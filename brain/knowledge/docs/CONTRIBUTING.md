@@ -20,7 +20,7 @@ Use when: it has SKILL.md, manifest.json, or can be called by agents
 # → Minimum score: 60
 
 # 2. Clone
-git clone --depth=1 <url> "D:\LongLeo\Project\AI OS\plugins\<name>"
+git clone --depth=1 <url> "<AI_OS_ROOT>\plugins\<name>"
 
 # 3. Create manifest
 # → plugins/<name>/manifest.json (see PLUGIN_SPEC.md)
@@ -35,14 +35,14 @@ git clone --depth=1 <url> "D:\LongLeo\Project\AI OS\plugins\<name>"
 ### Option B: Clone into knowledge/repos/ (reference only)
 Use when: it's a learning resource, not directly callable
 ```powershell
-git clone --depth=1 <url> "D:\LongLeo\Project\AI OS\knowledge\repos\<name>"
+git clone --depth=1 <url> "<AI_OS_ROOT>\knowledge\repos\<name>"
 # Register with source="knowledge_ref" in SKILL_REGISTRY.json
 ```
 
 ### Option C: Clone into REMOTE/claws/ (Claw variants)
 Use when: it's a Claude/AI runtime variant
 ```powershell
-git clone --depth=1 <url> "D:\LongLeo\Project\AI OS\REMOTE\claws\<name>"
+git clone --depth=1 <url> "<AI_OS_ROOT>\REMOTE\claws\<name>"
 # Register with category="claw_variant" in SKILL_REGISTRY.json
 ```
 

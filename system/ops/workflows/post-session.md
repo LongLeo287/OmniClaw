@@ -124,7 +124,7 @@ Output (Vietnamese):
 
 ```powershell
 # BÃ¡o Star Office UI: phiÃªn Ä‘Ã£ Ä‘Ã³ng, chuyá»ƒn sang idle
-python "d:\LongLeo\Project\AI OS\dashboard\set_state_aios.py" --state idle --detail "PhiÃªn lÃ m viá»‡c Ä‘Ã£ káº¿t thÃºc - Táº¡m biá»‡t!"
+python "<AI_OS_ROOT>\dashboard\set_state_aios.py" --state idle --detail "PhiÃªn lÃ m viá»‡c Ä‘Ã£ káº¿t thÃºc - Táº¡m biá»‡t!"
 ```
 
 ### Step 7: HUD Auto-Update (non-blocking)

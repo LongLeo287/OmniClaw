@@ -1,42 +1,42 @@
-# PHÒNG LỄ TÂN — Client Reception Activation Guide
-# Status: 🟡 BUILT — DORMANT (chờ token)
-# Khi sẵn sàng: đọc file này và thực hiện theo thứ tự
+﻿# PHÃ’NG Lá»„ TÃ‚N â€” Client Reception Activation Guide
+# Status: ðŸŸ¡ BUILT â€” DORMANT (chá» token)
+# Khi sáºµn sÃ ng: Ä‘á»c file nÃ y vÃ  thá»±c hiá»‡n theo thá»© tá»±
 
 ---
 
-## Trạng Thái Hiện Tại
+## Tráº¡ng ThÃ¡i Hiá»‡n Táº¡i
 
 | Component | Status | File |
 |-----------|--------|------|
-| Gateway SOP | ✅ Sẵn sàng | `corp/sops/CLIENT_INTAKE_GATEWAY.md` |
-| project_intake_agent | ✅ Registered | `skills/project_intake_agent/SKILL.md` |
-| proposal_engine | ✅ Registered | `skills/proposal_engine/SKILL.md` |
-| nullclaw config | ✅ Sẵn sàng | `REMOTE/claws/nullclaw/configs/client_gateway.json` |
-| tinyclaw config | ✅ Sẵn sàng | `REMOTE/claws/tinyclaw/configs/client_gateway.json` |
-| Delivery Pipeline | ✅ Sẵn sàng | `corp/sops/DELIVERY_PIPELINE.md` |
-| Telegram Bot | 🔴 Cần token | `@BotFather` trên Telegram |
-| Discord Bot | 🔴 Cần token | `discord.com/developers` |
+| Gateway SOP | âœ… Sáºµn sÃ ng | `corp/sops/CLIENT_INTAKE_GATEWAY.md` |
+| project_intake_agent | âœ… Registered | `skills/project_intake_agent/SKILL.md` |
+| proposal_engine | âœ… Registered | `skills/proposal_engine/SKILL.md` |
+| nullclaw config | âœ… Sáºµn sÃ ng | `REMOTE/claws/nullclaw/configs/client_gateway.json` |
+| tinyclaw config | âœ… Sáºµn sÃ ng | `REMOTE/claws/tinyclaw/configs/client_gateway.json` |
+| Delivery Pipeline | âœ… Sáºµn sÃ ng | `corp/sops/DELIVERY_PIPELINE.md` |
+| Telegram Bot | ðŸ”´ Cáº§n token | `@BotFather` trÃªn Telegram |
+| Discord Bot | ðŸ”´ Cáº§n token | `discord.com/developers` |
 
 ---
 
-## Khi Bạn Sẵn Sàng — Checklist Activate
+## Khi Báº¡n Sáºµn SÃ ng â€” Checklist Activate
 
-### Bước 1: Lấy Bot Tokens
+### BÆ°á»›c 1: Láº¥y Bot Tokens
 
 **Telegram:**
-1. Mở Telegram → nhắn tin @BotFather
-2. `/newbot` → đặt tên: `AI OS Corp` → username: `AICorpIntakeBot`
-3. Copy token (dạng `123456:ABC-DEF...`)
+1. Má»Ÿ Telegram â†’ nháº¯n tin @BotFather
+2. `/newbot` â†’ Ä‘áº·t tÃªn: `AI OS Corp` â†’ username: `AICorpIntakeBot`
+3. Copy token (dáº¡ng `123456:ABC-DEF...`)
 
 **Discord (optional):**
-1. Vào [discord.com/developers](https://discord.com/developers/applications)
-2. New Application → Bot → Add Bot → copy token
+1. VÃ o [discord.com/developers](https://discord.com/developers/applications)
+2. New Application â†’ Bot â†’ Add Bot â†’ copy token
 
-### Bước 2: Set Environment Variables
+### BÆ°á»›c 2: Set Environment Variables
 
 ```powershell
-# Trong PowerShell (Terminal) — thay thế bằng token thật
-$env:ANTHROPIC_API_KEY        = "sk-ant-..."
+# Trong PowerShell (Terminal) â€” thay tháº¿ báº±ng token tháº­t
+$env:ANTHROPIC_API_KEY='[REDACTED_API_KEY]'
 $env:TELEGRAM_CLIENT_BOT_TOKEN = "123456:ABC-..."   # Client bot
 $env:TELEGRAM_OPS_BOT_TOKEN    = "654321:XYZ-..."   # Ops bot (optional)
 $env:TELEGRAM_OPS_ALLOWED_IDS  = "your_telegram_user_id"
@@ -46,71 +46,72 @@ $env:DISCORD_CLIENT_BOT_TOKEN  = "..."
 $env:DISCORD_INTAKE_CHANNEL_IDS = "channel_id_here"
 ```
 
-> Lấy Telegram User ID: nhắn tin @userinfobot
+> Láº¥y Telegram User ID: nháº¯n tin @userinfobot
 
-### Bước 3: Khởi Động nullclaw (Client Gateway)
+### BÆ°á»›c 3: Khá»Ÿi Äá»™ng nullclaw (Client Gateway)
 
 ```powershell
-# Đổi vào thư mục plugin
-cd "D:\Project\AI OS\REMOTE\claws\nullclaw"
+# Äá»•i vÃ o thÆ° má»¥c plugin
+cd "<AI_OS_ROOT>\REMOTE\claws\nullclaw"
 
-# Build binary (nếu chưa có):
+# Build binary (náº¿u chÆ°a cÃ³):
 # zig build -Doptimize=ReleaseSmall
 
-# Start gateway với config
-nullclaw --config "D:\Project\AI OS\REMOTE\claws\nullclaw\configs\client_gateway.json" gateway
+# Start gateway vá»›i config
+nullclaw --config "<AI_OS_ROOT>\REMOTE\claws\nullclaw\configs\client_gateway.json" gateway
 ```
 
-### Bước 4: Expose qua Tunnel (để Telegram reach được)
+### BÆ°á»›c 4: Expose qua Tunnel (Ä‘á»ƒ Telegram reach Ä‘Æ°á»£c)
 
 ```powershell
-# Option A — Cloudflare Tunnel (free, ổn định)
+# Option A â€” Cloudflare Tunnel (free, á»•n Ä‘á»‹nh)
 cloudflared tunnel --url http://localhost:3100
 
-# Option B — ngrok (đơn giản hơn để test)
+# Option B â€” ngrok (Ä‘Æ¡n giáº£n hÆ¡n Ä‘á»ƒ test)
 ngrok http 3100
 ```
 
 Copy URL tunnel (vd: `https://abc123.trycloudflare.com`)
 
-### Bước 5: Đăng Ký Webhook
+### BÆ°á»›c 5: ÄÄƒng KÃ½ Webhook
 
 ```powershell
-# Thay <TOKEN> và <TUNNEL_URL>
+# Thay <TOKEN> vÃ  <TUNNEL_URL>
 Invoke-WebRequest "https://api.telegram.org/bot<TOKEN>/setWebhook?url=<TUNNEL_URL>/telegram/webhook"
 ```
 
-### Bước 6: Khởi Động tinyclaw (Ops Dashboard)
+### BÆ°á»›c 6: Khá»Ÿi Äá»™ng tinyclaw (Ops Dashboard)
 
 ```powershell
-cd "D:\Project\AI OS\REMOTE\claws\tinyclaw"
-tinyclaw start --config "D:\Project\AI OS\REMOTE\claws\tinyclaw\configs\client_gateway.json"
-tinyclaw office  # Dashboard tại http://localhost:3000
+cd "<AI_OS_ROOT>\REMOTE\claws\tinyclaw"
+tinyclaw start --config "<AI_OS_ROOT>\REMOTE\claws\tinyclaw\configs\client_gateway.json"
+tinyclaw office  # Dashboard táº¡i http://localhost:3000
 ```
 
-### Bước 7: Test
+### BÆ°á»›c 7: Test
 
-Gửi tin nhắn đến bot Telegram → phải nhận được welcome message:
+Gá»­i tin nháº¯n Ä‘áº¿n bot Telegram â†’ pháº£i nháº­n Ä‘Æ°á»£c welcome message:
 ```
-👋 Chào mừng đến AI OS Corp!
-Chúng tôi cung cấp giải pháp AI agents cho mọi loại dự án...
+ðŸ‘‹ ChÃ o má»«ng Ä‘áº¿n AI OS Corp!
+ChÃºng tÃ´i cung cáº¥p giáº£i phÃ¡p AI agents cho má»i loáº¡i dá»± Ã¡n...
 ```
 
 ---
 
-## Lệnh Hàng Ngày (sau khi activate)
+## Lá»‡nh HÃ ng NgÃ y (sau khi activate)
 
 ```powershell
-# Xem intakes mới
-cat "D:\Project\AI OS\shared-context\client_intake\_index.json"
+# Xem intakes má»›i
+cat "<AI_OS_ROOT>\shared-context\client_intake\_index.json"
 
-# Xem proposal đã tạo
-ls "D:\Project\AI OS\shared-context\corp\proposals\"
+# Xem proposal Ä‘Ã£ táº¡o
+ls "<AI_OS_ROOT>\shared-context\corp\proposals\"
 
 # Xem revenue
-cat "D:\Project\AI OS\shared-context\corp\invoices\_payment_tracker.json"
+cat "<AI_OS_ROOT>\shared-context\corp\invoices\_payment_tracker.json"
 ```
 
 ---
 
-*Phòng Lễ Tân sẵn sàng. Cung cấp token bất kỳ lúc nào để kích hoạt.* 🏨
+*PhÃ²ng Lá»… TÃ¢n sáºµn sÃ ng. Cung cáº¥p token báº¥t ká»³ lÃºc nÃ o Ä‘á»ƒ kÃ­ch hoáº¡t.* ðŸ¨
+

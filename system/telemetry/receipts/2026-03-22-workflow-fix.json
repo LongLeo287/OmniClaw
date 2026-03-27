@@ -73,7 +73,7 @@
     {
       "id": "FLOW-010",
       "file": "ops/workflows/content-intake-flow.md",
-      "issue": "STEP 5 destinations hardcoded to D:\\Project\\AI OS\\ (wrong path)",
+      "issue": "STEP 5 destinations hardcoded to <AI_OS_ROOT>\\ (wrong path)",
       "fix": "Changed to <AOS_ROOT>-relative paths"
     },
     {

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = 'd:\\AI OS CORP\\AI OS';
+const rootDir = '<AI_OS_ROOT>';
 const openClawJsonPath = path.join(rootDir, '.openclaw', 'openclaw.json');
 const pluginSkillsDir = path.join(rootDir, 'plugins', 'openclaw', 'skills');
 const workspaceSkillsDir = path.join(rootDir, '.openclaw', 'workspace', 'skills');

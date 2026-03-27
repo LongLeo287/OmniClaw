@@ -16,7 +16,7 @@
     {
       "id": "LOGIC-001",
       "file": "ops/workflows/claude_code_handoff.md",
-      "issue": "Line 30+56: hardcoded paths d:\\Project\\AI OS\\... (wrong location)",
+      "issue": "Line 30+56: hardcoded paths <AI_OS_ROOT>\\... (wrong location)",
       "fix": "Updated to <AOS_ROOT> tokens: brain/shared-context/blackboard.json + ops/scripts/handoff_to_claude_code.ps1"
     },
     {

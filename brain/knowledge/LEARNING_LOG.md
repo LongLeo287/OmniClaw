@@ -77,7 +77,7 @@ Each entry:
 **Applied In:** AGENTS.md role design inspiration
 
 ### Repo Ingestion Session (127 repos)
-**Source:** D:\LongLeo\Project\DATA\Github.txt + Google Sheets
+**Source:** <DATA_ROOT>\Github.txt + Google Sheets
 **Category:** system_upgrade
 **Key Learnings:**
 - AI OS can absorb 127 repos (44 plugins + 13 claws + 70 refs) in systematic batch

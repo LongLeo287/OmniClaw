@@ -165,7 +165,7 @@ Error: Ollama 8k context
 ```python
 # AI OS Memory upgrade:
 rag = LightRAG(
-    working_dir="D:/Project/AI OS/.ai-memory/lightrag/",
+    working_dir="<AI_OS_ROOT>/.ai-memory/lightrag/",
     workspace="ai_os",
     # Local LLM với Ollama:
     llm_model_func=ollama_model_complete,

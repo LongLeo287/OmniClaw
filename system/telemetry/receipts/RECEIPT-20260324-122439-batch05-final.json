@@ -27,7 +27,7 @@
     "GEMINI.md (RULE-CONTEXT7-01 + RULE-AGENT-PLATFORM-01)",
     "plugins/registry.json (context7 + port-killer added)",
     "brain/shared-context/SKILL_REGISTRY.json (tai-video added)",
-    "c:/Users/VUA2HAND/.gemini/antigravity/mcp_config.json (context7 MCP)"
+    "<USER_PROFILE>/.gemini/antigravity/mcp_config.json (context7 MCP)"
   ],
   "pending": [
     "Phase 3: version tracking plugin-catalog.md (minor)",
@@ -37,3 +37,4 @@
     "port-killer GUI: CEO can launch tools/port-killer/PortKiller.exe"
   ]
 }
+

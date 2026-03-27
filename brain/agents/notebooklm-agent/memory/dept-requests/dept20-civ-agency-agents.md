@@ -1,13 +1,13 @@
-# CIV Vetting Report — agency-agents
-**Dept 20 (CIV) | Date:** 2026-03-21 | **Analyst:** Nova (Dept 13 → Dept 20)
-**Repo Path:** `D:\Project\AI OS\brain\knowledge\repos\agency-agents\`
+﻿# CIV Vetting Report â€” agency-agents
+**Dept 20 (CIV) | Date:** 2026-03-21 | **Analyst:** Nova (Dept 13 â†’ Dept 20)
+**Repo Path:** `<AI_OS_ROOT>\brain\knowledge\repos\agency-agents\`
 
 ---
 
-## 📚 Sources
-📚 Sources: 1 repo | Types: GitHub OSS | Date: 2026-03-21
-🔧 Tool: Manual read (README.md + directory scan)
-🏢 Dept: Dept 20 (CIV) → Dept 4 (Registry) → Dept 21 (Agent Dev)
+## ðŸ“š Sources
+ðŸ“š Sources: 1 repo | Types: GitHub OSS | Date: 2026-03-21
+ðŸ”§ Tool: Manual read (README.md + directory scan)
+ðŸ¢ Dept: Dept 20 (CIV) â†’ Dept 4 (Registry) â†’ Dept 21 (Agent Dev)
 
 ---
 
@@ -15,27 +15,27 @@
 | Field | Value |
 |-------|-------|
 | **Repo** | agency-agents |
-| **Loại** | AI Agent Persona Library |
+| **Loáº¡i** | AI Agent Persona Library |
 | **License** | MIT (open source) |
-| **Hỗ trợ Antigravity** | ✅ Native (`./scripts/install.sh --tool antigravity`) |
-| **Privacy Tier** | PUBLIC — OSS, không nhạy cảm |
-| **Strix Scan** | Chưa chạy (xem mục 4) |
+| **Há»— trá»£ Antigravity** | âœ… Native (`./scripts/install.sh --tool antigravity`) |
+| **Privacy Tier** | PUBLIC â€” OSS, khÃ´ng nháº¡y cáº£m |
+| **Strix Scan** | ChÆ°a cháº¡y (xem má»¥c 4) |
 
 ## 2. Content Analysis
-- **144 agent files** chia thành 12 divisions (folders)
+- **144 agent files** chia thÃ nh 12 divisions (folders)
 - **Format:** Markdown `.md` (SKILL.md-compatible)
 - **Scope:** Engineering, Design, Marketing, Sales, Specialized, Game Dev, etc.
-- **Không có:** binary files, API keys, hardcoded credentials
+- **KhÃ´ng cÃ³:** binary files, API keys, hardcoded credentials
 
 ## 3. AI OS Alignment
-| Division | Depts Phục Vụ | Priority |
+| Division | Depts Phá»¥c Vá»¥ | Priority |
 |---------|--------------|---------|
 | specialized/ (24 agents) | Dept 13, 20, 8, 18 | HIGH |
 | engineering/ (23 agents) | Dept 1, 3, 10, 21 | HIGH |
 | support/ (6 agents) | Dept 8, 18, 19 | MEDIUM |
 | product/ (5 agents) | Dept 17, 13 | MEDIUM |
 | marketing/ (25 agents) | Dept 5 | LOW-MEDIUM |
-| game-development/ (17 agents) | N/A hiện tại | LOW |
+| game-development/ (17 agents) | N/A hiá»‡n táº¡i | LOW |
 
 ## 4. Risk Assessment
 | Risk | Level | Mitigation |
@@ -47,20 +47,21 @@
 
 ## 5. CIV Verdict
 
-> **✅ APPROVED — Conditional**
+> **âœ… APPROVED â€” Conditional**
 >
-> agency-agents được phép deploy vào AI OS với điều kiện:
-> 1. Chỉ install **specialized/ + engineering/ + support/** (72 files — low risk)
-> 2. Run Strix scan trong vòng 7 ngày → upload kết quả Dept 10
-> 3. Dept 4 đăng ký chính thức vào plugin registry
+> agency-agents Ä‘Æ°á»£c phÃ©p deploy vÃ o AI OS vá»›i Ä‘iá»u kiá»‡n:
+> 1. Chá»‰ install **specialized/ + engineering/ + support/** (72 files â€” low risk)
+> 2. Run Strix scan trong vÃ²ng 7 ngÃ y â†’ upload káº¿t quáº£ Dept 10
+> 3. Dept 4 Ä‘Äƒng kÃ½ chÃ­nh thá»©c vÃ o plugin registry
 
 ## 6. Proposed Install Path
 ```
-D:\Project\AI OS\plugins\agency-agents\     ← Plugin directory (D: drive)
-├── SKILL.md
-├── specialized/ (24 agents)
-├── engineering/ (23 agents)
-└── support/ (6 agents)
+<AI_OS_ROOT>\plugins\agency-agents\     â† Plugin directory (D: drive)
+â”œâ”€â”€ SKILL.md
+â”œâ”€â”€ specialized/ (24 agents)
+â”œâ”€â”€ engineering/ (23 agents)
+â””â”€â”€ support/ (6 agents)
 ```
 
-**Routing:** → Dept 4 (Registry) để đăng ký → CEO approval deploy
+**Routing:** â†’ Dept 4 (Registry) Ä‘á»ƒ Ä‘Äƒng kÃ½ â†’ CEO approval deploy
+

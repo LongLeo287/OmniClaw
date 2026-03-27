@@ -1,4 +1,4 @@
-# SKILL_REGISTRY.json Audit Report - 2026-03-24
+﻿# SKILL_REGISTRY.json Audit Report - 2026-03-24
 
 ## Summary
 - Total entries: 121
@@ -6,18 +6,18 @@
 - Broken paths: 121 (all entries had incorrect paths)
 
 ## Issues Found
-The audit revealed that almost all entries in SKILL_REGISTRY.json have incorrect paths. The paths appear to be using a placeholder root directory (`D:\Project\AI OS\`) instead of the actual project root (`D:\AI OS CORP\AI OS\`).
+The audit revealed that almost all entries in SKILL_REGISTRY.json have incorrect paths. The paths appear to be using a placeholder root directory (`<AI_OS_ROOT>\`) instead of the actual project root (`<AI_OS_ROOT>\`).
 
 ## Broken Entries (Sample)
-- **Accessibility Grounding**: D:\Project\AI OS\skills\accessibility_grounding\SKILL.md
-- **Android APK Modification**: D:\Project\AI OS\skills\apk-modification\SKILL.md
-- **Archivist**: D:\Project\AI OS\skills\archivist\SKILL.md
-- **channel_manager**: D:\Project\AI OS\skills\channel_manager\SKILL.md
-- **Cognitive Evolver**: D:\Project\AI OS\skills\cognitive_evolver\SKILL.md
+- **Accessibility Grounding**: <AI_OS_ROOT>\skills\accessibility_grounding\SKILL.md
+- **Android APK Modification**: <AI_OS_ROOT>\skills\apk-modification\SKILL.md
+- **Archivist**: <AI_OS_ROOT>\skills\archivist\SKILL.md
+- **channel_manager**: <AI_OS_ROOT>\skills\channel_manager\SKILL.md
+- **Cognitive Evolver**: <AI_OS_ROOT>\skills\cognitive_evolver\SKILL.md
 - And 116 more entries with similar path issues
 
 ## Root Cause
-The registry appears to have been generated with an incorrect base path. All entries use `D:\Project\AI OS\` as the base path instead of the actual project path `D:\AI OS CORP\AI OS\`.
+The registry appears to have been generated with an incorrect base path. All entries use `<AI_OS_ROOT>\` as the base path instead of the actual project path `<AI_OS_ROOT>\`.
 
 ## Recommendations
 1. **Immediate**: Regenerate the SKILL_REGISTRY.json with correct base path

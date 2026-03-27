@@ -10,7 +10,7 @@ const { ListToolsRequestSchema, CallToolRequestSchema } = require("@modelcontext
 const fs = require("fs");
 const path = require("path");
 
-const AOS_ROOT = process.env.AOS_ROOT || "D:/Project/AI OS";
+const AOS_ROOT = process.env.AOS_ROOT || "<AI_OS_ROOT>";
 
 const server = new Server(
   { name: "aos-workspace", version: "1.0.0" },

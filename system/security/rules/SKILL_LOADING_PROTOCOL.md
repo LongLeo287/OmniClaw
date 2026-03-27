@@ -53,7 +53,7 @@ Before loading any skill, the agent must identify:
 
 ```powershell
 # Read the registry (always fresh — no caching between sessions)
-$registry = Get-Content "d:\Project\AI OS\shared-context\SKILL_REGISTRY.json" | ConvertFrom-Json
+$registry = Get-Content "<AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json" | ConvertFrom-Json
 
 # Search by tag
 $candidates = $registry.entries | Where-Object { $_.tags -contains "memory" }
@@ -218,7 +218,7 @@ Format: { "event": "facts_extracted", "from": "smart_memory", "payload": [...] }
 
 Consuming skill reads from MQ:
 ```powershell
-$events = Get-ChildItem "d:\Project\AI OS\subagents\mq\" -Filter "facts_extracted_*.json"
+$events = Get-ChildItem "<AI_OS_ROOT>\subagents\mq\" -Filter "facts_extracted_*.json"
 $latest = $events | Sort-Object LastWriteTime -Descending | Select-Object -First 1
 $data   = Get-Content $latest.FullName | ConvertFrom-Json
 ```
@@ -235,7 +235,7 @@ Registry can become stale when new skills are added. Agents MUST refresh when:
 
 ```powershell
 # Quick refresh (auto-run, no confirmation needed):
-& "d:\Project\AI OS\scripts\skill_loader.ps1"
+& "<AI_OS_ROOT>\scripts\skill_loader.ps1"
 ```
 
 After refresh, re-query the registry — new skills will appear.

@@ -150,7 +150,7 @@ codex "$(cat delegation-task.md)"
 ### Vào skill loader
 ```
 Đặt spawn-agent skill tại:
-d:\Project\AI OS\skills\spawn-agent\SKILL.md
+<AI_OS_ROOT>\skills\spawn-agent\SKILL.md
 ```
 
 ### Workflow khi có large task

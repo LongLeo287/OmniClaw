@@ -1,5 +1,5 @@
 # Knowledge File: ClawTask — AI Agent Task Orchestration Platform
-# Source: https://vnrom.net/2026/03/clawtask-nen-tang-dieu-phoi-cong-viec-cho-ai-agents-khong-chi-la-mot-kanban-board/
+# Source: https://vnrom.net/2026/03/clawta[REDACTED_API_KEY]ts-khong-chi-la-mot-kanban-board/
 # Ingested: 2026-03-19 | Tier: T1 (Internal — AI OS Corp uses ClawTask)
 # Author: Duy Nghiện (vnROM)
 
@@ -9,7 +9,7 @@
 
 ClawTask là nền tảng **điều phối công việc cho AI agents** — không phải Kanban thông thường. Được thiết kế cho mô hình **human + AI agent collaboration**, nơi agent có trạng thái, workflow có checkpoint, và con người có thể can thiệp đúng lúc.
 
-**AI OS Corp đang dùng ClawTask tại:** `d:\Project\AI OS\tools\clawtask\`
+**AI OS Corp đang dùng ClawTask tại:** `<AI_OS_ROOT>\tools\clawtask\`
 **Server:** `clawtask_api.py` — chạy cổng 7474
 
 ---
@@ -104,9 +104,9 @@ Mapping department → clarification targets:
 
 ## LIÊN KẾT
 
-- Bài viết: https://vnrom.net/2026/03/clawtask-nen-tang-dieu-phoi-cong-viec-cho-ai-agents-khong-chi-la-mot-kanban-board/
-- Tool path: `d:\Project\AI OS\tools\clawtask\`
-- API file: `d:\Project\AI OS\tools\clawtask\clawtask_api.py`
+- Bài viết: https://vnrom.net/2026/03/clawta[REDACTED_API_KEY]ts-khong-chi-la-mot-kanban-board/
+- Tool path: `<AI_OS_ROOT>\tools\clawtask\`
+- API file: `<AI_OS_ROOT>\tools\clawtask\clawtask_api.py`
 - Liên quan: `planning_pmo` department (owner của ClawTask)
 - Liên quan: `monitoring_inspection` (consumes ClawTask data)
 

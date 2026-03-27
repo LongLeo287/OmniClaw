@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const configPath = 'd:\\AI OS CORP\\AI OS\\.openclaw\\openclaw.json';
+const configPath = '<AI_OS_ROOT>\\.openclaw\\openclaw.json';
 const configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 // The Cognitive Pack: Universal power-ups that don't violate specialty

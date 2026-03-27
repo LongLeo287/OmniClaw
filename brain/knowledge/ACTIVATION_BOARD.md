@@ -19,7 +19,7 @@
 
 ### 🦞 LobsterBoard — Dashboard tổng hợp AI usage
 ```bash
-cd "D:\LongLeo\Project\AI OS\plugins\LobsterBoard"
+cd "<AI_OS_ROOT>\plugins\LobsterBoard"
 cp config.example.json config.json   # lần đầu tiên
 # Sửa config.json: city, API keys muốn dùng
 node server.cjs
@@ -47,16 +47,16 @@ node server.cjs
 # MESSENGER_ACCESS_TOKEN=token   ← từ Facebook Developer Portal
 
 # 2. Health check
-python "D:\Project\AI OS\channels\health_check.py"
+python "<AI_OS_ROOT>\channels\health_check.py"
 
 # 3. Telegram (dễ nhất, không cần ngrok):
-python "D:\Project\AI OS\channels\telegram_bridge.py"
+python "<AI_OS_ROOT>\channels\telegram_bridge.py"
 
 # 4. Tất cả cùng lúc:
-python "D:\Project\AI OS\channels\start_bridges.py"
+python "<AI_OS_ROOT>\channels\start_bridges.py"
 
 # 5. Cần URL public cho Zalo & Facebook → chạy ngrok trước:
-python "D:\Project\AI OS\channels\ngrok_connector.py"
+python "<AI_OS_ROOT>\channels\ngrok_connector.py"
 ```
 
 | | |
@@ -70,7 +70,7 @@ python "D:\Project\AI OS\channels\ngrok_connector.py"
 
 ### 🔍 LightRAG — Local RAG (Retrieval-Augmented Generation)
 ```bash
-cd "D:\LongLeo\Project\AI OS\plugins\LightRAG"
+cd "<AI_OS_ROOT>\plugins\LightRAG"
 pip install -r requirements.txt   # lần đầu
 python -m lightrag.api.lightrag_server
 ```
@@ -84,7 +84,7 @@ python -m lightrag.api.lightrag_server
 
 ### 🕷️ Firecrawl — Web Crawler API
 ```bash
-cd "D:\LongLeo\Project\AI OS\plugins\firecrawl"
+cd "<AI_OS_ROOT>\plugins\firecrawl"
 npm install   # lần đầu
 npm run dev
 ```
@@ -98,7 +98,7 @@ npm run dev
 
 ### 🤖 MCP Server Bridge
 ```bash
-cd "D:\LongLeo\Project\AI OS\mcp"
+cd "<AI_OS_ROOT>\mcp"
 # Xem README.md trong thư mục mcp/ để biết lệnh cụ thể
 ```
 | | |
@@ -115,10 +115,10 @@ cd "D:\LongLeo\Project\AI OS\mcp"
 npm install -g pm2
 
 # LobsterBoard
-pm2 start "D:\LongLeo\Project\AI OS\plugins\LobsterBoard\server.cjs" --name lobsterboard
+pm2 start "<AI_OS_ROOT>\plugins\LobsterBoard\server.cjs" --name lobsterboard
 
 # Remote Bridge
-pm2 start "python D:\LongLeo\Project\AI OS\channels\start_bridges.py" --name aios-channels
+pm2 start "python <AI_OS_ROOT>\channels\start_bridges.py" --name aios-channels
 
 # Lưu để tự chạy khi khởi động Windows
 pm2 startup
@@ -145,7 +145,7 @@ pm2 save
 > ```
 > ### 🔷 [Tên plugin] — [Mô tả ngắn]
 > \```bash
-> cd "D:\LongLeo\Project\AI OS\plugins\<name>"
+> cd "<AI_OS_ROOT>\plugins\<name>"
 > [lệnh khởi động]
 > \```
 > | URL | http://localhost:<port> |

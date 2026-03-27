@@ -1,181 +1,181 @@
-# 📚 Large Repos Catalog — Clone On Demand
+﻿# ðŸ“š Large Repos Catalog â€” Clone On Demand
 # Version: 1.0 | 2026-03-25
-# Purpose: Các repo lớn không clone ngay — agent/dept lấy lệnh clone khi cần
+# Purpose: CÃ¡c repo lá»›n khÃ´ng clone ngay â€” agent/dept láº¥y lá»‡nh clone khi cáº§n
 # Path: brain/knowledge/notes/LARGE_REPOS_CATALOG.md
 
 ---
 
-## Cách sử dụng
+## CÃ¡ch sá»­ dá»¥ng
 
-> Agent hoặc phòng ban: Tìm repo phù hợp → chạy lệnh clone → thực hiện dự án → xóa sau khi xong (hoặc giữ lại nếu cần tiếp)
+> Agent hoáº·c phÃ²ng ban: TÃ¬m repo phÃ¹ há»£p â†’ cháº¡y lá»‡nh clone â†’ thá»±c hiá»‡n dá»± Ã¡n â†’ xÃ³a sau khi xong (hoáº·c giá»¯ láº¡i náº¿u cáº§n tiáº¿p)
 
 ```powershell
-# Clone về thư mục project cụ thể
-# Thay <PROJECT_DIR> bằng tên dự án đang làm
+# Clone vá» thÆ° má»¥c project cá»¥ thá»ƒ
+# Thay <PROJECT_DIR> báº±ng tÃªn dá»± Ã¡n Ä‘ang lÃ m
 
-git clone --depth 1 <URL> "D:\AI OS CORP\AI OS\plugins\github-repos\<REPO>"
+git clone --depth 1 <URL> "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
 ```
 
 ---
 
 ## Catalog
 
-| Repo | Dept chủ | Tag | Lý do clone |
+| Repo | Dept chá»§ | Tag | LÃ½ do clone |
 |------|----------|-----|-------------|
 | `next.js` | Engineering | `FRONTEND` | Khi build web app cho AI OS |
-| `excalidraw` | Design / R&D | `UI-TOOL` | Khi cần source code diagram / whiteboard tool |
-| `posthog` | Analytics / Ops | `ANALYTICS` | Khi cần self-hosted analytics pipeline |
+| `excalidraw` | Design / R&D | `UI-TOOL` | Khi cáº§n source code diagram / whiteboard tool |
+| `posthog` | Analytics / Ops | `ANALYTICS` | Khi cáº§n self-hosted analytics pipeline |
 | `plotly.js` | Data / HUD | `VISUALIZATION` | Khi build dashboard charts |
-| `trivy` | Security | `SECURITY` | Khi cần container & secret scanning |
-| `developer-roadmap` | Training | `KNOWLEDGE` | Khi onboard agents / cần skill matrix |
+| `trivy` | Security | `SECURITY` | Khi cáº§n container & secret scanning |
+| `developer-roadmap` | Training | `KNOWLEDGE` | Khi onboard agents / cáº§n skill matrix |
 | `openai-cookbook` | R&D | `AI-PATTERNS` | Khi research LLM integration patterns |
 | `anime.js` | Design / Frontend | `ANIMATION` | Khi build animated UI |
-| `agents-course` | Training / R&D | `AI-EDUCATION` | Khi training agents về LLM concepts |
-| `gitignore` | Core / DevOps | `TEMPLATE` | Khi setup repo mới |
-| `public-apis` | R&D / Integration | `INTEGRATION` | Khi cần tích hợp external APIs |
+| `agents-course` | Training / R&D | `AI-EDUCATION` | Khi training agents vá» LLM concepts |
+| `gitignore` | Core / DevOps | `TEMPLATE` | Khi setup repo má»›i |
+| `public-apis` | R&D / Integration | `INTEGRATION` | Khi cáº§n tÃ­ch há»£p external APIs |
 
 ---
 
-## Chi tiết từng repo
+## Chi tiáº¿t tá»«ng repo
 
 ---
 
-### 🔷 next.js — Vercel
+### ðŸ”· next.js â€” Vercel
 **Dept:** Engineering | Product | Frontend
 **Size:** ~1.2 GB | **Stars:** 130k+
-**Khi nào dùng:** Build web apps, dashboards, frontend cho dự án AI OS Corp
+**Khi nÃ o dÃ¹ng:** Build web apps, dashboards, frontend cho dá»± Ã¡n AI OS Corp
 
 ```powershell
-# Dùng khi: Build web UI cho AI OS dashboard, customer portal, product frontend
+# DÃ¹ng khi: Build web UI cho AI OS dashboard, customer portal, product frontend
 git clone --depth 1 https://github.com/vercel/next.js.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\next.js"
+    "<AI_OS_ROOT>\plugins\github-repos\next.js"
 ```
 
 **AI OS Impact:**
-- HUD v3 → Next.js real-time dashboard
-- Corp dashboard → web interface cho 21 depts
+- HUD v3 â†’ Next.js real-time dashboard
+- Corp dashboard â†’ web interface cho 21 depts
 - Product page / landing page
 
 ---
 
-### 🔷 excalidraw — Excalidraw Team
+### ðŸ”· excalidraw â€” Excalidraw Team
 **Dept:** Design | R&D | Product
 **Size:** ~500 MB | **Stars:** 95k+
-**Khi nào dùng:** Whiteboard tool, diagram tool, system architecture drawing
+**Khi nÃ o dÃ¹ng:** Whiteboard tool, diagram tool, system architecture drawing
 
 ```powershell
-# Dùng khi: Cần tool vẽ diagram cho dự án AI OS, system design, wireframe alternative
+# DÃ¹ng khi: Cáº§n tool váº½ diagram cho dá»± Ã¡n AI OS, system design, wireframe alternative
 git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\excalidraw"
+    "<AI_OS_ROOT>\plugins\github-repos\excalidraw"
 ```
 
 **AI OS Impact:**
-- Thay thế Stitch cho system architecture diagrams
-- Board brainstorm nội bộ cho các phòng ban
+- Thay tháº¿ Stitch cho system architecture diagrams
+- Board brainstorm ná»™i bá»™ cho cÃ¡c phÃ²ng ban
 - Self-hosted lightweight alternative
 
 ---
 
-### 🔷 posthog — PostHog
+### ðŸ”· posthog â€” PostHog
 **Dept:** Analytics | Ops | Product
 **Size:** ~800 MB | **Stars:** 24k+
-**Khi nào dùng:** Self-hosted analytics, event tracking, funnel analysis
+**Khi nÃ o dÃ¹ng:** Self-hosted analytics, event tracking, funnel analysis
 
 ```powershell
-# Dùng khi: Cần analytics pipeline cho AI OS products, track user events
+# DÃ¹ng khi: Cáº§n analytics pipeline cho AI OS products, track user events
 git clone --depth 1 https://github.com/posthog/posthog.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\posthog"
+    "<AI_OS_ROOT>\plugins\github-repos\posthog"
 ```
 
 **AI OS Impact:**
 - Track AI OS usage metrics (daily corp cycle, agent calls, skill usage)
-- Replace external analytics với self-hosted
-- Wire với B5 system_pulse.py
+- Replace external analytics vá»›i self-hosted
+- Wire vá»›i B5 system_pulse.py
 
 ---
 
-### 🔷 plotly.js — Plotly
+### ðŸ”· plotly.js â€” Plotly
 **Dept:** Data | Analytics | HUD
 **Size:** ~400 MB | **Stars:** 17k+
-**Khi nào dùng:** Charts, graphs, data visualization cho dashboards
+**Khi nÃ o dÃ¹ng:** Charts, graphs, data visualization cho dashboards
 
 ```powershell
-# Dùng khi: Build charts cho HUD, KPI dashboard, corp cycle analytics
+# DÃ¹ng khi: Build charts cho HUD, KPI dashboard, corp cycle analytics
 git clone --depth 1 https://github.com/plotly/plotly.js.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\plotly.js"
+    "<AI_OS_ROOT>\plugins\github-repos\plotly.js"
 ```
 
 **AI OS Impact:**
-- HUD v3 charts → KPI scoreboard visualization
+- HUD v3 charts â†’ KPI scoreboard visualization
 - Dept health graphs
 - CIV pipeline metrics charts
 
 ---
 
-### 🔷 trivy — Aqua Security
+### ðŸ”· trivy â€” Aqua Security
 **Dept:** Security | DevOps | CIV Pipeline
 **Size:** ~600 MB | **Stars:** 24k+
-**Khi nào dùng:** Security scan containers, repos, secrets — tích hợp CIV pipeline
+**Khi nÃ o dÃ¹ng:** Security scan containers, repos, secrets â€” tÃ­ch há»£p CIV pipeline
 
 ```powershell
-# Dùng khi: CIV pipeline cần deep security scan repo/container
-# Hoặc khi Security dept cần audit tools
+# DÃ¹ng khi: CIV pipeline cáº§n deep security scan repo/container
+# Hoáº·c khi Security dept cáº§n audit tools
 git clone --depth 1 https://github.com/aquasecurity/trivy.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\trivy"
+    "<AI_OS_ROOT>\plugins\github-repos\trivy"
 ```
 
 **AI OS Impact:**
 - CIV Pipeline Phase 2: security scan (thay `vet_repo.ps1`)
-- Integrate với `security/QUARANTINE/` workflow
-- Auto-scan mọi repo trước khi approve
+- Integrate vá»›i `security/QUARANTINE/` workflow
+- Auto-scan má»i repo trÆ°á»›c khi approve
 
 ---
 
-### 🔷 developer-roadmap — Kamran Ahmed
+### ðŸ”· developer-roadmap â€” Kamran Ahmed
 **Dept:** Training | HR | R&D
 **Size:** ~300 MB | **Stars:** 310k+
-**Khi nào dùng:** Khi onboard agent mới, build skill matrix, training plan
+**Khi nÃ o dÃ¹ng:** Khi onboard agent má»›i, build skill matrix, training plan
 
 ```powershell
-# Dùng khi: Training dept cần roadmap reference cho agent capabilities
+# DÃ¹ng khi: Training dept cáº§n roadmap reference cho agent capabilities
 git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\developer-roadmap"
+    "<AI_OS_ROOT>\plugins\github-repos\developer-roadmap"
 ```
 
 **AI OS Impact:**
 - Training dept: skill gap analysis cho 21 depts
 - SKILL_REGISTRY enhancement: map skills to roadmap nodes
-- Onboarding guide cho các agent mới
+- Onboarding guide cho cÃ¡c agent má»›i
 
 ---
 
-### 🔷 openai-cookbook — OpenAI
+### ðŸ”· openai-cookbook â€” OpenAI
 **Dept:** R&D | Engineering | AI Research
 **Size:** ~500 MB | **Stars:** 65k+
-**Khi nào dùng:** Research LLM patterns, prompt engineering, RAG techniques
+**Khi nÃ o dÃ¹ng:** Research LLM patterns, prompt engineering, RAG techniques
 
 ```powershell
-# Dùng khi: R&D dept cần reference cho LLM integration, RAG, fine-tuning patterns
+# DÃ¹ng khi: R&D dept cáº§n reference cho LLM integration, RAG, fine-tuning patterns
 git clone --depth 1 https://github.com/openai/openai-cookbook.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\openai-cookbook"
+    "<AI_OS_ROOT>\plugins\github-repos\openai-cookbook"
 ```
 
 **AI OS Impact:**
 - R&D dept: LLM pattern library
 - bridge_router.py improvements (new routing strategies)
-- RAG patterns → LightRAG enhancement
+- RAG patterns â†’ LightRAG enhancement
 
 ---
 
-### 🔷 anime.js — Julian Garnier
+### ðŸ”· anime.js â€” Julian Garnier
 **Dept:** Design | Frontend | Product
 **Size:** ~200 MB | **Stars:** 50k+
-**Khi nào dùng:** Khi build animated UI components, HUD animations
+**Khi nÃ o dÃ¹ng:** Khi build animated UI components, HUD animations
 
 ```powershell
-# Dùng khi: Frontend cần animations cho HUD dashboard, product UI
+# DÃ¹ng khi: Frontend cáº§n animations cho HUD dashboard, product UI
 git clone --depth 1 https://github.com/juliangarnier/anime.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\anime"
+    "<AI_OS_ROOT>\plugins\github-repos\anime"
 ```
 
 **AI OS Impact:**
@@ -185,55 +185,55 @@ git clone --depth 1 https://github.com/juliangarnier/anime.git `
 
 ---
 
-### 🔷 agents-course — HuggingFace
+### ðŸ”· agents-course â€” HuggingFace
 **Dept:** Training | R&D | AI Research
 **Size:** ~2 GB (notebooks + models)
-**Khi nào dùng:** Training dept cần deep-dive vào AI agent concepts, LLM theory
+**Khi nÃ o dÃ¹ng:** Training dept cáº§n deep-dive vÃ o AI agent concepts, LLM theory
 
 ```powershell
-# Dùng khi: Training dept cần full HuggingFace agents curriculum
-# Cảnh báo: ~2GB — chỉ clone khi có storage
+# DÃ¹ng khi: Training dept cáº§n full HuggingFace agents curriculum
+# Cáº£nh bÃ¡o: ~2GB â€” chá»‰ clone khi cÃ³ storage
 git clone --depth 1 https://github.com/huggingface/agents-course.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\agents-course"
+    "<AI_OS_ROOT>\plugins\github-repos\agents-course"
 ```
 
 **AI OS Impact:**
 - Agent training curriculum cho 12 placeholder agents
-- Reference cho activation_status.json → activating new agents
+- Reference cho activation_status.json â†’ activating new agents
 - Pattern library cho autonomous agent behavior
 
 ---
 
-### 🔷 gitignore — GitHub
+### ðŸ”· gitignore â€” GitHub
 **Dept:** DevOps | Engineering | All depts
 **Size:** ~50 MB (small actually)
-**Khi nào dùng:** Setup bất kỳ repo mới, cần .gitignore template
+**Khi nÃ o dÃ¹ng:** Setup báº¥t ká»³ repo má»›i, cáº§n .gitignore template
 
 ```powershell
-# Nhỏ — có thể clone ngay khi cần
+# Nhá» â€” cÃ³ thá»ƒ clone ngay khi cáº§n
 git clone --depth 1 https://github.com/github/gitignore.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\gitignore"
+    "<AI_OS_ROOT>\plugins\github-repos\gitignore"
 ```
 
 **AI OS Impact:**
-- Template cho mọi repo mới trong AI OS Corp
-- Đặt vào `ops/templates/gitignore/`
+- Template cho má»i repo má»›i trong AI OS Corp
+- Äáº·t vÃ o `ops/templates/gitignore/`
 
 ---
 
-### 🔷 public-apis — Public APIs
+### ðŸ”· public-apis â€” Public APIs
 **Dept:** R&D | Integration | Product
-**Size:** ~100 MB (chủ yếu markdown)
-**Khi nào dùng:** Khi R&D cần tìm API để tích hợp tính năng mới
+**Size:** ~100 MB (chá»§ yáº¿u markdown)
+**Khi nÃ o dÃ¹ng:** Khi R&D cáº§n tÃ¬m API Ä‘á»ƒ tÃ­ch há»£p tÃ­nh nÄƒng má»›i
 
 ```powershell
-# Dùng khi: Integration dept cần tìm free API cho dự án
+# DÃ¹ng khi: Integration dept cáº§n tÃ¬m free API cho dá»± Ã¡n
 git clone --depth 1 https://github.com/public-apis/public-apis.git `
-    "D:\AI OS CORP\AI OS\plugins\github-repos\public-apis"
+    "<AI_OS_ROOT>\plugins\github-repos\public-apis"
 ```
 
 **AI OS Impact:**
-- R&D dept: nguồn tham khảo API cho tích hợp
+- R&D dept: nguá»“n tham kháº£o API cho tÃ­ch há»£p
 - External Integrations wishlist (B12 GitHub, Telegram, etc.)
 - Rate-free APIs cho prototyping
 
@@ -242,65 +242,66 @@ git clone --depth 1 https://github.com/public-apis/public-apis.git `
 ## Quick Clone Reference
 
 ```powershell
-# ═══ FRONTEND / UI ════════════════════════════════════════
-# next.js — Khi build web app
-git clone --depth 1 https://github.com/vercel/next.js.git "D:\AI OS CORP\AI OS\plugins\github-repos\next.js"
+# â•â•â• FRONTEND / UI â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# next.js â€” Khi build web app
+git clone --depth 1 https://github.com/vercel/next.js.git "<AI_OS_ROOT>\plugins\github-repos\next.js"
 
-# excalidraw — Khi cần whiteboard/diagram tool
-git clone --depth 1 https://github.com/excalidraw/excalidraw.git "D:\AI OS CORP\AI OS\plugins\github-repos\excalidraw"
+# excalidraw â€” Khi cáº§n whiteboard/diagram tool
+git clone --depth 1 https://github.com/excalidraw/excalidraw.git "<AI_OS_ROOT>\plugins\github-repos\excalidraw"
 
-# anime.js — Khi cần animations
-git clone --depth 1 https://github.com/juliangarnier/anime.git "D:\AI OS CORP\AI OS\plugins\github-repos\anime"
+# anime.js â€” Khi cáº§n animations
+git clone --depth 1 https://github.com/juliangarnier/anime.git "<AI_OS_ROOT>\plugins\github-repos\anime"
 
-# plotly.js — Khi cần charts/graphs
-git clone --depth 1 https://github.com/plotly/plotly.js.git "D:\AI OS CORP\AI OS\plugins\github-repos\plotly.js"
+# plotly.js â€” Khi cáº§n charts/graphs
+git clone --depth 1 https://github.com/plotly/plotly.js.git "<AI_OS_ROOT>\plugins\github-repos\plotly.js"
 
-# ═══ ANALYTICS / MONITORING ═══════════════════════════════
-# posthog — Self-hosted analytics
-git clone --depth 1 https://github.com/posthog/posthog.git "D:\AI OS CORP\AI OS\plugins\github-repos\posthog"
+# â•â•â• ANALYTICS / MONITORING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# posthog â€” Self-hosted analytics
+git clone --depth 1 https://github.com/posthog/posthog.git "<AI_OS_ROOT>\plugins\github-repos\posthog"
 
-# ═══ SECURITY ═════════════════════════════════════════════
-# trivy — Container/repo security scanner
-git clone --depth 1 https://github.com/aquasecurity/trivy.git "D:\AI OS CORP\AI OS\plugins\github-repos\trivy"
+# â•â•â• SECURITY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# trivy â€” Container/repo security scanner
+git clone --depth 1 https://github.com/aquasecurity/trivy.git "<AI_OS_ROOT>\plugins\github-repos\trivy"
 
-# ═══ AI / R&D ══════════════════════════════════════════════
-# openai-cookbook — LLM patterns & examples
-git clone --depth 1 https://github.com/openai/openai-cookbook.git "D:\AI OS CORP\AI OS\plugins\github-repos\openai-cookbook"
+# â•â•â• AI / R&D â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# openai-cookbook â€” LLM patterns & examples
+git clone --depth 1 https://github.com/openai/openai-cookbook.git "<AI_OS_ROOT>\plugins\github-repos\openai-cookbook"
 
-# agents-course — HuggingFace agent curriculum [LARGE ~2GB]
-git clone --depth 1 https://github.com/huggingface/agents-course.git "D:\AI OS CORP\AI OS\plugins\github-repos\agents-course"
+# agents-course â€” HuggingFace agent curriculum [LARGE ~2GB]
+git clone --depth 1 https://github.com/huggingface/agents-course.git "<AI_OS_ROOT>\plugins\github-repos\agents-course"
 
-# ═══ TRAINING / KNOWLEDGE ═════════════════════════════════
-# developer-roadmap — Skill matrix & learning paths
-git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git "D:\AI OS CORP\AI OS\plugins\github-repos\developer-roadmap"
+# â•â•â• TRAINING / KNOWLEDGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+# developer-roadmap â€” Skill matrix & learning paths
+git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git "<AI_OS_ROOT>\plugins\github-repos\developer-roadmap"
 
-# public-apis — Free API directory
-git clone --depth 1 https://github.com/public-apis/public-apis.git "D:\AI OS CORP\AI OS\plugins\github-repos\public-apis"
+# public-apis â€” Free API directory
+git clone --depth 1 https://github.com/public-apis/public-apis.git "<AI_OS_ROOT>\plugins\github-repos\public-apis"
 
-# gitignore — GitHub templates [NHỎ - clone ngay]
-git clone --depth 1 https://github.com/github/gitignore.git "D:\AI OS CORP\AI OS\plugins\github-repos\gitignore"
+# gitignore â€” GitHub templates [NHá»Ž - clone ngay]
+git clone --depth 1 https://github.com/github/gitignore.git "<AI_OS_ROOT>\plugins\github-repos\gitignore"
 ```
 
 ---
 
 ## Trigger Rule cho Agents
 
-Khi một agent/dept cần clone, tự chạy lệnh trong section "Quick Clone Reference" theo tag phù hợp:
+Khi má»™t agent/dept cáº§n clone, tá»± cháº¡y lá»‡nh trong section "Quick Clone Reference" theo tag phÃ¹ há»£p:
 
-| Trigger | Tag cần tìm | Action |
+| Trigger | Tag cáº§n tÃ¬m | Action |
 |---------|-------------|--------|
 | Build web UI | `FRONTEND` | Clone next.js |
-| Cần charts | `VISUALIZATION` | Clone plotly.js |
+| Cáº§n charts | `VISUALIZATION` | Clone plotly.js |
 | Security audit | `SECURITY` | Clone trivy |
 | Research LLM | `AI-PATTERNS` | Clone openai-cookbook |
-| Train agent mới | `AI-EDUCATION` | Clone agents-course |
-| Tích hợp external | `INTEGRATION` | Clone public-apis |
+| Train agent má»›i | `AI-EDUCATION` | Clone agents-course |
+| TÃ­ch há»£p external | `INTEGRATION` | Clone public-apis |
 | Setup repo | `TEMPLATE` | Clone gitignore |
-| Cần analytics | `ANALYTICS` | Clone posthog |
-| Cần animations | `ANIMATION` | Clone anime.js |
+| Cáº§n analytics | `ANALYTICS` | Clone posthog |
+| Cáº§n animations | `ANIMATION` | Clone anime.js |
 | Diagram/whiteboard | `UI-TOOL` | Clone excalidraw |
 
 ---
 
 *Catalog v1.0 | 2026-03-25 | Owner: content_intake dept*
-*Run `python ops/aos.py intake <url>` khi có repo mới cần thêm vào catalog*
+*Run `python ops/aos.py intake <url>` khi cÃ³ repo má»›i cáº§n thÃªm vÃ o catalog*
+

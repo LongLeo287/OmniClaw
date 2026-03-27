@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const skillsDir = 'd:\\AI OS CORP\\AI OS\\.openclaw\\workspace\\skills';
+const skillsDir = '<AI_OS_ROOT>\\.openclaw\\workspace\\skills';
 
 const skillPrompts = {
   "agent-browser-clawdbot": "Use the browser tool to navigate, inspect, and extract information for ClawdBot operations. Ensure strict handling of dynamic JS content.",

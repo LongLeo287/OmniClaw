@@ -152,7 +152,7 @@ brain/brain/corp/memory/global/gaps_register.md
 brain/brain/corp/gaps/GAP-<date>-<domain>.md
 system/security/QUARANTINE/
 system/telemetry/receipts/
-AOS_ROOT: d:\AI OS CORP\AI OS
+AOS_ROOT: <AI_OS_ROOT>
 
 ---
 
@@ -173,4 +173,5 @@ Claude Code -> Antigravity:
 ---
 
 *v2.0 | 2026-03-24 | Clean UTF-8 rewrite*
+
 

@@ -31,7 +31,7 @@ npx @sickn33/antigravity-awesome-skills install --bundle developer
 ```
 
 ## Liên Quan AI OS
-- **Install path trùng** với `C:\Users\VUA2HAND\.gemini\antigravity\skills\` — đây chính là thư mục skill của AI OS
+- **Install path trùng** với `<USER_PROFILE>\.gemini\antigravity\skills\` — đây chính là thư mục skill của AI OS
 - Là nguồn bổ sung skill cho **Antigravity (Tier 1 Orchestrator)**
 - Pending Action từ Batch 2: Đã được chỉ định cài đặt nhưng chưa hoàn thành
 - **ƯU TIÊN CÀI NGAY** — Chạy: `npx @sickn33/antigravity-awesome-skills install`
@@ -40,5 +40,5 @@ npx @sickn33/antigravity-awesome-skills install --bundle developer
 ```
 STATUS: 🔴 CRITICAL — Cần cài ngay
 COMMAND: npx @sickn33/antigravity-awesome-skills install
-PATH: C:\Users\VUA2HAND\.gemini\antigravity\skills\
+PATH: <USER_PROFILE>\.gemini\antigravity\skills\
 ```

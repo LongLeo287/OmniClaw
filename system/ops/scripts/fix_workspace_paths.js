@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = 'd:\\AI OS CORP\\AI OS';
+const rootDir = '<AI_OS_ROOT>';
 const agentsDir = path.join(rootDir, '.openclaw', 'agents');
 const openclawDir = path.join(rootDir, '.openclaw');
 

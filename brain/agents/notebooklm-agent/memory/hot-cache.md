@@ -8,12 +8,12 @@
 ### [RULE-STORAGE-01] Storage Location *(CEO 2026-03-21 â€” Tuyá»‡t Ä‘á»‘i)*
 | | Path | Action |
 |---|---|---|
-| âœ… **Project files** | `D:\Project\AI OS\` | Táº¡o/lÆ°u Táº¤T Cáº¢ project files táº¡i Ä‘Ã¢y |
+| âœ… **Project files** | `<AI_OS_ROOT>\` | Táº¡o/lÆ°u Táº¤T Cáº¢ project files táº¡i Ä‘Ã¢y |
 | ðŸ”’ **System data** | `C:\...\'.gemini`, `.claude`, `.codex`, `.nullclaw`, `.ollama` | KHÃ”NG xÃ³a / KHÃ”NG di chuyá»ƒn |
 | âŒ **Banned** | `C:\Desktop`, `C:\Documents`, `C:\Temp`, báº¥t ká»³ C:\ khÃ¡c | KHÃ”NG táº¡o files |
 | âš ï¸ **Exception** | `C:\...\antigravity\skills\` | ÄÆ°á»£c mirror tá»« D: (source of truth = D:) |
 
-**Full rule:** `D:\Project\AI OS\brain\knowledge\notes\RULE-STORAGE-01-storage-location.md`
+**Full rule:** `<AI_OS_ROOT>\brain\knowledge\notes\RULE-STORAGE-01-storage-location.md`
 
 ---
 
@@ -94,4 +94,5 @@ python scripts/run.py ask_question.py --question "..." --notebook-url "..."
 ---
 
 *Nova | Hot Cache v4.0 | 2026-03-21 | CEO Standing Order: ACTIVE*
+
 

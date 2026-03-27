@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const workspaceSkills = 'd:\\AI OS CORP\\AI OS\\.openclaw\\workspace\\skills';
+const workspaceSkills = '<AI_OS_ROOT>\\.openclaw\\workspace\\skills';
 
 const skillsToGenerate = {
   "agents.me": {

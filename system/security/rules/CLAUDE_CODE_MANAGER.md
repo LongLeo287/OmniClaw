@@ -124,7 +124,7 @@ FOR EACH step in task.md:
 Each role MUST query `SKILL_REGISTRY.json` before loading:
 
 ```powershell
-$registry = Get-Content "d:\Project\AI OS\shared-context\SKILL_REGISTRY.json" | ConvertFrom-Json
+$registry = Get-Content "<AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json" | ConvertFrom-Json
 
 # Find skill by ID
 $skill = $registry.entries | Where-Object { $_.id -eq "shell_assistant" }
@@ -141,7 +141,7 @@ if ($hasAccess) {
 
 If a skill is not found in registry:
 ```
-1. Run: & "d:\Project\AI OS\scripts\skill_loader.ps1"
+1. Run: & "<AI_OS_ROOT>\scripts\skill_loader.ps1"
 2. Retry the lookup
 3. If still not found: note in receipt, proceed without the skill
 ```

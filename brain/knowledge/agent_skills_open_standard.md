@@ -79,7 +79,7 @@ Tham chiếu scripts: `scripts/run.ps1`
 | **Personal Skills** | Tất cả projects của user | `~/.copilot/skills/`, `~/.claude/skills/`, `~/.agents/skills/` |
 | **System Skills** | Admin/SDK level | System-wide shared location |
 
-> AI OS dùng: `d:\Project\AI OS\skills\` (project-level) + `d:\Project\AI OS\plugins\` (plugin-level)
+> AI OS dùng: `<AI_OS_ROOT>\skills\` (project-level) + `<AI_OS_ROOT>\plugins\` (plugin-level)
 
 ---
 
@@ -164,7 +164,7 @@ dependencies:
 Sources:
 - Official: github.com/agentskills/agentskills/skills/
 - Community: Contributed by users
-- AI OS: d:\Project\AI OS\skills\ + plugins\
+- AI OS: <AI_OS_ROOT>\skills\ + plugins\
 ```
 
 ---

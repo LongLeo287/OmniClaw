@@ -6,7 +6,7 @@
 
 ---
 
-## 📁 PLUGINS — `D:\Project\AI OS\plugins\`
+## 📁 PLUGINS — `<AI_OS_ROOT>\plugins\`
 *Repos đã sẵn sàng dùng trực tiếp bởi agents*
 
 ### 🤖 Claude Code & Antigravity Core
@@ -185,7 +185,7 @@
 
 ---
 
-## 📚 KNOWLEDGE REPOS — `D:\Project\AI OS\knowledge\repos\`
+## 📚 KNOWLEDGE REPOS — `<AI_OS_ROOT>\knowledge\repos\`
 *Reference material, không phải plugins — dùng để nghiên cứu, học hỏi*
 
 ### 🤖 AI & Machine Learning

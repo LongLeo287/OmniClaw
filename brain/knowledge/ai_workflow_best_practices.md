@@ -1,5 +1,5 @@
 # AI Workflow Best Practices — Knowledge Base
-# Source: D:\LongLeo\Project\DATA\POST.txt (Ingested 2026-03-15)
+# Source: <DATA_ROOT>\POST.txt (Ingested 2026-03-15)
 # Category: Tier 4 — Knowledge Library
 # 469 lines, 90KB of community-curated AI development knowledge
 
@@ -253,5 +253,5 @@ pytest / python -m venv
 
 ---
 
-*Ingested from: D:\LongLeo\Project\DATA\POST.txt*
+*Ingested from: <DATA_ROOT>\POST.txt*
 *Date: 2026-03-15 | Added to: knowledge/*

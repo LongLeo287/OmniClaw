@@ -9,8 +9,8 @@ const { ListToolsRequestSchema, CallToolRequestSchema } = require("@modelcontext
 const fs = require("fs");
 const path = require("path");
 
-const CORP_DIR = process.env.CORP_DIR || "D:/Project/AI OS/shared-context/corp";
-const AOS_ROOT = process.env.AOS_ROOT || "D:/Project/AI OS";
+const CORP_DIR = process.env.CORP_DIR || "<AI_OS_ROOT>/shared-context/corp";
+const AOS_ROOT = process.env.AOS_ROOT || "<AI_OS_ROOT>";
 
 const server = new Server(
   { name: "corp-data", version: "1.0.0" },

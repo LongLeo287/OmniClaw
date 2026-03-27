@@ -10,7 +10,7 @@ const fs = require("fs");
 const path = require("path");
 
 const REGISTRY_PATH = process.env.REGISTRY_PATH ||
-  "D:/Project/AI OS/shared-context/SKILL_REGISTRY.json";
+  "<AI_OS_ROOT>/shared-context/SKILL_REGISTRY.json";
 
 const server = new Server(
   { name: "skill-registry", version: "1.0.0" },
@@ -85,7 +85,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const issues = [];
       for (const s of entries) {
         const skillPath = s.path;
-        if (skillPath && !fs.existsSync(path.join("D:/Project/AI OS", skillPath, "SKILL.md"))) {
+        if (skillPath && !fs.existsSync(path.join("<AI_OS_ROOT>", skillPath, "SKILL.md"))) {
           issues.push(`❌ Missing SKILL.md: ${s.id || s.name}`);
         }
       }

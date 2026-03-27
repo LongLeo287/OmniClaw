@@ -48,7 +48,7 @@ RULE SEC-08: BLACKLIST MAINTENANCE
 
 RULE SEC-09: QUARANTINE ZONE OWNERSHIP
   Security GRC owns and operates the QUARANTINE zone at:
-  `D:\Project\AI OS\QUARANTINE\`
+  `<AI_OS_ROOT>\QUARANTINE\`
   This is the mandatory staging area for ALL external repos before entry into AI OS.
   
   QUARANTINE lifecycle (Security GRC enforces):
@@ -157,4 +157,5 @@ RULE SEC-09: QUARANTINE ZONE OWNERSHIP
 - `reasoning_engine` â€” assess if access is appropriate
 **Output:** access audit to security_grc.md dept memory weekly
 **Principle:** Least-privilege always. When in doubt, restrict.
+
 

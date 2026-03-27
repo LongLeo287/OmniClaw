@@ -30,8 +30,8 @@ Any agent reads this file to understand what to do at each lifecycle stage.
 
 ```
 BOOT sequence (strict order):
-1. Read d:\Project\AI OS\CLAUDE.md                  [ecosystem map]
-2. Read d:\Project\AI OS\rules\CLAUDE_CODE_MANAGER.md [if Claude Code]
+1. Read <AI_OS_ROOT>\CLAUDE.md                  [ecosystem map]
+2. Read <AI_OS_ROOT>\rules\CLAUDE_CODE_MANAGER.md [if Claude Code]
 3. Read shared-context/SKILL_REGISTRY.json           [skill graph]
 4. Read corp/org_chart.yaml                          [current team]
 5. Execute: workflows/pre-session.md                 [session init]

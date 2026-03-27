@@ -39,7 +39,7 @@ LOOP RESET
 **Goal:** Full OS context before any work
 
 ```
-1. Read d:\Project\AI OS\CLAUDE.md
+1. Read <AI_OS_ROOT>\CLAUDE.md
 2. Read rules\CLAUDE_CODE_MANAGER.md   (if Claude Code session)
 3. Load SKILL_REGISTRY.json            (verify skill graph current)
 4. Read corp/org_chart.yaml            (current 13-dept structure)

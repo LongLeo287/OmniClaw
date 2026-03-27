@@ -1,5 +1,5 @@
 # GitHub Repository Index — AI OS Knowledge Library
-# Source: D:\LongLeo\Project\DATA\Github.txt + Google Sheets
+# Source: <DATA_ROOT>\Github.txt + Google Sheets
 # Ingested: 2026-03-15 | 177 repos from Github.txt
 
 ---
@@ -235,5 +235,5 @@
 - **Claw variants:** 13
 - **Priority to evaluate:** LightRAG (RAG), openclaw (main claw platform), gitingest (code analysis)
 
-*Ingested from: D:\LongLeo\Project\DATA\Github.txt + Google Sheets*
+*Ingested from: <DATA_ROOT>\Github.txt + Google Sheets*
 *Date: 2026-03-15 | Added to: knowledge/*

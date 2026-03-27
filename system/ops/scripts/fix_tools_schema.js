@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const configPath = 'd:\\AI OS CORP\\AI OS\\.openclaw\\openclaw.json';
+const configPath = '<AI_OS_ROOT>\\.openclaw\\openclaw.json';
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 let fixedCount = 0;

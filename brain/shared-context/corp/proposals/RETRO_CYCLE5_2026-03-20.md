@@ -32,7 +32,7 @@
 ```
 Sếp → @LongLeo Bot (Telegram)
          ↑
-    Bot Token (8751070516:...)
+    Bot Token ([REDACTED]...)
          ↑
 telegram_notify.py
          ↑ hooks
@@ -68,7 +68,7 @@ Supabase DB (22 tasks)
 
 | Item | Owner | Action |
 |------|-------|--------|
-| Telegram live | Sếp | Add full token `8751070516:HASH` + CHAT_ID to `tools/clawtask/.env` |
+| Telegram live | Sếp | Add full token `[REDACTED]HASH` + CHAT_ID to `tools/clawtask/.env` |
 | Strix batch scan | Security | Run `nemoclaw-strix-scan.md` on 107 repos |
 | Agent Swarm Phase 2 | Engineering | Real multi-agent impl |
 | Corp Knowledge Graph | R&D | LightRAG/Cognee PoC |

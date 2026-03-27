@@ -1,74 +1,75 @@
-# AI OS Corp — Services
+﻿# AI OS Corp â€” Services
 
-Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, cấu hình từ đây.
+Folder táº­p trung toÃ n bá»™ dá»‹ch vá»¥. Má»i thá»© khá»Ÿi Ä‘á»™ng, dá»«ng, cáº¥u hÃ¬nh tá»« Ä‘Ã¢y.
 
 ---
 
-## Cấu trúc
+## Cáº¥u trÃºc
 
 ```
 services/
-├── boot.ps1        ← Khởi động tất cả (gọi từ máy hoặc bot /boot)
-├── stop.ps1        ← Dừng tất cả
-├── config.json     ← Cấu hình tập trung (ports, keys, paths)
-├── screenshot.py   ← Chụp màn hình → gửi Telegram (/snap)
-└── README.md       ← File này
+â”œâ”€â”€ boot.ps1        â† Khá»Ÿi Ä‘á»™ng táº¥t cáº£ (gá»i tá»« mÃ¡y hoáº·c bot /boot)
+â”œâ”€â”€ stop.ps1        â† Dá»«ng táº¥t cáº£
+â”œâ”€â”€ config.json     â† Cáº¥u hÃ¬nh táº­p trung (ports, keys, paths)
+â”œâ”€â”€ screenshot.py   â† Chá»¥p mÃ n hÃ¬nh â†’ gá»­i Telegram (/snap)
+â””â”€â”€ README.md       â† File nÃ y
 ```
 
 ---
 
-## Các dịch vụ
+## CÃ¡c dá»‹ch vá»¥
 
-| # | Tên | Port | URL | Loại |
+| # | TÃªn | Port | URL | Loáº¡i |
 |---|-----|------|-----|------|
 | 1 | **ClawTask Dashboard** | 7474 | http://localhost:7474/ | Local |
 | 2 | **9router (LLM Gateway)** | 20128 | http://localhost:20128/ | Local |
 | 3 | **AI OS Bot (nullclaw)** | 3000 | http://localhost:3000/ | Local |
 | 4 | **Ollama (Local AI)** | 11434 | http://localhost:11434/ | Local |
-| 5 | **OpenRouter** | — | https://openrouter.ai/ | Cloud |
+| 5 | **OpenRouter** | â€” | https://openrouter.ai/ | Cloud |
 
 ---
 
-## Cách khởi động
+## CÃ¡ch khá»Ÿi Ä‘á»™ng
 
-### Cách 1 — Từ máy tính (Desktop Shortcut)
-Double-click **"AI OS Boot"** trên Desktop.
+### CÃ¡ch 1 â€” Tá»« mÃ¡y tÃ­nh (Desktop Shortcut)
+Double-click **"AI OS Boot"** trÃªn Desktop.
 
-### Cách 2 — Từ Telegram Bot
-Nhắn `/boot` vào **AI OS Bot** — bot tự gọi `boot.ps1`.
+### CÃ¡ch 2 â€” Tá»« Telegram Bot
+Nháº¯n `/boot` vÃ o **AI OS Bot** â€” bot tá»± gá»i `boot.ps1`.
 
-### Cách 3 — Tự động khi bật máy
-Task Scheduler `AI_OS_Watchdog` tự start nullclaw bot khi đăng nhập.
-Sau đó nhắn `/boot` nếu muốn bật nốt ClawTask + 9router + Ollama.
+### CÃ¡ch 3 â€” Tá»± Ä‘á»™ng khi báº­t mÃ¡y
+Task Scheduler `AI_OS_Watchdog` tá»± start nullclaw bot khi Ä‘Äƒng nháº­p.
+Sau Ä‘Ã³ nháº¯n `/boot` náº¿u muá»‘n báº­t ná»‘t ClawTask + 9router + Ollama.
 
 ---
 
-## Lệnh thủ công
+## Lá»‡nh thá»§ cÃ´ng
 
 ```powershell
-# Khởi động tất cả
-powershell -ExecutionPolicy Bypass -File "D:\Project\AI OS\services\boot.ps1"
+# Khá»Ÿi Ä‘á»™ng táº¥t cáº£
+powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\boot.ps1"
 
-# Xem trạng thái (không start)
-powershell -ExecutionPolicy Bypass -File "D:\Project\AI OS\services\boot.ps1" -Status
+# Xem tráº¡ng thÃ¡i (khÃ´ng start)
+powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\boot.ps1" -Status
 
-# Dừng tất cả
-powershell -ExecutionPolicy Bypass -File "D:\Project\AI OS\services\stop.ps1"
+# Dá»«ng táº¥t cáº£
+powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\stop.ps1"
 ```
 
 ---
 
 ## Telegram Commands (AI OS Bot)
 
-| Lệnh | Mô tả |
+| Lá»‡nh | MÃ´ táº£ |
 |------|-------|
 | `/sys` | Check CPU, RAM, Ports |
-| `/task` | Xem/Thêm task ClawTask |
+| `/task` | Xem/ThÃªm task ClawTask |
 | `/clawtask` | Link + status Dashboard |
-| `/snap` | Chụp màn hình → gửi đây |
+| `/snap` | Chá»¥p mÃ n hÃ¬nh â†’ gá»­i Ä‘Ã¢y |
 | `/log` | Xem watchdog log |
-| `/run <cmd>` | Chạy PowerShell |
-| `/web <q>` | Tìm Google/đọc link |
-| `/boot` | Khởi động tất cả dịch vụ |
-| `/stop` | Tắt tất cả dịch vụ |
-| `/new` | Xóa lịch sử, bắt đầu lại |
+| `/run <cmd>` | Cháº¡y PowerShell |
+| `/web <q>` | TÃ¬m Google/Ä‘á»c link |
+| `/boot` | Khá»Ÿi Ä‘á»™ng táº¥t cáº£ dá»‹ch vá»¥ |
+| `/stop` | Táº¯t táº¥t cáº£ dá»‹ch vá»¥ |
+| `/new` | XÃ³a lá»‹ch sá»­, báº¯t Ä‘áº§u láº¡i |
+
