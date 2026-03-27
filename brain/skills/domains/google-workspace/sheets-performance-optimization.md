@@ -18,7 +18,7 @@ accessible_by:
 dependencies:
   - sheets_skill
 load_on_boot: false
-promoted_from: D:\GA\Workspaces\LongLeo\.claude\skills\
+promoted_from: <LONGLEO_WORKSPACE>\.claude\skills\
 ---
 
 # Google Sheets Performance Optimization

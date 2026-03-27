@@ -1,5 +1,5 @@
 # AI OS — Skill & Plugin Tier Registry
-# Path: D:\Project\AI OS\registry\SKILL_TIERS.md
+# Path: <AI_OS_ROOT>\registry\SKILL_TIERS.md
 # Updated: 2026-03-17
 # Purpose: Classify all skills/plugins by strategic importance
 
@@ -210,5 +210,5 @@ A plugin/skill can be promoted to a higher tier when:
 
 ---
 
-*Path: D:\Project\AI OS\registry\SKILL_TIERS.md*
+*Path: <AI_OS_ROOT>\registry\SKILL_TIERS.md*
 *Update whenever new skills are added or tier assignments change.*

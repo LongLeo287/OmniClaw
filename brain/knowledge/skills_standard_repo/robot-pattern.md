@@ -147,7 +147,7 @@ testWidgets('login button enables after input', (tester) async {
   final robot = LoginRobot(tester);
   await robot.pumpScreen(authBloc: mockAuthBloc);
   robot.verifyLoginButtonDisabled();
-  await robot.loginWith(email: 'a@b.com', password: 'pass');
+  await robot.loginWith(email: 'a@b.com', PASSWORD='[REDACTED_PASSWORD]');
 });
 ```
 
@@ -162,7 +162,7 @@ patrolTest('full login flow', ($) async {
   await $.pumpAndSettle();
   final robot = LoginRobot($.tester);        // ← same robot, $.tester unwraps it
   robot.verifyLoginScreenVisible();
-  await robot.loginWith(email: 'a@b.com', password: 'pass');
+  await robot.loginWith(email: 'a@b.com', PASSWORD='[REDACTED_PASSWORD]');
   // Native dialogs (OS-level only — NOT in robot):
   if (await $.native.isPermissionDialogVisible()) await $.native.allowPermission();
 });

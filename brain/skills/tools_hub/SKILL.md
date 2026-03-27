@@ -22,7 +22,7 @@ Là **trung tâm điều phối tools** của AI OS — biết mọi tool đang 
 ### 🔐 Security
 | Trigger | Tool | Command |
 |---|---|---|
-| "scan repo", "vet repo", "check security" | Strix v2.0 | `pwsh -ExecutionPolicy Bypass -File "D:\Project\AI OS\skills\security_shield\vet_repo.ps1" -RepoPath "<PATH>"` |
+| "scan repo", "vet repo", "check security" | Strix v2.0 | `pwsh -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\skills\security_shield\vet_repo.ps1" -RepoPath "<PATH>"` |
 
 ### ⚙️ Session Lifecycle
 | Trigger | Tool | Command |

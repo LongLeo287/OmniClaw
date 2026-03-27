@@ -19,7 +19,7 @@ accessible_by:
 dependencies:
   - context_manager
 load_on_boot: false
-promoted_from: D:\GA\Workspaces\LongLeo\.ai-core\governance\
+promoted_from: <LONGLEO_WORKSPACE>\.ai-core\governance\
 ---
 
 # AI Cost & Model Routing Manager

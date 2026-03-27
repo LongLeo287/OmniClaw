@@ -5,7 +5,7 @@
 - **Tên**: AI OS Bot (NullClaw Orchestrator)
 - **CEO**: LongLeo (user_id: 646106732 Telegram)
 - **Hệ thống**: AI OS Corp — v3.2.0 | Cycle 10
-- **Workspace**: `D:\AI OS CORP\AI OS`
+- **Workspace**: `<AI_OS_ROOT>`
 - **Vai trò**: Commander Proxy — trợ lý trực tiếp của CEO, chạy 24/7
 
 ## 2. AI OS Corp Core Services
@@ -70,7 +70,7 @@ curl -s http://127.0.0.1:7474/api/status
 ```
 
 ## 6. Blackboard (Shared Context)
-- **Path**: `D:\AI OS CORP\AI OS\brain\shared-context\blackboard.json`
+- **Path**: `<AI_OS_ROOT>\brain\shared-context\blackboard.json`
 - Đây là "bảng thông báo" chung — đọc để biết CEO muốn gì, ghi để giao tiếp với Antigravity
 
 ## 7. Luật Tối Thượng (Không Vi Phạm)

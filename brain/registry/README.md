@@ -1,5 +1,5 @@
 # Registry — How It Works
-# D:\Project\AI OS\registry\
+# <AI_OS_ROOT>\registry\
 
 ## Purpose
 

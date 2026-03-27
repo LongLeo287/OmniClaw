@@ -17,7 +17,7 @@ accessible_by:
   - Claude Code
 dependencies: []
 load_on_boot: false
-promoted_from: D:\GA\Workspaces\LongLeo\.claude\skills\
+promoted_from: <LONGLEO_WORKSPACE>\.claude\skills\
 ---
 
 # Feature-Sliced Design Architectural Linter

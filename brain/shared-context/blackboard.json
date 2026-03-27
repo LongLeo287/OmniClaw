@@ -6,7 +6,7 @@
         "task_id": "NONE",
         "description": "Chế độ chờ",
         "workspace_id": "AI-OS",
-        "workspace_path": "d:\\AI OS CORP\\AI OS",
+        "workspace_path": "<AI_OS_ROOT>",
         "task_file": "",
         "priority": "LOW"
     },

@@ -44,7 +44,7 @@ export class MyModule extends ConfigurableModuleClass {}
 @Module({
   imports: [
     MyModule.forRoot({
-      apiKey: 'secret',
+      API_KEY='[REDACTED_API_KEY]',
       isGlobal: true,
     }),
   ],

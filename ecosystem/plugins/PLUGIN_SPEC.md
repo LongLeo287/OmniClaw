@@ -1,7 +1,7 @@
 # PLUGIN_SPEC.md — AI OS Plugin Schema Standard
 # Version: 2.0 | Updated: 2026-03-14
 #
-# SCOPE: AI OS-level plugins (d:\Project\AI OS\plugins\)
+# SCOPE: AI OS-level plugins (<AI_OS_ROOT>\plugins\)
 # This is NOT the BookMark Extension plugin spec.
 
 ## What Is a Plugin?
@@ -155,7 +155,7 @@ plugins/
 
 ## Plugin Registry File
 
-The master registry is at `d:\Project\AI OS\plugins\registry.json`.
+The master registry is at `<AI_OS_ROOT>\plugins\registry.json`.
 Format:
 ```json
 {
@@ -164,7 +164,7 @@ Format:
   "plugins": [
     {
       "id": "<plugin_id>",
-      "path": "d:\\Project\\AI OS\\plugins\\<plugin_id>\\manifest.json",
+      "path": "<AI_OS_ROOT>\\plugins\\<plugin_id>\\manifest.json",
       "status": "<status>",
       "auto_load": false
     }

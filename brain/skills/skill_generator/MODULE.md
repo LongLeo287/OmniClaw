@@ -4,7 +4,7 @@ version: "2.0"
 tier: T0
 category: meta
 status: active
-source: D:\Project\AI OS\plugins\skill-generator
+source: <AI_OS_ROOT>\plugins\skill-generator
 author: marketingjuliancongdanh79-pixel
 description: |
   AI OS Core Module — Skill Creation Engine.

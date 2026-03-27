@@ -18,7 +18,7 @@ accessible_by:
   - QA
 dependencies: []
 load_on_boot: false
-promoted_from: D:\GA\Workspaces\LongLeo\.claude\skills\
+promoted_from: <LONGLEO_WORKSPACE>\.claude\skills\
 ---
 
 # Supabase Postgres Best Practices
