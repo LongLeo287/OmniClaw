@@ -26,10 +26,10 @@ To submit code to the OmniClaw kernel, strictly follow this protocol:
 
 ### Step 1: Fork & Branch
 1. Fork the repository to your local machine.
-2. Create a logically named branch based on your target area:
-   * `core/router-optimization` (For Master Router updates)
-   * `dept-99/new-image-agent` (For creating a new Department)
-   * `ops/memory-leak-fix` (For bug fixes and maintenance)
+2. Create a logically named branch based on standard conventions:
+   * `feat/your-new-feature` (For new features or agents)
+   * `fix/issue-name` (For bug fixes)
+   * `docs/update-readme` (For documentation changes)
 
 ### Step 2: Adhere to the 3-Tier Plugin Protocol
 OmniClaw is a monolithic hub-and-spoke system. We deeply care about RAM and startup times.
