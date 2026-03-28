@@ -1,190 +1,146 @@
-# 🌌 AI OS CORP — Hệ Điều Hành Trí Tuệ Nhân Tạo Tự Trị
-> **Phiên bản 3.0 | Chu kỳ 8 | [LongLeo287/aios-local](https://github.com/LongLeo287/aios-local)**
+<div align="center">
+  <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="AI OS Banner">
+  <h1>🌌 AI OS CORP</h1>
+  <b>Hệ điều hành Multi-Agent Tự trị và Nguyên khối</b><br>
+  <br>
 
-![License](https://img.shields.io/badge/Gi%E1%BA%A5y%20ph%C3%A9p-MIT-blue.svg)
-![Build](https://img.shields.io/badge/Build-Stable-green.svg)
-![Security](https://img.shields.io/badge/An%20ninh-Zero--Trust-red.svg)
-![Runtime](https://img.shields.io/badge/M%C3%B4i%20tr%C6%B0%E1%BB%9Dng-Node/Python/PS-blue.svg)
+  [![Phiên bản](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
+  [![Giấy phép](https://img.shields.io/badge/License-MIT-green.svg)](#)
+  [![Nền tảng](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
+  [![Thảo luận](https://img.shields.io/badge/Tham_gia_C%E1%BB%99ng%20%C4%91%E1%BB%93ng-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/aios-local/discussions)
+  
+  <br>
+  
+  [**🇺🇸 English Version**](README.md)
+  
+  <br>
 
-AI OS là một **hệ sinh thái tự trị, 100% di động và tuân thủ Zero-Trust**. Hệ thống được thiết kế để điều phối các luồng công việc AI phức tạp thông qua 21 phòng ban chuyên biệt, vận hành như một tập đoàn kỹ thuật số thực thụ với các quy tắc kiến trúc nghiêm ngặt.
+  [Giới thiệu](#-giới-thiệu-về-ai-os) •
+  [Điểm mạnh](#-điểm-mạnh-cốt-lõi--tại-sao-chọn-ai-os) •
+  [Kiến trúc](#-kiến-trúc--giao-thức-plugin-3-tầng) •
+  [Phòng ban](#-đội-ngũ-nhân- sự-của-ai-os) •
+  [Cài đặt](#-cài-đặt) •
+  [Thảo luận](https://github.com/LongLeo287/aios-local/discussions) •
+  [Tri ân](#-lời-cảm-ơn--tri-ân)
 
----
-
-## 🏛️ 1. Cấu Trúc Tổ Chức (21 Phòng Ban)
-
-Hệ thống được tổ chức theo mô hình phân tầng với đội ngũ lãnh đạo C-Suite giám sát các đơn vị thực thi.
-
-```mermaid
-graph TD
-    subgraph Tier0 [Tầng 0: Quyền Lực Tối Thượng]
-        CEO(CEO — Con Người)
-        AOS_OP(Orchestrator Pro — Trợ Lý Điều Hành)
-    end
-
-    subgraph Tier1 [Tầng 1: Chiến Lược C-Suite]
-        CTO(CTO — Kiến Trúc Sư Trưởng)
-        CMO(CMO — Giám Đốc Tăng Trưởng)
-        COO(COO — Quản Lý Vận Hành)
-        CFO(CFO — Quản Lý Chi Phí)
-        CSO(CSO — Giám Đốc Chiến Lược)
-    end
-
-    subgraph Tier2 [Tầng 2: Các Phòng Ban Chức Năng]
-        %% Khối Kỹ thuật
-        ENG[Engineering]
-        QA[QA & Kiểm Thử]
-        IT[Hạ Tầng IT]
-        REG[Quản Lý Năng Lực]
-        SYSTEM[Sức Khỏe Hệ Thống]
-
-        %% Khối Tăng trưởng
-        MKT[Marketing]
-        SUP[Hỗ Trợ]
-        CR[Kiểm Duyệt Nội Dung]
-        RD[Nghiên Cứu & Phát Triển]
-
-        %% Khối Vận hành & An ninh
-        OPS[Vận Hành]
-        SEC[An Ninh & GRC]
-        FIN[Tài Chính]
-        HR[Nhân Sự]
-        LEG[Pháp Lý]
-        CIV[Tiếp Nhận Nội Dung - CIV]
-        PLAN[Kế Hoạch & PMO]
-        MON[Giám Sát & Thanh Tra]
-        LIB[Thư Viện Tri Thức]
-        OD[Phát Triển Tổ Chức]
-        CR_DEPT[Phòng Lễ Tân]
-        FAC[Bảo Trì Hệ Thống]
-    end
-
-    CEO --> AOS_OP
-    AOS_OP --> CTO & CMO & COO & CFO & CSO
-
-    CTO --> ENG & QA & IT & REG & SYSTEM
-    CMO --> MKT & SUP & CR & RD
-    COO --> OPS & SEC & HR & CIV & PLAN & MON & LIB & CR_DEPT & FAC
-    CFO --> FIN
-    CSO --> LEG & RD & OD
-```
+</div>
 
 ---
 
-## 🤖 2. Hệ Thống Agent & Trí Tuệ Nhân Tạo
+## 🌟 Giới thiệu về AI OS
+**AI OS CORP** là một hệ điều hành Multi-Agent có tính mô-đun cao, được thiết kế để chạy trực tiếp trên các mô hình LLM hàng đầu (Anthropic Claude, Google Gemini, OpenAI). Nó biến máy tính cá nhân của bạn thành một tập đoàn kỹ thuật số tự trị.
 
-Hệ thống sử dụng mô hình 3 tầng Agent để đảm bảo an ninh, khả năng mở rộng và tính chuyên môn hóa cao.
-
-```mermaid
-graph LR
-    subgraph T0 [Tầng 0: Thủ Lĩnh]
-        ANT[Antigravity]
-        OPR[Orchestrator Pro]
-    end
-
-    subgraph T1 [Tầng 1: Lãnh Đạo]
-        SWE[Software Architect]
-        GRO[Growth Agent]
-        SCM[Scrum Master]
-        CSM[Cost Manager]
-        PM[Product Manager]
-    end
-
-    subgraph T2 [Tầng 2: Thực Thi & Subagents]
-        FE[Frontend Agent]
-        ML[AI/ML Engineer]
-        SEC_ENG[Security Engineer]
-        WEB[Web Researcher]
-        KNOW[Knowledge Agent]
-        SKILL[Skill Creator]
-    end
-
-    T0 --> T1
-    T1 --> T2
-```
-
-### Các Agent Chủ Chốt:
-- **Antigravity (Tier 0)**: Bộ não điều phối chính, quản lý việc bàn giao nhiệm vụ giữa các agent.
-- **Claude Code (Tier 2)**: Chuyên gia nghiên cứu và thực thi các tác vụ kỹ thuật chuyên sâu.
-- **Nova (R&D)**: Phụ trách tổng hợp tri thức và quy trình học tập tự động (Learning Loop).
-- **Strix (Security)**: Giám sát an ninh tự động và rà soát lỗ hổng.
+Thay vì chỉ hoạt động như một chatbot đơn giản, AI OS chủ động điều phối các chỉ thị phức tạp của bạn thông qua các **Phòng ban Chức năng** chuyên biệt, quản lý bộ nhớ bằng công nghệ Graph RAG và tự động tiến hóa mã nguồn dựa trên hướng dẫn của bạn. Hệ thống được thiết kế với triết lý **An ninh Zero-Trust**, đảm bảo toàn bộ dữ liệu chỉ nằm trên máy cục bộ của bạn.
 
 ---
 
-## ⚡ 3. Quy Trình Tự Động Hóa (CIV Pipeline)
+## ⚡ Điểm mạnh cốt lõi & Tại sao chọn AI OS?
 
-AI OS ưu tiên an toàn dữ liệu thông qua quy trình **CIV (Tiếp Nhận & Thẩm Định)** để đảm bảo mọi dữ liệu bên ngoài đều được kiểm soát chặt chẽ.
+Điều gì làm nên sự khác biệt hoàn toàn giữa AI OS và các trợ lý lập trình AI thông thường?
+
+1. **Tính linh hoạt tuyệt đối & Không phụ thuộc nền tảng**
+   Chúng tôi không khóa bạn vào một IDE duy nhất. AI OS được thiết kế từ gốc để tương thích với **Cursor**, **Claude Code CLI**, **Google Gemini** và **OpenCode**. Các quy tắc hệ thống được kế thừa toàn cầu bất kể bạn sử dụng giao diện nào.
+2. **Bảo vệ Git Zero-Trust**
+   Được trang bị các daemon chạy ngầm `aios_deep_cleaner.py` cực kỳ quyết liệt sau mỗi phiên làm việc. Mỗi khi bạn đóng phiên, OS sẽ quét bộ nhớ đệm, xóa các DB tạm thời (`.sqlite`, `.db`) và vệ sinh các commit GitHub để ngăn chặn việc lộ API key hay bí mật ra khỏi ổ đĩa cục bộ.
+3. **Trình khởi tạo vạn năng siêu tự động**
+   Quên việc phải quản lý hàng chục file shell script. Chỉ cần chạy lệnh `aios` trong terminal (hoặc nhấp đúp vào `aios.bat` trên Windows) để gọi Dashboard trung tâm. Nó tự động xử lý các dependencies NPM, cài đặt VSCode Extension và điều phối Model.
+4. **Thực thi tự trị (Worker Threads)**
+   Các Agent bậc thầy (như Claude hoặc Gemini) ủy quyền các nhiệm vụ đa bước khổng lồ cho các sub-agent (CrewAI, Node scripts). AI OS đóng vai trò như một Giám đốc dự án, không chỉ là một lập trình viên.
+
+---
+
+## 🗺️ Kiến trúc & Giao thức Plugin 3 tầng
+
+Để duy trì sự gọn nhẹ trong khi vẫn cho phép mở rộng vô hạn, tất cả các công cụ trong AI OS đều tuân thủ **Giao thức Plugin 3 tầng**:
+
+*   **Tầng 1 (Hạ tầng cốt lõi)**: Các engine luôn bật, tích hợp sẵn (ví dụ: `LightRAG` cho bộ nhớ, `Firecrawl` để trích xuất dữ liệu web sâu).
+*   **Tầng 2 (Plugin nạp khi cần)**: Các công cụ chuyên biệt (như trình phân tích PDF hoặc trình tạo ảnh Python nặng) được chạy trong sandbox và **chỉ kích hoạt khi có yêu cầu**, sau đó tự động hủy/ngắt kết nối để giải phóng RAM.
+*   **Tầng 3 (Danh sách đen)**: Các mô-đun cũ hoặc gây xung đột mà hệ thống bị cấm thực thi nghiêm ngặt.
 
 ```mermaid
 sequenceDiagram
-    participant CEO
-    participant CIV as Quy Trình CIV
-    participant SEC as Phòng An Ninh
-    participant LIB as Thư Viện Tri Thức
-    participant OS as Hệ Thống Active
-
-    CEO->>CIV: Lệnh: "aos ingest <nguồn>"
-    Note right of CIV: BƯỚC 0: Cách ly (Quarantine)
-    CIV->>SEC: BƯỚC 1: Quét an ninh 9 lớp
-    SEC-->>CIV: Kết quả (Điểm đánh giá an toàn)
-    CIV->>CIV: BƯỚC 2-5: Trích xuất tri thức
-    CIV->>LIB: BƯỚC 6: Chỉ mục & Lưu trữ
-    LIB->>OS: Tích hợp vào hệ thống
+    participant Agent
+    participant MCP Registry
+    participant Tier2 as Tier-2 Sandboxed Plugin
+    
+    Agent->>MCP Registry: Yêu cầu Kỹ năng/Công cụ chuyên sâu
+    alt Là Tầng 1 (Cốt lõi)
+        MCP Registry-->>Agent: Truy cập REST/Graph ngay lập tức
+    else Là Tầng 2 (Nạp khi cần)
+        MCP Registry->>Tier2: Kích hoạt môi trường thực thi cách ly
+        Tier2-->>Agent: Trả về kết quả tạm thời
+        Tier2->>Tier2: Tự động đóng & Xóa dữ liệu tạm
+    end
 ```
 
-### Các Tự Động Hóa Chính:
-- **Chu kỳ hàng ngày (`aos corp start`)**: Đồng bộ hóa toàn bộ phòng ban và tạo báo cáo hàng ngày.
-- **Bàn giao (Handoff Protocol)**: Tự động chuyển giao trạng thái giữa các agent qua `blackboard.json`.
-- **Tự sửa lỗi (Self-Healing)**: `system_health` giám sát độ trễ API và quản lý chi phí 24/7.
+---
+
+## 🏢 Đội ngũ nhân sự của AI OS
+
+Các lệnh từ CEO (Bạn) được điều phối thông qua các phòng ban chuyên môn. Hệ thống bao gồm tổng cộng **21 phòng ban** được tổ chức thành 5 khối chức năng.
+
+| ID | Phòng Ban | Chức Năng | Agent Phụ Trách |
+| :--- | :--- | :--- | :--- |
+| **Dept 01** | **Kỹ Thuật** | Phát triển Backend, giao diện UI/UX và tích hợp AI. | `backend-architect` |
+| **Dept 05** | **Chiến Lược** | Điều phối lộ trình, phân tích KPI và phát triển hệ thống. | `product-manager` |
+| **Dept 09** | **Kiểm Duyệt** | Chốt chặn kiểm duyệt chất lượng nội dung và văn phong. | `editor-agent` |
+| **Dept 10** | **An Ninh Strix** | Kiểm duyệt mã nguồn và thẩm định an ninh các thành phần bên ngoài. | `strix-agent` |
+| **Dept 13** | **Nghiên Cứu Nova** | Nghiên cứu Deep Web và phát triển các thiết kế kiến trúc nền tảng. | `rd-lead` |
+| **Dept 18** | **Thư Viện Tài Sản** | Quản lý vòng lặp bộ nhớ và Đồ thị Tri thức (Knowledge Graph). | `library-manager` |
+| **Dept 20** | **Tiếp Nhận CIV** | Thu thập, phân tích và thẩm định các tài liệu/mã nguồn khẩn cấp. | `intake-chief` |
+| **Dept 22** | **Vận Hành** | Vệ sinh phần cứng, dọn dẹp thư mục gốc và bảo vệ Git. | `scrum-master` |
+| **Dept 23** | **Lễ Tân** | Tiếp nhận dự án tự động, thu thập brief và soạn thảo đề xuất. | `project-intake` |
+
+> [!TIP]
+> **Tìm hiểu sâu**: Để xem chi tiết 21 phòng ban, sơ đồ báo cáo và cách các agent tương tác, hãy xem bản [**Sơ đồ Tổng thể Hệ thống**](brain/corp/MASTER_INDEX.md).
+
+> [!NOTE]
+> Để xem danh sách đầy đủ 21 phòng ban và danh sách agent, vui lòng tham khảo file đăng ký `brain/corp/org_chart.yaml`.
 
 ---
 
-## 🛠️ 4. Công Nghệ & Kỹ Năng
+## 💽 Cài đặt
 
-Hệ thống được xây dựng trên hạ tầng mô-đun, nạp dữ liệu theo yêu cầu (lazy-loaded).
+AI OS được xây dựng theo kiến trúc "Clone & Chạy" đơn giản.
 
-### 🧠 Trí Tuệ & RAG (Truy xuất dữ liệu)
-- **LightRAG**: Công cụ truy xuất tri thức lõi (Port 9621).
-- **Mem0**: Bộ nhớ dài hạn giúp lưu giữ ngữ cảnh qua nhiều phiên làm việc.
-- **GitNexus**: Phân tích cấu trúc code nâng cao để lập bản đồ kho lưu trữ.
+```bash
+# 1. Clone repository về máy cục bộ
+git clone https://github.com/LongLeo287/aios-local.git "AI OS"
+cd "AI OS"
 
-### ⚙️ Hệ Sinh Thái MCP
-- **Tier 1 (Cốt lõi)**: Firecrawl, Supabase, GitNexus.
-- **Tier 2 (Nâng cao)**: Context7, AgentShield, Google Knowledge.
-- **Plugins**: Hơn 50+ công cụ chuyên biệt về scraping, an ninh và thiết kế.
+# 2. Liên kết hệ thống toàn cầu qua NPM
+npm install -g .
 
-### 🚀 CI/CD & Cơ Sở Hạ Tầng
-- **Zero-Trust**: Các điểm kiểm soát bắt buộc (**GATE_QA**, **GATE_SECURITY**).
-- **Môi trường**: Runtimes Node/Python được quản lý qua `setup.ps1`.
-- **Telemetry**: Toàn bộ lịch sử thực thi được ghi lại tại `system/telemetry/receipts/`.
-
----
-
-## 🏁 5. Bắt Đầu Sử Dụng
-
-### 1. Khởi Tạo
-Chạy script cài đặt để cấu hình môi trường và nạp các khóa bí mật:
-```powershell
-./setup.ps1
+# 3. Khởi chạy Monolithic OS Terminal (Có thể chạy từ bất cứ đâu)
+aios
 ```
 
-### 2. Khởi Động Hệ Thống
-Bật bộ não điều hành và kiểm tra kết nối:
-```powershell
-aos corp start
-```
-
-### 3. Lệnh Cơ Bản
-- `aos ingest <repo>`: Tiếp nhận và nạp tri thức từ một repository an toàn.
-- `aos status`: Kiểm tra sức khỏe hệ thống và trạng thái bảng tin (blackboard).
-- `aos handoff <agent>`: Ủy quyền nhiệm vụ cho một agent chuyên trách.
+*Mẹo cho Windows: Chúng tôi đã cung cấp khả năng truy cập GUI bản địa. Chỉ cần nhấp đúp vào script `aios.bat` nằm trong thư mục gốc để mở ngay Bảng Điều khiển (Dashboard).*
 
 ---
 
-## 📜 6. Quy Tắc Quản Trị
-- **RULE-CIV-01**: Không clone trực tiếp. Mọi nguồn tin phải qua quy trình CIV thẩm định.
-- **RULE-STORAGE-01**: Toàn bộ dữ liệu phải nằm trong thư mục gốc `D:\AI OS CORP` để đảm bảo tính di động.
-- **RULE-TIER-01**: Tuân thủ nghiêm ngặt mô hình Plugin 3 tầng.
+## 🌐 Cộng đồng & Hỗ trợ
+
+Bạn có ý tưởng, câu hỏi hoặc muốn giới thiệu các quy trình Agent tùy chỉnh của mình? Chúng tôi đã xây dựng một không gian riêng để đội ngũ AI OS cùng nhau thảo luận.
+
+**[🚀 Tham gia không gian Thảo luận của AI OS CORP](https://github.com/LongLeo287/aios-local/discussions)**
 
 ---
-**AI OS CORP** — *Xây dựng tương lai của trí tuệ tự trị.*
-Thiết kế bởi **LongLeo** | Điều phối bởi **Antigravity**
+
+## 🙏 Lời cảm ơn & Tri ân
+
+AI OS CORP được xây dựng dựa trên nền tảng của các kiến trúc mã nguồn mở vĩ đại. Chúng tôi chân thành cảm ơn các tổ chức và dự án sau:
+
+*   **[Anthropic](https://anthropic.com)**: Cho Claude Code CLI và cấu trúc REPL tuyệt vời.
+*   **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: Cho các mô hình Gemini và khả năng phân tích cấu trúc ngữ cảnh sâu sắc chưa từng có.
+*   **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: Cho các quy trình bảo vệ Agent đa nền tảng và các mẫu chỉ dẫn dựa trên vai trò.
+*   **[LightRAG](https://github.com/HKUDS/LightRAG)**: Cung cấp hệ thống truy xuất tri thức dựa trên đồ thị chính xác và mạnh mẽ.
+*   **[Firecrawl](https://firecrawl.dev)**: Vận hành quy trình trích xuất markdown hoàn hảo.
+*   **[Mem0](https://github.com/mem0ai/mem0)**: Cách mạng hóa việc lưu giữ bộ nhớ dài hạn cho các AI agent.
+*   **[CrewAI](https://crewai.com)**: Cảm hứng cho mạng lưới worker-thread và sub-agent cục bộ.
+*   **[Cursor](https://cursor.sh)** / **OpenCode**: Các môi trường IDE được lựa chọn, tạo điều kiện cho liên kết thần kinh giữa OS và CEO.
+
+<br>
+<div align="center">
+  <i>"Hệ Điều Hành Của Tương Lai, Đang Chạy Trên Bàn Làm Việc Của Bạn Hôm Nay."</i>
+</div>
