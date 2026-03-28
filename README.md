@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="AI OS Banner">
-  <h1>🌌 AI OS CORP</h1>
+  <img src="https://img.shields.io/badge/OmniClaw-black?style=for-the-badge&logo=anthropic" alt="OmniClaw Banner">
+  <h1>🦅 OmniClaw</h1>
   <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br>
   <br>
 
@@ -15,35 +15,35 @@
   
   <br>
 
-  [About](#-about-ai-os) •
-  [Strengths](#-core-strengths--why-ai-os) •
+  [About](#-about-omniclaw) •
+  [Strengths](#-core-strengths--why-omniclaw) •
   [Architecture](#-architecture--3-tier-plugins) •
-  [Departments](#-the-workforce-departments) •
+  [Departments](#-the-workforce-core-departments) •
+  [Documentation](#-official-wiki--knowledge-base) •
   [Installation](#-installation) •
-  [Discussions](https://github.com/LongLeo287/aios-local/discussions) •
   [Credits](#-acknowledgements)
 
 </div>
 
 ---
 
-## 🌟 About AI OS
-**AI OS CORP** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital corporation. 
+## 🌟 About OmniClaw
+**OmniClaw** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital syndicate. 
 
-Rather than acting as a simple chatbot, AI OS actively routes your complex directives through specialized **Functional Departments**, manages its own memory utilizing Graph RAG, and dynamically evolves its codebase based on your instructions. It is designed with **Zero-Trust Privacy**, ensuring all your local data remains strictly on your machine.
+Rather than acting as a simple chatbot, OmniClaw actively routes your complex directives through specialized **Functional Departments**, manages its own memory utilizing Graph RAG, and dynamically evolves its codebase based on your instructions. It is designed with **Zero-Trust Privacy**, ensuring all your local data remains strictly on your machine.
 
 ---
 
-## ⚡ Core Strengths & Why AI OS?
+## ⚡ Core Strengths & Why OmniClaw?
 
-What makes AI OS profoundly different from standard AI coding assistants?
+What makes OmniClaw profoundly different from standard AI coding assistants?
 
 1. **Absolute Portability & Platform Agnosticism**
-   We do not lock you into a single IDE. AI OS is designed from the ground up to be compatible with **Cursor**, **Claude Code CLI**, **Google Gemini**, and **OpenCode**. The systemic rules are globally inherited no matter which frontend you prefer.
+   We do not lock you into a single IDE. OmniClaw is designed from the ground up to be compatible with **Cursor**, **Claude Code CLI**, **Google Gemini**, and **OpenCode**. The systemic rules are globally inherited no matter which frontend you prefer.
 2. **Zero-Trust Git Protection**
-   Equipped with aggressive post-session `aios_deep_cleaner.py` background daemons. Every time you close a session, the OS sweeps your cache, purges ephemeral databases (`.sqlite`, `.db`), and sanitizes GitHub commits to prevent API keys or secrets from ever leaving your local drive.
+   Equipped with aggressive post-session `omniclaw_cleaner.py` background daemons. Every time you close a session, the OS sweeps your cache, purges ephemeral databases (`.sqlite`, `.db`), and sanitizes GitHub commits to prevent API keys or secrets from ever leaving your local drive.
 3. **Hyper-Automated Universal Bootstrapper**
-   Forget managing 10 different shell scripts. Simply run `aios` in your terminal (or double-click the Windows `aios.bat`) to instantly invoke the central Dashboard. It handles NPM dependencies, VSCode Extension injections, and Model routing automatically.
+   Forget managing 10 different shell scripts. Simply run `omniclaw` in your terminal (or double-click the Windows `omniclaw.bat`) to instantly invoke the central Dashboard. It handles NPM dependencies, VSCode Extension injections, and Model routing automatically.
 4. **Autonomous Execution (Worker Threads)**
    Master agents (like Claude or Gemini) delegate massive, multi-step tasks to sub-agents (CrewAI, Node scripts). It acts as a Project Manager, not just a programmer.
 
@@ -51,26 +51,37 @@ What makes AI OS profoundly different from standard AI coding assistants?
 
 ## 🗺️ Architecture & 3-Tier Plugins
 
-To maintain a lightweight footprint while offering infinite vertical scaling, all tools in AI OS follow a strict **3-Tier Plugin Protocol**:
+To maintain a lightweight footprint while offering infinite vertical scaling, all tools in OmniClaw follow a strict **3-Tier Plugin Protocol**:
 
 *   **Tier 1 (Core Infrastructure)**: Native, always-on engines (e.g., `LightRAG` for memory, `Firecrawl` for deep web scraping).
 *   **Tier 2 (Lazy-Load Plugins)**: Specialized tools (like PDF parsers or heavy Python image generators) that are sandboxed and **spun up only when requested**, then autonomously destroyed/detached to free up RAM.
 *   **Tier 3 (Blacklisted)**: Outdated or conflicting legacy modules that the system is strictly forbidden from executing.
 
 ```mermaid
-sequenceDiagram
-    participant Agent
-    participant MCP Registry
-    participant Tier2 as Tier-2 Sandboxed Plugin
-    
-    Agent->>MCP Registry: Request Deep Skill/Tool
-    alt Is Tier 1 (Core)
-        MCP Registry-->>Agent: Immediate REST/Graph Access
-    else Is Tier 2 (Lazy Load)
-        MCP Registry->>Tier2: Spin up isolated local execution
-        Tier2-->>Agent: Return ephemeral output
-        Tier2->>Tier2: Autonomous Teardown & Purge
+flowchart TB
+    subgraph Frontend ["Communication Layer"]
+        CLI["Terminal / CLI"]
+        IDE["Cursor / VSCode IDE"]
     end
+
+    subgraph Core ["OmniClaw Kernel"]
+        ROUTER{"Master AI Router\n(Claude / Gemini)"}
+        MEM[("Cognitive Memory\n(Graph RAG)")]
+    end
+
+    subgraph Agents ["The Syndicate (Agent Workforce)"]
+        D10["🛡️ Dept 10 (Security)"]
+        D13["🔭 Dept 13 (Research)"]
+        D20["🗜️ Dept 20 (Intake)"]
+    end
+
+    Frontend == "Directives" ==> ROUTER
+    ROUTER <-->|Context Sync| MEM
+    ROUTER -->|Task Delegation| Agents
+
+    classDef core fill:#2d3748,stroke:#4a5568,stroke-width:2px,color:#fff,rx:5px,ry:5px;
+    classDef dept fill:#742a2a,stroke:#fc8181,stroke-width:2px,color:#fff,rx:5px,ry:5px;
+    class ROUTER core; class D10,D13,D20 dept;
 ```
 
 ---
@@ -87,49 +98,59 @@ Directives from the CEO (You) are routed through specialized departments. The OS
 | **Dept 10** | **Strix Security** | Cyber-security auditing and vetting of external components. | `strix-agent` |
 | **Dept 13** | **Nova Research** | Deep Web research and architectural prototyping. | `rd-lead` |
 | **Dept 18** | **Asset Library** | Managing Memory Rotation and the comprehensive Knowledge Graph. | `library-manager` |
-| **Dept 20** | **CIV (Content Intake)** | Systematically consumes, scrapes, and parses massive GitHub URLs or PDFs into pure Markdown. | `intake-chief` |
+| **Dept 20** | **CIV (Content Intake)** | Systematically consumes, scrapes, and parses massive URLs or PDFs into pure Markdown. | `intake-chief` |
 | **Dept 22** | **Operations** | Hardware sanitation, root directory cleanup, and Git Force-Push protection. | `scrum-master` |
 | **Dept 23** | **Reception** | Automated client intake, brief collection, and proposal generation. | `project-intake` |
 
 > [!TIP]
-> **Deep Dive**: For the full breakdown of all 21 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/corp/MASTER_INDEX.md).
+> **Deep Dive**: To keep the root repository clean of scattered `.md` files, the full breakdown of all 21 departments and agent rosters is securely hosted on our Wiki. Please visit the **[Master System Index on Wiki](https://github.com/LongLeo287/aios-local/wiki)**.
 
-> [!NOTE]
-> For the full list of 21 departments and agent rosters, please refer to the `brain/corp/org_chart.yaml` master registry.
+---
+
+## 📚 Official Wiki & Knowledge Base
+
+All deep-dive technical documentation, standard operating procedures (SOPs), and developer guides are hosted on our GitHub Wiki. 
+
+**[➡️ Enter the OmniClaw Knowledge Base](https://github.com/LongLeo287/aios-local/wiki)**
+
+**Featured Documentation:**
+* 🏛️ [Monolithic OS Design](https://github.com/LongLeo287/aios-local/wiki/Monolithic-OS-Design)
+* 🧠 [Cognitive Memory System (Graph RAG)](https://github.com/LongLeo287/aios-local/wiki/Cognitive-Memory)
+* 🛡️ [Zero-Trust Model & Deep Cleaning](https://github.com/LongLeo287/aios-local/wiki/Zero-Trust-Model)
 
 ---
 
 ## 💽 Installation
 
-AI OS is built to be a simple "Clone & Run" architecture.
+OmniClaw is built to be a simple "Clone & Run" architecture.
 
 ```bash
 # 1. Clone the core repository to your local drive
-git clone https://github.com/LongLeo287/aios-local.git "AI OS"
-cd "AI OS"
+git clone [https://github.com/LongLeo287/aios-local.git](https://github.com/LongLeo287/aios-local.git) "omniclaw"
+cd "omniclaw"
 
 # 2. Link the Global System via NPM
 npm install -g .
 
 # 3. Boot the Monolithic OS Terminal (Can be run from anywhere)
-aios
+omniclaw
 ```
 
-*Windows Tip: We have provided native Windows GUI accessibility. Simply double-click the `aios.bat` script located in the root repository to instantaneously open the Control Dashboard.*
+*Windows Tip: We have provided native Windows GUI accessibility. Simply double-click the `omniclaw.bat` script located in the root repository to instantaneously open the Control Dashboard.*
 
 ---
 
 ## 🌐 Community & Support
 
-Have ideas, questions, or want to showcase your custom Agent workflows? We have built a dedicated space for the AI OS workforce to collaborate.
+Have ideas, questions, or want to showcase your custom Agent workflows? We have built a dedicated space for the OmniClaw workforce to collaborate.
 
-**[🚀 Step into the AI OS CORP Discussions Space](https://github.com/LongLeo287/aios-local/discussions)**
+**[🚀 Step into the OmniClaw Discussions Space](https://github.com/LongLeo287/aios-local/discussions)**
 
 ---
 
 ## 🙏 Acknowledgements
 
-AI OS CORP stands upon the shoulders of monumental open-source architectures. We deeply thank and credit the following repositories and organizations:
+OmniClaw stands upon the shoulders of monumental open-source architectures. We deeply thank and credit the following repositories and organizations:
 
 *   **[Anthropic](https://anthropic.com)**: For the Claude Code CLI and its phenomenal REPL structure.
 *   **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: For the Gemini models and their unprecedented deep-context structural analysis.
