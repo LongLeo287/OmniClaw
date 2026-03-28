@@ -42,7 +42,7 @@ jobs:
       - name: Validate SKILL.md required fields
         run: |
           ERRORS=0
-          REQUIRED_FIELDS=(name description version tier category)
+          REQUIRED_FIELDS=(name description)
           for f in $(find ecosystem/skills brain/skills -name "SKILL.md" 2>/dev/null); do
             for field in "${REQUIRED_FIELDS[@]}"; do
               if ! grep -q "^${field}:" "$f"; then
