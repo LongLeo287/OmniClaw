@@ -185,10 +185,7 @@ def main():
     if args.file:
         fp = Path(args.file)
         try:
-            try:
-                text += " " + fp.read_text(encoding="utf-8", errors="ignore")[:2000]
-            except Exception:
-                pass
+            text += " " + fp.read_text(encoding="utf-8", errors="ignore")[:2000]
         except (FileNotFoundError, OSError) as e:
             print(f"[WARN] Khong doc duoc file '{args.file}': {e}")
 
