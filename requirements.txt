@@ -18,3 +18,7 @@ mem0ai>=1.0.0
 firecrawl-py>=1.0.0
 crewai>=0.28.0
 lightrag-hku>=0.0.1
+
+# ── Dependabot Security Overrides ────────────────────────────
+diskcache>=5.6.1
+pygments>=2.15.0
