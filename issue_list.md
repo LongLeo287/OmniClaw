@@ -26,7 +26,11 @@ Total Unique Issues: 118
 - [x] [HIGH][sync_identity_1_1.js] Hardcoded Placeholder <AI_OS_ROOT> Never Replaced
 - [x] [HIGH][server.js] Unvalidated File Write + JSON No Try-Catch + Manual YAML Parsing
 - [x] [HIGH][blackboard.json] corp_cycle_status='RUNNING' on Init -- Blocks All New Corp Cycle Starts
+<<<<<<< HEAD
 - [x] [HIGH][firecrawl/lightrag/mem0 adapters] Observability Module Import Always Fails -- ecosystem/plugins/observability/ Does Not Exist
+=======
+- [ ] [HIGH][firecrawl/lightrag/mem0 adapters] Observability Module Import Always Fails -- ecosystem/plugins/observability/ Does Not Exist
+>>>>>>> origin/main
 - [x] [HIGH][registry_indexer.py] Generates SYSTEM_INDEX.yaml With Unresolved Placeholders -- Root Cause of #109
 - [x] [HIGH][vet_media_docs.py] check_magic_bytes() Returns Inconsistent Types -- bool vs (bool, str) Tuple
 - [x] [HIGH][mem0_adapter.py] LOG_DIR Writes to ecosystem/telemetry/ Instead of Repo Root telemetry/
@@ -44,7 +48,11 @@ Total Unique Issues: 118
 - [x] [HIGH][.github/workflows] Dependabot Auto-Merge Bypasses Human Review + CI Validates Non-Existent Files
 - [x] [HIGH][aios_code_polisher.py] Return Type Mismatch — Returns False Instead of int
 - [x] [HIGH][Python Files] SyntaxWarning: Invalid Escape Sequences — Will Break Python 3.14+
+<<<<<<< HEAD
 - [x] [HIGH][aios_deep_cleaner.py + audit_aios.py] Mojibake Encoding Corruption in Error Messages
+=======
+- [ ] [HIGH][aios_deep_cleaner.py + audit_aios.py] Mojibake Encoding Corruption in Error Messages
+>>>>>>> origin/main
 - [x] [HIGH][batch_repo_intake.py] No GitHub API Rate Limit Handling — Will Hit 60 req/hour Limit
 - [x] [HIGH][aos.py] Wrong ROOT Path — All Subprocess Scripts 404 at Runtime
 - [x] [HIGH][aios_context_injector.py] Hardcoded localhost:7474 + Encoding errors='replace' Masks Data Corruption
@@ -52,6 +60,7 @@ Total Unique Issues: 118
 - [x] [HIGH][agent_bus.py] SQLite check_same_thread=False — Database Corruption Risk
 - [x] [HIGH][aos_start.py] event_bus.db Marked REQUIRED — Blocks Fresh Install Boot
 - [x] [HIGH][aios_code_polisher.py + audit_aios.py + aios_deep_cleaner.py] AOS_ROOT Falls Back to '.' — Runs Against Wrong Directory
+<<<<<<< HEAD
 - [x] [HIGH][blackboard.json] workspace_path Is Literal '<AI_OS_ROOT>' Placeholder — Agents Get Wrong Path
 - [x] [HIGH][repo_resolver.py] FileNotFoundError Not Caught on read_text() — Crashes File Scoring
 - [x] [HIGH][MASTER_SYSTEM_MAP.md] 6 Paths with system/system/ops/ Double Prefix — All Broken
@@ -60,6 +69,16 @@ Total Unique Issues: 118
 - [x] [HIGH][active_repos_pipeline.py] shutil.rmtree(ignore_errors=True) on Clone Failures — Errors Silently Lost
 - [x] [HIGH][civ_receipt.py] Telegram Token Directly in URL String — Exposed to Monitoring Tools
 - [x] [HIGH][index_skills_lightrag.py] Wrong Paths: brain/skills/ and /plugins/ Don't Exist
+=======
+- [ ] [HIGH][blackboard.json] workspace_path Is Literal '<AI_OS_ROOT>' Placeholder — Agents Get Wrong Path
+- [x] [HIGH][repo_resolver.py] FileNotFoundError Not Caught on read_text() — Crashes File Scoring
+- [ ] [HIGH][MASTER_SYSTEM_MAP.md] 6 Paths with system/system/ops/ Double Prefix — All Broken
+- [x] [HIGH][SKILL_REGISTRY.json] agent-shield Entry Points to Non-Existent Directory
+- [ ] [HIGH][corp-data/index.js] 4 JSON.parse Calls Without try-catch — MCP Server Crashes on Corrupt Data
+- [x] [HIGH][active_repos_pipeline.py] shutil.rmtree(ignore_errors=True) on Clone Failures — Errors Silently Lost
+- [ ] [HIGH][civ_receipt.py] Telegram Token Directly in URL String — Exposed to Monitoring Tools
+- [ ] [HIGH][index_skills_lightrag.py] Wrong Paths: brain/skills/ and /plugins/ Don't Exist
+>>>>>>> origin/main
 
 ## MEDIUM
 - [x] [MEDIUM][aios_orchestrator.py] Silent LTM Module Import Failure
@@ -101,12 +120,21 @@ Total Unique Issues: 118
 - [ ] [MEDIUM] 15 Agent Files Violate Naming Convention — Missing -agent Suffix
 - [x] [MEDIUM][aios_startup.py] Multiple bare except: pass — Silent Failures Across Boot Sequence
 - [x] [MEDIUM][aos.py] PowerShell ExecutionPolicy Bypass + check=False Silent Failures
+<<<<<<< HEAD
 - [x] [MEDIUM][skill-registry/index.js] Hardcoded <AI_OS_ROOT> Fallback in REGISTRY_PATH
 - [x] [MEDIUM][SKILL_REGISTRY.json] Duplicate Skill: agent-shield vs agentshield (Both Active)
 - [x] [MEDIUM][brain/shared-context] 5 Orphaned FAST_INDEX Backup Files (~3.5MB, No Cleanup)
 - [x] [MEDIUM][memory_daemon.py] Custom .env Parser Broken: Comments Not Skipped, encoding='ignore'
 - [x] [MEDIUM][process_github_queue.py] References Non-Existent pending_civ_classifier.py + Unsafe File Clear
 - [x] [MEDIUM][AUTOMATION_REGISTRY.yaml] UTF-8 Mojibake — Vietnamese Text Corrupted Throughout
+=======
+- [ ] [MEDIUM][skill-registry/index.js] Hardcoded <AI_OS_ROOT> Fallback in REGISTRY_PATH
+- [x] [MEDIUM][SKILL_REGISTRY.json] Duplicate Skill: agent-shield vs agentshield (Both Active)
+- [ ] [MEDIUM][brain/shared-context] 5 Orphaned FAST_INDEX Backup Files (~3.5MB, No Cleanup)
+- [ ] [MEDIUM][memory_daemon.py] Custom .env Parser Broken: Comments Not Skipped, encoding='ignore'
+- [ ] [MEDIUM][process_github_queue.py] References Non-Existent pending_civ_classifier.py + Unsafe File Clear
+- [ ] [MEDIUM][AUTOMATION_REGISTRY.yaml] UTF-8 Mojibake — Vietnamese Text Corrupted Throughout
+>>>>>>> origin/main
 - [ ] [MEDIUM][.mcp.json] Undocumented Required Env Vars for MiniMax MCP Server
 - [x] [MEDIUM][aios_code_polisher.py] Path Separator Mismatch — Skip List Broken on Windows
 - [x] [MEDIUM][civ_classifier.py] Input Truncated to 100 Chars in Receipt — Incomplete Audit Trail
