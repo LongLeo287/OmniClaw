@@ -8,8 +8,8 @@
 
 ## 🛠️ Tri thức nền tảng (Claude Code bắt buộc phải đọc trước khi Code)
 Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code của Sếp (AI OS):
-1. `d:\AI OS CORP\AI OS\brain\knowledge\agent_skills_open_standard.md` (LUẬT CODE SKILL)
-2. `d:\AI OS CORP\AI OS\brain\knowledge\spawn_agent_skill.md` (HƯỚNG DẪN TẠO SKILL)
+1. `<AI_OS_ROOT>\brain\knowledge\agent_skills_open_standard.md` (LUẬT CODE SKILL)
+2. `<AI_OS_ROOT>\brain\knowledge\spawn_agent_skill.md` (HƯỚNG DẪN TẠO SKILL)
 3. Tra cứu `google-developer-knowledge` MCP để cào tài liệu mới nhất về: *gcloud CLI, Cloud Run, Cloud Build.*
 
 ## 📋 Hạng mục Công Việc (Task Queue)
@@ -33,7 +33,7 @@ Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code
 Fix CLAUDE.md header: Cycle 8 (2026-03-23) -> Cycle 11 (2026-03-26)
 
 ### Steps
-1. Doc file CLAUDE.md tai root: d:\AI OS CORP\AI OS\CLAUDE.md
+1. Doc file CLAUDE.md tai root: <AI_OS_ROOT>\CLAUDE.md
 2. Tim dong: # AI OS CORP | Cycle 8 | Last synced: 2026-03-23
 3. Thay thanh: # AI OS CORP | Cycle 11 | Last synced: 2026-03-26
 4. Luu file UTF-8

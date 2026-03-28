@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 ROOT = os.environ.get("AOS_ROOT", ".")
 TARGETS = ["system", "tools", "brain", "ecosystem", "launcher", "storage"]
@@ -14,6 +14,7 @@ def clean(fp):
     new_lines = []
 
     for line in lines:
+        if '"""TODO: Add description' in line:
             changed = True
         else:
             new_lines.append(line)

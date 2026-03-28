@@ -1,4 +1,4 @@
-# KHO RULES — Master Rules Index
+﻿# KHO RULES â€” Master Rules Index
 # Version: 1.0 | 2026-03-24 | Owner: Antigravity (Tier 1)
 # Source of truth: GEMINI.md (core rules) + corp/departments/*/rules.md (dept rules)
 
@@ -61,7 +61,7 @@
 | Circuit Breaker | 2-failure max, then BLOCKED |
 | ABSOLUTE PROHIBITIONS | 9 hard stops (see .clauderules) |
 | CIV prohibition | No bypass of CIV pipeline |
-| Workspace boundary | d:\AI OS CORP\AI OS\ only |
+| Workspace boundary | <AI_OS_ROOT>\ only |
 
 ## HOW TO ADD A NEW RULE
 
@@ -70,3 +70,4 @@
 3. If global rule: also add to CLAUDE.md equivalent section
 4. Notify CEO: `[NEW RULE] RULE-<ID>-<NAME>`
 5. Update kho/rules/INDEX.md version header
+

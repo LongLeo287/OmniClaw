@@ -5,7 +5,7 @@
 Giao thức bọc (Wrapper) để sử dụng `GitNexus MCP`. Cung cấp cho các Agent khả năng hiểu cấu trúc Cây Cú pháp Trừu tượng (AST) của các repository thay vì vồ vập đọc code (cat/grep) theo chuỗi văn bản. Giúp nắm trọn dependencies, luồng logic các hàm và quan hệ biến mà không sợ cháy bộ nhớ (Context Overflow).
 
 ## THAO TÁC (HOW TO USE)
-- **Tọa độ Kho tàng**: `d:\AI OS CORP\AI OS\brain\knowledge\repos\GitNexus`
+- **Tọa độ Kho tàng**: `<AI_OS_ROOT>\brain\knowledge\repos\GitNexus`
 - **Kích hoạt khi**: Cần phân tích sâu 1 Repository (vd: Tìm xem hàm `login` gọi đến module nào, hoặc trace chain of dependencies của 1 file lớn).
 - **Lệnh giao tiếp**: Chạy GitNexus MCP Server theo dạng kiến trúc MCP, hoặc giao tiếp qua Command Line/Node tùy biến được định nghĩa sẵn tại repo.
 - (Agent nên tham chiếu file `knowledge.md` trong thư mục GitNexus trước khi gọi tool để nắm syntax chuẩn xác nhất của phiên bản hiện tại).

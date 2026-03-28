@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 aios_code_polisher.py â€” Global Codebase Sanitizer & Formatter
 Purpose: Scans the entire AI OS directory to fix corrupted encodings,
@@ -66,6 +66,7 @@ def inject_english_docstrings(filepath):
                     continue
                 insert_line = node.body[0].lineno - 1
                 indent = " " * node.body[0].col_offset
+                doc_str = f'{indent}"""TODO: Add description for {node.name}"""\n'
                 modifications.append((insert_line, doc_str))
                 injected += 1
 

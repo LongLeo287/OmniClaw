@@ -8,7 +8,7 @@ This is Claude Code's primary boot file — equivalent to GEMINI.md for Antigrav
 Claude Code has FULL AUTHORITY to create this file as it sees fit.
 
 ## Goal
-Create CLAUDE.md at the root of `D:\AI OS CORP\AI OS\` with:
+Create CLAUDE.md at the root of `<AI_OS_ROOT>\` with:
 1. The AGENT BOOT RULE section (same as GEMINI.md but for Claude Code)
 2. The shared BOOT SEQUENCE (Steps 1-10, identical to GEMINI.md shared steps)
 3. Any Claude Code-specific rules and context
@@ -53,7 +53,7 @@ HARD RULE: Skip any step = violation of AI OS governance.
 Pull from brain/shared-context/blackboard.json for current status.
 
 ## Instructions for Claude Code
-1. Create CLAUDE.md at `D:\AI OS CORP\AI OS\CLAUDE.md`
+1. Create CLAUDE.md at `<AI_OS_ROOT>\CLAUDE.md`
 2. Write it in proper UTF-8 encoding that Claude Code can read
 3. Include all 4 sections above
 4. Keep it concise — no more than 150 lines

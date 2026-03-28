@@ -62,7 +62,7 @@ TRƯỚC khi đẻ ra bất kỳ File, Agent, Quy trình, hay Tool mới nào, C
 
 ### [RULE-ARCH-05] PROACTIVE AUTO-EVOLUTION (TỰ HỌC VÀ TIẾN HÓA)
 Sứ mệnh của Claude là tự Tích Lũy. Khi CEO đưa cho bạn 1 concept mới, 1 kiến thức mới, 1 phương pháp giải quyết khác lạ — BẠN KHÔNG ĐƯỢC CHỜ LỆNH. Phải tự động Hóa Thạch tri thức đó: Tự đẻ Phòng ban, tự đẻ Agent, tự đẻ Rule, Workflow để đóng gói và duy trì kỹ năng vĩnh viễn cho OS. Sự TIẾN HÓA PHẢI NẰM Ở MỨC ĐỘ AUTO (TỰ ĐỘNG)!  Ã¢â€ â€™ ChÃ¡ÂºÂ¡y CIV pipeline: STEP 0 (LightRAG) Ã¢â€ â€™ STEP 1-5 (content-intake-flow.md)
-  Ã¢â€ â€™ QUARANTINE path: d:\AI OS CORP\AI OS\security\QUARANTINE\
+  Ã¢â€ â€™ QUARANTINE path: <AI_OS_ROOT>\security\QUARANTINE\
   Ã¢â€ â€™ Ref: brain/corp/departments/content_intake/WORKER_PROMPT.md v1.2
 ```
 
@@ -224,15 +224,15 @@ PRIORITY:
   3. Claude Code CLI: system/ops/workflows/launch-mcp-claude.md
 
 BEFORE any large change: ALWAYS git status + git diff first
-REPO ROOT: d:\AI OS CORP\AI OS
+REPO ROOT: <AI_OS_ROOT>
 ```
 
 **[RULE-ARCH-01] MACRO-COGNITION & AIR-GAPPED ARCHITECTURE:**
 ```
 Khi Sếp yêu cầu thay đổi Kiến trúc (Architecture), Phân tách nhánh (Branching), hoặc Di dời thư mục:
   1. NHẬN THỨC MÔ HÌNH 2 BÁN CẦU:
-     - Local Core (`d:\AI OS CORP\AI OS`): Nhân lõi, chạy VENV (`runtime\venv`), xử lý logic, RAG, Automation. KHÔNG CHỨA UI/OpenClaw.
-     - Remote Ecosystem (`d:\AI OS CORP\AI OS REMOTE`): Nhánh ngoại vi, chứa Giao diện (UI), Dashboard, OpenClaw, Telegram Bot, Các Repo thư viện UI.
+     - Local Core (`<AI_OS_ROOT>`): Nhân lõi, chạy VENV (`runtime\venv`), xử lý logic, RAG, Automation. KHÔNG CHỨA UI/OpenClaw.
+     - Remote Ecosystem (`<AI_OS_REMOTE_ROOT>`): Nhánh ngoại vi, chứa Giao diện (UI), Dashboard, OpenClaw, Telegram Bot, Các Repo thư viện UI.
   2. BẮT BUỘC QUÉT RADAR TOÀN CỤC TRƯỚC KHI HÀNH ĐỘNG:
      - Phải tự động cross-check kho QUARANTINE/incoming/repos/ và QUARANTINE/vetted/repos/.
      - KHÔNG làm việc cục bộ "bảo gì chuyển nấy". Nếu tạo/di dời mảng Remote/UI, TỰ ĐỘNG dọn dẹp tất cả Repo/File liên quan đến UI/Dashboard mới nạp vào sang nhánh REMOTE tương ứng.

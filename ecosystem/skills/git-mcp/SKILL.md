@@ -48,7 +48,7 @@ git_diff(target="HEAD~1")
 git_search_commits(query="mem0", max_results=10)
 
 # Read a file at a specific commit
-git_read_file(repo_path="d:\\AI OS CORP\\AI OS", file_path="skills/context7/SKILL.md", ref="HEAD")
+git_read_file(repo_path="<AI_OS_ROOT>", file_path="skills/context7/SKILL.md", ref="HEAD")
 ```
 
 ## Setup
@@ -58,7 +58,7 @@ git_read_file(repo_path="d:\\AI OS CORP\\AI OS", file_path="skills/context7/SKIL
   "mcpServers": {
     "git": {
       "command": "uvx",
-      "args": ["mcp-server-git", "--repository", "d:\\AI OS CORP\\AI OS"]
+      "args": ["mcp-server-git", "--repository", "<AI_OS_ROOT>"]
     }
   }
 }
@@ -70,6 +70,6 @@ git_read_file(repo_path="d:\\AI OS CORP\\AI OS", file_path="skills/context7/SKIL
 
 ## Notes
 - Works on Windows path with escaped backslashes
-- Default repo: `d:\AI OS CORP\AI OS`
+- Default repo: `<AI_OS_ROOT>`
 - Add multiple repos by running multiple server instances
 - Owner: Dept 1 (Engineering) — use for code archaeology

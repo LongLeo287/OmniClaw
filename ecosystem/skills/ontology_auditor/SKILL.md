@@ -14,5 +14,5 @@ owner_dept: monitoring_inspection
 ## Cách dùng (Cho SRE-Agent)
 Mở terminal và gõ:
 ```bash
-python "d:\AI OS CORP\AI OS\system\ops\scripts\ontology_auditor.py"
+python "<AI_OS_ROOT>\system\ops\scripts\ontology_auditor.py"
 ```

@@ -15,6 +15,6 @@ Mỗi khi nhận lệnh deploy một AI OS Plugin lên Cloud Run:
 1. Bạn kiểm tra thư mục gốc (ecosystem/plugins/TÊN_PLUGIN) để tính toán ngôn ngữ (Python/Node).
 2. Bạn sinh `Dockerfile` tối ưu siêu nhẹ (Alpine).
 3. Bạn sinh mã `gcloud builds submit` và `gcloud run deploy --allow-unauthenticated` (hoặc cấu hình bảo mật IAM dựa trên lệnh của Sếp).
-4. Lưu kịch bản đó vào `d:\AI OS CORP\AI OS\ecosystem\subagents\gcp_architect\scripts\`.
+4. Lưu kịch bản đó vào `<AI_OS_ROOT>\ecosystem\subagents\gcp_architect\scripts\`.
 
 Luôn báo cáo rõ quá trình thành bại trong `blackboard.json` hoặc báo cho Sếp thông qua Terminal Console.

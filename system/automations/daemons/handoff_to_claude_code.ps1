@@ -232,7 +232,7 @@ try {
     }
     
     $env:ANTHROPIC_AUTH_TOKEN = "[REDACTED]"
-    $env:ANTHROPIC_API_KEY='[REDACTED]'
+    $env:ANTHROPIC_API_KEY='[REDACTED_API_KEY]'
     $env:ANTHROPIC_DEFAULT_OPUS_MODEL = "AI_OS"
     $env:ANTHROPIC_DEFAULT_SONNET_MODEL = "cc/claude-sonnet-4-6"
     $env:ANTHROPIC_DEFAULT_HAIKU_MODEL = "cc/claude-haiku-4-5-20251001"
