@@ -204,6 +204,18 @@ def save_json(path, data, indent=2):
             except: pass
 
 def log(msg, level="INFO"):
+    if isinstance(msg, str):
+        sensitive_keys = [k for k in ENV.keys() if any(x in k.upper() for x in ("TOKEN", "KEY", "SECRET", "PASS"))]
+        for sk in sensitive_keys:
+            sval = ENV.get(sk)
+            if sval and len(sval) > 4 and sval in msg:
+                msg = msg.replace(sval, f"***MASKED_{sk}***")
+                
+        # Also check OS env
+        gh_token = os.environ.get("GITHUB_TOKEN")
+        if gh_token and len(gh_token) > 4 and gh_token in msg:
+             msg = msg.replace(gh_token, "***MASKED_GITHUB_TOKEN***")
+
     icon = {"INFO": "ℹ️", "OK": "✅", "WARN": "⚠️", "ERR": "❌", "ROUTE": "🔀", "DISPATCH": "📤"}.get(level, "•")
     print(f"[{now_ts()}] {icon} {msg}")
 

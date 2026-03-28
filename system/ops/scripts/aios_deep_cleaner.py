@@ -149,7 +149,19 @@ def purge_obsolete_directories(dry_run: bool) -> int:
                         if target.is_symlink():
                             target.unlink()
                         else:
-                            shutil.rmtree(target, ignore_errors=True)
+                            import stat
+                            def on_rmtree_error(func, path, exc_info):
+                                try:
+                                    if not os.path.exists(path): return
+                                    os.chmod(path, stat.S_IWRITE)
+                                    if os.path.islink(path): os.unlink(path)
+                                    else: func(path)
+                                except Exception as e:
+                                    print(f"   [!] Failed to remove {path}: {e}")
+                            if sys.version_info >= (3, 12):
+                                shutil.rmtree(target, onexc=on_rmtree_error)
+                            else:
+                                shutil.rmtree(target, onerror=on_rmtree_error)
                 else:
                     safely_delete_file(target, dry_run)
                 print(f"   [!] ÄÃ£ tiÃªu há»§y tá»­ huyá»‡t di tÃ­ch: {target.name}")
@@ -163,6 +175,10 @@ def run_deep_cleaner():
     parser.add_argument("--auto-delete", action="store_true", help="Execute destructive deletion (Default is Dry-Run)")
     parser.add_argument("--stale-days", type=int, default=14, help="Number of days before an artifact is considered stale (Default: 14)")
     args = parser.parse_args()
+
+    if args.stale_days < 1:
+        print("[!] ERROR: --stale-days phai lon hon hoac bang 1.")
+        sys.exit(1)
 
     dry_run = not args.auto_delete
     print("="*60)

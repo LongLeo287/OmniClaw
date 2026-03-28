@@ -18,26 +18,46 @@ def main():
     files = glob.glob(search_pattern)
 
     deleted_count = 0
+    if force and files:
+        confirm = input(f"[!] WARNING: This will delete files containing 'antigravity-bulk-intake-v2'. Continue? [y/N]: ")
+        if confirm.lower() != 'y':
+            print("Aborted.")
+            return
+
+    deleted_log = []
     for fpath in files:
-        # Chỉ xóa những file do V2 tạo (có url_entry, hoặc những file thuộc 91 URLs)
-        # Để an toàn, đọc nội dung xem submitter có phải là "antigravity-bulk-intake-v2" không
         try:
             with open(fpath, 'r', encoding='utf-8') as f:
                 content = f.read()
-                if '"submitted_by": "antigravity-bulk-intake-v2"' in content:
-                    if force:
-                        real_path = os.path.realpath(fpath)
-                        vault_real = os.path.realpath(VAULT_DATA_DIR)
-                        if not real_path.startswith(vault_real):
-                            print(f"  [!] SECURITY: Symlink points outside vault, skipping: {fpath}")
-                            continue
-                        os.unlink(fpath) if os.path.islink(fpath) else os.remove(fpath)
-                        print(f"  [-] Rollback (Deleted): {os.path.basename(fpath)}")
-                    else:
-                        print(f"  [DRY-RUN] Will Delete: {os.path.basename(fpath)}")
-                    deleted_count += 1
+            if '"submitted_by": "antigravity-bulk-intake-v2"' in content:
+                if force:
+                    real_path = os.path.realpath(fpath)
+                    vault_real = os.path.realpath(VAULT_DATA_DIR)
+                    if not real_path.startswith(vault_real):
+                        print(f"  [!] SECURITY: Symlink points outside vault, skipping: {fpath}")
+                        continue
+                    if os.path.islink(fpath): os.unlink(fpath)
+                    else: os.remove(fpath)
+                    print(f"  [-] Rollback (Deleted): {os.path.basename(fpath)}")
+                    deleted_log.append(fpath)
+                else:
+                    print(f"  [DRY-RUN] Will Delete: {os.path.basename(fpath)}")
+                deleted_count += 1
         except Exception as e:
             print(f"  [!] Error reading/deleting {os.path.basename(fpath)}: {e}")
+
+    if force and deleted_log:
+        receipt_dir = os.path.join(BASE_DIR, 'system', 'telemetry', 'receipts', 'system')
+        os.makedirs(receipt_dir, exist_ok=True)
+        import json
+        receipt = {
+            "timestamp": datetime.datetime.now().isoformat(),
+            "action": "ROLLBACK_BULK_INTAKE",
+            "deleted_count": deleted_count,
+            "deleted_files": deleted_log
+        }
+        with open(os.path.join(receipt_dir, f"rollback_{int(datetime.datetime.now().timestamp())}.json"), 'w') as rf:
+            json.dump(receipt, rf, indent=2)
 
     print(f"\n[SUCCESS] Emptied/Identified {deleted_count} massive intake tickets from Vault.")
     if not force:

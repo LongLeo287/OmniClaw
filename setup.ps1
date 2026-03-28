@@ -1,4 +1,4 @@
-﻿# ===========================================================
+# ===========================================================
 #  AI OS CORP — UNIFIED BOOTSTRAPPER & DASHBOARD
 # ===========================================================
 $ErrorActionPreference = "Continue"
@@ -14,7 +14,7 @@ if ($RestartCount -gt 5) {
     exit 1
 }
 
-# Check if OS is already initialized
+while ($true) {
 $ConfigPath = Join-Path $RepoRoot ".aios_config"
 
 if (Test-Path $ConfigPath) {
@@ -64,9 +64,7 @@ if (Test-Path $ConfigPath) {
         git pull origin main
         Write-Host "Cập nhật hoàn tất! Bấm phím bất kỳ để tải lại giao diện..." -ForegroundColor Green
         $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        $env:AOS_SETUP_RESTARTS = ($RestartCount + 1).ToString()
-        pwsh -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\setup.ps1"
-        exit
+        continue
     } elseif ($choice -eq '0') {
         Write-Host "OS shutdown signal received." -ForegroundColor DarkGray
     } else {
@@ -235,7 +233,6 @@ if (Test-Path $ConfigPath) {
 
     # Loop back into the same script to show the Daily Dashboard!
     Set-Location $AiosRoot
-    $env:AOS_SETUP_RESTARTS = ($RestartCount + 1).ToString()
-    pwsh -NoProfile -ExecutionPolicy Bypass -File "$PSScriptRoot\setup.ps1"
-    exit
+    continue
+}
 }

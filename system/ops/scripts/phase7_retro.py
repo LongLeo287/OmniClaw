@@ -11,9 +11,10 @@ import os
 import shutil
 from datetime import datetime, date
 
+from pathlib import Path
 TODAY     = date.today().isoformat()          # 2026-03-22
 NOW       = datetime.now().isoformat()
-ROOT      = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+ROOT      = str(Path(__file__).resolve().parents[3])
 CORP      = os.path.join(ROOT, "brain", "shared-context", "corp")
 PROPOSALS = os.path.join(CORP, "proposals")
 BRIEFS    = os.path.join(CORP, "daily_briefs")
