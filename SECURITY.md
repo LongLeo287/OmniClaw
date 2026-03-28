@@ -1,5 +1,11 @@
 # Security Policy
 
+<div align="center">
+  [**Xem Phiên Bản Tiếng Việt (Vietnamese)**](SECURITY-vn.md)
+</div>
+
+---
+
 ## 🛡️ The OmniClaw Zero-Trust Commitment
 
 OmniClaw is built on a strict **Zero-Trust Architecture**. Our core philosophy is that your local machine is a fortress, and no data—especially API keys, environment variables, or proprietary source code—should ever leave it without explicit, manual authorization. 
