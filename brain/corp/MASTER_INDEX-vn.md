@@ -1,9 +1,14 @@
-# 🏛️ AI OS CORP — Sơ đồ Tổng thể Hệ thống
-> **Danh bạ chính thức các Phòng ban, Agent và Quy trình (Sắp xếp theo ID)**
+<div align="center">
 
-[**🇺🇸 Xem Bản Tiếng Anh (English)**](MASTER_INDEX.md)
+# 🏛️ Tập đoàn OmniClaw — Sơ đồ Tổng thể Hệ thống
 
-Tài liệu này đóng vai trò là hướng dẫn chính thức về **cấu trúc tổ chức 21 phòng ban** của AI OS CORP. Nó xác định ai (Agent) làm gì (Chức năng) và cách họ liên kết với nhau (Quy trình).
+> **Danh bạ chính thức các Phòng ban, Đặc vụ và Quy trình (Sắp xếp theo ID)**
+> 
+> [**English**](MASTER_INDEX.md)
+
+Tài liệu này đóng vai trò là hướng dẫn chính thức về **cấu trúc tổ chức 21 phòng ban** của Tập đoàn OmniClaw. Nó xác định ai (Agent) làm gì (Chức năng) và cách họ liên kết với nhau (Quy trình).
+
+</div>
 
 ---
 
@@ -13,15 +18,15 @@ Hệ thống được quản trị theo mô hình lấy con người làm trung 
 
 ```mermaid
 graph TD
-    CEO(CEO — Con Người)
-    AOS(AI OS Orchestrator)
+    CEO["CEO — Con Người"]
+    AOS["OmniClaw Router"]
     
-    subgraph Executives [Tầng 1: C-Suite]
-        CTO(CTO: software-architect)
-        CMO(CMO: growth-agent)
-        COO(COO: scrum-master)
-        CFO(CFO: finance-agent)
-        CSO(CSO: product-manager)
+    subgraph Executives ["Tầng 1: C-Suite"]
+        CTO["CTO: software-architect"]
+        CMO["CMO: growth-agent"]
+        COO["COO: scrum-master"]
+        CFO["CFO: finance-agent"]
+        CSO["CSO: product-manager"]
     end
 
     CEO --> AOS
@@ -73,8 +78,5 @@ graph TD
 ---
 
 ## 📂 Tài nguyên Liên quan
-- **Dữ liệu Org Chart**: [brain/corp/org_chart.yaml](file:///d:/AI%20OS%20CORP/AI%20OS/brain/corp/org_chart.yaml)
-- **Định nghĩa Agent**: [brain/shared-context/AGENTS.md](file:///d:/AI%20OS%20CORP/AI%20OS/brain/shared-context/AGENTS.md)
-
----
-*Kết thúc Bản đồ Tổng thể*
+*   **Dữ liệu Org Chart:** `/.omniclaw/brain/corp/org_chart.yaml`
+*   **Định nghĩa Đặc vụ:** `/.omniclaw/brain/shared-context/AGENTS.md`
