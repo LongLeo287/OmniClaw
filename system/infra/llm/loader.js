@@ -71,7 +71,8 @@ function httpGet(url, timeoutMs = 2000) {
       path: u.pathname,
       timeout: timeoutMs,
     }, (res) => {
-      // Bất kỳ HTTP response = server đang chạy
+      // Drain the response body to release the socket — prevents memory leak
+      res.resume();
       resolve({ online: true, status: res.statusCode });
     });
     req.on('error', () => resolve({ online: false }));
