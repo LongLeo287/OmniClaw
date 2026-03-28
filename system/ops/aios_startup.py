@@ -37,7 +37,7 @@ def load_json(p):
     try:
         with open(p, encoding="utf-8-sig") as f:
             return json.load(f)
-    except:
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
         return None
 
 def save_json(p, d):
@@ -58,7 +58,8 @@ def save_json(p, d):
     finally:
         try:
             if os.path.exists(lock_path): os.remove(lock_path)
-        except: pass
+        except OSError:
+            pass
 
 def _env():
     env, p = {}, ROOT / ".env"

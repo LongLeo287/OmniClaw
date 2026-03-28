@@ -1,8 +1,14 @@
-﻿import os
+import os
 import yaml
 import json
+from pathlib import Path
 
-ROOT_DIR = os.environ.get("AOS_ROOT", ".")
+_fallback_root = str(Path(__file__).resolve().parents[3])
+ROOT_DIR = os.environ.get("AOS_ROOT", "") or _fallback_root
+
+# Validate: giả sử AOS_ROOT hợp lệ phải chứa GEMINI.md hoặc brain/
+if not any(os.path.exists(os.path.join(ROOT_DIR, marker)) for marker in ["GEMINI.md", "brain"]):
+    ROOT_DIR = _fallback_root
 DEPT_DIR = os.path.join(ROOT_DIR, "brain", "corp", "departments")
 
 AGENT_DIR = os.path.join(ROOT_DIR, "brain", "agents")
@@ -20,7 +26,7 @@ def load_all_depts():
                 with open(os.path.join(DEPT_DIR, f), 'r', encoding='utf-8') as yml:
                     d = yaml.safe_load(yml)
                     if d: depts.append(d)
-            except:
+            except (OSError, yaml.YAMLError):
                 pass
     return depts
 
@@ -66,7 +72,7 @@ def find_unmapped(depts):
                         content = wf.read(1000)
                         if "# Department:" not in content:
                             unlinked_workflows.append(f)
-                except:
+                except (OSError, UnicodeDecodeError):
                     pass
 
     # 3. Unlinked Skills (Folders in ecosystem/skills that aren't mapped in depts)

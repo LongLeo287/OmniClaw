@@ -10,7 +10,7 @@ DB_PATH = os.path.join(ROOT, "brain", "memory", "qdrant_db")
 
 def load_env():
     if os.path.exists(ENV_PATH):
-        with open(ENV_PATH, 'r', encoding='utf-8', errors='ignore') as f:
+        with open(ENV_PATH, 'r', encoding='utf-8', errors='replace') as f:
             for line in f:
                 line = line.strip()
                 if not line or line.startswith('#'): continue
