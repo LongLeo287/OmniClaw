@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[**View English Version**](SECURITY.md)
+[**English**](SECURITY.md)
 
 </div>
 
