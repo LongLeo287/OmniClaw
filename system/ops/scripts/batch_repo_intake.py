@@ -85,7 +85,18 @@ def github_get_readme(owner, repo, token):
     req.add_header('User-Agent', 'AI-OS-Corp-Intake/1.0')
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
-            return resp.read().decode('utf-8', errors='ignore')  # FULL README
+            return resp.read().decode('utf-8', errors='replace')
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            sys.stderr.write(f"[!] GitHub rate limit hit for {owner}/{repo}. Waiting 60s...\n")
+            time.sleep(60)
+            try:
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    return resp.read().decode('utf-8', errors='replace')
+            except Exception:
+                return None
+        sys.stderr.write(f"[!] HTTP {e.code} getting README for {owner}/{repo}\n")
+        return None
     except urllib.error.URLError as e:
         sys.stderr.write(f"[!] Lỗi kết nối GitHub khi lấy README: {e}\n")
         return None
@@ -99,6 +110,17 @@ def github_get_meta(owner, repo, token):
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
             return json.loads(resp.read().decode('utf-8'))
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            sys.stderr.write(f"[!] GitHub rate limit hit for {owner}/{repo}. Waiting 60s...\n")
+            time.sleep(60)
+            try:
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    return json.loads(resp.read().decode('utf-8'))
+            except Exception:
+                return {}
+        sys.stderr.write(f"[!] HTTP {e.code} getting meta for {owner}/{repo}\n")
+        return {}
     except urllib.error.URLError as e:
         sys.stderr.write(f"[!] Lỗi kết nối GitHub khi lấy Meta: {e}\n")
         return {}
@@ -406,7 +428,7 @@ if __name__ == "__main__":
         print("[ERROR] GITHUB_TOKEN not found")
         sys.exit(1)
 
-    print(f"[*] GitHub Token: {GITHUB_TOKEN[:20]}...")
+    print(f"[*] GitHub Token: {GITHUB_TOKEN[:4]}***{GITHUB_TOKEN[-4:]}")
     print(f"[*] Mode: {mode} | Limit: {limit}")
 
     if mode == 'active':

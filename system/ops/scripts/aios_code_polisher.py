@@ -17,7 +17,7 @@ def fix_encoding(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             f.read()
-            return False # already good
+            return 0  # already good
     except UnicodeDecodeError:
         pass
 
@@ -93,7 +93,8 @@ def run_polisher():
         if not os.path.exists(walk_dir): continue
 
         for root, dirs, files in os.walk(walk_dir):
-            if any(skip in root.replace('\\', '/') for skip in ["QUARANTINE", ".git", "node_modules", ".venv", "site-packages", "__pycache__", "knowledge/repos"]):
+            norm_root = root.replace('\\', '/')
+            if any(skip in norm_root for skip in ["QUARANTINE", ".git", "node_modules", ".venv", "site-packages", "__pycache__", "knowledge/repos"]):
                 continue
 
             for file in files:

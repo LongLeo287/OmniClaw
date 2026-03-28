@@ -193,7 +193,7 @@ def cmd_status():
 
 def cmd_retro():
     """Run Phase 7 — Reflect + Propose."""
-    script = os.path.join(ROOT, "ops", "phase7_retro.py")
+    script = os.path.join(ROOT, "system", "ops", "scripts", "phase7_retro.py")
     if os.path.exists(script):
         print(f"{CYAN}Running Phase 7 (Reflect + Propose)...{RESET}")
         subprocess.run([sys.executable, script], check=True)
@@ -320,7 +320,7 @@ def main():
 def cmd_intake(args):
     """C1: CEO paste link/text → CIV pipeline auto-classify + receipt"""
     import sys
-    _scripts = os.path.join(ROOT, "ops", "scripts")
+    _scripts = os.path.join(ROOT, "system", "ops", "scripts")
     source = " ".join(args) if args else ""
     if not source:
         print(f"{RED}Usage: aos intake <url_or_text>{RESET}")
@@ -405,7 +405,7 @@ def cmd_project(args):
         if dept: print(f"  Dept: {dept}")
         print(f"{CYAN}{'='*60}{RESET}")
 
-        resolver = os.path.join(ROOT, "ops", "scripts", "repo_resolver.py")
+        resolver = os.path.join(ROOT, "system", "ops", "scripts", "repo_resolver.py")
         cmd = [sys.executable, resolver]
         if dept:
             cmd += ["--dept", dept]

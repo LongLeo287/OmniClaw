@@ -41,7 +41,7 @@ BOOT_FILES = [
     (4, "AGENTS.md              (Roster)",           "brain/shared-context/AGENTS.md",                     True),
     (5, "THESIS.md              (Strategy)",         "brain/shared-context/THESIS.md",                     False),
     (6, "report_formats.md      (Output Format)",    "brain/shared-context/report_formats.md",             False),
-    (7, "event_bus.db           (Task Pub/Sub)",     "brain/shared-context/event_bus.db",                  True),
+    (7, "event_bus.db           (Task Pub/Sub)",     "brain/shared-context/event_bus.db",                  False),
     (8, "SKILL_REGISTRY.json    (Skill Registry)",   "ecosystem/skills/SKILL_REGISTRY.json",           False),
 ]
 
