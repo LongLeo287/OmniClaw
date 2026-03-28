@@ -7,6 +7,7 @@
   [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
   [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
+  [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/aios-local/discussions)
   
   <br>
   
@@ -19,6 +20,7 @@
   [Architecture](#-architecture--3-tier-plugins) •
   [Departments](#-the-workforce-departments) •
   [Installation](#-installation) •
+  [Discussions](https://github.com/LongLeo287/aios-local/discussions) •
   [Credits](#-acknowledgements)
 
 </div>
@@ -92,7 +94,7 @@ AI OS is built to be a simple "Clone & Run" architecture.
 
 ```bash
 # 1. Clone the core repository to your local drive
-git clone https://github.com/LongLeo287/aios-local.git "AI OS"
+git clone [https://github.com/LongLeo287/aios-local.git](https://github.com/LongLeo287/aios-local.git) "AI OS"
 cd "AI OS"
 
 # 2. Link the Global System via NPM
@@ -101,20 +103,30 @@ npm install -g .
 # 3. Boot the Monolithic OS Terminal (Can be run from anywhere)
 aios
 ```
+
 *Windows Tip: We have provided native Windows GUI accessibility. Simply double-click the `aios.bat` script located in the root repository to instantaneously open the Control Dashboard.*
 
 ---
 
+## 🌐 Community & Support
+
+Have ideas, questions, or want to showcase your custom Agent workflows? We have built a dedicated space for the AI OS workforce to collaborate.
+
+**[🚀 Step into the AI OS CORP Discussions Space](https://github.com/LongLeo287/aios-local/discussions)**
+
+---
+
 ## 🙏 Acknowledgements
+
 AI OS CORP stands upon the shoulders of monumental open-source architectures. We deeply thank and credit the following repositories and organizations:
 
-- **[Anthropic](https://anthropic.com)**: For the Claude Code CLI and its phenomenal REPL structure.
-- **[Google Gemini](https://deepmind.google.com/technologies/gemini/)**: For the Antigravity engine and its unprecedented deep-context structural analysis.
-- **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: For their phenomenal cross-platform Agent shielding workflows and role-based instruction patterns.
-- **[LightRAG](https://github.com/HKUDS/LightRAG)**: Supplying the immense and precise Graph-based cognitive retrieval system.
-- **[Firecrawl](https://firecrawl.dev)**: Powering the flawless markdown extraction pipeline.
-- **[CrewAI](https://crewai.com)**: Inspiring the localized worker-thread and sub-agent hive network.
-- **[Cursor](https://cursor.sh)** / **OpenCode**: Our IDE environments of choice, facilitating the neural link between the OS and the CEO.
+*   **[Anthropic](https://anthropic.com)**: For the Claude Code CLI and its phenomenal REPL structure.
+*   **[Google Gemini](https://deepmind.google.com/technologies/gemini/)**: For the Antigravity engine and its unprecedented deep-context structural analysis.
+*   **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: For their phenomenal cross-platform Agent shielding workflows and role-based instruction patterns.
+*   **[LightRAG](https://github.com/HKUDS/LightRAG)**: Supplying the immense and precise Graph-based cognitive retrieval system.
+*   **[Firecrawl](https://firecrawl.dev)**: Powering the flawless markdown extraction pipeline.
+*   **[CrewAI](https://crewai.com)**: Inspiring the localized worker-thread and sub-agent hive network.
+*   **[Cursor](https://cursor.sh)** / **OpenCode**: Our IDE environments of choice, facilitating the neural link between the OS and the CEO.
 
 <br>
 <div align="center">
