@@ -44,7 +44,7 @@ This Code of Conduct applies within all OmniClaw spaces (GitHub repository, Issu
 
 If you experience or witness instances of abusive, harassing, or otherwise unacceptable behavior, please do not engage publicly. Report it directly to the Core Operations Team at:
 
-📧 **Contact Email:** `[longdragon287@gmail.com]`
+📧 **Contact Email:** `Longdragon287@gmail.com`
 
 All complaints will be reviewed and investigated promptly and fairly. The Core Team is obligated to respect the privacy and security of the reporter of any incident.
 
