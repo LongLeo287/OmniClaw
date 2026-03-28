@@ -80,9 +80,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const resolvedRoot = path.resolve(AOS_ROOT);
       const rootWithSep = resolvedRoot.endsWith(path.sep) ? resolvedRoot : resolvedRoot + path.sep;
       const fullPath = path.resolve(AOS_ROOT, args.path || "");
-      if (!fullPath.startsWith(rootWithSep) && fullPath !== resolvedRoot) return { content: [{ type: "text", text: "Access Denied: Path traversal detected" }], isError: true };
-      if (!fs.existsSync(fullPath)) return { content: [{ type: "text", text: `Not found: ${args.path}` }] };
-      const entries = fs.readdirSync(fullPath, { withFileTypes: true });
+      if (!fullPath.startsWith(rootWithSep) && fullPath !== resolvedRoot)
+        return { content: [{ type: "text", text: "Access Denied: Path traversal detected" }], isError: true };
+      if (!fs.existsSync(fullPath))
+        return { content: [{ type: "text", text: `Not found: ${args.path}` }] };
+      // Resolve symlinks to prevent symlink traversal attacks
+      const realFullPath = fs.realpathSync(fullPath);
+      if (!realFullPath.startsWith(rootWithSep) && realFullPath !== resolvedRoot)
+        return { content: [{ type: "text", text: "Access Denied: Symlink traversal detected" }], isError: true };
+      const entries = fs.readdirSync(realFullPath, { withFileTypes: true });
       const result = entries.map(e => `${e.isDirectory() ? "[DIR]" : "[FILE]"} ${e.name}`).join("\n");
       return { content: [{ type: "text", text: result }] };
     }
@@ -91,9 +97,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const resolvedRoot = path.resolve(AOS_ROOT);
       const rootWithSep = resolvedRoot.endsWith(path.sep) ? resolvedRoot : resolvedRoot + path.sep;
       const fullPath = path.resolve(AOS_ROOT, args.path || "");
-      if (!fullPath.startsWith(rootWithSep) && fullPath !== resolvedRoot) return { content: [{ type: "text", text: "Access Denied: Path traversal detected" }], isError: true };
-      if (!fs.existsSync(fullPath)) return { content: [{ type: "text", text: `Not found: ${args.path}` }] };
-      const content = fs.readFileSync(fullPath, "utf-8");
+      if (!fullPath.startsWith(rootWithSep) && fullPath !== resolvedRoot)
+        return { content: [{ type: "text", text: "Access Denied: Path traversal detected" }], isError: true };
+      if (!fs.existsSync(fullPath))
+        return { content: [{ type: "text", text: `Not found: ${args.path}` }] };
+      // Resolve symlinks to prevent symlink traversal attacks
+      const realFullPath = fs.realpathSync(fullPath);
+      if (!realFullPath.startsWith(rootWithSep) && realFullPath !== resolvedRoot)
+        return { content: [{ type: "text", text: "Access Denied: Symlink traversal detected" }], isError: true };
+      const content = fs.readFileSync(realFullPath, "utf-8");
       return { content: [{ type: "text", text: content }] };
     }
 

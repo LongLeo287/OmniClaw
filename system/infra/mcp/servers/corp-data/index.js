@@ -9,8 +9,9 @@ const { ListToolsRequestSchema, CallToolRequestSchema } = require("@modelcontext
 const fs = require("fs");
 const path = require("path");
 
-const CORP_DIR = process.env.CORP_DIR || (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../../../..')) + "/shared-context/corp";
-const AOS_ROOT = process.env.AOS_ROOT || (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../../../..')) + "";
+const AOS_ROOT = process.env.AOS_ROOT || path.resolve(__dirname, '../../../../..');
+// brain/shared-context/corp — fixed path (was missing brain/ prefix)
+const CORP_DIR = process.env.CORP_DIR || path.join(AOS_ROOT, 'brain', 'shared-context', 'corp');
 
 const safeJSONParse = (content, fallback) => {
   try { return JSON.parse(content); }
@@ -95,8 +96,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "update_kpi") {
-      if (args.dept === "__proto__" || args.dept === "constructor") {
-        return { content: [{ type: "text", text: "Invalid dept name" }], isError: true };
+      // Prototype pollution guard — block dangerous key names
+      const DANGEROUS_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+      if (DANGEROUS_KEYS.has(args.dept) || DANGEROUS_KEYS.has(args.metric)) {
+        return { content: [{ type: "text", text: "Invalid dept or metric name" }], isError: true };
       }
       const kpiPath = path.join(CORP_DIR, "kpi_scoreboard.json");
       const data = fs.existsSync(kpiPath) ? safeJSONParse(fs.readFileSync(kpiPath, "utf-8"), {}) : {};
