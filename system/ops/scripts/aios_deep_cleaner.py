@@ -7,8 +7,9 @@ from pathlib import Path
 
 # AI OS Path Mapping
 AOS_ROOT = Path(os.environ.get("AOS_ROOT", Path(__file__).parent.parent.parent.parent))
-USER_PROFILE = Path(os.environ.get("USERPROFILE", "C:\\Users\\Default"))
-GEMINI_CACHE = USER_PROFILE / ".gemini"
+# Cross-platform home directory (replaces Windows-only USERPROFILE)
+USER_HOME = Path.home()
+GEMINI_CACHE = USER_HOME / ".gemini"
 
 # Sanitation Targets
 TARGET_DIRS = [
