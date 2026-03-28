@@ -49,8 +49,21 @@ def load_json(path, default=None):
     return default or {}
 
 def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    import time
+    lock_path = str(path) + ".lock"
+    for _ in range(50):
+        if not os.path.exists(lock_path): break
+        time.sleep(0.05)
+    try:
+        with open(lock_path, "w") as lf: lf.write("1")
+        tmp_path = str(path) + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(lock_path):
+            try: os.remove(lock_path)
+            except: pass
 
 def _now():
     return datetime.now().strftime("%Y-%m-%dT%H:%M:%S")

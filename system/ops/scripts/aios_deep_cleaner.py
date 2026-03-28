@@ -1,4 +1,4 @@
-﻿import os
+import os
 import sys
 import time
 import shutil
@@ -6,7 +6,7 @@ import argparse
 from pathlib import Path
 
 # AI OS Path Mapping
-AOS_ROOT = Path(os.environ.get("AOS_ROOT", os.environ.get("AOS_ROOT", ".")))
+AOS_ROOT = Path(os.environ.get("AOS_ROOT", Path(__file__).parent.parent.parent.parent))
 USER_PROFILE = Path(os.environ.get("USERPROFILE", "C:\\Users\\Default"))
 GEMINI_CACHE = USER_PROFILE / ".gemini"
 
@@ -146,7 +146,10 @@ def purge_obsolete_directories(dry_run: bool) -> int:
             try:
                 if target.is_dir():
                     if not dry_run:
-                        shutil.rmtree(target, ignore_errors=True)
+                        if target.is_symlink():
+                            target.unlink()
+                        else:
+                            shutil.rmtree(target, ignore_errors=True)
                 else:
                     safely_delete_file(target, dry_run)
                 print(f"   [!] ÄÃ£ tiÃªu há»§y tá»­ huyá»‡t di tÃ­ch: {target.name}")

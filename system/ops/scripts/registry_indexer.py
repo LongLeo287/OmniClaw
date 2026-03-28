@@ -2,26 +2,19 @@ import os
 from datetime import datetime
 import json
 
+ROOT = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+
 TARGETS = [
     # (Path, Category, Type)
-    (r"<AI_OS_ROOT>\brain\knowledge\repos", "LOCAL_CORE", "REPO"),
-    (r"<AI_OS_ROOT>\ecosystem\plugins", "LOCAL_CORE", "PLUGIN"),
-    (r"<AI_OS_ROOT>\ecosystem\tools", "LOCAL_CORE", "TOOL"),
-    (r"<AI_OS_ROOT>\ecosystem\skills", "LOCAL_CORE", "SKILL"),
-    (r"<AI_OS_ROOT>\ecosystem\workforce\subagents", "LOCAL_CORE", "AGENT"),
-    (r"<AI_OS_ROOT>\system\security\QUARANTINE\vetted\repos", "LOCAL_CORE", "REPO"),
-
-    (r"<AI_OS_REMOTE_ROOT>\brain\knowledge\repos", "REMOTE_ECOSYSTEM", "REPO"),
-    (r"<AI_OS_REMOTE_ROOT>\ecosystem\plugins", "REMOTE_ECOSYSTEM", "PLUGIN"),
-    (r"<AI_OS_REMOTE_ROOT>\incoming_repos", "REMOTE_ECOSYSTEM", "REPO"),
-    (r"<AI_OS_REMOTE_ROOT>\ui_dashboard", "REMOTE_ECOSYSTEM", "UI_COMPONENT"),
-    (r"<AI_OS_REMOTE_ROOT>\telegram_bot", "REMOTE_ECOSYSTEM", "GATEWAY"),
-    (r"<AI_OS_REMOTE_ROOT>\routers", "REMOTE_ECOSYSTEM", "ROUTER"),
-    (r"<AI_OS_REMOTE_ROOT>\openclaw", "REMOTE_ECOSYSTEM", "OPENCLAW"),
-    (r"<AI_OS_REMOTE_ROOT>\taskclaw", "REMOTE_ECOSYSTEM", "OPENCLAW"),
+    (os.path.join(ROOT, "brain", "knowledge", "repos"), "LOCAL_CORE", "REPO"),
+    (os.path.join(ROOT, "ecosystem", "plugins"), "LOCAL_CORE", "PLUGIN"),
+    (os.path.join(ROOT, "ecosystem", "tools"), "LOCAL_CORE", "TOOL"),
+    (os.path.join(ROOT, "ecosystem", "skills"), "LOCAL_CORE", "SKILL"),
+    (os.path.join(ROOT, "ecosystem", "workforce", "subagents"), "LOCAL_CORE", "AGENT"),
+    (os.path.join(ROOT, "system", "security", "QUARANTINE", "vetted", "repos"), "LOCAL_CORE", "REPO"),
 ]
 
-REGISTRY_OUT = r"<AI_OS_ROOT>\system\registry\SYSTEM_INDEX.yaml"
+REGISTRY_OUT = os.path.join(ROOT, "system", "registry", "SYSTEM_INDEX.yaml")
 
 def generate_safe_id(name, cat, typ):
     clean = "".join(c if c.isalnum() else "_" for c in name.lower())
@@ -38,10 +31,14 @@ def build_registry():
             ipath = os.path.join(path, item)
             if os.path.isdir(ipath):
                 e_id = generate_safe_id(item, cat, typ)
+                
+                # Make path relative to ROOT to keep it perfectly portable
+                rel_path = os.path.relpath(ipath, ROOT).replace("\\", "/")
+                
                 entities.append({
                     "id": e_id,
                     "name": item,
-                    "path": ipath,
+                    "path": rel_path,
                     "category": cat,
                     "type": typ
                 })

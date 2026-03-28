@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const configPath = '<AI_OS_ROOT>\\.openclaw\\openclaw.json';
+const configPath = (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../..')) + '\\.openclaw\\openclaw.json';
 const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 config.agents.list = config.agents.list.map(agent => {

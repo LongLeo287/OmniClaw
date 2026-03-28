@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 const { execSync } = require('child_process');
 const path = require('path');
-const fs = require('fs');
 
 const args = process.argv.slice(2);
+if (args.length > 1) {
+    console.warn(`⚠️ [Cảnh báo] Lệnh thừa đoạn: "${args.slice(1).join(' ')}" - sẽ bị bỏ qua.`);
+}
 const command = args[0] || 'start';
 
 const rootDir = path.resolve(__dirname, '..');
@@ -15,6 +17,7 @@ if (command === 'setup' || command === 'start') {
         execSync(`powershell -ExecutionPolicy Bypass -File "${setupPath}"`, { stdio: 'inherit', cwd: rootDir });
     } catch (e) {
         console.error("❌ [AI OS] Quá trình thực thi bị gián đoạn hoặc lỗi.");
+        console.error(`Chi tiết lỗi: ${e.message}`);
         process.exit(1);
     }
 } else {

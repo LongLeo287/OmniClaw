@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const configPath = '<AI_OS_ROOT>\\.openclaw\\openclaw.json';
+const configPath = (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../..')) + '\\.openclaw\\openclaw.json';
 const configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 // The exact absolute path to the main shared workspace where all our 87 skills live
-const sharedWorkspace = "<AI_OS_ROOT>\\.openclaw\\workspace";
+const sharedWorkspace = (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../..')) + "\\.openclaw\\workspace";
 
 let updatedCount = 0;
 

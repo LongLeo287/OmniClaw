@@ -19,7 +19,7 @@ const REGISTRY_PATH = path.join(BRAIN_CTX, "SKILL_REGISTRY.json");
 
 // CORS headers — cho phép call từ mọi nguồn (ChatGPT Actions, Gemini, v.v.)
 const CORS = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGIN || "*",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Content-Type": "application/json"
@@ -41,8 +41,15 @@ function readText(filePath) {
 function parseBody(req) {
   return new Promise((resolve) => {
     let body = "";
-    req.on("data", chunk => body += chunk);
+    req.on("data", chunk => {
+      body += chunk.toString();
+      if (body.length > 1e6) {
+        req.destroy();
+        resolve({ error: "Payload too large" });
+      }
+    });
     req.on("end", () => {
+      if (body.length > 1e6) return;
       try { resolve(JSON.parse(body)); } catch { resolve({}); }
     });
   });
@@ -94,8 +101,10 @@ const server = http.createServer(async (req, res) => {
 
   if (pathname === "/api/corp/escalate" && req.method === "POST") {
     const body = await parseBody(req);
+    if (body.error === "Payload too large") return json(res, { error: body.error }, 413);
     const { dept, level, issue } = body;
     if (!dept || !level || !issue) return json(res, { error: "dept, level, issue required" }, 400);
+    if (String(issue).length > 5000) return json(res, { error: "Issue description too long (max 5000 chars)" }, 400);
     const escPath = path.join(CORP_DIR, "escalations.md");
     const existing = fs.existsSync(escPath) ? fs.readFileSync(escPath, "utf-8") : "# Escalations\n\n";
     const ts = new Date().toISOString();

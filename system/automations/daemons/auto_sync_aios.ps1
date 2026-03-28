@@ -1,7 +1,7 @@
 $env:PYTHONIOENCODING = "utf-8"
 $ScriptDir = Split-Path $MyInvocation.MyCommand.Path
 $BaseDir = Split-Path $ScriptDir -Parent | Split-Path -Parent
-$InjectorScript = Join-Path $ScriptDir "aios_context_injector.py"
+$InjectorScript = Join-Path $BaseDir "ops\scripts\aios_context_injector.py"
 
 Write-Host "Starting AI OS Context Auto-Sync loop (every 60s)..."
 

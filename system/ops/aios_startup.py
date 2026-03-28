@@ -41,8 +41,23 @@ def load_json(p):
         return None
 
 def save_json(p, d):
-    with open(p, "w", encoding="utf-8") as f:
-        json.dump(d, f, indent=2, ensure_ascii=False)
+    import time
+    lock_path = str(p) + ".lock"
+    for _ in range(50):
+        if not (ROOT / lock_path if isinstance(lock_path, str) else lock_path).exists(): break
+        time.sleep(0.05)
+    try:
+        with open(lock_path, "w") as lf: lf.write("1")
+        tmp_path = str(p) + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=2, ensure_ascii=False)
+        import os
+        os.replace(tmp_path, p)
+    finally:
+        try:
+            import os
+            if os.path.exists(lock_path): os.remove(lock_path)
+        except: pass
 
 def _env():
     env, p = {}, ROOT / ".env"

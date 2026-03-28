@@ -4,9 +4,17 @@ Chỉ gồm: TỔNG KẾT + OVERVIEW TABLE (tất cả) + Top 50 APPROVE DETAIL 
 """
 import os, re, datetime
 
-BASE = r'<AI_OS_ROOT>\storage\vault\DATA'
-SRC = os.path.join(BASE, 'repo_intake_report_API_b1651_2026-03-27.md')
-ARTIFACTS = r'<USER_PROFILE>\.gemini\antigravity\brain\c62dcae9-e343-4924-9d8a-09cb97db93a4'
+import glob
+
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE = os.path.join(ROOT, 'storage', 'vault', 'DATA')
+
+reports = glob.glob(os.path.join(BASE, 'repo_intake_report_*.md'))
+if not reports:
+    print("No input report found.")
+    exit(1)
+SRC = max(reports, key=os.path.getctime)
+ARTIFACTS = BASE
 
 with open(SRC, 'r', encoding='utf-8') as f:
     content = f.read()
@@ -105,7 +113,7 @@ full = '\n'.join(report) if isinstance(report, list) else report
 # Actually we joined strings so:
 full_text = ''.join(report)
 
-OUT = os.path.join(ARTIFACTS, 'repo_intake_summary_2026-03-27.md')
+OUT = os.path.join(ARTIFACTS, f'repo_intake_summary_{date_str}.md')
 with open(OUT, 'w', encoding='utf-8') as f:
     f.write(full_text)
 

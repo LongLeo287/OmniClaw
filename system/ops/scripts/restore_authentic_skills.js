@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const root = '<AI_OS_ROOT>';
+const root = (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../..')) + '';
 const workspaceSkills = path.join(root, '.openclaw\\workspace\\skills');
 const allSkillsFile = path.join(root, 'all_skills.txt');
 

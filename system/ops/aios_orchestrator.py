@@ -32,6 +32,7 @@ try:
     _AGENT_BUS   = _AgentBus()
     _LTM_ONLINE  = True
 except Exception as _e:
+    print(f"[!] Cảnh báo: LTM/AgentBus Offline do lỗi - {_e}")
     _LTM_ONLINE = False
     _MEMORY_CORE = None
     _AGENT_BUS   = None
@@ -183,8 +184,21 @@ def load_json(path):
     except: return {}
 
 def save_json(path, data, indent=2):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=indent, ensure_ascii=False)
+    import time, os
+    lock_path = str(path) + ".lock"
+    for _ in range(50):
+        if not os.path.exists(lock_path): break
+        time.sleep(0.05)
+    try:
+        with open(lock_path, "w") as lf: lf.write("1")
+        tmp_path = str(path) + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=indent, ensure_ascii=False)
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(lock_path):
+            try: os.remove(lock_path)
+            except: pass
 
 def log(msg, level="INFO"):
     icon = {"INFO": "ℹ️", "OK": "✅", "WARN": "⚠️", "ERR": "❌", "ROUTE": "🔀", "DISPATCH": "📤"}.get(level, "•")

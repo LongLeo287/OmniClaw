@@ -4,16 +4,19 @@ import json
 import warnings
 warnings.filterwarnings("ignore")
 
-ENV_PATH = r"<AI_OS_ROOT>\system\ops\secrets\MASTER.env"
-DB_PATH = r"<AI_OS_ROOT>\brain\memory\qdrant_db"
+ROOT = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+ENV_PATH = os.path.join(ROOT, "system", "ops", "secrets", "MASTER.env")
+DB_PATH = os.path.join(ROOT, "brain", "memory", "qdrant_db")
 
 def load_env():
     if os.path.exists(ENV_PATH):
         with open(ENV_PATH, 'r', encoding='utf-8', errors='ignore') as f:
             for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'): continue
                 if '=' in line:
-                    key, val = line.strip().split('=', 1)
-                    os.environ[key] = val
+                    key, val = line.split('=', 1)
+                    os.environ[key.strip()] = val.strip()
 
 load_env()
 gemini_key = os.environ.get('GOOGLE_AI_API_KEY', '')

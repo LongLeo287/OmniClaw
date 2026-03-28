@@ -1,9 +1,12 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """audit_aios.py â€” Full AI OS Audit Script"""
-import os, json, subprocess, re
+import os, json, subprocess, re, sys, io
 from datetime import datetime, date
 
-ROOT = os.environ.get("AOS_ROOT", ".")
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+ROOT = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
 NOW = datetime.now().isoformat()
 
 issues = []
@@ -118,8 +121,8 @@ for port, name in PORT_MAP.items():
         try:
             with urlopen(Request(url), timeout=1) as r:
                 INFO("ports", f":{port} ONLINE  â€” {name}")
-        except:
-            INFO("ports", f":{port} offline â€” {name}")
+        except Exception as e:
+            INFO("ports", f":{port} offline â€” {name} ({type(e).__name__})")
 
 # â”€â”€â”€ 5. PLUGINS COVERAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 print("=== 5. PLUGINS ===")

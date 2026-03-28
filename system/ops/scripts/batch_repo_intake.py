@@ -86,7 +86,8 @@ def github_get_readme(owner, repo, token):
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             return resp.read().decode('utf-8', errors='ignore')  # FULL README
-    except:
+    except urllib.error.URLError as e:
+        sys.stderr.write(f"[!] Lỗi kết nối GitHub khi lấy README: {e}\n")
         return None
 
 def github_get_meta(owner, repo, token):
@@ -98,7 +99,8 @@ def github_get_meta(owner, repo, token):
     try:
         with urllib.request.urlopen(req, timeout=10) as resp:
             return json.loads(resp.read().decode('utf-8'))
-    except:
+    except urllib.error.URLError as e:
+        sys.stderr.write(f"[!] Lỗi kết nối GitHub khi lấy Meta: {e}\n")
         return {}
 
 def write_knowledge_note(full_name, meta, readme, status='ACTIVE', overwrite=True):

@@ -88,7 +88,9 @@ CHECKS = [
 # ─── Telegram Notify ─────────────────────────────────────────────────────────
 def send_telegram(text: str):
     if not TOKEN or not CHAT_ID:
+        print("[!] Telegram config missing (TOKEN or CHAT_ID). Alert skipped.")
         return
+    text = text[:4090]
     try:
         payload = json.dumps({"chat_id": CHAT_ID, "text": text, "parse_mode": "Markdown"}).encode()
         req = Request(

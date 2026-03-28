@@ -12,8 +12,11 @@ def get_github_token():
     if os.path.exists(ENV_FILE):
         with open(ENV_FILE, 'r', encoding='utf-8') as f:
             for line in f:
+                line = line.strip()
+                if line.startswith('#'): continue
                 if line.startswith('GITHUB_TOKEN='):
-                    return line.strip().split('=', 1)[1]
+                    val = line.split('=', 1)[1].strip()
+                    if val: return val.strip('"\'')
     return None
 
 def fetch_repo_meta(full_name, token):
@@ -42,6 +45,10 @@ def fetch_repo_readme(full_name, token):
 
 def integrate_repo(full_name):
     print(f"🔄 Đang tiến hành nạp Repo: {full_name}...")
+    if full_name.count('/') != 1:
+        print(f"❌ Lỗi: '{full_name}' không đúng định dạng owner/repo!")
+        return False
+
     token = get_github_token()
     meta = fetch_repo_meta(full_name, token)
     if not meta: return False

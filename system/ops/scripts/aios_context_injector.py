@@ -8,7 +8,8 @@ from pathlib import Path
 from datetime import datetime
 
 ROOT = Path(__file__).parent.parent.parent.parent
-NC_WS = Path(os.environ['USERPROFILE']) / '.nullclaw' / 'workspace'
+PORT = os.environ.get("CLAWTASK_PORT", "7474")
+NC_WS = Path.home() / '.nullclaw' / 'workspace'
 NC_WS.mkdir(parents=True, exist_ok=True)
 OUT   = NC_WS / 'AIOS_CONTEXT.md'
 NOW   = datetime.now().strftime('%Y-%m-%d %H:%M')
@@ -31,7 +32,7 @@ except Exception as e:
 
 # 1. ClawTask tasks — inject ALL pending tasks
 try:
-    ct_status = json.loads(urllib.request.urlopen('http://localhost:7474/api/status', timeout=4).read())
+    ct_status = json.loads(urllib.request.urlopen(f'http://localhost:{PORT}/api/status', timeout=4).read())
     counts = ct_status.get('counts', {})
     lines.append(f"## Tong quan ClawTask")
     lines.append(f"- Total: {counts.get('total',0)} tasks")
@@ -40,7 +41,7 @@ try:
     lines.append(f"- Done: {counts.get('done',0)}")
     lines.append("")
 
-    ct_raw = urllib.request.urlopen('http://localhost:7474/api/tasks', timeout=4).read()
+    ct_raw = urllib.request.urlopen(f'http://localhost:{PORT}/api/tasks', timeout=4).read()
     ct_tasks = json.loads(ct_raw)
     task_list = ct_tasks.get('tasks', ct_tasks) if isinstance(ct_tasks, dict) else ct_tasks
 
@@ -93,12 +94,12 @@ except Exception as _ltm_e:
     print(f"LTM err: {_ltm_e}")
 
 try:
-    bb = json.loads((ROOT / 'brain/shared-context/blackboard.json').read_text(encoding='utf-8-sig', errors='replace'))
+    bb = json.loads((ROOT / 'brain/shared-context/blackboard.json').read_text(encoding='utf-8-sig'))
     cycle  = bb.get('cycle', '?')
     n_task = bb.get('total_tasks', '?')
     lines.append(f"## AI OS Corp Status")
     lines.append(f"- Cycle: {cycle} | Total tasks tracked: {n_task}")
-    lines.append(f"- Workspace: <AI_OS_ROOT>")
+    lines.append(f"- Workspace: {ROOT}")
     lines.append("")
     print(f"Blackboard: cycle={cycle}")
 except Exception as e:
@@ -106,7 +107,7 @@ except Exception as e:
 
 # 3. Agents
 try:
-    reg    = json.loads((ROOT / 'kho/agents/registry.json').read_text(encoding='utf-8'))
+    reg    = json.loads((ROOT / 'brain/shared-context/agent_profiles.json').read_text(encoding='utf-8'))
     agents = reg.get('agents', [])
     active = [a['id'] for a in agents if a.get('status') == 'ACTIVE']
     stub   = [a['id'] for a in agents if a.get('status') == 'STUB']
@@ -146,7 +147,7 @@ except Exception as e:
 # 6. Workspace map (top level)
 try:
     dirs = [d.name for d in ROOT.iterdir() if d.is_dir() and not d.name.startswith('.')]
-    lines.append("## Workspace Directories (<AI_OS_ROOT>)")
+    lines.append(f"## Workspace Directories ({ROOT})")
     lines.append(f"- {', '.join(dirs)}")
     lines.append("")
     print(f"Workspace: {len(dirs)} dirs")
