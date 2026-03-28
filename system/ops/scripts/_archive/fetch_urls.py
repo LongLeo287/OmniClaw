@@ -8,8 +8,8 @@ def fetch(url):
         with urllib.request.urlopen(req, timeout=10) as response:
             html = response.read().decode('utf-8')
             # Extract basic text (Avoid regex catastrophic backtracking / ReDoS)
-            text = re.sub(r'<style[^>]*>[\s\S]*?</style>', '', html, flags=re.IGNORECASE)
-            text = re.sub(r'<script[^>]*>[\s\S]*?</script>', '', text, flags=re.IGNORECASE)
+            text = re.sub(r'<style[^>]*>[\s\S]*?</style[^>]*>', '', html, flags=re.IGNORECASE)
+            text = re.sub(r'<script[^>]*>[\s\S]*?</script[^>]*>', '', text, flags=re.IGNORECASE)
             text = re.sub(r'<[^>]+>', ' ', text)
             text = re.sub(r'\s+', ' ', text).strip()
             print(f"--- CONTENT FOR {url} ---\n{text[:2500]}\n")
