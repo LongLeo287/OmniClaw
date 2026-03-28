@@ -1,46 +1,38 @@
-# 🔒 Security Policy for AI OS CORP
+# Security Policy
 
-*Đọc bản [Tiếng Việt (Vietnamese version) tại đây](SECURITY_vi.md).*
+## 🛡️ The OmniClaw Zero-Trust Commitment
 
-> **"Code is Law. Security is the Foundation."**
-> — THE AI OS ZERO-TRUST DIRECTIVE
+OmniClaw is built on a strict **Zero-Trust Architecture**. Our core philosophy is that your local machine is a fortress, and no data—especially API keys, environment variables, or proprietary source code—should ever leave it without explicit, manual authorization. 
 
-The AI OS CORP operates on a **STRICT ZERO-TRUST ARCHITECTURE**. We take the security of this monolithic ecosystem extremely seriously and appreciate responsible vulnerability disclosures.
+The system utilizes automated background daemons (`omniclaw_cleaner.py`) and specialized agents (**Dept 10 - Strix Security**) to sanitize memory, rewrite git histories, and purge ephemeral data after every session.
 
----
+## Supported Versions
 
-## 🟢 Supported Versions
+We actively provide security updates and patches for the following versions of the OmniClaw Core:
 
-We currently provide active security updates exclusively for the leading edge branch:
-
-| Version | Supported |
-| --- | --- |
-| `main` | ✅ |
-| `<= 11.x.x` | ❌ |
-
-*(Note: We only patch vulnerabilities on the `main` branch. Older monolithic versions are deprecated and must be upgraded to the latest commit).*
-
----
+| Version | Supported          | Notes |
+| ------- | ------------------ | ----- |
+| 12.0.x  | :white_check_mark: | Current Active Cycle |
+| < 12.0  | :x:                | Deprecated (Pre-Rebrand) |
 
 ## 🚨 Reporting a Vulnerability
 
-**DO NOT CREATE PUBLIC ISSUES FOR EXPLOITS!**
+If you discover a security vulnerability, a sandbox escape, or a scenario where an Agent bypasses the Zero-Trust local containment, please **DO NOT** open a public GitHub Issue. 
 
-If you have discovered a critical security vulnerability, an API Key bleed, an arbitrary code execution (RCE) flaw in one of the AI Agents, or a CIV quarantine bypass, please report it privately:
+Publicly disclosing a vulnerability could put other users' local instances at risk before a patch can be deployed.
 
-1. **Email:** [Send a confidential email to the CEO / Lead Operator]
-2. **GitHub Security Advisories:** Use the "Report a vulnerability" button directly on our Security tab.
+**Please report it directly to our Security Department (Dept 10):**
+1. Navigate to the **[Security tab](../../security/advisories)** in this repository.
+2. Click **Report a vulnerability** to open a private advisory.
+3. Provide a detailed summary of the exploit, including steps to reproduce the bypass.
 
-We will acknowledge your report within 48 hours and work with you to test, patch, and deploy a hotfix before the vulnerability is made public.
+*Alternatively, if you prefer email, please reach out to the project maintainers directly.*
+
+### Triage & Resolution Process
+1. **Intake:** Dept 10 will acknowledge receipt of your vulnerability report within 48 hours.
+2. **Investigation:** Our core team will isolate the issue and verify the sandbox escape or data leak.
+3. **Eradication:** A hotfix will be developed and pushed to the `main` branch. 
+4. **Disclosure:** Once the patch is confirmed and distributed, we will publicly disclose the vulnerability and appropriately credit you for the discovery.
 
 ---
-
-## 🛡️ Best Practices for Reporting
-
-When submitting a security report, please include:
-
-* A clear description of the vulnerability and its potential impact.
-* The specific Agent (e.g., Nova, Strix, Antigravity), Tool, Workflow, or Skill that triggered the exploit.
-* Step-by-step instructions or an active Proof of Concept (PoC) to reproduce the vulnerability safely in a local environment.
-
-We deeply appreciate your efforts to keep the AI OS ecosystem secure!
+*“Trust nothing. Verify everything. Purge the rest.”* — **Dept 10 (Strix Security)**
