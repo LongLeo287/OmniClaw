@@ -30,18 +30,18 @@ Total Unique Issues: 118
 - [x] [HIGH][registry_indexer.py] Generates SYSTEM_INDEX.yaml With Unresolved Placeholders -- Root Cause of #109
 - [x] [HIGH][vet_media_docs.py] check_magic_bytes() Returns Inconsistent Types -- bool vs (bool, str) Tuple
 - [x] [HIGH][mem0_adapter.py] LOG_DIR Writes to ecosystem/telemetry/ Instead of Repo Root telemetry/
-- [ ] [HIGH][plugin-lazy-load.md] References Non-Existent plugin_sandbox.py -- Tier 2 Plugin Workflow Broken
-- [ ] [HIGH][Orchestrator Pro] Fallback Authority Completely Undefined -- No Governance Coverage
+- [x] [HIGH][plugin-lazy-load.md] References Non-Existent plugin_sandbox.py -- Tier 2 Plugin Workflow Broken
+- [x] [HIGH][Orchestrator Pro] Fallback Authority Completely Undefined -- No Governance Coverage
 - [x] [HIGH][blackboard.json] Missing CIV Tracking Fields -- Content Intake Pipeline Cannot Store State
 - [x] [HIGH][aos.py] Wrong Script Directory Path -- system/ops/scripts vs ops/scripts
 - [x] [HIGH][phase7_retro.py] ROOT Only 1 Level Up -- All Paths Resolve to Non-Existent system/ops/brain/
 - [x] [HIGH][corp-data/index.js] Prototype Pollution via Unvalidated JSON Keys
 - [x] [HIGH][corp-data/index.js] Wrong Path — get_org_chart Tool Always Returns Not Found
-- [ ] [HIGH][loader.js] Logic Error — preferLocal Overrides Routing Rules Without Fallback
+- [x] [HIGH][loader.js] Logic Error — preferLocal Overrides Routing Rules Without Fallback
 - [x] [HIGH][loader.js] Memory Leak — HTTP Health Check Response Not Drained
 - [x] [HIGH][memory_daemon.py + aios_context_injector.py] Hardcoded <AI_OS_ROOT> + Windows-Only USERPROFILE
-- [ ] [HIGH][GOVERNANCE.md] Dept 18 Assigned Twice — Numbering Conflict
-- [ ] [HIGH][.github/workflows] Dependabot Auto-Merge Bypasses Human Review + CI Validates Non-Existent Files
+- [x] [HIGH][GOVERNANCE.md] Dept 18 Assigned Twice — Numbering Conflict
+- [x] [HIGH][.github/workflows] Dependabot Auto-Merge Bypasses Human Review + CI Validates Non-Existent Files
 - [x] [HIGH][aios_code_polisher.py] Return Type Mismatch — Returns False Instead of int
 - [ ] [HIGH][Python Files] SyntaxWarning: Invalid Escape Sequences — Will Break Python 3.14+
 - [ ] [HIGH][aios_deep_cleaner.py + audit_aios.py] Mojibake Encoding Corruption in Error Messages
