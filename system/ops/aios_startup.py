@@ -37,12 +37,29 @@ def load_json(p):
     try:
         with open(p, encoding="utf-8-sig") as f:
             return json.load(f)
-    except:
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
         return None
 
 def save_json(p, d):
-    with open(p, "w", encoding="utf-8") as f:
-        json.dump(d, f, indent=2, ensure_ascii=False)
+    import time, os
+    lock_path = str(p) + ".lock"
+    for _ in range(50):
+        try:
+            fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.close(fd)
+            break
+        except FileExistsError:
+            time.sleep(0.05)
+    try:
+        tmp_path = str(p) + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=2, ensure_ascii=False)
+        os.replace(tmp_path, p)
+    finally:
+        try:
+            if os.path.exists(lock_path): os.remove(lock_path)
+        except OSError:
+            pass
 
 def _env():
     env, p = {}, ROOT / ".env"

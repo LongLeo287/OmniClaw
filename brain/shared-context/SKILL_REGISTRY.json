@@ -257,6 +257,17 @@
             "agents": [
                 "all"
             ]
+        },
+        {
+            "name": "dependabot-secretary",
+            "desc": "Analyzes Dependabot PRs and manages dependencies automatically",
+            "tier": "tier2",
+            "path": "ecosystem/skills/dependabot-secretary",
+            "status": "active",
+            "agents": [
+                "Claude Code",
+                "Antigravity"
+            ]
         }
     ]
 }

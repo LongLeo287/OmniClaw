@@ -9,8 +9,14 @@ const { ListToolsRequestSchema, CallToolRequestSchema } = require("@modelcontext
 const fs = require("fs");
 const path = require("path");
 
-const CORP_DIR = process.env.CORP_DIR || "<AI_OS_ROOT>/shared-context/corp";
-const AOS_ROOT = process.env.AOS_ROOT || "<AI_OS_ROOT>";
+const AOS_ROOT = process.env.AOS_ROOT || path.resolve(__dirname, '../../../../..');
+// brain/shared-context/corp — fixed path (was missing brain/ prefix)
+const CORP_DIR = process.env.CORP_DIR || path.join(AOS_ROOT, 'brain', 'shared-context', 'corp');
+
+const safeJSONParse = (content, fallback) => {
+  try { return JSON.parse(content); }
+  catch(e) { return fallback; }
+};
 
 const server = new Server(
   { name: "corp-data", version: "1.0.0" },
@@ -81,7 +87,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === "get_kpi_board") {
       const kpiPath = path.join(CORP_DIR, "kpi_scoreboard.json");
       if (!fs.existsSync(kpiPath)) return { content: [{ type: "text", text: "KPI scoreboard not found" }] };
-      const data = JSON.parse(fs.readFileSync(kpiPath, "utf-8"));
+      const data = safeJSONParse(fs.readFileSync(kpiPath, "utf-8"), {});
       if (args.dept) {
         const deptData = data[args.dept] || data.departments?.[args.dept];
         return { content: [{ type: "text", text: JSON.stringify(deptData, null, 2) }] };
@@ -90,8 +96,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "update_kpi") {
+      // Prototype pollution guard — block dangerous key names
+      const DANGEROUS_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+      if (DANGEROUS_KEYS.has(args.dept) || DANGEROUS_KEYS.has(args.metric)) {
+        return { content: [{ type: "text", text: "Invalid dept or metric name" }], isError: true };
+      }
       const kpiPath = path.join(CORP_DIR, "kpi_scoreboard.json");
-      const data = fs.existsSync(kpiPath) ? JSON.parse(fs.readFileSync(kpiPath, "utf-8")) : {};
+      const data = fs.existsSync(kpiPath) ? safeJSONParse(fs.readFileSync(kpiPath, "utf-8"), {}) : {};
       if (!data.departments) data.departments = {};
       if (!data.departments[args.dept]) data.departments[args.dept] = {};
       data.departments[args.dept][args.metric] = { value: args.value, updated: ts };
@@ -128,7 +139,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     }
 
     if (name === "get_org_chart") {
-      const orgPath = path.join(AOS_ROOT, "corp", "org_chart.yaml");
+      const orgPath = path.join(AOS_ROOT, "brain", "corp", "org_chart.yaml");
       const content = fs.existsSync(orgPath) ? fs.readFileSync(orgPath, "utf-8") : "Org chart not found";
       return { content: [{ type: "text", text: content }] };
     }

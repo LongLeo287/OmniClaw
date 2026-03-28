@@ -9,7 +9,7 @@ import os
 import sys
 import ast
 
-ROOT_DIR = os.environ.get("AOS_ROOT", ".")
+ROOT_DIR = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
 TARGET_DIRS = ["system", "tools", "brain", "ecosystem", "launcher", "storage"]
 
 def fix_encoding(filepath):
@@ -17,7 +17,7 @@ def fix_encoding(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             f.read()
-            return False # already good
+            return 0  # already good
     except UnicodeDecodeError:
         pass
 
@@ -27,10 +27,10 @@ def fix_encoding(filepath):
             content = f.read()
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
-        return True
+        return 1
     except Exception as e:
         print(f"  [!] Failed to fix encoding for {filepath}: {e}")
-        return False
+        return 0
 
 def format_clean_code(content):
     """Basic cleanliness: strip trailing whitespace, normalize line endings."""
@@ -50,7 +50,7 @@ def inject_english_docstrings(filepath):
         tree = ast.parse(content)
     except Exception as e:
         print(f"  [!] Syntax/Logic Error in {filepath}: {e}")
-        return False
+        return -1
 
     lines = content.splitlines()
     injected = 0
@@ -93,7 +93,8 @@ def run_polisher():
         if not os.path.exists(walk_dir): continue
 
         for root, dirs, files in os.walk(walk_dir):
-            if any(skip in root for skip in ["QUARANTINE", ".git", "node_modules", ".venv", "site-packages", "__pycache__", os.path.join("knowledge", "repos")]):
+            norm_root = root.replace('\\', '/')
+            if any(skip in norm_root for skip in ["QUARANTINE", ".git", "node_modules", ".venv", "site-packages", "__pycache__", "knowledge/repos"]):
                 continue
 
             for file in files:
@@ -119,10 +120,10 @@ def run_polisher():
 
                         # Inject docstrings
                         added = inject_english_docstrings(filepath)
-                        if added is not False and added > 0:
+                        if added > 0:
                             docstrings_added += added
                             print(f"  [+] Added {added} docstrings to {filepath}")
-                        elif added is False:
+                        elif added < 0:
                             syntax_errors += 1
                     except Exception as e:
                         pass # Ignore unresolved binary/read issues

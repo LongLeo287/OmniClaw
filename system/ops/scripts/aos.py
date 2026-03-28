@@ -49,8 +49,24 @@ def load_json(path, default=None):
     return default or {}
 
 def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    import time, os
+    lock_path = str(path) + ".lock"
+    for _ in range(50):
+        try:
+            fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.close(fd)
+            break
+        except FileExistsError:
+            time.sleep(0.05)
+    try:
+        tmp_path = str(path) + ".tmp"
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        os.replace(tmp_path, path)
+    finally:
+        if os.path.exists(lock_path):
+            try: os.remove(lock_path)
+            except: pass
 
 def _now():
     return datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
@@ -124,8 +140,11 @@ def cmd_hud_update():
     """Update HUD via update_hud.ps1."""
     if os.path.exists(HUD_PS1):
         print(f"{CYAN}Updating HUD...{RESET}")
-        subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-NoProfile", "-File", HUD_PS1], check=False)
-        print(f"{GREEN}✅ HUD updated{RESET}")
+        try:
+            subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-NoProfile", "-File", HUD_PS1], check=True)
+            print(f"{GREEN}✅ HUD updated{RESET}")
+        except subprocess.CalledProcessError as e:
+            print(f"{RED}❌ HUD update failed: {e}{RESET}")
     else:
         print(f"{YELLOW}HUD script not found: {HUD_PS1}{RESET}")
 
@@ -177,7 +196,7 @@ def cmd_status():
 
 def cmd_retro():
     """Run Phase 7 — Reflect + Propose."""
-    script = os.path.join(ROOT, "ops", "phase7_retro.py")
+    script = os.path.join(ROOT, "system", "ops", "scripts", "phase7_retro.py")
     if os.path.exists(script):
         print(f"{CYAN}Running Phase 7 (Reflect + Propose)...{RESET}")
         subprocess.run([sys.executable, script], check=True)
@@ -304,7 +323,7 @@ def main():
 def cmd_intake(args):
     """C1: CEO paste link/text → CIV pipeline auto-classify + receipt"""
     import sys
-    _scripts = os.path.join(ROOT, "ops", "scripts")
+    _scripts = os.path.join(ROOT, "system", "ops", "scripts")
     source = " ".join(args) if args else ""
     if not source:
         print(f"{RED}Usage: aos intake <url_or_text>{RESET}")
@@ -389,7 +408,7 @@ def cmd_project(args):
         if dept: print(f"  Dept: {dept}")
         print(f"{CYAN}{'='*60}{RESET}")
 
-        resolver = os.path.join(ROOT, "ops", "scripts", "repo_resolver.py")
+        resolver = os.path.join(ROOT, "system", "ops", "scripts", "repo_resolver.py")
         cmd = [sys.executable, resolver]
         if dept:
             cmd += ["--dept", dept]

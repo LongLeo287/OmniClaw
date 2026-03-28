@@ -6,7 +6,7 @@
         "task_id": "NONE",
         "description": "Chế độ chờ",
         "workspace_id": "AI-OS",
-        "workspace_path": "<AI_OS_ROOT>",
+        "workspace_path": ".",
         "task_file": "",
         "priority": "LOW"
     },
@@ -28,5 +28,7 @@
     "corp_cycle_status": "IDLE",
     "last_retro": "2026-03-28T02:35:00",
     "last_dispatch": "2026-03-28T02:35:00",
-    "dispatch_signal": "DISPATCH_IDLE"
+    "dispatch_signal": "DISPATCH_IDLE",
+    "corp_cycle_number": 3,
+    "corp_cycle_date": "2026-03-28"
 }

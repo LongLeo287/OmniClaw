@@ -17,9 +17,10 @@ const BRAIN_CTX = path.join(AOS_ROOT, "brain/shared-context");
 const CORP_DIR = path.join(BRAIN_CTX, "corp");
 const REGISTRY_PATH = path.join(BRAIN_CTX, "SKILL_REGISTRY.json");
 
-// CORS headers — cho phép call từ mọi nguồn (ChatGPT Actions, Gemini, v.v.)
+// CORS headers — Restrict allowing all origins, default to localhost
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://127.0.0.1:7474";
 const CORS = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": allowedOrigin,
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Content-Type": "application/json"
@@ -31,7 +32,12 @@ function json(res, data, status = 200) {
 }
 
 function readJson(filePath) {
-  return fs.existsSync(filePath) ? JSON.parse(fs.readFileSync(filePath, "utf-8")) : null;
+  try {
+    return fs.existsSync(filePath) ? JSON.parse(fs.readFileSync(filePath, "utf-8")) : null;
+  } catch (e) {
+    console.error(`[API Error] JSON parse fail for ${filePath}: ${e.message}`);
+    return null;
+  }
 }
 
 function readText(filePath) {
@@ -41,14 +47,37 @@ function readText(filePath) {
 function parseBody(req) {
   return new Promise((resolve) => {
     let body = "";
-    req.on("data", chunk => body += chunk);
+    req.on("data", chunk => {
+      body += chunk.toString();
+      if (body.length > 1e6) {
+        req.destroy();
+        resolve({ error: "Payload too large" });
+      }
+    });
     req.on("end", () => {
-      try { resolve(JSON.parse(body)); } catch { resolve({}); }
+      if (body.length > 1e6) return;
+      try { resolve(JSON.parse(body)); } catch(e) { 
+        console.warn(`[API Warn] parseBody JSON error: ${e.message}`);
+        resolve({}); 
+      }
     });
   });
 }
 
+const requestCounts = new Map();
+// Reset rate limits every minute
+setInterval(() => requestCounts.clear(), 60000);
+
 const server = http.createServer(async (req, res) => {
+  const ip = req.socket.remoteAddress || "unknown";
+  const count = (requestCounts.get(ip) || 0) + 1;
+  requestCounts.set(ip, count);
+  if (count > 120) {
+    res.writeHead(429, CORS);
+    res.end(JSON.stringify({ error: "Too Many Requests - Rate limit exceeded" }));
+    return;
+  }
+
   const { pathname, query } = url.parse(req.url, true);
 
   // CORS preflight
@@ -94,8 +123,10 @@ const server = http.createServer(async (req, res) => {
 
   if (pathname === "/api/corp/escalate" && req.method === "POST") {
     const body = await parseBody(req);
+    if (body.error === "Payload too large") return json(res, { error: body.error }, 413);
     const { dept, level, issue } = body;
     if (!dept || !level || !issue) return json(res, { error: "dept, level, issue required" }, 400);
+    if (String(issue).length > 5000) return json(res, { error: "Issue description too long (max 5000 chars)" }, 400);
     const escPath = path.join(CORP_DIR, "escalations.md");
     const existing = fs.existsSync(escPath) ? fs.readFileSync(escPath, "utf-8") : "# Escalations\n\n";
     const ts = new Date().toISOString();
@@ -132,20 +163,18 @@ const server = http.createServer(async (req, res) => {
     const task = query.task || "qa";
     const routerPath = path.join(AOS_ROOT, "infra/llm/router.yaml");
     if (!fs.existsSync(routerPath)) return json(res, { error: "Router not configured" }, 404);
-    // Simple parse: find the task block
-    const content = fs.readFileSync(routerPath, "utf-8");
-    const lines = content.split("\n");
-    let inTask = false, result = {};
-    for (const line of lines) {
-      if (line.trim() === `${task}:`) { inTask = true; continue; }
-      if (inTask && line.match(/^  \w/)) {
-        const [k, v] = line.trim().split(": ");
-        result[k] = v;
-        if (Object.keys(result).length >= 4) break;
+    
+    try {
+      const yaml = require("js-yaml");
+      const parsedYaml = yaml.load(fs.readFileSync(routerPath, "utf-8"));
+      if (parsedYaml && parsedYaml[task]) {
+        return json(res, { task, ...parsedYaml[task] });
       }
-      if (inTask && line.match(/^\w/)) break;
+      return json(res, { task, ...parsedYaml.default || { provider: "gemini", model: "gemini-2.5-flash" } });
+    } catch (e) {
+      console.error(`[API Error] YAML parse fail for ${routerPath}: ${e.message}`);
+      return json(res, { error: "Failed to parse router configuration" }, 500);
     }
-    return json(res, { task, ...result });
   }
 
   // === PLUGINS ===

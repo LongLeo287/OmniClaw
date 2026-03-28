@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const targetFile = '<AI_OS_ROOT>\\plugins\\openclaw\\ui\\src\\ui\\views\\agents-panels-tools-skills.ts';
+const targetFile = (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../..')) + '\\plugins\\openclaw\\ui\\src\\ui\\views\\agents-panels-tools-skills.ts';
 let content = fs.readFileSync(targetFile, 'utf8');
 
 const replacements = [

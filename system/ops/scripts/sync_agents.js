@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const rootDir = '<AI_OS_ROOT>';
+const rootDir = (process.env.AOS_ROOT || require('path').resolve(__dirname, '../../..')) + '';
 const activationFile = path.join(rootDir, 'brain', 'agents', 'activation_status.json');
 const openClawJsonPath = path.join(rootDir, '.openclaw', 'openclaw.json');
 const agentsDir = path.join(rootDir, '.openclaw', 'agents');

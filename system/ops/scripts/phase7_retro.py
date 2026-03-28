@@ -11,9 +11,10 @@ import os
 import shutil
 from datetime import datetime, date
 
+from pathlib import Path
 TODAY     = date.today().isoformat()          # 2026-03-22
 NOW       = datetime.now().isoformat()
-ROOT      = os.path.normpath(os.path.join(os.path.dirname(__file__), ".."))
+ROOT      = str(Path(__file__).resolve().parents[3])
 CORP      = os.path.join(ROOT, "brain", "shared-context", "corp")
 PROPOSALS = os.path.join(CORP, "proposals")
 BRIEFS    = os.path.join(CORP, "daily_briefs")
@@ -256,8 +257,8 @@ if os.path.exists(BB_PATH):
     try:
         with open(BB_PATH, "r", encoding="utf-8") as f:
             bb = json.load(f)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"    [!] Error reading blackboard: {e}")
 
 bb["corp_cycle_status"] = "IDLE"
 bb["last_phase7"] = NOW
@@ -279,8 +280,8 @@ if os.path.exists(KPI_PATH):
     try:
         with open(KPI_PATH, "r", encoding="utf-8") as f:
             kpi = json.load(f)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"    [!] Error reading KPI scoreboard: {e}")
 
 kpi["last_updated"]  = NOW
 kpi["last_cycle"]    = TODAY

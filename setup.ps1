@@ -1,4 +1,4 @@
-﻿# ===========================================================
+# ===========================================================
 #  AI OS CORP — UNIFIED BOOTSTRAPPER & DASHBOARD
 # ===========================================================
 $ErrorActionPreference = "Continue"
@@ -6,7 +6,15 @@ $RepoRoot = $PSScriptRoot
 $AiosRoot = $PSScriptRoot
 $Date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 
-# Check if OS is already initialized
+$RestartCountStr = $env:AOS_SETUP_RESTARTS
+if ([string]::IsNullOrWhiteSpace($RestartCountStr)) { $RestartCountStr = "0" }
+$RestartCount = [int]::Parse($RestartCountStr)
+if ($RestartCount -gt 5) {
+    Write-Error "[CRITICAL] Unbounded recursion detected in setup.ps1. Halting."
+    exit 1
+}
+
+while ($true) {
 $ConfigPath = Join-Path $RepoRoot ".aios_config"
 
 if (Test-Path $ConfigPath) {
@@ -56,7 +64,7 @@ if (Test-Path $ConfigPath) {
         git pull origin main
         Write-Host "Cập nhật hoàn tất! Bấm phím bất kỳ để tải lại giao diện..." -ForegroundColor Green
         $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-        .\setup.ps1
+        continue
     } elseif ($choice -eq '0') {
         Write-Host "OS shutdown signal received." -ForegroundColor DarkGray
     } else {
@@ -151,6 +159,13 @@ if (Test-Path $ConfigPath) {
         $installerPath = Join-Path $env:TEMP "OllamaSetup.exe"
         try {
             Invoke-WebRequest -Uri $installerUrl -OutFile $installerPath -UseBasicParsing
+            Write-Host "  [+] Verifying Authenticode Signature..." -ForegroundColor Cyan
+            $sig = Get-AuthenticodeSignature -FilePath $installerPath
+            if ($sig.Status -ne "Valid") {
+                Write-Host "  [!] SECURITY FATAL: OllamaSetup.exe signature is invalid or not signed. Aborting install." -ForegroundColor Red
+                Remove-Item $installerPath -Force
+                exit 1
+            }
             Write-Host "  $txtOllamaDown" -ForegroundColor Magenta
             Start-Process -FilePath $installerPath -ArgumentList "/S" -Wait
             Write-Host "  $txtOllamaOk" -ForegroundColor Green
@@ -197,7 +212,9 @@ if (Test-Path $ConfigPath) {
                 }
                 Write-Host "  [✓] Editor Extensions Synced." -ForegroundColor Green
             }
-        } catch {}
+        } catch {
+            Write-Warning "Failed to parse extensions.json or install extensions: $($_.Exception.Message)"
+        }
     }
 
     # Execute Cognitive Language Sync
@@ -216,5 +233,6 @@ if (Test-Path $ConfigPath) {
 
     # Loop back into the same script to show the Daily Dashboard!
     Set-Location $AiosRoot
-    .\setup.ps1
+    continue
+}
 }

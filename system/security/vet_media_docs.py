@@ -16,17 +16,18 @@ MAGIC_BYTES = {
     ".pdf": b"%PDF-",
 }
 
-def check_magic_bytes(fpath, ext):
+def check_magic_bytes(fpath, ext) -> tuple[bool, str]:
+    """Returns (ok: bool, message: str) — ALWAYS a 2-tuple."""
     if ext not in MAGIC_BYTES:
-        return True # Cannot verify magic byte for this ext
+        return True, "SKIP: magic bytes not verified for this extension"
     try:
         with open(fpath, "rb") as f:
             header = f.read(8)
             expected = MAGIC_BYTES[ext]
             if not header.startswith(expected):
-                return False, f"Magic Bytes không hợp lệ cho {ext}"
+                return False, f"Magic Bytes khong hop le cho {ext}"
     except Exception as e:
-        return False, f"Lỗi đọc file: {e}"
+        return False, f"Loi doc file: {e}"
     return True, "PASS"
 
 def vet_pdf(fpath):
