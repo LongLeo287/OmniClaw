@@ -7,6 +7,7 @@
   [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
   [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
+  [![Discussions](https://img.shields.io/badge/Tham_Gia_Cộng_Đồng-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/aios-local/discussions)
   
   <br>
   
@@ -19,6 +20,7 @@
   [Kiến trúc 3 Lớp](#-kiến-trúc--plugin-3-lớp) •
   [Hệ Thống Phòng Ban](#-hệ-thống-phòng-ban-công-sở) •
   [Cài Đặt](#-hướng-dẫn-cài-đặt) •
+  [Cộng Đồng](https://github.com/LongLeo287/aios-local/discussions) •
   [Nguồn Mở](#-lời-cảm-ơn)
 
 </div>
@@ -94,7 +96,7 @@ AI OS được thiết kế để "Clone và Chạy" một cách cục súc và 
 
 ```bash
 # 1. Bê nguyên Kho Lưu Trữ Cốt Lõi về Máy Tính của Sếp
-git clone https://github.com/LongLeo287/aios-local.git "AI OS"
+git clone [https://github.com/LongLeo287/aios-local.git](https://github.com/LongLeo287/aios-local.git) "AI OS"
 cd "AI OS"
 
 # 2. Cấy AI OS vào Global Environment của máy thông qua NPM
@@ -104,6 +106,14 @@ npm install -g .
 aios
 ```
 *Ghi Chú Đặc Quyền Dành Cho Windows: Chúng tôi đã tích hợp sẵn phương thức Khai hỏa cực lẹ. Sếp chỉ cần nhấn đúp chuột vào file `aios.bat` nằm ngay tại thư mục chứa Code, hệ thống Bố Cáo Setup Console sẽ bùng nổ tức thì.*
+
+---
+
+## 🌐 Cộng Đồng & Hỗ Trợ
+
+Sếp có ý tưởng mới, câu hỏi cần giải đáp, hay muốn khoe những workflow Agent tùy chỉnh cực ngầu của mình? Chúng tôi đã xây dựng một không gian chuyên biệt để lực lượng lao động của AI OS cùng nhau thảo luận và phát triển.
+
+**[🚀 Bước vào Không gian Thảo luận của Tập Đoàn AI OS CORP](https://github.com/LongLeo287/aios-local/discussions)**
 
 ---
 
