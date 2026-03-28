@@ -1,7 +1,7 @@
 # AI OS — LLM Router v2.0
 # Nguyên tắc: dùng model rẻ nhất ĐỦ KHẢ NĂNG cho task
 # Cost tier: 1=đắt/mạnh | 2=cân bằng | 3=rẻ/nhanh | local-1/2/3=free
-# Cập nhật: 2026-03-20 — Thêm 19-dept full mapping + local fallback
+# Cập nhật: 2026-03-20 — Thêm 20-dept full mapping + local fallback
 
 routing_rules:
 
@@ -258,8 +258,8 @@ budget:
   auto_local_at_pct: 85          # NEW: local threshold
 
 # ═══════════════════════════════════════════════════
-# 19-DEPARTMENT DEFAULT TASK MAPPING (v2.0)
-# Hoàn chỉnh — tất cả 19 departments
+# 20-DEPARTMENT DEFAULT TASK MAPPING (v2.0)
+# Hoàn chỉnh — tất cả 20 departments
 # ═══════════════════════════════════════════════════
 dept_defaults:
   # Technical & Infrastructure Domain (CTO)

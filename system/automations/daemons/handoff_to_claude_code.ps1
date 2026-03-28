@@ -1,7 +1,7 @@
-﻿<#
+<#
 .SYNOPSIS
     AI OS ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ï¿½ Claude Code Auto-Handoff Trigger
-    Launches Claude Code CLI with --dangerously-skip-permissions after performing
+    Launches Claude Code CLI with --enable-auto-mode after performing
     all safety checks: Gatekeeper validation, Git snapshot, Blackboard verification.
 
 .DESCRIPTION

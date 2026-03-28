@@ -92,10 +92,10 @@ Total Unique Issues: 118
 - [x] [MEDIUM][brain/agents] 99 Agent Files Reference Wrong Path — corp/departments/ vs brain/corp/departments/
 - [x] [MEDIUM][AGENTS.md + SKILL_REGISTRY.json] 13 Plugins Referenced But Not Registered
 - [ ] [MEDIUM][All Agents] LightRAG :9621 Referenced Everywhere But No Fallback If Unreachable
-- [ ] [MEDIUM][repo_evaluation_engine.py] 'lightrag' Duplicated in TIER1_TOOLS List
+- [x] [MEDIUM][repo_evaluation_engine.py] 'lightrag' Duplicated in TIER1_TOOLS List
 - [x] [MEDIUM][9router.yaml] UTF-8 BOM + CRLF/LF Mixed + Mojibake in Provider Config
 - [x] [MEDIUM][router.yaml] offline_mode References 'gemma2:2b' But Alias Not Defined in Any Provider
-- [ ] [MEDIUM][router.yaml] Comment Says 19 Departments But Actually Maps 20
+- [x] [MEDIUM][router.yaml] Comment Says 19 Departments But Actually Maps 20
 - [ ] [MEDIUM][GOVERNANCE.md v3.0 vs AGENTS.md v4.0] Version Mismatch — Agents May Use Outdated Authority Rules
 - [ ] [MEDIUM] 7 Workflows Referenced in Governance But Files Don't Exist
 - [ ] [MEDIUM] 15 Agent Files Violate Naming Convention — Missing -agent Suffix
@@ -111,7 +111,7 @@ Total Unique Issues: 118
 - [x] [MEDIUM][aios_code_polisher.py] Path Separator Mismatch — Skip List Broken on Windows
 - [x] [MEDIUM][civ_classifier.py] Input Truncated to 100 Chars in Receipt — Incomplete Audit Trail
 - [x] [MEDIUM][context7/SKILL.md] Wrong Path Reference — ops/secrets/MASTER.env Instead of system/ops/secrets/
-- [ ] [MEDIUM][handoff_to_claude_code.ps1] Docs Say --dangerously-skip-permissions but Uses --enable-auto-mode
+- [x] [MEDIUM][handoff_to_claude_code.ps1] Docs Say --dangerously-skip-permissions but Uses --enable-auto-mode
 - [x] [MEDIUM][deep_scan_unlinked.py] AOS_ROOT Fallback to '.' + No Validation = Scan Wrong Directory
 - [x] [MEDIUM][audit_aios.py] Bare except: on Port Check — Masks Network Configuration Errors
 - [x] [MEDIUM][make_summary_report.py] Hardcoded Date-Specific Input Filename — Breaks on Every Run
@@ -121,7 +121,7 @@ Total Unique Issues: 118
 - [ ] [LOW][3 Workflows] Self-Referential Calls — Potential Infinite Loop Without Circuit Breaker
 - [ ] [LOW][RULE-STORAGE-01.md] Hardcoded Path Examples May Confuse Agents
 - [x] [LOW][system/infra/llm/config.yaml] Deprecated File Still Present, Actively Misleading
-- [ ] [LOW][requirements.txt] All Dependencies Use >= (No Pinned Versions) — Supply Chain Risk
+- [x] [LOW][requirements.txt] All Dependencies Use >= (No Pinned Versions) — Supply Chain Risk
 - [x] [LOW][active_repos_pipeline.py] errors='ignore' Silently Drops Data + 120s Hardcoded Timeout
 - [ ] [LOW][sys.path Manipulation] 3 Scripts Pollute sys.path — Module Collision Risk
-- [ ] [LOW][aios_deep_cleaner.py] Redundant Double os.environ.get('AOS_ROOT') Call
+- [x] [LOW][aios_deep_cleaner.py] Redundant Double os.environ.get('AOS_ROOT') Call
