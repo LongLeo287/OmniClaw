@@ -11,7 +11,7 @@
   
   <br>
   
-  [**🇻🇳 Xem Phiên Bản Tiếng Việt (Vietnamese)**](README-vn.md)
+  [**Tiếng Việt**](README-vn.md)
   
   <br>
 
