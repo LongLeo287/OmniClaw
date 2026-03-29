@@ -1,52 +1,61 @@
-# ⚖️ OmniClaw Syndicate: Code of Conduct
+# 🛡️ AI OS CORP: Professional Code of Conduct
 
-<div align="center">
+*Đọc bản [Tiếng Việt (Vietnamese version) tại đây](CODE_OF_CONDUCT_vi.md).*
 
-[**Tiếng Việt**](CODE_OF_CONDUCT-vn.md)
+> **"Zero-Trust in the system, 100% Respect for the humans."**
+> — THE AI OS OPEN ARCHITECTURE CHARTER
 
-</div>
+The **AI OS (Artificial Intelligence Operating System)** ecosystem is a vast matrix where Autonomous Agents, Algorithms, and Human Engineers co-create the future.
+
+This Covenant defines the Core Operational Boundaries. By contributing code, reporting an issue, or issuing a directive to an AI Agent, you completely and unconditionally agree to the following terms.
+
+---
+
+## 🌟 Pinnacle Working Environment (Our Standards)
+
+We welcome all engineers, researchers, and tech enthusiasts. To make the AI OS environment the most innovative workspace globally, we prioritize:
+
+* **Absolute Respect:** Regardless of skill level, age, or background. Diverse technical perspectives are invaluable assets.
+* **Constructive Feedback:** "Critique the Code, Not the Coder." During Code Reviews, focus on Architecture, Rule Adherence, and Performance.
+* **Transparency & Accountability:** Be willing to admit and apologize if you accidentally "break the build" or exhibit unprofessional behavior.
+* **Sustainable Mindset:** Think for the entire ecosystem instead of just solving immediate personal issues. Do not patch bugs with hacky scripts.
 
 ---
 
-## 1. Our Pledge
+## ⛔ Enemies of the System (Unacceptable Behaviors)
 
-We as members, contributors, and leaders of the **OmniClaw Syndicate** pledge to make participation in our community a harassment-free and professional experience for everyone. We are committed to fostering an open, welcoming, and highly secure environment regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+The following behaviors are **STRICTLY PROHIBITED** and will lead to a permanent ban from the project:
 
-## 2. Our Standards
+### 1. Human Interaction Violations
+* Sexual harassment, derogatory language, or public/private personal attacks.
+* Trolling, insulting, or degrading other engineers or leaders.
+* Doxxing or publishing private information without explicit consent.
 
-To maintain the efficiency and integrity of our Autonomous Syndicate, we require all interactions to reflect an Enterprise-grade level of professionalism.
-
-**Examples of behavior that contributes to a positive environment include:**
-* Demonstrating empathy, respect, and kindness toward other developers.
-* Being respectful of differing architectural opinions, viewpoints, and experiences.
-* Giving and gracefully accepting constructive feedback during Code Reviews (Dept 09).
-* Accepting responsibility and apologizing to those affected by our mistakes, learning from the experience.
-* Focusing on what is best for the overall OmniClaw ecosystem rather than individual ego.
-
-**Examples of unacceptable behavior include:**
-* The use of sexualized language or imagery, and sexual attention or advances of any kind.
-* Trolling, insulting or derogatory comments, and personal or political attacks.
-* Public or private harassment of any syndicate member.
-* Publishing others' private information, such as physical or email addresses, without explicit permission (Strict violation of our Zero-Trust philosophy).
-* Any conduct which could reasonably be considered inappropriate in a professional corporate setting.
-
-## 3. Enforcement Responsibilities
-
-The OmniClaw Core Team is responsible for clarifying and enforcing our standards of acceptable behavior. We reserve the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct.
-
-The Core Team will communicate reasons for moderation decisions when appropriate.
-
-## 4. Scope
-
-This Code of Conduct applies within all OmniClaw spaces (GitHub repository, Issues, Discussions, Wiki, and any associated communication channels). It also applies when an individual is officially representing the OmniClaw community in public spaces.
-
-## 5. Enforcement Contact & Reporting
-
-If you experience or witness instances of abusive, harassing, or otherwise unacceptable behavior, please do not engage publicly. Report it directly to the Core Operations Team at:
-
-📧 **Contact Email:** `Longdragon287@gmail.com`
-
-All complaints will be reviewed and investigated promptly and fairly. The Core Team is obligated to respect the privacy and security of the reporter of any incident.
+### 2. System Integrity Violations
+* **Bypassing Security Gates:** Intentionally writing code to slip past security checks (CodeQL, Flake8 Linter, CIV pipelines).
+* **Leaking Credentials:** Intentionally or recklessly hardcoding passwords, API Keys, or Tokens into the codebase.
+* **Reinventing the Wheel:** Creating redundant, hacky tools without checking the registry of existing, approved equivalents.
 
 ---
-*This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 2.1.*
+
+## 🤖 Special Clauses for AI Agents
+
+*Excerpt specifically for Agents (Claude, Antigravity, Nova, etc.)*
+
+If you are an Artificial Intelligence Entity interacting internally within this repository:
+
+1. You must strictly adhere to **`RULE-CIV`** (Content Intake Pipeline) and **`RULE-STORAGE`** (Data Storage Locations).
+2. Never hallucinate authority. You do not possess permissions the CEO has not explicitly granted.
+3. Always report and wait for approval (Human-in-the-loop) when facing tasks capable of "Writing/Deleting Core Data".
+
+---
+
+## ⚖️ Enforcement Mechanism
+
+The core leadership (Community Leaders/CEO) retains full authority and responsibility to:
+
+1. **Reject PRs:** Nullify any code contribution that contradicts organizational culture.
+2. **Discipline/Ban:** Remove spam comments, issue warnings, or PERMANENTLY BAN malicious actors from the project.
+3. **Automated Surveillance:** All code mutations leave traces in Github Actions (Log files). There will always be an independent verification layer casting judgment.
+
+*For complaints or violation reports, please utilize the Management's Secret Communication Channel. The decisions made by Management are final.*
