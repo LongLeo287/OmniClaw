@@ -27,13 +27,14 @@ except ImportError:
 
 ROOT = Path(__file__).parent.parent.parent.parent  # system/ops/scripts -> AI OS root
 PROPOSAL_DIR = ROOT / "brain" / "shared-context" / "corp" / "proposals"
-DEPT_DIR     = ROOT / "brain" / "corp" / "departments"
+DEPT_DIR     = ROOT / "ecosystem" / "workforce" / "departments"
 ORG_CHART    = ROOT / "brain" / "corp" / "org_chart.yaml"
 MEMORY_DEPTS = ROOT / "brain" / "corp" / "memory" / "departments"
 BRIEFS_DIR   = ROOT / "brain" / "shared-context" / "corp" / "daily_briefs"
 WORKFORCE    = ROOT / "ecosystem" / "workforce" / "agents"
 AGENTS_MD    = ROOT / "brain" / "shared-context" / "AGENTS.md"
 CREATE_AGENT = ROOT / "system" / "ops" / "scripts" / "create_agent.py"
+LIBRARY_GRAPH = ROOT / "brain" / "knowledge" / "LIBRARY_GRAPH.json"
 
 def now():
     return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))).isoformat()
@@ -261,9 +262,9 @@ def create_proposal(dept: str, info: dict, gaps: list) -> dict:
         "reports_to": info["reports_to"],
         "missing_files": gaps,
         "proposed_actions": [
-            f"Create brain/corp/departments/{dept}/MANAGER_PROMPT.md",
-            f"Create brain/corp/departments/{dept}/WORKER_PROMPT.md",
-            f"Create brain/corp/departments/{dept}/rules.md",
+            f"Create ecosystem/workforce/departments/{dept}/MANAGER_PROMPT.md",
+            f"Create ecosystem/workforce/departments/{dept}/WORKER_PROMPT.md",
+            f"Create ecosystem/workforce/departments/{dept}/rules.md",
             f"Create brain/corp/memory/departments/{dept}.md",
             f"Create brain/shared-context/corp/daily_briefs/{dept}.md",
         ],
@@ -354,19 +355,19 @@ def execute_dept_activation(dept: str):
     mp = dept_path / "MANAGER_PROMPT.md"
     if not mp.exists():
         mp.write_text(generate_manager_prompt(dept, head, reports_to), encoding="utf-8")
-        created.append(f"brain/corp/departments/{dept}/MANAGER_PROMPT.md")
+        created.append(f"ecosystem/workforce/departments/{dept}/MANAGER_PROMPT.md")
 
     # WORKER_PROMPT.md
     wp = dept_path / "WORKER_PROMPT.md"
     if not wp.exists():
         wp.write_text(generate_worker_prompt(dept, head), encoding="utf-8")
-        created.append(f"brain/corp/departments/{dept}/WORKER_PROMPT.md")
+        created.append(f"ecosystem/workforce/departments/{dept}/WORKER_PROMPT.md")
 
     # rules.md
     rp = dept_path / "rules.md"
     if not rp.exists():
         rp.write_text(generate_rules(dept, reports_to), encoding="utf-8")
-        created.append(f"brain/corp/departments/{dept}/rules.md")
+        created.append(f"ecosystem/workforce/departments/{dept}/rules.md")
 
     # Memory
     MEMORY_DEPTS.mkdir(parents=True, exist_ok=True)
@@ -400,7 +401,7 @@ def execute_dept_activation(dept: str):
         skill_file.write_text(
             f"---\nname: {head}\ndescription: Head of {dept.replace('_',' ').title()}\n"
             f"agents: [{head}]\ntier: tier2\nstatus: active\nadded: {today()}\n---\n\n"
-            f"See: brain/corp/departments/{dept}/MANAGER_PROMPT.md\n",
+            f"See: ecosystem/workforce/departments/{dept}/MANAGER_PROMPT.md\n",
             encoding="utf-8"
         )
         created.append(f"ecosystem/workforce/agents/{head}/SKILL.md")
@@ -413,7 +414,7 @@ def execute_dept_activation(dept: str):
         print(f"  [--] {dept} — dept files already exist")
 
     # ── STEP 2: Smart routing — assign existing agent OR create new ──────────
-    agent_md = ROOT / "brain" / "agents" / head / "AGENT.md"
+    agent_md = ROOT / "ecosystem" / "workforce" / "agents" / head / "AGENT.md"
     agent_exists = agent_md.exists()
 
     if agent_exists:
@@ -618,7 +619,42 @@ def register_dept_in_system(dept: str):
 
     # 4. org_chart.yaml — auto-update via ruamel.yaml (preserves comments)
     auto_update_org_chart(dept, head, info.get("reports_to", "COO"))
+    
+    # 5. Library Graph Integration
+    register_dept_in_library_graph(dept)
 
+
+def register_dept_in_library_graph(dept: str):
+    """Register the new department as a node in the Central Library Graph."""
+    if not LIBRARY_GRAPH.exists():
+        print(f"  [WRN] LIBRARY_GRAPH.json not found.")
+        return
+    try:
+        data = json.loads(LIBRARY_GRAPH.read_text(encoding="utf-8", errors="ignore"))
+        nodes = data.get("nodes", [])
+        
+        node_id = f"DEPT-{dept}"
+        
+        for n in nodes:
+            if n.get("id") == node_id:
+                print(f"  [=] LIBRARY_GRAPH.json: Dept '{node_id}' already registered")
+                return
+                
+        new_node = {
+            "id": node_id,
+            "type": "department_node",
+            "name": dept,
+            "title": f"DEPARTMENT: {dept}",
+            "path": f"ecosystem/workforce/departments/{dept}/rules.md",
+            "tags": ["department", "org_chart"]
+        }
+        nodes.append(new_node)
+        data["nodes"] = nodes
+        
+        LIBRARY_GRAPH.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"  [+] LIBRARY_GRAPH.json: added '{node_id}'")
+    except Exception as e:
+        print(f"  [WRN] LIBRARY_GRAPH.json update failed: {e}")
 
 def auto_update_org_chart(dept: str, head: str, reports_to: str):
     """
@@ -671,7 +707,7 @@ def auto_update_org_chart(dept: str, head: str, reports_to: str):
             new_dept["head"] = head
             new_dept["head_title"] = f"Head of {dept.replace('_', ' ').title()}"
             new_dept["reports_to"] = reports_to
-            new_dept["prompt"] = f"brain/corp/departments/{dept}/MANAGER_PROMPT.md"
+            new_dept["prompt"] = f"ecosystem/workforce/departments/{dept}/MANAGER_PROMPT.md"
             new_dept["workers"] = CommentedSeq()
             new_dept["output_channel"] = f"shared-context/brain/corp/daily_briefs/{dept}.md"
             new_dept["qa_required"] = False

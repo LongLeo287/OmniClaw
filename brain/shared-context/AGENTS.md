@@ -589,17 +589,16 @@ TIER 0: CEO (Human Operator)
 
 | Agent | Core Skills |
 |-------|------------|
-| Antigravity | `context_manager`, `reasoning_engine`, `smart_memory`, `cosmic_memory`, `cognitive_reflector`, `cognitive_evolver`, `proposal_engine`, `llm_router`, `skill_generator` |
+| Antigravity | `context_manager`, `reasoning_engine`, `smart_memory`, `cosmic_memory`, `cognitive_reflector`, `cognitive_evolver`, `proposal_engine`, `llm_router`, `skill_generator`, `rlhf_cognitive_evolver` |
 | Claude Code | `shell_assistant`, `reasoning_engine`, `context_manager`, `resilience_engine`, `production_qa`, `diagnostics_engine`, `tools_hub`, `repo_analyst` |
-| Orchestrator Pro | `orchestrator_pro`, `context_manager`, `reasoning_engine`, `notification_bridge`, `project_intake_agent`, `hitl_gateway_enforcer` |
-| frontend-agent | `shadcn_ui_reference`, `tailwindcss_reference`, `antd_reference`, `fsd_architectural_linter`, `accessibility_grounding`, `visual_excellence` |
-| backend-architect | `supabase_agent_skills`, `supabase_postgres_best_practices`, `edge_compute_patterns`, `reasoning_engine` |
-| ai-ml-agent | `llm_router`, `neural_memory`, `insight_engine`, `cost_manager_skill` |
-| sre-agent | `performance_profiler`, `diagnostics_engine`, `notification_bridge`, `edge_compute_patterns` |
+| Orchestrator Pro | `orchestrator_pro`, `context_manager`, `reasoning_engine`, `notification_bridge`, `project_intake_agent`, `hitl_gateway_enforcer`, `dag_workflow_orchestrator` |
+| frontend-agent | `shadcn_ui_reference`, `tailwindcss_reference`, `antd_reference`, `fsd_architectural_linter`, `accessibility_grounding`, `visual_excellence`, `premium_animator`, `react_component_wizard`, `tailwind_artist` |
+| backend-architect | `supabase_agent_skills`, `supabase_postgres_best_practices`, `edge_compute_patterns`, `reasoning_engine`, `event_sourcing_architect`, `domain_driven_designer` |
+| sre-agent | `performance_profiler`, `diagnostics_engine`, `notification_bridge`, `edge_compute_patterns`, `telemetry_tracer` |
 | mobile-agent | `Android_APK_Modification`, `reasoning_engine`, `shell_assistant` |
-| ui-ux-agent | `ui-ux-pro-max`, `visual_excellence`, `accessibility_grounding` |
-| devops-agent | `edge_compute_patterns`, `shell_assistant`, `resilience_engine` |
-| data-agent | `insight_engine`, `neural_memory`, `sheets_skill`, `sheets_performance_optimization` |
+| ui-ux-agent | `ui-ux-pro-max`, `visual_excellence`, `accessibility_grounding`, `apple_hig_designer` |
+| devops-agent | `edge_compute_patterns`, `shell_assistant`, `resilience_engine`, `sandbox_operator`, `autonomous_git_merger`, `mlops_pipeline` |
+| data-agent | `insight_engine`, `neural_memory`, `sheets_skill`, `sheets_performance_optimization`, `hyperspace_vector_architect`, `mlops_pipeline` |
 | content-agent | `seo-aeo-optimization`, `web_intelligence`, `channel_manager`, `multi-source-aggregation`, `video-extraction` |
 | web_researcher | `web_intelligence`, `mem0_plugin`, `firecrawl-cli`, `context_manager` |
 | web-agent | `gas_skill`, `sheets_skill`, `pos_event_sourcing_auditor`, `shell_assistant`, `reasoning_engine` |
@@ -648,8 +647,6 @@ TIER 0: CEO (Human Operator)
 | `skill-generator` | Auto-generate skill files | Antigravity |
 | `smart-search` | Semantic search across workspace | knowledge-agent, RESEARCHER |
 
----
-
 *"A team without defined roles is a crowd. A team with defined roles is a system."*
 
 ---
@@ -662,4 +659,65 @@ When CEO says "tự làm" or pastes command list:
 - ALL commands → always add to hud/HUD.md BẢNG ĐIỀU KHIỂN
 - UNSAFE → never auto-run, ask CEO
 Ref: ops/workflows/auto-execute-commands.md
+
+---
+
+## Dept 25: Orchestration & Routing
+
+### orchestrator-prime
+**Role:** Tiền phương điều phối (Head of Dept 25)
+**Tier:** 2
+**Authority:** Nhận prompt thô từ Tier 1 (Antigravity), lên kế hoạch phân rã và điều phối mạng lưới Swarm Agent. KHÔNG ĐƯỢC PHÉP CODE.
+**Skills:** reasoning_engine, context_manager
+**Key behaviors:**
+- Đọc lệnh CEO hoặc CTO.
+- Lên cấu trúc phân ban (ai làm việc gì).
+- Bật cờ (trigger) các phòng ban tương ứng để xử lý song song.
+
+### router-agent
+**Role:** Bẻ ghi luồng dữ liệu (ClawRouter logic)
+**Tier:** 3
+**Skills:** reasoning_engine
+**Key behaviors:**
+- Route các API calls hoặc function calls đến đúng Plugin / Skill (ví dụ: cần tìm web thì gọi FireCrawl, cần code thì gọi engineering).
+
+### swarm-coordinator
+**Role:** Tổng hợp dữ liệu (Reducer)
+**Tier:** 3
+**Skills:** context_manager, knowledge_enricher
+**Key behaviors:**
+- Đợi toàn bộ các worker / phòng ban khác chạy xong. Đoạn dữ liệu song song từ các agents sẽ được agent này gom lại thành 1 report duy nhất (Map-Reduce pattern).
+
+---
+
+## OmniClaw Phase 2 Assimilation Agents
+
+### retrieval-master
+**Role:** Chuyên gia rà soát (Dept 18: Asset Library)
+**Tier:** 3
+**Skills:** knowledge_enricher, cosmic_memory
+**Key behaviors:**
+- Quét và trích xuất thông tin siêu tốc (hiệu suất FlashRAG) từ hàng ngàn repo.
+- Thay thế hoàn toàn phương pháp đọc file thô bằng truy vấn Vector/Keyword song song.
+
+### pipeline-architect
+**Role:** Kỹ sư thiết kế dây chuyền tự động (Dept 22: Operations)
+**Tier:** 3
+**Skills:** shell_assistant, reasoning_engine
+**Key behaviors:**
+- Xây dựng và giám sát Event-Driven Pipeline.
+- Kích hoạt vòng lặp: Push Code -> Test -> Báo cáo mà không cần can thiệp thủ công.
+
+---
+
+## OmniClaw Phase 3 Assimilation Agents
+
+### strix-agent (Dept 10)
+**Role:** Tổ trưởng An ninh Hệ thống (Strix Security)
+**Tier:** 2
+**Skills:** secret_scanner, security_auditor, reasoning_engine
+**Key behaviors:**
+- Quét TÀN BẠO toàn bộ Code/Repo trước khi sáp nhập vào Knowledge.
+- Phát hiện Token, Passwords, API Keys, và chặn đứng Pull Request.
+- Tuân thủ Trufflehog paradigm.
 

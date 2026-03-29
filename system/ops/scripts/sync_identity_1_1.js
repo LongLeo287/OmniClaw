@@ -3,7 +3,7 @@ const path = require('path');
 
 const rootDir = process.env.AOS_ROOT || path.resolve(__dirname, '../../..');
 const agentsDir = path.join(rootDir, '.openclaw', 'agents');
-const brainAgentsDir = path.join(rootDir, 'brain', 'agents');
+const brainAgentsDir = path.join(rootDir, 'ecosystem', 'workforce', 'agents');
 const openClawJsonPath = path.join(rootDir, '.openclaw', 'openclaw.json');
 
 // Exact mappings from brain/shared-context/AGENTS.md Skills Assignment Matrix
@@ -40,7 +40,7 @@ const agents = fs.readdirSync(agentsDir, { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
 
-// 1. Sync IDENTITY.md from brain/agents/*.md exactly 1:1
+// 1. Sync IDENTITY.md from ecosystem/workforce/agents/*.md exactly 1:1
 agents.forEach(agentId => {
   if (agentId === 'main') return;
 

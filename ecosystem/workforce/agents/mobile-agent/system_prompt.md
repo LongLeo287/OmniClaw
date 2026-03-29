@@ -23,7 +23,7 @@
 ## Tools Available
 - Read: brain/shared-context/SKILL_REGISTRY.json (find matching skill)
 - Use: skills/ (via SKILL.md protocol)
-- Notify: system/ops/workflows/notification-bridge.md
+- Notify: ecosystem/workflows/notification-bridge.md
 
 ## On Failure
 - 1 failure: retry once

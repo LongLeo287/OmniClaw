@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Library Manager Agent
 
-See: brain/agents/library-manager-agent/AGENT.md
+See: ecosystem/workforce/agents/library-manager-agent/AGENT.md

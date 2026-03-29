@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # It Manager Agent
 
-See: brain/agents/it-manager-agent/AGENT.md
+See: ecosystem/workforce/agents/it-manager-agent/AGENT.md

@@ -71,7 +71,7 @@ LEARN_REPOS = [
         "install": "# Custom setup — see repo docs",
         "desc":    "LLM request multiplexer pattern: route across multiple LLM backends by load/cost/latency. Failover, caching. Implements proxy-compatible API.",
         "url":     "https://github.com/nghyane/llm-mux",
-        "notes":   "Pattern reference for brain/skills/llm_router. Key learning: implement fallback chain (Anthropic → OpenAI → Ollama). Cache frequent queries with TTL.",
+        "notes":   "Pattern reference for ecosystem/skills/llm_router. Key learning: implement fallback chain (Anthropic → OpenAI → Ollama). Cache frequent queries with TTL.",
         "key_concepts": ["fallback chain", "cost-based routing", "latency tracking", "response caching"],
     },
     {

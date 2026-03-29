@@ -21,7 +21,7 @@ DRY_RUN   = "--dry-run" in sys.argv
 SCAN_DIRS = [
     ("plugins",          3),   # plugins/<name>/SKILL.md
     ("tools",            3),   # tools/<name>/SKILL.md
-    ("brain/skills",     4),   # brain/skills/<name>/SKILL.md
+    ("ecosystem/skills",     4),   # ecosystem/skills/<name>/SKILL.md
     ("workforce/agents", 3),   # workforce/agents/<name>/SKILL.md
     ("workforce/subagents", 3),
     ("corp/departments", 3),

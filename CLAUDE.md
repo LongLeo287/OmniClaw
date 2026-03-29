@@ -86,7 +86,7 @@ Do not skip. Do not exceed authority. Do not assume.
 - Reporting language: Vietnamese (unless CEO instructs otherwise)
 - No autonomous destructive actions without CEO confirmation
 - All task completions must update `blackboard.json` → `handoff_trigger: "COMPLETE"`
-- Subagent messages land in `ecosystem/subagents/mq/` — read them before each session
+- Subagent messages land in `ecosystem/workforce/agents/mq/` — read them before each session
 
 ### Plugin Usage Rules
 

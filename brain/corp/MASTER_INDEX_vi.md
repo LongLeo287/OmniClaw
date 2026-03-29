@@ -56,6 +56,7 @@ graph TD
 | **Dept 22** | **Vận Hành** | `scrum-master` | `cleanup-daemon`, `git-protector` | Vệ sinh phần cứng/thư mục gốc hàng ngày và bảo vệ Git. |
 | **Dept 23** | **Lễ Tân** | `project-intake` | `proposal-writer`, `brief-gatherer` | Tiếp nhận dự án tự động và phân tích yêu cầu khách hàng. |
 | **Dept 24** | **Cơ Sở Vật Chất** | `facility-agent` | `sanitation-bot` | Bảo trì thư mục gốc và vệ sinh không gian làm việc số. |
+| **Dept 25** | **Điều Phối** | `orchestrator-prime` | `router-agent`, `swarm-coordinator` | Bóc tách prompt, định tuyến và điều phối mạng lưới Swarm Agent. |
 
 ---
 

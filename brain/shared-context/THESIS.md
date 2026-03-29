@@ -57,7 +57,7 @@ This document defines the fundamental principles of the **AI Operating System** 
 - **`subagents/mq/<dept>_brief.md`** — The "Nervous System" for task passing between agents
 - **`corp/prompts/runes/`** — Standardized ritual prompts and SOP templates
 - **`telemetry/receipts/`** — Cryptographically-auditable task receipts (JSON, per step)
-- **`brain/skills/`** — 45+ loaded skill modules, queried via `SKILL_REGISTRY.json`
+- **`ecosystem/skills/`** — 45+ loaded skill modules, queried via `SKILL_REGISTRY.json`
 - **`plugins/`** — managed via kho/plugins/registry.json (7 tier1, 7 tier2) (firecrawl, LightRAG, crewai, zeroleaks, etc.)
 - **`brain/shared-context/report_formats.md`** — Standard output formats all agents must use when reporting to CEO (loaded at boot Step 6)
 
@@ -73,7 +73,7 @@ Immutable references for the AI OS technical landscape. Loaded on-demand by agen
 
 | Source | Content | Access |
 |--------|---------|--------|
-| `brain/skills/` | 14 active installed skills (SKILL_REGISTRY.json) (SKILL.md per skill) | via SKILL_REGISTRY.json |
+| `ecosystem/skills/` | 14 active installed skills (SKILL_REGISTRY.json) (SKILL.md per skill) | via SKILL_REGISTRY.json |
 | `brain/knowledge/` | Agent-curated knowledge index | via knowledge_navigator skill |
 | `plugins/` | managed via kho/plugins/registry.json (7 tier1, 7 tier2) (firecrawl, LightRAG, cognee, etc.) | via knowledge_navigator |
 | `brain/shared-context/` | GOVERNANCE, AGENTS, SOUL, THESIS | loaded at boot |

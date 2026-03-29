@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 create_agent.py â€” AI OS Corp V3.1 Agent Scaffolding Tool
 Path: system/ops/scripts/create_agent.py
@@ -21,14 +21,15 @@ import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent.parent.parent  # system/ops/scripts -> system/ops -> system -> AI OS root
-TEMPLATE_DIR = ROOT / "brain" / "agents" / "_template"
-AGENTS_DIR   = ROOT / "brain" / "agents"
+TEMPLATE_DIR = ROOT / "ecosystem" / "workforce" / "agents" / "_template"
+AGENTS_DIR   = ROOT / "ecosystem" / "workforce" / "agents"
 WORKFORCE    = ROOT / "ecosystem" / "workforce" / "agents"
 ORG_CHART    = ROOT / "brain" / "corp" / "org_chart.yaml"
 AGENTS_MD    = ROOT / "brain" / "shared-context" / "AGENTS.md"
 REGISTRY     = ROOT / "brain" / "shared-context" / "SKILL_REGISTRY.json"
+LIBRARY_GRAPH = ROOT / "brain" / "knowledge" / "LIBRARY_GRAPH.json"
 MEMORY_DIR   = ROOT / "brain" / "corp" / "memory" / "agents"
-DEPT_DIR     = ROOT / "brain" / "corp" / "departments"
+DEPT_DIR     = ROOT / "ecosystem" / "workforce" / "departments"
 RECEIPT_DIR  = ROOT / "system" / "telemetry" / "receipts" / "agent_onboard"
 
 # Colors
@@ -71,7 +72,7 @@ def check_agent_profile(agent_id: str) -> dict:
 
     results = {
         "agent_id": agent_id,
-        "brain/agents/AGENT.md":    brain_md.exists(),
+        "ecosystem/workforce/agents/AGENT.md":    brain_md.exists(),
         "memory file":               mem_file.exists(),
         "onboard receipt":           receipt.exists(),
         "workforce folder":          workforce_dir.exists(),
@@ -96,6 +97,47 @@ def check_agent_profile(agent_id: str) -> dict:
 
     return results
 
+def register_to_library_graph(agent_id: str, dept: str, tier: int):
+    """Register the new agent as a node in the Central Library Graph."""
+    if not LIBRARY_GRAPH.exists():
+        print(f"  {Y}⚠️{X}  LIBRARY_GRAPH.json not found. Run library_manager indexer first.")
+        return
+    try:
+        data = json.loads(LIBRARY_GRAPH.read_text(encoding="utf-8", errors="ignore"))
+        nodes = data.get("nodes", [])
+        edges = data.get("edges", [])
+        
+        node_id = f"AGENT-{agent_id}"
+        
+        for n in nodes:
+            if n.get("id") == node_id:
+                print(f"  {Y}⚠️{X}  Agent node '{node_id}' already in LIBRARY_GRAPH.json")
+                return
+                
+        new_node = {
+            "id": node_id,
+            "type": "agent_node",
+            "name": agent_id,
+            "title": f"AGENT PROFILE: {agent_id}",
+            "path": f"ecosystem/workforce/agents/{agent_id}/SKILL.md",
+            "tags": ["agent", "workforce", f"tier{tier}"]
+        }
+        nodes.append(new_node)
+        
+        if dept:
+            edges.append({
+                "source": node_id,
+                "target": f"DEPT-{dept}",
+                "relationship": "belongs_to"
+            })
+            
+        data["nodes"] = nodes
+        data["edges"] = edges
+        
+        LIBRARY_GRAPH.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"  {G}✅{X} brain/knowledge/LIBRARY_GRAPH.json (Agent Node added)")
+    except Exception as e:
+        print(f"  {R}❌{X} Failed to update LIBRARY_GRAPH.json: {e}")
 
 def cmd_check(agent_id: str):
     """Check one agent profile completeness."""
@@ -110,7 +152,7 @@ def cmd_check(agent_id: str):
 
 
 def cmd_check_all():
-    """Check all 99 agents from brain/agents/ folder."""
+    """Check all 99 agents from ecosystem/workforce/agents/ folder."""
     print(f"\n{B}Checking all agent profiles...{X}\n")
     complete, incomplete = [], []
 
@@ -156,7 +198,7 @@ def scaffold_agent(agent_id: str, dept: str, tier: int, is_head: bool = False, t
 
     created = []
 
-    # 1. brain/agents/<agent_id>/AGENT.md from template
+    # 1. ecosystem/workforce/agents/<agent_id>/AGENT.md from template
     agent_dir = AGENTS_DIR / agent_id
     agent_dir.mkdir(parents=True, exist_ok=True)
     agent_md_path = agent_dir / "AGENT.md"
@@ -175,7 +217,7 @@ def scaffold_agent(agent_id: str, dept: str, tier: int, is_head: bool = False, t
             .replace("<ISO8601>", now())
 
         agent_md_path.write_text(filled, encoding="utf-8")
-        print(f"  {G}âœ…{X} brain/agents/{agent_id}/AGENT.md")
+        print(f"  {G}âœ…{X} ecosystem/workforce/agents/{agent_id}/AGENT.md")
         created.append(str(agent_md_path.relative_to(ROOT)))
     else:
         print(f"  {Y}âš ï¸{X}  AGENT.md already exists â€” skipped")
@@ -221,7 +263,7 @@ def scaffold_agent(agent_id: str, dept: str, tier: int, is_head: bool = False, t
     wf_dir.mkdir(parents=True, exist_ok=True)
     skill_path = wf_dir / "SKILL.md"
     if not skill_path.exists():
-        skill_content = f"---\nname: {agent_id}\ndescription: {dept.title()} specialist agent\nagents: [{agent_id}]\ntier: tier{tier}\nstatus: active\nadded: {today()}\n---\n\n# {agent_id.replace('-',' ').title()}\n\nSee: brain/agents/{agent_id}/AGENT.md\n"
+        skill_content = f"---\nname: {agent_id}\ndescription: {dept.title()} specialist agent\nagents: [{agent_id}]\ntier: tier{tier}\nstatus: active\nadded: {today()}\n---\n\n# {agent_id.replace('-',' ').title()}\n\nSee: ecosystem/workforce/agents/{agent_id}/AGENT.md\n"
         skill_path.write_text(skill_content, encoding="utf-8")
         print(f"  {G}âœ…{X} ecosystem/workforce/agents/{agent_id}/SKILL.md")
         created.append(str(skill_path.relative_to(ROOT)))
@@ -239,7 +281,7 @@ def scaffold_agent(agent_id: str, dept: str, tier: int, is_head: bool = False, t
             fpath = dept_path / fname
             if not fpath.exists():
                 fpath.write_text(content, encoding="utf-8")
-                print(f"  {G}âœ…{X} brain/corp/departments/{dept}/{fname}")
+                print(f"  {G}âœ…{X} ecosystem/workforce/departments/{dept}/{fname}")
                 created.append(str(fpath.relative_to(ROOT)))
 
         # Dept memory
@@ -255,14 +297,16 @@ def scaffold_agent(agent_id: str, dept: str, tier: int, is_head: bool = False, t
         briefs.mkdir(parents=True, exist_ok=True)
         brief_file = briefs / f"{dept}.md"
         if not brief_file.exists():
-            brief_file.write_text(f"# Daily Brief: {dept.title()}\n\n## {today()}\nAgent {agent_id} activated â€” ready for tasks.\n", encoding="utf-8")
-            print(f"  {G}âœ…{X} brain/shared-context/corp/daily_briefs/{dept}.md")
+            brief_file.write_text(f"# Daily Brief: {dept.title()}\n\n## {today()}\nAgent {agent_id} activated — ready for tasks.\n", encoding="utf-8")
+            print(f"  {G}✅{X} brain/shared-context/corp/daily_briefs/{dept}.md")
+
+    # 6. Central Library Graph Insertion
+    register_to_library_graph(agent_id, dept, tier)
 
     print(f"\n  {B}Created {len(created)} files.{X}")
 
     # Summary checklist
     print(f"\n  {B}Checklist:{X}")
-    print(f"  {Y}âš ï¸  Manual steps still required:{X}")
     print(f"  â–¡ Add agent to AGENTS.md (brain/shared-context/AGENTS.md)")
     print(f"  â–¡ Add agent to org_chart.yaml (brain/corp/org_chart.yaml)")
     print(f"  â–¡ Run strix-agent security review (Tier 3 Gate)")
@@ -285,7 +329,7 @@ def main():
 Commands:
   --list                        List all agents with status
   --check <agent-id>            Check profile completeness for 1 agent
-  --check-all                   Check all agents in brain/agents/
+  --check-all                   Check all agents in ecosystem/workforce/agents/
   --id <id> --dept <dept> --tier <n>    Scaffold new agent
     --head                      Also create department files
     --title <title>             Agent title/description

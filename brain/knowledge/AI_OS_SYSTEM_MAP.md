@@ -193,9 +193,9 @@ Phase 7: Activate skills (registry-manager-agent) → SKILL_REGISTRY.json
 ## 7. SKILL ARCHITECTURE
 
 **Registry:** `brain/registry/SKILL_REGISTRY.json` (103+ skills)
-**Skill folders:** `brain/skills/` (45 folders)
+**Skill folders:** `ecosystem/skills/` (45 folders)
 **Tiers:** `brain/registry/SKILL_TIERS.md`
-**Spec:** `brain/skills/SKILL_SPEC.md`
+**Spec:** `ecosystem/skills/SKILL_SPEC.md`
 
 ### Core Skills (loaded by most agents)
 ```

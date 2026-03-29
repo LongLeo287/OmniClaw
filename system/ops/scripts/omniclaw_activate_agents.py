@@ -42,7 +42,7 @@ RESET  = "\033[0m"
 AOS_ROOT     = Path(__file__).resolve().parents[3]
 AGENTS_DIR   = AOS_ROOT / "ecosystem" / "workforce" / "agents"
 MEMORY_DIR   = AOS_ROOT / "brain" / "corp" / "memory" / "agents"
-DEPTS_DIR    = AOS_ROOT / "brain" / "corp" / "departments"
+DEPTS_DIR    = AOS_ROOT / "ecosystem" / "workforce" / "departments"
 TODAY        = date.today().isoformat()
 
 # ─── Bộ tri thức chuyên biệt theo Agent ID ────────────────────────────────────

@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Registry Manager Agent
 
-See: brain/agents/registry-manager-agent/AGENT.md
+See: ecosystem/workforce/agents/registry-manager-agent/AGENT.md

@@ -13,7 +13,7 @@
 | Corp Mode | org_chart.yaml v2.4 | ✅ DONE | 21 depts, ~80 agent roles |
 | Corp Skills | corp_orchestrator, corp_learning_loop | ✅ DONE | Tier 1 skills |
 | Skill Registry | SKILL_REGISTRY.json | ✅ DONE | 103+ skills + plugins |
-| Skills | brain/skills/ | ✅ DONE | 45 skill modules |
+| Skills | ecosystem/skills/ | ✅ DONE | 45 skill modules |
 | Plugins | plugins/ | ✅ DONE | 102 plugins |
 | Workflows | ops/workflows/ | ✅ DONE | 29 workflows |
 | Agents | workforce/agents/ | ✅ DONE | 28 agent dirs |

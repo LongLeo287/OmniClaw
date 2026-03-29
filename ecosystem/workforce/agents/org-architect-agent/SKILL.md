@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Org Architect Agent
 
-See: brain/agents/org-architect-agent/AGENT.md
+See: ecosystem/workforce/agents/org-architect-agent/AGENT.md

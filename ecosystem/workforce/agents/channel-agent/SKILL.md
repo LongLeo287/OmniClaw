@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Channel Agent
 
-See: brain/agents/channel-agent/AGENT.md
+See: ecosystem/workforce/agents/channel-agent/AGENT.md

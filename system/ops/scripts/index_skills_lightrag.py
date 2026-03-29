@@ -32,8 +32,8 @@ WORKSPACE = "ai_os_skills"
 
 # Paths to index
 INDEX_PATHS = [
-    AI_OS_ROOT / "brain" / "skills" / "**" / "SKILL.md",
-    AI_OS_ROOT / "brain" / "agents" / "**" / "AGENT.md",
+    AI_OS_ROOT / "ecosystem" / "skills" / "**" / "SKILL.md",
+    AI_OS_ROOT / "ecosystem" / "workforce" / "agents" / "**" / "AGENT.md",
     AI_OS_ROOT / "plugins" / "**" / "manifest.json",
     AI_OS_ROOT / "brain" / "knowledge" / "CAPABILITY_MAP.md",
     AI_OS_ROOT / "brain" / "knowledge" / "AI_OS_SYSTEM_MAP.md",

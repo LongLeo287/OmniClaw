@@ -91,7 +91,7 @@ Tuyá»‡t Ä‘á»‘i cáº¥m Ä‘á»ƒ ká»‹ch báº£n code xong dÃ
    - Cáº­p nháº­t Automation náº¿u script cáº§n cháº¡y ngáº§m vÃ o `system/automations/AUTOMATION_REGISTRY.yaml`.
 
 4. **PHÃ‚N PHÃT VÅ¨ KHÃ (WEAPON EQUIP):**
-   - Chá»‰nh sá»­a file cáº¥u hÃ¬nh YAML cá»§a PhÃ²ng Ban (`brain/corp/departments/[dept_name].yaml`).
+   - Chá»‰nh sá»­a file cáº¥u hÃ¬nh YAML cá»§a PhÃ²ng Ban (`ecosystem/workforce/departments/[dept_name].yaml`).
    - ThÃªm ID cá»§a Skill/Automation nÃ y vÃ o máº£ng `tools_and_capabilities/skills`.
 
 5. **ÄÃ“NG ÄINH Báº¢N Äá»’:**

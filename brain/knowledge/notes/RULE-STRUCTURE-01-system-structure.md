@@ -102,7 +102,7 @@ TIER 4: SUBAGENTS (spawned per task)
 | **Service config** | `ops/scripts/config.json` | Modules needing service URLs |
 | **Agent memory** | `corp/memory/agents/<name>.md` | Agent on session start |
 | **Dept memory** | `corp/memory/departments/<dept>.md` | Dept head at Phase 3 |
-| **Skills** | `brain/skills/<name>/SKILL.md` | Worker on task start |
+| **Skills** | `ecosystem/skills/<name>/SKILL.md` | Worker on task start |
 | **CI/CD tests** | `tools/clawtask/tests/` | Only when port 7474 UP |
 | **Telegram** | `channels/telegram_bridge.py` | Only when service connected |
 

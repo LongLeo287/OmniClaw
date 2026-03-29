@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Pmo Agent
 
-See: brain/agents/pmo-agent/AGENT.md
+See: ecosystem/workforce/agents/pmo-agent/AGENT.md

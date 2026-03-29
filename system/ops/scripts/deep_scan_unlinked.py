@@ -9,9 +9,9 @@ ROOT_DIR = os.environ.get("AOS_ROOT", "") or _fallback_root
 # Validate: giả sử AOS_ROOT hợp lệ phải chứa GEMINI.md hoặc brain/
 if not any(os.path.exists(os.path.join(ROOT_DIR, marker)) for marker in ["GEMINI.md", "brain"]):
     ROOT_DIR = _fallback_root
-DEPT_DIR = os.path.join(ROOT_DIR, "brain", "corp", "departments")
+DEPT_DIR = os.path.join(ROOT_DIR, "ecosystem", "workforce", "departments")
 
-AGENT_DIR = os.path.join(ROOT_DIR, "brain", "agents")
+AGENT_DIR = os.path.join(ROOT_DIR, "ecosystem", "workforce", "agents")
 WORKFLOW_DIR = os.path.join(ROOT_DIR, "system", "ops", "workflows")
 SKILL_DIR = os.path.join(ROOT_DIR, "ecosystem", "skills")
 PLUGIN_DIR = os.path.join(ROOT_DIR, "ecosystem", "plugins")

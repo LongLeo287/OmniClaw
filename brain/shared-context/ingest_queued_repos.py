@@ -61,7 +61,7 @@ REPOS = [
         "desc": "Effortless web scraping with anti-fingerprinting, proxy support, spiders, MCP server, CLI. Playwright/requests backends. ClaHub-registered skill.",
         "url": "https://github.com/D4Vinci/Scrapling",
         "tags": ["scraping", "web", "playwright", "mcp", "spider", "proxy"],
-        "usage": "Web intelligence pipeline — feeds brain/skills/web_intelligence and Blackboard data streams",
+        "usage": "Web intelligence pipeline — feeds ecosystem/skills/web_intelligence and Blackboard data streams",
         "install": "pip install scrapling",
     },
     {
@@ -204,7 +204,7 @@ REPOS = [
         "desc": "LLM request multiplexer: route across multiple LLM backends based on load, cost, latency. Failover, caching, load-balancing built-in. Proxy compatible.",
         "url": "https://github.com/nghyane/llm-mux",
         "tags": ["llm", "routing", "multiplexer", "load-balancing", "caching", "failover", "proxy"],
-        "usage": "AI OS LLM Router — integrates with brain/skills/llm_router for resilient multi-provider routing",
+        "usage": "AI OS LLM Router — integrates with ecosystem/skills/llm_router for resilient multi-provider routing",
         "install": "",
     },
     {

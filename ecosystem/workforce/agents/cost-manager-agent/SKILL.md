@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Cost Manager Agent
 
-See: brain/agents/cost-manager-agent/AGENT.md
+See: ecosystem/workforce/agents/cost-manager-agent/AGENT.md

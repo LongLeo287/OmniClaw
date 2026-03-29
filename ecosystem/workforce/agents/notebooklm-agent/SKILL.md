@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Notebooklm Agent
 
-See: brain/agents/notebooklm-agent/AGENT.md
+See: ecosystem/workforce/agents/notebooklm-agent/AGENT.md

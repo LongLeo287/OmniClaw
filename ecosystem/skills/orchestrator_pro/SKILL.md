@@ -27,7 +27,7 @@ Multi-agent coordination: phân chia tasks, giao việc cho đúng agent, tổng
 5. **Aggregate**: Tổng hợp kết quả
 
 ## Agent Registry
-`ecosystem/subagents/` — subagents chuyên biệt
+`ecosystem/workforce/agents/` — subagents chuyên biệt
 `ecosystem/workforce/agents/` — workforce generalists
 
 ---

@@ -58,7 +58,7 @@ TIER_BY_PATH = [
     ("experimental",    3),
     ("workforce/agents", 2),
     ("workforce/subagents", 2),
-    ("brain/skills",    2),
+    ("ecosystem/skills",    2),
     ("tools/",          2),
     ("plugins/",        2),
 ]
@@ -126,7 +126,7 @@ def inject_tier(text: str, tier: int) -> str:
 SCAN_DIRS = [
     ("plugins", 3),
     ("tools", 3),
-    ("brain/skills", 4),
+    ("ecosystem/skills", 4),
     ("workforce/agents", 3),
     ("workforce/subagents", 3),
 ]

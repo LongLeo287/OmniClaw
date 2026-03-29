@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Intake Chief Agent
 
-See: brain/agents/intake-chief-agent/AGENT.md
+See: ecosystem/workforce/agents/intake-chief-agent/AGENT.md

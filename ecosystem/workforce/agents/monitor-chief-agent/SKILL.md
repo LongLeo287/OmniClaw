@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Monitor Chief Agent
 
-See: brain/agents/monitor-chief-agent/AGENT.md
+See: ecosystem/workforce/agents/monitor-chief-agent/AGENT.md

@@ -100,7 +100,7 @@ files_to_check = [
     "brain/corp/rules/worker_rules.md",
     "system/security/rules/orchestrator_rules.md",
     "system/security/rules/WORKFLOW.md",
-    "system/ops/workflows/DELEGATION_SOP.md"
+    "ecosystem/workflows/DELEGATION_SOP.md"
 ]
 
 for rel_path in files_to_check:

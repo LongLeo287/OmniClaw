@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Health Chief Agent
 
-See: brain/agents/health-chief-agent/AGENT.md
+See: ecosystem/workforce/agents/health-chief-agent/AGENT.md

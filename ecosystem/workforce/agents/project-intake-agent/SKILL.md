@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Project Intake Agent
 
-See: brain/agents/project-intake-agent/AGENT.md
+See: ecosystem/workforce/agents/project-intake-agent/AGENT.md

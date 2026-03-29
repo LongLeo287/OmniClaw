@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     AI OS - Skill and Plugin Auto-Loader (Layer 4)
     Scans skills/ and plugins/ directories, parses SKILL.md / manifest.json,
@@ -23,14 +23,15 @@ param(
 $ErrorActionPreference = "Stop"
 
 # ---- PATHS (portable - auto-detect from script location) ----
-# scripts/ is always one level below AI OS root
-$AiOsRoot      = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
-$SkillsDir     = Join-Path $AiOsRoot "skills"
-$DomainsDir    = Join-Path $AiOsRoot "skills\domains"
-$ExperimentalDir = Join-Path $AiOsRoot "skills\experimental"
-$PluginsDir    = Join-Path $AiOsRoot "plugins"
-$AgentsDir     = Join-Path $AiOsRoot "agents"
-$RegistryOut   = Join-Path $AiOsRoot "shared-context\SKILL_REGISTRY.json"
+# scripts/ is in system/ops/scripts - so 3 levels down
+$AiOsRoot      = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..")).Path
+$SkillsDir     = Join-Path $AiOsRoot "ecosystem\skills"
+$DomainsDir    = Join-Path $SkillsDir "domains"
+$ExperimentalDir = Join-Path $SkillsDir "experimental"
+$PluginsDir    = Join-Path $AiOsRoot "ecosystem\plugins"
+$AgentsDir     = Join-Path $AiOsRoot "ecosystem\workforce\agents"
+$RegistryOut   = Join-Path $AiOsRoot "brain\shared-context\SKILL_REGISTRY.json"
+$LibraryGraph  = Join-Path $AiOsRoot "brain\knowledge\LIBRARY_GRAPH.json"
 $Timestamp     = Get-Date -Format "yyyy-MM-dd"
 $RunTime       = Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz"
 
@@ -88,7 +89,10 @@ function ConvertFrom-SkillMd {
     $name        = Get-YamlValue $lines "name"
     $version     = Get-YamlValue $lines "version"
     $tierRaw     = Get-YamlValue $lines "tier"
-    $tier        = if ($tierRaw) { [int]$tierRaw } else { 2 }
+    $tier        = if ($tierRaw) { 
+        $numericTier = $tierRaw -replace '\D', ''
+        if ([string]::IsNullOrWhiteSpace($numericTier)) { 2 } else { [int]$numericTier }
+    } else { 2 }
     $status      = Get-YamlValue $lines "status"
     $description = Get-YamlValue $lines "description"
     $domain      = Get-YamlValue $lines "domain"
@@ -361,5 +365,87 @@ if ($DryRun) {
     Write-Host "  [DRY-RUN] No changes written." -ForegroundColor Magenta
 } else {
     Write-Host "  Registry rebuilt successfully." -ForegroundColor Green
+    
+    # ---- INTEGRATE WITH: LIBRARY_GRAPH.json ----
+    Write-Host "Integrating entries into LIBRARY_GRAPH.json..." -ForegroundColor Yellow
+    
+    if (Test-Path $LibraryGraph) {
+        try {
+            # Load graph
+            $graphContent = Get-Content -Path $LibraryGraph -Raw -Encoding UTF8
+            $graphData = $graphContent | ConvertFrom-Json
+            
+            # Use raw arrays
+            $nodes = @($graphData.nodes)
+            $edges = @($graphData.edges)
+            
+            $existingNodes = @{}
+            foreach ($n in $nodes) { $existingNodes[$n.id] = $true }
+            
+            $existingEdges = @{}
+            foreach ($e in $edges) { $existingEdges["$($e.source)-$($e.target)"] = $true }
+            
+            $addedNodes = 0
+            $addedEdges = 0
+            
+            foreach ($entry in $allEntries) {
+                # Create Skill/Plugin Node
+                $nodeType = if ($entry.source -eq "plugin") { "plugin_node" } else { "skill_node" }
+                $nodePrefix = if ($entry.source -eq "plugin") { "PLUGIN" } else { "SKILL" }
+                $nodeId = "$nodePrefix-$($entry.id)"
+                
+                # Update or Insert Node
+                if (-not $existingNodes.ContainsKey($nodeId)) {
+                    $newNode = [PSCustomObject]@{
+                        id    = $nodeId
+                        type  = $nodeType
+                        name  = $entry.name
+                        title = "$nodePrefix`: $($entry.name)"
+                        path  = $entry.path -replace [regex]::Escape($AiOsRoot + '\'), '' -replace [regex]::Escape('\'), '/'
+                        tags  = [string[]]($entry.tags)
+                    }
+                    $nodes += $newNode
+                    $existingNodes[$nodeId] = $true
+                    $addedNodes++
+                }
+                
+                # Create Edges based on accessible_by
+                if ($entry.accessible_by) {
+                    foreach ($consumer in $entry.accessible_by) {
+                        $sourceId = "AGENT-$consumer"
+                        $edgeKey = "$sourceId-$nodeId"
+                        
+                        if (-not $existingEdges.ContainsKey($edgeKey)) {
+                            $newEdge = [PSCustomObject]@{
+                                source       = $sourceId
+                                target       = $nodeId
+                                relationship = "consumes"
+                            }
+                            $edges += $newEdge
+                            $existingEdges[$edgeKey] = $true
+                            $addedEdges++
+                        }
+                    }
+                }
+            }
+            
+            # Save graph if any changes
+            if ($addedNodes -gt 0 -or $addedEdges -gt 0) {
+                $graphData.nodes = $nodes
+                $graphData.edges = $edges
+                
+                $jsonOut = $graphData | ConvertTo-Json -Depth 10
+                $jsonOut | Set-Content -Path $LibraryGraph -Encoding UTF8
+                
+                Write-Host "  [OK] Graph Updated: +$addedNodes nodes, +$addedEdges edges" -ForegroundColor Green
+            } else {
+                Write-Host "  [OK] Graph is already up-to-date (no new objects)." -ForegroundColor Green
+            }
+        } catch {
+            Write-Host "  [FAIL] Could not update LIBRARY_GRAPH.json: $_" -ForegroundColor Red
+        }
+    } else {
+        Write-Host "  [SKIP] LIBRARY_GRAPH.json not found." -ForegroundColor DarkGray
+    }
 }
 Write-Host ""

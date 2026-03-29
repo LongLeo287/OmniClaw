@@ -35,7 +35,7 @@ c_suite:
     title: "CTO — Chief Technology Officer"
     agent: software-architect-agent
     reports_to: CEO
-    oversees: [engineering, qa_testing, it_infra, registry_capability, system_health]
+    oversees: [engineering, qa_testing, it_infra, registry_capability, system_health, orchestration]
     kpi: "System stability, build success rate, architecture quality, skill registry health, system uptime"
     escalation_threshold: "2 consecutive sprint blockers OR security critical OR system health CRITICAL"
 
@@ -234,6 +234,9 @@ departments:
       - agent: comms-ops-agent  # Fixed Bug #5: was channel-agent (head of support)
         role: "Comms Ops — internal Telegram/Discord bridges, ops notifications"
         prompt: "brain/corp/departments/operations/WORKER_PROMPT.md"
+      - agent: pipeline-architect
+        role: "Pipeline Architect — automate operational workflows and triggers"
+        primary_skill: shell_assistant
     output_channel: "shared-context/brain/corp/daily_briefs/operations.md"
     qa_required: false
     llm_tier: "economy"
@@ -431,6 +434,9 @@ departments:
       - agent: repo-analyst-agent
         role: "Repo Analyst — analyze and catalog code repositories"
         primary_skill: repo_analyst
+      - agent: retrieval-master
+        role: "Deep Retrieval Master — high-speed parallel RAG extraction"
+        primary_skill: knowledge_enricher
 
   # ── 16. ORGANIZATIONAL DEVELOPMENT & LEARNING ──
   od_learning:
@@ -650,6 +656,30 @@ departments:
     qa_required: false
     llm_tier: "economy"
     memory: "brain/corp/memory/departments/facility.md"
+
+  # ── 25. ORCHESTRATION & ROUTING (ĐIỀU PHỐI & PHÂN TUYẾN) ────
+  orchestration:
+    head: orchestrator-prime
+    head_title: "Head of Orchestration & Routing"
+    reports_to: CTO
+    prompt: "brain/corp/departments/orchestration/MANAGER_PROMPT.md"
+    rules: "brain/corp/departments/orchestration/rules.md"
+    mission: "Dynamic prompt routing and multi-agent swarm orchestration"
+    tools:
+      - "ecosystem/skills/context_manager/SKILL.md"
+      - "ecosystem/skills/reasoning_engine/SKILL.md"
+      - ".agents/workflows/agent-orchestration.md"
+    workers:
+      - agent: router-agent
+        role: "Router Specialist — parse prompt into subtasks, route to correct depts"
+        primary_skill: reasoning_engine
+      - agent: swarm-coordinator
+        role: "Swarm Coordinator — merge parallel responses into unified output"
+        primary_skill: context_manager
+    output_channel: "shared-context/brain/corp/daily_briefs/orchestration.md"
+    qa_required: false
+    llm_tier: "premium"  # Needs heavy reasoning power for complex prompt routing
+    memory: "brain/corp/memory/departments/orchestration.md"
 
 # ─────────────────────────────────────────────────
 # GATE SYSTEM — Blocking Gates

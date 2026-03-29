@@ -2,7 +2,7 @@
 import yaml
 
 ROOT_DIR = os.environ.get("AOS_ROOT", ".")
-DEPT_DIR = os.path.join(ROOT_DIR, "brain", "corp", "departments")
+DEPT_DIR = os.path.join(ROOT_DIR, "ecosystem", "workforce", "departments")
 SKILL_DIR = os.path.join(ROOT_DIR, "ecosystem", "skills")
 PLUGIN_DIR = os.path.join(ROOT_DIR, "ecosystem", "plugins")
 SUBAGENT_DIR = os.path.join(ROOT_DIR, "ecosystem", "subagents")

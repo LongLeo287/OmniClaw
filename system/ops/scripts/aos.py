@@ -108,7 +108,7 @@ def cmd_corp_dispatch(dept="all"):
     entry = f"\n## Dispatch {_now()}\n- [ ] CEO dispatch — dept: {dept}\n"
     with open(task_file, "a", encoding="utf-8") as f:
         f.write(entry)
-    print(f"{GREEN}✅ Dispatch — dept: {dept} — task written to subagents/mq/{dept}_tasks.md{RESET}")
+    print(f"{GREEN}✅ Dispatch — dept: {dept} — task written to ecosystem/workforce/agents/mq/{dept}_tasks.md{RESET}")
 
 def cmd_corp_retro():
     """Phase 5-7: Synthesis + Retro + HUD update."""
@@ -243,14 +243,14 @@ def cmd_brief():
 def cmd_dispatch(dept: str):
     """Dispatch tasks to a department (Phase 3 stub)."""
     print(f"{CYAN}Dispatching to department: {dept}{RESET}")
-    # Stub — in full impl would write to subagents/mq/<dept>_tasks.md
+    # Stub — in full impl would write to ecosystem/workforce/agents/mq/<dept>_tasks.md
     mq_dir = os.path.join(ROOT, "subagents", "mq")
     os.makedirs(mq_dir, exist_ok=True)
     task_file = os.path.join(mq_dir, f"{dept}_tasks.md")
     entry = f"\n## Dispatch {datetime.now().isoformat()[:19]}\n- [ ] Manual dispatch from `aos dispatch {dept}`\n"
     with open(task_file, "a", encoding="utf-8") as f:
         f.write(entry)
-    print(f"{GREEN}Task written to: subagents/mq/{dept}_tasks.md{RESET}")
+    print(f"{GREEN}Task written to: ecosystem/workforce/agents/mq/{dept}_tasks.md{RESET}")
 
 
 def cmd_rebuild_index():

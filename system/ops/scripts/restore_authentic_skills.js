@@ -33,8 +33,8 @@ for (const skill of missingSkills) {
   const destDir = path.join(workspaceSkills, skill);
   const destPath = path.join(destDir, 'SKILL.md');
   
-  // Try to find exact match in brain/skills
-  let matchedPath = allSkillPaths.find(p => p.toLowerCase().includes(`brain\\skills\\${skill.toLowerCase()}\\skill.md`));
+  // Try to find exact match in ecosystem/skills
+  let matchedPath = allSkillPaths.find(p => p.toLowerCase().includes(`ecosystem\\skills\\${skill.toLowerCase()}\\skill.md`));
   
   // Try to find manual mapped match
   if (!matchedPath && manualMap[skill]) {

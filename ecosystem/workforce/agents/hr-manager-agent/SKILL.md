@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Hr Manager Agent
 
-See: brain/agents/hr-manager-agent/AGENT.md
+See: ecosystem/workforce/agents/hr-manager-agent/AGENT.md

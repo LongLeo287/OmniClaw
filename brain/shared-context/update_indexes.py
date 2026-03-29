@@ -20,11 +20,11 @@ fi.setdefault("keyword", {}).update({
     "core_intel":     {"path": "tools/core_intel/SKILL.md",        "tier": 1, "dept": "monitoring",          "desc": "CIV metrics analytics"},
     "civ_metrics":    {"path": "tools/core_intel/SKILL.md",        "tier": 1, "dept": "monitoring",          "desc": "CIV score computation"},
     "gitnexus_web":   {"path": "tools/gitnexus-web/SKILL.md",      "tier": 2, "dept": "engineering",         "desc": "GitNexus browser UI"},
-    "agentskills":    {"path": "brain/skills/agentskills-spec/SKILL.md", "tier": 1, "dept": "registry_capability", "desc": "Anthropic agentskills spec"},
-    "cybersecurity":  {"path": "brain/skills/cybersecurity/SKILL.md", "tier": 2, "dept": "security_grc",     "desc": "Web security skills"},
-    "domains":        {"path": "brain/skills/domains/SKILL.md",    "tier": 2, "dept": "engineering",          "desc": "Multi-domain skill library"},
-    "ui_ux_pro":      {"path": "brain/skills/ui-ux-pro-max/SKILL.md", "tier": 2, "dept": "engineering",      "desc": "Advanced UI/UX skill scripts"},
-    "vibe_coder":     {"path": "brain/skills/antigravity/SKILL.md","tier": 2, "dept": "rd",                  "desc": "Vibe coding skill"},
+    "agentskills":    {"path": "ecosystem/skills/agentskills-spec/SKILL.md", "tier": 1, "dept": "registry_capability", "desc": "Anthropic agentskills spec"},
+    "cybersecurity":  {"path": "ecosystem/skills/cybersecurity/SKILL.md", "tier": 2, "dept": "security_grc",     "desc": "Web security skills"},
+    "domains":        {"path": "ecosystem/skills/domains/SKILL.md",    "tier": 2, "dept": "engineering",          "desc": "Multi-domain skill library"},
+    "ui_ux_pro":      {"path": "ecosystem/skills/ui-ux-pro-max/SKILL.md", "tier": 2, "dept": "engineering",      "desc": "Advanced UI/UX skill scripts"},
+    "vibe_coder":     {"path": "ecosystem/skills/antigravity/SKILL.md","tier": 2, "dept": "rd",                  "desc": "Vibe coding skill"},
     "scroll":         {"path": "plugins/lenis/SKILL.md",           "tier": 2, "dept": "engineering",          "desc": "Smooth scroll animation"},
 })
 
@@ -33,9 +33,9 @@ fi.setdefault("domain", {}).update({
     "sandbox_execution": {"path": "plugins/OpenSandbox/SKILL.md",  "tier": 2, "dept": "engineering"},
     "mcp_protocol":      {"path": "tools/mcp/SKILL.md",            "tier": 1, "dept": "registry_capability"},
     "civ_analytics":     {"path": "tools/core_intel/SKILL.md",     "tier": 1, "dept": "monitoring"},
-    "web_security":      {"path": "brain/skills/cybersecurity/SKILL.md", "tier": 2, "dept": "security_grc"},
-    "domain_skills":     {"path": "brain/skills/domains/SKILL.md", "tier": 2, "dept": "engineering"},
-    "ui_ux_advanced":    {"path": "brain/skills/ui-ux-pro-max/SKILL.md", "tier": 2, "dept": "engineering"},
+    "web_security":      {"path": "ecosystem/skills/cybersecurity/SKILL.md", "tier": 2, "dept": "security_grc"},
+    "domain_skills":     {"path": "ecosystem/skills/domains/SKILL.md", "tier": 2, "dept": "engineering"},
+    "ui_ux_advanced":    {"path": "ecosystem/skills/ui-ux-pro-max/SKILL.md", "tier": 2, "dept": "engineering"},
 })
 
 # paths is a dict {name: path_string}
@@ -46,13 +46,13 @@ fi.setdefault("paths", {}).update({
     "notebook_mcp":      "tools/mcp/SKILL.md",
     "core_intel":        "tools/core_intel/SKILL.md",
     "gitnexus_web":      "tools/gitnexus-web/SKILL.md",
-    "agentskills_spec":  "brain/skills/agentskills-spec/SKILL.md",
-    "antigravity_sk":    "brain/skills/antigravity/SKILL.md",
-    "cybersecurity":     "brain/skills/cybersecurity/SKILL.md",
-    "domains":           "brain/skills/domains/SKILL.md",
-    "experimental":      "brain/skills/experimental/SKILL.md",
-    "ui_ux":             "brain/skills/ui-ux/SKILL.md",
-    "ui_ux_pro_max":     "brain/skills/ui-ux-pro-max/SKILL.md",
+    "agentskills_spec":  "ecosystem/skills/agentskills-spec/SKILL.md",
+    "antigravity_sk":    "ecosystem/skills/antigravity/SKILL.md",
+    "cybersecurity":     "ecosystem/skills/cybersecurity/SKILL.md",
+    "domains":           "ecosystem/skills/domains/SKILL.md",
+    "experimental":      "ecosystem/skills/experimental/SKILL.md",
+    "ui_ux":             "ecosystem/skills/ui-ux/SKILL.md",
+    "ui_ux_pro_max":     "ecosystem/skills/ui-ux-pro-max/SKILL.md",
 })
 
 fi["_meta"]["built"] = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
@@ -85,13 +85,13 @@ new_entries = [
     {"id": "notebook_mcp",      "name": "Notebook MCP Server",       "path": "tools/mcp/SKILL.md",                        "tier": 1, "category": "mcp",            "dept": "registry_capability",  "status": "active"},
     {"id": "core_intel",        "name": "Core Intel CIV Metrics",    "path": "tools/core_intel/SKILL.md",                 "tier": 1, "category": "analytics",      "dept": "monitoring",           "status": "active"},
     {"id": "gitnexus_web",      "name": "GitNexus Web UI",           "path": "tools/gitnexus-web/SKILL.md",               "tier": 2, "category": "dev-tooling",    "dept": "engineering",          "status": "active"},
-    {"id": "agentskills_spec",  "name": "AgentSkills Specification", "path": "brain/skills/agentskills-spec/SKILL.md",    "tier": 1, "category": "specification",  "dept": "registry_capability",  "status": "active"},
-    {"id": "antigravity_skills","name": "Antigravity Agent Skills",  "path": "brain/skills/antigravity/SKILL.md",         "tier": 2, "category": "ai-agent",       "dept": "rd",                   "status": "active"},
-    {"id": "cybersecurity",     "name": "Cybersecurity Skills",      "path": "brain/skills/cybersecurity/SKILL.md",       "tier": 2, "category": "security",       "dept": "security_grc",         "status": "active"},
-    {"id": "domain_skills",     "name": "Domain Skills Library",     "path": "brain/skills/domains/SKILL.md",             "tier": 2, "category": "knowledge",      "dept": "engineering",          "status": "active"},
-    {"id": "experimental",      "name": "Experimental Skills",       "path": "brain/skills/experimental/SKILL.md",        "tier": 3, "category": "experimental",   "dept": "rd",                   "status": "draft"},
-    {"id": "ui_ux_skills",      "name": "UI-UX Skills",              "path": "brain/skills/ui-ux/SKILL.md",               "tier": 2, "category": "design",         "dept": "engineering",          "status": "active"},
-    {"id": "ui_ux_pro_max",     "name": "UI-UX Pro Max",             "path": "brain/skills/ui-ux-pro-max/SKILL.md",       "tier": 2, "category": "design",         "dept": "engineering",          "status": "active"},
+    {"id": "agentskills_spec",  "name": "AgentSkills Specification", "path": "ecosystem/skills/agentskills-spec/SKILL.md",    "tier": 1, "category": "specification",  "dept": "registry_capability",  "status": "active"},
+    {"id": "antigravity_skills","name": "Antigravity Agent Skills",  "path": "ecosystem/skills/antigravity/SKILL.md",         "tier": 2, "category": "ai-agent",       "dept": "rd",                   "status": "active"},
+    {"id": "cybersecurity",     "name": "Cybersecurity Skills",      "path": "ecosystem/skills/cybersecurity/SKILL.md",       "tier": 2, "category": "security",       "dept": "security_grc",         "status": "active"},
+    {"id": "domain_skills",     "name": "Domain Skills Library",     "path": "ecosystem/skills/domains/SKILL.md",             "tier": 2, "category": "knowledge",      "dept": "engineering",          "status": "active"},
+    {"id": "experimental",      "name": "Experimental Skills",       "path": "ecosystem/skills/experimental/SKILL.md",        "tier": 3, "category": "experimental",   "dept": "rd",                   "status": "draft"},
+    {"id": "ui_ux_skills",      "name": "UI-UX Skills",              "path": "ecosystem/skills/ui-ux/SKILL.md",               "tier": 2, "category": "design",         "dept": "engineering",          "status": "active"},
+    {"id": "ui_ux_pro_max",     "name": "UI-UX Pro Max",             "path": "ecosystem/skills/ui-ux-pro-max/SKILL.md",       "tier": 2, "category": "design",         "dept": "engineering",          "status": "active"},
     {"id": "archive_legacy",    "name": "Archive (Legacy)",          "path": "plugins/_archive/SKILL.md",                 "tier": 5, "category": "archive",        "dept": "legacy",               "status": "deprecated"},
 ]
 

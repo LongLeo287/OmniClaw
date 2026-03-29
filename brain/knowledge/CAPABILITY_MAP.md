@@ -34,93 +34,93 @@ FUTURE (Phase 3): GitNexus impact analysis → exact blast radius when modifying
 ### ai_ml (AI/ML, LLMs, RAG, Embeddings)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Knowledge search / RAG | `knowledge_enricher` | skill | brain/skills/knowledge_enricher/ |
+| Knowledge search / RAG | `knowledge_enricher` | skill | ecosystem/skills/knowledge_enricher/ |
 | Graph-based RAG | `LightRAG` | plugin | plugins/LightRAG/ |
 | Document ingestion | `open-notebook` | plugin | plugins/open-notebook/ |
 | Research synthesis | `notebooklm-skill` | plugin | plugins/notebooklm-skill/ |
-| Multi-source aggregation | `multi-source-aggregation` | skill | brain/skills/multi-source-aggregation/ |
-| Reasoning + decision | `reasoning_engine` | skill | brain/skills/reasoning_engine/ |
-| Cognitive patterns | `cognitive_reflector` | skill | brain/skills/cognitive_reflector/ |
-| LLM routing | `llm_router` | skill | brain/skills/llm_router/ |
+| Multi-source aggregation | `multi-source-aggregation` | skill | ecosystem/skills/multi-source-aggregation/ |
+| Reasoning + decision | `reasoning_engine` | skill | ecosystem/skills/reasoning_engine/ |
+| Cognitive patterns | `cognitive_reflector` | skill | ecosystem/skills/cognitive_reflector/ |
+| LLM routing | `llm_router` | skill | ecosystem/skills/llm_router/ |
 | NLP + data extract | `langextract` | plugin | plugins/langextract/ |
 
 ### backend (Python, API, FastAPI, Node.js)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Shell + scripts | `shell_assistant` | skill | brain/skills/shell_assistant/ |
-| Production QA | `production_qa` | skill | brain/skills/production_qa/ |
-| Architecture linting | `fsd_architectural_linter` | skill | brain/skills/domains/frontend/ |
-| Resilience + retry | `resilience_engine` | skill | brain/skills/resilience_engine/ |
-| Performance profiling | `performance_profiler` | skill | brain/skills/performance_profiler/ |
-| Diagnostics | `diagnostics_engine` | skill | brain/skills/diagnostics_engine/ |
+| Shell + scripts | `shell_assistant` | skill | ecosystem/skills/shell_assistant/ |
+| Production QA | `production_qa` | skill | ecosystem/skills/production_qa/ |
+| Architecture linting | `fsd_architectural_linter` | skill | ecosystem/skills/domains/frontend/ |
+| Resilience + retry | `resilience_engine` | skill | ecosystem/skills/resilience_engine/ |
+| Performance profiling | `performance_profiler` | skill | ecosystem/skills/performance_profiler/ |
+| Diagnostics | `diagnostics_engine` | skill | ecosystem/skills/diagnostics_engine/ |
 
 ### web_frontend (React, Vue, HTML, CSS, UI)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| UI/UX generation | `visual_excellence` | skill | brain/skills/visual_excellence/ |
+| UI/UX generation | `visual_excellence` | skill | ecosystem/skills/visual_excellence/ |
 | UI PRO generation | `ui-ux-pro-max` | plugin | plugins/ui-ux-pro-max/ |
-| Accessibility | `accessibility_grounding` | skill | brain/skills/accessibility_grounding/ |
-| SEO/AEO | `seo-aeo-optimization` | skill | brain/skills/seo-aeo-optimization/ |
+| Accessibility | `accessibility_grounding` | skill | ecosystem/skills/accessibility_grounding/ |
+| SEO/AEO | `seo-aeo-optimization` | skill | ecosystem/skills/seo-aeo-optimization/ |
 
 ### devops (Docker, CI/CD, k8s, infra)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Shell + deployment | `shell_assistant` | skill | brain/skills/shell_assistant/ |
-| Resilience | `resilience_engine` | skill | brain/skills/resilience_engine/ |
-| Diagnostics | `diagnostics_engine` | skill | brain/skills/diagnostics_engine/ |
+| Shell + deployment | `shell_assistant` | skill | ecosystem/skills/shell_assistant/ |
+| Resilience | `resilience_engine` | skill | ecosystem/skills/resilience_engine/ |
+| Diagnostics | `diagnostics_engine` | skill | ecosystem/skills/diagnostics_engine/ |
 | Cloudflare deploy | `cloudflare-skills` | plugin | plugins/cloudflare-skills/ |
 | Vercel deploy | `vercel-agent-skills` | plugin | plugins/vercel-agent-skills/ |
 
 ### cybersecurity (CVE, pentest, OWASP, secrets)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| GATE_SECURITY scan | `security_shield` | skill | brain/skills/security_shield/ |
-| Repo vetting | `skill_sentry` | skill | brain/skills/skill_sentry/ |
+| GATE_SECURITY scan | `security_shield` | skill | ecosystem/skills/security_shield/ |
+| Repo vetting | `skill_sentry` | skill | ecosystem/skills/skill_sentry/ |
 | Leak detection | `zeroleaks` | plugin | plugins/zeroleaks/ |
-| CVE tracking | `cybersecurity` | skill | brain/skills/cybersecurity/ |
+| CVE tracking | `cybersecurity` | skill | ecosystem/skills/cybersecurity/ |
 | Cert scanning | `cerberus-cve-tool` | plugin | plugins/cerberus-cve-tool/ (check) |
 
 ### marketing (SEO, content, social, campaigns)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Web intelligence | `web_intelligence` | skill | brain/skills/web_intelligence/ |
-| SEO/AEO | `seo-aeo-optimization` | skill | brain/skills/seo-aeo-optimization/ |
-| Channel management | `channel_manager` | skill | brain/skills/channel_manager/ |
-| Notification | `notification_bridge` | skill | brain/skills/notification_bridge/ |
+| Web intelligence | `web_intelligence` | skill | ecosystem/skills/web_intelligence/ |
+| SEO/AEO | `seo-aeo-optimization` | skill | ecosystem/skills/seo-aeo-optimization/ |
+| Channel management | `channel_manager` | skill | ecosystem/skills/channel_manager/ |
+| Notification | `notification_bridge` | skill | ecosystem/skills/notification_bridge/ |
 
 ### legal (GDPR, contracts, IP, compliance)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Legal reasoning | `reasoning_engine` | skill | brain/skills/reasoning_engine/ |
-| Knowledge enrichment | `knowledge_enricher` | skill | brain/skills/knowledge_enricher/ |
-| Web research | `web_intelligence` | skill | brain/skills/web_intelligence/ |
+| Legal reasoning | `reasoning_engine` | skill | ecosystem/skills/reasoning_engine/ |
+| Knowledge enrichment | `knowledge_enricher` | skill | ecosystem/skills/knowledge_enricher/ |
+| Web research | `web_intelligence` | skill | ecosystem/skills/web_intelligence/ |
 
 ### finance (budget, cost, invoice, API cost)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Cost tracking | `cost_manager_skill` | skill | brain/skills/domains/finance/ |
-| Performance metrics | `performance_profiler` | skill | brain/skills/performance_profiler/ |
-| Data analysis | `insight_engine` | skill | brain/skills/insight_engine/ |
+| Cost tracking | `cost_manager_skill` | skill | ecosystem/skills/domains/finance/ |
+| Performance metrics | `performance_profiler` | skill | ecosystem/skills/performance_profiler/ |
+| Data analysis | `insight_engine` | skill | ecosystem/skills/insight_engine/ |
 
 ### knowledge_mgmt (KI, memory, index, graph)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Knowledge navigation | `knowledge_navigator` | skill | brain/skills/knowledge_navigator/ |
-| Knowledge enrichment | `knowledge_enricher` | skill | brain/skills/knowledge_enricher/ |
-| Memory (session) | `cosmic_memory` | skill | brain/skills/cosmic_memory/ |
-| Memory (long-term) | `smart_memory` | skill | brain/skills/smart_memory/ |
-| Memory (neural) | `neural_memory` | skill | brain/skills/neural_memory/ |
-| Archiving | `archivist` | skill | brain/skills/archivist/ |
+| Knowledge navigation | `knowledge_navigator` | skill | ecosystem/skills/knowledge_navigator/ |
+| Knowledge enrichment | `knowledge_enricher` | skill | ecosystem/skills/knowledge_enricher/ |
+| Memory (session) | `cosmic_memory` | skill | ecosystem/skills/cosmic_memory/ |
+| Memory (long-term) | `smart_memory` | skill | ecosystem/skills/smart_memory/ |
+| Memory (neural) | `neural_memory` | skill | ecosystem/skills/neural_memory/ |
+| Archiving | `archivist` | skill | ecosystem/skills/archivist/ |
 | Graph RAG | `LightRAG` | plugin | plugins/LightRAG/ |
-| Context management | `context_manager` | skill | brain/skills/context_manager/ |
+| Context management | `context_manager` | skill | ecosystem/skills/context_manager/ |
 
 ### registry (skill, plugin, agent lifecycle)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Skill generation | `skill_generator` | skill | brain/skills/skill_generator/ |
-| Skill sentry | `skill_sentry` | skill | brain/skills/skill_sentry/ |
-| Agent creation | `orchestrator_pro` | skill | brain/skills/orchestrator_pro/ |
-| Proposal engine | `proposal_engine` | skill | brain/skills/proposal_engine/ |
+| Skill generation | `skill_generator` | skill | ecosystem/skills/skill_generator/ |
+| Skill sentry | `skill_sentry` | skill | ecosystem/skills/skill_sentry/ |
+| Agent creation | `orchestrator_pro` | skill | ecosystem/skills/orchestrator_pro/ |
+| Proposal engine | `proposal_engine` | skill | ecosystem/skills/proposal_engine/ |
 
 ### codebase_navigation (code understanding, refactoring, debugging)
 | Need | Use | Type | Path |
@@ -135,18 +135,18 @@ FUTURE (Phase 3): GitNexus impact analysis → exact blast radius when modifying
 ### google_workspace (GAS, Sheets, Docs, Drive)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Google Apps Script | `gas_skill` | skill | brain/skills/domains/google-workspace/ |
-| Sheets performance | `sheets_performance_optimization` | skill | brain/skills/domains/google-workspace/ |
+| Google Apps Script | `gas_skill` | skill | ecosystem/skills/domains/google-workspace/ |
+| Sheets performance | `sheets_performance_optimization` | skill | ecosystem/skills/domains/google-workspace/ |
 
 ### databases (Supabase, PostgreSQL, SQL)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Supabase patterns | `supabase_postgres_best_practices` | skill | brain/skills/domains/databases/ |
+| Supabase patterns | `supabase_postgres_best_practices` | skill | ecosystem/skills/domains/databases/ |
 
 ### mobile (React Native, Android, APK)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| APK modification | `Android_APK_Modification` | skill | brain/skills/ |
+| APK modification | `Android_APK_Modification` | skill | ecosystem/skills/ |
 
 ---
 

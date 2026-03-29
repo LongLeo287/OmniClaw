@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Test Manager Agent
 
-See: brain/agents/test-manager-agent/AGENT.md
+See: ecosystem/workforce/agents/test-manager-agent/AGENT.md

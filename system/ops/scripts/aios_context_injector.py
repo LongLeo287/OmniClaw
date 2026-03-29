@@ -137,7 +137,7 @@ try:
         workflows = [f.name for f in wf_dir.glob('*.md')]
         lines.append(f"## Workflows available ({len(workflows)})")
         for wf in workflows:
-            lines.append(f"- system/ops/workflows/{wf}")
+            lines.append(f"- ecosystem/workflows/{wf}")
         lines.append("")
         print(f"Workflows: {len(workflows)} found")
 except Exception as e:

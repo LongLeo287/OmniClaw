@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Rd Lead Agent
 
-See: brain/agents/rd-lead-agent/AGENT.md
+See: ecosystem/workforce/agents/rd-lead-agent/AGENT.md

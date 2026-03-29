@@ -448,8 +448,8 @@ Khi Sếp yêu cầu thay đổi Kiến trúc (Architecture), Phân tách nhánh
 ```
 Nghiêm cấm "mù mờ kiến trúc". Khi Sếp yêu cầu kiểm tra, tìm kiếm tài nguyên, ứng dụng, repo hoặc tool:
   1. KHÔNG QUÉT FILE THỦ CÔNG BẰNG DIRECTORY LISTING ở bước đầu (tránh hiệu ứng quên lãng).
-  2. ĐỌC NGAY SỔ ĐĂNG KÝ TỔNG (MASTER REGISTRY): `system/registry/SYSTEM_INDEX.yaml` để lấy Tọa độ gốc.
-  3. NHẬN THỨC VĨ MÔ: Tham chiếu file `system/registry/SYSTEM_INDEX_NARRATIVE.txt` hoặc kích hoạt `LightRAG` để biết repo đó phụ thuộc vào nhánh nào.
+  2. ĐỌC NGAY SỔ ĐĂNG KÝ TỔNG (MASTER REGISTRY): `brain/registry/SYSTEM_INDEX.yaml` để lấy Tọa độ gốc.
+  3. NHẬN THỨC VĨ MÔ: Tham chiếu file `brain/registry/SYSTEM_INDEX_NARRATIVE.txt` hoặc kích hoạt `LightRAG` để biết repo đó phụ thuộc vào nhánh nào.
   4. NHẬN THỨC VI MÔ (CODE-LEVEL): Kích hoạt `GitNexus MCP` để bóc tách AST (Cây Cú pháp) của repo, hiểu sâu luồng Function/Node mà không cần đọc tay từng dòng source.
 ```
 

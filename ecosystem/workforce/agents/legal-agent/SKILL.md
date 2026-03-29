@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Legal Agent
 
-See: brain/agents/legal-agent/AGENT.md
+See: ecosystem/workforce/agents/legal-agent/AGENT.md

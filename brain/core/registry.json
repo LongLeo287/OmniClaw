@@ -52,7 +52,7 @@
       "tier": "T0",
       "status": "active",
       "version": "2.0",
-      "module_path": "<AI_OS_ROOT>\\brain\\skills\\skill_generator",
+      "module_path": "<AI_OS_ROOT>\\ecosystem\\skills\\skill_generator",
       "source_plugin": "<AI_OS_ROOT>\\plugins\\skill-generator",
       "description": "Meta-skill factory — 8-phase pipeline to create, test, deploy AI skills",
       "registered_at": "2026-03-17T10:18:00+07:00"
@@ -61,7 +61,7 @@
       "tier": "T0",
       "status": "active",
       "version": "1.0",
-      "module_path": "<AI_OS_ROOT>\\brain\\skills\\tools_hub",
+      "module_path": "<AI_OS_ROOT>\\ecosystem\\skills\\tools_hub",
       "tools_registry": "<AI_OS_ROOT>\\brain\\shared-context\\registry\\TOOLS_REGISTRY.md",
       "description": "Central tool dispatcher — routes to vet_repo, wakeup, backup, skill_loader, MCP, handoff etc.",
       "total_tools": 22,

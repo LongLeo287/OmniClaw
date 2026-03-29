@@ -1,0 +1,7 @@
+{
+  "id": "claude_usage_checker",
+  "name": "Claude-Usage-Checker",
+  "status": "registered",
+  "upstream": "https://github.com/0xAstroAlpha/Claude-Usage-Checker",
+  "department": "Dept 20 \u2014 CIV"
+}

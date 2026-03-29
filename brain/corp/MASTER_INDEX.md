@@ -56,6 +56,7 @@ graph TD
 | **Dept 22** | **Operations** | `scrum-master` | `cleanup-daemon`, `git-protector` | Daily hardware/root sanitation and Git protection. |
 | **Dept 23** | **Reception** | `project-intake` | `proposal-writer`, `brief-gatherer` | Automated client intake and project requirement parsing. |
 | **Dept 24** | **Facility** | `facility-agent` | `sanitation-bot` | Maintenance of the root directory and workspace hygiene. |
+| **Dept 25** | **Orchestration** | `orchestrator-prime` | `router-agent`, `swarm-coordinator` | Dynamic prompt routing and multi-agent swarm orchestration. |
 
 ---
 

@@ -9,4 +9,4 @@ added: 2026-03-26
 
 # Strix Agent
 
-See: brain/agents/strix-agent/AGENT.md
+See: ecosystem/workforce/agents/strix-agent/AGENT.md

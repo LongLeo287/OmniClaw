@@ -1,14 +1,5 @@
 {
     "mcpServers": {
-        "gitnexus": {
-            "command": "npx",
-            "args": [
-                "-y",
-                "gitnexus@latest",
-                "mcp"
-            ],
-            "type": "stdio"
-        },
         "minimax-mcp-js": {
             "command": "node",
             "args": [

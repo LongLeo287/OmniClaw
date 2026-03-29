@@ -219,7 +219,7 @@ if os.path.isdir(WF_DIR):
         else:
             INFO("workflows", f"â—‹ {wf} not found (optional)")
 else:
-    ISSUE("workflows", "system/ops/workflows/ directory missing")
+    ISSUE("workflows", "ecosystem/workflows/ directory missing")
 
 # â”€â”€â”€ 11. REPO_REGISTRY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 print("=== 11. REPO_REGISTRY ===")

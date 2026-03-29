@@ -162,7 +162,7 @@ Ref: system/ops/workflows/claude-code-handoff.md
 
 Antigravity -> Claude Code:
   blackboard.json handoff_trigger:ACTIVE + target_agent:Claude Code
-  ecosystem/subagents/mq/claude_code_tasks.md (task detail)
+  ecosystem/workforce/agents/mq/claude_code_tasks.md (task detail)
 
 Claude Code unique capabilities:
   bash execution | sub-agents isolated context | 200K code gen | DEVELOPER->QA self-review

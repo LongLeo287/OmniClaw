@@ -2,7 +2,7 @@
   "_meta": {
     "version": "1.0.0",
     "last_updated": "2026-03-26",
-    "total_skills": 13,
+    "total_skills": 31,
     "owner": "Dept 4 â€” Registry & Capability",
     "description": "AI OS Corp Skill Registry â€” all installed skills in skills/ directory"
   },
@@ -388,6 +388,30 @@
       "status": "ACTIVE",
       "path": "ecosystem/skills/web_intelligence/SKILL.md",
       "description": "\"Load skill này khi cần thu thập thông tin từ web, research online, scrape dữ liệu, hoặc tìm kiếm tài liệu từ internet.\""
+    },
+    {
+      "id": "sandbox_operator",
+      "name": "Sandbox Operator",
+      "tier": 2,
+      "status": "ACTIVE",
+      "path": "ecosystem/skills/sandbox_operator/SKILL.md",
+      "description": "Thiết đặt Môi trường Giam Lỏng (Sandbox) giả lập cho AI"
+    },
+    {
+      "id": "secret_scanner",
+      "name": "Secret Scanner",
+      "tier": 2,
+      "status": "ACTIVE",
+      "path": "ecosystem/skills/secret_scanner/SKILL.md",
+      "description": "Quét Token/Password của phòng ban Strix Security"
+    },
+    {
+      "id": "hyperspace_vector_architect",
+      "name": "Hyperspace Vector Architect",
+      "tier": 2,
+      "status": "ACTIVE",
+      "path": "ecosystem/skills/hyperspace_vector_architect/SKILL.md",
+      "description": "Cấu trúc và tối ưu Database Vector RAG siêu tốc"
     }
   ]
 }
