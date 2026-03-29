@@ -180,6 +180,10 @@ CEO giao task trực tiếp → Antigravity plan → Handoff Claude Code
 # === KHỞI ĐỘNG NHANH (1 lệnh) ===
 python system/ops/aios_startup.py
 
+# === DATA VAULT (SYNC DỮ LIỆU) ===
+powershell "D:\LongLeo\AI OS CORP\AI OS REMOTE\scripts\setup.ps1" # (Kéo Data: chạy setup)
+python system/ops/scripts/omniclaw_data_push.py                  # (Đẩy Data: Sync lên Mây)
+
 # === ORCHESTRATOR ===
 python system/ops/aios_orchestrator.py once      # Update HUD + dispatch
 python system/ops/aios_orchestrator.py routes    # Xem 77 routing rules

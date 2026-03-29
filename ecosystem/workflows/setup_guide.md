@@ -1,18 +1,18 @@
-﻿# Department: operations
+# Department: operations
 # AI OS CORP â€” Setup Guide
 # Sau khi clone, chá»‰ cáº§n 2 bÆ°á»›c lÃ  cháº¡y Ä‘Æ°á»£c
 
 ## âš¡ Quick Start
 
 ```powershell
-# 1. Clone repo
+# 1. Clone repo (Code Lõi)
 git clone <repo-url> "d:\AI OS CORP"
 
-# 2. CÃ i Python dependencies (1 láº§n)
-cd "<AI_OS_ROOT>"
-pip install -r requirements.txt
+# 2. Auto-Setup: Kéo Data Vault (HuggingFace) & Cài Dependencies
+cd "d:\AI OS CORP\AI OS REMOTE\scripts"
+powershell -ExecutionPolicy Bypass -File setup.ps1
 
-# 3. Khá»Ÿi Ä‘á»™ng
+# 3. Khởi động Master Dashboard
 "<AI_OS_ROOT>\launcher\AI OS CORP.cmd"
 ```
 
