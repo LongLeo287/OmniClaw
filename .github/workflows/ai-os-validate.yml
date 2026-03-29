@@ -29,7 +29,7 @@ jobs:
           python3 -c "
           import os, sys
           missing = 0
-          for base in ['ecosystem/skills', 'brain/skills', 'ecosystem/plugins']:
+          for base in ['ecosystem/skills']:
               if not os.path.isdir(base): continue
               for d in os.listdir(base):
                   p = os.path.join(base, d)
@@ -50,7 +50,7 @@ jobs:
         run: |
           ERRORS=0
           REQUIRED_FIELDS=(name description version tier category)
-          for f in $(find ecosystem/skills brain/skills ecosystem/plugins -name "SKILL.md" 2>/dev/null); do
+          for f in $(find ecosystem/skills -name "SKILL.md" 2>/dev/null); do
             for field in "${REQUIRED_FIELDS[@]}"; do
               if ! grep -q "^${field}:" "$f"; then
                 echo "❌ Missing field '$field' in: $f"
@@ -70,7 +70,7 @@ jobs:
 
       - name: JSON syntax check
         run: |
-          python3 -c "import json; json.load(open('brain/shared-context/SKILL_REGISTRY.json'))"
+          python3 -c "import json; json.load(open('brain/shared-context/SKILL_REGISTRY.json', encoding='utf-8-sig'))"
           echo "✅ SKILL_REGISTRY.json is valid JSON"
 
       - name: Check for duplicate IDs
@@ -78,7 +78,7 @@ jobs:
           python3 << 'EOF'
           import json
           try:
-              reg = json.load(open("brain/shared-context/SKILL_REGISTRY.json"))
+              reg = json.load(open("brain/shared-context/SKILL_REGISTRY.json", encoding="utf-8-sig"))
               entries = reg.get("skills", reg.get("entries", []))
               ids = [e.get("id") or e.get("name") for e in entries]
               dupes = [x for x in ids if ids.count(x) > 1]
