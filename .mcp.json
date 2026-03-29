@@ -9,18 +9,6 @@
             ],
             "type": "stdio"
         },
-        "minimax-mcp": {
-            "command": "uvx",
-            "args": [
-                "minimax-mcp"
-            ],
-            "type": "stdio",
-            "description": "MiniMax AI API — TTS, ASR, image generation. [REQUIRES MINIMAX_API_KEY & MINIMAX_MCP_BASE_PATH set in system/ops/secrets/MASTER.env]. [RUN CLAUDE FROM AOS_ROOT ONLY]",
-            "env": {
-                "MINIMAX_API_KEY": "${MINIMAX_API_KEY}",
-                "MINIMAX_MCP_BASE_PATH": "${MINIMAX_MCP_BASE_PATH}"
-            }
-        },
         "minimax-mcp-js": {
             "command": "node",
             "args": [
@@ -37,7 +25,32 @@
             "type": "stdio",
             "description": "NotebookLM MCP - AI note analysis and research synthesis"
         },
+        "scrapling-mcp": {
+            "command": "scrapling",
+            "args": [
+                "mcp"
+            ],
+            "type": "stdio",
+            "description": "Scrapling web scraper - bypass Cloudflare protection"
+        }
+    },
+    "_disabled_requires_runtime_install": {
+        "_note": "Các plugin dưới đây bị disable vì runtime chưa cài trên máy. Cài đặt rồi chạy omniclaw_activate_agents.py để kích hoạt lại.",
+        "minimax-mcp": {
+            "_requires": "uvx (install: pip install uv hoặc winget install astral-sh.uv)",
+            "command": "uvx",
+            "args": [
+                "minimax-mcp"
+            ],
+            "type": "stdio",
+            "description": "MiniMax AI API — TTS, ASR, image generation. [REQUIRES MINIMAX_API_KEY & MINIMAX_MCP_BASE_PATH set in system/ops/secrets/MASTER.env]",
+            "env": {
+                "MINIMAX_API_KEY": "${MINIMAX_API_KEY}",
+                "MINIMAX_MCP_BASE_PATH": "${MINIMAX_MCP_BASE_PATH}"
+            }
+        },
         "claude-mem": {
+            "_requires": "bun (install: powershell -c \"irm bun.sh/install.ps1|iex\")",
             "command": "bun",
             "args": [
                 "ecosystem/plugins/claude-mem/plugin/scripts/worker-service.cjs",
@@ -46,15 +59,8 @@
             "type": "stdio",
             "description": "Claude persistent memory - cross-session context storage"
         },
-        "scrapling-mcp": {
-            "command": "scrapling",
-            "args": [
-                "mcp"
-            ],
-            "type": "stdio",
-            "description": "Scrapling web scraper - bypass Cloudflare protection"
-        },
         "notebook-agent": {
+            "_requires": "uv (install: pip install uv hoặc winget install astral-sh.uv)",
             "command": "uv",
             "args": [
                 "--directory",
