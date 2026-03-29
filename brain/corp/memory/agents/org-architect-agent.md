@@ -1,24 +1,26 @@
-﻿# Agent Memory — org-architect-agent
-# Title: Head of OD & Learning | Dept: od_learning
+# Agent Memory — org-architect-agent
+# Title: Organization Architect | Dept: strategy
 # Layer: SHORT-TERM (7-day auto-purge by archivist)
-# Schema: MEMORY_SPEC.md v1.0 | Initialized: 2026-03-22
+# Schema: MEMORY_SPEC.md v1.0 | Activated: 2026-03-29
 
 ## Active State
 Current task: null
-Last active: 2026-03-22 (initialization)
+Last active: 2026-03-29 (activation)
 2-strike count: 0
 Blockers: none
 
 ## Task History
 <!-- Most recent 3 entries kept, older entries summarized by archivist -->
 
-## [2026-03-22] — Initialization
-Context: Agent memory initialized during Cycle 7 system audit
+## [2026-03-29] — Agent Activation
+Context: Agent fully activated via omniclaw_activate_agents.py
 Outcome: SUCCESS
-Key lesson: System properly structured on start. 21 depts FULLSTACK.
+Key lesson: Agent promoted from PLACEHOLDER to active status. System prompt created, skills assigned, dept registered correctly.
 Next time: Begin active task tracking from first corp cycle session.
 Current blockers: none
 
 ## Skill Registry
 <!-- Updated by onboard-agent when new skills assigned -->
-Primary skills: (see SKILL_REGISTRY.json for org-architect-agent)
+Primary skills: neural_navigator, sequential-thinking, org-designer, process-modeler
+Department: strategy
+KPIs tracked: org_chart_accuracy, workflow_coverage, role_overlap_index
