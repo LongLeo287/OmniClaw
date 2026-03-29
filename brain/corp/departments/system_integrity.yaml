@@ -1,0 +1,53 @@
+department:
+  id: system_integrity
+  number: 32
+  name: SYSTEM INTEGRITY
+  active: true
+  created: "2026-03-29"
+  purpose: Auto-detect and repair system integrity issues — encoding corruption, broken paths, stale naming, MCP failures, registry inconsistencies
+leadership:
+  manager: system-repair-agent
+  reports_to: strix-agent
+  escalation_path: strix-agent → ceo-agent
+workforce:
+  - system-repair-agent
+kpi_targets:
+  encoding_issues_resolved: "100% auto"
+  broken_paths_ttr: "< 24h"
+  skill_registry_accuracy: "100% sync"
+  mcp_plugin_health: "0 broken active plugins"
+  stale_naming: "0 in tracked files"
+  escalation_threshold: "> 10 unfixed issues after 2 cycles → escalate CEO"
+tools_and_capabilities:
+  skills:
+    - system_autofix
+    - shell_assistant
+    - observability
+    - reasoning_engine
+  plugins: []
+outputs:
+  - artifact: repair_receipts
+    path: system/telemetry/receipts/repair_*.json
+    consumer: pmo-agent
+  - artifact: skill_registry_sync
+    path: brain/shared-context/SKILL_REGISTRY.json
+    consumer: registry-manager
+  - artifact: system_status_update
+    path: brain/shared-context/blackboard.json
+    consumer: all
+triggers:
+  - phrase: "audit system"
+  - phrase: "fix system"
+  - phrase: "scan and fix"
+  - phrase: "kiểm tra hệ thống"
+  - phrase: "sửa lỗi hệ thống"
+  - event: boot_sequence_missing_files
+  - event: ci_cd_encoding_failure
+  - schedule: daily
+autonomy: supervised_with_auto_execute
+blocked_actions:
+  - delete_file
+  - edit_tier0_files
+  - edit_secrets
+  - push_to_remote
+  - mass_operation_gt_50_files
