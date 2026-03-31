@@ -2,7 +2,7 @@
 # ============================================================
 # Danh sách TẤT CẢ secrets trong project AI OS Corp.
 # FILE NÀY: chỉ chứa KEY NAMES, KHÔNG chứa values.
-# Values thực được lưu tại: <AI_OS_ROOT>/tools/clawtask/.env
+# Values thực được lưu tại: $OMNICLAW_ROOT/tools/clawtask/.env
 # ============================================================
 # Maintained by: Security GRC Dept (strix-agent)
 # Last updated: 2026-03-22

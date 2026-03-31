@@ -22,7 +22,7 @@ Là **trung tâm điều phối tools** của OmniClaw — biết mọi tool đa
 ### 🔐 Security
 | Trigger | Tool | Command |
 |---|---|---|
-| "scan repo", "vet repo", "check security" | Strix v2.0 | `pwsh -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\skills\security_shield\vet_repo.ps1" -RepoPath "<PATH>"` |
+| "scan repo", "vet repo", "check security" | Strix v2.0 | `pwsh -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\skills\security_shield\vet_repo.ps1" -RepoPath "<PATH>"` |
 
 ### ⚙️ Session Lifecycle
 | Trigger | Tool | Command |

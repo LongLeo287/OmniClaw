@@ -52,13 +52,13 @@ $env:DISCORD_INTAKE_CHANNEL_IDS = "channel_id_here"
 
 ```powershell
 # Äá»•i vÃ o thÆ° má»¥c plugin
-cd "<AI_OS_ROOT>\REMOTE\claws\nullclaw"
+cd "$OMNICLAW_ROOT\REMOTE\claws\nullclaw"
 
 # Build binary (náº¿u chÆ°a cÃ³):
 # zig build -Doptimize=ReleaseSmall
 
 # Start gateway vá»›i config
-nullclaw --config "<AI_OS_ROOT>\REMOTE\claws\nullclaw\configs\client_gateway.json" gateway
+nullclaw --config "$OMNICLAW_ROOT\REMOTE\claws\nullclaw\configs\client_gateway.json" gateway
 ```
 
 ### BÆ°á»›c 4: Expose qua Tunnel (Ä‘á»ƒ Telegram reach Ä‘Æ°á»£c)
@@ -83,8 +83,8 @@ Invoke-WebRequest "https://api.telegram.org/bot<TOKEN>/setWebhook?url=<TUNNEL_UR
 ### BÆ°á»›c 6: Khá»Ÿi Äá»™ng tinyclaw (Ops Dashboard)
 
 ```powershell
-cd "<AI_OS_ROOT>\REMOTE\claws\tinyclaw"
-tinyclaw start --config "<AI_OS_ROOT>\REMOTE\claws\tinyclaw\configs\client_gateway.json"
+cd "$OMNICLAW_ROOT\REMOTE\claws\tinyclaw"
+tinyclaw start --config "$OMNICLAW_ROOT\REMOTE\claws\tinyclaw\configs\client_gateway.json"
 tinyclaw office  # Dashboard táº¡i http://localhost:3000
 ```
 
@@ -102,13 +102,13 @@ ChÃºng tÃ´i cung cáº¥p giáº£i phÃ¡p AI agents cho má»i loáº¡i
 
 ```powershell
 # Xem intakes má»›i
-cat "<AI_OS_ROOT>\shared-context\client_intake\_index.json"
+cat "$OMNICLAW_ROOT\shared-context\client_intake\_index.json"
 
 # Xem proposal Ä‘Ã£ táº¡o
-ls "<AI_OS_ROOT>\shared-context\corp\proposals\"
+ls "$OMNICLAW_ROOT\shared-context\corp\proposals\"
 
 # Xem revenue
-cat "<AI_OS_ROOT>\shared-context\corp\invoices\_payment_tracker.json"
+cat "$OMNICLAW_ROOT\shared-context\corp\invoices\_payment_tracker.json"
 ```
 
 ---

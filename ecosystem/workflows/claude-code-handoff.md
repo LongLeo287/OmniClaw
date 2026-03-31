@@ -92,7 +92,7 @@ File: `brain/shared-context/blackboard.json`
     "description": "<mÃ´ táº£ ngáº¯n>",
     "task_file": "subagents/mq/claude_code_tasks.md",
     "workspace_id": "<PRJ-XXX>",
-    "workspace_path": "<AI_OS_ROOT>",
+    "workspace_path": "$OMNICLAW_ROOT",
     "priority": "HIGH"
   },
   "blackboard_updated_at": "<ISO 8601>"
@@ -101,7 +101,7 @@ File: `brain/shared-context/blackboard.json`
 
 ### 1c. Gá»i launcher
 ```powershell
-& "<AI_OS_ROOT>\ops\scripts\handoff_to_claude_code.ps1"
+& "$OMNICLAW_ROOT\ops\scripts\handoff_to_claude_code.ps1"
 ```
 
 ---

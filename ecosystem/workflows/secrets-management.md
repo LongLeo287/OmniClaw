@@ -9,7 +9,7 @@ description: HÆ°á»›ng dáº«n quáº£n lÃ½ táº­p trung API keys, to
 
 | Rule | Detail |
 |------|--------|
-| **1 nguá»“n** | Táº¥t cáº£ secrets trong `<AI_OS_ROOT>\.env` (root master) |
+| **1 nguá»“n** | Táº¥t cáº£ secrets trong `$OMNICLAW_ROOT\.env` (root master) |
 | **KhÃ´ng commit** | `.env` luÃ´n bá»‹ gitignore, khÃ´ng bao giá» push lÃªn git |
 | **KhÃ´ng hardcode** | KhÃ´ng paste key vÃ o code, markdown, hay comment |
 | **Rotate** | Xoay vÃ²ng keys theo lá»‹ch (xem SECRETS_REGISTRY.md) |
@@ -20,7 +20,7 @@ description: HÆ°á»›ng dáº«n quáº£n lÃ½ táº­p trung API keys, to
 ## Cáº¥u trÃºc Files
 
 ```
-<AI_OS_ROOT>\
+$OMNICLAW_ROOT\
 â”œâ”€â”€ .env                    â† MASTER secrets (gitignored âœ…)
 â”œâ”€â”€ .env.example            â† Template an toÃ n (cÃ³ thá»ƒ commit)
 â”œâ”€â”€ secrets\
@@ -37,11 +37,11 @@ description: HÆ°á»›ng dáº«n quáº£n lÃ½ táº­p trung API keys, to
 
 ### BÆ°á»›c 1: Copy template
 ```powershell
-copy "<AI_OS_ROOT>\secrets\.env.master.example" "<AI_OS_ROOT>\.env"
+copy "$OMNICLAW_ROOT\secrets\.env.master.example" "$OMNICLAW_ROOT\.env"
 ```
 
 ### BÆ°á»›c 2: Äiá»n values
-Má»Ÿ `<AI_OS_ROOT>\.env` vÃ  Ä‘iá»n giÃ¡ trá»‹ thá»±c cho tá»«ng key.
+Má»Ÿ `$OMNICLAW_ROOT\.env` vÃ  Ä‘iá»n giÃ¡ trá»‹ thá»±c cho tá»«ng key.
 
 ### BÆ°á»›c 3: Setup sub-tool .env
 ```powershell
@@ -60,7 +60,7 @@ git check-ignore -v .env  # Pháº£i tráº£ vá» ".gitignore:.env"
 
 ## ThÃªm Secret Má»›i
 
-1. **ThÃªm vÃ o `<AI_OS_ROOT>\.env`** (giÃ¡ trá»‹ thá»±c)
+1. **ThÃªm vÃ o `$OMNICLAW_ROOT\.env`** (giÃ¡ trá»‹ thá»±c)
 2. **ThÃªm vÃ o `secrets\.env.master.example`** (placeholder)
 3. **ÄÄƒng kÃ½ vÃ o `secrets\SECRETS_REGISTRY.md`** (key name + metadata)
 4. Load trong code qua `os.environ.get("KEY_NAME")`
@@ -71,7 +71,7 @@ git check-ignore -v .env  # Pháº£i tráº£ vá» ".gitignore:.env"
 
 1. **Revoke key cÅ©** trÃªn portal cá»§a provider
 2. **Generate key má»›i**
-3. **Update** `<AI_OS_ROOT>\.env`
+3. **Update** `$OMNICLAW_ROOT\.env`
 4. **Restart** services dÃ¹ng key Ä‘Ã³ (Docker: `docker compose restart`)
 5. **Ghi nháº­t kÃ½** vÃ o SECRETS_REGISTRY.md (update date)
 

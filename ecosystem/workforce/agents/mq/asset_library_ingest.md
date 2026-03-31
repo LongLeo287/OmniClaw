@@ -14,7 +14,7 @@
 Status: EXAMPLE
 civ_ticket: CIV-2026-03-22-000
 content_type: DOCUMENT
-destination_path: <AOS_ROOT>/brain/knowledge/documents/example.md
+destination_path: $OMNICLAW_ROOT/brain/knowledge/documents/example.md
 quality_score: 8
 source_url: https://example.com
 tags: [ai, reference]

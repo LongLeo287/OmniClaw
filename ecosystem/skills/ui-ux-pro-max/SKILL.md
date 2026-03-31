@@ -61,6 +61,6 @@ python ecosystem/skills/ui-ux-pro-max/scripts/core.py extract "https://example.c
 {
   "cmd": "python ecosystem/skills/ui-ux-pro-max/scripts/search.py",
   "args": ["glassmorphism dashboard card"],
-  "cwd": "<AI_OS_ROOT>"
+  "cwd": "$OMNICLAW_ROOT"
 }
 ```

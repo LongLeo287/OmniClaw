@@ -1,5 +1,5 @@
 # Registry — How It Works
-# <AI_OS_ROOT>\registry\
+# $OMNICLAW_ROOT\registry\
 
 ## Purpose
 

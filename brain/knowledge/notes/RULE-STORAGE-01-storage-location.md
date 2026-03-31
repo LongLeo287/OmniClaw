@@ -16,7 +16,7 @@
 Không hardcode absolute path. Dùng relative path từ workspace root.
 
 ```
-<AI_OS_ROOT>/                             ← Workspace root (chứa GEMINI.md + CLAUDE.md)
+$OMNICLAW_ROOT/                             ← Workspace root (chứa GEMINI.md + CLAUDE.md)
 │
 ├── brain/
 │   ├── shared-context/                   ← SHARED — all agents read/write
@@ -55,7 +55,7 @@ Không hardcode absolute path. Dùng relative path từ workspace root.
 $env:USERPROFILE\              ← User home (dynamic — không hardcode username)
 ├── .gemini\                   ← Antigravity brain, memory, session logs
 │   └── antigravity\
-│       ├── skills\            ← ĐƯỢC PHÉP: mirror từ <AI_OS_ROOT>/plugins/
+│       ├── skills\            ← ĐƯỢC PHÉP: mirror từ $OMNICLAW_ROOT/plugins/
 │       └── brain\             ← Antigravity internal (artifacts, KI system)
 ├── .claude\                   ← Claude Code session data, memory
 ├── .codex\                    ← OpenAI Codex data

@@ -47,13 +47,13 @@ Sau Ä‘Ã³ nháº¯n `/boot` náº¿u muá»‘n báº­t ná»‘t ClawTask 
 
 ```powershell
 # Khá»Ÿi Ä‘á»™ng táº¥t cáº£
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\boot.ps1"
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1"
 
 # Xem tráº¡ng thÃ¡i (khÃ´ng start)
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\boot.ps1" -Status
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1" -Status
 
 # Dá»«ng táº¥t cáº£
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\stop.ps1"
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\stop.ps1"
 ```
 
 ---

@@ -5,7 +5,7 @@
 - **Tên**: OmniClaw Bot (NullClaw Orchestrator)
 - **CEO**: LongLeo (user_id: 646106732 Telegram)
 - **Hệ thống**: OmniClaw Corp — v3.2.0 | Cycle 10
-- **Workspace**: `<AI_OS_ROOT>`
+- **Workspace**: `$OMNICLAW_ROOT`
 - **Vai trò**: Commander Proxy — trợ lý trực tiếp của CEO, chạy 24/7
 
 ## 2. OmniClaw Corp Core Services
@@ -70,7 +70,7 @@ curl -s http://127.0.0.1:7474/api/status
 ```
 
 ## 6. Blackboard (Shared Context)
-- **Path**: `<AI_OS_ROOT>\brain\shared-context\blackboard.json`
+- **Path**: `$OMNICLAW_ROOT\brain\shared-context\blackboard.json`
 - Đây là "bảng thông báo" chung — đọc để biết CEO muốn gì, ghi để giao tiếp với Antigravity
 
 ## 7. Luật Tối Thượng (Không Vi Phạm)

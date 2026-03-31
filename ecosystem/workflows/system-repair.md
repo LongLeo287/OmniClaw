@@ -54,7 +54,7 @@ STALE_PATTERNS = [
     ('aios_', 'omniclaw_'),
     ('AI_OS_ROOT', 'OMNICLAW_ROOT'),
     ('AOS_ROOT', 'OMNICLAW_ROOT'),
-    ('<AI_OS_ROOT>', '<OMNICLAW_ROOT>'),
+    ('$OMNICLAW_ROOT', '<OMNICLAW_ROOT>'),
     ('omniclaw-local', 'omniclaw'),
 ]
 ```

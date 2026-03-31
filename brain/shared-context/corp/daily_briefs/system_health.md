@@ -64,7 +64,7 @@ All core services running. 1 known bug under active remediation.
 ## Infrastructure Inventory
 
 ```
-OmniClaw Corp Root: <AI_OS_ROOT>\
+OmniClaw Corp Root: $OMNICLAW_ROOT\
 â”œâ”€â”€ corp/                  â† Corp operational files
 â”‚   â”œâ”€â”€ memory/ (21 dept files + decisions_log) âœ…
 â”‚   â”œâ”€â”€ proposals/ (OKR_CYCLE1 + new docs) âœ…  

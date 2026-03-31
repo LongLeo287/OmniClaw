@@ -12,7 +12,7 @@ category: infrastructure
 tags: [llm, routing, cost-optimization, multi-model, fallback, budget]
 accessible_by:
   - all_agents
-source: <AI_OS_ROOT>\llm\
+source: $OMNICLAW_ROOT\llm\
 exposed_functions:
   - name: route_request
     description: "Given task_type → returns optimal model + provider"

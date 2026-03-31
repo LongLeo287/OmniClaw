@@ -15,7 +15,7 @@ ClawTask API tráº£ vá» `"backend": "json"` thay vÃ¬ `"backend": "supaba
 
 ```powershell
 # Check .env trong thÆ° má»¥c clawtask
-cat "<AI_OS_ROOT>\tools\clawtask\.env"
+cat "$OMNICLAW_ROOT\tools\clawtask\.env"
 ```
 
 Pháº£i tháº¥y:
@@ -31,7 +31,7 @@ SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
 SUPABASE_KEY=YOUR_ANON_KEY
 DATA_DIR=/app/data
 TZ=Asia/Ho_Chi_Minh
-"@ | Set-Content "<AI_OS_ROOT>\tools\clawtask\.env"
+"@ | Set-Content "$OMNICLAW_ROOT\tools\clawtask\.env"
 ```
 
 ---
@@ -40,7 +40,7 @@ TZ=Asia/Ho_Chi_Minh
 
 ```powershell
 # Tá»« thÆ° má»¥c clawtask
-cd "<AI_OS_ROOT>\tools\clawtask"
+cd "$OMNICLAW_ROOT\tools\clawtask"
 
 # Docker Compose V1 (náº¿u cÃ i standalone)
 docker-compose down && docker-compose up -d

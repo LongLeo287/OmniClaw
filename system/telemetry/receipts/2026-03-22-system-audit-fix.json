@@ -17,7 +17,7 @@
     {
       "id": "FIX-001",
       "file": "infra/api/server.js",
-      "issue": "Hardcoded AOS_ROOT = <AI_OS_ROOT>",
+      "issue": "Hardcoded AOS_ROOT = $OMNICLAW_ROOT",
       "fix": "Use path.resolve(__dirname, '../../') as dynamic fallback + env var",
       "severity": "CRITICAL"
     },
@@ -67,20 +67,20 @@
       "id": "FIX-008",
       "file": "brain/shared-context/SKILL_REGISTRY.json",
       "issue": "Hardcoded absolute paths in meta.spec and meta.loader",
-      "fix": "Replaced with <AOS_ROOT> placeholder tokens",
+      "fix": "Replaced with $OMNICLAW_ROOT placeholder tokens",
       "severity": "LOW"
     },
     {
       "id": "FIX-009",
       "file": "registry.json",
-      "issue": "All paths point to <AI_OS_ROOT> (old location â€” project is at <AI_OS_ROOT>)",
+      "issue": "All paths point to $OMNICLAW_ROOT (old location â€” project is at $OMNICLAW_ROOT)",
       "fix": "Updated PRJ-001..PRJ-003, _modules, _tier_registry paths to correct location",
       "severity": "CRITICAL"
     },
     {
       "id": "FIX-010",
       "file": "registry.json",
-      "issue": "PRJ-004 config_path/workflows_path pointed to <AI_OS_ROOT>\\projects\\PRJ-004\\",
+      "issue": "PRJ-004 config_path/workflows_path pointed to $OMNICLAW_ROOT\\projects\\PRJ-004\\",
       "fix": "Updated to D:\\Tiem_Nuoc_Nho_v5\\ (actual project root)",
       "severity": "HIGH"
     },

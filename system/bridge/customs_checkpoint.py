@@ -1,69 +1,117 @@
-from pathlib import Path
 """
 CUSTOMS CHECKPOINT (TRẠM KIỂM SOÁT HẢI QUAN)
-Áp dụng Luật Thép từ CEO: "Ai có thẻ sẽ đi dễ hơn nhưng VẪN BỊ KIỂM TRA. Chưa có thẻ thì kiểm tra gắt gao".
-ĐƯỢC GẮN CAMERA GIÁM SÁT: Luôn report (ghi log) khi có biến.
+Luật CEO: "Ai có thẻ thì đi dễ hơn nhưng VẪN BỊ KIỂM TRA. Chưa có thẻ thì kiểm tra gắt gao."
+Log MỌI request (PASS và FAIL) để phục vụ audit trail.
 """
-from fastapi import Request, HTTPException
+from __future__ import annotations
+
 import json
 import logging
 import os
+import uuid
+from pathlib import Path
+from fastapi import Request, HTTPException
 
-# Thiết lập hệ thống Báo động (Telemetry)
-LOG_DIR = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2]))) / "system" / "ops" / "telemetry" / "logs"
-os.makedirs(LOG_DIR, exist_ok=True)
+# ── Logging setup ──────────────────────────────────────────────────────────────
+_ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2])))
+LOG_DIR = _ROOT / "system" / "ops" / "telemetry" / "logs"
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
 logger = logging.getLogger("BorderSecurity")
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.DEBUG)
 if not logger.handlers:
-    fh = logging.FileHandler(os.path.join(LOG_DIR, "border_security.log"), encoding='utf-8')
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    fh.setFormatter(formatter)
+    fh = logging.FileHandler(LOG_DIR / "border_security.log", encoding='utf-8')
+    fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
     logger.addHandler(fh)
 
-async def strict_payload_scan(payload: str) -> bool:
-    """Kiểm tra khắt khe từng byte mã độc, prompt injection, DDoS..."""
-    bad_keywords = ["DROP TABLE", "<script>", "/bin/bash", "sudo rm", "ignore all previous instructions"]
-    for kw in bad_keywords:
-        if kw.lower() in payload.lower():
-            logger.error(f"🚨 CƯỚP BIỂN (MÃ ĐỘC): Phát hiện từ khóa '{kw}' trong khoang hàng.")
+# ── Bad keyword list (prompt injection + code injection) ───────────────────────
+_BAD_KEYWORDS = [
+    "DROP TABLE", "DELETE FROM", "INSERT INTO", "SELECT *",  # SQL injection
+    "<script>", "javascript:", "onerror=",                   # XSS
+    "/bin/bash", "/bin/sh", "sudo rm", "cmd.exe",            # Shell injection
+    "ignore all previous instructions",                       # Prompt injection
+    "ignore previous", "disregard your instructions",
+    "you are now", "act as DAN", "jailbreak",
+    "../../../", "..\\..\\",                                  # Path traversal
+]
+
+_GUEST_SIZE_LIMIT = 10 * 1024       # 10 KB
+_VIP_SIZE_LIMIT   = 50 * 1024 * 1024  # 50 MB
+_VALID_PLATFORMS  = {"zalo", "telegram", "facebook", "discord", "line", "whatsapp"}
+
+
+# ── Scan functions ─────────────────────────────────────────────────────────────
+
+async def strict_payload_scan(payload: str, request_id: str) -> bool:
+    """Kiểm tra gắt gao từng byte: SQL/XSS/shell injection, prompt injection, size."""
+    if len(payload) > _GUEST_SIZE_LIMIT:
+        logger.warning(f"[{request_id}] OVERSIZE: {len(payload)} bytes > {_GUEST_SIZE_LIMIT}B limit (GUEST)")
+        return False
+
+    payload_lower = payload.lower()
+    for kw in _BAD_KEYWORDS:
+        if kw.lower() in payload_lower:
+            logger.error(f"[{request_id}] MALICIOUS KEYWORD: '{kw}'")
             return False
-            
-    if len(payload) > 10240:
-        logger.warning(f"🚨 TẢI TRỌNG LẠ: Vượt 10KB (Khách Lạ). Kích thước: {len(payload)} bytes.")
-        return False
-        
+
     return True
 
-async def vip_payload_scan(payload: str) -> bool:
-    """Xét duyệt nhanh gọn (Log lưu vết nhưng không soi từng ngóc ngách)"""
-    if len(payload) > 52428800: # 50MB
-        logger.warning(f"🚨 TẢI TRỌNG VIP QUÁ KHỔ: Vượt 50MB. Kích thước: {len(payload)} bytes.")
+
+async def vip_payload_scan(payload: str, request_id: str) -> bool:
+    """Kiểm tra nhẹ cho VIP/HQ: chỉ check size và path traversal."""
+    if len(payload) > _VIP_SIZE_LIMIT:
+        logger.warning(f"[{request_id}] VIP OVERSIZE: {len(payload)} bytes > {_VIP_SIZE_LIMIT}B")
         return False
+
+    # Path traversal vẫn bị chặn dù là VIP
+    for kw in ["../../../", "..\\..\\", "/etc/passwd", "/etc/shadow"]:
+        if kw in payload:
+            logger.error(f"[{request_id}] VIP PATH TRAVERSAL attempt: '{kw}'")
+            return False
+
     return True
 
-async def inspect_cargo(request: Request, passport_status: dict):
-    """Tiến hành kiểm duyệt hàng hóa (Body Request) khi qua trạm."""
-    
+
+async def inspect_cargo(request: Request, passport_status: dict) -> bool:
+    """
+    Kiểm duyệt hàng hóa (body) khi qua trạm.
+    Ghi log MỌI request (PASS và FAIL) để phục vụ audit.
+    Trả True nếu qua, raise HTTPException nếu không.
+    """
     level = passport_status.get("level", "UNKNOWN")
+    owner = passport_status.get("owner", "UNKNOWN")
     client_ip = request.client.host if request.client else "UNKNOWN_IP"
-    
+    request_id = request.headers.get("X-Request-ID", str(uuid.uuid4())[:8])
+    endpoint = str(request.url.path)
+
     try:
         body_bytes = await request.body()
-        payload_str = body_bytes.decode('utf-8')
-    except Exception:
-        logger.error(f"❌ CUSTOMS ERROR: Lỗi định dạng gói hàng từ IP {client_ip}")
-        raise HTTPException(status_code=400, detail="Customs Error: Hàng hóa (Payload) bọc sai quy cách.")
+        payload_str = body_bytes.decode('utf-8', errors='replace')
+    except Exception as e:
+        logger.error(f"[{request_id}] DECODE ERROR from {client_ip}: {e}")
+        raise HTTPException(status_code=400, detail="Payload encoding error.")
 
-    if level in ["VIP", "OMNICLAW_HQ", "SYSTEM_BOT"]:
-        is_safe = await vip_payload_scan(payload_str)
-        if not is_safe:
-            raise HTTPException(status_code=403, detail="Customs Error: Khối hàng cực tiêu hoặc vi phạm chuẩn VIP.")
+    is_vip = level in {"VIP", "OMNICLAW_HQ", "SYSTEM_BOT"}
+    is_safe = await (vip_payload_scan(payload_str, request_id) if is_vip
+                     else strict_payload_scan(payload_str, request_id))
+
+    if is_safe:
+        logger.info(f"[{request_id}] PASS | {level} | {owner} | {client_ip} | {endpoint} | {len(payload_str)}B")
     else:
-        is_safe = await strict_payload_scan(payload_str)
-        if not is_safe:
-            # Ghi danh sách đen vào sổ
-            logger.critical(f"🛑 BÁO ĐỘNG ĐỎ: Đuổi cổ IP {client_ip} vì nghi ngờ phá hoại (No_Pass/GUEST).")
-            raise HTTPException(status_code=403, detail="Customs Alert: Báo động mã độc / Phá hoại từ khách lạ. Lệnh DROP ngay lập tức.")
-            
+        logger.critical(f"[{request_id}] BLOCK | {level} | {owner} | {client_ip} | {endpoint}")
+        detail = ("Payload quá lớn hoặc vi phạm chuẩn VIP."
+                  if is_vip else "Mã độc / Phá hoại từ khách lạ. DROP.")
+        raise HTTPException(status_code=403, detail=detail)
+
     return True
+
+
+def validate_platform(platform: str) -> str:
+    """Validate tên platform bot. Trả platform đã normalize, raise HTTPException nếu không hợp lệ."""
+    normalized = platform.lower().strip()
+    if normalized not in _VALID_PLATFORMS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Platform '{platform}' không được hỗ trợ. Hỗ trợ: {sorted(_VALID_PLATFORMS)}"
+        )
+    return normalized

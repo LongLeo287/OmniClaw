@@ -247,7 +247,7 @@ Format:
 
 Receiving role reads MQ on startup:
 ```powershell
-$latest = Get-ChildItem "<AI_OS_ROOT>\subagents\mq\" |
+$latest = Get-ChildItem "$OMNICLAW_ROOT\subagents\mq\" |
           Where-Object { $_.Name -match "qa_failed_$stepId" } |
           Sort-Object LastWriteTime -Descending |
           Select-Object -First 1

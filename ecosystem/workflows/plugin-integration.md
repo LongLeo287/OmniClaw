@@ -134,7 +134,7 @@ Cáº­p nháº­t `total_registered` vÃ  `active_count`.
 
 ### 5a â€” ThÃªm vÃ o Dashboard (dashboard.ps1)
 
-Má»Ÿ `<AI_OS_ROOT>\launcher\dashboard.ps1` vÃ  thÃªm vÃ o section **PLUGIN MANAGER**:
+Má»Ÿ `$OMNICLAW_ROOT\launcher\dashboard.ps1` vÃ  thÃªm vÃ o section **PLUGIN MANAGER**:
 
 ```powershell
 # Trong menu [P] Plugin Manager â†’ sub-menu
@@ -156,7 +156,7 @@ Náº¿u plugin lÃ  **library/tool** (khÃ´ng cÃ³ port) â†’ chá»‰ 
 ### 5c â€” Update MASTER.env (náº¿u cáº§n API key)
 
 ```
-<AI_OS_ROOT>\ops\secrets\MASTER.env
+$OMNICLAW_ROOT\ops\secrets\MASTER.env
 ```
 
 ---
@@ -195,7 +195,7 @@ python -c "import json; r=json.load(open('plugins/registry.json')); print([p for
 Náº¿u plugin thay Ä‘á»•i cÃ¡ch agent lÃ m viá»‡c, PHáº¢I thÃªm rule rÃµ rÃ ng:
 
 ```
-Má»Ÿ: <AI_OS_ROOT>\GEMINI.md
+Má»Ÿ: $OMNICLAW_ROOT\GEMINI.md
 ThÃªm vÃ o SECTION 3 â€” ANTIGRAVITY SPECIFIC RULES:
 
 **[RULE-<XYZ>-01]** <TÃªn rule>:

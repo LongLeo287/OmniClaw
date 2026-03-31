@@ -165,7 +165,7 @@ Error: Ollama 8k context
 ```python
 # OmniClaw Memory upgrade:
 rag = LightRAG(
-    working_dir="<AI_OS_ROOT>/.ai-memory/lightrag/",
+    working_dir="$OMNICLAW_ROOT/.ai-memory/lightrag/",
     workspace="OMNICLAW",
     # Local LLM với Ollama:
     llm_model_func=ollama_model_complete,

@@ -1,7 +1,7 @@
 ﻿# AI OS HUD â€” HEAD-UP DISPLAY
 # Version: 2.0 | 2026-03-24 | CEO reads nÃ y má»—i session
 # Update: Phase 7 (RETRO) + post-session.md â†’ hud/STATUS.json
-# Path: <AI_OS_ROOT>\hud\HUD.md
+# Path: $OMNICLAW_ROOT\hud\HUD.md
 
 ---
 

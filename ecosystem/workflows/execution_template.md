@@ -38,7 +38,7 @@ CONSTRAINTS :
 
 ## Skills Available (Auto-populated by skill_loader)
 
-Claude Code reads from `<AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json`
+Claude Code reads from `$OMNICLAW_ROOT\shared-context\SKILL_REGISTRY.json`
 
 Key skills for this task:
 ```

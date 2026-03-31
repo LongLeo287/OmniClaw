@@ -1,7 +1,7 @@
 ﻿# ðŸš€ CLAUDE.md â€” Tiem Nuoc Nho v5 (PRJ-004)
 # Version: 1.1 | Updated: 2026-03-16
 # Authority: Tier 0 (Project Constitution)
-# Location: <AI_OS_ROOT>\projects\PRJ-004\   â—„ Managed by OmniClaw
+# Location: $OMNICLAW_ROOT\projects\PRJ-004\   â—„ Managed by OmniClaw
 # Workspace: D:\Tiem_Nuoc_Nho_v5\
 
 > **THIS IS THE FIRST FILE YOU READ** when working on this project.
@@ -13,10 +13,10 @@
 
 ```
 STEP 1 â”€â”€â–º Read this CLAUDE.md                          [THIS FILE â€” in OmniClaw\projects\PRJ-004\]
-STEP 2 â”€â”€â–º Read OmniClaw Master                            [<AI_OS_ROOT>\CLAUDE.md]
+STEP 2 â”€â”€â–º Read OmniClaw Master                            [$OMNICLAW_ROOT\CLAUDE.md]
 STEP 3 â”€â”€â–º Validate workspace via Gatekeeper            [gatekeeper.ps1 -CheckID PRJ-004]
-STEP 4 â”€â”€â–º Read OmniClaw AGENTS.md                         [<AI_OS_ROOT>\shared-context\AGENTS.md]
-STEP 5 â”€â”€â–º Check Blackboard for pending tasks           [<AI_OS_ROOT>\shared-context\blackboard.json]
+STEP 4 â”€â”€â–º Read OmniClaw AGENTS.md                         [$OMNICLAW_ROOT\shared-context\AGENTS.md]
+STEP 5 â”€â”€â–º Check Blackboard for pending tasks           [$OMNICLAW_ROOT\shared-context\blackboard.json]
 STEP 6 â”€â”€â–º Begin work
 ```
 
@@ -33,8 +33,8 @@ STEP 6 â”€â”€â–º Begin work
 | **Backend** | Google Sheets as database, GAS as API layer |
 | **Dev URL** | http://localhost:7475 (port 7475 â€” Playwright-accessible) |
 | **Start** | `npm run dev` in `D:\Tiem_Nuoc_Nho_v5` |
-| **Config** | `<AI_OS_ROOT>\projects\PRJ-004\` |
-| **Workflows** | `<AI_OS_ROOT>\projects\PRJ-004\workflows\` |
+| **Config** | `$OMNICLAW_ROOT\projects\PRJ-004\` |
+| **Workflows** | `$OMNICLAW_ROOT\projects\PRJ-004\workflows\` |
 
 ---
 

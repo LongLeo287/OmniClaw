@@ -28,8 +28,8 @@ Next scan: 2026-03-30 (daily schedule)
 3. 4 MCP plugins broken (minimax-mcp-js, notebooklm-mcp, claude-mem, notebook-agent) — DISABLED
 4. server.js router.yaml path wrong — FIXED
 5. server.js plugins/ path wrong — FIXED
-6. start_lightrag.ps1 literal <AI_OS_ROOT> — FIXED
-7. start_supervisor_openclaw.ps1 <AI_OS_ROOT> — FIXED
+6. start_lightrag.ps1 literal $OMNICLAW_ROOT — FIXED
+7. start_supervisor_openclaw.ps1 $OMNICLAW_ROOT — FIXED
 8. package.json name=omniclaw-local, bin=omniclaw — FIXED
 9. 24 files with stale aios_/OmniClaw naming — FIXED (git mv + content update)
 10. SKILL_REGISTRY duplicate agent-shield entry — FIXED

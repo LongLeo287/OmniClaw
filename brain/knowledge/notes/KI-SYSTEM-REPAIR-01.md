@@ -40,7 +40,7 @@ OmniClaw → OmniClaw
 aios_ → omniclaw_
 AI_OS_ROOT → OMNICLAW_ROOT
 AOS_ROOT → OMNICLAW_ROOT (env vars)
-<AI_OS_ROOT> → $env:OMNICLAW_ROOT (in PS1)
+$OMNICLAW_ROOT → $env:OMNICLAW_ROOT (in PS1)
 omniclaw-local → omniclaw
 ```
 **Excluded paths:** `.git/`, `brain/knowledge/`, `system/telemetry/receipts/`, `storage/_archive/`
@@ -53,7 +53,7 @@ omniclaw-local → omniclaw
 **Common patterns:**
 - `.mcp.json` plugin args pointing to non-built JS files
 - `server.js` path constants using wrong root prefix
-- `.ps1` scripts with literal `<AI_OS_ROOT>` placeholder
+- `.ps1` scripts with literal `$OMNICLAW_ROOT` placeholder
 - GitHub Actions referencing old directory layout
 **Detection:** `os.path.exists()` check on extracted path tokens
 **Fix:** Update path to correct location
@@ -133,8 +133,8 @@ From full audit on 2026-03-29:
 | 3 | 4 MCP plugins broken (missing dist files) | FIXED (disabled) |
 | 4 | server.js router.yaml path wrong | FIXED |
 | 5 | server.js plugins/ path wrong | FIXED |
-| 6 | start_lightrag.ps1 literal `<AI_OS_ROOT>` | FIXED |
-| 7 | start_supervisor_openclaw.ps1 `<AI_OS_ROOT>` | FIXED |
+| 6 | start_lightrag.ps1 literal `$OMNICLAW_ROOT` | FIXED |
+| 7 | start_supervisor_openclaw.ps1 `$OMNICLAW_ROOT` | FIXED |
 | 8 | package.json name=omniclaw-local, bin=omniclaw | FIXED |
 | 9 | 24 files with aios_/OmniClaw naming | FIXED |
 | 10 | SKILL_REGISTRY duplicate agent-shield | FIXED |

@@ -4,7 +4,7 @@
 # ⚠️  THIS IS NOT THE AUTHORITATIVE FILE
 #
 # The AI OS SOUL has moved to its correct Tier 1 location:
-#   👉  <AI_OS_ROOT>\shared-context\SOUL.md
+#   👉  $OMNICLAW_ROOT\shared-context\SOUL.md
 #
 # This stub remains here to:
 #   1. Maintain .claudeignore protection on this path

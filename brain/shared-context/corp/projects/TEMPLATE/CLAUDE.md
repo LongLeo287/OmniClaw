@@ -5,7 +5,7 @@
 
 > **Satellite project of OmniClaw.**  
 > Skills, knowledge, and agents from OmniClaw are available here.
-> See: `<AI_OS_ROOT>\CLAUDE.md` for full governance.
+> See: `$OMNICLAW_ROOT\CLAUDE.md` for full governance.
 
 ---
 
@@ -23,7 +23,7 @@
 <!-- List the OmniClaw skills relevant to this project -->
 
 ```
-LOAD: <AI_OS_ROOT>\skills\[skill-name]\SKILL.md
+LOAD: $OMNICLAW_ROOT\skills\[skill-name]\SKILL.md
 ```
 
 Common options:
@@ -66,11 +66,11 @@ Common options:
 
 | Resource | Path |
 |----------|------|
-| Master Entry | `<AI_OS_ROOT>\CLAUDE.md` |
-| Skill Registry | `<AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json` |
-| Knowledge Base | `<AI_OS_ROOT>\knowledge\` |
-| Blackboard | `<AI_OS_ROOT>\shared-context\blackboard.json` |
-| Handoff Workflow | `<AI_OS_ROOT>\workflows\claude_code_handoff.md` |
+| Master Entry | `$OMNICLAW_ROOT\CLAUDE.md` |
+| Skill Registry | `$OMNICLAW_ROOT\shared-context\SKILL_REGISTRY.json` |
+| Knowledge Base | `$OMNICLAW_ROOT\knowledge\` |
+| Blackboard | `$OMNICLAW_ROOT\shared-context\blackboard.json` |
+| Handoff Workflow | `$OMNICLAW_ROOT\workflows\claude_code_handoff.md` |
 
 ---
 

@@ -36,7 +36,7 @@ All authorized paths are relative to **AI_OS_ROOT** (directory containing GEMINI
 No agent hardcodes absolute paths — see `RULE-DYNAMIC-01` for full policy.
 
 ```
-<AI_OS_ROOT>/              ◄ Central OS (Tier 0 governance)
+$OMNICLAW_ROOT/              ◄ Central OS (Tier 0 governance)
 ├── brain/                 ◄ Knowledge, agents, shared-context
 ├── corp/                  ◄ Departments, org, prompts
 ├── ops/                   ◄ Scripts, config, workflows
@@ -76,10 +76,10 @@ All agents must verify their actions against `AGENTS.md` before execution. In ca
 
 | Status | Paths | Rule |
 |--------|-------|------|
-| ✅ **PROJECT FILES** | `<AI_OS_ROOT>/brain/knowledge/` | All KI artifacts & reports |
-| ✅ **PROJECT FILES** | `<AI_OS_ROOT>/brain/agents/` | AGENT.md, memory, dept-requests |
-| ✅ **PROJECT FILES** | `<AI_OS_ROOT>/plugins/` | Plugins, skills, tools |
-| ✅ **PROJECT FILES** | `<AI_OS_ROOT>/ops/` | Scripts, config, infra |
+| ✅ **PROJECT FILES** | `$OMNICLAW_ROOT/brain/knowledge/` | All KI artifacts & reports |
+| ✅ **PROJECT FILES** | `$OMNICLAW_ROOT/brain/agents/` | AGENT.md, memory, dept-requests |
+| ✅ **PROJECT FILES** | `$OMNICLAW_ROOT/plugins/` | Plugins, skills, tools |
+| ✅ **PROJECT FILES** | `$OMNICLAW_ROOT/ops/` | Scripts, config, infra |
 | 🔒 **SYSTEM — NO TOUCH** | `$env:USERPROFILE\.gemini\` | Antigravity brain/memory |
 | 🔒 **SYSTEM — NO TOUCH** | `$env:USERPROFILE\.claude\` | Claude Code session data |
 | 🔒 **SYSTEM — NO TOUCH** | `$env:USERPROFILE\.codex\` | Codex data |

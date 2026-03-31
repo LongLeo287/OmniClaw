@@ -67,7 +67,7 @@ When delegating a POS coding task:
 }
 ```
 
-Update `<AI_OS_ROOT>\shared-context\blackboard.json` accordingly.
+Update `$OMNICLAW_ROOT\shared-context\blackboard.json` accordingly.
 
 ## Active Skills for This Project
 

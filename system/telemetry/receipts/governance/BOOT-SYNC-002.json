@@ -23,7 +23,7 @@
     {
       "step": 4,
       "action": "Created CLAUDE.md with 4 sections: Agent Boot Rule, Boot Sequence (Steps 1-10 incl. 9.5+9.6), Claude Code Specific Rules, Corp Mode Status",
-      "result": "OK â€” file written at <AI_OS_ROOT>/CLAUDE.md"
+      "result": "OK â€” file written at $OMNICLAW_ROOT/CLAUDE.md"
     },
     {
       "step": 5,

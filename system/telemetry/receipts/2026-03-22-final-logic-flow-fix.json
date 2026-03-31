@@ -16,8 +16,8 @@
     {
       "id": "LOGIC-001",
       "file": "ops/workflows/claude_code_handoff.md",
-      "issue": "Line 30+56: hardcoded paths <AI_OS_ROOT>\\... (wrong location)",
-      "fix": "Updated to <AOS_ROOT> tokens: brain/shared-context/blackboard.json + ops/scripts/handoff_to_claude_code.ps1"
+      "issue": "Line 30+56: hardcoded paths $OMNICLAW_ROOT\\... (wrong location)",
+      "fix": "Updated to $OMNICLAW_ROOT tokens: brain/shared-context/blackboard.json + ops/scripts/handoff_to_claude_code.ps1"
     },
     {
       "id": "LOGIC-002",

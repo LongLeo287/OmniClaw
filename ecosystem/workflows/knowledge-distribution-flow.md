@@ -76,7 +76,7 @@ Receipt format (written by ingest-router):
 ```json
 { "civ_ticket": "CIV-2026-03-22-001",
   "content_type": "WEB_CONTENT|DOCUMENT|TEXT|REPO|PLUGIN",
-  "destination_path": "<AOS_ROOT>/brain/knowledge/...",
+  "destination_path": "$OMNICLAW_ROOT/brain/knowledge/...",
   "quality_score": 7,
   "tags": [],
   "source_url": "..." }

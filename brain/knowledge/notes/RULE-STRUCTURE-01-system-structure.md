@@ -34,7 +34,7 @@ TIER 4: SUBAGENTS (spawned per task)
 > All paths below are RELATIVE to AI_OS_ROOT.
 
 ```
-<AI_OS_ROOT>/                             ← PROJECT ROOT (Source of Truth for ALL agents)
+$OMNICLAW_ROOT/                             ← PROJECT ROOT (Source of Truth for ALL agents)
 │
 ├── GEMINI.md                             ← Antigravity boot entry point
 ├── CLAUDE.md                             ← Claude Code boot entry point

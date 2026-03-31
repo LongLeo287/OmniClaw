@@ -78,7 +78,7 @@ AI OS responses via channels MUST NOT contain:
 
 All channel interactions MUST be logged to:
 ```
-<AI_OS_ROOT>\telemetry\channels\<YYYY-MM-DD>\<channel>_log.jsonl
+$OMNICLAW_ROOT\telemetry\channels\<YYYY-MM-DD>\<channel>_log.jsonl
 ```
 
 Log format (one JSON per line):

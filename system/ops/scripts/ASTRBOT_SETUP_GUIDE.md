@@ -25,10 +25,10 @@
 
 ```powershell
 # Má»Ÿ PowerShell, cháº¡y startup script
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\scripts\startup.ps1"
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\scripts\startup.ps1"
 
 # Hoáº·c start AstrBot riÃªng
-& "<AI_OS_ROOT>\plugins\AstrBot\.venv312\Scripts\astrbot.exe" run
+& "$OMNICLAW_ROOT\plugins\AstrBot\.venv312\Scripts\astrbot.exe" run
 ```
 
 AstrBot WebUI sáº½ má»Ÿ táº¡i: **http://localhost:6185/**
@@ -52,7 +52,7 @@ AstrBot WebUI sáº½ má»Ÿ táº¡i: **http://localhost:6185/**
 - Role: Admin
 
 ### 3.4 CÃ i AI OS Corp Plugin
-- Copy folder: `<AI_OS_ROOT>\plugins\AstrBot\data\plugins\astrbot_plugin_aios_corp\`
+- Copy folder: `$OMNICLAW_ROOT\plugins\AstrBot\data\plugins\astrbot_plugin_aios_corp\`
 - VÃ o: **Plugins â†’ Local Install**
 - Hoáº·c restart AstrBot (auto-detect plugin)
 
@@ -99,7 +99,7 @@ Nháº¯n vÃ o bot Telegram cá»§a báº¡n:
 ```powershell
 # Táº¡o scheduled task cháº¡y khi Windows boot
 $action = New-ScheduledTaskAction -Execute "powershell.exe" `
-    -Argument "-ExecutionPolicy Bypass -File `"<AI_OS_ROOT>\scripts\startup.ps1`""
+    -Argument "-ExecutionPolicy Bypass -File `"$OMNICLAW_ROOT\scripts\startup.ps1`""
 $trigger = New-ScheduledTaskTrigger -AtStartup
 Register-ScheduledTask -TaskName "AI OS Corp Startup" -Action $action -Trigger $trigger -RunLevel Highest
 ```

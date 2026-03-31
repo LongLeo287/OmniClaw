@@ -55,7 +55,7 @@ files = call_mcp("filesystem", "list_directory", {
 
 ```bash
 # CLI mode
-python plugins/mcp-client/mcp_client.py git git_log '{"repo_path": "<AI_OS_ROOT>", "max_count": 10}'
+python plugins/mcp-client/mcp_client.py git git_log '{"repo_path": "$OMNICLAW_ROOT", "max_count": 10}'
 ```
 
 ---
@@ -65,7 +65,7 @@ python plugins/mcp-client/mcp_client.py git git_log '{"repo_path": "<AI_OS_ROOT>
 ### BÆ°á»›c 1: Má»Ÿ terminal má»›i
 ```powershell
 # Tá»« OmniClaw root
-cd "<AI_OS_ROOT>"
+cd "$OMNICLAW_ROOT"
 ```
 
 ### BÆ°á»›c 2: Äáº£m báº£o claude_desktop_config.json Ä‘Ã£ cÃ³ MCP servers
@@ -74,7 +74,7 @@ File: `<USER_PROFILE>\AppData\Roaming\Claude\claude_desktop_config.json`
 {
   "mcpServers": {
     "sequential-thinking": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"] },
-    "git": { "command": "uvx", "args": ["mcp-server-git", "--repository", "<AI_OS_ROOT>"] },
+    "git": { "command": "uvx", "args": ["mcp-server-git", "--repository", "$OMNICLAW_ROOT"] },
     "filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "d:\\OmniClaw Corp"] }
   }
 }

@@ -48,7 +48,7 @@ RULE SEC-08: BLACKLIST MAINTENANCE
 
 RULE SEC-09: QUARANTINE ZONE OWNERSHIP
   Security GRC owns and operates the QUARANTINE zone at:
-  `<AI_OS_ROOT>\QUARANTINE\`
+  `$OMNICLAW_ROOT\QUARANTINE\`
   This is the mandatory staging area for ALL external repos before entry into OmniClaw.
   
   QUARANTINE lifecycle (Security GRC enforces):

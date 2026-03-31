@@ -155,7 +155,7 @@ or setup steps â€” without requiring explicit user request.
 
 ### BÆ°á»›c 3: ÄÄƒng kÃ½ API key
 - Truy cáº­p: context7.com/dashboard
-- Copy key vÃ o: `<AI_OS_ROOT>\MASTER.env`
+- Copy key vÃ o: `$OMNICLAW_ROOT\MASTER.env`
 - Biáº¿n mÃ´i trÆ°á»ng: `CONTEXT7_API_KEY=xxx`
 
 ### BÆ°á»›c 4: Test validation

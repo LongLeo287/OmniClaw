@@ -31,10 +31,10 @@ Bot Token:   [REDACTED_TELEGRAM_TOKEN]
 Admin ID:    646106732 (@LongLeo)
 LLM:         Gemini 2.0 Flash ([REDACTED_GEMINI_API_KEY])
 Config:      <USER_PROFILE>\.nullclaw\config.json
-Binary:      <AI_OS_ROOT>\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe
+Binary:      $OMNICLAW_ROOT\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe
 ```
 
-Full credentials: `<AI_OS_ROOT>\secrets\.env.telegram`
+Full credentials: `$OMNICLAW_ROOT\secrets\.env.telegram`
 
 ---
 
@@ -42,16 +42,16 @@ Full credentials: `<AI_OS_ROOT>\secrets\.env.telegram`
 
 ```powershell
 # Khá»Ÿi Ä‘á»™ng há»‡ thá»‘ng Ä‘áº§y Ä‘á»§
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\scripts\startup.ps1"
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\scripts\startup.ps1"
 
 # Chá»‰ nullclaw bot
-& "<AI_OS_ROOT>\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe" gateway
+& "$OMNICLAW_ROOT\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe" gateway
 
 # Chá»‰ ClawTask Dashboard
-python -m http.server 7474 --directory "<AI_OS_ROOT>\tools\clawtask"
+python -m http.server 7474 --directory "$OMNICLAW_ROOT\tools\clawtask"
 
 # Check bot status
-& "<AI_OS_ROOT>\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe" status
+& "$OMNICLAW_ROOT\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe" status
 ```
 
 ---
@@ -89,7 +89,7 @@ python -m http.server 7474 --directory "<AI_OS_ROOT>\tools\clawtask"
 ### SOP-BOT-01: Khá»Ÿi Ä‘á»™ng bot hÃ ng ngÃ y
 
 1. Open PowerShell as Admin
-2. `& "<AI_OS_ROOT>\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe" gateway`
+2. `& "$OMNICLAW_ROOT\REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe" gateway`
 3. Telegram â†’ nháº¯n "status" â†’ confirm reply
 
 ### SOP-BOT-02: Restart khi bot khÃ´ng pháº£n há»“i
@@ -107,7 +107,7 @@ python -m http.server 7474 --directory "<AI_OS_ROOT>\tools\clawtask"
 ### SOP-CONFIG-01: Rebuild nullclaw binary
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\scripts\build-nullclaw.ps1"
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\scripts\build-nullclaw.ps1"
 ```
 
 ---

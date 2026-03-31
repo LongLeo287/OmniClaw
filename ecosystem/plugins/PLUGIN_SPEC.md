@@ -1,7 +1,7 @@
 # PLUGIN_SPEC.md — OmniClaw Plugin Schema Standard
 # Version: 2.0 | Updated: 2026-03-14
 #
-# SCOPE: OmniClaw-level plugins (<AI_OS_ROOT>\plugins\)
+# SCOPE: OmniClaw-level plugins ($OMNICLAW_ROOT\plugins\)
 # This is NOT the BookMark Extension plugin spec.
 
 ## What Is a Plugin?
@@ -155,7 +155,7 @@ plugins/
 
 ## Plugin Registry File
 
-The master registry is at `<AI_OS_ROOT>\plugins\registry.json`.
+The master registry is at `$OMNICLAW_ROOT\plugins\registry.json`.
 Format:
 ```json
 {
@@ -164,7 +164,7 @@ Format:
   "plugins": [
     {
       "id": "<plugin_id>",
-      "path": "<AI_OS_ROOT>\\plugins\\<plugin_id>\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\plugins\\<plugin_id>\\manifest.json",
       "status": "<status>",
       "auto_load": false
     }

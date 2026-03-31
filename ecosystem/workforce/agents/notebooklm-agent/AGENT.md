@@ -200,7 +200,7 @@ Format file: `YYYY-MM-DD_[topic]_[dept].md`
 > Xem RULE-STORAGE-01 vÃ  RULE-DYNAMIC-01 Ä‘á»ƒ biáº¿t rÃµ.
 
 ```
-âœ… ÄÃšNG â€” <AI_OS_ROOT>/*
+âœ… ÄÃšNG â€” $OMNICLAW_ROOT/*
    brain/knowledge/    â†’ KI artifacts
    ecosystem/workforce/agents/       â†’ Agent files (AGENT.md, memory, etc.)
    plugins/            â†’ Plugins, tools, skills
@@ -219,7 +219,7 @@ Format file: `YYYY-MM-DD_[topic]_[dept].md`
    $env:TEMP\ hoáº·c báº¥t ká»³ Ä‘Æ°á»ng dáº«n há»‡ thá»‘ng nÃ o ngoÃ i .gemini/.claude/.codex/.nullclaw/.ollama
 ```
 
-**Exception duy nháº¥t:** Antigravity skills sync â†’ `$env:USERPROFILE\.gemini\antigravity\skills\` Ä‘Æ°á»£c phÃ©p mirror tá»« `<AI_OS_ROOT>/plugins/`, source of truth luÃ´n lÃ  AI_OS_ROOT.
+**Exception duy nháº¥t:** Antigravity skills sync â†’ `$env:USERPROFILE\.gemini\antigravity\skills\` Ä‘Æ°á»£c phÃ©p mirror tá»« `$OMNICLAW_ROOT/plugins/`, source of truth luÃ´n lÃ  AI_OS_ROOT.
 
 ---
 

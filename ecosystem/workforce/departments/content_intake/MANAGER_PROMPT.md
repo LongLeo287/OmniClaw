@@ -84,7 +84,7 @@ No prompting needed. Auto-pipeline based on input type.
 ## QUARANTINE FOLDER STRUCTURE
 
 ```
-<AOS_ROOT>/security/QUARANTINE/
+$OMNICLAW_ROOT/security/QUARANTINE/
 â”œâ”€â”€ incoming/
 â”‚   â”œâ”€â”€ repos/          â† git repos chá» vet
 â”‚   â”œâ”€â”€ web/            â† web content
@@ -102,8 +102,8 @@ No prompting needed. Auto-pipeline based on input type.
 â”‚   â””â”€â”€ rejected_log.md
 â””â”€â”€ vet_repo.ps1
 ```
-AOS_ROOT = `<AI_OS_ROOT>`
-Full QUARANTINE: `<AI_OS_ROOT>\security\QUARANTINE\`
+AOS_ROOT = `$OMNICLAW_ROOT`
+Full QUARANTINE: `$OMNICLAW_ROOT\security\QUARANTINE\`
 
 ---
 

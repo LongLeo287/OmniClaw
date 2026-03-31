@@ -152,7 +152,7 @@ brain/corp/memory/global/gaps_register.md
 brain/corp/gaps/GAP-<date>-<domain>.md
 system/security/QUARANTINE/
 system/telemetry/receipts/
-AOS_ROOT: <AI_OS_ROOT>
+AOS_ROOT: $OMNICLAW_ROOT
 
 ---
 

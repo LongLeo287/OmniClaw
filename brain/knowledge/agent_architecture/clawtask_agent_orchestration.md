@@ -9,7 +9,7 @@
 
 ClawTask là nền tảng **điều phối công việc cho AI agents** — không phải Kanban thông thường. Được thiết kế cho mô hình **human + AI agent collaboration**, nơi agent có trạng thái, workflow có checkpoint, và con người có thể can thiệp đúng lúc.
 
-**OmniClaw Corp đang dùng ClawTask tại:** `<AI_OS_ROOT>\tools\clawtask\`
+**OmniClaw Corp đang dùng ClawTask tại:** `$OMNICLAW_ROOT\tools\clawtask\`
 **Server:** `clawtask_api.py` — chạy cổng 7474
 
 ---
@@ -105,8 +105,8 @@ Mapping department → clarification targets:
 ## LIÊN KẾT
 
 - Bài viết: https://vnrom.net/2026/03/clawta[REDACTED_API_KEY]ts-khong-chi-la-mot-kanban-board/
-- Tool path: `<AI_OS_ROOT>\tools\clawtask\`
-- API file: `<AI_OS_ROOT>\tools\clawtask\clawtask_api.py`
+- Tool path: `$OMNICLAW_ROOT\tools\clawtask\`
+- API file: `$OMNICLAW_ROOT\tools\clawtask\clawtask_api.py`
 - Liên quan: `planning_pmo` department (owner của ClawTask)
 - Liên quan: `monitoring_inspection` (consumes ClawTask data)
 

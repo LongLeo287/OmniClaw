@@ -4,7 +4,7 @@ version: "2.0"
 tier: T0
 category: meta
 status: active
-source: <AI_OS_ROOT>\plugins\skill-generator
+source: $OMNICLAW_ROOT\plugins\skill-generator
 author: marketingjuliancongdanh79-pixel
 description: |
   OmniClaw Core Module — Skill Creation Engine.

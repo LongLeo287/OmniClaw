@@ -1,5 +1,5 @@
 # OmniClaw — Master Tools Registry
-# Path: <AI_OS_ROOT>\registry\TOOLS_REGISTRY.md
+# Path: $OMNICLAW_ROOT\registry\TOOLS_REGISTRY.md
 # Updated: 2026-03-17
 # Purpose: Inventory and categorize all tools in OmniClaw ecosystem
 
@@ -125,5 +125,5 @@ USER REQUEST
 
 ---
 
-*Path: <AI_OS_ROOT>\registry\TOOLS_REGISTRY.md*
+*Path: $OMNICLAW_ROOT\registry\TOOLS_REGISTRY.md*
 *Auto-update when new tools are added to scripts/, mcp/, or tools/*

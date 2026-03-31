@@ -5,13 +5,13 @@
     Scans a cloned repository in QUARANTINE for malware indicators,
     data exfiltration patterns, suspicious dependencies, and git hook injections.
     Must PASS before any content is moved into AI OS ecosystem.
-    QUARANTINE path: <AI_OS_ROOT>\security\QUARANTINE\
+    QUARANTINE path: $OMNICLAW_ROOT\security\QUARANTINE\
 .PARAMETER RepoPath
-    Full path to the quarantined repo (e.g., <AI_OS_ROOT>\security\QUARANTINE\incoming\repos\repo-name)
+    Full path to the quarantined repo (e.g., $OMNICLAW_ROOT\security\QUARANTINE\incoming\repos\repo-name)
 .PARAMETER Verbose
     Show detailed scan output
 .EXAMPLE
-    .\vet_repo.ps1 -RepoPath "<AI_OS_ROOT>\security\QUARANTINE\incoming\repos\everything-claude-code"
+    .\vet_repo.ps1 -RepoPath "$OMNICLAW_ROOT\security\QUARANTINE\incoming\repos\everything-claude-code"
 #>
 param(
     [Parameter(Mandatory=$true)]

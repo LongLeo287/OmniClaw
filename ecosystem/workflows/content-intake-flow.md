@@ -344,7 +344,7 @@ Actions:
 - Update CIV ticket to INGESTED
 - Confirm file exists at destination (verify)
 
-Destinations (paths relative to <AOS_ROOT>):
+Destinations (paths relative to $OMNICLAW_ROOT):
   REPO/PLUGIN        → plugins/  OR  ecosystem/skills/
   WEB_CONTENT        → brain/knowledge/web/
   DOCUMENT           → brain/knowledge/documents/

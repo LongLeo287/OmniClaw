@@ -39,7 +39,7 @@ python ops/scripts/repo_resolver.py "Build security scanner for CIV" --clone
 
 ```powershell
 # Lá»‡nh clone cho tá»«ng repo (xem LARGE_REPOS_CATALOG.md Ä‘á»ƒ chá»n)
-git clone --depth 1 <URL> "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
+git clone --depth 1 <URL> "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ```
 
 ---
@@ -62,7 +62,7 @@ Size: xxx MB
 
 ```powershell
 # XÃ³a repo sau khi dá»± Ã¡n xong (náº¿u khÃ´ng cáº§n giá»¯)
-Remove-Item -Recurse -Force "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
+Remove-Item -Recurse -Force "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ```
 
 ---

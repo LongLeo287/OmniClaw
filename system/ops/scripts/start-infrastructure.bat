@@ -7,7 +7,7 @@ REM  Usage: scripts\start-infrastructure.bat
 REM —————————————————————————————————————————————————————————————————————————
 
 REM Auto-detect AOS root from script location (scripts\ lives inside ops\)
-FOR %%I IN ("%~dp0\..\..\..\..") DO SET OMNICLAW_ROOT=%%~fI
+FOR %%I IN ("%~dp0\..\..\..\..\..\..") DO SET OMNICLAW_ROOT=%%~fI
 SET SCRIPTS_DIR=%OMNICLAW_ROOT%\ops\scripts
 SET LOGS_DIR=%OMNICLAW_ROOT%\ops\telemetry\logs
 

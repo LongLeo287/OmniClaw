@@ -244,6 +244,41 @@ automations:
 
 
 
+  remote_bridge_gateway:
+
+    type: daemon
+
+    path: system/bridge/main.py
+
+    launcher: system/bridge/open_port.bat
+
+    port: 8000
+
+    status: on_demand
+
+    owner: bridge-commander-agent
+
+    description: "FastAPI gateway đón traffic từ Remote/bots. Dispatch tới agent_bus (SQLite) hoặc blackboard fallback. Start: system\\bridge\\open_port.bat"
+
+    endpoints:
+      - "POST /dock/bots/{platform} — Zalo/Telegram/Facebook/Discord/Line webhooks"
+      - "POST /dock/mcp/dispatch — MCP tool agent calls"
+      - "POST /dock/agentic_ai/sync — OpenClaw AI sync"
+      - "POST /dock/cloud/webhook — Supabase/GCloud updates"
+      - "POST /dock/dashboard/ui_command — Web/Mobile UI"
+      - "POST /vault/auth/issue_temp_pass — Cấp token (HQ only)"
+      - "POST /vault/auth/revoke — Thu hồi token"
+      - "GET /vault/auth/list — Liệt kê tokens"
+      - "GET /health — Health check"
+
+    auth: "Header X-OMNICLAW-HQ-TOKEN (VaultKeeper). Key từ OMNICLAW_HQ_MASTER_KEY trong MASTER.env"
+
+    connections:
+      - "agent_bus.py (publish events) → fallback blackboard.json"
+      - "passport_issuer.py (token verify) → vault_tokens.json (persist)"
+      - "customs_checkpoint.py (scan payload) → border_security.log"
+
+
   # ── REMOTE SERVICES (chạy từ <AI_OS_REMOTE_ROOT>) ──────────────────
 
 

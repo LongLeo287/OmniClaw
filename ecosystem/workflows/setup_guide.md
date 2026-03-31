@@ -13,7 +13,7 @@ cd "d:\OmniClaw Corp\OmniClaw REMOTE\scripts"
 powershell -ExecutionPolicy Bypass -File setup.ps1
 
 # 3. Khởi động Master Dashboard
-"<AI_OS_ROOT>\launcher\OmniClaw Corp.cmd"
+"$OMNICLAW_ROOT\launcher\OmniClaw Corp.cmd"
 ```
 
 ---
@@ -58,7 +58,7 @@ pip install -r requirements.txt
 
 ### MaxKB
 ```powershell
-cd "<AI_OS_ROOT>\plugins\MaxKB"
+cd "$OMNICLAW_ROOT\plugins\MaxKB"
 docker compose up -d
 # UI: http://localhost:8080/maxkb
 ```

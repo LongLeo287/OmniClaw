@@ -16,7 +16,7 @@
 
 | Category | Bad (hardcoded) | Good (dynamic) |
 |----------|----------------|----------------|
-| Workspace root | `<AI_OS_ROOT>\` | "the directory containing GEMINI.md" |
+| Workspace root | `$OMNICLAW_ROOT\` | "the directory containing GEMINI.md" |
 | User home | `C:\Users\R9000P 2021.LONGLEO\` | `$env:USERPROFILE` (PowerShell) / `~` (bash) |
 | AI tool system dirs | `<USER_PROFILE>\.gemini\` | `$env:USERPROFILE\.gemini\` |
 | Dept count | `"22 departments"` | `corp/org_chart.yaml` â†’ `company.departments.count` |
@@ -70,8 +70,8 @@ Rule  : All services read their ports from this file. Never hardcode 7474, 3000,
 
 ### When writing a rule file:
 - Use RELATIVE paths: `brain/shared-context/blackboard.json` âœ…
-- Avoid ABSOLUTE paths: `<AI_OS_ROOT>\brain\...` âŒ
-- If must reference workspace root: write `<AI_OS_ROOT>` as placeholder
+- Avoid ABSOLUTE paths: `$OMNICLAW_ROOT\brain\...` âŒ
+- If must reference workspace root: write `$OMNICLAW_ROOT` as placeholder
 
 ### When writing boot files (GEMINI.md / CLAUDE.md):
 - Corp status â†’ reference blackboard.json, do NOT snapshot inline

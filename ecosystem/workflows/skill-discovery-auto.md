@@ -19,7 +19,7 @@ If it doesn't, this workflow runs automatically â€” NO manual trigger neede
 
 ```powershell
 # Run at every corp boot (corp-daily-cycle Phase 0)
-$ROOT = "<AI_OS_ROOT>"
+$ROOT = "$OMNICLAW_ROOT"
 $missing = @()
 
 # Scan all relevant locations

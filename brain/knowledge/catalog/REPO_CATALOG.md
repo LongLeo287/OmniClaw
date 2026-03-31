@@ -6,7 +6,7 @@
 
 ---
 
-## 📁 PLUGINS — `<AI_OS_ROOT>\plugins\`
+## 📁 PLUGINS — `$OMNICLAW_ROOT\plugins\`
 *Repos đã sẵn sàng dùng trực tiếp bởi agents*
 
 ### 🤖 Claude Code & Antigravity Core
@@ -185,7 +185,7 @@
 
 ---
 
-## 📚 KNOWLEDGE REPOS — `<AI_OS_ROOT>\knowledge\repos\`
+## 📚 KNOWLEDGE REPOS — `$OMNICLAW_ROOT\knowledge\repos\`
 *Reference material, không phải plugins — dùng để nghiên cứu, học hỏi*
 
 ### 🤖 AI & Machine Learning

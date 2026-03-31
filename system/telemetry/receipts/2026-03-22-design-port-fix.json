@@ -2,7 +2,7 @@
   "receipt_id": "2026-03-22-design-port-fix",
   "agent": "Claude Code (claude-sonnet-4-6)",
   "task": "Comprehensive design/color/spacing/port fix for ClawTask index.html",
-  "target_file": "<AI_OS_ROOT>/tools/clawtask/index.html",
+  "target_file": "$OMNICLAW_ROOT/tools/clawtask/index.html",
   "timestamp": "2026-03-22T00:00:00+07:00",
   "status": "COMPLETE",
 

@@ -13,7 +13,7 @@
 # Clone vá» thÆ° má»¥c project cá»¥ thá»ƒ
 # Thay <PROJECT_DIR> báº±ng tÃªn dá»± Ã¡n Ä‘ang lÃ m
 
-git clone --depth 1 <URL> "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
+git clone --depth 1 <URL> "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ```
 
 ---
@@ -48,7 +48,7 @@ git clone --depth 1 <URL> "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
 ```powershell
 # DÃ¹ng khi: Build web UI cho OmniClaw dashboard, customer portal, product frontend
 git clone --depth 1 https://github.com/vercel/next.js.git `
-    "<AI_OS_ROOT>\plugins\github-repos\next.js"
+    "$OMNICLAW_ROOT\plugins\github-repos\next.js"
 ```
 
 **OmniClaw Impact:**
@@ -66,7 +66,7 @@ git clone --depth 1 https://github.com/vercel/next.js.git `
 ```powershell
 # DÃ¹ng khi: Cáº§n tool váº½ diagram cho dá»± Ã¡n OmniClaw, system design, wireframe alternative
 git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
-    "<AI_OS_ROOT>\plugins\github-repos\excalidraw"
+    "$OMNICLAW_ROOT\plugins\github-repos\excalidraw"
 ```
 
 **OmniClaw Impact:**
@@ -84,7 +84,7 @@ git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
 ```powershell
 # DÃ¹ng khi: Cáº§n analytics pipeline cho OmniClaw products, track user events
 git clone --depth 1 https://github.com/posthog/posthog.git `
-    "<AI_OS_ROOT>\plugins\github-repos\posthog"
+    "$OMNICLAW_ROOT\plugins\github-repos\posthog"
 ```
 
 **OmniClaw Impact:**
@@ -102,7 +102,7 @@ git clone --depth 1 https://github.com/posthog/posthog.git `
 ```powershell
 # DÃ¹ng khi: Build charts cho HUD, KPI dashboard, corp cycle analytics
 git clone --depth 1 https://github.com/plotly/plotly.js.git `
-    "<AI_OS_ROOT>\plugins\github-repos\plotly.js"
+    "$OMNICLAW_ROOT\plugins\github-repos\plotly.js"
 ```
 
 **OmniClaw Impact:**
@@ -121,7 +121,7 @@ git clone --depth 1 https://github.com/plotly/plotly.js.git `
 # DÃ¹ng khi: CIV pipeline cáº§n deep security scan repo/container
 # Hoáº·c khi Security dept cáº§n audit tools
 git clone --depth 1 https://github.com/aquasecurity/trivy.git `
-    "<AI_OS_ROOT>\plugins\github-repos\trivy"
+    "$OMNICLAW_ROOT\plugins\github-repos\trivy"
 ```
 
 **OmniClaw Impact:**
@@ -139,7 +139,7 @@ git clone --depth 1 https://github.com/aquasecurity/trivy.git `
 ```powershell
 # DÃ¹ng khi: Training dept cáº§n roadmap reference cho agent capabilities
 git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git `
-    "<AI_OS_ROOT>\plugins\github-repos\developer-roadmap"
+    "$OMNICLAW_ROOT\plugins\github-repos\developer-roadmap"
 ```
 
 **OmniClaw Impact:**
@@ -157,7 +157,7 @@ git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git `
 ```powershell
 # DÃ¹ng khi: R&D dept cáº§n reference cho LLM integration, RAG, fine-tuning patterns
 git clone --depth 1 https://github.com/openai/openai-cookbook.git `
-    "<AI_OS_ROOT>\plugins\github-repos\openai-cookbook"
+    "$OMNICLAW_ROOT\plugins\github-repos\openai-cookbook"
 ```
 
 **OmniClaw Impact:**
@@ -175,7 +175,7 @@ git clone --depth 1 https://github.com/openai/openai-cookbook.git `
 ```powershell
 # DÃ¹ng khi: Frontend cáº§n animations cho HUD dashboard, product UI
 git clone --depth 1 https://github.com/juliangarnier/anime.git `
-    "<AI_OS_ROOT>\plugins\github-repos\anime"
+    "$OMNICLAW_ROOT\plugins\github-repos\anime"
 ```
 
 **OmniClaw Impact:**
@@ -194,7 +194,7 @@ git clone --depth 1 https://github.com/juliangarnier/anime.git `
 # DÃ¹ng khi: Training dept cáº§n full HuggingFace agents curriculum
 # Cáº£nh bÃ¡o: ~2GB â€” chá»‰ clone khi cÃ³ storage
 git clone --depth 1 https://github.com/huggingface/agents-course.git `
-    "<AI_OS_ROOT>\plugins\github-repos\agents-course"
+    "$OMNICLAW_ROOT\plugins\github-repos\agents-course"
 ```
 
 **OmniClaw Impact:**
@@ -212,7 +212,7 @@ git clone --depth 1 https://github.com/huggingface/agents-course.git `
 ```powershell
 # Nhá» â€” cÃ³ thá»ƒ clone ngay khi cáº§n
 git clone --depth 1 https://github.com/github/gitignore.git `
-    "<AI_OS_ROOT>\plugins\github-repos\gitignore"
+    "$OMNICLAW_ROOT\plugins\github-repos\gitignore"
 ```
 
 **OmniClaw Impact:**
@@ -229,7 +229,7 @@ git clone --depth 1 https://github.com/github/gitignore.git `
 ```powershell
 # DÃ¹ng khi: Integration dept cáº§n tÃ¬m free API cho dá»± Ã¡n
 git clone --depth 1 https://github.com/public-apis/public-apis.git `
-    "<AI_OS_ROOT>\plugins\github-repos\public-apis"
+    "$OMNICLAW_ROOT\plugins\github-repos\public-apis"
 ```
 
 **OmniClaw Impact:**
@@ -244,41 +244,41 @@ git clone --depth 1 https://github.com/public-apis/public-apis.git `
 ```powershell
 # â•â•â• FRONTEND / UI â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # next.js â€” Khi build web app
-git clone --depth 1 https://github.com/vercel/next.js.git "<AI_OS_ROOT>\plugins\github-repos\next.js"
+git clone --depth 1 https://github.com/vercel/next.js.git "$OMNICLAW_ROOT\plugins\github-repos\next.js"
 
 # excalidraw â€” Khi cáº§n whiteboard/diagram tool
-git clone --depth 1 https://github.com/excalidraw/excalidraw.git "<AI_OS_ROOT>\plugins\github-repos\excalidraw"
+git clone --depth 1 https://github.com/excalidraw/excalidraw.git "$OMNICLAW_ROOT\plugins\github-repos\excalidraw"
 
 # anime.js â€” Khi cáº§n animations
-git clone --depth 1 https://github.com/juliangarnier/anime.git "<AI_OS_ROOT>\plugins\github-repos\anime"
+git clone --depth 1 https://github.com/juliangarnier/anime.git "$OMNICLAW_ROOT\plugins\github-repos\anime"
 
 # plotly.js â€” Khi cáº§n charts/graphs
-git clone --depth 1 https://github.com/plotly/plotly.js.git "<AI_OS_ROOT>\plugins\github-repos\plotly.js"
+git clone --depth 1 https://github.com/plotly/plotly.js.git "$OMNICLAW_ROOT\plugins\github-repos\plotly.js"
 
 # â•â•â• ANALYTICS / MONITORING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # posthog â€” Self-hosted analytics
-git clone --depth 1 https://github.com/posthog/posthog.git "<AI_OS_ROOT>\plugins\github-repos\posthog"
+git clone --depth 1 https://github.com/posthog/posthog.git "$OMNICLAW_ROOT\plugins\github-repos\posthog"
 
 # â•â•â• SECURITY â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # trivy â€” Container/repo security scanner
-git clone --depth 1 https://github.com/aquasecurity/trivy.git "<AI_OS_ROOT>\plugins\github-repos\trivy"
+git clone --depth 1 https://github.com/aquasecurity/trivy.git "$OMNICLAW_ROOT\plugins\github-repos\trivy"
 
 # â•â•â• AI / R&D â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # openai-cookbook â€” LLM patterns & examples
-git clone --depth 1 https://github.com/openai/openai-cookbook.git "<AI_OS_ROOT>\plugins\github-repos\openai-cookbook"
+git clone --depth 1 https://github.com/openai/openai-cookbook.git "$OMNICLAW_ROOT\plugins\github-repos\openai-cookbook"
 
 # agents-course â€” HuggingFace agent curriculum [LARGE ~2GB]
-git clone --depth 1 https://github.com/huggingface/agents-course.git "<AI_OS_ROOT>\plugins\github-repos\agents-course"
+git clone --depth 1 https://github.com/huggingface/agents-course.git "$OMNICLAW_ROOT\plugins\github-repos\agents-course"
 
 # â•â•â• TRAINING / KNOWLEDGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # developer-roadmap â€” Skill matrix & learning paths
-git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git "<AI_OS_ROOT>\plugins\github-repos\developer-roadmap"
+git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git "$OMNICLAW_ROOT\plugins\github-repos\developer-roadmap"
 
 # public-apis â€” Free API directory
-git clone --depth 1 https://github.com/public-apis/public-apis.git "<AI_OS_ROOT>\plugins\github-repos\public-apis"
+git clone --depth 1 https://github.com/public-apis/public-apis.git "$OMNICLAW_ROOT\plugins\github-repos\public-apis"
 
 # gitignore â€” GitHub templates [NHá»Ž - clone ngay]
-git clone --depth 1 https://github.com/github/gitignore.git "<AI_OS_ROOT>\plugins\github-repos\gitignore"
+git clone --depth 1 https://github.com/github/gitignore.git "$OMNICLAW_ROOT\plugins\github-repos\gitignore"
 ```
 
 ---

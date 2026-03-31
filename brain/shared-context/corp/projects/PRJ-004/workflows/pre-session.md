@@ -3,15 +3,15 @@ description: POS project session initialization â€” run at start of every w
 ---
 
 # pre-session.md â€” Tiem Nuoc Nho v5
-# Managed by: <AI_OS_ROOT>\projects\PRJ-004\workflows\
+# Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Steps
 
 ### 1. Boot & Validate
 ```
-1. Read <AI_OS_ROOT>\projects\PRJ-004\CLAUDE.md
-2. Read <AI_OS_ROOT>\CLAUDE.md
-3. Run: powershell -File "<AI_OS_ROOT>\gatekeeper.ps1" -CheckID PRJ-004
+1. Read $OMNICLAW_ROOT\projects\PRJ-004\CLAUDE.md
+2. Read $OMNICLAW_ROOT\CLAUDE.md
+3. Run: powershell -File "$OMNICLAW_ROOT\gatekeeper.ps1" -CheckID PRJ-004
 ```
 
 ### 2. Dev Server Check
@@ -30,7 +30,7 @@ npx tsc --noEmit --skipLibCheck
 
 ### 4. Blackboard Check
 ```
-Read: <AI_OS_ROOT>\shared-context\blackboard.json
+Read: $OMNICLAW_ROOT\shared-context\blackboard.json
 - COMPLETE â†’ review Claude Code results
 - BLOCKED  â†’ investigate, report to user
 - IDLE     â†’ fresh session, ready

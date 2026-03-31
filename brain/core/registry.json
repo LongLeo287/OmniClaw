@@ -1,7 +1,7 @@
 {
   "PRJ-001": {
     "name": "OmniClaw Core",
-    "path": "<AI_OS_ROOT>",
+    "path": "$OMNICLAW_ROOT",
     "description": "Central OmniClaw — governance, skills, plugins, dashboard",
     "status": "active",
     "skills_used": [],
@@ -12,7 +12,7 @@
   },
   "PRJ-002": {
     "name": "Star Office UI Dashboard",
-    "path": "<AI_OS_ROOT>\\ui\\dashboard",
+    "path": "$OMNICLAW_ROOT\\ui\\dashboard",
     "description": "Pixel office dashboard for OmniClaw status visualization",
     "status": "active",
     "skills_used": ["ui-ux-pro-max"],
@@ -52,8 +52,8 @@
       "tier": "T0",
       "status": "active",
       "version": "2.0",
-      "module_path": "<AI_OS_ROOT>\\ecosystem\\skills\\skill_generator",
-      "source_plugin": "<AI_OS_ROOT>\\plugins\\skill-generator",
+      "module_path": "$OMNICLAW_ROOT\\ecosystem\\skills\\skill_generator",
+      "source_plugin": "$OMNICLAW_ROOT\\plugins\\skill-generator",
       "description": "Meta-skill factory — 8-phase pipeline to create, test, deploy AI skills",
       "registered_at": "2026-03-17T10:18:00+07:00"
     },
@@ -61,15 +61,15 @@
       "tier": "T0",
       "status": "active",
       "version": "1.0",
-      "module_path": "<AI_OS_ROOT>\\ecosystem\\skills\\tools_hub",
-      "tools_registry": "<AI_OS_ROOT>\\brain\\shared-context\\registry\\TOOLS_REGISTRY.md",
+      "module_path": "$OMNICLAW_ROOT\\ecosystem\\skills\\tools_hub",
+      "tools_registry": "$OMNICLAW_ROOT\\brain\\shared-context\\registry\\TOOLS_REGISTRY.md",
       "description": "Central tool dispatcher — routes to vet_repo, wakeup, backup, skill_loader, MCP, handoff etc.",
       "total_tools": 22,
       "registered_at": "2026-03-17T10:38:00+07:00"
     }
   },
   "_tier_registry": {
-    "registry_path": "<AI_OS_ROOT>\\brain\\shared-context\\registry\\SKILL_TIERS.md",
+    "registry_path": "$OMNICLAW_ROOT\\brain\\shared-context\\registry\\SKILL_TIERS.md",
     "last_updated": "2026-03-17",
     "total_classified": 107,
     "breakdown": {

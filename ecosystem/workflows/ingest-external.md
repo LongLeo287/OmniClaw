@@ -51,7 +51,7 @@ Khi user cung cấp link / tài liệu / repo từ bên ngoài với lệnh:
    - Stars, last commit date, contributors, license, README quality
 2. [QUARANTINE CLONE]
    git clone --depth=1 <URL> "D:\APP\QUARANTINE\<repo-name>"
-3. [AUTO SCAN] Run: <AI_OS_ROOT>\skills\security_shield\vet_repo.ps1
+3. [AUTO SCAN] Run: $OMNICLAW_ROOT\skills\security_shield\vet_repo.ps1
 4. [REPORT REVIEW] Open _VET_REPORT.md:
    - PASS → proceed
    - WARN → manual review, ask user to decide
@@ -114,7 +114,7 @@ If any item fails → do NOT ingest, report reason to user.
 
 ## OUTPUT FORMAT (for each ingested item)
 
-Save to: `<AI_OS_ROOT>\knowledge\<filename>.md`
+Save to: `$OMNICLAW_ROOT\knowledge\<filename>.md`
 
 ```markdown
 ---

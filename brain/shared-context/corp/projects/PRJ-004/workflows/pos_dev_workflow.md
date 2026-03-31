@@ -1,5 +1,5 @@
 ﻿# pos_dev_workflow.md â€” POS Feature Development SOP
-# Managed by: <AI_OS_ROOT>\projects\PRJ-004\workflows\
+# Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Phase 1: RESEARCH
 
@@ -51,7 +51,7 @@ For every file modified:
 
 ### Receipt File Naming
 ```
-<AI_OS_ROOT>\telemetry\receipts\
+$OMNICLAW_ROOT\telemetry\receipts\
 PRJ004_YYYYMMDD_NNN_<feature_slug>.json
 Example: PRJ004_20260316_003_qr_checkout.json
 ```
@@ -94,7 +94,7 @@ Example: PRJ004_20260316_003_qr_checkout.json
 
 ### Also update CLAUDE.md
 Move the completed feature from `PENDING FEATURES` to `COMPLETED FEATURES` in:
-`<AI_OS_ROOT>\projects\PRJ-004\CLAUDE.md`
+`$OMNICLAW_ROOT\projects\PRJ-004\CLAUDE.md`
 
 
 

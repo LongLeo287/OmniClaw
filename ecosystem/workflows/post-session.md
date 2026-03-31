@@ -84,7 +84,7 @@ Trigger: Gá»i ká»‹ch báº£n dá»n dáº¹p há»‡ luá»µ (omnic
 Script: python system/ops/scripts/omniclaw_deep_cleaner.py --auto-delete --stale-days 14
 
 Quy táº¯c dá»n dáº¹p (RULE-CLEANUP-01):
-1. QuÃ©t root directory (<AI_OS_ROOT>) vÃ  Ä‘áº©y má»i file táº¡o nhÃ¡p láº¡c loÃ i (.md, .py, .txt, .log) khÃ´ng thuá»™c há»‡ thá»‘ng vÃ o `storage/vault/DATA/stray_files/` Ä‘á»ƒ khoanh vÃ¹ng rÃ¡c.
+1. QuÃ©t root directory ($OMNICLAW_ROOT) vÃ  Ä‘áº©y má»i file táº¡o nhÃ¡p láº¡c loÃ i (.md, .py, .txt, .log) khÃ´ng thuá»™c há»‡ thá»‘ng vÃ o `storage/vault/DATA/stray_files/` Ä‘á»ƒ khoanh vÃ¹ng rÃ¡c.
 2. XÃ³a sáº¡ch cÃ¡c repo má»“ cÃ´i/rá»—ng trong `brain/knowledge/repos/*`.
 3. Clear cÃ¡c report vÃ  log rÃ¡c cÅ© (>14 ngÃ y) khá»i `QUARANTINE/` vÃ  `storage/vault/DATA/`.
 
@@ -124,7 +124,7 @@ Output (Vietnamese):
 
 ```powershell
 # BÃ¡o Star Office UI: phiÃªn Ä‘Ã£ Ä‘Ã³ng, chuyá»ƒn sang idle
-python "<AI_OS_ROOT>\dashboard\set_state_aios.py" --state idle --detail "PhiÃªn lÃ m viá»‡c Ä‘Ã£ káº¿t thÃºc - Táº¡m biá»‡t!"
+python "$OMNICLAW_ROOT\dashboard\set_state_aios.py" --state idle --detail "PhiÃªn lÃ m viá»‡c Ä‘Ã£ káº¿t thÃºc - Táº¡m biá»‡t!"
 ```
 
 ### Step 7: HUD Auto-Update (non-blocking)

@@ -6,7 +6,7 @@ Táº¥t cáº£ MCP servers trong há»‡ thá»‘ng. Claude Code Ä‘á»
 ## CÃ¡ch thÃªm vÃ o Claude Code
 
 1. Má»Ÿ Claude Code settings â†’ MCP
-2. Trá» Ä‘áº¿n `<AI_OS_ROOT>\mcp\config.json`
+2. Trá» Ä‘áº¿n `$OMNICLAW_ROOT\mcp\config.json`
 3. Hoáº·c copy ná»™i dung vÃ o `~/.claude/mcp.json`
 
 ---

@@ -51,13 +51,13 @@ TIER 4 — DATA & MEMORY   : memory/, knowledge/, shared-context/
 
 When starting ANY session, execute in order:
 
-1. Read `<AI_OS_ROOT>\CLAUDE.md` — verify you understand the directory map
-2. If accessing a workspace: Run `<AI_OS_ROOT>\gatekeeper.ps1 -CheckID <PRJ-XXX>`
-3. Load `<AI_OS_ROOT>\shared-context\AGENTS.md` — agent roster & decision authority
-4. Load `<AI_OS_ROOT>\shared-context\SOUL.md` — identity & behavioral DNA
-5. Load `<AI_OS_ROOT>\shared-context\THESIS.md` — strategic pillars
-6. Execute session hook: `<AI_OS_ROOT>\workflows\pre-session.md`
-7. Load `<AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json` — available capabilities
+1. Read `$OMNICLAW_ROOT\CLAUDE.md` — verify you understand the directory map
+2. If accessing a workspace: Run `$OMNICLAW_ROOT\gatekeeper.ps1 -CheckID <PRJ-XXX>`
+3. Load `$OMNICLAW_ROOT\shared-context\AGENTS.md` — agent roster & decision authority
+4. Load `$OMNICLAW_ROOT\shared-context\SOUL.md` — identity & behavioral DNA
+5. Load `$OMNICLAW_ROOT\shared-context\THESIS.md` — strategic pillars
+6. Execute session hook: `$OMNICLAW_ROOT\workflows\pre-session.md`
+7. Load `$OMNICLAW_ROOT\shared-context\SKILL_REGISTRY.json` — available capabilities
 8. Declare your current mode: `[PLANNING]`, `[EXECUTION]`, or `[REFLECTION]`
 
 ---
@@ -88,7 +88,7 @@ When starting ANY session, execute in order:
 
 ### 1. Gatekeeper Enforcement
 - NEVER operate on a workspace without passing `gatekeeper.ps1` first
-- Registered workspaces only — see `<AI_OS_ROOT>\registry.json`
+- Registered workspaces only — see `$OMNICLAW_ROOT\registry.json`
 - Unregistered workspace = DENY and escalate to Antigravity
 
 ### 2. Forbidden Operations
@@ -239,7 +239,7 @@ Reports to USER are in **<!--LANG-->Vietnamese<!--/LANG-->**. Agent-to-agent rec
 
 ```
 ALLOWED:
-  <AI_OS_ROOT>\          — Central OS, governance, skills, plugins, channels
+  $OMNICLAW_ROOT\          — Central OS, governance, skills, plugins, channels
   <DATA_ROOT>\           — Static resources, archives, references
   [Registered workspaces]    — As per registry.json, post-Gatekeeper
 
@@ -311,12 +311,12 @@ All new plugins/skills MUST pass 9-layer SkillSentry scan:
 Copy everything between `<MASTER_PROMPT>` and `</MASTER_PROMPT>` into the System Prompt of any compatible AI client.
 
 ### Method 2: CLAUDE.md pointer (for Claude Code)
-Claude Code automatically reads `CLAUDE.md` at workspace root — which points here. No extra steps needed if workspace root is `<AI_OS_ROOT>`.
+Claude Code automatically reads `CLAUDE.md` at workspace root — which points here. No extra steps needed if workspace root is `$OMNICLAW_ROOT`.
 
 ### Method 3: Reference in task files
 At the top of any `task.md`, add:
 ```
-<!-- GOVERNANCE: <AI_OS_ROOT>\rules\MASTER_PROMPT.md -->
+<!-- GOVERNANCE: $OMNICLAW_ROOT\rules\MASTER_PROMPT.md -->
 ```
 This signals to any agent reading the task that MASTER_PROMPT governs this task.
 

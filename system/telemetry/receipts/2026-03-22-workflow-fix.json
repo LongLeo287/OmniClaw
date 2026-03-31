@@ -73,8 +73,8 @@
     {
       "id": "FLOW-010",
       "file": "ops/workflows/content-intake-flow.md",
-      "issue": "STEP 5 destinations hardcoded to <AI_OS_ROOT>\\ (wrong path)",
-      "fix": "Changed to <AOS_ROOT>-relative paths"
+      "issue": "STEP 5 destinations hardcoded to $OMNICLAW_ROOT\\ (wrong path)",
+      "fix": "Changed to $OMNICLAW_ROOT-relative paths"
     },
     {
       "id": "FLOW-011",

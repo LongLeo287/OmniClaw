@@ -14,11 +14,11 @@
 Status: EXAMPLE
 civ_ticket: CIV-2026-03-22-000
 content_type: REPO
-destination_path: <AOS_ROOT>/plugins/example-plugin/
+destination_path: $OMNICLAW_ROOT/plugins/example-plugin/
 quality_score: 9
 source_url: https://github.com/example/repo
 tags: [plugin, tools]
-civ_analysis: <AOS_ROOT>/security/QUARANTINE/vetted/repos/example-plugin/_CIV_ANALYSIS.md
+civ_analysis: $OMNICLAW_ROOT/security/QUARANTINE/vetted/repos/example-plugin/_CIV_ANALYSIS.md
 delivered_at: 2026-03-22T00:00:00+07:00
 [DONE — processed by registry-manager-agent]
 -->

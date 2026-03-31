@@ -14,11 +14,11 @@ Quy trÃ¬nh nÃ y hÆ°á»›ng dáº«n `Archivist Agent` cáº­p nháº­t
 ## 2. Quy TrÃ¬nh Cáº­p Nháº­t (Sync Routine)
 
 **BÆ¯á»šC 1: XÃ¢y Dá»±ng Sá»• ÄÄƒng KÃ½ (Index Build)**
-- Lá»‡nh thá»±c thi: `python "<AI_OS_ROOT>\system\ops\scripts\registry_indexer.py"`
-- HÃ nh Ä‘á»™ng: QuÃ©t toÃ n cá»¥c táº¥t cáº£ Repo, Plugin, Tool á»Ÿ cáº£ 2 BÃ¡n Cáº§u (Local Core & Remote Ecosystem). Cáº­p nháº­t danh sÃ¡ch 300+ Entities vÃ o `<AI_OS_ROOT>\system\registry\SYSTEM_INDEX.yaml`.
+- Lá»‡nh thá»±c thi: `python "$OMNICLAW_ROOT\system\ops\scripts\registry_indexer.py"`
+- HÃ nh Ä‘á»™ng: QuÃ©t toÃ n cá»¥c táº¥t cáº£ Repo, Plugin, Tool á»Ÿ cáº£ 2 BÃ¡n Cáº§u (Local Core & Remote Ecosystem). Cáº­p nháº­t danh sÃ¡ch 300+ Entities vÃ o `$OMNICLAW_ROOT\system\registry\SYSTEM_INDEX.yaml`.
 
 **BÆ¯á»šC 2: Cáº¥p Dá»¯ Liá»‡u Ngá»¯ NghÄ©a (Narrative Feed)**
-- Lá»‡nh thá»±c thi: `python "<AI_OS_ROOT>\system\ops\scripts\graph_feeder.py"`
+- Lá»‡nh thá»±c thi: `python "$OMNICLAW_ROOT\system\ops\scripts\graph_feeder.py"`
 - HÃ nh Ä‘á»™ng: Dá»‹ch tá»‡p cáº¥u hÃ¬nh tÄ©nh (YAML) thÃ nh vÄƒn báº£n ngá»¯ nghÄ©a há»c (Narrative Text) Ä‘á»ƒ mÃ¡y há»c RAG cÃ³ thá»ƒ láº­p báº£n Ä‘á»“. Xuáº¥t ra tá»‡p `SYSTEM_INDEX_NARRATIVE.txt`.
 
 **BÆ¯á»šC 3: Dá»‡t Máº¡ng LÆ°á»›i (Graph Injection)**

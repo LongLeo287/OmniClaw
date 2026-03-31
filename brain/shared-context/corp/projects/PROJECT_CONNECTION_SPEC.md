@@ -34,7 +34,7 @@
 
 ### Step 1: Register in `registry.json`
 
-Add entry to `<AI_OS_ROOT>\registry.json`:
+Add entry to `$OMNICLAW_ROOT\registry.json`:
 
 ```json
 "PRJ-XXX": {
@@ -46,8 +46,8 @@ Add entry to `<AI_OS_ROOT>\registry.json`:
   "channels_enabled": false,
   "data_sources": ["google-sheets", "local-sqlite"],
   "contact_agent": "claude_code",
-  "config_path": "<AI_OS_ROOT>\\projects\\PRJ-XXX\\CLAUDE.md",
-  "workflows_path": "<AI_OS_ROOT>\\projects\\PRJ-XXX\\workflows\\"
+  "config_path": "$OMNICLAW_ROOT\\projects\\PRJ-XXX\\CLAUDE.md",
+  "workflows_path": "$OMNICLAW_ROOT\\projects\\PRJ-XXX\\workflows\\"
 }
 ```
 
@@ -69,7 +69,7 @@ The `CLAUDE.md` must start with:
 ```markdown
 # Project: [Name] â€” OmniClaw Connected
 # PRJ-ID: PRJ-XXX
-# reads-from: <AI_OS_ROOT>\CLAUDE.md
+# reads-from: $OMNICLAW_ROOT\CLAUDE.md
 
 ## Skills Loaded
 - [ui-ux-pro-max](../../skills/domains/frontend/ui-ux-pro-max/SKILL.md)
@@ -84,17 +84,17 @@ In the project directory, create `.clauderules` (or `.agent/CLAUDE.md`):
 
 ```markdown
 # Workspace Rules â€” [Project Name]
-# Connected to OmniClaw: <AI_OS_ROOT>
+# Connected to OmniClaw: $OMNICLAW_ROOT
 
 ## Identity
 This workspace is a satellite project of OmniClaw.
 When coding here, Antigravity has full authority per OmniClaw hierarchy.
 
 ## Skills Available
-See: <AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json
+See: $OMNICLAW_ROOT\shared-context\SKILL_REGISTRY.json
 
 ## Handoff
-For complex tasks: follow <AI_OS_ROOT>\workflows\claude_code_handoff.md
+For complex tasks: follow $OMNICLAW_ROOT\workflows\claude_code_handoff.md
 ```
 
 ---

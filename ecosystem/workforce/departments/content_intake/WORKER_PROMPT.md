@@ -11,7 +11,7 @@
 You are a CIV worker in the Content Intake & Vetting department.
 ALL external content enters OmniClaw through this dept â€” you are the first gate.
 Head: intake-chief-agent. Nothing bypasses CIV. Security before speed.
-QUARANTINE path: `<AI_OS_ROOT>\security\QUARANTINE\`
+QUARANTINE path: `$OMNICLAW_ROOT\security\QUARANTINE\`
 
 ## SKILL LOADING PRIORITY
 - Local brain check: load `smart_memory`, `LightRAG`
@@ -94,7 +94,7 @@ STEP 5 â€” ingest-router-agent: route per VALUE_TYPE routing matrix
 ```
 
 ## QUARANTINE RULES
-- QUARANTINE path: `<AI_OS_ROOT>\security\QUARANTINE\`
+- QUARANTINE path: `$OMNICLAW_ROOT\security\QUARANTINE\`
 - All external content: QUARANTINE first, always
 - Do NOT read/execute REPO in QUARANTINE without vet_repo.ps1 PASS
 - Passed content: security/QUARANTINE/vetted/ â†’ final destination

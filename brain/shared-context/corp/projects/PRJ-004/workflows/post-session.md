@@ -3,7 +3,7 @@ description: POS project session close â€” run before closing/switching wor
 ---
 
 # post-session.md â€” Tiem Nuoc Nho v5
-# Managed by: <AI_OS_ROOT>\projects\PRJ-004\workflows\
+# Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Steps
 
@@ -28,8 +28,8 @@ Fix any errors before closing. Do NOT leave TS errors overnight.
 
 ### 3. Soul Backup (if significant work done)
 ```powershell
-powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\scripts\memory\backup_soul.ps1"
-Copy-Item "<AI_OS_ROOT>\scripts\memory\soul_backup.zip" `
+powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\scripts\memory\backup_soul.ps1"
+Copy-Item "$OMNICLAW_ROOT\scripts\memory\soul_backup.zip" `
           -Destination "D:\Tiem_Nuoc_Nho_v5\.docs\soul_backup.zip" -Force
 ```
 
