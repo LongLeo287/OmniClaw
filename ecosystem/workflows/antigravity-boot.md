@@ -38,9 +38,9 @@ Read these files in order before responding:
 0. GEMINI.md                               ← MASTER RULES (load FIRST, absolute priority)
 1. brain/shared-context/AI_OS_CONTEXT.md   ← Platform roles, resource map
 2. brain/shared-context/blackboard.json    ← Current system state, open items
-3. corp/mission.md                         ← CEO's current strategic direction
-4. corp/kpi_scoreboard.json               ← Dept KPI status
-5. corp/escalations.md                    ← Any open L2/L3 blockers
+3. brain/shared-context/corp/mission.md                         ← CEO's current strategic direction
+4. brain/shared-context/corp/kpi_scoreboard.json               ← Dept KPI status
+5. brain/shared-context/corp/escalations.md                    ← Any open L2/L3 blockers
 ```
 
 **Key data to extract:**

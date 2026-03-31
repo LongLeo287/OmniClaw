@@ -1,0 +1,71 @@
+# OmniClaw — .gitattributes
+# Enforce UTF-8, consistent line endings, binary markers
+
+# ── Text files: normalize to LF ──────────────────────────────
+* text=auto eol=lf
+
+# ── Explicit text formats ─────────────────────────────────────
+*.md        text eol=lf encoding=utf-8
+*.txt       text eol=lf encoding=utf-8
+*.py        text eol=lf encoding=utf-8
+*.js        text eol=lf encoding=utf-8
+*.ts        text eol=lf encoding=utf-8
+*.json      text eol=lf encoding=utf-8
+*.yaml      text eol=lf encoding=utf-8
+*.yml       text eol=lf encoding=utf-8
+*.toml      text eol=lf encoding=utf-8
+*.sh        text eol=lf encoding=utf-8
+*.env       text eol=lf encoding=utf-8
+*.env.example text eol=lf encoding=utf-8
+*.css       text eol=lf encoding=utf-8
+*.html      text eol=lf encoding=utf-8
+*.xml       text eol=lf encoding=utf-8
+*.sql       text eol=lf encoding=utf-8
+*.graphql   text eol=lf encoding=utf-8
+
+# ── Windows-specific: allow CRLF ─────────────────────────────
+*.bat       text eol=crlf
+*.ps1       text eol=crlf
+*.psm1      text eol=crlf
+*.psd1      text eol=crlf
+*.cmd       text eol=crlf
+
+# ── Binary files: never diff/merge ───────────────────────────
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.webp      binary
+*.mp4       binary
+*.mkv       binary
+*.webm      binary
+*.mp3       binary
+*.wav       binary
+*.pdf       binary
+*.zip       binary
+*.tar       binary
+*.gz        binary
+*.7z        binary
+*.rar       binary
+*.exe       binary
+*.dll       binary
+*.so        binary
+*.dylib     binary
+*.gguf      binary
+*.pt        binary
+*.pth       binary
+*.bin       binary
+*.safetensors binary
+*.onnx      binary
+*.h5        binary
+*.pb        binary
+*.sqlite    binary
+*.sqlite3   binary
+*.db        binary
+*.dpapi     binary
+*.p12       binary
+*.pfx       binary
+*.pem       binary -diff
+*.key       binary -diff
+*.ppk       binary -diff

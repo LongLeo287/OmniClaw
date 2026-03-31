@@ -8,7 +8,16 @@
 
 ---
 
-## 1. Cơ Chế Bắn Tỉa (Targeted Data Push)
+## 1. Đội Dọn Dẹp Tiền Phương (Pre-push Cleanup Crew)
+Để đảm bảo các khu vực Data Vault trên mây luôn sạch sẽ và tinh khiết, hệ thống đã cài cắm "Đội Dọn Dẹp Tự Động" (`omniclaw_cleanup_crew.py’).
+**Hoạt động Automatic:**
+Ngay khi có lệnh Push Mây được gọi ở Bước 2, Đội Dọn Dẹp sẽ tự động "xuất kích" đi tuần tra toàn bộ Tụ điểm sắp được Push.
+Họ phân tích, tách tệp và gắp toàn bộ Rác sinh hoạt (`*.log`, `__pycache__`, `*.tmp`) đem nhốt vào Khung Hình Phạt `storage/vault/QUARANTINE/Trash_Before_Push/`.
+Data kiến thức thuần túy, mã nguồn Code sẽ không bao giờ bị đụng tới. Đội dọn dẹp quét xong thì Cỗ máy Push đám mây mới được quyền nổ máy.
+
+---
+
+## 2. Cơ Chế Bắn Tỉa (Targeted Data Push)
 Để tránh nhồi nhét thư mục gốc vào Git hoặc làm cồng kềnh kho dữ liệu, hệ thống ưu tiên "Bắn Tỉa" các vùng trọng yếu thay vì sao chép toàn bộ.
 
 Lõi sao lưu chịu trách nhiệm chính là Kịch bản Python:
@@ -55,6 +64,21 @@ Ngay khi Người Vận Hành thực hiện thao tác **Git Push** cuối cùng 
 
 - **`.github/workflows/ai-os-tests.yml`:** Liên tục kiểm tra lỗi cú pháp (Lint) của mã nguồn Code (`.py`, `.js`), đồng thời xác thực xem sự bành trướng của hệ thống và việc thêm `docs/` mới có làm sập hệ thống (Crash Engine) hay không.
 - **`.github/workflows/ai-os-validate.yml`:** Rà soát lại tất cả các siêu dữ liệu cấu hình như `SKILL_REGISTRY.json` và thuộc tính Agent YAML. Đảm bảo mọi Skill mới do AI Tự Viết đều đạt chuẩn định dạng mà không có dấu vân tay hay ID rác bị trùng lắp.
+
+---
+
+## 4. Quy Trình Trực Thăng Lên GitHub (Safe Git Push)
+Thay vì dùng tay gõ thủ công `git push` tiềm ẩn rủi ro ném rác lên Repository Mẫu Quốc. Người Vận Hành phải thông qua kịch bản Bọc Thép sau:
+
+**Script chạy:**
+```bash
+powershell -ExecutionPolicy Bypass -File system\ops\scripts\omniclaw_git_push.ps1
+```
+
+**Hoạt động (Push Git 3 trong 1):**
+1. **Triệu Hồi Đội Dọn Dẹp:** Kịch bản sẽ thả Cảm Biến AI (`omniclaw_cleanup_crew.py`) quét rộng 100% tọa độ `.` toàn Mẫu Quốc để thu gom rác sinh hoạt.
+2. Nén toàn bộ Data tinh khiết vào Commit mới nhất.
+3. Kích lực đẩy trực tiếp Source Code xịn 100% lên kho Origin Main của GitHub.
 
 ---
 

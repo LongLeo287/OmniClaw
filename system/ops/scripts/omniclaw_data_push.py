@@ -22,6 +22,8 @@ TARGET_VAULTS = [
     "ecosystem/plugins"
 ]
 
+IGNORE_PATTERNS = [".git", "node_modules", "__pycache__", ".env", "sandbox", "*.pack", "*.idx"]
+
 def load_environment():
     if SECRETS_FILE.exists():
         load_dotenv(SECRETS_FILE)
@@ -63,6 +65,7 @@ def push_delta_to_huggingface(hf_token):
                     repo_id=DATASET_REPO,
                     repo_type="dataset",
                     path_in_repo=folder, # Upload directly to the correct subpath in the cloud
+                    ignore_patterns=IGNORE_PATTERNS, # CHẶN RÁC
                     commit_message=f"OmniClaw Vault Sync [{folder}]: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                 )
             except Exception as e:
@@ -72,7 +75,7 @@ def push_delta_to_huggingface(hf_token):
             print(f"   [HF] Bỏ qua {folder} (Không tồn tại hoặc bị xóa)")
 
     if success:
-        print(f"\n✅ HF ĐỒNG BỘ HOÀN TẤT: Toàn bộ Lõi đã an tọa.")
+        print(f"\n✅ HF ĐỒNG BỘ HOÀN TẤT: Toàn bộ Lõi đã an tọa (Không kèm rác).")
     return success
 
 def scrub_ghost_folders(rclone_exe):
@@ -122,18 +125,29 @@ def push_delta_to_googledrive():
 
     print("\n🚀 Khởi chạy Delta-Sync lên Google Drive (Trạm 2)...")
     success = True
+    
+    # Tạo danh sách cờ chặn (Filters) cho Rclone
+    filter_args = []
+    for ignore in IGNORE_PATTERNS:
+        if ignore.startswith("*"):
+            filter_args.extend(["--exclude", f"{ignore}"])
+        else:
+            filter_args.extend(["--exclude", f"{ignore}/**"])
+
     for folder in TARGET_VAULTS:
         folder_path = AI_OS_ROOT / folder
         if folder_path.exists() and folder_path.is_dir():
              print(f"   [GDrive] Đang bắn tỉa thư mục: {folder} ...")
              try:
-                 # Rclone thẳng vào thư mục đích (Tắt hệ thống gạt lọc cồng kềnh toàn máy ảo)
-                 subprocess.run([
+                 # Rclone thẳng vào thư mục đích với MÀNG LỌC
+                 cmd = [
                      str(rclone_exe), "sync", str(folder_path), f"gdrive:OmniClaw-Data-Vault/{folder}",
-                     "--delete-excluded", # Xóa file rác NẾU CÓ bên trong chính thư mục đang sync
+                     "--delete-excluded", # TUYỆT KỸ: Gặp rác trên GDrive thì Vung Đao Chém!
                      "--fast-list", "--transfers", "16", "--checkers", "16",
                      "--stats", "30s" # Giảm spam log
-                 ], check=True)
+                 ] + filter_args
+                 
+                 subprocess.run(cmd, check=True)
              except subprocess.CalledProcessError as e:
                  print(f"      ❌ GDrive lỗi khi sync {folder}: {e}")
                  success = False
@@ -141,16 +155,21 @@ def push_delta_to_googledrive():
              print(f"   [GDrive] Bỏ qua {folder} (Không tìm thấy)")
 
     if success:
-        print("\n✅ GDRIVE ĐỒNG BỘ HOÀN TẤT. Hệ thống chắp cánh tới Mây thành công.")
+        print("\n✅ GDRIVE ĐỒNG BỘ HOÀN TẤT. Hệ thống không còn lẫn 1 file rác nào.")
     return success
         
+import omniclaw_cleanup_crew
+
 def main():
     print("=====================================================")
     print(" OmniClaw Data Vault - TARGETED VAULT PIPELINE")
     print("=====================================================")
     hf_token = load_environment()
     
-    print("⚡ BẮT ĐẦU VẬN HÀNH QUY TRÌNH BẮN TỈA TÀI NGUYÊN ⚡\n")
+    # 🧹 KÍCH HOẠT ĐỘI DỌN DẸP TRƯỚC KHI PUSH
+    omniclaw_cleanup_crew.deploy_cleanup_crew(TARGET_VAULTS)
+    
+    print("\n⚡ BẮT ĐẦU VẬN HÀNH QUY TRÌNH BẮN TỈA TÀI NGUYÊN ⚡\n")
     
     # We will run them sequentially in terminal script (easier UX tracking) 
     # instead of overlapping outputs since RClone Scrub takes terminal output
