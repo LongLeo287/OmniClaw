@@ -4,7 +4,7 @@ import json
 import warnings
 warnings.filterwarnings("ignore")
 
-ROOT = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+ROOT = os.environ.get("OMNICLAW_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
 ENV_PATH = os.path.join(ROOT, "system", "ops", "secrets", "MASTER.env")
 DB_PATH = os.path.join(ROOT, "brain", "memory", "qdrant_db")
 

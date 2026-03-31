@@ -13,8 +13,8 @@ echo  =============================================================
 echo.
 
 REM Set Workspace
-FOR %%I IN ("%~dp0\..\..") DO SET AOS_ROOT=%%~fI
-cd "%AOS_ROOT%"
+FOR %%I IN ("%~dp0\..\..") DO SET OMNICLAW_ROOT=%%~fI
+cd "%OMNICLAW_ROOT%"
 
 REM Cài đặt Tiếng Việt
 set PYTHONIOENCODING=utf-8

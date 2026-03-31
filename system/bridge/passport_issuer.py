@@ -5,6 +5,24 @@ Nơi sinh ra và cấp phát Thẻ Mộc (VIP) và Passport cho các thành ph�
 import uuid
 import hashlib
 import time
+import os
+from pathlib import Path
+
+def _load_master_env():
+    """Load MASTER.env để lấy OMNICLAW_HQ_MASTER_KEY nếu có."""
+    root = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2])))
+    env_path = root / "system" / "ops" / "secrets" / "MASTER.env"
+    if env_path.exists():
+        with open(env_path, 'r', encoding='utf-8', errors='replace') as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if '=' in line:
+                    key, val = line.split('=', 1)
+                    os.environ.setdefault(key.strip(), val.strip())
+
+_load_master_env()
 
 class VaultKeeper:
     def __init__(self):
@@ -12,9 +30,10 @@ class VaultKeeper:
         # Structure: token_hash -> {"level": "VIP"|"GUEST", "owner": "...", "expires": float}
         self._tokens = {}
         
-        # Hardcode OmniClaw HQ Master Key (Thượng phương bảo kiếm)
-        # Chỉ Admin nội bộ mới sở hữu key này
-        self._hq_master_key_hash = hashlib.sha256(b"OMNICLAW-HQ-MASTER-ROOT-2026").hexdigest()
+        # OmniClaw HQ Master Key — load từ OMNICLAW_HQ_MASTER_KEY trong MASTER.env
+        # Fallback về giá trị mặc định nếu chưa config (cần đổi trong production)
+        raw_master = os.environ.get("OMNICLAW_HQ_MASTER_KEY", "OMNICLAW-HQ-MASTER-ROOT-2026")
+        self._hq_master_key_hash = hashlib.sha256(raw_master.encode()).hexdigest()
 
     def issue_passport(self, owner: str, level: str = "GUEST", duration_days: int = 30) -> str:
         """Cấp Thẻ Mộc hoặc Passport cho một Client/Bot."""

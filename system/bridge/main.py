@@ -9,8 +9,8 @@ from fastapi.security.api_key import APIKeyHeader
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Dict, Any
 
-from passport_issuer import vault
-from customs_checkpoint import inspect_cargo
+from .passport_issuer import vault
+from .customs_checkpoint import inspect_cargo
 
 app = FastAPI(
     title="OmniClaw Remote Bridge",
@@ -32,7 +32,7 @@ api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 
 async def check_passport(request: Request, api_key: str = Security(api_key_header)) -> dict:
     """Hải Quan kiểm tra Hộ chiếu/Thẻ Mộc P2A."""
-    from customs_checkpoint import logger # Import chung cái còi báo động
+    from .customs_checkpoint import logger # Import chung cái còi báo động
     
     status = vault.verify_passport(api_key)
     if status["status"] in ["INVALID", "EXPIRED"]:

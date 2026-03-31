@@ -121,13 +121,13 @@ automations:
     path:
 
 
-      - system/ops/workflows/knowledge-ingest.md
+      - ecosystem/workflows/knowledge-ingest.md
 
 
-      - system/ops/workflows/agent-auto-create.md
+      - ecosystem/workflows/agent-auto-create.md
 
 
-      - system/ops/workflows/create-dept.md
+      - ecosystem/workflows/create-dept.md
 
 
     status: active
@@ -160,7 +160,7 @@ automations:
       - system/ops/scripts/repo_eval_github_api.py
 
 
-      - system/ops/workflows/repo-catalog-update.md
+      - ecosystem/workflows/repo-catalog-update.md
 
 
     status: active
@@ -265,7 +265,7 @@ automations:
     owner: channel-agent
 
 
-    description: "Telegram ↔ AI OS bridge. Start: python AI OS REMOTE/infra/channels/start_bridges.py"
+    description: "Telegram ↔ OmniClaw bridge. Start: python OmniClaw REMOTE/infra/channels/start_bridges.py"
 
 
 
@@ -292,7 +292,7 @@ automations:
     owner: it-manager-agent
 
 
-    description: "ClawTask API :7474 + NullClaw workspace. Start: AI OS REMOTE/launcher/START AI OS.ps1"
+    description: "ClawTask API :7474 + NullClaw workspace. Start: OmniClaw REMOTE/launcher/START OmniClaw.ps1"
 
 
 
@@ -319,7 +319,7 @@ automations:
     owner: knowledge_agent
 
 
-    description: "LightRAG RAG server :9621. Start: python AI OS REMOTE/scripts/lightrag_server.py"
+    description: "LightRAG RAG server :9621. Start: python OmniClaw REMOTE/scripts/lightrag_server.py"
 
 
 

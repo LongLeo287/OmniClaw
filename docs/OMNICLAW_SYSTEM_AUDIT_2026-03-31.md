@@ -2,7 +2,7 @@
 **Scope:** Full project audit — scripts, workflows, pipelines, automations
 **Status:** COMPLETE — All issues fixed
 **Total files scanned:** 1,700+
-**Total bugs fixed:** 255+ (across all waves)
+**Total bugs fixed:** 265+ (across 8 waves)
 
 ---
 
@@ -77,6 +77,24 @@
 |------|-----------|
 | `gatekeeper.ps1` | Validate workspace identity trước khi agent chạy — đọc core/registry.json |
 | `ecosystem/skills/security_shield/vet_repo.ps1` | Strix 12-stage security scan: git hooks, npm scripts, network calls, sensitive data exposure, obfuscation detection |
+
+### 1.7 Bridge (`system/bridge/`)
+
+| File | Chức năng | Port |
+|------|-----------|------|
+| `main.py` | FastAPI gateway — 5 dock zones: bots (Zalo/Telegram/Facebook/Discord), MCP dispatch, agentic AI sync, cloud webhook, dashboard commands | 8000 |
+| `passport_issuer.py` | VaultKeeper: cấp phát + xác minh Thẻ Mộc (VIP/GUEST/HQ token). HQ master key load từ MASTER.env | — |
+| `customs_checkpoint.py` | Trạm hải quan: kiểm tra payload — strict scan (GUEST: 10KB max, keyword block) vs VIP scan (50MB max) | — |
+| `open_port.bat` | Manual launcher: cd OMNICLAW_ROOT → python -m uvicorn system.bridge.main:app --port 8000 --reload | 8000 |
+
+**Kiến trúc luồng:**
+```
+Inbound request
+  → check_passport() [passport_issuer.vault.verify_passport]
+  → inspect_cargo() [customs_checkpoint]
+  → route to dock zone handler
+  → return CLEARED_CUSTOMS status
+```
 
 ---
 
@@ -455,6 +473,28 @@
 - refactor_omniclaw.py: REMOTE_DIR dynamic detection
 - customs_checkpoint.py: LOG_DIR hardcoded path → dynamic
 
+### Wave 8 — system/bridge + automation registry (2026-03-31)
+
+**system/bridge/main.py:**
+- Bare imports `from passport_issuer` / `from customs_checkpoint` → relative imports `from .passport_issuer` / `from .customs_checkpoint`
+- Root cause: running as package `system.bridge.main` requires relative imports — bare imports would cause ModuleNotFoundError
+
+**system/bridge/passport_issuer.py:**
+- HQ master key hardcoded in source → load from `OMNICLAW_HQ_MASTER_KEY` in MASTER.env
+- Added `_load_master_env()` helper using same pattern as memory_daemon.py
+- Fallback retained for local dev (with env override for production)
+
+**system/bridge/open_port.bat:**
+- `AOS_ROOT` → `OMNICLAW_ROOT` (2 occurrences) — stale pre-rebrand variable name
+
+**system/automations/AUTOMATION_REGISTRY.yaml:**
+- 4 workflow paths `system/ops/workflows/*` → `ecosystem/workflows/*` (post-DDD restructure)
+  - knowledge-ingest.md, agent-auto-create.md, create-dept.md, repo-catalog-update.md
+- Remote service descriptions: "AI OS REMOTE" → "OmniClaw Remote" (3 descriptions)
+
+**system/ops/scripts/memory_daemon.py:**
+- `AOS_ROOT` → `OMNICLAW_ROOT` in ROOT env var lookup (missed in prior waves)
+
 ---
 
 ## 8. DEPENDENCY MAP
@@ -532,4 +572,4 @@ hardcoded d:/LongLeo    → 0 (all replaced with dynamic detection)
 ---
 
 *Generated: 2026-03-31 | Audit by: Claude Code CLI*
-*Total bugs fixed: 255+ across 7 waves | Files modified: 750+*
+*Total bugs fixed: 265+ across 8 waves | Files modified: 755+*
