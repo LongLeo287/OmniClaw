@@ -2,7 +2,7 @@
 import json
 import yaml
 
-ROOT_DIR = os.environ.get("AOS_ROOT", ".")
+ROOT_DIR = os.environ.get("OMNICLAW_ROOT", ".")
 
 def create_skill():
     skill_dir = os.path.join(ROOT_DIR, "ecosystem", "skills", "ontology_auditor")

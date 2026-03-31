@@ -12,7 +12,7 @@ from pathlib import Path
 from datetime import datetime
 
 # Dynamic root
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 QUARANTINE_ROOT = Path(_AOS_ROOT) / "system" / "security" / "QUARANTINE"
 BRAIN_PROCESSED = Path(_AOS_ROOT) / "brain" / "knowledge" / "processed_repos"
 REJECTED_DIR = QUARANTINE_ROOT / "rejected"

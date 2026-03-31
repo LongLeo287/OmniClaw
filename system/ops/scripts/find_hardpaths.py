@@ -1,7 +1,7 @@
 ﻿import os
 
 def scan_files():
-    root_dir = os.environ.get("AOS_ROOT", ".")
+    root_dir = os.environ.get("OMNICLAW_ROOT", ".")
     ignore_dirs = {"node_modules", ".git", ".venv", "storage", "brain", "QUARANTINE", "__pycache__"}
     extensions = {".py", ".ps1", ".cmd", ".bat", ".yaml", ".json"}
 

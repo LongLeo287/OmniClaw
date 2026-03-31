@@ -1,6 +1,6 @@
 import os
 
-ROOT = os.environ.get("AOS_ROOT", ".")
+ROOT = os.environ.get("OMNICLAW_ROOT", ".")
 TARGETS = ["system", "tools", "brain", "ecosystem", "launcher", "storage"]
 
 def clean(fp):

@@ -1,9 +1,9 @@
-﻿{
+{
   "mcpServers": {
     "filesystem": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem",
-        "<AI_OS_ROOT>",
+        "${OMNICLAW_ROOT}",
         "D:/APP/BookMark Extension/.agents",
         "D:/Tiem_Nuoc_Nho_v5/.agent"
       ]
@@ -17,25 +17,24 @@
     },
     "omniclaw-workspace": {
       "command": "node",
-      "args": ["<AI_OS_ROOT>/mcp/servers/omniclaw-workspace/index.js"],
+      "args": ["${OMNICLAW_ROOT}/system/infra/mcp/servers/omniclaw-workspace/index.js"],
       "env": {
-        "AOS_ROOT": "<AI_OS_ROOT>"
+        "OMNICLAW_ROOT": "${OMNICLAW_ROOT}"
       }
     },
     "skill-registry": {
       "command": "node",
-      "args": ["<AI_OS_ROOT>/mcp/servers/skill-registry/index.js"],
+      "args": ["${OMNICLAW_ROOT}/system/infra/mcp/servers/skill-registry/index.js"],
       "env": {
-        "REGISTRY_PATH": "<AI_OS_ROOT>/shared-context/SKILL_REGISTRY.json"
+        "REGISTRY_PATH": "${OMNICLAW_ROOT}/brain/shared-context/SKILL_REGISTRY.json"
       }
     },
     "corp-data": {
       "command": "node",
-      "args": ["<AI_OS_ROOT>/mcp/servers/corp-data/index.js"],
+      "args": ["${OMNICLAW_ROOT}/system/infra/mcp/servers/corp-data/index.js"],
       "env": {
-        "CORP_DIR": "<AI_OS_ROOT>/shared-context/corp"
+        "CORP_DIR": "${OMNICLAW_ROOT}/brain/shared-context/corp"
       }
     }
   }
 }
-

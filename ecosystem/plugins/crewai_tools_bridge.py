@@ -7,7 +7,7 @@ from pydantic import Field
 from pathlib import Path
 
 # Append root for OmniClaw relative imports
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[2])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[2])
 sys.path.append(_AOS_ROOT)
 
 class GitingestTool(BaseTool):

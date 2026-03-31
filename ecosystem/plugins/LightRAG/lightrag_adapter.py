@@ -47,9 +47,9 @@ except ImportError:
     )
 
 # ── Root OmniClaw Corp ────────────────────────────────────────────────
-# Dùng env var AOS_ROOT nếu có (set bởi setup.ps1/START_AIOS.ps1)
+# Dùng env var OMNICLAW_ROOT nếu có (set bởi setup.ps1/START_AIOS.ps1)
 # Fallback: tính từ vị trí file hiện tại (ecosystem/plugins/LightRAG/lightrag_adapter.py → 4 cấp lên)
-_AOS_ROOT = Path(os.getenv("AOS_ROOT") or Path(__file__).resolve().parents[3])
+_AOS_ROOT = Path(os.getenv("OMNICLAW_ROOT") or Path(__file__).resolve().parents[3])
 _DEFAULT_WORKING_DIR = _AOS_ROOT / "brain" / "rag_storage" / "lightrag"
 _DEFAULT_KNOWLEDGE_DIR = _AOS_ROOT / "brain" / "knowledge"
 

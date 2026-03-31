@@ -24,8 +24,8 @@
   },
 
   "config": {
-    "working_dir": "<AOS_ROOT>/brain/rag_storage/lightrag/",
-    "knowledge_dir": "<AOS_ROOT>/brain/knowledge/",
+    "working_dir": "${OMNICLAW_ROOT}/brain/rag_storage/lightrag/",
+    "knowledge_dir": "${OMNICLAW_ROOT}/brain/knowledge/",
     "llm_model_env": "LIGHTRAG_LLM_MODEL",
     "embed_model_env": "LIGHTRAG_EMBED_MODEL",
     "ollama_url_env": "OLLAMA_BASE_URL",

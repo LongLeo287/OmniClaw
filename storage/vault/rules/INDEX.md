@@ -61,7 +61,7 @@
 | Circuit Breaker | 2-failure max, then BLOCKED |
 | ABSOLUTE PROHIBITIONS | 9 hard stops (see .clauderules) |
 | CIV prohibition | No bypass of CIV pipeline |
-| Workspace boundary | <AI_OS_ROOT>\ only |
+| Workspace boundary | $OMNICLAW_ROOT\ only |
 
 ## HOW TO ADD A NEW RULE
 

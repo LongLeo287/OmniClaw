@@ -11,7 +11,7 @@ import requests
 import hashlib
 from pathlib import Path
 
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 REGISTRY_FILE = Path(_AOS_ROOT) / "brain" / "knowledge" / "hash_registry.json"
 
 def load_registry():

@@ -55,7 +55,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$AiOsRoot = $env:AOS_ROOT
+$AiOsRoot = $env:OMNICLAW_ROOT
 $RegistryPath = "$AiOsRoot\registry.json"
 $ProjectsDir = "$AiOsRoot\projects"
 $TemplateDir = "$ProjectsDir\TEMPLATE"

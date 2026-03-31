@@ -1,7 +1,7 @@
 ﻿import os
 import yaml
 
-ROOT_DIR = os.environ.get("AOS_ROOT", ".")
+ROOT_DIR = os.environ.get("OMNICLAW_ROOT", ".")
 DEPT_DIR = os.path.join(ROOT_DIR, "ecosystem", "workforce", "departments")
 SKILL_DIR = os.path.join(ROOT_DIR, "ecosystem", "skills")
 PLUGIN_DIR = os.path.join(ROOT_DIR, "ecosystem", "plugins")

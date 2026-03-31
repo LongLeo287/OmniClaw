@@ -14,7 +14,7 @@ from pathlib import Path
 from datetime import datetime
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-AOS_ROOT      = Path(os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3]))
+AOS_ROOT      = Path(os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3]))
 PENDING_FILE  = AOS_ROOT / "storage" / "vault" / "DATA" / "PENDING_REPOS.md"
 ARCHIVE_DIR   = AOS_ROOT / "storage" / "vault" / "ARCHIVE"
 REPOS_DIR     = AOS_ROOT / "brain" / "knowledge" / "repos"

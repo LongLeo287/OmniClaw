@@ -27,7 +27,7 @@ if sys.stdout.encoding.lower() != 'utf-8':
 # ================= Configuration =================
 MAX_FILE_SIZE_MB = 10
 MAX_DEPTH = 10
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 
 PROCESSED_DIR = Path(_AOS_ROOT) / "brain" / "knowledge" / "processed_repos"
 

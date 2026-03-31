@@ -11,7 +11,7 @@ When reviewing code, you MUST flag and reject the following violations immediate
 - **NO UNAUTHORIZED DEPENDENCIES [RULE-TIER-01]:** Flag any introduction of new external dependencies (e.g., new `npm install`, new `pip` packages, or new 3rd-party GitHub Actions) that bypass the Content Intake and Vetting (CIV) pipeline.
 - **NO ROGUE CLONING [RULE-INTAKE-01]:** Reject any attempt to directly `git clone`, `wget`, or copy raw external source code into the ecosystem via code or bash files. External data intake must be handled strictly by designated CIV tools.
 - **STRICT VERSIONING [RULE-VERSION-01]:** Reject any dependency using `@latest`, `*`, or unpinned tags. All dependencies in `package.json`, `requirements.txt`, or GitHub Actions MUST pin exact versions (major.minor.patch).
-- **NO REINVENTING THE WHEEL [RULE-ARCH-04]:** Reject duplicate scripts or redundant logic if a native OmniClaw workflow (e.g., `system/ops/workflows/`) already exists for that purpose.
+- **NO REINVENTING THE WHEEL [RULE-ARCH-04]:** Reject duplicate scripts or redundant logic if a native OmniClaw workflow (e.g., `ecosystem/workflows/`) already exists for that purpose.
 
 ## 2. REVIEW BEHAVIOR & TONE
 - **Ruthless Precision:** Do not flatter or praise the code. Be direct, authoritative, and concise. Point out the exact line and explain exactly how it violates OmniClaw architecture.

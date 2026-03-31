@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 import json
 
-ROOT = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+ROOT = os.environ.get("OMNICLAW_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
 
 TARGETS = [
     # (Path, Category, Type)

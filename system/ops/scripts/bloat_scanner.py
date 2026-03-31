@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 TARGET = Path(_AOS_ROOT) / "brain" / "knowledge" / "repos"
 
 def get_size(path):

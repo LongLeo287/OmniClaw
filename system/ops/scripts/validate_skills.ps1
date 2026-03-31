@@ -7,21 +7,21 @@
 #>
 param([switch]$Verbose)
 
-$AOS_ROOT = Split-Path -Parent $PSScriptRoot
-$REGISTRY_PATH = Join-Path $AOS_ROOT "shared-context\SKILL_REGISTRY.json"
+$OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
+$REGISTRY_PATH = Join-Path $OMNICLAW_ROOT "brain\shared-context\SKILL_REGISTRY.json"
 $REQUIRED_FIELDS = @("name", "description", "version", "tier", "category")
 
 $errorCount = 0
 $ok = 0
 
 Write-Host ""
-Write-Host "=== AI OS Skill Validator ===" -ForegroundColor Cyan
+Write-Host "=== OmniClaw Skill Validator ===" -ForegroundColor Cyan
 Write-Host "--------------------------------------" -ForegroundColor DarkGray
 
 # === 1. Plugin SKILL.md check ===
 Write-Host ""
 Write-Host "[1/4] Plugin SKILL.md presence" -ForegroundColor Yellow
-$pluginsDir = Join-Path $AOS_ROOT "plugins"
+$pluginsDir = Join-Path $OMNICLAW_ROOT "ecosystem\plugins"
 $missing = @()
 if (Test-Path $pluginsDir) {
     $pluginDirs = Get-ChildItem $pluginsDir -Directory
@@ -44,8 +44,8 @@ if (Test-Path $pluginsDir) {
 Write-Host ""
 Write-Host "[2/4] SKILL.md required fields" -ForegroundColor Yellow
 $allSkillMds = @()
-$skillsPath = Join-Path $AOS_ROOT "skills"
-$pluginsPath = Join-Path $AOS_ROOT "plugins"
+$skillsPath = Join-Path $OMNICLAW_ROOT "ecosystem\skills"
+$pluginsPath = Join-Path $OMNICLAW_ROOT "ecosystem\plugins"
 if (Test-Path $skillsPath) {
     $allSkillMds += Get-ChildItem $skillsPath -Recurse -Filter "SKILL.md" -ErrorAction SilentlyContinue
 }
@@ -93,8 +93,8 @@ if (Test-Path $REGISTRY_PATH) {
 Write-Host ""
 Write-Host "[4/4] Corp + LLM YAML files" -ForegroundColor Yellow
 $yamlFiles = @()
-$corpPath = Join-Path $AOS_ROOT "corp"
-$llmPath = Join-Path $AOS_ROOT "llm"
+$corpPath = Join-Path $OMNICLAW_ROOT "brain\corp"
+$llmPath = Join-Path $OMNICLAW_ROOT "system\infra\llm"
 if (Test-Path $corpPath) {
     $yamlFiles += Get-ChildItem $corpPath -Recurse -Filter "*.yaml" -ErrorAction SilentlyContinue
 }

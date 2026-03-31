@@ -22,7 +22,7 @@ except ImportError:
     get_obs = None  # type: ignore
 
 # Telemetry setup - always relative to AOS_ROOT
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 LOG_DIR = Path(_AOS_ROOT) / "system" / "telemetry" / "receipts" / "mem0"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 

@@ -5,7 +5,7 @@ import sys
 # MA TRáº¬N Ká»ŠCH Báº¢N KIá»‚M KÃŠ (Ontology Auditor Suite)
 # ÄÆ°á»£c cháº¡y bá»Ÿi SRE-Agent hoáº·c Há»‡ thá»‘ng Daemon hÃ ng tuáº§n.
 
-ROOT_DIR = os.environ.get("AOS_ROOT", ".")
+ROOT_DIR = os.environ.get("OMNICLAW_ROOT", ".")
 SCRIPT_DIR = os.path.join(ROOT_DIR, "system", "ops", "scripts")
 
 scripts_to_run = [

@@ -8,7 +8,7 @@ import os, sys, re, shutil, subprocess
 from pathlib import Path
 from datetime import datetime
 
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 QUARANTINE_INCOMING = Path(_AOS_ROOT) / "system" / "security" / "QUARANTINE" / "incoming" / "repos"
 QUARANTINE_REJECTED = Path(_AOS_ROOT) / "system" / "security" / "QUARANTINE" / "rejected"
 BRAIN_PROCESSED     = Path(_AOS_ROOT) / "brain" / "knowledge" / "processed_repos"

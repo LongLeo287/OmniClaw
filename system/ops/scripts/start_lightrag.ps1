@@ -1,17 +1,17 @@
 ﻿<#
 .SYNOPSIS
-    Start LightRAG REST API server for AI OS â€” v1.4.11 compatible
+    Start LightRAG REST API server for OmniClaw — v1.4.11 compatible
 .DESCRIPTION
     LightRAG-HKU v1.4.11 khÃ´ng cÃ³ create_app hay CLI.
     DÃ¹ng lightrag.server module hoáº·c FastAPI wrapper.
     Port: 9621 | Working dir: brain/knowledge/lightrag_db
 #>
 
-$AOS_ROOT = $env:AOS_ROOT
+$OMNICLAW_ROOT = if ($env:OMNICLAW_ROOT) { $env:OMNICLAW_ROOT } else { (Resolve-Path "$PSScriptRoot\..\..\..\..\..").Path }
 $LIGHTRAG_PORT = 9621
-$WORKING_DIR = "$AOS_ROOT\brain\knowledge\lightrag_db"
+$WORKING_DIR = "$OMNICLAW_ROOT\brain\knowledge\lightrag_db"
 
-Write-Host "=== AI OS LightRAG API Startup ===" -ForegroundColor Cyan
+Write-Host "=== OmniClaw LightRAG API Startup ===" -ForegroundColor Cyan
 Write-Host "Version: lightrag-hku 1.4.11 | Port: $LIGHTRAG_PORT"
 
 # Check if already running
@@ -25,7 +25,7 @@ if ($existing) {
 New-Item -ItemType Directory -Force -Path $WORKING_DIR | Out-Null
 
 # Create FastAPI server script if not exists
-$serverScript = "$AOS_ROOT\ops\scripts\lightrag_server.py"
+$serverScript = "$OMNICLAW_ROOT\system\ops\scripts\lightrag_server.py"
 if (-not (Test-Path $serverScript)) {
     Write-Host "Creating lightrag_server.py..." -ForegroundColor Yellow
     # Script is created separately â€” run create_lightrag_server.py
@@ -36,9 +36,9 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import os
 
-WORKING_DIR = r'<AI_OS_ROOT>\\brain\\knowledge\\lightrag_db'
+WORKING_DIR = r'" + $env:OMNICLAW_ROOT + "\\brain\\knowledge\\lightrag_db'
 os.makedirs(WORKING_DIR, exist_ok=True)
-app = FastAPI(title='AI OS LightRAG API')
+app = FastAPI(title='OmniClaw LightRAG API')
 rag_instance = None
 
 @app.get('/health')
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='0.0.0.0', port=9621)
 '''
-with open(r'<AI_OS_ROOT>\\ops\\scripts\\lightrag_server.py', 'w', encoding='utf-8') as f:
+with open(r'" + $env:OMNICLAW_ROOT + "\\ops\\scripts\\lightrag_server.py', 'w', encoding='utf-8') as f:
     f.write(script)
 print('Created lightrag_server.py')
 " 2>&1

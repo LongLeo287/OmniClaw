@@ -9,7 +9,7 @@ os.environ["OPENAI_API_KEY"] = "ollama"
 os.environ["OPENAI_MODEL_NAME"] = "gemma2:2b"
 
 # Import Library vÃ  AI OS Tools
-sys.path.append(os.environ.get("AOS_ROOT", "."))
+sys.path.append(os.environ.get("OMNICLAW_ROOT", "."))
 from crewai import Agent, Task, Crew, Process
 from plugins.crewai_tools_bridge import GitingestTool, LightRAGTool
 

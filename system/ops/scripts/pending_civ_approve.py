@@ -9,7 +9,7 @@ import os, re, sys
 from pathlib import Path
 from datetime import datetime
 
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 ACTIVE_FILE  = Path(_AOS_ROOT) / "storage" / "vault" / "DATA" / "ACTIVE_REPOS.md"
 REPORT_DIR   = Path(_AOS_ROOT) / "system" / "security" / "QUARANTINE" / "logs"
 

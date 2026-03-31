@@ -8,8 +8,8 @@
 
 ## 🛠️ Tri thức nền tảng (Claude Code bắt buộc phải đọc trước khi Code)
 Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code của Sếp (OmniClaw):
-1. `<AI_OS_ROOT>\brain\knowledge\agent_skills_open_standard.md` (LUẬT CODE SKILL)
-2. `<AI_OS_ROOT>\brain\knowledge\spawn_agent_skill.md` (HƯỚNG DẪN TẠO SKILL)
+1. `$OMNICLAW_ROOT\brain\knowledge\agent_skills_open_standard.md` (LUẬT CODE SKILL)
+2. `$OMNICLAW_ROOT\brain\knowledge\spawn_agent_skill.md` (HƯỚNG DẪN TẠO SKILL)
 3. Tra cứu `google-developer-knowledge` MCP để cào tài liệu mới nhất về: *gcloud CLI, Cloud Run, Cloud Build.*
 
 ## 📋 Hạng mục Công Việc (Task Queue)
@@ -24,7 +24,7 @@ Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code
 ---
 
 ## TASK-CC-0326-BOOT-FIX: Sync CLAUDE.md Cycle Number
-**Status:** READY
+**Status:** DONE
 **Priority:** P1
 **Assigned:** Claude Code CLI
 **Created:** 2026-03-26T19:16:00+07:00
@@ -33,7 +33,7 @@ Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code
 Fix CLAUDE.md header: Cycle 8 (2026-03-23) -> Cycle 11 (2026-03-26)
 
 ### Steps
-1. Doc file CLAUDE.md tai root: <AI_OS_ROOT>\CLAUDE.md
+1. Doc file CLAUDE.md tai root: $OMNICLAW_ROOT\CLAUDE.md
 2. Tim dong: # OmniClaw Corp | Cycle 8 | Last synced: 2026-03-23
 3. Thay thanh: # OmniClaw Corp | Cycle 11 | Last synced: 2026-03-26
 4. Luu file UTF-8

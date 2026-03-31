@@ -18,7 +18,7 @@
 #>
 
 param(
-    [string]$AOS_ROOT = $(if ($env:AOS_ROOT) { $env:AOS_ROOT } else { (Get-Item "$PSScriptRoot\..\..\..").FullName }),
+    [string]$OMNICLAW_ROOT = $(if ($env:OMNICLAW_ROOT) { $env:OMNICLAW_ROOT } else { (Get-Item "$PSScriptRoot\..\..\..").FullName }),
     [switch]$SnapshotOnly,
     [switch]$Quiet
 )
@@ -51,7 +51,7 @@ foreach ($svc in $services) {
 }
 
 # ─── 2. READ BLACKBOARD ──────────────────────────────────────────────────────
-$bbPath = "$AOS_ROOT\brain\shared-context\blackboard.json"
+$bbPath = "$OMNICLAW_ROOT\brain\shared-context\blackboard.json"
 $openItems = 0
 $cycleNum = "?"
 $cycleStatus = "UNKNOWN"
@@ -67,20 +67,20 @@ if (Test-Path $bbPath) {
 }
 
 # ─── 3. COUNT PROPOSALS ──────────────────────────────────────────────────────
-$proposalPath = "$AOS_ROOT\brain\shared-context\corp\proposals"
+$proposalPath = "$OMNICLAW_ROOT\brain\shared-context\corp\proposals"
 $pendingProposals = 0
 if (Test-Path $proposalPath) {
     $pendingProposals = (Get-ChildItem $proposalPath -Filter "PROP_*.md" -ErrorAction SilentlyContinue | Measure-Object).Count
 }
 
 # ─── 4. COUNT SKILLS ─────────────────────────────────────────────────────────
-$skillsCount = (Get-ChildItem "$AOS_ROOT\skills" -Directory -ErrorAction SilentlyContinue | Measure-Object).Count
+$skillsCount = (Get-ChildItem "$OMNICLAW_ROOT\skills" -Directory -ErrorAction SilentlyContinue | Measure-Object).Count
 
 # ─── 5. COUNT GAPS ───────────────────────────────────────────────────────────
-$gapsCount = (Get-ChildItem "$AOS_ROOT\corp\gaps" -Filter "GAP-*.md" -ErrorAction SilentlyContinue | Measure-Object).Count
+$gapsCount = (Get-ChildItem "$OMNICLAW_ROOT\corp\gaps" -Filter "GAP-*.md" -ErrorAction SilentlyContinue | Measure-Object).Count
 
 # ─── 6. LAST RETRO ───────────────────────────────────────────────────────────
-$retros = Get-ChildItem "$AOS_ROOT\corp\memory\global" -Filter "RETRO_*.md" -ErrorAction SilentlyContinue | Sort-Object Name -Descending
+$retros = Get-ChildItem "$OMNICLAW_ROOT\corp\memory\global" -Filter "RETRO_*.md" -ErrorAction SilentlyContinue | Sort-Object Name -Descending
 $lastRetro = if ($retros) { $retros[0].Name -replace "RETRO_","" -replace ".md","" } else { "never" }
 
 # ─── 7. WRITE STATUS.json ────────────────────────────────────────────────────
@@ -106,12 +106,12 @@ foreach ($svc in $svcResults) {
 }
 
 $statusObj | ConvertTo-Json -Depth 5 | 
-    Set-Content "$AOS_ROOT\hud\STATUS.json" -Encoding UTF8
+    Set-Content "$OMNICLAW_ROOT\hud\STATUS.json" -Encoding UTF8
 Write-HUD "  [OK] STATUS.json updated"
 
 # ─── 8. UPDATE HUD.md — SERVICES TABLE ──────────────────────────────────────
 if (-not $SnapshotOnly) {
-    $hudPath = "$AOS_ROOT\hud\HUD.md"
+    $hudPath = "$OMNICLAW_ROOT\hud\HUD.md"
     $hudContent = [System.IO.File]::ReadAllText($hudPath, [System.Text.Encoding]::UTF8)
 
     # Build new services table
@@ -149,7 +149,7 @@ if (-not $SnapshotOnly) {
 }
 
 # ─── 9. CREATE SNAPSHOT ──────────────────────────────────────────────────────
-$snapshotDir = "$AOS_ROOT\hud\snapshots"
+$snapshotDir = "$OMNICLAW_ROOT\hud\snapshots"
 New-Item -ItemType Directory -Force -Path $snapshotDir | Out-Null
 
 $snapshotFile = "$snapshotDir\$(Get-Date -Format 'yyyy-MM-dd_HHmm').md"
@@ -172,7 +172,7 @@ $snapshotContent | Set-Content $snapshotFile -Encoding UTF8
 Write-HUD "  [OK] Snapshot: hud/snapshots/$(Split-Path $snapshotFile -Leaf)"
 
 # ─── 10. NOTIFY (optional Telegram) ─────────────────────────────────────────
-$envFile = "$AOS_ROOT\.env"
+$envFile = "$OMNICLAW_ROOT\.env"
 if (Test-Path $envFile) {
     $envLines = [System.IO.File]::ReadAllLines($envFile, [System.Text.Encoding]::UTF8)
     $TOKEN   = ($envLines | Where-Object { $_ -match "^TELEGRAM_BOT_TOKEN=" }) -replace "^TELEGRAM_BOT_TOKEN=",""

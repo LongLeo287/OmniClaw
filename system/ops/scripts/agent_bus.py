@@ -6,7 +6,7 @@ import threading
 from pathlib import Path
 
 # Dynamic path: dùng AOS_ROOT env var hoặc tự tính từ vị trí file này
-_AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[3])
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
 DB_PATH = os.path.join(_AOS_ROOT, "brain", "shared-context", "event_bus.db")
 
 class AgentBus:

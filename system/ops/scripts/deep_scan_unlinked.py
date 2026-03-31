@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 _fallback_root = str(Path(__file__).resolve().parents[3])
-ROOT_DIR = os.environ.get("AOS_ROOT", "") or _fallback_root
+ROOT_DIR = os.environ.get("OMNICLAW_ROOT", "") or _fallback_root
 
 # Validate: giả sử AOS_ROOT hợp lệ phải chứa GEMINI.md hoặc brain/
 if not any(os.path.exists(os.path.join(ROOT_DIR, marker)) for marker in ["GEMINI.md", "brain"]):

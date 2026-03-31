@@ -9,7 +9,7 @@ import os
 import sys
 import ast
 
-ROOT_DIR = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+ROOT_DIR = os.environ.get("OMNICLAW_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
 TARGET_DIRS = ["system", "tools", "brain", "ecosystem", "launcher", "storage"]
 
 def fix_encoding(filepath):

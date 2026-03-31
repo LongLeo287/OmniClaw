@@ -6,7 +6,7 @@ from datetime import datetime, date
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
-ROOT = os.environ.get("AOS_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
+ROOT = os.environ.get("OMNICLAW_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")))
 NOW = datetime.now().isoformat()
 
 issues = []

@@ -2,7 +2,7 @@
 import os
 
 # Append root
-sys.path.append(os.environ.get("AOS_ROOT", "."))
+sys.path.append(os.environ.get("OMNICLAW_ROOT", "."))
 
 from plugins.LightRAG.lightrag_adapter import get_lightrag
 import logging

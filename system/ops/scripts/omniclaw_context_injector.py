@@ -1,6 +1,6 @@
 """
-omniclaw_context_injector.py — Inject AI OS Corp live context vào NullClaw workspace
-Chạy trước khi start NullClaw. Output: ~/.nullclaw/workspace/AIOS_CONTEXT.md
+omniclaw_context_injector.py — Inject OmniClaw live context vào NullClaw workspace
+Chạy trước khi start NullClaw. Output: ~/.nullclaw/workspace/OMNICLAW_CONTEXT.md
 """
 import json, urllib.request, os, sys
 from pathlib import Path
@@ -10,17 +10,17 @@ ROOT = Path(__file__).parent.parent.parent.parent
 PORT = os.environ.get("CLAWTASK_PORT", "7474")
 NC_WS = Path.home() / '.nullclaw' / 'workspace'
 NC_WS.mkdir(parents=True, exist_ok=True)
-OUT   = NC_WS / 'AIOS_CONTEXT.md'
+OUT   = NC_WS / 'OMNICLAW_CONTEXT.md'
 NOW   = datetime.now().strftime('%Y-%m-%d %H:%M')
 
 lines = [
-    f"# AI OS Corp — Context (cap nhat: {NOW})",
+    f"# OmniClaw Corp — Context (cap nhat: {NOW})",
     "",
     "QUAN TRONG: Day la du lieu THUC cua he thong. Hay su dung de tra loi user.",
     "",
 ]
 
-# 0. Identity — AI OS Corp permanent identity (ALWAYS first)
+# 0. Identity — OmniClaw Corp permanent identity (ALWAYS first)
 try:
     identity = (ROOT / 'brain/shared-context/OMNICLAW_IDENTITY.md').read_text(encoding='utf-8')
     lines.append(identity)
@@ -78,7 +78,7 @@ try:
     from system.ops.scripts.memory_daemon import MemoryCore
     _mc = MemoryCore()
     # Query top 5 memories relevant to current session
-    _ltm_results = _mc.search("AI OS project progress current task", user_id="CEO")
+    _ltm_results = _mc.search("OmniClaw project progress current task", user_id="CEO")
     if _ltm_results:
         lines.append("## Long-Term Memory (LTM) — Bối Cảnh Từ Các Phiên Trước")
         for mem in _ltm_results[:5]:
@@ -96,7 +96,7 @@ try:
     bb = json.loads((ROOT / 'brain/shared-context/blackboard.json').read_text(encoding='utf-8-sig'))
     cycle  = bb.get('cycle', '?')
     n_task = bb.get('total_tasks', '?')
-    lines.append(f"## AI OS Corp Status")
+    lines.append(f"## OmniClaw Corp Status")
     lines.append(f"- Cycle: {cycle} | Total tasks tracked: {n_task}")
     lines.append(f"- Workspace: {ROOT}")
     lines.append("")
@@ -123,7 +123,7 @@ try:
     policy_path = ROOT / 'brain/shared-context/OMNICLAW_BOT_POLICY.md'
     if policy_path.exists():
         policy_text = policy_path.read_text(encoding='utf-8')
-        lines.append("## AI OS Bot Policy (NemoClaw Sandbox Rules)")
+        lines.append("## OmniClaw Bot Policy (NemoClaw Sandbox Rules)")
         lines.append(policy_text)
         lines.append("")
         print("Policy: Injected")
@@ -132,7 +132,7 @@ except Exception as e:
 
 # 5. Workflows
 try:
-    wf_dir = ROOT / 'system' / 'ops' / 'workflows'
+    wf_dir = ROOT / 'ecosystem' / 'workflows'
     if wf_dir.exists():
         workflows = [f.name for f in wf_dir.glob('*.md')]
         lines.append(f"## Workflows available ({len(workflows)})")

@@ -6,7 +6,7 @@ import argparse
 from pathlib import Path
 
 # OmniClaw Path Mapping
-AOS_ROOT = Path(os.environ.get("AOS_ROOT", Path(__file__).parent.parent.parent.parent))
+AOS_ROOT = Path(os.environ.get("OMNICLAW_ROOT", Path(__file__).parent.parent.parent.parent))
 # Cross-platform home directory (replaces Windows-only USERPROFILE)
 USER_HOME = Path.home()
 GEMINI_CACHE = USER_HOME / ".gemini"

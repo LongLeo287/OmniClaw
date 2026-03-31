@@ -105,7 +105,11 @@ async def issue_p2a_token(master_key: str = Security(api_key_header)):
 @app.get("/health")
 async def harbor_health_check():
     """Ping xem Cảng có hoạt động không."""
-    return {"status": "PORT_OPEN", "commander": "bridge-commander-agent", "terminals": 5}
+    return {
+        "status": "PORT_OPEN", 
+        "commander": "Trí Tuệ Cục Trưởng (Gateway AI)", 
+        "terminals": "5 Tuyến Đang Mở (Bot/Social, MCP Tools, OpenClaw AI, Data Cloud, Vault Security)"
+    }
 
 if __name__ == "__main__":
     import uvicorn
