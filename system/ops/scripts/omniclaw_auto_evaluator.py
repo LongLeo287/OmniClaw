@@ -3,7 +3,7 @@ import json
 import datetime
 from pathlib import Path
 
-ROOT = Path(os.getenv("OMNICLAW_ROOT", "d:/LongLeo/AI OS CORP/AI OS"))
+ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
 PROCESSED_DIR = ROOT / "brain" / "knowledge" / "processed_repos"
 CORP_DIR = ROOT / "brain" / "shared-context" / "corp"
 

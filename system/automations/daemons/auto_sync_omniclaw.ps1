@@ -4,7 +4,7 @@ $BaseDir = Split-Path $ScriptDir -Parent | Split-Path -Parent | Split-Path -Pare
 $InjectorScript = Join-Path $BaseDir "system\ops\scripts\omniclaw_context_injector.py"
 $env:AOS_ROOT = $BaseDir
 
-Write-Host "Starting AI OS Context Auto-Sync loop (every 60s) from $BaseDir ..."
+Write-Host "Starting OmniClaw Context Auto-Sync loop (every 60s) from $BaseDir ..."
 
 while ($true) {
     try {

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    AI OS HUD Auto-Update — Tier 3 (2-way HUD engine)
+    OmniClaw HUD Auto-Update — Tier 3 (2-way HUD engine)
 .DESCRIPTION
     Tự động cập nhật hud/HUD.md + hud/STATUS.json sau mỗi cycle/session.
     Đọc từ: ports, blackboard.json, proposals/, escalations.md, SKILL_REGISTRY.json
@@ -30,7 +30,7 @@ function Write-HUD($msg) {
     if (-not $Quiet) { Write-Host $msg }
 }
 
-Write-HUD "=== AI OS HUD UPDATE === $(Get-Date -Format 'HH:mm:ss')"
+Write-HUD "=== OmniClaw HUD UPDATE === $(Get-Date -Format 'HH:mm:ss')"
 
 # ─── 1. CHECK SERVICES (port scan) ───────────────────────────────────────────
 $services = @(
@@ -87,7 +87,7 @@ $lastRetro = if ($retros) { $retros[0].Name -replace "RETRO_","" -replace ".md",
 $ts = Get-Date -Format "yyyy-MM-ddTHH:mm:ss+07:00"
 $statusObj = [ordered]@{
     updated              = $ts
-    system               = "AI OS Corp"
+    system               = "OmniClaw Corp"
     version              = "v2.1"
     cycle                = $cycleNum
     corp_cycle_status    = $cycleStatus
@@ -180,7 +180,7 @@ if (Test-Path $envFile) {
 
     if ($TOKEN -and $CHAT_ID -and -not $Quiet) {
         $downSvcs = ($svcResults | Where-Object { $_.status -eq "DOWN" } | ForEach-Object { ":$($_.port)" }) -join ", "
-        $msg = "=AI OS HUD= Cycle $cycleNum | $cycleStatus`nServices DOWN: $(if($downSvcs){$downSvcs}else{'none'})`nOpen: $openItems items | Props: $pendingProposals | Skills: $skillsCount"
+        $msg = "=OmniClaw HUD= Cycle $cycleNum | $cycleStatus`nServices DOWN: $(if($downSvcs){$downSvcs}else{'none'})`nOpen: $openItems items | Props: $pendingProposals | Skills: $skillsCount"
         $body = @{ chat_id=$CHAT_ID; text=$msg } | ConvertTo-Json -Compress
         try {
             Invoke-RestMethod "https://api.telegram.org/bot$TOKEN/sendMessage" `

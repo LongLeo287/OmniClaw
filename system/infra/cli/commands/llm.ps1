@@ -1,5 +1,5 @@
 <#
-.SYNOPSIS LLM subcommand — aos llm cost|test <provider>|route <task>|list
+.SYNOPSIS LLM subcommand — omniclaw llm cost|test <provider>|route <task>|list
 #>
 $OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
 $ROUTER_PATH = Join-Path $AOS_ROOT "llm\router.yaml"
@@ -31,7 +31,7 @@ switch ($args[0]) {
 
     "route" {
         $task = $args[1]
-        if (-not $task) { Write-Host "Usage: aos llm route <task-type>" -ForegroundColor Yellow; return }
+        if (-not $task) { Write-Host "Usage: omniclaw llm route <task-type>" -ForegroundColor Yellow; return }
         if (-not (Test-Path $ROUTER_PATH)) { Write-Host "❌ llm/router.yaml not found" -ForegroundColor Red; return }
         $lines = Get-Content $ROUTER_PATH
         $inTask = $false; $found = @{}
@@ -53,7 +53,7 @@ switch ($args[0]) {
 
     "test" {
         $provider = $args[1]
-        if (-not $provider) { Write-Host "Usage: aos llm test <provider>" -ForegroundColor Yellow; return }
+        if (-not $provider) { Write-Host "Usage: omniclaw llm test <provider>" -ForegroundColor Yellow; return }
         Write-Host "🔗 Testing $provider API..." -ForegroundColor Cyan
         $envVars = @{
             "anthropic" = "ANTHROPIC_API_KEY"
@@ -80,5 +80,5 @@ switch ($args[0]) {
         Write-Host "  Router: llm/router.yaml" -ForegroundColor DarkGray
     }
 
-    default { Write-Host "Usage: aos llm cost | route <task> | test <provider> | list" }
+    default { Write-Host "Usage: omniclaw llm cost | route <task> | test <provider> | list" }
 }

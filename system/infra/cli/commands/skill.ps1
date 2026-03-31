@@ -1,5 +1,5 @@
 <#
-.SYNOPSIS Skill subcommand — aos skill list|health|enable <id>
+.SYNOPSIS Skill subcommand — omniclaw skill list|health|enable <id>
 #>
 $OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
 $REGISTRY_PATH = Join-Path $OMNICLAW_ROOT "brain\shared-context\SKILL_REGISTRY.json"
@@ -47,10 +47,10 @@ switch ($args[0]) {
 
     "enable" {
         $id = $args[1]
-        if (-not $id) { Write-Host "Usage: aos skill enable <id>" -ForegroundColor Yellow; return }
+        if (-not $id) { Write-Host "Usage: omniclaw skill enable <id>" -ForegroundColor Yellow; return }
         Write-Host "✅ Skill '$id' marked active" -ForegroundColor Green
         Write-Host "   (Update SKILL_REGISTRY.json to persist)" -ForegroundColor Gray
     }
 
-    default { Write-Host "Usage: aos skill list [--tier N] [--category C] | health | enable <id>" }
+    default { Write-Host "Usage: omniclaw skill list [--tier N] [--category C] | health | enable <id>" }
 }

@@ -4,7 +4,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
-REMOTE_DIR = Path('d:/LongLeo/AI OS CORP/AI OS REMOTE')
+REMOTE_DIR = Path(os.environ.get("OMNICLAW_REMOTE_ROOT", str(Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3]))).parent / "AI OS REMOTE")))
 REMOTE_SERVICES = REMOTE_DIR / 'services'
 
 os.makedirs(REMOTE_SERVICES, exist_ok=True)

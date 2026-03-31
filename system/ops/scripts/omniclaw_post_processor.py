@@ -10,7 +10,7 @@ import subprocess
 import datetime
 from pathlib import Path
 
-ROOT = Path(os.getenv("OMNICLAW_ROOT", "d:/LongLeo/AI OS CORP/AI OS"))
+ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
 CREATE_AGENT_SCRIPT = ROOT / "system" / "ops" / "scripts" / "CREATE_AGENT.py"
 INDEX_RAG_SCRIPT = ROOT / "system" / "ops" / "scripts" / "index_skills_lightrag.py"
 LOG_FILE = ROOT / "system" / "telemetry" / "omniclaw_post_processing.log"

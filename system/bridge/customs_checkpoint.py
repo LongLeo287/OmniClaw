@@ -1,3 +1,4 @@
+from pathlib import Path
 """
 CUSTOMS CHECKPOINT (TRẠM KIỂM SOÁT HẢI QUAN)
 Áp dụng Luật Thép từ CEO: "Ai có thẻ sẽ đi dễ hơn nhưng VẪN BỊ KIỂM TRA. Chưa có thẻ thì kiểm tra gắt gao".
@@ -9,7 +10,7 @@ import logging
 import os
 
 # Thiết lập hệ thống Báo động (Telemetry)
-LOG_DIR = r"d:\LongLeo\AI OS CORP\AI OS\system\ops\telemetry\logs"
+LOG_DIR = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2]))) / "system" / "ops" / "telemetry" / "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
 
 logger = logging.getLogger("BorderSecurity")

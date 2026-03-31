@@ -1,5 +1,5 @@
 <#
-.SYNOPSIS MCP subcommand — aos mcp list|start <name>|stop <name>|status
+.SYNOPSIS MCP subcommand — omniclaw mcp list|start <name>|stop <name>|status
 #>
 $OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
 $MCP_SERVERS_DIR = Join-Path $OMNICLAW_ROOT "system\infra\mcp\servers"
@@ -30,7 +30,7 @@ switch ($args[0]) {
 
     "start" {
         $name = $args[1]
-        if (-not $name) { Write-Host "Usage: aos mcp start <server-name>" -ForegroundColor Yellow; return }
+        if (-not $name) { Write-Host "Usage: omniclaw mcp start <server-name>" -ForegroundColor Yellow; return }
         $indexJs = Join-Path $MCP_SERVERS_DIR "$name\index.js"
         if (-not (Test-Path $indexJs)) {
             Write-Host "❌ Server '$name' not found at mcp/servers/$name/index.js" -ForegroundColor Red
@@ -66,5 +66,5 @@ switch ($args[0]) {
         Get-Content $cfgPath -Raw | Write-Host
     }
 
-    default { Write-Host "Usage: aos mcp list | start <name> | test [name] | config" }
+    default { Write-Host "Usage: omniclaw mcp list | start <name> | test [name] | config" }
 }
