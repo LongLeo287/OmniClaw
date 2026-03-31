@@ -2,7 +2,7 @@
 **Scope:** Full project audit — scripts, workflows, pipelines, automations
 **Status:** COMPLETE — All issues fixed
 **Total files scanned:** 1,700+
-**Total bugs fixed:** 265+ (across 8 waves)
+**Total bugs fixed:** 310+ (across 9 waves)
 
 ---
 
@@ -571,5 +571,23 @@ hardcoded d:/LongLeo    → 0 (all replaced with dynamic detection)
 
 ---
 
+### Wave 9 — Bulk AOS_ROOT cleanup + path repair (2026-03-31)
+
+**41 files fixed** (Python x30, PS1 x6, BAT x2, JSON/MD x3):
+
+- `os.getenv("AOS_ROOT")` → `os.getenv("OMNICLAW_ROOT")` in 30+ Python scripts
+- `$AOS_ROOT` / `$env:AOS_ROOT` → `$OMNICLAW_ROOT` / `$env:OMNICLAW_ROOT` in 6 PS1 files
+- `start-infrastructure.bat`: root depth `..\..\` → `..\..\..\..\` (was 2 levels, needs 4). Fix service paths: `api\server.js` → `system\infra\api\server.js`, `mcp\servers\` → `system\infra\mcp\servers\`, `.env` → `system\ops\secrets\MASTER.env`
+- `launch_claude_phase4.bat`: `cd /d $env:AOS_ROOT` (PowerShell syntax in BAT) → `cd /d %OMNICLAW_ROOT%`
+- `start_lightrag.ps1`: add dynamic root fallback + fix `<AI_OS_ROOT>` placeholders in embedded Python
+- `start_supervisor_openclaw.ps1`: `<AI_OS_ROOT>` → `$OMNICLAW_ROOT`, added dynamic root calc
+- `system/infra/mcp/config.json`: removed UTF-8 BOM + fixed all `<AI_OS_ROOT>` placeholders + `AOS_ROOT` env key + paths
+- `validate_skills.ps1`: root calc wrong (Split-Path gave `system/ops/`, not project root) → `Resolve-Path "$PSScriptRoot\..\..\..\.."`; skills/plugins paths → `ecosystem/skills`, `ecosystem/plugins`
+- `omniclaw_context_injector.py`: workflows scan path `system/ops/workflows` → `ecosystem/workflows`
+- `claude_code_tasks.md`: `<AI_OS_ROOT>` → `$OMNICLAW_ROOT`
+- Final scan: 0 remaining `AOS_ROOT` literals, 0 remaining `<AI_OS_ROOT>` placeholders
+
+---
+
 *Generated: 2026-03-31 | Audit by: Claude Code CLI*
-*Total bugs fixed: 265+ across 8 waves | Files modified: 755+*
+*Total bugs fixed: 310+ across 9 waves | Files modified: 796+*
