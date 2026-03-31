@@ -27,9 +27,9 @@ def extract_urls(targets):
                             gh = github_pattern.findall(content)
                             gen = general_pattern.findall(content)
                             for m in gh:
-                                all_urls.add(m.strip('.,)"\'\]<>'))
+                                all_urls.add(m.strip(".,)\"'\\]<>"))
                             for m in gen:
-                                all_urls.add(m.strip('.,)"\'\]<>'))
+                                all_urls.add(m.strip(".,)\"'\\]<>"))
                     except Exception as e:
                         pass
     return all_urls

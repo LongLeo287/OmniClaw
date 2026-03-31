@@ -29,13 +29,13 @@ def extract_urls(dir_path):
 
                         for m in gh_matches:
                             # clean up trailing slashes or punct
-                            m = m.strip('.,)"\'\]')
+                            m = m.strip(".,)\"'\\]")
                             all_urls.add(m)
 
                         # Only add general matches if they look like tool sites, maybe too noisy?
                         # Let's just collect all http for now and we will filter
                         for m in gen_matches:
-                            m = m.strip('.,)"\'\]')
+                            m = m.strip(".,)\"'\\]")
                             all_urls.add(m)
 
                 except Exception as e:
