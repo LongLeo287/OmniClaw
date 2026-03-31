@@ -1,15 +1,15 @@
 # Department: operations
 ---
-description: Automated protocol for exporting a clean, project-agnostic version of the AI OS Headquarters for use in new projects.
+description: Automated protocol for exporting a clean, project-agnostic version of the OmniClaw Headquarters for use in new projects.
 ---
 
-# 📦 AI OS Boilerplate Export Protocol
+# 📦 OmniClaw Boilerplate Export Protocol
 
 ## Objective
-To safely copy the AI OS "Engine" to a new project directory WITHOUT carrying over the specific context, history, or knowledge of the current project. This prevents "AI Hallucination" where the AI thinks the new project is still the old project.
+To safely copy the OmniClaw "Engine" to a new project directory WITHOUT carrying over the specific context, history, or knowledge of the current project. This prevents "AI Hallucination" where the AI thinks the new project is still the old project.
 
 ## The Strategy: Engine vs Cargo
-When cloning the AI OS, we only keep the Universal structural files (The Engine) and we wipe the specific data files (The Cargo).
+When cloning the OmniClaw, we only keep the Universal structural files (The Engine) and we wipe the specific data files (The Cargo).
 
 ### 🟢 KEEP (The Universal Engine)
 These folders contain universal logic and rules that apply to ANY project:

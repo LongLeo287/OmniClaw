@@ -11,7 +11,7 @@ AgentScope triển khai Agentic RL — agents tự học từ feedback loops:
 ```
 Agent acts → Environment responds → Reward signal → Policy update → Agent improves
 ```
-**AI OS ứng dụng:** Corp Learning Loop đã có cơ chế tương tự. Mở rộng:
+**OmniClaw ứng dụng:** Corp Learning Loop đã có cơ chế tương tự. Mở rộng:
 - Reward = CEO approval / task success
 - Penalty = escalation / task failure
 - Store outcomes in `decisions_log.md` → feed back into future prompts
@@ -29,7 +29,7 @@ AgentScope.init(
 # Launch distributed agent
 agent = AgentScope.create_agent("worker", distributed=True)
 ```
-**AI OS ứng dụng:** CrewAI đã cover phần này. AgentScope dùng nếu cần scale ngang.
+**OmniClaw ứng dụng:** CrewAI đã cover phần này. AgentScope dùng nếu cần scale ngang.
 
 ### Real-time Voice Agent Pattern
 ```python
@@ -40,7 +40,7 @@ voice_agent = VoiceAgent(
     interrupt_enabled=True     # User có thể ngắt agent đang nói
 )
 ```
-**AI OS ứng dụng:** DEFER — cần khi build voice interface (Phase 8+)
+**OmniClaw ứng dụng:** DEFER — cần khi build voice interface (Phase 8+)
 
 ### Human-in-the-Loop với MCP
 ```python
@@ -52,7 +52,7 @@ def deploy_to_production(code):
     if human_approval:
         execute_deploy(code)
 ```
-**AI OS ứng dụng:** Pattern này NÊN áp dụng cho mọi action có side-effects trong AI OS Corp.
+**OmniClaw ứng dụng:** Pattern này NÊN áp dụng cho mọi action có side-effects trong OmniClaw Corp.
 
 ---
 
@@ -82,7 +82,7 @@ class LLMRouter:
         else:
             return self.queues["fallback"]
 ```
-**AI OS ứng dụng:** Dept 1 (Engineering) — implement khi AI OS có >5 concurrent agents.
+**OmniClaw ứng dụng:** Dept 1 (Engineering) — implement khi OmniClaw có >5 concurrent agents.
 
 ### Pattern: Circuit Breaker
 ```python
@@ -105,7 +105,7 @@ class CircuitBreaker:
                 self.state = "OPEN"     # Stop calling
             raise
 ```
-**AI OS ứng dụng:** Wrap Firecrawl, LightRAG, Mem0 calls với circuit breaker.
+**OmniClaw ứng dụng:** Wrap Firecrawl, LightRAG, Mem0 calls với circuit breaker.
 
 ### Traffic Shaping: Token Budget
 ```python
@@ -119,11 +119,11 @@ class TokenBudget:
             raise BudgetExceededError("Session token limit reached")
         self.budget -= estimated_tokens
 ```
-**AI OS ứng dụng:** Đã có `budget.json` trong ClawTask — extend này.
+**OmniClaw ứng dụng:** Đã có `budget.json` trong ClawTask — extend này.
 
 ---
 
-## Action Items cho AI OS
+## Action Items cho OmniClaw
 
 | Pattern | Priority | Owner | When |
 |---------|----------|-------|------|

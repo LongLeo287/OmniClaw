@@ -1,3 +1,8 @@
+<!-- DEPRECATED — This workflow has been superseded by the current OmniClaw ecosystem.
+     Kept for historical reference only. DO NOT USE in active flows.
+     See ecosystem/workflows/ for current versions.
+-->
+
 ---
 description: How agents select and trigger Tier 2 Plugins via Lazy-Load Protocol
 ---
@@ -13,7 +18,7 @@ When an Agent needs to use an external tool from the `plugins/` directory, it MU
    - If **Tier 2 (Specialized/Lazy-Load)**: Proceed to Step 2.
 
 ## Step 2: Sandbox Initialization (Lazy-Load)
-Do NOT install Tier 2 dependencies globally or mix them with AI OS core. Use a temporary sandbox.
+Do NOT install Tier 2 dependencies globally or mix them with OmniClaw core. Use a temporary sandbox.
 Run the following initialization commands:
 // turbo
 ```powershell

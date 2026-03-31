@@ -1,4 +1,4 @@
-﻿# SKILL_SPEC.md â€” AI OS Skill Schema Standard
+﻿# SKILL_SPEC.md â€” OmniClaw Skill Schema Standard
 # Version: 1.1 | Updated: 2026-03-14
 
 ## Purpose
@@ -33,7 +33,7 @@ name: <Human Readable Name>
 version: <SemVer e.g. 1.0.0>
 tier: <1|2|3>                      # 1=Core, 2=Enhanced, 3=Domain/Manual
 status: <active|deprecated|beta>
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: <YYYY-MM-DD>
 
 # DOMAIN (new in v1.1)
@@ -222,7 +222,7 @@ name: Example Skill
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 accessible_by:
   - Orchestrator

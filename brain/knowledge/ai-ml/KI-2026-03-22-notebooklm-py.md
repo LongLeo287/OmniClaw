@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/teng-lin/notebooklm-py](https://github.com/teng-lin/notebooklm-py)  
 **Stars:** 400 | **Type:** REFERENCE | **Dept:** rd  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** open_notebook
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 Study alongside open-notebooklm plugin. Good API reference.
 
 ## Integration

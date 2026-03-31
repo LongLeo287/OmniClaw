@@ -43,6 +43,6 @@ activation: "[SUPERPOWERS] /superpowers:brainstorm <feature idea>"
 /superpowers:review       → code quality gate check
 ```
 
-## AI OS Integration
-This workflow pattern aligns with the AI OS **BMAD Sprint** Cowork template.  
+## OmniClaw Integration
+This workflow pattern aligns with the OmniClaw **BMAD Sprint** Cowork template.  
 Use `superpowers:execute-plan` to drive Claude Code subagent delegation autonomously.

@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/pnnbao97/VieNeu-TTS](https://github.com/pnnbao97/VieNeu-TTS)  
 **Stars:** 200 | **Type:** TOOL | **Dept:** rd, operations  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** content_analyst
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-TOOL — VERY RELEVANT for AI OS if needing Vietnamese voice output. Local, no API needed.
+## OmniClaw Notes
+TOOL — VERY RELEVANT for OmniClaw if needing Vietnamese voice output. Local, no API needed.
 
 ## Integration
 ⚠️ **PROPOSE CLONE** — compatible TOOL, propose to CEO

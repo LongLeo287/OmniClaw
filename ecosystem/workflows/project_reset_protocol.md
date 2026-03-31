@@ -1,6 +1,6 @@
 # Department: operations
 ---
-description: Standard Operating Procedure for archiving an old project and initializing a new one within the same AI OS instance. (Updated and Validated)
+description: Standard Operating Procedure for archiving an old project and initializing a new one within the same OmniClaw instance. (Updated and Validated)
 ---
 
 # 🔄 Project Reset & Archiving Protocol
@@ -11,7 +11,7 @@ When the User commands to "Start a new project" or "Reset project", Antigravity 
 ## Step 1: Data Classification (Engine vs Cargo)
 
 The system rigidly separates 2 types of data:
-*   **Core Library (Engine - KEEP UNTOUCHED):** `rules/`, `skills/`, `workflows/`, `CLAUDE.md`. This is the brain of the AI OS, shared across all projects.
+*   **Core Library (Engine - KEEP UNTOUCHED):** `rules/`, `skills/`, `workflows/`, `CLAUDE.md`. This is the brain of the OmniClaw, shared across all projects.
 *   **Old Project Data (Cargo - MUST ARCHIVE & WIPE):** All files located within `knowledge/`, `plans/`, `tasks/`, `archive/` (including the `media/` subfolder).
 
 ## Step 2: Automated Archiving (Zip & Save)

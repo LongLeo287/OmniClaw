@@ -1,4 +1,4 @@
-# AI OS Corp — Proposals Directory
+# OmniClaw Corp — Proposals Directory
 # Written by: Strategy dept (product-manager-agent, cognitive_reflector)
 # Read by: CEO via corp_orchestrator.approve_proposal
 

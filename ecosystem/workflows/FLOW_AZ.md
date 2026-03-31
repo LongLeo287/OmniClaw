@@ -1,8 +1,8 @@
 # Department: operations
 ---
-description: AI OS A-Z Operational Flow — luồng vận hành đầy đủ từ boot đến shutdown
+description: OmniClaw A-Z Operational Flow — luồng vận hành đầy đủ từ boot đến shutdown
 ---
-# AI OS — A-Z Operational Flow
+# OmniClaw — A-Z Operational Flow
 # Version: 1.0 | 2026-03-24 | Owner: Antigravity (CEO Mandate)
 # Authority: Tier 0 — Reference for ALL agents
 
@@ -60,11 +60,11 @@ CASE 1: CEO pastes link/repo/URL/file
     → NO question needed — auto-process
 
 CASE 2: CEO gives natural language command
-    "aos corp start"         → Section C (Corp Cycle)
-    "aos ingest <url>"       → Section D (CIV)
-    "aos skill health"       → skill-discovery-auto.md
-    "aos retro"              → corp-learning-loop.md
-    "aos escalate <issue>"   → corp-escalation-flow.md
+    "omniclaw corp start"         → Section C (Corp Cycle)
+    "omniclaw ingest <url>"       → Section D (CIV)
+    "omniclaw skill health"       → skill-discovery-auto.md
+    "omniclaw retro"              → corp-learning-loop.md
+    "omniclaw escalate <issue>"   → corp-escalation-flow.md
     "claude code: <task>"    → Section G (Handoff)
 
 CASE 3: CEO asks question / gives instruction
@@ -79,7 +79,7 @@ CASE 4: CEO uploads document/PDF
 
 ## C. CORP CYCLE — Full 8-Phase Loop
 
-**Trigger:** "aos corp start" | **Ref:** ops/workflows/corp-daily-cycle.md
+**Trigger:** "omniclaw corp start" | **Ref:** ops/workflows/corp-daily-cycle.md
 
 ```
 C0. SYSTEM HEALTH (Phase 0)

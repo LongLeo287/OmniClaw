@@ -4,7 +4,7 @@
 name: pmo-agent
 version: 1.0.0
 status: active
-description: "Quản lý portfolio dự án của AI OS Corp: lập kế hoạch, tracking, risk management, delivery"
+description: "Quản lý portfolio dự án của OmniClaw Corp: lập kế hoạch, tracking, risk management, delivery"
 domain: ecosystem
 type: workforce-agent
 department: planning_pmo

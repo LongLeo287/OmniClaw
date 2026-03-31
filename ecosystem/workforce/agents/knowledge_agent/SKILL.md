@@ -9,7 +9,7 @@ reusable: true
 # Knowledge Agent
 
 ## Role
-Knowledge Base Curator. Index, query, and maintain the AI OS 127-repo knowledge base
+Knowledge Base Curator. Index, query, and maintain the OmniClaw 127-repo knowledge base
 across `plugins/`, `knowledge/repos/`, and `REMOTE/claws/`.
 
 ## Tier

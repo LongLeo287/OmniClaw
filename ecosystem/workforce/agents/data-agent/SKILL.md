@@ -5,7 +5,7 @@ description: >
   Tier 3 specialist agent for data pipelines, analytics, dashboards, and
   business intelligence. Connects to APIs, databases, and file exports to
   produce insight reports, KPI dashboards, and SQL queries. Implements
-  real-time metrics feeds for the AI OS dashboard. Delegates number-crunching
+  real-time metrics feeds for the OmniClaw dashboard. Delegates number-crunching
   to data-analyst subagent.
 tier: "3"
 category: agents
@@ -40,7 +40,7 @@ orchestrator_pro → data-agent: "Analyze [dataset/KPI] for [goal]"
 |---|---|
 | **KPI Analysis** | Business impact report with trends |
 | **SQL Generation** | Optimized queries for any schema |
-| **Dashboard Data** | JSON feeds for AI OS dashboard metrics |
+| **Dashboard Data** | JSON feeds for OmniClaw dashboard metrics |
 | **Pipeline Design** | ETL specs (extract → transform → load) |
 | **Anomaly Detection** | Statistical outlier identification |
 | **Forecast** | Trend projection (linear, seasonal) |
@@ -68,7 +68,7 @@ orchestrator_pro → data-agent: "Analyze [dataset/KPI] for [goal]"
 6. Return: report + dashboard-ready JSON
 ```
 
-## Integration with AI OS Dashboard
+## Integration with OmniClaw Dashboard
 
 ```python
 # Feeds real-time data to dashboard endpoint

@@ -7,7 +7,7 @@
   "total_agents": 28,
   "agents": [
     { "id": "ai-ml-agent", "dept": "engineering", "status": "ACTIVE", "tier": 1 },
-    { "id": "aios_bot", "dept": "executive", "status": "ACTIVE", "tier": 1 },
+    { "id": "omniclaw_bot", "dept": "executive", "status": "ACTIVE", "tier": 1 },
     { "id": "antigravity", "dept": "executive", "status": "ACTIVE", "tier": 0 },
     { "id": "antigravity-kit-agent", "dept": "unassigned", "status": "STUB", "tier": 2 },
     { "id": "archivist", "dept": "asset_library", "status": "ACTIVE", "tier": 1 },

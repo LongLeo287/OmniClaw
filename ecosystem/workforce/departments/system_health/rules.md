@@ -1,7 +1,7 @@
 ﻿# SYSTEM HEALTH (Y Táº¾ Há»† THá»NG) â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: health-chief-agent | Reports to: CTO
-# Mission: NgÄƒn ngá»«a, phÃ¡t hiá»‡n, vÃ  phá»¥c há»“i sá»©c khá»e toÃ n bá»™ há»‡ thá»‘ng AI OS
+# Mission: NgÄƒn ngá»«a, phÃ¡t hiá»‡n, vÃ  phá»¥c há»“i sá»©c khá»e toÃ n bá»™ há»‡ thá»‘ng OmniClaw
 # "Y táº¿" = preventive care + diagnosis + treatment for AI agents and infrastructure
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
@@ -39,7 +39,7 @@ RULE HLT-05: HEALTH KNOWLEDGE BASE IS MAINTAINED
   New issue types always added. Never lose knowledge about how to fix something.
 
 RULE HLT-06: IMMUNE SYSTEM PRINCIPLE
-  System Health is the immune system of AI OS.
+  System Health is the immune system of OmniClaw.
   It learns from each incident and gets better at preventing the next one.
   Every incident â†’ new health check rule â†’ improved prevention.
 

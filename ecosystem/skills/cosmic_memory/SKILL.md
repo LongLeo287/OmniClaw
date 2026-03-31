@@ -4,7 +4,7 @@ name: Cosmic Memory
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Observation-based long-term memory for cross-session recall (Smallville style).
 
@@ -29,7 +29,7 @@ listens_to:
 ---
 # ðŸŒŒ Cosmic Memory Skill (Persistent Wisdom)
 
-This skill provides the AI OS with "Long-term Wisdom" â€” the ability to remember findings, hacks, and architectural decisions across sessions.
+This skill provides the OmniClaw with "Long-term Wisdom" â€” the ability to remember findings, hacks, and architectural decisions across sessions.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Observation extraction (/observe):**

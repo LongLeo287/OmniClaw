@@ -1,4 +1,4 @@
-# COWORK_PROTOCOL.md — AI OS Multi-Agent Collaboration Standard
+# COWORK_PROTOCOL.md — OmniClaw Multi-Agent Collaboration Standard
 # Version: 1.0 | Date: 2026-03-17
 # Authority: Tier 2
 

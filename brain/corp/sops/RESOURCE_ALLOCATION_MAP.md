@@ -1,4 +1,4 @@
-# AI OS Corp — Resource Allocation Map (v1.0)
+# OmniClaw Corp — Resource Allocation Map (v1.0)
 # Authority: Registry & Capability Management → COO
 # Updated: 2026-03-17
 # Source of Truth for: skill ownership, plugin ownership, subagent assignment

@@ -15,7 +15,7 @@
 
 IT Infra dept activated Cycle 3. Full infrastructure inventory documented.
 
-## AI OS Infrastructure Inventory
+## OmniClaw Infrastructure Inventory
 
 ### Compute Layer
 

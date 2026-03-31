@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot)  
 **Stars:** 5k | **Type:** TOOL | **Dept:** operations  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** corp_orchestrator
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-COMPATIBLE — AI OS already runs AstrBot as a service. This is the source repo — study for plugins and updates.
+## OmniClaw Notes
+COMPATIBLE — OmniClaw already runs AstrBot as a service. This is the source repo — study for plugins and updates.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

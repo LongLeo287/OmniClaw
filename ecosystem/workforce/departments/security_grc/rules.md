@@ -49,7 +49,7 @@ RULE SEC-08: BLACKLIST MAINTENANCE
 RULE SEC-09: QUARANTINE ZONE OWNERSHIP
   Security GRC owns and operates the QUARANTINE zone at:
   `<AI_OS_ROOT>\QUARANTINE\`
-  This is the mandatory staging area for ALL external repos before entry into AI OS.
+  This is the mandatory staging area for ALL external repos before entry into OmniClaw.
   
   QUARANTINE lifecycle (Security GRC enforces):
   1. Registry & Capability clones external repo INTO QUARANTINE (start)
@@ -58,7 +58,7 @@ RULE SEC-09: QUARANTINE ZONE OWNERSHIP
      - PASS (0 critical, â‰¤5 warnings)  â†’ hand off to Registry for ingestion
      - WARN (0 critical, >5 warnings)  â†’ strix-agent manual review â†’ decision
      - FAIL (any critical)             â†’ DELETE immediately, log to blacklist
-  4. Registry & Capability ingests ONLY cleared files into AI OS
+  4. Registry & Capability ingests ONLY cleared files into OmniClaw
   
   No file may bypass QUARANTINE. No exceptions. CEO override required + documented.
 

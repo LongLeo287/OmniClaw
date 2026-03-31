@@ -1,6 +1,6 @@
 # Department: operations
 ---
-description: Antigravity Boot Protocol — AI OS Corp context loading at session start
+description: Antigravity Boot Protocol — OmniClaw Corp context loading at session start
 ---
 # Antigravity Boot Protocol
 # Version: 1.0 | Created: 2026-03-20
@@ -11,13 +11,13 @@ description: Antigravity Boot Protocol — AI OS Corp context loading at session
 
 ## AUTO-TRIGGER — Khi nào AI phải khởi động?
 
-Antigravity TỰ ĐỘNG chạy quy trình Boot này (bằng lệnh `python system/ops/scripts/aos_start.py` hoặc đọc Context) khi Sếp gõ 1 trong 3 câu lệnh sau vào chat:
+Antigravity TỰ ĐỘNG chạy quy trình Boot này (bằng lệnh `python system/ops/scripts/omniclaw_start.py` hoặc đọc Context) khi Sếp gõ 1 trong 3 câu lệnh sau vào chat:
 
 | Lệnh / Prompt từ Sếp | Hành động của AI |
 |----------------------|------------------|
 | `"Bắt đầu phiên làm việc"` | 🚀 Chạy tự động ngay |
-| `"Khởi động AI OS"` | 🚀 Chạy tự động ngay |
-| `"aos start"` | 🚀 Chạy tự động ngay |
+| `"Khởi động OmniClaw"` | 🚀 Chạy tự động ngay |
+| `"omniclaw start"` | 🚀 Chạy tự động ngay |
 
 *(Ghi chú: Giống với logic của Post-Session, AI không được thắc mắc mà phải tiến hành Boot khi nhận 1 trong 3 Trigger trên).*
 
@@ -26,7 +26,7 @@ Antigravity TỰ ĐỘNG chạy quy trình Boot này (bằng lệnh `python syst
 ## Purpose
 
 Ensures Antigravity operates AS a Corp agent — not just a builder.
-Loads full AI OS Corp state, registers session, and aligns with current mission/KPIs.
+Loads full OmniClaw Corp state, registers session, and aligns with current mission/KPIs.
 
 ---
 
@@ -93,7 +93,7 @@ Antigravity role from `AGENTS.md`:
 After loading context, give CEO a concise status brief:
 
 ```
-📊 AI OS Corp Status — <date>
+📊 OmniClaw Corp Status — <date>
 
 🏢 System: <overall_status from kpi_scoreboard>
 📋 Blackboard: <summary of last session>
@@ -141,7 +141,7 @@ At end of session or when handing off:
 
 ---
 
-## Quick Reference — AI OS Corp Files
+## Quick Reference — OmniClaw Corp Files
 
 | Action | File/Endpoint |
 |--------|--------------|

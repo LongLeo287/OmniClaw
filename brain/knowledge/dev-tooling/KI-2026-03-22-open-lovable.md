@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/firecrawl/open-lovable](https://github.com/firecrawl/open-lovable)  
 **Stars:** 3k | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** visual_excellence
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 REFERENCE — study for AI-driven UI generation capabilities. Pairs with gaia-ui concepts.
 
 ## Integration

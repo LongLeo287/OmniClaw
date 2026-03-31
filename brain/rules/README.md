@@ -1,5 +1,5 @@
 # ⚖️ MA TRẬN LUẬT (DEPARTMENTAL RULES)
-**Chức năng:** Thư mục này chứa các quy định, ranh giới quyền hạn, và SOP cấp độ Hệ thống dành riêng cho từng Phòng ban và Agent, thuộc kiến trúc Neural Link (AI OS Corp).
+**Chức năng:** Thư mục này chứa các quy định, ranh giới quyền hạn, và SOP cấp độ Hệ thống dành riêng cho từng Phòng ban và Agent, thuộc kiến trúc Neural Link (OmniClaw Corp).
 
 ## 🗂️ Quy Hoạch Không Gian Luật
 Để giữ cho `CLAUDE.md` và `GEMINI.md` gọn nhẹ (chỉ chứa System Boot Protocol), mọi Rule chi tiết về đặc vụ hoặc phòng ban sẽ được lưu tại đây. AI Agent chỉ tải tệp Rule của phòng ban nó vào bộ nhớ khi được kích hoạt.

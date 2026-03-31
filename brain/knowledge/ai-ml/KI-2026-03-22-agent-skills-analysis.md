@@ -11,14 +11,14 @@ created: 2026-03-22T23:23:54.299876
 
 # Agent Skills — SOP Is The Backbone (Minh Do)
 
-> Vietnamese guide by AI Agent Builder Minh Do. Explains why SOP (Standard Operating Procedure) is essential for AI Skills. Validates AI OS SKILL.md 3-tier architecture with Job Description + SOP + References.
+> Vietnamese guide by AI Agent Builder Minh Do. Explains why SOP (Standard Operating Procedure) is essential for AI Skills. Validates OmniClaw SKILL.md 3-tier architecture with Job Description + SOP + References.
 
 **Source:** [https://2026-03-19-agent-skills-analysis.vercel.app/](https://2026-03-19-agent-skills-analysis.vercel.app/)  
 **Stars:** — | **Type:** REFERENCE  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
-## AI OS Notes
-DIRECTLY VALIDATES AI OS SKILL.md design. Key insight: Skill = Job Description (YAML frontmatter) + SOP (SKILL.md body) + References (references/ folder). 3-tier progressive disclosure matches exactly what AI OS does. A must-read for skill design.
+## OmniClaw Notes
+DIRECTLY VALIDATES OmniClaw SKILL.md design. Key insight: Skill = Job Description (YAML frontmatter) + SOP (SKILL.md body) + References (references/ folder). 3-tier progressive disclosure matches exactly what OmniClaw does. A must-read for skill design.
 
 ## Key Concepts
 - Skill = Job Description + SOP (Standard Operating Procedure)

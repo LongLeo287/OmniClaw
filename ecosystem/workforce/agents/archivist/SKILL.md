@@ -4,7 +4,7 @@ name: Archivist
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: File organization, log rotation, and knowledge indexing across workspaces.
 
@@ -33,7 +33,7 @@ listens_to:
 
 ## Purpose
 
-Archivist is the AI OS "librarian" -- it keeps the workspace clean, organized, and fully indexed.
+Archivist is the OmniClaw "librarian" -- it keeps the workspace clean, organized, and fully indexed.
 Runs at `session_end` or triggered manually by Orchestrator.
 
 ## Exposed Functions

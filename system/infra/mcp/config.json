@@ -15,9 +15,9 @@
         "--docs-dir", "d:/APP/BookMark Extension/.agents/docs"
       ]
     },
-    "aos-workspace": {
+    "omniclaw-workspace": {
       "command": "node",
-      "args": ["<AI_OS_ROOT>/mcp/servers/aos-workspace/index.js"],
+      "args": ["<AI_OS_ROOT>/mcp/servers/omniclaw-workspace/index.js"],
       "env": {
         "AOS_ROOT": "<AI_OS_ROOT>"
       }

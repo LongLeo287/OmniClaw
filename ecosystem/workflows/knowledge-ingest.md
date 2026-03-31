@@ -3,13 +3,13 @@
 # Version: 2.0 | Updated: 2026-03-22 | Created: 2026-03-22
 # Authority: Tier 2 (Operations)
 # Agents: intake-chief-agent → strix-agent → knowledge_navigator → knowledge_enricher → archivist
-# Trigger: "aos ingest <source>" OR agent drops file into intake queue
+# Trigger: "omniclaw ingest <source>" OR agent drops file into intake queue
 
 ---
 
 ## Overview
 
-Every piece of external knowledge (URL, doc, repo, bug fix, research dump) passes through this pipeline before entering the AI OS brain.
+Every piece of external knowledge (URL, doc, repo, bug fix, research dump) passes through this pipeline before entering the OmniClaw brain.
 
 ```
 SOURCE (URL / File / Repo / Bug Fix / Research)
@@ -43,12 +43,12 @@ SOURCE (URL / File / Repo / Bug Fix / Research)
 
 | Type | Input format | Trigger keyword |
 |------|-------------|----------------|
-| URL / webpage | `https://...` | `aos ingest url <url>` |
-| Local file | `.md`, `.pdf`, `.txt` | `aos ingest file <path>` |
-| Git repo | GitHub/GitLab URL | `aos ingest repo <url>` |
+| URL / webpage | `https://...` | `omniclaw ingest url <url>` |
+| Local file | `.md`, `.pdf`, `.txt` | `omniclaw ingest file <path>` |
+| Git repo | GitHub/GitLab URL | `omniclaw ingest repo <url>` |
 | Bug fix lesson | Task receipt + diff | Auto-trigger after task COMPLETE |
-| Research dump | Free text | `aos ingest text "<content>"` |
-| Web search | Query string | `aos ingest search "<query>"` |
+| Research dump | Free text | `omniclaw ingest text "<content>"` |
+| Web search | Query string | `omniclaw ingest search "<query>"` |
 
 ---
 
@@ -328,10 +328,10 @@ Channel: notification_bridge → Telegram
 ## Triggers
 
 ```
-Manual:    "aos ingest <source>"
+Manual:    "omniclaw ingest <source>"
 Auto:      After any task COMPLETE receipt → extract LESSON
 Auto:      After any bug fix → run with source_type=lesson
-On-demand: "aos search <query>" → ingest + return summary to CEO
+On-demand: "omniclaw search <query>" → ingest + return summary to CEO
 Weekly:    archivist runs backfill_knowledge to cross-link orphan entries
 ```
 

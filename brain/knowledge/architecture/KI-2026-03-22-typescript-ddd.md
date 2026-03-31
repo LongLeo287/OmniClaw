@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/CodelyTV/typescript-ddd-example](https://github.com/CodelyTV/typescript-ddd-example)  
 **Stars:** 2k | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** architect_agent
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 Study for ClawTask frontend architecture improvements.
 
 ## Integration

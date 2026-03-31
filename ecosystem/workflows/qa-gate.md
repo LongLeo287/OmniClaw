@@ -1,5 +1,5 @@
 # Department: qa_testing
-# qa-gate.md — QA Gate Protocol for AI OS Corp
+# qa-gate.md — QA Gate Protocol for OmniClaw Corp
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 2 (Operations)
 # Executed by: QA Department (security-engineer-agent + superpowers-agent)

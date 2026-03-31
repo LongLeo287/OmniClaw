@@ -1,6 +1,6 @@
 ﻿# Department: operations
 ---
-description: Khi nÃ o vÃ  cÃ¡ch khá»Ÿi Ä‘á»™ng Claude Code CLI Ä‘á»ƒ dÃ¹ng MCP servers trong AI OS â€” Hybrid MCP Strategy
+description: Khi nÃ o vÃ  cÃ¡ch khá»Ÿi Ä‘á»™ng Claude Code CLI Ä‘á»ƒ dÃ¹ng MCP servers trong OmniClaw â€” Hybrid MCP Strategy
 ---
 
 # Workflow: Launch MCP via Claude Code CLI
@@ -30,7 +30,7 @@ Khi task cáº§n dÃ¹ng MCP server mÃ  Antigravity khÃ´ng Ä‘á»§:
 ## CÃ¡ch 1 â€” Python MCP Client (KhÃ´ng cáº§n Claude Code CLI)
 
 ```python
-# Gá»i tá»« báº¥t ká»³ skill/adapter trong AI OS
+# Gá»i tá»« báº¥t ká»³ skill/adapter trong OmniClaw
 from plugins.mcp_client.mcp_client import call_mcp, AI_OS_ROOT
 
 # Git: xem history
@@ -64,7 +64,7 @@ python plugins/mcp-client/mcp_client.py git git_log '{"repo_path": "<AI_OS_ROOT>
 
 ### BÆ°á»›c 1: Má»Ÿ terminal má»›i
 ```powershell
-# Tá»« AI OS root
+# Tá»« OmniClaw root
 cd "<AI_OS_ROOT>"
 ```
 
@@ -75,7 +75,7 @@ File: `<USER_PROFILE>\AppData\Roaming\Claude\claude_desktop_config.json`
   "mcpServers": {
     "sequential-thinking": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"] },
     "git": { "command": "uvx", "args": ["mcp-server-git", "--repository", "<AI_OS_ROOT>"] },
-    "filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "d:\\AI OS CORP"] }
+    "filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "d:\\OmniClaw Corp"] }
   }
 }
 ```
@@ -100,7 +100,7 @@ Copy káº¿t quáº£ / files Ä‘Ã£ táº¡o â†’ tiáº¿p tá»¥c tr
 
 ---
 
-## MCPs trong AI OS â€” Danh sÃ¡ch Ä‘áº§y Ä‘á»§
+## MCPs trong OmniClaw â€” Danh sÃ¡ch Ä‘áº§y Ä‘á»§
 
 | MCP Server | Package | Tier | Skill |
 |-----------|---------|------|-------|

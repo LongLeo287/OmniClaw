@@ -1,21 +1,21 @@
 ﻿# CLIENT INTAKE GATEWAY â€” SOP v1.0
-# AI OS Corp | Tier 1 â€” Operations
+# OmniClaw Corp | Tier 1 â€” Operations
 # Effective: 2026-03-18
 
-> **Model:** BÃªn ngoÃ i káº¿t ná»‘i vÃ o AI OS Corp Ä‘á»ƒ sá»­ dá»¥ng AI agents nhÆ° dá»‹ch vá»¥.
+> **Model:** BÃªn ngoÃ i káº¿t ná»‘i vÃ o OmniClaw Corp Ä‘á»ƒ sá»­ dá»¥ng AI agents nhÆ° dá»‹ch vá»¥.
 > Client â†’ Channel â†’ Intake Agent â†’ Proposal â†’ Delivery Pipeline
 
 ---
 
 ## 1. Cá»•ng Tiáº¿p Nháº­n
 
-AI OS Corp tiáº¿p nháº­n yÃªu cáº§u qua **4 kÃªnh**:
+OmniClaw Corp tiáº¿p nháº­n yÃªu cáº§u qua **4 kÃªnh**:
 
 | KÃªnh | Platform | Agent xá»­ lÃ½ | Status |
 |------|----------|-------------|--------|
 | Telegram | Bot @AICorpBot | nullclaw `client-intake` agent | ðŸŸ¡ Cáº§n config |
 | Discord | #project-intake channel | tinyclaw `intake-agent` | ðŸŸ¡ Cáº§n config |
-| Web Form | `intake.aios-corp.local` | project-intake-agent SKILL | ðŸŸ¡ Cáº§n build |
+| Web Form | `intake.omniclaw-corp.local` | project-intake-agent SKILL | ðŸŸ¡ Cáº§n build |
 | WhatsApp | Business API | nullclaw `whatsapp` channel | ðŸ”´ Phase 2 |
 
 ---
@@ -60,7 +60,7 @@ AI OS Corp tiáº¿p nháº­n yÃªu cáº§u qua **4 kÃªnh**:
 Khi client nháº¯n tin láº§n Ä‘áº§u, bot tá»± Ä‘á»™ng gá»­i form sau:
 
 ```
-ðŸ‘‹ ChÃ o má»«ng Ä‘áº¿n AI OS Corp!
+ðŸ‘‹ ChÃ o má»«ng Ä‘áº¿n OmniClaw Corp!
 
 Äá»ƒ báº¯t Ä‘áº§u, vui lÃ²ng tráº£ lá»i 5 cÃ¢u há»i:
 

@@ -50,7 +50,7 @@ python ecosystem/skills/ui-ux-pro-max/scripts/core.py generate "glassmorphism ca
 python ecosystem/skills/ui-ux-pro-max/scripts/core.py extract "https://example.com"
 ```
 
-## AI OS Integration
+## OmniClaw Integration
 - **Used by:** Frontend agent, Engineering agent for UI generation
 - **ClawTask:** Terminal panel → run scripts via `/api/tool-run`
 - **Output:** Component specs fed to `ui/dashboard/`, `ui/viewer/`

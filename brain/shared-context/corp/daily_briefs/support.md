@@ -14,7 +14,7 @@
 
 Support dept activated Cycle 3. Defined internal support triage framework for the Corp. Catalogued all known open issues.
 
-## AI OS Corp — Internal Support Framework
+## OmniClaw Corp — Internal Support Framework
 
 ### Support Tiers (Internal)
 

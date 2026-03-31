@@ -4,7 +4,7 @@
 ## Purpose
 
 This folder is the **single source of truth** for all repositories, tools, websites,
-and resources that have been reviewed, ingested, or tracked for the AI OS.
+and resources that have been reviewed, ingested, or tracked for the OmniClaw.
 
 ## Files
 
@@ -35,8 +35,8 @@ Update STATUS → ✅ Ingested or 📦 Plugin
 
 | Code | Meaning |
 |---|---|
-| ✅ Ingested | Content analyzed and incorporated into AI OS knowledge/agents |
+| ✅ Ingested | Content analyzed and incorporated into OmniClaw knowledge/agents |
 | 📦 Plugin | Installed locally in `plugins/` folder |
 | 📥 Queued | Approved for next ingestion cycle |
 | 🔍 Watchlist | Tracked, not yet prioritized |
-| ❌ Rejected | Reviewed, not useful for AI OS |
+| ❌ Rejected | Reviewed, not useful for OmniClaw |

@@ -1,4 +1,4 @@
-# AI OS Corp — Master Roadmap
+# OmniClaw Corp — Master Roadmap
 # Version: 3.0 | Updated: 2026-03-22 | Authority: Tier 1 (Strategy)
 
 ---
@@ -39,7 +39,7 @@
 
 ---
 
-## AI OS Corp — Department Readiness
+## OmniClaw Corp — Department Readiness
 
 | Dept | Head Agent | Workers | Status |
 |------|-----------|---------|--------|
@@ -90,7 +90,7 @@
 ### Phase 2B: Client Pipeline
 - [ ] Activate nullclaw/tinyclaw for Telegram intake
 - [ ] Test client brief → proposal_engine → CEO approve flow
-- [ ] First live client project via AI OS Corp
+- [ ] First live client project via OmniClaw Corp
 
 ### Phase 2C: Learning Loop
 - [ ] Run first `corp_learning_loop.run_corp_retro`
@@ -121,11 +121,11 @@
 ## Archive: Legacy Phases (Pre-Corp)
 
 > The following phases were from the BookMark Extension project (completed 2026-03-14).
-> These established the AI OS infrastructure now used by AI OS Corp.
+> These established the OmniClaw infrastructure now used by OmniClaw Corp.
 
 - ✅ Phase 8: UI & AI Resource Consolidation
 - ✅ Phase 9: Advanced Local Automation (Intel Infrastructure Upgrade)
-- ✅ Phase 10: Intelligent Assistant [85%] — superseded by AI OS Corp launch
+- ✅ Phase 10: Intelligent Assistant [85%] — superseded by OmniClaw Corp launch
 - ✅ Phase 11: Cognitive Evolution — merged into THESIS.md Pillars 19-20
 
 ---

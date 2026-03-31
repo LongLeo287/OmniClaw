@@ -1,8 +1,8 @@
 {
   "PRJ-001": {
-    "name": "AI OS Core",
+    "name": "OmniClaw Core",
     "path": "<AI_OS_ROOT>",
-    "description": "Central AI OS — governance, skills, plugins, dashboard",
+    "description": "Central OmniClaw — governance, skills, plugins, dashboard",
     "status": "active",
     "skills_used": [],
     "channels_enabled": false,
@@ -13,7 +13,7 @@
   "PRJ-002": {
     "name": "Star Office UI Dashboard",
     "path": "<AI_OS_ROOT>\\ui\\dashboard",
-    "description": "Pixel office dashboard for AI OS status visualization",
+    "description": "Pixel office dashboard for OmniClaw status visualization",
     "status": "active",
     "skills_used": ["ui-ux-pro-max"],
     "channels_enabled": false,

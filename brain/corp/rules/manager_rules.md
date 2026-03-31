@@ -1,4 +1,4 @@
-# Manager Rules â€” AI OS Corp
+# Manager Rules â€” OmniClaw Corp
 # Authority: Tier 2 | Updated: 2026-03-17
 # Applied to: all Department Heads
 

@@ -1,9 +1,11 @@
-# 🏛️ AI OS CORP — Sơ đồ Tổng thể Hệ thống
+# 🏛️ OmniClaw Corp — Sơ đồ Tổng thể Hệ thống
 > **Danh bạ chính thức các Phòng ban, Agent và Quy trình (Sắp xếp theo ID)**
 
 [**🇺🇸 Xem Bản Tiếng Anh (English)**](MASTER_INDEX.md)
 
-Tài liệu này đóng vai trò là hướng dẫn chính thức về **cấu trúc tổ chức 21 phòng ban** của AI OS CORP. Nó xác định ai (Agent) làm gì (Chức năng) và cách họ liên kết với nhau (Quy trình).
+Đây là hướng dẫn chính thức về **cấu trúc tổ chức 21 phòng ban** của OmniClaw Corp. Nó xác định ai (Agent) làm gì (Chức năng) và cách họ liên kết với nhau (Quy trình).
+
+> 💡 **Lưu ý dành cho Người điều hành:** Một phiên bản đơn giản hóa, thân thiện hơn của sơ đồ này đã được công bố tại Cẩm nang [**docs/architecture/system_overview-vn.md**](../../docs/architecture/system_overview-vn.md).
 
 ---
 
@@ -14,7 +16,7 @@ Hệ thống được quản trị theo mô hình lấy con người làm trung 
 ```mermaid
 graph TD
     CEO(CEO — Con Người)
-    AOS(AI OS Orchestrator)
+    omniclaw(OmniClaw Orchestrator)
     
     subgraph Executives [Tầng 1: C-Suite]
         CTO(CTO: software-architect)
@@ -24,8 +26,8 @@ graph TD
         CSO(CSO: product-manager)
     end
 
-    CEO --> AOS
-    AOS --> CTO & CMO & COO & CFO & CSO
+    CEO --> omniclaw
+    omniclaw --> CTO & CMO & COO & CFO & CSO
 ```
 
 ---

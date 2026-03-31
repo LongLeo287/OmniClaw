@@ -1,4 +1,4 @@
-# AI OS Corp — OpenClaw Skill Router
+# OmniClaw Corp — OpenClaw Skill Router
 # Inspired by OpenClaw (🦞) Typed Pipeline Architecture
 # Each pipeline type maps to a set of Workflows + Agents
 
@@ -44,7 +44,7 @@ pipelines:
     workflows:
       - ops/workflows/bot-reporting.md
       - ops/workflows/start-services.md
-    agent: aios_bot
+    agent: omniclaw_bot
     tool_hint: "shell"
 
   PLAN:
@@ -56,5 +56,5 @@ pipelines:
   CHAT:
     keywords: []
     description: "Hội thoại thông thường, câu hỏi nhanh"
-    agent: aios_bot
+    agent: omniclaw_bot
     tool_hint: "none — respond directly"

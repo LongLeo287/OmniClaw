@@ -1,5 +1,5 @@
 {
-  "name": "AI OS",
+  "name": "OmniClaw",
   "version": "3.2.0",
   "codename": "Antigravity Prime",
   "updated": "2026-03-24",
@@ -80,7 +80,7 @@
     {
       "version": "1.0.0",
       "date": "2026-03-01",
-      "notes": "Initial AI OS setup"
+      "notes": "Initial OmniClaw setup"
     },
     {
       "version": "2.0.0",

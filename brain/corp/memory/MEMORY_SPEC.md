@@ -1,10 +1,10 @@
-﻿# MEMORY_SPEC.md â€” AI OS Corp Memory Architecture
+﻿# MEMORY_SPEC.md â€” OmniClaw Corp Memory Architecture
 # Version: 2.0 | Updated: 2026-03-22
 # Authority: Tier 4 (Data & Memory)
 
 ## Memory Layers Overview
 
-AI OS Corp sá»­ dá»¥ng **5 memory layers** vá»›i retention, ownership, vÃ  access khÃ¡c nhau:
+OmniClaw Corp sá»­ dá»¥ng **5 memory layers** vá»›i retention, ownership, vÃ  access khÃ¡c nhau:
 
 ```
 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”

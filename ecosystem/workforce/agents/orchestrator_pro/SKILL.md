@@ -4,7 +4,7 @@ name: Orchestrator Pro
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Full multi-agent orchestration -- decompose, delegate, monitor, synthesize.
 
@@ -36,7 +36,7 @@ listens_to:
 
 ## Purpose
 
-Orchestrator Pro is the AI OS "conductor" -- it breaks complex tasks into
+Orchestrator Pro is the OmniClaw "conductor" -- it breaks complex tasks into
 parallel/sequential steps, assigns them to the right agents, monitors progress,
 and synthesizes a final report. Called exclusively by Antigravity.
 

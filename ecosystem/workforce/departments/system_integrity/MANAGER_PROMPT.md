@@ -99,7 +99,7 @@ No skipping steps. Always write receipt, even if 0 issues found.
 |---|--------|-----------|
 | 1 | Encoding Fix (ftfy) | ✅ Yes |
 | 2 | Path Validation | ✅ Yes |
-| 3 | Naming Consistency (stale aios_/AI OS) | ✅ Yes |
+| 3 | Naming Consistency (stale aios_/OmniClaw) | ✅ Yes |
 | 4 | MCP Health Check | ✅ Yes (disable broken, not delete) |
 | 5 | Registry Sync (SKILL_REGISTRY.json) | ✅ Yes |
 | 6 | JSON/YAML Syntax Validation | ✅ Yes (fix) / ❌ Escalate (if ambiguous) |

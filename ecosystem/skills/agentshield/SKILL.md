@@ -10,7 +10,7 @@ Cherry-picked from `everything-claude-code` (affaan-m/everything-claude-code v1.
 Security-first auditing for AI agent code, skills, and prompts.
 
 ## When to Use
-- Before deploying a new agent or skill to AI OS Corp
+- Before deploying a new agent or skill to OmniClaw Corp
 - When reviewing third-party skill code
 - As part of GATE_SECURITY in plugin-integration workflow
 - Regular audits of existing agent prompts
@@ -30,7 +30,7 @@ Security-first auditing for AI agent code, skills, and prompts.
 ```
 □ No exec() or eval() on user input
 □ No subprocess with shell=True on untrusted input
-□ File access scoped to AI OS root only
+□ File access scoped to OmniClaw root only
 □ No unrestricted network calls
 □ Dependencies locked (pinned versions)
 ```

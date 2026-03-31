@@ -5,9 +5,9 @@ description: >
   Specialist in generating visually compelling slide decks, pitch presentations,
   and executive reports. Converts raw data, strategies, and analyses into
   polished multi-slide documents using Mermaid diagrams, structured Markdown, 
-  and REVEAL.js-compatible output. Integrates with AI OS Corp reporting pipeline.
+  and REVEAL.js-compatible output. Integrates with OmniClaw Corp reporting pipeline.
 version: 1.0.0
-author: AI OS Corp — Registry Dept 14
+author: OmniClaw Corp — Registry Dept 14
 tier: 3
 category: content-creation
 tags: [slides, presentation, mermaid, reporting, visual, deck, pitch]
@@ -38,7 +38,7 @@ task_ref: REG-01-001
 
 ## Identity
 
-NemoClaw is the **visual communicator** of AI OS Corp. It transforms complex
+NemoClaw is the **visual communicator** of OmniClaw Corp. It transforms complex
 ideas, data, and system analyses into professional slide decks and presentations
 that can be delivered to CEO, clients, or team members.
 

@@ -10,7 +10,7 @@
 | Extension ID | Name | Purpose | Tier |
 |---|---|---|---|
 | `zixfel.ag-auto-click-scroll` | AG Auto Click Scroll | Tự động click/scroll Antigravity response | tier1 |
-| `ms-python.python` | Python | Chạy Python scripts (aos.py, fix_skill_tiers.py) | tier1 |
+| `ms-python.python` | Python | Chạy Python scripts (omniclaw.py, fix_skill_tiers.py) | tier1 |
 | `ms-vscode.powershell` | PowerShell | Chạy .ps1 scripts (update_hud.ps1, setup.ps1) | tier1 |
 | `yzhang.markdown-all-in-one` | Markdown All in One | Edit .md files (AGENT prompts, workflows) | tier1 |
 | `redhat.vscode-yaml` | YAML | Edit org_chart.yaml, SKILL_REGISTRY configs | tier2 |

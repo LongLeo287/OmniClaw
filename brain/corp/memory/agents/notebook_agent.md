@@ -7,7 +7,7 @@
 
 ## IDENTITY & ROLE
 
-Notebook Agent = AI OS built-in content processing engine.
+Notebook Agent = OmniClaw built-in content processing engine.
 Always available. No Docker required.
 Single entry point at PORT 7474 → /api/notebook/*
 

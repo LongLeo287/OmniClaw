@@ -4,9 +4,9 @@ import json
 import os
 from datetime import datetime
 
-AIOS = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
-fi_path = os.path.join(AIOS, "brain", "shared-context", "FAST_INDEX.json")
-sr_path = os.path.join(AIOS, "brain", "shared-context", "SKILL_REGISTRY.json")
+omniclaw = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+fi_path = os.path.join(omniclaw, "brain", "shared-context", "FAST_INDEX.json")
+sr_path = os.path.join(omniclaw, "brain", "shared-context", "SKILL_REGISTRY.json")
 
 # ── FAST_INDEX ──────────────────────────────────────────────────────
 with open(fi_path, "r", encoding="utf-8") as f:

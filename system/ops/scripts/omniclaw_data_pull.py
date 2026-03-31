@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 from huggingface_hub import HfApi, login, snapshot_download
 
 # Configuration
-AI_OS_ROOT = Path("d:/LongLeo/AI OS CORP/AI OS")
-SECRETS_FILE = AI_OS_ROOT / "system/ops/secrets/MASTER.env"
+AI_OS_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+SECRETS_FILE = AI_OS_ROOT / "system" / "ops" / "secrets" / "MASTER.env"
 DATASET_REPO = "LongLeo/OmniClaw-Data-Vault"
 
 # =========================================================================
@@ -126,6 +126,14 @@ def main():
     
     if pull_target == '2' or pull_target == '3':
         gd_success = pull_from_googledrive()
+        
+    # [NEW] Restore Symlink Junctions automatically after Cloud Pull
+    if hf_success or gd_success:
+        print("\n🔄 Đang Móc Nối Lại Mạng Lưới Rễ Data (Junction Symlinks)...")
+        restore_script = AI_OS_ROOT / "system" / "ops" / "scripts" / "restore_links.py"
+        if restore_script.exists():
+            subprocess.run(["python", str(restore_script)])
+            print("✅ Liên kết đã hoàn thiện. Data sắn sàng phục vụ hệ sinh thái.")
     
     print("\n=====================================================")
     print("🎉 TRẠNG THÁI TỔNG KẾT DATA RESTORE:")

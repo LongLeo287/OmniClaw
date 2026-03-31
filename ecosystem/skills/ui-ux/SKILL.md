@@ -1,6 +1,6 @@
 ---
 name: UI-UX Skills
-description: Container namespace for all UI/UX skill collections in AI OS. Currently hosts ui-ux-pro-max sub-collection. Provides design system references, component patterns, and interaction design skills.
+description: Container namespace for all UI/UX skill collections in OmniClaw. Currently hosts ui-ux-pro-max sub-collection. Provides design system references, component patterns, and interaction design skills.
 department: engineering, rd
 tier: 2
 category: design
@@ -29,9 +29,9 @@ Namespace container for all UI/UX related skill collections. Currently houses:
 All UI/UX skills in this namespace are accessible via:
 - ClawTask Knowledge Browser → ui-ux files
 - `FAST_INDEX.json` category: `design`
-- Agent skill query: `GET /api/aios/skills?category=design`
+- Agent skill query: `GET /api/omniclaw/skills?category=design`
 
-## AI OS Integration
+## OmniClaw Integration
 - **Owner dept:** Engineering + R&D joint
 - **ClawTask:** Skills & Plugins panel → UI/UX category
 - **Used by:** Frontend agent, UI-UX pro-max analysis scripts

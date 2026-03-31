@@ -83,17 +83,17 @@ def validate_paths(root: str, file_path: str) -> list:
 
 ### Module 3 — Stale Naming Scan
 
-**Detects:** Old "AI OS", "aios_", "AI_OS_ROOT" references that weren't renamed to OmniClaw
+**Detects:** Old "OmniClaw", "aios_", "AI_OS_ROOT" references that weren't renamed to OmniClaw
 
 ```python
 STALE_PATTERNS = [
-    ('AI OS CORP', 'OmniClaw'),
-    ('AI OS', 'OmniClaw'),
+    ('OmniClaw Corp', 'OmniClaw'),
+    ('OmniClaw', 'OmniClaw'),
     ('aios_', 'omniclaw_'),
     ('AI_OS_ROOT', 'OMNICLAW_ROOT'),
     ('AOS_ROOT', 'OMNICLAW_ROOT'),
     ('<AI_OS_ROOT>', '<OMNICLAW_ROOT>'),
-    ('aios-local', 'omniclaw'),
+    ('omniclaw-local', 'omniclaw'),
 ]
 
 EXCLUDED_FILES = [
@@ -254,8 +254,8 @@ python3 -c "import json; [json.load(open(f)) for f in ['brain/shared-context/SKI
 # Encoding check on specific file
 python3 -c "import ftfy; open('CLAUDE.md','w').write(ftfy.fix_text(open('CLAUDE.md').read()))"
 
-# Find stale AI OS references
-grep -r "AI OS\|AI_OS_ROOT\|aios_\|AOS_ROOT" --include="*.md" --include="*.py" --include="*.ps1" --include="*.yaml" . | grep -v ".git" | grep -v "_archive"
+# Find stale OmniClaw references
+grep -r "OmniClaw\|AI_OS_ROOT\|aios_\|AOS_ROOT" --include="*.md" --include="*.py" --include="*.ps1" --include="*.yaml" . | grep -v ".git" | grep -v "_archive"
 
 # MCP health check
 node -e "const c=require('./.mcp.json'); const fs=require('fs'); Object.entries(c.mcpServers||{}).forEach(([n,s])=>{ const f=(s.args||[]).find(a=>a.endsWith('.js')||a.endsWith('.py')); if(f && !fs.existsSync(f)) console.log('BROKEN:', n, f); })"

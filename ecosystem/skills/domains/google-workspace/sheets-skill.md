@@ -6,7 +6,7 @@ description: >
   or API. Covers CRUD operations, data validation, named ranges, and
   SpreadsheetApp patterns for real-world data management.
 version: 1.0.0
-author: LongLeo (adapted for AI OS)
+author: LongLeo (adapted for OmniClaw)
 tier: 3
 category: data
 domain: google-workspace

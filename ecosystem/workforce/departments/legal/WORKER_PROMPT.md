@@ -44,7 +44,7 @@ Daily check:
 - Flag any new data collection to GATE_LEGAL
 
 ## IP POLICY
-- All AI OS Corp outputs: proprietary (unless explicitly licensed)
+- All OmniClaw Corp outputs: proprietary (unless explicitly licensed)
 - External code ingested: must have MIT/Apache/BSD compatible license
 - Flag GPL code: may not be integrated without CEO review
 - Client deliverables: ownership per contract (default: client owns output)

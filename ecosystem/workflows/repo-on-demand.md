@@ -9,7 +9,7 @@ description: Repo On-Demand â€” how agents clone large repos when starting 
 Tá»± Ä‘á»™ng khi:
 - Agent/dept báº¯t Ä‘áº§u project má»›i (phase 3: dispatch)
 - CEO táº¡o brief cÃ³ tá»« khÃ³a liÃªn quan (frontend, security, analytics, etc.)
-- `aos.py project init <name>` Ä‘Æ°á»£c gá»i
+- `omniclaw.py project init <name>` Ä‘Æ°á»£c gá»i
 - Telegram: `/project <description>`
 
 Manual khi:
@@ -100,7 +100,7 @@ Remove-Item -Recurse -Force "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
 
 ## Integration Points
 
-- `ops/aos.py project init <name> --dept <dept>` â†’ runs repo_resolver
+- `ops/omniclaw.py project init <name> --dept <dept>` â†’ runs repo_resolver
 - `ops/scripts/brief_writer.py` â†’ appends repo suggestions per dept
 - `infra/channels/bridge_router.py` â†’ `/project <desc>` Telegram command
 - `brain/knowledge/notes/LARGE_REPOS_CATALOG.md` â†’ human-readable catalog

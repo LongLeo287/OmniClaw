@@ -10,7 +10,7 @@ Usage:
   python ops/scripts/repo_resolver.py --file brain/shared-context/corp/proposals/PROP_xyz.md
 
 Integration:
-  - aos.py project init <name> → calls repo_resolver
+  - omniclaw.py project init <name> → calls repo_resolver
   - brief_writer.py → calls repo_resolver per dept
   - Telegram: /project <description> → resolve + show clone commands
 """

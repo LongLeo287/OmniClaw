@@ -38,7 +38,7 @@
 
 ---
 
-## Use Cases cho AI OS
+## Use Cases cho OmniClaw
 
 | Use Case | Phù hợp |
 |----------|---------|
@@ -50,7 +50,7 @@
 
 ---
 
-## Integration với AI OS
+## Integration với OmniClaw
 
 ```python
 # Potential: web-crawler agent dùng browser-use
@@ -72,7 +72,7 @@ async def civ_web_crawler(url: str) -> str:
 
 | Criterion | Score | Notes |
 |-----------|-------|-------|
-| Relevance to AI OS | 9/10 | Web-crawler + research automator |
+| Relevance to OmniClaw | 9/10 | Web-crawler + research automator |
 | Security risk | LOW | MIT license, well-maintained |
 | Integration effort | MED | Python async, uv install |
 | Value type | SKILL + PLUGIN | |

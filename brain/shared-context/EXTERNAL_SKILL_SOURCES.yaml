@@ -1,7 +1,7 @@
 registry_version: "ai-os-1.0"
 generated_at: "2026-03-14"
 description: >
-  Catalog of external skill sources for AI OS.
+  Catalog of external skill sources for OmniClaw.
   These sources are NOT auto-fetched. Use skill_fetcher.ps1 to fetch manually.
   All fetched skills go to skills/experimental/ for review before promotion.
 
@@ -84,7 +84,7 @@ sources:
     fetch_method: "github_api_subdir_zip"
     parse_targets: ["README*", "**/*.md", "**/*.yml"]
     status: trusted
-    notes: "Agile AI development framework â€” very relevant for AI OS"
+    notes: "Agile AI development framework â€” very relevant for OmniClaw"
 
   - source_id: "gh:Fission-AI/OpenSpec"
     name: "OpenSpec Agent Specification"
@@ -159,7 +159,7 @@ sources:
     notes: >
       NVIDIA secure always-on agent runtime. OpenClaw plugin for OpenShell.
       Provides sandboxed execution, policy-based network/file guardrails,
-      local inference with Nemotron models. Relevant for AI OS agent security layer.
+      local inference with Nemotron models. Relevant for OmniClaw agent security layer.
     domain: "security/agent-runtime"
     priority: high
 
@@ -175,5 +175,5 @@ sources:
     notes: >
       AI-powered Slidev presentation deck generator.
       Generates slide decks with customisable background, logo, and image style.
-      Useful for AI OS Corp automated reporting and presentation workflows.
+      Useful for OmniClaw Corp automated reporting and presentation workflows.
     domain: "content/presentation"

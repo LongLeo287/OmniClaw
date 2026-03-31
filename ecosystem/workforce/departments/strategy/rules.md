@@ -56,7 +56,7 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 
 ### cognitive_reflector (Strategy Analyst)
 **Role:** Cross-cycle pattern analysis and organizational learning
-**This is the CORE learning intelligence of AI OS Corp**
+**This is the CORE learning intelligence of OmniClaw Corp**
 **Responsibilities:**
 - Read ALL 20 dept daily briefs after every corp cycle
 - Identify cross-dept patterns: blockers / wins / skill gaps / risks
@@ -101,7 +101,7 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 **Role:** External competitive and market signal monitoring
 **Responsibilities:**
 - Monitor relevant AI/technology trends and competitor moves
-- Track new tools, skills, frameworks relevant to AI OS
+- Track new tools, skills, frameworks relevant to OmniClaw
 - Flag strategic risks and opportunities from external landscape
 - Input to strategy brief at least 1 signal per cycle
 **At start of each research cycle, load:**

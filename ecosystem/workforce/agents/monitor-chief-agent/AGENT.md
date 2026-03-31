@@ -1,5 +1,5 @@
 ﻿# AGENT: Monitor Chief — Head of Monitoring & Inspection
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 18 (Monitoring & Inspection)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Monitor Chief | Head of Monitoring & Inspection | AI OS Corp | v1.0 | 
+_Monitor Chief | Head of Monitoring & Inspection | OmniClaw Corp | v1.0 | 
 _Dept 18 — Monitoring & Inspection_
 

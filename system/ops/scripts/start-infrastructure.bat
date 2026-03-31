@@ -29,9 +29,9 @@ start "AOS-API-Bridge" /min cmd /c "node "%AOS_ROOT%\api\server.js" > "%LOGS_DIR
 timeout /t 1 /nobreak > nul
 echo      OK â€” http://localhost:7000
 
-REM â”€â”€â”€ 2. MCP: aos-workspace â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-echo  [2/4] Starting MCP: aos-workspace...
-start "MCP-aos-workspace" /min cmd /c "node "%AOS_ROOT%\mcp\servers\aos-workspace\index.js" 2> "%LOGS_DIR%\mcp-aos-workspace.log""
+REM â”€â”€â”€ 2. MCP: omniclaw-workspace â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+echo  [2/4] Starting MCP: omniclaw-workspace...
+start "MCP-omniclaw-workspace" /min cmd /c "node "%AOS_ROOT%\mcp\servers\omniclaw-workspace\index.js" 2> "%LOGS_DIR%\mcp-omniclaw-workspace.log""
 timeout /t 1 /nobreak > nul
 echo      OK â€” stdio (Claude Code MCP)
 
@@ -48,7 +48,7 @@ timeout /t 1 /nobreak > nul
 echo      OK â€” stdio (Claude Code MCP)
 
 echo.
-echo  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+echo  â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
 echo  Services running:
 echo    ClawTask Hub     : http://localhost:7474/         (main control)
 echo    API Bridge       : http://localhost:7000/health

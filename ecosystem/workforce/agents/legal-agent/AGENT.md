@@ -1,5 +1,5 @@
 ﻿# AGENT: General Counsel — General Counsel / GATE_LEGAL Authority
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 12 (Legal)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_General Counsel | General Counsel / GATE_LEGAL Authority | AI OS Corp | v1.0 | 
+_General Counsel | General Counsel / GATE_LEGAL Authority | OmniClaw Corp | v1.0 | 
 _Dept 12 — Legal_
 

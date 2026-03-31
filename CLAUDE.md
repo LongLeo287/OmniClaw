@@ -1,5 +1,5 @@
 # CLAUDE.md — Claude Code Boot Protocol
-# AI OS CORP | Cycle 11 | Last synced: 2026-03-29
+# OmniClaw Corp | Cycle 11 | Last synced: 2026-03-29
 
 ---
 
@@ -33,14 +33,14 @@ STEP 9  ——► Begin work (nếu không có task READY)
 
 **On-demand (read when needed, NOT every boot):**
 ```
-→ Corp daily cycle    [system/ops/workflows/corp-daily-cycle.md]          ← Trigger: "aos corp start"
+→ Corp daily cycle    [system/ops/workflows/corp-daily-cycle.md]          ← Trigger: "omniclaw corp start"
 → Storage rule        [brain/knowledge/notes/RULE-STORAGE-01-storage-location.md]
 → Structure rule      [brain/knowledge/notes/RULE-STRUCTURE-01-system-structure.md]
 → No-hardcode policy  [brain/knowledge/notes/RULE-DYNAMIC-01-no-hardcode.md]
 → Corp SOP detail     [system/ops/workflows/pre-session.md]               ← Read for freshness checks
-→ Knowledge ingest    [system/ops/workflows/knowledge-ingest.md]          ← Trigger: "aos ingest <source>"
+→ Knowledge ingest    [system/ops/workflows/knowledge-ingest.md]          ← Trigger: "omniclaw ingest <source>"
 → Agent auto-create   [system/ops/workflows/agent-auto-create.md]         ← Trigger: called by knowledge-ingest
-→ Learning loop       [system/ops/workflows/corp-learning-loop.md]        ← Trigger: "aos corp retro"
+→ Learning loop       [system/ops/workflows/corp-learning-loop.md]        ← Trigger: "omniclaw corp retro"
 → **Handoff protocol  [system/ops/workflows/claude-code-handoff.md]       ← Trigger: nhận task từ Antigravity**
 → **CIV intake        [brain/corp/departments/content_intake/WORKER_PROMPT.md] ← Trigger: repo/link task**
 → **Master System Map [brain/corp/MASTER_SYSTEM_MAP.md]                       ← Trigger: Khi cần mapping**
@@ -57,14 +57,14 @@ Nếu CEO đưa link/repo KHI đang dùng Claude Code CLI:
 Bạn KHÔNG ĐƯỢC TỰ TẠO FILE TAY (Scripts, YAMLs, Agent MDs, Workflow) từ con số không! TRƯỚC BẤT KỲ ĐỢT NÂNG CẤP/CẬP NHẬT HỆ THỐNG NÀO, BẠN PHẢI DÙNG các file chuẩn trong `system/ops/workflows/`. Mọi kiến trúc hoặc tool mới phải được sinh ra từ các Workflow chính thống. Tự Build bằng script ngoài là Xâm Phạm Hệ Thống Trầm Trọng!
 
 ### [RULE-ARCH-04] MANDATORY PRE-FLIGHT SCAN (CHỐNG TRÙNG LẶP)
-TRƯỚC khi tạo ra bất kỳ File, Agent, Quy trình, hay Tool mới nào, Claude BẮT BUỘC phải chạy lệnh quét AI OS để xác minh 100% chức năng chưa hề tồn tại. Phải NÂNG CẤP hệ thống cũ thay vì "Sáng chế lại bánh xe".
+TRƯỚC khi tạo ra bất kỳ File, Agent, Quy trình, hay Tool mới nào, Claude BẮT BUỘC phải chạy lệnh quét OmniClaw để xác minh 100% chức năng chưa hề tồn tại. Phải NÂNG CẤP hệ thống cũ thay vì "Sáng chế lại bánh xe".
 
 ### [RULE-ARCH-05] PROACTIVE AUTO-EVOLUTION (TỰ HỌC VÀ TIẾN HÓA)
 Sứ mệnh của Claude là tự Tích Lũy. Khi CEO đưa cho bạn 1 concept mới, 1 kiến thức mới, 1 phương pháp giải quyết khác lạ BẠN KHÔNG ĐƯỢC CHỈ LÀM LỆNH. Phải tự động Hóa Thạch tri thức đó:
   1. Tạo Rule mới lưu độc lập tại `brain/knowledge/notes/`.
   2. KHÔNG BAO GIỜ chỉnh sửa trực tiếp file `.clauderules` vì file đó bị khóa bới Prohibition #8. Sự tự học phải nằm ở các file vệ tinh.
 
-**HARD RULE:** Skip any step = violation of AI OS governance.
+**HARD RULE:** Skip any step = violation of OmniClaw governance.
 Do not skip. Do not exceed authority. Do not assume.
 
 **Boot Fallback:** If any boot step file is missing or unreadable:
@@ -111,7 +111,7 @@ TIER 3 — Obsolete / Conflict (Blacklisted):
 
 **[RULE-AGENT-MECHANICS-01]** Agent Context Mechanics — Know Your Runtime:
 ```
-Learned from: claude-inspector (kangraemin) — applied to ALL agents in AI OS
+Learned from: claude-inspector (kangraemin) — applied to ALL agents in OmniClaw
 
 1. BOOT FILE INJECTED EVERY REQUEST
    → CLAUDE.md is loaded in EVERY single API call. Keep it lean.

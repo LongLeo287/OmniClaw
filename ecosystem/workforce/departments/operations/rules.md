@@ -33,7 +33,7 @@ RULE OPS-05: NO BLACKBOARD MODIFICATION BY WORKERS
 
 RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
   After every sprint, scrum-master-agent triggers learning loop.
-  No exceptions: `aos corp retro` must run end of every active cycle.
+  No exceptions: `omniclaw corp retro` must run end of every active cycle.
 
 ---
 
@@ -66,7 +66,7 @@ RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
 - Archive telemetry/receipts/ (move old â†’ archive/)
 - Update shared-context/knowledge_index.md monthly
 - Run memory rotation receipt to telemetry/archivist_log.md
-**Trigger:** `aos corp retro --full` OR weekly on-demand
+**Trigger:** `omniclaw corp retro --full` OR weekly on-demand
 **At start of each run, load:**
 - SKILL: `context_manager` â€” reading memory files
 - SKILL: `knowledge_enricher` â€” summarizing knowledge into global memory
@@ -82,7 +82,7 @@ RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
 ---
 
 ### channel-agent (ops instance)
-**Role:** Maintain communication bridges between channels and AI OS
+**Role:** Maintain communication bridges between channels and OmniClaw
 **Note:** Different from support/channel-agent which handles queries.
 This instance manages the TECHNICAL bridge infrastructure.
 **Responsibilities:**

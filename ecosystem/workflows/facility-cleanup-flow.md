@@ -1,16 +1,16 @@
 ---
-description: Workflow for Dept 22 (facility-agent) to autonomously sweep, compress, and delete AI OS artifact bloat, temporary logs, and orphaned repositories.
+description: Workflow for Dept 22 (facility-agent) to autonomously sweep, compress, and delete OmniClaw artifact bloat, temporary logs, and orphaned repositories.
 ---
 
 # Facility Cleanup Flow (Dept 22)
 
-This workflow is executed by the `facility-agent` to ensure that AI OS does not succumb to file bloat caused by AI generation outputs and repository clone failures.
+This workflow is executed by the `facility-agent` to ensure that OmniClaw does not succumb to file bloat caused by AI generation outputs and repository clone failures.
 
 ## Step 1: Execute Deep Cleaner Script
 The core garbage collection logic is written in a Python maintenance script. You are authorized to run this script to scan for empty repositories, old logs, and orphaned markdown files.
 
 ```bash
-python system/ops/scripts/aios_deep_cleaner.py --auto-delete --stale-days 14
+python system/ops/scripts/omniclaw_deep_cleaner.py --auto-delete --stale-days 14
 ```
 
 ### Script Targets:

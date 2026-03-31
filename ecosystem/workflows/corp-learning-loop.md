@@ -32,7 +32,7 @@ CEO reads → decides → cycle improves
 
 **Trigger (2 modes):**
 - **MANDATORY** — Automatically runs as Phase 7 of every `corp-daily-cycle.md` (after Phase 6 BRIEF BACK)
-- **ON-DEMAND** — CEO triggers manually with `aos corp retro` to run reflection outside main cycle
+- **ON-DEMAND** — CEO triggers manually with `omniclaw corp retro` to run reflection outside main cycle
 
 Both modes run identical phases. In mandatory mode, cognitive_reflector starts immediately after all 21 dept daily_briefs are written.
 
@@ -159,8 +159,8 @@ Stored in: `shared-context/corp/proposals/PROPOSAL_<date>_<topic>.md`
 | When | Trigger | Depth |
 |------|---------|-------|
 | After each active corp cycle (mandatory) | corp-daily-cycle Phase 7 | Light (skip archive if same-session) |
-| On-demand standalone | `aos corp retro` | Light (skip archive) |
-| Weekly | `aos corp retro --full` | Full (archive + rotate memory) |
+| On-demand standalone | `omniclaw corp retro` | Light (skip archive) |
+| Weekly | `omniclaw corp retro --full` | Full (archive + rotate memory) |
 | Monthly | Archivist scheduled | Deep (purge + global summary) |
 
 ---

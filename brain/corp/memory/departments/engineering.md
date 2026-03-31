@@ -13,7 +13,7 @@ Primary skills: backend, database, docker, supabase, api-design
 ## Sprint 1 â€” 2026-03-17 (Initial)
 
 ### Architecture Decisions
-- Dept created as part of AI OS Corp v2.0 restructure
+- Dept created as part of OmniClaw Corp v2.0 restructure
 
 ### Lessons Learned
 - (populate after first active sprint)

@@ -26,7 +26,7 @@ load_on_boot: false
 status: active
 ---
 
-This skill provides the AI OS with "Organizational Instincts" — keeping the workspace clean and searchable by automatically sorting logs, archiving tasks, and indexing knowledge.
+This skill provides the OmniClaw with "Organizational Instincts" — keeping the workspace clean and searchable by automatically sorting logs, archiving tasks, and indexing knowledge.
 
 ## 🛠️ Core Functions
 
@@ -35,7 +35,7 @@ This skill provides the AI OS with "Organizational Instincts" — keeping the wo
    - Move old sprint plans, brainstorming sessions, and completed tasks to `archive/`.
    - Categorize markdown files by topic (plans, brainstorms, media).
 2. **Cross-Session Preservation (/migrate):**
-   - Automatically ingest data from previous AI OS brains (e.g., Gemini/Claude cache folders) into the central project `archive/`.
+   - Automatically ingest data from previous OmniClaw brains (e.g., Gemini/Claude cache folders) into the central project `archive/`.
    - Filter out `.resolved` and `.metadata` system cache files during migration.
 3. **File Aggregation & Cleanup (/aggregate):**
    - Regularly monitor the project for scattered `.md`, `.log`, and task reporting files.

@@ -1,5 +1,5 @@
 """
-firecrawl_adapter.py — AI OS Corp wrapper cho firecrawl
+firecrawl_adapter.py — OmniClaw Corp wrapper cho firecrawl
 Phase 2: Web Intelligence Plugin
 
 KHÔNG cần AI model — firecrawl chi la web scraper/HTML cleaner.
@@ -21,7 +21,7 @@ import os
 import logging
 from typing import Any
 
-logger = logging.getLogger("aios.firecrawl")
+logger = logging.getLogger("omniclaw.firecrawl")
 
 # ── Observability ─────────────────────────────────────────────────────────────
 try:
@@ -42,7 +42,7 @@ except ImportError:
 
 class FirecrawlAdapter:
     """
-    AI OS Corp wrapper cho firecrawl.
+    OmniClaw Corp wrapper cho firecrawl.
 
     Tu dong chon che do:
     - Self-hosted (FIRECRAWL_URL set) → dung localhost, khong can API key

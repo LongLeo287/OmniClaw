@@ -10,7 +10,7 @@
 **Priority:** HIGH
 
 ### Goal this cycle:
-Full system health check — first formal health scan of AI OS Corp.
+Full system health check — first formal health scan of OmniClaw Corp.
 Document current state of all infrastructure components.
 
 ### KPI Targets:
@@ -23,7 +23,7 @@ Document current state of all infrastructure components.
 ## Task Cards
 
 ### Task HLT-01-001
-**Title:** AI OS Corp Full System Health Check — Cycle 1
+**Title:** OmniClaw Corp Full System Health Check — Cycle 1
 **Assigned to:** health-chief-agent (via Antigravity)
 **Priority:** HIGH
 **Context:** First health scan. Check: Docker containers, Supabase connectivity, SKILL_REGISTRY integrity (107 plugins, 94 knowledge repos), memory architecture status, MQ queues, Corp infrastructure files.

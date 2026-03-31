@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import sys
 
-_AOS_ROOT = Path("d:/LongLeo/AI OS CORP/AI OS")
+_AOS_ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
 DATA_DIR = _AOS_ROOT / "storage" / "vault" / "DATA"
 QUAR_DIR = _AOS_ROOT / "system" / "security" / "QUARANTINE"
 PROCESSED_DIR = _AOS_ROOT / "brain" / "knowledge" / "processed_repos"

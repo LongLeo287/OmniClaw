@@ -30,18 +30,18 @@ Corrupted:  Ã¢â‚¬â€
 Fixed:      —
 ```
 
-### FP-02 — Stale Naming (AI OS → OmniClaw Migration)
+### FP-02 — Stale Naming (OmniClaw → OmniClaw Migration)
 
 **Symptom:** References to old names remain after project rename
 **Patterns to replace:**
 ```
-AI OS CORP → OmniClaw
-AI OS → OmniClaw
+OmniClaw Corp → OmniClaw
+OmniClaw → OmniClaw
 aios_ → omniclaw_
 AI_OS_ROOT → OMNICLAW_ROOT
 AOS_ROOT → OMNICLAW_ROOT (env vars)
 <AI_OS_ROOT> → $env:OMNICLAW_ROOT (in PS1)
-aios-local → omniclaw
+omniclaw-local → omniclaw
 ```
 **Excluded paths:** `.git/`, `brain/knowledge/`, `system/telemetry/receipts/`, `storage/_archive/`
 **Auto-execute:** YES for clear matches
@@ -135,8 +135,8 @@ From full audit on 2026-03-29:
 | 5 | server.js plugins/ path wrong | FIXED |
 | 6 | start_lightrag.ps1 literal `<AI_OS_ROOT>` | FIXED |
 | 7 | start_supervisor_openclaw.ps1 `<AI_OS_ROOT>` | FIXED |
-| 8 | package.json name=aios-local, bin=aios | FIXED |
-| 9 | 24 files with aios_/AI OS naming | FIXED |
+| 8 | package.json name=omniclaw-local, bin=omniclaw | FIXED |
+| 9 | 24 files with aios_/OmniClaw naming | FIXED |
 | 10 | SKILL_REGISTRY duplicate agent-shield | FIXED |
 | 11 | SKILL_REGISTRY wrong openclaw_tools path | FIXED |
 | 12 | 5 skills on disk missing from registry | FIXED |

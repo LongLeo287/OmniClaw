@@ -5,7 +5,7 @@
   "type": "cognitive",
   "status": "active",
   "description": "Persistent memory layer for AI agents — stores user preferences, facts, and context across sessions using vector search",
-  "author": "AI OS Core Team",
+  "author": "OmniClaw Core Team",
   "source_repo": "https://github.com/mem0ai/mem0",
   "source_version": "mem0ai (PyPI latest)",
   "updated": "2026-03-23",

@@ -5,12 +5,12 @@
 ---
 
 ## Mục đích
-Index tham khảo khi AI OS cần thêm khả năng mới qua MCP.
+Index tham khảo khi OmniClaw cần thêm khả năng mới qua MCP.
 **QUY TẮC:** Trước khi tự build MCP server mới → CHECK INDEX NÀY TRƯỚC.
 
 ## Categories có sẵn (40+)
 
-| Category | Dùng khi AI OS cần... |
+| Category | Dùng khi OmniClaw cần... |
 |----------|----------------------|
 | 🔌 Aggregators | Quản lý nhiều MCP servers |
 | 📂 Browser Automation | Điều khiển browser, test UI |
@@ -34,15 +34,15 @@ Index tham khảo khi AI OS cần thêm khả năng mới qua MCP.
 | 🔄 Version Control | Git advanced operations |
 | 🏢 Workplace & Productivity | Calendar, tasks, docs |
 
-## Top Picks cho AI OS tiếp theo
+## Top Picks cho OmniClaw tiếp theo
 
-### Knowledge & Memory (Priority cho AI OS)
-- **mem0** MCP — AI OS đã có adapter, thêm MCP mode
+### Knowledge & Memory (Priority cho OmniClaw)
+- **mem0** MCP — OmniClaw đã có adapter, thêm MCP mode
 - **Zep** — long-term memory với graph
 - **Chroma** — vector store MCP
 
 ### Security (Dept 10)
-- **Trivy** MCP — AI OS đã có skill, thêm MCP mode
+- **Trivy** MCP — OmniClaw đã có skill, thêm MCP mode
 - **Semgrep** — code security analysis
 - **Vault** (HashiCorp) — secret management
 
@@ -66,7 +66,7 @@ Index tham khảo khi AI OS cần thêm khả năng mới qua MCP.
 # Query online
 # https://github.com/punkpeye/awesome-mcp-servers#category-name
 
-# When AI OS needs new capability:
+# When OmniClaw needs new capability:
 # 1. Check category above
 # 2. Find MCP server
 # 3. Run trivy scan on it

@@ -1,4 +1,4 @@
-# AI OS Corp — Vocabulary & Glossary
+# OmniClaw Corp — Vocabulary & Glossary
 # Maintained by: OD & Learning Dept
 # Last updated: 2026-03-20 (Cycle 3)
 
@@ -8,7 +8,7 @@
 
 | Term | Definition |
 |------|-----------|
-| **CYCLE** | One full 7-phase operational day for AI OS Corp. Named numerically: Cycle 1, Cycle 2, etc. |
+| **CYCLE** | One full 7-phase operational day for OmniClaw Corp. Named numerically: Cycle 1, Cycle 2, etc. |
 | **SPRINT** | A focused execution period within a cycle, typically scoped to 1-2 depts. |
 | **MQ (Message Queue)** | Files in `subagents/mq/<dept>_tasks.md` — the official task dispatch channel from C-Suite to Dept Heads. |
 | **GATE** | Quality checkpoint a task must pass before being marked DONE. Four gates: QA, Content, Security, Legal. |

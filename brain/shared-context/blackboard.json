@@ -20,7 +20,7 @@
         "phases": {
             "phase1_architecture": "DONE - 904 empty repos purged, system bloated cleared",
             "phase2_security": "DONE - Zero-Trust Git Push. All D:\\LongLeo, VUA2HAND, and tokens REDACTED globally.",
-            "phase3_bootstrapper": "DONE - Universal NPM + Windows `aios.bat` integrated.",
+            "phase3_bootstrapper": "DONE - Universal NPM + Windows `omniclaw.bat` integrated.",
             "phase4_documentation": "DONE - Premium Bilingual README (English/Vietnamese) deployed.",
             "phase5_handoff": "DONE - System idle, ready for next session."
         }

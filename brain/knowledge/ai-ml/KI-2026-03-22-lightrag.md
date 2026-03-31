@@ -18,9 +18,9 @@ created: 2026-03-22
 ## vs GraphRAG
 - LightRAG: faster, lighter, graph + vector hybrid
 - GraphRAG: deeper narrative analysis, Microsoft-backed
-- AI OS has BOTH cloned â€” use LightRAG for speed, GraphRAG for deep analysis
+- OmniClaw has BOTH cloned â€” use LightRAG for speed, GraphRAG for deep analysis
 
-## AI OS Integration
+## OmniClaw Integration
 - Drop into Notebook Agent as secondary RAG backend
 - Can index ecosystem/plugins/KI entries for fast cross-domain retrieval
 - Compatible with Ollama (local models)

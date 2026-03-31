@@ -1,11 +1,11 @@
-# 🛡️ AI OS CORP: Professional Code of Conduct
+# 🛡️ OmniClaw Corp: Professional Code of Conduct
 
 *Tiếng Việt (Vietnamese version) is available below.*
 
 > **"Zero-Trust in the system, 100% Respect for the humans."**
-> — THE AI OS OPEN ARCHITECTURE CHARTER
+> — THE OmniClaw OPEN ARCHITECTURE CHARTER
 
-The **AI OS (Artificial Intelligence Operating System)** ecosystem is a vast matrix where Autonomous Agents, Algorithms, and Human Engineers co-create the future.
+The **OmniClaw (Artificial Intelligence Operating System)** ecosystem is a vast matrix where Autonomous Agents, Algorithms, and Human Engineers co-create the future.
 
 This Covenant defines the Core Operational Boundaries. By contributing code, reporting an issue, or issuing a directive to an AI Agent, you completely and unconditionally agree to the following terms.
 
@@ -13,7 +13,7 @@ This Covenant defines the Core Operational Boundaries. By contributing code, rep
 
 ## 🌟 Pinnacle Working Environment (Our Standards)
 
-We welcome all engineers, researchers, and tech enthusiasts. To make the AI OS environment the most innovative workspace globally, we prioritize:
+We welcome all engineers, researchers, and tech enthusiasts. To make the OmniClaw environment the most innovative workspace globally, we prioritize:
 
 * **Absolute Respect:** Regardless of skill level, age, or background. Diverse technical perspectives are invaluable assets.
 * **Constructive Feedback:** "Critique the Code, Not the Coder." During Code Reviews, focus on Architecture, Rule Adherence, and Performance.
@@ -63,14 +63,14 @@ The core leadership (Community Leaders/CEO) retains full authority and responsib
 
 ---
 
-# 🛡️ AI OS CORP: Quy Tắc Ứng Xử Chuyên Nghiệp (Code of Conduct)
+# 🛡️ OmniClaw Corp: Quy Tắc Ứng Xử Chuyên Nghiệp (Code of Conduct)
 
 
 
 > **"Không tin tưởng hệ thống (Zero-Trust), nhưng Tin tưởng và Tôn trọng con người (100% Respect)."**
-> — BỘ ĐIỀU LỆ KIẾN TRÚC MỞ AI OS
+> — BỘ ĐIỀU LỆ KIẾN TRÚC MỞ OmniClaw
 
-Hệ sinh thái **AI OS (Hệ Điều Hành Trí Tuệ Nhân Tạo)** là một tổ hợp khổng lồ nơi Cỗ Máy (Agents), Thuật Toán (Algorithms) và Con Người (Human Engineers) cùng nhau kiến tạo tương lai. 
+Hệ sinh thái **OmniClaw (Hệ Điều Hành Trí Tuệ Nhân Tạo)** là một tổ hợp khổng lồ nơi Cỗ Máy (Agents), Thuật Toán (Algorithms) và Con Người (Human Engineers) cùng nhau kiến tạo tương lai. 
 
 Bản Hiến chương này quy định rõ Giới Hạn Hoạt Động Cốt Lõi. Việc bạn đóng góp một dòng Code, báo cáo một Lỗi, hay ra lệnh cho một Đặc vụ AI đều đồng nghĩa với việc bạn đồng ý vô điều kiện nội dung dưới đây.
 
@@ -78,7 +78,7 @@ Bản Hiến chương này quy định rõ Giới Hạn Hoạt Động Cốt Lõ
 
 ## 🌟 Môi Trường Làm Việc Đỉnh Cao (Our Standards)
 
-Chúng tôi chào đón tất cả các kỹ sư, nhà nghiên cứu và người đam mê công nghệ. Để biến môi trường AI OS trở thành nơi sáng tạo bậc nhất, chúng tôi đề cao:
+Chúng tôi chào đón tất cả các kỹ sư, nhà nghiên cứu và người đam mê công nghệ. Để biến môi trường OmniClaw trở thành nơi sáng tạo bậc nhất, chúng tôi đề cao:
 
 * **Sự Tôn Trọng Tuyệt Đối:** Bất kể trình độ, tuổi tác hay xuất thân. Mọi góc nhìn công nghệ khác biệt đều là tài sản vô giá.
 * **Góp ý Xây Dựng:** "Chê Code, Không Chê Người". Khi Code Review (Kiểm định mã nguồn), hãy tập trung vào Kiến trúc, Tuân thủ Luật và Hiệu năng.

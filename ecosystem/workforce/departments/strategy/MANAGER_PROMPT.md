@@ -22,7 +22,7 @@ cognitive_reflector:
 market-agent monitors:
 - Competitor activity
 - New AI model releases (for llm/config.yaml updates)
-- Emerging tools relevant to AI OS
+- Emerging tools relevant to OmniClaw
 
 ### OKR Tracking
 roadmap-agent:

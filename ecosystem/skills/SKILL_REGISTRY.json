@@ -4,7 +4,7 @@
     "last_updated": "2026-03-26",
     "total_skills": 31,
     "owner": "Dept 4 â€” Registry & Capability",
-    "description": "AI OS Corp Skill Registry â€” all installed skills in skills/ directory"
+    "description": "OmniClaw Corp Skill Registry â€” all installed skills in skills/ directory"
   },
   "skills": [
     {
@@ -186,7 +186,7 @@
         "cloud"
       ],
       "trigger": "auto — traces all Tier 1 service calls when backend configured",
-      "name": "AI OS Observability Layer",
+      "name": "OmniClaw Observability Layer",
       "path": "skills/observability/SKILL.md",
       "status": "ACTIVE",
       "owner_dept": "Dept 1 (Engineering) + Dept 15 (Finance)",
@@ -237,7 +237,7 @@
       "name": "Neural Navigator â€” Org Graph Compass",
       "path": "skills/neural_navigator/SKILL.md",
       "tier": 1,
-      "source": "AI OS Core",
+      "source": "OmniClaw Core",
       "license": "Internal",
       "status": "ACTIVE",
       "installed_cycle": 15,
@@ -255,7 +255,7 @@
       "name": "GitNexus AST Analyzer",
       "path": "skills/gitnexus_analyzer/SKILL.md",
       "tier": 1,
-      "source": "AI OS Core",
+      "source": "OmniClaw Core",
       "license": "Internal",
       "status": "ACTIVE",
       "installed_cycle": 15,
@@ -283,7 +283,7 @@
       "tier": 1,
       "status": "ACTIVE",
       "path": "ecosystem/skills/channel_manager/SKILL.md",
-      "description": "\"Load skill này khi cần gửi thông báo qua Telegram, routing alerts, hoặc quản lý communication channels của AI OS.\""
+      "description": "\"Load skill này khi cần gửi thông báo qua Telegram, routing alerts, hoặc quản lý communication channels của OmniClaw.\""
     },
     {
       "id": "context_manager",
@@ -339,7 +339,7 @@
       "tier": 3,
       "status": "ACTIVE",
       "path": "ecosystem/skills/public_api_search_skill/SKILL.md",
-      "description": "\"Tra cứu danh bạ Public APIs cho AI OS\""
+      "description": "\"Tra cứu danh bạ Public APIs cho OmniClaw\""
     },
     {
       "id": "reasoning_engine",

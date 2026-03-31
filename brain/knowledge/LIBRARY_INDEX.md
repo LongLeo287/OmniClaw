@@ -1,6 +1,6 @@
 # 📚 THƯ VIỆN THỰC CHIẾN (ACTIVE LIBRARY)
 
-Đây là các Repo đang được sử dụng (Thư Viện) cho Hệ thống AI OS.
+Đây là các Repo đang được sử dụng (Thư Viện) cho Hệ thống OmniClaw.
 
 ## Mảng Khoa Học Dữ Liệu & Học Máy (Data Science & ML)
 

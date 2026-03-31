@@ -15,7 +15,7 @@ dependencies:
 # Skill Sentry
 
 ## Purpose
-Port of the SkillSentry 9-layer security scanner into AI OS native skill.
+Port of the SkillSentry 9-layer security scanner into OmniClaw native skill.
 MANDATORY before activating any new plugin or skill.
 
 ## Risk Score Thresholds

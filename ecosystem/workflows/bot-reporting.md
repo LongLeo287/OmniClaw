@@ -1,9 +1,9 @@
 ﻿# Department: monitoring_inspection
 ---
-description: AI OS Bot Reporting Protocol â€” how to report status, tasks, and alerts via Telegram bot
+description: OmniClaw Bot Reporting Protocol â€” how to report status, tasks, and alerts via Telegram bot
 ---
 
-# AI OS Bot Reporting Protocol
+# OmniClaw Bot Reporting Protocol
 
 ## Quy táº¯c chung
 // turbo-all
@@ -49,7 +49,7 @@ Next: [next action]
 
 ### Audit / Status Report
 ```
-AI OS Status [time]
+OmniClaw Status [time]
 
 === [AREA] ===
 [item]: [status]

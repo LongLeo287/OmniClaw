@@ -1,9 +1,9 @@
 # Department: operations
 ---
-description: Tạo phòng ban mới và/hoặc agent mới trong AI OS Corp
+description: Tạo phòng ban mới và/hoặc agent mới trong OmniClaw Corp
 ---
 
-# AI OS Corp — Quy Trình Tạo Phòng Ban & Agent Mới
+# OmniClaw Corp — Quy Trình Tạo Phòng Ban & Agent Mới
 
 ## Nguyên tắc bất biến
 

@@ -6,7 +6,7 @@ description: >
   state, routes MQ messages between sub-agents, escalates BLOCKED states, and
   keeps task.md in sync. Does not execute code or make strategic decisions.
 version: 1.0.0
-author: AI OS Core Team
+author: OmniClaw Core Team
 tier: 2
 category: coordination
 tags: [coordination, monitoring, escalation, mq, multi-agent]

@@ -1,4 +1,4 @@
-﻿# AI OS Corp -- Master System Map
+﻿# OmniClaw Corp -- Master System Map
 # Version: 2.0 | Date: 2026-03-24 | Owner: Antigravity
 # Authority: Tier 0 -- Single Source of Truth for all operational flows
 # NOTE: v2.0 rewritten clean UTF-8 (v1.0 had cp1252 corruption)
@@ -17,7 +17,7 @@ Claude Code: CLAUDE.md -> SOUL.md -> GOVERNANCE.md -> AGENTS.md -> blackboard.js
 
 ## 2. CORP DAILY CYCLE (8 Phases)
 
-Trigger: "aos corp start" | Ref: system/ops/workflows/corp-daily-cycle.md
+Trigger: "omniclaw corp start" | Ref: system/ops/workflows/corp-daily-cycle.md
 
 Phase 0: SYSTEM HEALTH (ports, blackboard, skill-discovery-auto)
 Phase 1: CEO BRIEF (mission, kpi, escalations, proposals)
@@ -94,11 +94,11 @@ STEP 5: ingest-router -> skill-discovery-auto + knowledge-distribution-flow
 
 ## 6. COMMAND MAP
 
-aos corp start    -> corp-daily-cycle.md (full 8 phases)
-aos corp brief    -> Phase 1 CEO BRIEF only
-aos ingest <url>  -> content-intake-flow.md
-aos skill health  -> skill-discovery-auto.md
-aos retro         -> corp-learning-loop.md
+omniclaw corp start    -> corp-daily-cycle.md (full 8 phases)
+omniclaw corp brief    -> Phase 1 CEO BRIEF only
+omniclaw ingest <url>  -> content-intake-flow.md
+omniclaw skill health  -> skill-discovery-auto.md
+omniclaw retro         -> corp-learning-loop.md
 Any link/repo/URL -> RULE-CIV-01 (auto-trigger CIV)
 
 ---

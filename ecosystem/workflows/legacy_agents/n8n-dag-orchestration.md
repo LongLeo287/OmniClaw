@@ -1,3 +1,8 @@
+<!-- DEPRECATED — This workflow has been superseded by the current OmniClaw ecosystem.
+     Kept for historical reference only. DO NOT USE in active flows.
+     See ecosystem/workflows/ for current versions.
+-->
+
 # 🕸️ Mạng Nhện Tự Động Hóa (n8n DAG Orchestration)
 
 ---

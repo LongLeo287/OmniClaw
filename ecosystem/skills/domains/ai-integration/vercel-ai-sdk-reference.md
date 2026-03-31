@@ -6,7 +6,7 @@ tier: 3
 domain: ai-integration
 cost_tier: standard
 status: draft
-author: AI OS (adapted from vercel/ai)
+author: OmniClaw (adapted from vercel/ai)
 updated: 2026-03-14
 source: https://github.com/vercel/ai
 warning: UNVERIFIED — written from AI training data, not fetched from official docs. Verify before production use.
@@ -31,7 +31,7 @@ exposed_functions:
 load_on_boot: false
 ---
 
-# Vercel AI SDK — AI OS Reference Skill
+# Vercel AI SDK — OmniClaw Reference Skill
 
 > Source: https://github.com/vercel/ai | `ai` npm package
 > The TypeScript toolkit for building AI-powered products with React, Next.js, Svelte, Nuxt, and Node.

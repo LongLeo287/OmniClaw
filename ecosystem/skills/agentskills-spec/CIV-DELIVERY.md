@@ -10,7 +10,7 @@ License: Apache-2.0
 
 ## What This Is
 The official specification repository for Agent Skills format.
-This is the CANONICAL REFERENCE for the skill format AI OS uses.
+This is the CANONICAL REFERENCE for the skill format OmniClaw uses.
 
 Key contents:
 - SKILL.md specification (front matter + instruction format)

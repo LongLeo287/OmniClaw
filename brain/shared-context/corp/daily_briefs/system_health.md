@@ -5,14 +5,14 @@
 
 ---
 
-# ðŸ¥ AI OS Corp â€” System Health Report
+# ðŸ¥ OmniClaw Corp â€” System Health Report
 # Cycle 1 | 2026-03-20 | First Health Check
 
 ---
 
 ## Executive Summary
 
-AI OS Corp infrastructure is **OPERATIONAL** with 2 minor issues.
+OmniClaw Corp infrastructure is **OPERATIONAL** with 2 minor issues.
 All core services running. 1 known bug under active remediation.
 
 ---
@@ -64,7 +64,7 @@ All core services running. 1 known bug under active remediation.
 ## Infrastructure Inventory
 
 ```
-AI OS Corp Root: <AI_OS_ROOT>\
+OmniClaw Corp Root: <AI_OS_ROOT>\
 â”œâ”€â”€ corp/                  â† Corp operational files
 â”‚   â”œâ”€â”€ memory/ (21 dept files + decisions_log) âœ…
 â”‚   â”œâ”€â”€ proposals/ (OKR_CYCLE1 + new docs) âœ…  
@@ -87,7 +87,7 @@ AI OS Corp Root: <AI_OS_ROOT>\
 
 1. **Fix ClawTask â†’ Supabase link** â€” Verify SUPABASE_URL in .env is correct project
 2. **Activate Telegram alerting** â€” Configure bot token for real-time Corp notifications
-3. **Set up memory rotation schedule** â€” Run `aos corp retro` after this cycle
+3. **Set up memory rotation schedule** â€” Run `omniclaw corp retro` after this cycle
 4. **Initialize corp/daily_briefs/** â€” Create dept brief template files
 
 ---

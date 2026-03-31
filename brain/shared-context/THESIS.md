@@ -1,4 +1,4 @@
-﻿# AI OS Core Strategy (THESIS.md)
+﻿# OmniClaw Core Strategy (THESIS.md)
 # Version: 2.0 | Updated: 2026-03-24
 
 This document defines the fundamental principles of the **AI Operating System** integrated into this project.
@@ -69,7 +69,7 @@ All Agents must adhere to the global **Shared Context**:
 
 ## 3. Knowledge Base (The "What")
 
-Immutable references for the AI OS technical landscape. Loaded on-demand by agents.
+Immutable references for the OmniClaw technical landscape. Loaded on-demand by agents.
 
 | Source | Content | Access |
 |--------|---------|--------|
@@ -109,7 +109,7 @@ A recursive history of growth — multi-layer, multi-timeframe.
 
 ## 5. Operating Principles (The "How")
 
-Non-negotiable behavioral rules for all AI OS agents. These complement GOVERNANCE.md.
+Non-negotiable behavioral rules for all OmniClaw agents. These complement GOVERNANCE.md.
 
 ### Language Policy (RULE-LANG-01)
 | Audience | Language |

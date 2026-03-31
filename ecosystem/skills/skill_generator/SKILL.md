@@ -1,7 +1,7 @@
 ---
 name: skill-generator
 description: |
-  AI OS Core Meta-Skill. Tạo AI Skill mới từ bất kỳ quy trình nào qua
+  OmniClaw Core Meta-Skill. Tạo AI Skill mới từ bất kỳ quy trình nào qua
   pipeline 8 bước. Kích hoạt khi user nói "tạo skill", "biến quy trình
   thành skill", "automate this", "make a skill for X", hoặc mô tả workflow
   lặp lại. Cũng dùng khi muốn improve/test/optimize skill hiện có.

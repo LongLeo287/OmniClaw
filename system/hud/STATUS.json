@@ -1,6 +1,6 @@
 {
   "version": "v3.1",
-  "agents": 30,
+  "agents": 53,
   "services": {
     "langfuse": {
       "port": 3100,
@@ -27,7 +27,7 @@
   },
   "cycle": 11,
   "open_items": 5,
-  "last_hud_update": "2026-03-26T18:25:25.170063+07:00",
+  "last_hud_update": "2026-03-30T09:31:15.507578+07:00",
   "departments": 15,
   "corp_cycle_status": "ACTIVE",
   "kho": {
@@ -36,7 +36,7 @@
       "providers": 7
     },
     "agents": {
-      "total": 30,
+      "total": 53,
       "status": "OK"
     },
     "brain": {
@@ -56,7 +56,7 @@
       "files": 1
     },
     "mcp": {
-      "servers": 8,
+      "servers": 3,
       "status": "OK"
     },
     "cicd": {
@@ -64,20 +64,21 @@
       "status": "OK"
     },
     "plugins": {
-      "plugins": 36,
+      "plugins": 144,
       "status": "OK"
     },
     "skills": {
-      "total": 24,
+      "total": 80,
       "status": "OK"
     }
   },
   "pending_proposals": 5,
-  "skills": 24,
+  "skills": 80,
   "system": "AI OS Corp",
-  "updated": "2026-03-26T18:25:25.170051+07:00",
+  "updated": "2026-03-30T09:31:15.507561+07:00",
   "v31_reconnect": "COMPLETE",
   "orchestrator": "ONLINE",
   "brain_agent_profiles": 99,
-  "routing_rules": 77
+  "routing_rules": 77,
+  "services_live": 0
 }

@@ -4,7 +4,7 @@
 ## Always-Load Context
 - Dept: Content Intake & Vetting (Dept 20) | Reports to: COO
 - **PRIMARY ROLE: GATE 1 — Repo Evaluation** (Owner of `ops/workflows/repo-evaluation.md`)
-- SINGLE ENTRY GATE for ALL external content AND repos into AI OS (RULE CIV-01)
+- SINGLE ENTRY GATE for ALL external content AND repos into OmniClaw (RULE CIV-01)
 - QUARANTINE folder: `<AI_OS_ROOT>/QUARANTINE/`
 - intake_log.md: all active tickets — check first on boot
 - Co-authority with Security GRC (strix-agent) for all repo/plugin vetting
@@ -14,7 +14,7 @@
 ## SOP — Repo Evaluation (GATE 1 — RULE-PROCESS-01 Extended)
 
 ### When This Gate Triggers
-Any request to bring an external repo/tool/package into AI OS → CIV issues a ticket and runs evaluation.
+Any request to bring an external repo/tool/package into OmniClaw → CIV issues a ticket and runs evaluation.
 
 ### Evaluation Workflow
 Follow `ops/workflows/repo-evaluation.md` exactly:

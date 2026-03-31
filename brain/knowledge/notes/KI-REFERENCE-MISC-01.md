@@ -23,28 +23,28 @@ result = query("""
 }
 """, url="https://shop.example.com")
 ```
-**AI OS:** Firecrawl đã cover. Biết pattern này nếu cần structured extraction ngoài Firecrawl.
+**OmniClaw:** Firecrawl đã cover. Biết pattern này nếu cần structured extraction ngoài Firecrawl.
 
 ---
 
-## Archon (coleam00) — AI OS Reference Architecture
+## Archon (coleam00) — OmniClaw Reference Architecture
 
 ### Archon OS Structure (học từ)
 ```
 Archon/
-├── knowledge/      # Persistent knowledge base (AI OS: brain/)
-├── tasks/          # Task queue (AI OS: ClawTask)
-├── agents/         # Agent definitions (AI OS: brain/agents/)
-├── tools/          # Tool wrappers (AI OS: tools/)
-└── memory/         # Memory layer (AI OS: Mem0 + LightRAG)
+├── knowledge/      # Persistent knowledge base (OmniClaw: brain/)
+├── tasks/          # Task queue (OmniClaw: ClawTask)
+├── agents/         # Agent definitions (OmniClaw: brain/agents/)
+├── tools/          # Tool wrappers (OmniClaw: tools/)
+└── memory/         # Memory layer (OmniClaw: Mem0 + LightRAG)
 ```
-**Takeaway:** AI OS Corp cấu trúc tương đồng Archon. Validated approach. No changes needed.
+**Takeaway:** OmniClaw Corp cấu trúc tương đồng Archon. Validated approach. No changes needed.
 
 ---
 
 ## TinyFish Cookbook (tinyfish-io) — n8n + AgentQL Patterns
 
-### n8n Workflow Patterns cho AI OS
+### n8n Workflow Patterns cho OmniClaw
 ```
 Trigger: Webhook hoặc Schedule
    ↓
@@ -56,13 +56,13 @@ OpenAI/Claude Node → Analyze
    ↓
 Slack/Email Node → Notify
 ```
-**AI OS ứng dụng:** DEFER Phase 6 — n8n as automation layer cho recurring Corp tasks.
+**OmniClaw ứng dụng:** DEFER Phase 6 — n8n as automation layer cho recurring Corp tasks.
 
 ---
 
 ## wtfjs (denysdovhan) — JavaScript Edge Cases
 
-### Top AI OS–relevant JS quirks to remember:
+### Top OmniClaw–relevant JS quirks to remember:
 ```javascript
 // KNOW THESE TO AVOID BUGS:
 
@@ -83,7 +83,7 @@ NaN === NaN  // false — use Number.isNaN()
 // 5. 0.1 + 0.2 !== 0.3
 0.1 + 0.2 === 0.3  // false → use toFixed() or decimal libraries
 ```
-**AI OS:** Apply khi agent writes JavaScript. framework-standards skill should reference these.
+**OmniClaw:** Apply khi agent writes JavaScript. framework-standards skill should reference these.
 
 ---
 
@@ -100,7 +100,7 @@ curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Pytho
 # Combined (Node + Python)
 wget https://www.toptal.com/developers/gitignore/api/node,python,macos,windows
 
-# AI OS specific ignores (add manually):
+# OmniClaw specific ignores (add manually):
 echo "ops/secrets/\n*.env\nbrain/private/\ntelemetry/logs/*.log" >> .gitignore
 ```
 
@@ -119,7 +119,7 @@ Patterns: Dots, Lines, Crosshatch, Waves, Hexagons, Triangles...
 
 ## plotly.js — Data Visualization
 
-### Khi AI OS cần chart (dùng CDN, không clone):
+### Khi OmniClaw cần chart (dùng CDN, không clone):
 ```html
 <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
 <script>
@@ -128,14 +128,14 @@ Plotly.newPlot('myDiv', [{
     y: kpi_values,
     type: 'scatter',
     mode: 'lines+markers',
-    name: 'AI OS KPIs'
+    name: 'OmniClaw KPIs'
 }], {
-    title: 'AI OS Corp KPI Dashboard',
+    title: 'OmniClaw Corp KPI Dashboard',
     template: 'plotly_dark'
 });
 </script>
 ```
-**AI OS:** Dùng cho KPI visualization dashboard (Dept 9 Analytics).
+**OmniClaw:** Dùng cho KPI visualization dashboard (Dept 9 Analytics).
 
 ---
 

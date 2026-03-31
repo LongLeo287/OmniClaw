@@ -4,7 +4,7 @@
 name: legal-agent
 version: 1.0.0
 status: active
-description: "Đảm bảo tuân thủ pháp lý, quản lý license, GDPR compliance cho toàn hệ thống AI OS"
+description: "Đảm bảo tuân thủ pháp lý, quản lý license, GDPR compliance cho toàn hệ thống OmniClaw"
 domain: ecosystem
 type: workforce-agent
 department: legal

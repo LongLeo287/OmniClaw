@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/coderamp-labs/gitingest](https://github.com/coderamp-labs/gitingest)  
 **Stars:** 8k | **Type:** TOOL | **Dept:** engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** gitnexus_agent
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 INSTALLED in plugins/gitingest/. pip install gitingest — COMPATIBLE and useful for knowledge ingestion pipeline.
 
 ## Integration

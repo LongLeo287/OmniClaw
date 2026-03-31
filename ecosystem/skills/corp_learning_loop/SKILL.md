@@ -2,12 +2,12 @@
 name: corp_learning_loop
 display_name: Corp Learning Loop — Daily Retro Engine
 description: >
-  Runs the daily retrospective for AI OS Corp. Collects all department daily_briefs,
+  Runs the daily retrospective for OmniClaw Corp. Collects all department daily_briefs,
   runs cognitive_reflector analysis across departments, identifies cross-cutting patterns
   and skill gaps, updates the KPI scoreboard, and produces actionable proposals for the CEO.
   Extends LEARNING_CYCLE_PROTOCOL.md with corp-level context.
 version: 1.0.0
-author: AI OS Core Team
+author: OmniClaw Core Team
 tier: 1
 category: self-improvement
 tags: [learning, retro, reflection, kpi, proposals, corp, daily-loop]
@@ -36,7 +36,7 @@ load_on_boot: false
 
 ## Role
 
-The Corp Learning Loop is the **self-improvement engine** of AI OS Corp.
+The Corp Learning Loop is the **self-improvement engine** of OmniClaw Corp.
 It runs after departments submit their daily briefs and:
 - Identifies what went well and what didn't (cross-department view)
 - Updates the KPI scoreboard with actuals

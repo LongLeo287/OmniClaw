@@ -13,7 +13,7 @@ Primary skills: check SKILL_REGISTRY.json for 'rd' category
 ## Sprint 1 — 2026-03-17 (Initial)
 
 ### Architecture Decisions
-- Dept created as part of AI OS Corp v2.0 restructure
+- Dept created as part of OmniClaw Corp v2.0 restructure
 
 ### Lessons Learned
 - (populate after first active sprint)

@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/darshilparmar/dataengineering-youtube-analysis-project](https://github.com/darshilparmar/dataengineering-youtube-analysis-project)  
 **Stars:** 2k | **Type:** REFERENCE | **Dept:** rd, finance  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** insight_engine
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-REFERENCE — good example pipeline for AI OS data processing.
+## OmniClaw Notes
+REFERENCE — good example pipeline for OmniClaw data processing.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

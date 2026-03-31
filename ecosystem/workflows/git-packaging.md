@@ -1,5 +1,5 @@
 # Department: operations
-﻿# git-packaging.md — AI OS GitHub Packaging Protocol
+﻿# git-packaging.md — OmniClaw GitHub Packaging Protocol
 # Version: 1.0 | Updated: 2026-03-27
 # Authority: Tier 1 (Core Governance)
 # Executed by: Any agent executing GitHub sync or final commit workflows.
@@ -52,21 +52,24 @@ git rm -r --cached "brain/memory" "storage/_archive" "*.sqlite" "*.db" "*.webp" 
 ### Bước 3: Dọn Rác Vô Hại (Deep Cleaner)
 Chạy script dọn dẹp các tệp tin `stray` và rác hệ thống vô hại (files nháp, repo trống) bằng công cụ được cấp phép:
 ```bash
-python system/ops/scripts/aios_deep_cleaner.py --auto-delete
+python system/ops/scripts/omniclaw_deep_cleaner.py --auto-delete
 ```
 *(Script này ĐÃ ĐƯỢC THIẾT KẾ ĐỂ KHÔNG ĐỤNG CHẠM VÀO .SQLITE hay TRÍ NHỚ. Nó chỉ dọn dẹp các file `.txt`, `.log` đi lạc cũ hơn 14 ngày).*
 
-### Bước 4: Delta-Sync Dữ Liệu Nặng (Hugging Face / Google Drive)
-Trước khi push code nhẹ lên GitHub, phải đồng bộ dữ liệu nặng nguyên bản (Database, Trí Nhớ, Media, Plugin Lớn) dạng tệp riêng rẽ (không nén ZIP) lên Hub/Cloud:
+### Bước 4: Chạy Targeted Vault Sync (Hugging Face / Google Drive)
+BẮT BUỘC chỉ kéo đúng 3 thư mục lõi (Data Vault Mỏ Vàng) lên Cloud, tuyệt đối KHÔNG đẩy toàn hệ thống để tránh lọt ma trận folder rác:
+1. `brain/memory`
+2. `storage/vault`
+3. `ecosystem/plugins`
 ```bash
 python system/ops/scripts/omniclaw_data_push.py
 ```
-*(Script này hoạt động như Git Push, dùng thuật toán Hugging Face để check SHA256 và chỉ đẩy những file thực sự thay đổi, tiết kiệm thời gian tuyệt đối).*
+*(Script này sẽ lọc và bơm thẳng 3 thư mục lõi vào Google Drive và Hugging Face theo chuẩn Targeted. Tích hợp sẵn cơ chế `rclone purge` tàn sát thư mục lạ trên GDrive).*
 
 ### Bước 5: Đóng Gói Cốt Lõi Và Triển Khai Git
 ```bash
 git add .
-git commit -m "AI OS CORP - <Phiên bản>: <Lý do>"
+git commit -m "OmniClaw Corp - <Phiên bản>: <Lý do>"
 git push -u origin <branch>
 ```
 

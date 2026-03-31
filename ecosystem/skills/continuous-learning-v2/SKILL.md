@@ -50,7 +50,7 @@ KNOWLEDGE_GAP     → Something I didn't know, now I do — write KI Note
 → If no: iterate
 ```
 
-## Integration with AI OS Workflows
+## Integration with OmniClaw Workflows
 - `ops/workflows/post-session.md` — triggers this loop at session end
 - `ops/workflows/corp-learning-loop.md` — weekly aggregate
 - `brain/shared-context/corp/decisions_log.md` — permanent store
@@ -69,5 +69,5 @@ KNOWLEDGE_GAP     → Something I didn't know, now I do — write KI Note
 ## Notes
 - Source: github.com/affaan-m/everything-claude-code v1.8.0 (cherry-pick)
 - This is a cognitive skill, not a tool — no CLI needed
-- Already integrated with AI OS post-session workflow
+- Already integrated with OmniClaw post-session workflow
 - Owner: All agents — apply universally

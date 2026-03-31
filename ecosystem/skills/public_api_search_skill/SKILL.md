@@ -1,6 +1,6 @@
 ---
 name: public_api_search_skill
-description: "Tra cứu danh bạ Public APIs cho AI OS"
+description: "Tra cứu danh bạ Public APIs cho OmniClaw"
 version: 1.0.0
 owner: Dept 03
 ---

@@ -4,7 +4,7 @@ name: Cognitive Evolver
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Self-modifying strategy and paradigm evolution based on accumulated insights.
 
@@ -28,7 +28,7 @@ listens_to:
 ---
 # ðŸ§¬ Cognitive Evolver Skill (Self-Adaptive Agent)
 
-This skill provides the AI OS with "Self-Improvement" â€” the ability to rewrite its own dossiers and strategies based on experience.
+This skill provides the OmniClaw with "Self-Improvement" â€” the ability to rewrite its own dossiers and strategies based on experience.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Persona Evolution (/evolve-persona):**

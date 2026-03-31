@@ -1,10 +1,10 @@
-﻿# Project: [PROJECT_NAME] â€” AI OS Connected
+﻿# Project: [PROJECT_NAME] â€” OmniClaw Connected
 # PRJ-ID: PRJ-XXX
 # Status: active
 # Updated: [DATE]
 
-> **Satellite project of AI OS.**  
-> Skills, knowledge, and agents from AI OS are available here.
+> **Satellite project of OmniClaw.**  
+> Skills, knowledge, and agents from OmniClaw are available here.
 > See: `<AI_OS_ROOT>\CLAUDE.md` for full governance.
 
 ---
@@ -20,7 +20,7 @@
 
 ## ðŸ› ï¸ Skills Loaded
 
-<!-- List the AI OS skills relevant to this project -->
+<!-- List the OmniClaw skills relevant to this project -->
 
 ```
 LOAD: <AI_OS_ROOT>\skills\[skill-name]\SKILL.md
@@ -30,7 +30,7 @@ Common options:
 - `ui-ux-pro-max` â€” Premium UI/UX design
 - `pos-event-sourcing` â€” POS audit & event tracing
 - `gas-sheets-optimizer` â€” Google Apps Script & Sheets
-- `knowledge_navigator` â€” Query AI OS knowledge base
+- `knowledge_navigator` â€” Query OmniClaw knowledge base
 
 ---
 
@@ -62,7 +62,7 @@ Common options:
 
 ---
 
-## ðŸ”— AI OS Resources
+## ðŸ”— OmniClaw Resources
 
 | Resource | Path |
 |----------|------|
@@ -91,5 +91,5 @@ Common options:
 - Deleting files, deploying to production, modifying config
 
 **Never:**
-- Touching AI OS core files from this workspace
+- Touching OmniClaw core files from this workspace
 

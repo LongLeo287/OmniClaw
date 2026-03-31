@@ -56,5 +56,5 @@ Before implementation, the kit asks:
 Drop files into `.context/` → auto-injected into every prompt  
 Drop Python functions into `engine/src/tools/` → auto-discovered as tools
 
-## AI OS Alignment
-Kit's 20 specialists overlap with AI OS's 23 agents — use for cross-compatible routing.
+## OmniClaw Alignment
+Kit's 20 specialists overlap with OmniClaw's 23 agents — use for cross-compatible routing.

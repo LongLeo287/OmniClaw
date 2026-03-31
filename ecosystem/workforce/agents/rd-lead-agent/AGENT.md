@@ -1,5 +1,5 @@
 ﻿# AGENT: Research Lead — Head of R&D / Research Lead
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 13 (R&D)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Research Lead | Head of R&D / Research Lead | AI OS Corp | v1.0 | 
+_Research Lead | Head of R&D / Research Lead | OmniClaw Corp | v1.0 | 
 _Dept 13 — R&D_
 

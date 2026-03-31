@@ -1,9 +1,9 @@
 """
-mem0_adapter.py — AI OS Corp wrapper for mem0ai
+mem0_adapter.py — OmniClaw Corp wrapper for mem0ai
 Plugin: mem0 | Version: 1.0.0 | Date: 2026-03-23
 
 Provides a standardized interface for mem0 memory operations
-that integrates with AI OS Corp plugin hooks system.
+that integrates with OmniClaw Corp plugin hooks system.
 """
 
 import os
@@ -48,7 +48,7 @@ def _log_activation(agent: str, action: str, details: dict):
 
 class Mem0Adapter:
     """
-    AI OS Corp wrapper for mem0ai Memory.
+    OmniClaw Corp wrapper for mem0ai Memory.
 
     Usage:
         mem = Mem0Adapter(agent_id="acp")
@@ -180,7 +180,7 @@ class Mem0Adapter:
             logger.error(f"[mem0] get_all failed: {e}")
             return []
 
-    # ─── AI OS Hooks ──────────────────────────────────────────────────────────
+    # ─── OmniClaw Hooks ──────────────────────────────────────────────────────────
 
     def on_task_start(self, task_description: str, user_id: str = "CEO") -> str:
         """

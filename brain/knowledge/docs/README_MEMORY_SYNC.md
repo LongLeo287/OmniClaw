@@ -1,6 +1,6 @@
 ﻿# 1-Click Memory Sync â€” User Manual
 
-> Phase 15.1 | Smart Bookmark Manager AI OS Ecosystem
+> Phase 15.1 | Smart Bookmark Manager OmniClaw Ecosystem
 
 ## Overview
 

@@ -4,7 +4,7 @@
 name: health-chief-agent
 version: 1.0.0
 status: active
-description: "Giám sát toàn bộ sức khỏe hệ thống AI OS: uptime, memory leaks, performance bottlenecks"
+description: "Giám sát toàn bộ sức khỏe hệ thống OmniClaw: uptime, memory leaks, performance bottlenecks"
 domain: ecosystem
 type: workforce-agent
 department: system_health

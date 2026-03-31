@@ -2,12 +2,12 @@
 
 **Từ:** Antigravity (Kiến trúc sư trưởng)
 **Đến:** Claude Code CLI (Kỹ sư triển khai)
-**Mục tiêu:** Xây dựng toàn bộ Hồ sơ (Profile) và Mã kỹ năng (Skills Code) cho Đặc vụ `gcp_architect` dựa trên các tài liệu tiêu chuẩn `Open Standard` của AI OS V3.1 và trí tuệ từ Google Developer MCP.
+**Mục tiêu:** Xây dựng toàn bộ Hồ sơ (Profile) và Mã kỹ năng (Skills Code) cho Đặc vụ `gcp_architect` dựa trên các tài liệu tiêu chuẩn `Open Standard` của OmniClaw V3.1 và trí tuệ từ Google Developer MCP.
 
 ---
 
 ## 🛠️ Tri thức nền tảng (Claude Code bắt buộc phải đọc trước khi Code)
-Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code của Sếp (AI OS):
+Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code của Sếp (OmniClaw):
 1. `<AI_OS_ROOT>\brain\knowledge\agent_skills_open_standard.md` (LUẬT CODE SKILL)
 2. `<AI_OS_ROOT>\brain\knowledge\spawn_agent_skill.md` (HƯỚNG DẪN TẠO SKILL)
 3. Tra cứu `google-developer-knowledge` MCP để cào tài liệu mới nhất về: *gcloud CLI, Cloud Run, Cloud Build.*
@@ -34,8 +34,8 @@ Fix CLAUDE.md header: Cycle 8 (2026-03-23) -> Cycle 11 (2026-03-26)
 
 ### Steps
 1. Doc file CLAUDE.md tai root: <AI_OS_ROOT>\CLAUDE.md
-2. Tim dong: # AI OS CORP | Cycle 8 | Last synced: 2026-03-23
-3. Thay thanh: # AI OS CORP | Cycle 11 | Last synced: 2026-03-26
+2. Tim dong: # OmniClaw Corp | Cycle 8 | Last synced: 2026-03-23
+3. Thay thanh: # OmniClaw Corp | Cycle 11 | Last synced: 2026-03-26
 4. Luu file UTF-8
 5. Verify: git diff CLAUDE.md
 

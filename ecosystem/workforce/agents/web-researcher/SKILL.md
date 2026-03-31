@@ -66,10 +66,10 @@ load_on_boot: false
    - Call `smart_scrape(url)` for direct text.
    - Call `extract_structured(url, schema)` for tabulated/JSON data.
 5. Process, clean, and verify the integrity of the data returned by Firecrawl.
-6. Return synthesized content directly to the calling agent or save to AI OS Knowledge Base.
+6. Return synthesized content directly to the calling agent or save to OmniClaw Knowledge Base.
 ```
 
-## Integration with AI OS Dashboard
+## Integration with OmniClaw Dashboard
 
 ```python
 # Feeds real-time crawling status to Dashboard Web Intel module

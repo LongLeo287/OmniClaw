@@ -15,7 +15,7 @@ intent:
   triggers:  ["when user asks about X", "when detecting pattern Y"]
   not_for:   ["when Z is needed instead — use skill-Y"]
 ```
-**Khác với AI OS hiện tại:** AI OS skills chỉ có `description` trong YAML. Thêm `triggers` và `not_for` giúp agent CHỌN ĐÚNG skill hơn.
+**Khác với OmniClaw hiện tại:** OmniClaw skills chỉ có `description` trong YAML. Thêm `triggers` và `not_for` giúp agent CHỌN ĐÚNG skill hơn.
 
 ### Layer 2: Knowledge  
 ```yaml
@@ -46,7 +46,7 @@ execution:
 | **Context-fit** | Phù hợp với ngữ cảnh cụ thể |
 | **Consequence** | Không gây side-effect nguy hiểm |
 
-**AI OS hiện tại:** Chưa có 4C verification. Apply cho critical skills (Dept 10 security, Dept 15 finance).
+**OmniClaw hiện tại:** Chưa có 4C verification. Apply cho critical skills (Dept 10 security, Dept 15 finance).
 
 ### Layer 5: Evolution
 ```yaml
@@ -76,7 +76,7 @@ SKILL_COSTS = {
 def estimate_session_cost(skills_used: list[str]) -> int:
     return sum(SKILL_COSTS.get(s, 300) for s in skills_used)
 ```
-**AI OS ứng dụng:** Add `context_budget` field vào mỗi SKILL.md, track trong `budget.json`.
+**OmniClaw ứng dụng:** Add `context_budget` field vào mỗi SKILL.md, track trong `budget.json`.
 
 ### Mesh Resilience: Skill Fallback Chain
 ```yaml
@@ -86,11 +86,11 @@ fallback_chain:
   - fallback: agent-shield        # Manual audit if trivy unavailable
   - last_resort: manual_checklist # If both fail
 ```
-**AI OS ứng dụng:** Strix pipeline — nếu trivy down → AgentShield → manual.
+**OmniClaw ứng dụng:** Strix pipeline — nếu trivy down → AgentShield → manual.
 
 ---
 
-## Immediate AI OS Upgrades
+## Immediate OmniClaw Upgrades
 
 1. **Add `triggers` + `not_for` to SKILL.md** — giúp agent chọn skill đúng
 2. **Add `context_budget` field** — track cost per skill

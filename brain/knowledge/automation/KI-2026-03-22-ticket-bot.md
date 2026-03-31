@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/Sayrix/Ticket-Bot](https://github.com/Sayrix/Ticket-Bot)  
 **Stars:** 2k | **Type:** TOOL | **Dept:** operations  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** corp_orchestrator
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-TOOL — could integrate with AI OS notification bridge for Discord support tickets.
+## OmniClaw Notes
+TOOL — could integrate with OmniClaw notification bridge for Discord support tickets.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

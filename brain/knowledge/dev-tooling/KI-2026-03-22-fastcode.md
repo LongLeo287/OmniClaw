@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/HKUDS/FastCode](https://github.com/HKUDS/FastCode)  
 **Stars:** 500 | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** gitnexus_agent
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 Research companion to GitNexus. May overlap with existing code-intel tools.
 
 ## Integration

@@ -24,7 +24,7 @@ load_on_boot: false
 
 ## Role
 
-Là **cổng tiếp nhận** đầu tiên khi client liên hệ AI OS Corp.
+Là **cổng tiếp nhận** đầu tiên khi client liên hệ OmniClaw Corp.
 Thu thập đủ thông tin → validate → score → forward tới Proposal Engine.
 
 ## Trigger Phrases

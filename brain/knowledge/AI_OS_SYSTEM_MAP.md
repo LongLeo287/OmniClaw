@@ -8,11 +8,11 @@ version: 1.0
 authority: CEO
 ---
 
-# AI OS Corp — Master System Map
+# OmniClaw Corp — Master System Map
 ## Complete Knowledge Reference for All Agents, Depts, Workflows, Rules, and Memory
 
 > **READ THIS FIRST.** Bất kỳ AI nào mới được nạp vào hệ thống phải đọc file này.
-> Đây là bản đồ tổng thể của toàn bộ AI OS Corp.
+> Đây là bản đồ tổng thể của toàn bộ OmniClaw Corp.
 
 ---
 
@@ -20,14 +20,14 @@ authority: CEO
 
 | Field | Value |
 |-------|-------|
-| Name | AI OS Corp |
+| Name | OmniClaw Corp |
 | Version | v2.4 (Cycle 7) |
 | CEO | LongLeo |
-| Soul | `AI OS/SOUL.md` |
-| Governance | `AI OS/GOVERNANCE.md` |
-| Thesis | `AI OS/THESIS.md` (40 pillars) |
+| Soul | `OmniClaw/SOUL.md` |
+| Governance | `OmniClaw/GOVERNANCE.md` |
+| Thesis | `OmniClaw/THESIS.md` (40 pillars) |
 
-**What is AI OS Corp?**
+**What is OmniClaw Corp?**
 Một hệ thống AI multi-agent được tổ chức như một công ty thực thụ.
 Có CEO, C-Suite, 21 phòng ban, 75+ agents, đầy đủ workflows, memory, gates, và quy trình tự vận hành.
 
@@ -91,10 +91,10 @@ Tier 4: Workers — task execution
 
 | Workflow | File | Trigger | Phases |
 |----------|------|---------|--------|
-| Corp Daily Cycle | `ops/workflows/corp-daily-cycle.md` | `aos corp start` | 7 phases |
-| Knowledge Ingest | `ops/workflows/knowledge-ingest.md` | `aos ingest <source>` | 7 phases |
+| Corp Daily Cycle | `ops/workflows/corp-daily-cycle.md` | `omniclaw corp start` | 7 phases |
+| Knowledge Ingest | `ops/workflows/knowledge-ingest.md` | `omniclaw ingest <source>` | 7 phases |
 | Agent Auto-Create | `ops/workflows/agent-auto-create.md` | Phase 5b of knowledge-ingest | 7 phases |
-| Corp Learning Loop | `ops/workflows/corp-learning-loop.md` | `aos corp retro` | auto |
+| Corp Learning Loop | `ops/workflows/corp-learning-loop.md` | `omniclaw corp retro` | auto |
 | Delivery Pipeline | `corp/sops/DELIVERY_PIPELINE.md` | Client accepts proposal | 6 phases |
 
 ### Corp Daily Cycle (7 phases)
@@ -229,7 +229,7 @@ notification_bridge  — Telegram/Discord alert routing
 ## 9. FILE PATH RULES
 
 ```
-✅ VALID — AI OS workspace:
+✅ VALID — OmniClaw workspace:
   corp/           → org structure, prompts, memory, rules
   brain/          → knowledge, agents, skills, registry, memory, shared-context
   ops/            → workflows, scripts, infra
@@ -243,7 +243,7 @@ notification_bridge  — Telegram/Discord alert routing
   $USERPROFILE/.nullclaw/ → NullClaw data
 
 ❌ NEVER create project files in:
-  Desktop, Documents, Temp, or any path outside AI OS workspace
+  Desktop, Documents, Temp, or any path outside OmniClaw workspace
 ```
 
 **Source: RULE-STORAGE-01, RULE-DYNAMIC-01 in GOVERNANCE.md**
@@ -355,18 +355,18 @@ Every completed task writes a receipt to `telemetry/receipts/<dept>/<task_id>_re
 
 | Command | Action |
 |---------|--------|
-| `aos corp start` | Begin daily corp cycle |
-| `aos corp retro` | Run learning loop / retro |
-| `aos ingest url <url>` | Ingest web URL into knowledge base |
-| `aos ingest repo <url>` | Ingest GitHub repo |
-| `aos ingest file <path>` | Ingest local file |
-| `aos ingest text "<content>"` | Ingest raw text |
-| `aos ingest search "<query>"` | Web search + ingest |
+| `omniclaw corp start` | Begin daily corp cycle |
+| `omniclaw corp retro` | Run learning loop / retro |
+| `omniclaw ingest url <url>` | Ingest web URL into knowledge base |
+| `omniclaw ingest repo <url>` | Ingest GitHub repo |
+| `omniclaw ingest file <path>` | Ingest local file |
+| `omniclaw ingest text "<content>"` | Ingest raw text |
+| `omniclaw ingest search "<query>"` | Web search + ingest |
 | `approve agent <id>` | CEO approves new agent proposal |
 | `reject agent <id>` | CEO rejects new agent proposal |
 
 ---
 
-*AI OS Corp — System Map v1.0 — 2026-03-22*
+*OmniClaw Corp — System Map v1.0 — 2026-03-22*
 *Last updated: Cycle 7 system audit*
 *Read on boot. Update when system structure changes.*

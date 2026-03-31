@@ -8,9 +8,9 @@ foundation: true
 tags: ['design', 'ui', 'ux', 'css', 'clawtask', 'dashboard']
 ---
 
-# AI OS Corp — UI/UX Design Standards
+# OmniClaw Corp — UI/UX Design Standards
 
-## AI OS Corp Design System
+## OmniClaw Corp Design System
 
 ### Color Palette (ClawTask Dashboard)
 - Background: `#070710` (deep dark)

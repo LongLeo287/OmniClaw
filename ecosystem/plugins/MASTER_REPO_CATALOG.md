@@ -1,4 +1,4 @@
-# 🗂️ MASTER REPO CATALOG — AI OS Corp
+# 🗂️ MASTER REPO CATALOG — OmniClaw Corp
 **Updated:** 2026-03-27 | **Owner:** Dept 20 CIV + Antigravity
 **Automation:** `ops/scripts/repo_eval_github_api.py` → auto-refresh hàng tuần
 
@@ -8,13 +8,13 @@
 
 | Kho | Count | Trạng thái |
 |-----|-------|-----------|
-| ⭐ ACTIVE | 38 | Đang dùng trong AI OS |
+| ⭐ ACTIVE | 38 | Đang dùng trong OmniClaw |
 | 🔖 PENDING | 1245 | Đã APPROVE, chưa cài đặt |
 | ❌ ARCHIVED | 140 | REJECT/DEFER — CEO xem xét lại |
 
 ---
 
-## ⭐ REPO ĐANG ACTIVE TRONG AI OS
+## ⭐ REPO ĐANG ACTIVE TRONG OmniClaw
 
 > Các repo này cần được update thường xuyên. Mỗi tuần Dept 20 CIV kiểm tra version mới.
 
@@ -64,7 +64,7 @@
 ## 🔖 PENDING — Đã APPROVE, Chờ CEO Duyệt Cài Đặt
 
 > Tổng 1245 repos. Priority: sort theo Stars. Dept phụ trách: Dept 20 CIV.
-> Trigger: `aos integrate <plugin_id>` sau khi CEO sign-off.
+> Trigger: `omniclaw integrate <plugin_id>` sau khi CEO sign-off.
 
 | # | Repo | Stars | Dept | Ghi chú |
 |---|------|-------|------|---------|

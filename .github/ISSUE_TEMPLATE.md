@@ -1,5 +1,5 @@
-# GitHub Issues — AI OS Code Review
-> Copy từng section dưới đây, tạo issue tại: https://github.com/LongLeo287/aios-local/issues/new
+# GitHub Issues — OmniClaw Code Review
+> Copy từng section dưới đây, tạo issue tại: https://github.com/LongLeo287/omniclaw-local/issues/new
 
 ---
 

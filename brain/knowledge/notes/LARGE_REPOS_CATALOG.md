@@ -22,7 +22,7 @@ git clone --depth 1 <URL> "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
 
 | Repo | Dept chá»§ | Tag | LÃ½ do clone |
 |------|----------|-----|-------------|
-| `next.js` | Engineering | `FRONTEND` | Khi build web app cho AI OS |
+| `next.js` | Engineering | `FRONTEND` | Khi build web app cho OmniClaw |
 | `excalidraw` | Design / R&D | `UI-TOOL` | Khi cáº§n source code diagram / whiteboard tool |
 | `posthog` | Analytics / Ops | `ANALYTICS` | Khi cáº§n self-hosted analytics pipeline |
 | `plotly.js` | Data / HUD | `VISUALIZATION` | Khi build dashboard charts |
@@ -43,15 +43,15 @@ git clone --depth 1 <URL> "<AI_OS_ROOT>\plugins\github-repos\<REPO>"
 ### ðŸ”· next.js â€” Vercel
 **Dept:** Engineering | Product | Frontend
 **Size:** ~1.2 GB | **Stars:** 130k+
-**Khi nÃ o dÃ¹ng:** Build web apps, dashboards, frontend cho dá»± Ã¡n AI OS Corp
+**Khi nÃ o dÃ¹ng:** Build web apps, dashboards, frontend cho dá»± Ã¡n OmniClaw Corp
 
 ```powershell
-# DÃ¹ng khi: Build web UI cho AI OS dashboard, customer portal, product frontend
+# DÃ¹ng khi: Build web UI cho OmniClaw dashboard, customer portal, product frontend
 git clone --depth 1 https://github.com/vercel/next.js.git `
     "<AI_OS_ROOT>\plugins\github-repos\next.js"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - HUD v3 â†’ Next.js real-time dashboard
 - Corp dashboard â†’ web interface cho 21 depts
 - Product page / landing page
@@ -64,12 +64,12 @@ git clone --depth 1 https://github.com/vercel/next.js.git `
 **Khi nÃ o dÃ¹ng:** Whiteboard tool, diagram tool, system architecture drawing
 
 ```powershell
-# DÃ¹ng khi: Cáº§n tool váº½ diagram cho dá»± Ã¡n AI OS, system design, wireframe alternative
+# DÃ¹ng khi: Cáº§n tool váº½ diagram cho dá»± Ã¡n OmniClaw, system design, wireframe alternative
 git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
     "<AI_OS_ROOT>\plugins\github-repos\excalidraw"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - Thay tháº¿ Stitch cho system architecture diagrams
 - Board brainstorm ná»™i bá»™ cho cÃ¡c phÃ²ng ban
 - Self-hosted lightweight alternative
@@ -82,13 +82,13 @@ git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
 **Khi nÃ o dÃ¹ng:** Self-hosted analytics, event tracking, funnel analysis
 
 ```powershell
-# DÃ¹ng khi: Cáº§n analytics pipeline cho AI OS products, track user events
+# DÃ¹ng khi: Cáº§n analytics pipeline cho OmniClaw products, track user events
 git clone --depth 1 https://github.com/posthog/posthog.git `
     "<AI_OS_ROOT>\plugins\github-repos\posthog"
 ```
 
-**AI OS Impact:**
-- Track AI OS usage metrics (daily corp cycle, agent calls, skill usage)
+**OmniClaw Impact:**
+- Track OmniClaw usage metrics (daily corp cycle, agent calls, skill usage)
 - Replace external analytics vá»›i self-hosted
 - Wire vá»›i B5 system_pulse.py
 
@@ -105,7 +105,7 @@ git clone --depth 1 https://github.com/plotly/plotly.js.git `
     "<AI_OS_ROOT>\plugins\github-repos\plotly.js"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - HUD v3 charts â†’ KPI scoreboard visualization
 - Dept health graphs
 - CIV pipeline metrics charts
@@ -124,7 +124,7 @@ git clone --depth 1 https://github.com/aquasecurity/trivy.git `
     "<AI_OS_ROOT>\plugins\github-repos\trivy"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - CIV Pipeline Phase 2: security scan (thay `vet_repo.ps1`)
 - Integrate vá»›i `security/QUARANTINE/` workflow
 - Auto-scan má»i repo trÆ°á»›c khi approve
@@ -142,7 +142,7 @@ git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git `
     "<AI_OS_ROOT>\plugins\github-repos\developer-roadmap"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - Training dept: skill gap analysis cho 21 depts
 - SKILL_REGISTRY enhancement: map skills to roadmap nodes
 - Onboarding guide cho cÃ¡c agent má»›i
@@ -160,7 +160,7 @@ git clone --depth 1 https://github.com/openai/openai-cookbook.git `
     "<AI_OS_ROOT>\plugins\github-repos\openai-cookbook"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - R&D dept: LLM pattern library
 - bridge_router.py improvements (new routing strategies)
 - RAG patterns â†’ LightRAG enhancement
@@ -178,7 +178,7 @@ git clone --depth 1 https://github.com/juliangarnier/anime.git `
     "<AI_OS_ROOT>\plugins\github-repos\anime"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - HUD v3 real-time animated indicators
 - Corp cycle phase progress animations
 - Dept health dashboard micro-animations
@@ -197,7 +197,7 @@ git clone --depth 1 https://github.com/huggingface/agents-course.git `
     "<AI_OS_ROOT>\plugins\github-repos\agents-course"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - Agent training curriculum cho 12 placeholder agents
 - Reference cho activation_status.json â†’ activating new agents
 - Pattern library cho autonomous agent behavior
@@ -215,8 +215,8 @@ git clone --depth 1 https://github.com/github/gitignore.git `
     "<AI_OS_ROOT>\plugins\github-repos\gitignore"
 ```
 
-**AI OS Impact:**
-- Template cho má»i repo má»›i trong AI OS Corp
+**OmniClaw Impact:**
+- Template cho má»i repo má»›i trong OmniClaw Corp
 - Äáº·t vÃ o `ops/templates/gitignore/`
 
 ---
@@ -232,7 +232,7 @@ git clone --depth 1 https://github.com/public-apis/public-apis.git `
     "<AI_OS_ROOT>\plugins\github-repos\public-apis"
 ```
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - R&D dept: nguá»“n tham kháº£o API cho tÃ­ch há»£p
 - External Integrations wishlist (B12 GitHub, Telegram, etc.)
 - Rate-free APIs cho prototyping
@@ -303,5 +303,5 @@ Khi má»™t agent/dept cáº§n clone, tá»± cháº¡y lá»‡nh trong sect
 ---
 
 *Catalog v1.0 | 2026-03-25 | Owner: content_intake dept*
-*Run `python ops/aos.py intake <url>` khi cÃ³ repo má»›i cáº§n thÃªm vÃ o catalog*
+*Run `python ops/omniclaw.py intake <url>` khi cÃ³ repo má»›i cáº§n thÃªm vÃ o catalog*
 

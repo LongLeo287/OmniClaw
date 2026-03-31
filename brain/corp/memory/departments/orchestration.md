@@ -9,7 +9,7 @@
 - Định tuyến chính xác tuyệt đối các mảnh ghép prompt.
 
 ## KẾ THỪA TỪ: `ClawRouter` & `AgentScope` (Repos)
-Đoạn ký ức này ghi nhận rằng AI OS CORP đã tích hợp kiến trúc của 2 hệ thống mã nguồn ngoài này bẻ ghi cho `router-agent`.
+Đoạn ký ức này ghi nhận rằng OmniClaw Corp đã tích hợp kiến trúc của 2 hệ thống mã nguồn ngoài này bẻ ghi cho `router-agent`.
 - **ClawRouter Concept:** Fast Path (NodeJS, API Calls) vs Slow Path (Deep Reason, SRE Calls).
 - **AgentScope Concept:** Mạng lưới Actor Model (Mỗi Dept là 1 Actor nhận Message và Xử lý).
 

@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent)  
 **Stars:** 5k | **Type:** REFERENCE | **Dept:** rd, engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** llm_router
 - **security_gate:** PASS — trusted_org
 
-## AI OS Notes
-Good reference for Qwen tool-call format. AI OS uses Claude but Qwen API available as fallback.
+## OmniClaw Notes
+Good reference for Qwen tool-call format. OmniClaw uses Claude but Qwen API available as fallback.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

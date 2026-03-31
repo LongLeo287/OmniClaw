@@ -4,7 +4,7 @@ name: Diagnostics Engine
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Full system health audit and project quality scoring (React Doctor style).
 
@@ -27,7 +27,7 @@ listens_to: []
 ---
 # ðŸ¥ Diagnostics Engine Skill (Project Health Audit)
 
-This skill provides the AI OS with "Clinical Diagnostics" â€” the ability to audit any part of the project for health, performance, and compliance.
+This skill provides the OmniClaw with "Clinical Diagnostics" â€” the ability to audit any part of the project for health, performance, and compliance.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Health Audit (/audit):**
@@ -38,7 +38,7 @@ This skill provides the AI OS with "Clinical Diagnostics" â€” the ability t
     - A summary of the most critical "Health Bottlenecks" (Inspired by React Doctor).
     - Provide "Auto-Fix" proposals for P1 issues.
 3.  **Adherence Tracking:**
-    - Monitor how well Agent actions align with the 13 Pillars of the AI OS.
+    - Monitor how well Agent actions align with the 13 Pillars of the OmniClaw.
 
 ## ðŸ“‹ Instructions:
 Before ending a session or starting a major refactor:

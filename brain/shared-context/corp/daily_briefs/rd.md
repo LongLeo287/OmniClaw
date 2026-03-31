@@ -5,7 +5,7 @@
 
 ## Summary
 
-R&D dept activated. First research report on frontier AI relevant to AI OS Corp.
+R&D dept activated. First research report on frontier AI relevant to OmniClaw Corp.
 
 ## Research Report — Cycle 3
 

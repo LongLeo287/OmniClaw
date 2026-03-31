@@ -86,7 +86,7 @@ REPO / PLUGIN                     OTHER CONTENT
 │ • "Conflict với hệ thống?"   │             │
 │ • "Route về phòng nào?"      │             │
 │ • "Chất lượng / rủi ro?"     │             │
-│ • "Domain này AI OS đã có    │             │
+│ • "Domain này OmniClaw đã có    │             │
 │    agent/dept nào không?"    │             │
 │ • "Đề xuất agent/dept mới    │             │
 │    nếu chưa có?"             │             │
@@ -218,10 +218,10 @@ Actions:
 - Load digest into open-notebook
 - Query **6 standard CIV questions** (v1.2 — thêm 2 câu gap detection):
   1. "Repo/plugin này làm gì? Mô tả chính xác purpose."
-  2. "Có conflict hoặc overlap với tools đã có trong AI OS không?"
+  2. "Có conflict hoặc overlap với tools đã có trong OmniClaw không?"
   3. "Phòng ban nào nên sử dụng repo này?"
   4. "Rủi ro nội dung: có sensitive data, suspicious logic, hoặc quality issues nào không?"
-  5. ★ NEW: "Domain này (kỹ năng/lĩnh vực) AI OS đã có agent hoặc dept phụ trách chưa?" ← gap detection
+  5. ★ NEW: "Domain này (kỹ năng/lĩnh vực) OmniClaw đã có agent hoặc dept phụ trách chưa?" ← gap detection
   6. ★ NEW: "Nếu chưa có, đề xuất tên agent hoặc dept mới phù hợp nhất?"
 - Generate CIV Analysis Report → save to QUARANTINE/vetted/repos/<name>/_CIV_ANALYSIS.md
   - **MANDATORY FORMAT:** Report phải xuất theo định dạng C-Suite (NO MARKDOWN HEADINGS, Dùng In hoa + Emoji, thuần ASCII) đúng chuẩn `presentation-protocol.md`.
@@ -257,7 +257,7 @@ Actions:
 **Gap domain:** <domain>
 **Lý do:** Không có agent/dept nào cover domain "<domain>" này
 
-**AI OS hiện có gần nhất:**
+**OmniClaw hiện có gần nhất:**
 - Dept X (match ~60%) — scope: <mô tả>
 
 **Đề xuất:**
@@ -371,7 +371,7 @@ Post-routing handoff:
   TẤT CẢ Content nạp vào thành công (REPO, PLUGIN, DOCUMENT):
     → Archivist Agent chạy `neural-link-sync.md`.
     → Update `SYSTEM_INDEX.yaml` + `SYSTEM_INDEX_NARRATIVE.txt`.
-    → Đảm bảo AI OS luôn biết vị trí của File/Repo mới.
+    → Đảm bảo OmniClaw luôn biết vị trí của File/Repo mới.
 
 SLA: < 5 minutes after content reaches /vetted/
 

@@ -1,7 +1,7 @@
 name: gitnexus_analyzer
 description: GitNexus repository parsing bridge for deep code analysis and dependencies
 # SKILL: gitnexus_analyzer (Thấu Thị Mã)
-# Version: 1.0 (AI OS Neural Link Phase 15)
+# Version: 1.0 (OmniClaw Neural Link Phase 15)
 
 ## MỤC ĐÍCH (PURPOSE)
 Giao thức bọc (Wrapper) để sử dụng `GitNexus MCP`. Cung cấp cho các Agent khả năng hiểu cấu trúc Cây Cú pháp Trừu tượng (AST) của các repository thay vì vồ vập đọc code (cat/grep) theo chuỗi văn bản. Giúp nắm trọn dependencies, luồng logic các hàm và quan hệ biến mà không sợ cháy bộ nhớ (Context Overflow).

@@ -1,10 +1,10 @@
 name: neural_navigator
 description: Neural navigation algorithms
 # SKILL: neural_navigator (Thiên Lý Nhãn)
-# Version: 1.0 (AI OS Neural Link Phase 15)
+# Version: 1.0 (OmniClaw Neural Link Phase 15)
 
 ## MỤC ĐÍCH (PURPOSE)
-Kỹ năng cốt lõi cho mọi Đặc vụ AI (Agent) trong AI OS. Khi CEO đặt câu hỏi liên quan đến Cấu trúc tổ chức, Phòng ban, Quy trình, Agent phụ trách, hoặc vị trí lưu trữ của bất cứ thực thể nào, ĐÂY LÀ KỸ NĂNG BẮT BUỘC PHẢI DÙNG.
+Kỹ năng cốt lõi cho mọi Đặc vụ AI (Agent) trong OmniClaw. Khi CEO đặt câu hỏi liên quan đến Cấu trúc tổ chức, Phòng ban, Quy trình, Agent phụ trách, hoặc vị trí lưu trữ của bất cứ thực thể nào, ĐÂY LÀ KỸ NĂNG BẮT BUỘC PHẢI DÙNG.
 
 ## THAO TÁC (HOW TO USE)
 Khi bắt đầu task tìm kiếm thông tin tổ chức/hệ thống, Agent phải dùng công cụ đọc file (`view_file` hoặc lệnh tương đương) để mở các tọa độ gốc sau:

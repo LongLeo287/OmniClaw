@@ -4,7 +4,7 @@
 name: it-manager-agent
 version: 1.0.0
 status: active
-description: "Quản lý toàn bộ hạ tầng IT của AI OS: servers, networks, endpoints, dependencies"
+description: "Quản lý toàn bộ hạ tầng IT của OmniClaw: servers, networks, endpoints, dependencies"
 domain: ecosystem
 type: workforce-agent
 department: it_infra

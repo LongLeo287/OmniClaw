@@ -3,7 +3,7 @@
 description: How to recover agent state after a session reset, context compression, or context rot
 ---
 
-# Recovery Protocol — AI OS Corp
+# Recovery Protocol — OmniClaw Corp
 # Version: 2.0 | Updated: 2026-03-22
 # Authority: Tier 2 (Operations)
 # Trigger: Automatically by CLAUDE.md boot fallback | Manually when agent detects context rot

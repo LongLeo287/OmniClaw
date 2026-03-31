@@ -2,12 +2,12 @@
 name: corp_orchestrator
 display_name: Corp Orchestrator — Company-Mode Dispatcher
 description: >
-  Activates "Corp Mode" in AI OS. Reads the org chart, dispatches the daily brief
+  Activates "Corp Mode" in OmniClaw. Reads the org chart, dispatches the daily brief
   to department heads, monitors escalations and KPI board, and gates CEO approval
   on strategic proposals. Acts as the executive assistant between the Human CEO
   and the 6 AI departments.
 version: 1.0.0
-author: AI OS Core Team
+author: OmniClaw Core Team
 tier: 1
 category: orchestration
 tags: [corp, orchestration, dispatch, kpi, escalation, ceo, departments]
@@ -35,7 +35,7 @@ load_on_boot: false
 
 ## Role
 
-Corp Orchestrator is the **executive layer** of AI OS Corp.
+Corp Orchestrator is the **executive layer** of OmniClaw Corp.
 It bridges the CEO (human) with the 6 AI departments by:
 1. Broadcasting mission and targets to dept heads
 2. Monitoring KPI scoreboard and flagging issues

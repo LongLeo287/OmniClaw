@@ -6,7 +6,7 @@ tier: 3
 domain: security
 cost_tier: standard
 status: active
-author: AI OS (synthesized from TruffleHog, Katana, PentestOPS, hintshell)
+author: OmniClaw (synthesized from TruffleHog, Katana, PentestOPS, hintshell)
 updated: 2026-03-14
 sources:
   - https://github.com/trufflesecurity/trufflehog  (25K stars, AGPL-3.0)
@@ -21,7 +21,7 @@ accessible_by:
 load_on_boot: false
 ---
 
-# Security Scanning Reference — AI OS Skill
+# Security Scanning Reference — OmniClaw Skill
 
 > Synthesized from 4 security repos. Used for: code review, secret detection, pentest planning, web recon.
 
@@ -117,7 +117,7 @@ katana -u https://target.com \
   -fs custom -fr "logout|signout"  # filter out
 ```
 
-### Katana for AI OS Usage
+### Katana for OmniClaw Usage
 - **Endpoint discovery**: Map all API routes before security testing
 - **JavaScript crawl**: Find client-side routes in SPAs (React, Vue, Next.js)
 - **Asset enumeration**: List all JS bundles for source map analysis
@@ -191,7 +191,7 @@ Specific fix recommendations with code examples.
 
 > Source: philau2512/hintshell — Rust + TypeScript, AI-powered CLI
 
-### hintshell Concepts for AI OS
+### hintshell Concepts for OmniClaw
 
 hintshell is a real-time CLI suggestion tool that:
 - Learns from command history (fuzzy-match, frequency analysis)
@@ -222,7 +222,7 @@ SAFE alternatives:
 
 ---
 
-## 5. Quick Security Checklist for AI OS Ingest
+## 5. Quick Security Checklist for OmniClaw Ingest
 
 Before ingesting ANY external repo (from pre-ingest-check.ps1):
 

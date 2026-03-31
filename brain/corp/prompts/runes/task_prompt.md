@@ -4,7 +4,7 @@
 ## Hướng Dẫn
 
 Sau khi người dùng duyệt brainstorm, Antigravity điền template này
-và lưu vào workspace của dự án (KHÔNG lưu trong AI OS core).
+và lưu vào workspace của dự án (KHÔNG lưu trong OmniClaw core).
 File này là task_file được đặt trong blackboard.json.
 
 ---

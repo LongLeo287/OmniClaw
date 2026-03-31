@@ -1,6 +1,6 @@
 # [RULE-STORAGE-01] Storage Location Protocol
 # Issued by: CEO LongLeo | Date: 2026-03-22 | Status: MANDATORY — Không exception
-# Scope: Tất cả agents, Antigravity, Nova, và mọi AI OS operations
+# Scope: Tất cả agents, Antigravity, Nova, và mọi OmniClaw operations
 # Updated: Removed hardcoded paths per RULE-DYNAMIC-01
 
 ---
@@ -10,7 +10,7 @@
 
 ---
 
-## ✅ ĐÚNG — Project Files → AI OS Workspace Root
+## ✅ ĐÚNG — Project Files → OmniClaw Workspace Root
 
 **Workspace root** = thư mục chứa `GEMINI.md` + `CLAUDE.md`.
 Không hardcode absolute path. Dùng relative path từ workspace root.

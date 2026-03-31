@@ -6,7 +6,7 @@ tier: 3
 domain: frontend
 cost_tier: economy
 status: active
-author: AI OS (adapted from tailwindlabs/tailwindcss)
+author: OmniClaw (adapted from tailwindlabs/tailwindcss)
 updated: 2026-03-14
 source: https://github.com/tailwindlabs/tailwindcss
 tags: [tailwind, css, utility-first, responsive, dark-mode, frontend]
@@ -26,7 +26,7 @@ exposed_functions:
 load_on_boot: false
 ---
 
-# Tailwind CSS — AI OS Reference Skill
+# Tailwind CSS — OmniClaw Reference Skill
 
 > Source: https://tailwindlabs.com | v4 (latest) | v3 (stable)
 

@@ -151,10 +151,10 @@ This document describes the relational mapping between departments, agents, tool
 ### WORKFLOW: agent-workflow.md
 - **Process Ownership**: This workflow is owned and executed by department 'operations'.
 
-### WORKFLOW: aios-orchestrator.md
+### WORKFLOW: omniclaw-orchestrator.md
 - **Process Ownership**: This workflow is owned and executed by department 'operations'.
 
-### WORKFLOW: aios-startup.md
+### WORKFLOW: omniclaw-startup.md
 - **Process Ownership**: This workflow is owned and executed by department 'operations'.
 
 ### WORKFLOW: antigravity-boot.md
@@ -298,7 +298,7 @@ This document describes the relational mapping between departments, agents, tool
 - **Owner**: Administered by 'antigravity' (Mapped to Dept: operations).
 - **Description**: Shell giữ quyền điều khiển và Handoff phiên làm việc.
 
-### AUTOMATION: auto_sync_aios
+### AUTOMATION: auto_sync_omniclaw
 - **Type**: daemon
 - **Status**: paused
 - **Owner**: Administered by 'sec-agent' (Mapped to Dept: operations).

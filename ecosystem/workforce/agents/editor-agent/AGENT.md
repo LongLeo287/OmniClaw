@@ -1,5 +1,5 @@
 ﻿# AGENT: Editor-in-Chief — Editor-in-Chief / GATE_CONTENT Authority
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 6 (Content Review)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Editor-in-Chief | Editor-in-Chief / GATE_CONTENT Authority | AI OS Corp | v1.0 | 
+_Editor-in-Chief | Editor-in-Chief / GATE_CONTENT Authority | OmniClaw Corp | v1.0 | 
 _Dept 6 — Content Review_
 

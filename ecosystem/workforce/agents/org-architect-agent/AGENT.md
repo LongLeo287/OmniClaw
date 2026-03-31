@@ -1,5 +1,5 @@
 ﻿# AGENT: Org Architect — Organizational Development Lead / Org Architect
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 16 (OD & Learning)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Org Architect | Organizational Development Lead / Org Architect | AI OS Corp | v1.0 | 
+_Org Architect | Organizational Development Lead / Org Architect | OmniClaw Corp | v1.0 | 
 _Dept 16 — OD & Learning_
 

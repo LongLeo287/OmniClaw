@@ -1,7 +1,7 @@
-# AI OS — Master Tools Registry
+# OmniClaw — Master Tools Registry
 # Path: <AI_OS_ROOT>\registry\TOOLS_REGISTRY.md
 # Updated: 2026-03-17
-# Purpose: Inventory and categorize all tools in AI OS ecosystem
+# Purpose: Inventory and categorize all tools in OmniClaw ecosystem
 
 ---
 
@@ -29,7 +29,7 @@ Located in `scripts/`
 | **Backup Memory** | `Backup_Memory.bat` | Quick memory backup trigger |
 | **WakeUp Memory** | `WakeUp_Memory.bat` | Restore memory on session start |
 | **Wakeup Project** | `wakeup-project.ps1` | Load project context on boot |
-| **Wakeup Session** | `wakeup.ps1` | General AI OS session init |
+| **Wakeup Session** | `wakeup.ps1` | General OmniClaw session init |
 | **Backup Soul** | `scripts/memory/backup_soul.ps1` | Soul Sync — backup AI brain state |
 | **Wake Soul** | `scripts/memory/wake_up.ps1` | Soul Sync — restore AI brain state |
 | **Register Project** | `register_project.ps1` | Register new project in `registry.json` |
@@ -87,8 +87,8 @@ Located in `.agent/workflows/`
 |---|---|---|
 | **CLI Handoff** | `automated_cli_handoff.md` | SOP for automated CLI session handoff |
 | **Delegation SOP** | `delegation_sop_boilerplate.md` | Boilerplate for agent delegation |
-| **Export Template** | `export_ai_os_template.md` | Export AI OS config as portable template |
-| **Recovery Protocol** | `recovery-protocol.md` | Emergency recovery steps when AI OS state is lost |
+| **Export Template** | `export_ai_os_template.md` | Export OmniClaw config as portable template |
+| **Recovery Protocol** | `recovery-protocol.md` | Emergency recovery steps when OmniClaw state is lost |
 
 ---
 

@@ -1,4 +1,4 @@
-# AI OS Corp — Escalations Queue
+# OmniClaw Corp — Escalations Queue
 # Written by: Dept Heads or C-Suite agents
 # Read by: CEO (Human Operator) via Antigravity session
 

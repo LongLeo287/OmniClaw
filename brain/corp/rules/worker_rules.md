@@ -1,4 +1,4 @@
-# Worker Rules — AI OS Corp
+# Worker Rules — OmniClaw Corp
 # Authority: Tier 3 | Updated: 2026-03-17
 # Applied to: all Worker Agents in all departments
 

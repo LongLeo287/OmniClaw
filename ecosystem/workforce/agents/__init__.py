@@ -1,1 +1,1 @@
-# AI OS ecosystem package marker
+# OmniClaw ecosystem package marker

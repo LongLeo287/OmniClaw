@@ -6,7 +6,7 @@ description: Standard Operating Procedure (SOP) for new feature implementation
 # Agent Workflow: Standard Task Execution
 
 ## Description
-A technical workflow for AI agents, detailing the iterative cycle of preparation, implementation planning, execution, and verification within the AI OS ecosystem.
+A technical workflow for AI agents, detailing the iterative cycle of preparation, implementation planning, execution, and verification within the OmniClaw ecosystem.
 
 When assigned a complex task regarding the extension, follow these steps strictly:
 

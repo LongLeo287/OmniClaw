@@ -1,20 +1,20 @@
 ---
-description: Evaluate whether to add Observability Layer (LangSmith / Langfuse) to AI OS
+description: Evaluate whether to add Observability Layer (LangSmith / Langfuse) to OmniClaw
 ---
 
-# PROPOSAL: Observability Layer for AI OS
+# PROPOSAL: Observability Layer for OmniClaw
 
 **ID:** PROP_2026-03-23_OBSERVABILITY_LAYER
 **Date:** 2026-03-23 | **Author:** Antigravity | **Status:** PENDING CEO
 
 ## Problem
-AI OS hiện tại thiếu visibility vào:
+OmniClaw hiện tại thiếu visibility vào:
 - Mỗi LLM call tốn bao nhiêu tokens?
 - Agent nào đang chậm / fail?
 - Skill nào được gọi nhiều nhất?
 - Errors xảy ra ở đâu trong pipeline?
 
-From KI-AI-STACK-LANDSCAPE-01: **Observability = biggest gap** còn lại của AI OS so với enterprise tools.
+From KI-AI-STACK-LANDSCAPE-01: **Observability = biggest gap** còn lại của OmniClaw so với enterprise tools.
 
 ## Options
 
@@ -27,7 +27,7 @@ From KI-AI-STACK-LANDSCAPE-01: **Observability = biggest gap** còn lại của 
 - Open source, MIT
 - Self-hosted → data privacy
 - Docker support
-- **Recommended** cho AI OS (data stays local)
+- **Recommended** cho OmniClaw (data stays local)
 
 ### Option C: Custom telemetry (current)
 - `telemetry/` directory manual logging

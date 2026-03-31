@@ -1,6 +1,6 @@
 # Department: operations
 ---
-description: AI OS Proposal handling workflow — từ proposal creation đến CEO decision
+description: OmniClaw Proposal handling workflow — từ proposal creation đến CEO decision
 ---
 # ops/workflows/proposal-flow.md
 # Version: 1.0 | 2026-03-24 | Owner: strategy + C-Suite

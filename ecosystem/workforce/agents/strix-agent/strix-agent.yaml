@@ -4,7 +4,7 @@
 name: strix-agent
 version: 1.0.0
 status: active
-description: "Giám sát bảo mật liên tục, phát hiện threats, quản lý GRC (Governance, Risk, Compliance) cho AI OS"
+description: "Giám sát bảo mật liên tục, phát hiện threats, quản lý GRC (Governance, Risk, Compliance) cho OmniClaw"
 domain: ecosystem
 type: workforce-agent
 department: security_grc

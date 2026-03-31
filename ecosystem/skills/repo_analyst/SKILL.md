@@ -3,7 +3,7 @@ name: repo_analyst
 version: 1.0
 tier: 3
 category: analysis
-description: Analyze, summarize, and compare cloned repos in AI OS knowledge base
+description: Analyze, summarize, and compare cloned repos in OmniClaw knowledge base
 exposed_functions:
   - summarize_repo
   - extract_patterns
@@ -32,7 +32,7 @@ Returns: {
   "tech_stack": [str],
   "key_features": [str],
   "integration_points": [str],  # APIs, CLIs, imports
-  "learning_points": [str],     # What AI OS can learn from this
+  "learning_points": [str],     # What OmniClaw can learn from this
   "files": int,
   "size_mb": float,
   "trust_level": "HIGH|REFERENCE"
@@ -73,7 +73,7 @@ Searches: knowledge/*, plugins/*, SKILL_REGISTRY.json descriptions
 
 ### generate_integration_guide(name: str) → str
 ```
-Generates step-by-step guide for integrating a repo into AI OS:
+Generates step-by-step guide for integrating a repo into OmniClaw:
   1. Prerequisites
   2. Install steps
   3. Configuration needed

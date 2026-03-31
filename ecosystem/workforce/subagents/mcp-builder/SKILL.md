@@ -3,7 +3,7 @@ name: mcp-builder
 display_name: "MCP Server Builder Subagent"
 description: >
   Builds Model Context Protocol (MCP) servers from scratch. Creates custom
-  MCP tools/resources/prompts for AI OS integration. Reads existing API docs
+  MCP tools/resources/prompts for OmniClaw integration. Reads existing API docs
   and wraps them as MCP-compliant server endpoints.
 tier: "2"
 category: subagent

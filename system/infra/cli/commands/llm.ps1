@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS LLM subcommand — aos llm cost|test <provider>|route <task>|list
 #>
-$AOS_ROOT = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+$OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
 $ROUTER_PATH = Join-Path $AOS_ROOT "llm\router.yaml"
-$CONFIG_PATH = Join-Path $AOS_ROOT "llm\config.yaml"
+$CONFIG_PATH = Join-Path $OMNICLAW_ROOT "system\infra\llm\config.yaml"
 
 # Cost table (per 1K input tokens, USD)
 $CostTable = @(

@@ -6,7 +6,7 @@ description: >
   Edge Functions, real-time subscriptions, and performance optimization.
   Applicable to any project using Supabase as backend.
 version: 1.0.0
-author: LongLeo/skills.sh (adapted for AI OS)
+author: LongLeo/skills.sh (adapted for OmniClaw)
 tier: 3
 category: database
 domain: databases

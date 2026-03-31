@@ -1,11 +1,11 @@
 # Plugin Clone Candidates — 2026-03-22
 
-Repos classified as TOOL + Compatible AI OS from knowledge-ingest Phase 3.
+Repos classified as TOOL + Compatible OmniClaw from knowledge-ingest Phase 3.
 **Pending CEO decision before cloning.**
 
 | Repo | URL | Reason |
 |------|-----|--------|
-| VieNeu TTS | https://github.com/pnnbao97/VieNeu-TTS | TOOL — VERY RELEVANT for AI OS if needing Vietnamese voice o... |
+| VieNeu TTS | https://github.com/pnnbao97/VieNeu-TTS | TOOL — VERY RELEVANT for OmniClaw if needing Vietnamese voice o... |
 | ag-auto-click-scroll | https://open-vsx.org/extension/zixfel/ag-auto-click-scroll | VS Code ext auto-clicks Antigravity prompts — INSTALL via: code --install-extension zixfel.ag-auto-click-scroll |
 
 ## CEO DECISION

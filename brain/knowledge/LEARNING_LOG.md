@@ -1,7 +1,7 @@
-# AI OS Learning Log
+# OmniClaw Learning Log
 # Version: 1.0 | Created: 2026-03-16
 # Updated by: Knowledge Agent, Archivist
-# Purpose: Track what the AI OS learns each session and from which source
+# Purpose: Track what the OmniClaw learns each session and from which source
 
 ---
 
@@ -19,7 +19,7 @@ Each entry:
 
 ---
 
-## 2026-03-16 — AI OS Full System Upgrade + Repo Ingestion
+## 2026-03-16 — OmniClaw Full System Upgrade + Repo Ingestion
 
 ### Auto-Claude (AndyMik90/Auto-Claude)
 **Source:** knowledge/non_cloneable_repos_analysis.md
@@ -80,7 +80,7 @@ Each entry:
 **Source:** <DATA_ROOT>\Github.txt + Google Sheets
 **Category:** system_upgrade
 **Key Learnings:**
-- AI OS can absorb 127 repos (44 plugins + 13 claws + 70 refs) in systematic batch
+- OmniClaw can absorb 127 repos (44 plugins + 13 claws + 70 refs) in systematic batch
 - --depth=1 cloning is optimal for speed without losing usability
 - Non-cloneable repos (private/deleted) can still yield knowledge via README fetch
 - SKILL_REGISTRY JSON is the single source of truth for all capabilities

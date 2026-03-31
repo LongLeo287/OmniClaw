@@ -1,5 +1,5 @@
 ﻿# AGENT: Reception Chief — Head of Client Reception / Project Intake
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 21 (Client Reception)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Reception Chief | Head of Client Reception / Project Intake | AI OS Corp | v1.0 | 
+_Reception Chief | Head of Client Reception / Project Intake | OmniClaw Corp | v1.0 | 
 _Dept 21 — Client Reception_
 

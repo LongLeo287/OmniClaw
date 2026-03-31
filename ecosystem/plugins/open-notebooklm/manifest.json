@@ -2,7 +2,7 @@
   "plugin_id": "open-notebooklm",
   "display_name": "Open NotebookLM — PDF to Podcast Generator",
   "version": "1.0.0",
-  "description": "Open-source tool chuyển đổi PDF thành podcast episodes dùng open-source LLMs (Llama 3.3) và TTS. Tạo engaging dialogue từ tài liệu, output MP3. Dùng để tạo audio learning content từ AI OS knowledge base, repos, research papers.",
+  "description": "Open-source tool chuyển đổi PDF thành podcast episodes dùng open-source LLMs (Llama 3.3) và TTS. Tạo engaging dialogue từ tài liệu, output MP3. Dùng để tạo audio learning content từ OmniClaw knowledge base, repos, research papers.",
   "category": "content_generation",
   "tags": ["notebooklm", "podcast", "pdf", "audio", "tts", "llama", "gradio", "learning"],
   "type": "plugin",

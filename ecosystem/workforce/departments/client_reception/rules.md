@@ -63,4 +63,4 @@
 - Accepting any project that requires illegal, unethical, or harmful outputs
 - Sharing proposal details with non-involved departments without COO approval
 - Onboarding a client without completing the 5-field intake form
-- Making verbal/informal commitments on behalf of AI OS Corp
+- Making verbal/informal commitments on behalf of OmniClaw Corp

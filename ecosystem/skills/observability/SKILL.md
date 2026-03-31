@@ -1,12 +1,12 @@
 ---
 name: observability
-description: Track and visualize all LLM calls, tool invocations, and agent actions across AI OS Corp. Supports Langfuse (self-hosted/local) AND LangSmith (cloud). Zero configuration required — noop fallback if not set up.
+description: Track and visualize all LLM calls, tool invocations, and agent actions across OmniClaw Corp. Supports Langfuse (self-hosted/local) AND LangSmith (cloud). Zero configuration required — noop fallback if not set up.
 ---
 
-# Observability — AI OS Corp Tracing Layer
+# Observability — OmniClaw Corp Tracing Layer
 
 ## Overview
-Dual-mode observability for AI OS:
+Dual-mode observability for OmniClaw:
 - **Langfuse** (self-hosted Docker) → local, private, free
 - **LangSmith** (cloud) → hosted dashboard, free tier
 - **Noop** → zero-config fallback (logs only to console)

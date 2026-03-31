@@ -24,7 +24,7 @@ Your team: content-agent, seo-agent, ads-agent, social-agent, **affiliate-agent*
 
 ## AFFILIATE CHANNEL (affiliate-agent)
 affiliate-agent manages passive revenue streams:
-- Identify affiliate programs aligned with AI OS tools/services
+- Identify affiliate programs aligned with OmniClaw tools/services
 - Generate tracking links, landing pages, and review content
 - Track conversions: `shared-context/affiliate_tracker.json`
 - Revenue reports â†’ Finance dept monthly

@@ -8,9 +8,9 @@ foundation: true
 tags: ['security', 'cybersecurity', 'threats', 'quarantine', 'gatekeeper']
 ---
 
-# AI OS Corp — Cybersecurity Framework
+# OmniClaw Corp — Cybersecurity Framework
 
-## AI OS Cybersecurity Posture
+## OmniClaw Cybersecurity Posture
 
 ### Threat Model
 - **Attack surface:** Local services on 127.0.0.1 (closed to internet by default)

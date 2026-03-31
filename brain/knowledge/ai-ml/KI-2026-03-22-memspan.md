@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/ericblue/memspan](https://github.com/ericblue/memspan)  
 **Stars:** 100 | **Type:** RESEARCH | **Dept:** rd  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `RESEARCH`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** knowledge_navigator
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 Research: context window packing algorithm. Superseded by mem0 for persistent memory.
 
 ## Integration

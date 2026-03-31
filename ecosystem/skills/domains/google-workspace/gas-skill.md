@@ -6,7 +6,7 @@ description: >
   Covers doGet/doPost handlers, LockService for concurrency, SpreadsheetApp
   operations, MailApp, DriveApp, and time-based triggers.
 version: 1.0.0
-author: LongLeo (adapted for AI OS)
+author: LongLeo (adapted for OmniClaw)
 tier: 3
 category: integration
 domain: google-workspace

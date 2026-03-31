@@ -11,7 +11,7 @@ applies_to: [Antigravity, all agents needing fast data retrieval]
 # Fast & Accurate Data Retrieval — Operating Protocol
 
 > Học từ: GitNexus (graph code intelligence) + LightRAG (graph-RAG framework)
-> Áp dụng: mỗi khi cần tìm dữ liệu trong AI OS Corp hoặc bất kỳ codebase nào
+> Áp dụng: mỗi khi cần tìm dữ liệu trong OmniClaw Corp hoặc bất kỳ codebase nào
 
 ---
 
@@ -56,22 +56,22 @@ Học từ `gitnexus-exploring.md`:
 ```
 ĐÚNG THỨ TỰ:
 1. Context overview trước (~150 tokens)
-   → AI OS: đọc AI_OS_SYSTEM_MAP.md → biết toàn bộ cấu trúc
+   → OmniClaw: đọc AI_OS_SYSTEM_MAP.md → biết toàn bộ cấu trúc
    → Codebase: gitnexus://repo/{name}/context → staleness + stats
 
 2. Query concept → tìm flows liên quan
    → GitNexus: gitnexus_query({query: "authentication"})
      → Trả về: processes grouped by execution flow
-   → AI OS: grep_search trong folder đúng, không scan everything
+   → OmniClaw: grep_search trong folder đúng, không scan everything
 
 3. Context(symbol) → 360° view của 1 element
    → GitNexus: gitnexus_context({name: "validateUser"})
      → Callers (ai gọi nó), Callees (nó gọi ai), Processes (nó thuộc flow nào)
-   → AI OS: grep_search(symbol, SearchPath=AI OS root) → xem ai reference đến nó
+   → OmniClaw: grep_search(symbol, SearchPath=OmniClaw root) → xem ai reference đến nó
 
 4. Full trace chỉ khi cần
    → GitNexus: READ gitnexus://repo/{name}/process/{name}
-   → AI OS: view_file chỉ những file đã identify ở bước 3
+   → OmniClaw: view_file chỉ những file đã identify ở bước 3
 ```
 
 **Key rule:** Process/flow trước, file sau. "Nó thuộc workflow nào?" trước "nó ở file nào?"
@@ -98,10 +98,10 @@ Risk levels:
   >15 symbols hoặc many flows  → HIGH    → plan, announce trước
   Core path (auth, CEO data)   → CRITICAL → CEO approval required
 
-Áp dụng trong AI OS:
+Áp dụng trong OmniClaw:
   Trước khi sửa org_chart.yaml → ai đọc nó? (d=1: tất cả 21 depts)
   Trước khi sửa blackboard.json → ai writes/reads? (d=1: mọi agent)
-  Trước khi xoá plugin → gitnexus_impact hoặc grep_search(plugin_id, SearchPath=AI OS)
+  Trước khi xoá plugin → gitnexus_impact hoặc grep_search(plugin_id, SearchPath=OmniClaw)
   Trước khi sửa SKILL_REGISTRY.json → ai load skill này? (accessible_by[])
 ```
 
@@ -117,7 +117,7 @@ Triệu chứng → Flow → Symbol → Root cause
 1. Identify symptom (error message, wrong output, missing data)
 2. Query flow: "which workflow/process involves this symptom?"
    → GitNexus: gitnexus_query({query: "error symptom text"})
-   → AI OS: grep_search("error keyword") in ops/workflows/ + corp/departments/
+   → OmniClaw: grep_search("error keyword") in ops/workflows/ + corp/departments/
 3. Context on suspect: callers + callees
    → Callers = who triggered the bug
    → Callees = what the bug called (often the real problem)

@@ -1,4 +1,4 @@
-# [RULE-STRUCTURE-01] AI OS System & Data Structure
+# [RULE-STRUCTURE-01] OmniClaw System & Data Structure
 # Issued by: CEO LongLeo | Date: 2026-03-22 | Status: MANDATORY
 # Scope: All agents — Antigravity, Claude Code, Orchestrator Pro, all Corp workers
 # NOTE: No hardcoded paths per RULE-DYNAMIC-01. Use relative paths from AI_OS_ROOT.

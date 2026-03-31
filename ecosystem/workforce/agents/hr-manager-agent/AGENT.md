@@ -1,5 +1,5 @@
 ﻿# AGENT: HR Manager — HR Manager / Workforce Architect
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 8 (HR & People)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_HR Manager | HR Manager / Workforce Architect | AI OS Corp | v1.0 | 
+_HR Manager | HR Manager / Workforce Architect | OmniClaw Corp | v1.0 | 
 _Dept 8 — HR & People_
 

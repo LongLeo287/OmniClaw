@@ -16,8 +16,8 @@ created: 2026-03-22T22:37:16.443912
 **Type:** TOOL | **Dept:** security_grc  
 **Relevant Agents:** security_shield, fbi-watchdog
 
-## AI OS Notes
-Run before any plugin is added to AI OS. Add to CI/CD: `trufflehog git plugins/<plugin>`. Best practice: scan on every new repo ingest.
+## OmniClaw Notes
+Run before any plugin is added to OmniClaw. Add to CI/CD: `trufflehog git plugins/<plugin>`. Best practice: scan on every new repo ingest.
 
 ## Install / Use
 ```

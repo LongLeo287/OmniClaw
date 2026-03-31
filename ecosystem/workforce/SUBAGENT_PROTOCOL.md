@@ -1,4 +1,4 @@
-# SUBAGENT_PROTOCOL.md -- AI OS Sub-Agent Operating Standard
+# SUBAGENT_PROTOCOL.md -- OmniClaw Sub-Agent Operating Standard
 # Version: 1.1 | Updated: 2026-03-17
 # Authority: Tier 2 (Operations) | Allocation Map: corp/sops/RESOURCE_ALLOCATION_MAP.md
 # Read by: Any agent operating as Developer, QA, or Researcher under Claude Code

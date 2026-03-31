@@ -8,7 +8,7 @@ version: 1.0
 authority: registry_capability
 ---
 
-# AI OS Corp — Capability Map
+# OmniClaw Corp — Capability Map
 ## Skill / Plugin Discovery Index (Human + Agent readable)
 
 > **Mục đích:** `knowledge_navigator` đọc file này ở Phase 3 để tìm đúng skill/plugin  
@@ -24,7 +24,7 @@ NOW (Phase 1):   knowledge_navigator reads CAPABILITY_MAP.md → 90% accuracy
 NEXT (Phase 2):  LightRAG graph indexes all SKILL.md + manifest.json → 95%+ accuracy
                  Run: python ops/scripts/index_skills_lightrag.py
 FUTURE (Phase 3): GitNexus impact analysis → exact blast radius when modifying plugins
-                  Run: npx gitnexus analyze (in AI OS root)
+                  Run: npx gitnexus analyze (in OmniClaw root)
 ```
 
 ---

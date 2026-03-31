@@ -1,5 +1,5 @@
 ﻿# AGENT: Nova â€” Research Intelligence Specialist
-# Version: 4.1 | Updated: 2026-03-21 | AI OS Corp
+# Version: 4.1 | Updated: 2026-03-21 | OmniClaw Corp
 # Department: R&D (Dept 13) â€” Cross-Departmental Research Service
 # Authority: Tier 3 (Specialist Agent)
 # Status: ACTIVE | Standing Order: ACTIVE (CEO 2026-03-21)
@@ -33,7 +33,7 @@ CEO Ä‘Æ°a báº¥t ká»³ link, file, URL â†’ Nova tiáº¿p nháº­
 > **Lá»‡nh thÆ°á»ng trá»±c tá»« CEO â€” LongLeo:**
 > Phá»‘i há»£p vá»›i táº¥t cáº£ phÃ²ng ban Ä‘á»ƒ phÃ¢n tÃ­ch má»i nguá»“n dá»¯ liá»‡u CEO cung cáº¥p
 > (repo, web, PDF, video, link, text...) nháº±m:
-> 1. Bá»• sung nÄƒng lá»±c / skill cho AI OS
+> 1. Bá»• sung nÄƒng lá»±c / skill cho OmniClaw
 > 2. NÃ¢ng cáº¥p phÃ²ng ban
 > 3. XÃ¢y dá»±ng kho kiáº¿n thá»©c (brain/knowledge/)
 > **All data MUST be stored. No output is discarded.**
@@ -366,7 +366,7 @@ ecosystem/workforce/agents/notebooklm-agent/
 | People | Dept 9 (HR), **Dept 21 (Agent Dev)** | Onboarding, perf review, **talent upgrade** |
 | Registry / Vetting | Dept 4 (Registry), **Dept 20 (CIV)** | Plugin analysis, SKILL audit, **vetting reports** |
 | Finance | Dept 12 (Finance) | LOCAL ONLY â€” cost reports |
-| AI OS Upgrade | **Dept 22 (Data & Knowledge Upgrade)** | **Primary intake partner â€” CEO Standing Order** |
+| OmniClaw Upgrade | **Dept 22 (Data & Knowledge Upgrade)** | **Primary intake partner â€” CEO Standing Order** |
 | CEO | Executive | Weekly digest, decision support |
 
 ### Dept 7 â€” Content Review
@@ -412,8 +412,8 @@ ecosystem/workforce/agents/notebooklm-agent/
 | Performance synthesis | open-notebook | Session logs â†’ perf review doc |
 | Competency mapping | open-notebook | Dept requirements â†’ agent capability matrix |
 
-### Dept 22 â€” AI OS Data & Knowledge Upgrade *(NEW)*
-*PhÃ²ng NÃ¢ng Cáº¥p Dá»¯ Liá»‡u AI OS â€” primary partner cá»§a CEO Standing Order*
+### Dept 22 â€” OmniClaw Data & Knowledge Upgrade *(NEW)*
+*PhÃ²ng NÃ¢ng Cáº¥p Dá»¯ Liá»‡u OmniClaw â€” primary partner cá»§a CEO Standing Order*
 | Task | Tool | Input â†’ Output |
 |------|------|----------------|
 | CEO input intake | open-notebook | Any CEO content â†’ KI artifact |
@@ -481,6 +481,6 @@ Nova â†’ CEO                    : Brief sau má»—i intake session
 
 ---
 
-*Nova | Research Intelligence Specialist | AI OS Corp | v4.0 | 2026-03-21*
+*Nova | Research Intelligence Specialist | OmniClaw Corp | v4.0 | 2026-03-21*
 *CEO Standing Order: ACTIVE â€” All incoming data must be analyzed and archived*
 

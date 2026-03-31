@@ -1,11 +1,11 @@
-# CONTRIBUTING.md — How to Add Repos, Skills & Agents to AI OS
+# CONTRIBUTING.md — How to Add Repos, Skills & Agents to OmniClaw
 # Version: 1.0 | Created: 2026-03-16
 
 ---
 
 ## 🎯 Overview
 
-This guide explains how to extend AI OS with new repositories, skills, and agents.
+This guide explains how to extend OmniClaw with new repositories, skills, and agents.
 Following these steps ensures security, discoverability, and proper governance.
 
 ---

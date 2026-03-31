@@ -1,3 +1,8 @@
+<!-- DEPRECATED — This workflow has been superseded by the current OmniClaw ecosystem.
+     Kept for historical reference only. DO NOT USE in active flows.
+     See ecosystem/workflows/ for current versions.
+-->
+
 ---
 name: mlops_pipeline
 description: Quy trình triển khai luồng vận hành Machine Learning, Data Analytics, và AI Modeling từ Thư Viện Thực Chiến.

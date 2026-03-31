@@ -22,7 +22,7 @@ LEARN_REPOS = [
         "install": "pip install llm",
         "desc":    "Access 200+ LLMs from terminal. Plugin system for Ollama/llama.cpp, OpenAI, Anthropic, Gemini, Mistral. Embeddings, conversation logging, Python API.",
         "url":     "https://github.com/simonw/llm",
-        "notes":   "No clone needed — install via pip. Use in AI OS scripts: `import llm; model = llm.get_model('claude-3-5-sonnet')`. Useful for llm_router to route between models.",
+        "notes":   "No clone needed — install via pip. Use in OmniClaw scripts: `import llm; model = llm.get_model('claude-3-5-sonnet')`. Useful for llm_router to route between models.",
     },
     {
         "ki_id":   f"KI-{TODAY}-trufflehog",
@@ -34,7 +34,7 @@ LEARN_REPOS = [
         "install": "docker run trufflesecurity/trufflehog git <repo-url>",
         "desc":    "700+ detectors for secrets/credentials in Git/GitHub/AWS/GCP/files. 16k★. Go binary — use via Docker or binary download. CI/CD integration.",
         "url":     "https://github.com/trufflesecurity/trufflehog",
-        "notes":   "Run before any plugin is added to AI OS. Add to CI/CD: `trufflehog git plugins/<plugin>`. Best practice: scan on every new repo ingest.",
+        "notes":   "Run before any plugin is added to OmniClaw. Add to CI/CD: `trufflehog git plugins/<plugin>`. Best practice: scan on every new repo ingest.",
     },
     {
         "ki_id":   f"KI-{TODAY}-setup-n8n",
@@ -46,7 +46,7 @@ LEARN_REPOS = [
         "install": "cd plugins/setup-n8n && docker compose up -d",
         "desc":    "Production N8N setup with Docker Compose, Nginx, SSL, webhook config. AI-ready automation infrastructure for triggering agents.",
         "url":     "https://github.com/ndoanh266/setup-n8n",
-        "notes":   "Deploy to trigger AI OS agents from external webhooks. N8N workflows can call ClawTask API (:7474) as HTTP node. Config: set WEBHOOK_URL to ClawTask base URL.",
+        "notes":   "Deploy to trigger OmniClaw agents from external webhooks. N8N workflows can call ClawTask API (:7474) as HTTP node. Config: set WEBHOOK_URL to ClawTask base URL.",
     },
     {
         "ki_id":   f"KI-{TODAY}-qwen2-omni",
@@ -96,7 +96,7 @@ LEARN_REPOS = [
         "install": "",
         "desc":    "Curated AI engineering patterns: MLOps, LLM evaluation, inference optimization, observability, prompt engineering, data pipelines. Framework-agnostic.",
         "url":     "https://github.com/Sumanth077/ai-engineering-toolkit",
-        "notes":   "Key patterns: eval-driven dev, observability-first, prompt versioning. Apply when designing new AI OS features. Ref for CIV metrics design.",
+        "notes":   "Key patterns: eval-driven dev, observability-first, prompt versioning. Apply when designing new OmniClaw features. Ref for CIV metrics design.",
         "key_concepts": ["eval-driven development", "LLM observability", "inference caching", "prompt versioning"],
     },
     {
@@ -122,7 +122,7 @@ LEARN_REPOS = [
         "install": "pip install videocaptioner",
         "desc":    "AI subtitle generator: 100+ languages, SRT/VTT output, batch processing, local WhisperX + cloud model support. 2k★.",
         "url":     "https://github.com/WEIFENG2333/VideoCaptioner",
-        "notes":   "Use for AI OS media content production. Install via pip, works locally with WhisperX (no GPU needed for small files). Add to content pipeline.",
+        "notes":   "Use for OmniClaw media content production. Install via pip, works locally with WhisperX (no GPU needed for small files). Add to content pipeline.",
     },
     {
         "ki_id":   f"KI-{TODAY}-pm-skills",
@@ -168,9 +168,9 @@ LEARN_REPOS = [
         "dept":    "engineering",
         "agents":  ["web_intelligence", "knowledge_navigator"],
         "install": "",
-        "desc":    "500+ public APIs: REST/GraphQL/WebSocket/MCP, auth methods, rate limits. Useful for AI OS knowledge workers finding data sources.",
+        "desc":    "500+ public APIs: REST/GraphQL/WebSocket/MCP, auth methods, rate limits. Useful for OmniClaw knowledge workers finding data sources.",
         "url":     "https://github.com/cporter202/API-mega-list",
-        "notes":   "Check before building new AI OS integrations — likely already an API exists. Complement to public-apis plugin.",
+        "notes":   "Check before building new OmniClaw integrations — likely already an API exists. Complement to public-apis plugin.",
     },
     {
         "ki_id":   f"KI-{TODAY}-picoclaw",
@@ -182,7 +182,7 @@ LEARN_REPOS = [
         "install": "pip install picoclaw",
         "desc":    "Lightweight Claw agent for embedded/IoT. Raspberry Pi 4+. MQTT, <50MB footprint, local tool execution, edge inference.",
         "url":     "https://github.com/sipeed/picoclaw",
-        "notes":   "Low priority for current AI OS (Windows-based). Track for future edge deployments. No agent needed — route to engineering dept head if ever needed.",
+        "notes":   "Low priority for current OmniClaw (Windows-based). Track for future edge deployments. No agent needed — route to engineering dept head if ever needed.",
     },
     {
         "ki_id":   f"KI-{TODAY}-learn-ai-engineering",
@@ -194,7 +194,7 @@ LEARN_REPOS = [
         "install": "",
         "desc":    "AI engineering learning path: LLMs, RAG, agents, evaluation, deployment. Project-based curriculum with code examples. 1k★.",
         "url":     "https://github.com/ashishps1/learn-ai-engineering",
-        "notes":   "Onboarding reference for new AI OS collaborators. Key modules: RAG patterns, agent evaluation, LLM inference optimization.",
+        "notes":   "Onboarding reference for new OmniClaw collaborators. Key modules: RAG patterns, agent evaluation, LLM inference optimization.",
     },
 ]
 
@@ -256,7 +256,7 @@ created: {NOW}
 **Type:** {repo['type']} | **Dept:** {repo['dept']}
 **Relevant Agents:** {agents_list}
 
-## AI OS Notes
+## OmniClaw Notes
 {repo['notes']}
 
 ## Install / Use

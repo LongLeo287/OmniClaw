@@ -4,7 +4,7 @@ name: Accessibility Grounding
 version: 1.1.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: WCAG compliance and Accessibility Tree parsing for efficient web control.
 

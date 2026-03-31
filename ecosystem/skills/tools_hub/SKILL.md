@@ -5,7 +5,7 @@ tier: 1
 category: system
 status: active
 description: |
-  AI OS Tool Hub — central registry and dispatcher for all 22 system tools.
+  OmniClaw Tool Hub — central registry and dispatcher for all 22 system tools.
   Routes tool requests to correct script/server. Trigger: "dùng tool X",
   "chạy backup", "scan repo", "load skill", "handoff", "wakeup session",
   "register project", "check tools", "what tools do we have".
@@ -13,7 +13,7 @@ description: |
 
 # Goal
 
-Là **trung tâm điều phối tools** của AI OS — biết mọi tool đang có, khi nào dùng cái nào, và execute đúng cách.
+Là **trung tâm điều phối tools** của OmniClaw — biết mọi tool đang có, khi nào dùng cái nào, và execute đúng cách.
 
 # Instructions
 

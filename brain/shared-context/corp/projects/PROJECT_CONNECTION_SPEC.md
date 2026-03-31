@@ -1,8 +1,8 @@
-﻿# Project Connection Protocol â€” AI OS v3.0
+﻿# Project Connection Protocol â€” OmniClaw v3.0
 # Authority: Tier 0 (Constitution)
 # Updated: 2026-03-16
 
-> **Purpose:** Defines the standard protocol for any external project to connect to and leverage AI OS capabilities (skills, channels, knowledge, agents).
+> **Purpose:** Defines the standard protocol for any external project to connect to and leverage OmniClaw capabilities (skills, channels, knowledge, agents).
 
 ---
 
@@ -13,14 +13,14 @@
 â”‚              EXTERNAL PROJECT               â”‚
 â”‚  (React app, GAS backend, CLI tool, etc.)   â”‚
 â”‚                                             â”‚
-â”‚  [.agent/CLAUDE.md]  â† reads AI OS skills  â”‚
+â”‚  [.agent/CLAUDE.md]  â† reads OmniClaw skills  â”‚
 â”‚  [.clauderules]      â† workspace rules      â”‚
 â”‚  [.claudeignore]     â† scope limits         â”‚
 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
                  â”‚ registers via
                  â–¼
 â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚              AI OS CORE                     â”‚
+â”‚              OmniClaw CORE                     â”‚
 â”‚  registry.json  â† project catalog          â”‚
 â”‚  skills/        â† shared capabilities      â”‚
 â”‚  knowledge/     â† shared intelligence      â”‚
@@ -59,7 +59,7 @@ Use `scripts/register_project.ps1 -Id PRJ-XXX -Name "..." -Path "..."` to automa
 
 ```
 projects/PRJ-XXX/
-â”œâ”€â”€ CLAUDE.md          â† Project-scoped identity (load AI OS skills)
+â”œâ”€â”€ CLAUDE.md          â† Project-scoped identity (load OmniClaw skills)
 â””â”€â”€ workflows/         â† Project-specific workflows
     â”œâ”€â”€ deploy.md
     â””â”€â”€ debug.md
@@ -67,7 +67,7 @@ projects/PRJ-XXX/
 
 The `CLAUDE.md` must start with:
 ```markdown
-# Project: [Name] â€” AI OS Connected
+# Project: [Name] â€” OmniClaw Connected
 # PRJ-ID: PRJ-XXX
 # reads-from: <AI_OS_ROOT>\CLAUDE.md
 
@@ -84,11 +84,11 @@ In the project directory, create `.clauderules` (or `.agent/CLAUDE.md`):
 
 ```markdown
 # Workspace Rules â€” [Project Name]
-# Connected to AI OS: <AI_OS_ROOT>
+# Connected to OmniClaw: <AI_OS_ROOT>
 
 ## Identity
-This workspace is a satellite project of AI OS.
-When coding here, Antigravity has full authority per AI OS hierarchy.
+This workspace is a satellite project of OmniClaw.
+When coding here, Antigravity has full authority per OmniClaw hierarchy.
 
 ## Skills Available
 See: <AI_OS_ROOT>\shared-context\SKILL_REGISTRY.json
@@ -102,11 +102,11 @@ For complex tasks: follow <AI_OS_ROOT>\workflows\claude_code_handoff.md
 ### Step 4: Run Gatekeeper (first access)
 
 ```powershell
-# From AI OS root
+# From OmniClaw root
 .\gatekeeper.ps1 -ProjectId PRJ-XXX
 ```
 
-If GRANT â†’ project is active in AI OS ecosystem.
+If GRANT â†’ project is active in OmniClaw ecosystem.
 
 ---
 
@@ -125,7 +125,7 @@ DRAFT â†’ ACTIVE â†’ MAINTENANCE â†’ ARCHIVED
 
 ---
 
-## What AI OS Provides to Connected Projects
+## What OmniClaw Provides to Connected Projects
 
 | Resource | Location | How to Use |
 |----------|----------|------------|
@@ -133,7 +133,7 @@ DRAFT â†’ ACTIVE â†’ MAINTENANCE â†’ ARCHIVED
 | Knowledge | `knowledge/` | Read via knowledge_navigator skill |
 | Channel Bridge | `channels/` | Set `channels_enabled: true` in registry |
 | Shared Agents | `agents/` | Invoke via blackboard.json |
-| Orchestrator | `blackboard.json` | Write task payload â†’ AI OS picks up |
+| Orchestrator | `blackboard.json` | Write task payload â†’ OmniClaw picks up |
 
 ---
 
@@ -152,5 +152,5 @@ DRAFT â†’ ACTIVE â†’ MAINTENANCE â†’ ARCHIVED
 
 ---
 
-*"Every project is a satellite. AI OS is the operating system they orbit."*
+*"Every project is a satellite. OmniClaw is the operating system they orbit."*
 

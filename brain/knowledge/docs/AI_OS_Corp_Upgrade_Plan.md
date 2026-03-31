@@ -1,4 +1,4 @@
-# Kế Hoạch Nâng Cấp & Mở Rộng Hệ Thống AI OS Corp
+# Kế Hoạch Nâng Cấp & Mở Rộng Hệ Thống OmniClaw Corp
 
 ## 1. Sơ đồ tổng quan: Lộ trình phát triển
 
@@ -23,7 +23,7 @@ graph TD
         K[**Mở rộng 3: Tích hợp Kênh Giao tiếp Mới**]
     end
 
-    subgraph Tương lai: AI OS Tự chủ
+    subgraph Tương lai: OmniClaw Tự chủ
       L[Hệ thống có khả năng tự dự báo và tối ưu]
     end
 

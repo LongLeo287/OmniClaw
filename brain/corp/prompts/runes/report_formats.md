@@ -1,5 +1,5 @@
 ---
-description: Quick-reference selector for all AI OS report formats. Full definitions in brain/shared-context/report_formats.md
+description: Quick-reference selector for all OmniClaw report formats. Full definitions in brain/shared-context/report_formats.md
 ---
 
 # report_formats.md — Format Selector (Quick Reference)

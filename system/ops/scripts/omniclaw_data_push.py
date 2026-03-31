@@ -1,4 +1,5 @@
 import os
+import sys
 import datetime
 import subprocess
 import concurrent.futures
@@ -7,31 +8,18 @@ from dotenv import load_dotenv
 from huggingface_hub import HfApi, login
 
 # Configuration
-AI_OS_ROOT = Path("d:/LongLeo/AI OS CORP/AI OS")
-SECRETS_FILE = AI_OS_ROOT / "system/ops/secrets/MASTER.env"
+AI_OS_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+SECRETS_FILE = AI_OS_ROOT / "system" / "ops" / "secrets" / "MASTER.env"
 DATASET_REPO = "LongLeo/OmniClaw-Data-Vault"
 
-# Các định dạng thư mục/files thuộc về Trí Nhớ và Core DB
-HEAVY_PATTERNS = [
-    "*.sqlite", "*.sqlite3", "*.db",
-    "brain/memory/*",
-    "brain/memory/**/*",
-    "storage/_archive/*", 
-    "storage/_archive/**/*",
-    "storage/temp/*",
-    "storage/temp/**/*",
-    "storage/vault/memory/*",
-    "storage/vault/memory/**/*",
-    "system/telemetry/receipts/*",
-    "ecosystem/plugins/*",
-    "ecosystem/plugins/**/*",
-    "*.webp", "*.mp4", "*.mkv", "*.webm", "*.jpg", "*.png"
-]
-
-IGNORE_PATTERNS = [
-    ".git/*", ".git/**/*",
-    "node_modules/*", "node_modules/**/*",
-    "__pycache__/*", "__pycache__/**/*"
+# =========================================================================
+# DATA VAULT TARGETS: LỢI HẠI NHẤT
+# Chỉ push các thư mục này. Bỏ qua hoàn toàn quét root để tránh ma trận thư mục rác.
+# =========================================================================
+TARGET_VAULTS = [
+    "brain/memory",
+    "storage/vault",
+    "ecosystem/plugins"
 ]
 
 def load_environment():
@@ -45,7 +33,7 @@ def load_environment():
     return hf_token
 
 def push_delta_to_huggingface(hf_token):
-    print("🔑 Authenticating with Hugging Face...")
+    print("\n🔑 Authenticating with Hugging Face...")
     login(token=hf_token)
     api = HfApi()
     
@@ -63,26 +51,61 @@ def push_delta_to_huggingface(hf_token):
             return False
 
     print("🚀 Khởi chạy Delta-Sync lên Hugging Face (Trạm 1)...")
+    success = True
+    for folder in TARGET_VAULTS:
+        folder_path = AI_OS_ROOT / folder
+        if folder_path.exists() and folder_path.is_dir():
+            print(f"   [HF] Đang bắn tỉa thư mục: {folder} ...")
+            try:
+                # HF upload_folder native support path_in_repo mapping!
+                api.upload_folder(
+                    folder_path=str(folder_path),
+                    repo_id=DATASET_REPO,
+                    repo_type="dataset",
+                    path_in_repo=folder, # Upload directly to the correct subpath in the cloud
+                    commit_message=f"OmniClaw Vault Sync [{folder}]: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                )
+            except Exception as e:
+                print(f"      ❌ Lỗi khi tải {folder} lên HF: {e}")
+                success = False
+        else:
+            print(f"   [HF] Bỏ qua {folder} (Không tồn tại hoặc bị xóa)")
+
+    if success:
+        print(f"\n✅ HF ĐỒNG BỘ HOÀN TẤT: Toàn bộ Lõi đã an tọa.")
+    return success
+
+def scrub_ghost_folders(rclone_exe):
+    print("\n🧹 Bắt đầu rà soát và thanh trừng thư mục rác trên Google Drive...")
     try:
-        res = api.upload_folder(
-            folder_path=str(AI_OS_ROOT),
-            repo_id=DATASET_REPO,
-            repo_type="dataset",
-            allow_patterns=HEAVY_PATTERNS,
-            ignore_patterns=IGNORE_PATTERNS,
-            commit_message=f"OmniClaw Delta Sync: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-        )
-        print(f"\n✅ HF ĐỒNG BỘ HOÀN TẤT. Xem URL: {res}")
-        return True
-    except Exception as e:
-        print(f"\n❌ Lỗi Cản Trở Quá Trình Sync HF: {e}")
-        return False
+        # Lấy danh sách tất cả các files/folders Layer 0 trên Drive
+        result = subprocess.check_output([str(rclone_exe), "lsf", "gdrive:OmniClaw-Data-Vault"], text=True)
+        items = result.strip().split("\n")
+        
+        allowed_roots = [d.split('/')[0] + "/" for d in TARGET_VAULTS] # ví dụ 'brain/', 'storage/', 'ecosystem/'
+        
+        folders_deleted = 0
+        for item in items:
+            if not item: continue
+            # Nếu là thư mục (cuối bằng /) và không thuộc nhóm cốt lõi
+            if item.endswith("/") and item not in allowed_roots:
+                junk_dir = f"gdrive:OmniClaw-Data-Vault/{item.strip('/')}"
+                print(f"   🔥 Đang Tàn Sát thư mục rác: {junk_dir}")
+                subprocess.run([str(rclone_exe), "purge", junk_dir], check=True)
+                folders_deleted += 1
+                
+        if folders_deleted > 0:
+            print(f"✅ Đã dọn sạch {folders_deleted} thư mục Lõi Rác trên GDrive!")
+        else:
+            print("✅ Ổ đĩa GDrive hiện tại đã thanh khiết. Không có thư mục lạ.")
+            
+    except subprocess.CalledProcessError as e:
+         print(f"   ⚠️ Lỗi cản trở quá trình thanh trừng: {e}")
 
 def push_delta_to_googledrive():
     rclone_exe = AI_OS_ROOT / "system/ops/tools/rclone/rclone.exe"
     if not rclone_exe.exists():
         print("\n⚠️ SYSTEM: Chưa phát hiện Rclone (Google Drive Engine). Bỏ qua bước đồng bộ phụ.")
-        print("   -> Sếp có thể chạy `system/ops/scripts/setup_gdrive_rclone.ps1` để cài đặt.")
         return False
 
     # Check if gdrive is configured
@@ -90,60 +113,58 @@ def push_delta_to_googledrive():
         remotes = subprocess.check_output([str(rclone_exe), "listremotes"], text=True)
         if "gdrive:" not in remotes:
             print("\n❌ LỖI RCLONE: Chưa xác thực Google Drive!")
-            print("   -> Bạn cần chạy `system/ops/scripts/setup_gdrive_rclone.ps1` để đăng nhập Web.")
             return False
     except Exception as e:
         return False
 
-    print("\n🚀 Khởi chạy Delta-Sync lên Google Drive (Trạm 2)...")
-    
-    # Xây dựng file Filter trực tiếp thay vì code tay thủ công
-    filter_file = AI_OS_ROOT / "system/ops/tools/rclone/filter_omniclaw.txt"
-    with open(filter_file, "w", encoding="utf-8") as f:
-        for p in HEAVY_PATTERNS:
-            f.write(f"+ {p}\n")
-        f.write("- *\n")  # Ignore the rest
+    # Dọn dẹp rác ma trước khi đẩy
+    scrub_ghost_folders(rclone_exe)
 
-    try:
-        subprocess.run([
-            str(rclone_exe), "sync", str(AI_OS_ROOT), "gdrive:OmniClaw-Data-Vault",
-            "--filter-from", str(filter_file),
-            "--fast-list", "--transfers", "16", "--checkers", "16",
-            "--stats", "10s"
-        ], check=True)
-        print("✅ GDRIVE ĐỒNG BỘ HOÀN TẤT. Hệ thống đã khớp thư mục với mây Google.")
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"❌ GDRIVE BÁO LỖI KHI SYNC: {e}")
-        return False
+    print("\n🚀 Khởi chạy Delta-Sync lên Google Drive (Trạm 2)...")
+    success = True
+    for folder in TARGET_VAULTS:
+        folder_path = AI_OS_ROOT / folder
+        if folder_path.exists() and folder_path.is_dir():
+             print(f"   [GDrive] Đang bắn tỉa thư mục: {folder} ...")
+             try:
+                 # Rclone thẳng vào thư mục đích (Tắt hệ thống gạt lọc cồng kềnh toàn máy ảo)
+                 subprocess.run([
+                     str(rclone_exe), "sync", str(folder_path), f"gdrive:OmniClaw-Data-Vault/{folder}",
+                     "--delete-excluded", # Xóa file rác NẾU CÓ bên trong chính thư mục đang sync
+                     "--fast-list", "--transfers", "16", "--checkers", "16",
+                     "--stats", "30s" # Giảm spam log
+                 ], check=True)
+             except subprocess.CalledProcessError as e:
+                 print(f"      ❌ GDrive lỗi khi sync {folder}: {e}")
+                 success = False
+        else:
+             print(f"   [GDrive] Bỏ qua {folder} (Không tìm thấy)")
+
+    if success:
+        print("\n✅ GDRIVE ĐỒNG BỘ HOÀN TẤT. Hệ thống chắp cánh tới Mây thành công.")
+    return success
         
 def main():
     print("=====================================================")
-    print(" OmniClaw Data Vault - PARALLEL DUAL DELTA SYNC PIPELINE")
+    print(" OmniClaw Data Vault - TARGETED VAULT PIPELINE")
     print("=====================================================")
     hf_token = load_environment()
     
-    hf_success = False
-    gd_success = False
+    print("⚡ BẮT ĐẦU VẬN HÀNH QUY TRÌNH BẮN TỈA TÀI NGUYÊN ⚡\n")
     
-    # Chạy song song cả hai luồng đồng bộ bằng ThreadPoolExecutor
-    print("⚡ BẮT ĐẦU ĐỔ SONG SONG CẢ 2 KHO (HUGGING FACE + GOOGLE DRIVE) ⚡\n")
-    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        future_hf = executor.submit(push_delta_to_huggingface, hf_token)
-        future_gd = executor.submit(push_delta_to_googledrive)
-        
-        hf_success = future_hf.result()
-        gd_success = future_gd.result()
+    # We will run them sequentially in terminal script (easier UX tracking) 
+    # instead of overlapping outputs since RClone Scrub takes terminal output
+    hf_success = push_delta_to_huggingface(hf_token)
+    gd_success = push_delta_to_googledrive()
     
     print("\n=====================================================")
     if hf_success or gd_success:
-        print("🎉 TRẠNG THÁI CUỐI: HOÀN TẤT SONG SONG")
-        if hf_success: print("   - [ON] Trạm Hugging Face Hoàn Tất")
-        if gd_success: print("   - [ON] Trạm Google Drive Hoàn Tất")
+        print("🎉 TRẠNG THÁI CUỐI: HOÀN TẤT")
+        if hf_success: print("   - [ON] Trạm Hugging Face An Toàn")
+        if gd_success: print("   - [ON] Trạm Google Drive Thanh Khiết")
     else:
-        print("⚠️ TRẠNG THÁI: TẠM NGỪNG DO LỖI")
+        print("⚠️ TRẠNG THÁI: TẠM NGỪNG DO LỖI VẬN HÀNH")
     print("=====================================================")
         
 if __name__ == "__main__":
     main()
-

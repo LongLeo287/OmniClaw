@@ -38,7 +38,7 @@ activation: "[RESEARCHER] Investigating: <topic>"
    </thought>
 
 3. Research in order:
-   a. AI OS knowledge/ directory
+   a. OmniClaw knowledge/ directory
    b. SKILL_REGISTRY.json for relevant skills
    c. Codebase scan (grep_search, find_by_name)
    d. Web search (search_web)

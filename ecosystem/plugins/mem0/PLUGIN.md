@@ -1,5 +1,5 @@
 # mem0 — AI Agent Long-term Memory Plugin
-# AI OS Corp | Cognitive Plugin | v1.0.0
+# OmniClaw Corp | Cognitive Plugin | v1.0.0
 
 ## Purpose
 

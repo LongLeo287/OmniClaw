@@ -1,8 +1,8 @@
 # 📚 AI OS Reference Repositories Catalog
-> Generated on: 2026-03-27 from intake backlog evaluation.
+> Generated on: 2026-03-30 from intake backlog evaluation.
 > Total: 1,444 repos. Trạng thái: Chỉ lưu trữ để tham khảo (chưa clone).
 
-- https://github.com/1444
+- https://github.com/1401
 - https://github.com/-update-workflows-list-page-to-show-fake-door-templates/issues
 - https://github.com/01mf02/jaq
 - https://github.com/0xBugatti/PentestOPS
@@ -22,7 +22,6 @@
 - https://github.com/AndyMik90/Aperant
 - https://github.com/AngeloD2022/jsxer
 - https://github.com/AppImage/AppImageKit
-- https://github.com/AstrBotDevs/AstrBot
 - https://github.com/Avaiga/taipy
 - https://github.com/AykutSarac/jsoncrack-vscode
 - https://github.com/AykutSarac/jsoncrack.com
@@ -61,7 +60,6 @@
 - https://github.com/CodebuffAI/codebuff.git
 - https://github.com/ComPWA/taplo-pre-commit
 - https://github.com/CosmoBlk/email-marketing-bible
-- https://github.com/D4Vinci/Scrapling
 - https://github.com/D4Vinci/Scrapling.git
 - https://github.com/DRCRecoveryData/ARW-NEF-Repair-Tool
 - https://github.com/DRCRecoveryData/CR2-Repair-Tool
@@ -71,10 +69,8 @@
 - https://github.com/DavidAnson/markdownlint-cli2
 - https://github.com/DevLyon/mixter
 - https://github.com/DoumanAsh/xxhash-rust
-- https://github.com/Draculabo/AntigravityManager
 - https://github.com/ElderJames/shriek-fx
 - https://github.com/Eventuria/gsd
-- https://github.com/Fission-AI/OpenSpec
 - https://github.com/FlowiseAI/Flowise
 - https://github.com/FujiwaraChoki/MoneyPrinter
 - https://github.com/FujiwaraChoki/MoneyPrinterV2
@@ -217,7 +213,6 @@
 - https://github.com/SanjaySunil/BetterDiscordPanel
 - https://github.com/Sayrix/Ticket-Bot
 - https://github.com/ScoopInstaller/Install
-- https://github.com/ScrapeGraphAI/Scrapegraph-ai
 - https://github.com/SeleniumHQ/selenium
 - https://github.com/Significant-Gravitas/Auto-GPT
 - https://github.com/Significant-Gravitas/AutoGPT
@@ -225,7 +220,6 @@
 - https://github.com/StefanTerdell/json-schema-to-zod
 - https://github.com/Stranger6667/jsonschema
 - https://github.com/Stranger6667/jsonschema-rs
-- https://github.com/Sumanth077/ai-engineering-toolkit
 - https://github.com/TUAN130294/awf
 - https://github.com/TanStack/hotkeys
 - https://github.com/Temm1e/Temm1e
@@ -241,8 +235,6 @@
 - https://github.com/Valkyrie00/bold-brew
 - https://github.com/Valkyrie00/bold-brew.git
 - https://github.com/Vasco0x4/AIDA
-- https://github.com/VinciGit00/Scrapegraph-ai
-- https://github.com/WEIFENG2333/VideoCaptioner
 - https://github.com/WPS/egon.io
 - https://github.com/Wilfred/tree-sitter-elisp
 - https://github.com/WiseLibs/better-sqlite3
@@ -257,7 +249,6 @@
 - https://github.com/YS-L/csvlens
 - https://github.com/Yomguithereal/xsv
 - https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts
-- https://github.com/ZeroLeaks/zeroleaks
 - https://github.com/aardappel/lobster
 - https://github.com/abhigyanpatwari/GitNexus
 - https://github.com/acme-corp/dotfiles
@@ -283,7 +274,6 @@
 - https://github.com/aheckmann/gm
 - https://github.com/alasql/alasql
 - https://github.com/alexta69/metube
-- https://github.com/alibaba/OpenSandbox
 - https://github.com/alibaba/OpenSandbox.git
 - https://github.com/all-contributors/all-contributors
 - https://github.com/all-contributors/allcontributors.org
@@ -311,7 +301,6 @@
 - https://github.com/asc-lab/dotnet-cqrs-intro
 - https://github.com/asc-lab/java-cqrs-intro
 - https://github.com/asgeirtj/system_prompts_leaks
-- https://github.com/ashishps1/learn-ai-engineering
 - https://github.com/asottile/pyupgrade
 - https://github.com/assets/cb-17251
 - https://github.com/astral-sh/ruff
@@ -342,7 +331,6 @@
 - https://github.com/blinko-space/blinko
 - https://github.com/blinko-space/blinko.git
 - https://github.com/blinkospace/blinko
-- https://github.com/bmad-code-org/BMAD-METHOD
 - https://github.com/bmad-code-org/bmad-method-test-architecture-enterprise
 - https://github.com/bmad-code-org/bmad-module-game-dev-studio
 - https://github.com/bmad-code-org/tea
@@ -395,7 +383,6 @@
 - https://github.com/codebuff/codebuff.git
 - https://github.com/codelucas/newspaper
 - https://github.com/codemirror/lang-sql
-- https://github.com/coderamp-labs/gitingest
 - https://github.com/coderamp-labs/gitingest-extension
 - https://github.com/coderamp-labs/gitingest.git
 - https://github.com/codes_of_conduct/citizen_code_of_conduct
@@ -412,16 +399,12 @@
 - https://github.com/company/user-service
 - https://github.com/conda-forge/croc-feedstock
 - https://github.com/coreos/bbolt
-- https://github.com/cporter202/API-mega-list
-- https://github.com/crewAIInc/crewAI
 - https://github.com/cube2222/octosql
 - https://github.com/cucumber/godog
-- https://github.com/curbob/LobsterBoard
 - https://github.com/d60/Cirqus
 - https://github.com/daijro/camoufox
 - https://github.com/damianh/Cedar.CommandHandling
 - https://github.com/damianh/SqlStreamStore
-- https://github.com/darkroomengineering/lenis
 - https://github.com/darkroomengineering/lenis.git
 - https://github.com/darshilparmar/dataengineering-youtube-analysis-project
 - https://github.com/dathere/100.dathere.com
@@ -530,7 +513,6 @@
 - https://github.com/fdhhhdjd/class-prometheus-grafana-telegram-alerts
 - https://github.com/feature-sliced/documentation
 - https://github.com/felipexw/clean-arch-ddd-intro
-- https://github.com/firecrawl/firecrawl
 - https://github.com/firecrawl/firecrawl-app-examples
 - https://github.com/firecrawl/firecrawl-claude-plugin
 - https://github.com/firecrawl/firecrawl-discord-bot
@@ -584,7 +566,6 @@
 - https://github.com/goldynlabs/prr-kit
 - https://github.com/goldynlabs/prr-kit.git
 - https://github.com/google-gemini/antigravity
-- https://github.com/google/langextract
 - https://github.com/google/magika
 - https://github.com/google/pprof
 - https://github.com/google/snappy
@@ -675,7 +656,6 @@
 - https://github.com/huifer/WellAlly-health
 - https://github.com/humank/EventStormingWorkShop
 - https://github.com/humank/ddd-practitioners-ref
-- https://github.com/huynamboz/assistant-context
 - https://github.com/hykilpikonna/hyfetch
 - https://github.com/ibireme/yyjson
 - https://github.com/icsharpcode/SharpZipLib
@@ -753,7 +733,6 @@
 - https://github.com/jvm-profiling-tools/async-profiler
 - https://github.com/k-kolomeitsev/data-structure-protocol
 - https://github.com/kaechele/pre-commit-mirror-prettier
-- https://github.com/kaida-palooza/ccpoke
 - https://github.com/kamranahmedse/developer-roadmap
 - https://github.com/kamranahmedse/developer-roadmap.git
 - https://github.com/karpathy/autoresearch
@@ -773,15 +752,12 @@
 - https://github.com/kyutai-labs/pocket-tts
 - https://github.com/lamngockhuong/termote
 - https://github.com/langchain-ai/langchain
-- https://github.com/langchain-ai/langgraph
 - https://github.com/langcorn/langcorn
 - https://github.com/langflow-ai/langflow
 - https://github.com/langroid/langroid
-- https://github.com/lbjlaq/Antigravity-Manager
 - https://github.com/lcandy2/gitingest-extension
 - https://github.com/leondz/garak
 - https://github.com/levz0r/markdown-printer
-- https://github.com/lfnovo/open-notebook
 - https://github.com/licenses/agpl-3.0
 - https://github.com/licenses/apache-2.0
 - https://github.com/licenses/gpl-3.0
@@ -793,7 +769,6 @@
 - https://github.com/linuxserver/reverse-proxy-confs
 - https://github.com/lmittmann/tint
 - https://github.com/lmittmann/tint.svg
-- https://github.com/lobehub/lobe-chat
 - https://github.com/lobehub/lobehub
 - https://github.com/lobsters/lobsters
 - https://github.com/localtunnel/localtunnel
@@ -823,7 +798,6 @@
 - https://github.com/medialab/xan
 - https://github.com/megaparse/megaparse
 - https://github.com/megh-bari/pattern-craft
-- https://github.com/mem0ai/mem0
 - https://github.com/memodb-io/Acontext
 - https://github.com/memodb-io/acontext
 - https://github.com/message-db/message-db
@@ -885,7 +859,6 @@
 - https://github.com/nanocortex/metube-firefox-addon
 - https://github.com/ncruces/go-strftime
 - https://github.com/ndjson/ndjson-spec
-- https://github.com/ndoanh266/setup-n8n
 - https://github.com/nebrelbug/npm-to-yarn
 - https://github.com/neilotoole/fifomu
 - https://github.com/neilotoole/jsoncolor
@@ -901,7 +874,6 @@
 - https://github.com/neuml/txtai
 - https://github.com/nghyane/ampcode-connector
 - https://github.com/nguyenphutrong/quotio
-- https://github.com/nhonn/antigravity-switcher
 - https://github.com/nicholas-fedor/watchtower
 - https://github.com/nicktimko/winloop
 - https://github.com/nicoloboschi/hindsight
@@ -919,7 +891,6 @@
 - https://github.com/octocat/Hello-World
 - https://github.com/octocat/Hello-World.git
 - https://github.com/octocat/Spoon-Knife
-- https://github.com/octokit/graphql.js
 - https://github.com/octokit/octokit.rb
 - https://github.com/octokit/rest.js
 - https://github.com/ohmyzsh/ohmyzsh
@@ -979,8 +950,6 @@
 - https://github.com/peterbourgon/diskv
 - https://github.com/petewarden/dstkdata
 - https://github.com/pgcentralfoundation/pgrx
-- https://github.com/pgvector/pgvector
-- https://github.com/pgvector/pgvector.git
 - https://github.com/phanxuanquang/Adobe-Camera-Profiles-Unlocker
 - https://github.com/phuc-nt/my-translator
 - https://github.com/phuc-nt/my-translator.git
@@ -1004,7 +973,6 @@
 - https://github.com/plotly/plotly.js.git
 - https://github.com/pluginagentmarketplace/custom-plugin-java
 - https://github.com/pluginagentmarketplace/custom-plugin-java.git
-- https://github.com/pnnbao97/VieNeu-TTS
 - https://github.com/pnnbao97/VieNeu-TTS.git
 - https://github.com/pnnbao97/sea-g2p
 - https://github.com/pointfreeco/swift-composable-architecture
@@ -1021,7 +989,6 @@
 - https://github.com/prettier/prettier
 - https://github.com/privatenumber/get-tsconfig
 - https://github.com/privatenumber/resolve-pkg-maps
-- https://github.com/productdevbook/port-killer
 - https://github.com/projectdiscovery/dsl
 - https://github.com/projectdiscovery/katana
 - https://github.com/projectdiscovery/nuclei
@@ -1128,7 +1095,6 @@
 - https://github.com/shopspring/decimal
 - https://github.com/showdownjs/showdown
 - https://github.com/shuding/better-all
-- https://github.com/shynlee04/hivemind-plugin
 - https://github.com/signerlabs/ShipSwift
 - https://github.com/sigstore/cosign
 - https://github.com/sigstore/cosign-installer
@@ -1275,14 +1241,11 @@
 - https://github.com/ticki/eudex
 - https://github.com/tikv/pprof-rs
 - https://github.com/timescale/pg_textsearch
-- https://github.com/timescale/pgvectorscale
 - https://github.com/tinyfish-io/tinyfish-cookbook
-- https://github.com/tirth8205/code-review-graph
 - https://github.com/tmux/tmux
 - https://github.com/tody-agent/codymaster
 - https://github.com/tomiok/patients-API
 - https://github.com/tomwright/dasel
-- https://github.com/topoteretes/cognee
 - https://github.com/tranhaonguyendev/Lazy-downloader
 - https://github.com/tree-sitter/tree-sitter-c
 - https://github.com/tree-sitter/tree-sitter-c-sharp
@@ -1303,7 +1266,6 @@
 - https://github.com/truera/trulens
 - https://github.com/trufflesecurity/test_keys
 - https://github.com/trufflesecurity/test_keys.git
-- https://github.com/trufflesecurity/trufflehog
 - https://github.com/trufflesecurity/trufflehog.git
 - https://github.com/tscholl2/dc7dc15dc132ea70a98e8542fefffa28
 - https://github.com/tuanngocptn/nport
@@ -1312,7 +1274,6 @@
 - https://github.com/tw93/Mole
 - https://github.com/twogood/unshield
 - https://github.com/typestack/typedi
-- https://github.com/tysonnbt/Antigravity-Deck
 - https://github.com/ubikron/OSINT-CTFs
 - https://github.com/ublue-os/bluefin
 - https://github.com/ulid/spec
@@ -1320,7 +1281,6 @@
 - https://github.com/unslothai/notebooks
 - https://github.com/unslothai/unsloth
 - https://github.com/upsonic/upsonic
-- https://github.com/upstash/context7
 - https://github.com/upstash/context7.git
 - https://github.com/uptrain-ai/uptrain
 - https://github.com/upx/upx
@@ -1383,9 +1343,7 @@
 - https://github.com/volak/Aggregates.NET
 - https://github.com/volak/TodoMVC-DDD-CQRS-EventSourcing
 - https://github.com/volak/eShopOnContainersDDD
-- https://github.com/volcengine/OpenViking
 - https://github.com/vouch/vouch-proxy
-- https://github.com/vudovn/antigravity-kit
 - https://github.com/w3c/csvw
 - https://github.com/wandb/wandb
 - https://github.com/wandb/weave
@@ -1438,7 +1396,6 @@
 - https://github.com/yuliskov/SmartTube
 - https://github.com/zhongyu09/openchatbi
 - https://github.com/zhouxiaoka/autoclip
-- https://github.com/zixfelw/ag-auto-click-scroll
 - https://github.com/zixfelw/ag-live-code
 - https://github.com/zombodb/zombodb
 - https://github.com/zsh-users/zsh-autosuggestions
@@ -1447,3 +1404,402 @@
 - https://github.com/zsh-users/zsh-syntax-highlighting.git
 - https://github.com/zw008/VMware-AIops
 - https://github.com/zylon-ai/private-gpt
+
+
+## 📚 BATCH UPDATE 2026-03-30 11:46:03
+- https://github.com/14islands/r3f-scroll-rig (⭐ 921 | Khớp: 0đ)
+
+
+## 📚 BATCH UPDATE 2026-03-30 12:59:27
+- https://github.com/14islands/r3f-scroll-rig (⭐ 921 | Khớp: 0đ)
+- https://github.com/Aikoyori/ProgrammingVTuberLogos (⭐ 6157 | Khớp: 10đ)
+- https://github.com/Alamofire/Alamofire (⭐ 42366 | Khớp: 10đ)
+- https://github.com/AlexxEG/BSA_Browser (⭐ 121 | Khớp: 0đ)
+- https://github.com/AndreyAkinshin/pragmastat (⭐ 30 | Khớp: 0đ)
+- https://github.com/Avaiga/taipy (⭐ 19142 | Khớp: 20đ)
+- https://github.com/Bioruebe/Bio.cs (⭐ 4 | Khớp: -20đ)
+- https://github.com/Bioruebe/UniExtract2 (⭐ 4255 | Khớp: 10đ)
+- https://github.com/Bioruebe/cicdec (⭐ 39 | Khớp: 0đ)
+- https://github.com/Bioruebe/godotdec (⭐ 218 | Khớp: 0đ)
+- https://github.com/Bioruebe/rmvdec (⭐ 31 | Khớp: 0đ)
+- https://github.com/Bioruebe/spoondec (⭐ 9 | Khớp: -20đ)
+- https://github.com/Bioruebe/utagedec (⭐ 4 | Khớp: -20đ)
+- https://github.com/BitTacklr/Projac (⭐ 138 | Khớp: 0đ)
+- https://github.com/BottegaIT/ddd-leaven-v2 (⭐ 880 | Khớp: 10đ)
+- https://github.com/BrianRWagner/ai-marketing-claude-code-skills (⭐ 179 | Khớp: 10đ)
+- https://github.com/BrianRWagner/ai-marketing-skills (⭐ 179 | Khớp: 10đ)
+- https://github.com/BurntSushi/rust-stats (⭐ 88 | Khớp: 0đ)
+- https://github.com/CarterLi/polyfill-glibc (⭐ 3 | Khớp: -20đ)
+- https://github.com/Chleba/ollamaMQ (⭐ 86 | Khớp: 8đ)
+- https://github.com/ClickHouse/agent-skills (⭐ 379 | Khớp: 10đ)
+- https://github.com/Codeaholicguy/ai-devkit (⭐ 992 | Khớp: 18đ)
+- https://github.com/CodebuffAI/codebuff-community (⭐ 37 | Khớp: 0đ)
+- https://github.com/CodelyTV/csharp-ddd-skeleton (⭐ 176 | Khớp: 0đ)
+- https://github.com/CodelyTV/typescript-api-skeleton (⭐ 204 | Khớp: 5đ)
+- https://github.com/CodelyTV/typescript-basic-skeleton (⭐ 144 | Khớp: 5đ)
+- https://github.com/ComPWA/taplo-pre-commit (⭐ 32 | Khớp: 0đ)
+- https://github.com/DataDog/pprof-nodejs (⭐ 29 | Khớp: 5đ)
+- https://github.com/DevLyon/mixter (⭐ 314 | Khớp: 0đ)
+- https://github.com/EveryInc/charlie-cfo-skill (⭐ 181 | Khớp: 0đ)
+- https://github.com/FlowiseAI/Flowise (⭐ 51236 | Khớp: 15đ)
+- https://github.com/Goekdeniz-Guelmez/Local-NotebookLM (⭐ 866 | Khớp: 18đ)
+- https://github.com/HeyVincent-ai/agent-skills (⭐ 5 | Khớp: 6đ)
+- https://github.com/HoangTran0410/douyin-dowload-all-video (⭐ 1 | Khớp: -20đ)
+- https://github.com/HoangTran0410/social_downloader_extension (⭐ 1 | Khớp: -20đ)
+- https://github.com/Homebrew/homebrew-bundle (⭐ 5555 | Khớp: 10đ)
+- https://github.com/Homebrew/homebrew-core (⭐ 15167 | Khớp: 10đ)
+- https://github.com/HumeAI/tada (⭐ 931 | Khớp: 10đ)
+- https://github.com/IBM/actionspz (⭐ 24 | Khớp: 0đ)
+- https://github.com/ItzCrazyKns/Vane (⭐ 33482 | Khớp: 18đ)
+- https://github.com/JasperFx/marten (⭐ 3351 | Khớp: 15đ)
+- https://github.com/Joannis/claude-skills (⭐ 53 | Khớp: 8đ)
+- https://github.com/KajanM/fresh-coupons (⭐ 68 | Khớp: 0đ)
+- https://github.com/KalyanM45/AI-Project-Gallery (⭐ 4563 | Khớp: 15đ)
+- https://github.com/KalyanM45/BlogBoard-AI-Blog-Generator (⭐ 5 | Khớp: 6đ)
+- https://github.com/KalyanM45/DocGenius-Revolutionizing-PDFs-with-AI (⭐ 80 | Khớp: 18đ)
+- https://github.com/KalyanM45/Doclify (⭐ 11 | Khớp: 8đ)
+- https://github.com/KalyanM45/E-Commerce-Data-Analysis (⭐ 9 | Khớp: -20đ)
+- https://github.com/KalyanM45/End-to-End-Airbnb-Price-Prediction (⭐ 56 | Khớp: 10đ)
+- https://github.com/KalyanM45/Gemini-ChatBot (⭐ 15 | Khớp: 0đ)
+- https://github.com/KalyanM45/Medical-Assisstant (⭐ 15 | Khớp: 10đ)
+- https://github.com/KalyanM45/Virat-Kohli-Score-Analytics (⭐ 11 | Khớp: 0đ)
+- https://github.com/KalyanMurapaka45/Checking-Password-Strength-using-Machine-Learning (⭐ 7 | Khớp: -10đ)
+- https://github.com/KalyanMurapaka45/DocGenius-Revolutionizing-PDFs-with-AI (⭐ 80 | Khớp: 18đ)
+- https://github.com/KalyanMurapaka45/E-Commerce-Data-Analysis (⭐ 9 | Khớp: -20đ)
+- https://github.com/KalyanMurapaka45/End-to-End-Airbnb-Price-Prediction (⭐ 56 | Khớp: 10đ)
+- https://github.com/KalyanMurapaka45/Gemini-ChatBot (⭐ 15 | Khớp: 0đ)
+- https://github.com/KalyanMurapaka45/Medical-Assisstant (⭐ 15 | Khớp: 10đ)
+- https://github.com/KalyanMurapaka45/Virat-Kohli-Score-Analytics (⭐ 11 | Khớp: 0đ)
+- https://github.com/KittenML/KittenTTS (⭐ 13358 | Khớp: 20đ)
+- https://github.com/LinesYu/trainingAI (⭐ 8 | Khớp: -20đ)
+- https://github.com/MShawon/github-clone-count-badge (⭐ 50 | Khớp: 18đ)
+- https://github.com/Mermade/oas-kit (⭐ 743 | Khớp: 5đ)
+- https://github.com/MiniMax-AI/MiniMax-AI.github.io (⭐ 67 | Khớp: 0đ)
+- https://github.com/MoonshotAI/WorldVQA (⭐ 110 | Khớp: 10đ)
+- https://github.com/Munkhin/auto-accept-agent (⭐ 89 | Khớp: 10đ)
+- https://github.com/NEventStore/NEventStore (⭐ 1612 | Khớp: 10đ)
+- https://github.com/NVIDIA/nvidia-docker (⭐ 17523 | Khớp: 10đ)
+- https://github.com/NixOS/nixpkgs (⭐ 24082 | Khớp: 10đ)
+- https://github.com/NotMyself/claude-win11-speckit-update-skill (⭐ 29 | Khớp: 8đ)
+- https://github.com/OpenBMB/VoxCPM (⭐ 6203 | Khớp: 20đ)
+- https://github.com/OpenRouterTeam/ai-sdk-provider (⭐ 613 | Khớp: 15đ)
+- https://github.com/OptikR/OptikR (⭐ 5 | Khớp: 6đ)
+- https://github.com/Orvid/Champollion (⭐ 136 | Khớp: 0đ)
+- https://github.com/Paramchoudhary/ResumeSkills (⭐ 196 | Khớp: 10đ)
+- https://github.com/QwenLM/Qwen2.5-Omni (⭐ 3966 | Khớp: 20đ)
+- https://github.com/ReScienceLab/opc-skills (⭐ 650 | Khớp: 10đ)
+- https://github.com/RoundTable02/tutor-skills (⭐ 550 | Khớp: 8đ)
+- https://github.com/RsyncProject/rsync (⭐ 4322 | Khớp: 10đ)
+- https://github.com/SAWARATSUKI/KawaiiLogos (⭐ 6367 | Khớp: 10đ)
+- https://github.com/SEL-Columbia/formhub (⭐ 259 | Khớp: 10đ)
+- https://github.com/STRML/strml.net (⭐ 2642 | Khớp: 10đ)
+- https://github.com/SangVoM/trans-faster (⭐ 9 | Khớp: -20đ)
+- https://github.com/SanjaySunil/BetterDiscordPanel (⭐ 721 | Khớp: 15đ)
+- https://github.com/SeanZoR/claude-speed-reader (⭐ 13 | Khớp: 0đ)
+- https://github.com/StableDiffusionVN/sdvn_apix_python (⭐ 32 | Khớp: 10đ)
+- https://github.com/TUAN130294/awf (⭐ 202 | Khớp: 18đ)
+- https://github.com/Tencent-Hunyuan/ArtifactsBenchmark (⭐ 260 | Khớp: 18đ)
+- https://github.com/ThomasBury/pyragify (⭐ 64 | Khớp: 18đ)
+- https://github.com/Tieske/date (⭐ 276 | Khớp: 8đ)
+- https://github.com/ToJans/Scritchy (⭐ 66 | Khớp: 0đ)
+- https://github.com/VoltAgent/skills (⭐ 9 | Khớp: -10đ)
+- https://github.com/WEIFENG2333/VideoCaptioner (⭐ 13788 | Khớp: 18đ)
+- https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts (⭐ 10138 | Khớp: 10đ)
+- https://github.com/ZackKorman/skills (⭐ 16 | Khớp: 10đ)
+- https://github.com/ZhangHanDong/makepad-skills (⭐ 727 | Khớp: 10đ)
+- https://github.com/aardappel/lobster (⭐ 2708 | Khớp: 20đ)
+- https://github.com/adbar/trafilatura (⭐ 5613 | Khớp: 20đ)
+- https://github.com/adrai/node-cqrs-saga (⭐ 62 | Khớp: 5đ)
+- https://github.com/agrinman/tunnelto (⭐ 6301 | Khớp: 18đ)
+- https://github.com/agrinman/wormhole (⭐ 6301 | Khớp: 18đ)
+- https://github.com/andyfischer/ai-coding-tools (⭐ 34 | Khớp: 0đ)
+- https://github.com/anthropics/claude-code (⭐ 84315 | Khớp: 15đ)
+- https://github.com/aquasecurity/trivy (⭐ 34220 | Khớp: 20đ)
+- https://github.com/arm64x/PHP-Lazada-Affiliate-API-Tool (⭐ 6 | Khớp: -20đ)
+- https://github.com/asc-lab/better-code-with-ddd (⭐ 320 | Khớp: 0đ)
+- https://github.com/asc-lab/dotnet-cqrs-intro (⭐ 138 | Khớp: 0đ)
+- https://github.com/asc-lab/java-cqrs-intro (⭐ 213 | Khớp: 0đ)
+- https://github.com/asgeirtj/system_prompts_leaks (⭐ 35201 | Khớp: 10đ)
+- https://github.com/atxp-dev/cli (⭐ 9 | Khớp: -10đ)
+- https://github.com/authelia/authelia (⭐ 27346 | Khớp: 10đ)
+- https://github.com/avajs/find-cache-dir (⭐ 162 | Khớp: 0đ)
+- https://github.com/aymanbagabas/go-udiff (⭐ 222 | Khớp: 0đ)
+- https://github.com/binance/binance-skills-hub (⭐ 616 | Khớp: 15đ)
+- https://github.com/bitnami/charts (⭐ 10317 | Khớp: 10đ)
+- https://github.com/blader/humanizer (⭐ 11586 | Khớp: 10đ)
+- https://github.com/bmad-code-org/bmad-builder (⭐ 95 | Khớp: 8đ)
+- https://github.com/bmad-code-org/bmad-module-creative-intelligence-suite (⭐ 51 | Khớp: 18đ)
+- https://github.com/bmad-code-org/bmad-module-game-dev-studio (⭐ 124 | Khớp: 8đ)
+- https://github.com/boristane/agent-skills (⭐ 73 | Khớp: 10đ)
+- https://github.com/boyney123/eventcatalog (⭐ 6 | Khớp: -20đ)
+- https://github.com/brianlovin/agent-config (⭐ 308 | Khớp: 10đ)
+- https://github.com/brianlovin/claude-config (⭐ 308 | Khớp: 10đ)
+- https://github.com/broadway/broadway (⭐ 1509 | Khớp: 10đ)
+- https://github.com/caido/caido (⭐ 2232 | Khớp: 10đ)
+- https://github.com/carapace-sh/carapace-bin (⭐ 1757 | Khớp: 10đ)
+- https://github.com/chalk/ansi-styles (⭐ 453 | Khớp: 0đ)
+- https://github.com/chalk/strip-ansi (⭐ 504 | Khớp: 5đ)
+- https://github.com/chalk/wrap-ansi (⭐ 136 | Khớp: 0đ)
+- https://github.com/cheahjs/free-llm-api-resources (⭐ 17407 | Khớp: 18đ)
+- https://github.com/cheeriojs/cheerio (⭐ 30241 | Khớp: 15đ)
+- https://github.com/chroma-core/chroma (⭐ 27028 | Khớp: 20đ)
+- https://github.com/citerus/dddsample-core (⭐ 5265 | Khớp: 10đ)
+- https://github.com/claromes/waybacktweets (⭐ 183 | Khớp: 10đ)
+- https://github.com/codeaholicguy/ai-devkit (⭐ 992 | Khớp: 18đ)
+- https://github.com/codelucas/newspaper (⭐ 15015 | Khớp: 20đ)
+- https://github.com/codemirror/lang-sql (⭐ 97 | Khớp: 0đ)
+- https://github.com/coderamp-labs/gitingest-extension (⭐ 209 | Khớp: 8đ)
+- https://github.com/conda-forge/croc-feedstock (⭐ 1 | Khớp: -20đ)
+- https://github.com/dathere/qsv-dateparser (⭐ 3 | Khớp: -20đ)
+- https://github.com/dathere/qsv-easy-windows-installer (⭐ 2 | Khớp: -20đ)
+- https://github.com/dathere/qsv-stats (⭐ 10 | Khớp: 0đ)
+- https://github.com/ddd-by-examples/event-source-cqrs-sample (⭐ 476 | Khớp: 0đ)
+- https://github.com/ddd-cqrs-es/community (⭐ 78 | Khớp: 0đ)
+- https://github.com/ddd-crew/eventstorming-glossary-cheat-sheet (⭐ 956 | Khớp: 10đ)
+- https://github.com/deltazero-cz/node-isdoc-pdf (⭐ 6 | Khớp: -15đ)
+- https://github.com/dgreenheck/webgpu-claude-skill (⭐ 466 | Khớp: 10đ)
+- https://github.com/die-net/lrucache (⭐ 34 | Khớp: 0đ)
+- https://github.com/dmmulroy/cloudflare-skill (⭐ 711 | Khớp: 18đ)
+- https://github.com/docker/setup-qemu-action (⭐ 565 | Khớp: 8đ)
+- https://github.com/dotnet-architecture/eShopOnContainers (⭐ 24413 | Khớp: 10đ)
+- https://github.com/dotnet-architecture/eShopOnWeb (⭐ 10639 | Khớp: 10đ)
+- https://github.com/doublify/pre-commit-rust (⭐ 204 | Khớp: 0đ)
+- https://github.com/dream-num/univer-presets (⭐ 7 | Khớp: -15đ)
+- https://github.com/dscharrer/innoextract (⭐ 1275 | Khớp: 10đ)
+- https://github.com/dtrupenn/Tetris (⭐ 6 | Khớp: -20đ)
+- https://github.com/dunkbing/ktab (⭐ 11 | Khớp: 0đ)
+- https://github.com/dylanaraps/neofetch (⭐ 23600 | Khớp: 10đ)
+- https://github.com/e2b-dev/code-interpreter (⭐ 2263 | Khớp: 25đ)
+- https://github.com/efremidze/swift-patterns-skill (⭐ 5 | Khớp: 13đ)
+- https://github.com/ehmo/platform-design-skills (⭐ 301 | Khớp: 10đ)
+- https://github.com/elixir-lang/tree-sitter-elixir (⭐ 276 | Khớp: 0đ)
+- https://github.com/ericblue/claude-openclaw-bridge (⭐ 7 | Khớp: -10đ)
+- https://github.com/ericciarla/aginews (⭐ 272 | Khớp: 0đ)
+- https://github.com/esd-org-uk/schemas (⭐ 7 | Khớp: -20đ)
+- https://github.com/fal-ai-community/skills (⭐ 43 | Khớp: 18đ)
+- https://github.com/fb55/encoding-sniffer (⭐ 6 | Khớp: -15đ)
+- https://github.com/fb55/entities (⭐ 377 | Khớp: 15đ)
+- https://github.com/fdhhhdjd/class-prometheus-grafana-telegram-alerts (⭐ 29 | Khớp: 5đ)
+- https://github.com/firecrawl/create-llmstxt-py (⭐ 287 | Khớp: 10đ)
+- https://github.com/firecrawl/firecrawl-claude-plugin (⭐ 36 | Khớp: 8đ)
+- https://github.com/firecrawl/firesearch (⭐ 467 | Khớp: 13đ)
+- https://github.com/firecrawl/open-lovable (⭐ 24615 | Khớp: 18đ)
+- https://github.com/forwardemail/superagent (⭐ 16643 | Khớp: 15đ)
+- https://github.com/friendsofgo/gopherapi (⭐ 80 | Khớp: 0đ)
+- https://github.com/fvadicamo/dev-agent-skills (⭐ 54 | Khớp: 18đ)
+- https://github.com/gabrielchua/open-notebooklm (⭐ 2576 | Khớp: 20đ)
+- https://github.com/get-gah/gah (⭐ 282 | Khớp: 0đ)
+- https://github.com/getsentry/skills (⭐ 491 | Khớp: 18đ)
+- https://github.com/github/docs (⭐ 19210 | Khớp: 10đ)
+- https://github.com/goauthentik/authentik (⭐ 20722 | Khớp: 18đ)
+- https://github.com/gokapso/agent-skills (⭐ 97 | Khớp: 10đ)
+- https://github.com/golang/gddo (⭐ 1102 | Khớp: 10đ)
+- https://github.com/golang/go (⭐ 133195 | Khớp: 10đ)
+- https://github.com/golangci/golangci-lint (⭐ 18730 | Khớp: 10đ)
+- https://github.com/grafana/async-profiler (⭐ 5 | Khớp: -10đ)
+- https://github.com/grafana/dskit (⭐ 563 | Khớp: 0đ)
+- https://github.com/grafana/explore-profiles (⭐ 40 | Khớp: 10đ)
+- https://github.com/grafana/grafana-github-actions (⭐ 30 | Khớp: 0đ)
+- https://github.com/grafana/grafonnet-lib (⭐ 1079 | Khớp: 10đ)
+- https://github.com/grafana/k8s-monitoring-helm (⭐ 621 | Khớp: 0đ)
+- https://github.com/grafana/otel-profiling-go (⭐ 100 | Khớp: 10đ)
+- https://github.com/grafana/otel-profiling-python (⭐ 9 | Khớp: -10đ)
+- https://github.com/grafana/phlare (⭐ 2030 | Khớp: 10đ)
+- https://github.com/grafana/pyroscope-java (⭐ 115 | Khớp: 10đ)
+- https://github.com/grafana/pyroscope-rs (⭐ 211 | Khớp: 0đ)
+- https://github.com/greyblake/whatlang-rs (⭐ 1064 | Khớp: 20đ)
+- https://github.com/hanfang/claude-memory-skill (⭐ 5 | Khớp: 0đ)
+- https://github.com/harehare/mq-conv (⭐ 1 | Khớp: -20đ)
+- https://github.com/harehare/mq-go (⭐ 0 | Khớp: -20đ)
+- https://github.com/harehare/mq-java (⭐ 0 | Khớp: -20đ)
+- https://github.com/harehare/mq-python (⭐ 1 | Khớp: -10đ)
+- https://github.com/harehare/mq-ruby (⭐ 0 | Khớp: -20đ)
+- https://github.com/harehare/mq-tui (⭐ 7 | Khớp: -20đ)
+- https://github.com/harehare/mq-update (⭐ 0 | Khớp: -20đ)
+- https://github.com/harehare/mq_elixir (⭐ 0 | Khớp: -20đ)
+- https://github.com/harehare/mqt (⭐ 7 | Khớp: -20đ)
+- https://github.com/harry0703/MoneyPrinterTurbo (⭐ 53967 | Khớp: 20đ)
+- https://github.com/huggingface/transformers (⭐ 158533 | Khớp: 20đ)
+- https://github.com/huggingface/trl (⭐ 17837 | Khớp: 20đ)
+- https://github.com/huifer/Claude-Ally-Health (⭐ 794 | Khớp: 0đ)
+- https://github.com/huifer/WellAlly-health (⭐ 794 | Khớp: 0đ)
+- https://github.com/ibelick/ui-skills (⭐ 1137 | Khớp: 10đ)
+- https://github.com/icsharpcode/SharpZipLib (⭐ 3910 | Khớp: 10đ)
+- https://github.com/innobead/huber (⭐ 223 | Khớp: 0đ)
+- https://github.com/janikredpandadev/ddd-modulith (⭐ 0 | Khớp: -20đ)
+- https://github.com/javanile/php-glossary (⭐ 5 | Khớp: -20đ)
+- https://github.com/jbogard/ContosoUniversityCore (⭐ 589 | Khớp: 0đ)
+- https://github.com/jhuckaby/pixl-boot (⭐ 5 | Khớp: -15đ)
+- https://github.com/jhuckaby/pixl-cli (⭐ 11 | Khớp: 5đ)
+- https://github.com/jhuckaby/pixl-logger (⭐ 6 | Khớp: -15đ)
+- https://github.com/jhuckaby/pixl-mail (⭐ 6 | Khớp: -10đ)
+- https://github.com/jhuckaby/pixl-request (⭐ 5 | Khớp: -5đ)
+- https://github.com/jhuckaby/pixl-server-debug (⭐ 0 | Khớp: -5đ)
+- https://github.com/jhuckaby/pixl-server-user (⭐ 4 | Khớp: 3đ)
+- https://github.com/jinq51187/auto-accept-antigravity (⭐ 13 | Khớp: 10đ)
+- https://github.com/jqnatividad/rust-stats (⭐ 10 | Khớp: 0đ)
+- https://github.com/jquery/qunit (⭐ 4028 | Khớp: 15đ)
+- https://github.com/kaida-palooza/ccpoke (⭐ 96 | Khớp: 15đ)
+- https://github.com/kamranahmedse/developer-roadmap (⭐ 351845 | Khớp: 25đ)
+- https://github.com/klpod221/kerminal (⭐ 417 | Khớp: 15đ)
+- https://github.com/knucklesuganda/py_assimilator (⭐ 216 | Khớp: 10đ)
+- https://github.com/koai-dev/xapktool (⭐ 18 | Khớp: 0đ)
+- https://github.com/koalaman/shellcheck-precommit (⭐ 124 | Khớp: 0đ)
+- https://github.com/kubernetes-sigs/windows-gmsa (⭐ 34 | Khớp: 0đ)
+- https://github.com/lcandy2/gitingest-extension (⭐ 209 | Khớp: 8đ)
+- https://github.com/lightpanda-io/browser (⭐ 25888 | Khớp: 18đ)
+- https://github.com/linuxserver/reverse-proxy-confs (⭐ 1607 | Khớp: 10đ)
+- https://github.com/lmittmann/tint (⭐ 1262 | Khớp: 10đ)
+- https://github.com/localtunnel/localtunnel (⭐ 22188 | Khớp: 10đ)
+- https://github.com/longtho638-jpg/openclaw-worker (⭐ 42 | Khớp: 17đ)
+- https://github.com/magic-wormhole/magic-wormhole (⭐ 22464 | Khớp: 20đ)
+- https://github.com/marverix/gah (⭐ 282 | Khớp: 0đ)
+- https://github.com/mattn/go-isatty (⭐ 898 | Khớp: 10đ)
+- https://github.com/mduongvandinh/springboot-best-practices (⭐ 38 | Khớp: 18đ)
+- https://github.com/mendableai/firecrawl-go (⭐ 25 | Khớp: 8đ)
+- https://github.com/micromatch/anymatch (⭐ 402 | Khớp: 0đ)
+- https://github.com/microsoft/pyright (⭐ 15340 | Khớp: 20đ)
+- https://github.com/microsoft/vscode-ripgrep (⭐ 175 | Khớp: 10đ)
+- https://github.com/microsoft/winget-pkgs (⭐ 10412 | Khớp: 10đ)
+- https://github.com/mikonos/zk-steward-companion (⭐ 0 | Khớp: -2đ)
+- https://github.com/minhchi1509/tiktok-bulk-downloader-desktop-app (⭐ 74 | Khớp: 0đ)
+- https://github.com/n8n-io/n8n-hosting (⭐ 1545 | Khớp: 18đ)
+- https://github.com/n8n-io/task-runner-launcher (⭐ 47 | Khớp: 10đ)
+- https://github.com/nagisanzenin/claude-code-skill-maker-plugin (⭐ 1 | Khớp: -20đ)
+- https://github.com/napi-rs/package-template (⭐ 365 | Khớp: 5đ)
+- https://github.com/ncruces/go-strftime (⭐ 18 | Khớp: 0đ)
+- https://github.com/ndoanh266/setup-n8n (⭐ 79 | Khớp: 8đ)
+- https://github.com/nektos/act (⭐ 69613 | Khớp: 18đ)
+- https://github.com/nghyane/llm-mux (⭐ 328 | Khớp: 8đ)
+- https://github.com/nhonn/antigravity-switcher (⭐ 22 | Khớp: 0đ)
+- https://github.com/nightlyone/lockfile (⭐ 147 | Khớp: 0đ)
+- https://github.com/numman-ali/opencode-openai-codex-auth (⭐ 1864 | Khớp: 10đ)
+- https://github.com/octokit/rest.js (⭐ 652 | Khớp: 13đ)
+- https://github.com/ognjengt/founder-skills (⭐ 104 | Khớp: 0đ)
+- https://github.com/olekukonko/tablewriter (⭐ 4775 | Khớp: 10đ)
+- https://github.com/onsi/ginkgo (⭐ 8970 | Khớp: 18đ)
+- https://github.com/open-telemetry/opentelemetry-dotnet (⭐ 3681 | Khớp: 10đ)
+- https://github.com/open-telemetry/opentelemetry-python (⭐ 2372 | Khớp: 20đ)
+- https://github.com/pawelkaczor/akka-ddd (⭐ 360 | Khớp: 0đ)
+- https://github.com/pilloPl/event-source-cqrs-sample (⭐ 476 | Khớp: 0đ)
+- https://github.com/pixlcore/xyops-shell-image (⭐ 0 | Khớp: -5đ)
+- https://github.com/pixlcore/xyplug-stagehand (⭐ 0 | Khớp: 6đ)
+- https://github.com/pixlcore/xyrun (⭐ 6 | Khớp: -7đ)
+- https://github.com/pixlcore/xysat (⭐ 11 | Khớp: 13đ)
+- https://github.com/pluginagentmarketplace/custom-plugin-java (⭐ 28 | Khớp: 10đ)
+- https://github.com/pola-rs/polars (⭐ 37920 | Khớp: 25đ)
+- https://github.com/postmanlabs/httpbin (⭐ 13532 | Khớp: 20đ)
+- https://github.com/pre-commit/mirrors-mypy (⭐ 349 | Khớp: 10đ)
+- https://github.com/pre-commit/mirrors-yapf (⭐ 29 | Khớp: 0đ)
+- https://github.com/projectdiscovery/dsl (⭐ 117 | Khớp: 18đ)
+- https://github.com/pwaller/pyfiglet (⭐ 1553 | Khớp: 20đ)
+- https://github.com/pyroscope-io/async-profiler (⭐ 5 | Khớp: -10đ)
+- https://github.com/pyroscope-io/homebrew-brew (⭐ 3 | Khớp: -20đ)
+- https://github.com/pyroscope-io/otel-profiling-go (⭐ 100 | Khớp: 10đ)
+- https://github.com/pyroscope-io/pyroscope-java (⭐ 115 | Khớp: 10đ)
+- https://github.com/pyroscope-io/pyroscope-rs (⭐ 211 | Khớp: 0đ)
+- https://github.com/qunitjs/qunit (⭐ 4028 | Khớp: 15đ)
+- https://github.com/raboof/sfarkxtc (⭐ 96 | Khớp: 0đ)
+- https://github.com/raintree-technology/apple-hig-skills (⭐ 30 | Khớp: 15đ)
+- https://github.com/raintree-technology/hig-doctor (⭐ 30 | Khớp: 15đ)
+- https://github.com/rameerez/claude-code-startup-skills (⭐ 21 | Khớp: 0đ)
+- https://github.com/ramzesenok/iOS-Accessibility-Audit-Skill (⭐ 12 | Khớp: 0đ)
+- https://github.com/readthedocs/test-builds (⭐ 20 | Khớp: 0đ)
+- https://github.com/remorses/tuistory (⭐ 278 | Khớp: 5đ)
+- https://github.com/remotion-dev/skills (⭐ 2462 | Khớp: 10đ)
+- https://github.com/replicate/skills (⭐ 26 | Khớp: 10đ)
+- https://github.com/rsteube/carapace-bin (⭐ 1757 | Khớp: 10đ)
+- https://github.com/run-llama/llama_cloud_services (⭐ 4251 | Khớp: 25đ)
+- https://github.com/run-llama/llama_parse (⭐ 4251 | Khớp: 25đ)
+- https://github.com/rust-lang/rust (⭐ 111573 | Khớp: 10đ)
+- https://github.com/rusticstuff/simdutf8 (⭐ 592 | Khớp: 0đ)
+- https://github.com/saturndec/waoowaoo (⭐ 10603 | Khớp: 10đ)
+- https://github.com/scop/pre-commit-shfmt (⭐ 89 | Khớp: 0đ)
+- https://github.com/segmentio/encoding (⭐ 1046 | Khớp: 10đ)
+- https://github.com/serenakeyitan/citation-check-skill (⭐ 58 | Khớp: 18đ)
+- https://github.com/shanraisshan/claude-code-codex-cursor-gemini (⭐ 9 | Khớp: -5đ)
+- https://github.com/shanraisshan/claude-code-hooks (⭐ 221 | Khớp: 18đ)
+- https://github.com/shanraisshan/claude-code-voice-hooks (⭐ 221 | Khớp: 18đ)
+- https://github.com/shareAI-lab/shareAI-skills (⭐ 233 | Khớp: 10đ)
+- https://github.com/sharkdp/bat (⭐ 57855 | Khớp: 18đ)
+- https://github.com/simonwong/agent-skills (⭐ 1 | Khớp: 0đ)
+- https://github.com/sindresorhus/find-cache-directory (⭐ 162 | Khớp: 0đ)
+- https://github.com/sindresorhus/ora (⭐ 9652 | Khớp: 25đ)
+- https://github.com/skillhub-club/skillhub-desktop (⭐ 491 | Khớp: 15đ)
+- https://github.com/smixs/creative-director-skill (⭐ 45 | Khớp: 10đ)
+- https://github.com/sourcegraph/go-diff (⭐ 452 | Khớp: 0đ)
+- https://github.com/streamlit/streamlit (⭐ 44058 | Khớp: 20đ)
+- https://github.com/superdesigndev/superdesign-skill (⭐ 279 | Khớp: 18đ)
+- https://github.com/syndtr/goleveldb (⭐ 6320 | Khớp: 10đ)
+- https://github.com/termux/termux-packages (⭐ 15967 | Khớp: 10đ)
+- https://github.com/thanhkeke97/RSTGameTranslation (⭐ 475 | Khớp: 18đ)
+- https://github.com/thanos-io/objstore (⭐ 178 | Khớp: 8đ)
+- https://github.com/thaonv7995/acpms (⭐ 10 | Khớp: 15đ)
+- https://github.com/theHamsta/nvim-dap-virtual-text (⭐ 1062 | Khớp: 20đ)
+- https://github.com/thenativeweb/node-cqrs-saga (⭐ 62 | Khớp: 5đ)
+- https://github.com/thinkbeforecoding/FsUno (⭐ 76 | Khớp: 0đ)
+- https://github.com/thinkbeforecoding/m-r (⭐ 73 | Khớp: 0đ)
+- https://github.com/thurask/Qt-Linguist (⭐ 130 | Khớp: 0đ)
+- https://github.com/tomiok/patients-API (⭐ 31 | Khớp: 0đ)
+- https://github.com/tranhaonguyendev/Lazy-downloader (⭐ 17 | Khớp: 5đ)
+- https://github.com/transloadit/skills (⭐ 2 | Khớp: -2đ)
+- https://github.com/tree-sitter/tree-sitter-c (⭐ 355 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-c-sharp (⭐ 288 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-cpp (⭐ 407 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-go (⭐ 402 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-java (⭐ 251 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-javascript (⭐ 469 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-ocaml (⭐ 93 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-php (⭐ 214 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-python (⭐ 532 | Khớp: 18đ)
+- https://github.com/tree-sitter/tree-sitter-ql (⭐ 35 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-ruby (⭐ 225 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-rust (⭐ 487 | Khớp: 8đ)
+- https://github.com/tree-sitter/tree-sitter-typescript (⭐ 502 | Khớp: 13đ)
+- https://github.com/tunnelvisionlabs/antlr4ts (⭐ 676 | Khớp: 5đ)
+- https://github.com/tw93/Mole (⭐ 44700 | Khớp: 15đ)
+- https://github.com/twogood/unshield (⭐ 409 | Khớp: 0đ)
+- https://github.com/ubikron/OSINT-CTFs (⭐ 43 | Khớp: 0đ)
+- https://github.com/ublue-os/bluefin (⭐ 2400 | Khớp: 18đ)
+- https://github.com/upx/upx (⭐ 17306 | Khớp: 10đ)
+- https://github.com/usagirei/RGSS-Decryptor (⭐ 37 | Khớp: 0đ)
+- https://github.com/usestrix/benchmarks (⭐ 10 | Khớp: 0đ)
+- https://github.com/vectorize-io/hindsight-cookbook (⭐ 21 | Khớp: 18đ)
+- https://github.com/vectorize-io/pg0 (⭐ 44 | Khớp: 15đ)
+- https://github.com/vercel/turborepo (⭐ 30086 | Khớp: 15đ)
+- https://github.com/visionmedia/superagent (⭐ 16643 | Khớp: 15đ)
+- https://github.com/vitejs/vite (⭐ 79426 | Khớp: 10đ)
+- https://github.com/vueuse/skills (⭐ 346 | Khớp: 10đ)
+- https://github.com/w3c/csvw (⭐ 168 | Khớp: 0đ)
+- https://github.com/waoowaooAI/waoowaoo (⭐ 10604 | Khớp: 10đ)
+- https://github.com/wendylabsinc/claude-skills (⭐ 53 | Khớp: 8đ)
+- https://github.com/wesm/agentsview (⭐ 613 | Khớp: 15đ)
+- https://github.com/wrsmith108/varlock-claude-skill (⭐ 16 | Khớp: 0đ)
+- https://github.com/xhafan/emailmaker (⭐ 13 | Khớp: 0đ)
+- https://github.com/yamafaktory/jql (⭐ 1664 | Khớp: 18đ)
+- https://github.com/yhat/pandasql (⭐ 1348 | Khớp: 20đ)
+- https://github.com/younos1986/Core.EventStore (⭐ 6 | Khớp: -20đ)
+- https://github.com/yreynhout/Projac (⭐ 138 | Khớp: 0đ)
+- https://github.com/ysharma3501/LinaCodec (⭐ 261 | Khớp: 10đ)
+- https://github.com/zackkorman/skills (⭐ 16 | Khớp: 10đ)
+- https://github.com/zixfelw/ag-auto-click-scroll (⭐ 9 | Khớp: -10đ)
+- https://github.com/zsh-users/zsh-syntax-highlighting (⭐ 22428 | Khớp: 10đ)
+
+
+## 📚 BATCH UPDATE 2026-03-30 13:09:00
+- https://github.com/manhvicky/openclaw-admin (⭐ 9 | Khớp: 0đ)
+- https://github.com/IvanMurzak/Unity-Package-Template (⭐ 98 | Khớp: 8đ)
+- https://github.com/FutureisinPast/antigravity-conversation-fix (⭐ 170 | Khớp: 10đ)
+- https://github.com/atlas-os/atlas (⭐ 20098 | Khớp: 10đ)
+- https://github.com/TUAN130294/awf (⭐ 202 | Khớp: 18đ)
+- https://github.com/FutureisinPast/antigravity-conversation-fix (⭐ 170 | Khớp: 10đ)
+
+
+## 📚 BATCH UPDATE 2026-03-30 22:38:13
+- https://github.com/manhvicky/openclaw-admin (⭐ 9 | Khớp: 0đ)
+- https://github.com/IvanMurzak/Unity-Package-Template (⭐ 98 | Khớp: 8đ)
+- https://github.com/FutureisinPast/antigravity-conversation-fix (⭐ 173 | Khớp: 10đ)
+- https://github.com/atlas-os/atlas (⭐ 20103 | Khớp: 10đ)
+- https://github.com/TUAN130294/awf (⭐ 202 | Khớp: 18đ)
+- https://github.com/FutureisinPast/antigravity-conversation-fix (⭐ 173 | Khớp: 10đ)
+- https://github.com/TableProApp/TablePro (⭐ 1820 | Khớp: 10đ)

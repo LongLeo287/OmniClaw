@@ -15,7 +15,7 @@ Intake protocol: brain/corp/sops/CLIENT_INTAKE_GATEWAY.md
 ## Sprint 1 â€” 2026-03-19 (Initial Setup)
 
 ### Architecture Decisions
-- Dept created as part of AI OS Corp v2.4 (21st department)
+- Dept created as part of OmniClaw Corp v2.4 (21st department)
 - DORMANT mode by default â€” designed for CEO-offline scenarios
 - Phase 1 channels: Telegram + Discord via nullclaw bot
 - Phase 2 channels (planned): WhatsApp, Web form portal

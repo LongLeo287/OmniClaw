@@ -1,7 +1,7 @@
 ﻿# ORGANIZATIONAL DEVELOPMENT & LEARNING (OD&L) â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: org-architect-agent | Reports to: CSO
-# Mission: XÃ¢y dá»±ng, nÃ¢ng cáº¥p, vÃ  phÃ¡t triá»ƒn tá»• chá»©c AI OS Corp
+# Mission: XÃ¢y dá»±ng, nÃ¢ng cáº¥p, vÃ  phÃ¡t triá»ƒn tá»• chá»©c OmniClaw Corp
 # Core question this dept answers: "LÃ m tháº¿ nÃ o Ä‘á»ƒ tá»• chá»©c nÃ y trá»Ÿ nÃªn tá»‘t hÆ¡n?"
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
@@ -66,7 +66,7 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 
 ### org-architect-agent (Dept Head)
 **Role:** Organizational design leadership, structural proposals, upgrade strategy
-**This agent is the architectural intelligence of AI OS Corp**
+**This agent is the architectural intelligence of OmniClaw Corp**
 **Responsibilities:**
 - Design new departments and restructuring proposals
 - Assess org health holistically across all 20 depts

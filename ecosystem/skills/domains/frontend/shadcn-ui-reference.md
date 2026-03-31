@@ -6,7 +6,7 @@ tier: 3
 domain: frontend
 cost_tier: standard
 status: active
-author: AI OS (adapted from shadcn-ui/ui)
+author: OmniClaw (adapted from shadcn-ui/ui)
 updated: 2026-03-14
 source: https://github.com/shadcn-ui/ui
 tags: [shadcn, react, tailwind, radix-ui, typescript, components, copy-paste]
@@ -30,7 +30,7 @@ exposed_functions:
 load_on_boot: false
 ---
 
-# shadcn/ui — AI OS Reference Skill
+# shadcn/ui — OmniClaw Reference Skill
 
 > Source: https://github.com/shadcn-ui/ui (Open Source, Open Code)
 > "A set of beautifully designed components you can customize, extend, and build on."

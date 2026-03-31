@@ -1,6 +1,6 @@
 # Department: operations
 ---
-description: AI OS notification routing — gửi alert qua Telegram, log hệ thống, CEO dashboard
+description: OmniClaw notification routing — gửi alert qua Telegram, log hệ thống, CEO dashboard
 ---
 # notification-bridge.md — Notification Bridge Protocol
 # Version: 1.0 | Created: 2026-03-24
@@ -77,7 +77,7 @@ $body = @{
     type = "SYSTEM_ERROR"
     priority = "NORMAL"
     title = "Test notification"
-    body = "AI OS notification-bridge working ✅"
+    body = "OmniClaw notification-bridge working ✅"
 } | ConvertTo-Json
 
 Invoke-RestMethod -Uri "http://localhost:<nullclaw-port>/notify" -Method POST -Body $body -ContentType "application/json"

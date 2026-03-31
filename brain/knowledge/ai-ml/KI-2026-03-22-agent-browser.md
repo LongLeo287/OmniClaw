@@ -16,7 +16,7 @@ created: 2026-03-22T22:37:16.443912
 **Type:** TOOL | **Dept:** engineering  
 **Relevant Agents:** web_intelligence, autoresearchclaw
 
-## AI OS Notes
+## OmniClaw Notes
 JS/TS only. Consider for Node.js workflows. Pairs with web_intelligence skill for structured web data extraction. Alternative to raw Playwright.
 
 ## Install / Use

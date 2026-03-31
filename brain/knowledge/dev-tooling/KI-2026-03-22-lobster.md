@@ -15,10 +15,10 @@ created: 2026-03-22T23:23:54.299876
 
 **Source:** [https://github.com/openclaw/lobster](https://github.com/openclaw/lobster)  
 **Stars:** 200 | **Type:** REFERENCE  
-**AI OS Compatible:** ❌ OpenClaw/NVIDIA-specific
+**OmniClaw Compatible:** ❌ OpenClaw/NVIDIA-specific
 
-## AI OS Notes
-OpenClaw-specific. Interesting typed pipeline pattern (objects instead of text pipes) and token-saving macro concept. Not directly compatible with AI OS (Claude/Antigravity). Study for AI OS workflow macro patterns.
+## OmniClaw Notes
+OpenClaw-specific. Interesting typed pipeline pattern (objects instead of text pipes) and token-saving macro concept. Not directly compatible with OmniClaw (Claude/Antigravity). Study for OmniClaw workflow macro patterns.
 
 ## Key Concepts
 - Typed pipelines: objects/arrays, not text pipes

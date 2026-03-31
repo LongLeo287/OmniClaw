@@ -1,6 +1,6 @@
 ---
 name: Cybersecurity Skills
-description: AI OS cybersecurity skill bundle. Web app security testing (SQLi, XSS, API security), penetration testing workflows, and security assessment capabilities. Delivered from CIV ingest pipeline.
+description: OmniClaw cybersecurity skill bundle. Web app security testing (SQLi, XSS, API security), penetration testing workflows, and security assessment capabilities. Delivered from CIV ingest pipeline.
 department: security_grc
 tier: 2
 category: security
@@ -18,7 +18,7 @@ tags: [security, pentest, sqli, xss, api-security, web-security, assessment]
 
 ## What it is
 
-A curated set of cybersecurity skills delivered into AI OS brain. Covers offensive security (assessment tools) and defensive (policy/compliance) workflows.
+A curated set of cybersecurity skills delivered into OmniClaw brain. Covers offensive security (assessment tools) and defensive (policy/compliance) workflows.
 
 ## Skills Covered
 
@@ -46,7 +46,7 @@ Maps to Security Console tools in ClawTask:
 4. Generate report → telemetry/receipts/
 ```
 
-## AI OS Integration
+## OmniClaw Integration
 - **Owner dept:** `security_grc` → `corp/departments/security_grc/`
 - **ClawTask panel:** Security Console (view `security`)
 - **Pairs with:** `security/rules/`, `security/secrets/`

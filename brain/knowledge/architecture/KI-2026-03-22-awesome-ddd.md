@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/heynickc/awesome-ddd](https://github.com/heynickc/awesome-ddd)  
 **Stars:** 6k | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** architect_agent
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-REFERENCE — good foundation for AI OS microservice architecture. Study for dept/agent boundary design.
+## OmniClaw Notes
+REFERENCE — good foundation for OmniClaw microservice architecture. Study for dept/agent boundary design.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

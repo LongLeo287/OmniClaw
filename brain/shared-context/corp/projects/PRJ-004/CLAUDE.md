@@ -1,21 +1,21 @@
 ﻿# ðŸš€ CLAUDE.md â€” Tiem Nuoc Nho v5 (PRJ-004)
 # Version: 1.1 | Updated: 2026-03-16
 # Authority: Tier 0 (Project Constitution)
-# Location: <AI_OS_ROOT>\projects\PRJ-004\   â—„ Managed by AI OS
+# Location: <AI_OS_ROOT>\projects\PRJ-004\   â—„ Managed by OmniClaw
 # Workspace: D:\Tiem_Nuoc_Nho_v5\
 
 > **THIS IS THE FIRST FILE YOU READ** when working on this project.
-> Managed centrally by AI OS. Do NOT move to project folder.
+> Managed centrally by OmniClaw. Do NOT move to project folder.
 
 ---
 
 ## âš¡ BOOT SEQUENCE
 
 ```
-STEP 1 â”€â”€â–º Read this CLAUDE.md                          [THIS FILE â€” in AI OS\projects\PRJ-004\]
-STEP 2 â”€â”€â–º Read AI OS Master                            [<AI_OS_ROOT>\CLAUDE.md]
+STEP 1 â”€â”€â–º Read this CLAUDE.md                          [THIS FILE â€” in OmniClaw\projects\PRJ-004\]
+STEP 2 â”€â”€â–º Read OmniClaw Master                            [<AI_OS_ROOT>\CLAUDE.md]
 STEP 3 â”€â”€â–º Validate workspace via Gatekeeper            [gatekeeper.ps1 -CheckID PRJ-004]
-STEP 4 â”€â”€â–º Read AI OS AGENTS.md                         [<AI_OS_ROOT>\shared-context\AGENTS.md]
+STEP 4 â”€â”€â–º Read OmniClaw AGENTS.md                         [<AI_OS_ROOT>\shared-context\AGENTS.md]
 STEP 5 â”€â”€â–º Check Blackboard for pending tasks           [<AI_OS_ROOT>\shared-context\blackboard.json]
 STEP 6 â”€â”€â–º Begin work
 ```
@@ -42,7 +42,7 @@ STEP 6 â”€â”€â–º Begin work
 
 ```
 D:\Tiem_Nuoc_Nho_v5\             â—„ Source code only
-â”œâ”€â”€ .clauderules                  â—„ ONLY AI OS file here (Claude Code requirement)
+â”œâ”€â”€ .clauderules                  â—„ ONLY OmniClaw file here (Claude Code requirement)
 â”œâ”€â”€ src/
 â”‚   â”œâ”€â”€ components/
 â”‚   â”‚   â”œâ”€â”€ Menu.tsx              â—„ Menu grid + item add flow

@@ -100,7 +100,7 @@ All 4 must sign off before final PASS.
 ```
 [ ] L1  â€” Contract structure complete (parties, scope, term, termination)
 [ ] L2  â€” No clauses that override CEO authority or agent governance rules
-[ ] L3  â€” IP ownership clauses: all AI OS output remains AI OS Corp property
+[ ] L3  â€” IP ownership clauses: all OmniClaw output remains OmniClaw Corp property
 [ ] L4  â€” Data privacy: GDPR/local law compliant (gdpr-agent review)
 [ ] L5  â€” No unlimited liability clauses
 [ ] L6  â€” Dispute resolution jurisdiction acceptable

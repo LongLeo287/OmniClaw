@@ -14,7 +14,7 @@
 
 Finance dept activated Cycle 2. Deliverable: Cost tracking template and LLM spend framework for Corp operations.
 
-## AI OS Corp Cost Tracking Template — Cycle 2
+## OmniClaw Corp Cost Tracking Template — Cycle 2
 
 ### Cost Centers
 

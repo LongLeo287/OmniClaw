@@ -1,3 +1,8 @@
+<!-- DEPRECATED — This workflow has been superseded by the current OmniClaw ecosystem.
+     Kept for historical reference only. DO NOT USE in active flows.
+     See ecosystem/workflows/ for current versions.
+-->
+
 ---
 description: Tiêu chuẩn thu thập và Truy vết Log LLM API
 ---

@@ -1,4 +1,4 @@
-﻿# AI OS Corp â€” Services
+﻿# OmniClaw Corp â€” Services
 
 Folder táº­p trung toÃ n bá»™ dá»‹ch vá»¥. Má»i thá»© khá»Ÿi Ä‘á»™ng, dá»«ng, cáº¥u hÃ¬nh tá»« Ä‘Ã¢y.
 
@@ -23,7 +23,7 @@ services/
 |---|-----|------|-----|------|
 | 1 | **ClawTask Dashboard** | 7474 | http://localhost:7474/ | Local |
 | 2 | **9router (LLM Gateway)** | 20128 | http://localhost:20128/ | Local |
-| 3 | **AI OS Bot (nullclaw)** | 3000 | http://localhost:3000/ | Local |
+| 3 | **OmniClaw Bot (nullclaw)** | 3000 | http://localhost:3000/ | Local |
 | 4 | **Ollama (Local AI)** | 11434 | http://localhost:11434/ | Local |
 | 5 | **OpenRouter** | â€” | https://openrouter.ai/ | Cloud |
 
@@ -32,10 +32,10 @@ services/
 ## CÃ¡ch khá»Ÿi Ä‘á»™ng
 
 ### CÃ¡ch 1 â€” Tá»« mÃ¡y tÃ­nh (Desktop Shortcut)
-Double-click **"AI OS Boot"** trÃªn Desktop.
+Double-click **"OmniClaw Boot"** trÃªn Desktop.
 
 ### CÃ¡ch 2 â€” Tá»« Telegram Bot
-Nháº¯n `/boot` vÃ o **AI OS Bot** â€” bot tá»± gá»i `boot.ps1`.
+Nháº¯n `/boot` vÃ o **OmniClaw Bot** â€” bot tá»± gá»i `boot.ps1`.
 
 ### CÃ¡ch 3 â€” Tá»± Ä‘á»™ng khi báº­t mÃ¡y
 Task Scheduler `AI_OS_Watchdog` tá»± start nullclaw bot khi Ä‘Äƒng nháº­p.
@@ -58,7 +58,7 @@ powershell -ExecutionPolicy Bypass -File "<AI_OS_ROOT>\services\stop.ps1"
 
 ---
 
-## Telegram Commands (AI OS Bot)
+## Telegram Commands (OmniClaw Bot)
 
 | Lá»‡nh | MÃ´ táº£ |
 |------|-------|

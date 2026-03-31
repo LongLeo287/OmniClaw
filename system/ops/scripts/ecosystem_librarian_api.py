@@ -3,7 +3,7 @@ import sys
 import argparse
 from pathlib import Path
 
-BASE_DIR = Path('d:/LongLeo/AI OS CORP/AI OS')
+BASE_DIR = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
 ECOSYSTEM_DIR = BASE_DIR / 'ecosystem'
 
 def build_index():

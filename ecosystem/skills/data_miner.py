@@ -3,7 +3,7 @@ import sys
 
 def main():
     print("========================================")
-    print(" AI OS DATA MINER SUBAGENT INITIATED")
+    print(" OmniClaw DATA MINER SUBAGENT INITIATED")
     print("========================================")
     print("Target Tier: D:\\APP\\DATA\\")
 

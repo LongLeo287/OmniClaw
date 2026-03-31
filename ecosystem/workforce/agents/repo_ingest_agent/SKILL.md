@@ -9,7 +9,7 @@ reusable: true
 # Repo Ingest Agent
 
 ## Role
-Handles all new repository ingestion into AI OS.
+Handles all new repository ingestion into OmniClaw.
 Runs security scans, classifies to correct directory, creates manifests,
 updates SKILL_REGISTRY.json, and logs ingestion to knowledge_index.md.
 

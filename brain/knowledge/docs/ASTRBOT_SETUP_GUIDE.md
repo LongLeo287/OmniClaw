@@ -1,4 +1,4 @@
-﻿# AI OS Corp â€” AstrBot Setup Guide
+﻿# OmniClaw Corp â€” AstrBot Setup Guide
 # Dept 03 (IT Infrastructure) | Updated: 2026-03-18
 
 ## BÆ°á»›c 1: Láº¥y thÃ´ng tin cáº§n thiáº¿t
@@ -6,7 +6,7 @@
 ### 1.1 Telegram Bot Token
 1. Má»Ÿ Telegram â†’ tÃ¬m **@BotFather**
 2. Gá»­i: `/newbot`
-3. Äáº·t tÃªn bot (vd: `AI OS Corp Bot`)
+3. Äáº·t tÃªn bot (vd: `OmniClaw Corp Bot`)
 4. Äáº·t username (vd: `aios_corp_bot`)
 5. Copy **TOKEN** dáº¡ng: `7123456789:AABBCc...`
 
@@ -51,7 +51,7 @@ AstrBot WebUI sáº½ má»Ÿ táº¡i: **http://localhost:6185/**
 - Add Telegram ID tá»« BÆ°á»›c 1
 - Role: Admin
 
-### 3.4 CÃ i AI OS Corp Plugin
+### 3.4 CÃ i OmniClaw Corp Plugin
 - Copy folder: `<AI_OS_ROOT>\plugins\AstrBot\data\plugins\astrbot_plugin_aios_corp\`
 - VÃ o: **Plugins â†’ Local Install**
 - Hoáº·c restart AstrBot (auto-detect plugin)
@@ -71,7 +71,7 @@ Nháº¯n vÃ o bot Telegram cá»§a báº¡n:
 
 ---
 
-## Commands AI OS Corp Plugin
+## Commands OmniClaw Corp Plugin
 
 | Command | MÃ´ táº£ |
 |---------|-------|
@@ -101,7 +101,7 @@ Nháº¯n vÃ o bot Telegram cá»§a báº¡n:
 $action = New-ScheduledTaskAction -Execute "powershell.exe" `
     -Argument "-ExecutionPolicy Bypass -File `"<AI_OS_ROOT>\scripts\startup.ps1`""
 $trigger = New-ScheduledTaskTrigger -AtStartup
-Register-ScheduledTask -TaskName "AI OS Corp Startup" -Action $action -Trigger $trigger -RunLevel Highest
+Register-ScheduledTask -TaskName "OmniClaw Corp Startup" -Action $action -Trigger $trigger -RunLevel Highest
 ```
 
 *Cháº¡y command nÃ y trong PowerShell (Admin) Ä‘á»ƒ auto-start khi báº­t mÃ¡y.*

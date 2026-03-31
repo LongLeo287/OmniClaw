@@ -8,9 +8,9 @@ foundation: true
 tags: ['agents', 'architecture', 'acp', 'swarm', 'orchestrator', 'react']
 ---
 
-# AI OS Corp — Agent Architecture Reference
+# OmniClaw Corp — Agent Architecture Reference
 
-## AI OS Agent Architecture
+## OmniClaw Agent Architecture
 
 ### Agent Hierarchy
 ```

@@ -1,5 +1,5 @@
 ﻿# AGENT: PMO Lead — Project Management Officer / Capacity Planner
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 17 (Planning & PMO)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_PMO Lead | Project Management Officer / Capacity Planner | AI OS Corp | v1.0 | 
+_PMO Lead | Project Management Officer / Capacity Planner | OmniClaw Corp | v1.0 | 
 _Dept 17 — Planning & PMO_
 

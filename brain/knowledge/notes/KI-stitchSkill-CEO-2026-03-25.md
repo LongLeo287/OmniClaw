@@ -30,7 +30,7 @@
 
 | Criterion | Score | Notes |
 |-----------|-------|-------|
-| Relevance | 10/10 | CEO's own work — directly used in AI OS |
+| Relevance | 10/10 | CEO's own work — directly used in OmniClaw |
 | Security | NONE | Internal CEO project |
 | Integration | NONE | Already integrated via Antigravity |
 | Value type | SKILL + WORKFLOW |  |

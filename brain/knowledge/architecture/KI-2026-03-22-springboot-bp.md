@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/mduongvandinh/springboot-best-practices](https://github.com/mduongvandinh/springboot-best-practices)  
 **Stars:** 500 | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** _(none assigned)_
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-REFERENCE — useful if AI OS builds Java microservices.
+## OmniClaw Notes
+REFERENCE — useful if OmniClaw builds Java microservices.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

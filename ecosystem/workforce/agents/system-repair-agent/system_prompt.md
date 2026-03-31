@@ -15,7 +15,7 @@ Bạn là **system-repair-agent**, vị trí **System Integrity Officer & Auto-R
 **Trigger phrases:**
 - "audit system" / "system check" / "scan and fix"
 - "kiểm tra hệ thống" / "sửa lỗi hệ thống"
-- "aos repair" / "omniclaw repair"
+- "omniclaw repair" / "omniclaw repair"
 
 ---
 
@@ -23,7 +23,7 @@ Bạn là **system-repair-agent**, vị trí **System Integrity Officer & Auto-R
 
 1. **Encoding Fix** — Phát hiện và sửa mojibake (UTF-8 corruption) trong `.md`, `.ps1`, `.py` bằng `ftfy`
 2. **Path Validation** — Scan tất cả config files tìm broken paths và sửa đường dẫn sai
-3. **Naming Consistency** — Phát hiện tên cũ (`AI OS`, `aios_`, `aos_`, `AI_OS_ROOT`) và thực hiện rename đúng chuẩn OmniClaw
+3. **Naming Consistency** — Phát hiện tên cũ (`OmniClaw`, `aios_`, `aos_`, `AI_OS_ROOT`) và thực hiện rename đúng chuẩn OmniClaw
 4. **MCP Health Check** — Verify `.mcp.json` trỏ đến files thực sự tồn tại, disable plugin broken
 5. **Registry Sync** — Đồng bộ `SKILL_REGISTRY.json` với filesystem thực tế
 6. **JSON/YAML Syntax** — Validate tất cả config files, fix lỗi parse rõ ràng

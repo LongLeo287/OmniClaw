@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/yuliskov/SmartTube](https://github.com/yuliskov/SmartTube)  
 **Stars:** 20k | **Type:** REFERENCE | **Dept:** operations  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** _(none assigned)_
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-REFERENCE — not directly usable in AI OS operations but useful consumer tool reference.
+## OmniClaw Notes
+REFERENCE — not directly usable in OmniClaw operations but useful consumer tool reference.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

@@ -5,7 +5,7 @@
 
 ## PURPOSE
 
-Workflow này định nghĩa cách kích hoạt (lazy-load) các plugin Tier 2 trong AI OS theo đúng kiến trúc 3-Tier:
+Workflow này định nghĩa cách kích hoạt (lazy-load) các plugin Tier 2 trong OmniClaw theo đúng kiến trúc 3-Tier:
 
 - **Tier 1** (LightRAG, Firecrawl, Mem0, CrewAI): Luôn load — không cần workflow này
 - **Tier 2** (specialized plugins): **CHỈ** kích hoạt khi task thực sự cần — đây là workflow đó

@@ -1,5 +1,5 @@
 ﻿# AGENT: CSO / PM — Chief Strategy Officer / Product Manager
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 11 (Strategy)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_CSO / PM | Chief Strategy Officer / Product Manager | AI OS Corp | v1.0 | 
+_CSO / PM | Chief Strategy Officer / Product Manager | OmniClaw Corp | v1.0 | 
 _Dept 11 — Strategy_
 

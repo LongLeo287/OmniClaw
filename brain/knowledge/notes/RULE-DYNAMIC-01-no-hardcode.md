@@ -7,7 +7,7 @@
 ## CORE RULE
 
 > **NEVER hardcode machine-specific values.**
-> The AI OS runs on different machines, users, and environments.
+> The OmniClaw runs on different machines, users, and environments.
 > Hardcoded paths, usernames, counts, or ports = system breakage.
 
 ---
@@ -87,7 +87,7 @@ Rule  : All services read their ports from this file. Never hardcode 7474, 3000,
 
 ## 4. PROCEDURE â€” When System Changes (New Machine / New Path)
 
-When the AI OS moves to a new machine or the root path changes:
+When the OmniClaw moves to a new machine or the root path changes:
 
 ```
 STEP 1: Update ops/scripts/config.json

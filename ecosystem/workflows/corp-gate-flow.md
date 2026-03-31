@@ -110,7 +110,7 @@ All 4 must review before final decision.
 ## GATE_SECURITY — Operation
 
 **Autonomous** — security_grc monitors continuously; does not wait for queue
-**Also accepts manual trigger:** `aos corp gate security <repo-or-plugin>`
+**Also accepts manual trigger:** `omniclaw corp gate security <repo-or-plugin>`
 
 **Auto-trigger conditions:**
 - New file appears in plugins/ directory

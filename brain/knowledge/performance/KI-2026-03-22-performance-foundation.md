@@ -8,9 +8,9 @@ foundation: true
 tags: ['performance', 'optimization', 'latency', 'fast-index', 'bottleneck']
 ---
 
-# AI OS Corp — Performance Targets & Optimization
+# OmniClaw Corp — Performance Targets & Optimization
 
-## AI OS Performance
+## OmniClaw Performance
 
 ### Service Response Targets
 | Service | Target | Current |

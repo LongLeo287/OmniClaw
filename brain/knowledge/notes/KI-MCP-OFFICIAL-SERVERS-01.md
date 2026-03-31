@@ -24,7 +24,7 @@
 | **Sequential Thinking** | Dynamic reflective problem-solving | `npx @modelcontextprotocol/server-sequentialthinking` |
 | **Time** | Time and timezone conversion | `npx @modelcontextprotocol/server-time` |
 
-### AI OS Status:
+### OmniClaw Status:
 - ✅ **Filesystem** — đã có (infra/mcp/MCP_REGISTRY.md server #4)
 - ✅ **Fetch** — Firecrawl cover use case tốt hơn (self-hosted)
 - ✅ **Memory** — Mem0 cover tốt hơn (vector store)
@@ -38,7 +38,7 @@
   "mcpServers": {
     "git": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "d:\\AI OS CORP"]
+      "args": ["-y", "@modelcontextprotocol/server-git", "--repository", "d:\\OmniClaw Corp"]
     },
     "sequential-thinking": {
       "command": "npx",
@@ -50,10 +50,10 @@
 
 ---
 
-## 2. Official Integrations — Top Picks cho AI OS
+## 2. Official Integrations — Top Picks cho OmniClaw
 
 ### Productivity & Communication
-| Server | Provider | AI OS Use |
+| Server | Provider | OmniClaw Use |
 |--------|----------|-----------|
 | **Slack** | Slack | Dept comms, CEO notifications |
 | **Google Drive** | Google | Document storage |
@@ -63,23 +63,23 @@
 | **Jira** | Atlassian | Issue tracking |
 
 ### Developer Tools
-| Server | Provider | AI OS Use |
+| Server | Provider | OmniClaw Use |
 |--------|----------|-----------|
 | **GitHub** (official) | GitHub | PR management, code review, repo ops |
 | **Supabase** | Supabase | Direct DB queries |
-| **Sentry** | Sentry | Error tracking from AI OS |
+| **Sentry** | Sentry | Error tracking from OmniClaw |
 | **Cloudflare** | Cloudflare | Edge functions, DNS |
 
 ### Data & Analytics
-| Server | Provider | AI OS Use |
+| Server | Provider | OmniClaw Use |
 |--------|----------|-----------|
-| **AgentQL** | TinyFish | Structured web extraction (AI OS đã có skill) |
+| **AgentQL** | TinyFish | Structured web extraction (OmniClaw đã có skill) |
 | **AgentOps** | AgentOps | Agent observability alternative (vs Langfuse) |
 | **Algolia** | Algolia | Semantic search |
 | **Snowflake** | Snowflake | Analytics DB |
 
 ### Security & Infrastructure
-| Server | Provider | AI OS Use |
+| Server | Provider | OmniClaw Use |
 |--------|----------|-----------|
 | **AWS** (official) | AWS | Cloud infrastructure |
 | **GCP** | Google | Cloud infrastructure |
@@ -95,23 +95,23 @@
 - **MCP Framework** (TypeScript) — official TypeScript SDK
 - **Anthropic Server SDK** — used in Reference Servers
 
-### AI OS ứng dụng
-Khi build MCP servers mới cho AI OS (corp-data, skill-registry, aos-workspace):
+### OmniClaw ứng dụng
+Khi build MCP servers mới cho OmniClaw (corp-data, skill-registry, omniclaw-workspace):
 ```python
 # Use FastMCP pattern (simpler than raw SDK)
 from fastmcp import FastMCP
 
-mcp = FastMCP("aos-workspace")
+mcp = FastMCP("omniclaw-workspace")
 
 @mcp.tool()
 def list_skills() -> list[str]:
-    """List all installed AI OS skills"""
+    """List all installed OmniClaw skills"""
     return [d.name for d in Path("skills/").iterdir() if d.is_dir()]
 ```
 
 ---
 
-## 4. AI OS Action Items (Priority)
+## 4. OmniClaw Action Items (Priority)
 
 | # | Action | Priority | Owner |
 |---|--------|----------|-------|
@@ -120,7 +120,7 @@ def list_skills() -> list[str]:
 | 3 | Evaluate GitHub official MCP (replace github-bridges) | P2 | Dept 4 |
 | 4 | Evaluate Supabase MCP (complement database-js) | P2 | Dept 1 |
 | 5 | Evaluate Slack MCP for CEO notifications | P3 | Dept 1 |
-| 6 | Update aos-workspace MCP server dùng FastMCP pattern | P3 | Dept 1 |
+| 6 | Update omniclaw-workspace MCP server dùng FastMCP pattern | P3 | Dept 1 |
 
 ---
 

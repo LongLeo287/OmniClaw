@@ -1,5 +1,5 @@
 """
-lightrag_adapter.py — AI OS Corp wrapper cho LightRAG
+lightrag_adapter.py — OmniClaw Corp wrapper cho LightRAG
 Phase 3: Corp Knowledge Graph (OPEN-004)
 
 Ket noi brain/knowledge/ vao LightRAG graph retrieval.
@@ -21,7 +21,7 @@ import logging
 from pathlib import Path
 from typing import Any
 
-logger = logging.getLogger("aios.lightrag")
+logger = logging.getLogger("omniclaw.lightrag")
 
 # ── Observability ─────────────────────────────────────────────────────────────
 try:
@@ -46,7 +46,7 @@ except ImportError:
         "De kich hoat: pip install lightrag-hku"
     )
 
-# ── Root AI OS Corp ────────────────────────────────────────────────
+# ── Root OmniClaw Corp ────────────────────────────────────────────────
 # Dùng env var AOS_ROOT nếu có (set bởi setup.ps1/START_AIOS.ps1)
 # Fallback: tính từ vị trí file hiện tại (ecosystem/plugins/LightRAG/lightrag_adapter.py → 4 cấp lên)
 _AOS_ROOT = Path(os.getenv("AOS_ROOT") or Path(__file__).resolve().parents[3])
@@ -56,7 +56,7 @@ _DEFAULT_KNOWLEDGE_DIR = _AOS_ROOT / "brain" / "knowledge"
 
 class LightRAGAdapter:
     """
-    AI OS Corp wrapper cho LightRAG.
+    OmniClaw Corp wrapper cho LightRAG.
 
     Connects brain/knowledge/ to graph-based RAG (OPEN-004).
 

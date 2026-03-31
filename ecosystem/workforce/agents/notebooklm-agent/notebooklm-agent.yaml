@@ -4,7 +4,7 @@
 name: notebooklm-agent
 version: 1.0.0
 status: active
-description: "Tích hợp Google NotebookLM vào pipeline nghiên cứu của AI OS để tổng hợp và phân tích tài liệu"
+description: "Tích hợp Google NotebookLM vào pipeline nghiên cứu của OmniClaw để tổng hợp và phân tích tài liệu"
 domain: ecosystem
 type: workforce-agent
 department: rd

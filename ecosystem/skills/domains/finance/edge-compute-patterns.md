@@ -6,7 +6,7 @@ description: >
   currency conversion) to edge-compatible environments for zero-latency results.
   Applicable to any e-commerce, fintech, or retail project with calculation needs.
 version: 1.0.0
-author: LongLeo (adapted for AI OS — tax values removed, patterns generalized)
+author: LongLeo (adapted for OmniClaw — tax values removed, patterns generalized)
 tier: 3
 category: performance
 domain: finance

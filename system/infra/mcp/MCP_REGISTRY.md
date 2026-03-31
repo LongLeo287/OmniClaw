@@ -13,11 +13,11 @@ Táº¥t cáº£ MCP servers trong há»‡ thá»‘ng. Claude Code Ä‘á»
 
 ## Servers
 
-### 1. aos-workspace â­
-- **File:** `mcp/servers/aos-workspace/index.js`
+### 1. omniclaw-workspace â­
+- **File:** `mcp/servers/omniclaw-workspace/index.js`
 - **DÃ¹ng cho:** Duyá»‡t AI OS workspace, Ä‘á»c skills, plugins, blackboard
 - **Tools:** `list_dir`, `read_file`, `search_skills`, `read_blackboard`, `read_context`, `list_plugins`
-- **Start test:** `node mcp/servers/aos-workspace/index.js --test`
+- **Start test:** `node mcp/servers/omniclaw-workspace/index.js --test`
 
 ### 2. skill-registry
 - **File:** `mcp/servers/skill-registry/index.js`
@@ -51,7 +51,7 @@ Táº¥t cáº£ MCP servers trong há»‡ thá»‘ng. Claude Code Ä‘á»
 | Google AI Studio | REST API: `http://localhost:7000/api/*` |
 | Má»i HTTP client | `GET /api/skills`, `POST /api/corp/escalate`, ... |
 
-**Start REST API:** `node api/server.js` hoáº·c `.\cli\aos.ps1 api start`
+**Start REST API:** `node api/server.js` hoáº·c `.\cli\omniclaw.ps1 api start`
 
 ---
 
@@ -59,12 +59,12 @@ Táº¥t cáº£ MCP servers trong há»‡ thá»‘ng. Claude Code Ä‘á»
 
 ```bash
 # Cho MCP servers (Node.js >= 18)
-cd mcp/servers/aos-workspace && npm init -y && npm install @modelcontextprotocol/sdk
+cd mcp/servers/omniclaw-workspace && npm init -y && npm install @modelcontextprotocol/sdk
 cd ../skill-registry && npm init -y && npm install @modelcontextprotocol/sdk
 cd ../corp-data && npm init -y && npm install @modelcontextprotocol/sdk
 
 # Test táº¥t cáº£
-.\cli\aos.ps1 mcp test all
+.\cli\omniclaw.ps1 mcp test all
 ```
 
 ---

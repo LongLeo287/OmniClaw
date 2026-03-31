@@ -126,7 +126,7 @@ All agents must verify their actions against `AGENTS.md` before execution. In ca
 
 ### 🚦 Gate System *(Source: org_chart.yaml — `is_gate: true` departments)*
 
-AI OS Corp enforces **4 mandatory gates**. Output cannot bypass its gate.
+OmniClaw Corp enforces **4 mandatory gates**. Output cannot bypass its gate.
 
 | Gate | Department | Agent | Triggers | Blocks |
 |------|-----------|-------|---------|--------|
@@ -162,7 +162,7 @@ All departments and agents MUST follow this policy when dealing with external to
 
 #### Repo Intake Process (Mandatory Gate — RULE-PROCESS-01 Extended)
 
-No repo may be cloned into or activated within AI OS without passing through **both** gates in order:
+No repo may be cloned into or activated within OmniClaw without passing through **both** gates in order:
 
 ```
 GATE 1: Repo Evaluation  → ops/workflows/repo-evaluation.md   (Owner: Dept 20 CIV)
@@ -187,8 +187,8 @@ GATE 2: Plugin Integration → ops/workflows/plugin-integration.md  (Owner: Dept
 
 ```
 Reading a repo README   ≠  Permission to clone
-Cloning a repo          ≠  Permission to use in AI OS
-Using in AI OS          ≠  Without APPROVE verdict + Security CLEAR
+Cloning a repo          ≠  Permission to use in OmniClaw
+Using in OmniClaw          ≠  Without APPROVE verdict + Security CLEAR
 ```
 
 **Violations** → Report immediately to Dept 20 (CIV) + Dept 10 (Security) + CEO
@@ -224,7 +224,7 @@ Store receipts in the workspace's `telemetry/receipts/` folder.
 |---|------|-----------|-------|-------------|---------------|
 | 01 | Engineering | CTO | → GATE_QA | No | Code deploy after QA PASS |
 | 02 | QA Testing | CTO | IS gate | No | BLOCK/PASS engineering |
-| 03 | IT Infra | CTO | No | No | Infra changes within AI OS |
+| 03 | IT Infra | CTO | No | No | Infra changes within OmniClaw |
 | 04 | Marketing | CMO | → GATE_CONTENT | No | Publish after Content PASS |
 | 05 | Support | CMO | No | No | Customer response |
 | 06 | Content Review | CMO | IS gate | No | BLOCK/PASS marketing+support |

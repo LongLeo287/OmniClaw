@@ -14,7 +14,7 @@ trigger: weekly | manual | on_new_url_submitted
 
 Duy trì `ecosystem/plugins/MASTER_REPO_CATALOG.md` luôn cập nhật và chính xác.
 Đảm bảo 3 kho luôn được phân loại đúng:
-- ⭐ **ACTIVE** — repos AI OS đang dùng (kiểm tra version mới)
+- ⭐ **ACTIVE** — repos OmniClaw đang dùng (kiểm tra version mới)
 - 🔖 **PENDING** — repos APPROVE chưa cài (hàng chờ CEO)
 - ❌ **ARCHIVED** — repos REJECT/DEFER (CEO xem xét lại khi cần)
 

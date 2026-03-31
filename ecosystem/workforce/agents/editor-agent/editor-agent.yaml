@@ -4,7 +4,7 @@
 name: editor-agent
 version: 1.0.0
 status: active
-description: "Biên tập, kiểm tra chất lượng và chuẩn hóa tất cả nội dung đầu ra của hệ thống AI OS"
+description: "Biên tập, kiểm tra chất lượng và chuẩn hóa tất cả nội dung đầu ra của hệ thống OmniClaw"
 domain: ecosystem
 type: workforce-agent
 department: content_review

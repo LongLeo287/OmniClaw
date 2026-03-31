@@ -16,7 +16,7 @@ created: 2026-03-22T22:37:16.443912
 **Type:** RESEARCH | **Dept:** rd  
 **Relevant Agents:** llm_router, content_analyst
 
-## AI OS Notes
+## OmniClaw Notes
 Requires high-end GPU. Use via Aliyun Model Studio API for production. MiniMax API is current replacement for TTS. Track for future local multimodal model use.
 
 ## Install / Use

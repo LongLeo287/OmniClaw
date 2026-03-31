@@ -16,8 +16,8 @@ created: 2026-03-22T22:37:16.443912
 **Type:** TOOL | **Dept:** operations  
 **Relevant Agents:** content_analyst
 
-## AI OS Notes
-Use for AI OS media content production. Install via pip, works locally with WhisperX (no GPU needed for small files). Add to content pipeline.
+## OmniClaw Notes
+Use for OmniClaw media content production. Install via pip, works locally with WhisperX (no GPU needed for small files). Add to content pipeline.
 
 ## Install / Use
 ```

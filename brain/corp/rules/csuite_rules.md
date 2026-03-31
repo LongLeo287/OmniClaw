@@ -1,4 +1,4 @@
-# C-Suite Rules â€” AI OS Corp
+# C-Suite Rules â€” OmniClaw Corp
 # Authority: Tier 1 | Updated: 2026-03-17
 # Applied to: CTO, CMO, COO, CFO, CSO
 

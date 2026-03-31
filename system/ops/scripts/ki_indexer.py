@@ -12,7 +12,7 @@ import re
 from pathlib import Path
 from datetime import datetime
 
-ROOT      = Path(__file__).parent.parent.parent
+ROOT      = Path(__file__).parent.parent.parent.parent
 NOTES_DIR = ROOT / "brain" / "knowledge" / "notes"
 INDEX_OUT = ROOT / "brain" / "knowledge" / "KI_INDEX.md"
 

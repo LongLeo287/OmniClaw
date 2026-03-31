@@ -47,7 +47,7 @@ For every file modified:
 ## Phase 5: RECEIPT (MANDATORY â€” Auto-Write After Every Feature)
 
 > This step is NOT optional. Every completed feature generates a receipt.
-> Receipts feed the AI OS Learning Cycle â†’ knowledge base.
+> Receipts feed the OmniClaw Learning Cycle â†’ knowledge base.
 
 ### Receipt File Naming
 ```

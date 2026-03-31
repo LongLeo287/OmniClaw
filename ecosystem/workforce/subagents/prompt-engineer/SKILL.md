@@ -86,4 +86,4 @@ KNOWN EDGE CASES: <inputs that may fail + mitigations>
 ## Integration
 
 - Output: optimized prompt → direct file or MQ
-- Use with: AI OS `prompts/` directory for versioned prompt library
+- Use with: OmniClaw `prompts/` directory for versioned prompt library

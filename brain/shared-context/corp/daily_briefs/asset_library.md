@@ -14,7 +14,7 @@
 
 Asset Library dept activated. All Corp-produced artifacts from Cycles 1-3 catalogued and categorized.
 
-## AI OS Corp Asset Inventory — Cycle 3
+## OmniClaw Corp Asset Inventory — Cycle 3
 
 ### Category 1: OKR & Strategy Documents
 | Asset | Path | Cycle | Status |

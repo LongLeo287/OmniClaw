@@ -15,7 +15,7 @@ created: 2026-03-22
 
 **Install:** code --install-extension zixfel.ag-auto-click-scroll
 
-## AI OS Notes
+## OmniClaw Notes
 - Runs natively inside VS Code — no extra Python/npm process needed
 - Intercepts all Claude Code/Antigravity permission prompts and clicks Allow automatically
 - Enables fully autonomous overnight agent runs without human intervention

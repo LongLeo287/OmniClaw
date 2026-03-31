@@ -42,7 +42,7 @@ npx skills add google-labs-code/stitch-skills --skill enhance-prompt --global
 
 | Criterion | Score | Notes |
 |-----------|-------|-------|
-| Relevance to AI OS | 10/10 | CEO đang dùng Stitch MCP |
+| Relevance to OmniClaw | 10/10 | CEO đang dùng Stitch MCP |
 | Security risk | NONE | Official Google source |
 | Integration effort | LOW | npx install |
 | Value type | SKILLS |  |

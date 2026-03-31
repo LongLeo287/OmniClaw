@@ -1,5 +1,5 @@
 ﻿# AGENT: COO / Scrum Master — Chief Operating Officer / Scrum Master
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 7 (Operations)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_COO / Scrum Master | Chief Operating Officer / Scrum Master | AI OS Corp | v1.0 | 
+_COO / Scrum Master | Chief Operating Officer / Scrum Master | OmniClaw Corp | v1.0 | 
 _Dept 7 — Operations_
 

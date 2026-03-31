@@ -1,8 +1,8 @@
 <#
-.SYNOPSIS Corp subcommand — aos corp start|status|kpi [dept]|escalate|brief
+.SYNOPSIS Corp subcommand — omniclaw corp start|status|kpi [dept]|escalate|brief
 #>
-$AOS_ROOT = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
-$CORP_DIR = Join-Path $AOS_ROOT "shared-context\corp"
+$OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
+$CORP_DIR = Join-Path $OMNICLAW_ROOT "brain\shared-context\corp"
 
 function Format-Table2 ($data) {
     $data | Format-Table -AutoSize
@@ -12,19 +12,19 @@ switch ($args[0]) {
 
     "start" {
         Write-Host "`n🏢 Kích hoạt Corp Mode..." -ForegroundColor Cyan
-        $orchPath = Join-Path $AOS_ROOT "skills\corp_orchestrator\SKILL.md"
+        $orchPath = Join-Path $OMNICLAW_ROOT "ecosystem\skills\corp_orchestrator\SKILL.md"
         if (Test-Path $orchPath) {
             Write-Host "✅ corp_orchestrator: READY" -ForegroundColor Green
         }
         $ts = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
-        $bbPath = Join-Path $AOS_ROOT "shared-context\blackboard.json"
+        $bbPath = Join-Path $OMNICLAW_ROOT "brain\shared-context\blackboard.json"
         $bb = if (Test-Path $bbPath) { Get-Content $bbPath -Raw | ConvertFrom-Json } else { @{} }
         $bb | Add-Member -NotePropertyName "corp_status" -NotePropertyValue "active" -Force
         $bb | Add-Member -NotePropertyName "corp_started_at" -NotePropertyValue $ts -Force
         $bb | ConvertTo-Json -Depth 5 | Set-Content $bbPath
         Write-Host "✅ Corp Mode ACTIVE — $ts" -ForegroundColor Green
-        Write-Host "   Run: aos corp status    để xem KPI" -ForegroundColor Gray
-        Write-Host "   Run: aos corp brief      để gửi brief cho dept heads" -ForegroundColor Gray
+        Write-Host "   Run: omniclaw corp status    để xem KPI" -ForegroundColor Gray
+        Write-Host "   Run: omniclaw corp brief      để gửi brief cho dept heads" -ForegroundColor Gray
     }
 
     "status" {
@@ -46,7 +46,7 @@ switch ($args[0]) {
             Write-Host "`n⚠️  Escalations OPEN: $openCount" -ForegroundColor $(if ($openCount -gt 0) { "Red" } else { "Green" })
         }
         # Blackboard
-        $bbPath = Join-Path $AOS_ROOT "shared-context\blackboard.json"
+        $bbPath = Join-Path $OMNICLAW_ROOT "brain\shared-context\blackboard.json"
         if (Test-Path $bbPath) {
             $bb = Get-Content $bbPath -Raw | ConvertFrom-Json
             Write-Host "`nBlackboard:" -ForegroundColor Yellow
@@ -72,7 +72,7 @@ switch ($args[0]) {
     "escalate" {
         $dept = $args[1]; $level = $args[2]; $issue = $args[3..($args.Count-1)] -join " "
         if (-not $dept -or -not $level -or -not $issue) {
-            Write-Host "Usage: aos corp escalate <dept> <L1|L2|L3> <issue description>" -ForegroundColor Yellow
+            Write-Host "Usage: omniclaw corp escalate <dept> <L1|L2|L3> <issue description>" -ForegroundColor Yellow
             return
         }
         $ts = Get-Date -Format "yyyy-MM-ddTHH:mm:ss"
@@ -96,5 +96,5 @@ switch ($args[0]) {
         }
     }
 
-    default { Write-Host "Usage: aos corp start|status|kpi [dept]|escalate|brief" }
+    default { Write-Host "Usage: omniclaw corp start|status|kpi [dept]|escalate|brief" }
 }

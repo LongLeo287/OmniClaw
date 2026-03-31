@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/cporter202/API-mega-list](https://github.com/cporter202/API-mega-list)  
 **Stars:** 500 | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** web_intelligence
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 REFERENCE — already KI entry exists. Supplement public-apis plugin.
 
 ## Integration

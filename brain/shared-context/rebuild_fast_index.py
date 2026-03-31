@@ -162,7 +162,7 @@ def build_index(skills: list[dict]) -> dict:
 
 
 def main():
-    print(f"AIOS root: {AIOS_ROOT}")
+    print(f"omniclaw root: {AIOS_ROOT}")
     all_skills = []
 
     for rel_dir, max_depth in SCAN_DIRS:

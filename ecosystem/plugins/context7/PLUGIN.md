@@ -1,5 +1,5 @@
 # PLUGIN.md — Context7
-# AI OS Plugin | Tier 2 | Owner: Dept 4 Registry
+# OmniClaw Plugin | Tier 2 | Owner: Dept 4 Registry
 # Version: latest | Installed: 2026-03-24
 # RULE-AGENT-PLATFORM-01: Không độc quyền — setup cho ALL platforms
 

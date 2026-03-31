@@ -4,7 +4,7 @@ name: Performance Profiler
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Latency auditing, resource tracking and performance bottleneck detection.
 

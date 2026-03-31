@@ -16,8 +16,8 @@ created: 2026-03-22T22:37:16.443912
 **Type:** REFERENCE | **Dept:** rd  
 **Relevant Agents:** insight_engine, cognitive_reflector
 
-## AI OS Notes
-Key patterns: eval-driven dev, observability-first, prompt versioning. Apply when designing new AI OS features. Ref for CIV metrics design.
+## OmniClaw Notes
+Key patterns: eval-driven dev, observability-first, prompt versioning. Apply when designing new OmniClaw features. Ref for CIV metrics design.
 
 ## Install / Use
 ```

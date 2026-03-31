@@ -1,3 +1,8 @@
+<!-- DEPRECATED — This workflow has been superseded by the current OmniClaw ecosystem.
+     Kept for historical reference only. DO NOT USE in active flows.
+     See ecosystem/workflows/ for current versions.
+-->
+
 ---
 description: How Dept 25 Orchestrates a complex Swarm Prompt
 ---

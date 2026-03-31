@@ -1,12 +1,12 @@
-# PLUGIN_SPEC.md — AI OS Plugin Schema Standard
+# PLUGIN_SPEC.md — OmniClaw Plugin Schema Standard
 # Version: 2.0 | Updated: 2026-03-14
 #
-# SCOPE: AI OS-level plugins (<AI_OS_ROOT>\plugins\)
+# SCOPE: OmniClaw-level plugins (<AI_OS_ROOT>\plugins\)
 # This is NOT the BookMark Extension plugin spec.
 
 ## What Is a Plugin?
 
-A **Plugin** extends the AI OS with capabilities that are:
+A **Plugin** extends the OmniClaw with capabilities that are:
 - **Non-core** (not required for base OS operation)
 - **Composable** (can depend on Skills but not on other plugins)
 - **Isolable** (failure of a plugin must NOT crash the OS or other agents)
@@ -28,7 +28,7 @@ Plugins differ from Skills in that:
 |------|-------------|---------|
 | `cognitive` | Enhances agent reasoning or memory | `LightRAG`, `neural_memory` |
 | `data` | Integrates external or local data sources | `langextract`, `eco-ingest` |
-| `bridge` | Connects AI OS to external systems | `cloud-sync`, `notification_bridge` |
+| `bridge` | Connects OmniClaw to external systems | `cloud-sync`, `notification_bridge` |
 | `ui` | Provides dashboard or visual capabilities | `ai-os-viewer`, `ui-ux-pro-max` |
 
 ---
@@ -57,7 +57,7 @@ plugins/
   "type": "cognitive | data | bridge | ui",
   "status": "active | beta | deprecated | planned",
   "description": "<one-line description>",
-  "author": "AI OS Core Team",
+  "author": "OmniClaw Core Team",
   "updated": "YYYY-MM-DD",
 
   "skill_dependencies": [

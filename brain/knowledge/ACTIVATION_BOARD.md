@@ -1,4 +1,4 @@
-# 🚦 ACTIVATION BOARD — AI OS Services & Dashboards
+# 🚦 ACTIVATION BOARD — OmniClaw Services & Dashboards
 # Cập nhật: 2026-03-16
 # Mọi thứ cần kích hoạt / mở localhost phải có ở bảng này
 
@@ -11,7 +11,7 @@
 
 | Service | URL | Port | Ghi chú |
 |---------|-----|------|---------|
-| **AI OS Dashboard** | http://127.0.0.1:19000 | 19000 | Tự khởi động qua pre-session.md |
+| **OmniClaw Dashboard** | http://127.0.0.1:19000 | 19000 | Tự khởi động qua pre-session.md |
 
 ---
 
@@ -118,7 +118,7 @@ npm install -g pm2
 pm2 start "<AI_OS_ROOT>\plugins\LobsterBoard\server.cjs" --name lobsterboard
 
 # Remote Bridge
-pm2 start "python <AI_OS_ROOT>\channels\start_bridges.py" --name aios-channels
+pm2 start "python <AI_OS_ROOT>\channels\start_bridges.py" --name omniclaw-channels
 
 # Lưu để tự chạy khi khởi động Windows
 pm2 startup

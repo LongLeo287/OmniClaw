@@ -12,12 +12,12 @@
 
 ## Summary
 
-Marketing dept activated for first time in Corp Cycle 2. Core deliverable: Growth Report skeleton defining AI OS Corp's go-to-market positioning and KPI framework for external growth metrics.
+Marketing dept activated for first time in Corp Cycle 2. Core deliverable: Growth Report skeleton defining OmniClaw Corp's go-to-market positioning and KPI framework for external growth metrics.
 
-## AI OS Corp Growth Framework — Cycle 2
+## OmniClaw Corp Growth Framework — Cycle 2
 
 ### Target Segments (MVP)
-1. **AI Engineers** — Using AI OS as personal productivity OS
+1. **AI Engineers** — Using OmniClaw as personal productivity OS
 2. **Indie Makers** — Multi-agent automation without DevOps overhead  
 3. **Enterprise AI Teams** — Governed, auditable AI agent workflows
 

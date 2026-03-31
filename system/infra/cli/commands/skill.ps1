@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS Skill subcommand — aos skill list|health|enable <id>
 #>
-$AOS_ROOT = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
-$REGISTRY_PATH = Join-Path $AOS_ROOT "shared-context\SKILL_REGISTRY.json"
+$OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
+$REGISTRY_PATH = Join-Path $OMNICLAW_ROOT "brain\shared-context\SKILL_REGISTRY.json"
 
 switch ($args[0]) {
 
@@ -37,7 +37,7 @@ switch ($args[0]) {
             $name = if ($s.id) { $s.id } else { $s.name }
             $pathVal = $s.path
             if ($pathVal) {
-                $fullPath = Join-Path $AOS_ROOT $pathVal "SKILL.md"
+                $fullPath = Join-Path $OMNICLAW_ROOT $pathVal "SKILL.md"
                 if (Test-Path $fullPath) { $ok++ }
                 else { Write-Host "  ❌ Missing: $name ($pathVal)" -ForegroundColor Red; $fail++ }
             } else { $ok++ }

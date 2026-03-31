@@ -4,7 +4,7 @@ name: Insight Engine
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Cross-domain pattern discovery and trend analysis.
 
@@ -29,7 +29,7 @@ listens_to: []
 ---
 # ðŸ§  Insight Engine Skill (Pattern Discovery)
 
-This skill provides the AI OS with "Intuition" â€” finding non-obvious correlations across different knowledge domains.
+This skill provides the OmniClaw with "Intuition" â€” finding non-obvious correlations across different knowledge domains.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Correlation Scan (/correlate):**

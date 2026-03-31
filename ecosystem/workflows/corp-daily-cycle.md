@@ -1,15 +1,15 @@
 # Department: operations
-# corp-daily-cycle.md — AI OS Corp Operating Cycle
+# corp-daily-cycle.md — OmniClaw Corp Operating Cycle
 # Version: 2.0 | Updated: 2026-03-17
 # Authority: Tier 2 (Operations)
 # Mode: ON-DEMAND (trigger-based, not scheduled)
-# Trigger: "aos corp start" | CEO session activation
+# Trigger: "omniclaw corp start" | CEO session activation
 
 ---
 
 ## Overview
 
-The Corp Cycle is how AI OS Corp runs work — on-demand.
+The Corp Cycle is how OmniClaw Corp runs work — on-demand.
 No fixed schedule. CEO triggers when needed.
 8 phases (Phase 0 = pre-flight). End-to-end: pre-flight → CEO brief → execution → reflection → next decision.
 
@@ -39,7 +39,7 @@ CEO reads proposals → decides → RESET → next cycle
 
 ## Phase 0: PRE-FLIGHT CHECK
 
-**Trigger:** Automatically runs before Phase 1 on every `aos corp start`
+**Trigger:** Automatically runs before Phase 1 on every `omniclaw corp start`
 **Who:** orchestrator_pro (or Claude Code if orchestrator_pro unavailable)
 
 ```
@@ -80,7 +80,7 @@ On Step 0.3 FAIL: log warning, proceed with stale SKILL_REGISTRY, mark for manua
 
 ## Phase 1: CEO BRIEF
 
-**Trigger:** `aos corp start` or CEO activates corp mode
+**Trigger:** `omniclaw corp start` or CEO activates corp mode
 **Ref:** `corp/prompts/CEO_PROMPT.md`
 
 ```
@@ -264,15 +264,15 @@ This prevents two concurrent cycles. Reset to "IDLE" only after Phase 7 complete
 
 | Command | Phases Run |
 |---------|-----------|
-| `aos corp start` | Phases 1–7 (full cycle) |
-| `aos corp brief` | Phase 1 (CEO brief only) |
-| `aos corp dispatch <dept>` | Phase 3 for one dept |
-| `aos corp gate qa <T-ID>` | Phase 5 GATE_QA only |
-| `aos corp gate security <item>` | Phase 5 GATE_SECURITY only |
-| `aos corp kpi` | Show kpi_scoreboard.json |
-| `aos corp escalate L3 <msg>` | Write L3 straight to escalations.md |
-| `aos corp retro` | Phases 6–7 only (reflect + propose) |
-| `aos corp status` | Show cycle status |
+| `omniclaw corp start` | Phases 1–7 (full cycle) |
+| `omniclaw corp brief` | Phase 1 (CEO brief only) |
+| `omniclaw corp dispatch <dept>` | Phase 3 for one dept |
+| `omniclaw corp gate qa <T-ID>` | Phase 5 GATE_QA only |
+| `omniclaw corp gate security <item>` | Phase 5 GATE_SECURITY only |
+| `omniclaw corp kpi` | Show kpi_scoreboard.json |
+| `omniclaw corp escalate L3 <msg>` | Write L3 straight to escalations.md |
+| `omniclaw corp retro` | Phases 6–7 only (reflect + propose) |
+| `omniclaw corp status` | Show cycle status |
 
 ---
 

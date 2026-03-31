@@ -1,5 +1,5 @@
 ﻿# AGENT: CMO — Chief Marketing Officer / Growth Lead
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 4 (Marketing)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_CMO | Chief Marketing Officer / Growth Lead | AI OS Corp | v1.0 | 
+_CMO | Chief Marketing Officer / Growth Lead | OmniClaw Corp | v1.0 | 
 _Dept 4 — Marketing_
 

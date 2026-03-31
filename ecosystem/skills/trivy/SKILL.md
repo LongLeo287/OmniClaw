@@ -6,7 +6,7 @@ description: Run Trivy vulnerability scanner on containers, code repos, Kubernet
 # Trivy Security Scanner — Dept 10 (Security GRC)
 
 ## When to Use
-- Before integrating any new plugin or container into AI OS
+- Before integrating any new plugin or container into OmniClaw
 - Scanning code repos for secrets, CVEs, misconfigurations
 - Part of GATE_SECURITY in strix-scan pipeline
 

@@ -140,7 +140,7 @@ Monitor: brain/shared-context/blackboard.json
 
 ---
 
-## Capabilities Cá»§a Claude Code Trong AI OS
+## Capabilities Cá»§a Claude Code Trong OmniClaw
 
 ```
 1. Auto-execute (--enable-auto-mode)     â†’ HÃ ng loáº¡t file ops khÃ´ng cáº§n confirm
@@ -148,7 +148,7 @@ Monitor: brain/shared-context/blackboard.json
 3. Long-context code gen (200K tokens)   â†’ Viáº¿t module lá»›n khÃ´ng bá»‹ truncation
 4. DEVELOPER â†’ QA â†’ RESEARCHER roles    â†’ Self-review code vá»«a viáº¿t
 5. Native git integration               â†’ Snapshot trÆ°á»›c task, reset --hard náº¿u fail
-6. .claude/commands/ slash commands     â†’ /project:aos-intake, /project:vet-repo
+6. .claude/commands/ slash commands     â†’ /project:omniclaw-intake, /project:vet-repo
 ```
 
 ---

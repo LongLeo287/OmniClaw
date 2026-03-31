@@ -143,7 +143,7 @@ Analyst: content-analyst-agent
 ## Purpose
 Collection of 200+ community-submitted SKILL.md files for Claude Code agents.
 Covers domains: coding, research, writing, automation, DevOps.
-Primary use: expand AI OS skill library with battle-tested community skills.
+Primary use: expand OmniClaw skill library with battle-tested community skills.
 
 ## Conflicts
 Minor overlap with plugins/anthropic-skills (official Anthropic skills).

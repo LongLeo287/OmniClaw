@@ -17,9 +17,9 @@
 - Restart gitnexus bằng `gitnexus serve` trước mỗi session CodeIntel
 - Dùng cache-buster `?t=<timestamp>` khi reload trang để tránh stale cache
 
-**AI OS Impact:**
+**OmniClaw Impact:**
 - `it-manager-agent` cần thêm health check cho gitnexus vào Phase 0 (System Health)
-- Nên thêm auto-restart logic cho gitnexus vào `launcher/START AI OS.ps1`
+- Nên thêm auto-restart logic cho gitnexus vào `launcher/START OmniClaw.ps1`
 
 ---
 
@@ -41,18 +41,18 @@
 
 **Ghi nhận từ analysis.md (14/03):**
 - Web Fullstack với LadybugDB (custom storage layer)
-- AI OS integration điểm: client-facing + agent-assisted workflows
+- OmniClaw integration điểm: client-facing + agent-assisted workflows
 - Cấu trúc: Frontend SPA + Backend Python FastAPI
 
 **Status tại thời điểm đó:** Đang phân tích cấu trúc code
 
 ---
 
-## 4. AI OS Architecture — Snapshot 03/2026
+## 4. OmniClaw Architecture — Snapshot 03/2026
 
 **Từ các scratchpad sessions:**
-- AI OS có 567,772 nodes và 1,472,756 edges trong GitNexus Code Intel (14/03)
-- nullclaw: 335 nodes, 319 edges (nhỏ hơn nhiều so với AI OS)
+- OmniClaw có 567,772 nodes và 1,472,756 edges trong GitNexus Code Intel (14/03)
+- nullclaw: 335 nodes, 319 edges (nhỏ hơn nhiều so với OmniClaw)
 - Sigma.js + graphology + ForceAtlas2 là tech stack cho LiveMap visualization
 
 ---

@@ -16,5 +16,5 @@
   "cost_tier": "standard",
   "status": "active",
   "entry_point": "README.md",
-  "notes": "MCP-native interface cho NotebookLM. Phù hợp tích hợp vào MCP cluster của AI OS. Pair với MCP servers để query NLM documents từ Claude Code workflow."
+  "notes": "MCP-native interface cho NotebookLM. Phù hợp tích hợp vào MCP cluster của OmniClaw. Pair với MCP servers để query NLM documents từ Claude Code workflow."
 }

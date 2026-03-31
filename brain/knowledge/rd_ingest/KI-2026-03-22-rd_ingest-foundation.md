@@ -8,7 +8,7 @@ foundation: true
 tags: ['rd', 'research', 'ingest', 'backlog', 'pipeline']
 ---
 
-# AI OS Corp — R&D Ingest Queue & Research Backlog
+# OmniClaw Corp — R&D Ingest Queue & Research Backlog
 
 ## R&D Ingest Tracking
 
@@ -22,14 +22,14 @@ tags: ['rd', 'research', 'ingest', 'backlog', 'pipeline']
 | lightrag | REFERENCE | KI entry only (HKUDS, 35k⭐) |
 | NemoClaw | REFERENCE | KI entry (NVIDIA 4-layer sandbox) |
 | ClawWork | REFERENCE | Cloned for study (HKUDS task framework) |
-| prometheus-grafana | TOOL | Cloned → plugins/ (AI OS monitoring) |
+| prometheus-grafana | TOOL | Cloned → plugins/ (OmniClaw monitoring) |
 | vieneu-tts | TOOL | Cloned → plugins/ (local Vietnamese TTS) |
 
 ### Ingest Workflow
 See `ops/workflows/knowledge-ingest.md` for the complete 4-step process:
 1. Classify: TOOL / REFERENCE / RESEARCH
 2. Write KI entry to brain/knowledge/<domain>/
-3. Clone only if: TOOL + compatible AI OS + standalone
+3. Clone only if: TOOL + compatible OmniClaw + standalone
 4. CEO approval for high-impact repos
 
 ### Research Backlog Topics

@@ -1,6 +1,6 @@
 ---
 name: git-mcp
-description: Read, search, and manipulate Git repositories directly through MCP. Use for code history analysis, commit inspection, diff viewing, branch management, and repository exploration within AI OS Corp.
+description: Read, search, and manipulate Git repositories directly through MCP. Use for code history analysis, commit inspection, diff viewing, branch management, and repository exploration within OmniClaw Corp.
 ---
 
 # Git MCP — Repository Intelligence

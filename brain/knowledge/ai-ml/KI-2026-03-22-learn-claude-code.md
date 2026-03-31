@@ -16,7 +16,7 @@ created: 2026-03-22T22:37:16.443912
 **Type:** REFERENCE | **Dept:** rd  
 **Relevant Agents:** skill_generator, cognitive_evolver
 
-## AI OS Notes
+## OmniClaw Notes
 Key takeaways: use /compact for context, custom slash-commands in .claude/commands/, extended thinking for complex tasks, git worktrees for parallel agents.
 
 ## Install / Use

@@ -1,4 +1,4 @@
-﻿# AI OS Corp â€” Global Decisions Log
+﻿# OmniClaw Corp â€” Global Decisions Log
 # Owner: CEO | Retention: PERMANENT | Updated: 2026-03-17
 
 ## How to Use
@@ -28,7 +28,7 @@ Review date: 2026-04-17 (1 month â€” evaluate if structure is working)
 
 ## [2026-03-20] â€” Corp Cycle 1 Bootstrap Execution
 
-Context: First full execution of AI OS Corp Cycle 1. Corp infrastructure existed (workflows, memory files, org chart) but had never run a complete cycle. Antigravity orchestrated end-to-end.
+Context: First full execution of OmniClaw Corp Cycle 1. Corp infrastructure existed (workflows, memory files, org chart) but had never run a complete cycle. Antigravity orchestrated end-to-end.
 
 Decisions:
 - APPROVE Antigravity as Cycle 1 Orchestrator (Tier 1, acting CEO proxy for task execution)
@@ -51,11 +51,11 @@ Review date: Start of Cycle 2
 
 ## [2026-03-23] â€” Multi-Engine Governance & External Rules (Phase 5)
 
-Context: AI OS Ä‘ang cháº¡y káº¿t há»£p Ä‘a luá»“ng Engine (Claude/Gemini/Ollama). Cáº§n má»™t chuáº©n má»±c chung Ä‘á»ƒ trÃ¡nh cÃ¡c Engine hoáº¡t Ä‘á»™ng tá»± phÃ¡t vÃ  giá»›i háº¡n quyá»n truy cáº­p Máº¡ng ngoÃ i nháº±m báº£o vá»‡ Data ná»™i bá»™.
+Context: OmniClaw Ä‘ang cháº¡y káº¿t há»£p Ä‘a luá»“ng Engine (Claude/Gemini/Ollama). Cáº§n má»™t chuáº©n má»±c chung Ä‘á»ƒ trÃ¡nh cÃ¡c Engine hoáº¡t Ä‘á»™ng tá»± phÃ¡t vÃ  giá»›i háº¡n quyá»n truy cáº­p Máº¡ng ngoÃ i nháº±m báº£o vá»‡ Data ná»™i bá»™.
 
 Decisions:
 - APPROVE Luáº­t Báº¥t Kháº£ Tri Model (Model Agnosticism): Má»i Engine pháº£i hÃ nh xá»­ theo Quy trÃ¬nh 7-Phase cá»§a CÃ´ng ty. TÆ°á»›c bá» danh tÃ­nh Trá»£ lÃ½ áº¢o máº·c Ä‘á»‹nh, Ã©p vÃ o Vai trÃ² (Role) cá»§a Agent.
-- APPROVE CÆ¡ cháº¿ Má»Ÿ Rá»™ng NÃ¢ng Cao qua ClawTask: CÃ¡c Plugin/Skill (Firecrawl, Web Intelligence, v.v.) CÆ  Báº¢N váº«n hoáº¡t Ä‘á»™ng 100% trÃªn AI OS cho cÃ¡c Agent/PhÃ²ng ban xá»­ lÃ½ project cÃ¡ nhÃ¢n. NhÆ°ng khi chá»©c nÄƒng "Báº­t káº¿t ná»‘i ngoÃ i/Má»Ÿ rá»™ng" Ä‘Æ°á»£c KÃ­ch Hoáº¡t trÃªn ClawTask, há»‡ thá»‘ng sáº½ má»Ÿ khÃ³a **cÃ¡c chá»©c nÄƒng siÃªu nÃ¢ng cao, má»Ÿ rá»™ng Ä‘a luá»“ng** cá»§a cÃ¡c Tool nÃ y cho Agents. Táº¯t cá» trÃªn ClawTask Ä‘á»“ng nghÄ©a cÃ¡c Tool giáº£m vá» má»©c Ä‘á»™ hoáº¡t Ä‘á»™ng Standard thÃ´ng thÆ°á»ng.
+- APPROVE CÆ¡ cháº¿ Má»Ÿ Rá»™ng NÃ¢ng Cao qua ClawTask: CÃ¡c Plugin/Skill (Firecrawl, Web Intelligence, v.v.) CÆ  Báº¢N váº«n hoáº¡t Ä‘á»™ng 100% trÃªn OmniClaw cho cÃ¡c Agent/PhÃ²ng ban xá»­ lÃ½ project cÃ¡ nhÃ¢n. NhÆ°ng khi chá»©c nÄƒng "Báº­t káº¿t ná»‘i ngoÃ i/Má»Ÿ rá»™ng" Ä‘Æ°á»£c KÃ­ch Hoáº¡t trÃªn ClawTask, há»‡ thá»‘ng sáº½ má»Ÿ khÃ³a **cÃ¡c chá»©c nÄƒng siÃªu nÃ¢ng cao, má»Ÿ rá»™ng Ä‘a luá»“ng** cá»§a cÃ¡c Tool nÃ y cho Agents. Táº¯t cá» trÃªn ClawTask Ä‘á»“ng nghÄ©a cÃ¡c Tool giáº£m vá» má»©c Ä‘á»™ hoáº¡t Ä‘á»™ng Standard thÃ´ng thÆ°á»ng.
 
 Outcomes:
 - NÃ¢ng cáº¥p `AI_OS_CONTEXT.md` (ThÃªm 2 bá»™ luáº­t quan trá»ng).
@@ -67,7 +67,7 @@ Review date: Phá»¥ thuá»™c vÃ o quÃ¡ trÃ¬nh tráº£i nghiá»‡m 
 
 ## [2026-03-23] â€” 3-Tier Plugin Architecture (Lazy-Load Protocol)
 
-Context: Há»‡ thá»‘ng sá»Ÿ há»¯u 131 repos / plugins. Náº¿u náº¡p toÃ n bá»™ vÃ o AI OS sáº½ gÃ¢y sá»¥p Ä‘á»• RAM vÃ  xung Ä‘á»™t lá»‡nh (Bloatware). CEO yÃªu cáº§u chÃ­nh thá»©c hÃ³a quy trÃ¬nh phÃ¢n tÃ¡ch Táº§ng.
+Context: Há»‡ thá»‘ng sá»Ÿ há»¯u 131 repos / plugins. Náº¿u náº¡p toÃ n bá»™ vÃ o OmniClaw sáº½ gÃ¢y sá»¥p Ä‘á»• RAM vÃ  xung Ä‘á»™t lá»‡nh (Bloatware). CEO yÃªu cáº§u chÃ­nh thá»©c hÃ³a quy trÃ¬nh phÃ¢n tÃ¡ch Táº§ng.
 
 Decisions:
 - APPROVE Kiáº¿n trÃºc 3 Táº§ng cho toÃ n bá»™ CÆ¡ sá»Ÿ háº¡ táº§ng CÃ´ng cá»¥ / Plugin cá»§a HÄH:
@@ -85,7 +85,7 @@ Review date: Permanent Rule.
 
 ## [2026-03-23] â€” 3-Tier Plugin Architecture + Governance Gate System
 Type: STRATEGIC_DECISION + LESSON_LEARNED
-Context: Session audit revealed AI OS thiáº¿u quy trÃ¬nh rÃµ rÃ ng Ä‘á»ƒ Ä‘Ã¡nh giÃ¡ vÃ  tÃ­ch há»£p repos má»›i.
+Context: Session audit revealed OmniClaw thiáº¿u quy trÃ¬nh rÃµ rÃ ng Ä‘á»ƒ Ä‘Ã¡nh giÃ¡ vÃ  tÃ­ch há»£p repos má»›i.
 Decision: FORMALIZE 3-Tier Plugin Architecture lÃ m Luáº­t lÃµi há»‡ thá»‘ng (RULE-TIER-01)
   - Tier 1 (Always-on): mem0, firecrawl, LightRAG, CrewAI
   - Tier 2 (Lazy-load): Táº¥t cáº£ plugins khÃ¡c qua plugin-lazy-load.md
@@ -130,7 +130,7 @@ Applied to: Táº¥t cáº£ system/ops/workflows/ files, quy trÃ¬nh táº¡o 
 
 ## [2026-03-23] — Cycle 8: Repo Governance + Skill Expansion
 
-Context: CEO submitted 51 repo URLs across 3 batches for AI OS integration evaluation.
+Context: CEO submitted 51 repo URLs across 3 batches for OmniClaw integration evaluation.
 Established CIV Repo Evaluation Gate (5-step workflow). Processed all repos.
 
 Decisions:
@@ -147,7 +147,7 @@ Outcomes:
 - GEMINI.md + CLAUDE.md upgraded to v2.3
 - 8 KI Notes added to brain/knowledge/notes/
 - strix-scan workflow updated with Trivy as Step 0
-- AI OS confirmed top 15% of enterprise AI tools landscape
+- OmniClaw confirmed top 15% of enterprise AI tools landscape
 
 Next Review: 2026-04-23 (check Observability Layer proposal)
 

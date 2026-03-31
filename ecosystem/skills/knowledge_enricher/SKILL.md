@@ -4,7 +4,7 @@ name: Knowledge Enricher
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Metadata enrichment and contextual cross-linking of knowledge entries.
 

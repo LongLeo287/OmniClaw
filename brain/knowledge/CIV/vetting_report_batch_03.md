@@ -48,7 +48,7 @@ Batch 3 covers 10 high-star public repos với focus trên AI framework, RAG, da
 - **Description**: Framework for orchestrating role-playing, autonomous AI agents
 - **Stars**: 46,407 | **Forks**: 6,260
 - **License**: MIT — commercial-friendly ✅
-- **CIV Notes**: Already in `plugins/crewai` as reference. Score upgraded from previous listing — confirm MIT license valid. **Sangat phù hợp với AI OS Corp multi-agent model.**
+- **CIV Notes**: Already in `plugins/crewai` as reference. Score upgraded from previous listing — confirm MIT license valid. **Sangat phù hợp với OmniClaw Corp multi-agent model.**
 - **Confidence**: crewAI là operational backbone option cho future Corp orchestration
 - **Recommendation**: Upgrade to `plugins/crewai` — T2 Skill Tier
 - **Dept**: Engineering (Dept 01)
@@ -61,7 +61,7 @@ Batch 3 covers 10 high-star public repos với focus trên AI framework, RAG, da
 - **Description**: Multi-agent collaboration, MCP support, AI chat UI
 - **Stars**: 73,884 | **Forks**: 14,796
 - **License**: Other (custom) — cần check lobehub ToS cho embedding
-- **CIV Notes**: Đã có trong catalog. Confirm tiếp tục là reference UI. MCP support = tích hợp trực tiếp với AI OS MCP layer.
+- **CIV Notes**: Đã có trong catalog. Confirm tiếp tục là reference UI. MCP support = tích hợp trực tiếp với OmniClaw MCP layer.
 - **Recommendation**: Keep as `plugins/lobe-chat` — verify license before production use
 - **Dept**: Engineering/UI (Dept 01)
 
@@ -85,7 +85,7 @@ Batch 3 covers 10 high-star public repos với focus trên AI framework, RAG, da
 - **Description**: Agentic IM Chatbot infrastructure — TG/DC/QQ/WeChat + MCP + LLM
 - **Stars**: 25,703 | **Forks**: 1,750
 - **License**: AGPL-3.0 — reference only ⚠️
-- **CIV Notes**: Interesting — description says "can be your openclaw alternative." Có conflict với `nullclaw`/`tinyclaw` potential. Tuy nhiên vì AI OS đã có gateway riêng, AstrBot nên là **knowledge reference** không phải plugin.
+- **CIV Notes**: Interesting — description says "can be your openclaw alternative." Có conflict với `nullclaw`/`tinyclaw` potential. Tuy nhiên vì OmniClaw đã có gateway riêng, AstrBot nên là **knowledge reference** không phải plugin.
 - **Open Issues**: 829 — khá cao, project còn busy
 - **Recommendation**: `knowledge/repos/astrbot-ref` — alternative gateway research
 - **Dept**: R&D (Dept 13) / Support (Dept 05)

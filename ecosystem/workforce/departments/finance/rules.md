@@ -1,7 +1,7 @@
 ﻿# FINANCE â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: cost-manager-agent | Reports to: CFO
-# Manages all LLM token budgets, API costs, and AI OS operating expenses
+# Manages all LLM token budgets, API costs, and OmniClaw operating expenses
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
 ---
@@ -43,7 +43,7 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 ## AGENT ROLES & RESPONSIBILITIES
 
 ### cost-manager-agent (Dept Head / CFO proxy)
-**Role:** AI OS operating cost management and optimization
+**Role:** OmniClaw operating cost management and optimization
 **Responsibilities:**
 - Monitor all LLM API token costs across all depts (from telemetry receipts)
 - Allocate monthly token budgets per dept (coordinated with CFO)

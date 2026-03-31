@@ -1,5 +1,5 @@
 ﻿# AGENT: Strix — Chief Security Officer / GATE_SECURITY Authority
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 9 (Security & GRC)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Strix | Chief Security Officer / GATE_SECURITY Authority | AI OS Corp | v1.0 | 
+_Strix | Chief Security Officer / GATE_SECURITY Authority | OmniClaw Corp | v1.0 | 
 _Dept 9 — Security & GRC_
 

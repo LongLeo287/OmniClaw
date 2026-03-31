@@ -6,9 +6,9 @@
 
 ## 1. AI Tool Landscape (seeaifirst — 66 tools, 13 categories)
 
-### AI OS hiện có vs. thị trường
+### OmniClaw hiện có vs. thị trường
 
-| Category | Thị trường | AI OS có | Gap |
+| Category | Thị trường | OmniClaw có | Gap |
 |----------|-----------|---------|-----|
 | LLM/Model | GPT-4o, Claude 3.5, Gemini, Llama 3 | All via llm_router.py | ✅ |
 | Agent Framework | LangChain, LangGraph, CrewAI, AutoGen | CrewAI + custom | ✅ |
@@ -32,7 +32,7 @@
 
 ## 2. GitHub Copilot Patterns (awesome-copilot)
 
-### Copilot Custom Instructions (compatible với AI OS GEMINI.md)
+### Copilot Custom Instructions (compatible với OmniClaw GEMINI.md)
 ```markdown
 # Pattern từ awesome-copilot community
 You are working in [project name]. When generating code:
@@ -41,12 +41,12 @@ You are working in [project name]. When generating code:
 - Security first: no hardcoded secrets
 - Write tests for any non-trivial logic
 ```
-**AI OS ứng dụng:** GEMINI.md + CLAUDE.md đã implement this pattern. Confirmed correct approach.
+**OmniClaw ứng dụng:** GEMINI.md + CLAUDE.md đã implement this pattern. Confirmed correct approach.
 
 ### Copilot Skills for Enterprise
 - Custom skill = inject business-specific rules vào Copilot
 - Pattern: `/.github/copilot-instructions.md` → auto-loaded
-- **AI OS equivalent:** `GEMINI.md` / `CLAUDE.md` → exact same pattern ✅
+- **OmniClaw equivalent:** `GEMINI.md` / `CLAUDE.md` → exact same pattern ✅
 
 ---
 
@@ -62,7 +62,7 @@ Execute query against GitHub dataset
    ↓
 Return: Chart + table + natural language answer
 ```
-**AI OS ứng dụng:** Dept 9 (Analytics) — build similar NL-to-KPI dashboard for AI OS Corp metrics.
+**OmniClaw ứng dụng:** Dept 9 (Analytics) — build similar NL-to-KPI dashboard for OmniClaw Corp metrics.
 
 ### Query Pattern
 ```python
@@ -75,12 +75,12 @@ def nl_to_query(natural_language: str, schema: dict) -> str:
     """
     return llm.generate(prompt)
 ```
-**AI OS ứng dụng:** Agent query `blackboard.json` / `decisions_log.md` bằng natural language → answered by ChatCorp agent.
+**OmniClaw ứng dụng:** Agent query `blackboard.json` / `decisions_log.md` bằng natural language → answered by ChatCorp agent.
 
 ---
 
 ## Landscape Summary
-- AI OS hiện tại đang ở **top 15%** về feature coverage so với enterprise AI OS tools
+- OmniClaw hiện tại đang ở **top 15%** về feature coverage so với enterprise OmniClaw tools
 - Chính các gap: Observability (LangSmith-like), n8n automation, advanced monitoring
 - Chiến lược đúng: build strong core (done) → add observability (Phase 7) → automation (Phase 8)
 

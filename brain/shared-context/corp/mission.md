@@ -1,4 +1,4 @@
-<!-- AI OS Corp — Company Mission Statement -->
+<!-- OmniClaw Corp — Company Mission Statement -->
 <!-- Written by: CEO (Human Operator) -->
 <!-- Updated: 2026-03-20 — Cycle 1 Kickoff -->
 <!-- Read by: all department heads at daily cycle start -->
@@ -6,7 +6,7 @@
 # 🎯 Company Mission
 
 **Current Mission (Q1 2026):**
-Build and operate the most capable AI OS in the world — 
+Build and operate the most capable OmniClaw in the world — 
 a self-improving, multi-agent operating system that augments human intelligence 
 across engineering, marketing, strategy, and operations.
 

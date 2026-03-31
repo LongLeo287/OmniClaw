@@ -1,6 +1,6 @@
 # [RULE-VERSION-02] Thư Ký Tự Động Sát Nhập (Dependabot Auto-Merge Secretary)
 
-> AI OS CORP Quyết định Ủy quyền Lãnh đạo cho Robot Đám Mây (Auto-Merge Action) vào Quá trình Duyệt Lỗi của Dependabot để giảm tải cho CEO.
+> OmniClaw Corp Quyết định Ủy quyền Lãnh đạo cho Robot Đám Mây (Auto-Merge Action) vào Quá trình Duyệt Lỗi của Dependabot để giảm tải cho CEO.
 
 ## 1. Giới hạn Thẩm quyền (Zero-Trust Boundaries)
 "Thư Ký" chỉ được phép hoạt động theo đúng Quy trình ranh giới cực nghiêm ngặt:

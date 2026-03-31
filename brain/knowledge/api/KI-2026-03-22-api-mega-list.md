@@ -10,14 +10,14 @@ created: 2026-03-22T22:37:16.443912
 
 # API Mega List
 
-> 500+ public APIs: REST/GraphQL/WebSocket/MCP, auth methods, rate limits. Useful for AI OS knowledge workers finding data sources.
+> 500+ public APIs: REST/GraphQL/WebSocket/MCP, auth methods, rate limits. Useful for OmniClaw knowledge workers finding data sources.
 
 **Source:** [https://github.com/cporter202/API-mega-list](https://github.com/cporter202/API-mega-list)  
 **Type:** REFERENCE | **Dept:** engineering  
 **Relevant Agents:** web_intelligence, knowledge_navigator
 
-## AI OS Notes
-Check before building new AI OS integrations — likely already an API exists. Complement to public-apis plugin.
+## OmniClaw Notes
+Check before building new OmniClaw integrations — likely already an API exists. Complement to public-apis plugin.
 
 ## Install / Use
 ```

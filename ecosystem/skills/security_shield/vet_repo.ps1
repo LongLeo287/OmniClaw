@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-    AI OS Repository Vetting Script - Strix Security Protocol v2.0
+    OmniClaw Repository Vetting Script - Strix Security Protocol v2.0
 .DESCRIPTION
     Scans a cloned repository in QUARANTINE for malware indicators,
     data exfiltration patterns, suspicious dependencies, and git hook injections.
-    Must PASS before any content is moved into D:\APP\AI OS ecosystem.
+    Must PASS before any content is moved into D:\APP\OmniClaw ecosystem.
 .PARAMETER RepoPath
     Full path to the quarantined repo (e.g., D:\APP\QUARANTINE\repo-name)
 .PARAMETER Verbose
@@ -42,7 +42,7 @@ function Add-Finding {
 
 # VALIDATION
 Write-Host ""
-Write-Host "=== AI OS STRIX SECURITY VET - v2.0 (12-STAGE) ===" -ForegroundColor Cyan
+Write-Host "=== OmniClaw STRIX SECURITY VET - v2.0 (12-STAGE) ===" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Target: $RepoPath" -ForegroundColor White
 
@@ -412,16 +412,16 @@ Write-Host "=== RESULT: $status | Critical: $($script:CriticalCount) | Warnings:
 
 $verdictText = ""
 if ($status -eq "PASS") {
-    $verdictText = "PASS - Repo passed all security checks. Safe to extract specific files into AI OS."
+    $verdictText = "PASS - Repo passed all security checks. Safe to extract specific files into OmniClaw."
 } elseif ($status -eq "WARN") {
     $verdictText = "WARN - Warnings found. Manual review required before ingestion. See findings below."
 } else {
-    $verdictText = "FAIL - Critical issues found. DO NOT ingest into AI OS until resolved."
+    $verdictText = "FAIL - Critical issues found. DO NOT ingest into OmniClaw until resolved."
 }
 
 $nextStepText = ""
 if ($status -eq "PASS") {
-    $nextStepText = "Proceed to content extraction. Copy only needed files into D:\APP\AI OS\knowledge\ or relevant skill folder."
+    $nextStepText = "Proceed to content extraction. Copy only needed files into D:\APP\OmniClaw\knowledge\ or relevant skill folder."
 } elseif ($status -eq "WARN") {
     $nextStepText = "Review each WARN item manually. If comfortable, proceed with caution. Document your review decision."
 } else {

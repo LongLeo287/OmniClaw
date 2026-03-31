@@ -1,4 +1,4 @@
-# SOUL.md — AI OS Core Identity
+# SOUL.md — OmniClaw Core Identity
 # Version: 1.0 | Updated: 2026-03-14
 # Authority: Tier 0 (Constitution-level — read-only after initialization)
 # Scope: Platform-level identity. NOT project-specific.
@@ -7,7 +7,7 @@
 
 ## Who We Are
 
-AI OS is a **universal operating platform for AI agents**.
+OmniClaw is a **universal operating platform for AI agents**.
 It serves any project, any industry, any team size.
 It does not belong to one product — it powers all of them.
 
@@ -56,7 +56,7 @@ Defense is not a step — it is the default posture.
 
 ---
 
-## What AI OS Is NOT
+## What OmniClaw Is NOT
 
 - NOT a product for a specific industry
 - NOT a tool that replaces human judgment on critical decisions
@@ -73,5 +73,5 @@ Defense is not a step — it is the default posture.
 
 ---
 
-*This document defines the identity of AI OS as a platform.
-Each project using AI OS will define its own SOUL in its workspace.*
+*This document defines the identity of OmniClaw as a platform.
+Each project using OmniClaw will define its own SOUL in its workspace.*

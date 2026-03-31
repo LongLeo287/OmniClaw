@@ -17,7 +17,7 @@ git commit -m "AGENT: Escalated to CEO → security score 45/100"
 ```
 **Lợi ích:** Full audit trail. CEO có thể `git log` để xem mọi agent action.
 
-**AI OS ứng dụng:** Áp dụng cho `strix-agent` — mỗi scan result = 1 git commit vào `telemetry/`.
+**OmniClaw ứng dụng:** Áp dụng cho `strix-agent` — mỗi scan result = 1 git commit vào `telemetry/`.
 
 ### 2. SkillsFlow — Skills qua Git
 ```yaml
@@ -32,7 +32,7 @@ skills:
     agent: strix-agent
     output: telemetry/qa_receipts/
 ```
-**AI OS ứng dụng:** `.gitagent/skills.yaml` → ánh xạ với AI OS skills/ directory.
+**OmniClaw ứng dụng:** `.gitagent/skills.yaml` → ánh xạ với OmniClaw skills/ directory.
 
 ### 3. Separation of Duties (SOD)
 ```
@@ -41,7 +41,7 @@ gitagent nguyên tắc: Một agent KHÔNG làm cả propose + approve
 → review-agent review
 → merge chỉ xảy ra sau approval
 ```
-**AI OS ứng dụng:** QUAN TRỌNG. Áp dụng ngay cho plugin integration:
+**OmniClaw ứng dụng:** QUAN TRỌNG. Áp dụng ngay cho plugin integration:
 - Antigravity: propose plugin (CIV evaluation)
 - CEO: approve/reject
 - Deploy: chỉ sau CEO OK
@@ -53,7 +53,7 @@ main:     production agent (stable, strict)
 dev:      experimental agent (relaxed rules)
 feature/: proto agent for testing new skills
 ```
-**AI OS ứng dụng:** Khi test new skill/rule → tạo branch, không push thẳng main.
+**OmniClaw ứng dụng:** Khi test new skill/rule → tạo branch, không push thẳng main.
 
 ### 5. Agent Audit Trail Pattern
 ```python
@@ -73,7 +73,7 @@ def log_agent_action(action: str, result: str, confidence: float):
     if confidence < 0.7:  # Low confidence → escalate
         escalate_to_ceo(action, result)
 ```
-**AI OS ứng dụng:** Extend `archivist_log.md` với structured JSONL entries.
+**OmniClaw ứng dụng:** Extend `archivist_log.md` với structured JSONL entries.
 
 ---
 

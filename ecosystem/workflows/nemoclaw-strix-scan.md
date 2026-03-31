@@ -1,5 +1,5 @@
 ---
-description: NemoClaw automated Strix security scan pipeline for AI OS Corp plugins
+description: NemoClaw automated Strix security scan pipeline for OmniClaw Corp plugins
 ---
 
 # NemoClaw Strix Automation Workflow

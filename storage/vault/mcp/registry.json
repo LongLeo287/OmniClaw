@@ -36,10 +36,10 @@
       "skill": "skills/git-mcp/SKILL.md"
     },
     {
-      "name": "aos-workspace",
+      "name": "omniclaw-workspace",
       "purpose": "AI OS workspace server",
       "type": "node",
-      "cmd": "infra/mcp/servers/aos-workspace/",
+      "cmd": "infra/mcp/servers/omniclaw-workspace/",
       "status": "active",
       "notes": "Custom MCP server for AI OS workspace access"
     },

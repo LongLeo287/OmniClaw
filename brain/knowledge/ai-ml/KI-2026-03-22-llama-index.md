@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/run-llama/llama_index](https://github.com/run-llama/llama_index)  
 **Stars:** 37k | **Type:** REFERENCE | **Dept:** engineering, rd  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** knowledge_navigator
 - **security_gate:** PASS — trusted_org
 
-## AI OS Notes
-REFERENCE — AI OS uses LightRAG+GraphRAG+mem0 for RAG. LlamaIndex too heavy to add. Use docs as reference for custom connector patterns.
+## OmniClaw Notes
+REFERENCE — OmniClaw uses LightRAG+GraphRAG+mem0 for RAG. LlamaIndex too heavy to add. Use docs as reference for custom connector patterns.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

@@ -1,19 +1,19 @@
 # Department: operations
-# AI OS CORP â€” Setup Guide
+# OmniClaw Corp â€” Setup Guide
 # Sau khi clone, chá»‰ cáº§n 2 bÆ°á»›c lÃ  cháº¡y Ä‘Æ°á»£c
 
 ## âš¡ Quick Start
 
 ```powershell
 # 1. Clone repo (Code Lõi)
-git clone <repo-url> "d:\AI OS CORP"
+git clone <repo-url> "d:\OmniClaw Corp"
 
 # 2. Auto-Setup: Kéo Data Vault (HuggingFace) & Cài Dependencies
-cd "d:\AI OS CORP\AI OS REMOTE\scripts"
+cd "d:\OmniClaw Corp\OmniClaw REMOTE\scripts"
 powershell -ExecutionPolicy Bypass -File setup.ps1
 
 # 3. Khởi động Master Dashboard
-"<AI_OS_ROOT>\launcher\AI OS CORP.cmd"
+"<AI_OS_ROOT>\launcher\OmniClaw Corp.cmd"
 ```
 
 ---
@@ -87,5 +87,5 @@ FIRECRAWL_API_KEY=fc-...
 
 ---
 
-*Dashboard: `launcher\AI OS CORP.cmd` â†’ [I] Install Manager Ä‘á»ƒ kiá»ƒm tra tráº¡ng thÃ¡i*
+*Dashboard: `launcher\OmniClaw Corp.cmd` â†’ [I] Install Manager Ä‘á»ƒ kiá»ƒm tra tráº¡ng thÃ¡i*
 

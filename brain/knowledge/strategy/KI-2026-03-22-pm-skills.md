@@ -16,7 +16,7 @@ created: 2026-03-22T22:37:16.443912
 **Type:** REFERENCE | **Dept:** strategy  
 **Relevant Agents:** strategy/product-manager-agent
 
-## AI OS Notes
+## OmniClaw Notes
 Import key prompts into strategy/product-manager-agent AGENT.md skill section. Useful: OKR template, PRD structure, stakeholder matrix.
 
 ## Install / Use

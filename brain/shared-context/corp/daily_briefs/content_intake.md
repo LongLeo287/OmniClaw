@@ -12,7 +12,7 @@
 
 ## Summary
 
-Content Intake (Ingestion) dept activated. This dept manages the pipeline for ingesting external repos, skills, and knowledge sources into the AI OS Corp knowledge base.
+Content Intake (Ingestion) dept activated. This dept manages the pipeline for ingesting external repos, skills, and knowledge sources into the OmniClaw Corp knowledge base.
 
 ## Intake Queue Status (from EXTERNAL_SKILL_SOURCES.yaml)
 

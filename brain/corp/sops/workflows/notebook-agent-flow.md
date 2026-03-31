@@ -1,4 +1,4 @@
-# AI OS Notebook Agent — Workflow
+# OmniClaw Notebook Agent — Workflow
 # Version: 1.0 | Updated: 2026-03-22
 # Owner: content_intake (primary trigger), all depts (consumers)
 # Tool: Notebook Agent Skill → POST /api/notebook/*
@@ -9,7 +9,7 @@
 ## OVERVIEW
 
 This workflow defines the complete lifecycle of content through the
-AI OS Notebook Agent — from raw input to indexed knowledge.
+OmniClaw Notebook Agent — from raw input to indexed knowledge.
 
 ```
 RAW CONTENT (PDF / URL / text)

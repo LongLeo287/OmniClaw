@@ -39,7 +39,7 @@ STEP 9.5 ──► Load Storage Rule                      [brain/knowledge/notes
 STEP 9.6 ──► Load Structure Rule                    [brain/knowledge/notes/RULE-STRUCTURE-01-system-structure.md]
 STEP 10  ──► Begin work
 ```
-HARD RULE: Skip any step = violation of AI OS governance.
+HARD RULE: Skip any step = violation of OmniClaw governance.
 
 ### Section 3 — Claude Code Specific Rules
 - Role: Tier 2 Executor (reads blackboard for tasks from Antigravity)

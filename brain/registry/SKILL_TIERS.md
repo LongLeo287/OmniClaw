@@ -1,4 +1,4 @@
-# AI OS — Skill & Plugin Tier Registry
+# OmniClaw — Skill & Plugin Tier Registry
 # Path: <AI_OS_ROOT>\registry\SKILL_TIERS.md
 # Updated: 2026-03-17
 # Purpose: Classify all skills/plugins by strategic importance
@@ -18,7 +18,7 @@ T3 ── Experimental / Lab   (testing, niche, or watchlist)
 
 | Criterion | T0 | T1 | T2 | T3 |
 |---|---|---|---|---|
-| **Dependency** | AI OS cannot function without | Core workflows depend on | Useful but optional | Exploratory |
+| **Dependency** | OmniClaw cannot function without | Core workflows depend on | Useful but optional | Exploratory |
 | **Usage freq** | Every session | Daily | Weekly/On-demand | Rare/Experimental |
 | **Replaceability** | Irreplaceable | Hard to replace | Swappable | Easily swapped |
 | **Stability** | Production-hardened | Stable | Maturing | Beta/Alpha |
@@ -27,7 +27,7 @@ T3 ── Experimental / Lab   (testing, niche, or watchlist)
 
 ## 🔴 TIER 0 — Core OS Foundation
 
-> These are load-bearing pillars. AI OS cannot operate without them.
+> These are load-bearing pillars. OmniClaw cannot operate without them.
 
 ### Core Skills (`skills/` directory)
 

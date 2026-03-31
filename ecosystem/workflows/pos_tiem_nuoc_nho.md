@@ -72,5 +72,5 @@ Update `<AI_OS_ROOT>\shared-context\blackboard.json` accordingly.
 ## Active Skills for This Project
 
 - `ui-ux-pro-max` â€” loaded from `.agent/skills/`
-- `pos_event_sourcing_auditor` â€” available in AI OS `skills/domains/pos/`
+- `pos_event_sourcing_auditor` â€” available in OmniClaw `skills/domains/pos/`
 

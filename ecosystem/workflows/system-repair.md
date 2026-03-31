@@ -19,7 +19,7 @@ broken paths, stale naming, MCP plugin failures, skill registry inconsistencies,
 | "audit system" / "kiểm tra hệ thống" | Full repair |
 | "fix system" / "sửa lỗi hệ thống" | Full repair |
 | "scan and fix" | Full repair |
-| "aos repair" / "omniclaw repair" | Full repair |
+| "omniclaw repair" / "omniclaw repair" | Full repair |
 | Boot: missing/unreadable files detected | Quick (targeted) |
 | After large rename/refactor | Quick (encoding + naming) |
 | CI/CD encoding/path failure | Targeted (affected files) |
@@ -49,13 +49,13 @@ git stash list
 
 ```python
 STALE_PATTERNS = [
-    ('AI OS CORP', 'OmniClaw'),
-    ('AI OS', 'OmniClaw'),
+    ('OmniClaw Corp', 'OmniClaw'),
+    ('OmniClaw', 'OmniClaw'),
     ('aios_', 'omniclaw_'),
     ('AI_OS_ROOT', 'OMNICLAW_ROOT'),
     ('AOS_ROOT', 'OMNICLAW_ROOT'),
     ('<AI_OS_ROOT>', '<OMNICLAW_ROOT>'),
-    ('aios-local', 'omniclaw'),
+    ('omniclaw-local', 'omniclaw'),
 ]
 ```
 

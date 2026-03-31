@@ -8,9 +8,9 @@ foundation: true
 tags: ['learnings', 'post-mortem', 'lessons', 'patterns', 'mistakes']
 ---
 
-# AI OS Corp — Project Learnings & Post-Mortems
+# OmniClaw Corp — Project Learnings & Post-Mortems
 
-## AI OS Project Learnings
+## OmniClaw Project Learnings
 
 ### 2026-03-22 Session Learnings
 
@@ -27,12 +27,12 @@ tags: ['learnings', 'post-mortem', 'lessons', 'patterns', 'mistakes']
 #### Auto-Accept Agent Design
 - **Problem:** VS Code extension approach too tightly coupled to VS Code
 - **Solution:** Built ag_auto_accept.py as subprocess wrapper + HTTP API
-- **Learning:** AI OS tools should be standalone HTTP services, not editor plugins
+- **Learning:** OmniClaw tools should be standalone HTTP services, not editor plugins
 
 #### Knowledge Base Quality
 - **Issue:** 525 KI entries but heavy in bmad_repo (199) and skills_standard_repo (167) — repo dumps
 - **Learning:** KI entries should be curated insights, not raw file lists
-- **Action:** Focus future KI on "Key Concepts" and "AI OS Integration" sections
+- **Action:** Focus future KI on "Key Concepts" and "OmniClaw Integration" sections
 
 ### Recurring Issues
 1. `Stop-Process python` kills ALL Python services (ClawTask + side services)

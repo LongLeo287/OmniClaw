@@ -16,8 +16,8 @@ created: 2026-03-22T22:37:16.443912
 **Type:** TOOL | **Dept:** engineering  
 **Relevant Agents:** llm_router
 
-## AI OS Notes
-No clone needed — install via pip. Use in AI OS scripts: `import llm; model = llm.get_model('claude-3-5-sonnet')`. Useful for llm_router to route between models.
+## OmniClaw Notes
+No clone needed — install via pip. Use in OmniClaw scripts: `import llm; model = llm.get_model('claude-3-5-sonnet')`. Useful for llm_router to route between models.
 
 ## Install / Use
 ```

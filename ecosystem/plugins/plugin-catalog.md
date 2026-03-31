@@ -1,4 +1,4 @@
-# AI OS Plugin Catalog
+# OmniClaw Plugin Catalog
 # Version: 3.0 | Updated: 2026-03-24 | Owner: Dept 4 (Registry) + Dept 20 (CIV)
 # Evaluated via: ops/workflows/repo-evaluation.md
 
@@ -60,7 +60,7 @@
 | `bmad-method` | ✅ ACTIVE | Tier 2 | — | Active. BMAD agile method. |
 | `MaxKB` | 🔖 DEFER → Phase 7 | Tier 2 | ⚠️ Overlap ClawTask + RAG | **Verdict:** DEFER. Enterprise platform — evaluate chỉ nếu cần KB riêng cho khách hàng. Hiện tại LightRAG + ClawTask thay thế đủ. |
 | `all-agentic-architectures` | 📚 REFERENCE | — | — | **Verdict:** REFERENCE. 17 kiến trúc Agent (Reflection, ReAct, PEV, Blackboard, ToT, Metacognitive...). KI: `brain/knowledge/notes/KI-AGENT-ARCHITECTURES-01.md` |
-| `agency-agents` | 📚 CHERRY-PICK | — | — | **Verdict:** CHERRY-PICK. 144 agent templates — không chạy install script. Cherry-pick các agents AI OS còn thiếu (Code Reviewer, MCP Builder, Incident Commander...). KI: `brain/knowledge/notes/KI-AGENCY-AGENTS-CHERRY-PICK-01.md` |
+| `agency-agents` | 📚 CHERRY-PICK | — | — | **Verdict:** CHERRY-PICK. 144 agent templates — không chạy install script. Cherry-pick các agents OmniClaw còn thiếu (Code Reviewer, MCP Builder, Incident Commander...). KI: `brain/knowledge/notes/KI-AGENCY-AGENTS-CHERRY-PICK-01.md` |
 | `Mini-Agent` | 📚 REFERENCE | — | — | **Verdict:** REFERENCE. Đọc để học pattern thiết kế lightweight agent. Không integrate framework, chỉ lấy pattern. |
 | `AntigravityManager` | 🔖 DEFER → Phase 5 | Tier 2 | Check overlap | **Verdict:** DEFER pending dedup check với antigravity-manager. Có thể là cùng 1 repo. Chờ xác nhận. |
 | `antigravity-manager` | 🔖 DEFER → Phase 5 | Tier 2 | Check overlap | **Verdict:** DEFER. Dedup check với AntigravityManager. Nếu trùng → keep 1, REJECT cái còn lại. |
@@ -99,7 +99,7 @@
 | `e2b` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. Code execution sandbox — integrate vào ACP console (Dept Engineering). Phase 3. |
 | `cloud-sync` | 🔖 DEFER → Phase 6 | Tier 2 | Safe | **Verdict:** DEFER. Cloud sync — cần xác định provider cụ thể (S3, GCS?) trước khi integrate. |
 | `MiniMax-MCP` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. MiniMax API bridge — integrate khi LLM Router cần MiniMax model (ví dụ: video/audio gen). |
-| `MiniMax-MCP-JS` | ❌ REJECT | Tier 3 | ❌ Duplicate MiniMax-MCP | **Verdict:** REJECT. JS version của MiniMax-MCP — Python version (MiniMax-MCP) ưu tiên hơn vì AI OS chạy Python-first. |
+| `MiniMax-MCP-JS` | ❌ REJECT | Tier 3 | ❌ Duplicate MiniMax-MCP | **Verdict:** REJECT. JS version của MiniMax-MCP — Python version (MiniMax-MCP) ưu tiên hơn vì OmniClaw chạy Python-first. |
 | `OpenSandbox` | ❌ REJECT | Tier 3 | ❌ Duplicate e2b | **Verdict:** REJECT. e2b được maintain tốt hơn, có team, có docs đầy đủ hơn OpenSandbox. |
 | `OpenShell` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Open shell interface — evaluate when enhanced shell needed. |
 | `openviking` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Viking-inspired tools — evaluate when historical/Norse-themed tools needed. |
@@ -115,7 +115,7 @@
 | `zeroleaks` | ✅ ACTIVE | Tier 2 | — | Active. Secret leak prevention. check monthly. |
 | `claude-bug-bounty` | ❌ REJECT | Tier 3 | — | **Verdict:** REJECT. Đây là flow/methodology, không phải tool integrable. Tham khảo docs chứ không clone vào hệ thống. |
 | `trufflehog` | 🔖 DEFER → Phase 3 | Tier 2 | Safe — complement zeroleaks | **Verdict:** DEFER. Secret scanning deep scan (Git history). Bổ sung zeroleaks. Dept 10 (Security) integrate vào strix-scan pipeline. |
-| `GitHacker` | ❌ REJECT | Tier 3 | ⚠️ Offensive tool | **Verdict:** REJECT. Git exploitation tool — offensive security. AI OS không có use case tấn công. Chỉ dùng defensive tools. |
+| `GitHacker` | ❌ REJECT | Tier 3 | ⚠️ Offensive tool | **Verdict:** REJECT. Git exploitation tool — offensive security. OmniClaw không có use case tấn công. Chỉ dùng defensive tools. |
 | `identYwaf` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Identity WAF protection — evaluate when advanced web security needed. |
 | `kong-reverse-engineer` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Kong reverse engineering — evaluate when API gateway reverse engineering needed. |
 
@@ -135,7 +135,7 @@
 | `claudekit` | ✅ ACTIVE | Core ClaudeKit. |
 | `antigravity-awesome-skills` | 🔖 DEFER → Phase 4 | **Verdict:** DEFER. Review skill list xem có skill nào chưa có trong SKILL_REGISTRY.json → cherry-pick và import từng skill, không clone toàn bộ. |
 | `awesome-agent-skills` | 🔖 DEFER → Phase 4 | **Verdict:** DEFER. Same as above — cherry-pick, không clone. |
-| `awesome-claude-skills` | 🔖 DEFER → Phase 4 | **Verdict:** Same — cherry-pick các skill Claude-specific phù hợp với AI OS. |
+| `awesome-claude-skills` | 🔖 DEFER → Phase 4 | **Verdict:** Same — cherry-pick các skill Claude-specific phù hợp với OmniClaw. |
 | `ai-engineering-toolkit` | 🔖 DEFER → Phase 5 | **Verdict:** DEFER. Toolkit tổng hợp — xem xét khi Dept Engineering cần expand toolkit. |
 | `api-mega-list` | 🔖 REFERENCE | **Verdict:** REFERENCE ONLY. Danh sách API — không integrate. Đọc khi cần tìm API mới. |
 | `affiliate-skills` | 👁️ | Reference | Affiliate marketing skills — reference for marketing automation. |
@@ -282,12 +282,12 @@
 | `claude-mem` | Duplicate mem0, chỉ hỗ trợ Claude, mem0 cross-platform |
 | `openrag` | nexusrag tốt hơn, nay cả nexusrag cũng bị thay bởi LightRAG |
 | `scrapling-mcp` | Duplicate Firecrawl MCP adapter, 2 lớp trùng nhau |
-| `agency-agents` | Duplicate AI OS Corp agent system đã đầy đủ hơn |
-| `Mini-Agent` | Duplicate sub-agent layer của AI OS |
-| `MiniMax-MCP-JS` | Duplicate MiniMax-MCP Python version, AI OS Python-first |
+| `agency-agents` | Duplicate OmniClaw Corp agent system đã đầy đủ hơn |
+| `Mini-Agent` | Duplicate sub-agent layer của OmniClaw |
+| `MiniMax-MCP-JS` | Duplicate MiniMax-MCP Python version, OmniClaw Python-first |
 | `OpenSandbox` | Duplicate e2b, e2b maintained tốt hơn |
 | `claude-bug-bounty` | Methodology, không phải tool, không integrate được |
-| `GitHacker` | Offensive security tool, AI OS dùng defensive only |
+| `GitHacker` | Offensive security tool, OmniClaw dùng defensive only |
 
 ---
 

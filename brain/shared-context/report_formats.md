@@ -1,10 +1,10 @@
-# report_formats.md — AI OS Master Report Formats
+# report_formats.md — OmniClaw Master Report Formats
 # Version: 2.0 | Authority: Tier 0
 # Location: brain/shared-context/report_formats.md  ← CANONICAL SOURCE
 # Loaded at: Boot Step 6
 # Rune pointer: corp/prompts/runes/report_formats.md → references this file
 #
-# This file defines ALL output formats used in AI OS:
+# This file defines ALL output formats used in OmniClaw:
 #   PART A — CEO-Facing Formats (Antigravity → Human/CEO)
 #   PART B — Corp System Formats (Agent ↔ Agent / Corp Layer)
 

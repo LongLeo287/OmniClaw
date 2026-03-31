@@ -25,7 +25,7 @@
 
 **Telegram:**
 1. Má»Ÿ Telegram â†’ nháº¯n tin @BotFather
-2. `/newbot` â†’ Ä‘áº·t tÃªn: `AI OS Corp` â†’ username: `AICorpIntakeBot`
+2. `/newbot` â†’ Ä‘áº·t tÃªn: `OmniClaw Corp` â†’ username: `AICorpIntakeBot`
 3. Copy token (dáº¡ng `123456:ABC-DEF...`)
 
 **Discord (optional):**
@@ -92,7 +92,7 @@ tinyclaw office  # Dashboard táº¡i http://localhost:3000
 
 Gá»­i tin nháº¯n Ä‘áº¿n bot Telegram â†’ pháº£i nháº­n Ä‘Æ°á»£c welcome message:
 ```
-ðŸ‘‹ ChÃ o má»«ng Ä‘áº¿n AI OS Corp!
+ðŸ‘‹ ChÃ o má»«ng Ä‘áº¿n OmniClaw Corp!
 ChÃºng tÃ´i cung cáº¥p giáº£i phÃ¡p AI agents cho má»i loáº¡i dá»± Ã¡n...
 ```
 

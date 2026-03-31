@@ -45,7 +45,7 @@ All proposals use format from strategy/MANAGER_PROMPT.md:
 Monitor weekly:
 - New AI model releases â†’ update llm/config.yaml recommendation?
 - Competitor product launches â†’ alert to Marketing
-- AI OS-relevant tools on GitHub trending â†’ forward to R&D
+- OmniClaw-relevant tools on GitHub trending â†’ forward to R&D
 
 ## RECEIPT ADDITIONS
 ```json

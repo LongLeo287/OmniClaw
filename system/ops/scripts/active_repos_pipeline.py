@@ -169,7 +169,13 @@ def main():
             log(f"  [STRIX] {reason}")
             if not ok:
                 QUARANTINE_REJECTED.mkdir(parents=True, exist_ok=True)
-                shutil.move(str(incoming_path), str(QUARANTINE_REJECTED / repo_name))
+                import time
+                unique_dest = QUARANTINE_REJECTED / f"{repo_name}_{int(time.time())}"
+                try:
+                    shutil.move(str(incoming_path), str(unique_dest))
+                except Exception as e:
+                    log(f"  [ERROR] Lỗi di dời: {e}")
+                    shutil.rmtree(incoming_path, ignore_errors=True)
                 write_log(repo_name, url, "REJECTED", reason)
                 state["failed"].append(url)
                 results["rejected"] += 1

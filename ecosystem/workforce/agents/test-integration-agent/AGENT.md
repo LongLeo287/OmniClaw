@@ -1,5 +1,5 @@
 ﻿# AGENT: Test Integration Agent â€” Testing specialist
-# Version: 1.0 | Created: 2026-03-29 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-29 | OmniClaw Corp
 # Department: Testing (Dept 3) â€” <Sub-scope if any>
 # Authority: Tier 3 (<Specialist|Manager|Executor>)
 # Status: ACTIVE | auto_created: true
@@ -193,5 +193,5 @@ requires_ceo_approval_for:
 
 ---
 
-*Test Integration Agent â€” Created by AI OS Corp agent-auto-create workflow. Supervised until first performance review.*
+*Test Integration Agent â€” Created by OmniClaw Corp agent-auto-create workflow. Supervised until first performance review.*
 

@@ -4,7 +4,7 @@ name: Security Shield
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Defensive security auditing, vulnerability scanning and auto-remediation.
 
@@ -30,18 +30,18 @@ listens_to: []
 # ðŸ›¡ï¸ Security Shield Skill (Strix Protocol)
 
 ## Description
-This skill provides the AI OS with "Hacker Instincts" â€” pre-clone repo vetting, vulnerability scanning, and auto-remediation. Protects the ecosystem from supply chain attacks, malware, and data exfiltration.
+This skill provides the OmniClaw with "Hacker Instincts" â€” pre-clone repo vetting, vulnerability scanning, and auto-remediation. Protects the ecosystem from supply chain attacks, malware, and data exfiltration.
 
 ## ðŸ› ï¸ Core Functions
 
 1. **Pre-Clone Vetting (/vet-repo):** â† NEW
-   - Run `vet_repo.ps1` on a quarantined repo BEFORE any content enters AI OS.
+   - Run `vet_repo.ps1` on a quarantined repo BEFORE any content enters OmniClaw.
    - Scans: git hooks, npm postinstall scripts, network calls, sensitive data access, obfuscation, hardcoded secrets, suspicious binaries.
    - Generates `_VET_REPORT.md` with PASS / WARN / FAIL verdict.
    - Usage: `.\vet_repo.ps1 -RepoPath "D:\APP\QUARANTINE\repo-name" -Verbose`
 
 2. **Vulnerability Scan (/scan):**
-   - Static analysis on existing AI OS code and any newly added files.
+   - Static analysis on existing OmniClaw code and any newly added files.
    - Search for: Hardcoded secrets, insecure API usage, open permissions, injection points.
 
 3. **Proof-of-Impact (/exploit-test):**
@@ -56,11 +56,11 @@ This skill provides the AI OS with "Hacker Instincts" â€” pre-clone repo ve
 1. Clone into `D:\APP\QUARANTINE\<repo-name>` with `--depth=1`
 2. Delete `.git\hooks\` non-.sample files
 3. Run `/vet-repo` â†’ wait for PASS
-4. Extract ONLY needed files into AI OS
+4. Extract ONLY needed files into OmniClaw
 5. Run `/scan` on newly added files
 6. Delete QUARANTINE folder
 
-See full protocol: `D:\APP\AI OS\rules\clone_security_protocol.md`
+See full protocol: `D:\APP\OmniClaw\rules\clone_security_protocol.md`
 
 ### For Code Changes (Before Commit)
 1. Run `/scan` on changed files

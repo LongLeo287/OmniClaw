@@ -1,9 +1,11 @@
-# 🏛️ AI OS CORP — Master System Index
+# 🏛️ OmniClaw Corp — Master System Index
 > **Official Directory of Departments, Agents, and Workflows (Sorted by ID)**
 
 [**🇻🇳 Xem Bản Tiếng Việt (Vietnamese)**](MASTER_INDEX_vi.md)
 
-This document serves as the definitive guide to the **21-department organizational structure** of AI OS CORP. It defines who (Agents) does what (Functions) and how they are linked (Workflows).
+This document serves as the definitive guide to the **21-department organizational structure** of OmniClaw Corp. It defines who (Agents) does what (Functions) and how they are linked (Workflows).
+
+> 💡 **Notice for Human Operators:** A simplified, public-facing version of this architecture is now available in the [**docs/architecture/system_overview.md**](../../docs/architecture/system_overview.md) guide.
 
 ---
 
@@ -14,7 +16,7 @@ The system is governed by a human-centric leadership model supported by speciali
 ```mermaid
 graph TD
     CEO(CEO — Human Operator)
-    AOS(AI OS Orchestrator)
+    omniclaw(OmniClaw Orchestrator)
     
     subgraph Executives [Tier 1: C-Suite]
         CTO(CTO: software-architect)
@@ -24,8 +26,8 @@ graph TD
         CSO(CSO: product-manager)
     end
 
-    CEO --> AOS
-    AOS --> CTO & CMO & COO & CFO & CSO
+    CEO --> omniclaw
+    omniclaw --> CTO & CMO & COO & CFO & CSO
 ```
 
 ---

@@ -1,7 +1,7 @@
 import os, sys, shutil, subprocess, json, datetime
 from pathlib import Path
 
-BASE_DIR = Path('d:/LongLeo/AI OS CORP/AI OS')
+BASE_DIR = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
 SANDBOX_ENV = BASE_DIR / 'tmp' / 'sandbox_env'
 APPROVED_LIST = BASE_DIR / 'storage' / 'vault' / 'DATA' / 'APPROVED_REPOS.txt'
 ECOSYSTEM_PLUGINS = BASE_DIR / 'ecosystem' / 'plugins'

@@ -5,7 +5,7 @@
 
 ## Summary
 
-Legal dept activated. First compliance review and IP framework established for AI OS Corp.
+Legal dept activated. First compliance review and IP framework established for OmniClaw Corp.
 
 ## IP & License Compliance Review
 
@@ -21,7 +21,7 @@ Legal dept activated. First compliance review and IP framework established for A
 
 ## Corp IP Framework
 
-### What AI OS Corp Owns
+### What OmniClaw Corp Owns
 - All markdown files in `corp/`, `shared-context/`, `workflows/`
 - All MQ task cards
 - All daily briefs, retros, OKR docs

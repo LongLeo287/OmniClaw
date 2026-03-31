@@ -46,7 +46,7 @@ External source → ingest-router-agent → experimental/ (stage)
   domains/<domain>/ (promote) → FAST_INDEX + SKILL_REGISTRY
 ```
 
-## AI OS Integration
+## OmniClaw Integration
 - **Owner:** `registry_capability` + R&D
 - **Auto-ingest:** `ingest-router-agent` deposits here
 - **Review by:** CEO / Registry dept before promotion

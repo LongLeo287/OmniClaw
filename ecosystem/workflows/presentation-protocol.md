@@ -136,7 +136,7 @@ Close with: *"Chờ Sếp phản hồi chốt phương án trước khi thực t
 3. **Priority Alert:** (GitHub Alert `> [!IMPORTANT]`) — Kê biên danh sách ưu tiên cao nhất (Priority 1) kèm hành động.
 4. **Carousel Bảng Dữ liệu:** 4 dấu backticks (` ` ` `carousel), chia các hạng mục logic bằng `<!-- slide -->`. Bên trong là Bảng (Table) kèm trạng thái Emoji.
 5. **Reject Warning:** (GitHub Alert `> [!WARNING]`) — Kê biên hạng mục bị trục xuất khỏi hệ thống.
-6. **Mermaid Flowchart:** Sơ đồ mạng lưới mũi tên chứng minh toàn bộ dữ liệu đã được AI OS xử lý khép kín.
+6. **Mermaid Flowchart:** Sơ đồ mạng lưới mũi tên chứng minh toàn bộ dữ liệu đã được OmniClaw xử lý khép kín.
 
 **Rule Tối Thượng Format 6:**
 - Cấm tuyệt đối dùng Heading Markdown (`#`).

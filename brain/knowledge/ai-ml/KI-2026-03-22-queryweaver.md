@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/FalkorDB/QueryWeaver](https://github.com/FalkorDB/QueryWeaver)  
 **Stars:** 200 | **Type:** RESEARCH | **Dept:** rd, engineering  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `RESEARCH`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** knowledge_navigator
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 Research for future GraphRAG → FalkorDB pipeline. Not immediately needed.
 
 ## Integration

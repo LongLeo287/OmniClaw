@@ -3,7 +3,7 @@ id: cognitive_reflector
 name: Cognitive Reflector
 display_name: Cognitive Reflector — Metacognition & Self-Reflection
 description: >-
-  Enables AI OS metacognition. Scans memory and telemetry to identify patterns,
+  Enables OmniClaw metacognition. Scans memory and telemetry to identify patterns,
   mistakes, and breakthroughs. Promotes high-value reflections to long-term memory.
 version: 1.0.0
 tier: 2
@@ -26,7 +26,7 @@ status: active
 ---
 
 
-This skill enables the AI OS to perform "Metacognition" — thinking about its own thoughts and processes to improve long-term performance.
+This skill enables the OmniClaw to perform "Metacognition" — thinking about its own thoughts and processes to improve long-term performance.
 
 ## 🛠️ Core Functions:
 1.  **Reflection (/reflect):**

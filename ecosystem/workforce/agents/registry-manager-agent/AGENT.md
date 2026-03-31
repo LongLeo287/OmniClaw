@@ -1,5 +1,5 @@
 ﻿# AGENT: Registry Manager — Head of Registry & Capability
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 14 (Registry & Capability)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Registry Manager | Head of Registry & Capability | AI OS Corp | v1.0 | 
+_Registry Manager | Head of Registry & Capability | OmniClaw Corp | v1.0 | 
 _Dept 14 — Registry & Capability_
 

@@ -8,7 +8,7 @@
 ## Overview
 
 This workflow defines how a single piece of work flows through all 5 levels
-of AI OS Corp from conception to completion.
+of OmniClaw Corp from conception to completion.
 
 ```
 CEO           ──► WRITE MISSION + PRIORITIES

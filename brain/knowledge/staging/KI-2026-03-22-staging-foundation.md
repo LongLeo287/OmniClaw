@@ -8,12 +8,12 @@ foundation: true
 tags: ['staging', 'deployment', 'docker', 'production', 'devops']
 ---
 
-# AI OS Corp — Staging & Deployment
+# OmniClaw Corp — Staging & Deployment
 
 ## Staging Environment
 
 ### Current State: Local-Only
-AI OS Corp currently runs entirely on local machine:
+OmniClaw Corp currently runs entirely on local machine:
 - No cloud deployment
 - All services bind to 127.0.0.1
 - Docker-based services (open-notebook, lobe-chat, prometheus) run locally

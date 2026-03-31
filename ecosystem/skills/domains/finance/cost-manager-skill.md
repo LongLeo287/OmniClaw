@@ -7,7 +7,7 @@ description: >
   token estimation, cost tracking, and budget policies.
   Applicable to any project using LLM APIs.
 version: 1.0.0
-author: LongLeo/cfo-agent (adapted concept for AI OS — values removed)
+author: LongLeo/cfo-agent (adapted concept for OmniClaw — values removed)
 tier: 3
 category: governance
 domain: finance

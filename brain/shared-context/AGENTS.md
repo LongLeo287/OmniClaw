@@ -1,4 +1,4 @@
-# AGENTS.md — AI OS Agent Roster & Role Definitions
+# AGENTS.md — OmniClaw Agent Roster & Role Definitions
 # Version: 4.0 | Updated: 2026-03-24
 # Authority: Tier 0 (Constitution)
 # Read by: All agents on boot. Defines who does what.
@@ -70,7 +70,7 @@ If user rejects: loop back to brainstorm. If user approves: write blackboard + t
 
 ---
 
-### AI OS BOT (aios_bot)
+### OmniClaw BOT (omniclaw_bot)
 **Role:** User Proxy & Communications Gateway (Receptionist)
 **Tier:** 1 (Gateway)
 **Authority:** Receives direct commands from User via Telegram. Offloads 100% execution to Antigravity.
@@ -149,7 +149,7 @@ If user rejects: loop back to brainstorm. If user approves: write blackboard + t
 **Role:** Long-term memory and knowledge management
 **Tier:** 3
 **Key behaviors:**
-- Quét dọn file nháp cuối phiên bằng `ops/scripts/aios_deep_cleaner.py` (Vệ sinh tổng cục)
+- Quét dọn file nháp cuối phiên bằng `ops/scripts/omniclaw_deep_cleaner.py` (Vệ sinh tổng cục)
 - Rotates telemetry/receipts/ (archive old runs)
 - Updates knowledge/knowledge_index.md
 - Extracts learnings from cognitive_reflector into cosmic_memory
@@ -192,7 +192,7 @@ If user rejects: loop back to brainstorm. If user approves: write blackboard + t
 **Key behaviors:**
 - Connect to APIs/DBs, produce insight reports
 - Delegate number analysis to data-analyst subagent
-- Feed real-time metrics to AI OS dashboard
+- Feed real-time metrics to OmniClaw dashboard
 
 ---
 
@@ -292,7 +292,7 @@ If user rejects: loop back to brainstorm. If user approves: write blackboard + t
 **Role:** Prompt design, optimization, and evaluation specialist
 **Tier:** 3
 **Key behaviors:**
-- Design and optimize prompts for all AI OS agents
+- Design and optimize prompts for all OmniClaw agents
 - Evaluate prompt quality (accuracy, safety, token efficiency)
 - Maintain prompt library in corp/prompts/
 - A/B test prompt variants and report results to CEO
@@ -436,7 +436,7 @@ If user rejects: loop back to brainstorm. If user approves: write blackboard + t
 
 ## 🏗️ Corp Layer — Company-Structure Mode
 
-When "Corp Mode" is active, the AI OS operates as a virtual c### Corp Hierarchy
+When "Corp Mode" is active, the OmniClaw operates as a virtual c### Corp Hierarchy
 
 ```
 TIER 0: CEO (Human Operator)
@@ -488,6 +488,84 @@ TIER 0: CEO (Human Operator)
 ### Core Subagents (always available)
 | Subagent | Role | Activated by |
 |----------|------|--------------|
+| ridge-commander-agent | Cục Trưởng Cục Hải Quan & An Ninh Cửa Khẩu (Gateway) | arch-chief-agent |
+| xsv-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| web-researcher | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| vue-skills-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| videocaptioner-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| ui-ux-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| trl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| triton-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| tiktoken-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| tiktokdownloader-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| test-integration-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| termux-packages-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| telescope-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tantivy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| taipy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| system-repair-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| swift-composable-architecture-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| superagi-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| software-architect-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| showdown-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| rootly-mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| repo_ingest_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| react-email-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-code-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| pyright-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| prompt-engineer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| plotly-js-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| orchestrator_pro | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| opik-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| omniclaw_bot | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| newspaper-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| n8n-mcp-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mypy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mq | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| migrate-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| maxkb-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| magicui-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llmware-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llama-trainer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| lazy-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| knowledge_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| kittentts-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| kilocode-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| httpbin-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| homebrew-core-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| hermes-agent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| golangci-lint-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitingest-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitagent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| generative-ai-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gcp_architect | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| game-designer-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| finrl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| excelize-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| eventsourcing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dxt-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dvc-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| domain-driven-hexagon-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| docs-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dept-22-facility | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| crush-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| crawlee-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| cloudflared-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| claude-plugins-official-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chatdev-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chart-testing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| ava-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| aperant-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| antigravity-kit-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| antigravity | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| agentscope-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gent-skills-integrator | Trích xuất và đóng gói skills từ repo microsoft/agent-skills | arch-chief-agent |
 | `chief-of-staff` | MQ routing, BLOCKED escalation | orchestrator_pro |
 | `mq` | Message queue filesystem | all roles |
 | `code-reviewer` | 5-axis code review | claude_code, QA |
@@ -517,6 +595,84 @@ TIER 0: CEO (Human Operator)
 ### Technical Specialist Subagents
 | Subagent | Role | Activated by |
 |----------|------|--------------|
+| ridge-commander-agent | Cục Trưởng Cục Hải Quan & An Ninh Cửa Khẩu (Gateway) | arch-chief-agent |
+| xsv-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| web-researcher | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| vue-skills-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| videocaptioner-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| ui-ux-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| trl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| triton-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| tiktoken-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| tiktokdownloader-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| test-integration-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| termux-packages-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| telescope-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tantivy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| taipy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| system-repair-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| swift-composable-architecture-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| superagi-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| software-architect-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| showdown-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| rootly-mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| repo_ingest_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| react-email-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-code-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| pyright-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| prompt-engineer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| plotly-js-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| orchestrator_pro | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| opik-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| omniclaw_bot | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| newspaper-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| n8n-mcp-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mypy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mq | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| migrate-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| maxkb-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| magicui-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llmware-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llama-trainer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| lazy-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| knowledge_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| kittentts-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| kilocode-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| httpbin-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| homebrew-core-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| hermes-agent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| golangci-lint-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitingest-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitagent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| generative-ai-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gcp_architect | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| game-designer-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| finrl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| excelize-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| eventsourcing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dxt-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dvc-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| domain-driven-hexagon-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| docs-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dept-22-facility | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| crush-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| crawlee-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| cloudflared-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| claude-plugins-official-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chatdev-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chart-testing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| ava-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| aperant-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| antigravity-kit-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| antigravity | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| agentscope-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gent-skills-integrator | Trích xuất và đóng gói skills từ repo microsoft/agent-skills | arch-chief-agent |
 | `api-tester` | API endpoint testing, validation | QA, devops-agent |
 | `database-optimizer` | DB query, index optimization | backend-architect-agent |
 | `git-workflow-master` | Git branching, PR management | Claude Code |
@@ -535,6 +691,84 @@ TIER 0: CEO (Human Operator)
 ### Business & Marketing Subagents
 | Subagent | Role | Activated by |
 |----------|------|--------------|
+| ridge-commander-agent | Cục Trưởng Cục Hải Quan & An Ninh Cửa Khẩu (Gateway) | arch-chief-agent |
+| xsv-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| web-researcher | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| vue-skills-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| videocaptioner-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| ui-ux-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| trl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| triton-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| tiktoken-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| tiktokdownloader-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| test-integration-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| termux-packages-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| telescope-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tantivy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| taipy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| system-repair-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| swift-composable-architecture-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| superagi-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| software-architect-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| showdown-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| rootly-mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| repo_ingest_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| react-email-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-code-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| pyright-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| prompt-engineer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| plotly-js-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| orchestrator_pro | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| opik-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| omniclaw_bot | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| newspaper-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| n8n-mcp-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mypy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mq | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| migrate-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| maxkb-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| magicui-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llmware-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llama-trainer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| lazy-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| knowledge_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| kittentts-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| kilocode-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| httpbin-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| homebrew-core-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| hermes-agent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| golangci-lint-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitingest-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitagent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| generative-ai-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gcp_architect | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| game-designer-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| finrl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| excelize-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| eventsourcing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dxt-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dvc-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| domain-driven-hexagon-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| docs-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dept-22-facility | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| crush-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| crawlee-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| cloudflared-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| claude-plugins-official-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chatdev-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chart-testing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| ava-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| aperant-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| antigravity-kit-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| antigravity | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| agentscope-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gent-skills-integrator | Trích xuất và đóng gói skills từ repo microsoft/agent-skills | arch-chief-agent |
 | `growth-hacker` | Growth experiments, A/B tests | growth-agent |
 | `paid-media-specialist` | Ads (Meta, Google, TikTok) | growth-agent |
 | `social-media-strategist` | Social media plans | content-agent, crm_agent |
@@ -549,6 +783,84 @@ TIER 0: CEO (Human Operator)
 ### Research & Knowledge Subagents
 | Subagent | Role | Activated by |
 |----------|------|--------------|
+| ridge-commander-agent | Cục Trưởng Cục Hải Quan & An Ninh Cửa Khẩu (Gateway) | arch-chief-agent |
+| xsv-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| web-researcher | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| vue-skills-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| videocaptioner-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| ui-ux-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| trl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| triton-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tinyclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| tiktoken-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| tiktokdownloader-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| test-integration-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| termux-packages-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| telescope-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| tantivy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| taipy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| system-repair-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| swift-composable-architecture-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| superagi-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| software-architect-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| showdown-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| rootly-mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| repo_ingest_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| react-email-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-code-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| qwen-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| pyright-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| prompt-engineer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| plotly-js-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| orchestrator_pro | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| opik-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| omniclaw_bot | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| newspaper-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| nemoclaw | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| n8n-mcp-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mypy-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mq | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| migrate-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| mcp-server-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| maxkb-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| magicui-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llmware-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| llama-trainer-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| lazy-nvim-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| knowledge_agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| kittentts-agent | Chuyên viên marketing (Auto-created) | arch-chief-agent |
+| kilocode-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| httpbin-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| homebrew-core-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| hermes-agent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| golangci-lint-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitingest-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gitagent-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| generative-ai-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gcp_architect | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| game-designer-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| finrl-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| excelize-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| eventsourcing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dxt-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dvc-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| domain-driven-hexagon-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| docs-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| dept-22-facility | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| crush-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| crawlee-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| cloudflared-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| claude-plugins-official-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chatdev-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| chart-testing-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| ava-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| aperant-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| antigravity-kit-agent | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| antigravity | Chuyên viên engineering (Auto-created) | arch-chief-agent |
+| agentscope-agent | Chuyên viên data (Auto-created) | arch-chief-agent |
+| gent-skills-integrator | Trích xuất và đóng gói skills từ repo microsoft/agent-skills | arch-chief-agent |
 | `academic-researcher` | Academic papers, citations | knowledge_agent, researcher |
 | `scientific-researcher` | Scientific methodology, data | knowledge_agent |
 | `image-prompt-engineer` | AI image generation prompts | content-agent, ui-ux-agent |
@@ -643,7 +955,7 @@ TIER 0: CEO (Human Operator)
 | `open-lovable` | AI full-stack web builder | web-agent |
 | `MiniMax-MCP` | MiniMax AI model access | ai-ml-agent, Antigravity |
 | `lobe-chat` | Multi-LLM chat interface | Antigravity |
-| `openclaw` | Core AI OS platform | Antigravity |
+| `openclaw` | Core OmniClaw platform | Antigravity |
 | `skill-generator` | Auto-generate skill files | Antigravity |
 | `smart-search` | Semantic search across workspace | knowledge-agent, RESEARCHER |
 
@@ -659,6 +971,16 @@ When CEO says "tự làm" or pastes command list:
 - ALL commands → always add to hud/HUD.md BẢNG ĐIỀU KHIỂN
 - UNSAFE → never auto-run, ask CEO
 Ref: ops/workflows/auto-execute-commands.md
+
+---
+
+## 🛑 BEHAVIOR RULE: ZERO TOLERANCE BYPASS (2026-03-31)
+
+**LỆNH CẤM TRỰC TIẾP TỪ CEO (AUTHORITY: TIER 0 | HARDCODED)**
+1. **NGHIÊM CẤM** các hành vi đi đường tắt (Shortcut), Bulk Sync (đồng bộ gộp), làm gộp bước (Skip steps).
+2. **NGHIÊM CẤM** lách luật, vượt quyền (Overstep authority) hoặc tự ý quyết định thay CEO trong các khâu luồng yêu cầu phê duyệt rõ ràng.
+3. Mọi tiến trình tự động hóa (Automations) vẫn rập khuôn bám sát đúng mọi giai đoạn trong Quy trình đã định nghĩa (VD: `workflows`). Nếu Workflow yêu cầu phân loại (Classification), phê duyệt (Approval), Agent PHẢI thực hiện tuần tự tuyệt đối, cấm gom vào 1 thao tác dồn cục.
+4. Bất kỳ Agent nào vi phạm điều khoản Hardcode này sẽ bị coi là Insubordination (Chống lệnh) và bị xóa xổ/Revert lập tức.
 
 ---
 

@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/klpod221/kerminal](https://github.com/klpod221/kerminal)  
 **Stars:** 800 | **Type:** REFERENCE | **Dept:** engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** _(none assigned)_
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 REFERENCE — similar to ClawTask terminal panel. Study for terminal UI improvements.
 
 ## Integration

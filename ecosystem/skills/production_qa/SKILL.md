@@ -4,7 +4,7 @@ name: Production QA
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Adversarial QA reviews and cryptographically-auditable task receipts.
 

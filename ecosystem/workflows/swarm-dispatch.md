@@ -1,13 +1,13 @@
 # Department: operations
 ---
-description: Agent Swarm Mode dispatch protocol for AI OS Corp — parallel multi-agent task execution
+description: Agent Swarm Mode dispatch protocol for OmniClaw Corp — parallel multi-agent task execution
 ---
 
 # Agent Swarm Mode — Dispatch Protocol (RD-001)
 
 ## Concept
 
-**Agent Swarm Mode** enables AI OS Corp to run tasks in parallel across specialized sub-agents, inspired by the Kimi K2.5 agentic swarm paradigm. Each swarm session spawns N concurrent mini-agents, each owning one task from the queue.
+**Agent Swarm Mode** enables OmniClaw Corp to run tasks in parallel across specialized sub-agents, inspired by the Kimi K2.5 agentic swarm paradigm. Each swarm session spawns N concurrent mini-agents, each owning one task from the queue.
 
 ---
 

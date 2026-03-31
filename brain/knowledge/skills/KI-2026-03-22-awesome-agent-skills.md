@@ -16,7 +16,7 @@ created: 2026-03-22T22:37:16.443912
 **Type:** REFERENCE | **Dept:** registry_capability  
 **Relevant Agents:** skill_generator, skill_sentry
 
-## AI OS Notes
+## OmniClaw Notes
 Run monthly: check for new skill IDs to import into SKILL_REGISTRY.json. Use as discovery source for ingest_queued_repos.py.
 
 ## Install / Use

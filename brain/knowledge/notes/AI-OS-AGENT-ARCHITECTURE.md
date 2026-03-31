@@ -1,6 +1,6 @@
-# AI OS CORP - KẾN TRÚC NHÂN SỰ VÀ LUỒNG XỬ LÝ TELEGRAM BOT
+# OmniClaw Corp - KẾN TRÚC NHÂN SỰ VÀ LUỒNG XỬ LÝ TELEGRAM BOT
 
-Tài liệu này mô tả chi tiết quy trình vận hành tự động và bán tự động của hệ sinh thái AI OS thông qua giao diện Telegram Bot.
+Tài liệu này mô tả chi tiết quy trình vận hành tự động và bán tự động của hệ sinh thái OmniClaw thông qua giao diện Telegram Bot.
 
 ## 1. Sơ Đồ Khối Chuỗi Cung Ứng Nhân Sự
 

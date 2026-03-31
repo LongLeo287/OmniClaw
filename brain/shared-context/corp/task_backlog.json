@@ -2,12 +2,12 @@
     "_meta": {
         "version": "1.0",
         "updated": "2026-03-25",
-        "description": "Task backlog cho 21 depts — CEO điền → aos.py corp dispatch tự route",
+        "description": "Task backlog cho 21 depts — CEO điền → omniclaw.py corp dispatch tự route",
         "schema": "dept → [{title, priority, assignee, due, status}]"
     },
     "engineering": [
         {"id": "ENG-001", "title": "Review và optimize config.py load path cho all bridge modules", "priority": "HIGH", "assignee": "backend-architect-agent", "due": "2026-03-26", "status": "OPEN"},
-        {"id": "ENG-002", "title": "Viết unit test cho aos.py corp start/retro/dispatch", "priority": "MED", "assignee": "test-manager-agent", "due": "2026-03-27", "status": "OPEN"}
+        {"id": "ENG-002", "title": "Viết unit test cho omniclaw.py corp start/retro/dispatch", "priority": "MED", "assignee": "test-manager-agent", "due": "2026-03-27", "status": "OPEN"}
     ],
     "qa_testing": [
         {"id": "QA-001", "title": "Test telegram_bridge.py với mock TELEGRAM_BOT_TOKEN", "priority": "HIGH", "assignee": "test-manager-agent", "due": "2026-03-26", "status": "OPEN"}

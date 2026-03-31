@@ -15,10 +15,10 @@ created: 2026-03-22T23:23:54.299876
 
 **Source:** [https://github.com/NVIDIA/NemoClaw](https://github.com/NVIDIA/NemoClaw)  
 **Stars:** 1k | **Type:** REFERENCE  
-**AI OS Compatible:** ❌ OpenClaw/NVIDIA-specific
+**OmniClaw Compatible:** ❌ OpenClaw/NVIDIA-specific
 
-## AI OS Notes
-OpenClaw/OpenShell ecosystem. NOT compatible with AI OS Claude/Antigravity. However, the 4-layer sandbox architecture (network+filesystem+process+inference) is extremely valuable reference for AI OS security model. Study the Blueprint/Policy design for AI OS QUARANTINE process.
+## OmniClaw Notes
+OpenClaw/OpenShell ecosystem. NOT compatible with OmniClaw Claude/Antigravity. However, the 4-layer sandbox architecture (network+filesystem+process+inference) is extremely valuable reference for OmniClaw security model. Study the Blueprint/Policy design for OmniClaw QUARANTINE process.
 
 ## Key Concepts
 - 4-layer protection: Network, Filesystem, Process, Inference

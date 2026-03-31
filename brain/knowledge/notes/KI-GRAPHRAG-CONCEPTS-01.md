@@ -1,4 +1,4 @@
-# Knowledge Note: GraphRAG — Community Detection for AI OS Knowledge Graph
+# Knowledge Note: GraphRAG — Community Detection for OmniClaw Knowledge Graph
 # Source: plugins/graphrag (MIT License) — Microsoft Research
 # Extracted: 2026-03-23 | By: Antigravity (Knowledge Extraction Pass)
 # Status: REFERENCE ONLY — LightRAG covers use case locally. Extract concepts only.
@@ -7,7 +7,7 @@
 
 ## What GraphRAG Does Uniquely vs LightRAG
 
-| Feature | LightRAG (AI OS Tier 1) | GraphRAG (Microsoft) |
+| Feature | LightRAG (OmniClaw Tier 1) | GraphRAG (Microsoft) |
 |---------|------------------------|---------------------|
 | Setup | Local, Ollama | Cloud LLM (expensive) |
 | Query modes | naive/local/global/hybrid | local/global |
@@ -20,12 +20,12 @@
 
 ---
 
-## Key Concept: Community Detection (Worth Implementing in AI OS)
+## Key Concept: Community Detection (Worth Implementing in OmniClaw)
 
 GraphRAG uses **Leiden Algorithm** to group knowledge graph entities into "communities" — 
-thematic clusters that enable better global reasoning (e.g., "What are the major themes in AI OS knowledge?").
+thematic clusters that enable better global reasoning (e.g., "What are the major themes in OmniClaw knowledge?").
 
-**AI OS Application:**
+**OmniClaw Application:**
 LightRAG's graph index builds entity relationships but does NOT automatically cluster them.
 To improve global reasoning, consider adding a post-processing step after `index_brain_knowledge()`:
 - Group entities by relationship density (manual community tagging)
@@ -45,12 +45,12 @@ After knowledge ingest:
 
 ## Prompt Tuning Insight (from GraphRAG docs)
 
-GraphRAG emphasizes **prompt tuning** for better entity extraction. Apply to AI OS:
-- When ingesting documents, the extraction prompt should specify entity types relevant to AI OS
+GraphRAG emphasizes **prompt tuning** for better entity extraction. Apply to OmniClaw:
+- When ingesting documents, the extraction prompt should specify entity types relevant to OmniClaw
   (Agent, Department, Workflow, Rule, Plugin, Decision, etc.)
 - Current LightRAG ingestion uses generic extraction — add entity type hints to improve graph quality
 
-**Recommended entity types for AI OS corpus:**
+**Recommended entity types for OmniClaw Corpus:**
 ```python
 entity_types = ["agent", "department", "workflow", "rule", "plugin", "decision", "skill", "tool", "service"]
 ```

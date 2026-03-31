@@ -4,7 +4,7 @@
 name: monitor-chief-agent
 version: 1.0.0
 status: active
-description: "Điều phối toàn bộ công tác giám sát và thanh tra chất lượng trong AI OS Corp"
+description: "Điều phối toàn bộ công tác giám sát và thanh tra chất lượng trong OmniClaw Corp"
 domain: ecosystem
 type: workforce-agent
 department: monitoring_inspection

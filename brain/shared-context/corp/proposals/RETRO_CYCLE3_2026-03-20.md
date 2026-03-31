@@ -1,4 +1,4 @@
-# AI OS Corp — Cycle 3 Retrospective
+# OmniClaw Corp — Cycle 3 Retrospective
 # Date: 2026-03-20
 # Facilitator: Antigravity (Tier 1 Orchestrator)
 # Participants: All 19 Dept Heads

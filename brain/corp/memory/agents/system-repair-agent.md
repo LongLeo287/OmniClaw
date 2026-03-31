@@ -30,8 +30,8 @@ Next scan: 2026-03-30 (daily schedule)
 5. server.js plugins/ path wrong — FIXED
 6. start_lightrag.ps1 literal <AI_OS_ROOT> — FIXED
 7. start_supervisor_openclaw.ps1 <AI_OS_ROOT> — FIXED
-8. package.json name=aios-local, bin=aios — FIXED
-9. 24 files with stale aios_/AI OS naming — FIXED (git mv + content update)
+8. package.json name=omniclaw-local, bin=omniclaw — FIXED
+9. 24 files with stale aios_/OmniClaw naming — FIXED (git mv + content update)
 10. SKILL_REGISTRY duplicate agent-shield entry — FIXED
 11. SKILL_REGISTRY wrong openclaw_tools path — FIXED
 12. 5 skills on disk missing from registry — FIXED (added)

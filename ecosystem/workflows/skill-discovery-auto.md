@@ -10,7 +10,7 @@ description: Auto Skill Creator â€” Automatically create SKILL.md for any n
 
 ## RULE: No folder without SKILL.md
 
-Any plugin, tool, agent, or subagent folder in AI OS Corp MUST have a SKILL.md.
+Any plugin, tool, agent, or subagent folder in OmniClaw Corp MUST have a SKILL.md.
 If it doesn't, this workflow runs automatically â€” NO manual trigger needed.
 
 ---

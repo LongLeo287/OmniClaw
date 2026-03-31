@@ -57,7 +57,7 @@ load_on_boot: false
 - Bias testing across all demographic groups before deploy
 - Privacy-preserving: local models for sensitive data
 
-## Integration with AI OS
+## Integration with OmniClaw
 
 - Uses: `cognee` plugin for agent memory (knowledge graph)
 - Uses: `nexusrag` + `pageindex` for document intelligence

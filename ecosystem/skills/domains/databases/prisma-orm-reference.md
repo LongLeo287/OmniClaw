@@ -6,7 +6,7 @@ tier: 3
 domain: databases
 cost_tier: standard
 status: draft
-author: AI OS (adapted from prisma/prisma docs)
+author: OmniClaw (adapted from prisma/prisma docs)
 updated: 2026-03-14
 source: https://github.com/prisma/prisma
 warning: UNVERIFIED — written from AI training data, not fetched from official docs. Verify before production use.
@@ -31,7 +31,7 @@ exposed_functions:
 load_on_boot: false
 ---
 
-# Prisma ORM — AI OS Reference Skill
+# Prisma ORM — OmniClaw Reference Skill
 
 > Source: https://github.com/prisma/prisma | https://www.prisma.io
 > Type-safe database client for TypeScript and Node.js

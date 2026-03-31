@@ -4,7 +4,7 @@ name: Neural Memory
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Associative neural-network style recall and knowledge graph synthesis.
 
@@ -29,7 +29,7 @@ listens_to: []
 ---
 # ðŸ§  Neural Memory Skill (Associative Intelligence)
 
-This skill adds "Synapses" to the AI OS Memory, allowing Agents to associate related concepts dynamically.
+This skill adds "Synapses" to the OmniClaw Memory, allowing Agents to associate related concepts dynamically.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Link Generation (/link):** Create an entry in `.agents/memory/neural_links/map.json` connecting two facts.

@@ -42,7 +42,7 @@ npx ctx7 docs /supabase/supabase "email password authentication"
 Incorporate the returned documentation into your response.
 The docs contain: real-time code examples, correct API signatures, version-specific syntax.
 
-## Quick Reference — AI OS Common Libraries
+## Quick Reference — OmniClaw Common Libraries
 
 | Library | Context7 ID | Usage |
 |---------|-------------|-------|

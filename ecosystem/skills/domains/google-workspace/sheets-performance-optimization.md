@@ -6,7 +6,7 @@ description: >
   Covers batch operations, caching strategies, VLOOKUP alternatives,
   and query optimization to handle large datasets efficiently.
 version: 1.0.0
-author: LongLeo (adapted for AI OS)
+author: LongLeo (adapted for OmniClaw)
 tier: 3
 category: performance
 domain: google-workspace

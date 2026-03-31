@@ -6,7 +6,7 @@ description: >
   Prevents horizontal feature imports, ensures proper layer isolation
   (app/pages/widgets/features/entities/shared), and rejects boundary violations.
 version: 1.0.0
-author: LongLeo (adapted for AI OS)
+author: LongLeo (adapted for OmniClaw)
 tier: 3
 category: code-quality
 domain: frontend

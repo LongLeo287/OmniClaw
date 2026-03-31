@@ -4,7 +4,7 @@
 name: intake-chief-agent
 version: 1.0.0
 status: active
-description: "Tiếp nhận, phân loại và định tuyến tất cả đầu vào mới vào hệ thống AI OS Corp"
+description: "Tiếp nhận, phân loại và định tuyến tất cả đầu vào mới vào hệ thống OmniClaw Corp"
 domain: ecosystem
 type: workforce-agent
 department: content_intake

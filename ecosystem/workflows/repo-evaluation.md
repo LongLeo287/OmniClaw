@@ -1,12 +1,12 @@
 # Department: operations
 ---
-description: Deep evaluation of a repo before deciding to integrate into AI OS
+description: Deep evaluation of a repo before deciding to integrate into OmniClaw
 ---
 # Repo Evaluation Workflow (Pre-Integration Gate)
 # Version: 1.0 | 2026-03-23 | Owner: Antigravity + Dept 20 CIV
 
 > **This workflow runs BEFORE `plugin-integration.md`.**
-> Purpose: Decide IF a repo should enter AI OS — not HOW to integrate it.
+> Purpose: Decide IF a repo should enter OmniClaw — not HOW to integrate it.
 > Output: One of three verdicts: APPROVE / DEFER / REJECT
 
 ---
@@ -17,7 +17,7 @@ Before touching any code, answer these 5 questions by reading only the README:
 
 ```
 Q1. What does this repo DO in one sentence?
-Q2. What problem does it solve that AI OS doesn't already solve?
+Q2. What problem does it solve that OmniClaw doesn't already solve?
 Q3. Who built it? (Individual hobbyist vs. company-backed project?)
 Q4. When was it last updated? (>12 months stale = caution flag)
 Q5. How many stars/forks? (Signal of community trust)
@@ -29,7 +29,7 @@ Q5. How many stars/forks? (Signal of community trust)
 
 ## STEP 2 — Conflict & Redundancy Check
 
-Cross-reference against what AI OS already has:
+Cross-reference against what OmniClaw already has:
 
 ```
 Check against:
@@ -38,10 +38,10 @@ Check against:
   - brain/shared-context/blackboard.json      (planned integrations)
 
 Ask:
-  [A] Does AI OS already have a TIER 1 tool that covers this function?
+  [A] Does OmniClaw already have a TIER 1 tool that covers this function?
       YES → REJECT (Tier 1 never gets replaced by a newcomer)
 
-  [B] Does AI OS have a TIER 2 tool with similar function?
+  [B] Does OmniClaw have a TIER 2 tool with similar function?
       YES → Compare quality. Keep the better one. Mark other as ❌ in catalog.
 
   [C] Is this truly a gap? (Function not covered anywhere)
@@ -86,7 +86,7 @@ Before approving, estimate the real cost of bringing this repo in:
 [ ] Does it require installing new system-level dependencies?
 [ ] Does it need a port/service (adds to dashboard.ps1 complexity)?
 [ ] Does it need an API key (adds to MASTER.env)?
-[ ] Does it need a custom adapter to fit the AI OS patterns?
+[ ] Does it need a custom adapter to fit the OmniClaw patterns?
 [ ] How long will integration take? (>1 day = flag for CEO review)
 ```
 
@@ -148,7 +148,7 @@ Before approving, estimate the real cost of bringing this repo in:
 - **Mô tả:** [1 câu mô tả repo làm gì]
 - **License:** MIT / Apache / BSL / GPL / Custom
 - **Highlights:** [3-5 tính năng/thống kê nổi bật: số releases, contributors, tính năng chính]
-- **AI OS Relevance:** ⭐⭐⭐⭐⭐ — [giải thích tại sao phù hợp với AI OS]
+- **OmniClaw Relevance:** ⭐⭐⭐⭐⭐ — [giải thích tại sao phù hợp với OmniClaw]
 - **Action:** → [lệnh cụ thể hoặc bước tiếp theo]
 - **Conflict check:** SAFE / ⚠️ [tên tool conflict] — [lý do]
 - **Dept:** [Dept X — tên department phụ trách]
@@ -180,7 +180,7 @@ Before approving, estimate the real cost of bringing this repo in:
 
 After APPROVE verdict, hand off to the integration workflow:
 ```
-Trigger: aos integrate <plugin_id>
+Trigger: omniclaw integrate <plugin_id>
 File: ops/workflows/plugin-integration.md
 ```
 
@@ -192,7 +192,7 @@ File: ops/workflows/plugin-integration.md
 1. "No clone by default" — reading README ≠ permission to clone.
    Only clone when verdict = APPROVE.
 
-2. "One function, one tool" — if AI OS already has a tool for a job,
+2. "One function, one tool" — if OmniClaw already has a tool for a job,
    do not add a second tool for the same job without REJECTING the old one first.
 
 3. "Tier 1 is frozen" — do not propose replacing Tier 1 tools.

@@ -1,6 +1,6 @@
 # Legacy Department Definitions
 
-This directory contains legacy department configuration files that were migrated to the new structure in `corp/departments/` as part of the AI OS Corp restructuring.
+This directory contains legacy department configuration files that were migrated to the new structure in `corp/departments/` as part of the OmniClaw Corp restructuring.
 
 ## Files Overview
 

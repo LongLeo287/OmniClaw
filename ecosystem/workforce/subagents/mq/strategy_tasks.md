@@ -23,10 +23,10 @@ First strategic document of the Corp — sets tone for all future cycles.
 ## Task Cards
 
 ### Task STR-01-001
-**Title:** Write AI OS Corp OKR Framework — Cycle 1
+**Title:** Write OmniClaw Corp OKR Framework — Cycle 1
 **Assigned to:** product-manager-agent (via Antigravity)
 **Priority:** HIGH
-**Context:** First formal OKR for AI OS Corp. Mission: "Build most capable AI OS in the world". Should cover: (1) Technical stability, (2) Agent workforce activation, (3) System self-improvement capability.
+**Context:** First formal OKR for OmniClaw Corp. Mission: "Build most capable OmniClaw in the world". Should cover: (1) Technical stability, (2) Agent workforce activation, (3) System self-improvement capability.
 **Acceptance criteria:**
   - [ ] 3 Objectives defined, each SMART
   - [ ] 2+ Key Results per objective, measurable

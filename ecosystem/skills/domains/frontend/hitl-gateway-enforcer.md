@@ -6,7 +6,7 @@ description: >
   approval before committing high-risk or irreversible operations.
   Applicable to any project — not domain-specific.
 version: 1.0.0
-author: LongLeo (adapted for AI OS)
+author: LongLeo (adapted for OmniClaw)
 tier: 3
 category: governance
 domain: frontend

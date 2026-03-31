@@ -23,7 +23,7 @@ MaxKB ("Max Knowledge Brain") là nền tảng open-source xây dựng AI agents
 ### Agentic Workflow Engine
 - Visual workflow builder (drag & drop)
 - Function library tích hợp
-- **MCP tool-use support** — tương thích AI OS MCP ecosystem
+- **MCP tool-use support** — tương thích OmniClaw MCP ecosystem
 - Orchestration AI phức tạp không cần code
 
 ### Model Support (Model-Agnostic)
@@ -36,9 +36,9 @@ MaxKB ("Max Knowledge Brain") là nền tảng open-source xây dựng AI agents
 - Tag management, batch export
 - Embedding + reranker models
 
-## AI OS Integration
+## OmniClaw Integration
 
-### Kết nối với AI OS
+### Kết nối với OmniClaw
 - **RAG Agent**: `subagents/rag-specialist/` có thể dùng MaxKB làm backend
 - **MCP Bridge**: MaxKB MCP support → tích hợp với `tools/mcp_ecosystem_overview.md`
 - **Complement**: NexusRAG (high-perf local) + MaxKB (enterprise UI + multi-user) = bộ đôi RAG
@@ -52,7 +52,7 @@ docker compose up -d
 # Hoặc qua 1Panel app store với Ollama + Llama 3
 ```
 
-## Use Cases trong AI OS
+## Use Cases trong OmniClaw
 - Enterprise knowledge search agent
 - Internal company Q&A bot với UI đẹp
 - Multi-user knowledge base với phân quyền

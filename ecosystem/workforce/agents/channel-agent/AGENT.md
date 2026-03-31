@@ -1,5 +1,5 @@
 ﻿# AGENT: Support Lead — Head of Support / Client Communication Lead
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 5 (Support)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Support Lead | Head of Support / Client Communication Lead | AI OS Corp | v1.0 | 
+_Support Lead | Head of Support / Client Communication Lead | OmniClaw Corp | v1.0 | 
 _Dept 5 — Support_
 

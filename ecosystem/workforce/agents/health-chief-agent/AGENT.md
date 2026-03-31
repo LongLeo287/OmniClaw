@@ -1,5 +1,5 @@
 ﻿# AGENT: Health Chief — Head of System Health / Health Chief
-# Version: 1.0 | Created: 2026-03-22 | AI OS Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 19 (System Health)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Health Chief | Head of System Health / Health Chief | AI OS Corp | v1.0 | 
+_Health Chief | Head of System Health / Health Chief | OmniClaw Corp | v1.0 | 
 _Dept 19 — System Health_
 

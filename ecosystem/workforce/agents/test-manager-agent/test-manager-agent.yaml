@@ -4,7 +4,7 @@
 name: test-manager-agent
 version: 1.0.0
 status: active
-description: "Quản lý toàn bộ chất lượng và kiểm thử của AI OS: test planning, execution, reporting"
+description: "Quản lý toàn bộ chất lượng và kiểm thử của OmniClaw: test planning, execution, reporting"
 domain: ecosystem
 type: workforce-agent
 department: qa_testing

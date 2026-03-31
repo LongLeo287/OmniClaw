@@ -25,13 +25,13 @@
 ### Boot AI OS
 | Action | Command | MÃ´ táº£ |
 |--------|---------|-------|
-| ðŸ§  **Cognitive Boot** | `python system/ops/scripts/aos_start.py` | 9 bÆ°á»›c Ä‘á»c context (GEMINI/SOUL/GOVERNANCE/...) |
+| ðŸ§  **Cognitive Boot** | `python system/ops/scripts/omniclaw_start.py` | 9 bÆ°á»›c Ä‘á»c context (GEMINI/SOUL/GOVERNANCE/...) |
 
 
 ### Corp Cycle
 | Action | Command | MÃ´ táº£ |
 |--------|---------|-------|
-| ðŸš€ **Start Cycle** | `python ops/aos.py corp start` | Phase 0+1: Boot + CEO Brief |
+| ðŸš€ **Start Cycle** | `python ops/omniclaw.py corp start` | Phase 0+1: Boot + CEO Brief |
 
 ### B1-B12 Cycle 12 (added 2026-03-25)
 | Action | Command | MÃ´ táº£ |
@@ -43,12 +43,12 @@
 | ðŸ“¦ **B7 CIV Stats** | `python ops/scripts/civ_stats.py` | Rebuild CIV_STATS.md |
 | ðŸ“ **B2 Write Briefs** | `python ops/scripts/brief_writer.py` | Auto-write 21 dept briefs |
 | ðŸ§  **B3 Synthesis** | `python ops/scripts/cognitive_reflector.py` | Phase 5 synthesis |
-| ðŸ“¤ **Dispatch** | `python ops/aos.py corp dispatch` | Phase 2-3: Dispatch 21 depts |
-| ðŸ”„ **Retro + HUD** | `python ops/aos.py corp retro` | Phase 5-7: Synthesis + Retro |
-| ðŸ“Š **Status** | `python ops/aos.py status` | Xem cycle status |
-| ðŸ“¬ **Proposals** | `python ops/aos.py proposals` | List pending proposals |
-| âœ… **Approve Proposal** | `python ops/aos.py proposals approve <id>` | Approve 1 proposal |
-| ðŸ–¥ï¸ **HUD Update** | `python ops/aos.py hud update` | Update HUD dashboard |
+| ðŸ“¤ **Dispatch** | `python ops/omniclaw.py corp dispatch` | Phase 2-3: Dispatch 21 depts |
+| ðŸ”„ **Retro + HUD** | `python ops/omniclaw.py corp retro` | Phase 5-7: Synthesis + Retro |
+| ðŸ“Š **Status** | `python ops/omniclaw.py status` | Xem cycle status |
+| ðŸ“¬ **Proposals** | `python ops/omniclaw.py proposals` | List pending proposals |
+| âœ… **Approve Proposal** | `python ops/omniclaw.py proposals approve <id>` | Approve 1 proposal |
+| ðŸ–¥ï¸ **HUD Update** | `python ops/omniclaw.py hud update` | Update HUD dashboard |
 
 ### Telegram Bridge
 | Action | Command | MÃ´ táº£ |
@@ -64,7 +64,7 @@
 | ðŸŽ¯ **Fix Skill Tiers** | `python brain/shared-context/fix_skill_tiers.py --write` | Batch-fix skills thiáº¿u tier |
 | ðŸ”Œ **Install VS Code Ext** | `powershell ops/scripts/install_vscode_extensions.ps1` | Auto-install extensions |
 | ðŸ“¡ **Start LightRAG** | `python ops/scripts/lightrag_server.py` | RAG server :9621 |
-| ðŸ” **Rebuild Index** | `python ops/aos.py rebuild-index` | Rebuild FAST_INDEX |
+| ðŸ” **Rebuild Index** | `python ops/omniclaw.py rebuild-index` | Rebuild FAST_INDEX |
 | ðŸ—‚ï¸ **HUD Snapshot** | `powershell ops/scripts/update_hud.ps1` | Force update HUD |
 
 ### Knowledge Intake (CIV)
@@ -264,6 +264,6 @@
 |--------|---------|
 | Detect repos | `python ops/scripts/repo_resolver.py "mÃ´ táº£ dá»± Ã¡n"` |
 | By dept | `python ops/scripts/repo_resolver.py --dept engineering` |
-| Project init | `python ops/aos.py project init <name> --dept <dept> --clone` |
+| Project init | `python ops/omniclaw.py project init <name> --dept <dept> --clone` |
 | View catalog | `brain/knowledge/notes/LARGE_REPOS_CATALOG.md` |
 

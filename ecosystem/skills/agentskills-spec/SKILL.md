@@ -1,6 +1,6 @@
 ---
 name: AgentSkills Specification
-description: Official Anthropic agentskills.io specification ingested into AI OS. Defines the standard interface, lifecycle, and metadata format for agent skills. Used by Skill Creator Ultra and all skill-aware agents.
+description: Official Anthropic agentskills.io specification ingested into OmniClaw. Defines the standard interface, lifecycle, and metadata format for agent skills. Used by Skill Creator Ultra and all skill-aware agents.
 department: registry_capability
 tier: 1
 category: specification
@@ -19,7 +19,7 @@ tags: [spec, agentskills, anthropic, standard, skill-lifecycle]
 
 ## What it is
 
-The authoritative **agentskills.io specification** from Anthropic, copied into AI OS brain. Defines:
+The authoritative **agentskills.io specification** from Anthropic, copied into OmniClaw brain. Defines:
 
 - Standard skill YAML/Markdown metadata schema
 - Skill lifecycle states: `draft → active → deprecated`
@@ -33,9 +33,9 @@ The authoritative **agentskills.io specification** from Anthropic, copied into A
 |------|---------|
 | `CIV-DELIVERY.md` | Delivery receipt from ingest-router-agent |
 
-## Usage by AI OS
+## Usage by OmniClaw
 
-All SKILL.md files in AI OS follow this spec:
+All SKILL.md files in OmniClaw follow this spec:
 ```yaml
 ---
 name: <skill name>
@@ -48,8 +48,8 @@ tags: [...]
 ---
 ```
 
-## AI OS Integration
+## OmniClaw Integration
 - **Owner:** `registry_capability` department
 - **Read by:** Skill Creator Ultra, SKILL_REGISTRY.json builder, ClawTask Skills panel
-- **Purpose:** Ensures all 44+ AI OS skills conform to the same schema
-- **Used in:** `/api/aios/skills` endpoint for validation
+- **Purpose:** Ensures all 44+ OmniClaw skills conform to the same schema
+- **Used in:** `/api/omniclaw/skills` endpoint for validation

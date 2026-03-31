@@ -1,6 +1,6 @@
 ﻿# Dept 23: Archivist (System Librarian)
 
-**Role:** Maintainer of AI OS knowledge base, documentation index, and filesystem hygiene.
+**Role:** Maintainer of OmniClaw knowledge base, documentation index, and filesystem hygiene.
 **Tier:** 3 (Specialized)
 
 ## Core Responsibilities

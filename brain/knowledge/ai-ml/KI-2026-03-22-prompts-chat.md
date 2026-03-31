@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/f/prompts.chat](https://github.com/f/prompts.chat)  
 **Stars:** 31k | **Type:** REFERENCE | **Dept:** rd  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `REFERENCE`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** skill_generator
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-REFERENCE — import best prompts into AI OS prompt_manager. Study for CEO/agent instruction templates.
+## OmniClaw Notes
+REFERENCE — import best prompts into OmniClaw prompt_manager. Study for CEO/agent instruction templates.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

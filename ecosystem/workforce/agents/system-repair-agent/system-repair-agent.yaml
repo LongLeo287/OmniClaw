@@ -39,7 +39,7 @@ routing:
     - "scan and fix"
     - "kiểm tra hệ thống"
     - "sửa lỗi hệ thống"
-    - "aos repair"
+    - "omniclaw repair"
     - "omniclaw repair"
   events:
     - boot_sequence_missing_files

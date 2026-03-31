@@ -1,5 +1,5 @@
 ﻿# AGENT: [Agent Name] â€” [Short Role Description]
-# Version: 1.0 | Created: <DATE> | AI OS Corp
+# Version: 1.0 | Created: <DATE> | OmniClaw Corp
 # Department: <Dept Name> (Dept <N>) â€” <Sub-scope if any>
 # Authority: Tier <2|3|4> (<Specialist|Manager|Executor>)
 # Status: ACTIVE | auto_created: true
@@ -193,5 +193,5 @@ requires_ceo_approval_for:
 
 ---
 
-*[Agent Name] â€” Created by AI OS Corp agent-auto-create workflow. Supervised until first performance review.*
+*[Agent Name] â€” Created by OmniClaw Corp agent-auto-create workflow. Supervised until first performance review.*
 

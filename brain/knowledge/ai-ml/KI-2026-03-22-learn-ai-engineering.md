@@ -16,8 +16,8 @@ created: 2026-03-22T22:37:16.443912
 **Type:** REFERENCE | **Dept:** rd  
 **Relevant Agents:** cognitive_evolver
 
-## AI OS Notes
-Onboarding reference for new AI OS collaborators. Key modules: RAG patterns, agent evaluation, LLM inference optimization.
+## OmniClaw Notes
+Onboarding reference for new OmniClaw collaborators. Key modules: RAG patterns, agent evaluation, LLM inference optimization.
 
 ## Install / Use
 ```

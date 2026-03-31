@@ -110,7 +110,7 @@ session_summary = {
     ],
     "proposals": [
         "P1: Batch-add tier metadata to all SKILL.md files missing it (2618 files)",
-        "P2: Create aos CLI script (ops/aos.py) to trigger corp-daily-cycle from terminal",
+        "P2: Create aos CLI script (ops/omniclaw.py) to trigger corp-daily-cycle from terminal",
         "P3: Auto-start deepagents :8765 via ClawTask service panel on boot",
         "P4: Add /api/telemetry/agents endpoint for live agent heartbeat dashboard",
     ]
@@ -193,9 +193,9 @@ proposals = [
         "id": f"PROP_{TODAY}_AOS_CLI",
         "type": "STRATEGIC",
         "priority": "HIGH",
-        "title": "Create aos CLI (ops/aos.py) for corp cycle control",
+        "title": "Create aos CLI (ops/omniclaw.py) for corp cycle control",
         "context": "corp-daily-cycle.md defines: aos corp start/brief/dispatch/retro. No implementation exists.",
-        "action": "Build ops/aos.py skeleton: reads blackboard, routes to phase scripts, logs to telemetry",
+        "action": "Build ops/omniclaw.py skeleton: reads blackboard, routes to phase scripts, logs to telemetry",
         "effort": "3h",
         "impact": "HIGH — enables automated cycle triggers without manual coding",
     },

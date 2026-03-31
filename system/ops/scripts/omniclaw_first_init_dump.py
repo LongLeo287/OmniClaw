@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from huggingface_hub import HfApi, login
 
 def first_time_dump():
-    AI_OS_ROOT = Path("d:/LongLeo/AI OS CORP/AI OS")
+    AI_OS_ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
     SECRETS_FILE = AI_OS_ROOT / "system/ops/secrets/MASTER.env"
     DATASET_REPO = "LongLeo/OmniClaw-Data-Vault"
 

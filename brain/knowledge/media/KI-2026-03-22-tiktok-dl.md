@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/JoeanAmier/TikTokDownloader](https://github.com/JoeanAmier/TikTokDownloader)  
 **Stars:** 24k | **Type:** TOOL | **Dept:** operations  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** content_analyst
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-TOOL — could be useful for content pipeline if AI OS does media analysis. pip installable.
+## OmniClaw Notes
+TOOL — could be useful for content pipeline if OmniClaw does media analysis. pip installable.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

@@ -29,7 +29,7 @@ These are different questions. Both must be answered before routing.
 |------------|-----------|---------|------------|
 | `KNOWLEDGE` | Reference information, research, articles, summaries | No actionable structure; informational | Asset & Knowledge Library |
 | `SKILL` | Reusable LLM capability packaged per SKILL_SPEC | SKILL.md present, or clear skill pattern in repo | Registry & Capability |
-| `PLUGIN` | External code/tool that integrates with AI OS | Has integration interface, CLI, or MCP protocol | Registry & Capability |
+| `PLUGIN` | External code/tool that integrates with OmniClaw | Has integration interface, CLI, or MCP protocol | Registry & Capability |
 | `WORKFLOW` | Step-by-step process or SOP for agents or humans | Sequential steps, flowchart, protocol doc | Operations dept |
 | `MCP_SERVER` | Model Context Protocol server implementation | Has MCP protocol, tool definitions, server.py/ts | IT Infra + Engineering |
 | `TOOL_SCRIPT` | Runnable script automating a task (PS1, Python, Bash) | Executable script file, no LLM needed to run | IT Infra / Operations |

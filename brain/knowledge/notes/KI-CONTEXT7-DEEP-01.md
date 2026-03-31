@@ -8,7 +8,7 @@
 
 ## 1. Váº¥n Ä‘á» context7 giáº£i quyáº¿t (WHY â€” Quan trá»ng nháº¥t)
 
-| Váº¥n Ä‘á» | MÃ´ táº£ | TÃ¡c Ä‘á»™ng trong AI OS |
+| Váº¥n Ä‘á» | MÃ´ táº£ | TÃ¡c Ä‘á»™ng trong OmniClaw |
 |--------|-------|---------------------|
 | âŒ Outdated training data | LLM biáº¿t API cá»§a Next.js 12, nhÆ°ng Ä‘ang code vá»›i Next.js 15 | Agent viáº¿t code sai, debug máº¥t giá» |
 | âŒ Hallucinated APIs | Agent "bá»‹a" function khÃ´ng tá»“n táº¡i | Code crash, máº¥t trust |
@@ -48,7 +48,7 @@ npx ctx7 setup             # Auto-detect
 ```
 - CÃ i Skill vÃ o agent
 - DÃ¹ng CLI commands: `ctx7 library <name>` vÃ  `ctx7 docs <libraryId>`
-- **PhÃ¹ há»£p nháº¥t cho AI OS Corp hiá»‡n táº¡i** (khÃ´ng cáº§n MCP server riÃªng)
+- **PhÃ¹ há»£p nháº¥t cho OmniClaw Corp hiá»‡n táº¡i** (khÃ´ng cáº§n MCP server riÃªng)
 
 ### Mode B: MCP Server (Full integration)
 - ÄÄƒng kÃ½ Context7 MCP server trong config
@@ -127,7 +127,7 @@ docs = requests.get("https://context7.com/api/v2/context",
 | Tier | Rate limit | CÃ¡ch dÃ¹ng |
 |------|-----------|-----------|
 | KhÃ´ng cÃ³ API key | Tháº¥p (anonymous) | Demo/test |
-| Free API key | Cao hÆ¡n | AI OS daily use |
+| Free API key | Cao hÆ¡n | OmniClaw daily use |
 | Enterprise | KhÃ´ng giá»›i háº¡n | Production scale |
 
 **Action:** ÄÄƒng kÃ½ free API key táº¡i **context7.com/dashboard**
@@ -135,7 +135,7 @@ docs = requests.get("https://context7.com/api/v2/context",
 
 ---
 
-## 7. TÃ­ch há»£p vÃ o AI OS â€” Action Plan
+## 7. TÃ­ch há»£p vÃ o OmniClaw â€” Action Plan
 
 ### BÆ°á»›c 1: CÃ i CLI + Skill (Ngay hÃ´m nay)
 ```bash
@@ -171,7 +171,7 @@ ctx7 docs /vercel/next.js "middleware auth"
 
 ---
 
-## 8. Libraries AI OS thÆ°á»ng dÃ¹ng â€” NÃªn configure
+## 8. Libraries OmniClaw thÆ°á»ng dÃ¹ng â€” NÃªn configure
 
 | Library cáº§n | Context7 ID (Æ°á»›c tÃ­nh) |
 |------------|------------------------|
@@ -202,16 +202,16 @@ ctx7 docs /vercel/next.js "middleware auth"
 
 ---
 
-## 10. So sÃ¡nh vá»›i AI OS hiá»‡n táº¡i
+## 10. So sÃ¡nh vá»›i OmniClaw hiá»‡n táº¡i
 
-| Capability | AI OS hiá»‡n táº¡i | AI OS + Context7 |
+| Capability | OmniClaw hiá»‡n táº¡i | OmniClaw + Context7 |
 |-----------|---------------|-----------------|
 | Code generation vá»›i Next.js 15 | DÃ¹ng training data 2024 | Real-time docs 2026 |
 | Supabase auth API | CÃ³ thá»ƒ outdated | LuÃ´n version-specific |
 | Firecrawl SDK methods | May hallucinate | Exact API |
 | Agent viáº¿t migration scripts | Generic | Version-aware |
 
-**Káº¿t luáº­n:** Context7 lÃ  layer **chá»‘ng hallucination API** thiáº¿t yáº¿u â€” Ä‘áº·c biá»‡t quan trá»ng khi AI OS Corp build products vá»›i cÃ¡c library thay Ä‘á»•i nhanh (Next.js, Supabase, Tailwind v4...).
+**Káº¿t luáº­n:** Context7 lÃ  layer **chá»‘ng hallucination API** thiáº¿t yáº¿u â€” Ä‘áº·c biá»‡t quan trá»ng khi OmniClaw Corp build products vá»›i cÃ¡c library thay Ä‘á»•i nhanh (Next.js, Supabase, Tailwind v4...).
 
 ---
 

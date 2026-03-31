@@ -7,7 +7,7 @@ description: >
   as an immutable event rather than mutating current state.
   For any project implementing POS, retail, or transaction-heavy systems.
 version: 1.0.0
-author: LongLeo (adapted for AI OS)
+author: LongLeo (adapted for OmniClaw)
 tier: 3
 category: architecture
 domain: pos

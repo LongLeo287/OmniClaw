@@ -26,7 +26,7 @@
     "Import và synthesize 300+ repos từ Google Sheets",
     "Research document QA với citation",
     "Generate learning tutorials từ knowledge base",
-    "Podcast + flashcard generation từ AI OS knowledge"
+    "Podcast + flashcard generation từ OmniClaw knowledge"
   ],
   "departments": ["rd", "od_learning", "asset_library"],
   "notes": "Self-hosted NotebookLM alternative. Run: pip install -r requirements.txt && python -m open_notebook. Web UI at localhost:8080. Hỗ trợ Ollama cho local inference. Primary tool cho R&D research synthesis pipeline."

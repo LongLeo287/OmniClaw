@@ -6,7 +6,7 @@ tier: 3
 domain: frontend
 cost_tier: standard
 status: active
-author: AI OS (adapted from ant-design/ant-design)
+author: OmniClaw (adapted from ant-design/ant-design)
 updated: 2026-03-14
 source: https://github.com/ant-design/ant-design
 tags: [antd, react, typescript, ui-library, design-system, components, enterprise]
@@ -30,7 +30,7 @@ exposed_functions:
 load_on_boot: false
 ---
 
-# Ant Design (antd) — AI OS Reference Skill
+# Ant Design (antd) — OmniClaw Reference Skill
 
 > Source: https://github.com/ant-design/ant-design (97K ⭐ | TypeScript | React)
 > Adapted: CLAUDE.md + component catalog — NOT the source code (251MB, too large to clone)

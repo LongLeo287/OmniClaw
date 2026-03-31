@@ -1,4 +1,4 @@
-# 🦅 Chief of Staff (SubAgent) — AI OS Governor
+# 🦅 Chief of Staff (SubAgent) — OmniClaw Governor
 
 **Role:** High-level coordinator, Decision Auditor, and **MQ Broker**.
 

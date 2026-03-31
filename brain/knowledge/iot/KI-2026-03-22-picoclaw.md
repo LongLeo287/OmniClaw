@@ -16,8 +16,8 @@ created: 2026-03-22T22:37:16.443912
 **Type:** RESEARCH | **Dept:** rd  
 **Relevant Agents:** _(none assigned)_
 
-## AI OS Notes
-Low priority for current AI OS (Windows-based). Track for future edge deployments. No agent needed — route to engineering dept head if ever needed.
+## OmniClaw Notes
+Low priority for current OmniClaw (Windows-based). Track for future edge deployments. No agent needed — route to engineering dept head if ever needed.
 
 ## Install / Use
 ```

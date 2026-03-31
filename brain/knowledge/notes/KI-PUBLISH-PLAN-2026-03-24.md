@@ -1,14 +1,14 @@
-# AI OS — Distribution & Publishing Plan
+# OmniClaw — Distribution & Publishing Plan
 # Status: DRAFT | Saved: 2026-03-24 | For: CEO Brainstorm
-# Retrieve khi cần: "tìm plan publish AI OS"
+# Retrieve khi cần: "tìm plan publish OmniClaw"
 
 ---
 
 ## BỐI CẢNH
 
-AI OS Corp hiện chạy full local trên máy CEO.
+OmniClaw Corp hiện chạy full local trên máy CEO.
 Vấn đề: hệ thống nặng (~GB do plugins, vector DB, models) → không thể push raw lên GitHub.
-Câu hỏi cốt lõi: **Distribute AI OS cho user khác như thế nào?**
+Câu hỏi cốt lõi: **Distribute OmniClaw cho user khác như thế nào?**
 
 ---
 
@@ -73,7 +73,7 @@ Best for: CEO và team internal (<5 người)
 ```
 Pros:  User click "Use this template" → clone về → setup
 Cons:  Cần maintain 2 versions (template + CEO private)
-Best for: Phân phối cho clients hoặc bán AI OS template
+Best for: Phân phối cho clients hoặc bán OmniClaw template
 ```
 
 ### Option D — Packaged Release (ZIP)
@@ -152,19 +152,19 @@ Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (đã pending)
 | `ops/scripts/setup.ps1` | Bootstrap full install | 30 phút |
 | `README.md` | Architecture + install guide | 20 phút |
 
-**Tổng:** ~1 giờ → AI OS sẵn sàng distribute
+**Tổng:** ~1 giờ → OmniClaw sẵn sàng distribute
 
 ---
 
 ## CÂU HỎI CHO BRAINSTORM (khi CEO cần quyết định)
 
 1. Mục tiêu distribute: cho team nội bộ hay cho client/cộng đồng?
-2. Có muốn monetize AI OS template không?
-3. Phần nào của AI OS là "secret" (CEO customization) và phần nào là "template"?
+2. Có muốn monetize OmniClaw template không?
+3. Phần nào của OmniClaw là "secret" (CEO customization) và phần nào là "template"?
 4. Cloud deploy hay local-only?
 5. Target user: technical (developer) hay non-technical?
 
 ---
 
-*Plan v1.0 | 2026-03-24 | Retrieve: "aos plan publish" hoặc đọc file này*
+*Plan v1.0 | 2026-03-24 | Retrieve: "omniclaw plan publish" hoặc đọc file này*
 *Location: brain/knowledge/notes/KI-PUBLISH-PLAN-2026-03-24.md*

@@ -3,7 +3,7 @@
 # Updated: 2026-03-22 | Schema: v1.0
 
 ## PURPOSE
-health_kb.md là kho lưu trữ tất cả health events của AI OS Corp.
+health_kb.md là kho lưu trữ tất cả health events của OmniClaw Corp.
 Được update sau mỗi scan bởi agent-health-agent và system-diagnostics-agent.
 
 ## Health Status Legend
@@ -21,7 +21,7 @@ health_kb.md là kho lưu trữ tất cả health events của AI OS Corp.
 ### Initial State
 Status: INITIALIZED — no health history yet
 Total agents tracked: 75+ (see AGENTS.md for roster)
-System version: AI OS Corp v2.4 (Cycle 7)
+System version: OmniClaw Corp v2.4 (Cycle 7)
 Infrastructure: ClawTask API (port 7474), RUNNING
 
 ### Infrastructure Health Baseline

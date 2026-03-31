@@ -1,5 +1,5 @@
 ﻿# DELIVERY PIPELINE â€” SOP v1.0
-# AI OS Corp | Tier 1 â€” Operations
+# OmniClaw Corp | Tier 1 â€” Operations
 # Effective: 2026-03-18
 
 > **Má»¥c Ä‘Ã­ch:** Quy trÃ¬nh hoÃ n chá»‰nh tá»« khi client ACCEPT proposal â†’ Deliver â†’ Invoice.

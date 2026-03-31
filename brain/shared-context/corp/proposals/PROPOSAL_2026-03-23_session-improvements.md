@@ -8,9 +8,9 @@
 ## PROP-2026-03-23-001 — Agent Cherry-Pick from agency-agents
 **Priority:** HIGH
 **Type:** AGENT_ROSTER_CHANGE
-**Context:** Session 2026-03-23 identified 6 agent roles missing from AI OS Corp roster. Source: `plugins/agency-agents` (144 agents, MIT License, battle-tested).
+**Context:** Session 2026-03-23 identified 6 agent roles missing from OmniClaw Corp roster. Source: `plugins/agency-agents` (144 agents, MIT License, battle-tested).
 **Proposal:**
-Import the following 6 agent templates (adapt to AI OS format — NOT install scripts):
+Import the following 6 agent templates (adapt to OmniClaw format — NOT install scripts):
 1. Code Reviewer → `corp/departments/engineering/` (Dept 1)
 2. Incident Response Commander → `corp/departments/engineering/` + `ops/workflows/incident-response.md`
 3. Evidence Collector (Screenshot QA) → `corp/departments/qa_testing/` (Dept 2)

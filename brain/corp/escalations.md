@@ -24,7 +24,7 @@ BATCH-05 Plugin Integration: 2 items cần Dept 10 xử lý theo đúng cấp
 - Action needed: CEO tự download .exe từ GitHub releases
 
 ## Tác động
-- trivy: AI OS chưa có security scanner → Dept 10 confirm rồi mới cài
+- trivy: OmniClaw chưa có security scanner → Dept 10 confirm rồi mới cài
 - port-killer GUI: CEO cần download thủ công — không có winget ID hợp lệ
 
 ## CEO Decision

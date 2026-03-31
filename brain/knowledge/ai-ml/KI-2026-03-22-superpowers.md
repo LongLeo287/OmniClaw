@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/superpowers-ai/superpowers](https://github.com/superpowers-ai/superpowers)  
 **Stars:** 1k | **Type:** TOOL | **Dept:** engineering  
-**AI OS Compatible:** âœ… Compatible
+**OmniClaw Compatible:** âœ… Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,7 +26,7 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** corp_orchestrator
 - **security_gate:** PASS â€” community_vetted
 
-## AI OS Notes
+## OmniClaw Notes
 INSTALLED in ecosystem/plugins/superpowers/ â€” reference only
 
 ## Integration

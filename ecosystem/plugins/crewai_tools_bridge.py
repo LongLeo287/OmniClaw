@@ -6,7 +6,7 @@ from pydantic import Field
 
 from pathlib import Path
 
-# Append root for AI OS relative imports
+# Append root for OmniClaw relative imports
 _AOS_ROOT = os.getenv("AOS_ROOT") or str(Path(__file__).resolve().parents[2])
 sys.path.append(_AOS_ROOT)
 

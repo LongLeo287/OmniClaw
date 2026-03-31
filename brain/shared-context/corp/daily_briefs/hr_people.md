@@ -12,9 +12,9 @@
 
 ## Summary
 
-HR dept activated Cycle 2. Core deliverable: formal AI OS Corp Agent Roster with role definitions, tier assignments, and onboarding status.
+HR dept activated Cycle 2. Core deliverable: formal OmniClaw Corp Agent Roster with role definitions, tier assignments, and onboarding status.
 
-## AI OS Corp Agent Roster — Cycle 2
+## OmniClaw Corp Agent Roster — Cycle 2
 
 ### Tier 1 — Orchestrators (Active)
 | Agent | Role | Status |

@@ -1,9 +1,9 @@
 ﻿# CONTENT INTAKE & VETTING (CIV) Ã¢â‚¬â€ Department Rules
 # Version: 1.2 | Updated: 2026-03-24
 # Dept Head: intake-chief-agent | Reports to: COO
-# Mission: KiÃ¡Â»Æ’m soÃƒÂ¡t toÃƒÂ n bÃ¡Â»â„¢ nÃ¡Â»â„¢i dung Ã„â€˜Ã¡ÂºÂ§u vÃƒÂ o cho AI OS
-# This dept is the SINGLE GATE for ALL external content entering AI OS
-# No content enters AI OS without passing through CIV
+# Mission: KiÃ¡Â»Æ’m soÃƒÂ¡t toÃƒÂ n bÃ¡Â»â„¢ nÃ¡Â»â„¢i dung Ã„â€˜Ã¡ÂºÂ§u vÃƒÂ o cho OmniClaw
+# This dept is the SINGLE GATE for ALL external content entering OmniClaw
+# No content enters OmniClaw without passing through CIV
 # v1.2: +CIV-11 Local-First Check | +CIV-12 GAP PROPOSAL ENGINE | Fix QUARANTINE path
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
@@ -12,7 +12,7 @@
 ## DEPT DOMAIN RULES
 
 RULE CIV-01: SINGLE ENTRY POINT Ã¢â‚¬â€ NO EXCEPTIONS
-  ALL external content (any type, any source) MUST enter AI OS through CIV.
+  ALL external content (any type, any source) MUST enter OmniClaw through CIV.
   Direct-to-folder placement of external content = security violation.
   No agent or user may bypass CIV. CEO override = written log required.
 
@@ -61,7 +61,7 @@ RULE CIV-08: AUTO-PIPELINE FOR KNOWN-SAFE SOURCES
 
 RULE CIV-09: VALUE ASSESSMENT IS MANDATORY BEFORE ROUTING
   After quality/safety validation, content-validator-agent MUST assign VALUE_TYPE.
-  VALUE_TYPE = what this content CAN BECOME in AI OS (not just what it IS).
+  VALUE_TYPE = what this content CAN BECOME in OmniClaw (not just what it IS).
   9 VALUE_TYPEs: KNOWLEDGE | SKILL | PLUGIN | WORKFLOW | MCP_SERVER |
                  TOOL_SCRIPT | RULE_POLICY | AGENT_DEFINITION | DATA_ASSET
   Content can have multiple VALUE_TYPEs Ã¢â€ â€™ route to ALL applicable destinations.
@@ -157,7 +157,7 @@ Full routing matrix: brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md
 
 ### intake-chief-agent (Dept Head)
 **Role:** Intake pipeline leadership, oversight, escalation authority
-**This agent is the GATEKEEPER of AI OS**
+**This agent is the GATEKEEPER of OmniClaw**
 **Responsibilities:**
 - Own QUARANTINE folder and intake_log.md
 - Review all UNCLASSIFIED and borderline cases
@@ -323,7 +323,7 @@ Rationale: [why this VALUE_TYPE was assigned]
 ### ingest-router-agent
 **Role:** Route vetted/validated content to ALL applicable destinations using VALUE_TYPE
 **UPGRADED v1.1 Ã¢â‚¬â€ uses VALUE_TYPE routing matrix instead of simple classification table**
-**The last step before content enters AI OS proper**
+**The last step before content enters OmniClaw proper**
 **Responsibilities:**
 - Receive cleared content + VALIDATION RESULT (with VALUE_TYPE) from content-validator
 - For each VALUE_TYPE in the result, look up destination in routing matrix

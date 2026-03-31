@@ -4,10 +4,10 @@ name: Notebook Agent
 version: 2.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-22
 description: >
-  Built-in knowledge processing engine for AI OS.
+  Built-in knowledge processing engine for OmniClaw.
   Extracts, analyzes, and stores content from PDF, URL, and plain text.
   Always available (no Docker required). Integrates with llm_router,
   blackboard, telegram_notify. Docker extends to full Nova Agent mode.
@@ -118,7 +118,7 @@ ci:
 
 # 📓 Notebook Agent Skill
 
-Core content processing engine for AI OS. Always available as the **lite agent**.
+Core content processing engine for OmniClaw. Always available as the **lite agent**.
 Upgrades automatically to **full Nova Agent** when Docker is running.
 
 ## When to Use
@@ -126,7 +126,7 @@ Upgrades automatically to **full Nova Agent** when Docker is running.
 Trigger this skill when an agent needs to:
 - Extract text from a PDF, URL, or raw text block
 - Summarize or analyze a document with LLM assistance
-- Save analysis results to AI OS knowledge store
+- Save analysis results to OmniClaw knowledge store
 - Query a previously saved notebook for answers
 - Check mode status (lite vs. full)
 
@@ -162,7 +162,7 @@ POST /api/notebook/analyze
 {
   "source": "https://arxiv.org/abs/...",
   "type": "url",
-  "prompt": "Extract research findings, methodology, and applicability to AI OS",
+  "prompt": "Extract research findings, methodology, and applicability to OmniClaw",
   "save": true
 }
 ```
@@ -184,7 +184,7 @@ POST /api/notebook/analyze
 {
   "source": "https://competitor.com/pricing",
   "type": "url",
-  "prompt": "Identify competitive positioning, pricing model, feature gaps vs AI OS"
+  "prompt": "Identify competitive positioning, pricing model, feature gaps vs OmniClaw"
 }
 ```
 

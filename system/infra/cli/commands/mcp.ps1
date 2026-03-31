@@ -1,11 +1,11 @@
 <#
 .SYNOPSIS MCP subcommand — aos mcp list|start <name>|stop <name>|status
 #>
-$AOS_ROOT = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
-$MCP_SERVERS_DIR = Join-Path $AOS_ROOT "mcp\servers"
+$OMNICLAW_ROOT = (Resolve-Path "$PSScriptRoot\..\..\..\..").Path
+$MCP_SERVERS_DIR = Join-Path $OMNICLAW_ROOT "system\infra\mcp\servers"
 
 $KnownServers = @{
-    "aos-workspace"  = @{ port = $null; desc = "AI OS workspace browser" }
+    "omniclaw-workspace"  = @{ port = $null; desc = "OmniClaw workspace browser" }
     "skill-registry" = @{ port = $null; desc = "Skill registry CRUD" }
     "corp-data"      = @{ port = $null; desc = "KPI, escalations, proposals" }
     "filesystem"     = @{ port = $null; desc = "General filesystem MCP" }
@@ -45,7 +45,7 @@ switch ($args[0]) {
     "test" {
         $name = if ($args[1]) { $args[1] } else { "all" }
         if ($name -eq "all") {
-            foreach ($srv in @("aos-workspace", "skill-registry", "corp-data")) {
+            foreach ($srv in @("omniclaw-workspace", "skill-registry", "corp-data")) {
                 $indexJs = Join-Path $MCP_SERVERS_DIR "$srv\index.js"
                 if (Test-Path $indexJs) {
                     Write-Host -NoNewline "  Testing $srv... "
@@ -61,7 +61,7 @@ switch ($args[0]) {
     }
 
     "config" {
-        $cfgPath = Join-Path $AOS_ROOT "mcp\config.json"
+        $cfgPath = Join-Path $OMNICLAW_ROOT "system\infra\mcp\config.json"
         Write-Host "`n📄 mcp/config.json:" -ForegroundColor Cyan
         Get-Content $cfgPath -Raw | Write-Host
     }

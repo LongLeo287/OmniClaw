@@ -1,6 +1,6 @@
 # KI-TOKEN-REDUCTION-01 — Token Reduction Strategies (code-review-graph + agents-course)
 **Nguồn:** tirth8205/code-review-graph + huggingface/agents-course
-**Ngày:** 2026-03-23 | **Verdict:** REFERENCE — áp dụng ngay vào AI OS
+**Ngày:** 2026-03-23 | **Verdict:** REFERENCE — áp dụng ngay vào OmniClaw
 
 ---
 
@@ -27,7 +27,7 @@ relevant_files = graph.get_related("auth.py", depth=2)
 
 **6.8× reduction:** 50,000 tokens → ~7,400 tokens cho cùng review quality.
 
-### Apply trong AI OS
+### Apply trong OmniClaw
 - `Understand-Anything` skill đã cover use case này
 - Pattern: mọi codebase analysis task → build graph trước → query graph
 - Tools: `ctx7` cho library docs + knowledge graph cho local code
@@ -47,7 +47,7 @@ def search_web(query: str) -> str:
 
 @tool
 def query_knowledge_base(question: str) -> str:
-    """Query AI OS knowledge base"""
+    """Query OmniClaw knowledge base"""
     return lightrag.query(question)
 
 agent = CodeAgent(
@@ -55,7 +55,7 @@ agent = CodeAgent(
     model=claude_model
 )
 ```
-**AI OS pattern:** Wrap Firecrawl + LightRAG + Mem0 như @tools → inject vào agent.
+**OmniClaw pattern:** Wrap Firecrawl + LightRAG + Mem0 như @tools → inject vào agent.
 
 ### Memory Patterns (3 types)
 ```
@@ -63,7 +63,7 @@ agent = CodeAgent(
 2. External memory     → Vector DB (Mem0, LightRAG) — persistent
 3. Episodic memory     → Past task outcomes → decisions_log.md
 ```
-**AI OS status:**
+**OmniClaw status:**
 - ✅ In-context: implemented
 - ✅ External: Mem0 + LightRAG active
 - ⚠️ Episodic: `decisions_log.md` exists but not systematically linked
@@ -77,7 +77,7 @@ def route_task(task):
     if "finance" in task:   return finance_agent
     return general_agent
 ```
-**AI OS:** Dept routing trong Corp Cycle đã implement này.
+**OmniClaw:** Dept routing trong Corp Cycle đã implement này.
 
 ### ReAct Pattern (Reason + Act)
 ```
@@ -89,7 +89,7 @@ ACTION: ctx7_docs("/npm/lodash", "CVE fix version")
 OBSERVATION: Fixed in lodash 4.17.21
 FINAL: Upgrade lodash to 4.17.21
 ```
-**AI OS ứng dụng:** GEMINI.md đã có "Read first, Act second, Report always" — đây là ReAct pattern chính xác.
+**OmniClaw ứng dụng:** GEMINI.md đã có "Read first, Act second, Report always" — đây là ReAct pattern chính xác.
 
 ---
 

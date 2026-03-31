@@ -1,7 +1,7 @@
 ﻿# REGISTRY & CAPABILITY MANAGEMENT â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: registry-manager-agent | Reports to: CTO
-# Mission: Quáº£n lÃ½ toÃ n bá»™ kháº£ nÄƒng (Skill/Plugin/Feature) cá»§a AI OS
+# Mission: Quáº£n lÃ½ toÃ n bá»™ kháº£ nÄƒng (Skill/Plugin/Feature) cá»§a OmniClaw
 # Tools: skill_generator | skill_loader.ps1 | skill_fetcher.ps1 | validate_skills.ps1
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 

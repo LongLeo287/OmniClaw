@@ -10,7 +10,7 @@
 mindmap
   root((Cycle 12))
     Track 1 - Proposals
-      AOS CLI
+      omniclaw CLI
       Skill Tier Batch
       Plugin Candidates
       ClawTask Telemetry
@@ -34,9 +34,9 @@ mindmap
 
 > **CÃ¢u há»i cá»‘t lÃµi:** CÃ¡i nÃ o táº¡o ra giÃ¡ trá»‹ nháº¥t cho há»‡ thá»‘ng hÃ´m nay?
 
-### P1 â€” AOS CLI (`ops/aos.py`)
+### P1 â€” omniclaw CLI (`ops/omniclaw.py`)
 ```
-Váº¥n Ä‘á»: "aos corp start" chá»‰ lÃ  tá»« trong workflow â€” khÃ´ng cÃ³ code thá»±c
+Váº¥n Ä‘á»: "omniclaw corp start" chá»‰ lÃ  tá»« trong workflow â€” khÃ´ng cÃ³ code thá»±c
 Náº¿u build: CEO gÃµ 1 lá»‡nh â†’ há»‡ thá»‘ng tá»± cháº¡y háº¿t cÃ¡c phases
 Náº¿u khÃ´ng: CEO váº«n Ä‘iá»u phá»‘i thá»§ cÃ´ng qua Antigravity (hiá»‡n táº¡i)
 
@@ -72,7 +72,7 @@ Cáº£ 2 phá»¥ thuá»™c ClawTask â€” CEO Ä‘Ã£ nÃ³i khÃ´ng d
 
 ## TRACK 2 â€” Corp Cycle Phase 2-7
 
-> **CÃ¢u há»i cá»‘t lÃµi:** HÃ´m nay AI OS Corp cáº§n "lÃ m viá»‡c" hay "review"?
+> **CÃ¢u há»i cá»‘t lÃµi:** HÃ´m nay OmniClaw Corp cáº§n "lÃ m viá»‡c" hay "review"?
 
 ```mermaid
 flowchart LR
@@ -137,7 +137,7 @@ flowchart TD
 
 | | Nhanh (<2h) | Táº¡o giÃ¡ trá»‹ dÃ i háº¡n | Cáº§n CEO input |
 |---|---|---|---|
-| **P1 AOS CLI** | âŒ 3h | âœ… cao | âœ… |
+| **P1 omniclaw CLI** | âŒ 3h | âœ… cao | âœ… |
 | **P2 Skill Tier** | âœ… 2h | âœ… cao | âŒ auto |
 | **Mini-Cycle Retro** | âœ… 1h | âœ… medium | âŒ auto |
 | **CIV Feature má»›i** | âœ… 30min | ðŸ”„ depends | âœ… cáº§n link |
@@ -151,7 +151,7 @@ flowchart TD
 1. HÃ´m nay CEO cÃ³ task cá»¥ thá»ƒ nÃ o muá»‘n cÃ¡c dept thá»±c hiá»‡n khÃ´ng?
    â†’ CÃ³: Full Cycle | KhÃ´ng: Mini-Cycle
 
-2. CEO cÃ³ muá»‘n AOS CLI (gÃµ 1 lá»‡nh cháº¡y há»‡ thá»‘ng) khÃ´ng?
+2. CEO cÃ³ muá»‘n omniclaw CLI (gÃµ 1 lá»‡nh cháº¡y há»‡ thá»‘ng) khÃ´ng?
    â†’ CÃ³: Approve P1, build hÃ´m nay | KhÃ´ng: Defer
 
 3. CEO muá»‘n intake tool/repo/bÃ i viáº¿t nÃ o khÃ´ng?

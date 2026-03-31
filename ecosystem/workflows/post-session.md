@@ -1,5 +1,5 @@
 ﻿# Department: operations
-ï»¿# post-session.md â€” AI OS Session Close Hook
+ï»¿# post-session.md â€” OmniClaw Session Close Hook
 # Version: 1.0 | Updated: 2026-03-14
 # Authority: Tier 2 (Operations)
 # Executed by: Any agent at end of every session (before disconnect)
@@ -35,7 +35,7 @@ Before closing session â€” save key context to vector memory:
   OR
   python system/ops/scripts/save_session_memory.py "[tÃ³m táº¯t phiÃªn ngáº¯n gá»n]"
 
-This ensures AI OS remembers what happened across sessions (vectorized, not just text).
+This ensures OmniClaw remembers what happened across sessions (vectorized, not just text).
 Silent fail if LTM offline â€” never block session close.
 ```
 
@@ -79,9 +79,9 @@ If cognitive_reflector ran this session:
 ### Step 3B: Autonomous Facility Sanitation (Dept 22)
 ```
 Tá»° Äá»˜NG CHáº Y á»ž CUá»I PHIÃŠN LÃ€M VIá»†C.
-Trigger: Gá»i ká»‹ch báº£n dá»n dáº¹p há»‡ luá»µ (aios_deep_cleaner) Ä‘á»ƒ quÃ©t toÃ n cá»¥c.
+Trigger: Gá»i ká»‹ch báº£n dá»n dáº¹p há»‡ luá»µ (omniclaw_deep_cleaner) Ä‘á»ƒ quÃ©t toÃ n cá»¥c.
 
-Script: python system/ops/scripts/aios_deep_cleaner.py --auto-delete --stale-days 14
+Script: python system/ops/scripts/omniclaw_deep_cleaner.py --auto-delete --stale-days 14
 
 Quy táº¯c dá»n dáº¹p (RULE-CLEANUP-01):
 1. QuÃ©t root directory (<AI_OS_ROOT>) vÃ  Ä‘áº©y má»i file táº¡o nhÃ¡p láº¡c loÃ i (.md, .py, .txt, .log) khÃ´ng thuá»™c há»‡ thá»‘ng vÃ o `storage/vault/DATA/stray_files/` Ä‘á»ƒ khoanh vÃ¹ng rÃ¡c.

@@ -22,8 +22,8 @@ created: 2026-03-22T23:23:54.299876
 - Prometheus :9090 → scrapes metrics + cAdvisor :8082  
 - Grafana :4000 → dashboards + alert rules → Telegram bot
 
-## AI OS Integration Plan
-Modify prometheus.yml to scrape AI OS services:
+## OmniClaw Integration Plan
+Modify prometheus.yml to scrape OmniClaw services:
 ```yaml
 scrape_configs:
   - job_name: clawtask

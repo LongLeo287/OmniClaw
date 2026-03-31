@@ -1,4 +1,4 @@
-﻿# AI OS Corp â€” Remote Control System HANDOFF
+﻿# OmniClaw Corp â€” Remote Control System HANDOFF
 # Project: nullclaw Telegram Bot + Automation Gateway
 # Owner: CEO @LongLeo | Assigned: Scrum-Master (COO)
 # Date: 2026-03-18 | Status: LIVE âœ…
@@ -7,7 +7,7 @@
 
 ## ðŸŽ¯ Project Overview
 
-nullclaw adalah gateway tá»± Ä‘á»™ng hÃ³a chÃ­nh cá»§a AI OS Corp â€” káº¿t ná»‘i Telegram cá»§a CEO (@LongLeo) vá»›i toÃ n bá»™ há»‡ thá»‘ng AI agents. CEO Ä‘iá»u khiá»ƒn má»i thá»© qua chat.
+nullclaw adalah gateway tá»± Ä‘á»™ng hÃ³a chÃ­nh cá»§a OmniClaw Corp â€” káº¿t ná»‘i Telegram cá»§a CEO (@LongLeo) vá»›i toÃ n bá»™ há»‡ thá»‘ng AI agents. CEO Ä‘iá»u khiá»ƒn má»i thá»© qua chat.
 
 ---
 
@@ -61,14 +61,14 @@ python -m http.server 7474 --directory "<AI_OS_ROOT>\tools\clawtask"
 ### ðŸ”´ HIGH â€” Ngay bÃ¢y giá»
 
 - [ ] **TG-001** Test bot hoáº¡t Ä‘á»™ng: @LongLeo nháº¯n â†’ bot reply Gemini
-- [ ] **TG-002** ThÃªm AI OS Corp system prompt chi tiáº¿t hÆ¡n vÃ o config
+- [ ] **TG-002** ThÃªm OmniClaw Corp system prompt chi tiáº¿t hÆ¡n vÃ o config
 - [ ] **TG-003** Auto-start bot khi Windows boot (Task Scheduler)
 
 ### ðŸŸ¡ MEDIUM â€” Sprint nÃ y
 
-- [ ] **AOS-004** AstrBot WebUI config: thÃªm Telegram token qua http://localhost:6185/
-- [ ] **AOS-005** Plugin `astrbot_plugin_aios_corp` â€” test /clawtask command
-- [ ] **AOS-006** Sync ClawTask â†’ JSON file Ä‘á»ƒ plugin Ä‘á»c Ä‘Æ°á»£c
+- [ ] **omniclaw-004** AstrBot WebUI config: thÃªm Telegram token qua http://localhost:6185/
+- [ ] **omniclaw-005** Plugin `astrbot_plugin_aios_corp` â€” test /clawtask command
+- [ ] **omniclaw-006** Sync ClawTask â†’ JSON file Ä‘á»ƒ plugin Ä‘á»c Ä‘Æ°á»£c
 - [ ] **REG-007** SKILL_REGISTRY.json update â€” promote LightRAG + cognee + crewAI lÃªn T2
 - [ ] **LEG-008** GATE_LEGAL review `awesome-claude-skills` license
 

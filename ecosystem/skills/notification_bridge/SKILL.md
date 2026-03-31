@@ -4,7 +4,7 @@ name: Notification Bridge
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Push notifications and multi-channel alerting (ccpoke Protocol).
 
@@ -30,7 +30,7 @@ listens_to:
 ---
 # ðŸŒ‰ Notification Bridge Skill (Remote Connection)
 
-This skill enables the AI OS to bridge with external communication channels (Telegram, Discord, Slack) inspired by the `ccpoke` protocol.
+This skill enables the OmniClaw to bridge with external communication channels (Telegram, Discord, Slack) inspired by the `ccpoke` protocol.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Task Notifications (/notify):**

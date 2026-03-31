@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent)  
 **Stars:** 200 | **Type:** RESEARCH | **Dept:** rd  
-**AI OS Compatible:** ❌ Not compatible
+**OmniClaw Compatible:** ❌ Not compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `RESEARCH`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** _(none assigned)_
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-Research only — superseded by claude-octopus in AI OS
+## OmniClaw Notes
+Research only — superseded by claude-octopus in OmniClaw
 
 ## Integration
 📖 KI entry only — no plugin clone needed

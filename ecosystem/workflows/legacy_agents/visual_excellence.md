@@ -1,3 +1,8 @@
+<!-- DEPRECATED — This workflow has been superseded by the current OmniClaw ecosystem.
+     Kept for historical reference only. DO NOT USE in active flows.
+     See ecosystem/workflows/ for current versions.
+-->
+
 # Thẩm Mỹ Tối Thượng (Visual Excellence) - Chuẩn Apple HIG
 
 BẤT CỨ KHI NÀO MỘT AGENT XÂY DỰNG GIAO DIỆN (UI/UX) CHO OMNICLAW HOẶC APP CHO SẾP, PHẢI TUÂN THỦ CÁC LUẬT THÉP SAU ĐÂY:

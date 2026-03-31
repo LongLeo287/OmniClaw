@@ -118,7 +118,7 @@ def format_alert(issues: list) -> str:
     lines = [f"⚠️ *AI OS System Pulse* — {ts}"]
     for issue in issues:
         lines.append(f"  ❌ `{issue['name']}` — {issue['status']}")
-    lines.append("\nCheck: `python ops/aos.py status`")
+    lines.append("\nCheck: `python ops/omniclaw.py status`")
     return "\n".join(lines)
 
 def main():

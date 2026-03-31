@@ -4,7 +4,7 @@ name: Cognitive Reflector
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Post-task reflection engine -- outcome vs plan comparison, lesson extraction.
 
@@ -33,7 +33,7 @@ listens_to:
 
 ## Purpose
 
-Cognitive Reflector is the AI OS "after-action review" engine.
+Cognitive Reflector is the OmniClaw "after-action review" engine.
 After every task (success or failure), it compares outcome vs original plan,
 extracts lessons, and feeds them back into cosmic_memory for long-term recall.
 

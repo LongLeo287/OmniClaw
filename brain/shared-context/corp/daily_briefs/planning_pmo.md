@@ -14,7 +14,7 @@
 
 PMO dept activated Cycle 2. Sprint board initialized. Formal tracking of Corp velocity begins.
 
-## AI OS Corp — Sprint Board Cycle 2
+## OmniClaw Corp — Sprint Board Cycle 2
 
 ### Sprint Goal
 Activate 10+ departments and fix ClawTask Supabase backend.

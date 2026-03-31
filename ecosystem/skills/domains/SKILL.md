@@ -60,7 +60,7 @@ A structured library of domain-specific skill references across 6 business/techn
 |------|---------|
 | `pos-event-sourcing-auditor.md` | POS system event sourcing + audit trail |
 
-## AI OS Integration
+## OmniClaw Integration
 - **Used by:** All dept agents for domain-specific guidance
 - **Knowledge Browser:** Accessible via ClawTask Knowledge Browser panel
 - **FAST_INDEX:** Each domain's key docs indexed in FAST_INDEX.json

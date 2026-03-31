@@ -37,6 +37,8 @@ INDEX_PATHS = [
     AI_OS_ROOT / "plugins" / "**" / "manifest.json",
     AI_OS_ROOT / "brain" / "knowledge" / "CAPABILITY_MAP.md",
     AI_OS_ROOT / "brain" / "knowledge" / "AI_OS_SYSTEM_MAP.md",
+    AI_OS_ROOT / "brain" / "knowledge" / "processed_repos" / "*.md",
+    AI_OS_ROOT / "brain" / "knowledge" / "updates" / "*.md",
     AI_OS_ROOT / "corp" / "departments" / "**" / "MANAGER_PROMPT.md",
     AI_OS_ROOT / "corp" / "departments" / "**" / "WORKER_PROMPT.md",
 ]
@@ -123,6 +125,30 @@ async def index_all_skills(rag):
     print(f"✅ Indexed {len(documents)} documents")
     return len(documents)
 
+async def index_single_file(rag, filepath: str):
+    """Index a single file to avoid overhead of full indexing."""
+    filepath = Path(filepath)
+    if not filepath.exists():
+        print(f"File not found: {filepath}")
+        return 0
+        
+    try:
+        content = filepath.read_text(encoding="utf-8", errors="ignore")
+        if len(content.strip()) < 50:
+            return 0
+            
+        rel_path = filepath.relative_to(AI_OS_ROOT)
+        header = f"[FILE: {rel_path}]\n"
+        
+        doc = header + content
+        print(f"\n📚 Indexing 1 document into LightRAG graph: {rel_path}")
+        await rag.ainsert([doc])
+        print(f"✅ Indexed 1 document")
+        return 1
+    except Exception as e:
+        print(f"⚠️  Skip {filepath}: {e}")
+        return 0
+
 
 async def query_capabilities(rag, query: str, mode: str = "mix"):
     """Query the skill graph for a capability."""
@@ -144,6 +170,7 @@ async def main():
     parser.add_argument("--mode", "-m", type=str, default="mix",
                         choices=["local", "global", "hybrid", "naive", "mix"],
                         help="LightRAG query mode (default: mix)")
+    parser.add_argument("--file", "-f", type=str, help="Target a specific file to index")
     parser.add_argument("--reindex", action="store_true", help="Force re-index all files")
     args = parser.parse_args()
 
@@ -161,6 +188,10 @@ async def main():
         if args.query:
             # Query mode — assume already indexed
             result = await query_capabilities(rag, args.query, args.mode)
+        elif args.file:
+            # Single file mode
+            count = await index_single_file(rag, args.file)
+            print(f"\n✅ Done! {count} document indexed.")
         else:
             # Index mode
             count = await index_all_skills(rag)

@@ -91,7 +91,7 @@ SLA: < 1 corp cycle after delivery
 
 ---
 
-### STEP D2 — Tag & Classify (in AI OS context)
+### STEP D2 — Tag & Classify (in OmniClaw context)
 Trigger: knowledge-curator-agent hands off to knowledge-tagger-agent
 Agent: knowledge-tagger-agent (NEW — Asset Library)
 

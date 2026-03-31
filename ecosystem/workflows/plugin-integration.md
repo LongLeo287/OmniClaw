@@ -1,13 +1,13 @@
 ﻿# Department: operations
 ---
-description: Plugin Integration Process â€” AI OS Corp (Quy trÃ¬nh tÃ­ch há»£p Plugin)
+description: Plugin Integration Process â€” OmniClaw Corp (Quy trÃ¬nh tÃ­ch há»£p Plugin)
 ---
 
 # Plugin Integration Workflow
 # Version: 1.0 | 2026-03-23 | Owner: Antigravity (Dept 4 â€” Registry)
 
-Quy trÃ¬nh báº¯t buá»™c khi tÃ­ch há»£p báº¥t ká»³ repo/plugin/tool má»›i vÃ o AI OS Corp.
-Trigger: `aos integrate <plugin_id>` hoáº·c khi CEO request.
+Quy trÃ¬nh báº¯t buá»™c khi tÃ­ch há»£p báº¥t ká»³ repo/plugin/tool má»›i vÃ o OmniClaw Corp.
+Trigger: `omniclaw integrate <plugin_id>` hoáº·c khi CEO request.
 
 > âš ï¸ **PRE-GATE:** Workflow nÃ y chá»‰ cháº¡y SAU KHI `ops/workflows/repo-evaluation.md` cho phÃ¡n quyáº¿t **APPROVE**.
 > Náº¿u chÆ°a cháº¡y repo-evaluation â†’ STOP, quay láº¡i bÆ°á»›c Ä‘Ã¡nh giÃ¡ trÆ°á»›c.
@@ -171,7 +171,7 @@ python plugins/<plugin_id>/tests/test_<id>.py
 python -c "import json; r=json.load(open('plugins/registry.json')); print([p for p in r['plugins'] if p['id']=='<id>'])"
 
 # 3. Test activation tá»« dashboard (náº¿u cÃ³)
-# Má»Ÿ AI OS CORP.cmd â†’ [P] Plugin Manager â†’ chá»n plugin
+# Má»Ÿ OmniClaw Corp.cmd â†’ [P] Plugin Manager â†’ chá»n plugin
 ```
 
 ---

@@ -1,5 +1,5 @@
 # Department: operations
-﻿# pre-session.md — AI OS Session Freshness Checklist
+﻿# pre-session.md — OmniClaw Session Freshness Checklist
 # Version: 4.0 | Updated: 2026-03-22
 # Authority: Tier 2 (Operations)
 # When to read: ON-DEMAND — after boot sequence, or at start of long session
@@ -54,7 +54,7 @@ Output format (Vietnamese):
 ```
 Output to CEO:
 
-"✅ AI OS đã khởi động đầy đủ.
+"✅ OmniClaw đã khởi động đầy đủ.
 - Identity: SOUL.md ✅
 - Rules: GOVERNANCE.md ✅
 - Roster: AGENTS.md ✅ ([N] agents)
@@ -90,7 +90,7 @@ If any step fails:
 ## On-Demand References (NOT in boot sequence)
 
 ```
-Corp daily cycle:    ops/workflows/corp-daily-cycle.md    ← Trigger: "aos corp start"
+Corp daily cycle:    ops/workflows/corp-daily-cycle.md    ← Trigger: "omniclaw corp start"
 Storage rule:        brain/knowledge/notes/RULE-STORAGE-01-storage-location.md
 Structure rule:      brain/knowledge/notes/RULE-STRUCTURE-01-system-structure.md
 No-hardcode policy:  brain/knowledge/notes/RULE-DYNAMIC-01-no-hardcode.md

@@ -4,7 +4,7 @@
 name: cost-manager-agent
 version: 1.0.0
 status: active
-description: "Kiểm soát chi phí vận hành AI OS, quản lý ngân sách API, tối ưu hóa ROI của toàn hệ thống"
+description: "Kiểm soát chi phí vận hành OmniClaw, quản lý ngân sách API, tối ưu hóa ROI của toàn hệ thống"
 domain: ecosystem
 type: workforce-agent
 department: finance

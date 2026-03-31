@@ -17,7 +17,7 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/Bioruebe/UniExtract2](https://github.com/Bioruebe/UniExtract2)  
 **Stars:** 2k | **Type:** TOOL | **Dept:** engineering  
-**AI OS Compatible:** ✅ Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
@@ -26,8 +26,8 @@ created: 2026-03-22T23:02:23.338520
 - **relevant_agents:** _(none assigned)_
 - **security_gate:** PASS — community_vetted
 
-## AI OS Notes
-TOOL — Windows native, useful for AI OS data ingestion from compressed packages.
+## OmniClaw Notes
+TOOL — Windows native, useful for OmniClaw data ingestion from compressed packages.
 
 ## Integration
 📖 KI entry only — no plugin clone needed

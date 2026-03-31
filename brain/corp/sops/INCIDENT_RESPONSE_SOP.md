@@ -7,7 +7,7 @@
 
 ## Overview
 
-This SOP defines the AI OS Corp response to security incidents.
+This SOP defines the OmniClaw Corp response to security incidents.
 All incidents are managed by security_grc dept.
 CRITICAL incidents override all other work priorities.
 

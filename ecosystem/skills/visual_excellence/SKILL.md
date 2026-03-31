@@ -4,7 +4,7 @@ name: Visual Excellence
 version: 1.0.0
 tier: 2
 status: active
-author: AI OS Core Team
+author: OmniClaw Core Team
 updated: 2026-03-14
 description: Cinematic UI generation and Apple-style premium visual storytelling.
 
@@ -28,7 +28,7 @@ listens_to: []
 # âœ¨ Visual Excellence Skill (Cinematic UI)
 
 ## Description
-This skill ensures all AI OS products (Dashboard, Popup, Reports) achieve a "WOW" effect through cinematic, scroll-driven storytelling and high-impact visual design.
+This skill ensures all OmniClaw products (Dashboard, Popup, Reports) achieve a "WOW" effect through cinematic, scroll-driven storytelling and high-impact visual design.
 
 ## ðŸ› ï¸ Core Functions:
 1.  **Cinematic Storytelling:**
