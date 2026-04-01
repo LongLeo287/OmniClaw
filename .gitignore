@@ -388,3 +388,7 @@ releases/
 # --- Legacy Quarantine -------------------------------------
 system/security/QUARANTINE/*
 !system/security/QUARANTINE/.gitkeep
+
+# --- Orphaned Embedded Repos (non-submodule gitlinks) ------
+system/security/rules/prompts/
+!system/security/rules/prompts/.gitkeep

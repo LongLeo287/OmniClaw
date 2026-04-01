@@ -162,7 +162,7 @@ def audit_and_heal_entities():
         for ext in ["*.md", "*.json", "*.yaml", "*.py"]:
             for file_path in target.rglob(ext):
                 # Skip 3rd-party source code directories and raw data
-                excluded_parts = {"node_modules", ".git", "repos", "plugins", "QUARANTINE", "tmp", "__pycache__", ".venv"}
+                excluded_parts = {"node_modules", ".git", "repos", "plugins", "QUARANTINE", "tmp", "__pycache__", ".venv", "prompts"}
                 if set(file_path.parts) & excluded_parts:
                     continue
                 

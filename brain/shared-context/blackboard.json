@@ -11,7 +11,7 @@
     "priority": "LOW"
   },
   "expected_output": "Sẵn sàng tác chiến",
-  "blackboard_updated_at": "2026-04-01T17:10:14.744304",
+  "blackboard_updated_at": "2026-04-01T17:13:00.364535",
   "system_status": "ONLINE",
   "active_campaign": "v12.0.0_zero_trust_hardening",
   "v12_hardening": {
@@ -38,9 +38,9 @@
     "last_vetted_plugin": "NONE"
   },
   "oid_stats": {
-    "total_ingested": 925,
-    "last_ingested_source": "https://github.com/KalyanMurapaka45/Gemini-ChatBot",
+    "total_ingested": 931,
+    "last_ingested_source": "https://github.com/nvim-telescope/telescope.nvim",
     "last_ingested_domain": "general",
-    "last_ingested_time": "2026-04-01T17:10:14.744296"
+    "last_ingested_time": "2026-04-01T17:13:00.364525"
   }
 }
