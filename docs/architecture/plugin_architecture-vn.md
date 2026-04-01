@@ -27,3 +27,11 @@ Luật chơi khi bạn muốn dâng hiến mã nguồn cho OmniClaw:
 2. Khai báo Schema theo Chuẩn Mở Toàn Cầu (Open Standard).
 3. Đẩy vào cho Orchestrator, nó sẽ ném thẳng cho Đặc nhiệm Tình Báo CIV (Dept 20).
 4. Nếu Lọt khe! Cục Đăng kiểm (Dept 04) sẽ mở Sổ Vàng và chiêu mộ Plugin của bạn cho đủ 21 Bộ/Ngành xài chung ngay tức khắc.
+
+---
+
+## 📖 Đặc Quyền Sinh Thái: Xuyên Không Vào Não (`brain/knowledge`)
+
+Mặc dù cánh cửa Ghi chép (Intake) vào Tàng Kinh Các bị khóa chặt bởi OIW và Thằng Thủ Thư (Phòng 15), nhưng **Các Đặc Vụ và Phụ Kiện Rừng Rú (Tier 1 & Tier 2) thuộc Hệ sinh thái đều có "Thẻ Thỉnh Kinh Từ Xa" (Free-Pass Authority)**.
+* **Quyền hạn:** Bất cứ Plugin, Skill, hoặc Hệ lệnh nào xuất phát từ `ecosystem/` đều được Tự do Đọc mượt mà, Search Semantic, và lướt qua toàn bộ Mạng lưới Thư mục của `brain/knowledge/`.
+* **Giới hạn Thép:** Hệ Sinh thái chỉ đóng vai "Người Tiêu Thụ Tri Thức" (Consumers). Nghiêm cấm mọi Plugin có hành vi Trút dữ liệu thô, Sửa Luật lõi, hoặc Đổ rác vào Não mà không qua phễu `gitingest`.

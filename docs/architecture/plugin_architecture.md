@@ -27,3 +27,11 @@ To build a skill or plugin for OmniClaw:
 2. Define the schema according to the Open Standard.
 3. Submit it to the system. The Orchestrator will have Dept 20 (CIV) verify it.
 4. If approved, Dept 04 (Registry) updates the global cache and your tool goes live immediately across all 21 departments.
+
+---
+
+## 📖 Ecosystem Free-Pass to Brain (`brain/knowledge`)
+
+While the creation and ingestion of knowledge sets are tightly guarded by the OmniClaw Intake Workflow (OIW) and Dept 15, **Execution Agents and Plugins (Tier 1 & Tier 2) hold "Free-Pass" Authority.**
+* **What this means:** Any authenticated plugin, skill, or executing agent running from the `ecosystem/` can freely Read, Traverse, and Semantically Search the entire `brain/knowledge/` directory structure.
+* **Limitation:** Ecosystem plugins may NOT dump raw data, rewrite core rules, or bypass the `gitingest` mandate inside the Brain. They act strictly as Knowledge Consumers.
