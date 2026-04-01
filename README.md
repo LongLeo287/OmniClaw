@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="OmniClaw Banner">
+
   <h1>🌌 OmniClaw</h1>
   
   <p align="center">
