@@ -202,6 +202,16 @@ def audit_and_heal_entities():
                         except Exception as e:
                             issues.append(f"UTF-8 Healing Failed for {file_path.name}: {e}")
 
+                # --- Open-Source Agnostic Guardian (Detect Hardcoded Usernames in Prompts) ---
+                if "prompts" in file_path.parts and file_path.suffix == ".md":
+                    try:
+                        content = file_path.read_text(encoding="utf-8")
+                        if "LongLeo" in content or "LongLeo287" in content:
+                            issues.append(f"OS-AGNOSTIC VIOLATION: Hardcoded username 'LongLeo' detected in {file_path.relative_to(AOS_ROOT)}")
+                            logging.warning(f"🚨 [HARDCODE ALERT] Found local username in {file_path.name}! Prompts must be decoupled for Open-Source.")
+                    except Exception:
+                        pass
+
                 # --- Isolate Broken JSON (For OA) ---
                 if file_path.suffix == ".json":
                     try:
