@@ -21,17 +21,16 @@ These are out-of-process servers using the **Model Context Protocol (MCP)**.
 - OmniClaw acts as an MCP Host and can connect to off-site tools (e.g., Supabase MCP, Google Drive MCP).
 - Because they run on the OS machine but are written by outside parties, they are kept entirely sandboxed. The AI can only invoke the schema they expose.
 
-## Building a New Plugin
-To build a skill or plugin for OmniClaw:
-1. Create a `SKILL.md` inside `ecosystem/skills/YOUR_SKILL_NAME/`.
-2. Define the schema according to the Open Standard.
-3. Submit it to the system. The Orchestrator will have Dept 20 (CIV) verify it.
-4. If approved, Dept 04 (Registry) updates the global cache and your tool goes live immediately across all 21 departments.
+## Building a New Plugin (The Strict Handoff)
+To build a skill or plugin for OmniClaw, a strict 3-step Isolation Handoff must be observed to prevent overlapping authority:
+1. **Quarantine:** The raw plugin code (created by R&D or OIW) must be placed in `storage/vault/quarantine/`.
+2. **Security Gate (Dept 10):** The Security Agent (`strix-agent`) inspects the code. If clean, it stamps the approval.
+3. **Registration (Dept 14):** Only the Registry Manager (`registry-manager-agent`) has the file-level authority to move the approved code into `ecosystem/skills/`, define the Open Standard schema, and update the global `SKILL_REGISTRY.json`. No other agents (including CTO or Orchestrator) may write directly to the `ecosystem/` folder.
 
 ---
 
-## 📖 Ecosystem Manager Free-Pass to Brain (`brain/knowledge`)
+## 📖 Dept 14 Free-Pass to Brain (`brain/knowledge`)
 
-While the creation and ingestion of knowledge sets are tightly guarded by the OmniClaw Intake Workflow (OIW) and Dept 15, the top-level **Ecosystem Manager holds "Free-Pass" Authority.**
-* **What this means:** The highest authority governing the `ecosystem/` can freely Read, Traverse, and Semantically Search the entire `brain/knowledge/` directory structure. **Standard agents and plugins DO NOT have this right.**
+While the creation and ingestion of knowledge sets are tightly guarded by the OmniClaw Intake Workflow (OIW) and Dept 15, the sole administrator of the ecosystem, **Dept 14 (`registry-manager-agent`), holds "Free-Pass" Authority.**
+* **What this means:** Dept 14 can freely Read, Traverse, and Semantically Search the entire `brain/knowledge/` directory structure on behalf of the plugins it manages. **Standard executing agents, CTO, Orchestrator, and individual plugins DO NOT have this right.**
 * **Protection Equivalence:** The `ecosystem/` directory and the `brain/knowledge/` directory share the exact same security posture: they are **Read-Only Vaults**. Tools and algorithms can view them, but no unauthorized modification is permitted.

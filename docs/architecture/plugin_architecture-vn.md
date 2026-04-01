@@ -21,17 +21,16 @@ Hệ kết nối ngoài hệ thống thông qua giao thức tối tân **Model C
 - Chạy chung máy tính nhưng khác luồng tiến trình (Out-of-process).
 - Được xem là Ngoại xâm Tiềm năng (Zero Trust) - Chỉ nghe lời từ bộ khung giao thức Schema đã thống nhất (Supabase MCP, Google Drive MCP).
 
-## Tự Build Plugin Sinh Thái Mới
-Luật chơi khi bạn muốn dâng hiến mã nguồn cho OmniClaw:
-1. Soạn thảo bộ khung `SKILL.md` và tuồn vào `ecosystem/skills/TEN_CUA_BAN/`.
-2. Khai báo Schema theo Chuẩn Mở Toàn Cầu (Open Standard).
-3. Đẩy vào cho Orchestrator, nó sẽ ném thẳng cho Đặc nhiệm Tình Báo CIV (Dept 20).
-4. Nếu Lọt khe! Cục Đăng kiểm (Dept 04) sẽ mở Sổ Vàng và chiêu mộ Plugin của bạn cho đủ 21 Bộ/Ngành xài chung ngay tức khắc.
+## Tự Build Plugin Sinh Thái Mới (Quy trình Handoff Chặt Chẽ)
+Để tránh giẫm đạp quyền hạn (Overlapping Authority), việc Build Plugin tuân thủ 3 bước Bàn Giao Cứng:
+1. **Cách Ly (Quarantine):** Code thô của Plugin (do R&D hoặc thợ code kéo về) phải được ném vào `storage/vault/quarantine/`.
+2. **Trạm Kiểm Dịch (Phòng 10):** Cảnh sát `strix-agent` vào rà file. Nếu sạch, đóng dấu Mộc An Toàn (Pass Security).
+3. **Mở Cửa Rừng (Phòng 14):** Chỉ duy nhất `registry-manager-agent` được phép cầm file Đã Duyệt mang vào `ecosystem/skills/`, ghi sổ Schema, và cập nhật kho tổng `SKILL_REGISTRY.json`. Mọi Agent khác (kể cả CTO hay Orchestrator) tuyệt đối KHÔNG ĐƯỢC thao tác file trực tiếp trong thư mục `ecosystem/`.
 
 ---
 
-## 📖 Đặc Quyền Sinh Thái: Cấp Bậc Ecosystem Manager (`brain/knowledge`)
+## 📖 Đặc Quyền Sinh Thái: Cấp Bậc Trưởng Phòng 14 (`brain/knowledge`)
 
-Mặc dù cánh cửa Ghi chép (Intake) bị khóa chặt bởi OIW và Thằng Thủ Thư (Phòng 15), **Ecosystem Manager (Thực thể cao nhất của hệ sinh thái) sở hữu "Thẻ Thỉnh Kinh Từ Xa" (Free-Pass Authority)**.
-* **Quyền hạn:** Chỉ có Chỉ huy cao nhất của `ecosystem/` mới được Tự do Đọc, Search Semantic, và lướt qua Mạng lưới Thư mục của `brain/knowledge/`. **Các Agent thường và Plugin tuyệt đối không có quyền này.**
+Mặc dù cánh cửa Ghi chép (Intake) bị khóa chặt bởi OIW và Thằng Thủ Thư (Phòng 15), **Trưởng phòng 14 (`registry-manager-agent`) sở hữu "Thẻ Thỉnh Kinh Từ Xa" (Free-Pass Authority)** để phục vụ công tác điều phối Skill.
+* **Quyền hạn:** Chỉ có Phòng 14 mới được Tự do Đọc, Search Semantic, và lướt qua Mạng lưới Thư mục của `brain/knowledge/`. **Các Agent thường, Plugin, CTO, Orchestrator tuyệt đối không có quyền này.**
 * **Tương đương Bảo vệ (Protection Equivalence):** Thư mục `ecosystem/` và `brain/knowledge/` có mức độ bảo vệ giống hệt nhau: **Chỉ Xem (Read-Only Vault)**. Các Đặc vụ không được phép sửa đổi, thay đổi cấu trúc ở hai thư mục lõi này.
