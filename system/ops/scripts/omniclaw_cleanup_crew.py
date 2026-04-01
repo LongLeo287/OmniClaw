@@ -24,6 +24,7 @@ USAGE:
 import os
 import sys
 import shutil
+import subprocess
 from pathlib import Path
 
 # Dynamic root detection — NO hardcoded paths
@@ -46,6 +47,19 @@ def is_junk(path_obj: Path) -> bool:
     if path_obj.is_dir():
         return path_obj.name in TRASH_DIR_NAMES
     return False
+
+def flush_npm_cache():
+    """Execute 'npm cache clean --force' to sterilize supply chain hazards."""
+    print("\n  [NPM SANITATION] Pumping out global npm cache...")
+    try:
+        # We use shell=True on Windows to resolve "npm" from path correctly
+        result = subprocess.run(["npm", "cache", "clean", "--force"], 
+                                capture_output=True, text=True, shell=True, check=True)
+        print("    [CLEAN] Cache incinerated successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"    [WARN] npm cache clean failed: {e.stderr.strip()}")
+    except FileNotFoundError:
+        print("    [SKIP] 'npm' command not found on this system.")
 
 
 def deploy_cleanup_crew(target_folders_list: list, base_path=AI_OS_ROOT, trash_vault=TRASH_VAULT) -> int:
@@ -131,3 +145,6 @@ if __name__ == "__main__":
 
     custom_vault = Path(args.quarantine_path)
     deploy_cleanup_crew(args.folders, trash_vault=custom_vault)
+    
+    # Unleash NPM cache flush at the end of routine maintenance
+    flush_npm_cache()
