@@ -134,6 +134,7 @@ OmniClaw is an entire Operating System, not just a codebase. For daily usage and
 
 For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult our master maps:
 
+* 🏛️ [**Core Architectural Principles**](docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
 * 🧭 [**Master System Map**](docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 21 departments, Boot Sequence, Memory architecture, and Gate workflows.
 * 🚦 [**Activation Guide**](docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
 * 🧩 [**Skills & Plugins Capability Map**](docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
