@@ -5,6 +5,7 @@ import json
 import logging
 import uuid
 import subprocess
+import shutil
 from datetime import datetime
 from pathlib import Path
 
@@ -100,13 +101,11 @@ def sweep_and_quarantine():
         # --- Sweep Dead Claude Worktrees ---
         claude_worktrees_dir = AOS_ROOT / ".claude/worktrees"
         if claude_worktrees_dir.exists():
-            import subprocess
             for wt in claude_worktrees_dir.iterdir():
                 if wt.is_dir():
                     try:
                         res = subprocess.run(["git", "status"], cwd=str(wt), capture_output=True, text=True)
                         if res.returncode != 0 and "fatal: not a git repository" in res.stderr.lower():
-                            import shutil
                             dest = VAULT_QUARANTINE / f"DEAD_WORKTREE_{wt.name}"
                             shutil.move(str(wt), str(dest))
                             logging.warning(f"☠ Quarantined DEAD Claude Worktree: {wt.name}")
@@ -179,7 +178,7 @@ def audit_and_heal_entities():
                         issues.append(f"Could not rename {file_path.name}: {e}")
                 
                 # --- Auto-fix UTF-8 Encoding (Streaming Mode for Massive Files) ---
-                if file_path.suffix in [".md", ".json", ".yaml"]:
+                if file_path.is_file() and file_path.suffix in [".md", ".json", ".yaml"]:
                     try:
                         with open(file_path, "r", encoding="utf-8") as f:
                             for _ in f: pass
