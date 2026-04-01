@@ -20,7 +20,7 @@ Combine the following elements based on content type. DO NOT use only one elemen
   - NO parentheses `()` inside node labels — use `-` or space.
   - NO colons `:` inside node labels.
   - Node label format: `["Label - Sublabel"]` using dash separator.
-- Example clean node: `Paperclip{"📋 PAPERCLIP - Hạt Nhân Vận Hành"}`
+- Example clean node: `Paperclip{"📋 PAPERCLIP - Operational Core"}`
 
 ---
 ### ELEMENT 2: Carousel (USE FOR — Comparison, Feature Lists, Options)
@@ -49,11 +49,11 @@ Combine the following elements based on content type. DO NOT use only one elemen
 - Use for sequential phase or day-by-day rollout plans.
 - Format:
 ```
-Ngày 1  ──►  [Action]
+Day 1  ──►  [Action]
    │
-Ngày 2  ──►  [Action]
+Day 2  ──►  [Action]
    │
-Ngày N  ──►  [Final outcome]
+Day N  ──►  [Final outcome]
 ```
 
 ---
@@ -73,19 +73,19 @@ Ngày N  ──►  [Final outcome]
 > One-line executive summary.
 
 ---
-## 🗺️ Sơ Đồ [Fixed Mermaid]
+## 🗺️ Diagram [Fixed Mermaid]
 
 ---
 ## 📊 [Topic] (Carousel — if comparison needed)
 
 ---
-## ⚠️ Rủi Ro & Quyết Định (Alert blocks)
+## ⚠️ Risks & Decisions (Alert blocks)
 
 ---
-## 🚀 Lộ Trình (ASCII Timeline)
+## 🚀 Roadmap (ASCII Timeline)
 
-*Chờ Sếp phản hồi chốt phương án trước khi thực thi.*
+*Wait for CEO confirmation before execution.*
 ```
 
 ---
-*Format này được CEO phê duyệt ngày 2026-03-19. Không được tự ý thay đổi cấu trúc.*
+*This format was approved by CEO on 2026-03-19. Do not alter the structure.*

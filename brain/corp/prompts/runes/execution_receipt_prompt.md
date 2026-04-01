@@ -7,48 +7,48 @@ Write to artifact file → notify_user → NEVER paste in chat
 ---
 ## ✅ Execution Receipt
 
-**Task:** [tên task]
+**Task:** [task name]
 **Executed by:** [Antigravity / Claude Code]
 **Date:** [YYYY-MM-DD HH:MM]
 **Status:** [COMPLETED ✅ / PARTIAL ⚠️ / FAILED ❌]
 
 ---
-### 📋 Tóm Tắt
+### 📋 Summary
 
-> [Mô tả ngắn gọn những gì đã làm — 2-3 câu]
+> [Brief description of what was done — 2-3 sentences]
 
 ---
-### 📁 Files Đã Thay Đổi
+### 📁 Modified Files
 
-| File | Loại thay đổi | Ghi chú |
-|------|--------------|---------|
+| File | Change Type | Notes |
+|------|-------------|-------|
 | [path/to/file.py] | Created / Modified / Deleted | [...] |
 | [path/to/file.md] | Created / Modified / Deleted | [...] |
 
 ---
-### ⚡ Lệnh Đã Chạy
+### ⚡ Executed Commands
 
 ```bash
-# Liệt kê các command đã execute
+# List executed commands
 $ [command 1]
 $ [command 2]
 ```
 
 ---
-### 🧪 Kết Quả Kiểm Tra
+### 🧪 Verification Results
 
-| Test / Verification | Kết quả | Ghi chú |
-|--------------------|---------|---------|
+| Test / Verification | Result | Notes |
+|---------------------|--------|-------|
 | [build / test / manual check] | ✅ Pass / ❌ Fail | [...] |
 
 ---
-### ⚠️ Vấn Đề Còn Lại
+### ⚠️ Outstanding Issues
 
 - [Issue 1] — Priority: High/Med/Low
 - [Issue 2] — Priority: High/Med/Low
 
 ---
-### ➡️ Bước Tiếp Theo Đề Xuất
+### ➡️ Proposed Next Steps
 
 1. [...]
 2. [...]

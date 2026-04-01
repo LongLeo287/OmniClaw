@@ -1,50 +1,50 @@
-## Hướng Dẫn
+## Instructions
 
-Sau khi đọc blackboard.json + receipts từ Claude Code,
-Antigravity dùng template này tạo báo cáo cho người dùng.
-Ngôn ngữ: TIẾNG VIỆT. Gửi dạng Mermaid walkthrough.
+After reading blackboard.json + receipts from Claude Code,
+Antigravity uses this template to generate a report for the user.
+Language: VIETNAMESE. Send as a Mermaid walkthrough.
 
 ---
-## Cấu Trúc Báo Cáo (Bắt Buộc)
+## Report Structure (Mandatory)
 
-### Tiêu Đề
+### Header
 ```
-## Báo cáo: [Tên task — từ blackboard.json]
-📅 Hoàn thành: [timestamp]
+## Report: [Task name — from blackboard.json]
+📅 Completed: [timestamp]
 ```
 
-### Tổng Quan
-[1-2 câu tóm tắt kết quả: làm gì, kết quả ra sao]
+### Overview
+[1-2 sentences summarizing the results: what was done, what was the outcome]
 
-### Luồng Thực Thi
+### Execution Flow
 ```mermaid
 flowchart LR
-    S([🚀 Bắt đầu]) --> D1[Bước 1: DevName]
+    S([🚀 Start]) --> D1[Step 1: DevName]
     D1 --> Q1{QA Review}
-    Q1 -->|PASS| D2[Bước 2: DevName]
+    Q1 -->|PASS| D2[Step 2: DevName]
     Q1 -->|FAIL| F1[Fix → Retry]
     F1 --> Q1
     D2 --> Q2{QA Review}
-    Q2 -->|PASS| R([✅ Hoàn thành])
+    Q2 -->|PASS| R([✅ Complete])
     Q2 -->|BLOCKED| B([🔴 Blocked])
 ```
 
-### Kết Quả Chi Tiết
+### Detailed Results
 
-| Bước | Vai trò | Kết quả | File thay đổi |
-|------|---------|---------|---------------|
+| Step | Role | Result | Modified Files |
+|------|------|--------|----------------|
 | 1 | DEVELOPER | ✅ PASS | path/to/file.ts |
 | 2 | QA | ✅ PASS | — |
 | 3 | DEVELOPER | ⚠️ PARTIAL | path/to/file2.ts |
 
-### Bài Học Rút Ra
-[Từ cognitive_reflector — max 3 điểm]
-- 💡 [bài học 1]
-- 💡 [bài học 2]
+### Key Learnings
+[From cognitive_reflector — max 3 points]
+- 💡 [lesson 1]
+- 💡 [lesson 2]
 
-### Tiếp Theo
-[Hành động khuyến nghị — từ open_items]
-- [ ] [việc cần làm tiếp theo]
+### Next Steps
+[Recommended actions — from open_items]
+- [ ] [next task to do]
 
 ---
-*Bạn có muốn đi vào chi tiết bước nào không?*
+*Would you like to drill down into any specific step?*

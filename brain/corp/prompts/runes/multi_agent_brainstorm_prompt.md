@@ -6,28 +6,28 @@ Write output to artifact file → notify_user → NEVER paste in chat
 Invoke only for high-risk, high-complexity, or high-impact designs.
 
 ---
-## Cấu Trúc Multi-Agent Review (Bắt Buộc)
+## Multi-Agent Review Structure (Mandatory)
 
 ### 🎨 Phase 1 — Primary Designer
 ```
-Tóm tắt thiết kế đề xuất (từ brainstorm đã confirm):
-- Quyết định kiến trúc chính: [...]
+Summary of proposed design (from confirmed brainstorm):
+- Key architectural decisions: [...]
 - Assumptions: [...]
-- Decision Log (bắt đầu): [...]
+- Decision Log (started): [...]
 ```
 
 ---
 ### ⚔️ Phase 2A — Skeptic / Challenger
 ```
-Prompt nội bộ: "Assume this design fails in production. Why?"
+Internal Prompt: "Assume this design fails in production. Why?"
 ```
 **Checklist:**
-- [ ] Điểm single-of-failure?
-- [ ] Phụ thuộc ngoài không kiểm soát được?
-- [ ] Assumption sai có thể xảy ra?
+- [ ] Single-point-of-failure vulnerabilities?
+- [ ] Uncontrolled external dependencies?
+- [ ] Flawed assumptions that could occur?
 - [ ] YAGNI violations?
 
-**Kết quả:** [liệt kê objections cụ thể]
+**Results:** [list specific objections]
 
 ---
 ### 🔒 Phase 2B — Constraint Guardian
@@ -35,12 +35,12 @@ Prompt nội bộ: "Assume this design fails in production. Why?"
 Focus: performance · security · reliability · maintainability · cost
 ```
 **Checklist:**
-- [ ] Tải tối đa hệ thống chịu được?
-- [ ] Data sensitive có được bảo vệ?
-- [ ] Có thể maintain sau 6 tháng không?
-- [ ] Chi phí vận hành có scale hợp lý?
+- [ ] Can the system handle maximum load?
+- [ ] Is sensitive data protected?
+- [ ] Will it be maintainable in 6 months?
+- [ ] Do operational costs scale reasonably?
 
-**Kết quả:** [pass / reject / cần sửa]
+**Results:** [pass / reject / needs revision]
 
 ---
 ### 👤 Phase 2C — User Advocate
@@ -48,11 +48,11 @@ Focus: performance · security · reliability · maintainability · cost
 Focus: UX · cognitive load · clarity · error messaging
 ```
 **Checklist:**
-- [ ] User hiểu ngay không cần hướng dẫn?
-- [ ] Error messages có ý nghĩa?
-- [ ] Flow có điểm nào gây nhầm lẫn?
+- [ ] Will users understand it without guidance?
+- [ ] Are error messages meaningful?
+- [ ] Are there confusing points in the flow?
 
-**Kết quả:** [pass / reject / cần sửa]
+**Results:** [pass / reject / needs revision]
 
 ---
 ### ⚖️ Phase 3 — Arbiter / Integrator
@@ -60,12 +60,12 @@ Focus: UX · cognitive load · clarity · error messaging
 Resolve all objections. Declare: APPROVED | REVISE | REJECT
 ```
 
-| Objection | Từ | Accept? | Giải quyết |
-|-----------|-----|---------|------------|
-| [objection] | Skeptic | ✅/❌ | [cách xử lý] |
+| Objection | From | Accept? | Resolution |
+|-----------|------|---------|------------|
+| [objection] | Skeptic | ✅/❌ | [how it's handled] |
 
 **Verdict:** [APPROVED / REVISE / REJECT]
-**Decision Log (final):** [ghi lại toàn bộ quyết định]
+**Decision Log (final):** [record all decisions]
 
 ---
-*Chỉ sau khi Arbiter tuyên bố APPROVED mới tiến hành implementation.*
+*Implementation must only proceed after Arbiter declares APPROVED.*

@@ -8,40 +8,40 @@ Append to existing decision log if one already exists for the project.
 ---
 ## Decision Log Entry
 
-**Project / Context:** [tên project hoặc vấn đề]
+**Project / Context:** [project name or issue]
 **Date:** [YYYY-MM-DD]
 **Owner:** [Antigravity / Claude Code / User]
 
 ---
-### ✅ Quyết Định Đã Chốt
+### ✅ Finalized Decision
 
-> [Mô tả ngắn gọn 1-2 câu quyết định là gì]
+> [Brief 1-2 sentence description of the decision]
 
 ---
-### 🔀 Phương Án Đã Xem Xét
+### 🔀 Options Considered
 
-| Phương án | Mô tả | Lý do không chọn |
-|-----------|-------|-----------------|
+| Option | Description | Reason for Rejection |
+|--------|-------------|----------------------|
 | A | [...] | [...] |
 | B | [...] | [...] |
-| **C (Chọn)** | [...] | ← **Đây là phương án được chọn** |
+| **C (Selected)** | [...] | ← **This is the selected option** |
 
 ---
-### 📌 Lý Do Chọn
+### 📌 Rationale
 
 ```
-- Lý do chính: [...]
-- Trade-off chấp nhận: [...]
-- Assumption quan trọng: [...]
+- Primary reason: [...]
+- Accepted trade-offs: [...]
+- Key assumptions: [...]
 ```
 
 ---
-### ⚠️ Rủi Ro Đã Nhận Biết
+### ⚠️ Identified Risks
 
-- [Rủi ro 1] → Mitigation: [...]
-- [Rủi ro 2] → Mitigation: [...]
+- [Risk 1] → Mitigation: [...]
+- [Risk 2] → Mitigation: [...]
 
 ---
-### 🔁 Điều Kiện Để Xem Xét Lại
+### 🔁 Conditions for Reconsideration
 
-> Quyết định này sẽ được review lại nếu: [điều kiện cụ thể]
+> This decision will be reviewed if: [specific condition]

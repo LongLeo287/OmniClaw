@@ -5,61 +5,61 @@ description: BMAD Method — product and feature discovery brainstorm. Use for n
 Write output to artifact file → notify_user → NEVER paste in chat
 
 ---
-## Cấu Trúc BMAD (Bắt Buộc)
+## BMAD Structure (Mandatory)
 
 ### 1. Problem Statement
 ```
-Vấn đề cụ thể cần giải quyết:
-- Người dùng gặp khó khăn gì?
-- Impact nếu không giải quyết?
+Specific problem to solve:
+- What difficulties are users facing?
+- Impact if not solved?
 - Scope: [in scope / out of scope]
 ```
 
 ---
 ### 2. Hypothesis
 ```
-"Chúng tôi tin rằng [GIẢI PHÁP] sẽ giúp [NGƯỜI DÙNG]
-đạt được [KẾT QUẢ], đo bằng [CHỈ SỐ]."
+"We believe that [SOLUTION] will help [USER]
+achieve [OUTCOME], measured by [METRIC]."
 ```
 
-| Giả thuyết | Confidence | Dễ kiểm chứng? |
-|------------|-----------|----------------|
+| Hypothesis | Confidence | Easily testable? |
+|------------|-----------|------------------|
 | [H1] | High/Med/Low | Yes/No |
 | [H2] | High/Med/Low | Yes/No |
 
 ---
 ### 3. Proposed Approaches
 ```
-Liệt kê 2-3 cách tiếp cận:
+List 2-3 approaches:
 ```
 
 | # | Approach | Effort | Risk | Confidence |
 |---|----------|--------|------|------------|
-| A | [mô tả] | S/M/L | Low/Med/High | High/Med/Low |
-| B | [mô tả] | S/M/L | Low/Med/High | High/Med/Low |
-| C | [mô tả] | S/M/L | Low/Med/High | High/Med/Low |
+| A | [description] | S/M/L | Low/Med/High | High/Med/Low |
+| B | [description] | S/M/L | Low/Med/High | High/Med/Low |
+| C | [description] | S/M/L | Low/Med/High | High/Med/Low |
 
 ---
 ### 4. Success Metrics
 ```
-Làm sao biết đã thành công?
+How do we know we succeeded?
 ```
 
-| Metric | Baseline | Target | Cách đo |
-|--------|----------|--------|---------|
-| [metric 1] | [giá trị hiện tại] | [target] | [cách đo] |
-| [metric 2] | [giá trị hiện tại] | [target] | [cách đo] |
+| Metric | Baseline | Target | Measuring method |
+|--------|----------|--------|------------------|
+| [metric 1] | [current value] | [target] | [measuring method] |
+| [metric 2] | [current value] | [target] | [measuring method] |
 
 ---
 ### 5. Go / No-Go Recommendation
 
 ```
-Đề xuất: GO ✅ / NO-GO ❌ / NEEDS MORE DATA ⚠️
+Recommendation: GO ✅ / NO-GO ❌ / NEEDS MORE DATA ⚠️
 
-Lý do: [...]
-Điều kiện để proceed: [...]
-Bước tiếp theo nếu GO: [...]
+Reasoning: [...]
+Conditions to proceed: [...]
+Next steps if GO: [...]
 ```
 
 ---
-*Chờ phản hồi của bạn trước khi lên implementation plan.*
+*Wait for user feedback before creating the implementation plan.*
