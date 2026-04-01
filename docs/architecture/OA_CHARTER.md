@@ -16,6 +16,7 @@ OA evaluates all departments, agents, plugins, and architectures strictly agains
 5. **Architectural Isolation:** Strict separation of responsibilities (e.g., Intake vs. Storage vs. Knowledge).
 6. **Stateless Operations:** Agents must drop their context and log off cleanly, relying only on OS persistent tracking.
 7. **Ecosystem Free-Pass:** Autonomous Skills/Plugins must be able to read/traverse the brain freely without hallucinating.
+8. **Artifact Publishing Hygiene:** (Operational Ethics) No internal logic (`.map`), environment files, or configuration contexts may be leaked during package release. Code hygiene must extend beyond the model to the DevOps layer.
 
 ---
 

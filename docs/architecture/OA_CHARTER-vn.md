@@ -16,6 +16,7 @@ OA trừng phạt và đánh giá mọi Hệ thống, Agent, Plugin và Kiến t
 5. **Biên Giới Nhiệm Vụ (Architectural Isolation):** Phân chia rõ đường ray của thằng Đi Hút Rác (Intake), Kho Bãi (Storage), và Não Ký Ức (Knowledge).
 6. **Hành Động Khuyết Danh (Stateless Operations):** Đặc vụ bay vào nhận việc, bay ra phải xóa sạch Context, chỉ tin tưởng vào Lệnh OS.
 7. **Đặc Quyền Sinh Thái (Ecosystem Free-Pass):** Hệ thống Agent Tác chiến / Ecosystem được quyền đi tự do vào Não đọc RAG mà không sợ Lú (Hallucinate).
+8. **An Ninh Lớp Phát Hành (Artifact Publishing Hygiene):** (Operational Ethics) Cấm tuyệt đối việc Đóng gói rò rỉ File nội bộ (`.map`), file môi trường (`.env`), hay config nhạy cảm ra ngoài lúc Release. Đạo đức phải nằm ở DevOps.
 
 ---
 
