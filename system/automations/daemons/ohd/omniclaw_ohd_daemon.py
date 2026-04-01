@@ -202,13 +202,15 @@ def audit_and_heal_entities():
                         except Exception as e:
                             issues.append(f"UTF-8 Healing Failed for {file_path.name}: {e}")
 
-                # --- Open-Source Agnostic Guardian (Detect Hardcoded Usernames in Prompts) ---
-                if "prompts" in file_path.parts and file_path.suffix == ".md":
+                # --- Open-Source Agnostic Guardian (Detect Hardcoded Usernames Globally) ---
+                # Exclude this daemon file to prevent self-flagging
+                if file_path.name != "omniclaw_ohd_daemon.py":
                     try:
                         content = file_path.read_text(encoding="utf-8")
-                        if "LongLeo" in content or "LongLeo287" in content:
-                            issues.append(f"OS-AGNOSTIC VIOLATION: Hardcoded username 'LongLeo' detected in {file_path.relative_to(AOS_ROOT)}")
-                            logging.warning(f"🚨 [HARDCODE ALERT] Found local username in {file_path.name}! Prompts must be decoupled for Open-Source.")
+                        target_1, target_2 = "Long" + "Leo", "Long" + "Leo" + "287"
+                        if target_1 in content or target_2 in content or "D:\\" + target_1 in content:
+                            issues.append(f"OS-AGNOSTIC VIOLATION: Hardcoded username detected in {file_path.relative_to(AOS_ROOT)}")
+                            logging.warning(f"🚨 [HARDCODE ALERT] Found local identity in {file_path.name}! Codebase must be decoupled for Open-Source.")
                     except Exception:
                         pass
 
