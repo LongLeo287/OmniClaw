@@ -3,6 +3,8 @@
 > **Authority:** CEO (LongLeo) | **Version:** 1.0 | **Date:** 2026-04-02
 > **Status:** ACTIVE — This document supersedes all previous ecosystem authority definitions.
 
+[**🇻🇳 Bản Tiếng Việt**](CORE_DAEMONS_AND_OER-vn.md) | [**Back to Docs**](../README.md)
+
 This document defines the **4 Core Daemons** of OmniClaw OS and the **5-Gate Automated Pipeline** that governs how every Skill, Plugin, Agent, and Workflow enters the ecosystem.
 
 ---

@@ -141,6 +141,7 @@ Khác với một kho lưu trữ code thông thường, OmniClaw là một hệ 
 * 🚦 [**Bảng Điều Khiển Khởi Động**](docs/usage_guides/ACTIVATION_GUIDE-vn.md) — Danh sách Port và lệnh khởi động cho toàn bộ dịch vụ Local (LobsterBoard, LightRAG, v.v.).
 * 🧩 [**Bản Đồ Plugins & Kỹ Năng**](docs/architecture/SKILLS_AND_PLUGINS_MAP-vn.md) — Mục lục tham chiếu 100+ kỹ năng và Plugins dành cho AI Agent.
 * 📊 [**Kho Dữ Liệu Khoa Học**](docs/usage_guides/DATA_SCIENCE_LIBRARY-vn.md) — Danh sách các Repositories mẫu về Machine Learning & RAG hiện hành.
+* 🏛️ [**Tứ Trụ Daemon & OER — Quản Trị Hệ Sinh Thái**](docs/architecture/CORE_DAEMONS_AND_OER-vn.md) — 4 Core Daemon (OIW/OHD/OA/OER), Ma Trận Phân Quyền và Pipeline 5-Gate tự động toàn diện.
 
 ---
 
