@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-    AI OS - External Skill Fetcher
+    OmniClaw - External Skill Fetcher
     Fetches skill files from external sources (GitHub, web) defined in EXTERNAL_SKILL_SOURCES.yaml.
     All fetched skills land in skills/experimental/ for review before promotion.
 .DESCRIPTION
@@ -32,7 +32,7 @@ $Timestamp       = Get-Date -Format "yyyyMMdd-HHmmss"
 
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor Cyan
-Write-Host "  AI OS EXTERNAL SKILL FETCHER                   " -ForegroundColor Cyan
+Write-Host "  OmniClaw EXTERNAL SKILL FETCHER                   " -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -146,7 +146,7 @@ New-Item -ItemType Directory -Path $destFolder -Force | Out-Null
 if ($source.method -like "github_api*") {
     $repoPath = $source.url -replace "https://github.com/", ""
     $apiUrl   = "https://api.github.com/repos/$repoPath/zipball/main"
-    $zipPath  = Join-Path $env:TEMP "aios_fetch_$Timestamp.zip"
+    $zipPath  = Join-Path $env:TEMP "omniclaw_fetch_$Timestamp.zip"
 
     Write-Host "Fetching from GitHub: $apiUrl" -ForegroundColor Yellow
 

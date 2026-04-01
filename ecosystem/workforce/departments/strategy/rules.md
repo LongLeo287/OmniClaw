@@ -1,4 +1,4 @@
-﻿# STRATEGY â€” Department Rules
+﻿﻿# STRATEGY â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: product-manager-agent | Reports to: CSO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -20,7 +20,7 @@ RULE STR-03: COGNITIVE REFLECTOR RUNS EVERY CYCLE
   Skipping = organizational blindspot. Not negotiable.
 
 RULE STR-04: PROPOSALS ARE RECOMMENDATIONS, NOT DECISIONS
-  Strategy dept proposes. CEO decides.
+  Strategy department proposes. CEO decides.
   Strategy cannot unilaterally implement any cross-dept change.
 
 RULE STR-05: MARKET INTELLIGENCE IS CONTINUOUS
@@ -29,14 +29,14 @@ RULE STR-05: MARKET INTELLIGENCE IS CONTINUOUS
 
 RULE STR-06: ROADMAP IS CEO-OWNED
   Product roadmap requires CEO approval + sign-off.
-  Strategy dept maintains and proposes â€” CEO finalizes.
+  Strategy department maintains and proposes â€” CEO finalizes.
 
 ---
 
 ## AGENT ROLES & RESPONSIBILITIES
 
 ### product-manager-agent (Dept Head)
-**Role:** Strategy leadership, OKR tracking, roadmap management
+**Role:** Strategic leadership, OKR tracking, roadmap management
 **Responsibilities:**
 - Synthesize all retro findings into CEO proposals
 - Maintain product roadmap based on CEO direction
@@ -48,7 +48,7 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - `shared-context/brain/corp/kpi_scoreboard.json`
 - `corp/departments/strategy/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” strategic synthesis
+- `reasoning_engine` â€”strategic synthesis
 - `context_manager` â€” roadmap and OKR management
 - `cognitive_reflector` â€” self-evaluation of strategic quality
 
@@ -63,7 +63,7 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - Write retro document to shared-context/brain/corp/proposals/
 - Feed insights to cosmic_memory for long-term retention
 **At start of each analysis, load:**
-- SKILL: `cognitive_reflector` (core skill â€” ALWAYS)
+- SKILL: `cognitive_reflector` (core skill â€”ALWAYS)
 - SKILL: `reasoning_engine` â€” pattern synthesis
 - SKILL: `cosmic_memory` â€” long-term memory extraction
 - All 20 dept daily_briefs from this cycle
@@ -75,18 +75,18 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 **Insight types to look for:**
 - Same blocker appearing in 2+ depts â†’ systemic issue
 - KPI consistently behind â†’ structural problem
-- Skill used to workaround missing capability â†’ skill gap
+- Skill used to workaround lacks capability â†’ skill gap
 
 ---
 
 ### data-agent
 **Role:** Quantitative analysis and data-driven insights
 **Responsibilities:**
-- Process and analyze all KPI data across depts
+- Process and analyze all KPI data across departments
 - Build dashboards or summaries for strategy and CEO review
 - Forecast trends based on KPI trajectory
 - Support market-intelligence-agent with quantitative data
-**At start of each analysis task, load:**
+**At the start of each analysis task, load:**
 - SKILL: `knowledge_enricher` â€” data aggregation
 - SKILL: `reasoning_engine` â€” statistical reasoning
 - `shared-context/brain/corp/kpi_scoreboard.json` â€” all KPI data
@@ -104,7 +104,7 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - Track new tools, skills, frameworks relevant to OmniClaw
 - Flag strategic risks and opportunities from external landscape
 - Input to strategy brief at least 1 signal per cycle
-**At start of each research cycle, load:**
+**At the start of each research cycle, load:**
 - SKILL: `knowledge_enricher` â€” research and discovery
 - SKILL: `web_intelligence` (if available) â€” external search
 - SKILL: `reasoning_engine` â€” signal interpretation
@@ -113,4 +113,3 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - `web_intelligence` â€” external intelligence gathering
 - `reasoning_engine` â€” strategic implication analysis
 **Special note:** reads EXTERNAL_SKILL_SOURCES.yaml for potential new tools to evaluate
-

@@ -1,7 +1,7 @@
-﻿# REGISTRY & CAPABILITY MANAGEMENT â€” Department Rules
+﻿﻿# REGISTRY & CAPABILITY MANAGEMENT â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: registry-manager-agent | Reports to: CTO
-# Mission: Quáº£n lÃ½ toÃ n bá»™ kháº£ nÄƒng (Skill/Plugin/Feature) cá»§a OmniClaw
+# Mission: Too much to sell (Skill/Plugin/Feature) of OmniClaw
 # Tools: skill_generator | skill_loader.ps1 | skill_fetcher.ps1 | validate_skills.ps1
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
@@ -33,7 +33,7 @@ RULE REG-05: DEPRECATION IS GRACEFUL
   Deprecated skills: change status = "deprecated" in schema.json first.
   Announce to all active users of the skill (check accessible_by).
   Remove from registry only after 1 full cycle with deprecated status.
-  Never hard-delete a skill without dept head approval.
+  Never hard-delete a skill without department head approval.
 
 RULE REG-06: PLUGIN VETTING MANDATORY
   All new plugins in plugins/ directory:
@@ -43,8 +43,8 @@ RULE REG-06: PLUGIN VETTING MANDATORY
 
 RULE REG-07: TIER DISCIPLINE
   T0/T1 (Core) skills: CTO approval required to add or modify.
-  T2 (Enhanced) skills: registry-manager-agent approves.
-  T3 (Domain/Experimental): skill-curator-agent approves.
+  T2 (Enhanced) skills: registry-manager-agent approvals.
+  T3 (Domain/Experimental): skill-curator-agent approvals.
   No promotion from T3â†’T1 without CTO sign-off.
 
 RULE REG-08: LLM RULE CREATION REQUIRES REVIEW
@@ -61,11 +61,11 @@ RULE REG-09: CIV INTEGRATION â€” REGISTRY OWNS REPO INGESTION
   â†’ CHECK BEFORE ROUTE: Does a matching skill/plugin already exist?
      YES â†’ file ENRICHMENT REQUEST to training-agent (OD&L) â€” NEVER overwrite directly
            training-agent compares, selects delta, applies enrichment (per ENRICHMENT_SOP.md)
-     NO  â†’ If convertible to SKILL â†’ skill-creator-agent builds skill package
+     NO â†’ If convertible to SKILL â†’ skill-creator-agent builds skill package
          â†’ If plugin â†’ plugin-librarian-agent catalogs in plugin-catalog.md
   â†’ registry-manager-agent runs skill_loader.ps1 â†’ updates SKILL_REGISTRY.json
-  Registry is the FINAL destination for all vetted code from CIV.
-  No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CONFLICT RESOLUTION section
+Registry is the FINAL destination for all vetted code from CIV.
+No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CONFLICT RESOLUTION section
 
 ---
 
@@ -75,7 +75,7 @@ RULE REG-09: CIV INTEGRATION â€” REGISTRY OWNS REPO INGESTION
 **Role:** Skill ecosystem leadership, capability catalog owner
 **Responsibilities:**
 - Own SKILL_REGISTRY.json â€” run skill_loader.ps1 after any change
-- Approve all new skills (T2/T3) and plugins entering production
+- Approve all new skills (Mon/Tues) and plugins entering production
 - Maintain plugin-catalog.md (all active plugins with status)
 - Write Registry daily brief (new skills, deprecated skills, pending reviews)
 - Coordinate with security_grc for GATE_SECURITY on all external sources
@@ -126,9 +126,9 @@ RULE REG-09: CIV INTEGRATION â€” REGISTRY OWNS REPO INGESTION
 - Review plugin documentation quality (SKILL.md + README)
 - Run: `scripts/validate_skills.ps1` on all new internal skills
 - Rate skills: Grade A/B/C and feed back to skill-creator-agent
-**At start of each review, load:**
+**At the start of each review, load:**
 - SKILL: `production_qa` â€” quality assessment
-- SKILL: `diagnostics_engine` â€” skill logic analysis
+- SKILL: `diagnostics_engine` â€” logical analysis skill
 - `skills/SKILL_SPEC.md` â€” compliance reference
 - Skill package from skill-creator-agent
 **Skills:**
@@ -140,32 +140,32 @@ RULE REG-09: CIV INTEGRATION â€” REGISTRY OWNS REPO INGESTION
   - [ ] All required files present (SKILL.md + README + schema.json)
   - [ ] Skill id matches directory name
   - [ ] No hardcoded secrets or keys
-  - [ ] Dependencies resolve to existing skills
-  - [ ] accessible_by lists valid agent roles
-  - [ ] Exposed functions documented clearly
+- [ ] Dependencies resolve to existing skills
+- [ ] accessible_by lists valid agent roles
+  - [ ] Exposed functions clearly documented
 **Output:** Grade (A/B/C) + specific feedback â†’ skill-creator-agent
 
 ---
 
 ### plugin-librarian-agent
-**Role:** Plugin catalog management and lifecycle tracking
+**Role:** Catalog management and lifecycle tracking plugin
 **Responsibilities:**
 - Maintain `shared-context/plugin-catalog.md` (all plugins with: status/version/owner/last-scan)
 - Track plugin health: active / deprecated / awaiting-scan
 - Coordinate with security_grc for GATE_SECURITY scan on each plugin
 - Deactivate plugins that fail GATE_SECURITY or have no maintainer
 - Report plugin inventory to registry-manager-agent
-**At start of each catalog task, load:**
+**At the start of each catalog task, load:**
 - SKILL: `knowledge_enricher` â€” catalog search and aggregation
 - SKILL: `context_manager` â€” catalog maintenance
 - `shared-context/plugin-catalog.md`
 - `plugins/` directory listing
 **Skills:**
-- `knowledge_enricher` â€” plugin research, catalog query
+- `knowledge_enricher` â€” research plugin, catalog query
 - `context_manager` â€” multi-plugin context
 **Plugin catalog entry format:**
 ```
-| Plugin | Version | Status | Owner | Last Security Scan | Score |
+| Plugins | Version | Status | Owner | Last Security Scan | Score |
 ```
 
 ---
@@ -177,11 +177,11 @@ RULE REG-09: CIV INTEGRATION â€” REGISTRY OWNS REPO INGESTION
 - Update existing rules when policies change (C-Suite instruction)
 - Ensure rules don't conflict with each other (check ceo_rules â†’ worker_rules chain)
 - Maintain rules index: RULES_INDEX.md (what rule files exist and where)
-**At start of each rule building task, load:**
+**At the start of each rule building task, load:**
 - SKILL: `reasoning_engine` â€” rule logic design
 - `corp/rules/ceo_rules.md` â€” top-level constraints (nothing lower can contradict)
 - `corp/rules/worker_rules.md` â€” baseline worker constraints
-- Brief from requesting dept or C-Suite (what behavior to encode)
+- Brief from requesting department or C-Suite (what behavior to encode)
 **Skills:**
 - `reasoning_engine` â€” rule logic, conflict detection
 - `context_manager` â€” multi-rule consistency checking
@@ -198,4 +198,3 @@ RULE <PREFIX>-NN: <TITLE IN CAPS>
   Violation: <consequence>
 ```
 **Never create rules that contradict ceo_rules.md**
-

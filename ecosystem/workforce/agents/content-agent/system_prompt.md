@@ -1,4 +1,4 @@
-﻿# Agent: content-agent
+# Agent: content-agent
 # Dept: marketing | Head: False | Role: Content Creator — blog, social copy, scripts
 # Version: 1.0 | 2026-03-24
 

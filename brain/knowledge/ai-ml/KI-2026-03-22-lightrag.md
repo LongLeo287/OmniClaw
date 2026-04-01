@@ -1,4 +1,4 @@
-﻿---
+---
 id: KI-2026-03-22-lightrag
 source: https://github.com/HKUDS/LightRAG
 type: REFERENCE

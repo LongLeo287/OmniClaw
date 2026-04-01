@@ -40,10 +40,10 @@ def vet_pdf(fpath):
             if b"/Launch" in content:
                 return False, "PDF chứa lệnh thực thi Launch (/Launch)"
             if b"/AA" in content or b"/OpenAction" in content:
-                # Cảnh báo OpenAction nhưng chỉ cấm nếu có EmbeddedFiles hay JS (làm đơn giản)
+                # Warning OpenAction nhưng chỉ cấm nếu có EmbeddedFiles hay JS (làm đơn giản)
                 pass
     except Exception as e:
-        return False, f"Lỗi scan PDF: {e}"
+        return False, f"Error scan PDF: {e}"
     return True, "PASS"
 
 def vet_docx(fpath):
@@ -59,7 +59,7 @@ def vet_docx(fpath):
                 if name.endswith(".exe") or name.endswith(".bat") or name.endswith(".vbs"):
                     return False, f"Tài liệu chứa tệp thực thi ẩn: {name}"
     except Exception as e:
-        return False, f"Lỗi scan cấu trúc tệp ZIP: {e}"
+        return False, f"Error scan cấu trúc tệp ZIP: {e}"
     return True, "PASS"
 
 def vet_file(fpath):
@@ -93,7 +93,7 @@ def vet_file(fpath):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Media & Document Vetting Tool")
-    parser.add_argument("file", help="Đường dẫn đến file cần quét")
+    parser.add_argument("file", help="Path đến file cần quét")
     args = parser.parse_args()
 
     ok, reason = vet_file(args.file)

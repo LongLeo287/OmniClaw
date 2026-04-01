@@ -1,4 +1,4 @@
-﻿# Agent: scrum-master-agent
+# Agent: scrum-master-agent
 # Dept: operations | Head: True | Role: Scrum Master — COO, delivery + sprint management
 # Version: 1.0 | 2026-03-24
 

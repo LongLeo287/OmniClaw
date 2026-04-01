@@ -7,14 +7,14 @@ from pathlib import Path
 from dotenv import load_dotenv
 from huggingface_hub import HfApi, login
 
-# Configuration
+# Configuration (Dynamic paths)
 AI_OS_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 SECRETS_FILE = AI_OS_ROOT / "system" / "ops" / "secrets" / "MASTER.env"
-DATASET_REPO = "LongLeo/OmniClaw-Data-Vault"
+DATASET_REPO = "OmniClaw_Admin/OmniClaw-Data-Vault"
 
 # =========================================================================
-# DATA VAULT TARGETS: LỢI HẠI NHẤT
-# Chỉ push các thư mục này. Bỏ qua hoàn toàn quét root để tránh ma trận thư mục rác.
+# DATA VAULT TARGETS
+# Only push these highly curated folders. Ignore everything else.
 # =========================================================================
 TARGET_VAULTS = [
     "brain/memory",
@@ -30,103 +30,97 @@ def load_environment():
     
     hf_token = os.getenv("HF_TOKEN")
     if not hf_token:
-        print("[ERROR] HF_TOKEN missing from MASTER.env or environment.")
+        print("[ERROR] HF_TOKEN missing from MASTER.env or environment variables.")
         exit(1)
     return hf_token
 
 def push_delta_to_huggingface(hf_token):
-    print("\n🔑 Authenticating with Hugging Face...")
+    print("\n Authenticating with Hugging Face...")
     login(token=hf_token)
     api = HfApi()
     
-    print(f"🔍 Validating HF repository: {DATASET_REPO}")
+    print(f" Validating HF repository: {DATASET_REPO}")
     try:
         api.dataset_info(DATASET_REPO)
-        print("✅ HF Repository exists.")
+        print(" HF Repository exists.")
     except Exception as e:
-        print("⚠️ HF Repository not found or inaccessible. Creating a new private dataset repository...")
+        print(" HF Repository not found or inaccessible. Creating a new private dataset repository...")
         try:
             api.create_repo(repo_id=DATASET_REPO, repo_type="dataset", private=True, exist_ok=True)
-            print("✅ Created new repository on HF.")
+            print(" Created new repository on Hugging Face.")
         except Exception as ce:
-            print(f"❌ KHÔNG THỂ TẠO DATASET MỚI! Sếp cần cài đặt Token có quyền 'Write' (Tạo Repo): {ce}")
+            print(f" CANNOT CREATE NEW DATASET! Missing 'Write' permissions on HF Token: {ce}")
             return False
 
-    print("🚀 Khởi chạy Delta-Sync lên Hugging Face (Trạm 1)...")
+    print(" Initiating Delta-Sync to Hugging Face...")
     success = True
     for folder in TARGET_VAULTS:
         folder_path = AI_OS_ROOT / folder
         if folder_path.exists() and folder_path.is_dir():
-            print(f"   [HF] Đang bắn tỉa thư mục: {folder} ...")
+            print(f"   [HF] Synchronizing heavy vault folder: {folder} ...")
             try:
-                # HF upload_folder native support path_in_repo mapping!
                 api.upload_folder(
                     folder_path=str(folder_path),
                     repo_id=DATASET_REPO,
                     repo_type="dataset",
-                    path_in_repo=folder, # Upload directly to the correct subpath in the cloud
-                    ignore_patterns=IGNORE_PATTERNS, # CHẶN RÁC
+                    path_in_repo=folder,
+                    ignore_patterns=IGNORE_PATTERNS,
                     commit_message=f"OmniClaw Vault Sync [{folder}]: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                 )
             except Exception as e:
-                print(f"      ❌ Lỗi khi tải {folder} lên HF: {e}")
+                print(f"       Failed to push {folder} to HF: {e}")
                 success = False
         else:
-            print(f"   [HF] Bỏ qua {folder} (Không tồn tại hoặc bị xóa)")
+            print(f"   [HF] Skipping {folder} (Path does not exist)")
 
     if success:
-        print(f"\n✅ HF ĐỒNG BỘ HOÀN TẤT: Toàn bộ Lõi đã an tọa (Không kèm rác).")
+        print(f"\n HF SYNC COMPLETE: Core data vaults preserved (Trash excluded).")
     return success
 
 def scrub_ghost_folders(rclone_exe):
-    print("\n🧹 Bắt đầu rà soát và thanh trừng thư mục rác trên Google Drive...")
+    print("\n Scrubbing and purging ghost trash folders on Google Drive...")
     try:
-        # Lấy danh sách tất cả các files/folders Layer 0 trên Drive
         result = subprocess.check_output([str(rclone_exe), "lsf", "gdrive:OmniClaw-Data-Vault"], text=True)
         items = result.strip().split("\n")
         
-        allowed_roots = [d.split('/')[0] + "/" for d in TARGET_VAULTS] # ví dụ 'brain/', 'storage/', 'ecosystem/'
+        allowed_roots = [d.split('/')[0] + "/" for d in TARGET_VAULTS]
         
         folders_deleted = 0
         for item in items:
             if not item: continue
-            # Nếu là thư mục (cuối bằng /) và không thuộc nhóm cốt lõi
             if item.endswith("/") and item not in allowed_roots:
                 junk_dir = f"gdrive:OmniClaw-Data-Vault/{item.strip('/')}"
-                print(f"   🔥 Đang Tàn Sát thư mục rác: {junk_dir}")
+                print(f"    Purging unexpected root directory on Cloud: {junk_dir}")
                 subprocess.run([str(rclone_exe), "purge", junk_dir], check=True)
                 folders_deleted += 1
                 
         if folders_deleted > 0:
-            print(f"✅ Đã dọn sạch {folders_deleted} thư mục Lõi Rác trên GDrive!")
+            print(f" Successfully vaporized {folders_deleted} ghost directories on Google Drive!")
         else:
-            print("✅ Ổ đĩa GDrive hiện tại đã thanh khiết. Không có thư mục lạ.")
+            print(" Google Drive space is perfectly clean. No anomalies detected.")
             
     except subprocess.CalledProcessError as e:
-         print(f"   ⚠️ Lỗi cản trở quá trình thanh trừng: {e}")
+         print(f"    Warning: Scrubbing process encountered an obstacle: {e}")
 
 def push_delta_to_googledrive():
-    rclone_exe = AI_OS_ROOT / "system/ops/tools/rclone/rclone.exe"
+    rclone_exe = AI_OS_ROOT / "system" / "ops" / "tools" / "rclone" / "rclone.exe"
     if not rclone_exe.exists():
-        print("\n⚠️ SYSTEM: Chưa phát hiện Rclone (Google Drive Engine). Bỏ qua bước đồng bộ phụ.")
+        print("\n WARNING: Rclone binary missing. Google Drive synchronization skipped.")
         return False
 
-    # Check if gdrive is configured
     try:
         remotes = subprocess.check_output([str(rclone_exe), "listremotes"], text=True)
         if "gdrive:" not in remotes:
-            print("\n❌ LỖI RCLONE: Chưa xác thực Google Drive!")
+            print("\n RCLONE ERROR: 'gdrive:' remote is not authenticated!")
             return False
     except Exception as e:
         return False
 
-    # Dọn dẹp rác ma trước khi đẩy
     scrub_ghost_folders(rclone_exe)
 
-    print("\n🚀 Khởi chạy Delta-Sync lên Google Drive (Trạm 2)...")
+    print("\n Initiating Delta-Sync to Google Drive...")
     success = True
     
-    # Tạo danh sách cờ chặn (Filters) cho Rclone
     filter_args = []
     for ignore in IGNORE_PATTERNS:
         if ignore.startswith("*"):
@@ -137,52 +131,49 @@ def push_delta_to_googledrive():
     for folder in TARGET_VAULTS:
         folder_path = AI_OS_ROOT / folder
         if folder_path.exists() and folder_path.is_dir():
-             print(f"   [GDrive] Đang bắn tỉa thư mục: {folder} ...")
+             print(f"   [GDrive] Synchronizing heavy vault folder: {folder} ...")
              try:
-                 # Rclone thẳng vào thư mục đích với MÀNG LỌC
                  cmd = [
                      str(rclone_exe), "sync", str(folder_path), f"gdrive:OmniClaw-Data-Vault/{folder}",
-                     "--delete-excluded", # TUYỆT KỸ: Gặp rác trên GDrive thì Vung Đao Chém!
+                     "--delete-excluded",
                      "--fast-list", "--transfers", "16", "--checkers", "16",
-                     "--stats", "30s" # Giảm spam log
+                     "--stats", "30s"
                  ] + filter_args
                  
                  subprocess.run(cmd, check=True)
              except subprocess.CalledProcessError as e:
-                 print(f"      ❌ GDrive lỗi khi sync {folder}: {e}")
+                 print(f"       GDrive synchronization failed for {folder}: {e}")
                  success = False
         else:
-             print(f"   [GDrive] Bỏ qua {folder} (Không tìm thấy)")
+             print(f"   [GDrive] Skipping {folder} (Path does not exist)")
 
     if success:
-        print("\n✅ GDRIVE ĐỒNG BỘ HOÀN TẤT. Hệ thống không còn lẫn 1 file rác nào.")
+        print("\n GDRIVE SYNC COMPLETE. 100% Absolute Mirror with Zero Trash.")
     return success
         
 import omniclaw_cleanup_crew
 
 def main():
     print("=====================================================")
-    print(" OmniClaw Data Vault - TARGETED VAULT PIPELINE")
+    print(" OmniClaw Core Vault - TARGETED DATA PIPELINE")
     print("=====================================================")
     hf_token = load_environment()
     
-    # 🧹 KÍCH HOẠT ĐỘI DỌN DẸP TRƯỚC KHI PUSH
+    # TRIGGER PRE-FLIGHT CLEANUP CHECK
     omniclaw_cleanup_crew.deploy_cleanup_crew(TARGET_VAULTS)
     
-    print("\n⚡ BẮT ĐẦU VẬN HÀNH QUY TRÌNH BẮN TỈA TÀI NGUYÊN ⚡\n")
+    print("\n INITIATING MASSIVE CLOUD DATA UPLOAD \n")
     
-    # We will run them sequentially in terminal script (easier UX tracking) 
-    # instead of overlapping outputs since RClone Scrub takes terminal output
     hf_success = push_delta_to_huggingface(hf_token)
     gd_success = push_delta_to_googledrive()
     
     print("\n=====================================================")
     if hf_success or gd_success:
-        print("🎉 TRẠNG THÁI CUỐI: HOÀN TẤT")
-        if hf_success: print("   - [ON] Trạm Hugging Face An Toàn")
-        if gd_success: print("   - [ON] Trạm Google Drive Thanh Khiết")
+        print(" FINAL STATUS: OPERATION SUCCEEDED")
+        if hf_success: print("   - [ON] Hugging Face Station Secure")
+        if gd_success: print("   - [ON] Google Drive Sector Purified")
     else:
-        print("⚠️ TRẠNG THÁI: TẠM NGỪNG DO LỖI VẬN HÀNH")
+        print(" FINAL STATUS: OPERATION HALTED DUE TO ERRORS")
     print("=====================================================")
         
 if __name__ == "__main__":

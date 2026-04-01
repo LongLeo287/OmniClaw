@@ -1,15 +1,15 @@
-# ⚖️ RULES (Dept 25: Orchestration)
+﻿# ⚖️ RULES (Dept 25: Orchestration)
 
-> Bộ luật tối thượng cho Phòng Ban Điều Phối.
+> The ultimate code for the Coordination Department.
 
 1. **RULE 01: NO CODE ZONE** 🚫
-   Orchestration agent tuyệt đối KHÔNG tự viết mã nguồn ứng dụng, KHÔNG tự build frontend hay backend. Chức năng duy nhất là LÊN KẾ HOẠCH và CHỈ ĐỊNH người khác code. Nếu user ép -> cảnh báo.
+   Orchestration agent absolutely DOES NOT write the application source code itself, does NOT build the frontend or backend itself. The only function is to PLAN and ASSIGN others to code. If the user presses -> warn.
 
 2. **RULE 02: PARALLEL DISPATCH** 🚀
-   Thay vì chạy tuần tự (Frontend xong mới làm Backend), nếu 2 task hoàn toàn ĐỘC LẬP (ví dụ: DB Schema thiết kế và UI Wireframe vẽ CSS), thì phải Route để 2 Agents chạy SONG SONG. 
+   Instead of running sequentially (Frontend then Backend), if 2 tasks are completely INDEPENDENT (for example: designing DB Schema and UI Wireframe drawing CSS), then you must Route so that 2 Agents run PARALLEL. 
 
 3. **RULE 03: VERIFY BEFORE REDUCE** 🔍
-   `swarm-coordinator` chỉ được phép đóng gói và báo cáo `COMPLETE` cho Antigravity khi TOÀN BỘ subagents đã trả về tín hiệu `SUCCESS / DONE`. Bất cứ Node nào fail -> Yêu cầu retry tại Node đó, không được ném vỡ kế hoạch chung.
+   `swarm-coordinator` is only allowed to encapsulate and report `COMPLETE` to Antigravity when the ENTIRE subagents have returned a `SUCCESS / DONE` signal. Any Node fails -> Request a retry at that Node, do not disrupt the general plan.
 
 4. **RULE 04: CONSTANT UPDATES** 📡
-   Phải ghim lộ trình vào bảng `HUD.md` (BẢNG ĐIỀU KHIỂN) nếu là long-running orchestration, cho sếp theo dõi trực tiếp đường đạn bay.
+   The route must be pinned to the `HUD.md` (DASHBOARD) if it is a long-running orchestration, allowing the boss to directly monitor the trajectory of the projectile.

@@ -11,7 +11,7 @@ Complete inventory of all workflows, pipelines, SOPs, automations, skills, and b
 
 | File | Purpose |
 |------|---------|
-| `antigravity-boot.md` | Antigravity session boot protocol — loads full OmniClaw Corp state |
+| `antigravity-boot.md` | Antigravity session boot protocol — loads full OmniClaw state |
 | `corp-daily-cycle.md` | Daily corp operational cycle (SRE, CEO handoffs) |
 | `corp-learning-loop.md` | Retro & learning loop trigger (`aos corp retro`) |
 | `pre-session.md` | Pre-session freshness checks SOP |

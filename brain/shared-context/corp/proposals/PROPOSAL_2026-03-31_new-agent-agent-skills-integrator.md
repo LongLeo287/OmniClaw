@@ -1,4 +1,4 @@
-﻿---
+---
 proposal_id: PROPOSAL-2026-03-31-001
 status: DRAFT
 created: 2026-03-31T01:21:39

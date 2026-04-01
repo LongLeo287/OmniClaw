@@ -3,7 +3,7 @@
 # Version: latest | Installed: 2026-03-24
 # RULE-AGENT-PLATFORM-01: Không độc quyền — setup cho ALL platforms
 
-## Mô tả
+## Description
 
 Context7 là MCP server cung cấp documentation thư viện real-time cho LLM. Giải quyết hallucinated APIs và outdated code examples.
 

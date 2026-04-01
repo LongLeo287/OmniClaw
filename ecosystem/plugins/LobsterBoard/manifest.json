@@ -53,5 +53,5 @@
     "API Status (provider availability)"
   ],
   "tags": ["dashboard", "openClaw", "monitoring", "widgets", "self-hosted", "ai-usage", "Antigravity"],
-  "relation_to_aios": "Provides visual dashboard for OmniClaw monitoring — especially the Antigravity + Claude Code AI usage widgets match directly"
+  "relation_to_omniclaw": "Provides visual dashboard for OmniClaw monitoring — especially the Antigravity + Claude Code AI usage widgets match directly"
 }

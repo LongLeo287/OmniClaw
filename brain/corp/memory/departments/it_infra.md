@@ -1,4 +1,4 @@
-﻿# it_infra — Department Memory
+# it_infra — Department Memory
 # Owner: Dept Head | Retention: 30-day rolling | Layer: Department
 # Updated: 2026-03-17 | Format: see brain/corp/memory/MEMORY_SPEC.md
 

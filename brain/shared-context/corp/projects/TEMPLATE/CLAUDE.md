@@ -1,4 +1,4 @@
-﻿# Project: [PROJECT_NAME] â€” OmniClaw Connected
+# Project: [PROJECT_NAME] â€” OmniClaw Connected
 # PRJ-ID: PRJ-XXX
 # Status: active
 # Updated: [DATE]

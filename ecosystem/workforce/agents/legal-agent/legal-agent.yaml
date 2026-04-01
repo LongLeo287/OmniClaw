@@ -1,10 +1,10 @@
-# Agent Configuration — legal-agent
+﻿# Agent Configuration — legal-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: legal-agent
 version: 1.0.0
 status: active
-description: "Đảm bảo tuân thủ pháp lý, quản lý license, GDPR compliance cho toàn hệ thống OmniClaw"
+description: "Ensure legal compliance, license management, GDPR compliance for the entire OmniClaw system"
 domain: ecosystem
 type: workforce-agent
 department: legal

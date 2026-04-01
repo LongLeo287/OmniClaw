@@ -1,4 +1,4 @@
-﻿# [RULE-DYNAMIC-01] No Hardcoding Policy
+# [RULE-DYNAMIC-01] No Hardcoding Policy
 # Issued by: CEO LongLeo | Date: 2026-03-22 | Status: MANDATORY
 # Scope: All agents, all rule files, all boot files, all scripts
 

@@ -1,4 +1,4 @@
-﻿# Strix Vet Report: agent-skills-standard
+# Strix Vet Report: agent-skills-standard
 **Date:** 2026-03-14 10:50:00
 **Status:** WARN
 **Critical Findings:** 0

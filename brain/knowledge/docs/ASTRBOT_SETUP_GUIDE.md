@@ -1,4 +1,4 @@
-﻿# OmniClaw Corp â€” AstrBot Setup Guide
+# OmniClaw Corp â€” AstrBot Setup Guide
 # Dept 03 (IT Infrastructure) | Updated: 2026-03-18
 
 ## BÆ°á»›c 1: Láº¥y thÃ´ng tin cáº§n thiáº¿t

@@ -1,9 +1,9 @@
-﻿# SKILL_SPEC.md â€” OmniClaw Skill Schema Standard
+# SKILL_SPEC.md — OmniClaw Skill Schema Standard
 # Version: 1.1 | Updated: 2026-03-14
 
 ## Purpose
 
-This document defines the **mandatory schema** for every OS-level skill in `AI_OS_ROOT\skills\`.
+This document defines the **mandatory schema** for every OS-level skill in `$OMNICLAW_ROOT\skills\`.
 All skills MUST conform to this spec. Non-conforming skills will be rejected by the Skill Loader.
 
 ---
@@ -12,17 +12,17 @@ All skills MUST conform to this spec. Non-conforming skills will be rejected by 
 
 ```
 skills/
-â””â”€â”€ <skill_id>/
-    â”œâ”€â”€ SKILL.md          [REQUIRED] â€” Manifest & instructions
-    â”œâ”€â”€ README.md         [REQUIRED] â€” Human-readable usage guide
-    â”œâ”€â”€ schema.json       [REQUIRED] â€” Machine-readable metadata
-    â””â”€â”€ tests/            [OPTIONAL] â€” Validation scripts
-        â””â”€â”€ test_<skill_id>.ps1
+└── <skill_id>/
+    ├── SKILL.md          [REQUIRED] — Manifest & instructions
+    ├── README.md         [REQUIRED] — Human-readable usage guide
+    ├── schema.json       [REQUIRED] — Machine-readable metadata
+    └── tests/            [OPTIONAL] — Validation scripts
+        └── test_<skill_id>.ps1
 ```
 
 ---
 
-## SKILL.md â€” Manifest Format
+## SKILL.md — Manifest Format
 
 Every `SKILL.md` MUST begin with the following YAML frontmatter block:
 
@@ -38,8 +38,8 @@ updated: <YYYY-MM-DD>
 
 # DOMAIN (new in v1.1)
 domain: core | google-workspace | databases | finance | frontend | pos | <custom>
-# domain=core â†’ lives in skills/core/
-# domain=<other> â†’ lives in skills/domains/<domain>/
+# domain=core → lives in skills/core/
+# domain=<other> → lives in skills/domains/<domain>/
 # load_on_boot: false for ALL domain skills (never auto-loaded)
 
 # COST TIER (new in v1.1)
@@ -90,7 +90,7 @@ Followed by the full instruction body in English.
 
 ---
 
-## schema.json â€” Machine-Readable Metadata
+## schema.json — Machine-Readable Metadata
 
 ```json
 {
@@ -99,7 +99,7 @@ Followed by the full instruction body in English.
   "version": "<SemVer>",
   "tier": 1,
   "status": "active",
-  "path": "AI_OS_ROOT\\skills\\<skill_id>\\SKILL.md",
+  "path": "$OMNICLAW_ROOT\\skills\\<skill_id>\\SKILL.md",
   "accessible_by": ["Orchestrator", "Claude Code"],
   "dependencies": [],
   "exposed_functions": [
@@ -128,13 +128,13 @@ Followed by the full instruction body in English.
 | **3** | Domain/Manual | Project-specific, external, or experimental | Manual-load only |
 
 **Domain skill location:**
-- `domain: core` â†’ `skills/[skill_id]/SKILL.md`
-- `domain: google-workspace` â†’ `skills/domains/google-workspace/<skill>.md`
-- `domain: databases` â†’ `skills/domains/databases/<skill>.md`
-- `domain: finance` â†’ `skills/domains/finance/<skill>.md`
-- `domain: frontend` â†’ `skills/domains/frontend/<skill>.md`
-- `domain: pos` â†’ `skills/domains/pos/<skill>.md`
-- Proposals â†’ `skills/experimental/PROPOSAL_<name>_<date>.md`
+- `domain: core` → `skills/[skill_id]/SKILL.md`
+- `domain: google-workspace` → `skills/domains/google-workspace/<skill>.md`
+- `domain: databases` → `skills/domains/databases/<skill>.md`
+- `domain: finance` → `skills/domains/finance/<skill>.md`
+- `domain: frontend` → `skills/domains/frontend/<skill>.md`
+- `domain: pos` → `skills/domains/pos/<skill>.md`
+- Proposals → `skills/experimental/PROPOSAL_<name>_<date>.md`
 
 **Cost tier guide:**
 - `economy` = simple lookups, formatting, data transforms
@@ -208,10 +208,10 @@ Skills failing validation are marked `"status": "error"` in `SKILL_REGISTRY.json
 
 ```
 skills/
-â””â”€â”€ example_skill/
-    â”œâ”€â”€ SKILL.md       # With YAML frontmatter
-    â”œâ”€â”€ README.md      # Usage instructions
-    â””â”€â”€ schema.json    # Machine metadata
+└── example_skill/
+    ├── SKILL.md       # With YAML frontmatter
+    ├── README.md      # Usage instructions
+    └── schema.json    # Machine metadata
 ```
 
 `skills/example_skill/SKILL.md`:

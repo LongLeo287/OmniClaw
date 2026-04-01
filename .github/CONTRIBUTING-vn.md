@@ -1,55 +1,55 @@
 # 🛠️ Hướng Dẫn Đóng Góp (Contributing to OmniClaw Corp)
 
+[**🇬🇧 View English Version**](CONTRIBUTING.md)
+
 > **"Mã Nguồn (Code) là Luật. Bảo Mật là Sinh Mệnh."**
 > — BỘ CHỈ HUY KIẾN TRÚC OmniClaw
 
-Lời đầu tiên, xin chân thành cảm ơn Sếp vì đã cân nhắc đóng góp thêm cho hệ sinh thái OmniClaw Corp! Cho dù Sếp là Kỹ sư Tối cao, Nhà nghiên cứu AI hay Đặc vụ Máy Tín (Autonomous Agent), những đóng góp của Sếp chính là màng chắn cốt lõi, biến OmniClaw thành hệ điều hành tự trị Zero-Trust mạnh nhất.
+Cảm ơn bạn đã cân nhắc đóng góp cho hệ sinh thái OmniClaw Corp! Dù bạn là Kỹ sư, Nhà nghiên cứu AI hay Agent tự trị, những đóng góp của bạn giúp OmniClaw ngày càng mạnh hơn.
 
-Trước khi nộp bất kỳ Bản sửa đổi nào (Pull Request) hay Thêm chức năng, **BẮT BUỘC** phải đọc và tuân thủ các quy định dưới đây.
-
----
-
-## 🛡️ Vùng Cấm: Chính Sách Zero-Trust
-
-OmniClaw vận hành trên kiến trúc Cấm Tin Tưởng Tuyệt Đối (Zero-Trust). Mọi dòng Code đi từ ngoài vào đều bị Đội Cảnh Khuyển CIV (Content Intake and Vetting) và Hàng rào Máy chủ (GitHub Actions) chặn lại soi xét.
-
-1. **CẤM Hardcode Chìa Khóa (Credentials):** Tuyệt đối không được gõ "chết" các dòng Mật khẩu, API Keys, JWT Tokens hay file `.env` vào Code. Máy quét CodeQL sẽ lập tức đánh Đỏ, và Đơn của Sếp sẽ bị Gạch Bỏ ngay lập tức. Hãy dùng `$env:KEY_NAME` hoặc `process.env`.
-2. **CẤM Hardcode Đường Dẫn Cục Bộ:** OmniClaw là hệ thống cơ động, di động 100%. Không bao giờ được viết đường dẫn máy chủ nhà như `C:\Users\John\...` hay `/Users/Mac/...`. Luôn dùng đường dẫn tương đối (`./scripts`) hoặc Biến môi trường chỉ điểm Thư mục Gốc (`<AI_OS_ROOT>`).
+Trước khi nộp bất kỳ Pull Request (PR) nào, **BẮT BUỘC** phải đọc và tuân thủ các quy định dưới đây.
 
 ---
 
-## 🚀 Quy Trình Nộp Đơn (How to Contribute)
+## 🛡️ Chính Sách Zero-Trust (Bắt Buộc)
 
-Để giữ cho Kho hệ điều hành sạch sẽ như Bệnh viện, toàn bộ tác vụ Code phải đi qua máy chạy Git Flow:
+OmniClaw vận hành theo kiến trúc Zero-Trust. Mọi đoạn code đến từ bên ngoài đều bị pipeline CIV và GitHub Actions kiểm tra tự động.
 
-1. **Copy Bản Sao (Fork):** Clone bản OmniClaw về Sandbox tài khoản GitHub cá nhân của mình.
-2. **Khai Sinh Nhánh Phụ (Feature Branch):** Ngăn chặn Mọi Sửa Đổi Lộn Xộn:
-   `git checkout -b feat/loi-giai-cuu`
-   `git checkout -b fix/phan-giai-path`
-3. **Commit Chuyên Nghiệp:** Thông báo chính xác lý do sửa:
-   - `feat: ...` (Thêm Tính Năng mới)
-   - `fix: ...` (Vá Lỗi bug rách màng)
-   - `docs: ...` (Cập nhật Hướng Dẫn)
-   - `chore(security): ...` (Gia Cố Bảo Mật)
-4. **Push Lên Đám Mây (PR):** Push nhánh vừa Code lên Đảo và mở Đơn xin Nhập Mã (PR) thẳng vào Mạch máu chính `main` của `LongLeo287/omniclaw-local`.
-5. **Chờ Dấu Xanh:** Hệ thống Giả Lập (`ai-os-tests.yml`) sẽ mô phỏng Code của Sếp trong Máy rỗng. Nếu qua cửa (Thấy Xanh), Lãnh đạo hoặc Thư Ký Tự Động (Auto-Merge) sẽ đóng dấu Gộp vào Lõi.
+1. **CẤM Hardcode Credentials:** Không được ghi cứng API Keys, Tokens, Passwords hay file `.env` vào code. Hãy dùng `$env:KEY_NAME` hoặc `process.env`.
+2. **CẤM Hardcode Đường Dẫn Máy Cục Bộ:** OmniClaw phải hoạt động được trên mọi máy. Không bao giờ viết `C:\Path\To\Local\Workspace\...` hay `/var/www/html/...`. Hãy dùng đường dẫn tương đối (`./scripts`) hoặc biến môi trường (`<OMNICLAW_ROOT>`).
 
 ---
 
-## 🤖 Cách Bơm Đặc Vụ/Skill (Agent Plugins)
+## 🚀 Quy Trình Đóng Góp
 
-Nếu Sếp chuẩn bị phát minh thêm một Skill siêu việt, hay một Thực thể Agent mới (Ví dụ như: Antigravity, Nova, Strix):
+1. **Fork Repository:** Clone bản OmniClaw về tài khoản GitHub cá nhân của bạn.
+2. **Tạo Feature Branch:** Luôn cô lập phần công việc của mình:
+   `git checkout -b feat/ten-tinh-nang`
+   `git checkout -b fix/ten-loi-can-va`
+3. **Commit Chuyên Nghiệp:** Tuân theo Conventional Commits:
+   - `feat: ...` — Thêm tính năng mới
+   - `fix: ...` — Vá lỗi
+   - `docs: ...` — Cập nhật tài liệu
+   - `chore(security): ...` — Gia cố bảo mật
+4. **Mở Pull Request:** Push nhánh lên và mở PR vào nhánh `main` của `OmniClaw-Corp/omniclaw-local`.
+5. **Chờ Xét Duyệt:** Hệ thống CI/CD (`omniclaw-tests.yml`) sẽ chạy kiểm tra tự động. Nếu qua được, PR sẽ được phê duyệt và merge vào nhánh chính.
 
-* **Khai Báo Căn Cước `SKILL.md`:** Cứ sinh ra một Tướng mới lính mới, **BẮT BUỘC** phải có tờ Hộ chiếu `SKILL.md` cắm ở Thư mục Gốc mang đủ dòng Metadata YAML sau:
+---
+
+## 🤖 Đóng Góp Skill / Agent Plugin
+
+Nếu bạn muốn phát triển thêm một Skill, Plugin, hoặc Workflow mới:
+
+* **Khai Báo `SKILL.md`:** Mỗi plugin mới **BẮT BUỘC** phải có file `SKILL.md` ở thư mục gốc với đầy đủ metadata YAML:
   ```yaml
   ---
-  name: awesome-skill
-  description: Công lực và giới hạn của bí kíp này là gì.
+  name: ten-skill
+  description: Mô tả chức năng và giới hạn của skill này.
   version: 1.0.0
   tier: 2
   ---
   ```
-* **Luật 3 Tầng Kiến Trúc (3-Tier):** Skill Tier 2 bắt buộc phải Cấu hình Chạy ngầm Kích hoại sau (Lazy-Loading) dạng Init -> Execute -> Teardown để tránh ngốn bộ nhớ chính (Main RAM). Đọc thêm phần `README.md`.
-* **Quét Lỗi Trùng Lặp Chức Năng:** Trước khi viết Đặc Vụ giải quyết Vấn đề X, Sếp bắt buộc phải Dùng Câu Lệnh (`grep`, Explorer) rà sát toàn bộ Đại Bản Doanh xem Hệ thống đã có con Tool/Workflow nào tương tự chưa (Registry Của OmniClaw). Nghiêm cấm **"Chế tạo lại Bánh xe"** theo Tuyên Ngôn `RULE-ARCH-04`!
+* **Tuân Theo Kiến Trúc 3-Tier:** Skill Tier 2 bắt buộc phải triển khai theo giao thức Lazy-Loading (Init → Execute → Teardown) để tránh chiếm dụng bộ nhớ chính.
+* **Kiểm Tra Trùng Lặp:** Trước khi tạo Agent hay Workflow mới, hãy tìm kiếm trong Registry để đảm bảo chức năng đó chưa tồn tại. Nghiêm cấm "tái phát minh bánh xe" theo `RULE-ARCH-04`.
 
-*Cảm ơn Sếp đã dẫn lối để tiến hóa OmniClaw thành Cỗ Máy Hệ Điều Hành Tự Trị tối thượng không thể phá hủy!*
+*Cảm ơn bạn đã giúp OmniClaw ngày càng hoàn thiện hơn!*

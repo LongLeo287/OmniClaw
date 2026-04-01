@@ -1,10 +1,10 @@
-# Agent Configuration — strix-agent
+﻿# Agent Configuration — strix-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: strix-agent
 version: 1.0.0
 status: active
-description: "Giám sát bảo mật liên tục, phát hiện threats, quản lý GRC (Governance, Risk, Compliance) cho OmniClaw"
+description: "Continuous security monitoring, threat detection, GRC (Governance, Risk, Compliance) management for OmniClaw"
 domain: ecosystem
 type: workforce-agent
 department: security_grc

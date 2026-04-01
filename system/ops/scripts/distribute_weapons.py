@@ -1,4 +1,4 @@
-﻿import os
+import os
 import yaml
 
 ROOT_DIR = os.environ.get("OMNICLAW_ROOT", ".")
@@ -103,4 +103,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

@@ -2,7 +2,7 @@ import os
 import re
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
-EXCLUDE_DIRS = ['.git', 'node_modules', 'venv', '.gemini', 'runtime', 'sandbox', 'AI OS REMOTE']
+EXCLUDE_DIRS = ['.git', 'node_modules', 'venv', '.gemini', 'runtime', 'sandbox', 'OmniClaw REMOTE']
 OUTPUT_FILE = os.path.join(BASE_DIR, 'storage', 'vault', 'DATA', 'master_global_urls.txt')
 
 # Regex for Github URLs strictly matching repos (e.g., https://github.com/user/repo)
@@ -56,7 +56,7 @@ def filter_useful_urls(urls):
     return filtered
 
 if __name__ == "__main__":
-    print(f"[*] Scanning entire AI OS directory for URLs...")
+    print(f"[*] Scanning entire OmniClaw directory for URLs...")
     print(f"[*] Base: {BASE_DIR}")
 
     raw_urls = extract_urls(BASE_DIR)
@@ -69,5 +69,5 @@ if __name__ == "__main__":
         for u in sorted_urls:
             f.write(u + '\n')
 
-    print(f"[SUCCESS] Scanned entire AI OS. Found {len(sorted_urls)} unique URLs.")
+    print(f"[SUCCESS] Scanned entire OmniClaw. Found {len(sorted_urls)} unique URLs.")
     print(f"[>] Saved to: {OUTPUT_FILE}")

@@ -1,4 +1,4 @@
-﻿# WORKER_PROMPT.md â€” Worker Agent Activation Prompt
+# WORKER_PROMPT.md â€” Worker Agent Activation Prompt
 # Universal template â€” dept-specific overlays add domain context
 # Authority: Tier 3 | Updated: 2026-03-17
 

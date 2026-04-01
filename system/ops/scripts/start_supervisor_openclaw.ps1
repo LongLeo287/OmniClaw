@@ -16,4 +16,3 @@ Set-Location "$OMNICLAW_ROOT\ecosystem\plugins\openclaw"
 # Run the OpenClaw Gateway natively using node pointing to the mjs file
 Write-Host "[INFRA] Starting OpenClaw Gateway on Port 18789..." -ForegroundColor Yellow
 pnpm openclaw gateway --port 18789 --verbose --allow-unconfigured
-

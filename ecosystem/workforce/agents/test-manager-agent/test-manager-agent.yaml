@@ -1,10 +1,10 @@
-# Agent Configuration — test-manager-agent
+﻿# Agent Configuration — test-manager-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: test-manager-agent
 version: 1.0.0
 status: active
-description: "Quản lý toàn bộ chất lượng và kiểm thử của OmniClaw: test planning, execution, reporting"
+description: "Manage all quality and testing of OmniClaw: test planning, execution, reporting"
 domain: ecosystem
 type: workforce-agent
 department: qa_testing

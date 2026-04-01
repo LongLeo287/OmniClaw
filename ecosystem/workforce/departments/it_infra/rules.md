@@ -1,4 +1,4 @@
-﻿# IT INFRASTRUCTURE â€” Department Rules
+﻿﻿﻿# IT INFRASTRUCTURE â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: it-manager-agent | Reports to: CTO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -20,11 +20,11 @@ RULE IT-02: DRY-RUN REQUIRED
   â†’ No live migrations without dry-run verification.
 
 RULE IT-03: MAINTENANCE WINDOW
-  Planned downtime must be communicated BEFORE to:
+  Planned downtime must be communicates BEFORE to:
   â†’ Engineering head (backend-architect-agent)
   â†’ COO (via Operations)
   â†’ Logged in IT brief
-  Unplanned downtime > 5 min â†’ immediate notify Engineering + COO.
+  Unplanned downtime > 5 min â†’ immediately notify Engineering + COO.
 
 RULE IT-04: UPTIME TARGET
   Production uptime target: 99.9% per month.
@@ -57,7 +57,7 @@ RULE IT-06: DB PERFORMANCE BASELINE
 **Skills:**
 - `diagnostics_engine` â€” infrastructure diagnostics
 - `shell_assistant` â€” server management commands
-- `reasoning_engine` â€” capacity planning
+- `reasoning_engine` â€” planning capacity
 
 ---
 
@@ -68,7 +68,7 @@ RULE IT-06: DB PERFORMANCE BASELINE
 - Schedule and verify backups (daily automated, monthly full)
 - Monitor disk space, CPU, RAM â€” alert if > 85% threshold
 - Install only GATE_SECURITY-approved packages
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `shell_assistant` â€” bash/PowerShell server commands
 - SKILL: `resilience_engine` â€” safe change execution
 **Skills:**
@@ -87,7 +87,7 @@ RULE IT-06: DB PERFORMANCE BASELINE
 - Monitor HTTP uptime for all services (target 99.9%)
 - Respond to network incidents immediately
 - Maintain network architecture documentation
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `diagnostics_engine` â€” network diagnostics
 - SKILL: `shell_assistant` â€” cli tools (ping, traceroute, dig, curl)
 **Skills:**
@@ -105,7 +105,7 @@ RULE IT-06: DB PERFORMANCE BASELINE
 - Optimize slow queries (> 500ms flag)
 - Manage backup schedules and verify restoration works
 - Monitor database health and connection pool
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `shell_assistant` â€” SQL CLI, DB migration tools
 - SKILL: `diagnostics_engine` â€” query analysis
 - SKILL: `reasoning_engine` â€” migration safety analysis
@@ -115,4 +115,3 @@ RULE IT-06: DB PERFORMANCE BASELINE
 - `reasoning_engine` â€” migration impact assessment
 **Tools:** DB CLI, migration framework (Flyway/Prisma/Alembic)
 **Rule:** NEVER run destructive migration without backup confirmation
-

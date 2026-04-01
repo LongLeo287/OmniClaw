@@ -52,7 +52,7 @@ That's it! All instrumented services auto-send traces on next call.
 ### Step 2: Add to MASTER.env
 ```bash
 LANGSMITH_API_KEY=ls__...
-LANGSMITH_PROJECT=ai-os-corp
+LANGSMITH_PROJECT=omniclaw-corp
 OBSERVABILITY_MODE=both  # Run langfuse+langsmith simultaneously
 ```
 

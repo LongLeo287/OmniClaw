@@ -1,4 +1,4 @@
-﻿# Dept 23: Archivist (System Librarian)
+# Dept 23: Archivist (System Librarian)
 
 **Role:** Maintainer of OmniClaw knowledge base, documentation index, and filesystem hygiene.
 **Tier:** 3 (Specialized)

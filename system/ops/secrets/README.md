@@ -1,66 +1,72 @@
-# =============================================================
-# ops/secrets/README.md — Hướng Dẫn Quản Lý Secrets
-# =============================================================
+# system/ops/secrets — OmniClaw Secrets Management
 
-## Cấu trúc
+## Directory Structure
 
 ```
-ops/secrets/
-├── MASTER.env          ← Nguồn duy nhất chứa mọi API keys (gitignored)
-├── MASTER.env.dpapi    ← Phiên bản mã hoá DPAPI (gitignored)
-├── MASTER.env.example  ← Template không có keys thật (có thể commit)
-├── encrypt.ps1         ← Mã hoá MASTER.env → MASTER.env.dpapi
-├── decrypt.ps1         ← Giải mã + load vào $env:*
-├── load-env.ps1        ← Tiện ích cho các script khác import
-└── README.md           ← File này
+system/ops/secrets/
+├── MASTER.env          <- Single source of truth for all API keys (gitignored)
+├── MASTER.env.dpapi    <- DPAPI-encrypted backup (gitignored)
+├── MASTER.env.example  <- Template with no real keys (safe to commit)
+├── encrypt.ps1         <- Encrypt MASTER.env -> MASTER.env.dpapi
+├── decrypt.ps1         <- Decrypt + load into $env:*
+├── load-env.ps1        <- Utility for other scripts to import
+└── README.md           <- This file
 ```
 
 ---
 
-## Workflow cơ bản
+## Basic Workflow
 
-### Lần đầu setup:
+### Initial setup:
 ```powershell
-# Điền keys vào MASTER.env, sau đó mã hoá:
-.\ops\secrets\encrypt.ps1
+# Fill in keys in MASTER.env, then encrypt:
+.\system\ops\secrets\encrypt.ps1
 ```
 
-### Khi cần thêm / sửa key:
+### Adding or updating a key:
 ```powershell
-# 1. Sửa MASTER.env (plaintext)
-# 2. Chạy lại encrypt để cập nhật .dpapi
-.\ops\secrets\encrypt.ps1
+# 1. Edit MASTER.env (plaintext)
+# 2. Re-run encrypt to update .dpapi
+.\system\ops\secrets\encrypt.ps1
 ```
 
-### Load secrets vào terminal:
+### Load secrets into terminal:
 ```powershell
-# Dot-source để load vào session hiện tại:
-. .\ops\secrets\load-env.ps1
+# Dot-source to load into current session:
+. .\system\ops\secrets\load-env.ps1
 
-# Kiểm tra:
+# Verify:
 echo $env:TELEGRAM_BOT_TOKEN
 ```
 
-### Dùng trong PowerShell script khác:
+### Use in another PowerShell script:
 ```powershell
-# Ở đầu script, trước khi dùng bất kỳ key nào:
-$AiOsRoot = (Resolve-Path (Join-Path $PSScriptRoot ".." "..")).Path
-. "$AiOsRoot\ops\secrets\load-env.ps1"
+# At the top of any script, before using any key:
+$OMNICLAW_ROOT = if ($env:OMNICLAW_ROOT) { $env:OMNICLAW_ROOT } else {
+    (Resolve-Path (Join-Path $PSScriptRoot ".." ".." "..")).Path
+}
+$SecretsLoader = Join-Path $OMNICLAW_ROOT "system\ops\secrets\load-env.ps1"
+if (Test-Path $SecretsLoader) { . $SecretsLoader }
 
-# Sau đó dùng trực tiếp:
+# Then use directly:
 $token = $env:TELEGRAM_BOT_TOKEN
 ```
 
 ---
 
-## Bảo mật
+## Security Mechanisms
 
-| Cơ chế | Mô tả |
-|---------|--------|
-| **DPAPI** | Windows user-level encryption. Chỉ user đã encrypt mới decrypt được |
-| **.gitignore** | `MASTER.env` và `*.dpapi` không bao giờ commit lên git |
-| **.claudeignore** | Claude Code không đọc được thư mục này |
-| **Scope** | `CurrentUser` — không chia sẻ được dù trên cùng máy |
+| Mechanism | Description |
+|-----------|-------------|
+| **DPAPI** | Windows user-level encryption. Only the encrypting user can decrypt. |
+| **.gitignore** | `MASTER.env` and `*.dpapi` are never committed to git. |
+| **Scope** | `CurrentUser` — not shareable even on the same machine by another user. |
 
-> ⚠️ MASTER.env.dpapi KHÔNG portable — không thể copy sang máy khác và decrypt.
-> Khi đổi máy, cần nhập lại keys vào MASTER.env mới trên máy đó.
+> WARNING: MASTER.env.dpapi is NOT portable — cannot be copied to another machine and decrypted.
+> On a new machine, re-enter keys into a fresh MASTER.env on that machine.
+
+---
+
+## Policy Reference
+
+See: `brain/knowledge/notes/RULE-SECRETS-01-secrets-management.md`

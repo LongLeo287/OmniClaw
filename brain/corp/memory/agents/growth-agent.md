@@ -1,4 +1,4 @@
-﻿# Agent Memory — growth-agent
+# Agent Memory — growth-agent
 # Title: Head of Marketing | Dept: marketing
 # Layer: SHORT-TERM (7-day auto-purge by archivist)
 # Schema: MEMORY_SPEC.md v1.0 | Initialized: 2026-03-22

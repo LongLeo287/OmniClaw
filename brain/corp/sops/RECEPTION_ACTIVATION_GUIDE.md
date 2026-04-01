@@ -1,4 +1,4 @@
-﻿# PHÃ’NG Lá»„ TÃ‚N â€” Client Reception Activation Guide
+# PHÃ’NG Lá»„ TÃ‚N â€” Client Reception Activation Guide
 # Status: ðŸŸ¡ BUILT â€” DORMANT (chá» token)
 # Khi sáºµn sÃ ng: Ä‘á»c file nÃ y vÃ  thá»±c hiá»‡n theo thá»© tá»±
 

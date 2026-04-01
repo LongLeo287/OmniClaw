@@ -1,7 +1,7 @@
-﻿# PLANNING & PMO â€” Department Rules
+﻿﻿# PLANNING & PMO â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: pmo-agent | Reports to: COO
-# Mission: Káº¿ hoáº¡ch váº­n hÃ nh, quáº£n lÃ½ dá»± Ã¡n tá»•ng thá»ƒ, capacity planning, resource allocation
+# Mission: Project planning, capacity planning, resource allocation
 # NOT Strategy (Strategy = WHAT to do). Planning = HOW MUCH, WHEN, WHO, WITH WHAT.
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
@@ -19,11 +19,11 @@ RULE PMO-01: EVERY TASK HAS A PLAN BEFORE EXECUTION
 
 RULE PMO-02: CAPACITY IS TRACKED ALWAYS
   capacity-planner-agent tracks total active task load per dept.
-  Overscheduled dept (>80% capacity) = PMO alerts COO before accepting more tasks.
+  Overscheduled department (>80% capacity) = PMO alerts COO before accepting more tasks.
   No dept is assigned tasks it cannot complete this cycle.
 
 RULE PMO-03: MILESTONES ARE FIXED
-  Once CEO or CSO sets a milestone date, PMO defends it.
+  Once the CEO or CSO sets a milestone date, the PMO defends it.
   Scope changes that would bust a milestone require CEO re-approval.
   PMO does not silently absorb scope creep.
 
@@ -51,7 +51,7 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 **Responsibilities:**
 - Maintain master plan in shared-context/blackboard.json (plan layer)
 - Resolve resource conflicts between depts
-- Report plan health to COO each cycle
+- Report health plan to COO each cycle
 - Escalate milestone risks immediately (not after they occur)
 - Write Planning daily brief
 **Must load at boot:**
@@ -72,7 +72,7 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - Alert PMO when any dept hits 80% capacity
 - Provide capacity forecast: projected load next cycle
 - Recommend task deferral or rebalancing when overloaded
-**At start of each planning cycle, load:**
+**At the start of each planning cycle, load:**
 - SKILL: `knowledge_enricher` â€” aggregate task data from all dept queues
 - SKILL: `reasoning_engine` â€” capacity math and forecast
 - All dept task queues in `subagents/mq/`
@@ -90,16 +90,16 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - When new major task arrives: find the best-fit agent (skill match + available capacity)
 - Check SKILL_REGISTRY for agent capability
 - Check capacity-planner data for availability
-- Recommend assignment to dept head
+- Recommend assignment to department head
 - Flag if no suitable agent available â†’ PMO escalates to OD&L (recruit/train)
-**At start of each allocation task, load:**
+**At the start of each allocation task, load:**
 - SKILL: `knowledge_enricher` â€” SKILL_REGISTRY lookup
 - SKILL: `reasoning_engine` â€” skill-task fitness assessment
 - `shared-context/SKILL_REGISTRY.json`
 - Current capacity report from capacity-planner-agent
 **Skills:**
 - `knowledge_enricher` â€” skill and capability search
-- `reasoning_engine` â€” assignment optimization
+- `reasoning_engine` â€” optimization assignment
 
 ---
 
@@ -110,7 +110,7 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - Check progress each cycle against milestone targets
 - Alert PMO if any milestone at risk (behind by >20% of remaining time)
 - Generate milestone status report for CEO brief
-**At start of each tracking cycle, load:**
+**At the start of each tracking cycle, load:**
 - SKILL: `reasoning_engine` â€” progress analysis, risk assessment
 - SKILL: `context_manager` â€” milestone register management
 - shared-context/brain/corp/kpi_scoreboard.json (milestone section)
@@ -120,4 +120,3 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 **Risk thresholds:**
 - YELLOW: behind by 20% of remaining time
 - RED: behind by 40% â†’ automatic L2 escalation to COO
-

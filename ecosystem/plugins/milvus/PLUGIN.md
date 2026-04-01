@@ -2,18 +2,18 @@
 **ID:** `milvus` | **Status:** registered | **Dept:** Dept 07 — Knowledge
 **Upstream:** https://github.com/milvus-io/milvus
 
-## Mô tả
+## Description
 Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-process_github_queue.py — AI OS Batch GitHub Intake Tool (Cập nhật RULE-CIV-02)
-Đọc URL từ storage/vault/DATA/Github.txt và ĐƯA VÀO PENDING_REPOS.md.
-Nghiêm cấm clone trực tiếp ở bước này để tuân thủ PENDING GATE.
-Sau khi đẩy vào PENDING thành công, xóa URL khỏi Github.txt.
+process_github_queue.py — OmniClaw Batch GitHub Intake Tool (Update RULE-CIV-02)
+Read URLs from storage/vault/DATA/Github.txt and push to PENDING_REPOS.md.
+Strictly forbidden to clone directly here to comply with PENDING GATE.
+After successfully pushing to PENDING, remove URLs from Github.txt.
 """
 
 import os
@@ -20,19 +20,19 @@ def now():
 
 def process_queue():
     if not os.path.exists(VAULT_FILE):
-        print(f"File không tồn tại: {VAULT_FILE}")
+        print(f"File not found: {VAULT_FILE}")
         return
 
     with open(VAULT_FILE, "r", encoding="utf-8") as f:
         urls = [line.strip() for line in f if line.strip() and line.startswith("http")]
 
     if not urls:
-        print("Không có URL nào trong Github.txt để xử lý.")
+        print("No URLs found in Github.txt to process.")
         return
 
-    print(f"=> Tìm thấy {len(urls)} URLs cần xử lý trong Github.txt.")
+    print(f"=> Found {len(urls)} URLs to process in Github.txt.")
 
-    # Đọc PENDING hiện tại để tránh trùng
+    # Read existing PENDING to avoid duplicates
     existing_pending = set()
     if os.path.exists(PENDING_FILE):
         with open(PENDING_FILE, "r", encoding="utf-8") as f:
@@ -40,33 +40,33 @@ def process_queue():
 
     added_count = 0
     with open(PENDING_FILE, "a", encoding="utf-8") as f:
-        f.write(f"\n## Batch từ Github.txt — {now()}\n\n")
-        f.write("| STT | Repo | Ghi chú | Ngày thêm |\n")
+        f.write(f"\n## Batch from Github.txt — {now()}\n\n")
+        f.write("| No | Repo | Notes | Date Added |\n")
         f.write("|-----|------|---------|-----------|\n")
 
         for i, url in enumerate(urls, 1):
             url_clean = url.rstrip('/')
             if url_clean in existing_pending:
-                print(f"  [!] {url_clean} đã có trong PENDING_REPOS.md. Bỏ qua.")
+                print(f"  [!] {url_clean} already exists in PENDING_REPOS.md. Skipping.")
                 continue
 
             repo_name = url_clean.split("/")[-1]
             owner_repo = "/".join(url_clean.split("/")[-2:])
 
-            f.write(f"| {i} | [{owner_repo}]({url_clean}) | Auto-queued từ Github.txt | {now()[:10]} |\n")
-            print(f"  [+] Đã thêm vào PENDING: {owner_repo}")
+            f.write(f"| {i} | [{owner_repo}]({url_clean}) | Auto-queued from Github.txt | {now()[:10]} |\n")
+            print(f"  [+] Added to PENDING: {owner_repo}")
             added_count += 1
 
-    # Xóa trắng file Github.txt sau khi xử lý xong (nếu có URL đã đọc)
+    # Clear Github.txt file after processing (if URLs were read)
     if urls:
         with open(VAULT_FILE, 'w', encoding='utf-8') as _f:
             pass
-        print(f"\n=> [RULE-CIV-02 OK] Đã chuyển {added_count} URLs mới vào PENDING_REPOS.md.")
-        print("=> Github.txt đã được dọn sạch.")
+        print(f"\n=> [RULE-CIV-02 OK] Transferred {added_count} new URLs to PENDING_REPOS.md.")
+        print("=> Github.txt has been cleared.")
     else:
-        print(f"\n=> [RULE-CIV-02 OK] Không có URL mới nào được thêm.")
+        print(f"\n=> [RULE-CIV-02 OK] No new URLs were added.")
 
-    print("=> Bước tiếp: Chạy system/ops/scripts/civ_classifier.py để duyệt.")
+    print("=> Next step: Run system/ops/scripts/civ_classifier.py to review.")
 
 if __name__ == "__main__":
     process_queue()

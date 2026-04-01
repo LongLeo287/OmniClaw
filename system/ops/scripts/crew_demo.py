@@ -1,27 +1,27 @@
-﻿import os
+import os
 import sys
 
 # ==========================================
-# Cáº¥u hÃ¬nh Local LLM cho CrewAI (cháº¡y 100% Offline qua Ollama)
+# [System log: Legacy non-English comment removed]
 # ==========================================
 os.environ["OPENAI_API_BASE"] = "http://localhost:11434/v1"
 os.environ["OPENAI_API_KEY"] = "ollama"
 os.environ["OPENAI_MODEL_NAME"] = "gemma2:2b"
 
-# Import Library vÃ  AI OS Tools
+# [System log: Legacy non-English comment removed]
 sys.path.append(os.environ.get("OMNICLAW_ROOT", "."))
 from crewai import Agent, Task, Crew, Process
 from plugins.crewai_tools_bridge import GitingestTool, LightRAGTool
 
 def run_crew():
-    print("ðŸš€ [PHASE 4] Khá»Ÿi cháº¡y Äá»™i NhÃ³m: AI OS Multi-Agent Sync")
+    print("[OmniClaw System Event]")
     print("----------------------------------------------------------")
 
-    # 1. Khá»Ÿi táº¡o vÅ© khÃ­ (Tools) tá»« AI OS
+    # [System log: Legacy non-English comment removed]
     git_tool = GitingestTool()
     rag_tool = LightRAGTool()
 
-    # 2. Khai bÃ¡o NhÃ¢n Sá»± (Agents)
+    # [System log: Legacy non-English comment removed]
     analyst = Agent(
         role="NhÃ  PhÃ¢n TÃ­ch MÃ£ Nguá»“n (Code_Analyst)",
         goal="Äá»c mÃ£ nguá»“n Repo Github báº±ng Gitingest (GitNexus) vÃ  tÃ³m táº¯t cáº¥u trÃºc.",
@@ -34,15 +34,15 @@ def run_crew():
     architect = Agent(
         role="Kiáº¿n TrÃºc SÆ° Tri Thá»©c (Knowledge_Architect)",
         goal="Sá»­ dá»¥ng LightRAG quÃ©t vÃ  nÃ©n bÃ¡o cÃ¡o cá»§a nhÃ¢n viÃªn Analyst vÃ o Äá»“ thá»‹ tri thá»©c.",
-        backstory="Báº¡n lÃ  ngÆ°á»i canh giá»¯ ThÆ° viá»‡n AI OS. Báº¡n khÃ´ng phÃ¢n tÃ­ch code, báº¡n chá»‰ chá» nháº­n bÃ¡o cÃ¡o (Context) tá»« Analyst vÃ  thá»±c thi thao tÃ¡c Insert vÃ o LightRAG Pipeline.",
+        backstory="Báº¡n lÃ  ngÆ°á»i canh giá»¯ ThÆ° viá»‡n OmniClaw. Báº¡n khÃ´ng phÃ¢n tÃ­ch code, báº¡n chá»‰ chá» nháº­n bÃ¡o cÃ¡o (Context) tá»« Analyst vÃ  thá»±c thi thao tÃ¡c Insert vÃ o LightRAG Pipeline.",
         tools=[rag_tool],
         allow_delegation=False,
         verbose=True
     )
 
-    # 3. PhÃ¢n cÃ´ng CÃ´ng viá»‡c (Tasks)
+    # [System log: Legacy non-English comment removed]
     task_code = Task(
-        description="DÃ¹ng cÃ´ng cá»¥ Gitingest, hÃ£y ingest vÃ  phÃ¢n tÃ­ch Repository nÃ y: 'https://github.com/carlrannaberg/ccpoke'. TÃ³m táº¯t láº¡i nÃ³ dÃ¹ng Ä‘á»ƒ lÃ m gÃ¬ vÃ  cÃ´ng nghá»‡ gÃ¬.",
+        description="DÃ¹ng cÃ´ng cá»¥ Gitingest, hÃ£y ingest vÃ  phÃ¢n tÃ­ch Repository nÃ y: 'https: // [Removed legacy comment]
         expected_output="1 BÃ i bÃ¡o cÃ¡o ngáº¯n (dÆ°á»›i 300 chá»¯) tÃ³m lÆ°á»£c Repo.",
         agent=analyst
     )
@@ -54,7 +54,7 @@ def run_crew():
         context=[task_code]
     )
 
-    # 4. Láº¯p rÃ¡p Äá»™i nhÃ³m (Crew)
+    # [System log: Legacy non-English comment removed]
     ai_os_crew = Crew(
         agents=[analyst, architect],
         tasks=[task_code, task_index],
@@ -62,14 +62,13 @@ def run_crew():
         verbose=True
     )
 
-    # Gá»i hÃ m Thá»±c thi
+    # [System log: Legacy non-English comment removed]
     result = ai_os_crew.kickoff()
 
-    print("\nðŸ Káº¾T QUáº¢ CUá»I CÃ™NG Tá»ª Äá»˜I NHÃ“M:")
+    print("[OmniClaw System Event]")
     print("===================================")
     print(result)
     print("===================================")
 
 if __name__ == "__main__":
     run_crew()
-

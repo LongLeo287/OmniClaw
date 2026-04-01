@@ -3,22 +3,22 @@ name: Pull Request
 about: Submit a patch, tool, or agent upgrade
 ---
 
-## 🛠 Lĩnh Vực Cập Nhật / Area of Update
+## 🛠 Area of Update
 - [ ] Core Infra (Tier 1) / Bootstrapper
 - [ ] Plugin / Tool (Tier 2/3)
 - [ ] Agent Roster / Role / Prompt
-- [ ] System Rules / Governance (`SOUL.md`, `GEMINI.md`, v.v.)
-- [ ] Knowledge Bơm vào / RAG Memory
+- [ ] System Rules / Governance (`SOUL.md`, `GEMINI.md`, etc.)
+- [ ] Knowledge Injection / RAG Memory
 
-## 📖 Mô Tả Chi Tiết / Description
-Vui lòng giải thích ngắn gọn cập nhật này làm gì, tại sao nó cần thiết.
+## 📖 Description
+Please briefly explain what this update does and why it is necessary.
 
-## ✅ Checklist (Bắt Buộc / Mandatory)
-- [ ] Đã quét bảo mật (Không nhúng API keys / Mật khẩu cá nhân / `.env`).
-- [ ] Các tính năng mới không gọi trực tiếp Root OS commands trừ khi được cho phép (`SafeToAutoRun` strict policies).
-- [ ] (Nếu có Plugin Mới) Đã tuân thủ nguyên tắc Lazy-Load 3-Tier.
-- [ ] Đã cập nhật `SKILL_REGISTRY.json` hoặc `AGENTS.md` (nếu cần).
+## ✅ Checklist (Mandatory)
+- [ ] Code has been scanned for security (No embedded API keys / Personal Passwords / `.env`).
+- [ ] New features DO NOT execute Root OS commands directly unless explicitly authorized (`SafeToAutoRun` strict policies).
+- [ ] (If New Plugin) Strict adherence to the Lazy-Load 3-Tier architecture.
+- [ ] Updated `SKILL_REGISTRY.json` or `AGENTS.md` (if applicable).
 
-## 🧠 Tác Động Giao Tiếp (Phía CEO)
-Bản cập nhật này có làm thay đổi cách CEO ra lệnh cho hệ thống không?
-(Nếu có, giải thích vắn tắt lệnh mới / luồng thông tin mới).
+## 🧠 Communication Impact (CEO Facing)
+Does this update change how the CEO commands the system?
+(If yes, briefly explain the new command / new information flow).

@@ -1,4 +1,4 @@
-﻿# Web-Researcher
+# Web-Researcher
 
 ## Identity
 - ID: `web_researcher`

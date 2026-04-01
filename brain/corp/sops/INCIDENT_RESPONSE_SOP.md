@@ -1,4 +1,4 @@
-﻿# INCIDENT_RESPONSE_SOP.md â€” Security Incident Response Playbook
+# INCIDENT_RESPONSE_SOP.md â€” Security Incident Response Playbook
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 1 (Security & GRC) / BLOCKING
 # Lead: strix-agent / security_grc dept

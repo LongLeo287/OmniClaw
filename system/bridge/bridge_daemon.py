@@ -1,8 +1,8 @@
 """
 OMNICLAW HQ - BRIDGE DAEMON (SUPERVISOR)
-Tự động duy trì và phục hồi Bến Cảng (Port 8000) 24/7.
-Không phụ thuộc vào file .bat thô sơ.
-Tránh tình trạng Remote "Đất Cáp Lõi" do uvicorn sập ngầm.
+Automatically maintains and recovers Harbor (Port 8000) 24/7.
+Does not depend on basic .bat files.
+Avoids Core Disconnect situations due to silent uvicorn crashes.
 """
 
 import sys
@@ -29,16 +29,16 @@ logging.basicConfig(
 
 TARGET_MODULE = "system.bridge.main:app"
 PORT = "8000"
-RESTART_DELAY = 5  # Đợi 5s trước khi nổ máy lại để tránh loop
+RESTART_DELAY = 5  # Wait 5s before restarting to avoid loops
 
 def start_guard():
-    logging.info("🛡️ KÍCH HOẠT HỆ THỐNG PHÒNG THỦ CẢNG OMNICLAW (DAEMON MODE)")
+    logging.info("🛡️ ACTIVATING OMNICLAW HARBOR DEFENSE SYSTEM (DAEMON MODE)")
     crash_count = 0
     
     while True:
         try:
-            logging.info(f"▶️ Đang cấp điện cho Cầu Dao Tổng (Port {PORT})...")
-            # Chạy uvicorn trực tiếp thông qua subprocess
+            logging.info(f"▶️ Powering up Main Breaker (Port {PORT})...")
+            # Run uvicorn directly via subprocess
             process = subprocess.Popen(
                 [sys.executable, "-m", "uvicorn", TARGET_MODULE, "--host", "0.0.0.0", "--port", PORT],
                 stdout=sys.stdout,
@@ -46,18 +46,18 @@ def start_guard():
                 env=os.environ.copy()
             )
             
-            # Đợi process kết thúc (Nếu sập, code sẽ đi tiếp qua đây)
+            # Wait for process to end (If it crashes, code continues here)
             process.wait()
             
-            # Nếu code chạy đến đây tức là Uvicorn đã chết
+            # If code reaches here, Uvicorn has died
             crash_count += 1
-            logging.error(f"❌ MẤT ĐIỆN! Cảng OmniClaw vừa sập (Lần {crash_count}). Exit Code: {process.returncode}")
+            logging.error(f"❌ BLACKOUT! OmniClaw Harbor just crashed (Count {crash_count}). Exit Code: {process.returncode}")
             
         except Exception as e:
-            logging.error(f"☠️ LỖI CHÍ TỬ TRONG DAEMON: {e}")
+            logging.error(f"☠️ FATAL ERROR IN DAEMON: {e}")
             crash_count += 1
             
-        logging.warning(f"⏳ Tự động hồi sinh Cảng sau {RESTART_DELAY} giây...")
+        logging.warning(f"⏳ Auto-reviving Harbor in {RESTART_DELAY} seconds...")
         time.sleep(RESTART_DELAY)
 
 if __name__ == "__main__":

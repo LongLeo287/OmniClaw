@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI OS V3.1 — Central Workflow Orchestrator (FULL EDITION)
+OmniClaw V2.0 — Central Workflow Orchestrator (FULL EDITION)
 Path: system/ops/omniclaw_orchestrator.py
 Built: 2026-03-26 | Based on AGENTS.md v4.0
 
@@ -32,7 +32,7 @@ try:
     _AGENT_BUS   = _AgentBus()
     _LTM_ONLINE  = True
 except Exception as _e:
-    print(f"[!] Cảnh báo: LTM/AgentBus Offline do lỗi - {_e}")
+    print("[OmniClaw System Event]")
     _LTM_ONLINE = False
     _MEMORY_CORE = None
     _AGENT_BUS   = None
@@ -314,7 +314,7 @@ def update_hud() -> dict:
     status.update({
         "version":          "v3.1",
         "cycle":            11,
-        "system":           "AI OS Corp",
+        "system":           "OmniClaw Corp",
         "updated":          now_iso(),
         "last_hud_update":  now_iso(),
         "skills":           skill_count,
@@ -364,7 +364,7 @@ def run_cycle(verbose=True) -> dict:
     """Main orchestration cycle — 1 pass"""
     if verbose:
         print("=" * 65)
-        print("  AI OS V3.1 ORCHESTRATOR — FULL EDITION")
+        print("  OmniClaw V2.0 ORCHESTRATOR — FULL EDITION")
         print(f"  Routing rules: {len(ROUTING_TABLE)} | Depts: {len(DEPARTMENTS)}")
         print("=" * 65)
 
@@ -417,7 +417,7 @@ def run_cycle(verbose=True) -> dict:
     elif trigger == "DONE":
         s = status
         send_telegram_simple(
-            f"📊 *AI OS V3.1 — System Status*\n"
+            f"📊 *OmniClaw V2.0 — System Status*\n"
             f"• 🤖 Agents: `{s['agents']}` (+`{s['brain_agent_profiles']}` profiles)\n"
             f"• 🧠 Skills: `{s['skills']}`\n"
             f"• 🏢 Depts: `{s['departments']}`\n"

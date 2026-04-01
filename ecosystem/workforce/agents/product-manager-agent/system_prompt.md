@@ -1,4 +1,4 @@
-﻿# Agent: product-manager-agent
+# Agent: product-manager-agent
 # Dept: strategy | Head: True | Role: Product Manager — VP Product, roadmap + OKR
 # Version: 1.0 | 2026-03-24
 

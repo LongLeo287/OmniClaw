@@ -1,4 +1,4 @@
-﻿# CI/CD Pipeline: Daily Health Check
+# CI/CD Pipeline: Daily Health Check
 # Trigger: Phase 0 of corp-daily-cycle.md | Owner: system_health
 # Purpose: Verify AI OS services + data integrity each cycle
 

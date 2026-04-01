@@ -1,4 +1,4 @@
-﻿# R&D (RESEARCH & DEVELOPMENT) â€” Department Rules
+﻿﻿# R&D (RESEARCH & DEVELOPMENT) â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: research-agent | Reports to: CSO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -94,7 +94,7 @@ RULE RD-07: RESULTS TO STRATEGY
 - Run pilot in isolated environment (never production)
 - Measure real-world performance metrics
 - Write pilot report for research-agent review
-**At start of each pilot, load:**
+**At the start of each pilot, load:**
 - Experiment result from experiment-agent (must be SUCCESS before pilot)
 - SKILL: `resilience_engine` â€” pilot failure handling
 - SKILL: `diagnostics_engine` â€” pilot monitoring
@@ -107,4 +107,3 @@ RULE RD-07: RESULTS TO STRATEGY
 **Output:** `knowledge/research/PILOT_<date>_<concept>.md`
 **Scope enforcement:** stop immediately if pilot exceeds defined scope
 **Success metric:** pilot achieves 80% of hypothesis target in bounded scope
-

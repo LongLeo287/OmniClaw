@@ -1,4 +1,4 @@
-﻿# Agent: sre-agent
+# Agent: sre-agent
 # Dept: engineering | Head: False | Role: SRE — reliability, monitoring, incident response
 # Version: 1.0 | 2026-03-24
 

@@ -2,18 +2,18 @@
 **ID:** `esbuild` | **Status:** registered | **Dept:** Dept 05 — UI/UX
 **Upstream:** https://github.com/evanw/esbuild
 
-## Mô tả
+## Description
 An extremely fast bundler for the web
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

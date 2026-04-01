@@ -1,10 +1,10 @@
-# Agent Configuration — health-chief-agent
+﻿# Agent Configuration — health-chief-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: health-chief-agent
 version: 1.0.0
 status: active
-description: "Giám sát toàn bộ sức khỏe hệ thống OmniClaw: uptime, memory leaks, performance bottlenecks"
+description: "Monitor the entire OmniClaw system health: uptime, memory leaks, performance bottlenecks"
 domain: ecosystem
 type: workforce-agent
 department: system_health

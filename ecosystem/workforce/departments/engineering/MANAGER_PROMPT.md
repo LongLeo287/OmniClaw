@@ -1,4 +1,4 @@
-﻿# Engineering â€” Dept Manager Prompt
+﻿﻿﻿﻿﻿﻿# Engineering â€” Dept Manager Prompt
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 # Head: backend-architect-agent | Reports to: CTO
 
@@ -32,10 +32,10 @@ After base MANAGER boot sequence, also load:
 Every code PR / deployment:
 1. Engineer writes receipt with qa_required: true
 2. Route to qa_testing dept: subagents/mq/qa_review_queue.md
-3. GATE_QA must issue PASS before deploy
+3. GATE_QA must issue PASS before deploying
 
 ## ENGINEERING BRIEF ADDITIONS
-Include in standard brief:
+Included in standard brief:
 - Build status: passing/failing
 - Test coverage: %
 - Open PRs awaiting QA
@@ -43,4 +43,3 @@ Include in standard brief:
 - Technical debt flags
 
 </ENGINEERING_MANAGER_PROMPT>
-

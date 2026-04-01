@@ -1,4 +1,4 @@
-﻿# QUARANTINE — Content Intake Staging Area
+# QUARANTINE — Content Intake Staging Area
 # Version: 1.0 | Created: 2026-03-25
 # Owner: content_intake dept (civ-agent)
 # DO NOT manually add files here — use CIV pipeline only

@@ -1,4 +1,4 @@
-﻿# CONTENT REVIEW (KIá»‚M DUYá»†T) â€” Department Rules
+﻿﻿﻿﻿﻿﻿# CONTENT REVIEW (KIá»‚M DUYá»†T) â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: editor-agent | Reports to: CMO
 # This dept IS a gate (GATE_CONTENT) â€” blocks all public content
@@ -14,7 +14,7 @@ RULE CR-01: ALL 4 REVIEWERS REQUIRED
   3-of-4 is not acceptable. All must complete review.
 
 RULE CR-02: NO SELF-REVIEW
-  The dept/agent that produced the content CANNOT review it.
+  The department/agent that produced the content CANNOT review it.
   content_review is always a different team from content producers.
 
 RULE CR-03: TIMELINESS
@@ -30,10 +30,10 @@ RULE CR-04: SPECIFIC FAIL FEEDBACK
 
 RULE CR-05: CONDITIONAL PASS
   CONDITIONAL PASS = content can publish ONLY IF stated conditions are met.
-  Conditions must be specific, verifiable, and flagged to author before publish.
+  Conditions must be specific, verifiable, and flagged to author before publishing.
 
 RULE CR-06: FACT SOURCE REQUIRED
-  Any statistical claim without a source â†’ automatic FAIL at fact-checker.
+  Any statistical without claiming a source â†’ automatic FAIL at fact-checker.
   Author must provide verifiable source or remove the claim.
 
 RULE CR-07: LEGAL FLAG
@@ -70,7 +70,7 @@ RULE CR-07: LEGAL FLAG
 - Check all links are live and safe
 - Flag any claim without a verifiable source
 - Cross-reference AI-generated content for hallucinations
-**At start of each review, load:**
+**At the start of each review, load:**
 - SKILL: `knowledge_enricher` â€” cross-reference facts
 - SKILL: `web_intelligence` (if available) â€” external verification
 - Input: content draft from GATE_CONTENT queue
@@ -89,8 +89,8 @@ RULE CR-07: LEGAL FLAG
 - Check for harmful, offensive, or discriminatory content
 - Verify no false advertising claims
 - Ensure legal disclaimers present where required
-- Check for misinformation or misleading framing
-**At start of each review, load:**
+- Check for misleading or misleading framing
+**At the start of each review, load:**
 - SKILL: `reasoning_engine` â€” policy interpretation
 - `shared-context/SOUL.md` â€” core values alignment
 - Company content policy guidelines
@@ -108,11 +108,10 @@ RULE CR-07: LEGAL FLAG
 - Check correct product names and spellings
 - Confirm CTA is present and correct
 - Verify visual elements (if applicable) match brand guidelines
-**At start of each review, load:**
+**At the start of each review, load:**
 - SKILL: `visual_excellence` â€” brand design standards
 - Brand guidelines reference (from shared-context or marketing)
 **Skills:**
 - `visual_excellence` â€” brand and visual consistency
 - `context_manager` â€” brand voice context across channels
 **Decision scope:** ONLY brand voice and identity
-

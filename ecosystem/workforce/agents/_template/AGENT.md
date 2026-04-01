@@ -13,11 +13,11 @@
 | Field | Value |
 |-------|-------|
 | **TÃªn** | <Agent Name> |
-| **Chá»©c danh** | <Full Title> |
-| **PhÃ²ng ban** | Dept <N> (<Dept Name>) |
-| **BÃ¡o cÃ¡o cho** | <Dept Head> â†’ <C-Suite> â†’ CEO |
-| **Phá»¥c vá»¥** | <Scope â€” which depts or all> |
-| **Triáº¿t lÃ½** | "<One-sentence philosophy>" |
+| **Chá»©c name** | <Full Title> |
+| **Party** | Dept <N> (<Dept Name>) |
+| **There are some options for** | <Dept Head> â†’ <C-Suite> â†’ CEO |
+| **Break»¥c patch»¥** | <Scope â€” which depts or all> |
+| **Triáº¿t isÃ½** | "<One-sentence philosophy>" |
 
 **Trigger phrases:**
 ```
@@ -44,7 +44,7 @@ Knowledge source: `brain/knowledge/<domain>/<KI-id>.md`
 
 ---
 
-## ðŸ—ºï¸ Decision Authority
+## ðŸ—ºï¸ Decision Authority
 
 | Decision Type | Authority Level |
 |--------------|----------------|
@@ -58,11 +58,11 @@ Knowledge source: `brain/knowledge/<domain>/<KI-id>.md`
 
 ---
 
-## ðŸ› ï¸ Tool Stack & Skills
+## ðŸ› ï¸ Tool Stack & Skills
 
 ### Required Skills (from SKILL_REGISTRY.json)
-| Skill | Purpose | Status |
-|-------|---------|--------|
+| Skills | Purpose | Status |
+|-------|--------|--------|
 | `<skill_id_1>` | <why needed> | âœ… In registry |
 | `<skill_id_2>` | <why needed> | âœ… In registry |
 
@@ -115,8 +115,8 @@ BLOCKED (unless escalated):
 **Works with:**
 | Agent/Dept | Relationship |
 |-----------|-------------|
-| <agent or dept 1> | Provides: <what> | Receives: <what> |
-| <agent or dept 2> | Provides: <what> | Receives: <what> |
+| <agent or department 1> | Provides: <what> | Receives: <what> |
+| <agent or department 2> | Provides: <what> | Receives: <what> |
 
 **Reads from:**
 - `shared-context/brain/corp/daily_briefs/<dept>.md`
@@ -131,8 +131,8 @@ BLOCKED (unless escalated):
 
 ## ðŸ“Š KPIs
 
-| Metric | Target | Measurement |
-|--------|--------|------------|
+| Metrics | Target | Measurement |
+|--------|--------|-------------|
 | <KPI 1> | <target value> | <how measured> |
 | <KPI 2> | <target value> | <how measured> |
 
@@ -140,7 +140,7 @@ BLOCKED (unless escalated):
 
 ---
 
-## ðŸ“ Memory Format
+## ðŸ“ Memory Format
 
 ```markdown
 ## [DATE] â€” Task: <task name>
@@ -153,7 +153,7 @@ Next time: <what to do differently>
 
 ---
 
-## âš ï¸ Autonomy & Constraints
+## âš ï¸ Autonomy & Constraints
 
 ```
 autonomy_level: supervised
@@ -194,4 +194,3 @@ requires_ceo_approval_for:
 ---
 
 *[Agent Name] â€” Created by OmniClaw Corp agent-auto-create workflow. Supervised until first performance review.*
-

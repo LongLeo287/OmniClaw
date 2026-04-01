@@ -1,4 +1,4 @@
-﻿# CI/CD Pipeline: Intake
+# CI/CD Pipeline: Intake
 # Trigger: CIV STEP 3A (repo received) | Owner: content_intake
 # Purpose: Auto-check integrity before vet_repo.ps1 runs
 

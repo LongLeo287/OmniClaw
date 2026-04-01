@@ -1,4 +1,4 @@
-﻿---
+---
 id: production_qa
 name: Production QA
 version: 1.0.0

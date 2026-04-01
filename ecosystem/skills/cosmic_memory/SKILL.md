@@ -1,4 +1,4 @@
-﻿---
+---
 id: cosmic_memory
 name: Cosmic Memory
 version: 1.0.0

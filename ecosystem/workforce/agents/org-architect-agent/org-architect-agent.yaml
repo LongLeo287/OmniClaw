@@ -1,10 +1,10 @@
-# Agent Configuration — org-architect-agent
+﻿# Agent Configuration — org-architect-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: org-architect-agent
 version: 1.0.0
 status: active
-description: "Thiết kế và tối ưu cấu trúc tổ chức, workforce layout và quy trình hoạt động của OmniClaw Corp"
+description: "Design and optimize the organizational structure, workforce layout and operating processes of OmniClaw Corp"
 domain: ecosystem
 type: workforce-agent
 department: strategy
@@ -14,7 +14,7 @@ skills:
   - neural_navigator
   - sequential-thinking
   - org-designer
-  - process-modeler
+  -process-modeler
 
 tools:
   - file-system

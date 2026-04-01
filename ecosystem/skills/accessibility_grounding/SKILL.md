@@ -1,4 +1,4 @@
-﻿---
+---
 id: accessibility_grounding
 name: Accessibility Grounding
 version: 1.1.0

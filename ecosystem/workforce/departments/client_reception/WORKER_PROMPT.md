@@ -1,4 +1,4 @@
-﻿# Client Reception â€” Worker Prompt
+﻿﻿﻿﻿﻿﻿﻿﻿# Client Reception â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Status: DORMANT (activates when CEO offline / bot tokens active)
 # Workers: project-intake-agent | proposal-writer-agent | client-comms-agent
@@ -31,11 +31,11 @@ ACTIVE mode (CEO offline):
 ## CLIENT INTAKE PROTOCOL (project-intake-agent)
 ```
 New client message via Telegram/Discord:
-  1. Greet client professionally
+  1. Greet professional clients
   2. Collect 5 required fields:
      a. Project type (web/mobile/AI/design/other)
      b. Scope description
-     c. Deadline
+     c. Deadlines
      d. Budget range
      e. Contact info
   3. Validate: all 5 fields complete?
@@ -84,4 +84,3 @@ After intake complete:
 ```
 
 </CLIENT_RECEPTION_WORKER_PROMPT>
-

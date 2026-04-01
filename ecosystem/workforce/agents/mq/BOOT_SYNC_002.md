@@ -1,4 +1,4 @@
-# TASK: BOOT-SYNC-002 — Recreate CLAUDE.md Boot Protocol
+﻿# TASK: BOOT-SYNC-002 — Recreate CLAUDE.md Boot Protocol
 # From: Antigravity | Date: 2026-03-22T02:00:00+07:00 | Priority: CRITICAL
 # Authority: CEO LongLeo | Full permissions granted for this task
 
@@ -17,27 +17,27 @@ Create CLAUDE.md at the root of `$OMNICLAW_ROOT\` with:
 
 ### Section 1 — Agent Boot Rule
 ```
-CEO mở Claude Code CLI?
-    YES ──► Read CLAUDE.md     (Claude Code boot protocol — THIS FILE)
-    NO  ──► Read GEMINI.md     (Antigravity boot protocol)
+CEO opens Claude Code CLI?
+    YES ──► Read CLAUDE.md (Claude Code boot protocol — THIS FILE)
+    NO ──► Read GEMINI.md (Antigravity boot protocol)
 ```
 Rule: No agent reads the wrong boot file.
 
 ### Section 2 — Boot Sequence (MANDATORY — identical shared steps)
 ```
-STEP 1   ──► Read CLAUDE.md                         (THIS FILE)
-STEP 1.5 ──► Read Presentation Format Guide         [runes/report_formats.md]
-STEP 2   ──► Read Agent Roster & Roles              [brain/shared-context/AGENTS.md]
-STEP 3   ──► Load Platform Identity & Soul          [brain/shared-context/SOUL.md]
-STEP 4   ──► Load Strategy & Thesis                 [brain/shared-context/THESIS.md]
-STEP 5   ──► Load Governance                        [brain/shared-context/GOVERNANCE.md]
-STEP 6   ──► Read Operational SOP                   [ops/workflows/corp-daily-cycle.md]
-STEP 7   ──► Execute Session Hook                   [ops/workflows/pre-session.md]
-STEP 8   ──► Check Blackboard (active tasks)        [brain/shared-context/blackboard.json]
-STEP 9   ──► Load Skill Registry                    [brain/shared-context/SKILL_REGISTRY.json]
-STEP 9.5 ──► Load Storage Rule                      [brain/knowledge/notes/RULE-STORAGE-01-storage-location.md]
-STEP 9.6 ──► Load Structure Rule                    [brain/knowledge/notes/RULE-STRUCTURE-01-system-structure.md]
-STEP 10  ──► Begin work
+STEP 1 ──► Read CLAUDE.md (THIS FILE)
+STEP 1.5 ──► Read Presentation Format Guide [runes/report_formats.md]
+STEP 2 ──► Read Agent Roster & Roles [brain/shared-context/AGENTS.md]
+STEP 3 ──► Load Platform Identity & Soul [brain/shared-context/SOUL.md]
+STEP 4 ──► Load Strategy & Thesis [brain/shared-context/THESIS.md]
+STEP 5 ──► Load Governance [brain/shared-context/GOVERNANCE.md]
+STEP 6 ──► Read Operational SOP [ops/workflows/corp-daily-cycle.md]
+STEP 7 ──► Execute Session Hook [ops/workflows/pre-session.md]
+STEP 8 ──► Check Blackboard (active tasks) [brain/shared-context/blackboard.json]
+STEP 9 ──► Load Skill Registry [brain/shared-context/SKILL_REGISTRY.json]
+STEP 9.5 ──► Load Storage Rule [brain/knowledge/notes/RULE-STORAGE-01-storage-location.md]
+STEP 9.6 ──► Load Structure Rule [brain/knowledge/notes/RULE-STRUCTURE-01-system-structure.md]
+STEP 10 ──► Begin work
 ```
 HARD RULE: Skip any step = violation of OmniClaw governance.
 
@@ -64,5 +64,5 @@ Pull from brain/shared-context/blackboard.json for current status.
 
 ## DO NOT
 - Do NOT copy GEMINI.md verbatim
-- Do NOT add content irrelevant to Claude Code's boot
+- Do NOT add irrelevant content to Claude Code's boot
 - Do NOT skip the boot sequence steps

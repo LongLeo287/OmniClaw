@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 ---
 description: Láº¥y brain data tá»« .ai-memory/ trong project ra restore vÃ o session má»›i
 ---

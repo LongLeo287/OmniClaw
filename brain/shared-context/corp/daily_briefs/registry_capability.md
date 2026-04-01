@@ -1,4 +1,4 @@
-﻿# Registry & Capability — Daily Brief
+# Registry & Capability — Daily Brief
 # Channel: shared-context/corp/daily_briefs/registry_capability.md
 # Updated by: registry-manager-agent at end of each active cycle
 

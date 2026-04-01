@@ -1,4 +1,4 @@
-﻿# open-notebook Startup Note
+# open-notebook Startup Note
 # Port: 5055 | Role: content-analyst-agent (CIV STEP 3.5)
 
 ## Start open-notebook

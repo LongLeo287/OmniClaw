@@ -1,4 +1,4 @@
-﻿---
+---
 id: knowledge_enricher
 name: Knowledge Enricher
 version: 1.0.0

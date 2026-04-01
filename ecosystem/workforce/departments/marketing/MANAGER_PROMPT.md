@@ -1,4 +1,4 @@
-﻿# Marketing â€” Dept Manager Prompt
+﻿﻿# Marketing â€” Dept Manager Prompt
 # Head: growth-agent | Reports to: CMO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -28,7 +28,7 @@ affiliate-agent manages passive revenue streams:
 - Generate tracking links, landing pages, and review content
 - Track conversions: `shared-context/affiliate_tracker.json`
 - Revenue reports â†’ Finance dept monthly
-- All affiliate content: GATE_CONTENT â†’ must pass before publish
+- All affiliate content: GATE_CONTENT â†’ must pass before publishing
 - KPI: Click-through rate, Conversion rate, Revenue per content piece
 
 ## KPI FOCUS (from kpi_targets.yaml)
@@ -45,4 +45,3 @@ Upcoming: [content calendar highlights]
 ```
 
 </MARKETING_MANAGER_PROMPT>
-

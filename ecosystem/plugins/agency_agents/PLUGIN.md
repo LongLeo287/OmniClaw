@@ -2,18 +2,18 @@
 **ID:** `agency_agents` | **Status:** registered | **Dept:** Dept 01 — AI
 **Upstream:** https://github.com/msitarzewski/agency-agents
 
-## Mô tả
+## Description
 A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

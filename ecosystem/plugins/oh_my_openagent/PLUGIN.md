@@ -2,18 +2,18 @@
 **ID:** `oh_my_openagent` | **Status:** registered | **Dept:** Dept 01 — AI
 **Upstream:** https://github.com/code-yeongyu/oh-my-openagent
 
-## Mô tả
+## Description
 omo; the best agent harness - previously oh-my-opencode
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

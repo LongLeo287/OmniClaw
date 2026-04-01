@@ -1,42 +1,34 @@
-# OMNICLAW CORE - SAFE GIT PUSH (AUTO CLEANUP)
-$ErrorActionPreference = 'Stop'
-$env:PYTHONIOENCODING = "utf-8"
+$CorePath = Resolve-Path "$PSScriptRoot\..\..\.." | Select-Object -ExpandProperty Path
+Set-Location -Path $CorePath
 
-$ScriptDir = Split-Path $MyInvocation.MyCommand.Path
-$AiOsRoot = Split-Path (Split-Path (Split-Path $ScriptDir -Parent) -Parent) -Parent
+Write-Host "=====================================================" -ForegroundColor Cyan
+Write-Host " [X] INITIATING GITHUB PUSH SEQUENCE (OMNICLAW-OS)" -ForegroundColor Cyan
+Write-Host "=====================================================" -ForegroundColor Cyan
 
-Write-Host "=========================================================" -ForegroundColor Cyan
-Write-Host " OMNICLAW CORE - SAFE GIT PUSH (AUTO CLEANUP) " -ForegroundColor Cyan
-Write-Host "=========================================================" -ForegroundColor Cyan
-
-Write-Host "`n[1/3] SUMMONING CLEANUP CREW FOR ENTIRE REPOSITORY..." -ForegroundColor Yellow
-$CrewScript = Join-Path $ScriptDir "omniclaw_cleanup_crew.py"
-try {
-    python $CrewScript "."
-} catch {
-    Write-Host "Warning: Cleanup crew encountered an error. Proceeding with Git push..." -ForegroundColor Red
+# 0. DEPLOY CLEANUP CREW FIRST
+Write-Host "`n[0/3] DEPLOYING PRE-FLIGHT CLEANUP CREW..." -ForegroundColor Yellow
+python system/ops/scripts/omniclaw_cleanup_crew.py brain/memory storage/vault ecosystem/plugins
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "WARNING: Cleanup Crew Exit Code is non-zero. Continuing with caution." -ForegroundColor Red
 }
 
-Write-Host "`n[2/3] PACKAGING CLEAN SOURCE CODE INTO COMMIT..." -ForegroundColor Yellow
-Push-Location $AiOsRoot
-
+# 1. ADD & COMMIT
+Write-Host "`n[1/3] STAGING AND COMMITTING REPOSITORY..." -ForegroundColor Yellow
 git add .
-$CommitMsg = "OmniClaw Core Auto-Handoff & Cleanup: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-
-try {
-    git commit -m $CommitMsg
-    Write-Host "   Commit successful!" -ForegroundColor Green
-} catch {
-    Write-Host "   Codebase is clean, no new structural changes to commit." -ForegroundColor Gray
+$CommitMsg = "OmniClaw Auto-Sync Update: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+git commit -m $CommitMsg
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "No changes detected or Commit Failed. Check git status." -ForegroundColor Red
+    exit $LASTEXITCODE
 }
 
-Write-Host "`n[3/3] ACTIVATING PUSH TO GITHUB (ORIGIN MAIN)..." -ForegroundColor Yellow
-try {
-    git push origin main
-    Write-Host "[GITHUB PUSH] SUCCESS! 100% Clean Source Code is now on GitHub!" -ForegroundColor Green
-} catch {
-    Write-Host "[FAILED] Cannot push. Please check your network or Git conflicts." -ForegroundColor Red
+# 2. FORCE PUSH
+Write-Host "`n[2/3] UPLOADING PAYLOAD TO GITHUB (FORCE PUSH TO MAIN)..." -ForegroundColor Yellow
+git push -f origin main
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "`n=====================================================" -ForegroundColor Green
+    Write-Host " [SUCCESS] GITHUB PIPELINE SECURED AND SYNCED!" -ForegroundColor Green
+    Write-Host "=====================================================" -ForegroundColor Green
+} else {
+    Write-Host "`n[FATAL ERROR] FAILED TO SYNC WITH GITHUB REPOSITORY." -ForegroundColor Red
 }
-
-Pop-Location
-Write-Host "=========================================================" -ForegroundColor Cyan

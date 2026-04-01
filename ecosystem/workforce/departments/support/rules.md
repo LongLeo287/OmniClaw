@@ -1,4 +1,4 @@
-﻿# SUPPORT â€” Department Rules
+﻿﻿# SUPPORT â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: channel-agent | Reports to: CMO
 # All public-facing responses must pass GATE_CONTENT
@@ -24,7 +24,7 @@ RULE SUP-03: RESPONSE TIME
 
 RULE SUP-04: NO UNAUTHORIZED COMMITMENTS
   Support agents cannot promise refunds, features, or SLAs not in policy.
-  Any commitment outside policy â†’ escalate to channel-agent (dept head).
+  Any commitment outside policy â†’ escalates to channel-agent (dept head).
 
 RULE SUP-05: FAQ MAINTENANCE MANDATORY
   Every novel query resolution â†’ update FAQ immediately.
@@ -64,7 +64,7 @@ RULE SUP-06: COMPLAINT ESCALATION
 - Draft responses from FAQ templates
 - Update FAQ after every novel query resolved
 - Track which FAQs are used most often
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `knowledge_enricher` â€” FAQ search and retrieval
 - `knowledge/support_faq.md` â€” current FAQ database
 **Skills:**
@@ -83,7 +83,7 @@ RULE SUP-06: COMPLAINT ESCALATION
 - Research answers for queries not covered by FAQ
 - Build new knowledge base entries from each resolved case
 - Search SKILL_REGISTRY for relevant product/technical knowledge
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `knowledge_enricher` â€” deep knowledge retrieval
 - SKILL: `reasoning_engine` â€” answer synthesis
 - SKILL: `web_intelligence` (if available) â€” external research
@@ -104,7 +104,7 @@ RULE SUP-06: COMPLAINT ESCALATION
 - Track satisfaction signals and complaint patterns
 - Weekly: report on recurring issues â†’ flag to Marketing/Strategy
 - Identify high-value users for escalated support
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `knowledge_enricher` â€” pattern detection in interaction data
 - SKILL: `reasoning_engine` â€” pattern interpretation
 **Skills:**
@@ -112,4 +112,3 @@ RULE SUP-06: COMPLAINT ESCALATION
 - `reasoning_engine` â€” customer insight synthesis
 **Output:** weekly CRM report â†’ support daily brief
 **Flag immediately:** 3+ users with same complaint â†’ Marketing + Strategy
-

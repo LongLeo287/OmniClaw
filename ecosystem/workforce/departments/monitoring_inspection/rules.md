@@ -1,7 +1,7 @@
-﻿# MONITORING & INSPECTION â€” Department Rules
+﻿﻿# MONITORING & INSPECTION â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: monitor-chief-agent | Reports to: COO
-# Mission: GiÃ¡m sÃ¡t toÃ n diá»‡n 20 phÃ²ng ban, quy trÃ¬nh, compliance, vÃ  cháº¥t lÆ°á»£ng váº­n hÃ nh
+# Mission: Improve the integrity of 20 departments, processes, compliance, and ensure compliance
 # This dept OBSERVES and REPORTS â€” it does not execute or fix (except emergency response)
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
@@ -13,7 +13,7 @@ RULE MON-01: MONITOR EVERYTHING, FIX NOTHING (EXCEPT EMERGENCY)
   Monitoring dept observes and reports.
   Fixes are done by the owning department.
   Exception: CRITICAL security events â€” strix-agent has autonomous fix authority.
-  All other fixes go through proper dept ownership.
+  All other fixes go through proper department ownership.
 
 RULE MON-02: REAL-TIME ALERTS, NOT BATCH REPORTS
   Anomalies are reported immediately when detected.
@@ -70,7 +70,7 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 ### process-monitor-agent
 **Role:** Monitor all workflow processes for adherence and performance
 **Responsibilities:**
-- Watch all 20 dept task flows for: SLA breaches, gate skips, missing receipts
+- Watch all 20 dept task flows for: SLA criticism, gate skips, missing receipts
 - Flag any task that has been in-progress >1 cycle without update
 - Verify GATE compliance: every code pushes through GATE_QA, every content through GATE_CONTENT
 - Alert on process drift (dept consistently skipping a step)
@@ -83,7 +83,7 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 - `diagnostics_engine` â€” process anomaly detection
 - `reasoning_engine` â€” SLA breach calculation
 **Key checks:**
-  - Tasks stuck >1 cycle â†’ WARN alert
+- Tasks stuck >1 cycle â†’ WARN alert
   - Gate skipped (output without gate receipt) â†’ CRITICAL alert
   - Missing receipt for completed task â†’ WARN alert
 
@@ -94,20 +94,20 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 **Responsibilities:**
 - Sample daily briefs for compliance signals (are agents following their rules?)
 - Check receipt quality (is required data present?)
-- Verify rule ESCALATION thresholds are being honored (agent escalates when required?)
+- Verify rule ESCALATION thresholds are being honorable (agent escalates when required?)
 - Flag non-compliance to dept head + monitor-chief-agent
-**At start of each inspection cycle, load:**
+**At the start of each inspection cycle, load:**
 - SKILL: `reasoning_engine` â€” compliance evaluation
 - SKILL: `knowledge_enricher` â€” read all dept rules.md for comparison
 - All 20 dept daily_briefs (this cycle)
 - All dept rules.md files
 **Skills:**
 - `reasoning_engine` â€” compliance gap analysis
-- `knowledge_enricher` â€” rules cross-reference
+- `knowledge_enricher` â€” cross-reference rules
 **Sample compliance checks:**
   - Does daily brief contain ALL required sections? (per MANAGER_PROMPT format)
-  - Does escalation appear when KPI threshold is breached? (per dept rules)
-  - Do receipts have required fields? (per worker_rules.md)
+  - Does escalation appear when KPI threshold is breached? (per department rules)
+  - Do receipts have required fields? (per employee_rules.md)
 
 ---
 
@@ -116,7 +116,7 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 **Responsibilities:**
 - Monitor LLM API response times and error rates
 - Monitor memory usage per agent/dept (is anyone hitting limits?)
-- Monitor blackboard write conflicts or corruption
+- Monitor blackboard writes conflicts or corruption
 - Alert finance dept if cost spike detected (>2x normal for any dept)
 - Alert IT Infra if infrastructure metrics degrade
 **At start of each monitoring cycle, load:**
@@ -131,4 +131,3 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
   - API latency >3x normal â†’ L2 to IT Infra
   - Cost spike >2x â†’ alert Finance immediately
   - Memory corruption detected â†’ L3 to CEO + security_grc
-

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    AI OS Local Skill Validator
+    OmniClaw Local Skill Validator
     Equivalent of GitHub Actions CI - run offline before pushing
 .USAGE
     .\scripts\validate_skills.ps1 [-Verbose]

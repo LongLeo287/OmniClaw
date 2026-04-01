@@ -1,4 +1,4 @@
-﻿# HR & PEOPLE (NHÃ‚N Sá»°) â€” Department Rules
+﻿﻿﻿﻿﻿# HR & PEOPLE (NHÃ‚N Sá»°) â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: hr-manager-agent | Reports to: COO
 # Manages all AI agent workforce (recruiting, onboarding, performance, budget)
@@ -14,7 +14,7 @@ RULE HR-01: ORG CHART IS AUTHORITATIVE
   Unregistered agents cannot be assigned tasks.
 
 RULE HR-02: ONBOARDING BEFORE ACTIVATION
-  New agent onboarding must be complete before the agent receives any task:
+  New agent onboarding must be completed before the agent receives any task:
   1. brain/corp/memory/agents/<agent>.md created
   2. Dept context injected
   3. Skills and tools documented
@@ -27,11 +27,11 @@ RULE HR-03: PERFORMANCE TRACKING IS MANDATORY
 
 RULE HR-04: BUDGET COORDINATION WITH CFO
   LLM token budget per dept coordinated with Finance dept.
-  HR cannot unilaterally increase dept budgets.
+  HR cannot unilaterally increase department budgets.
   Budget changes â†’ CFO approval â†’ CEO approval if > 20%.
 
 RULE HR-05: NO DUPLICATE ROLES
-  Before recruiting a new agent: verify no existing agent already covers the capability.
+  Before recruiting a new agent: verify no existing agent already covers the capabilities.
   recruiter-agent must check SKILL_REGISTRY + org_chart.yaml first.
 
 RULE HR-06: PRIVACY
@@ -55,7 +55,7 @@ RULE HR-06: PRIVACY
 - `shared-context/brain/corp/kpi_scoreboard.json` (all depts â€” for workforce health overview)
 - `corp/departments/hr_people/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” workforce planning decisions
+- `reasoning_engine` â€” planning workforce decisions
 - `context_manager` â€” org-wide context maintenance
 
 ---
@@ -65,8 +65,8 @@ RULE HR-06: PRIVACY
 **Responsibilities:**
 - When dept head requests new capability â†’ search for best-fit solution
 - Check SKILL_REGISTRY first (existing skill may cover the need)
-- Check plugins/ for matching plugin
-- If nothing exists: propose new agent role to hr-manager-agent
+- Check plugins/ for matching plugins
+- If nothing exists: proposes new agent role to hr-manager-agent
 - Write recruiting recommendation to subagents/mq/hr_people_request.md
 **At start of each recruiting task, load:**
 - SKILL: `knowledge_enricher` â€” search SKILL_REGISTRY and plugins/
@@ -86,7 +86,7 @@ RULE HR-06: PRIVACY
 - Inject dept context, skill list, LLM tier, and task queue access
 - Register agent in brain/corp/org_chart.yaml
 - Notify dept head when onboarding complete
-**At start of each onboarding task, load:**
+**At the start of each onboarding task, load:**
 - SKILL: `context_manager` â€” context injection
 - `corp/memory/MEMORY_SPEC.md` â€” agent memory format
 - `corp/org_chart.yaml` â€” for registration
@@ -96,7 +96,7 @@ RULE HR-06: PRIVACY
 ```markdown
 # Agent: <name> | Dept: <dept> | Activated: <date>
 ## Role: <role description>
-## LLM Tier: economy | balanced | premium
+## LLM Tier: economics | balanced | premium
 ## Skills: [list]
 ## Task Queue: subagents/mq/<dept>_tasks.md
 ## Escalation To: <dept-head-agent>
@@ -111,9 +111,9 @@ RULE HR-06: PRIVACY
 **Responsibilities:**
 - Track token usage per dept per cycle (from telemetry receipts)
 - Produce monthly budget report for CFO
-- Alert at 80% budget utilization per dept
+- Alert at 80% budget utilization per department
 - Recommend LLM tier changes (upgrade/downgrade) based on usage
-**At start of each budget cycle, load:**
+**At the start of each budget cycle, load:**
 - SKILL: `knowledge_enricher` â€” aggregate telemetry receipt data
 - SKILL: `reasoning_engine` â€” cost optimization recommendations
 - telemetry/receipts/ â€” all receipts for the period
@@ -133,11 +133,10 @@ RULE HR-06: PRIVACY
 - Identify underperforming agents (3+ consecutive failures)
 - Write performance report to hr-manager-agent
 - Recommend: retraining (new skill) / reassignment / replacement
-**At start of each review cycle, load:**
+**At the start of each review cycle, load:**
 - SKILL: `knowledge_enricher` â€” aggregate receipt data
 - SKILL: `reasoning_engine` â€” performance pattern analysis
 **Skills:**
 - `knowledge_enricher` â€” data aggregation from receipts
 - `reasoning_engine` â€” performance assessment
 **Output:** weekly performance digest â†’ hr_people daily brief
-

@@ -2,18 +2,18 @@
 **ID:** `awesome_openclaw_skills` | **Status:** registered | **Dept:** Dept 01 — AI
 **Upstream:** https://github.com/VoltAgent/awesome-openclaw-skills
 
-## Mô tả
+## Description
 The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

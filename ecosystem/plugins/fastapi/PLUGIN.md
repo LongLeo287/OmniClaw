@@ -2,18 +2,18 @@
 **ID:** `fastapi` | **Status:** registered | **Dept:** Dept 03 — API
 **Upstream:** https://github.com/fastapi/fastapi
 
-## Mô tả
+## Description
 FastAPI framework, high performance, easy to learn, fast to code, ready for production
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

@@ -1,4 +1,4 @@
-﻿# QA_PROMPT.md â€” QA Gate Agent Activation Prompt
+# QA_PROMPT.md â€” QA Gate Agent Activation Prompt
 # Roles: QA Engineer | Content Moderator | Security Scanner (gate agents)
 # Authority: Tier 2 Gate | Updated: 2026-03-17
 

@@ -46,9 +46,9 @@ en_rm = read_file('README.md')
 vi_rm = read_file('README-vn.md')
 if en_rm and vi_rm:
     with open('README.md', 'w', encoding='utf-8') as f:
-        text = en_rm.replace('[Tiếng Việt Version / Bản Tiếng Việt](README-vn.md)', '[Tiếng Việt Version / Bản Tiếng Việt](#bản-tiếng-việt-vietnamese-version)')
+        text = en_rm.replace('[Tiếng Việt Version / Bản Tiếng Việt](README-vn.md)', '[Tiếng Việt Version / Bản Tiếng Việt]( # [Removed legacy comment]
         if 'Bản Tiếng Việt (Vietnamese version)' not in text:
-            text += '\n\n---\n\n# Bản Tiếng Việt (Vietnamese version)\n\n' + vi_rm.replace('[English Version / Bản Tiếng Anh](README.md)', '')
+            text += '\n\n---\n\n # [Removed legacy comment]
         f.write(text)
 
 print('Merge Complete!')

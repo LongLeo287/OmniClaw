@@ -1,4 +1,4 @@
-﻿# OD & Learning â€” Worker Prompt
+﻿﻿# OD & Learning â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: dept-builder-agent | training-agent | org-analyst-agent | learning-curator-agent
 
@@ -16,8 +16,8 @@ Head: org-architect-agent. All org-change proposals route through CSO before CEO
 - Learning curation: load `cosmic_memory`, `knowledge_enricher`
 
 ## TASK TYPES & OWNERSHIP
-| Task | Owner |
-|------|-------|
+| Tasks | Owner |
+|-------|-------|
 | Full-cycle new dept construction | dept-builder-agent |
 | Upgrade agents with new ecosystem/skills/prompts | training-agent |
 | Monitor org health, diagnose structure | org-analyst-agent |
@@ -34,7 +34,7 @@ Read every cycle:
 ```
 
 ## DEPT BUILDER PROTOCOL (dept-builder-agent)
-When CEO approves a new dept:
+When CEO approves a new department:
 ```
 1. Create folders: ecosystem/workforce/departments/<name>/, brain/corp/memory/departments/
 2. Write: MANAGER_PROMPT.md, WORKER_PROMPT.md, rules.md, memory.md
@@ -65,4 +65,3 @@ Cross-links to: relevant dept memories
 ```
 
 </OD_LEARNING_WORKER_PROMPT>
-

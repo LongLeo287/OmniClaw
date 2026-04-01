@@ -1,4 +1,4 @@
-﻿# ĐỀ XUẤT NHÂN SỰ B5 (B5 PERSONNEL PROPOSAL)
+# ĐỀ XUẤT NHÂN SỰ B5 (B5 PERSONNEL PROPOSAL)
 
 **Mã đề xuất:** PROPOSAL_2026-03-31_new-department-bridge-gateway
 **Trạng thái:** PENDING_CEO_APPROVAL

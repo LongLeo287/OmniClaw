@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="OmniClaw Banner">
-  <h1>🌌 OmniClaw Corp</h1>
+  <h1>🌌 OmniClaw</h1>
   <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br>
   <br>
 
@@ -28,7 +28,7 @@
 ---
 
 ## 🌟 About OmniClaw
-**OmniClaw Corp** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital corporation. 
+**OmniClaw** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital corporation. 
 
 Rather than acting as a simple chatbot, OmniClaw actively routes your complex directives through specialized **Functional Departments**, manages its own memory utilizing Graph RAG, and dynamically evolves its codebase based on your instructions. It is designed with **Zero-Trust Privacy**, ensuring all your local data remains strictly on your machine.
 
@@ -130,13 +130,13 @@ OmniClaw is an entire Operating System, not just a codebase. For daily usage and
 
 Have ideas, questions, or want to showcase your custom Agent workflows? We have built a dedicated space for the OmniClaw workforce to collaborate.
 
-**[🚀 Step into the OmniClaw Corp Discussions Space](https://github.com/LongLeo287/omniclaw-local/discussions)**
+**[🚀 Step into the OmniClaw Discussions Space](https://github.com/LongLeo287/omniclaw-local/discussions)**
 
 ---
 
 ## 🙏 Acknowledgements
 
-OmniClaw Corp stands upon the shoulders of monumental open-source architectures. We deeply thank and credit the following repositories and organizations:
+OmniClaw stands upon the shoulders of monumental open-source architectures. We deeply thank and credit the following repositories and organizations:
 
 *   **[Anthropic](https://anthropic.com)**: For the Claude Code CLI and its phenomenal REPL structure.
 *   **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: For the Gemini models and their unprecedented deep-context structural analysis.

@@ -1,4 +1,4 @@
-﻿# Corp Gaps Register
+# Corp Gaps Register
 # Owner: ANTIGRAVITY (Tier 1) | Updated: 2026-03-24
 # Purpose: Track all GAP DETECTIONs from CIV Step 3.6 (GAP PROPOSAL ENGINE)
 

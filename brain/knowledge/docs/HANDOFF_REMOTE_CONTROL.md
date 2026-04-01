@@ -1,4 +1,4 @@
-﻿# OmniClaw Corp â€” Remote Control System HANDOFF
+# OmniClaw Corp â€” Remote Control System HANDOFF
 # Project: nullclaw Telegram Bot + Automation Gateway
 # Owner: CEO @LongLeo | Assigned: Scrum-Master (COO)
 # Date: 2026-03-18 | Status: LIVE âœ…

@@ -1,4 +1,4 @@
-# 📚 OmniClaw Corp - Official Documentation
+# 📚 OmniClaw - Official Documentation
 
 Welcome to the **OmniClaw Official Documentation**. This directory contains human-readable guides, architectural overviews, and tutorials for understanding and interacting with the 21-department AI operating system.
 

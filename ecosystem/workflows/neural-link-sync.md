@@ -1,4 +1,4 @@
-﻿# neural-link-sync.md â€” Knowledge Graph & Registry Synchronization
+# neural-link-sync.md â€” Knowledge Graph & Registry Synchronization
 # Version: 1.1 | Updated: 2026-03-26
 # Department: [DEPT-07] KNOWLEDGE & REGISTRY CAPABILITY (Archivist Agent)
 # Mode: EVENT-DRIVEN (Chá»‰ quÃ©t khi cÃ³ dá»¯ liá»‡u má»›i, tá»‘i Æ°u Quota/Context)

@@ -1,4 +1,4 @@
-﻿# Agent Memory — product-manager-agent
+# Agent Memory — product-manager-agent
 # Title: Head of Strategy | Dept: strategy
 # Layer: SHORT-TERM (7-day auto-purge by archivist)
 # Schema: MEMORY_SPEC.md v1.0 | Initialized: 2026-03-22

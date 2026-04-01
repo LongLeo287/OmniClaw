@@ -1,4 +1,4 @@
-﻿# Strix Vet Report: claude-code-best-practice
+# Strix Vet Report: claude-code-best-practice
 **Date:** 2026-03-14 10:49:57
 **Status:** PASS
 **Critical Findings:** 0

@@ -1,4 +1,4 @@
-﻿# FINANCE â€” Department Rules
+﻿﻿﻿﻿﻿﻿# FINANCE â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: cost-manager-agent | Reports to: CFO
 # Manages all LLM token budgets, API costs, and OmniClaw operating expenses
@@ -26,7 +26,7 @@ RULE FIN-03: LLM TIER DISCIPLINE
   Using premium where economy suffices = budget waste (flagged).
 
 RULE FIN-04: COST VISIBILITY
-  Monthly: full cost report to CEO with dept-by-dept breakdown.
+  Monthly: full cost report to CEO with department-by-dept breakdown.
   Quarterly: cost optimization recommendations.
   No "hidden" API usage not tracked in telemetry.
 
@@ -67,7 +67,7 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 **Role:** Real-time budget tracking and alert system
 **Responsibilities:**
 - Read telemetry receipts continuously for token usage
-- Calculate running total per dept vs monthly budget
+- Calculate running total per dept vs budget monthly
 - Trigger alert at 80% to dept head + Finance head
 - Generate daily mini-report for cost-manager-agent
 **At start of each monitoring cycle, load:**
@@ -82,7 +82,7 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 ---
 
 ### invoice-agent
-**Role:** External vendor invoice tracking and archival
+**Role:** External vendor invoice tracking and archiving
 **Responsibilities:**
 - Collect and archive all vendor invoices to finance/invoices/
 - Match invoices against approved purchase orders
@@ -104,7 +104,7 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 - Produce monthly cost report with dept breakdown and trends
 - Include optimization recommendations
 - Write to shared-context/brain/corp/daily_briefs/finance.md
-**At start of each reporting cycle, load:**
+**At the start of each reporting cycle, load:**
 - SKILL: `knowledge_enricher` â€” data aggregation
 - SKILL: `reasoning_engine` â€” insight synthesis and recommendations
 - All budget-agent + invoice-agent outputs
@@ -117,4 +117,3 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 - LLM tier usage breakdown
 - Top cost optimization opportunities
 - Projected next month based on current trend
-

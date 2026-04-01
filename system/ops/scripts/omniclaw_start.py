@@ -1,35 +1,17 @@
 #!/usr/bin/env python3
 """
-AOS START — AI OS Cognitive Boot Protocol v1.0
+AOS START - OmniClaw Cognitive Boot Protocol v1.0
 Owner: Antigravity | Based on GEMINI.md SECTION 2 Boot Sequence
-
-Đây là quy trình KHỞI ĐỘNG NHẬN THỨC, KHÔNG start bất kỳ server/port nào.
-Thực hiện 9 bước bắt buộc như trong GEMINI.md:
-  STEP 1  → Read GEMINI.md (entry point)
-  STEP 2  → Load Identity & Core Values          [brain/shared-context/SOUL.md]
-  STEP 3  → Load Governance & Rules              [brain/shared-context/GOVERNANCE.md]
-  STEP 4  → Load Agent Roster & Roles            [brain/shared-context/AGENTS.md]
-  STEP 5  → Load Strategy & 40 Pillars           [brain/shared-context/THESIS.md]
-  STEP 6  → Load Output Format Guide             [brain/shared-context/report_formats.md]
-  STEP 7  → Check Blackboard (active tasks)       [brain/shared-context/blackboard.json]
-  STEP 8  → Load Skill Registry                  [brain/shared-context/SKILL_REGISTRY.json]
-  STEP 9  → Begin work — Print boot summary
-
-Usage:
-  python system/ops/scripts/omniclaw_start.py
-  OR via launcher: aos start
 """
 
 import os, json, datetime, sys, subprocess
-
-# FIX: Đảm bảo stdout/stderr luôn UTF-8 trên Windows — ngăn UnicodeEncodeError khi in emoji
 import io
+
 if hasattr(sys.stdout, 'buffer'):
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 os.environ.setdefault('PYTHONIOENCODING', 'utf-8')
 
-# Màu ANSI
 CYAN   = "\033[96m"
 GREEN  = "\033[92m"
 YELLOW = "\033[93m"
@@ -41,7 +23,6 @@ RESET  = "\033[0m"
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 
 BOOT_FILES = [
-    # (step, label, relative_path, required)
     (1, "GEMINI.md              (Entry Point)",      "GEMINI.md",                                          True),
     (2, "SOUL.md                (Identity)",         "brain/shared-context/SOUL.md",                       True),
     (3, "GOVERNANCE.md          (Rules)",            "brain/shared-context/GOVERNANCE.md",                 True),
@@ -55,7 +36,7 @@ BOOT_FILES = [
 def banner():
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n{CYAN}{BOLD}{'='*60}{RESET}")
-    print(f"{CYAN}{BOLD}  AI OS CORP — COGNITIVE BOOT PROTOCOL{RESET}")
+    print(f"{CYAN}{BOLD}  OmniClaw CORP - COGNITIVE BOOT PROTOCOL{RESET}")
     print(f"{CYAN}{BOLD}  Antigravity | Boot v1.0 | {now}{RESET}")
     print(f"{CYAN}{BOLD}{'='*60}{RESET}\n")
 
@@ -85,7 +66,6 @@ def check_file(step, label, rel_path, required):
         return False, None
 
 def check_event_bus():
-    """Đọc SQLite Event Bus xem có bao nhiêu Task Pending"""
     try:
         sys.path.append(ROOT)
         from system.ops.scripts.agent_bus import AgentBus
@@ -93,7 +73,7 @@ def check_event_bus():
         cnt = bus.get_pending_count()
 
         print(f"\n  {CYAN}── EVENT BUS (PUB/SUB) ────────────────────────────{RESET}")
-        print(f"  {BOLD}📡 Tín Hiệu Nhiệm Vụ:{RESET} {YELLOW}{cnt} PENDING TASKS{RESET} đang vỗ biên")
+        print(f"  {BOLD}📡 Task Signals:{RESET} {YELLOW}{cnt} PENDING TASKS{RESET} in queue")
 
         bus.cursor.execute("SELECT id, topic, status, picked_by, payload FROM events WHERE status='PENDING' ORDER BY id ASC LIMIT 5")
         rows = bus.cursor.fetchall()
@@ -103,17 +83,16 @@ def check_event_bus():
                 try: payload_obj = json.loads(r[4]) if r[4] else {}
                 except: pass
                 task_desc = payload_obj.get('task', 'No description')
-                print(f"     • [{r[1]:<10}] ID:{r[0]:03d} — {task_desc}")
+                print(f"     • [{r[1]:<10}] ID:{r[0]:03d} - {task_desc}")
             if cnt > 5:
-                print(f"     {GRAY}... và {cnt-5} tín hiệu khác{RESET}")
+                print(f"     {GRAY}... and {cnt-5} other signals{RESET}")
         else:
-            print(f"  {GREEN}✓ Đội hình Agent đang rảnh rỗi. Event Bus trống.{RESET}")
+            print(f"  {GREEN}✓ Workforce is idle. Event Bus is clear.{RESET}")
 
     except Exception as e:
-        print(f"  {YELLOW}[WARN] Không đọc được Event Bus: {e}{RESET}")
+        print(f"  {YELLOW}[WARN] Cannot access Event Bus: {e}{RESET}")
 
 def read_skill_registry(path):
-    """Đọc SKILL_REGISTRY.json và báo số skills active"""
     try:
         with open(path, 'r', encoding='utf-8') as f:
             reg = json.load(f)
@@ -125,7 +104,6 @@ def read_skill_registry(path):
         print(f"\n  {CYAN}── SKILL REGISTRY ─────────────────────────────────{RESET}")
         print(f"  {BOLD}🎛️  Skills registered:{RESET} {count} total | {GREEN}{len(active)} active{RESET}")
 
-        # Show by domain
         domains = {}
         for e in active:
             d = e.get('domain', 'unknown')
@@ -134,27 +112,24 @@ def read_skill_registry(path):
             print(f"     {dom:<15} {cnt} skills")
 
     except Exception as e:
-        print(f"  {YELLOW}[WARN] Không đọc được SKILL_REGISTRY: {e}{RESET}")
+        print(f"  {YELLOW}[WARN] Cannot parse SKILL_REGISTRY: {e}{RESET}")
 
 def check_environment():
     print(f"\n  {CYAN}── SYSTEM ENVIRONMENT ───────────────────────────────{RESET}")
-    # Python
     py_ver = sys.version.split()[0]
     print(f"  {BOLD}🐍 Python:{RESET} {py_ver}")
-    # Git
     try:
         branch = subprocess.check_output(["git", "branch", "--show-current"], cwd=ROOT, stderr=subprocess.DEVNULL).decode().strip()
         print(f"  {BOLD}🌿 Git Branch:{RESET} {branch}")
     except:
-        print(f"  {BOLD}🌿 Git Branch:{RESET} {YELLOW}Not a git repo / git missing{RESET}")
+        print(f"  {BOLD}🌿 Git Branch:{RESET} {YELLOW}Not a git repository{RESET}")
 
-    # MASTER.env
     env_path = os.path.join(ROOT, "system/ops/secrets/MASTER.env")
     if os.path.exists(env_path):
         size = os.path.getsize(env_path)
         print(f"  {BOLD}🔐 MASTER.env:{RESET} {GREEN}Loaded ({size} bytes){RESET}")
     else:
-        print(f"  {BOLD}🔐 MASTER.env:{RESET} {RED}MISSING! LLM Agents sẽ lỗi.{RESET}")
+        print(f"  {BOLD}🔐 MASTER.env:{RESET} {RED}MISSING! Autonomous execution will fail.{RESET}")
 
 def check_knowledge_pulse():
     print(f"\n  {CYAN}── KNOWLEDGE PULSE ────────────────────────────────{RESET}")
@@ -180,9 +155,9 @@ def check_memory_core():
         memories = core.get_all()
         count = len(memories) if memories else 0
         print(f"  {BOLD}🧠 Cortex Status:{RESET} {GREEN}ONLINE & READY{RESET}")
-        print(f"  {BOLD}📚 Total Memories:{RESET} {count} Neural Nodes mapped in Qdrant Local")
-    except Exception as e:
-        print(f"  {BOLD}🧠 Cortex Status:{RESET} {YELLOW}OFFLINE / SYNCING ({e}){RESET}")
+        print(f"  {BOLD}📚 Total Memories:{RESET} {count} Neural Nodes mapped in Vector Database")
+    except Exception:
+        print(f"  {BOLD}🧠 Cortex Status:{RESET} {YELLOW}OFFLINE / SYNCING{RESET}")
 
 def check_automations():
     print(f"\n  {CYAN}── AUTOMATIONS & DAEMONS ──────────────────────────{RESET}")
@@ -200,7 +175,7 @@ def check_automations():
         active    = [(k, a) for k, a in automations.items() if a.get('status') == 'active']
         paused    = [(k, a) for k, a in automations.items() if a.get('status') == 'paused']
         on_demand = [(k, a) for k, a in automations.items() if a.get('status') == 'on_demand']
-        print(f"  {BOLD}⚙️  Daemons:{RESET} {GREEN}{len(active)} active{RESET} | {YELLOW}{len(paused)} paused{RESET} | {GRAY}{len(on_demand)} on_demand{RESET} / {len(automations)} total")
+        print(f"  {BOLD}⚙️  Daemons:{RESET} {GREEN}{len(active)} active{RESET} | {YELLOW}{len(paused)} paused{RESET} | {GRAY}{len(on_demand)} on-demand{RESET} / {len(automations)} total")
         for k, a in active[:3]:
             path_show = str(a.get('path', k))[:40]
             print(f"     • {path_show}...")
@@ -209,10 +184,9 @@ def check_automations():
         if paused:
             print(f"   {YELLOW}  Paused:{RESET} {', '.join(k for k,_ in paused)}")
     except ImportError:
-        print(f"  {YELLOW}[WARN] PyYAML not installed. Tự cài: pip install pyyaml{RESET}")
+        print(f"  {YELLOW}[WARN] PyYAML not installed. Fallback to basic mode.{RESET}")
     except Exception as e:
-        print(f"  {RED}Error reading yaml: {e}{RESET}")
-
+        print(f"  {RED}Error parsing yaml: {e}{RESET}")
 
 def boot_summary(results):
     ok      = sum(1 for ok, _ in results if ok)
@@ -220,26 +194,24 @@ def boot_summary(results):
     missing = [(step, label) for (step, label, _, req), (ok, _) in zip(BOOT_FILES, results) if not ok and req]
 
     print(f"\n{CYAN}{'='*60}{RESET}")
-    print(f"  Boot result: {GREEN if not missing else RED}{ok}/{total}{RESET} files loaded")
+    print(f"  Boot result: {GREEN if not missing else RED}{ok}/{total}{RESET} components loaded")
 
     if missing:
-        print(f"\n  {RED}⚠ MISSING REQUIRED FILES:{RESET}")
+        print(f"\n  {RED}⚠ MISSING REQUIRED COMPONENTS:{RESET}")
         for step, label in missing:
             print(f"    STEP {step:02d}: {label}")
-        print(f"\n  {YELLOW}Boot INCOMPLETE — Resolve missing files trước khi làm việc.{RESET}")
+        print(f"\n  {YELLOW}Boot INCOMPLETE - Resolve missing assets before continuing.{RESET}")
     else:
-        print(f"\n  {GREEN}{BOLD}☀ HỆ THỐNG ĐÃ SẴN SÀNG CHO CA LÀM VIỆC MỚI.{RESET}")
-        print(f"\n  {BOLD}CÁC LỆNH TIẾP THEO:{RESET}")
-        print(f"  {GRAY}  aos corp start   → Corp daily cycle{RESET}")
-        print(f"  {GRAY}  aos hud          → Xem HUD dashboard{RESET}")
-        print(f"  {GRAY}  aos ingest <url> → Nạp URL mới{RESET}")
+        print(f"\n  {GREEN}{BOLD}☀ SYSTEM ONLINE. READY FOR DAILY CYCLE.{RESET}")
+        print(f"\n  {BOLD}AVAILABLE COMMANDS:{RESET}")
+        print(f"  {GRAY}  aos corp start   -> Initiate daily routine{RESET}")
+        print(f"  {GRAY}  aos hud          -> Display operations dashboard{RESET}")
+        print(f"  {GRAY}  aos ingest <url> -> Append external intelligence{RESET}")
 
     print(f"{CYAN}{'='*60}{RESET}\n")
 
 if __name__ == "__main__":
     banner()
-
-    # Run Diagnostics First
     check_environment()
     check_knowledge_pulse()
     check_memory_core()
@@ -253,18 +225,10 @@ if __name__ == "__main__":
     for step, label, rel, required in BOOT_FILES:
         ok, path = check_file(step, label, rel, required)
         results.append((ok, path))
-        if step == 7 and ok:
-            bb_path = path
-        if step == 8 and ok:
-            sk_path = path
+        if step == 7 and ok: bb_path = path
+        if step == 8 and ok: sk_path = path
 
-    # Step 7: Event Bus detail
-    if bb_path:
-        check_event_bus()
-
-    # Step 8: Skill Registry detail
-    if sk_path:
-        read_skill_registry(sk_path)
-
-    # Step 9: Summary
+    if bb_path: check_event_bus()
+    if sk_path: read_skill_registry(sk_path)
+    
     boot_summary(results)

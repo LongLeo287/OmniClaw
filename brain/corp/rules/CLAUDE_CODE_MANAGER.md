@@ -1,4 +1,4 @@
-﻿# CLAUDE_CODE_MANAGER.md â€” Claude Code Fix-Retry Loop Rules
+# CLAUDE_CODE_MANAGER.md â€” Claude Code Fix-Retry Loop Rules
 # Version: 1.0 | Created: 2026-03-22
 # Referenced by: system/ops/workflows/execution_template.md
 # Authority: Tier 2 (Operations)

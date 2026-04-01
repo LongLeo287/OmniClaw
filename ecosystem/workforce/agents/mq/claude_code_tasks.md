@@ -1,25 +1,25 @@
-# [HANDOFF] Chiến Dịch Giao Việc: Xây Dựng Kỹ Năng (Skills) Cho GCP Architect
+﻿# [HANDOFF] Job Assignment Campaign: Building Skills for GCP Architect
 
-**Từ:** Antigravity (Kiến trúc sư trưởng)
-**Đến:** Claude Code CLI (Kỹ sư triển khai)
-**Mục tiêu:** Xây dựng toàn bộ Hồ sơ (Profile) và Mã kỹ năng (Skills Code) cho Đặc vụ `gcp_architect` dựa trên các tài liệu tiêu chuẩn `Open Standard` của OmniClaw V3.1 và trí tuệ từ Google Developer MCP.
+**From:** Antigravity (Chief Architect)
+**To:** Claude Code CLI (Implementation Engineer)
+**Goal:** Build the entire Profile and Skills Code for Agent `gcp_architect` based on OmniClaw V3.1 `Open Standard` documents and intelligence from Google Developer MCP.
 
 ---
 
-## 🛠️ Tri thức nền tảng (Claude Code bắt buộc phải đọc trước khi Code)
-Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code của Sếp (OmniClaw):
-1. `$OMNICLAW_ROOT\brain\knowledge\agent_skills_open_standard.md` (LUẬT CODE SKILL)
-2. `$OMNICLAW_ROOT\brain\knowledge\spawn_agent_skill.md` (HƯỚNG DẪN TẠO SKILL)
-3. Tra cứu `google-developer-knowledge` MCP để cào tài liệu mới nhất về: *gcloud CLI, Cloud Run, Cloud Build.*
+## 🛠️ Foundation knowledge (Claude Code is required to read before coding)
+Open and devour the following 3 documents to understand the rules of the Boss Code (OmniClaw):
+1. `$OMNICLAW_ROOT\brain\knowledge\agent_skills_open_standard.md` (CODE SKILL LAW)
+2. `$OMNICLAW_ROOT\brain\knowledge\spawn_agent_skill.md` (SKILL CREATION INSTRUCTIONS)
+3. Look up `google-developer-knowledge` MCP to find the latest documentation on: *gcloud CLI, Cloud Run, Cloud Build.*
 
-## 📋 Hạng mục Công Việc (Task Queue)
-- [ ] **Khởi tạo hệ thống Skill:** Trong thư mục `ecosystem/skills/`, hãy tạo một bộ Skill mới tên là `gcp_deploy_skill`. Bộ code này phải đúng 100% chuẩn Open Standard (như có `schema.json`, `index.py`, `README.md`).
-- [ ] **Code hóa logic:** Viết code Python bên trong Skill này để thực thi lệnh `gcloud builds submit` và `gcloud run deploy`. Không được bịa lệnh! Phải dùng MCP Google Dev để tra API gcloud trước.
-- [ ] **Gắn Skill vào Cấy ghép (Bind):** Sửa đổi file `ecosystem/workforce/agents/gcp_architect/agent.yaml` và `prompts/system_prompt.md` để kết nối thẳng con Subagent này vào cái Skill `gcp_deploy_skill` vừa tạo.
-- [ ] **Kiểm tra chéo:** Đảm bảo code chạy mượt mà trên môi trường Local (giả lập) hoặc ít nhất không dính lỗi Cú pháp lệnh Google.
-- [ ] **Báo cáo:** Ghi kết quả "Hoàn Tất Mĩ Mãn" vào `brain/shared-context/blackboard.json` (sửa `handoff_trigger` thành `DONE`).
+## 📋 Task Queue
+- [ ] **Initialize the Skill system:** In the `ecosystem/skills/` directory, create a new Skill set named `gcp_deploy_skill`. This set of code must be 100% Open Standard (such as `schema.json`, `index.py`, `README.md`).
+- [ ] **Coding logic:** Write Python code inside this Skill to execute the commands `gcloud builds submit` and `gcloud run deploy`. Do not make up orders! Must use MCP Google Dev to look up gcloud API first.
+- [ ] **Attach Skill to Implant (Bind):** Modify the files `ecosystem/workforce/agents/gcp_architect/agent.yaml` and `prompts/system_prompt.md` to connect this Subagent directly to the Skill `gcp_deploy_skill` just created.
+- [ ] **Cross-check:** Make sure the code runs smoothly on the Local (simulated) environment or at least does not have Google Command Syntax errors.
+- [ ] **Report:** Write the result "Satisfactorily Completed" to `brain/shared-context/blackboard.json` (change `handoff_trigger` to `DONE`).
 
-> ⚠ **CLAUDE CODE CLI CHÚ Ý:** Tuyệt đối không xóa bất cứ file System nào. Code xong nhớ báo cáo lại cho Master (Sếp).
+> ⚠ **CLAUDE CODE CLI ATTENTION:** Absolutely do not delete any System files. After completing the code, remember to report back to the Master.
 
 ---
 
@@ -29,14 +29,14 @@ Mở và ngấu nghiến 3 tài liệu sau để nắm được luật lệ Code
 **Assigned:** Claude Code CLI
 **Created:** 2026-03-26T19:16:00+07:00
 
-### Task
+### Tasks
 Fix CLAUDE.md header: Cycle 8 (2026-03-23) -> Cycle 11 (2026-03-26)
 
 ### Steps
-1. Doc file CLAUDE.md tai root: $OMNICLAW_ROOT\CLAUDE.md
-2. Tim dong: # OmniClaw Corp | Cycle 8 | Last synced: 2026-03-23
-3. Thay thanh: # OmniClaw Corp | Cycle 11 | Last synced: 2026-03-26
-4. Luu file UTF-8
+1. Doc file CLAUDE.md at root: $OMNICLAW_ROOT\CLAUDE.md
+2. Tim: # OmniClaw Corp | Cycle 8 | Last synced: 2026-03-23
+3. Replace bar: # OmniClaw Corp | Cycle 11 | Last synced: 2026-03-26
+4. Save UTF-8 files
 5. Verify: git diff CLAUDE.md
 
 ### Receipt

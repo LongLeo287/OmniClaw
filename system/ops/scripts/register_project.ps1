@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-    Register a new project into the AI OS ecosystem.
+    Register a new project into the OmniClaw ecosystem.
 
 .DESCRIPTION
     Creates registry.json entry, scaffolds projects/PRJ-XXX/ directory,
@@ -167,4 +167,3 @@ Write-Host "  1. Edit $configPath - add project-specific skills & rules"
 Write-Host "  2. Add workflows to $workflowsPath"
 Write-Host "  3. Run: .\gatekeeper.ps1 -ProjectId $Id"
 Write-Host ""
-

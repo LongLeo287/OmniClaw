@@ -1,8 +1,8 @@
-﻿# SYSTEM HEALTH (Y Táº¾ Há»† THá»NG) â€” Department Rules
+﻿﻿# SYSTEM HEALTH (Nurses) â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: health-chief-agent | Reports to: CTO
-# Mission: NgÄƒn ngá»«a, phÃ¡t hiá»‡n, vÃ  phá»¥c há»“i sá»©c khá»e toÃ n bá»™ há»‡ thá»‘ng OmniClaw
-# "Y táº¿" = preventive care + diagnosis + treatment for AI agents and infrastructure
+# Mission: Discover, discover, and discover what's different about OmniClaw
+# "Nurseº¿" = preventive care + diagnosis + treatment for AI agents and infrastructure
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
 ---
@@ -36,7 +36,7 @@ RULE HLT-04: RECOVERY IS DOCUMENTED
 RULE HLT-05: HEALTH KNOWLEDGE BASE IS MAINTAINED
   All known health issues, their symptoms, and their remedies documented in:
   `knowledge/system_health/health_kb.md`
-  New issue types always added. Never lose knowledge about how to fix something.
+  New issue types are always added. Never lose knowledge about how to fix something.
 
 RULE HLT-06: IMMUNE SYSTEM PRINCIPLE
   System Health is the immune system of OmniClaw.
@@ -66,7 +66,7 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
 - `knowledge/system_health/health_kb.md` â€” known issues and remedies
 - `corp/departments/system_health/MANAGER_PROMPT.md`
 **Skills:**
-- `diagnostics_engine` â€” ALWAYS. Core tool.
+- `diagnostics_engine` â€” ALWAYS. Core tools.
 - `resilience_engine` â€” recovery strategy
 - `reasoning_engine` â€” root cause analysis
 
@@ -79,9 +79,9 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
   - Memory staleness (>14 days old â†’ refresh needed)
   - Failure rate trend (rising over 3 cycles â†’ training flag)
   - Context overload (agent handling too many concurrent tasks)
-  - Skill-task mismatch (assigned tasks their skills don't match)
+- Skill-task mismatch (assigned tasks their skills don't match)
 - Produce agent health dashboard for health-chief-agent
-- Flag degraded agents â†’ recommend action (training / memory refresh / reassignment)
+- Flag degraded agents â†’ recommended action (training / memory refresh / reassignment)
 **At start of each health scan, load:**
 - SKILL: `diagnostics_engine` â€” agent health metrics
 - SKILL: `knowledge_enricher` â€” aggregate agent memory + receipt data
@@ -107,7 +107,7 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
 - SKILL: `diagnostics_engine` â€” system diagnostic scans
 - SKILL: `resilience_engine` â€” fault classification
 - SKILL: `shell_assistant` â€” run diagnostic scripts if needed
-- All telemetry/ recent data
+- All telemetry/recent data
 **Skills:**
 - `diagnostics_engine` â€” PRIMARY TOOL. Full system scan.
 - `resilience_engine` â€” fault severity classification
@@ -144,4 +144,3 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
   - Action taken: [what was done]
   - Outcome: [resolved / partially resolved / escalated]
   - health_kb updated: [YES/NO]
-

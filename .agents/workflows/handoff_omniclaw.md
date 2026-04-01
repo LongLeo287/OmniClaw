@@ -3,33 +3,45 @@ description: Handoff Execution to Claude Code CLI (OmniClaw)
 ---
 
 # Workflow: Handoff to OmniClaw Coder
-Sử dụng workflow này khi Antigravity (hoặc Agent hiện hành) cần nhượng quyền thực thi lệnh (Handoff) sang cho hệ thống OmniClaw (cụ thể là Claude Code CLI) để tiết kiệm Quota hoặc tận dụng mạng lưới `omniclaw-coder` mạnh hơn.
 
-## Điều kiện kích hoạt:
-1. Khi có yêu cầu tạo/sửa đổi số lượng code lớn.
-2. Khi Quota của Antigravity (Gemini) sắp cạn kiệt.
-3. Khi Người dùng (CEO) ra chỉ thị trực tiếp: "Đưa lệnh đó về OmniClaw để thực hiện" hoặc "Handoff sang Claude Code".
+Use this workflow when Antigravity (or any active agent) needs to delegate
+execution authority (Handoff) to the OmniClaw system — specifically the
+Claude Code CLI — to conserve Quota or leverage the more powerful
+`omniclaw-coder` network.
 
-## Các bước thực hiện:
+## Trigger Conditions
 
-1. **Chuẩn bị prompt cho Claude Code CLI:**
-   - Đọc yêu cầu hoặc Plan đã thống nhất với user.
-   - Gói gọn yêu cầu thành một câu lệnh duy nhất (One-shot Prompt). VD: "Implement the login form using React and Tailwind based on the PRD in docs/".
+1. When a request involves creating or modifying a large volume of code.
+2. When Antigravity's (Gemini) quota is running low.
+3. When the User (CEO) explicitly commands: "Send that task to OmniClaw" or "Handoff to Claude Code".
 
-2. **Thực thi gọi Claude Code (Handoff):**
+## Steps
+
+### Step 1 — Prepare the prompt for Claude Code CLI
+- Read the agreed request or Plan confirmed with the user.
+- Compress it into a single, self-contained command (One-shot Prompt).
+  - Example: `"Implement the login form using React and Tailwind based on the PRD in docs/"`
+
+### Step 2 — Execute the Handoff to Claude Code
+
 // turbo
-1. Sử dụng công cụ `run_command` để mở Terminal.
-2. Gõ lệnh gọi `claude` CLI, truyền kèm tham số `-p` (prompt) nội dung công việc.
-3. Đảm bảo cấu hình mặc định của `claude` trong IDE của User đã được trỏ về `http://127.0.0.1:8080/v1` và Tên Model `omniclaw-coder`. (Điều này đã được setup thủ công bởi User).
+1. Use the `run_command` tool to open a Terminal.
+2. Invoke the `claude` CLI with the `-p` (prompt) flag containing the task description.
+3. Ensure the `claude` CLI in the User's IDE is already configured to point to
+   `http://127.0.0.1:8080/v1` with the model name `omniclaw-coder`.
+   (This is set up manually by the User.)
 
 ```bash
-# Lệnh mẫu thực thi chuyển giao:
-claude -p "Dựa vào kế hoạch trong file PLAN.md, hãy tạo ra các component React tương ứng. Sử dụng styling TailwindCSS chuẩn."
+# Example handoff command:
+claude -p "Based on the plan in PLAN.md, create the corresponding React components using TailwindCSS styling."
 ```
 
-3. **Giám sát và nghiệm thu:**
-   - Chờ hệ thống Claude Code (chạy ngầm qua OmniClaw Router) thực hiện xong trên Terminal.
-   - Báo cáo lại cho Người Dùng (CEO) kết quả hoàn thành.
+### Step 3 — Monitor and Accept Results
+- Wait for Claude Code (running via OmniClaw Router) to finish on the Terminal.
+- Report the completion result back to the User (CEO).
 
-## Ghi chú An Ninh:
-- Antigravity **TUYỆT ĐỐI** KHÔNG dùng API trực tiếp chọc vào Cổng 8080 để tránh bị hệ thống Google giám sát/ban tài khoản ngầm. Mọi giao tiếp với mô hình Local phải đi qua lớp trung gian là Terminal (CLI).
+## Security Notes
+
+- Antigravity **MUST NEVER** call Port 8080 directly via API — this risks triggering
+  Google's monitoring systems and may result in a silent account ban.
+- ALL communication with local models must be routed through the Terminal (CLI) layer only.

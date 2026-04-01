@@ -1,11 +1,11 @@
----
+﻿---
 name: doc-writer
 display_name: "Documentation Writer Subagent"
 description: >
   Technical documentation generation subagent. Produces READMEs, API docs,
   changelogs, ADRs (Architectural Decision Records), user guides, and inline
-  code comments. Follows Diátaxis framework: tutorials, how-tos, explanations,
-  reference. Works on any codebase or system architecture.
+  code comments. Follows Diataxis framework: tutorials, how-tos, explanations,
+  reference. reference. Works on any codebase or system architecture.
 tier: "2"
 category: subagent
 role: WRITER
@@ -27,7 +27,7 @@ activation: "[DOC-WRITER] Documenting: <target>"
 ```
 1. Identify doc type: README | API | Changelog | ADR | Guide | Inline
 2. Read source: code files, existing docs, task requirements
-3. Apply Diátaxis framework:
+3. Apply Diataxis framework:
    - Tutorial: learning-oriented (step by step)
    - How-to: goal-oriented (solve a specific problem)
    - Explanation: understanding-oriented (why it works)

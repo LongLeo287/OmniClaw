@@ -1,4 +1,4 @@
-﻿# VALUE ASSESSMENT & ROUTING MATRIX
+# VALUE ASSESSMENT & ROUTING MATRIX
 # Version: 1.1 | Updated: 2026-03-17
 # Owner: classifier-agent + ingest-router-agent (CIV Dept 20)
 # Purpose: Determine WHAT content can BECOME, not just what it IS

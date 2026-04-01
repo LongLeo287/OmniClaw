@@ -1,4 +1,4 @@
-﻿# Agent Memory — scrum-master-agent
+# Agent Memory — scrum-master-agent
 # Title: Head of Operations | Dept: operations
 # Layer: SHORT-TERM (7-day auto-purge by archivist)
 # Schema: MEMORY_SPEC.md v1.0 | Initialized: 2026-03-22

@@ -1,4 +1,4 @@
-﻿---
+---
 id: KI-2026-03-22-hivemind-plugin
 source: https://github.com/shynlee04/hivemind-plugin
 type: TOOL

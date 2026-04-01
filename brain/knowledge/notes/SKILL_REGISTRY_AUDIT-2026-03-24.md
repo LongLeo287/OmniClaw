@@ -1,4 +1,4 @@
-﻿# SKILL_REGISTRY.json Audit Report - 2026-03-24
+# SKILL_REGISTRY.json Audit Report - 2026-03-24
 
 ## Summary
 - Total entries: 121

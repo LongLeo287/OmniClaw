@@ -1,4 +1,4 @@
-﻿# The Shorthand Guide to Everything Agentic Security
+# The Shorthand Guide to Everything Agentic Security
 
 _everything claude code / research / security_
 

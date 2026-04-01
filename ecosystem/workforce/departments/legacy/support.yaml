@@ -1,4 +1,4 @@
-﻿# Support Department Configuration
+# Support Department Configuration
 id: support
 display_name: Support
 head_agent: channel_agent

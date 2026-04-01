@@ -1,4 +1,4 @@
-﻿# Agent: growth-agent
+# Agent: growth-agent
 # Dept: marketing | Head: True | Role: Growth Agent — CMO, marketing strategy + execution
 # Version: 1.0 | 2026-03-24
 

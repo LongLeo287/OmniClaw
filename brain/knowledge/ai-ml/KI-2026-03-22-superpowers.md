@@ -1,4 +1,4 @@
-﻿---
+---
 id: KI-2026-03-22-superpowers
 source: https://github.com/superpowers-ai/superpowers
 type: TOOL

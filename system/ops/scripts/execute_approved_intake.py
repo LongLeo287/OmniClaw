@@ -16,11 +16,11 @@ def process_report():
         content = f.read()
 
     # The report contains blocks like:
-    # ## CHI TIẾT — APPROVE REPOS
+    # [System log: Legacy non-English comment removed]
     # ### 1. some/repo
     # 🔗 https://github.com/some/repo
 
-    # Extract APPROVE URLs (they are in the "CHI TIẾT — APPROVE REPOS" section)
+    # [System log: Legacy non-English comment removed]
     # Actually, we can just extract from the OVERVIEW table!
     # Format in table: | 1 | `org/repo` | ✅ APPROVE | Dept | Reason |
     # But wait, the report has URLs in the table? No, it has `name`.
@@ -35,7 +35,7 @@ def process_report():
 
     current_section = None
     for line in lines:
-        if "## CHI TIẾT — APPROVE REPOS" in line:
+        if " # [Removed legacy comment]
             current_section = "APPROVE"
             continue
 
@@ -91,7 +91,7 @@ def process_report():
     # 2. PROCESS REFERENCE REPOS -> Write to Markdown Catalog
     os.makedirs(os.path.dirname(REF_CATALOG_FILE), exist_ok=True)
     with open(REF_CATALOG_FILE, 'w', encoding='utf-8') as f:
-        f.write("# 📚 AI OS Reference Repositories Catalog\n")
+        f.write("# 📚 OmniClaw Reference Repositories Catalog\n")
         f.write(f"> Generated on: {date_str} from intake backlog evaluation.\n")
         f.write("> Total: 1,444 repos. Trạng thái: Chỉ lưu trữ để tham khảo (chưa clone).\n\n")
 

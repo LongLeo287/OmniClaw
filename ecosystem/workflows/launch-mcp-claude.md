@@ -1,45 +1,45 @@
-﻿# Department: operations
+# Department: operations
 ---
-description: Khi nÃ o vÃ  cÃ¡ch khá»Ÿi Ä‘á»™ng Claude Code CLI Ä‘á»ƒ dÃ¹ng MCP servers trong OmniClaw â€” Hybrid MCP Strategy
+description: Khi nào và cách khởi động Claude Code CLI để dùng MCP servers trong OmniClaw — Hybrid MCP Strategy
 ---
 
 # Workflow: Launch MCP via Claude Code CLI
 
-## Má»¥c Ä‘Ã­ch
-Khi task cáº§n dÃ¹ng MCP server mÃ  Antigravity khÃ´ng Ä‘á»§:
-- Sequential Thinking MCP (cho reasoning chains phá»©c táº¡p)
-- Git MCP (cho git operations nÃ¢ng cao)
-- Filesystem MCP (vá»›i access control granular)
+## Mục đích
+Khi task cần dùng MCP server mà Antigravity không đủ:
+- Sequential Thinking MCP (cho reasoning chains phức tạp)
+- Git MCP (cho git operations nâng cao)
+- Filesystem MCP (với access control granular)
 
-> **Æ¯u tiÃªn:** DÃ¹ng Antigravity native trÆ°á»›c â†’ chá»‰ escalate khi cáº§n.
+> **Ưu tiên:** Dùng Antigravity native trước → chỉ escalate khi cần.
 
 ---
 
-## Decision Matrix â€” Khi nÃ o dÃ¹ng gÃ¬
+## Decision Matrix — Khi nào dùng gì
 
-| Scenario | DÃ¹ng gÃ¬ |
+| Scenario | Dùng gì |
 |----------|---------|
-| Git log/diff/blame Ä‘Æ¡n giáº£n | Antigravity `run_command` (native) |
+| Git log/diff/blame đơn giản | Antigravity `run_command` (native) |
 | Complex reasoning, debugging | Antigravity Thought N: pattern (native) |
 | Deep git history traversal, multi-file blame | Python `mcp_client.py call_mcp("git", ...)` |
-| Extended sequential reasoning session | Claude Code CLI vá»›i MCP server |
-| Cáº§n nhiá»u MCP tools liÃªn tá»¥c | Claude Code CLI |
+| Extended sequential reasoning session | Claude Code CLI với MCP server |
+| Cần nhiều MCP tools liên tục | Claude Code CLI |
 
 ---
 
-## CÃ¡ch 1 â€” Python MCP Client (KhÃ´ng cáº§n Claude Code CLI)
+## Cách 1 — Python MCP Client (Không cần Claude Code CLI)
 
 ```python
-# Gá»i tá»« báº¥t ká»³ skill/adapter trong OmniClaw
-from plugins.mcp_client.mcp_client import call_mcp, AI_OS_ROOT
+# Gọi từ bất kỳ skill/adapter trong OmniClaw
+from plugins.mcp_client.mcp_client import call_mcp, OMNICLAW_ROOT
 
 # Git: xem history
 history = call_mcp("git", "git_log", {
-    "repo_path": AI_OS_ROOT,
+    "repo_path": OMNICLAW_ROOT,
     "max_count": 20
 })
 
-# Sequential Thinking: má»™t thought step
+# Sequential Thinking: một thought step
 thought = call_mcp("sequential-thinking", "sequentialthinking", {
     "thought": "Analyzing the root cause of this bug...",
     "thoughtNumber": 1,
@@ -49,7 +49,7 @@ thought = call_mcp("sequential-thinking", "sequentialthinking", {
 
 # Filesystem: list directory
 files = call_mcp("filesystem", "list_directory", {
-    "path": f"{AI_OS_ROOT}/skills"
+    "path": f"{OMNICLAW_ROOT}/skills"
 })
 ```
 
@@ -60,15 +60,15 @@ python plugins/mcp-client/mcp_client.py git git_log '{"repo_path": "$OMNICLAW_RO
 
 ---
 
-## CÃ¡ch 2 â€” Claude Code CLI Launch (Khi cáº§n full MCP session)
+## Cách 2 — Claude Code CLI Launch (Khi cần full MCP session)
 
-### BÆ°á»›c 1: Má»Ÿ terminal má»›i
+### Bước 1: Mở terminal mới
 ```powershell
-# Tá»« OmniClaw root
+# Từ OmniClaw root
 cd "$OMNICLAW_ROOT"
 ```
 
-### BÆ°á»›c 2: Äáº£m báº£o claude_desktop_config.json Ä‘Ã£ cÃ³ MCP servers
+### Bước 2: Đảm bảo claude_desktop_config.json đã có MCP servers
 File: `<USER_PROFILE>\AppData\Roaming\Claude\claude_desktop_config.json`
 ```json
 {
@@ -80,27 +80,27 @@ File: `<USER_PROFILE>\AppData\Roaming\Claude\claude_desktop_config.json`
 }
 ```
 
-### BÆ°á»›c 3: Khá»Ÿi Ä‘á»™ng Claude Code CLI
+### Bước 3: Khởi động Claude Code CLI
 ```powershell
-claude  # hoáº·c: claude --mcp-debug (Ä‘á»ƒ debug MCP connections)
+claude  # hoặc: claude --mcp-debug (để debug MCP connections)
 ```
 
-### BÆ°á»›c 4: Trong Claude Code session, verify MCPs connected
+### Bước 4: Trong Claude Code session, verify MCPs connected
 ```
 /mcp         # list connected MCP servers
 /tools       # list all available tools including MCP tools
 ```
 
-### BÆ°á»›c 5: DÃ¹ng MCP tools tá»± nhiÃªn
-Claude Code tá»± detect vÃ  dÃ¹ng MCP tools khi phÃ¹ há»£p.
-Hoáº·c explicit: "Use the sequential-thinking MCP to analyze this bug"
+### Bước 5: Dùng MCP tools tự nhiên
+Claude Code tự detect và dùng MCP tools khi phù hợp.
+Hoặc explicit: "Use the sequential-thinking MCP to analyze this bug"
 
-### BÆ°á»›c 6: Sau khi xong â€” output vá» Antigravity
-Copy káº¿t quáº£ / files Ä‘Ã£ táº¡o â†’ tiáº¿p tá»¥c trong Antigravity
+### Bước 6: Sau khi xong — output về Antigravity
+Copy kết quả / files đã tạo → tiếp tục trong Antigravity
 
 ---
 
-## MCPs trong OmniClaw â€” Danh sÃ¡ch Ä‘áº§y Ä‘á»§
+## MCPs trong OmniClaw — Danh sách đầy đủ
 
 | MCP Server | Package | Tier | Skill |
 |-----------|---------|------|-------|
@@ -109,7 +109,7 @@ Copy káº¿t quáº£ / files Ä‘Ã£ táº¡o â†’ tiáº¿p tá»¥c tr
 | filesystem | `@modelcontextprotocol/server-filesystem` | 1 | Built-in |
 | context7 | `@upstash/context7` (CLI npx ctx7) | 1 | skills/context7/SKILL.md |
 
-> **Note:** context7 dÃ¹ng CLI mode (`npx ctx7`) â€” khÃ´ng cáº§n MCP session.
+> **Note:** context7 dùng CLI mode (`npx ctx7`) — không cần MCP session.
 
 ---
 
@@ -118,7 +118,7 @@ Copy káº¿t quáº£ / files Ä‘Ã£ táº¡o â†’ tiáº¿p tá»¥c tr
 | Issue | Fix |
 |-------|-----|
 | `uvx: not found` | `$env:Path = "<USER_PROFILE>\.local\bin;$env:Path"` |
-| MCP server khÃ´ng connect | `claude --mcp-debug` Ä‘á»ƒ xem log |
+| MCP server không connect | `claude --mcp-debug` để xem log |
 | `claude: not found` | Install: `npm install -g @anthropic-ai/claude-code` |
 | Port/pipe error | Restart Claude Code CLI |
 

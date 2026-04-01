@@ -1,4 +1,4 @@
-﻿# Strix Vet Report: BMAD-METHOD
+# Strix Vet Report: BMAD-METHOD
 **Date:** 2026-03-14 10:49:48
 **Status:** WARN
 **Critical Findings:** 0

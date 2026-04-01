@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 ---
 description: Plugin Integration Process â€” OmniClaw Corp (Quy trÃ¬nh tÃ­ch há»£p Plugin)
 ---

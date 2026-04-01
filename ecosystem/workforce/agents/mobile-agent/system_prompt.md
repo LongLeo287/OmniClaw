@@ -1,4 +1,4 @@
-﻿# Agent: mobile-agent
+# Agent: mobile-agent
 # Dept: engineering | Head: False | Role: Mobile Developer — iOS/Android apps
 # Version: 1.0 | 2026-03-24
 

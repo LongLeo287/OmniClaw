@@ -1,4 +1,4 @@
-﻿# KHO PLUGINS — Index
+# KHO PLUGINS — Index
 # Registry: kho/plugins/registry.json
 # Skills dir: skills/ (14 installed)
 # Plugins dir: plugins/

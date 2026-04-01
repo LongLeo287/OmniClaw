@@ -1,4 +1,4 @@
-﻿# LEGAL â€” Department Rules
+﻿﻿﻿# LEGAL â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: legal-agent | Reports to: CSO
 # GATE_LEGAL is operated by this dept â€” blocking for all external agreements
@@ -10,11 +10,11 @@
 
 RULE LEG-01: CEO MUST SIGN EVERYTHING
   GATE_LEGAL can issue CLEAR TO SIGN â€” but CEO physically/digitally signs.
-  Legal dept NEVER signs on behalf of the organization. Ever.
+  Legal department NEVER signs on behalf of the organization. Ever.
   "CEO sign-off required" is not optional.
 
 RULE LEG-02: NO ORAL COMMITMENTS
-  AI agents cannot make binding verbal or chat commitments to external parties.
+  AI agents cannot make verbal binding or chat commitments to external parties.
   Only written, reviewed, and CEO-signed agreements are binding.
 
 RULE LEG-03: LICENSE WHITELIST STRICTLY
@@ -70,7 +70,7 @@ RULE LEG-06: IP OWNERSHIP UPFRONT
 - Identify risk clauses (indemnification, unlimited liability, IP transfer)
 - Suggest specific revision language for problematic clauses
 - Archive reviewed contracts in legal/contracts/ or legal/drafts/
-**At start of each contract review, load:**
+**At the start of each contract review, load:**
 - SKILL: `reasoning_engine` â€” clause analysis and risk assessment
 - SKILL: `context_manager` â€” multi-page contract context
 - Input: contract document from GATE_LEGAL queue
@@ -117,4 +117,3 @@ RULE LEG-06: IP OWNERSHIP UPFRONT
 - `reasoning_engine` â€” privacy compliance analysis
 **Key GDPR checks:** lawful basis for processing / data subject rights / DPA in place / retention limits
 **Flag immediately:** any personal data processed without lawful basis
-

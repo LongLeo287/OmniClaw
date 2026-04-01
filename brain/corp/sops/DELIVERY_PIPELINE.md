@@ -1,4 +1,4 @@
-﻿# DELIVERY PIPELINE â€” SOP v1.0
+# DELIVERY PIPELINE â€” SOP v1.0
 # OmniClaw Corp | Tier 1 â€” Operations
 # Effective: 2026-03-18
 

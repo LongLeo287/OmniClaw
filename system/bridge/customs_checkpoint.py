@@ -1,7 +1,7 @@
 """
-CUSTOMS CHECKPOINT (TRẠM KIỂM SOÁT HẢI QUAN)
-Luật CEO: "Ai có thẻ thì đi dễ hơn nhưng VẪN BỊ KIỂM TRA. Chưa có thẻ thì kiểm tra gắt gao."
-Log MỌI request (PASS và FAIL) để phục vụ audit trail.
+CUSTOMS CHECKPOINT
+CEO Rule: "Those with pass go easier but ARE STILL CHECKED. No pass gets strict checks."
+Log ALL requests (PASS and FAIL) for audit trail.
 """
 from __future__ import annotations
 
@@ -43,7 +43,7 @@ _VALID_PLATFORMS  = {"zalo", "telegram", "facebook", "discord", "line", "whatsap
 # ── Scan functions ─────────────────────────────────────────────────────────────
 
 async def strict_payload_scan(payload: str, request_id: str) -> bool:
-    """Kiểm tra gắt gao từng byte: SQL/XSS/shell injection, prompt injection, size."""
+    """Strict byte check: SQL/XSS/shell injection, prompt injection, size."""
     if len(payload) > _GUEST_SIZE_LIMIT:
         logger.warning(f"[{request_id}] OVERSIZE: {len(payload)} bytes > {_GUEST_SIZE_LIMIT}B limit (GUEST)")
         return False
@@ -58,12 +58,12 @@ async def strict_payload_scan(payload: str, request_id: str) -> bool:
 
 
 async def vip_payload_scan(payload: str, request_id: str) -> bool:
-    """Kiểm tra nhẹ cho VIP/HQ: chỉ check size và path traversal."""
+    """Light check for VIP/HQ: only size and path traversal."""
     if len(payload) > _VIP_SIZE_LIMIT:
         logger.warning(f"[{request_id}] VIP OVERSIZE: {len(payload)} bytes > {_VIP_SIZE_LIMIT}B")
         return False
 
-    # Path traversal vẫn bị chặn dù là VIP
+    # Path traversal is still blocked even for VIP
     for kw in ["../../../", "..\\..\\", "/etc/passwd", "/etc/shadow"]:
         if kw in payload:
             logger.error(f"[{request_id}] VIP PATH TRAVERSAL attempt: '{kw}'")
@@ -74,9 +74,9 @@ async def vip_payload_scan(payload: str, request_id: str) -> bool:
 
 async def inspect_cargo(request: Request, passport_status: dict) -> bool:
     """
-    Kiểm duyệt hàng hóa (body) khi qua trạm.
-    Ghi log MỌI request (PASS và FAIL) để phục vụ audit.
-    Trả True nếu qua, raise HTTPException nếu không.
+    Inspect cargo (body) passing checkpoint.
+    Log ALL requests (PASS and FAIL) for audit.
+    Return True if passed, raise HTTPException otherwise.
     """
     level = passport_status.get("level", "UNKNOWN")
     owner = passport_status.get("owner", "UNKNOWN")
@@ -99,19 +99,19 @@ async def inspect_cargo(request: Request, passport_status: dict) -> bool:
         logger.info(f"[{request_id}] PASS | {level} | {owner} | {client_ip} | {endpoint} | {len(payload_str)}B")
     else:
         logger.critical(f"[{request_id}] BLOCK | {level} | {owner} | {client_ip} | {endpoint}")
-        detail = ("Payload quá lớn hoặc vi phạm chuẩn VIP."
-                  if is_vip else "Mã độc / Phá hoại từ khách lạ. DROP.")
+        detail = ("Payload oversize or VIP standard violation."
+                  if is_vip else "Malicious / Sabotage from unknown guest. DROP.")
         raise HTTPException(status_code=403, detail=detail)
 
     return True
 
 
 def validate_platform(platform: str) -> str:
-    """Validate tên platform bot. Trả platform đã normalize, raise HTTPException nếu không hợp lệ."""
+    """Validate bot platform name. Return normalized platform, raise HTTPException if invalid."""
     normalized = platform.lower().strip()
     if normalized not in _VALID_PLATFORMS:
         raise HTTPException(
             status_code=400,
-            detail=f"Platform '{platform}' không được hỗ trợ. Hỗ trợ: {sorted(_VALID_PLATFORMS)}"
+            detail=f"Platform '{platform}' not supported. Supported: {sorted(_VALID_PLATFORMS)}"
         )
     return normalized

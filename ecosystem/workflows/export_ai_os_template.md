@@ -29,8 +29,9 @@ These folders contain context specific to the OLD project and MUST be emptied (k
 Run this command to create a clean `.agents-template` folder that you can copy to any new project.
 
 ```powershell
-$source = "d:\APP\BookMark Extension\.agents"
-$dest = "d:\APP\AI_OS_Template"
+# Set source to the current OmniClaw root, dest to your target location
+$source = $env:OMNICLAW_ROOT                         # or: "path\to\your\.agents" folder
+$dest   = Join-Path (Split-Path $source -Parent) "OmniClaw-Template"
 
 # Clone full structure
 Copy-Item -Path $source -Destination $dest -Recurse -Force
@@ -42,6 +43,6 @@ Remove-Item -Path "$dest\tasks\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item -Path "$dest\archive\*" -Recurse -Force -ErrorAction SilentlyContinue
 
 # Create empty anchor files for the new project
-New-Item -ItemType File -Path "$dest\tasks\task.md" -Value "# 📋 Task Decomposition`n`n## Objective`n[Define your new project goal here]" -Force
-New-Item -ItemType File -Path "$dest\knowledge\knowledge_index.md" -Value "# 🗂️ Knowledge Index`n`n## 🏛️ Governance Core`n- [AGENTS.md](../rules/AGENTS.md)`n`n## 📚 Technical Library`n[Add new project docs here]" -Force
+New-Item -ItemType File -Path "$dest\tasks\task.md" -Value "# Task Decomposition`n`n## Objective`n[Define your new project goal here]" -Force
+New-Item -ItemType File -Path "$dest\knowledge\knowledge_index.md" -Value "# Knowledge Index`n`n## Governance Core`n- [AGENTS.md](../rules/AGENTS.md)`n`n## Technical Library`n[Add new project docs here]" -Force
 ```

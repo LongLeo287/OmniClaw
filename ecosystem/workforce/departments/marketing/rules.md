@@ -1,7 +1,7 @@
-﻿# MARKETING â€” Department Rules
+﻿﻿# MARKETING â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: growth-agent | Reports to: CMO
-# ALL content outputs must pass GATE_CONTENT before publish
+# ALL content outputs must pass GATE_CONTENT before publishing
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
 ---
@@ -11,7 +11,7 @@
 RULE MKT-01: GATE_CONTENT IS BLOCKING
   Zero content published without GATE_CONTENT PASS.
   Self-publishing or bypassing content_review = policy violation.
-  Flagged to CMO + legal dept.
+  Flagged to CMO + legal department.
 
 RULE MKT-02: BRAND VOICE FIRST
   Every piece of content must match brand voice guidelines.
@@ -65,7 +65,7 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Write blog posts, articles, product copy per content calendar
 - Follow SEO guidance from seo-agent
 - Submit all content to GATE_CONTENT before delivery
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `visual_excellence` â€” writing polish standards
 - SKILL: `reasoning_engine` â€” content reasoning/argumentation
 - Brief from growth-agent (topic, audience, goal)
@@ -85,7 +85,7 @@ RULE MKT-06: CAMPAIGN TRACKING
 - AEO (Answer Engine Optimization) structuring
 - Technical SEO audit recommendations
 - Optimize meta titles, descriptions, headers
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `knowledge_enricher` â€” keyword/topic research
 - SKILL: `reasoning_engine` â€” SEO strategy decisions
 **Skills:**
@@ -103,9 +103,9 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Set up campaign structure with UTM tracking
 - Monitor campaign performance vs ROAS targets
 - Optimize underperforming campaigns
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `reasoning_engine` â€” ad strategy
-- Budget approval from CFO (required before any new spend)
+- Budget approval from CFO (required before any new spending)
 **Skills:**
 - `reasoning_engine` â€” campaign strategy, copy direction
 - `context_manager` â€” audience context, campaign history
@@ -121,7 +121,7 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Schedule posts across platforms (FB, LinkedIn, Twitter/X)
 - Monitor engagement metrics
 - Reply to comments (escalate sensitive topics to growth-agent)
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `visual_excellence` â€” social post formatting
 - Input: GATE_CONTENT-approved content
 **Skills:**
@@ -129,4 +129,3 @@ RULE MKT-06: CAMPAIGN TRACKING
 - `context_manager` â€” brand voice consistency
 **Tools:** Social scheduling tools
 **Only post content with GATE_CONTENT PASS receipt**
-

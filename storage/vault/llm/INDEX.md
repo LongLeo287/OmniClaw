@@ -1,4 +1,4 @@
-﻿# KHO LLM — Index
+# KHO LLM — Index
 # Registry: kho/llm/registry.json
 # Config: infra/llm/router.yaml + fallback_chain.yaml
 # Rule: RULE-VERSION-01 (no @latest)

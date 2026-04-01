@@ -1,4 +1,4 @@
-﻿# Agent: data-agent
+# Agent: data-agent
 # Dept: planning_pmo | Head: False | Role: Data Analyst — metrics, dashboards
 # Version: 1.0 | 2026-03-24
 

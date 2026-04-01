@@ -425,7 +425,7 @@ Inbound request
 
 **Scope:** 578 files, ~1,500+ replacements
 
-- AI OS Corp → OmniClaw Corp (toàn codebase)
+- AI OS Corp → OmniClaw (toàn codebase)
 - AOS_ROOT / AI_OS_ROOT → OMNICLAW_ROOT (tất cả scripts)
 - aios_ prefix → omniclaw_ (agents, scripts, IDs, registries)
 - Renamed: aios_bot/ → omniclaw_bot/, aios-startup/orchestrator.md → omniclaw-*.md

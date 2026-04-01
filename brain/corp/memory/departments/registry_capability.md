@@ -1,4 +1,4 @@
-﻿# Memory: registry_capability department
+# Memory: registry_capability department
 # Type: department
 # Dept Number: 4
 # Retention: 30d rolling

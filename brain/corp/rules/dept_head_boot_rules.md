@@ -1,4 +1,4 @@
-﻿# DEPT HEAD BOOT RULES â€” Shared Baseline (v1.0)
+# DEPT HEAD BOOT RULES â€” Shared Baseline (v1.0)
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: COO | Applies to: ALL 20 dept heads
 # These rules apply IN ADDITION to manager_rules.md

@@ -1,4 +1,4 @@
-﻿# Department: engineering
+# Department: engineering
 ---
 description: Antigravity â†’ Claude Code CLI handoff â€” quy trÃ¬nh duy nháº¥t, Ä‘áº§y Ä‘á»§
 ---

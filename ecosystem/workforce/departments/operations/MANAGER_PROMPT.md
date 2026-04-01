@@ -1,4 +1,4 @@
-﻿# Operations â€” Dept Manager Prompt
+﻿﻿# Operations â€” Dept Manager Prompt
 # Head: scrum-master-agent | Reports to: COO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -29,7 +29,7 @@ archivist runs weekly on-demand:
 channel-agent maintains remote bridges:
 - Monitor Telegram/Zalo/Discord/FB Messenger bridges
 - Route external messages to correct dept
-- Handle bridge failures, restart if needed
+- Handle bridge fails, restart if needed
 - Log all channel events to telemetry/channels/
 
 ## SPRINT BOARD FORMAT
@@ -64,4 +64,3 @@ Telemetry archived: [N receipts]
 ```
 
 </OPS_MANAGER_PROMPT>
-

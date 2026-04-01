@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 ---
 description: LÆ°u chat history vÃ  brain data VÃ€O trong folder dá»± Ã¡n Ä‘á»ƒ chuyá»ƒn mÃ¡y
 ---

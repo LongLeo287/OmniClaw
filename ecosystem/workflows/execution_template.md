@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 # execution_template.md -- Standard Task Format for Claude Code (Phase 5)
 # Version: 1.0 | Updated: 2026-03-14
 # Authority: Tier 2 (Operations)

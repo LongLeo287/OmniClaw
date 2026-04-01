@@ -1,4 +1,4 @@
-﻿# Strix Vet Report: _test_dummy
+# Strix Vet Report: _test_dummy
 **Date:** 2026-03-14 10:49:44
 **Status:** FAIL
 **Critical Findings:** 1

@@ -1,7 +1,7 @@
-﻿import json
+import json
 import os
 
-REGISTRY = r'd:\LongLeo\AI OS CORP\AI OS\brain\shared-context\SKILL_REGISTRY.json'
+REGISTRY = r'd:\OmniClaw_Admin\OmniClaw CORP\OmniClaw\brain\shared-context\SKILL_REGISTRY.json'
 
 with open(REGISTRY, 'r', encoding='utf-8') as f:
     skills = json.load(f)
@@ -13,7 +13,7 @@ new_skills = {
         "granted_to": ["bridge-commander-agent"]
     },
     "passport_verify": {
-        "description": "Xác minh chuẩn Thẻ/Token kết nối mảng Remote Bridge Vault.",
+        "description": "Verify chuẩn Thẻ/Token kết nối mảng Remote Bridge Vault.",
         "filepath": "system/bridge/secrets_manager/passport_issuer.py",
         "granted_to": ["bridge-commander-agent", "vault-keeper-agent"]
     }
@@ -30,4 +30,4 @@ for k, v in new_skills.items():
 with open(REGISTRY, 'w', encoding='utf-8') as f:
     json.dump(skills, f, ensure_ascii=False, indent=4)
 
-print("Đã Update Skill Registry cấp Chứng chỉ Kỹ năng cho Cục Trưởng!")
+print("[OmniClaw System Event]")

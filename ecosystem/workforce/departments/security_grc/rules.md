@@ -1,4 +1,4 @@
-﻿# SECURITY & GRC â€” Department Rules
+﻿﻿# SECURITY & GRC â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: strix-agent | Reports to: COO
 # AUTONOMOUS DEPT â€” can act without manager trigger for CRITICAL threats
@@ -49,15 +49,15 @@ RULE SEC-08: BLACKLIST MAINTENANCE
 RULE SEC-09: QUARANTINE ZONE OWNERSHIP
   Security GRC owns and operates the QUARANTINE zone at:
   `$OMNICLAW_ROOT\QUARANTINE\`
-  This is the mandatory staging area for ALL external repos before entry into OmniClaw.
+  This is the mandatory staging area for ALL external repos before entering OmniClaw.
   
   QUARANTINE lifecycle (Security GRC enforces):
   1. Registry & Capability clones external repo INTO QUARANTINE (start)
   2. security-scanner runs `vet_repo.ps1` (12-stage Strix Security Scan)
   3. strix-agent reviews report:
-     - PASS (0 critical, â‰¤5 warnings)  â†’ hand off to Registry for ingestion
-     - WARN (0 critical, >5 warnings)  â†’ strix-agent manual review â†’ decision
-     - FAIL (any critical)             â†’ DELETE immediately, log to blacklist
+     - PASS (0 critical, â‰¤5 warnings) â†’ hand off to Registry for ingestion
+     - WARN (0 critical, >5 warnings) â†’ strix-agent manual review â†’ decision
+     - FAIL (any critical) â†’ DELETE immediately, log to blacklist
   4. Registry & Capability ingests ONLY cleared files into OmniClaw
   
   No file may bypass QUARANTINE. No exceptions. CEO override required + documented.
@@ -68,7 +68,7 @@ RULE SEC-09: QUARANTINE ZONE OWNERSHIP
 ## AGENT ROLES & RESPONSIBILITIES
 
 ### strix-agent (Dept Head / CISO)
-**Role:** Chief Information Security â€” strategic security leadership
+**Role:** Chief Information Security â€”strategic security leadership
 **Responsibilities:**
 - Oversee all security team operations
 - Initiate GATE_SECURITY for new repos/plugins
@@ -130,7 +130,7 @@ RULE SEC-09: QUARANTINE ZONE OWNERSHIP
 - Lead investigation on security incidents
 - Write investigation reports
 - Track open incidents to resolution
-**At start of each incident, load:**
+**At the start of each incident, load:**
 - SKILL: `diagnostics_engine` â€” root cause analysis
 - `corp/sops/INCIDENT_RESPONSE_SOP.md`
 - Relevant telemetry receipts from the affected period
@@ -157,5 +157,3 @@ RULE SEC-09: QUARANTINE ZONE OWNERSHIP
 - `reasoning_engine` â€” assess if access is appropriate
 **Output:** access audit to security_grc.md dept memory weekly
 **Principle:** Least-privilege always. When in doubt, restrict.
-
-

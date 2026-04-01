@@ -2,18 +2,18 @@
 **ID:** `awesome_claude_skills` | **Status:** registered | **Dept:** Dept 20 — CIV
 **Upstream:** https://github.com/ComposioHQ/awesome-claude-skills
 
-## Mô tả
+## Description
 A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

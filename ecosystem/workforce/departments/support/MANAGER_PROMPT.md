@@ -1,4 +1,4 @@
-﻿# Support â€” Dept Manager Prompt
+﻿﻿# Support â€” Dept Manager Prompt
 # Head: channel-agent | Reports to: CMO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -22,7 +22,7 @@ Your team: faq-agent, knowledge-agent, crm-agent
 faq-agent:
 - Maintain `knowledge/support_faq.md`
 - Flag outdated answers for review
-- Add new Q&A after each novel support query resolved
+- Add new Q&A after each novel to support query resolution
 
 ### CRM Tracking
 crm-agent:
@@ -41,4 +41,3 @@ Open items: N
 ```
 
 </SUPPORT_MANAGER_PROMPT>
-

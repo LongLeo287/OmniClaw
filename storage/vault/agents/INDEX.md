@@ -1,4 +1,4 @@
-﻿# KHO AGENTS — Index
+# KHO AGENTS — Index
 # Registry: kho/agents/registry.json (52 agents)
 # Definitions: brain/agents/ (48 files)
 # Org chart: corp/org_chart.yaml

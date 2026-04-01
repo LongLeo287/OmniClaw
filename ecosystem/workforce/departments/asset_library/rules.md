@@ -1,12 +1,12 @@
-# ⚖️ RULES (Dept 18: Asset & Knowledge Library)
+﻿# ⚖️ RULES (Dept 18: Asset & Knowledge Library)
 
-> Bộ luật nội bộ dành cho Thư viện Tài Sản.
+> Internal Code for Asset Library.
 
 1. **RULE 01: NO BULK READ** 🚫
-   Các Agent (bao gồm Tier 1) tuyệt đối KHÔNG ĐƯỢC tự đọc toàn bộ file `PROCESSED_LIBRARY.md` hoặc các file dữ liệu thô lớn hơn 500 lines. Mọi truy vấn phải thông qua `retrieval-master`.
+   Agents (including Tier 1) absolutely CANNOT read the entire `PROCESSED_LIBRARY.md` file or raw data files larger than 500 lines. All queries must go through `retrieval-master`.
 
 2. **RULE 02: HIGH-SPEED RAG MANDATE** ⚡
-   `retrieval-master` bắt buộc phải sử dụng biểu thức Vector/Keyword song song theo nguyên lý FlashRAG. Không quét tuyến tính. Đầu ra phải giới hạn trong 200 - 300 words có tinh suất cao nhất.
+   `retrieval-master` forces the use of parallel Vector/Keyword expressions according to the FlashRAG principle. No linear scanning. Output should be limited to 200 - 300 words of highest quality.
 
 3. **RULE 03: INDEX FIRST, RETRIEVE LATER** 🗃️
-   Toàn bộ mã nguồn mới đẩy vào nhánh ARCHIVE phải được `knowledge-curator-agent` và `asset-tracker-agent` gán chunk tagging ngay lập tức trước khi phân quyền truy cập.
+   All new source code pushed into the ARCHIVE branch must be chunk tagged by `knowledge-curator-agent` and `asset-tracker-agent` immediately before granting access.

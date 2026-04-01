@@ -4,7 +4,7 @@ import shutil
 from pathlib import Path
 
 ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3])))
-REMOTE_DIR = Path(os.environ.get("OMNICLAW_REMOTE_ROOT", str(Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3]))).parent / "AI OS REMOTE")))
+REMOTE_DIR = Path(os.environ.get("OMNICLAW_REMOTE_ROOT", str(Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[3]))).parent / "OmniClaw REMOTE")))
 REMOTE_SERVICES = REMOTE_DIR / 'services'
 
 os.makedirs(REMOTE_SERVICES, exist_ok=True)
@@ -14,14 +14,14 @@ exts = ['.py', '.ps1', '.cmd', '.bat', '.md', '.json', '.yaml', '.yml']
 
 # Specific replacement mapping (Order matters: longest match first)
 REPLACEMENTS = [
-    (re.compile(r'AI OS CORP', re.IGNORECASE), 'OmniClaw Corp'),
-    (re.compile(r'AI OS Auto-Merge Secret', re.IGNORECASE), 'OmniClaw Auto-Merge Secret'),
-    (re.compile(r'AI OS Auto-Test & Lint', re.IGNORECASE), 'OmniClaw Auto-Test & Lint'),
-    (re.compile(r'AI OS Auto-Merge', re.IGNORECASE), 'OmniClaw Auto-Merge'),
-    (re.compile(r'AI OS Auto-Test', re.IGNORECASE), 'OmniClaw Auto-Test'),
-    (re.compile(r'\bAI OS\b', re.IGNORECASE), 'OmniClaw'),
+    (re.compile(r'OmniClaw CORP', re.IGNORECASE), 'OmniClaw Corp'),
+    (re.compile(r'OmniClaw Auto-Merge Secret', re.IGNORECASE), 'OmniClaw Auto-Merge Secret'),
+    (re.compile(r'OmniClaw Auto-Test & Lint', re.IGNORECASE), 'OmniClaw Auto-Test & Lint'),
+    (re.compile(r'OmniClaw Auto-Merge', re.IGNORECASE), 'OmniClaw Auto-Merge'),
+    (re.compile(r'OmniClaw Auto-Test', re.IGNORECASE), 'OmniClaw Auto-Test'),
+    (re.compile(r'\bOmniClaw\b', re.IGNORECASE), 'OmniClaw'),
     (re.compile(r'\bAI_OS\b', re.IGNORECASE), 'OMNICLAW'),
-    (re.compile(r'\baios\b', re.IGNORECASE), 'omniclaw'),
+    (re.compile(r'\bomniclaw\b', re.IGNORECASE), 'omniclaw'),
     (re.compile(r'\baos\b', re.IGNORECASE), 'omniclaw'),
 ]
 
@@ -91,4 +91,4 @@ for srv in services_to_migrate:
         if dst.exists():
             shutil.rmtree(str(dst))
         shutil.move(str(src), str(dst))
-        print(f"[MIGRATED] Plugin '{srv}' moved to AI OS REMOTE/services/")
+        print(f"[MIGRATED] Plugin '{srv}' moved to OmniClaw REMOTE/services/")

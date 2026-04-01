@@ -1,4 +1,4 @@
-﻿# Department: monitoring_inspection
+# Department: monitoring_inspection
 ---
 description: OmniClaw Bot Reporting Protocol â€” how to report status, tasks, and alerts via Telegram bot
 ---

@@ -19,56 +19,56 @@ def check_agent(role_id):
 
 def main():
     print("\n" + "="*70)
-    print("🚀 BẮT ĐẦU CHU TRÌNH ĐI LUỒNG TOÀN BỘ AI OS CORP (CYCLE DEMO)")
+    print("[OmniClaw System Event]")")
     print("="*70)
 
     # [PHASE 1] Wake Up
-    print("\n➡️ [Phase 1: Wake Up] Orchestrator (Antigravity/Gemini) khởi động...")
-    print("   - Đang tuân thủ bộ Luật Bất Khả Tri Model...")
+    print("[OmniClaw System Event]") khởi động...")
+    print("[OmniClaw System Event]")
     gate = check_external_gate()
-    print(f"   - External Gate (Chốt kiểm duyệt Mạng Mở Rộng): {'BẬT 🟢' if gate else 'TẮT 🔴'}")
+    print("[OmniClaw System Event]"): {'BẬT 🟢' if gate else 'TẮT 🔴'}")
     if not gate:
-        print("   - [CẢNH BÁO MẠNG]: Mọi Agent bị chặn quyền gọi công cụ External (Firecrawl, Google). Pipeline chuyển sang Internal Local.")
+        print("[OmniClaw System Event]"). Pipeline chuyển sang Internal Local.")
 
     time.sleep(1)
 
     # [PHASE 2] Brief
-    print("\n➡️ [Phase 2: Brief] Phân công nhiệm vụ nội bộ (Local Sync)...")
-    print("   - YÊU CẦU: Trích xuất Dữ liệu Kỹ thuật Tuyên Ngôn Công Ty (THESIS) và Nạp vào Đồ thị Tri thức.")
+    print("[OmniClaw System Event]")...")
+    print("[OmniClaw System Event]") và Nạp vào Đồ thị Tri thức.")
 
     time.sleep(1)
 
     # [PHASE 3] Execute
-    print("\n➡️ [Phase 3: Execute] Bắt đầu Vòng Lặp Phân Quyền (Delegation)...")
-    print(f"   - Gọi Agent: [web_researcher]... Đã mapping chức danh? {'YES' if check_agent('web-researcher') else 'NO'}")
-    print("   - LƯU Ý: [web_researcher] bị từ chối nhiệm vụ do 'External Gate == 🔴'. Orchestrator đổi hướng Agent khác.")
-    print(f"   - Gọi Agent: [data-collector-agent] (RESEARCHER)... Đã xử lý File nội bộ thành công.")
+    print("[OmniClaw System Event]")...")
+    print("[OmniClaw System Event]") else 'NO'}")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]")... Đã xử lý File nội bộ thành công.")
 
-    print("\n   - Gọi Agent: [knowledge-agent] (MAINTAINER)... Đã mapping chức danh? {'YES' if check_agent('knowledge-agent') else 'NO'}")
-    print("   - [knowledge-agent] được ủy quyền dùng vũ khí [LightRAG].")
-    print(f"   📥 Đang nạp File: THESIS.md")
-    print("   ⏳ Đang Trích xuất Entity & Relations Node thông qua `gemma2:2b` Local Model...")
+    print("[OmniClaw System Event]")... Đã mapping chức danh? {'YES' if check_agent('knowledge-agent') else 'NO'}")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]")
     time.sleep(2)
-    print("   ✅ [SYSTEM API] Đã vòng qua lỗi Asyncio Library của LightRAG HKU (Mock Sync)...")
-    print("   ✅ Hoàn tất Nén & Gắn Node vào mạng lưới Knowledge Graph bằng Ollama.")
+    print("[OmniClaw System Event]")...")
+    print("[OmniClaw System Event]")
 
     time.sleep(1)
 
     # [PHASE 4 & 5] QA & Report
-    print("\n➡️ [Phase 4 & 5: QA & Report] Lấy Báo Cáo...")
-    print("   ❓ Câu hỏi: 'Tóm tắt cốt lõi triết lý của AI OS Corp theo Tuyên ngôn là gì?'")
-    print("   🔍 Đang lục lọi bộ nhớ màng nhện (Graph Hybrid Query)...")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]")...")
     time.sleep(1.5)
     print("\n[" + "-"*68 + "]")
-    print("📝 REPORT TỪ AI OS KNOWLEDGE GRAPH:")
-    print("Triết lý của AI OS Corp là xây dựng một hệ điều hành phi tập trung, biến Trí tuệ nhân tạo thành các Phòng ban (Departments) thực thụ. Các AI Agent từ bỏ cái tôi cá nhân, hoạt động dựa trên Quy trình 7-Phase chung đúc kết từ mọi Engine (Gemini/Claude). Nó kết hợp cả Text RAG phẳng và Graph RAG để suy luận văn bản nội bộ siêu bảo mật.")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]") thực thụ. Các AI Agent từ bỏ cái tôi cá nhân, hoạt động dựa trên Quy trình 7-Phase chung đúc kết từ mọi Engine (Gemini/Claude). Nó kết hợp cả Text RAG phẳng và Graph RAG để suy luận văn bản nội bộ siêu bảo mật.")
     print("[" + "-"*68 + "]")
 
     time.sleep(1)
 
     # [PHASE 6 & 7] Learn
-    print("\n➡️ [Phase 6 & 7: Learn & Close] Chép Log System vào File & Thoát.")
-    print("✅ KẾT THÚC CHU KỲ (PIPELINE MAPPING HOÀN HÀO THEO ĐÚNG RULE MỚI).")
+    print("[OmniClaw System Event]")
+    print("[OmniClaw System Event]").")
     print("="*70 + "\n")
 
 if __name__ == "__main__":

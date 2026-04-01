@@ -1,6 +1,6 @@
 # 🏛️ Tổng Quan Hệ Thống (Kiến trúc 21 Phòng Ban)
 
-Tập đoàn OmniClaw Corp mô phỏng chính xác cấu trúc của một siêu công ty kỹ thuật số, sở hữu **21 "Phòng ban" tách biệt** được vận hành bởi các Đặc vụ Trí tuệ (AI Agents) dưới cơ chế đa luồng phức tạp.
+Tập đoàn OmniClaw mô phỏng chính xác cấu trúc của một siêu công ty kỹ thuật số, sở hữu **21 "Phòng ban" tách biệt** được vận hành bởi các Đặc vụ Trí tuệ (AI Agents) dưới cơ chế đa luồng phức tạp.
 
 [**🇬🇧 Read in English**](system_overview.md) | [**Quay lại Mục Lục**](../README-vn.md) | [**📚 Tra Cứu Wiki**](https://github.com/LongLeo287/OmniClaw/wiki)
 

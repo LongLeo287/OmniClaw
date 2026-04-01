@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-AI OS V3.1 — System Startup Script
+OmniClaw V2.0 — System Startup Script
 Path: system/ops/omniclaw_startup.py
 Built: 2026-03-26 | Author: Antigravity
 
-Lệnh dùng:
+Usage:
   python system/ops/omniclaw_startup.py              # Boot check + Telegram report
-  python system/ops/omniclaw_startup.py --verbose    # Chi tiết từng bước
-  python system/ops/omniclaw_startup.py --check-only # Chỉ check, không khởi động
-  python system/ops/omniclaw_startup.py --no-telegram # Không gửi Telegram
+  python system/ops/omniclaw_startup.py --verbose     # [Removed legacy comment]
+  python system/ops/omniclaw_startup.py --check-only # Only check, do not start
+  python system/ops/omniclaw_startup.py --no-telegram  # [Removed legacy comment]
 """
 
 import json
@@ -134,7 +134,7 @@ def check_critical_files() -> tuple[bool, list]:
             errors.append(str(f))
     for f in WARN_FILES:
         if not f.exists():
-            warn(f"{f.name} — không có nhưng không bắt buộc")
+            warn("[OmniClaw System Event]")
     return len(errors) == 0, errors
 
 
@@ -142,7 +142,7 @@ def check_blackboard() -> tuple[str, dict]:
     hdr("BƯỚC 1.2 — Blackboard State")
     bb = load_json(ROOT / "brain" / "shared-context" / "blackboard.json")
     if not bb:
-        err("Không đọc được blackboard.json!")
+        err("Failed to read blackboard.json!")
         return "ERROR", {}
 
     cycle_status = bb.get("corp_cycle_status", "IDLE")
@@ -151,8 +151,8 @@ def check_blackboard() -> tuple[str, dict]:
     open_items   = len(bb.get("open_items", []))
 
     if cycle_status == "RUNNING":
-        warn(f"corp_cycle_status = RUNNING — Cycle trước chưa xong!")
-        warn("→ KHÔNG start Corp Cycle mới. CEO cần confirm.")
+        warn("[OmniClaw System Event]")
+        warn("[OmniClaw System Event]")
     else:
         ok(f"corp_cycle_status = {cycle_status}")
 
@@ -166,9 +166,9 @@ def check_blackboard() -> tuple[str, dict]:
         content = esc_path.read_text(encoding="utf-8", errors="ignore")
         l3_count = content.count("[L3]") + content.count("L3:")
         if l3_count > 0:
-            err(f"CÓ {l3_count} L3 Escalation mở! KHÔNG start Corp Cycle trước khi CEO resolve.")
+            err(f"HAS {l3_count} Open L3 Escalation! DO NOT start Corp Cycle before CEO resolves.")
         else:
-            ok("Không có L3 escalation")
+            ok("No L3 escalation")
 
     return cycle_status, bb
 
@@ -200,7 +200,7 @@ def check_skill_registry() -> dict:
     reg_path = ROOT / "brain" / "shared-context" / "SKILL_REGISTRY.json"
     reg = load_json(reg_path)
     if not reg:
-        err("SKILL_REGISTRY.json missing hoặc invalid!")
+        err("[OmniClaw System Event]")
         return {}
 
     skills = reg.get("skills", [])
@@ -216,11 +216,11 @@ def check_skill_registry() -> dict:
             built_dt = datetime.datetime.fromisoformat(last_built.replace("Z", "+00:00"))
             age_days = (datetime.datetime.now(datetime.timezone.utc) - built_dt).days
             if age_days > 7:
-                warn(f"Registry {age_days} ngày chưa update! Chạy: python system/ops/omniclaw_orchestrator.py once")
+                warn(f"Registry {age_days} days no update! Run: python system/ops/omniclaw_orchestrator.py once")
             else:
                 ok(f"Registry freshness OK ({age_days} ngày)")
     except:
-        info("Không tính được tuổi registry")
+        info("Cannot calculate registry age")
 
     return {"skills": len(skills), "last_updated": last_built}
 
@@ -242,7 +242,7 @@ def update_hud(services: dict, reg_info: dict) -> dict:
     status.update({
         "version":          "v3.1",
         "cycle":            status.get("cycle", 11),
-        "system":           "AI OS Corp",
+        "system":           "OmniClaw Corp",
         "updated":          now_iso(),
         "last_hud_update":  now_iso(),
         "skills":           skill_count,
@@ -274,7 +274,7 @@ def send_telegram_boot_report(status: dict, bb: dict, services: dict):
     token = ENV.get("TELEGRAM_BOT_TOKEN", "")
     chat  = ENV.get("TELEGRAM_CHAT_ID", "")
     if not token or not chat:
-        warn("Telegram skip: Chưa cấu hình BOT_TOKEN/CHAT_ID trong .env")
+        warn("Telegram skip: BOT_TOKEN/CHAT_ID not configured in .env")
         return
 
     live  = sum(1 for v in services.values() if v)
@@ -285,7 +285,7 @@ def send_telegram_boot_report(status: dict, bb: dict, services: dict):
     trigger  = bb.get("handoff_trigger", "IDLE")
 
     msg = (
-        f"🚀 *AI OS V3.1 — SYSTEM BOOT*\n"
+        f"🚀 *OmniClaw V2.0 — SYSTEM BOOT*\n"
         f"⏰ {now_iso()[11:16]} GMT+7\n\n"
         f"━━━━━━━━━━━━━━━\n"
         f"• 🏢 System: `ONLINE`\n"
@@ -317,7 +317,7 @@ def print_summary(files_ok: bool, cycle_status: str, services: dict, reg_info: d
     total = len(services)
 
     print(f"\n{'═'*52}")
-    print(f"  {C.BOLD}AI OS V3.1 — BOOT SUMMARY{C.RESET}")
+    print(f"  {C.BOLD}OmniClaw V2.0 — BOOT SUMMARY{C.RESET}")
     print(f"{'═'*52}")
 
     status_icon = "✅" if files_ok else "❌"
@@ -333,15 +333,15 @@ def print_summary(files_ok: bool, cycle_status: str, services: dict, reg_info: d
     if not files_ok:
         print(f"  {C.RED}→ FIX missing critical files first!{C.RESET}")
     elif cycle_status == "RUNNING":
-        print(f"  {C.YELLOW}→ Resolve previous cycle trước khi start mới{C.RESET}")
+        print("[OmniClaw System Event]")
     else:
         print(f"  {C.GREEN}→ python system/ops/omniclaw_orchestrator.py once{C.RESET}")
         print(f"  {C.GREEN}→ python ops/omniclaw.py corp start (Corp Daily Cycle){C.RESET}")
-        print(f"  {C.GREEN}→ Hoặc giao task trực tiếp cho Antigravity{C.RESET}")
+        print("[OmniClaw System Event]")
 
     print(f"\n  {C.CYAN}📊 HUD:     system/hud/STATUS.json{C.RESET}")
     print(f"  {C.CYAN}📋 Tasks:   http://localhost:7474{C.RESET}")
-    print(f"  {C.CYAN}📱 Telegram: @aios_corp_bot{C.RESET}")
+    print(f"  {C.CYAN}📱 Telegram: @omniclaw_corp_bot{C.RESET}")
     print(f"{'═'*52}\n")
 
 
@@ -349,7 +349,7 @@ def print_summary(files_ok: bool, cycle_status: str, services: dict, reg_info: d
 def main():
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n{'═'*52}")
-    print(f"  {C.BOLD}🚀 AI OS V3.1 — STARTUP BOOT{C.RESET}")
+    print(f"  {C.BOLD}🚀 OmniClaw V2.0 — STARTUP BOOT{C.RESET}")
     print(f"  {C.CYAN}{ts}{C.RESET}")
     print(f"{'═'*52}")
 

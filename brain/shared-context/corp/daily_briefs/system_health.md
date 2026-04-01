@@ -1,4 +1,4 @@
-﻿# Daily Brief â€” System Health â€” 2026-03-20
+# Daily Brief â€” System Health â€” 2026-03-20
 # Agent: health-chief-agent
 # Task: HLT-01-001 | Cycle: 1
 # Status: COMPLETE âœ…

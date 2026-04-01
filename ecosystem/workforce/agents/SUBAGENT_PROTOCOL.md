@@ -1,4 +1,4 @@
-﻿# SUBAGENT PROTOCOL
+# SUBAGENT PROTOCOL
 # Version: 1.0 | Owner: Claude Code (Tier 2)
 # Purpose: Rules for sub-agent spawning in Claude Code CLI
 

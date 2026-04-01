@@ -1,4 +1,4 @@
-﻿# KI-CONTEXT7-DEEP-01 â€” Context7: Real-Time Doc Injection cho LLM
+# KI-CONTEXT7-DEEP-01 â€” Context7: Real-Time Doc Injection cho LLM
 **Loáº¡i:** Deep Analysis â€” MCP Integration
 **Nguá»“n:** github.com/upstash/context7 + context7.com/docs + context7.com/docs/api-guide
 **NgÃ y:** 2026-03-23 | **Verdict:** âœ… APPROVE â€” Tier 1 candidate

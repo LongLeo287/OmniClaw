@@ -1,7 +1,7 @@
-name: system-repair-agent
+﻿name: system-repair-agent
 version: 1.0.0
 status: active
-description: "Tự động phát hiện và sửa chữa lỗi hệ thống OmniClaw: encoding corruption, broken paths, stale naming, MCP failures, registry inconsistencies"
+description: "Automatically detect and fix OmniClaw system errors: encoding corruption, broken paths, stale naming, MCP failures, registry inconsistencies"
 domain: ecosystem
 type: workforce-agent
 department: system_integrity
@@ -37,8 +37,8 @@ routing:
     - "audit system"
     - "fix system"
     - "scan and fix"
-    - "kiểm tra hệ thống"
-    - "sửa lỗi hệ thống"
+    - "system check"
+    - "fix system errors"
     - "omniclaw repair"
     - "omniclaw repair"
   events:

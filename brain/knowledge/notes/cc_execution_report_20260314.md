@@ -1,4 +1,4 @@
-﻿# Claude Code Execution Report
+# Claude Code Execution Report
 **Date:** 2026-03-14 10:50
 **Executor:** Claude Code (OS Executor)
 **Task File:** D:\APP\OmniClaw\memory\CLAUDE_CODE_TASK_20260314.md

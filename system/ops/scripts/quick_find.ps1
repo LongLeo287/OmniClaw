@@ -1,14 +1,14 @@
 ﻿#!/usr/bin/env pwsh
-# quick_find.ps1 â€" AI OS Fast Retrieval CLI
+# quick_find.ps1 "" OmniClaw Fast Retrieval CLI
 # Version: 1.0 | Created: 2026-03-22
 # Owner: registry_capability (registry-manager-agent)
 #
 # USAGE:
-#   .\quick_find.ps1 "security scanning"       â†' find by keyword/capability
-#   .\quick_find.ps1 -domain cybersecurity      â†' list all tools in domain
-#   .\quick_find.ps1 -agent strix-agent         â†' list agent's skills
-#   .\quick_find.ps1 -skill security_shield     â†' show path + info
-#   .\quick_find.ps1 -rebuild                   â†' rebuild FAST_INDEX.json
+# [System log: Legacy non-English comment removed]
+# [System log: Legacy non-English comment removed]
+# [System log: Legacy non-English comment removed]
+# [System log: Legacy non-English comment removed]
+# [System log: Legacy non-English comment removed]
 
 param(
   [Parameter(Position=0)] [string]$Query,
@@ -48,7 +48,7 @@ if ($Rebuild) {
 }
 
 $idx = Load-Index
-Write-Host "ðŸ" AI OS Fast Retrieval" -ForegroundColor Green
+Write-Host "ðŸ" OmniClaw Fast Retrieval" -ForegroundColor Green
 Write-Host "   Index: v$($idx._meta.version) | Skills: $($idx._meta.total_skills) | Plugins: $($idx._meta.total_plugins)"
 
 # === ALL DOMAINS ===
@@ -72,7 +72,7 @@ if ($Domain) {
     }
   } else {
     Write-Host "  Domain '$Domain' not found. Available:" -ForegroundColor Yellow
-    $idx.domain.PSObject.Properties.Name | ForEach-Object { Write-Host "    â€¢ $_" }
+    $idx.domain.PSObject.Properties.Name | ForEach-Object { Write-Host "    "¢ $_" }
   }
   exit 0
 }
@@ -89,7 +89,7 @@ if ($Agent) {
   } else {
     Write-Host "  Agent '$Agent' not found." -ForegroundColor Yellow
     Write-Host "  Known agents:" -ForegroundColor Yellow
-    $idx.agent.PSObject.Properties.Name | ForEach-Object { Write-Host "    â€¢ $_" }
+    $idx.agent.PSObject.Properties.Name | ForEach-Object { Write-Host "    "¢ $_" }
   }
   exit 0
 }
@@ -115,11 +115,11 @@ if ($Skill) {
   # Show which domains and agents use this skill
   Write-Host "`n  Used in domains:" -ForegroundColor Yellow
   $idx.domain.PSObject.Properties | Where-Object { $Skill -in $_.Value } | ForEach-Object {
-    Write-Host "    â€¢ $($_.Name)"
+    Write-Host "    "¢ $($_.Name)"
   }
   Write-Host "`n  Used by agents:" -ForegroundColor Yellow
   $idx.agent.PSObject.Properties | Where-Object { $Skill -in $_.Value } | ForEach-Object {
-    Write-Host "    â€¢ $($_.Name)"
+    Write-Host "    "¢ $($_.Name)"
   }
   exit 0
 }
@@ -178,5 +178,4 @@ Write-Host "  .\quick_find.ps1 -Skill security_shield  â†' skill path + info"
 Write-Host "  .\quick_find.ps1 -All                    â†' all domains"
 Write-Host "  .\quick_find.ps1 -Rebuild                â†' refresh index"
 Write-Host "`nAvailable domains:" -ForegroundColor Cyan
-$idx.domain.PSObject.Properties.Name | ForEach-Object { Write-Host "  â€¢ $_" }
-
+$idx.domain.PSObject.Properties.Name | ForEach-Object { Write-Host "  "¢ $_" }

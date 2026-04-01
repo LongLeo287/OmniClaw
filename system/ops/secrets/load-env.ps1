@@ -1,18 +1,18 @@
 <#
 .SYNOPSIS
-    AI OS Corp — Load Secrets into $env:* for current session.
-    Tiện ích được gọi bởi các script khác để load secrets trước khi chạy.
+    OmniClaw Corp -- Load secrets into $env:* for the current PowerShell session.
+    Utility called by other scripts to load secrets before execution.
 
 .DESCRIPTION
-    Dot-source file này để load toàn bộ secrets từ MASTER.env (hoặc .dpapi)
-    vào môi trường của PowerShell session hiện tại.
+    Dot-source this file to load all secrets from MASTER.env (or .dpapi)
+    into the environment of the current PowerShell session.
 
 .USAGE
-    # Từ bất kỳ script nào:
-    $SecretsLoader = Join-Path $AiOsRoot "ops\secrets\load-env.ps1"
+    # From any script:
+    $SecretsLoader = Join-Path $OMNICLAW_ROOT "system\ops\secrets\load-env.ps1"
     if (Test-Path $SecretsLoader) { . $SecretsLoader }
 
-    # Sau đó dùng trực tiếp:
+    # Then use directly:
     $env:TELEGRAM_BOT_TOKEN
     $env:OPENAI_API_KEY
     # ...etc
@@ -21,5 +21,5 @@
 # Resolve secrets dir relative to THIS file
 $_SecretsDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-# Silently delegate to decrypt.ps1
+# Delegate to decrypt.ps1
 . (Join-Path $_SecretsDir "decrypt.ps1")

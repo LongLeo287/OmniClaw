@@ -1,4 +1,4 @@
-﻿# Strategy Department Configuration
+# Strategy Department Configuration
 id: strategy
 display_name: Strategy
 head_agent: product-manager-agent

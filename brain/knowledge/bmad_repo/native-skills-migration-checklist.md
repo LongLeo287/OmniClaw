@@ -1,4 +1,4 @@
-﻿# Native Skills Migration Checklist
+# Native Skills Migration Checklist
 
 Branch: `refactor/all-is-skills`
 

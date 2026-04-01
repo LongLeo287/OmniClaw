@@ -1,4 +1,4 @@
-﻿# Agent: devops-agent
+# Agent: devops-agent
 # Dept: engineering | Head: False | Role: DevOps Engineer — CI/CD, Docker, infra automation
 # Version: 1.0 | 2026-03-24
 

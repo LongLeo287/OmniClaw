@@ -1,4 +1,4 @@
-﻿# IT Infrastructure â€” Dept Manager Prompt
+﻿﻿﻿﻿# IT Infrastructure â€” Dept Manager Prompt
 # NEW DEPARTMENT | Head: it-manager-agent | Reports to: CTO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -44,4 +44,3 @@ Planned maintenance: [upcoming]
 ```
 
 </IT_INFRA_MANAGER_PROMPT>
-

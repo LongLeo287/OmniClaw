@@ -1,4 +1,4 @@
-﻿# Strix Vet Report: everything-claude-code
+# Strix Vet Report: everything-claude-code
 **Date:** 2026-03-14 10:49:53
 **Status:** FAIL
 **Critical Findings:** 2

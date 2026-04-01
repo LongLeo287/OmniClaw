@@ -1,4 +1,4 @@
-﻿# client_reception â€” Department Memory
+# client_reception â€” Department Memory
 # Owner: project-intake-agent | Retention: 30-day rolling | Layer: Department
 # Updated: 2026-03-19 | Format: see brain/corp/memory/MEMORY_SPEC.md
 

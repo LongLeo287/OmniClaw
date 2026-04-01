@@ -1,4 +1,4 @@
-﻿---
+---
 description: POS project session initialization â€” run at start of every work session
 ---
 

@@ -18,11 +18,11 @@ Secrets = API keys, tokens, passwords, private keys, database URLs, webhook secr
 
 | Type | Location | Gitignored? |
 |------|----------|-------------|
-| All runtime secrets | `system/ops/secrets/MASTER.env` | YES ✓ |
-| Local overrides | `.env` (root) | YES ✓ |
-| Token store (Bridge) | `brain/shared-context/vault_tokens.json` | YES ✓ |
-| Keys directory | `system/ops/secrets/KEYS/` | YES ✓ |
-| DPAPI backup | `system/ops/secrets/MASTER.env.dpapi` | YES ✓ |
+| All runtime secrets | `system/ops/secrets/MASTER.env` | YES |
+| Local overrides | `.env` (root) | YES |
+| Bridge token store | `brain/shared-context/vault_tokens.json` | YES |
+| Keys directory | `system/ops/secrets/KEYS/` | YES |
+| DPAPI backup | `system/ops/secrets/MASTER.env.dpapi` | YES |
 
 **Rule:** Secrets ONLY go in the locations above. Nowhere else.
 
@@ -65,7 +65,7 @@ IF EXIST "%OMNICLAW_ROOT%\system\ops\secrets\MASTER.env" (
 # BAD — hardcoded key
 api_key = "sk-abc123..."
 
-# BAD — hardcoded path to secrets on local machine
+# BAD — hardcoded path on local machine
 ENV_FILE = r"D:\LongLeo\AI OS CORP\AI OS\system\ops\secrets\MASTER.env"
 
 # GOOD — dynamic root + env var
@@ -77,16 +77,15 @@ api_key = os.environ.get("MY_API_KEY")
 
 ## Git Safety Rules
 
-1. `.gitignore` covers ALL known secret locations (see `RULE-GIT-SECRETS-GITIGNORE` below)
+1. `.gitignore` covers ALL known secret locations (see canonical list below)
 2. NEVER use `git add -A` or `git add .` without reviewing diff first
 3. NEVER force-push if secrets were accidentally committed — instead revoke the key immediately
 4. Template/example files (`.env.example`) are safe to commit — they must NOT contain real values
 
 ---
 
-## RULE-GIT-SECRETS-GITIGNORE (Canonical List)
+## Canonical Gitignore Entries (NEVER remove)
 
-These patterns are in `.gitignore` and must NEVER be removed:
 ```
 .env
 system/ops/secrets/MASTER.env
@@ -109,7 +108,7 @@ brain/shared-context/vault_tokens.json
 
 ## Responsible Agent
 
-- **Primary:** `strix-agent` (security_grc) — scans for leaks on every commit
+- **Primary:** `strix-agent` (security_grc) — scans for leaks on every scheduled run
 - **Secondary:** `sec-agent` — auto-backup/sync validation
 - **Escalation:** CEO (LongLeo) for any CRITICAL leak
 

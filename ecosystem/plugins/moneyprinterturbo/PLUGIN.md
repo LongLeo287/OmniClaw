@@ -2,18 +2,18 @@
 **ID:** `moneyprinterturbo` | **Status:** registered | **Dept:** Dept 02 — AI
 **Upstream:** https://github.com/harry0703/MoneyPrinterTurbo
 
-## Mô tả
+## Description
 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

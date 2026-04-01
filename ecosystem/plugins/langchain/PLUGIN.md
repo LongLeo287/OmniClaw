@@ -2,18 +2,18 @@
 **ID:** `langchain` | **Status:** registered | **Dept:** Dept 01 — AI
 **Upstream:** https://github.com/langchain-ai/langchain
 
-## Mô tả
+## Description
 The agent engineering platform
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

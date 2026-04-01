@@ -1,4 +1,4 @@
-﻿# OPERATIONS â€” Department Rules
+﻿﻿# OPERATIONS â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: scrum-master-agent | Reports to: COO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -8,13 +8,13 @@
 ## DEPT DOMAIN RULES
 
 RULE OPS-01: BLACKBOARD IS SINGLE SOURCE OF TRUTH
-  ALL active tasks across all depts must be in shared-context/blackboard.json.
+  ALL active tasks across all departments must be in shared-context/blackboard.json.
   Tasks existing only in chat or memory (not in blackboard) = unofficial.
   scrum-master-agent maintains blackboard integrity at all times.
 
 RULE OPS-02: SPRINT SCOPE IS FIXED
   Once sprint tasks are set, scope cannot expand without COO approval.
-  Mid-sprint additions: assessed for impact before accepting.
+  Mid-sprint additions: assessed for impact before acceptance.
   Scope creep is the enemy of delivery.
 
 RULE OPS-03: CHANNEL BRIDGES MUST BE UP
@@ -33,7 +33,7 @@ RULE OPS-05: NO BLACKBOARD MODIFICATION BY WORKERS
 
 RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
   After every sprint, scrum-master-agent triggers learning loop.
-  No exceptions: `omniclaw corp retro` must run end of every active cycle.
+  No exceptions: `omniclaw corp retro` must run at the end of every active cycle.
 
 ---
 
@@ -67,7 +67,7 @@ RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
 - Update shared-context/knowledge_index.md monthly
 - Run memory rotation receipt to telemetry/archivist_log.md
 **Trigger:** `omniclaw corp retro --full` OR weekly on-demand
-**At start of each run, load:**
+**At the start of each run, load:**
 - SKILL: `context_manager` â€” reading memory files
 - SKILL: `knowledge_enricher` â€” summarizing knowledge into global memory
 - `corp/memory/MEMORY_SPEC.md` â€” retention rules
@@ -98,4 +98,3 @@ This instance manages the TECHNICAL bridge infrastructure.
 - `shell_assistant` â€” start/stop/monitor bridge processes
 - `diagnostics_engine` â€” bridge failure diagnosis
 **Tools:** Channel bridge services, system process manager
-

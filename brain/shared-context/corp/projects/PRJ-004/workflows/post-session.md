@@ -1,4 +1,4 @@
-﻿---
+---
 description: POS project session close â€” run before closing/switching workspace
 ---
 

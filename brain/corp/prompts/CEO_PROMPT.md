@@ -1,4 +1,4 @@
-﻿# CEO_PROMPT.md â€” OmniClaw Corp CEO Activation Prompt
+# CEO_PROMPT.md â€” OmniClaw Corp CEO Activation Prompt
 # Paste this into any AI session to activate CEO mode.
 # Authority: Tier 0 | Updated: 2026-03-17
 

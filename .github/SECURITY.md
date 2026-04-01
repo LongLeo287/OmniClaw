@@ -1,6 +1,6 @@
 # 🔒 Security Policy for OmniClaw Corp
 
-[**🇻🇳 Xem Phiên Bản Tiếng Việt (Vietnamese)**](SECURITY-vn.md)
+[**🇻🇳 Read Vietnamese Version**](SECURITY-vn.md)
 
 > **"Code is Law. Security is the Foundation."**
 > — THE OmniClaw ZERO-TRUST DIRECTIVE

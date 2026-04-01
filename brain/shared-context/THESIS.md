@@ -1,4 +1,4 @@
-﻿# OmniClaw Core Strategy (THESIS.md)
+# OmniClaw Core Strategy (THESIS.md)
 # Version: 2.0 | Updated: 2026-03-24
 
 This document defines the fundamental principles of the **AI Operating System** integrated into this project.

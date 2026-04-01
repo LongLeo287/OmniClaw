@@ -1,4 +1,4 @@
-# AI OS Corp -- DPAPI Secrets Encryptor
+# OmniClaw Corp -- DPAPI Secrets Encryptor
 # Encrypts MASTER.env using Windows Data Protection API (DPAPI).
 # Only the current Windows user on this machine can decrypt.
 #
@@ -15,7 +15,7 @@ $EncryptedOut = Join-Path $SecretsDir "MASTER.env.dpapi"
 Write-Host ""
 Write-Host "===========================================
 " -ForegroundColor Cyan
-Write-Host "  AI OS Corp -- DPAPI Encryption" -ForegroundColor Cyan
+Write-Host "  OmniClaw Corp -- DPAPI Encryption" -ForegroundColor Cyan
 Write-Host "============================================" -ForegroundColor Cyan
 Write-Host ""
 

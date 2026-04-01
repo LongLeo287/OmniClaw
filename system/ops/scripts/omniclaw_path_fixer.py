@@ -42,4 +42,3 @@ def replace_in_file(path):
 for f in SCRIPTS_DIR.glob('*'):
     if f.is_file() and f.suffix in ['.py', '.js']:
         replace_in_file(f)
-

@@ -1,4 +1,4 @@
-﻿# AGENT ENRICHMENT SOP
+# AGENT ENRICHMENT SOP
 # Version: 1.0 | Updated: 2026-03-17
 # Owner: OD&L (Dept 16) â€” training-agent
 # Triggered by: knowledge-distributor-agent (HIGH-VALUE flag) OR dept head request

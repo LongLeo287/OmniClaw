@@ -1,4 +1,4 @@
-﻿# QA Department Configuration
+# QA Department Configuration
 id: qa
 display_name: QA
 head_agent: security-engineer-agent

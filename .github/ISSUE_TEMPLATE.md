@@ -1,5 +1,5 @@
 # GitHub Issues — OmniClaw Code Review
-> Copy từng section dưới đây, tạo issue tại: https://github.com/LongLeo287/omniclaw-local/issues/new
+> Copy a section below to create an issue at: https://github.com/OmniClaw-Corp/omniclaw-local/issues/new
 
 ---
 
@@ -21,34 +21,34 @@
 
 ```javascript
 const CORS = {
-  "Access-Control-Allow-Origin": "*",  // ← NGUY HIỂM
+  "Access-Control-Allow-Origin": "*",  // ← DANGEROUS
 };
 ```
 
-**Rủi ro:** Bất kỳ website nào cũng có thể gửi request đến API này → CSRF, data exfiltration.
-**Fix:** Whitelist origin từ env var `ALLOWED_ORIGINS`.
+**Risk:** Any website can send requests to this API → CSRF, data exfiltration.
+**Fix:** Whitelist origin from env var `ALLOWED_ORIGINS`.
 
 ---
 
-### C2 — Không Giới Hạn Request Body Size (Line 41-48)
+### C2 — No Request Body Size Limit (Line 41-48)
 
 ```javascript
-req.on("data", chunk => body += chunk);  // ← Không giới hạn!
+req.on("data", chunk => body += chunk);  // ← No limit!
 ```
 
-**Rủi ro:** Attacker gửi GB-sized request → memory exhaustion, crash toàn bộ API server.
-**Fix:** Thêm `MAX_BODY_SIZE = 1MB`, destroy request nếu vượt ngưỡng.
+**Risk:** Attacker sends GB-sized request → memory exhaustion, crash entire API server.
+**Fix:** Add `MAX_BODY_SIZE = 1MB`, destroy request if it exceeds limit.
 
 ---
 
-### C3 — Không Có Rate Limiting / Authentication (All endpoints)
+### C3 — No Rate Limiting / Authentication (All endpoints)
 
-- Không có rate limiting
-- Không có API key validation
-- `/api/corp/escalate` có thể bị flood → file system đầy
-- Các endpoint GET bị DDoS dễ dàng
+- No rate limiting
+- No API key validation
+- `/api/corp/escalate` can be flooded → file system full
+- GET endpoints are easily DDoS-able
 
-**Fix:** Thêm rate-limit middleware + API key header check.
+**Fix:** Add rate-limit middleware + API key header check.
 ```
 
 ---
@@ -71,66 +71,66 @@ req.on("data", chunk => body += chunk);  // ← Không giới hạn!
 
 ```javascript
 const { dept, level, issue } = body;
-// Không sanitize "issue"!
+// "issue" is not sanitized!
 const entry = `\n## [${ts}] ${level} — ${dept}\n${issue}\n_Status: OPEN_\n`;
 fs.writeFileSync(escPath, existing + entry);
 ```
 
-**Rủi ro:** `issue` không validate về length → resource exhaustion. Injection nếu file được parse sau này.
+**Risk:** `issue` length is not validated → resource exhaustion. Injection risk if file is parsed later.
 **Fix:** Validate `issue.length <= 5000`, strip control characters.
 
 ---
 
-### C5 — JSON Parse Không Có Try-Catch (Line 34)
+### C5 — JSON Parse Missing Try-Catch (Line 34)
 
 ```javascript
 function readJson(filePath) {
   return fs.existsSync(filePath) ? JSON.parse(fs.readFileSync(filePath, "utf-8")) : null;
-  //                                ↑ File bị corrupt → uncaught exception → crash server!
+  //                                ↑ Corrupt file → uncaught exception → server crash!
 }
 ```
 
-**Rủi ro:** `blackboard.json` hoặc `SKILL_REGISTRY.json` bị corrupt → API server crash hoàn toàn.
-**Fix:** Wrap `JSON.parse` trong `try-catch`, return `null` khi lỗi.
+**Risk:** Corrupt `blackboard.json` or `SKILL_REGISTRY.json` → API server crashes completely.
+**Fix:** Wrap `JSON.parse` in `try-catch`, return `null` on error.
 
 ---
 
-### C7 — Manual YAML Parsing với Regex Lỏng (Line 137-148)
+### C7 — Manual YAML Parsing with Weak Regex (Line 137-148)
 
 ```javascript
-const [k, v] = line.trim().split(": ");  // ← Value chứa ": " → split sai!
-result[k] = v;                           // ← v có thể undefined → crash!
+const [k, v] = line.trim().split(": ");  // ← Value contains ": " → split fails!
+result[k] = v;                           // ← v can be undefined → crash!
 ```
 
-**Fix:** Dùng `js-yaml` npm package thay regex thủ công.
+**Fix:** Use `js-yaml` npm package instead of manual regex.
 
 ---
 
 ### L4 — parseBody() Silent Error (Line 46)
 
 ```javascript
-try { resolve(JSON.parse(body)); } catch { resolve({}); }  // ← Không log gì!
+try { resolve(JSON.parse(body)); } catch { resolve({}); }  // ← No logging!
 ```
 
-**Impact:** Invalid JSON body được treat như empty object → subtle bugs khó debug.
-**Fix:** Log warning khi parse fail.
+**Impact:** Invalid JSON body is treated as empty object → subtle bugs that are hard to debug.
+**Fix:** Log a warning when parsing fails.
 
 ---
 
-### L5 — Query Parameter Filter Không Validate (Line 66-68)
+### L5 — Query Parameter Filter Missing Validation (Line 66-68)
 
 ```javascript
 if (query.tier) entries = entries.filter(s => String(s.tier) === query.tier);
 ```
 
-**Fix:** Validate `query.tier` nằm trong tập `['0','1','2','3','4']` trước khi filter.
+**Fix:** Validate `query.tier` is in `['0','1','2','3','4']` before filtering.
 
 ---
 
-### S5 — Không Có Audit Logging Cho Write Operations
+### S5 — Missing Audit Logging For Write Operations
 
-`/api/corp/escalate` ghi file nhưng không log IP requester, timestamp, nội dung.
-**Fix:** Ghi audit log trước khi `fs.writeFileSync()`.
+`/api/corp/escalate` writes to file but does not log requester IP, timestamp, or content.
+**Fix:** Write audit log before `fs.writeFileSync()`.
 ```
 
 ---
@@ -153,14 +153,14 @@ if (query.tier) entries = entries.filter(s => String(s.tier) === query.tier);
 try:
     with urllib.request.urlopen(req, timeout=15) as resp:
         return resp.read().decode('utf-8', errors='ignore')
-except:  # ← Bare except! Nuốt MỌI lỗi kể cả KeyboardInterrupt!
+except:  # ← Bare except! Swallows ALL errors including KeyboardInterrupt!
     return None
 ```
 
-**Rủi ro:**
-- Không biết có lỗi xảy ra
-- Không thể debug khi fails
-- Nuốt cả `KeyboardInterrupt`, `SystemExit`
+**Risk:**
+- Blind to execution failures
+- Cannot be debugged
+- Swallows `KeyboardInterrupt`, `SystemExit`
 
 **Fix:**
 ```python
@@ -169,30 +169,30 @@ except (urllib.error.URLError, urllib.error.HTTPError, socket.timeout) as e:
     return None
 ```
 
-Pattern này lặp lại nhiều chỗ trong file — cần audit toàn bộ `except:` bare clauses.
+This pattern repeats across the file — audit all bare `except:` clauses.
 ```
 
 ---
 
 ## ISSUE 4 of 9
 
-**Title:** `[HIGH][aos_integrate.py] Unvalidated CLI Arg Split + Broken .env Parser`
+**Title:** `[HIGH][omniclaw_integrate.py] Unvalidated CLI Arg Split + Broken .env Parser`
 
 **Labels:** `bug`
 
 **Body:**
 ```
-## 🟠 High — `system/ops/scripts/aos_integrate.py`
+## 🟠 High — `system/ops/scripts/omniclaw_integrate.py`
 
 **Review date:** 2026-03-28
 
 ### C9 — Unvalidated CLI Argument Split (Line 49)
 
 ```python
-owner, repo_name = full_name.split('/')  # ← Nếu không có '/' → ValueError crash!
+owner, repo_name = full_name.split('/')  # ← If no '/' → ValueError crash!
 ```
 
-Input từ `sys.argv` không được validate trước khi unpack. Bất kỳ string không có `/` → crash.
+Input from `sys.argv` is unpacked without validation. Any string lacking `/` → crash.
 
 **Fix:**
 ```python
@@ -204,7 +204,7 @@ owner, repo_name = full_name.split('/')
 
 ---
 
-### C10 — .env Parser Thiếu Sót (Line 11-17)
+### C10 — Flawed .env Parser (Line 11-17)
 
 ```python
 def get_github_token():
@@ -216,20 +216,20 @@ def get_github_token():
     return None
 ```
 
-**Vấn đề:**
-- Không skip comment lines bắt đầu bằng `#`
-- Không skip blank lines
-- `GITHUB_TOKEN=` (empty value) → return `""` — truthy nhưng invalid
-- Không có error handling nếu file read fail
+**Issues:**
+- Does not skip comment lines starting with `#`
+- Does not skip blank lines
+- `GITHUB_TOKEN=` (empty value) → returns `""` — truthy but invalid
+- Missing error handling if file read fails
 
-**Fix:** Dùng `python-dotenv` library hoặc thêm proper validation.
+**Fix:** Use the `python-dotenv` library or add robust validation.
 ```
 
 ---
 
 ## ISSUE 5 of 9
 
-**Title:** `[HIGH][sync_identity_1_1.js] Hardcoded Placeholder <AI_OS_ROOT> Never Replaced`
+**Title:** `[HIGH][sync_identity_1_1.js] Hardcoded Placeholder <OMNICLAW_ROOT> Never Replaced`
 
 **Labels:** `bug`
 
@@ -242,10 +242,10 @@ def get_github_token():
 ### C8 — Hardcoded Placeholder (Line 4)
 
 ```javascript
-const rootDir = '<AI_OS_ROOT>';  // ← Template placeholder chưa được thay thế!
+const rootDir = '<OMNICLAW_ROOT>';  // ← Unreplaced template placeholder!
 ```
 
-Script này sẽ **fail hoàn toàn** khi chạy vì `<AI_OS_ROOT>` không phải path hợp lệ trên bất kỳ OS nào.
+This script will **fail entirely** execution because `<OMNICLAW_ROOT>` is not a valid path on any OS.
 
 **Fix Option A** (dynamic):
 ```javascript
@@ -254,23 +254,23 @@ const rootDir = path.resolve(__dirname, '../../..');
 
 **Fix Option B** (env-based):
 ```javascript
-const rootDir = process.env.AI_OS_ROOT || path.resolve(__dirname, '../../..');
+const rootDir = process.env.OMNICLAW_ROOT || path.resolve(__dirname, '../../..');
 ```
 
-Cần audit toàn bộ codebase tìm các placeholder `<AI_OS_ROOT>` chưa được replace khác.
+Audit entire codebase for any unreplaced `<OMNICLAW_ROOT>` placeholders.
 ```
 
 ---
 
 ## ISSUE 6 of 9
 
-**Title:** `[MEDIUM][aios_orchestrator.py] Silent LTM Module Import Failure`
+**Title:** `[MEDIUM][omniclaw_orchestrator.py] Silent LTM Module Import Failure`
 
 **Labels:** `bug`
 
 **Body:**
 ```
-## 🟡 Medium — `system/ops/aios_orchestrator.py`
+## 🟡 Medium — `system/ops/omniclaw_orchestrator.py`
 
 **Review date:** 2026-03-28
 
@@ -284,12 +284,12 @@ try:
     _AGENT_BUS   = _AgentBus()
     _LTM_ONLINE  = True
 except Exception as _e:
-    _LTM_ONLINE = False   # ← _e bị nuốt hoàn toàn, không ai biết tại sao LTM offline!
+    _LTM_ONLINE = False   # ← _e is swallowed entirely, nobody knows why LTM is offline!
     _MEMORY_CORE = None
     _AGENT_BUS   = None
 ```
 
-Graceful degradation là tốt, nhưng việc không log exception khiến việc debug rất khó khi LTM bị offline trong production.
+Graceful degradation is good, but failure to log exceptions makes debugging LTM offline states extremely difficult in production.
 
 **Fix:**
 ```python
@@ -316,14 +316,14 @@ except Exception as _e:
 
 **Review date:** 2026-03-28
 
-### L2 — Telegram Credentials Không Validate (Line 42-43)
+### L2 — Telegram Credentials Unvalidated (Line 42-43)
 
 ```python
 TOKEN   = _ENV.get("TELEGRAM_BOT_TOKEN", "")
 CHAT_ID = _ENV.get("TELEGRAM_CHAT_ID", "")
 ```
 
-Khi `TOKEN=""`, `send_telegram()` vẫn được gọi và tạo URL invalid → Telegram API reject với HTTP error nhưng không ai biết.
+If `TOKEN=""`, `send_telegram()` is still called generating an invalid URL → Telegram API rejects silently with HTTP error.
 
 **Fix:**
 ```python
@@ -335,9 +335,9 @@ if not TOKEN or not CHAT_ID:
 
 ---
 
-### L3 — Message Length Không Validate (Line 89-101)
+### L3 — Message Length Unvalidated (Line 89-101)
 
-Telegram API giới hạn 4096 ký tự/message. Nếu message dài hơn → API reject silently, alert bị mất.
+Telegram API limits payloads to 4096 characters/message. If message is longer → API rejects silently, alert is lost.
 
 **Fix:**
 ```python
@@ -368,17 +368,17 @@ def send_telegram(text: str):
 
 | | Count |
 |---|---|
-| Skills trên disk (`ecosystem/skills/`) | 29 |
-| Skills trong registry | 28 |
-| **Thiếu** | **1** |
+| Skills on disk (`ecosystem/skills/`) | 29 |
+| Skills in registry | 28 |
+| **Missing** | **1** |
 
-**Skill bị thiếu:** `dependabot-secretary`
-- File tồn tại: `ecosystem/skills/dependabot-secretary/SKILL.md` ✅
-- Trong SKILL_REGISTRY.json: ❌ KHÔNG CÓ
+**Missing Skill:** `dependabot-secretary`
+- File exists: `ecosystem/skills/dependabot-secretary/SKILL.md` ✅
+- In SKILL_REGISTRY.json: ❌ MISSING
 
-**Impact:** Skill này không thể được discover tự động bởi agent routing engine.
+**Impact:** Skill cannot be autos-discovered by the agent routing engine.
 
-**Fix:** Thêm entry cho `dependabot-secretary` vào `brain/shared-context/SKILL_REGISTRY.json` với đầy đủ fields: `id`, `name`, `description`, `tier`, `category`, `status`, `path`.
+**Fix:** Add entry for `dependabot-secretary` to `brain/shared-context/SKILL_REGISTRY.json` with all required fields: `id`, `name`, `description`, `tier`, `category`, `status`, `path`.
 ```
 
 ---
@@ -395,35 +395,35 @@ def send_telegram(text: str):
 
 **Review date:** 2026-03-28
 
-### S1 — CLAUDE_CODE_TASKS.md Bị Thiếu
+### S1 — Missing CLAUDE_CODE_TASKS.md
 
-`CLAUDE.md` Step 9 yêu cầu:
+`CLAUDE.md` Step 9 requirements:
 > ⚡ READ & AUTO-EXECUTE TASK QUEUE [CLAUDE_CODE_TASKS.md]
 
-Nhưng file này **KHÔNG TỒN TẠI** trong repo.
+But this file **DOES NOT EXIST** in the repo.
 
-Mỗi lần boot → fallback mechanism được trigger → warning logged → CEO cần được thông báo.
+Every boot → fallback mechanism triggers → warning logged → CEO needs notification.
 
-**Fix:** Một trong hai:
-1. Tạo `CLAUDE_CODE_TASKS.md` với template rỗng (preferred)
-2. Remove/comment out reference trong `CLAUDE.md` Step 9
+**Fix:** Either:
+1. Create `CLAUDE_CODE_TASKS.md` with an empty template (preferred)
+2. Remove/comment out the reference in `CLAUDE.md` Step 9
 
 ---
 
 ### S4 — UTF-8 Encoding Corruption
 
-**Files bị ảnh hưởng:** `CLAUDE.md`, `.clauderules`
+**Affected files:** `CLAUDE.md`, `.clauderules`
 
-Ký tự tiếng Việt/Unicode bị garble:
-- `→` hiển thị thành `Ã¢â€â€™`
-- `—` hiển thị thành `Ã¢â‚¬â€œ`
-- `✅` bị corrupt thành multi-byte garbage
+Vietnamese/Unicode characters are garbled:
+- `→` displays as `Ã¢â€â€™`
+- `—` displays as `Ã¢â‚¬â€œ`
+- `✅` corrupts into multi-byte garbage
 
-**Nguyên nhân:** Files được lưu với encoding Windows-1252 hoặc Latin-1, sau đó re-read as UTF-8.
+**Cause:** Files saved with Windows-1252 or Latin-1 encoding, then re-read as UTF-8.
 
-**Impact:** Boot protocols và governance rules có thể bị misread bởi tools xử lý text (CI/CD, grep, diff tools).
+**Impact:** Boot protocols and governance rules can be misread by text tools (CI/CD, grep, diff tools).
 
-**Fix:** Convert toàn bộ sang UTF-8 without BOM:
+**Fix:** Convert all entirely to UTF-8 without BOM:
 ```bash
 # PowerShell
 Get-Content CLAUDE.md -Encoding UTF8 | Set-Content CLAUDE.md -Encoding UTF8NoBOM
@@ -432,18 +432,18 @@ Get-Content CLAUDE.md -Encoding UTF8 | Set-Content CLAUDE.md -Encoding UTF8NoBOM
 
 ---
 
-## TÓM TẮT
+## SUMMARY
 
 | # | File | Severity | Issues |
 |---|------|----------|--------|
 | 1 | `system/infra/api/server.js` | 🔴 Critical | CORS wildcard, no body limit, no rate limiting |
 | 2 | `system/infra/api/server.js` | 🟠 High | Unvalidated file write, JSON parse no try-catch, manual YAML |
 | 3 | `system/ops/scripts/batch_repo_intake.py` | 🟠 High | Bare except swallows all errors |
-| 4 | `system/ops/scripts/aos_integrate.py` | 🟠 High | Split crash, broken .env parser |
-| 5 | `system/ops/scripts/sync_identity_1_1.js` | 🟠 High | Hardcoded `<AI_OS_ROOT>` placeholder |
-| 6 | `system/ops/aios_orchestrator.py` | 🟡 Medium | Silent LTM import failure |
+| 4 | `system/ops/scripts/omniclaw_integrate.py` | 🟠 High | Split crash, broken .env parser |
+| 5 | `system/ops/scripts/sync_identity_1_1.js` | 🟠 High | Hardcoded `<OMNICLAW_ROOT>` placeholder |
+| 6 | `system/ops/omniclaw_orchestrator.py` | 🟡 Medium | Silent LTM import failure |
 | 7 | `system/automations/daemons/system_pulse.py` | 🟡 Medium | Telegram no validation |
 | 8 | `brain/shared-context/SKILL_REGISTRY.json` | 🟡 Medium | dependabot-secretary unregistered |
 | 9 | `CLAUDE.md` + `.clauderules` | 🟡 Medium | Missing boot file + UTF-8 corruption |
 
-**Tổng:** 5 Critical, 6 High, 8 Medium issues
+**Total:** 5 Critical, 6 High, 8 Medium issues

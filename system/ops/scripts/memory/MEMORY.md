@@ -68,7 +68,7 @@
 ## LESSONS LEARNED
 
 - Extension ecosystem at D:\APP\Extension Ecosystem\ — has monorepo tooling to reuse
-- LongLeo project at D:\APP\LongLeo\ — good governance patterns to borrow
+- OmniClaw_Admin project at D:\APP\OmniClaw_Admin\ — good governance patterns to borrow
 - Github/ folder has curated repo references by category
 
 ## IMPORTANT FILES

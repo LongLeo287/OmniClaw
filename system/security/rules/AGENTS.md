@@ -1,4 +1,4 @@
-﻿# REDIRECT â€” rules/AGENTS.md
+# REDIRECT â€” rules/AGENTS.md
 > âš ï¸ **THIS IS NOT THE AUTHORITATIVE FILE**
 
 The AI OS AGENTS roster has moved to its correct Tier 1 location:

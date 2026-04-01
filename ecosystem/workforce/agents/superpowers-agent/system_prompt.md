@@ -1,4 +1,4 @@
-﻿# Agent: superpowers-agent
+# Agent: superpowers-agent
 # Dept: qa_testing | Head: False | Role: QA Engineer — automated testing, test plans
 # Version: 1.0 | 2026-03-24
 

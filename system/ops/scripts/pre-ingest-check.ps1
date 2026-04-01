@@ -1,6 +1,6 @@
-﻿# pre-ingest-check.ps1 -- AI OS Layer 1 Pre-Ingest Protection
+﻿# pre-ingest-check.ps1 -- OmniClaw Layer 1 Pre-Ingest Protection
 # Version: 1.2 | 2026-03-14
-# Run BEFORE cloning any external repo into AI OS plugins/ or skills/
+# Run BEFORE cloning any external repo into OmniClaw plugins/ or skills/
 #
 # INSPIRED BY:
 #   TruffleHog (secret scanning), ZeroLeaks (leak detection),
@@ -89,7 +89,7 @@ $apiBase = "https://api.github.com/repos/$owner/$repo"
 
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor Magenta
-Write-Host "  AI OS -- Layer 1 Pre-Ingest Security Check"      -ForegroundColor Magenta
+Write-Host "  OmniClaw -- Layer 1 Pre-Ingest Security Check"      -ForegroundColor Magenta
 Write-Host "=================================================" -ForegroundColor Magenta
 Write-Host "  Repo  : $owner/$repo"
 Write-Host "  Time  : $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
@@ -186,7 +186,7 @@ foreach ($org in $TRUSTED_ORGS) {
 }
 
 if ($isTrusted) {
-    Write-Pass "Author '$owner' is in AI OS trusted list"
+    Write-Pass "Author '$owner' is in OmniClaw trusted list"
     $score += 20; $null = $ok.Add("Trusted org: $owner")
 } else {
     Write-Warn "Author '$owner' NOT in trusted list -- manual review needed"
@@ -326,7 +326,7 @@ try {
         Write-Pass "License: $spdx (permissive)"
         $score += 10; $null = $ok.Add("Permissive license: $spdx")
     } elseif ($spdx -match "GPL") {
-        Write-Warn "License: $spdx (copyleft -- check AI OS usage policy)"
+        Write-Warn "License: $spdx (copyleft -- check OmniClaw usage policy)"
         $null = $warns.Add("Copyleft license: $spdx")
     } else {
         Write-Warn "License: $spdx -- verify compatibility"

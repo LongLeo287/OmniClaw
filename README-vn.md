@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="OmniClaw Banner">
-  <h1>🌌 OmniClaw Corp</h1>
+  <h1>🌌 OmniClaw</h1>
   <b>Hệ điều hành Multi-Agent Tự trị và Nguyên khối</b><br>
   <br>
 
@@ -28,7 +28,7 @@
 ---
 
 ## 🌟 Giới thiệu về OmniClaw
-**OmniClaw Corp** là một hệ điều hành Multi-Agent có tính mô-đun cao, được thiết kế để chạy trực tiếp trên các mô hình LLM hàng đầu (Anthropic Claude, Google Gemini, OpenAI). Nó biến máy tính cá nhân của bạn thành một tập đoàn kỹ thuật số tự trị.
+**OmniClaw** là một hệ điều hành Multi-Agent có tính mô-đun cao, được thiết kế để chạy trực tiếp trên các mô hình LLM hàng đầu (Anthropic Claude, Google Gemini, OpenAI). Nó biến máy tính cá nhân của bạn thành một tập đoàn kỹ thuật số tự trị.
 
 Thay vì chỉ hoạt động như một chatbot đơn giản, OmniClaw chủ động điều phối các chỉ thị phức tạp của bạn thông qua các **Phòng ban Chức năng** chuyên biệt, quản lý bộ nhớ bằng công nghệ Graph RAG và tự động tiến hóa mã nguồn dựa trên hướng dẫn của bạn. Hệ thống được thiết kế với triết lý **An ninh Zero-Trust**, đảm bảo toàn bộ dữ liệu chỉ nằm trên máy cục bộ của bạn.
 
@@ -132,13 +132,13 @@ Khác với một kho lưu trữ code thông thường, OmniClaw là một hệ 
 
 Bạn có ý tưởng, câu hỏi hoặc muốn giới thiệu các quy trình Agent tùy chỉnh của mình? Chúng tôi đã xây dựng một không gian riêng để đội ngũ OmniClaw cùng nhau thảo luận.
 
-**[🚀 Tham gia không gian Thảo luận của OmniClaw Corp](https://github.com/LongLeo287/omniclaw-local/discussions)**
+**[🚀 Tham gia không gian Thảo luận của OmniClaw](https://github.com/LongLeo287/omniclaw-local/discussions)**
 
 ---
 
 ## 🙏 Lời cảm ơn & Tri ân
 
-OmniClaw Corp được xây dựng dựa trên nền tảng của các kiến trúc mã nguồn mở vĩ đại. Chúng tôi chân thành cảm ơn các tổ chức và dự án sau:
+OmniClaw được xây dựng dựa trên nền tảng của các kiến trúc mã nguồn mở vĩ đại. Chúng tôi chân thành cảm ơn các tổ chức và dự án sau:
 
 *   **[Anthropic](https://anthropic.com)**: Cho Claude Code CLI và cấu trúc REPL tuyệt vời.
 *   **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: Cho các mô hình Gemini và khả năng phân tích cấu trúc ngữ cảnh sâu sắc chưa từng có.

@@ -1,4 +1,4 @@
-﻿# Agent Memory — backend-architect-agent
+# Agent Memory — backend-architect-agent
 # Title: Head of Engineering | Dept: engineering
 # Layer: SHORT-TERM (7-day auto-purge by archivist)
 # Schema: MEMORY_SPEC.md v1.0 | Initialized: 2026-03-22

@@ -1,4 +1,4 @@
-﻿# pos_dev_workflow.md â€” POS Feature Development SOP
+# pos_dev_workflow.md â€” POS Feature Development SOP
 # Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Phase 1: RESEARCH

@@ -1,4 +1,4 @@
-﻿# Agent: web_researcher
+# Agent: web_researcher
 # Dept: rd | Head: False | Role: Web Researcher (Crawl Specialist) — Firecrawl-powered deep research
 # Version: 1.0 | 2026-03-24
 

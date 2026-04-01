@@ -1,10 +1,10 @@
-# Agent Configuration — intake-chief-agent
+﻿# Agent Configuration — intake-chief-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: intake-chief-agent
 version: 1.0.0
 status: active
-description: "Tiếp nhận, phân loại và định tuyến tất cả đầu vào mới vào hệ thống OmniClaw Corp"
+description: "Receive, classify and route all new inputs into the OmniClaw Corp system"
 domain: ecosystem
 type: workforce-agent
 department: content_intake

@@ -1,6 +1,6 @@
 # 🏛️ System Overview (21-Department Architecture)
 
-OmniClaw Corp functions exactly like a digital mega-corporation, boasting **21 distinct structural "Departments"** managed by AI Agents working in concert via multi-agent pipelines.
+OmniClaw functions exactly like a digital mega-corporation, boasting **21 distinct structural "Departments"** managed by AI Agents working in concert via multi-agent pipelines.
 
 [**🇻🇳 Xem Bản Tiếng Việt**](system_overview-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 

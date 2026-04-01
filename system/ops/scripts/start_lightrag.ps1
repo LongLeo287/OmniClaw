@@ -28,7 +28,7 @@ New-Item -ItemType Directory -Force -Path $WORKING_DIR | Out-Null
 $serverScript = "$OMNICLAW_ROOT\system\ops\scripts\lightrag_server.py"
 if (-not (Test-Path $serverScript)) {
     Write-Host "Creating lightrag_server.py..." -ForegroundColor Yellow
-    # Script is created separately â€” run create_lightrag_server.py
+    # Script is created separately "” run create_lightrag_server.py
     python -c "
 import os
 script = '''
@@ -115,7 +115,6 @@ $check = Get-NetTCPConnection -LocalPort $LIGHTRAG_PORT -State Listen -ErrorActi
 if ($check) {
     Write-Host "[STARTED] LightRAG API :$LIGHTRAG_PORT" -ForegroundColor Green
 } else {
-    Write-Host "[WARNING] LightRAG may still be initializing â€” check in 5s" -ForegroundColor Yellow
+    Write-Host "[WARNING] LightRAG may still be initializing "” check in 5s" -ForegroundColor Yellow
     Write-Host "  Manual: python ops/scripts/lightrag_server.py"
 }
-

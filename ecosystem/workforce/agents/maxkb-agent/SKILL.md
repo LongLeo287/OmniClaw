@@ -1,4 +1,4 @@
----
+﻿---
 name: MaxKB Knowledge Base Platform
 tier: 2
 source: https://github.com/1Panel-dev/MaxKB
@@ -11,20 +11,20 @@ security: PASS (manual review - 9 false positives: CJK i18n unicode + standard V
 # MaxKB — Enterprise AI Knowledge Base & RAG Platform
 
 ## What It Is
-MaxKB ("Max Knowledge Brain") là nền tảng open-source xây dựng AI agents doanh nghiệp với RAG pipeline hoàn chỉnh. 20k+ GitHub stars. Stack: Vue.js + Python/Django + LangChain + PostgreSQL/pgvector.
+MaxKB ("Max Knowledge Brain") is an open-source platform for building enterprise AI agents with a complete RAG pipeline. 20k+ GitHub stars. Stack: Vue.js + Python/Django + LangChain + PostgreSQL/pgvector.
 
 ## Core Capabilities
 
 ### RAG Pipeline
-- Upload tài liệu / crawl web tự động
+- Upload documents / crawl web automatically
 - Auto text splitting, vectorization, indexing
-- Reduce LLM hallucination, Q&A chất lượng cao
+- Reduce LLM hallucination, high quality Q&A
 
 ### Agentic Workflow Engine
 - Visual workflow builder (drag & drop)
-- Function library tích hợp
-- **MCP tool-use support** — tương thích OmniClaw MCP ecosystem
-- Orchestration AI phức tạp không cần code
+- Integrated function library
+- **MCP tool-use support** — compatible with the OmniClaw MCP ecosystem
+- Complex AI Orchestration without code
 
 ### Model Support (Model-Agnostic)
 - Private: DeepSeek, Llama, Qwen (via Ollama)
@@ -38,28 +38,28 @@ MaxKB ("Max Knowledge Brain") là nền tảng open-source xây dựng AI agents
 
 ## OmniClaw Integration
 
-### Kết nối với OmniClaw
-- **RAG Agent**: `subagents/rag-specialist/` có thể dùng MaxKB làm backend
-- **MCP Bridge**: MaxKB MCP support → tích hợp với `tools/mcp_ecosystem_overview.md`
-- **Complement**: NexusRAG (high-perf local) + MaxKB (enterprise UI + multi-user) = bộ đôi RAG
-- **Deploy**: Docker-based, tích hợp với `devops-agent`
+### Connect to OmniClaw
+- **RAG Agent**: `subagents/rag-specialist/` can use MaxKB as a backend
+- **MCP Bridge**: MaxKB MCP support → integration with `tools/mcp_ecosystem_overview.md`
+- **Complement**: NexusRAG (high-perf local) + MaxKB (enterprise UI + multi-user) = RAG duo
+- **Deploy**: Docker-based, integrated with `devops-agent`
 
 ### Activation (local deploy)
 ```bash
 # Deploy via Docker
 docker compose up -d
 
-# Hoặc qua 1Panel app store với Ollama + Llama 3
+# Or via 1Panel app store with Ollama + Llama 3
 ```
 
-## Use Cases trong OmniClaw
+## Use Cases in OmniClaw
 - Enterprise knowledge search agent
-- Internal company Q&A bot với UI đẹp
-- Multi-user knowledge base với phân quyền
-- Scientific research agent backend (dùng với claude-scientific-skills)
+- Internal company Q&A bot with beautiful UI
+- Multi-user knowledge base with decentralization
+- Scientific research agent backend (used with claude-scientific-skills)
 
 ## Security Notes
 - 9 CRITICAL → all confirmed FALSE POSITIVES:
   - `localStorage.getItem` = Vue.js JWT session management (standard)
   - Unicode escapes = CJK/Chinese i18n strings in TypeScript
-- Không có crypto miner, không có cookie theft thật, không có supply chain attack
+- No crypto miners, no real cookie theft, no supply chain attack

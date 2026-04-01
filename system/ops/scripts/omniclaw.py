@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-omniclaw.py — AI OS Corp Cycle CLI v2.0
+omniclaw.py — OmniClaw Corp Cycle CLI v2.0
 Triggers corp-daily-cycle.md phases from terminal.
 
 Usage:
@@ -128,10 +128,10 @@ def cmd_corp_retro():
     save_json(BB_PATH, bb)
     print(f"{GREEN}✅ RETRO_{today}.md written — Cycle {cycle} COMPLETE{RESET}")
 
-    # ── Tích hợp Auto-Dream (TECH-01) ──
+    # [System log: Legacy non-English comment removed]
     reflector = os.path.join(ROOT, "system", "ops", "scripts", "cognitive_reflector.py")
     if os.path.exists(reflector):
-        print(f"{CYAN}Kích hoạt giấc ngủ Auto-Dream (REM Sleep)...{RESET}")
+        print("[OmniClaw System Event]")...{RESET}")
         subprocess.run([sys.executable, reflector], check=False)
 
     cmd_hud_update()
@@ -176,7 +176,7 @@ def cmd_status():
     status = bb.get("corp_cycle_status", "UNKNOWN")
     color  = GREEN if status == "IDLE" else YELLOW if status == "RUNNING" else RED
 
-    print(f"\n{BOLD}╔══ AI OS Corp Status ══════════════════════╗{RESET}")
+    print(f"\n{BOLD}╔══ OmniClaw Corp Status ══════════════════════╗{RESET}")
     print(f"  Cycle status : {color}{status}{RESET}")
     print(f"  Cycles done  : {bb.get('cycles_complete', 0)}")
     print(f"  Last cycle   : {bb.get('last_cycle_date', 'N/A')}")
@@ -277,7 +277,7 @@ COMMANDS = {
 def main():
     args = sys.argv[1:]
     if not args:
-        print(f"{BOLD}aos — AI OS Corp CLI v2.0{RESET}")
+        print(f"{BOLD}aos — OmniClaw Corp CLI v2.0{RESET}")
         print("Usage: python ops/omniclaw.py <command> [args]")
         print("\nCommands:")
         print("  corp start            Boot + CEO Brief (Phase 0-1)")

@@ -1,4 +1,4 @@
-﻿# Project Connection Protocol â€” OmniClaw v3.0
+# Project Connection Protocol â€” OmniClaw v3.0
 # Authority: Tier 0 (Constitution)
 # Updated: 2026-03-16
 

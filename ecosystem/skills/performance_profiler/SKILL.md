@@ -1,4 +1,4 @@
-﻿---
+---
 id: performance_profiler
 name: Performance Profiler
 version: 1.0.0

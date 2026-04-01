@@ -1,4 +1,4 @@
-department:
+﻿department:
   id: system_integrity
   number: 32
   name: SYSTEM INTEGRITY
@@ -34,13 +34,13 @@ outputs:
     consumer: registry-manager
   - artifact: system_status_update
     path: brain/shared-context/blackboard.json
-    consumer: all
+    consumers: all
 triggers:
   - phrase: "audit system"
   - phrase: "fix system"
   - phrase: "scan and fix"
-  - phrase: "kiểm tra hệ thống"
-  - phrase: "sửa lỗi hệ thống"
+  - phrase: "system check"
+  - phrase: "fix system errors"
   - event: boot_sequence_missing_files
   - event: ci_cd_encoding_failure
   - schedule: daily

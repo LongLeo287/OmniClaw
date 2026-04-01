@@ -1,4 +1,4 @@
-﻿# Department: registry_capability
+# Department: registry_capability
 ---
 description: Auto Skill Creator â€” Automatically create SKILL.md for any new repo/agent/tool without one
 ---

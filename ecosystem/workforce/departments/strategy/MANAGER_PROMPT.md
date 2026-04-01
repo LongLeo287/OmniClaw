@@ -1,4 +1,4 @@
-﻿# Strategy â€” Dept Manager Prompt
+﻿﻿# Strategy â€” Dept Manager Prompt
 # Head: product-manager-agent | Reports to: CSO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -26,7 +26,7 @@ market-agent monitors:
 
 ### OKR Tracking
 roadmap-agent:
-- Tracks quarterly OKRs
+- Tracks Quarterly OKRs
 - Alerts if OKR behind >30%
 - Updates roadmap milestones to ROADMAP.md
 
@@ -59,4 +59,3 @@ B. [Option B] â€” Pros: / Cons:
 Strategy uses premium tier (Claude Sonnet) for analysis tasks.
 
 </STRATEGY_MANAGER_PROMPT>
-

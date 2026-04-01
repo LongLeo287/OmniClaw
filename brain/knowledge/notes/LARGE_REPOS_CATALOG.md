@@ -1,4 +1,4 @@
-﻿# ðŸ“š Large Repos Catalog â€” Clone On Demand
+# ðŸ“š Large Repos Catalog â€” Clone On Demand
 # Version: 1.0 | 2026-03-25
 # Purpose: CÃ¡c repo lá»›n khÃ´ng clone ngay â€” agent/dept láº¥y lá»‡nh clone khi cáº§n
 # Path: brain/knowledge/notes/LARGE_REPOS_CATALOG.md

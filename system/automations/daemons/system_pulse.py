@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-system/automations/daemons/system_pulse.py — AI OS System Health Pulse Checker (B5)
-Chạy mỗi 5 phút. Gửi Telegram alert nếu có issue.
+system/automations/daemons/system_pulse.py — OmniClaw System Health Pulse Checker (B5)
+Runs every 5 minutes. Sends Telegram alert if there's an issue.
 
-NOTE (2026-03-27): Services giờ chạy từ AI OS REMOTE (<AI_OS_REMOTE_ROOT>)
-  - ClawTask :7474   → REMOTE/claws/nullclaw/ hoặc REMOTE/scripts/start_nullclaw.ps1
+NOTE (2026-03-27): Services now run from OmniClaw REMOTE (<OMNICLAW_REMOTE_ROOT>)
+  - ClawTask :7474   → REMOTE/claws/nullclaw/ or REMOTE/scripts/start_nullclaw.ps1
   - LightRAG :9621   → REMOTE/scripts/lightrag_server.py
   - Telegram Bridge  → REMOTE/infra/channels/start_bridges.py
-  script này CHỈ check port (socket ping), không import module nào từ REMOTE.
+  this script ONLY checks port (socket ping), does not import any module from REMOTE.
 
 Usage:
   python system/automations/daemons/system_pulse.py           # One-shot
-  python system/automations/daemons/system_pulse.py --loop    # Loop mỗi 5 phút
-  python system/automations/daemons/system_pulse.py --quiet   # Chỉ alert khi có issue
+  python system/automations/daemons/system_pulse.py --loop    # Loop every 5 minutes
+  python system/automations/daemons/system_pulse.py --quiet   # Only alert when there's an issue
 """
 import sys
 import os
@@ -64,7 +64,7 @@ def check_blackboard() -> dict:
 
 def check_bridge() -> dict:
     """Check Telegram Bridge via blackboard heartbeat.
-    Bridge chạy từ: <AI_OS_REMOTE_ROOT>\infra\channels\start_bridges.py
+    Bridge runs from: <OMNICLAW_REMOTE_ROOT>\infra\channels\start_bridges.py
     """
     try:
         bb = json.loads(BB.read_text(encoding="utf-8"))
@@ -77,9 +77,9 @@ def check_bridge() -> dict:
 
 CHECKS = [
     lambda: check_port("127.0.0.1", 11434, "Ollama :11434"),
-    # ClawTask chạy từ: AI OS REMOTE/claws/nullclaw/ hoặc REMOTE/scripts/start_nullclaw.ps1
+    # ClawTask runs from: OmniClaw REMOTE/claws/nullclaw/ or REMOTE/scripts/start_nullclaw.ps1
     lambda: check_port("127.0.0.1", 7474,  "ClawTask :7474 (REMOTE)"),
-    # LightRAG chạy từ: AI OS REMOTE/scripts/lightrag_server.py
+    # LightRAG runs from: OmniClaw REMOTE/scripts/lightrag_server.py
     lambda: check_port("127.0.0.1", 9621,  "LightRAG :9621 (REMOTE)"),
     check_blackboard,
     check_bridge,
@@ -115,7 +115,7 @@ def run_pulse() -> list:
 
 def format_alert(issues: list) -> str:
     ts = datetime.now().strftime("%H:%M:%S")
-    lines = [f"⚠️ *AI OS System Pulse* — {ts}"]
+    lines = [f"⚠️ *OmniClaw System Pulse* — {ts}"]
     for issue in issues:
         lines.append(f"  ❌ `{issue['name']}` — {issue['status']}")
     lines.append("\nCheck: `python ops/omniclaw.py status`")
@@ -123,7 +123,7 @@ def format_alert(issues: list) -> str:
 
 def main():
     loop = "--loop" in sys.argv
-    print(f"{'[LOOP] ' if loop else ''}AI OS System Pulse — {datetime.now().strftime('%H:%M:%S')}")
+    print(f"{'[LOOP] ' if loop else ''}OmniClaw System Pulse — {datetime.now().strftime('%H:%M:%S')}")
 
     while True:
         if not QUIET:

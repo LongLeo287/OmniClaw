@@ -1,4 +1,4 @@
-﻿# CI/CD Pipeline: Skill Validation
+# CI/CD Pipeline: Skill Validation
 # Trigger: New skill added to skills/ | Owner: registry_capability
 # Purpose: Validate SKILL.md before activating in SKILL_REGISTRY
 

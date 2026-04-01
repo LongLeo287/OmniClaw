@@ -1,10 +1,10 @@
-# Agent Configuration — project-intake-agent
+﻿# Agent Configuration — project-intake-agent
 # OmniClaw Corp | Activated: 2026-03-29
 
 name: project-intake-agent
 version: 1.0.0
 status: active
-description: "Tiếp nhận, đánh giá và chuẩn bị đầu vào cho các dự án mới trước khi chuyển sang pmo-agent"
+description: "Receive, evaluate and prepare input for new projects before moving to pmo-agent"
 domain: ecosystem
 type: workforce-agent
 department: planning_pmo
@@ -14,7 +14,7 @@ skills:
   - neural_navigator
   - sequential-thinking
   - intake-classifier
-  - feasibility-checker
+  - considerations-checker
 
 tools:
   - file-system

@@ -1,7 +1,7 @@
-﻿# QA & TESTING â€” Department Rules
+﻿﻿# QA & TESTING â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: security-engineer-agent | Reports to: CTO
-# This dept IS a gate â€” it does not go through QA itself
+# This department IS a gate â€” it does not go through QA itself
 # Applies in addition to: brain/corp/rules/qa_rules.md
 
 ---
@@ -11,12 +11,12 @@
 RULE QA-D-01: GATE IS BLOCKING
   Nothing ships to production without GATE_QA sign-off.
   GATE_QA cannot be bypassed by Engineering workers or managers.
-  Only CEO override with documented reason.
+  Only CEO overrides with documented reasons.
 
 RULE QA-D-02: FULL CHECKLIST EVERY TIME
   The QA checklist runs on every single item submitted.
   No shortcuts for "simple changes" or "obvious fixes."
-  Every checklist item explicitly checked and marked.
+  Every checklist item clearly checked and marked.
 
 RULE QA-D-03: ACTIONABLE FAILS ONLY
   Every FAIL decision must list:
@@ -74,14 +74,14 @@ RULE QA-D-07: SECURITY OVERLAP
 - Execute test suites: unit, integration, regression
 - Write QA receipts for every reviewed item
 - Return actionable FAIL feedback to engineering workers
-**At start of every review, load:**
+**At the start of every review, load:**
 - SKILL: `diagnostics_engine` â€” code analysis
 - Input: code artifact + test results from engineering worker
 - Reference: `rules/APPROVAL_GATES.md` GATE_QA checklist
 **Skills:**
 - `diagnostics_engine` â€” code pattern detection
 - `shell_assistant` â€” run `npm test`, `pytest`, `go test`
-- `reasoning_engine` â€” evaluate architecture patterns
+- `reasoning_engine` â€” evaluate architectural patterns
 **Output:**
 - QA receipt: `telemetry/qa_receipts/gate_qa/<T-ID>.json`
 - Decision: PASS / FAIL / CONDITIONAL
@@ -96,7 +96,7 @@ RULE QA-D-07: SECURITY OVERLAP
 - Define which modules need more test coverage
 - Write new integration tests proactively
 - Track and report coverage metrics in daily brief
-**At start of each task, load:**
+**At the start of each task, load:**
 - SKILL: `shell_assistant` â€” test framework commands
 - SKILL: `reasoning_engine` â€” test design strategy
 - Current coverage report from last CI run
@@ -105,4 +105,3 @@ RULE QA-D-07: SECURITY OVERLAP
 - `reasoning_engine` â€” test case design
 **Output:** test files to `tests/` directory (or per-project convention)
 **Priority order:** integration tests > unit tests > e2e tests
-

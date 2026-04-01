@@ -119,17 +119,17 @@
 
 ---
 
-## Session 8 — Ingested 2026-03-23
+## Session 8 ï¿½ Ingested 2026-03-23
 
 ### Governance & System Maps (4)
 | File | Topic |
 |------|-------|
-| MASTER_SYSTEM_MAP.md | System Map v2 — Boot ? 8-phase Corp Cycle ? 21 Depts ? 3-Tier Plugin ? Agent Memory ? Escalation ? CLI |
-| ops/workflows/repo-evaluation.md | Repo Evaluation Gate (CIV Gate 1) — 5-step: APPROVE / DEFER / REJECT |
-| shared-context/GOVERNANCE.md | v2 — Plugin & Repo Governance Policy, 3-Tier Architecture added |
-| plugins/plugin-catalog.md | v2.0 — All 35+ repos have explicit VERDICT + ?? REFERENCE category |
+| MASTER_SYSTEM_MAP.md | System Map v2 ï¿½ Boot ? 8-phase Corp Cycle ? 21 Depts ? 3-Tier Plugin ? Agent Memory ? Escalation ? CLI |
+| ops/workflows/repo-evaluation.md | Repo Evaluation Gate (CIV Gate 1) ï¿½ 5-step: APPROVE / DEFER / REJECT |
+| shared-context/GOVERNANCE.md | v2 ï¿½ Plugin & Repo Governance Policy, 3-Tier Architecture added |
+| plugins/plugin-catalog.md | v2.0 ï¿½ All 35+ repos have explicit VERDICT + ?? REFERENCE category |
 
-### Knowledge Items — Agent & Plugin Patterns (3 KI Notes)
+### Knowledge Items ï¿½ Agent & Plugin Patterns (3 KI Notes)
 | File | Topic |
 |------|-------|
 | notes/KI-AGENT-ARCHITECTURES-01.md | 17 Agentic Architecture Patterns with AI OS mapping |
@@ -140,32 +140,32 @@
 | Dept | File | Update |
 |------|------|--------|
 | Dept 4 (Registry) | corp/memory/departments/registry_capability.md | Full SOP v2 |
-| Dept 10 (Security) | corp/memory/departments/security_grc.md | Full SOP v2 — 3-Tier enforcement |
-| Dept 20 (CIV) | corp/memory/departments/content_intake.md | Full SOP v2 — GATE 1 owner |
+| Dept 10 (Security) | corp/memory/departments/security_grc.md | Full SOP v2 ï¿½ 3-Tier enforcement |
+| Dept 20 (CIV) | corp/memory/departments/content_intake.md | Full SOP v2 ï¿½ GATE 1 owner |
 
 ### Learning Loop (Cycle 8 Retro)
 | File | Type |
 |------|------|
-| brain/shared-context/corp/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective — 5 patterns, 5 lessons, 3 proposals |
+| brain/shared-context/corp/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective ï¿½ 5 patterns, 5 lessons, 3 proposals |
 | brain/shared-context/corp/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
 | corp/memory/global/decisions_log.md | +4 LESSON_LEARNED entries (permanent) |
 
 ---
 
-## Session 8 additions — 2026-03-23 (continued)
+## Session 8 additions ï¿½ 2026-03-23 (continued)
 
 ### Deep Analysis KI Notes
 | File | Topic |
 |------|-------|
-| notes/KI-CONTEXT7-DEEP-01.md | Context7: MCP doc injection — 50.2k stars, REST API v2, 2 modes (CLI+Skill / MCP), action plan 5 buoc, risk analysis |
+| notes/KI-CONTEXT7-DEEP-01.md | Context7: MCP doc injection ï¿½ 50.2k stars, REST API v2, 2 modes (CLI+Skill / MCP), action plan 5 buoc, risk analysis |
 
 ---
 
-## Session 8 additions — KI Notes from REFERENCE Repos (2026-03-23)
+## Session 8 additions ï¿½ KI Notes from REFERENCE Repos (2026-03-23)
 
 | KI File | Content | Source Repos |
 |---------|---------|--------------|
-| notes/KI-CONTEXT7-DEEP-01.md | Context7 deep analysis — REST API, 2 modes, action plan | upstash/context7 |
+| notes/KI-CONTEXT7-DEEP-01.md | Context7 deep analysis ï¿½ REST API, 2 modes, action plan | upstash/context7 |
 | notes/KI-MULTI-AGENT-PATTERNS-01.md | Agentic RL, HTIL, LLM Router, Circuit Breaker, Token Budget | agentscope + agenttrafficcontrol |
 | notes/KI-GIT-NATIVE-AGENT-01.md | Git-native agent: audit trail, SOD, SkillsFlow, versioned agents | open-gitagent/gitagent |
 | notes/KI-SKILL-COST-MODEL-01.md | 5-Layer skill: triggers, not_for, 4C verification, context_budget, fallback chains | rune-kit/rune |

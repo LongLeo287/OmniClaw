@@ -1,18 +1,18 @@
 <#
 .SYNOPSIS
-    AI OS - Skill and Plugin Auto-Loader (Layer 4)
+    OmniClaw - Skill and Plugin Auto-Loader (Layer 4)
     Scans skills/ and plugins/ directories, parses SKILL.md / manifest.json,
     and rebuilds shared-context/SKILL_REGISTRY.json automatically.
 .DESCRIPTION
-    This is the discovery engine of AI OS Layer 4.
+    This is the discovery engine of OmniClaw Layer 4.
     Run it any time a new skill or plugin is added to auto-register it.
-    PORTABLE: Auto-detects AI OS root from script location - works anywhere.
+    PORTABLE: Auto-detects OmniClaw root from script location - works anywhere.
 .USAGE
     .\scripts\skill_loader.ps1           # Full rebuild
     .\scripts\skill_loader.ps1 -DryRun  # Preview only
     .\scripts\skill_loader.ps1 -Verbose # Show all details
 .NOTES
-    Updated: 2026-03-14 | Version: 1.2 | Part of AI OS Layer 4
+    Updated: 2026-03-14 | Version: 1.2 | Part of OmniClaw Layer 4
 #>
 
 param(
@@ -39,7 +39,7 @@ Write-Host "  [ROOT] $AiOsRoot" -ForegroundColor DarkGray
 
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor Cyan
-Write-Host "  AI OS SKILL LOADER -- Layer 4 Cross-Read      " -ForegroundColor Cyan
+Write-Host "  OmniClaw SKILL LOADER -- Layer 4 Cross-Read      " -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -315,7 +315,7 @@ $tier3 = $allEntries | Where-Object { ($_.tier -eq 3 -or $_.source -eq "plugin")
 # ---- BUILD: Registry object ----
 $registry = [ordered]@{
     meta = [ordered]@{
-        title         = "AI OS -- Master Skill and Plugin Registry"
+        title         = "OmniClaw -- Master Skill and Plugin Registry"
         version       = "2.1"
         updated       = $Timestamp
         generated_by  = "scripts/skill_loader.ps1"

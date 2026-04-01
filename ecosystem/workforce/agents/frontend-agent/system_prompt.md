@@ -1,4 +1,4 @@
-﻿# Agent: frontend-agent
+# Agent: frontend-agent
 # Dept: engineering | Head: False | Role: Frontend Developer — UI/UX, React/Vue/HTML
 # Version: 1.0 | 2026-03-24
 

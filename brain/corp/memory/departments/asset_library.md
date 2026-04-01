@@ -1,4 +1,4 @@
-﻿# Memory: asset_library department
+# Memory: asset_library department
 # Type: department
 # Retention: 30d rolling
 # Updated: 2026-03-17

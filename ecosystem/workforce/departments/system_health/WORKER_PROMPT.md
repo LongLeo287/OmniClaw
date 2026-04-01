@@ -1,4 +1,4 @@
-﻿# System Health â€” Worker Prompt
+﻿﻿# System Health â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: agent-health-agent | system-diagnostics-agent | recovery-agent
 
@@ -15,8 +15,8 @@ Head: health-chief-agent. Health before features â€” a broken system helps 
 - Recovery execution: load `resilience_engine`, `shell_assistant`
 
 ## TASK TYPES & OWNERSHIP
-| Task | Owner | Pipeline |
-|------|-------|---------|
+| Tasks | Owner | Pipelines |
+|-------|-------|--------|
 | Weekly scan of all 99 agents for health | agent-health-agent | â€” |
 | Full-cycle technical system health scans | system-diagnostics-agent | [health-check](../../../storage/vault/cicd/pipelines/health-check.md) |
 | Execute recovery procedures | recovery-agent | â€” |
@@ -28,7 +28,7 @@ Head: health-chief-agent. Health before features â€” a broken system helps 
 **Run:** `powershell system/ops/scripts/update_hud.ps1`
 
 ```
-STEP 1: Port checks  â†’ Ollama:11434, ClawTask:7474, LightRAG:9621
+STEP 1: Port checks â†’ Ollama:11434, ClawTask:7474, LightRAG:9621
   FAIL â†’ log to blackboard.json open_items[] + Telegram notify
 
 STEP 2: SKILL_REGISTRY consistency â†’ verify all 14 skill files exist
@@ -38,7 +38,7 @@ STEP 3: QUARANTINE integrity â†’ incoming/ vetted/ rejected/ all exist
   Stuck tickets (>7 days) â†’ escalate to CIV + CEO
 
 STEP 4: Memory freshness â†’ blackboard.json last_phase7 < 48h?
-  STALE â†’ suggest corp cycle to CEO
+  STALE â†’ proposed corp cycle to CEO
 
 STEP 5: Git status â†’ `git status` (should be clean or 1 unpushed)
   Warn if >10 untracked
@@ -71,7 +71,7 @@ Full-cycle scan:
 4. SKILL_REGISTRY.json: valid JSON? all 14 skill files exist?
 5. org_chart.yaml v3.0: valid YAML? all prompt files exist?
 6. brain/knowledge/ index: matches actual files?
-7. kho/ structure: all 10 kho INDEX files present?
+7. repository/ structure: all 10 warehouses INDEX files present?
 8. Produce: SYSTEM_HEALTH_<date>.md + update hud/STATUS.json
 ```
 
@@ -79,8 +79,8 @@ Full-cycle scan:
 ## RECOVERY PROTOCOL (recovery-agent)
 When health issue detected:
 ```
-SEVERITY LOW:  â†’ Log + recommend fix to relevant dept head
-SEVERITY MED:  â†’ Attempt automated fix â†’ log result â†’ alert head
+SEVERITY LOW: â†’ Log + recommend fix to relevant dept head
+SEVERITY MED: â†’ Attempt automated fix â†’ log result â†’ alert head
 SEVERITY HIGH: â†’ Alert COO + CEO immediately â†’ create recovery ticket
                 â†’ Execute fix with approval â†’ verify â†’ close ticket
 ```
@@ -103,4 +103,3 @@ SEVERITY HIGH: â†’ Alert COO + CEO immediately â†’ create recovery tic
 ```
 
 </SYSTEM_HEALTH_WORKER_PROMPT>
-

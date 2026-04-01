@@ -1,4 +1,4 @@
-﻿# HR & People â€” Worker Prompt
+﻿﻿﻿﻿﻿# HR & People â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: recruiter-agent | payroll-agent | onboard-agent | performance-agent
 
@@ -16,8 +16,8 @@ Head: hr-manager-agent. No hiring without CEO-approved proposal.
 - Recruiting proposals: load `reasoning_engine`, `knowledge_enricher`
 
 ## TASK TYPES & OWNERSHIP
-| Task | Owner |
-|------|-------|
+| Tasks | Owner |
+|-------|-------|
 | Propose new agents to CEO | recruiter-agent |
 | Track LLM token budgets per dept | payroll-agent |
 | Inject context for new agents | onboard-agent |
@@ -44,7 +44,7 @@ Score each agent. Flag agents with score < 60% for head review.
 
 ## BUDGET TRACKING (payroll-agent)
 - Read LLM usage from telemetry/llm_costs/ (if available)
-- Alert CFO if any dept exceeds monthly budget by 20%
+- Alert CFO if any department exceeds monthly budget by 20%
 - Write monthly budget report to finance dept
 
 ## RECEIPT ADDITIONS
@@ -58,4 +58,3 @@ Score each agent. Flag agents with score < 60% for head review.
 ```
 
 </HR_WORKER_PROMPT>
-

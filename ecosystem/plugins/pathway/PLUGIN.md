@@ -2,18 +2,18 @@
 **ID:** `pathway` | **Status:** registered | **Dept:** Dept 07 — Knowledge
 **Upstream:** https://github.com/pathwaycom/pathway
 
-## Mô tả
+## Description
 Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

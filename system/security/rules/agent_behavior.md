@@ -1,4 +1,4 @@
-﻿# ðŸ¤– Agent Behavior & Responsibility Rules
+# ðŸ¤– Agent Behavior & Responsibility Rules
 
 ## Description
 A comprehensive rule set governing agent autonomy, resource awareness (SFUA loop), progress tracking, and Vietnamese-centric reporting standards for the project.

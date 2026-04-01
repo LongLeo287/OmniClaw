@@ -1,4 +1,4 @@
-﻿---
+---
 id: notification_bridge
 name: Notification Bridge
 version: 1.0.0

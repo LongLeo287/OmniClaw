@@ -1,4 +1,4 @@
-﻿---
+---
 id: neural_memory
 name: Neural Memory
 version: 1.0.0

@@ -2,18 +2,18 @@
 **ID:** `scrapy` | **Status:** registered | **Dept:** Dept 11 — Web
 **Upstream:** https://github.com/scrapy/scrapy
 
-## Mô tả
+## Description
 Scrapy, a fast high-level web crawling & scraping framework for Python.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

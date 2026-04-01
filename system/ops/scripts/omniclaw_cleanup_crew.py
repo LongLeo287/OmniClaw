@@ -1,85 +1,133 @@
+#!/usr/bin/env python3
+"""
+omniclaw_cleanup_crew.py - OmniClaw Pre-Push Cleanup Utility
+--------------------------------------------------------------
+PURPOSE:
+  Scan designated target folders for junk/ephemeral files and directories,
+  then safely quarantine them before any cloud sync or git push operation.
+
+JUNK TARGETS:
+  Files : .log, .tmp, .temp, .bak, .swp, .dmp, .DS_Store, Thumbs.db
+  Dirs  : __pycache__, .pytest_cache
+
+SAFE DESIGN:
+  - Junk is MOVED (not deleted) to a quarantine vault, allowing recovery
+  - Does NOT touch .git, node_modules, or any system-critical directories
+  - Idempotent: safe to run multiple times
+
+USAGE:
+  python omniclaw_cleanup_crew.py [folder1] [folder2] ...
+  python omniclaw_cleanup_crew.py brain/memory storage/vault
+  python omniclaw_cleanup_crew.py .   (scan entire repo)
+"""
+
 import os
+import sys
 import shutil
 from pathlib import Path
 
-# Đường dẫn Vùng Cách Ly Rác (Vault Trash) của AI OS
+# Dynamic root detection — NO hardcoded paths
 AI_OS_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 TRASH_VAULT = AI_OS_ROOT / "storage" / "vault" / "QUARANTINE" / "Trash_Before_Push"
 
-# Danh sách hình thái nhận dạng Rác Vật Lý (Di dời được mà không ảnh hưởng Source Code)
-# Lưu ý: Các file hệ thống mạng lưới như .git, node_modules là Không Thể Xóa/Di Dời vì nó làm sụp đổ Repo nội bộ. 
-# Bọn .git, .pack sẽ được Cản lại bằng Bức Tường Lực (IGNORE_PATTERNS) lúc Push. Đội dọn dẹp chỉ nhặt Rác sinh hoạt.
-TRASH_EXTRACTS = {'.log', '.tmp', '.temp', '.bak', '.swp', '.dmp', '.DS_Store'}
-TRASH_DIRECTORIES = {'__pycache__', '.pytest_cache'}
+# Junk file signatures
+TRASH_FILE_EXTENSIONS = {'.log', '.tmp', '.temp', '.bak', '.swp', '.dmp', '.DS_Store'}
+TRASH_DIR_NAMES = {'__pycache__', '.pytest_cache'}
 
-def check_if_trash(path_obj: Path) -> bool:
+# Directories that must never be traversed
+PROTECTED_DIRS = {'.git', 'node_modules', 'venv', 'env', 'vault', 'QUARANTINE'}
+
+
+def is_junk(path_obj: Path) -> bool:
+    """Return True if the given path is classified as junk."""
     if path_obj.is_file():
-        if path_obj.suffix.lower() in TRASH_EXTRACTS:
-            return True
-        if path_obj.name == "Thumbs.db":
-            return True
-    elif path_obj.is_dir():
-        if path_obj.name in TRASH_DIRECTORIES:
-            return True
+        return path_obj.suffix.lower() in TRASH_FILE_EXTENSIONS or \
+               path_obj.name in {'Thumbs.db', 'desktop.ini'}
+    if path_obj.is_dir():
+        return path_obj.name in TRASH_DIR_NAMES
     return False
 
-def deploy_cleanup_crew(target_folders_list, base_path=AI_OS_ROOT):
+
+def deploy_cleanup_crew(target_folders_list: list, base_path=AI_OS_ROOT, trash_vault=TRASH_VAULT) -> int:
+    """
+    Scan specified folders for junk, quarantine all found items.
+
+    Args:
+        target_folders_list: List of relative folder paths to scan.
+        base_path: Root path to resolve folders against (default: AI_OS_ROOT).
+        trash_vault: Override the destination for quarantined items.
+
+    Returns:
+        Number of items quarantined.
+    """
     print("\n=====================================================")
-    print(" 🧹 ĐỘI DỌN DẸP (CLEANUP CREW) BẮT ĐẦU TUẦN TRA")
+    print("  [CLEANUP CREW] PRE-FLIGHT SCAN INITIATED")
     print("=====================================================")
-    TRASH_VAULT.mkdir(parents=True, exist_ok=True)
-    trash_counter = 0
+
+    trash_vault.mkdir(parents=True, exist_ok=True)
+    quarantine_count = 0
 
     for folder in target_folders_list:
         scan_path = Path(base_path) / folder
         if not scan_path.exists():
+            print(f"  [SKIP] Target not found: {folder}")
             continue
-            
-        print(f"   🔍 Đang soi rọi khu vực: {folder} ...")
-        # Quét từ dưới đáy (Bottom-up) để tiện di dời Thư mục rỗng/rác
-        for root_dir, dirs, files in os.walk(scan_path, topdown=False):
-            # Không soi mói vào nhà của Hàng xóm hệ thống (.git, node_modules)
-            if ".git" in root_dir or "node_modules" in root_dir:
-                continue
-                
-            current_root = Path(root_dir)
-            
-            # Gắp File Rác
-            for file_name in files:
-                file_path = current_root / file_name
-                if check_if_trash(file_path):
-                    safe_dest = TRASH_VAULT / f"{file_path.parent.name}_{file_name}"
-                    try:
-                        shutil.move(str(file_path), str(safe_dest))
-                        trash_counter += 1
-                        print(f"      🗑️ [Tóm sống] File rác: {file_name}")
-                    except Exception: pass
-                    
-            # Xúc Thư Mục Rác
-            for dir_name in dirs:
-                dir_path = current_root / dir_name
-                if check_if_trash(dir_path):
-                    safe_dest = TRASH_VAULT / f"{dir_path.parent.name}_{dir_name}"
-                    try:
-                        shutil.move(str(dir_path), str(safe_dest))
-                        trash_counter += 1
-                        print(f"      🗑️ [Tóm sống] Ổ rác: {dir_name}/")
-                    except Exception: pass
 
-    if trash_counter > 0:
-        print(f"\n✅ Đội Dọn Dẹp rút quân! {trash_counter} dị vật đã bị áp giải về {TRASH_VAULT.relative_to(AI_OS_ROOT)}")
+        print(f"  [SCAN] Entering sector: {folder}")
+
+        # Walk top-down to allow pruning of directories
+        for root, dirs, files in os.walk(scan_path, topdown=True):
+            # Prune protected directories to prevent deep traversal hangs
+            dirs[:] = [d for d in dirs if d not in PROTECTED_DIRS]
+
+            current = Path(root)
+
+            # Phase 1: Quarantine junk files
+            for file_name in files:
+                file_path = current / file_name
+                if is_junk(file_path):
+                    dest = trash_vault / f"{file_path.parent.name}_{file_name}"
+                    try:
+                        shutil.move(str(file_path), str(dest))
+                        quarantine_count += 1
+                        print(f"    [TRASH] File: {file_name}")
+                    except Exception:
+                        pass
+
+            # Phase 2: Quarantine junk directories
+            for dir_name in list(dirs):
+                dir_path = current / dir_name
+                if is_junk(dir_path):
+                    dest = trash_vault / f"{dir_path.parent.name}_{dir_name}"
+                    try:
+                        shutil.move(str(dir_path), str(dest))
+                        quarantine_count += 1
+                        dirs.remove(dir_name) # Prevent traversing deleted directory
+                        print(f"    [TRASH] Directory: {dir_name}/")
+                    except Exception:
+                        pass
+
+    # Summary
+    if quarantine_count > 0:
+        try:
+            rel = trash_vault.relative_to(AI_OS_ROOT)
+        except ValueError:
+            rel = trash_vault
+        print(f"\n  [DONE] {quarantine_count} items quarantined -> {rel}")
     else:
-        print("\n✅ Khu vực Thanh Khiết! Đội Nhặt Rác không tìm thấy cọng rác nào.")
-        
-    return trash_counter
+        print("\n  [DONE] Sector is clean. No junk detected.")
+
+    return quarantine_count
+
 
 if __name__ == "__main__":
-    import sys
-    # Cho phép gọi từ Terminal với các tham số, vd: python omniclaw_cleanup_crew.py "."
-    if len(sys.argv) > 1:
-        targets = sys.argv[1:]
-    else:
-        # Nếu gọi tay không tham số, đi tuần mặc định 3 kho báu Lõi
-        targets = ["brain/memory", "storage/vault", "ecosystem/plugins"]
-        
-    deploy_cleanup_crew(targets)
+    import argparse
+    parser = argparse.ArgumentParser(description="OmniClaw Pre-Push Cleanup Utility")
+    parser.add_argument("folders", nargs="*", default=["brain/memory", "storage/vault", "ecosystem/plugins"],
+                        help="Target folders to scan (relative to AI_OS_ROOT)")
+    parser.add_argument("--quarantine-path", type=str, default=str(TRASH_VAULT),
+                        help="Override default quarantine path")
+    args = parser.parse_args()
+
+    custom_vault = Path(args.quarantine_path)
+    deploy_cleanup_crew(args.folders, trash_vault=custom_vault)

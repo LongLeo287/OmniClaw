@@ -16,7 +16,7 @@ Before submitting any Pull Request (PR) or committing code, you **MUST** read an
 OmniClaw operates on a Strict Zero-Trust Architecture. All incoming code is scrutinized automatically by the Content Intake and Vetting (CIV) pipeline and GitHub Actions.
 
 1. **NO Hardcoded Credentials:** Never commit API keys, tokens, passwords, or `.env` secrets. Automated CodeQL scanners will immediately detect and block the leak, and the PR will be rejected. Use `$env:KEY_NAME` or `process.env`.
-2. **NO Absolute Machine Paths:** OmniClaw must be 100% portable. Never write code that expects `C:\Users\John\...` or `/Users/Mac/...`. Always use relative paths (`./scripts`) or environment variables indicating the root directory (e.g., `<AI_OS_ROOT>`).
+2. **NO Absolute Machine Paths:** OmniClaw must be 100% portable. Never write code that expects `C:\Path\To\Local\Workspace\...` or `/var/www/html/...`. Always use relative paths (`./scripts`) or environment variables indicating the root directory (e.g., `<OMNICLAW_ROOT>`).
 
 ---
 
@@ -33,8 +33,8 @@ To maintain a clean and reliable codebase, follow the standard Git Flow:
    - `fix: ...` for a bug fix.
    - `docs: ...` for documentation changes.
    - `chore(security): ...` for security upgrades.
-4. **Push and PR:** Push to your branch and open a Pull Request against the `main` branch of `LongLeo287/omniclaw-local`.
-5. **Wait for Approval:** Our CI/CD validation hooks (`ai-os-tests.yml` and `ai-os-validate.yml`) will run a dry-run test of your logic. Once the status checks turn green, human leadership or the Dependabot Auto-Merge Secretary will approve the merge.
+4. **Push and PR:** Push to your branch and open a Pull Request against the `main` branch of `OmniClaw-Corp/omniclaw-local`.
+5. **Wait for Approval:** Our CI/CD validation hooks (`omniclaw-tests.yml` and `omniclaw-validate.yml`) will run a dry-run test of your logic. Once the status checks turn green, human leadership or the Dependabot Auto-Merge Secretary will approve the merge.
 
 ---
 

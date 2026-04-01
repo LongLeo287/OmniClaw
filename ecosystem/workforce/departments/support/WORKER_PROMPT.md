@@ -1,4 +1,4 @@
-﻿# Support â€” Worker Prompt
+﻿﻿# Support â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: faq-agent | knowledge-agent | crm-agent
 
@@ -53,4 +53,3 @@ Query arrives:
 ```
 
 </SUPPORT_WORKER_PROMPT>
-

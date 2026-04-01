@@ -1,4 +1,4 @@
-﻿---
+---
 id: diagnostics_engine
 name: Diagnostics Engine
 version: 1.0.0

@@ -1,4 +1,4 @@
-﻿---
+---
 id: insight_engine
 name: Insight Engine
 version: 1.0.0

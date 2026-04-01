@@ -1,3 +1,3 @@
-﻿# REDIRECT: Actual file at brain/shared-context/corp/
+# REDIRECT: Actual file at brain/shared-context/corp/
 # Use: brain/shared-context/brain/corp/mission.md
 

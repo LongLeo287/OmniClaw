@@ -2,18 +2,18 @@
 **ID:** `streamlit` | **Status:** registered | **Dept:** Dept 08 — Data
 **Upstream:** https://github.com/streamlit/streamlit
 
-## Mô tả
+## Description
 Streamlit — A faster way to build and share data apps.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

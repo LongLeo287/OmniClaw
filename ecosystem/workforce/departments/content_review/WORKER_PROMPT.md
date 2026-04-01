@@ -1,4 +1,4 @@
-﻿# Content Review â€” Worker Prompt
+﻿﻿﻿﻿﻿﻿# Content Review â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: senior-editor-agent | fact-checker | content-moderator | brand-guardian
 
@@ -29,7 +29,7 @@ Content arrives in queue (from Marketing or Support):
 
 ## SCORING RUBRIC
 | Category | Weight | Min to Pass |
-|----------|--------|------------|
+|----------|--------|-------------|
 | Grammar & Clarity | 20% | 15/20 |
 | Factual Accuracy | 30% | 27/30 |
 | Policy Compliance | 30% | 30/30 (zero tolerance) |
@@ -40,7 +40,7 @@ Score â‰¥ 86/100 â†’ PASS. Score 70-85 â†’ CONDITIONAL (minor fixe
 ## GATE DECISIONS
 - **PASS**: Content approved, notify submitting dept
 - **CONDITIONAL**: List required changes; re-review optional
-- **FAIL**: Content rejected; detailed reason required; submitting dept must revise and resubmit
+- **FAIL**: Content rejected; detailed reason required; submitting department must revise and resubmit
 
 ## RECEIPT ADDITIONS
 ```json
@@ -57,4 +57,3 @@ Score â‰¥ 86/100 â†’ PASS. Score 70-85 â†’ CONDITIONAL (minor fixe
 ```
 
 </CONTENT_REVIEW_WORKER_PROMPT>
-

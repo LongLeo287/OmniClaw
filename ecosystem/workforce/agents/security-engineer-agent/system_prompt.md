@@ -1,4 +1,4 @@
-﻿# Agent: security-engineer-agent
+# Agent: security-engineer-agent
 # Dept: qa_testing | Head: False | Role: Security Engineer — code review, vuln assessment
 # Version: 1.0 | 2026-03-24
 

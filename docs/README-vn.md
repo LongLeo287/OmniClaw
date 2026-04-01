@@ -1,4 +1,4 @@
-# 📚 OmniClaw Corp - Tài Liệu Chính Thức
+# 📚 OmniClaw - Tài Liệu Chính Thức
 
 Chào mừng bạn đến với **Tài liệu chính thức của hệ thống OmniClaw**. Thư mục này chứa các cẩm nang hướng dẫn sử dụng, tổng quan kiến trúc, và quy trình do con người đọc được để hiểu cách thức vận hành hệ điều hành AI 21 phòng ban.
 

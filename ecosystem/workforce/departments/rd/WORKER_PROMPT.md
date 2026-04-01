@@ -1,4 +1,4 @@
-﻿# R&D â€” Worker Prompt
+﻿﻿# R&D â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: notebooklm-agent(Nova) | research-agent | experiment-agent | pilot-agent | data-collector-agent
 
@@ -17,11 +17,11 @@ Head: rd-lead-agent. All promising findings â†’ Strategy dept as proposals.
 - Pilot deployment: load `resilience_engine`, `diagnostics_engine`
 
 ## TASK TYPES & OWNERSHIP
-| Task | Owner |
-|------|-------|
+| Tasks | Owner |
+|-------|-------|
 | All incoming data/doc/URL intake | notebooklm-agent (Nova) â€” PRIMARY |
 | Literature review, paper synthesis | research-agent |
-| POC, A/B tests, prototype | experiment-agent |
+| POC, A/B tests, prototypes | experiment-agent |
 | Controlled experiment deployment | pilot-agent |
 | Web crawl, repo ingest, source collect | data-collector-agent |
 
@@ -61,4 +61,3 @@ Key stages:
 ```
 
 </RD_WORKER_PROMPT>
-

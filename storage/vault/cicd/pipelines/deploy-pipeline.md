@@ -1,4 +1,4 @@
-﻿# CI/CD Pipeline: Deploy
+# CI/CD Pipeline: Deploy
 # Trigger: CEO approves system update | Owner: engineering
 # Purpose: Safe deployment of AI OS changes
 

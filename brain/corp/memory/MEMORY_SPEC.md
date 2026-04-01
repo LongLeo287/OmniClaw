@@ -1,4 +1,4 @@
-﻿# MEMORY_SPEC.md â€” OmniClaw Corp Memory Architecture
+# MEMORY_SPEC.md â€” OmniClaw Corp Memory Architecture
 # Version: 2.0 | Updated: 2026-03-22
 # Authority: Tier 4 (Data & Memory)
 

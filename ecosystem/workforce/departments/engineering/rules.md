@@ -1,4 +1,4 @@
-﻿# ENGINEERING â€” Department Rules
+﻿﻿﻿﻿﻿﻿# ENGINEERING â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: backend-architect-agent | Reports to: CTO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -9,7 +9,7 @@
 
 RULE ENG-01: NO PUSH TO MAIN
   All code changes go through Pull Request only.
-  No direct commit to main/master under any circumstance.
+  No direct commit to main/master under any circumstances.
   Violation = immediate rollback + engineering brief flag.
 
 RULE ENG-02: TEST COVERAGE FLOOR
@@ -40,7 +40,7 @@ RULE ENG-07: DEPENDENCY WHITELIST
   New npm/pip/go dependencies require review:
   â†’ Check license (MIT/Apache/BSD only)
   â†’ Check CVE status
-  â†’ backend-architect-agent approves
+  â†’ backend-architect-agent approvals
 
 RULE ENG-08: ERROR HANDLING REQUIRED
   All external calls must have try/catch with meaningful error message.
@@ -64,7 +64,7 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - `shared-context/brain/corp/kpi_scoreboard.json` (engineering section)
 **Tools:** file system, git, code analysis
 **Skills to load:**
-- `reasoning_engine` â€” for architecture decisions
+- `reasoning_engine` â€” for architectural decisions
 - `shell_assistant` â€” for build/test commands
 - `diagnostics_engine` â€” for debugging
 
@@ -164,4 +164,3 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - `shell_assistant` â€” build tools (gradle, xcode cli)
 **Output:** mobile builds to task-specified path
 **qa_required: true for all mobile releases**
-

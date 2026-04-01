@@ -1,4 +1,4 @@
-﻿---
+---
 id: cognitive_evolver
 name: Cognitive Evolver
 version: 1.0.0

@@ -1,4 +1,4 @@
-﻿# KHO MCP — Index
+# KHO MCP — Index
 # Config: .mcp.json (root)
 # Registry: kho/mcp/registry.json
 

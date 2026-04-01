@@ -1,4 +1,4 @@
-﻿# security_grc â€” Department Memory
+# security_grc â€” Department Memory
 # Owner: Dept 10 | Retention: 30-day rolling | Layer: Department
 # Updated: 2026-03-23 | Format: see brain/corp/memory/MEMORY_SPEC.md
 

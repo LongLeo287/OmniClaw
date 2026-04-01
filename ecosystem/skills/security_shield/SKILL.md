@@ -1,4 +1,4 @@
-﻿---
+---
 id: security_shield
 name: Security Shield
 version: 1.0.0

@@ -2,18 +2,18 @@
 **ID:** `llm_course` | **Status:** registered | **Dept:** Dept 02 — AI
 **Upstream:** https://github.com/mlabonne/llm-course
 
-## Mô tả
+## Description
 Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 

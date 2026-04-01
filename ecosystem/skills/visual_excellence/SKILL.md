@@ -1,4 +1,4 @@
-﻿---
+---
 id: visual_excellence
 name: Visual Excellence
 version: 1.0.0

@@ -1,8 +1,8 @@
-﻿# ORGANIZATIONAL DEVELOPMENT & LEARNING (OD&L) â€” Department Rules
+﻿﻿# ORGANIZATIONAL DEVELOPMENT & LEARNING (OD&L) â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: org-architect-agent | Reports to: CSO
-# Mission: XÃ¢y dá»±ng, nÃ¢ng cáº¥p, vÃ  phÃ¡t triá»ƒn tá»• chá»©c OmniClaw Corp
-# Core question this dept answers: "LÃ m tháº¿ nÃ o Ä‘á»ƒ tá»• chá»©c nÃ y trá»Ÿ nÃªn tá»‘t hÆ¡n?"
+# Mission: Build wood, grow fish, and develop technology OmniClaw Corp.
+# Core question this dept answers: "What is the problem?"
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
 ---
@@ -14,12 +14,12 @@ RULE OD-01: ORG DESIGN IS EVIDENCE-BASED
   - Problem statement (what gap are we filling?)
   - Evidence (data from retros, KPI gaps, escalation patterns)
   - Resource estimate (how many agents, which skills)
-  - Integration map (which existing depts are affected)
+  - Integration map (which existing departments are affected)
   Proposals without evidence â†’ returned by org-architect-agent.
 
 RULE OD-02: UPGRADE BEFORE REPLACE
-  Before proposing a NEW dept or agent: verify that UPGRADING
-  an existing dept (new skill, restructure, new rule) cannot solve the problem.
+  Before reacting a NEW department or agent: verify that UPGRADING
+  an existing department (new skill, restructure, new rule) cannot solve the problem.
   dept-builder-agent checks org_chart + existing agents first.
 
 RULE OD-03: ALL ORG CHANGES NEED CEO APPROVAL
@@ -69,7 +69,7 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 **This agent is the architectural intelligence of OmniClaw Corp**
 **Responsibilities:**
 - Design new departments and restructuring proposals
-- Assess org health holistically across all 20 depts
+- Assess org health comprehensively across all 20 depts
 - Synthesize retro findings into concrete org improvement proposals
 - Coordinate all OD&L workflows
 - Write OD&L daily brief
@@ -96,8 +96,8 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 - Create full package (rules.md + MANAGER_PROMPT.md + memory + org_chart + daily-cycle update)
 - Coordinate with HR (hr-manager-agent) for agent onboarding
 - Coordinate with Registry (registry-manager-agent) for skill registration
-- Test the new dept by simulating a first task run
-**At start of each dept build, load:**
+- Test the new department by simulating a first task run
+**At the start of each dept build, load:**
 - SKILL: `reasoning_engine` â€” dept design decisions
 - SKILL: `context_manager` â€” multi-file simultaneous creation
 - `corp/org_chart.yaml` â€” current structure reference
@@ -130,13 +130,13 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 - TYPE 3 (Rule): draft rule â†’ rule-builder-agent validates â†’ C-Suite approves â†’ deploy
 - TYPE 4 (Dept Drop): write to brain/corp/memory/departments/<dept>.md rolling memory
 - Write ENRICHMENT RECEIPT to OD&L daily brief after every enrichment
-- Validate enrichment effectiveness by reviewing agent's next 2 outputs
-**At start of each training cycle, load:**
+- Validate enrichment by reviewing agent's next 2 outputs
+**At the start of each training cycle, load:**
 - SKILL: `knowledge_enricher` â€” search SKILL_REGISTRY for best skill match
 - SKILL: `reasoning_engine` â€” skill-agent fit assessment
 - SKILL: `cognitive_evolver` â€” agent capability evolution assessment
 - SKILL: `cosmic_memory` â€” check if enrichment is worth permanent retention
-- `corp/sops/ENRICHMENT_SOP.md` â€” enrichment type definitions + formats
+- `corp/sops/ENRICHMENT_SOP.md` â€” enrich type definitions + formats
 - `shared-context/SKILL_REGISTRY.json` â€” available skills
 - Agent's current memory + rules spec
 - `corp/knowledge_feeds/od_learning/new_knowledge.md` â€” incoming enrichment triggers
@@ -144,7 +144,7 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 - `knowledge_enricher` â€” skill discovery and matching
 - `reasoning_engine` â€” training strategy
 - `cognitive_evolver` â€” agent capability evolution assessment
-- `cosmic_memory` â€” identify which enrichments deserve permanent retention
+- `cosmic_memory` â€” identifies which enrichments deserve permanent retention
 **Upgrade output:**
 - Updated agent spec in dept rules.md (added skill or modified rule)
 - Updated memory schema if role expanded (via memory-builder-agent)
@@ -162,14 +162,14 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 - Identify structural problems: bottlenecks, overloaded agents, missing skills
 - Report findings to org-architect-agent with root cause analysis
 - Build evidence base for org improvement proposals
-**At start of each analysis cycle, load:**
+**At the start of each analysis cycle, load:**
 - SKILL: `cognitive_reflector` â€” cross-dept pattern analysis
 - SKILL: `reasoning_engine` â€” root cause analysis
 - SKILL: `knowledge_enricher` â€” aggregate daily brief data
 - All 20 dept daily_briefs from `shared-context/brain/corp/daily_briefs/`
 - `shared-context/brain/corp/kpi_scoreboard.json`
 **Skills:**
-- `cognitive_reflector` â€” ALWAYS. Pattern detection across depts.
+- `cognitive_reflector` â€” ALWAYS. Pattern detection across departments.
 - `reasoning_engine` â€” causal analysis
 - `knowledge_enricher` â€” data aggregation from briefs
 **Key patterns to detect:**
@@ -188,7 +188,7 @@ RULE OD-08: COORDINATION WITH OTHER DEPTS
 - Write curated learning to `knowledge/org_learning/`
 - Feed high-value learning to cosmic_memory (permanent retention)
 - Build org learning library: indexed, searchable, actionable
-**At start of each curation task, load:**
+**At the start of each curation task, load:**
 - SKILL: `knowledge_enricher` â€” extract insights from retro docs
 - SKILL: `cosmic_memory` â€” permanent learning persistence
 - SKILL: `cognitive_reflector` â€” insight synthesis
@@ -206,4 +206,3 @@ Learning: [what we learned]
 Action: [what OD&L should do about this]
 Cosmic: [YES/NO â€” worth permanent retention]
 ```
-

@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 ï»¿# post-session.md â€” OmniClaw Session Close Hook
 # Version: 1.0 | Updated: 2026-03-14
 # Authority: Tier 2 (Operations)

@@ -1,7 +1,7 @@
 """
 PASSPORT ISSUER & VAULT MANAGER
-Nơi sinh ra và cấp phát Thẻ Mộc (VIP/GUEST/BOT) cho các thành phần giao tiếp.
-Tokens được persist ra file JSON để sống qua restart.
+Birthplace and issuer of Wooden Tags (VIP/GUEST/BOT) for communicating entities.
+Tokens are persisted to JSON file to survive restarts.
 """
 import uuid
 import hashlib
@@ -15,7 +15,7 @@ _VALID_LEVELS = {"VIP", "GUEST", "BOT", "SYSTEM_BOT", "OMNICLAW_HQ"}
 
 
 def _load_master_env():
-    """Load MASTER.env để lấy OMNICLAW_HQ_MASTER_KEY nếu có."""
+    """Load MASTER.env to get OMNICLAW_HQ_MASTER_KEY if available."""
     root = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2])))
     env_path = root / "system" / "ops" / "secrets" / "MASTER.env"
     if env_path.exists():
@@ -50,7 +50,7 @@ class VaultKeeper:
     # ── Persistence ────────────────────────────────────────────────────────────
 
     def _load_tokens(self):
-        """Load tokens từ file (survive restart)."""
+        """Load tokens from file (survive restart)."""
         if _VAULT_FILE.exists():
             try:
                 with open(_VAULT_FILE, 'r', encoding='utf-8') as f:
@@ -62,20 +62,20 @@ class VaultKeeper:
                 self._tokens = {}
 
     def _save_tokens(self):
-        """Persist tokens ra file (gọi sau mỗi thay đổi)."""
+        """Persist tokens to file (called after each change)."""
         _VAULT_FILE.parent.mkdir(parents=True, exist_ok=True)
         try:
             with open(_VAULT_FILE, 'w', encoding='utf-8') as f:
                 json.dump(self._tokens, f, ensure_ascii=False, indent=2)
         except Exception:
-            pass  # Non-fatal — token vẫn hoạt động in-memory
+            pass  # Non-fatal — token still works in-memory
 
     # ── Public API ─────────────────────────────────────────────────────────────
 
     def issue_passport(self, owner: str, level: str = "GUEST", duration_days: int = 30) -> str:
-        """Cấp Thẻ Mộc cho một Client/Bot. Trả raw token (chỉ 1 lần duy nhất)."""
+        """Issue Wooden Tag for a Client/Bot. Return raw token (only once)."""
         if level not in _VALID_LEVELS:
-            raise ValueError(f"Level '{level}' không hợp lệ. Chọn: {_VALID_LEVELS}")
+            raise ValueError(f"Invalid level '{level}'. Choose: {_VALID_LEVELS}")
 
         raw_token = f"omniclaw_{level.lower()}_{uuid.uuid4().hex}"
         token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
@@ -92,29 +92,29 @@ class VaultKeeper:
         return raw_token
 
     def verify_passport(self, raw_token: str) -> dict:
-        """Hải quan soi Thẻ — trả dict với status/level/owner/msg."""
+        """Customs inspects Tag — returns dict with status/level/owner/msg."""
         if not raw_token:
-            return {"status": "NO_PASS", "level": "UNKNOWN", "msg": "Không có Pass"}
+            return {"status": "NO_PASS", "level": "UNKNOWN", "msg": "No Pass"}
 
         token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
 
         # HQ Master Key bypass
         if token_hash == self._hq_master_key_hash:
-            return {"status": "VALID", "level": "OMNICLAW_HQ", "owner": "THE_CORE", "msg": "HQ - Miễn kiểm"}
+            return {"status": "VALID", "level": "OMNICLAW_HQ", "owner": "THE_CORE", "msg": "HQ - Exempt"}
 
         with self._lock:
             stamp = self._tokens.get(token_hash)
 
         if stamp is None:
-            return {"status": "INVALID", "level": "UNKNOWN", "msg": "Thẻ không tồn tại hoặc đã bị thu hồi."}
+            return {"status": "INVALID", "level": "UNKNOWN", "msg": "Token does not exist or has been revoked."}
 
         if time.time() > stamp["expires"]:
-            return {"status": "EXPIRED", "level": stamp["level"], "msg": "Thẻ đã hết hạn."}
+            return {"status": "EXPIRED", "level": stamp["level"], "msg": "Token expired."}
 
-        return {"status": "VALID", "level": stamp["level"], "owner": stamp["owner"], "msg": "Hợp lệ."}
+        return {"status": "VALID", "level": stamp["level"], "owner": stamp["owner"], "msg": "Valid."}
 
     def revoke_passport(self, raw_token: str) -> bool:
-        """Thu hồi thẻ ngay lập tức. Trả True nếu thành công."""
+        """Revoke token immediately. Return True if successful."""
         token_hash = hashlib.sha256(raw_token.encode()).hexdigest()
         with self._lock:
             if token_hash in self._tokens:
@@ -124,7 +124,7 @@ class VaultKeeper:
         return False
 
     def list_passports(self) -> list:
-        """Liệt kê tất cả token còn hiệu lực (không trả raw token)."""
+        """List all valid tokens (does not return raw token)."""
         now = time.time()
         with self._lock:
             return [
@@ -138,7 +138,7 @@ class VaultKeeper:
             ]
 
     def purge_expired(self) -> int:
-        """Xóa hết token hết hạn. Trả số token đã xóa."""
+        """Purge all expired tokens. Return count of removed tokens."""
         now = time.time()
         with self._lock:
             before = len(self._tokens)

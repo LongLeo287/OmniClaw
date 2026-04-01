@@ -1,10 +1,10 @@
-# AI OS Corp -- DPAPI Secrets Decryptor
+# OmniClaw Corp -- DPAPI Secrets Decryptor
 # Decrypts MASTER.env.dpapi and loads secrets into $env:* variables.
 # Must be dot-sourced to affect the calling session.
 #
 # Usage:
-#   . .\ops\secrets\decrypt.ps1
-#   . .\ops\secrets\decrypt.ps1 -ShowKeys
+#   . .\system\ops\secrets\decrypt.ps1
+#   . .\system\ops\secrets\decrypt.ps1 -ShowKeys
 
 param(
     [switch]$ShowKeys
@@ -21,7 +21,7 @@ Add-Type -AssemblyName System.Security
 $plaintext = $null
 
 if (Test-Path $EncryptedFile) {
-    Write-Host "  Decrypting MASTER.env.dpapi (DPAPI)..." -ForegroundColor Cyan
+    Write-Host "  Decrypting MASTER.env.dpapi via DPAPI..." -ForegroundColor Cyan
     $encrypted = [System.IO.File]::ReadAllBytes($EncryptedFile)
     $bytes     = [System.Security.Cryptography.ProtectedData]::Unprotect(
         $encrypted,
@@ -29,9 +29,9 @@ if (Test-Path $EncryptedFile) {
         [System.Security.Cryptography.DataProtectionScope]::CurrentUser
     )
     $plaintext = [System.Text.Encoding]::UTF8.GetString($bytes)
-    Write-Host "  OK Decrypted successfully" -ForegroundColor Green
+    Write-Host "  OK Decrypted successfully." -ForegroundColor Green
 } elseif (Test-Path $FallbackPlain) {
-    Write-Host "  WARNING No .dpapi found -- loading MASTER.env plaintext" -ForegroundColor Yellow
+    Write-Host "  WARNING: No .dpapi found -- loading MASTER.env plaintext." -ForegroundColor Yellow
     $plaintext = Get-Content $FallbackPlain -Raw -Encoding UTF8
 } else {
     Write-Error "[ABORT] No secrets file found. Expected: $EncryptedFile"

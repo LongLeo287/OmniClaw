@@ -1,5 +1,5 @@
 # ops/tools/vscode-extensions.md
-# AI OS Corp — VS Code Extensions Registry
+# OmniClaw Corp — VS Code Extensions Registry
 # Version: 1.0 | 2026-03-25
 # Auto-install via: ops/scripts/install_vscode_extensions.ps1
 
@@ -45,9 +45,9 @@ Trigger: `pre-session.md` Step 0 (boot check) — nếu `vscode_extensions_insta
 Extension ID: `zixfel.ag-auto-click-scroll`
 Source: https://open-vsx.org/extension/zixfel/ag-auto-click-scroll
 
-**Integration với AI OS:**
+**Integration với OmniClaw:**
 - Khi Antigravity render response → extension tự scroll + click "Accept"
-- Giảm thao tác thủ công khi AI OS đang chạy automated cycle
+- Giảm thao tác thủ công khi OmniClaw đang chạy automated cycle
 - Không cần cài tay — `install_vscode_extensions.ps1` handle
 
 ---

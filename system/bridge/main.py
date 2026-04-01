@@ -1,17 +1,17 @@
 """
 OMNICLAW REMOTE BRIDGE - API GATEWAY
-Trạm Gác Cửa Khẩu đón mọi lưu lượng từ OmniClaw Remote.
+Border Patrol Checkpoint receives all traffic from OmniClaw Remote.
 Dispatch thực sự tới agent_bus (SQLite pub/sub) + blackboard.json.
 
 Endpoints:
   POST /dock/bots/{platform}      — Social bot webhooks
   POST /dock/mcp/dispatch         — MCP tool agent calls
-  POST /dock/agentic_ai/sync      — OpenClaw AI sync
+  POST /dock/agentic_ai/sync      — OmniClaw AI sync
   POST /dock/cloud/webhook        — Supabase / GCloud updates
   POST /dock/dashboard/ui_command — Web/Mobile UI commands
-  POST /vault/auth/issue_temp_pass — Cấp token tạm (cần HQ key)
-  POST /vault/auth/revoke         — Thu hồi token
-  GET  /vault/auth/list           — Liệt kê tokens còn hiệu lực (HQ only)
+  POST /vault/auth/issue_temp_pass — Issue temp token (HQ key required)
+  POST /vault/auth/revoke         — Revoke token
+  GET  /vault/auth/list           — List valid tokens (HQ only)
   GET  /health                    — Health check
 """
 
@@ -39,7 +39,7 @@ _BLACKBOARD = _ROOT / "brain" / "shared-context" / "blackboard.json"
 _BRIDGE_LOG = _ROOT / "system" / "ops" / "telemetry" / "logs" / "bridge_gateway.log"
 _BRIDGE_LOG.parent.mkdir(parents=True, exist_ok=True)
 
-# CORS: đọc từ env var, fallback wildcard cho dev
+# CORS: read from env var, fallback wildcard for dev
 _ALLOWED_ORIGINS = os.environ.get("BRIDGE_ALLOWED_ORIGINS", "*").split(",")
 
 # ── Logging ────────────────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ except Exception as _e:
 
 
 def _publish_event(topic: str, payload: dict) -> Optional[int]:
-    """Bắn event vào AgentBus nếu available, fallback ghi vào blackboard.json."""
+    """Fire event to AgentBus if available, fallback write to blackboard.json."""
     if _agent_bus:
         try:
             return _agent_bus.publish(topic, payload)
@@ -99,7 +99,7 @@ async def lifespan(app: FastAPI):
 # ── App ────────────────────────────────────────────────────────────────────────
 app = FastAPI(
     title="OmniClaw Remote Bridge",
-    description="Siêu Bến Cảng Local đón/xử lý requests từ OmniClaw Remote và External Bots.",
+    description="Local Super Harbor receiving/processing requests from OmniClaw Remote and External Bots.",
     version="2.0.0",
     lifespan=lifespan,
 )
@@ -118,14 +118,14 @@ api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 
 
 async def check_passport(request: Request, api_key: str = Security(api_key_header)) -> dict:
-    """Kiểm tra Hộ chiếu / Thẻ Mộc P2A."""
+    """Check Passport / P2A Wooden Tag."""
     from .customs_checkpoint import logger as border_logger
 
     status = vault.verify_passport(api_key)
     if status["status"] in ("INVALID", "EXPIRED", "NO_PASS"):
         client_ip = request.client.host if request.client else "UNKNOWN"
         border_logger.warning(f"BLOCKED {client_ip}: {status['msg']}")
-        raise HTTPException(status_code=403, detail=f"Hải quan chặn: {status['msg']}")
+        raise HTTPException(status_code=403, detail=f"Customs blocked: {status['msg']}")
     return status
 
 
@@ -146,14 +146,14 @@ async def bot_webhook_receiver(
     request: Request,
     passport: dict = Security(check_passport),
 ):
-    """Nhận webhook từ Social Bots (Zalo/Telegram/Facebook/Discord/Line)."""
+    """Receive webhook from Social Bots (Zalo/Telegram/Facebook/Discord/Line)."""
     platform = validate_platform(platform)
     await inspect_cargo(request, passport_status=passport)
 
     try:
         payload = await request.json()
     except Exception:
-        raise HTTPException(status_code=400, detail="Lỗi parse JSON body.")
+        raise HTTPException(status_code=400, detail="Error parse JSON body.")
 
     event_id = _publish_event(
         topic=f"bot.inbound.{platform}",
@@ -180,7 +180,7 @@ async def mcp_server_gateway(
     request: Request,
     passport: dict = Security(check_passport),
 ):
-    """Cổng cho Tool Agents bên ngoài gọi vào MCP Local."""
+    """Port for external Tool Agents calling into Local MCP."""
     await inspect_cargo(request, passport_status=passport)
 
     try:
@@ -205,7 +205,7 @@ async def openclaw_sync(
     request: Request,
     passport: dict = Security(check_passport),
 ):
-    """Đồng bộ hóa nhận thức giữa Local và OpenClaw (Remote AI)."""
+    """Synchronize context between Local and OmniClaw (Remote AI)."""
     await inspect_cargo(request, passport_status=passport)
 
     try:
@@ -231,7 +231,7 @@ async def cloud_webhook_sync(
     request: Request,
     passport: dict = Security(check_passport),
 ):
-    """Tiếp nhận update Database từ Supabase/GCloud."""
+    """Receive Database update from Supabase/GCloud."""
     await inspect_cargo(request, passport_status=passport)
 
     try:
@@ -256,7 +256,7 @@ async def master_dashboard_command(
     request: Request,
     passport: dict = Security(check_passport),
 ):
-    """Nhận tín hiệu Controller từ giao diện Web/Mobile."""
+    """Receive Controller signal from Web/Mobile UI."""
     await inspect_cargo(request, passport_status=passport)
 
     try:
@@ -282,10 +282,10 @@ async def issue_p2a_token(
     request: Request,
     master_key: str = Security(api_key_header),
 ):
-    """Cấp phát thẻ P2A tạm thời (yêu cầu Master Key)."""
+    """Issue temporary P2A token (requires Master Key)."""
     status = vault.verify_passport(master_key)
     if status.get("level") != "OMNICLAW_HQ":
-        raise HTTPException(status_code=403, detail="Chỉ OmniClaw Lõi mới được đúc thẻ mới.")
+        raise HTTPException(status_code=403, detail="Only OmniClaw Core can mint new tokens.")
 
     try:
         body = await request.json()
@@ -310,9 +310,9 @@ async def revoke_token(
     request: Request,
     passport: dict = Security(check_passport),
 ):
-    """Thu hồi một token. Chỉ OMNICLAW_HQ mới được thu hồi token của người khác."""
+    """Revoke a token. Only OMNICLAW_HQ can revoke others' tokens."""
     if passport.get("level") != "OMNICLAW_HQ":
-        raise HTTPException(status_code=403, detail="Chỉ OMNICLAW_HQ mới được thu hồi thẻ.")
+        raise HTTPException(status_code=403, detail="Only OMNICLAW_HQ can revoke tokens.")
 
     try:
         body = await request.json()
@@ -321,7 +321,7 @@ async def revoke_token(
         token_to_revoke = None
 
     if not token_to_revoke:
-        raise HTTPException(status_code=400, detail="Thiếu field 'token' trong body.")
+        raise HTTPException(status_code=400, detail="Missing 'token' field in body.")
 
     revoked = vault.revoke_passport(token_to_revoke)
     gw_logger.info(f"Token revoke: {'SUCCESS' if revoked else 'NOT_FOUND'} by {passport.get('owner')}")
@@ -330,16 +330,16 @@ async def revoke_token(
 
 @app.get("/vault/auth/list")
 async def list_tokens(passport: dict = Security(check_passport)):
-    """Liệt kê tokens còn hiệu lực (OMNICLAW_HQ only)."""
+    """List valid tokens (OMNICLAW_HQ only)."""
     if passport.get("level") != "OMNICLAW_HQ":
-        raise HTTPException(status_code=403, detail="Chỉ OMNICLAW_HQ.")
+        raise HTTPException(status_code=403, detail="OMNICLAW_HQ only.")
     return {"tokens": vault.list_passports()}
 
 
 # ── HEALTH ─────────────────────────────────────────────────────────────────────
 @app.get("/health")
 async def harbor_health_check():
-    """Ping xem Cảng có hoạt động không."""
+    """Ping to see if Harbor is active."""
     return {
         "status": "PORT_OPEN",
         "version": "2.0.0",

@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 ---
 description: Repo On-Demand â€” how agents clone large repos when starting a project
 ---

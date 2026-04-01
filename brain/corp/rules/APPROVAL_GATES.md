@@ -1,4 +1,4 @@
-﻿# APPROVAL_GATES.md â€” Gate Checklists for All 4 Corp Gates
+# APPROVAL_GATES.md â€” Gate Checklists for All 4 Corp Gates
 # Version: 1.0 | Created: 2026-03-22
 # Referenced by: corp-gate-flow.md, corp-daily-cycle.md (Phase 5)
 # Authority: Tier 2 (Operations) â€” overridden only by Tier 0-1

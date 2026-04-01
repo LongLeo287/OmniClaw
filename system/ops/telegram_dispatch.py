@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-AI OS V3.1 — Telegram Bot Dispatch
+OmniClaw V2.0 — Telegram Bot Dispatch
 Path: system/ops/telegram_dispatch.py
 Author: Antigravity (2026-03-26)
 
-Đây là module gửi thực tế lên Telegram Bot của AI OS Corp.
-Dùng python-telegram-bot hoặc raw HTTP request.
+Actual dispatch module to Telegram Bot of OmniClaw Corp.
+Uses python-telegram-bot or raw HTTP request.
 """
 
 import os
@@ -76,7 +76,7 @@ def notify(title: str, body: str, priority: str = "INFO") -> dict:
     icon = ICONS.get(priority, "•")
     ts   = datetime.datetime.now().strftime("%H:%M")
 
-    msg = f"{icon} *{title}*\n{body}\n_⏰ {ts} | AI OS V3.1_"
+    msg = f"{icon} *{title}*\n{body}\n_⏰ {ts} | OmniClaw V2.0_"
     return send_telegram(msg)
 
 
@@ -88,7 +88,7 @@ def send_system_status():
             s = json.load(f)
 
         msg = (
-            f"📊 *AI OS V3.1 — System Status*\n\n"
+            f"📊 *OmniClaw V2.0 — System Status*\n\n"
             f"• 🤖 Agents: `{s.get('agents', 'N/A')}`\n"
             f"• 🧠 Skills:  `{s.get('skills', 'N/A')}`\n"
             f"• 🔌 MCPs:   `{s['kho']['mcp']['servers']}`\n"
@@ -137,14 +137,14 @@ if __name__ == "__main__":
 
     elif cmd == "test":
         result = notify(
-            title="AI OS V3.1 — Test Notification",
-            body="✅ Telegram dispatch đã kết nối thành công!",
+            title="OmniClaw V2.0 — Test Notification",
+            body="✅ Telegram dispatch successfully connected!",
             priority="OK"
         )
         print(json.dumps(result, indent=2))
 
     elif cmd == "alert":
-        msg = sys.argv[2] if len(sys.argv) > 2 else "Manual alert from AI OS"
+        msg = sys.argv[2] if len(sys.argv) > 2 else "Manual alert from OmniClaw"
         priority = sys.argv[3] if len(sys.argv) > 3 else "INFO"
         result = notify("Manual Alert", msg, priority)
         print(json.dumps(result, indent=2))

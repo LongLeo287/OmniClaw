@@ -1,4 +1,4 @@
-﻿# Agent: ai-ml-agent
+# Agent: ai-ml-agent
 # Dept: engineering | Head: False | Role: AI/ML Engineer — model integration, RAG, pipelines
 # Version: 1.0 | 2026-03-24
 

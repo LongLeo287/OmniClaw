@@ -1,4 +1,4 @@
-﻿# Strix Security Vetting Report â€” Batch 3 Installs
+# Strix Security Vetting Report â€” Batch 3 Installs
 **Auditor:** Antigravity (Tier 1 â€” Security Clearance)  
 **Date:** 2026-03-21T15:21  
 **Protocol:** Strix v2.0 (12-stage)

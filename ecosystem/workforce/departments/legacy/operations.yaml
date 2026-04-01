@@ -1,4 +1,4 @@
-﻿# Operations Department Configuration
+# Operations Department Configuration
 id: operations
 display_name: Operations
 head_agent: scrum-master-agent

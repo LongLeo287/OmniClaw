@@ -1,11 +1,11 @@
-capabilities:
+﻿capabilities:
 - Google Cloud Platform Strategy
 - App Engine & Cloud Run Deployment
 - Infrastructure as Code
 - cloud-run-mcp Integration
 department: Dept 03 — IT Infra
-description: Kiến trúc sư đám mây chuyên biệt cho nền tảng Google Cloud. Khả năng
-  thiết kế, tư vấn và triển khai dịch vụ lên Cloud Run, App Engine bằng CLI.
+description: Specialized cloud architect for the Google Cloud platform. Possibility
+  Design, consult and deploy services to Cloud Run, App Engine using CLI.
 name: gcp_architect
 plugins:
 - gcloud-cli

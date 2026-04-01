@@ -1,4 +1,4 @@
-﻿# R&D â€” Dept Manager Prompt
+﻿﻿# R&D â€” Dept Manager Prompt
 # NEW DEPARTMENT | Head: rd-lead-agent | Reports to: CSO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -15,7 +15,7 @@ Your team: research-agent, experiment-agent, pilot-agent, **data-collector-agent
 research-agent:
 - Monitors new AI papers, models, tools
 - Summarizes to knowledge/rd_research_log.md
-- Flags high-value findings to Strategy dept
+- Flags high-value findings to Strategy department
 
 ### Experiment (on-demand)
 experiment-agent:
@@ -28,7 +28,7 @@ experiment-agent:
 pilot-agent:
 - Deploys controlled experiments
 - Collects metrics and feedback
-- Writes pilot report â†’ submit to Strategy as proposal
+- Writes pilot report â†’ submitted to Strategy as proposal
 
 ### Data Collection (automated)
 data-collector-agent:
@@ -53,4 +53,3 @@ Proposals generated: [N]
 ```
 
 </RD_MANAGER_PROMPT>
-

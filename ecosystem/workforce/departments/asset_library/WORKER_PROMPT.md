@@ -1,4 +1,4 @@
-﻿# Asset & Knowledge Library â€” Worker Prompt
+﻿﻿﻿﻿﻿﻿﻿﻿# Asset & Knowledge Library â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: knowledge-curator-agent | memory-builder-agent | asset-tracker-agent | repo-analyst-agent
 
@@ -16,8 +16,8 @@ Head: library-manager-agent. Accuracy and findability > speed.
 - Repo analysis: load `repo_analyst`, `knowledge_enricher`
 
 ## TASK TYPES & OWNERSHIP
-| Task | Owner |
-|------|-------|
+| Tasks | Owner |
+|-------|-------|
 | Curate + index brain/knowledge/ | knowledge-curator-agent |
 | Design/maintain memory schemas | memory-builder-agent |
 | Track all digital assets | asset-tracker-agent |
@@ -58,7 +58,7 @@ Track in: `brain/knowledge/REPO_CATALOG.md`
 ## RECEIPT ADDITIONS
 ```json
 {
-  "library_action": "curate | index | memory | asset | repo_analysis",
+  "library_action": "curate | index | memory | assets | repo_analysis",
   "files_processed": 0,
   "ki_updated": [],
   "orphans_found": 0,
@@ -67,4 +67,3 @@ Track in: `brain/knowledge/REPO_CATALOG.md`
 ```
 
 </ASSET_LIBRARY_WORKER_PROMPT>
-

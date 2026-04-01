@@ -1,4 +1,4 @@
-﻿# Department: operations
+# Department: operations
 ---
 description: Supabase connection debug â€” ClawTask API backend khÃ´ng switch sang supabase
 ---

@@ -1,4 +1,4 @@
-﻿# ðŸš€ CLAUDE.md â€” Tiem Nuoc Nho v5 (PRJ-004)
+# ðŸš€ CLAUDE.md â€” Tiem Nuoc Nho v5 (PRJ-004)
 # Version: 1.1 | Updated: 2026-03-16
 # Authority: Tier 0 (Project Constitution)
 # Location: $OMNICLAW_ROOT\projects\PRJ-004\   â—„ Managed by OmniClaw

@@ -2,18 +2,18 @@
 **ID:** `get_shit_done` | **Status:** registered | **Dept:** Dept 05 — UI/UX
 **Upstream:** https://github.com/gsd-build/get-shit-done
 
-## Mô tả
+## Description
 A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.
 
-## Khi nào dùng
-> TODO: Điền sau khi đọc README đầy đủ
+## When to Use
+> TODO: Fill in after reading the full README
 
-## Cách kích hoạt
+## How to Activate
 ```bash
-# TODO: Điền lệnh cài đặt/kích hoạt
+# TODO: Fill in install/activate command
 ```
 
-## Agent có quyền dùng
+## Authorized Agents
 - knowledge_navigator
 - strategy-agent
 
