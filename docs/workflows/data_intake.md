@@ -2,7 +2,7 @@
 
 ## Content Intake and Vetting (CIV) Pipeline
 
-The OmniClaw ecosystem operates on a Strict Zero-Trust Architecture. All 3rd-party code, repositories, or external plugins MUST be completely sandboxed within `system/security/QUARANTINE_INCOMING` and undergo meticulous scanning before execution. Raw `git clone` into `/brain` or `/ecosystem/plugins/` is architecturally prohibited and natively blocked.
+The OmniClaw ecosystem operates on a Strict Zero-Trust Architecture. All 3rd-party code, repositories, or external plugins MUST be completely sandboxed within `system/security/QUARANTINE_INCOMING` and undergo meticulous scanning before execution. Raw `git clone` into `/brain` or `/ecosystem/plugins/` is architecturally prohibited and natively blocked. Instead, you MUST use `gitingest` or `gitnexus` to extract the repository codebase into a single, lightweight `.md` or `.txt` file before committing it to the knowledge base.
 
 To safely ingest new data, you MUST use the CIV pipeline managed by Dept 20 (CIV) and Dept 10 (Strix).
 

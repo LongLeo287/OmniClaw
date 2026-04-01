@@ -2,7 +2,7 @@
 
 ## Chuỗi Chắt Lọc & Nạp Tri Thức (CIV Pipeline)
 
-Hệ sinh thái OmniClaw vận hành dựa trên Kiến trúc Zero-Trust ngặt nghèo. Mọi mã nguồn từ bên ngoài, thư viện hay code do AI tự kéo về BẮT BUỘC phải đi qua trạm kiểm dịch và bị nhốt vào vùng `system/security/QUARANTINE_INCOMING` để dò quét. Hành vi `git clone` thẳng vào bán cầu não `/brain` hoặc `/ecosystem/plugins/` bị cấm hoàn toàn.
+Hệ sinh thái OmniClaw vận hành dựa trên Kiến trúc Zero-Trust ngặt nghèo. Mọi mã nguồn từ bên ngoài, thư viện hay code do AI tự kéo về BẮT BUỘC phải đi qua trạm kiểm dịch và bị nhốt vào vùng `system/security/QUARANTINE_INCOMING` để dò quét. Hành vi `git clone` nguyên xi mã nguồn thô thẳng vào bán cầu não `/brain` hoặc `/ecosystem/plugins/` bị cấm hoàn toàn. Thay vào đó, BẮT BUỘC sử dụng công cụ `gitingest` hoặc `gitnexus` để ép toàn bộ Repo thành 1 file `.md` siêu nhẹ trước khi bơm vào não.
 
 Để nạp kho tri thức mới một cách an toàn, bạn PHẢI tuân thủ chuỗi thao tác của Tổ Quản Lý Phân Loại Nội Dung (Dept 20 - CIV) và Tổ An Ninh Mạng (Dept 10 - Strix).
 
