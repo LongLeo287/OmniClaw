@@ -46,6 +46,10 @@ Thay vì chỉ hoạt động như một chatbot đơn giản, OmniClaw chủ đ
    Quên việc phải quản lý hàng chục file shell script. Chỉ cần chạy lệnh `omniclaw` trong terminal (hoặc nhấp đúp vào `omniclaw.bat` trên Windows) để gọi Dashboard trung tâm. Nó tự động xử lý các dependencies NPM, cài đặt VSCode Extension và điều phối Model.
 4. **Thực thi tự trị (Worker Threads)**
    Các Agent bậc thầy (như Claude hoặc Gemini) ủy quyền các nhiệm vụ đa bước khổng lồ cho các sub-agent (CrewAI, Node scripts). OmniClaw đóng vai trò như một Giám đốc dự án, không chỉ là một lập trình viên.
+5. **Khung Xương Nhận Thức Tích Hợp (Zero-Config Memory)**
+   Khi clone OmniClaw, bạn ngay lập tức kế thừa cấu trúc 300+ thư mục được khởi tạo sẵn bằng hệ thống theo dõi `.gitkeep` chuyên sâu. Cấu trúc Trí nhớ RAG và Không gian Tri Thức Đa Đặc Vụ luôn trong trạng thái sẵn sàng phân vùng dữ liệu ngay từ Ngày 1 mà không cần chạy bất kỳ scripts khởi tạo nền móng nào.
+6. **Chính Sách Ngôn Ngữ Nguyên Bản Cấu Trúc (OS-Agnostic Core)**
+   Toàn bộ mã nguồn cốt lõi Hệ Điều Hành, Lệnh System, AI Agents, và Kho Tri Thức (`brain/knowledge/`) tuân thủ nghiêm ngặt chuẩn Tiếng Anh Kỹ Thuật (English-Only Core). Nguyên tắc sống còn này loại bỏ hoàn toàn các nút thắt Encoding/Tokenization, đảm bảo hệ thống đọc/ghi tri thức mượt mà trên mọi LLM toàn cầu bất chấp phân vùng máy chủ, trong khi vẫn hỗ trợ đầy đủ Docs/Template Giao Diện Bản địa cho người dùng qua đuôi `-vn.md`.
 
 ---
 
