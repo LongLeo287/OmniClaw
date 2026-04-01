@@ -1,7 +1,14 @@
 <div align="center">
   <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="OmniClaw Banner">
   <h1>🌌 OmniClaw</h1>
+  <p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+SYSTEM+UPDATE+DAILY;+🌌+OMNICLAW+IS+EVOLVING...;+🛠️+NEW+AGENTS+ADDED+TODAY" alt="Typing SVG" />
+</p>
   <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br>
+  <br>
+
+  [![Daily Update](https://img.shields.io/badge/STATUS-UPDATING_DAILY-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
+  [![Last Update](https://img.shields.io/github/last-commit/LongLeo287/OmniClaw?label=LAST%20UPDATE&style=for-the-badge&color=brightgreen)](https://github.com/LongLeo287/OmniClaw/commits/main)
   <br>
 
   [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
