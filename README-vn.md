@@ -1,10 +1,10 @@
 <div align="center">
 
-  <img src="asset/omniclaw_banner.png" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
+  <img src="asset/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
   <br><br>
   
   <p align="center">
-    <img src="asset/omniclaw_logo.png" alt="OmniClaw Logo" width="100" />
+    <img src="asset/omniclaw_logo_1800px.png" alt="OmniClaw Logo" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
   </p>
   
   <p align="center">
