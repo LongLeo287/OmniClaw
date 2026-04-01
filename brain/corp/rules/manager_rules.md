@@ -1,4 +1,4 @@
-# Manager Rules — OmniClaw Corp
+# Manager Rules — OmniClaw
 # Authority: Tier 2 | Updated: 2026-03-17
 # Applied to: all Department Heads
 

@@ -1,9 +1,9 @@
-# 🏛️ OmniClaw Corp — Sơ đồ Tổng thể Hệ thống
+# 🏛️ OmniClaw — Sơ đồ Tổng thể Hệ thống
 > **Danh bạ chính thức các Phòng ban, Agent và Quy trình (Sắp xếp theo ID)**
 
 [**🇺🇸 Xem Bản Tiếng Anh (English)**](MASTER_INDEX.md)
 
-Đây là hướng dẫn chính thức về **cấu trúc tổ chức 21 phòng ban** của OmniClaw Corp. Nó xác định ai (Agent) làm gì (Chức năng) và cách họ liên kết với nhau (Quy trình).
+Đây là hướng dẫn chính thức về **cấu trúc tổ chức 21 phòng ban** của OmniClaw. Nó xác định ai (Agent) làm gì (Chức năng) và cách họ liên kết với nhau (Quy trình).
 
 > 💡 **Lưu ý dành cho Người điều hành:** Một phiên bản đơn giản hóa, thân thiện hơn của sơ đồ này đã được công bố tại Cẩm nang [**docs/architecture/system_overview-vn.md**](../../docs/architecture/system_overview-vn.md).
 

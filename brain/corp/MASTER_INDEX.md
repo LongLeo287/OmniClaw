@@ -1,9 +1,9 @@
-# 🏛️ OmniClaw Corp — Master System Index
+# 🏛️ OmniClaw — Master System Index
 > **Official Directory of Departments, Agents, and Workflows (Sorted by ID)**
 
 [**🇻🇳 Xem Bản Tiếng Việt (Vietnamese)**](MASTER_INDEX_vi.md)
 
-This document serves as the definitive guide to the **21-department organizational structure** of OmniClaw Corp. It defines who (Agents) does what (Functions) and how they are linked (Workflows).
+This document serves as the definitive guide to the **21-department organizational structure** of OmniClaw. It defines who (Agents) does what (Functions) and how they are linked (Workflows).
 
 > 💡 **Notice for Human Operators:** A simplified, public-facing version of this architecture is now available in the [**docs/architecture/system_overview.md**](../../docs/architecture/system_overview.md) guide.
 

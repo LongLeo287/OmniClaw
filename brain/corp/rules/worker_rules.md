@@ -1,4 +1,4 @@
-# Worker Rules — OmniClaw Corp
+# Worker Rules — OmniClaw
 # Authority: Tier 3 | Updated: 2026-03-17
 # Applied to: all Worker Agents in all departments
 

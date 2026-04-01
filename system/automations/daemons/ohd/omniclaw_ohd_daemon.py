@@ -177,30 +177,49 @@ def audit_and_heal_entities():
                     except Exception as e:
                         issues.append(f"Could not rename {file_path.name}: {e}")
                 
-                # --- Auto-fix UTF-8 Encoding (Streaming Mode for Massive Files) ---
+                # --- Hardcode Encoding Standard (Split-Encoding Policy) ---
                 if file_path.is_file() and file_path.suffix in [".md", ".json", ".yaml"]:
                     try:
-                        with open(file_path, "r", encoding="utf-8") as f:
-                            for _ in f: pass
+                        if file_path.stat().st_size > 20 * 1024 * 1024:
+                            continue # Skip huge files (> 20MB) to prevent memory overload
                             
-                        # Removed flawed MOJIBAKE heuristic as it destroys valid Vietnamese text (like 'â' which is \u00e2).
-                                    
-                    except UnicodeDecodeError:
+                        # 1. Determine Target Encoding Protocol
+                        is_vietnamese = file_path.name.lower().endswith("-vn.md") or file_path.name.lower().endswith("_vn.md")
+                        
+                        # 2. Probe byte signature
+                        raw_bytes = file_path.read_bytes()
+                        has_bom = raw_bytes.startswith(b'\xef\xbb\xbf')
+                        
+                        needs_rewrite = False
+                        target_enc = "utf-8-sig" if is_vietnamese else "utf-8"
+                        
+                        # Enforce BOM Rules
+                        if is_vietnamese and not has_bom:
+                            needs_rewrite = True
+                        elif not is_vietnamese and has_bom:
+                            needs_rewrite = True
+                            
+                        # Validate UTF-8 Integrity & Heal Mojibake
+                        content = None
                         try:
-                            # Fallback stream read and rewrite
-                            import codecs, shutil
-                            tmp_path = file_path.with_suffix(".tmp.heal")
-                            with codecs.open(file_path, "r", encoding="utf-8", errors="replace") as fin:
-                                with codecs.open(tmp_path, "w", encoding="utf-8") as fout:
-                                    shutil.copyfileobj(fin, fout)
+                            content = raw_bytes.decode('utf-8-sig' if has_bom else 'utf-8')
+                        except UnicodeDecodeError:
+                            # File is currently corrupted/ANSI, needs deep healing
+                            needs_rewrite = True
                             try:
-                                os.replace(tmp_path, file_path)
-                                logging.info(f"Auto-Healed UTF-8 Encoding for: {file_path.name}")
+                                content = raw_bytes.decode('cp1258') # Recover from Windows Vietnamese ANSI
+                            except UnicodeDecodeError:
+                                content = raw_bytes.decode('utf-8', errors='replace') # Destructive fallback
+                        
+                        if needs_rewrite and content is not None:
+                            try:
+                                file_path.write_text(content, encoding=target_enc)
+                                logging.info(f"Auto-Healed Encoding (Hardcoded {target_enc}): {file_path.name}")
                             except PermissionError:
-                                logging.warning(f"Could not auto-heal UTF-8 (Permission Denied): {file_path.name}")
-                                if tmp_path.exists(): tmp_path.unlink()
-                        except Exception as e:
-                            issues.append(f"UTF-8 Healing Failed for {file_path.name}: {e}")
+                                logging.warning(f"Encoding rewrite blocked (Permission Denied): {file_path.name}")
+                                
+                    except Exception as e:
+                        issues.append(f"Encoding Healing Failed for {file_path.name}: {e}")
 
                 # --- Open-Source Agnostic Guardian (Detect Hardcoded Usernames Globally) ---
                 # Exclude this daemon file to prevent self-flagging
@@ -211,6 +230,12 @@ def audit_and_heal_entities():
                         if target_1 in content or target_2 in content or "D:\\" + target_1 in content:
                             issues.append(f"OS-AGNOSTIC VIOLATION: Hardcoded username detected in {file_path.relative_to(AOS_ROOT)}")
                             logging.warning(f"🚨 [HARDCODE ALERT] Found local identity in {file_path.name}! Codebase must be decoupled for Open-Source.")
+                            
+                        # --- Auto-fix Branding: OmniClaw Corp -> OmniClaw ---
+                        if "OmniClaw Corp" in content:
+                            content = content.replace("OmniClaw Corp", "OmniClaw")
+                            file_path.write_text(content, encoding="utf-8")
+                            logging.info(f"Auto-Healed Branding (Corp removed): {file_path.name}")
                     except Exception:
                         pass
 
@@ -247,6 +272,50 @@ def audit_and_heal_entities():
                 
     if issues:
         logging.warning(f"Detected {len(issues)} structural issues requiring OA intervention.")
+    return issues
+
+def auto_heal_terminal_ime():
+    """OHD Native TUI Vaccine: Heals Node.js/Ink terminals from \\x7f input buffer crashes caused by Vietnamese IME."""
+    logging.info("Running Terminal IME Auto-Heal (Vaccine)...")
+    issues = []
+    
+    # 1. Heal Claude Code (Default Native Target)
+    try:
+        # Use shell=True for npx on Windows to prevent 'file not found' cmd resolution errors
+        res = subprocess.run("npx -y fix-vietnamese-claude-code", shell=True, capture_output=True, text=True)
+        if "already patched" not in res.stdout.lower() and "Success" in res.stdout:
+            logging.info("OHD successfully patched Claude Code for Vietnamese IME.")
+    except Exception as e:
+        logging.warning(f"Failed to run IME patch for Claude Code: {e}")
+        
+    # 2. Heal OmniClaw / Antigravity Custom Targets
+    targets_config = current_file.parent / "ime_targets.json"
+    if targets_config.exists():
+        try:
+            with open(targets_config, 'r', encoding='utf-8') as f:
+                targets = json.load(f)
+            for target_path in targets.get("patch_files", []):
+                p = Path(target_path)
+                if p.exists():
+                    if p.suffix in ['.js', '.cmd', '.exe'] or not p.suffix:
+                        res = subprocess.run(f'npx -y fix-vietnamese-claude-code -f "{str(p)}"', shell=True, capture_output=True, text=True)
+                        if "already patched" not in res.stdout.lower() and "Success" in res.stdout:
+                            logging.info(f"OHD successfully patched Node.js CLI for Vietnamese IME: {p.name}")
+                    elif p.suffix == '.py':
+                        healer_script_path = current_file.parent / "scripts" / "python_ime_healer.py"
+                        healer_dir = str(healer_script_path.parent).replace('\\', '\\\\')
+                        injection_string = f'# [OHD MEDICAL VACCINE]\nimport sys; sys.path.insert(0, r"{healer_dir}"); try: import python_ime_healer except ImportError: pass\n'
+                        try:
+                            content = p.read_text(encoding='utf-8')
+                            if "# [OHD MEDICAL VACCINE]" not in content:
+                                p.write_text(injection_string + content, encoding='utf-8')
+                                logging.info(f"OHD successfully injected Python IME Healer into: {p.name}")
+                        except Exception as inner_e:
+                            logging.warning(f"Failed to inject Python healer into {p.name}: {inner_e}")
+        except Exception as e:
+            issues.append(f"Failed to process ime_targets.json: {e}")
+            logging.error(f"IME Target processing error: {e}")
+            
     return issues
 
 def dispatch_to_oa(garbage_count, structural_issues):
@@ -368,6 +437,11 @@ def run_daemon():
                 
                 garbage_count = sweep_and_quarantine()
                 issues = audit_and_heal_entities()
+                
+                # --- OHD Terminal Health (IME Fix) ---
+                ime_issues = auto_heal_terminal_ime()
+                issues.extend(ime_issues)
+                
                 leaks = check_git_hygiene()
                 
                 if leaks:

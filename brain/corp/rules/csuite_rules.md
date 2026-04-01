@@ -1,4 +1,4 @@
-# C-Suite Rules — OmniClaw Corp
+# C-Suite Rules — OmniClaw
 # Authority: Tier 1 | Updated: 2026-03-17
 # Applied to: CTO, CMO, COO, CFO, CSO
 

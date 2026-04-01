@@ -21,12 +21,13 @@
 [ ] Q6  — Error handling present for external calls
 [ ] Q7  — No breaking changes to existing API contracts (or documented)
 [ ] Q8  — Receipt written to telemetry/receipts/<dept>/<T-ID>.json
+[ ] Q9  — Split-Encoding Policy satisfied: System logic uses pure ASCII/UTF-8; human Vietnamese text is strictly isolated to `*-vn.md` files encoded with UTF-8-SIG (BOM).
 ```
 
 **Scoring:**
-- All 8 PASS → **GATE_QA: PASS**
+- All 9 PASS → **GATE_QA: PASS**
 - Q1–Q4 fail → **GATE_QA: FAIL** (blocking — must fix before re-submit)
-- Q5–Q8 fail → **GATE_QA: CONDITIONAL** (must fix within 1 cycle)
+- Q5–Q9 fail → **GATE_QA: CONDITIONAL** (must fix within 1 cycle)
 
 **Receipts:** `telemetry/qa_receipts/gate_qa/<T-ID>.json`
 
@@ -100,7 +101,7 @@ All 4 must sign off before final PASS.
 ```
 [ ] L1  — Contract structure complete (parties, scope, term, termination)
 [ ] L2  — No clauses that override CEO authority or agent governance rules
-[ ] L3  — IP ownership clauses: all OmniClaw output remains OmniClaw Corp property
+[ ] L3  — IP ownership clauses: all OmniClaw output remains OmniClaw property
 [ ] L4  — Data privacy: GDPR/local law compliant (gdpr-agent review)
 [ ] L5  — No unlimited liability clauses
 [ ] L6  — Dispute resolution jurisdiction acceptable

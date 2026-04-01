@@ -492,6 +492,28 @@ try {
 
     
 
+    # -------------------------------------------------------------------------
+
+    # OmniClaw Health Daemon (OHD) — Inject Vietnamese IME Fix for Claude Code
+
+    # -------------------------------------------------------------------------
+
+    Write-Host "  [OHD] Applying Vietnamese IME patch (npx fix-vietnamese-claude-code)..." -ForegroundColor Magenta
+
+    try {
+
+        npx -y fix-vietnamese-claude-code 2>&1 | Out-Null
+
+        Write-Host "  [OHD] Vietnamese IME patched successfully." -ForegroundColor Green
+
+    } catch {
+
+        Write-Warning "  [OHD] Failed to patch Vietnamese IME. Claude may not support Unikey/EVKey correctly."
+
+    }
+
+    
+
     if ($SkipPermissions) {
 
         "1" | claude --enable-auto-mode "$StartupPrompt"

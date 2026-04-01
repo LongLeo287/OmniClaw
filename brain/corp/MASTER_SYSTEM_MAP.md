@@ -1,4 +1,4 @@
-# OmniClaw Corp -- Master System Map
+# OmniClaw -- Master System Map
 # Version: 2.0 | Date: 2026-03-24 | Owner: Antigravity
 # Authority: Tier 0 -- Single Source of Truth for all operational flows
 # NOTE: v2.0 rewritten clean UTF-8 (v1.0 had cp1252 corruption)

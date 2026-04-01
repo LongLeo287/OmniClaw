@@ -1,4 +1,4 @@
-# QA Rules — OmniClaw Corp
+# QA Rules — OmniClaw
 # Authority: Tier 2 Gate | Updated: 2026-03-17
 # Applied to: QA gate agents (GATE_QA, GATE_CONTENT, GATE_SECURITY, GATE_LEGAL)
 

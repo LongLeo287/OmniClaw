@@ -8,26 +8,26 @@ description: Evaluate whether to add Observability Layer (LangSmith / Langfuse) 
 **Date:** 2026-03-23 | **Author:** Antigravity | **Status:** PENDING CEO
 
 ## Problem
-OmniClaw hiện tại thiếu visibility vào:
-- Mỗi LLM call tốn bao nhiêu tokens?
-- Agent nào đang chậm / fail?
-- Skill nào được gọi nhiều nhất?
-- Errors xảy ra ở đâu trong pipeline?
+OmniClaw currently lacks visibility into:
+- How many tokens each LLM call consumes?
+- Which agents are running slow or failing?
+- Which skills are invoked the most?
+- Where do errors occur in the pipeline?
 
-From KI-AI-STACK-LANDSCAPE-01: **Observability = biggest gap** còn lại của OmniClaw so với enterprise tools.
+From KI-AI-STACK-LANDSCAPE-01: **Observability is the biggest remaining gap** for OmniClaw compared to enterprise tools.
 
 ## Options
 
 ### Option A: LangSmith (LangChain)
 - Cloud-based, free tier
-- Tích hợp ngay với CrewAI + LangChain
-- Dashboard đẹp
+- Native integration with CrewAI + LangChain
+- Sleek dashboard
 
 ### Option B: Langfuse (Self-hosted)
 - Open source, MIT
 - Self-hosted → data privacy
 - Docker support
-- **Recommended** cho OmniClaw (data stays local)
+- **Recommended** for OmniClaw (data stays local)
 
 ### Option C: Custom telemetry (current)
 - `telemetry/` directory manual logging
@@ -38,7 +38,7 @@ From KI-AI-STACK-LANDSCAPE-01: **Observability = biggest gap** còn lại của 
 **Option B: Langfuse self-hosted**
 - Privacy preserved
 - Open source
-- Docker compose trong 5 phút
+- Docker compose in 5 minutes
 
 ```bash
 # Langfuse Docker

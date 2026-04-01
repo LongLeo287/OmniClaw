@@ -1,41 +1,41 @@
-# PHÒNG LỄ TÂN — Client Reception Activation Guide
-# Status: 🟡 BUILT — DORMANT (chờ token)
-# Khi sẵn sàng: đọc file này và thực hiện theo thứ tự
+# RECEPTION DESK — Client Reception Activation Guide
+# Status: 🟡 BUILT — DORMANT (awaiting token)
+# Upon readiness: Read this document and execute sequentially
 
 ---
 
-## Trạng Thái Hiện Tại
+## Current Status
 
 | Component | Status | File |
 |-----------|--------|------|
-| Gateway SOP | ✅ Sẵn sàng | `corp/sops/CLIENT_INTAKE_GATEWAY.md` |
+| Gateway SOP | ✅ Ready | `corp/sops/CLIENT_INTAKE_GATEWAY.md` |
 | project_intake_agent | ✅ Registered | `skills/project_intake_agent/SKILL.md` |
 | proposal_engine | ✅ Registered | `skills/proposal_engine/SKILL.md` |
-| nullclaw config | ✅ Sẵn sàng | `REMOTE/claws/nullclaw/configs/client_gateway.json` |
-| tinyclaw config | ✅ Sẵn sàng | `REMOTE/claws/tinyclaw/configs/client_gateway.json` |
-| Delivery Pipeline | ✅ Sẵn sàng | `corp/sops/DELIVERY_PIPELINE.md` |
-| Telegram Bot | 🔴 Cần token | `@BotFather` trên Telegram |
-| Discord Bot | 🔴 Cần token | `discord.com/developers` |
+| nullclaw config | ✅ Ready | `REMOTE/claws/nullclaw/configs/client_gateway.json` |
+| tinyclaw config | ✅ Ready | `REMOTE/claws/tinyclaw/configs/client_gateway.json` |
+| Delivery Pipeline | ✅ Ready | `corp/sops/DELIVERY_PIPELINE.md` |
+| Telegram Bot | 🔴 Needs token | `@BotFather` on Telegram |
+| Discord Bot | 🔴 Needs token | `discord.com/developers` |
 
 ---
 
-## Khi Bạn Sẵn Sàng — Checklist Activate
+## When You Are Ready — Activation Checklist
 
-### Bước 1: Lấy Bot Tokens
+### Step 1: Obtain Bot Tokens
 
 **Telegram:**
-1. Mở Telegram → nhắn tin @BotFather
-2. `/newbot` → đặt tên: `OmniClaw Corp` → username: `AICorpIntakeBot`
-3. Copy token (dạng `123456:ABC-DEF...`)
+1. Open Telegram → message @BotFather
+2. `/newbot` → set name: `OmniClaw` → username: `AICorpIntakeBot`
+3. Copy token (format `123456:ABC-DEF...`)
 
 **Discord (optional):**
-1. Vào [discord.com/developers](https://discord.com/developers/applications)
+1. Go to [discord.com/developers](https://discord.com/developers/applications)
 2. New Application → Bot → Add Bot → copy token
 
-### Bước 2: Set Environment Variables
+### Step 2: Set Environment Variables
 
 ```powershell
-# Trong PowerShell (Terminal) — thay thế bằng token thật
+# In PowerShell (Terminal) — replace with actual token
 $env:ANTHROPIC_API_KEY='[REDACTED_API_KEY]'
 $env:TELEGRAM_CLIENT_BOT_TOKEN = "123456:ABC-..."   # Client bot
 $env:TELEGRAM_OPS_BOT_TOKEN    = "654321:XYZ-..."   # Ops bot (optional)
@@ -46,72 +46,71 @@ $env:DISCORD_CLIENT_BOT_TOKEN  = "..."
 $env:DISCORD_INTAKE_CHANNEL_IDS = "channel_id_here"
 ```
 
-> Lấy Telegram User ID: nhắn tin @userinfobot
+> To get Telegram User ID: message @userinfobot
 
-### Bước 3: Khởi Động nullclaw (Client Gateway)
+### Step 3: Start nullclaw (Client Gateway)
 
 ```powershell
-# Đổi vào thư mục plugin
+# Navigate to the plugin directory
 cd "$OMNICLAW_ROOT\REMOTE\claws\nullclaw"
 
-# Build binary (nếu chưa có):
+# Build binary (if not exists):
 # zig build -Doptimize=ReleaseSmall
 
-# Start gateway với config
+# Start gateway with config
 nullclaw --config "$OMNICLAW_ROOT\REMOTE\claws\nullclaw\configs\client_gateway.json" gateway
 ```
 
-### Bước 4: Expose qua Tunnel (để Telegram reach được)
+### Step 4: Expose via Tunnel (for Telegram webhooks)
 
 ```powershell
-# Option A — Cloudflare Tunnel (free, ổn định)
+# Option A — Cloudflare Tunnel (free, stable)
 cloudflared tunnel --url http://localhost:3100
 
-# Option B — ngrok (đơn giản hơn để test)
+# Option B — ngrok (simpler for testing)
 ngrok http 3100
 ```
 
-Copy URL tunnel (vd: `https://abc123.trycloudflare.com`)
+Copy the tunnel URL (e.g. `https://abc123.trycloudflare.com`)
 
-### Bước 5: Đăng Ký Webhook
+### Step 5: Register Webhook
 
 ```powershell
-# Thay <TOKEN> và <TUNNEL_URL>
+# Replace <TOKEN> and <TUNNEL_URL>
 Invoke-WebRequest "https://api.telegram.org/bot<TOKEN>/setWebhook?url=<TUNNEL_URL>/telegram/webhook"
 ```
 
-### Bước 6: Khởi Động tinyclaw (Ops Dashboard)
+### Step 6: Start tinyclaw (Ops Dashboard)
 
 ```powershell
 cd "$OMNICLAW_ROOT\REMOTE\claws\tinyclaw"
 tinyclaw start --config "$OMNICLAW_ROOT\REMOTE\claws\tinyclaw\configs\client_gateway.json"
-tinyclaw office  # Dashboard tại http://localhost:3000
+tinyclaw office  # Dashboard at http://localhost:3000
 ```
 
-### Bước 7: Test
+### Step 7: Test
 
-Gửi tin nhắn đến bot Telegram → phải nhận được welcome message:
+Send a message to the Telegram bot → you should receive the welcome message:
 ```
-👋 Chào mừng đến OmniClaw Corp!
-Chúng tôi cung cấp giải pháp AI agents cho mọi loại dự án...
+👋 Welcome to OmniClaw!
+We provide AI agents solutions for all project types...
 ```
 
 ---
 
-## Lệnh Hàng Ngày (sau khi activate)
+## Daily Commands (post-activation)
 
 ```powershell
-# Xem intakes mới
+# View new intakes
 cat "$OMNICLAW_ROOT\shared-context\client_intake\_index.json"
 
-# Xem proposal đã tạo
+# View generated proposals
 ls "$OMNICLAW_ROOT\shared-context\corp\proposals\"
 
-# Xem revenue
+# View revenue
 cat "$OMNICLAW_ROOT\shared-context\corp\invoices\_payment_tracker.json"
 ```
 
 ---
 
-*Phòng Lễ Tân sẵn sàng. Cung cấp token bất kỳ lúc nào để kích hoạt.* 🏨
-
+*Reception Desk is ready. Provide the active token whenever ready to initiate.* 🏨

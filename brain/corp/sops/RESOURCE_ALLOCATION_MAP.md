@@ -1,4 +1,4 @@
-# OmniClaw Corp — Resource Allocation Map (v1.0)
+# OmniClaw — Resource Allocation Map (v1.0)
 # Authority: Registry & Capability Management → COO
 # Updated: 2026-03-17
 # Source of Truth for: skill ownership, plugin ownership, subagent assignment
@@ -6,10 +6,10 @@
 ---
 
 ## LEGEND
-- **OWNER**: Phòng ban sở hữu và chịu trách nhiệm tài nguyên này
-- **ACCESSIBLE**: Các phòng ban được phép sử dụng (access control)
-- **RESTRICTED**: Chỉ owner mới được dùng
-- **ALL**: Mọi phòng ban có thể truy cập
+- **OWNER**: Department that owns and is responsible for this resource
+- **ACCESSIBLE**: Departments permitted to use this (access control)
+- **RESTRICTED**: Only the owner is permitted to use this
+- **ALL**: All departments can access this
 
 ---
 

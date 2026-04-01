@@ -1,21 +1,21 @@
 # CLIENT INTAKE GATEWAY — SOP v1.0
-# OmniClaw Corp | Tier 1 — Operations
+# OmniClaw | Tier 1 — Operations
 # Effective: 2026-03-18
 
-> **Model:** Bên ngoài kết nối vào OmniClaw Corp để sử dụng AI agents như dịch vụ.
+> **Model:** External connections to OmniClaw to utilize AI agents as a service.
 > Client → Channel → Intake Agent → Proposal → Delivery Pipeline
 
 ---
 
-## 1. Cổng Tiếp Nhận
+## 1. Reception Portal
 
-OmniClaw Corp tiếp nhận yêu cầu qua **4 kênh**:
+OmniClaw receives requests via **4 channels**:
 
-| Kênh | Platform | Agent xử lý | Status |
+| Channel | Platform | Assigned Agent | Status |
 |------|----------|-------------|--------|
-| Telegram | Bot @AICorpBot | nullclaw `client-intake` agent | 🟡 Cần config |
-| Discord | #project-intake channel | tinyclaw `intake-agent` | 🟡 Cần config |
-| Web Form | `intake.omniclaw-corp.local` | project-intake-agent SKILL | 🟡 Cần build |
+| Telegram | Bot @AICorpBot | nullclaw `client-intake` agent | 🟡 Needs config |
+| Discord | #project-intake channel | tinyclaw `intake-agent` | 🟡 Needs config |
+| Web Form | `intake.omniclaw.local` | project-intake-agent SKILL | 🟡 Needs build |
 | WhatsApp | Business API | nullclaw `whatsapp` channel | 🔴 Phase 2 |
 
 ---
@@ -23,54 +23,54 @@ OmniClaw Corp tiếp nhận yêu cầu qua **4 kênh**:
 ## 2. Intake Flow
 
 ```
-[CLIENT gửi brief qua Channel]
+[CLIENT sends brief via Channel]
          │
          ▼
 [NULLCLAW / TINYCLAW — Channel Gateway]
-  - nhận message
+  - receive message
   - sanitize & validate input
-  - route đến project-intake-agent
+  - route to project-intake-agent
          │
          ▼
-[PROJECT-INTAKE-AGENT — thu thập thông tin]
-  Thu thập 5 fields bắt buộc:
+[PROJECT-INTAKE-AGENT — gather information]
+  Collects 5 mandatory fields:
   1. project_type    — Web / Mobile / AI / Data / Automation / Other
-  2. description     — Mô tả ngắn (max 500 words)
-  3. timeline        — Deadline mong muốn
+  2. description     — Short description (max 500 words)
+  3. timeline        — Desired deadline
   4. budget_range    — Bracket: <$500 | $500-2k | $2k-10k | $10k+
   5. contact_info    — Telegram/Email/Discord handle
          │
          ▼
 [VALIDATE & SCORE]
-  - Completeness check (tất cả 5 fields?)
-  - Feasibility score (1-10) dựa trên skill registry
+  - Completeness check (all 5 fields present?)
+  - Feasibility score (1-10) based on skill registry
   - Priority: URGENT / NORMAL / LOW
          │
          ▼
 [ROUTE TO PROPOSAL ENGINE]
-  → Ghi vào: shared-context/client_intake/YYYY-MM-DD_HHMMSS_<slug>.json
-  → Notify: operations dept + CEO (nếu budget > $2k)
-  → Tự động trigger Proposal Engine
+  → Write to: shared-context/client_intake/YYYY-MM-DD_HHMMSS_<slug>.json
+  → Notify: operations dept + CEO (if budget > $2k)
+  → Auto-trigger Proposal Engine
 ```
 
 ---
 
 ## 3. Brief Template (Client-Facing)
 
-Khi client nhắn tin lần đầu, bot tự động gửi form sau:
+When a client messages for the first time, the bot automatically sends the following form:
 
 ```
-👋 Chào mừng đến OmniClaw Corp!
+👋 Welcome to OmniClaw!
 
-Để bắt đầu, vui lòng trả lời 5 câu hỏi:
+To get started, please answer 5 simple questions:
 
-1️⃣ Loại project: Web / Mobile / AI Chatbot / Data / Automation / Khác
-2️⃣ Mô tả ngắn: [Max 500 chữ]
-3️⃣ Deadline mong muốn: [DD/MM/YYYY]
-4️⃣ Budget: Dưới $500 / $500-2k / $2k-10k / $10k+
-5️⃣ Cách liên lạc: [Telegram/Email]
+1️⃣ Project Type: Web / Mobile / AI Chatbot / Data / Automation / Other
+2️⃣ Short Description: [Max 500 words]
+3️⃣ Desired Deadline: [DD/MM/YYYY]
+4️⃣ Budget: Under $500 / $500-2k / $2k-10k / $10k+
+5️⃣ Contact Method: [Telegram/Email]
 
-Sau khi điền xong, team sẽ phản hồi trong 2 giờ làm việc. ✅
+Once submitted, our team will respond within 2 business hours. ✅
 ```
 
 ---
@@ -109,7 +109,7 @@ Sau khi điền xong, team sẽ phản hồi trong 2 giờ làm việc. ✅
 
 | Budget | Feasibility | Action |
 |--------|-------------|--------|
-| $10k+ | Any | Notify CEO immediate + auto-propose |
+| $10k+ | Any | Notify CEO immediately + auto-propose |
 | $2k-10k | ≥7 | Auto-propose → operations approval |
 | $500-2k | ≥5 | Auto-propose → ops handles |
 | <$500 | Any | Standard SOP — ops team |
@@ -119,15 +119,14 @@ Sau khi điền xong, team sẽ phản hồi trong 2 giờ làm việc. ✅
 
 ## 6. Files & Paths
 
-| File | Mục đích |
+| File | Purpose |
 |------|---------|
-| `shared-context/client_intake/` | Thư mục lưu tất cả intake records |
-| `shared-context/client_intake/_index.json` | Index tất cả intakes |
-| `shared-context/brain/corp/proposals/` | Proposals auto-generated |
+| `shared-context/client_intake/` | Directory storing all intake records |
+| `shared-context/client_intake/_index.json` | Index of all intakes |
+| `shared-context/brain/corp/proposals/` | Auto-generated proposals |
 | `shared-context/brain/corp/escalations.md` | CEO escalations |
 
 ---
 
-*Channel configs: xem `REMOTE/claws/nullclaw/configs/client_gateway.json`*
-*Sau khi intake: trigger `PROPOSAL_ENGINE_SOP.md`*
-
+*Channel configs: see `REMOTE/claws/nullclaw/configs/client_gateway.json`*
+*Post-intake: trigger `PROPOSAL_ENGINE_SOP.md`*
