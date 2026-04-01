@@ -1,9 +1,10 @@
-# ⚖️ OMNICLAW ACADEMY (OA) - OIW STRICT INTAKE & LIBRARY RULES
+# OIW STRICT INTAKE & LIBRARY RULES
 > **Authority:** CEO & OA Faculty
 > **Targets:** OmniClaw Intake Workflow (OIW), Dept 15 (`library-manager-agent`)
 > **Severity:** FATAL (CRITICAL SYSTEM INTEGRITY)
+> **Updated:** 2026-04-02 — OIW registration rights stripped, transferred to OER.
 
-This document contains the absolute mandates for handling external code intake (OmniClaw Intake Workflow - OIW) and managing the `brain/knowledge` sector. Failure to comply with these rules will result in catastrophic RAG bloat and system paralysis.
+This document contains the absolute mandates for handling external code intake (OmniClaw Intake Workflow - OIW) and managing the `brain/knowledge` sector.
 
 ---
 
@@ -15,10 +16,20 @@ You are the harvester and extractor outside the Brain. You hunt, pull, and dry (
 You **MUST NEVER** pull raw `.git` or raw codebase into `brain/`. All raw cloning goes to `storage/vault/DATA/incoming_repos/`.
 
 ### Rule 20.2: Extract & Handoff (The "Drying" Process)
-You must use `gitingest` or similar to "dry" the code into a pure `.md` file. Once extracted, you DO NOT sort it—you hand it over to the boundary of the Brain for the Librarian (Dept 15) to receive.
+You must use `gitingest` or similar to "dry" the code into a pure `.md` file. Once extracted, you DO NOT sort it — you hand it over to the boundary of the Brain for the Librarian (Dept 15) to receive.
 
 ### Rule 20.3: Quarantine Routing
 If you absolutely MUST clone a raw repository for execution or compilation (not just reading), you MUST route it to `storage/vault/DATA/incoming_repos/` or `system/security/QUARANTINE_INCOMING/`.
+
+### Rule 20.4: ZERO Registration Rights
+**OIW DOES NOT register anything.** OIW's mandate ends at the Quarantine gate.
+- OIW does **NOT** update `SKILL_REGISTRY.json`.
+- OIW does **NOT** create new Agent entries in `AGENTS.md` or `org_chart.yaml`.
+- OIW does **NOT** move files into `ecosystem/`.
+- OIW does **NOT** issue IDs or capability tokens.
+
+All registration functions are the **exclusive domain of OER (Dept 14)**.
+After OIW deposits material in Quarantine, it sends a handoff signal to OHD & OER and **stops**.
 
 ---
 
@@ -56,10 +67,14 @@ While `brain/knowledge` is heavily guarded against raw intake bloat, the followi
 * **Role:** The Supreme Auditor. 
 * **Rights:** Full access to inspect, evaluate, and audit the entire knowledge structure. OA agents can freely traverse this folder to ensure all items comply with the Markdown Purity and Zero-Config standards.
 
-### 2. Dept 14 (`registry-manager-agent`)
-* **Role:** The Sole Administrator of the Ecosystem.
-* **Rights:** Unlike standard workforce agents or plugins (which DO NOT have a free-pass), **Dept 14** holds exclusive Free-Pass READ and TRAVERSAL access to `brain/knowledge/` for the purpose of executing capabilities. No other agents (including the CTO or Orchestrator) have direct file-system manipulative rights here.
-* **Protection Equivalence:** Both `brain/knowledge/` and `ecosystem/` are highly protected **View-Only Vaults**. Regular agents cannot modify them. They are strictly read-only spaces for fetching knowledge and tools.
+### 2. OER (Dept 14 — `registry-manager-agent`) 
+* **Role:** The Sole Registrar and Administrator of the Ecosystem.
+* **Rights:** Unlike standard workforce agents or plugins (which DO NOT have a free-pass), **OER (Dept 14)** holds exclusive **Free-Pass READ and TRAVERSAL** access to `brain/knowledge/` for capability coordination purposes.
+* **Exclusive Write Rights:** OER is the ONLY entity authorized to write to `ecosystem/` and update `SKILL_REGISTRY.json`. No other agents (including the CTO, Orchestrator, or OIW) may do this.
+* **Protection Equivalence:** Both `brain/knowledge/` and `ecosystem/` are highly protected **View-Only Vaults** for all agents except OER. OER alone possesses write keys to `ecosystem/`.
+
+**OER Charter:** `docs/architecture/OER_CHARTER.md`
+**OER Pipeline Script:** `system/ops/scripts/oer_register.py`
 
 ---
 **Violation of these rules will result in Agent session termination by the OHD (OmniClaw Health Daemon).**

@@ -4,7 +4,8 @@ type: REFERENCE
 domain: [system, architecture, meta]
 dept: all
 created: 2026-03-22
-version: 1.0
+updated: 2026-04-02
+version: 2.0
 authority: CEO
 ---
 
@@ -60,7 +61,7 @@ Tier 4: Chuyên viên (Workers) — Thực thi logic nghiệp vụ.
 | 11 | strategy | product-manager-agent | — | CSO |
 | 12 | legal | legal-agent | Là GATE_LEGAL | CSO |
 | 13 | rd | rd-lead-agent | — | CTO |
-| 14 | registry_capability | registry-manager-agent | — | CTO |
+| 14 | registry_capability | registry-manager-agent (OER) | — | CTO |
 | 15 | asset_library | library-manager-agent | — | CIO |
 | 16 | od_learning | org-architect-agent | — | CSO |
 | 17 | planning_pmo | pmo-agent | — | COO |
@@ -97,16 +98,51 @@ Tier 4: Chuyên viên (Workers) — Thực thi logic nghiệp vụ.
 | Corp Learning Loop | `ops/workflows/corp-learning-loop.md` | `omniclaw corp retro` | Auto |
 | Delivery Pipeline | `corp/sops/DELIVERY_PIPELINE.md` | Client chốt Proposal | 6 phases |
 
-### Corp Daily Cycle (7 Nhịp Độ Hàng Ngày)
+### Corp Daily Cycle (7 Nhip Do Hang Ngay)
 ```
-Phase 1: CEO Brief → Đọc KPI Hệ, Lịch, Sự cố từ CEO.
-Phase 2: C-Suite Dispatch → Xuất chiến lược → Gán Goal → Ném vào blackboard.json.
-Phase 3: Dept Dispatch → 21 Trưởng phòng phân mục tiêu xuống dàn Hậu Cần/Coder.
-Phase 4: Execute → Workers chạy Scripts & Viết Biên Lai Hóa Đơn (Receipt).
-Phase 5: Gate → Kích Hoạt GATE_QA / GATE_CONTENT / GATE_SECURITY.
-Phase 6: Brief Back → Các Head tổng hợp Lịch Sử cho Daily_Briefs.
-Phase 7: Reflect → Cognitive_Reflector duyệt & đề xuất Lỗ Hổng cho CEO.
+Phase 1: CEO Brief -> Doc KPI He, Lich, Su co tu CEO.
+Phase 2: C-Suite Dispatch -> Xuat chien luoc -> Gan Goal -> Nem vao blackboard.json.
+Phase 3: Dept Dispatch -> 21 Truong phong phan muc tieu xuong dan Hau Can/Coder.
+Phase 4: Execute -> Workers chay Scripts & Viet Bien Lai Hoa Don (Receipt).
+Phase 5: Gate -> Kich Hoat GATE_QA / GATE_CONTENT / GATE_SECURITY.
+Phase 6: Brief Back -> Cac Head tong hop Lich Su cho Daily_Briefs.
+Phase 7: Reflect -> Cognitive_Reflector duyet & de xuat Lo Hong cho CEO.
 ```
+
+---
+
+## 4a. BON TRU COT DAEMON (CORE DAEMONS)
+
+Day la 4 he thong cap cao doc lap dieu phoi xay dung nen OmniClaw OS:
+```
++----------+----------+----------+----------+
+|  OIW     |   OHD    |    OA    |   OER    |
+| Harvester|  Doctor  |  Judge   |Registrar |
++----------+----------+----------+----------+
+| Hut Repo | Khu Trung| Xet Xu   | Dang Kiem|
+| Gitingest| npm clean| 8 Tru Cot| Cap ID   |
+| Quarantin| Quet Virus| OA Audit| Nhap Kho |
+| Dept 20  | Dept 19  | OA/Strix | Dept 14  |
++----------+----------+----------+----------+
+```
+
+### Phan Quyen Ma Tran (4 Daemons x Chuc Nang)
+| Chuc nang | OIW | OHD | OA | OER |
+|---|---|---|---|---|
+| Hut Repo, Gitingest | YES | NO | NO | NO |
+| Dat vao Quarantine | YES | NO | NO | NO |
+| **Dang ky Agent/Skill moi** | **NO** | NO | NO | **YES** |
+| Quet Virus, IOC Supply Chain | NO | YES | NO | NO |
+| Don rac npm, cache | NO | YES | NO | NO |
+| Bao cao suc khoe | NO | YES | NO | NO |
+| Xet xu vi pham | NO | NO | YES | NO |
+| Audit Ecosystem | NO | NO | YES | NO |
+| Ghi file vao `ecosystem/` | NO | NO | NO | YES |
+| Cap nhat SKILL_REGISTRY.json | NO | NO | NO | YES |
+| Free-Pass vao `brain/knowledge`| NO | NO | NO | YES |
+
+**Hien Chuong OER:** `docs/architecture/OER_CHARTER-vn.md`
+**Script Tu Dong Phase 5:** `system/ops/scripts/oer_register.py`
 
 ---
 
@@ -147,10 +183,17 @@ Phase 7: Reflect → Cognitive_Reflector duyệt & đề xuất Lỗ Hổng cho 
 
 ---
 
-## 7. KIẾN TRÚC KỸ NĂNG (SKILL ARCHITECTURE)
+## 7. KIEN TRUC KY NANG (SKILL ARCHITECTURE)
 
-**Trung Tâm Registry:** `brain/registry/SKILL_REGISTRY.json` (103+ Skills)
-**Thư Mục Mã (Folder):** `ecosystem/skills/`
+**Trung Tam Registry:** `brain/registry/SKILL_REGISTRY.json` (103+ Skills)
+**Thu Muc Ma (Folder):** `ecosystem/skills/`
+**Quan Ly Boi:** OER (Phong 14 - registry-manager-agent) — DUY NHAT duoc ghi.
+**Script Dang Ky:** `system/ops/scripts/oer_register.py`
+
+**Pipeline Nhap Kho (5-Gate Flow):**
+```
+OIW (Hut) -> OHD (Khu Trung) -> OA (Kiem Toan) -> Dept 1 (Ren) -> OER (Dang Ky)
+```
 
 ### Siêu Kỹ Năng Đa Thuộc Tính (Core Skills)
 ```
