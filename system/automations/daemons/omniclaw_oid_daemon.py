@@ -291,6 +291,25 @@ def deep_process(source: str, source_type: str, ticket_id: str) -> bool:
             log(f"[{ticket_id}] Fetch failed — all clone strategies exhausted", "ERROR")
             return False
 
+        # ── OIW INTAKE GATE: Empty / Broken Repo Check ────────────────────────
+        # Check if the folder is functionally empty (e.g. only contains .git)
+        has_real_content = False
+        if cloned_path.exists() and cloned_path.is_dir():
+            for item in cloned_path.iterdir():
+                if item.name not in ('.git', '.DS_Store', 'desktop.ini', 'thumbs.db'):
+                    has_real_content = True
+                    break
+
+        if not has_real_content:
+            log(f"[{ticket_id}] OA ALERT: Fetched repository is EMPTY or BROKEN. (Likely a clone failure or hollow repo)", "ERROR")
+            log(f"[{ticket_id}] OHD ACTION: Purging hollow directory {cloned_path}...", "WARN")
+            try:
+                # Call OHD (Cleanup) to eradicate the hollow directory
+                shutil.rmtree(str(cloned_path))
+            except Exception as e:
+                log(f"[{ticket_id}] OHD Purge failed: {e}", "ERROR")
+            return False
+
         # ── 5b: Extract ───────────────────────────────────────────────────────
         success = extract_knowledge(cloned_path, cleanup=True)  # cleanup=True wipes clone
         if not success:
