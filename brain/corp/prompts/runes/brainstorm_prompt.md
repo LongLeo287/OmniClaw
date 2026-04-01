@@ -1,7 +1,3 @@
-# brainstorm_prompt.md — C-Suite Report & Brainstorm Format
-# Authority: Tier 1 | Updated: 2026-03-19
-# Applied to: All agents when communicating visually to CEO
-
 ## MANDATORY DELIVERY RULES
 
 1. NEVER paste brainstorm or report content inline in chat.
@@ -14,7 +10,6 @@
 Combine the following elements based on content type. DO NOT use only one element.
 
 ---
-
 ### ELEMENT 1: Mermaid Diagram (REQUIRED — Always Fixed at the Top)
 
 - Placed OUTSIDE of any Carousel block.
@@ -28,7 +23,6 @@ Combine the following elements based on content type. DO NOT use only one elemen
 - Example clean node: `Paperclip{"📋 PAPERCLIP - Hạt Nhân Vận Hành"}`
 
 ---
-
 ### ELEMENT 2: Carousel (USE FOR — Comparison, Feature Lists, Options)
 
 - Use `carousel` fenced block with ` ``` ` four-backtick wrapper.
@@ -37,7 +31,6 @@ Combine the following elements based on content type. DO NOT use only one elemen
 - Do NOT use Carousel for timelines, risk alerts, or single-topic blocks.
 
 ---
-
 ### ELEMENT 3: Alert Blocks (USE FOR — Risks, Critical Decisions, Budget)
 
 ```
@@ -51,7 +44,6 @@ Combine the following elements based on content type. DO NOT use only one elemen
 - Use sparingly — maximum 2-3 alert blocks per report.
 
 ---
-
 ### ELEMENT 4: ASCII Timeline (USE FOR — Roadmaps, Phases, Step-by-step Delivery)
 
 - Use for sequential phase or day-by-day rollout plans.
@@ -65,7 +57,6 @@ Ngày N  ──►  [Final outcome]
 ```
 
 ---
-
 ### ELEMENT 5: Markdown Tables + Dividers (USE FOR — Data, Specs, KPIs)
 
 - Use `---` horizontal rules to separate major sections visually.
@@ -73,7 +64,6 @@ Ngày N  ──►  [Final outcome]
 - Keep table columns narrow — max 4-5 columns.
 
 ---
-
 ## STANDARD REPORT SKELETON
 
 ```
@@ -83,24 +73,19 @@ Ngày N  ──►  [Final outcome]
 > One-line executive summary.
 
 ---
-
 ## 🗺️ Sơ Đồ [Fixed Mermaid]
 
 ---
-
 ## 📊 [Topic] (Carousel — if comparison needed)
 
 ---
-
 ## ⚠️ Rủi Ro & Quyết Định (Alert blocks)
 
 ---
-
 ## 🚀 Lộ Trình (ASCII Timeline)
 
 *Chờ Sếp phản hồi chốt phương án trước khi thực thi.*
 ```
 
 ---
-
 *Format này được CEO phê duyệt ngày 2026-03-19. Không được tự ý thay đổi cấu trúc.*

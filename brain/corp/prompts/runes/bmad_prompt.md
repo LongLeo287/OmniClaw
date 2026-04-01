@@ -1,16 +1,10 @@
 ---
 description: BMAD Method — product and feature discovery brainstorm. Use for new capabilities, scope definition, and hypothesis-driven planning.
 ---
-
-# bmad_prompt.md — BMAD Method Template
-# Authority: Tier 2 | Use for: product features, new capabilities, scope definition
-# Language: <!--LANG-->Vietnamese<!--/LANG--> (user-facing) | English (labels)
-
 ## MANDATORY DELIVERY RULE
 Write output to artifact file → notify_user → NEVER paste in chat
 
 ---
-
 ## Cấu Trúc BMAD (Bắt Buộc)
 
 ### 1. Problem Statement
@@ -22,7 +16,6 @@ Vấn đề cụ thể cần giải quyết:
 ```
 
 ---
-
 ### 2. Hypothesis
 ```
 "Chúng tôi tin rằng [GIẢI PHÁP] sẽ giúp [NGƯỜI DÙNG]
@@ -35,7 +28,6 @@ Vấn đề cụ thể cần giải quyết:
 | [H2] | High/Med/Low | Yes/No |
 
 ---
-
 ### 3. Proposed Approaches
 ```
 Liệt kê 2-3 cách tiếp cận:
@@ -48,7 +40,6 @@ Liệt kê 2-3 cách tiếp cận:
 | C | [mô tả] | S/M/L | Low/Med/High | High/Med/Low |
 
 ---
-
 ### 4. Success Metrics
 ```
 Làm sao biết đã thành công?
@@ -60,7 +51,6 @@ Làm sao biết đã thành công?
 | [metric 2] | [giá trị hiện tại] | [target] | [cách đo] |
 
 ---
-
 ### 5. Go / No-Go Recommendation
 
 ```
@@ -72,5 +62,4 @@ Bước tiếp theo nếu GO: [...]
 ```
 
 ---
-
 *Chờ phản hồi của bạn trước khi lên implementation plan.*

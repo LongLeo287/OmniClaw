@@ -1,6 +1,3 @@
-# report_prompt.md — Mẫu Báo Cáo Mermaid (Phase 6)
-# Authority: Tier 2 | Dùng bởi: Antigravity (Phase 6 — REPORT)
-
 ## Hướng Dẫn
 
 Sau khi đọc blackboard.json + receipts từ Claude Code,
@@ -8,7 +5,6 @@ Antigravity dùng template này tạo báo cáo cho người dùng.
 Ngôn ngữ: TIẾNG VIỆT. Gửi dạng Mermaid walkthrough.
 
 ---
-
 ## Cấu Trúc Báo Cáo (Bắt Buộc)
 
 ### Tiêu Đề
@@ -51,5 +47,4 @@ flowchart LR
 - [ ] [việc cần làm tiếp theo]
 
 ---
-
 *Bạn có muốn đi vào chi tiết bước nào không?*

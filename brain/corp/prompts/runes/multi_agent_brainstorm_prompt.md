@@ -1,17 +1,11 @@
 ---
 description: Multi-Agent structured design review — simulate peer review with 4 constrained agent roles before implementation
 ---
-
-# multi_agent_brainstorm_prompt.md — Multi-Agent Review Template
-# Authority: Tier 2 | Use AFTER Visual Brainstorm (Format 1) is confirmed
-# Language: Vietnamese (user-facing sections) | English (agent role labels)
-
 ## MANDATORY DELIVERY RULE
 Write output to artifact file → notify_user → NEVER paste in chat
 Invoke only for high-risk, high-complexity, or high-impact designs.
 
 ---
-
 ## Cấu Trúc Multi-Agent Review (Bắt Buộc)
 
 ### 🎨 Phase 1 — Primary Designer
@@ -23,7 +17,6 @@ Tóm tắt thiết kế đề xuất (từ brainstorm đã confirm):
 ```
 
 ---
-
 ### ⚔️ Phase 2A — Skeptic / Challenger
 ```
 Prompt nội bộ: "Assume this design fails in production. Why?"
@@ -37,7 +30,6 @@ Prompt nội bộ: "Assume this design fails in production. Why?"
 **Kết quả:** [liệt kê objections cụ thể]
 
 ---
-
 ### 🔒 Phase 2B — Constraint Guardian
 ```
 Focus: performance · security · reliability · maintainability · cost
@@ -51,7 +43,6 @@ Focus: performance · security · reliability · maintainability · cost
 **Kết quả:** [pass / reject / cần sửa]
 
 ---
-
 ### 👤 Phase 2C — User Advocate
 ```
 Focus: UX · cognitive load · clarity · error messaging
@@ -64,7 +55,6 @@ Focus: UX · cognitive load · clarity · error messaging
 **Kết quả:** [pass / reject / cần sửa]
 
 ---
-
 ### ⚖️ Phase 3 — Arbiter / Integrator
 ```
 Resolve all objections. Declare: APPROVED | REVISE | REJECT
@@ -78,5 +68,4 @@ Resolve all objections. Declare: APPROVED | REVISE | REJECT
 **Decision Log (final):** [ghi lại toàn bộ quyết định]
 
 ---
-
 *Chỉ sau khi Arbiter tuyên bố APPROVED mới tiến hành implementation.*

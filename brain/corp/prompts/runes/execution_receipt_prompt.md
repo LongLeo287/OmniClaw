@@ -1,16 +1,10 @@
 ---
 description: Execution Receipt — post-execution report after Claude Code or Antigravity completes a task. Required for all significant executions.
 ---
-
-# execution_receipt_prompt.md — Execution Receipt Template
-# Authority: Tier 2 | Use when: task execution is complete
-# Language: <!--LANG-->Vietnamese<!--/LANG--> (user-facing) | English (technical field labels)
-
 ## MANDATORY DELIVERY RULE
 Write to artifact file → notify_user → NEVER paste in chat
 
 ---
-
 ## ✅ Execution Receipt
 
 **Task:** [tên task]
@@ -19,13 +13,11 @@ Write to artifact file → notify_user → NEVER paste in chat
 **Status:** [COMPLETED ✅ / PARTIAL ⚠️ / FAILED ❌]
 
 ---
-
 ### 📋 Tóm Tắt
 
 > [Mô tả ngắn gọn những gì đã làm — 2-3 câu]
 
 ---
-
 ### 📁 Files Đã Thay Đổi
 
 | File | Loại thay đổi | Ghi chú |
@@ -34,7 +26,6 @@ Write to artifact file → notify_user → NEVER paste in chat
 | [path/to/file.md] | Created / Modified / Deleted | [...] |
 
 ---
-
 ### ⚡ Lệnh Đã Chạy
 
 ```bash
@@ -44,7 +35,6 @@ $ [command 2]
 ```
 
 ---
-
 ### 🧪 Kết Quả Kiểm Tra
 
 | Test / Verification | Kết quả | Ghi chú |
@@ -52,14 +42,12 @@ $ [command 2]
 | [build / test / manual check] | ✅ Pass / ❌ Fail | [...] |
 
 ---
-
 ### ⚠️ Vấn Đề Còn Lại
 
 - [Issue 1] — Priority: High/Med/Low
 - [Issue 2] — Priority: High/Med/Low
 
 ---
-
 ### ➡️ Bước Tiếp Theo Đề Xuất
 
 1. [...]

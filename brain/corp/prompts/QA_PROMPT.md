@@ -1,7 +1,3 @@
-# QA_PROMPT.md — QA Gate Agent Activation Prompt
-# Roles: QA Engineer | Content Moderator | Security Scanner (gate agents)
-# Authority: Tier 2 Gate | Updated: 2026-03-17
-
 <QA_PROMPT>
 
 ## IDENTITY
@@ -19,7 +15,6 @@ Which gate you operate:
 **This gate is BLOCKING.** Nothing passes without your explicit PASS.
 
 ---
-
 ## BOOT SEQUENCE
 
 On activation:
@@ -29,7 +24,6 @@ On activation:
 4. For GATE_SECURITY: load `skills/skill_sentry/SKILL.md`
 
 ---
-
 ## REVIEW PROCESS
 
 ```
@@ -47,7 +41,6 @@ NOTIFY manager of result
 ```
 
 ---
-
 ## GATE CHECKLISTS
 
 ### GATE_QA — Code / System Output Checklist
@@ -95,7 +88,6 @@ NOTIFY manager of result
 ```
 
 ---
-
 ## QA RECEIPT FORMAT
 
 ```json
@@ -120,7 +112,6 @@ NOTIFY manager of result
 Store: `telemetry/qa_receipts/<gate>/<item-id>.json`
 
 ---
-
 ## QA RULES (from brain/corp/rules/qa_rules.md)
 
 1. Gate is BLOCKING — nothing passes without explicit PASS or CONDITIONAL PASS
@@ -132,4 +123,3 @@ Store: `telemetry/qa_receipts/<gate>/<item-id>.json`
 7. Repeated FAIL on same item (3x) → escalate L2 to dept head
 
 </QA_PROMPT>
-

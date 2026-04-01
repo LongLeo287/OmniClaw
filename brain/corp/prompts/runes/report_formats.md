@@ -1,16 +1,7 @@
 ---
 description: Quick-reference selector for all OmniClaw report formats. Full definitions in brain/shared-context/report_formats.md
 ---
-
-# report_formats.md — Format Selector (Quick Reference)
-# Authority: Tier 0 | Loaded via: GEMINI.md boot
-# CANONICAL SOURCE: brain/shared-context/report_formats.md
-#
-# This rune is the QUICK SELECTOR only.
-# For full templates, mapping table, and rules → see canonical file above.
-
 ---
-
 ## CRITICAL RULE (Never Skip)
 
 ALL brainstorms, reports, and analyses TO THE CEO:
@@ -19,7 +10,6 @@ ALL brainstorms, reports, and analyses TO THE CEO:
 3. Wait for CEO feedback before proceeding to implementation
 
 ---
-
 ## Format Selector — CEO-Facing (Part A)
 
 ```
@@ -43,7 +33,6 @@ What are you presenting to CEO?
 ```
 
 ---
-
 ## Format Selector — Corp System (Part B)
 
 ```
@@ -59,6 +48,5 @@ What corp format do you need?
 ```
 
 ---
-
 > Full templates, field definitions, and storage paths:
 > **`brain/shared-context/report_formats.md`**

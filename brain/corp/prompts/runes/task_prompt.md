@@ -1,5 +1,4 @@
 ﻿# task_prompt.md — Fill Template execution_template.md
-# Authority: Tier 2 | Used by: Antigravity (Phase 3 — after user approves plan)
 
 ## Instructions
 
@@ -8,7 +7,6 @@ and save to project workspace (DO NOT save in OmniClaw core).
 This file is task_file placed in blackboard.json.
 
 ---
-
 ## How to Fill
 
 ```
@@ -18,7 +16,6 @@ There is always STEP QA Final and STEP FINAL (Synthesis).
 ```
 
 ---
-
 ## Template (Copy and Fill)
 
 ```markdown
@@ -36,7 +33,6 @@ CONSTRAINTS :
   - [constraint 2]
 
 ---
-
 ### STEP 1: [Description name]
 Role : RESEARCHER | DEVELOPER | QA
 Depends on : none
@@ -50,14 +46,12 @@ QA Checklist:
 - [ ] [check specifically 2]
 
 ---
-
 ### STEP 2: [Description name]
 Role: DEVELOPER
 Depends on : STEP 1
 [... similar...]
 
 ---
-
 ### STEP N: QA Final Review
 Role: QA
 Depends on : ALL previous DEVELOPER steps
@@ -65,7 +59,6 @@ Action : Full QA pass on all outputs
 Success : All critical checks pass, no regressions
 
 ---
-
 ### STEP FINAL: Synthesis & Handoff
 Role : DEVELOPER (acting as Manager)
 Depends on : STEP N
@@ -74,7 +67,6 @@ Output : blackboard.json result.summary updated
 ```
 
 ---
-
 ## After Filling
 
 1. Save the file to: `[workspace]/task_file.md`
