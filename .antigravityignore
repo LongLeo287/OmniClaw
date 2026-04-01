@@ -1,0 +1,31 @@
+# 🛡️ OmniClaw Agent Context Shield
+# This file prevents Antigravity (and other OS Agents) from traversing massive dependency or binary bloat.
+
+node_modules/
+.venv/
+venv/
+__pycache__/
+.git/
+build/
+dist/
+.pytest_cache/
+
+# Binaries and DBs
+*.pth
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.sqlite
+*.sqlite3
+*.db
+*.pyc
+*.tmp
+*.log
+*.exe
+*.dll
+
+# Specific Storage Quarantine Exclusions
+storage/models/
+storage/vault/ARCHIVE/
+storage/assets/
