@@ -35,7 +35,7 @@ def process_report():
 
     current_section = None
     for line in lines:
-        if " # [Removed legacy comment]
+        if "APPROVE" in line:
             current_section = "APPROVE"
             continue
 
@@ -80,7 +80,7 @@ def process_report():
                 f.write(f"Source: {url}\n")
                 f.write("Type: REPO\n")
                 f.write("Agent: batch-intake-agent\n")
-                f.write("Route: brain/knowledge/repos/\n")
+                f.write("Route: storage/vault/DATA/incoming_repos/\n")
                 f.write(f"Date: {date_str}\n")
             count_tickets += 1
 
