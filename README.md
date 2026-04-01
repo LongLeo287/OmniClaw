@@ -126,6 +126,17 @@ OmniClaw is an entire Operating System, not just a codebase. For daily usage and
 
 ---
 
+## 📖 Comprehensive System Maps & Guides
+
+For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult our master maps:
+
+* 🧭 [**Master System Map**](docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 21 departments, Boot Sequence, Memory architecture, and Gate workflows.
+* 🚦 [**Activation Guide**](docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
+* 🧩 [**Skills & Plugins Capability Map**](docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
+* 📊 [**Data Science Repositories**](docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
+
+---
+
 ## 🌐 Community & Support
 
 Have ideas, questions, or want to showcase your custom Agent workflows? We have built a dedicated space for the OmniClaw workforce to collaborate.

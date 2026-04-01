@@ -128,6 +128,17 @@ Khác với một kho lưu trữ code thông thường, OmniClaw là một hệ 
 
 ---
 
+## 📖 Sơ Đồ Hệ Thống & Hướng Dẫn Chi Tiết (Tiếng Anh)
+
+Để hiểu sâu hơn về kiến trúc hệ thống, các luồng dịch vụ và kỹ năng của Agent, vui lòng tham khảo các bản đồ tổng quan:
+
+* 🧭 [**Sơ Đồ Hệ Thống Tổng Thể**](docs/architecture/MASTER_SYSTEM_MAP.md) — Sơ đồ toàn diện: Tổ chức 21 phòng ban, Boot Sequence, Bộ nhớ, và quy trình Gate.
+* 🚦 [**Bảng Điều Khiển Khởi Động**](docs/usage_guides/ACTIVATION_GUIDE.md) — Danh sách Port và lệnh khởi động cho toàn bộ dịch vụ Local (LobsterBoard, LightRAG, v.v.).
+* 🧩 [**Bản Đồ Plugins & Kỹ Năng**](docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Mục lục tham chiếu 100+ kỹ năng và Plugins dành cho AI Agent.
+* 📊 [**Kho Dữ Liệu Khoa Học**](docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — Danh sách các Repositories mẫu về Machine Learning & RAG hiện hành.
+
+---
+
 ## 🌐 Cộng đồng & Hỗ trợ
 
 Bạn có ý tưởng, câu hỏi hoặc muốn giới thiệu các quy trình Agent tùy chỉnh của mình? Chúng tôi đã xây dựng một không gian riêng để đội ngũ OmniClaw cùng nhau thảo luận.
