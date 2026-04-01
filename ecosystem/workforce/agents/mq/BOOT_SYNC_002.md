@@ -1,4 +1,4 @@
-﻿# TASK: BOOT-SYNC-002 — Recreate CLAUDE.md Boot Protocol
+# TASK: BOOT-SYNC-002 — Recreate CLAUDE.md Boot Protocol
 # From: Antigravity | Date: 2026-03-22T02:00:00+07:00 | Priority: CRITICAL
 # Authority: CEO LongLeo | Full permissions granted for this task
 

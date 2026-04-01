@@ -1,4 +1,4 @@
-﻿# AGENT: QA Chief — QA Manager / GATE_QA Authority
+# AGENT: QA Chief — QA Manager / GATE_QA Authority
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 2 (QA & Testing)
 # Authority: Tier 2 (Manager / Dept Head)

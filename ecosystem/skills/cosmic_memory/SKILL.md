@@ -27,11 +27,11 @@ emits_events:
 listens_to:
   - reflection_complete
 ---
-# ðŸŒŒ Cosmic Memory Skill (Persistent Wisdom)
+# 🌌 Cosmic Memory Skill (Persistent Wisdom)
 
-This skill provides the OmniClaw with "Long-term Wisdom" â€” the ability to remember findings, hacks, and architectural decisions across sessions.
+This skill provides the OmniClaw with "Long-term Wisdom" — the ability to remember findings, hacks, and architectural decisions across sessions.
 
-## ðŸ› ï¸ Core Functions:
+## 🛠️ Core Functions:
 1.  **Observation extraction (/observe):**
     - After every tool execution or task completion, extract a "Lesson Learned".
     - Compress the lesson into a structured fact.
@@ -42,7 +42,7 @@ This skill provides the OmniClaw with "Long-term Wisdom" â€” the ability to
     - On every `SessionStart`, search the store for relevant past findings.
     - Inject "Context Fragments" into the current prompt to avoid repeat mistakes.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 1. Always run `/observe` after a successful complex refactor.
 2. Use `/remember --critical` for architectural decisions.
 3. Before admitting defeat on a bug, `/recall` past similar failures.

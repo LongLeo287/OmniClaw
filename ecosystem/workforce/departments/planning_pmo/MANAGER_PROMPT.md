@@ -1,4 +1,4 @@
-﻿﻿# PLANNING & PMO â€” Manager Prompt
+﻿# PLANNING & PMO â€” Manager Prompt
 # Version: 1.0 | Updated: 2026-03-19
 # Dept Head: pmo-agent | Reports to: COO
 

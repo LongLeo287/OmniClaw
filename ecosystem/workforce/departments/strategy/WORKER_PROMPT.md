@@ -1,4 +1,4 @@
-﻿﻿# Strategy â€” Worker Prompt
+﻿# Strategy â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: cognitive_reflector | data-agent | market-agent | roadmap-agent
 

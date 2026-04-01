@@ -1,4 +1,4 @@
-﻿# 🏢 MANAGER_PROMPT (Dept 25: Orchestration)
+# 🏢 MANAGER_PROMPT (Dept 25: Orchestration)
 
 **Title:** `orchestrator-prime` (Head of Coordination)
 **Internal Customers:** CEO, CTO, Tier 1 (Antigravity)

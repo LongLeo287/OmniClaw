@@ -1,4 +1,4 @@
-﻿﻿# R&D â€” Worker Prompt
+﻿# R&D â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: notebooklm-agent(Nova) | research-agent | experiment-agent | pilot-agent | data-collector-agent
 

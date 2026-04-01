@@ -1,4 +1,4 @@
-﻿﻿# Operations â€” Worker Prompt
+﻿# Operations â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: platform-ops-agent | archivist | comms-ops-agent
 

@@ -1,4 +1,4 @@
-﻿# AGENT: CSO / PM — Chief Strategy Officer / Product Manager
+# AGENT: CSO / PM — Chief Strategy Officer / Product Manager
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 11 (Strategy)
 # Authority: Tier 2 (Manager / Dept Head)

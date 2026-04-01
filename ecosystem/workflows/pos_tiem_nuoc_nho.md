@@ -1,12 +1,12 @@
 # Department: operations
 ---
-description: POS Tiá»‡m NÆ°á»›c Nhá» v5 â€” workflow cho má»i tÃ¡c vá»¥ phÃ¡t triá»ƒn vÃ  maintain
+description: POS Tiệm Nước Nhỏ v5 — workflow cho mọi tác vụ phát triển và maintain
 project_id: PRJ-003
 workspace: d:\Tiem_Nuoc_Nho_v5
 registered: 2026-03-14
 ---
 
-# POS Tiá»‡m NÆ°á»›c Nhá» v5 â€” Development Workflow
+# POS Tiệm Nước Nhỏ v5 — Development Workflow
 
 ## Boot Sequence (before any POS task)
 
@@ -21,15 +21,15 @@ registered: 2026-03-14
 | UI | `src/components/*.tsx` | React + Tailwind v4 |
 | State | `src/context/*.tsx` | Cart, Data, Auth contexts |
 | Types | `src/types.ts` | Shared interfaces |
-| GAS | External Google Apps Script | Webhook â†’ Sheets |
+| GAS | External Google Apps Script | Webhook → Sheets |
 
 ## Standard Dev Loop
 
 ```
 1. Make change to component
-2. npx tsc --noEmit          â† verify types compile
-3. npm run dev               â† verify visual result
-4. Fix any lint warnings     â† Tailwind v4 class names
+2. npx tsc --noEmit          ← verify types compile
+3. npm run dev               ← verify visual result
+4. Fix any lint warnings     ← Tailwind v4 class names
 ```
 
 ## Tailwind v4 Class Mapping (common mistakes)
@@ -44,14 +44,14 @@ registered: 2026-03-14
 
 ## Key Business Logic Files
 
-- **Cart.tsx** â€” branch selector, order form, QR payment interception
+- **Cart.tsx** — branch selector, order form, QR payment interception
   - `BRANCHES` const at top of file (edit for actual branch names)
   - `handleCheckout` intercepts for QR payment
   - Submit requires: `tableNumber` + `branch` (both non-empty)
-- **GlobalQrModal.tsx** â€” VietQR integration
+- **GlobalQrModal.tsx** — VietQR integration
   - MoMo: BIN `970454`, account `0769284483`
   - Timo: BIN `963388`, account `8007041038207`
-- **CartItemRow.tsx** â€” compact item card (~70px height)
+- **CartItemRow.tsx** — compact item card (~70px height)
 
 ## Handoff to Claude Code
 
@@ -71,6 +71,6 @@ Update `$OMNICLAW_ROOT\shared-context\blackboard.json` accordingly.
 
 ## Active Skills for This Project
 
-- `ui-ux-pro-max` â€” loaded from `.agent/skills/`
-- `pos_event_sourcing_auditor` â€” available in OmniClaw `skills/domains/pos/`
+- `ui-ux-pro-max` — loaded from `.agent/skills/`
+- `pos_event_sourcing_auditor` — available in OmniClaw `skills/domains/pos/`
 

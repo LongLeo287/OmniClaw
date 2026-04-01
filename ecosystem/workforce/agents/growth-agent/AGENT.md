@@ -1,4 +1,4 @@
-﻿# AGENT: CMO — Chief Marketing Officer / Growth Lead
+# AGENT: CMO — Chief Marketing Officer / Growth Lead
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 4 (Marketing)
 # Authority: Tier 2 (Manager / Dept Head)

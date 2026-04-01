@@ -25,12 +25,12 @@ consumed_by:
 emits_events: []
 listens_to: []
 ---
-# âœ¨ Visual Excellence Skill (Cinematic UI)
+# ✨ Visual Excellence Skill (Cinematic UI)
 
 ## Description
 This skill ensures all OmniClaw products (Dashboard, Popup, Reports) achieve a "WOW" effect through cinematic, scroll-driven storytelling and high-impact visual design.
 
-## ðŸ› ï¸ Core Functions:
+## 🛠️ Core Functions:
 1.  **Cinematic Storytelling:**
     - Use `<Scene>` and `<ScrollTransform>` components for smooth, Apple-style transitions.
     - Implement `TextReveal` for high-impact briefing documents.
@@ -40,7 +40,7 @@ This skill ensures all OmniClaw products (Dashboard, Popup, Reports) achieve a "
 3.  **Visual Hierarchy:**
     - Use 3D perspectives and parallax to guide the user's attention to key insights.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 - When building the Dashboard, ensure every interaction feels fluid and "premium."
 - Respect `prefers-reduced-motion` settings.
 - Use scaffolding for "Case Study" or "Product Launch" styles when generating final project reports.

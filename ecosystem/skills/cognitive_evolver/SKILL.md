@@ -26,11 +26,11 @@ emits_events:
 listens_to:
   - reflection_complete
 ---
-# ðŸ§¬ Cognitive Evolver Skill (Self-Adaptive Agent)
+# 🧬 Cognitive Evolver Skill (Self-Adaptive Agent)
 
-This skill provides the OmniClaw with "Self-Improvement" â€” the ability to rewrite its own dossiers and strategies based on experience.
+This skill provides the OmniClaw with "Self-Improvement" — the ability to rewrite its own dossiers and strategies based on experience.
 
-## ðŸ› ï¸ Core Functions:
+## 🛠️ Core Functions:
 1.  **Persona Evolution (/evolve-persona):**
     - Review task success rates and user satisfaction.
     - Propose updates to `ROLE.md`, `OBJECTIVE.md`, or `RULES.md` to reflect a more efficient persona.
@@ -39,7 +39,7 @@ This skill provides the OmniClaw with "Self-Improvement" â€” the ability to
 3.  **Rule Patching (/patch-rules):**
     - Propose "Behavior Patches" if current rules are causing bottlenecks or circular reasoning.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 At the end of every week or after 10 successful tasks:
 1. Run `/evolve-persona` for the lead agent.
 2. If the user approves, apply the "Evolution Patch" to the relevant Dossier files.

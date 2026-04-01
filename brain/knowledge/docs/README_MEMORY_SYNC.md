@@ -1,4 +1,4 @@
-# 1-Click Memory Sync â€” User Manual
+# 1-Click Memory Sync — User Manual
 
 > Phase 15.1 | Smart Bookmark Manager OmniClaw Ecosystem
 
@@ -59,12 +59,12 @@ soul_backup.zip
 |---------|-------|-----|
 | `No conversation found` | No `.pb` files in Gemini directory | Start a Gemini conversation first, then retry backup |
 | `No soul_backup.zip found` | Missing backup file | Run `Backup_Memory.bat` first, or pull from Git |
-| PowerShell script blocked | Execution policy restriction | The `.bat` wrappers already use `-ExecutionPolicy Bypass` â€” run the `.bat` file, not the `.ps1` directly |
+| PowerShell script blocked | Execution policy restriction | The `.bat` wrappers already use `-ExecutionPolicy Bypass` — run the `.bat` file, not the `.ps1` directly |
 | Zip creation fails | Temp folder permission issue | Run the terminal as Administrator |
 
 ## Security Notes
 
-- The `.bat` wrappers use `powershell -ExecutionPolicy Bypass` scoped only to the invoked script â€” this does not change your system-wide policy.
+- The `.bat` wrappers use `powershell -ExecutionPolicy Bypass` scoped only to the invoked script — this does not change your system-wide policy.
 - `soul_backup.zip` may contain conversation content. Add it to `.gitignore` if you do not want it pushed to a shared remote.
 
 ## Git Integration

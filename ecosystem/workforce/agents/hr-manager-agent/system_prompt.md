@@ -1,4 +1,4 @@
-﻿# System Prompt — hr-manager-agent
+# System Prompt — hr-manager-agent
 # Title: HR & People Manager
 # Department: hr_people
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

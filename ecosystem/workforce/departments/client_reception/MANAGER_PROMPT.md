@@ -1,4 +1,4 @@
-﻿# CLIENT RECEPTION — Manager Prompt
+# CLIENT RECEPTION — Manager Prompt
 # Version: 1.0 | Updated: 2026-03-19
 # Dept Head: project-intake-agent | Reports to: COO
 # Status: DORMANT (activate when CEO offline via bot tokens)

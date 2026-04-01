@@ -1,51 +1,51 @@
-# MEMORY_SPEC.md â€” OmniClaw Corp Memory Architecture
+# MEMORY_SPEC.md — OmniClaw Corp Memory Architecture
 # Version: 2.0 | Updated: 2026-03-22
 # Authority: Tier 4 (Data & Memory)
 
 ## Memory Layers Overview
 
-OmniClaw Corp sá»­ dá»¥ng **5 memory layers** vá»›i retention, ownership, vÃ  access khÃ¡c nhau:
+OmniClaw Corp sử dụng **5 memory layers** với retention, ownership, và access khác nhau:
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  LAYER 1: KNOWLEDGE BASE (Long-term, permanent)              â”‚
-â”‚  Path: brain/knowledge/                                      â”‚
-â”‚  Owner: Asset Library dept (library-manager-agent)           â”‚
-â”‚  Retention: PERMANENT â€” never auto-purged                    â”‚
-â”‚  Contents: Research, KIs, REPO_CATALOG, patterns, FAQs      â”‚
-â”‚  Access: Read-all | Write: R&D, Asset Library, Nova          â”‚
-â”‚  Index: knowledge_index.md                                   â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  LAYER 2: GLOBAL MEMORY (Long-term, CEO-level)               â”‚
-â”‚  Path: brain/corp/memory/global/                                   â”‚
-â”‚  Owner: CEO / orchestrator                                   â”‚
-â”‚  Retention: PERMANENT â€” never auto-purged                    â”‚
-â”‚  Contents: Strategic decisions, architectural pivots,        â”‚
-â”‚            org-wide learnings, HEALTH reports                â”‚
-â”‚  Access: Read-all | Write: CEO + C-Suite only                â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  LAYER 3: DEPARTMENT MEMORY (Medium-term, 30-day rolling)    â”‚
-â”‚  Path: brain/corp/memory/departments/<dept>.md                     â”‚
-â”‚  Owner: Dept Head (Manager)                                  â”‚
-â”‚  Retention: 30-day rolling â€” archivist rotates weekly        â”‚
-â”‚  Contents: Sprint lessons, dept patterns, effective tools    â”‚
-â”‚  Access: Read-all | Write: Dept Head + cognitive_reflector   â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  LAYER 4: AGENT MEMORY (Short-term, 7-day auto-purge)        â”‚
-â”‚  Path: brain/corp/memory/agents/<agent>.md                         â”‚
-â”‚  Owner: Individual agent                                     â”‚
-â”‚  Retention: 7 days â€” auto-purged by archivist                â”‚
-â”‚  Contents: Current task context, last 3 outcomes, blockers   â”‚
-â”‚  Access: Read: manager + agent itself | Write: agent only    â”‚
-â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
-â”‚  LAYER 5: DAILY SESSION MEMORY (Short-term, 7-day)           â”‚
-â”‚  Path: brain/memory/daily/<YYYY-MM-DD>.md                    â”‚
-â”‚  Owner: Operations (archivist)                               â”‚
-â”‚  Retention: 7 days â€” auto-purged by archivist                â”‚
-â”‚  Contents: Session events, decisions, gates triggered,       â”‚
-â”‚            knowledge ingested, escalations                   â”‚
-â”‚  Access: Read-all | Write: archivist (auto)                  â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+┌──────────────────────────────────────────────────────────────┐
+│  LAYER 1: KNOWLEDGE BASE (Long-term, permanent)              │
+│  Path: brain/knowledge/                                      │
+│  Owner: Asset Library dept (library-manager-agent)           │
+│  Retention: PERMANENT — never auto-purged                    │
+│  Contents: Research, KIs, REPO_CATALOG, patterns, FAQs      │
+│  Access: Read-all | Write: R&D, Asset Library, Nova          │
+│  Index: knowledge_index.md                                   │
+├──────────────────────────────────────────────────────────────┤
+│  LAYER 2: GLOBAL MEMORY (Long-term, CEO-level)               │
+│  Path: brain/corp/memory/global/                                   │
+│  Owner: CEO / orchestrator                                   │
+│  Retention: PERMANENT — never auto-purged                    │
+│  Contents: Strategic decisions, architectural pivots,        │
+│            org-wide learnings, HEALTH reports                │
+│  Access: Read-all | Write: CEO + C-Suite only                │
+├──────────────────────────────────────────────────────────────┤
+│  LAYER 3: DEPARTMENT MEMORY (Medium-term, 30-day rolling)    │
+│  Path: brain/corp/memory/departments/<dept>.md                     │
+│  Owner: Dept Head (Manager)                                  │
+│  Retention: 30-day rolling — archivist rotates weekly        │
+│  Contents: Sprint lessons, dept patterns, effective tools    │
+│  Access: Read-all | Write: Dept Head + cognitive_reflector   │
+├──────────────────────────────────────────────────────────────┤
+│  LAYER 4: AGENT MEMORY (Short-term, 7-day auto-purge)        │
+│  Path: brain/corp/memory/agents/<agent>.md                         │
+│  Owner: Individual agent                                     │
+│  Retention: 7 days — auto-purged by archivist                │
+│  Contents: Current task context, last 3 outcomes, blockers   │
+│  Access: Read: manager + agent itself | Write: agent only    │
+├──────────────────────────────────────────────────────────────┤
+│  LAYER 5: DAILY SESSION MEMORY (Short-term, 7-day)           │
+│  Path: brain/memory/daily/<YYYY-MM-DD>.md                    │
+│  Owner: Operations (archivist)                               │
+│  Retention: 7 days — auto-purged by archivist                │
+│  Contents: Session events, decisions, gates triggered,       │
+│            knowledge ingested, escalations                   │
+│  Access: Read-all | Write: archivist (auto)                  │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -69,15 +69,15 @@ OmniClaw Corp sá»­ dá»¥ng **5 memory layers** vá»›i retention, ownersh
 
 ## Memory Update Protocol
 
-### Layer 1 â€” Knowledge Base (knowledge-ingest.md workflow)
+### Layer 1 — Knowledge Base (knowledge-ingest.md workflow)
 New knowledge flows through `ops/workflows/knowledge-ingest.md` (7 phases).
 Final destination: brain/knowledge/<domain>/
 Nova (notebooklm-agent) is primary intake agent.
 
-### Layer 2 â€” Global Memory (after CEO decision)
+### Layer 2 — Global Memory (after CEO decision)
 Write to `corp/memory/global/decisions_log.md`:
 ```markdown
-## [DATE] â€” [DECISION TITLE]
+## [DATE] — [DECISION TITLE]
 Context: <what triggered the decision>
 Options considered: A | B | C
 Decision: <what was chosen>
@@ -86,22 +86,22 @@ Impact: <which depts / agents affected>
 Review date: <when to evaluate outcome>
 ```
 
-### Layer 3 â€” Dept Memory (after every brief cycle)
+### Layer 3 — Dept Memory (after every brief cycle)
 Manager writes to `corp/memory/departments/<dept>.md`:
 ```markdown
-## Cycle N â€” [DATE RANGE]
+## Cycle N — [DATE RANGE]
 Goals achieved: [list]
-Goals missed: [list] â€” [root cause]
+Goals missed: [list] — [root cause]
 Patterns observed: [recurring facts]
 Cross-dept dependencies: [what we needed from others]
 Lessons learned: [actionable]
 Next cycle focus: [top 3]
 ```
 
-### Layer 4 â€” Agent Memory (after every task)
+### Layer 4 — Agent Memory (after every task)
 Write to `corp/memory/agents/<agent>.md`:
 ```markdown
-## [DATE] â€” Task: <task-name>
+## [DATE] — Task: <task-name>
 Context: <1 sentence>
 Outcome: SUCCESS | PARTIAL | FAILED
 Key lesson: <1 sentence fact>
@@ -109,7 +109,7 @@ Next time: <what to do differently>
 Current blockers: <any outstanding>
 ```
 
-### Layer 5 â€” Daily Session (auto by archivist)
+### Layer 5 — Daily Session (auto by archivist)
 Archivist auto-creates `brain/memory/daily/<DATE>.md` at session start.
 Schema: see brain/memory/daily/2026-03-22.md as reference.
 
@@ -121,7 +121,7 @@ The `archivist` agent runs rotation on-demand (weekly or per CEO request):
 ```
 1. Layer 5 (daily): Purge files > 7 days
 2. Layer 4 (agents): Purge entries > 7 days, keep latest 3
-3. Layer 3 (depts): Summarize entries > 30 days â†’ Layer 2 or Layer 1
+3. Layer 3 (depts): Summarize entries > 30 days → Layer 2 or Layer 1
 4. Layer 2 (global): Never purge, compress > 1MB files
 5. Layer 1 (knowledge): knowledge-curator-agent maintains index
 6. Write rotation receipt to telemetry/

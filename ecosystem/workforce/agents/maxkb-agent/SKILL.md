@@ -1,4 +1,4 @@
-﻿---
+---
 name: MaxKB Knowledge Base Platform
 tier: 2
 source: https://github.com/1Panel-dev/MaxKB

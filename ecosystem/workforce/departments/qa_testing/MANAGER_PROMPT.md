@@ -1,4 +1,4 @@
-﻿﻿# QA & Testing â€” Dept Manager Prompt
+﻿# QA & Testing â€” Dept Manager Prompt
 # Head: security-engineer-agent | Reports to: CTO
 # This department IS the gate â€” it does not go through QA itself
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md | Also load: brain/corp/prompts/QA_PROMPT.md

@@ -1,59 +1,59 @@
 # Department: operations
 ---
-description: Plugin Integration Process â€” OmniClaw Corp (Quy trÃ¬nh tÃ­ch há»£p Plugin)
+description: Plugin Integration Process — OmniClaw Corp (Quy trình tích hợp Plugin)
 ---
 
 # Plugin Integration Workflow
-# Version: 1.0 | 2026-03-23 | Owner: Antigravity (Dept 4 â€” Registry)
+# Version: 1.0 | 2026-03-23 | Owner: Antigravity (Dept 4 — Registry)
 
-Quy trÃ¬nh báº¯t buá»™c khi tÃ­ch há»£p báº¥t ká»³ repo/plugin/tool má»›i vÃ o OmniClaw Corp.
-Trigger: `omniclaw integrate <plugin_id>` hoáº·c khi CEO request.
+Quy trình bắt buộc khi tích hợp bất kỳ repo/plugin/tool mới vào OmniClaw Corp.
+Trigger: `omniclaw integrate <plugin_id>` hoặc khi CEO request.
 
-> âš ï¸ **PRE-GATE:** Workflow nÃ y chá»‰ cháº¡y SAU KHI `ops/workflows/repo-evaluation.md` cho phÃ¡n quyáº¿t **APPROVE**.
-> Náº¿u chÆ°a cháº¡y repo-evaluation â†’ STOP, quay láº¡i bÆ°á»›c Ä‘Ã¡nh giÃ¡ trÆ°á»›c.
+> ⚠️ **PRE-GATE:** Workflow này chỉ chạy SAU KHI `ops/workflows/repo-evaluation.md` cho phán quyết **APPROVE**.
+> Nếu chưa chạy repo-evaluation → STOP, quay lại bước đánh giá trước.
 
 
 ---
 
-## PHASE 0 â€” Catalog & Conflict Check
+## PHASE 0 — Catalog & Conflict Check
 
-### 0.1 â€” ÄÃ¡nh dáº¥u repo trong plugin-catalog.md
+### 0.1 — Đánh dấu repo trong plugin-catalog.md
 
-Má»Ÿ `plugins/plugin-catalog.md` vÃ  cáº­p nháº­t tráº¡ng thÃ¡i:
+Mở `plugins/plugin-catalog.md` và cập nhật trạng thái:
 
-| KÃ½ hiá»‡u | Ã nghÄ©a |
+| Ký hiệu | Ý nghĩa |
 |---------|---------|
-| `ðŸ‘ï¸` | ÄÃ£ Ä‘á»c/kháº£o sÃ¡t README |
-| `ðŸ”–` | Giá»¯ láº¡i, cÃ³ thá»ƒ dÃ¹ng sau |
-| `âœ…` | Äang sá»­ dá»¥ng (theo dÃµi version) |
-| `âš¡` | Äang trong quÃ¡ trÃ¬nh tÃ­ch há»£p |
-| `âŒ` | Loáº¡i bá» (trÃ¹ng chá»©c nÄƒng / khÃ´ng phÃ¹ há»£p) |
+| `👁️` | Đã đọc/khảo sát README |
+| `🔖` | Giữ lại, có thể dùng sau |
+| `✅` | Đang sử dụng (theo dõi version) |
+| `⚡` | Đang trong quá trình tích hợp |
+| `❌` | Loại bỏ (trùng chức năng / không phù hợp) |
 
-**Rule:** Má»i repo trong `plugins/` pháº£i cÃ³ tráº¡ng thÃ¡i trong catalog trÆ°á»›c khi Ä‘á»c code.
+**Rule:** Mọi repo trong `plugins/` phải có trạng thái trong catalog trước khi đọc code.
 
-### 0.2 â€” Conflict check
+### 0.2 — Conflict check
 
-Kiá»ƒm tra chá»©c nÄƒng má»›i cÃ³ trÃ¹ng vá»›i plugin hiá»‡n cÃ³ khÃ´ng:
+Kiểm tra chức năng mới có trùng với plugin hiện có không:
 
 ```
-1. Liá»‡t kÃª chá»©c nÄƒng chÃ­nh cá»§a plugin má»›i
-2. So sÃ¡nh vá»›i plugins/registry.json (status: active)
-3. So sÃ¡nh vá»›i blackboard.json infrastructure section
-4. Náº¿u trÃ¹ng: Ä‘Ã¡nh giÃ¡ "bá»• sung" hay "thay tháº¿"
-   - Bá»• sung â†’ OK, ghi rÃµ use case phÃ¢n biá»‡t
-   - Thay tháº¿ â†’ pháº£i deprecate plugin cÅ© trÆ°á»›c
+1. Liệt kê chức năng chính của plugin mới
+2. So sánh với plugins/registry.json (status: active)
+3. So sánh với blackboard.json infrastructure section
+4. Nếu trùng: đánh giá "bổ sung" hay "thay thế"
+   - Bổ sung → OK, ghi rõ use case phân biệt
+   - Thay thế → phải deprecate plugin cũ trước
 ```
 
-### 0.3 â€” Update catalog: âš¡ (in progress)
+### 0.3 — Update catalog: ⚡ (in progress)
 
 ---
 
-## PHASE 1 â€” Security Scan (RULE-PROCESS-01 Báº¯t buá»™c)
+## PHASE 1 — Security Scan (RULE-PROCESS-01 Bắt buộc)
 
-**Owner: Dept 10 â€” Security/GRC (Strix)**
+**Owner: Dept 10 — Security/GRC (Strix)**
 
 ```bash
-# Cháº¡y nemoclaw-strix-scan trÃªn repo
+# Chạy nemoclaw-strix-scan trên repo
 # See: ops/workflows/nemoclaw-strix-scan.md
 ```
 
@@ -62,53 +62,53 @@ Minimum check:
 - [ ] No hardcoded credentials, API keys
 - [ ] No cryptominer, obfuscated code
 - [ ] Source repo is public/verified
-- [ ] `pip show <package>` hoáº·c `npm info <package>` â€” verify publisher
+- [ ] `pip show <package>` hoặc `npm info <package>` — verify publisher
 
-Káº¿t quáº£: **CLEAR** hoáº·c **FLAG** (CEO quyáº¿t Ä‘á»‹nh náº¿u FLAG)
+Kết quả: **CLEAR** hoặc **FLAG** (CEO quyết định nếu FLAG)
 
 ---
 
-## PHASE 2 â€” Táº¡o Plugin Structure (PLUGIN_SPEC.md)
+## PHASE 2 — Tạo Plugin Structure (PLUGIN_SPEC.md)
 
 ```
 plugins/<plugin_id>/
-â”œâ”€â”€ manifest.json     [REQUIRED]
-â”œâ”€â”€ PLUGIN.md         [REQUIRED] â€” hÆ°á»›ng dáº«n cho agents
-â”œâ”€â”€ README.md         [REQUIRED] â€” tá»•ng quan
-â”œâ”€â”€ <adapter>.py      [náº¿u cáº§n wrapper]
-â””â”€â”€ tests/            [REQUIRED]
-    â””â”€â”€ test_<id>.py  â€” smoke tests
+├── manifest.json     [REQUIRED]
+├── PLUGIN.md         [REQUIRED] — hướng dẫn cho agents
+├── README.md         [REQUIRED] — tổng quan
+├── <adapter>.py      [nếu cần wrapper]
+└── tests/            [REQUIRED]
+    └── test_<id>.py  — smoke tests
 ```
 
 ### manifest.json checklist
-- [ ] `id`, `name`, `version`, `type`, `status` Ä‘iá»n Ä‘áº§y Ä‘á»§
-- [ ] `agent_hooks` khai bÃ¡o Ä‘Ãºng hooks dÃ¹ng
-- [ ] `auto_load: false` (máº·c Ä‘á»‹nh â€” khÃ´ng tá»± load khi boot)
-- [ ] `can_crash_os: false` â€” báº¯t buá»™c
-- [ ] `conflict_check` section: ghi káº¿t quáº£ phase 0
-- [ ] `upstream_check`: táº§n suáº¥t check version má»›i
+- [ ] `id`, `name`, `version`, `type`, `status` điền đầy đủ
+- [ ] `agent_hooks` khai báo đúng hooks dùng
+- [ ] `auto_load: false` (mặc định — không tự load khi boot)
+- [ ] `can_crash_os: false` — bắt buộc
+- [ ] `conflict_check` section: ghi kết quả phase 0
+- [ ] `upstream_check`: tần suất check version mới
 
 ---
 
-## PHASE 3 â€” Version Tracking Setup
+## PHASE 3 — Version Tracking Setup
 
-ThÃªm vÃ o **Version Tracking table** trong `plugin-catalog.md`:
+Thêm vào **Version Tracking table** trong `plugin-catalog.md`:
 
 ```markdown
 | <plugin_id> | <current_version> | <frequency> | <update_command> |
 ```
 
-**Táº§n suáº¥t theo má»©c Ä‘á»™ quan trá»ng:**
-- Core agent tools â†’ Weekly
-- Data/bridge tools â†’ Monthly
-- Security tools â†’ Weekly
-- Reference/UI â†’ Quarterly
+**Tần suất theo mức độ quan trọng:**
+- Core agent tools → Weekly
+- Data/bridge tools → Monthly
+- Security tools → Weekly
+- Reference/UI → Quarterly
 
 ---
 
-## PHASE 4 â€” ÄÄƒng kÃ½ Registry
+## PHASE 4 — Đăng ký Registry
 
-Cáº­p nháº­t `plugins/registry.json`:
+Cập nhật `plugins/registry.json`:
 
 ```json
 {
@@ -118,42 +118,42 @@ Cáº­p nháº­t `plugins/registry.json`:
   "auto_load": false,
   "path": "plugins/<plugin_id>/",
   "manifest": "plugins/<plugin_id>/manifest.json",
-  "notes": "<mÃ´ táº£ ngáº¯n, ngÃ y tÃ­ch há»£p>",
+  "notes": "<mô tả ngắn, ngày tích hợp>",
   "registered_at": "YYYY-MM-DD",
-  "upstream_check": "<frequency> â€” <command>"
+  "upstream_check": "<frequency> — <command>"
 }
 ```
 
-Cáº­p nháº­t `total_registered` vÃ  `active_count`.
+Cập nhật `total_registered` và `active_count`.
 
 ---
 
-## PHASE 5 â€” Activation Commands (RULE-ACTIVATION-01)
+## PHASE 5 — Activation Commands (RULE-ACTIVATION-01)
 
-**Náº¿u plugin cáº§n cmd/powershell Ä‘á»ƒ kÃ­ch hoáº¡t:**
+**Nếu plugin cần cmd/powershell để kích hoạt:**
 
-### 5a â€” ThÃªm vÃ o Dashboard (dashboard.ps1)
+### 5a — Thêm vào Dashboard (dashboard.ps1)
 
-Má»Ÿ `$OMNICLAW_ROOT\launcher\dashboard.ps1` vÃ  thÃªm vÃ o section **PLUGIN MANAGER**:
+Mở `$OMNICLAW_ROOT\launcher\dashboard.ps1` và thêm vào section **PLUGIN MANAGER**:
 
 ```powershell
-# Trong menu [P] Plugin Manager â†’ sub-menu
+# Trong menu [P] Plugin Manager → sub-menu
 "<plugin_id>" = @{
     Name = "<Display Name>"
     Check = { <check if installed/running> }
     Install = "<install command>"
-    Start = "<start command, náº¿u cÃ³>"
-    Port = <port náº¿u cÃ³ service, $null náº¿u khÃ´ng>
+    Start = "<start command, nếu có>"
+    Port = <port nếu có service, $null nếu không>
 }
 ```
 
-### 5b â€” ThÃªm vÃ o ClawTask (Port 7474)
+### 5b — Thêm vào ClawTask (Port 7474)
 
-Náº¿u plugin lÃ  má»™t **service cÃ³ port** â†’ thÃªm vÃ o `$SERVICES` trong `dashboard.ps1`.
+Nếu plugin là một **service có port** → thêm vào `$SERVICES` trong `dashboard.ps1`.
 
-Náº¿u plugin lÃ  **library/tool** (khÃ´ng cÃ³ port) â†’ chá»‰ thÃªm vÃ o Plugin Manager section.
+Nếu plugin là **library/tool** (không có port) → chỉ thêm vào Plugin Manager section.
 
-### 5c â€” Update MASTER.env (náº¿u cáº§n API key)
+### 5c — Update MASTER.env (nếu cần API key)
 
 ```
 $OMNICLAW_ROOT\ops\secrets\MASTER.env
@@ -161,56 +161,56 @@ $OMNICLAW_ROOT\ops\secrets\MASTER.env
 
 ---
 
-## PHASE 6 â€” Test & Verify
+## PHASE 6 — Test & Verify
 
 ```bash
-# 1. Cháº¡y smoke tests
+# 1. Chạy smoke tests
 python plugins/<plugin_id>/tests/test_<id>.py
 
 # 2. Verify registry
 python -c "import json; r=json.load(open('plugins/registry.json')); print([p for p in r['plugins'] if p['id']=='<id>'])"
 
-# 3. Test activation tá»« dashboard (náº¿u cÃ³)
-# Má»Ÿ OmniClaw Corp.cmd â†’ [P] Plugin Manager â†’ chá»n plugin
+# 3. Test activation từ dashboard (nếu có)
+# Mở OmniClaw Corp.cmd → [P] Plugin Manager → chọn plugin
 ```
 
 ---
 
-## PHASE 7 â€” Update Blackboard & Catalog
+## PHASE 7 — Update Blackboard & Catalog
 
 ```
-1. blackboard.json: cáº­p nháº­t open_items náº¿u Ä‘Ã¢y lÃ  OPEN task
-2. plugin-catalog.md: status âš¡ â†’ âœ…, thÃªm version tracking
-3. telemetry/receipts/<plugin_id>/: log activation Ä‘áº§u tiÃªn
+1. blackboard.json: cập nhật open_items nếu đây là OPEN task
+2. plugin-catalog.md: status ⚡ → ✅, thêm version tracking
+3. telemetry/receipts/<plugin_id>/: log activation đầu tiên
 ```
 
 ---
 
-## PHASE 7b â€” Register Rules, Skills & Workflow Hooks (Báº®T BUá»˜C)
+## PHASE 7b — Register Rules, Skills & Workflow Hooks (BẮT BUỘC)
 
-> ÄÃ¢y lÃ  bÆ°á»›c thÆ°á»ng bá»‹ bá» qua. Pháº£i lÃ m NGAY SAU Phase 7.
+> Đây là bước thường bị bỏ qua. Phải làm NGAY SAU Phase 7.
 
-### 7b.1 â€” ThÃªm RULE vÃ o GEMINI.md
+### 7b.1 — Thêm RULE vào GEMINI.md
 
-Náº¿u plugin thay Ä‘á»•i cÃ¡ch agent lÃ m viá»‡c, PHáº¢I thÃªm rule rÃµ rÃ ng:
+Nếu plugin thay đổi cách agent làm việc, PHẢI thêm rule rõ ràng:
 
 ```
-Má»Ÿ: $OMNICLAW_ROOT\GEMINI.md
-ThÃªm vÃ o SECTION 3 â€” ANTIGRAVITY SPECIFIC RULES:
+Mở: $OMNICLAW_ROOT\GEMINI.md
+Thêm vào SECTION 3 — ANTIGRAVITY SPECIFIC RULES:
 
-**[RULE-<XYZ>-01]** <TÃªn rule>:
-  1. Khi nÃ o dÃ¹ng plugin nÃ y
-  2. CÃ¡ch gá»i (import, function)
-  3. Scope: phÃ²ng ban nÃ o / agent nÃ o
+**[RULE-<XYZ>-01]** <Tên rule>:
+  1. Khi nào dùng plugin này
+  2. Cách gọi (import, function)
+  3. Scope: phòng ban nào / agent nào
   
 Full docs: plugins/<plugin_id>/PLUGIN.md
 ```
 
-### 7b.2 â€” ÄÄƒng kÃ½ SKILL_REGISTRY.json
+### 7b.2 — Đăng ký SKILL_REGISTRY.json
 
 ```
-Má»Ÿ: brain/shared-context/SKILL_REGISTRY.json
-ThÃªm entry vÃ o "entries" array:
+Mở: brain/shared-context/SKILL_REGISTRY.json
+Thêm entry vào "entries" array:
 {
   "id": "<plugin_id>",
   "name": "<Display Name>",
@@ -219,7 +219,7 @@ ThÃªm entry vÃ o "entries" array:
   "source": "plugin",
   "path": "plugins/<plugin_id>/SKILL.md",
   "adapter": "plugins/<plugin_id>/<adapter>.py",
-  "description": "<MÃ´ táº£ ngáº¯n khi nÃ o dÃ¹ng>",
+  "description": "<Mô tả ngắn khi nào dùng>",
   "domain": "<data|core|bridge|ui>",
   "accessible_by": ["<agent_ids>"],
   "exposed_functions": ["<function_names>"],
@@ -227,34 +227,34 @@ ThÃªm entry vÃ o "entries" array:
   "rule": "<RULE-ID>",
   "noop_safe": true
 }
-TÄƒng "count" lÃªn.
+Tăng "count" lên.
 Validate: python -c "import json; json.load(open('brain/shared-context/SKILL_REGISTRY.json'))"
 ```
 
-### 7b.3 â€” Hook vÃ o Workflows liÃªn quan
+### 7b.3 — Hook vào Workflows liên quan
 
-Kiá»ƒm tra vÃ  cáº­p nháº­t cÃ¡c workflow sá»­ dá»¥ng plugin nÃ y:
+Kiểm tra và cập nhật các workflow sử dụng plugin này:
 
 ```
-- ops/workflows/knowledge-ingest.md  â†’ step "fetch URL/search"
-- ops/workflows/corp-daily-cycle.md  â†’ náº¿u plugin cháº¡y daily
-- ops/workflows/agent-workflow.md    â†’ náº¿u agent cáº§n dÃ¹ng plugin
+- ops/workflows/knowledge-ingest.md  → step "fetch URL/search"
+- ops/workflows/corp-daily-cycle.md  → nếu plugin chạy daily
+- ops/workflows/agent-workflow.md    → nếu agent cần dùng plugin
 ```
 
-Cá»¥ thá»ƒ: tÃ¬m cÃ¡c bÆ°á»›c hiá»‡n dÃ¹ng fallback thá»§ cÃ´ng â†’ thay báº±ng adapter call.
+Cụ thể: tìm các bước hiện dùng fallback thủ công → thay bằng adapter call.
 
 ---
 
-## VERSION TRACKING â€” Weekly/Monthly Checks
+## VERSION TRACKING — Weekly/Monthly Checks
 
 ```powershell
-# Cháº¡y tá»« dashboard: [V] Version Check (má»›i thÃªm)
-# Hoáº·c cháº¡y thá»§ cÃ´ng:
+# Chạy từ dashboard: [V] Version Check (mới thêm)
+# Hoặc chạy thủ công:
 pip show mem0ai
 pip show firecrawl-py
 pip show crewai
-# â†’ So sÃ¡nh vá»›i version trong plugin-catalog.md
-# â†’ Náº¿u cÃ³ version má»›i: pip install --upgrade <package>
+# → So sánh với version trong plugin-catalog.md
+# → Nếu có version mới: pip install --upgrade <package>
 ```
 
 ---

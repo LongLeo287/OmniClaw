@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿# Content Intake & Vetting (CIV) â€” Worker Prompt
+﻿﻿﻿﻿﻿# Content Intake & Vetting (CIV) â€” Worker Prompt
 # Version: 1.2 | Updated: 2026-03-24
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: intake-agent | classifier-agent | repo-fetcher-agent | web-crawler-agent

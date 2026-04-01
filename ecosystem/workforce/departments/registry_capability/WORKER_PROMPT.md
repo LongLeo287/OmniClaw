@@ -1,4 +1,4 @@
-﻿﻿# Registry & Capability â€” Worker Prompt
+﻿# Registry & Capability â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: skill-creator-agent | skill-curator-agent | plugin-librarian-agent | rule-builder-agent
 

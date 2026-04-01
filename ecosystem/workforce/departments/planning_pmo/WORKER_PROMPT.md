@@ -1,4 +1,4 @@
-﻿﻿# Planning & PMO â€” Worker Prompt
+﻿# Planning & PMO â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: capacity-planner-agent | resource-allocator-agent | milestone-tracker-agent
 

@@ -1,21 +1,21 @@
 # Department: registry_capability
 ---
-description: Auto Skill Creator â€” Automatically create SKILL.md for any new repo/agent/tool without one
+description: Auto Skill Creator — Automatically create SKILL.md for any new repo/agent/tool without one
 ---
 # Auto Skill Creation Workflow
 
 > Owner: registry-manager-agent | Dept: Registry
-> Trigger: AUTOMATIC â€” runs daily at corp boot or whenever new folder is detected without SKILL.md
+> Trigger: AUTOMATIC — runs daily at corp boot or whenever new folder is detected without SKILL.md
 > Tool: Skill Creator Ultra (plugins/antigravity-awesome-skills/skills/skill-creator/)
 
 ## RULE: No folder without SKILL.md
 
 Any plugin, tool, agent, or subagent folder in OmniClaw Corp MUST have a SKILL.md.
-If it doesn't, this workflow runs automatically â€” NO manual trigger needed.
+If it doesn't, this workflow runs automatically — NO manual trigger needed.
 
 ---
 
-## Phase 1 â€” Detect Missing SKILL.md (Auto-Scan)
+## Phase 1 — Detect Missing SKILL.md (Auto-Scan)
 
 ```powershell
 # Run at every corp boot (corp-daily-cycle Phase 0)
@@ -30,7 +30,7 @@ foreach ($dir in @("plugins","tools","workforce/agents","subagents","system\ops\
     $missing += @{ path = $_.FullName; name = $_.Name; dir = $dir }
   }
   
-  # Äáº·c biá»‡t Æ°u tiÃªn file script Python/PS1 Ä‘á»™c láº­p:
+  # Đặc biệt ưu tiên file script Python/PS1 độc lập:
   if ($dir -eq "system\ops\scripts") {
     Get-ChildItem "$ROOT\$dir" -File -Include *.py,*.ps1 | Where-Object {
        -not (Test-Path "$ROOT\ecosystem\skills\$($_.BaseName)\SKILL.md")
@@ -50,7 +50,7 @@ if ($missing.Count -gt 0) {
 }
 ```
 
-## Phase 2 â€” Generate SKILL.md Using Skill Creator Ultra
+## Phase 2 — Generate SKILL.md Using Skill Creator Ultra
 
 For each missing location, registry-manager-agent:
 
@@ -64,11 +64,11 @@ For each missing location, registry-manager-agent:
    /plugins/antigravity-awesome-skills/skills/skill-creator/SKILL.md
 
 3. RUN 5-Phase Pipeline:
-   Phase 1: Brainstorm â†’ extract purpose from README/code
-   Phase 2: Enhancement â†’ refine description
-   Phase 3: Generate â†’ create SKILL.md with proper frontmatter
-   Phase 4: Validate â†’ check YAML + content quality
-   Phase 5: Install â†’ write to folder/SKILL.md
+   Phase 1: Brainstorm → extract purpose from README/code
+   Phase 2: Enhancement → refine description
+   Phase 3: Generate → create SKILL.md with proper frontmatter
+   Phase 4: Validate → check YAML + content quality
+   Phase 5: Install → write to folder/SKILL.md
 
 4. Required frontmatter fields:
    - name: [tool name]
@@ -81,7 +81,7 @@ For each missing location, registry-manager-agent:
    - status: active|standby|planned
 ```
 
-## Phase 3 â€” Update FAST_INDEX.json
+## Phase 3 — Update FAST_INDEX.json
 
 After SKILL.md creation:
 
@@ -113,7 +113,7 @@ Dept: Registry
 
 Every generated SKILL.md must have:
 - [ ] `name:` field (clear, descriptive)
-- [ ] `description:` (what it does, when to use it â€” for keyword discovery)
+- [ ] `description:` (what it does, when to use it — for keyword discovery)
 - [ ] `dept:` field (which department owns/uses it)
 - [ ] `accessible_by:` (which agents can use it)
 - [ ] `tier:` (1=core always loaded, 2=lazy load, 3=optional)
@@ -126,18 +126,18 @@ Every generated SKILL.md must have:
 Phase 0 (Boot) in corp-daily-cycle.md runs this workflow as Step 0.3:
 ```
 Step 0.3: registry-manager-agent runs skill-discovery-auto.md
-  â†’ Scans all locations
-  â†’ Creates missing SKILL.md
-  â†’ Rebuilds FAST_INDEX.json
-  â†’ Reports count to blackboard
+  → Scans all locations
+  → Creates missing SKILL.md
+  → Rebuilds FAST_INDEX.json
+  → Reports count to blackboard
 
-IMPORTANT â€” SKILL_REGISTRY lock protocol:
+IMPORTANT — SKILL_REGISTRY lock protocol:
   Before writing to SKILL_REGISTRY.json:
     Set blackboard.json: skill_registry_status = "UPDATING"
   After write completes:
     Set blackboard.json: skill_registry_status = "READY"
 
-  Phase 1 (CEO BRIEF) reads SKILL_REGISTRY â€” must wait for "READY":
+  Phase 1 (CEO BRIEF) reads SKILL_REGISTRY — must wait for "READY":
     If skill_registry_status = "UPDATING": wait 30s then re-check.
     If still "UPDATING" after 90s: proceed with stale cache, log warning.
 ```
@@ -150,9 +150,9 @@ IMPORTANT â€” SKILL_REGISTRY lock protocol:
 
 **Sequence enforced by corp-daily-cycle.md Phase 0:**
 ```
-0.1 â†’ Pre-flight checks
-0.2 â†’ strix continuous scan check
-0.3 â†’ skill-discovery-auto (SKILL_REGISTRY lock â†’ scan â†’ write â†’ unlock)
-0.4 â†’ Phase 0 complete â†’ Phase 1 begins (SKILL_REGISTRY guaranteed READY)
+0.1 → Pre-flight checks
+0.2 → strix continuous scan check
+0.3 → skill-discovery-auto (SKILL_REGISTRY lock → scan → write → unlock)
+0.4 → Phase 0 complete → Phase 1 begins (SKILL_REGISTRY guaranteed READY)
 ```
 

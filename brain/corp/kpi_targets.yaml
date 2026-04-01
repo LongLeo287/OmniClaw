@@ -1,6 +1,6 @@
-# OmniClaw Corp â€” KPI Targets by Department
+# OmniClaw Corp — KPI Targets by Department
 # Version: 2.0 | Updated: 2026-03-22
-# Authority: CEO â†’ C-Suite â†’ Dept Heads
+# Authority: CEO → C-Suite → Dept Heads
 # Reviewed: daily by corp_learning_loop
 # Coverage: 21 / 21 departments
 
@@ -258,7 +258,7 @@ departments:
         unit: "HEALTH_REPORT produced"
       - metric: "Retro lessons extracted"
         target: 100
-        unit: "percent of lessons â†’ knowledge/"
+        unit: "percent of lessons → knowledge/"
     monthly_targets:
       - metric: "Org improvement proposals"
         target: 2
@@ -320,11 +320,11 @@ departments:
         unit: "QUARANTINE/logs/intake_log.md cleaned"
 
   client_reception:
-    kpi_mode: "DORMANT â€” activates when CEO offline"
+    kpi_mode: "DORMANT — activates when CEO offline"
     active_targets:
       - metric: "Proposal within SLA"
         target: 100
-        unit: "percent of intakes â†’ proposal within 2h"
+        unit: "percent of intakes → proposal within 2h"
       - metric: "Client satisfaction"
         target: 4.0
         unit: "avg score 1-5"
@@ -332,12 +332,12 @@ departments:
         target: 70
         unit: "percent of accepted proposals started"
 
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 # STATUS THRESHOLDS
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 status_thresholds:
   on_track:   ">= 80% of daily target met"
   at_risk:    "50-79% of daily target met"
-  behind:     "< 50% of daily target met â†’ auto-escalate"
-  critical:   "0% â†’ immediate CEO notification"
+  behind:     "< 50% of daily target met → auto-escalate"
+  critical:   "0% → immediate CEO notification"
 

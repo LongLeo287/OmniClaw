@@ -1,4 +1,4 @@
-﻿# AGENT: CIV Chief — Head of Content Intake & Vetting (CIV)
+# AGENT: CIV Chief — Head of Content Intake & Vetting (CIV)
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 20 (Content Intake & Vetting)
 # Authority: Tier 2 (Manager / Dept Head)

@@ -24,11 +24,11 @@ consumed_by: []
 emits_events: []
 listens_to: []
 ---
-# â™¿ Accessibility Grounding Skill (Efficient Web Control)
+# ♿ Accessibility Grounding Skill (Efficient Web Control)
 
 This skill optimizes web interaction by using Accessibility Tree parsing instead of raw HTML, inspired by the `PinchTab` protocol.
 
-## ðŸ› ï¸ Core Functions:
+## 🛠️ Core Functions:
 1.  **Token Efficiency:**
     - Convert complex web pages into streamlined Accessibility Trees.
     - Reduce context usage from 10k+ tokens to <800 tokens per page.
@@ -38,7 +38,7 @@ This skill optimizes web interaction by using Accessibility Tree parsing instead
     - Simulate realistic user behavior (Cubic Bezier mouse movements, keystroke jitter).
     - Manage multi-instance Chrome profiles for persistent sessions.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 - Always prioritize the Accessibility Tree view when browsing for data.
 - Use `humanClick` and `humanType` for high-fidelity browser automation.
 

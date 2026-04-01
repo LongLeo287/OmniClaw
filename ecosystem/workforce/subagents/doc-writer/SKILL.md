@@ -1,4 +1,4 @@
-﻿---
+---
 name: doc-writer
 display_name: "Documentation Writer Subagent"
 description: >

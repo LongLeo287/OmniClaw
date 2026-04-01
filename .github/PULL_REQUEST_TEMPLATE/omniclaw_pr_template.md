@@ -1,7 +1,11 @@
+[**🇻🇳 Xem Phiên Bản Tiếng Việt (Vietnamese)**](omniclaw_pr_template-vn.md)
+
 ---
 name: Pull Request
 about: Submit a patch, tool, or agent upgrade
 ---
+
+[**🇻🇳 Xem Phiên Bản Tiếng Việt (Vietnamese)**](omniclaw_pr_template-vn.md)
 
 ## 🛠 Area of Update
 - [ ] Core Infra (Tier 1) / Bootstrapper

@@ -1,4 +1,4 @@
-﻿# AGENT: Org Architect — Organizational Development Lead / Org Architect
+# AGENT: Org Architect — Organizational Development Lead / Org Architect
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 16 (OD & Learning)
 # Authority: Tier 2 (Manager / Dept Head)

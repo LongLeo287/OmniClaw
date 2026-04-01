@@ -1,4 +1,4 @@
-﻿﻿# AGENT: Claude Plugins Official Agent â€” Auto-Scaffolded Agent for claude-plugins-official
+﻿# AGENT: Claude Plugins Official Agent â€” Auto-Scaffolded Agent for claude-plugins-official
 # Version: 1.0 | Created: 2026-03-30 | OmniClaw Corp
 # Department: Engineering (Dept 2) â€” <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)

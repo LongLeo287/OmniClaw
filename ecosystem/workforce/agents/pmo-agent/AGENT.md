@@ -1,4 +1,4 @@
-﻿# AGENT: PMO Lead — Project Management Officer / Capacity Planner
+# AGENT: PMO Lead — Project Management Officer / Capacity Planner
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 17 (Planning & PMO)
 # Authority: Tier 2 (Manager / Dept Head)

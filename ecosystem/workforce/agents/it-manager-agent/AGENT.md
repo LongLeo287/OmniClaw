@@ -1,4 +1,4 @@
-﻿# AGENT: IT Manager — IT Infrastructure Manager
+# AGENT: IT Manager — IT Infrastructure Manager
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 3 (IT Infrastructure)
 # Authority: Tier 2 (Manager / Dept Head)

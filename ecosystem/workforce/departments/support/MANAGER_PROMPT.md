@@ -1,4 +1,4 @@
-﻿﻿# Support â€” Dept Manager Prompt
+﻿# Support â€” Dept Manager Prompt
 # Head: channel-agent | Reports to: CMO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

@@ -1,30 +1,30 @@
 # Department: operations
 ---
-description: Láº¥y brain data tá»« .ai-memory/ trong project ra restore vÃ o session má»›i
+description: Lấy brain data từ .ai-memory/ trong project ra restore vào session mới
 ---
 
-# Wakeup dá»± Ã¡n
+# Wakeup dự án
 
-Khi user cÃ³ lá»‡nh rÃµ rÃ ng: "Wakeup dá»± Ã¡n [tÃªn dá»± Ã¡n]" (lá»‡nh gá»i Ä‘á»™c láº­p chá»‰ dÃ nh cho dá»± Ã¡n, lÆ°u Ã½ ráº±ng pháº§n lá»›n thá»i gian há»‡ thá»‘ng sáº½ tá»± Wakeup khi khá»Ÿi Ä‘á»™ng báº±ng `pre-session`):
+Khi user có lệnh rõ ràng: "Wakeup dự án [tên dự án]" (lệnh gọi độc lập chỉ dành cho dự án, lưu ý rằng phần lớn thời gian hệ thống sẽ tự Wakeup khi khởi động bằng `pre-session`):
 
-1. XÃ¡c nháº­n: "TÃ´i sáº½ restore brain data tá»« .ai-memory\ trong project. XÃ¡c nháº­n chÆ°a?"
+1. Xác nhận: "Tôi sẽ restore brain data từ .ai-memory\ trong project. Xác nhận chưa?"
 
-1. XÃ¡c nháº­n: "TÃ´i sáº½ restore brain data tá»« .ai-memory\ trong project [TÃªn]. XÃ¡c nháº­n chÆ°a?"
+1. Xác nhận: "Tôi sẽ restore brain data từ .ai-memory\ trong project [Tên]. Xác nhận chưa?"
 
-2. Náº¿u user khÃ´ng cung cáº¥p Ä‘Æ°á»ng dáº«n dá»± Ã¡n cá»¥ thá»ƒ, hÃ£y TÃŒM Láº I tÃªn dá»± Ã¡n trong CÃ‚U Lá»†NH CHAT cá»§a user (vÃ­ dá»¥ "Wakeup dá»± Ã¡n Tiem_Nuoc_Nho_v5") Ä‘á»ƒ tá»± suy luáº­n vÃ  ná»‘i vÃ o `$ProjectsRoot`.
+2. Nếu user không cung cấp đường dẫn dự án cụ thể, hãy TÌM LẠI tên dự án trong CÂU LỆNH CHAT của user (ví dụ "Wakeup dự án Tiem_Nuoc_Nho_v5") để tự suy luận và nối vào `$ProjectsRoot`.
 
 // turbo
-3. Cháº¡y script:
+3. Chạy script:
 ```powershell
-& "$OMNICLAW_ROOT\scripts\wakeup.ps1" -ProjectPath "ÄÆ¯á»œNG_DáºªN_Tá»šI_TÃŠN_Dá»°_ÃN_TRONG_CÃ‚U_CHAT"
+& "$OMNICLAW_ROOT\scripts\wakeup.ps1" -ProjectPath "ĐƯỜNG_DẪN_TỚI_TÊN_DỰ_ÁN_TRONG_CÂU_CHAT"
 ```
 
-Script sáº½:
-- Äá»c `.ai-memory\` tá»« bÃªn trong project
-- Restore brain sessions vá» `~\.gemini\antigravity\brain\`
+Script sẽ:
+- Đọc `.ai-memory\` từ bên trong project
+- Restore brain sessions về `~\.gemini\antigravity\brain\`
 - Restore knowledge items
-- Auto-seed session hiá»‡n táº¡i vá»›i key artifacts (task.md, walkthrough...)
-- Há»i user náº¿u khÃ´ng tá»± detect Ä‘Æ°á»£c session ID
+- Auto-seed session hiện tại với key artifacts (task.md, walkthrough...)
+- Hỏi user nếu không tự detect được session ID
 
-4. ThÃ´ng bÃ¡o: "âœ… ÄÃ£ restore xong â€” tiáº¿p tá»¥c lÃ m viá»‡c bÃ¬nh thÆ°á»ng!"
+4. Thông báo: "✅ Đã restore xong — tiếp tục làm việc bình thường!"
 

@@ -1,4 +1,4 @@
-﻿# AGENT: COO / Scrum Master — Chief Operating Officer / Scrum Master
+# AGENT: COO / Scrum Master — Chief Operating Officer / Scrum Master
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 7 (Operations)
 # Authority: Tier 2 (Manager / Dept Head)

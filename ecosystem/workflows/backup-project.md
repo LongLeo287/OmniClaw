@@ -1,28 +1,28 @@
 # Department: operations
 ---
-description: LÆ°u chat history vÃ  brain data VÃ€O trong folder dá»± Ã¡n Ä‘á»ƒ chuyá»ƒn mÃ¡y
+description: Lưu chat history và brain data VÀO trong folder dự án để chuyển máy
 ---
 
-# Backup dá»± Ã¡n nÃ y
+# Backup dự án này
 
-Khi user cÃ³ lá»‡nh rÃµ rÃ ng: "Backup dá»± Ã¡n [tÃªn dá»± Ã¡n]" (chá»‰ dÃ¹ng riÃªng cho dá»± Ã¡n, khÃ´ng dÃ¹ng cho há»‡ thá»‘ng OmniClaw):
+Khi user có lệnh rõ ràng: "Backup dự án [tên dự án]" (chỉ dùng riêng cho dự án, không dùng cho hệ thống OmniClaw):
 
-1. XÃ¡c Ä‘á»‹nh project path: 
-   - Æ¯u tiÃªn 1 Láº¤Y TÃŠN Dá»° ÃN Tá»ª CÃ‚U Lá»†NH CHAT cá»§a user (Vd: "Backup dá»± Ã¡n Tiem_Nuoc_Nho_v5") vÃ  ná»‘i vÃ o `$ProjectsRoot`.
-   - Æ¯u tiÃªn 2: XÃ¡c Ä‘á»‹nh tá»« workspace Ä‘ang má»Ÿ.
+1. Xác định project path: 
+   - Ưu tiên 1 LẤY TÊN DỰ ÁN TỪ CÂU LỆNH CHAT của user (Vd: "Backup dự án Tiem_Nuoc_Nho_v5") và nối vào `$ProjectsRoot`.
+   - Ưu tiên 2: Xác định từ workspace đang mở.
 
 // turbo
-2. Cháº¡y script:
+2. Chạy script:
 ```powershell
-& "$OMNICLAW_ROOT\scripts\backup.ps1" -ProjectPath "ÄÆ¯á»œNG_DáºªN_Tá»šI_TÃŠN_Dá»°_ÃN_TRONG_CÃ‚U_CHAT"
+& "$OMNICLAW_ROOT\scripts\backup.ps1" -ProjectPath "ĐƯỜNG_DẪN_TỚI_TÊN_DỰ_ÁN_TRONG_CÂU_CHAT"
 ```
 
-Script sáº½ táº¡o folder `.ai-memory\` bÃªn trong project, chá»©a:
-- `brain\` â€” toÃ n bá»™ chat session artifacts (task.md, walkthrough, plans...)
-- `knowledge\` â€” knowledge items
-- `memory_config.json` â€” metadata
+Script sẽ tạo folder `.ai-memory\` bên trong project, chứa:
+- `brain\` — toàn bộ chat session artifacts (task.md, walkthrough, plans...)
+- `knowledge\` — knowledge items
+- `memory_config.json` — metadata
 
-3. ThÃ´ng bÃ¡o: "ÄÃ£ lÆ°u brain data vÃ o [project]\.ai-memory\"
+3. Thông báo: "Đã lưu brain data vào [project]\.ai-memory\"
 
-**Äá»ƒ chuyá»ƒn mÃ¡y:** chá»‰ cáº§n copy toÃ n bá»™ project folder sang lÃ  xong â€” khÃ´ng cáº§n lÃ m gÃ¬ thÃªm.
+**Để chuyển máy:** chỉ cần copy toàn bộ project folder sang là xong — không cần làm gì thêm.
 

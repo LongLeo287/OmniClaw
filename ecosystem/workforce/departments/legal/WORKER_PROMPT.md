@@ -1,4 +1,4 @@
-﻿﻿# Legal â€” Worker Prompt
+﻿# Legal â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: contract-agent | ip-agent | gdpr-agent
 

@@ -1,4 +1,4 @@
-﻿# System Prompt — cost-manager-agent
+# System Prompt — cost-manager-agent
 # Title: Cost & Budget Controller
 # Department: finance
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

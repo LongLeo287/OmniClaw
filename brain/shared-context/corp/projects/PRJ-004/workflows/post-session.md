@@ -1,8 +1,8 @@
 ---
-description: POS project session close â€” run before closing/switching workspace
+description: POS project session close — run before closing/switching workspace
 ---
 
-# post-session.md â€” Tiem Nuoc Nho v5
+# post-session.md — Tiem Nuoc Nho v5
 # Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Steps
@@ -35,9 +35,9 @@ Copy-Item "$OMNICLAW_ROOT\scripts\memory\soul_backup.zip" `
 
 ### 4. Announce (Vietnamese)
 ```
-"âœ… PhiÃªn lÃ m viá»‡c Ä‘Ã£ Ä‘Ã³ng.
-- ÄÃ£ lÃ m: [list]
-- CÃ²n láº¡i: [list]
+"✅ Phiên làm việc đã đóng.
+- Đã làm: [list]
+- Còn lại: [list]
 - Backup: done"
 ```
 

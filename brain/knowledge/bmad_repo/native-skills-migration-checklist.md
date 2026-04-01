@@ -66,15 +66,15 @@ Support assumption: full Agent Skills support. Windsurf docs confirm workspace s
 
 Support assumption: full Agent Skills support. Cline docs confirm workspace skills at `.cline/skills/<skill-name>/SKILL.md` and global skills at `~/.cline/skills/`. BMAD has now migrated from `.clinerules/workflows` to `.cline/skills`.
 
-**Install:** VS Code extension `saoudrizwan.claude-dev` â€” search "Cline" in Extensions or `code --install-extension saoudrizwan.claude-dev`
+**Install:** VS Code extension `saoudrizwan.claude-dev` — search "Cline" in Extensions or `code --install-extension saoudrizwan.claude-dev`
 
 - [x] Confirm current Cline skills path is `.cline/skills/{skill-name}/SKILL.md` with YAML frontmatter (name + description)
 - [x] Implement installer migration to native skills output
 - [x] Add legacy cleanup for `.clinerules/workflows`
-- [x] Test fresh install â€” 43 skills installed to `.cline/skills/`
+- [x] Test fresh install — 43 skills installed to `.cline/skills/`
 - [x] Test reinstall/upgrade from legacy workflow output
 - [x] Confirm no ancestor conflict protection is needed because Cline only scans workspace-local `.cline/skills/` and global `~/.cline/skills/`, with no ancestor directory inheritance
-- [x] Implement/extend automated tests â€” 9 assertions in test suite 18
+- [x] Implement/extend automated tests — 9 assertions in test suite 18
 - [x] Commit
 
 ## Google Antigravity
@@ -108,13 +108,13 @@ Support assumption: full Agent Skills support. CodeBuddy docs confirm workspace 
 
 **Install:** Download [Tencent CodeBuddy IDE](https://codebuddyide.net/) or install as VS Code extension `CodebuddyAI.codebuddy-ai`
 
-- [x] Confirm CodeBuddy native skills path is `.codebuddy/skills/{skill-name}/SKILL.md` with YAML frontmatter (name + description) â€” per docs, not IDE-verified
+- [x] Confirm CodeBuddy native skills path is `.codebuddy/skills/{skill-name}/SKILL.md` with YAML frontmatter (name + description) — per docs, not IDE-verified
 - [x] Implement installer migration to native skills output
 - [x] Add legacy cleanup for `.codebuddy/commands`
-- [x] Test fresh install â€” 43 skills installed to `.codebuddy/skills/` (installer output only)
+- [x] Test fresh install — 43 skills installed to `.codebuddy/skills/` (installer output only)
 - [x] Test reinstall/upgrade from legacy command output
-- [ ] **NEEDS MANUAL IDE VERIFICATION** â€” requires Tencent Cloud account; confirm skills appear in UI and test ancestor inheritance
-- [x] Implement/extend automated tests â€” 9 assertions in test suite 19
+- [ ] **NEEDS MANUAL IDE VERIFICATION** — requires Tencent Cloud account; confirm skills appear in UI and test ancestor inheritance
+- [x] Implement/extend automated tests — 9 assertions in test suite 19
 - [x] Commit
 
 ## Crush
@@ -123,14 +123,14 @@ Support assumption: full Agent Skills support. Crush scans project-local `.crush
 
 **Install:** `brew install charmbracelet/tap/crush` (macOS/Linux) or `winget install charmbracelet.crush` (Windows)
 
-- [x] Confirm Crush project-local skills path is `.crush/skills/{skill-name}/SKILL.md` â€” per GitHub issue #2072 confirming `.crush/skills/` is the only scan path
+- [x] Confirm Crush project-local skills path is `.crush/skills/{skill-name}/SKILL.md` — per GitHub issue #2072 confirming `.crush/skills/` is the only scan path
 - [x] Implement installer migration to native skills output
 - [x] Add legacy cleanup for `.crush/commands`
-- [x] Test fresh install â€” 43 skills installed to `.crush/skills/`
+- [x] Test fresh install — 43 skills installed to `.crush/skills/`
 - [x] Test reinstall/upgrade from legacy command output
 - [x] Confirm no ancestor conflict protection is needed because Crush only scans project-local `.crush/skills/`, no ancestor inheritance
-- [x] Manual CLI verification â€” `crush run` lists all 10 skills and successfully triggers bmad-help
-- [x] Implement/extend automated tests â€” 9 assertions in test suite 20
+- [x] Manual CLI verification — `crush run` lists all 10 skills and successfully triggers bmad-help
+- [x] Implement/extend automated tests — 9 assertions in test suite 20
 - [x] Commit
 
 ## Kiro
@@ -162,15 +162,15 @@ Support assumption: full Agent Skills support. BMAD currently splits output betw
 
 Support assumption: full Agent Skills support. BMAD currently installs commands to `.roo/commands`; target should move to `.roo/skills` or the correct mode-aware skill directories.
 
-**Install:** VS Code extension `RooVeterinaryInc.roo-cline` â€” search "Roo Code" in Extensions or `code --install-extension RooVeterinaryInc.roo-cline`
+**Install:** VS Code extension `RooVeterinaryInc.roo-cline` — search "Roo Code" in Extensions or `code --install-extension RooVeterinaryInc.roo-cline`
 
 - [x] Confirm Roo native skills path is `.roo/skills/{skill-name}/SKILL.md` with `name` frontmatter matching directory exactly (lowercase, alphanumeric + hyphens only)
 - [x] Implement installer migration to native skills output
 - [x] Add legacy cleanup for `.roo/commands`
-- [x] Test fresh install â€” 43 skills installed, verified in Roo Code v3.51
+- [x] Test fresh install — 43 skills installed, verified in Roo Code v3.51
 - [x] Test reinstall/upgrade from legacy command output
 - [x] Confirm no ancestor conflict protection is needed because manual Roo Code v3.51 verification showed child-local `child-only` skill loaded while parent-only skill was not inherited
-- [x] Implement/extend automated tests â€” 7 assertions in test suite 13
+- [x] Implement/extend automated tests — 7 assertions in test suite 13
 - [x] Commit
 
 ## Trae
@@ -179,43 +179,43 @@ Support assumption: full Agent Skills support. [Trae docs](https://docs.trae.ai/
 
 **Install:** Download [standalone IDE](https://www.trae.ai/download) (macOS/Windows/Linux) or `winget install -e --id ByteDance.Trae`
 
-- [x] Confirm Trae native skills path is `.trae/skills/{skill-name}/SKILL.md` â€” per official docs
+- [x] Confirm Trae native skills path is `.trae/skills/{skill-name}/SKILL.md` — per official docs
 - [x] Implement installer migration to native skills output
 - [x] Add legacy cleanup for `.trae/rules`
-- [x] Test fresh install â€” 43 skills installed to `.trae/skills/`
+- [x] Test fresh install — 43 skills installed to `.trae/skills/`
 - [x] Test reinstall/upgrade from legacy rules output
-- [x] Confirm no ancestor conflict protection is needed â€” Trae docs describe project-local `.trae/skills/` only
-- [ ] **NEEDS MANUAL IDE VERIFICATION** â€” download Trae IDE and confirm skills appear in UI
-- [x] Implement/extend automated tests â€” 9 assertions in test suite 21
+- [x] Confirm no ancestor conflict protection is needed — Trae docs describe project-local `.trae/skills/` only
+- [ ] **NEEDS MANUAL IDE VERIFICATION** — download Trae IDE and confirm skills appear in UI
+- [x] Implement/extend automated tests — 9 assertions in test suite 21
 - [x] Commit
 
 ## GitHub Copilot
 
 Support assumption: full Agent Skills support. BMAD currently uses a custom installer that generates `.github/agents`, `.github/prompts`, and `.github/copilot-instructions.md`; target should move to `.github/skills`.
 
-**Install:** VS Code extension `GitHub.copilot` â€” search "GitHub Copilot" in Extensions or `code --install-extension GitHub.copilot`
+**Install:** VS Code extension `GitHub.copilot` — search "GitHub Copilot" in Extensions or `code --install-extension GitHub.copilot`
 
-- [x] Confirm GitHub Copilot native skills path is `.github/skills/{skill-name}/SKILL.md` â€” also reads `.claude/skills/` automatically
-- [x] Design the migration away from the custom prompt/agent installer model â€” replaced 699-line custom installer with config-driven `skill_format: true`
+- [x] Confirm GitHub Copilot native skills path is `.github/skills/{skill-name}/SKILL.md` — also reads `.claude/skills/` automatically
+- [x] Design the migration away from the custom prompt/agent installer model — replaced 699-line custom installer with config-driven `skill_format: true`
 - [x] Implement native skills output, ideally with shared config-driven code where practical
 - [x] Add legacy cleanup for `.github/agents`, `.github/prompts`, and BMAD markers in `copilot-instructions.md`
-- [x] Test fresh install â€” 43 skills installed to `.github/skills/`
-- [x] Test reinstall/upgrade from legacy custom installer output â€” legacy dirs removed, BMAD markers stripped, user content preserved
+- [x] Test fresh install — 43 skills installed to `.github/skills/`
+- [x] Test reinstall/upgrade from legacy custom installer output — legacy dirs removed, BMAD markers stripped, user content preserved
 - [x] Confirm no ancestor conflict protection is needed because manual Copilot verification showed child-local `child-only` skill loaded while parent-only skill was not inherited
-- [x] Implement/extend automated tests â€” 11 assertions in test suite 17 including marker cleanup
+- [x] Implement/extend automated tests — 11 assertions in test suite 17 including marker cleanup
 - [x] Commit
 
-## KiloCoder â€” SUSPENDED
+## KiloCoder — SUSPENDED
 
 **Status: Kilo Code does not support the Agent Skills standard.** The original migration assumed skills support because Kilo forked from Roo Code, but manual IDE verification confirmed Kilo has not merged that feature. BMAD support is paused until Kilo implements skills.
 
-**Install:** VS Code extension `kilocode.kilo-code` â€” search "Kilo Code" in Extensions or `code --install-extension kilocode.kilo-code`
+**Install:** VS Code extension `kilocode.kilo-code` — search "Kilo Code" in Extensions or `code --install-extension kilocode.kilo-code`
 
-- [x] ~~Confirm KiloCoder native skills path~~ â€” **FALSE**: assumed from Roo Code fork, not verified. Manual testing showed no skills support in the IDE
-- [x] Config and installer code retained in platform-codes.yaml with `suspended` flag â€” hidden from IDE picker, setup blocked with explanation
+- [x] ~~Confirm KiloCoder native skills path~~ — **FALSE**: assumed from Roo Code fork, not verified. Manual testing showed no skills support in the IDE
+- [x] Config and installer code retained in platform-codes.yaml with `suspended` flag — hidden from IDE picker, setup blocked with explanation
 - [x] Installer fails early (before writing `_bmad/`) if Kilo is the only selected IDE, protecting existing installations
 - [x] Legacy cleanup still runs for `.kilocode/workflows` and `.kilocodemodes` when users switch to a different IDE
-- [x] Automated tests â€” 7 assertions in suite 22 (suspended config, hidden from picker, setup blocked, no files written, legacy cleanup)
+- [x] Automated tests — 7 assertions in suite 22 (suspended config, hidden from picker, setup blocked, no files written, legacy cleanup)
 
 ## Gemini CLI
 
@@ -224,13 +224,13 @@ Support assumption: full Agent Skills support. Gemini CLI docs confirm workspace
 **Install:** `npm install -g @google/gemini-cli` or see [geminicli.com](https://geminicli.com)
 
 - [x] Confirm Gemini CLI native skills path is `.gemini/skills/{skill-name}/SKILL.md` (per [geminicli.com/docs/cli/skills](https://geminicli.com/docs/cli/skills/))
-- [x] Implement native skills output â€” target_dir `.gemini/skills`, skill_format true, template_type default (replaces TOML templates)
+- [x] Implement native skills output — target_dir `.gemini/skills`, skill_format true, template_type default (replaces TOML templates)
 - [x] Add legacy cleanup for `.gemini/commands` (via `legacy_targets`)
-- [x] Test fresh install â€” skills written to `.gemini/ecosystem/skills/bmad-master/SKILL.md` with correct frontmatter
-- [x] Test reinstall/upgrade from legacy TOML command output â€” legacy dir removed, skills installed
-- [x] Confirm no ancestor conflict protection is needed â€” Gemini CLI uses workspace > user > extension precedence, no ancestor directory inheritance
-- [x] Implement/extend automated tests â€” 9 assertions in test suite 23 (config, fresh install, legacy cleanup, reinstall)
-- [x] Manual CLI verification â€” `gemini` lists all 10 skills and successfully triggers bmad-help
+- [x] Test fresh install — skills written to `.gemini/ecosystem/skills/bmad-master/SKILL.md` with correct frontmatter
+- [x] Test reinstall/upgrade from legacy TOML command output — legacy dir removed, skills installed
+- [x] Confirm no ancestor conflict protection is needed — Gemini CLI uses workspace > user > extension precedence, no ancestor directory inheritance
+- [x] Implement/extend automated tests — 9 assertions in test suite 23 (config, fresh install, legacy cleanup, reinstall)
+- [x] Manual CLI verification — `gemini` lists all 10 skills and successfully triggers bmad-help
 - [ ] Commit
 
 ## iFlow
@@ -238,12 +238,12 @@ Support assumption: full Agent Skills support. Gemini CLI docs confirm workspace
 Support assumption: full Agent Skills support. iFlow docs confirm workspace skills at `.iflow/skills/` and global skills at `~/.iflow/skills/`. BMAD previously installed flat files to `.iflow/commands`.
 
 - [x] Confirm iFlow native skills path is `.iflow/skills/{skill-name}/SKILL.md`
-- [x] Implement native skills output â€” target_dir `.iflow/skills`, skill_format true, template_type default
+- [x] Implement native skills output — target_dir `.iflow/skills`, skill_format true, template_type default
 - [x] Add legacy cleanup for `.iflow/commands` (via `legacy_targets`)
-- [x] Test fresh install â€” skills written to `.iflow/ecosystem/skills/bmad-master/SKILL.md`
-- [x] Test legacy cleanup â€” legacy commands dir removed
-- [x] Implement/extend automated tests â€” 6 assertions in test suite 24
-- [ ] **NEEDS MANUAL IDE VERIFICATION** â€” install iFlow and confirm skills appear in UI and can be triggered
+- [x] Test fresh install — skills written to `.iflow/ecosystem/skills/bmad-master/SKILL.md`
+- [x] Test legacy cleanup — legacy commands dir removed
+- [x] Implement/extend automated tests — 6 assertions in test suite 24
+- [ ] **NEEDS MANUAL IDE VERIFICATION** — install iFlow and confirm skills appear in UI and can be triggered
 - [ ] Commit
 
 ## QwenCoder
@@ -251,12 +251,12 @@ Support assumption: full Agent Skills support. iFlow docs confirm workspace skil
 Support assumption: full Agent Skills support. Qwen Code supports workspace skills at `.qwen/skills/` and global skills at `~/.qwen/skills/`. BMAD previously installed flat files to `.qwen/commands`.
 
 - [x] Confirm QwenCoder native skills path is `.qwen/skills/{skill-name}/SKILL.md`
-- [x] Implement native skills output â€” target_dir `.qwen/skills`, skill_format true, template_type default
+- [x] Implement native skills output — target_dir `.qwen/skills`, skill_format true, template_type default
 - [x] Add legacy cleanup for `.qwen/commands` (via `legacy_targets`)
-- [x] Test fresh install â€” skills written to `.qwen/ecosystem/skills/bmad-master/SKILL.md`
-- [x] Test legacy cleanup â€” legacy commands dir removed
-- [x] Implement/extend automated tests â€” 6 assertions in test suite 25
-- [ ] **NEEDS MANUAL IDE VERIFICATION** â€” install QwenCoder and confirm skills appear in UI and can be triggered
+- [x] Test fresh install — skills written to `.qwen/ecosystem/skills/bmad-master/SKILL.md`
+- [x] Test legacy cleanup — legacy commands dir removed
+- [x] Implement/extend automated tests — 6 assertions in test suite 25
+- [ ] **NEEDS MANUAL IDE VERIFICATION** — install QwenCoder and confirm skills appear in UI and can be triggered
 - [ ] Commit
 
 ## Rovo Dev
@@ -266,10 +266,10 @@ Support assumption: full Agent Skills support. Rovo Dev now supports workspace s
 - [x] Confirm Rovo Dev native skills path is `.rovodev/skills/{skill-name}/SKILL.md` (per Atlassian blog)
 - [x] Replace 257-line custom `rovodev.js` with config-driven entry in `platform-codes.yaml`
 - [x] Add legacy cleanup for `.rovodev/workflows` (via `legacy_targets`) and BMAD entries in `prompts.yml` (via `cleanupRovoDevPrompts()` in `_config-driven.js`)
-- [x] Test fresh install â€” skills written to `.rovodev/ecosystem/skills/bmad-master/SKILL.md`
-- [x] Test legacy cleanup â€” legacy workflows dir removed, `prompts.yml` BMAD entries stripped while preserving user entries
-- [x] Implement/extend automated tests â€” 8 assertions in test suite 26
-- [ ] **NEEDS MANUAL IDE VERIFICATION** â€” install Rovo Dev and confirm skills appear in UI and can be triggered
+- [x] Test fresh install — skills written to `.rovodev/ecosystem/skills/bmad-master/SKILL.md`
+- [x] Test legacy cleanup — legacy workflows dir removed, `prompts.yml` BMAD entries stripped while preserving user entries
+- [x] Implement/extend automated tests — 8 assertions in test suite 26
+- [ ] **NEEDS MANUAL IDE VERIFICATION** — install Rovo Dev and confirm skills appear in UI and can be triggered
 - [ ] Commit
 
 ## Summary Gates

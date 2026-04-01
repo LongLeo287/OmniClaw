@@ -9,7 +9,7 @@ compatible_ai_os: true
 created: 2026-03-22
 ---
 
-# LightRAG â€” Fast Knowledge Graph RAG
+# LightRAG — Fast Knowledge Graph RAG
 
 > Fast, lightweight RAG using knowledge graphs. HKUDS team (same as ClawWork). Combines graph-based retrieval with vector search for superior context retrieval.
 
@@ -18,7 +18,7 @@ created: 2026-03-22
 ## vs GraphRAG
 - LightRAG: faster, lighter, graph + vector hybrid
 - GraphRAG: deeper narrative analysis, Microsoft-backed
-- OmniClaw has BOTH cloned â€” use LightRAG for speed, GraphRAG for deep analysis
+- OmniClaw has BOTH cloned — use LightRAG for speed, GraphRAG for deep analysis
 
 ## OmniClaw Integration
 - Drop into Notebook Agent as secondary RAG backend

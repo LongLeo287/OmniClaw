@@ -1,4 +1,4 @@
-﻿# AGENT: Reception Chief — Head of Client Reception / Project Intake
+# AGENT: Reception Chief — Head of Client Reception / Project Intake
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 21 (Client Reception)
 # Authority: Tier 2 (Manager / Dept Head)

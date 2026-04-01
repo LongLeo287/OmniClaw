@@ -25,11 +25,11 @@ emits_events:
   - health_report_ready
 listens_to: []
 ---
-# ðŸ¥ Diagnostics Engine Skill (Project Health Audit)
+# 🏥 Diagnostics Engine Skill (Project Health Audit)
 
-This skill provides the OmniClaw with "Clinical Diagnostics" â€” the ability to audit any part of the project for health, performance, and compliance.
+This skill provides the OmniClaw with "Clinical Diagnostics" — the ability to audit any part of the project for health, performance, and compliance.
 
-## ðŸ› ï¸ Core Functions:
+## 🛠️ Core Functions:
 1.  **Health Audit (/audit):**
     - Perform a multi-pass scan of the current directory.
     - Check for: Lint errors, broken links, missing JSDoc, rule violations (from `.agents/rules/`), and context drift.
@@ -40,7 +40,7 @@ This skill provides the OmniClaw with "Clinical Diagnostics" â€” the abilit
 3.  **Adherence Tracking:**
     - Monitor how well Agent actions align with the 13 Pillars of the OmniClaw.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 Before ending a session or starting a major refactor:
 1. Run `/audit` on the relevant scope.
 2. If Score < 80, trigger the [Self-Correction](/resilience-fix).

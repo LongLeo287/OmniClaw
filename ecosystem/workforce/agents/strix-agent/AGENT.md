@@ -1,4 +1,4 @@
-﻿# AGENT: Strix — Chief Security Officer / GATE_SECURITY Authority
+# AGENT: Strix — Chief Security Officer / GATE_SECURITY Authority
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 9 (Security & GRC)
 # Authority: Tier 2 (Manager / Dept Head)

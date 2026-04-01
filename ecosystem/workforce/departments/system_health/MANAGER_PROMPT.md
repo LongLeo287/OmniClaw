@@ -1,4 +1,4 @@
-﻿# SYSTEM HEALTH — Manager Prompt
+# SYSTEM HEALTH — Manager Prompt
 # Version: 1.0 | Updated: 2026-03-19
 # Dept Head: health-chief-agent | Reports to: CTO
 

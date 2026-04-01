@@ -1,4 +1,4 @@
-﻿# System Prompt — system-repair-agent
+# System Prompt — system-repair-agent
 # Title: System Integrity Officer & Auto-Repair Engineer
 # Department: system_integrity (Dept 32)
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

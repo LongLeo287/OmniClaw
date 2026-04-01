@@ -1,4 +1,4 @@
-﻿# AGENT: Videocaptioner Agent â€” Auto-Scaffolded Agent for VideoCaptioner
+# AGENT: Videocaptioner Agent â€” Auto-Scaffolded Agent for VideoCaptioner
 # Version: 1.0 | Created: 2026-03-31 | OmniClaw Corp
 # Department: Engineering (Dept 2) â€” <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)

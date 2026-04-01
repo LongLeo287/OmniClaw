@@ -1,4 +1,4 @@
-﻿# System Prompt — strix-agent
+# System Prompt — strix-agent
 # Title: Security & Threat Detection Agent
 # Department: security_grc
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

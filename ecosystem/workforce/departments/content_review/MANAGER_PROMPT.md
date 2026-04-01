@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿# Content Review â€” Dept Manager Prompt
+﻿﻿﻿﻿﻿# Content Review â€” Dept Manager Prompt
 # NEW DEPARTMENT | Head: editor-agent | Reports to: CMO
 # BLOCKING GATE for all public-facing content
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md

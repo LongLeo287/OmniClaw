@@ -1,4 +1,4 @@
-﻿﻿# STRATEGY â€” Department Rules
+﻿# STRATEGY â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: product-manager-agent | Reports to: CSO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md

@@ -1,30 +1,30 @@
 # Department: operations
 ---
-description: Supabase connection debug â€” ClawTask API backend khÃ´ng switch sang supabase
+description: Supabase connection debug — ClawTask API backend không switch sang supabase
 ---
 
 # Supabase Debug Workflow
 
-## Khi nÃ o dÃ¹ng workflow nÃ y?
+## Khi nào dùng workflow này?
 
-ClawTask API tráº£ vá» `"backend": "json"` thay vÃ¬ `"backend": "supabase"`.
+ClawTask API trả về `"backend": "json"` thay vì `"backend": "supabase"`.
 
 ---
 
-## Step 1: Verify .env tá»“n táº¡i vÃ  cÃ³ Ä‘Ãºng giÃ¡ trá»‹
+## Step 1: Verify .env tồn tại và có đúng giá trị
 
 ```powershell
-# Check .env trong thÆ° má»¥c clawtask
+# Check .env trong thư mục clawtask
 cat "$OMNICLAW_ROOT\tools\clawtask\.env"
 ```
 
-Pháº£i tháº¥y:
+Phải thấy:
 ```
-SUPABASE_URL=https://xxxx.supabase.co   â† khÃ´ng Ä‘Æ°á»£c rá»—ng
-SUPABASE_KEY=eyJhbGci...                â† anon key tá»« Supabase dashboard
+SUPABASE_URL=https://xxxx.supabase.co   ← không được rỗng
+SUPABASE_KEY=eyJhbGci...                ← anon key từ Supabase dashboard
 ```
 
-**Fix náº¿u trá»‘ng:** Cháº¡y lá»‡nh sau (thay YOUR_PROJECT_REF vÃ  YOUR_ANON_KEY):
+**Fix nếu trống:** Chạy lệnh sau (thay YOUR_PROJECT_REF và YOUR_ANON_KEY):
 ```powershell
 @"
 SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
@@ -36,25 +36,25 @@ TZ=Asia/Ho_Chi_Minh
 
 ---
 
-## Step 2: Restart Docker container Ä‘á»ƒ load .env má»›i
+## Step 2: Restart Docker container để load .env mới
 
 ```powershell
-# Tá»« thÆ° má»¥c clawtask
+# Từ thư mục clawtask
 cd "$OMNICLAW_ROOT\tools\clawtask"
 
-# Docker Compose V1 (náº¿u cÃ i standalone)
+# Docker Compose V1 (nếu cài standalone)
 docker-compose down && docker-compose up -d
 
-# Docker Compose V2 (náº¿u cÃ i qua Docker Desktop)
+# Docker Compose V2 (nếu cài qua Docker Desktop)
 docker compose down && docker compose up -d
 
-# Hoáº·c dÃ¹ng batch file cÃ³ sáºµn
+# Hoặc dùng batch file có sẵn
 .\docker-manage.bat
 ```
 
 ---
 
-## Step 3: Verify container Ä‘Ã£ load .env
+## Step 3: Verify container đã load .env
 
 ```powershell
 # Check env vars inside container
@@ -82,21 +82,21 @@ docker exec clawtask_api printenv | findstr SUPABASE
 }
 ```
 
-**Still showing `"backend": "json"`?** â†’ Go to Step 5.
+**Still showing `"backend": "json"`?** → Go to Step 5.
 
 ---
 
 ## Step 5: Check Supabase project is active (not paused)
 
-1. Má»Ÿ: https://supabase.com/dashboard/project/YOUR_PROJECT_REF
-2. Check project status â€” náº¿u PAUSED, click "Resume"
-3. Sau khi resume, Docker restart láº¡i (Step 2)
+1. Mở: https://supabase.com/dashboard/project/YOUR_PROJECT_REF
+2. Check project status — nếu PAUSED, click "Resume"
+3. Sau khi resume, Docker restart lại (Step 2)
 
 ---
 
 ## Step 6: Verify tasks table schema
 
-Cháº¡y trong Supabase SQL Editor:
+Chạy trong Supabase SQL Editor:
 ```sql
 SELECT column_name, data_type 
 FROM information_schema.columns 
@@ -104,9 +104,9 @@ WHERE table_name = 'tasks' AND table_schema = 'public'
 ORDER BY ordinal_position;
 ```
 
-Pháº£i tháº¥y: `id`, `title`, `agent_id`, `status`, `priority`, `created_at`, `blockers`, `notes`
+Phải thấy: `id`, `title`, `agent_id`, `status`, `priority`, `created_at`, `blockers`, `notes`
 
-**Thiáº¿u `agent_id`?** Cháº¡y:
+**Thiếu `agent_id`?** Chạy:
 ```sql
 ALTER TABLE public.tasks ADD COLUMN IF NOT EXISTS agent_id text;
 ```
@@ -121,7 +121,7 @@ $body = '{"title":"Debug test","agent_id":"antigravity","priority":"low"}'
 (Invoke-WebRequest -Uri http://localhost:7474/api/tasks/add -Method POST -Body $body -Headers $headers -UseBasicParsing).Content
 ```
 
-**Response náº¿u thÃ nh cÃ´ng:**
+**Response nếu thành công:**
 ```json
 {"ok": true, "task": {"id": "T...", "title": "Debug test", "agent_id": "antigravity"}}
 ```
@@ -132,8 +132,8 @@ $body = '{"title":"Debug test","agent_id":"antigravity","priority":"low"}'
 
 | Date | Issue | Fix Applied |
 |------|-------|------------|
-| 2026-03-20 | .env SUPABASE_URL trá»‘ng trong root .env | Táº¡o .env riÃªng trong tools/clawtask/ |
-| 2026-03-20 | docker exec khÃ´ng available in PS context | Sá»­ dá»¥ng docker compose hoáº·c docker-manage.bat |
+| 2026-03-20 | .env SUPABASE_URL trống trong root .env | Tạo .env riêng trong tools/clawtask/ |
+| 2026-03-20 | docker exec không available in PS context | Sử dụng docker compose hoặc docker-manage.bat |
 
 ---
 

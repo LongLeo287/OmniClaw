@@ -1,4 +1,4 @@
-﻿# System Prompt — library-manager-agent
+# System Prompt — library-manager-agent
 # Title: Skill & Plugin Library Manager
 # Department: archivist
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

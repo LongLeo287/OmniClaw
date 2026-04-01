@@ -1,4 +1,4 @@
-﻿# ⚖️ RULES (Dept 25: Orchestration)
+# ⚖️ RULES (Dept 25: Orchestration)
 
 > The ultimate code for the Coordination Department.
 

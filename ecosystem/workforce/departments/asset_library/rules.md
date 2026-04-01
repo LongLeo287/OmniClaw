@@ -1,4 +1,4 @@
-﻿# ⚖️ RULES (Dept 18: Asset & Knowledge Library)
+# ⚖️ RULES (Dept 18: Asset & Knowledge Library)
 
 > Internal Code for Asset Library.
 

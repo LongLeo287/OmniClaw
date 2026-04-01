@@ -1,32 +1,32 @@
 # Department: operations
 ---
-description: Repo On-Demand â€” how agents clone large repos when starting a project
+description: Repo On-Demand — how agents clone large repos when starting a project
 ---
 
-# ðŸ—‚ï¸ Repo On-Demand Workflow
+# 🗂️ Repo On-Demand Workflow
 
-## Khi nÃ o trigger
-Tá»± Ä‘á»™ng khi:
-- Agent/dept báº¯t Ä‘áº§u project má»›i (phase 3: dispatch)
-- CEO táº¡o brief cÃ³ tá»« khÃ³a liÃªn quan (frontend, security, analytics, etc.)
-- `omniclaw.py project init <name>` Ä‘Æ°á»£c gá»i
+## Khi nào trigger
+Tự động khi:
+- Agent/dept bắt đầu project mới (phase 3: dispatch)
+- CEO tạo brief có từ khóa liên quan (frontend, security, analytics, etc.)
+- `omniclaw.py project init <name>` được gọi
 - Telegram: `/project <description>`
 
 Manual khi:
-- CEO paste yÃªu cáº§u dá»± Ã¡n â†’ Antigravity nháº­n diá»‡n
+- CEO paste yêu cầu dự án → Antigravity nhận diện
 
 ---
 
-## Step 1 â€” Auto-Detect (repo_resolver.py)
+## Step 1 — Auto-Detect (repo_resolver.py)
 
 ```powershell
-# Tá»« mÃ´ táº£ dá»± Ã¡n
+# Từ mô tả dự án
 python ops/scripts/repo_resolver.py "Build analytics dashboard with KPI charts"
 
-# Tá»« phÃ²ng ban
+# Từ phòng ban
 python ops/scripts/repo_resolver.py --dept engineering
 
-# Tá»« file proposal
+# Từ file proposal
 python ops/scripts/repo_resolver.py --file brain/shared-context/corp/proposals/PROP_xyz.md
 
 # Auto-clone ngay
@@ -35,33 +35,33 @@ python ops/scripts/repo_resolver.py "Build security scanner for CIV" --clone
 
 ---
 
-## Step 2 â€” Clone On-Demand
+## Step 2 — Clone On-Demand
 
 ```powershell
-# Lá»‡nh clone cho tá»«ng repo (xem LARGE_REPOS_CATALOG.md Ä‘á»ƒ chá»n)
+# Lệnh clone cho từng repo (xem LARGE_REPOS_CATALOG.md để chọn)
 git clone --depth 1 <URL> "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ```
 
 ---
 
-## Step 3 â€” Notify CEO
+## Step 3 — Notify CEO
 
-Sau khi clone â†’ Antigravity gá»­i Telegram:
+Sau khi clone → Antigravity gửi Telegram:
 ```
-ðŸ“¥ REPO CLONED
+📥 REPO CLONED
 Source: github.com/...
-Project: <tÃªn dá»± Ã¡n>
-Dept: <phÃ²ng ban>
+Project: <tên dự án>
+Dept: <phòng ban>
 Path: plugins/github-repos/<name>
 Size: xxx MB
 ```
 
 ---
 
-## Step 4 â€” Cleanup (tÃ¹y chá»n)
+## Step 4 — Cleanup (tùy chọn)
 
 ```powershell
-# XÃ³a repo sau khi dá»± Ã¡n xong (náº¿u khÃ´ng cáº§n giá»¯)
+# Xóa repo sau khi dự án xong (nếu không cần giữ)
 Remove-Item -Recurse -Force "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ```
 
@@ -100,10 +100,10 @@ Remove-Item -Recurse -Force "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 
 ## Integration Points
 
-- `ops/omniclaw.py project init <name> --dept <dept>` â†’ runs repo_resolver
-- `ops/scripts/brief_writer.py` â†’ appends repo suggestions per dept
-- `infra/channels/bridge_router.py` â†’ `/project <desc>` Telegram command
-- `brain/knowledge/notes/LARGE_REPOS_CATALOG.md` â†’ human-readable catalog
+- `ops/omniclaw.py project init <name> --dept <dept>` → runs repo_resolver
+- `ops/scripts/brief_writer.py` → appends repo suggestions per dept
+- `infra/channels/bridge_router.py` → `/project <desc>` Telegram command
+- `brain/knowledge/notes/LARGE_REPOS_CATALOG.md` → human-readable catalog
 
 ---
 

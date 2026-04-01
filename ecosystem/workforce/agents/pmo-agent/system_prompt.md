@@ -1,4 +1,4 @@
-﻿# System Prompt — pmo-agent
+# System Prompt — pmo-agent
 # Title: Project Management Officer
 # Department: planning_pmo
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

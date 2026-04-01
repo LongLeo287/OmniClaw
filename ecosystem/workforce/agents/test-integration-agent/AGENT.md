@@ -1,4 +1,4 @@
-﻿# AGENT: Test Integration Agent â€” Testing specialist
+# AGENT: Test Integration Agent â€” Testing specialist
 # Version: 1.0 | Created: 2026-03-29 | OmniClaw Corp
 # Department: Testing (Dept 3) â€” <Sub-scope if any>
 # Authority: Tier 3 (<Specialist|Manager|Executor>)

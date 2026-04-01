@@ -1,4 +1,4 @@
-﻿﻿﻿# IT Infrastructure â€” Worker Prompt
+﻿﻿# IT Infrastructure â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: sysadmin-agent | netops-agent | database-agent
 

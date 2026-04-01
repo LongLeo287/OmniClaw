@@ -1,4 +1,4 @@
-﻿﻿# AGENT: Bridge Commander Agent â€” Director of Customs & Border Security Department
+﻿# AGENT: Bridge Commander Agent â€” Director of Customs & Border Security Department
 # Version: 1.0 | Created: 2026-03-31 | OmniClaw Corp
 # Department: Gateway_Border_Security (Dept 3) â€” <Sub-scope if any>
 # Authority: Tier 3 (<Specialist|Manager|Executor>)

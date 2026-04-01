@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# HR & People â€” Dept Manager Prompt
+﻿﻿﻿﻿# HR & People â€” Dept Manager Prompt
 # NEW DEPARTMENT | Head: hr-manager-agent | Reports to: COO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

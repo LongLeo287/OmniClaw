@@ -1,4 +1,4 @@
-﻿---
+---
 name: antigravity
 display_name: Antigravity — Master Orchestrator
 description: >

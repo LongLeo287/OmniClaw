@@ -1,4 +1,4 @@
-﻿﻿# SUPPORT â€” Department Rules
+﻿# SUPPORT â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: channel-agent | Reports to: CMO
 # All public-facing responses must pass GATE_CONTENT

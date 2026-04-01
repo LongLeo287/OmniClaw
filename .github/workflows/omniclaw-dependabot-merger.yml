@@ -1,0 +1,29 @@
+name: "🤖 OmniClaw Auto-Merge Secretary"
+
+on: pull_request
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  auto-merge:
+    name: "Auto-Merge Dependabot PRs"
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    steps:
+      - name: "Fetch Dependabot Metadata"
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          
+      - name: "Approve and Merge PR"
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        run: |
+          echo "🤖 Secretary Review: Bypassing manual approval ONLY for Patch Security Updates. Minor/Major require Human Review."
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}

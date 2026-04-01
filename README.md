@@ -11,7 +11,7 @@
   
   <br>
   
-  [**🇻🇳 Xem Phiên Bản Tiếng Việt (Vietnamese)**](README-vn.md)
+  [**🇻🇳 Watch Vietnamese Version (Vietnamese)**](README-vn.md)
   
   <br>
 
@@ -45,7 +45,7 @@ What makes OmniClaw profoundly different from standard AI coding assistants?
 3. **Hyper-Automated Universal Bootstrapper**
    Forget managing 10 different shell scripts. Simply run `omniclaw` in your terminal (or double-click the Windows `omniclaw.bat`) to instantly invoke the central Dashboard. It handles NPM dependencies, VSCode Extension injections, and Model routing automatically.
 4. **Autonomous Execution (Worker Threads)**
-   Master agents (like Claude or Gemini) delegate massive, multi-step tasks to sub-agents (CrewAI, Node scripts). It acts as a Project Manager, not just a programmer.
+   Master agents (like Claude or Gemini) delegate massive, multi-step tasks to sub-agents (CrewAI, Node scripts). It acts like a Project Manager, not just a programmer.
 
 ---
 
@@ -53,9 +53,9 @@ What makes OmniClaw profoundly different from standard AI coding assistants?
 
 To maintain a lightweight footprint while offering infinite vertical scaling, all tools in OmniClaw follow a strict **3-Tier Plugin Protocol**:
 
-*   **Tier 1 (Core Infrastructure)**: Native, always-on engines (e.g., `LightRAG` for memory, `Firecrawl` for deep web scraping).
-*   **Tier 2 (Lazy-Load Plugins)**: Specialized tools (like PDF parsers or heavy Python image generators) that are sandboxed and **spun up only when requested**, then autonomously destroyed/detached to free up RAM.
-*   **Tier 3 (Blacklisted)**: Outdated or conflicting legacy modules that the system is strictly forbidden from executing.
+* **Tier 1 (Core Infrastructure)**: Native, always-on engines (e.g., `LightRAG` for memory, `Firecrawl` for deep web scraping).
+* **Tier 2 (Lazy-Load Plugins)**: Specialized tools (like PDF parsers or heavy Python image generators) that are sandboxed and **spun up only when requested**, then autonomously destroyed/detached to free up RAM.
+* **Tier 3 (Blacklisted)**: Outdated or conflicting legacy modules that the system is strictly forbidden from executing.
 
 ```mermaid
 sequenceDiagram
@@ -108,21 +108,21 @@ OmniClaw is built to be a simple "Clone & Run" architecture.
 git clone https://github.com/LongLeo287/omniclaw-local.git "OmniClaw"
 cd "OmniClaw"
 
-# 2. Link the Global System via NPM
+#2. Link the Global System via NPM
 npm install -g .
 
 # 3. Boot the Monolithic OS Terminal (Can be run from anywhere)
 omniclaw
 ```
 
-*Windows Tip: We have provided native Windows GUI accessibility. Simply double-click the `omniclaw.bat` script located in the root repository to instantaneously open the Control Dashboard.*
+*Windows Tip: We have provided native Windows GUI accessibility. Simply double-click the `omniclaw.bat` script located in the root repository to instantly open the Control Dashboard.*
 
 ## 📚 Documentation & Internal Workflows
 
 OmniClaw is an entire Operating System, not just a codebase. For daily usage and automatic data processing, please refer to our internal operation guides:
 
-*   [**Secure GitHub Intake Protocol (CIV)**](docs/workflows/data_intake.md)
-*   [**OS Deep Sanitation & Vault Protection**](docs/workflows/deep_cleaner.md)
+* [**Secure GitHub Intake Protocol (CIV)**](docs/workflows/data_intake.md)
+* [**OS Deep Sanitation & Vault Protection**](docs/workflows/deep_cleaner.md)
 
 ---
 
@@ -134,18 +134,18 @@ Have ideas, questions, or want to showcase your custom Agent workflows? We have 
 
 ---
 
-## 🙏 Acknowledgements
+## 🙏 Acknowledgments
 
 OmniClaw stands upon the shoulders of monumental open-source architectures. We deeply thank and credit the following repositories and organizations:
 
-*   **[Anthropic](https://anthropic.com)**: For the Claude Code CLI and its phenomenal REPL structure.
-*   **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: For the Gemini models and their unprecedented deep-context structural analysis.
-*   **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: For their phenomenal cross-platform Agent shielding workflows and role-based instruction patterns.
-*   **[LightRAG](https://github.com/HKUDS/LightRAG)**: Supplying the immense and precise Graph-based cognitive retrieval system.
-*   **[Firecrawl](https://firecrawl.dev)**: Powering the flawless markdown extraction pipeline.
-*   **[Mem0](https://github.com/mem0ai/mem0)**: Revolutionizing long-term memory persistence for AI agents.
-*   **[CrewAI](https://crewai.com)**: Inspiring the localized worker-thread and sub-agent hive network.
-*   **[Cursor](https://cursor.sh)** / **OpenCode**: Our IDE environments of choice, facilitating the neural link between the OS and the CEO.
+* **[Anthropic](https://anthropic.com)**: For the Claude Code CLI and its phenomenal REPL structure.
+* **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: For the Gemini models and their unprecedented deep-context structural analysis.
+* **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: For their phenomenal cross-platform Agent shielding workflows and role-based instruction patterns.
+* **[LightRAG](https://github.com/HKUDS/LightRAG)**: Providing the immense and precise Graph-based cognitive retrieval system.
+* **[Firecrawl](https://firecrawl.dev)**: Powering the flawless markdown extraction pipeline.
+* **[Mem0](https://github.com/mem0ai/mem0)**: Revolutionizing long-term memory persistence for AI agents.
+* **[CrewAI](https://crewai.com)**: Inspiring the localized worker-thread and sub-agent hive network.
+* **[Cursor](https://cursor.sh)** / **OpenCode**: Our IDE environments of choice, facilitating the neural link between the OS and the CEO.
 
 <br>
 <div align="center">

@@ -17,20 +17,20 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/shynlee04/hivemind-plugin](https://github.com/shynlee04/hivemind-plugin)  
 **Stars:** 200 | **Type:** TOOL | **Dept:** engineering  
-**OmniClaw Compatible:** âœ… Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
 - **domains:** ai-ml, multi-agent
 - **target_dept:** engineering
 - **relevant_agents:** corp_orchestrator
-- **security_gate:** PASS â€” community_vetted
+- **security_gate:** PASS — community_vetted
 
 ## OmniClaw Notes
-INSTALLED in ecosystem/plugins/hivemind-plugin/ â€” reference only now
+INSTALLED in ecosystem/plugins/hivemind-plugin/ — reference only now
 
 ## Integration
-ðŸ“– KI entry only â€” no plugin clone needed
+📖 KI entry only — no plugin clone needed
 
 ---
 *Ingested: 2026-03-22T23:02:23.338520 via knowledge-ingest.md Phase 1-3*

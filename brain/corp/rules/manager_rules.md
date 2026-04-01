@@ -1,11 +1,11 @@
-# Manager Rules â€” OmniClaw Corp
+# Manager Rules — OmniClaw Corp
 # Authority: Tier 2 | Updated: 2026-03-17
 # Applied to: all Department Heads
 
 RULE MGR-01: BRIEF IS MANDATORY
   A dept brief must be written to shared-context/brain/corp/daily_briefs/<dept>.md
   after every active work cycle. No exceptions.
-  Missing 2 consecutive briefs â†’ L2 escalation triggered automatically.
+  Missing 2 consecutive briefs → L2 escalation triggered automatically.
 
 RULE MGR-02: KPI CONTEXT BEFORE ASSIGNMENT
   Do NOT assign tasks without reading:
@@ -34,7 +34,7 @@ RULE MGR-06: MEMORY UPDATE
   - New lessons learned
   - Patterns of failure
   - Effective approaches
-  Do NOT store raw logs â€” store distilled facts.
+  Do NOT store raw logs — store distilled facts.
 
 RULE MGR-07: LLM COST COMPLIANCE
   Assign LLM tier per task as specified in dept config (llm_tier field).
@@ -55,7 +55,7 @@ RULE MGR-10: SECURITY COMPLIANCE
 RULE MGR-11: KNOWLEDGE FEED CHECK AT BOOT
   Every dept head agent MUST load brain/corp/knowledge_feeds/<dept>/new_knowledge.md at boot.
   Process each item: [READ] | [ACTION] | [TRAIN] | [RULE] (per dept_head_boot_rules.md).
-  TRAIN items â†’ forward ENRICHMENT REQUEST to OD&L training-agent.
+  TRAIN items → forward ENRICHMENT REQUEST to OD&L training-agent.
   Unprocessed feed items = invisible org knowledge = violated MGR-06.
 
 RULE MGR-12: ENRICHMENT IS THE MANAGER'S RESPONSIBILITY

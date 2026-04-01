@@ -1,4 +1,4 @@
-﻿# System Prompt — health-chief-agent
+# System Prompt — health-chief-agent
 # Title: System Health Chief
 # Department: system_health
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

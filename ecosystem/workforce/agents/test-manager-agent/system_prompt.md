@@ -1,4 +1,4 @@
-﻿# System Prompt — test-manager-agent
+# System Prompt — test-manager-agent
 # Title: QA & Test Manager
 # Department: qa_testing
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

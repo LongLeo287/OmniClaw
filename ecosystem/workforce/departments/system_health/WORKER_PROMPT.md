@@ -1,4 +1,4 @@
-﻿﻿# System Health â€” Worker Prompt
+﻿# System Health â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: agent-health-agent | system-diagnostics-agent | recovery-agent
 

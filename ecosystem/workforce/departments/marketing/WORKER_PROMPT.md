@@ -1,4 +1,4 @@
-﻿﻿# Marketing â€” Worker Prompt
+﻿# Marketing â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: content-agent | seo-agent | ads-agent | social-agent | affiliate-agent
 

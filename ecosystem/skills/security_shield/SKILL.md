@@ -27,14 +27,14 @@ emits_events:
   - compliance_passed
 listens_to: []
 ---
-# ðŸ›¡ï¸ Security Shield Skill (Strix Protocol)
+# 🛡️ Security Shield Skill (Strix Protocol)
 
 ## Description
-This skill provides the OmniClaw with "Hacker Instincts" â€” pre-clone repo vetting, vulnerability scanning, and auto-remediation. Protects the ecosystem from supply chain attacks, malware, and data exfiltration.
+This skill provides the OmniClaw with "Hacker Instincts" — pre-clone repo vetting, vulnerability scanning, and auto-remediation. Protects the ecosystem from supply chain attacks, malware, and data exfiltration.
 
-## ðŸ› ï¸ Core Functions
+## 🛠️ Core Functions
 
-1. **Pre-Clone Vetting (/vet-repo):** â† NEW
+1. **Pre-Clone Vetting (/vet-repo):** ← NEW
    - Run `vet_repo.ps1` on a quarantined repo BEFORE any content enters OmniClaw.
    - Scans: git hooks, npm postinstall scripts, network calls, sensitive data access, obfuscation, hardcoded secrets, suspicious binaries.
    - Generates `_VET_REPORT.md` with PASS / WARN / FAIL verdict.
@@ -50,12 +50,12 @@ This skill provides the OmniClaw with "Hacker Instincts" â€” pre-clone repo
 4. **Auto-Remediation (/secure-patch):**
    - Propose and apply security patches automatically.
 
-## ðŸ“‹ Standard Operating Procedure
+## 📋 Standard Operating Procedure
 
 ### For External Repos (MANDATORY)
 1. Clone into `D:\APP\QUARANTINE\<repo-name>` with `--depth=1`
 2. Delete `.git\hooks\` non-.sample files
-3. Run `/vet-repo` â†’ wait for PASS
+3. Run `/vet-repo` → wait for PASS
 4. Extract ONLY needed files into OmniClaw
 5. Run `/scan` on newly added files
 6. Delete QUARANTINE folder
@@ -64,10 +64,10 @@ See full protocol: `D:\APP\OmniClaw\rules\clone_security_protocol.md`
 
 ### For Code Changes (Before Commit)
 1. Run `/scan` on changed files
-2. If vulnerabilities found â†’ trigger `/secure-patch`
+2. If vulnerabilities found → trigger `/secure-patch`
 3. Document "Security Receipt" in task telemetry
 
-## ðŸ“š Knowledge Base
+## 📚 Knowledge Base
 - Protocol: [clone_security_protocol.md](../rules/clone_security_protocol.md)
 - Knowledge: [repo_vetting_knowledge.md](../knowledge/repo_vetting_knowledge.md)
 - Script: [vet_repo.ps1](./vet_repo.ps1)

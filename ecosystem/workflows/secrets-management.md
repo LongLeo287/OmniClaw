@@ -1,103 +1,103 @@
 # Department: operations
 ---
-description: HÆ°á»›ng dáº«n quáº£n lÃ½ táº­p trung API keys, tokens, vÃ  secrets trong OmniClaw Corp
+description: Hướng dẫn quản lý tập trung API keys, tokens, và secrets trong OmniClaw Corp
 ---
 
 # Secrets Management SOP
 
-## NguyÃªn táº¯c cá»‘t lÃµi
+## Nguyên tắc cốt lõi
 
 | Rule | Detail |
 |------|--------|
-| **1 nguá»“n** | Táº¥t cáº£ secrets trong `$OMNICLAW_ROOT\.env` (root master) |
-| **KhÃ´ng commit** | `.env` luÃ´n bá»‹ gitignore, khÃ´ng bao giá» push lÃªn git |
-| **KhÃ´ng hardcode** | KhÃ´ng paste key vÃ o code, markdown, hay comment |
-| **Rotate** | Xoay vÃ²ng keys theo lá»‹ch (xem SECRETS_REGISTRY.md) |
-| **Least privilege** | Chá»‰ cáº¥p quyá»n tá»‘i thiá»ƒu cáº§n thiáº¿t cho má»—i key |
+| **1 nguồn** | Tất cả secrets trong `$OMNICLAW_ROOT\.env` (root master) |
+| **Không commit** | `.env` luôn bị gitignore, không bao giờ push lên git |
+| **Không hardcode** | Không paste key vào code, markdown, hay comment |
+| **Rotate** | Xoay vòng keys theo lịch (xem SECRETS_REGISTRY.md) |
+| **Least privilege** | Chỉ cấp quyền tối thiểu cần thiết cho mỗi key |
 
 ---
 
-## Cáº¥u trÃºc Files
+## Cấu trúc Files
 
 ```
 $OMNICLAW_ROOT\
-â”œâ”€â”€ .env                    â† MASTER secrets (gitignored âœ…)
-â”œâ”€â”€ .env.example            â† Template an toÃ n (cÃ³ thá»ƒ commit)
-â”œâ”€â”€ secrets\
-â”‚   â”œâ”€â”€ .gitignore          â† Cháº·n toÃ n folder
-â”‚   â”œâ”€â”€ SECRETS_REGISTRY.md â† Inventory keys (khÃ´ng cÃ³ values)
-â”‚   â””â”€â”€ .env.master.example â† Template master Ä‘áº§y Ä‘á»§
-â””â”€â”€ tools\clawtask\
-    â””â”€â”€ .env                â† Sub-env (chá»‰ vars cáº§n cho clawtask, gitignored âœ…)
+├── .env                    ← MASTER secrets (gitignored ✅)
+├── .env.example            ← Template an toàn (có thể commit)
+├── secrets\
+│   ├── .gitignore          ← Chặn toàn folder
+│   ├── SECRETS_REGISTRY.md ← Inventory keys (không có values)
+│   └── .env.master.example ← Template master đầy đủ
+└── tools\clawtask\
+    └── .env                ← Sub-env (chỉ vars cần cho clawtask, gitignored ✅)
 ```
 
 ---
 
-## Quy trÃ¬nh Onboarding (setup láº§n Ä‘áº§u)
+## Quy trình Onboarding (setup lần đầu)
 
-### BÆ°á»›c 1: Copy template
+### Bước 1: Copy template
 ```powershell
 copy "$OMNICLAW_ROOT\secrets\.env.master.example" "$OMNICLAW_ROOT\.env"
 ```
 
-### BÆ°á»›c 2: Äiá»n values
-Má»Ÿ `$OMNICLAW_ROOT\.env` vÃ  Ä‘iá»n giÃ¡ trá»‹ thá»±c cho tá»«ng key.
+### Bước 2: Điền values
+Mở `$OMNICLAW_ROOT\.env` và điền giá trị thực cho từng key.
 
-### BÆ°á»›c 3: Setup sub-tool .env
+### Bước 3: Setup sub-tool .env
 ```powershell
-# ClawTask cáº§n subset nhá»
-copy template vÃ o tools\clawtask\.env
-# Chá»‰ Ä‘iá»n: SUPABASE_URL, SUPABASE_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+# ClawTask cần subset nhỏ
+copy template vào tools\clawtask\.env
+# Chỉ điền: SUPABASE_URL, SUPABASE_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 ```
 
-### BÆ°á»›c 4: Verify gitignore
+### Bước 4: Verify gitignore
 ```powershell
-git status   # .env KHÃ”NG Ä‘Æ°á»£c xuáº¥t hiá»‡n trong danh sÃ¡ch
-git check-ignore -v .env  # Pháº£i tráº£ vá» ".gitignore:.env"
+git status   # .env KHÔNG được xuất hiện trong danh sách
+git check-ignore -v .env  # Phải trả về ".gitignore:.env"
 ```
 
 ---
 
-## ThÃªm Secret Má»›i
+## Thêm Secret Mới
 
-1. **ThÃªm vÃ o `$OMNICLAW_ROOT\.env`** (giÃ¡ trá»‹ thá»±c)
-2. **ThÃªm vÃ o `secrets\.env.master.example`** (placeholder)
-3. **ÄÄƒng kÃ½ vÃ o `secrets\SECRETS_REGISTRY.md`** (key name + metadata)
+1. **Thêm vào `$OMNICLAW_ROOT\.env`** (giá trị thực)
+2. **Thêm vào `secrets\.env.master.example`** (placeholder)
+3. **Đăng ký vào `secrets\SECRETS_REGISTRY.md`** (key name + metadata)
 4. Load trong code qua `os.environ.get("KEY_NAME")`
 
 ---
 
 ## Rotate Secret
 
-1. **Revoke key cÅ©** trÃªn portal cá»§a provider
-2. **Generate key má»›i**
+1. **Revoke key cũ** trên portal của provider
+2. **Generate key mới**
 3. **Update** `$OMNICLAW_ROOT\.env`
-4. **Restart** services dÃ¹ng key Ä‘Ã³ (Docker: `docker compose restart`)
-5. **Ghi nháº­t kÃ½** vÃ o SECRETS_REGISTRY.md (update date)
+4. **Restart** services dùng key đó (Docker: `docker compose restart`)
+5. **Ghi nhật ký** vào SECRETS_REGISTRY.md (update date)
 
 ---
 
-## Náº¿u Key bá»‹ Lá»™ (Emergency)
+## Nếu Key bị Lộ (Emergency)
 
 ```
-KHáº¨N Cáº¤P: Revoke ngay trÃªn provider portal!
+KHẨN CẤP: Revoke ngay trên provider portal!
 ```
 
-1. ðŸ”´ **Revoke ngay** â€” khÃ´ng chá»
+1. 🔴 **Revoke ngay** — không chờ
 2. Generate key replacement
 3. Update `.env` + restart services
-4. Verify khÃ´ng cÃ²n reference trong code: `grep -r "old_key_prefix" d:\Project`
-5. Audit log xem ai/cÃ¡i gÃ¬ Ä‘Ã£ access
+4. Verify không còn reference trong code: `grep -r "old_key_prefix" d:\Project`
+5. Audit log xem ai/cái gì đã access
 
 ---
 
-## Tools & Commands há»¯u Ã­ch
+## Tools & Commands hữu ích
 
 ```powershell
-# Kiá»ƒm tra file cÃ³ bá»‹ commit khÃ´ng
+# Kiểm tra file có bị commit không
 git ls-files .env
 
-# Xem secrets Ä‘ang Ä‘Æ°á»£c load khÃ´ng
+# Xem secrets đang được load không
 python -c "import os; print(os.environ.get('ANTHROPIC_API_KEY','NOT SET')[:10])"
 
 # Check gitnore
@@ -113,12 +113,12 @@ curl http://localhost:7474/api/telegram/test
 
 | Provider | Revoke Location |
 |----------|----------------|
-| Anthropic | console.anthropic.com â†’ API Keys |
-| OpenAI | platform.openai.com â†’ API Keys |
+| Anthropic | console.anthropic.com → API Keys |
+| OpenAI | platform.openai.com → API Keys |
 | GitHub | github.com/settings/tokens |
-| Supabase | Project â†’ Settings â†’ API |
-| Telegram | Telegram â†’ @BotFather â†’ /revoke |
-| Google | console.cloud.google.com â†’ Credentials |
+| Supabase | Project → Settings → API |
+| Telegram | Telegram → @BotFather → /revoke |
+| Google | console.cloud.google.com → Credentials |
 
 ---
 

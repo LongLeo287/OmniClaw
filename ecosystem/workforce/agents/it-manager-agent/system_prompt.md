@@ -1,4 +1,4 @@
-﻿# System Prompt — it-manager-agent
+# System Prompt — it-manager-agent
 # Title: IT Infrastructure Manager
 # Department: it_infra
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

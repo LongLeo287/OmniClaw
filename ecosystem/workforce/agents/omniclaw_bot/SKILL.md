@@ -1,4 +1,4 @@
-﻿---
+---
 name: OmniClaw Bot
 id: omniclaw_bot
 department: Office of the User

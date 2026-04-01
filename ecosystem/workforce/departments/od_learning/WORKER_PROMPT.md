@@ -1,4 +1,4 @@
-﻿﻿# OD & Learning â€” Worker Prompt
+﻿# OD & Learning â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: dept-builder-agent | training-agent | org-analyst-agent | learning-curator-agent
 

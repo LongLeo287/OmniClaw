@@ -1,4 +1,4 @@
-﻿# SYSTEM INTEGRITY — Manager Prompt
+# SYSTEM INTEGRITY — Manager Prompt
 # Version: 1.0 | Created: 2026-03-29
 # Dept Head: system-repair-agent | Reports to: strix-agent → CEO
 # Dept: 32 (System Integrity) | Purpose: Auto-detect & repair system issues

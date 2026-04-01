@@ -1,4 +1,4 @@
-﻿﻿# REGISTRY & CAPABILITY MANAGEMENT â€” Department Rules
+﻿# REGISTRY & CAPABILITY MANAGEMENT â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: registry-manager-agent | Reports to: CTO
 # Mission: Too much to sell (Skill/Plugin/Feature) of OmniClaw

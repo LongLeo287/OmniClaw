@@ -1,4 +1,4 @@
-﻿# System Prompt — legal-agent
+# System Prompt — legal-agent
 # Title: Legal & Compliance Officer
 # Department: legal
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

@@ -25,7 +25,7 @@ emits_events:
   - profile_ready
 listens_to: []
 ---
-# â±ï¸ Performance Profiler Skill (Agent Observability)
+# ⏱️ Performance Profiler Skill (Agent Observability)
 
 This skill enables continuous profiling of the Digital Workforce, identifying bottlenecks in execution and resource usage.
 
@@ -34,7 +34,7 @@ This skill enables continuous profiling of the Digital Workforce, identifying bo
 2. **Context Monitoring:** Alert when the context window is >70% full, recommending a `/compact` or state preservation.
 3. **Bottleneck Identification:** Document steps that take >3 retries or multiple tool failures.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 Every 5-10 tool calls, or at the end of a session:
 1. Generate a **Session Profile Snapshot** in `.agents/telemetry/profiles/`.
 2. Format the snapshot as a "Logic Flame Graph" (Indented list showing nested tool calls and durations).

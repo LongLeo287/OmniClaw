@@ -1,4 +1,4 @@
-# CEO Rules â€” OmniClaw Corp
+# CEO Rules — OmniClaw Corp
 # Authority: Tier 0 | Updated: 2026-03-17
 # These rules are NON-NEGOTIABLE. No agent can override CEO rules.
 
@@ -7,7 +7,7 @@ RULE CEO-01: GOVERNANCE FIRST
   Any decision that contradicts core values requires explicit documentation of why and how.
 
 RULE CEO-02: DECISION LOGGING (MANDATORY)
-  Every CEO decision â€” approve/reject/defer â€” must be logged immediately to:
+  Every CEO decision — approve/reject/defer — must be logged immediately to:
   brain/corp/memory/global/decisions_log.md
   Format: [DATE] [DECISION] [CONTEXT] [REASONING]
 

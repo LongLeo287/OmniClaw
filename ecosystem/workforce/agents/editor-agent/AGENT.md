@@ -1,4 +1,4 @@
-﻿# AGENT: Editor-in-Chief — Editor-in-Chief / GATE_CONTENT Authority
+# AGENT: Editor-in-Chief — Editor-in-Chief / GATE_CONTENT Authority
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 6 (Content Review)
 # Authority: Tier 2 (Manager / Dept Head)

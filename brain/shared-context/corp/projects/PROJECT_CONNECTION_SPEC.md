@@ -1,4 +1,4 @@
-# Project Connection Protocol â€” OmniClaw v3.0
+# Project Connection Protocol — OmniClaw v3.0
 # Authority: Tier 0 (Constitution)
 # Updated: 2026-03-16
 
@@ -9,23 +9,23 @@
 ## Core Concept
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚              EXTERNAL PROJECT               â”‚
-â”‚  (React app, GAS backend, CLI tool, etc.)   â”‚
-â”‚                                             â”‚
-â”‚  [.agent/CLAUDE.md]  â† reads OmniClaw skills  â”‚
-â”‚  [.clauderules]      â† workspace rules      â”‚
-â”‚  [.claudeignore]     â† scope limits         â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                 â”‚ registers via
-                 â–¼
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚              OmniClaw CORE                     â”‚
-â”‚  registry.json  â† project catalog          â”‚
-â”‚  skills/        â† shared capabilities      â”‚
-â”‚  knowledge/     â† shared intelligence      â”‚
-â”‚  channels/      â† remote bridge (optional) â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+┌─────────────────────────────────────────────┐
+│              EXTERNAL PROJECT               │
+│  (React app, GAS backend, CLI tool, etc.)   │
+│                                             │
+│  [.agent/CLAUDE.md]  ← reads OmniClaw skills  │
+│  [.clauderules]      ← workspace rules      │
+│  [.claudeignore]     ← scope limits         │
+└────────────────┬────────────────────────────┘
+                 │ registers via
+                 ▼
+┌─────────────────────────────────────────────┐
+│              OmniClaw CORE                     │
+│  registry.json  ← project catalog          │
+│  skills/        ← shared capabilities      │
+│  knowledge/     ← shared intelligence      │
+│  channels/      ← remote bridge (optional) │
+└─────────────────────────────────────────────┘
 ```
 
 ---
@@ -59,15 +59,15 @@ Use `scripts/register_project.ps1 -Id PRJ-XXX -Name "..." -Path "..."` to automa
 
 ```
 projects/PRJ-XXX/
-â”œâ”€â”€ CLAUDE.md          â† Project-scoped identity (load OmniClaw skills)
-â””â”€â”€ workflows/         â† Project-specific workflows
-    â”œâ”€â”€ deploy.md
-    â””â”€â”€ debug.md
+├── CLAUDE.md          ← Project-scoped identity (load OmniClaw skills)
+└── workflows/         ← Project-specific workflows
+    ├── deploy.md
+    └── debug.md
 ```
 
 The `CLAUDE.md` must start with:
 ```markdown
-# Project: [Name] â€” OmniClaw Connected
+# Project: [Name] — OmniClaw Connected
 # PRJ-ID: PRJ-XXX
 # reads-from: $OMNICLAW_ROOT\CLAUDE.md
 
@@ -83,7 +83,7 @@ The `CLAUDE.md` must start with:
 In the project directory, create `.clauderules` (or `.agent/CLAUDE.md`):
 
 ```markdown
-# Workspace Rules â€” [Project Name]
+# Workspace Rules — [Project Name]
 # Connected to OmniClaw: $OMNICLAW_ROOT
 
 ## Identity
@@ -106,14 +106,14 @@ For complex tasks: follow $OMNICLAW_ROOT\workflows\claude_code_handoff.md
 .\gatekeeper.ps1 -ProjectId PRJ-XXX
 ```
 
-If GRANT â†’ project is active in OmniClaw ecosystem.
+If GRANT → project is active in OmniClaw ecosystem.
 
 ---
 
 ## Project Status Lifecycle
 
 ```
-DRAFT â†’ ACTIVE â†’ MAINTENANCE â†’ ARCHIVED
+DRAFT → ACTIVE → MAINTENANCE → ARCHIVED
 ```
 
 | Status | Meaning |
@@ -133,14 +133,14 @@ DRAFT â†’ ACTIVE â†’ MAINTENANCE â†’ ARCHIVED
 | Knowledge | `knowledge/` | Read via knowledge_navigator skill |
 | Channel Bridge | `channels/` | Set `channels_enabled: true` in registry |
 | Shared Agents | `agents/` | Invoke via blackboard.json |
-| Orchestrator | `blackboard.json` | Write task payload â†’ OmniClaw picks up |
+| Orchestrator | `blackboard.json` | Write task payload → OmniClaw picks up |
 
 ---
 
 ## Quick Reference: Auto-Register Script
 
 ```powershell
-# Táº¡o project má»›i vÃ  register tá»± Ä‘á»™ng:
+# Tạo project mới và register tự động:
 .\scripts\register_project.ps1 `
   -Id "PRJ-005" `
   -Name "My New Project" `

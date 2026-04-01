@@ -1,9 +1,9 @@
-# ðŸ¤– Agent Behavior & Responsibility Rules
+# 🤖 Agent Behavior & Responsibility Rules
 
 ## Description
 A comprehensive rule set governing agent autonomy, resource awareness (SFUA loop), progress tracking, and Vietnamese-centric reporting standards for the project.
 
-## 0. ðŸ§  Phase 11: Advanced Cognitive protocols (MANDATORY)
+## 0. 🧠 Phase 11: Advanced Cognitive protocols (MANDATORY)
 
 Agents operate under the **Cognitive Evolution** standard:
 
@@ -29,17 +29,17 @@ Agents operate under the **Cognitive Evolution** standard:
     - **Exit:** Reflection documented, knowledge/ updated, next task identified.
 
     **Mode Transition Rules:**
-    - `[PLANNING]` â†’ `[EXECUTION]`: Only after plan validation.
-    - `[EXECUTION]` â†’ `[REFLECTION]`: Automatic on task completion or failure.
-    - `[REFLECTION]` â†’ `[PLANNING]`: When next task is identified.
-    - Emergency: Any mode â†’ `[PLANNING]` on CIRCUIT BREAKER activation.
+    - `[PLANNING]` → `[EXECUTION]`: Only after plan validation.
+    - `[EXECUTION]` → `[REFLECTION]`: Automatic on task completion or failure.
+    - `[REFLECTION]` → `[PLANNING]`: When next task is identified.
+    - Emergency: Any mode → `[PLANNING]` on CIRCUIT BREAKER activation.
 
 3.  **SELF-DIAGNOSTICS:** Before calling a tool, the Agent must perform a "Dry Run" reasoning step within `<thought>` tags to predict success/failure and identify side effects.
-4.  **HUMAN-IN-THE-LOOP (HITL) â€” Advanced Safety:**
+4.  **HUMAN-IN-THE-LOOP (HITL) — Advanced Safety:**
     - **Tier 1 (Auto-Approve):** Read operations, search, local file edits within `.agents/`.
-    - **Tier 2 (Dry-Run Required):** Code modifications, dependency changes â€” agent must output `<thought>` dry-run before execution.
+    - **Tier 2 (Dry-Run Required):** Code modifications, dependency changes — agent must output `<thought>` dry-run before execution.
     - **Tier 3 (User Confirmation):** File deletion, schema changes, deployment, git operations beyond local commits.
-    - **Tier 4 (Simulated Dry-Run):** Infrastructure changes, external API calls â€” agent must simulate the full operation in `<thought>` tags, present expected outcomes, and wait for explicit approval.
+    - **Tier 4 (Simulated Dry-Run):** Infrastructure changes, external API calls — agent must simulate the full operation in `<thought>` tags, present expected outcomes, and wait for explicit approval.
 
 ---
 
@@ -47,17 +47,17 @@ Agents operate under the **Cognitive Evolution** standard:
 
 Agents must move from "Static Prompting" to "Context Engineering" using the **SFUA Loop**:
 
-1. **ðŸ” SEARCH**: At the start of any task, perform a **HYBRID SEARCH** (Keyword + Semantic) across `.agents/knowledge/`, `.agents/docs/`, and `.agents/memory/`. Do NOT rely on training data for internal project details.
-2. **ðŸ“¥ FETCH**: Retrieve the full content of relevant skill manifests (`SKILL.md`), plans, or rules. Ensure you have the "Ground Truth" before planning execution.
-3. **âš¡ USE**: Execute the task as per the [Strategy](../plans/implementation_plan.md).
-4. **ðŸ“ ANNOTATE**: Use the [Smart Memory Skill](../skills/smart_memory/SKILL.md) to extract **Facts** (not logs). Update the `walkthrough_active.md` and annotate high-density lessons in `.agents/memory/daily/`.
-5. **ðŸ”— CROSS-SESSION CONTINUITY**: When starting a new session or encountering an unknown context, you **MUST** review the `archive/` and previous `tasks/reports/` to ensure long-term continuity. Never start from zero.
-6. **âš“ RE-ANCHOR**: At every phase transition, you **MUST** re-read `THESIS.md`, `.agents/tasks/task.md`, and **[ORCHESTRATION_SOP.md](ORCHESTRATION_SOP.md)**.
+1. **🔍 SEARCH**: At the start of any task, perform a **HYBRID SEARCH** (Keyword + Semantic) across `.agents/knowledge/`, `.agents/docs/`, and `.agents/memory/`. Do NOT rely on training data for internal project details.
+2. **📥 FETCH**: Retrieve the full content of relevant skill manifests (`SKILL.md`), plans, or rules. Ensure you have the "Ground Truth" before planning execution.
+3. **⚡ USE**: Execute the task as per the [Strategy](../plans/implementation_plan.md).
+4. **📝 ANNOTATE**: Use the [Smart Memory Skill](../skills/smart_memory/SKILL.md) to extract **Facts** (not logs). Update the `walkthrough_active.md` and annotate high-density lessons in `.agents/memory/daily/`.
+5. **🔗 CROSS-SESSION CONTINUITY**: When starting a new session or encountering an unknown context, you **MUST** review the `archive/` and previous `tasks/reports/` to ensure long-term continuity. Never start from zero.
+6. **⚓ RE-ANCHOR**: At every phase transition, you **MUST** re-read `THESIS.md`, `.agents/tasks/task.md`, and **[ORCHESTRATION_SOP.md](ORCHESTRATION_SOP.md)**.
     - **RE-ANCHOR:** Every 30 minutes, re-read `CLAUDE.md`, `THESIS.md`, and the new **[SOUL.md](SOUL.md)**, **[AGENTS.md](AGENTS.md)**, **[WORKFLOW.md](WORKFLOW.md)**, **[ORCHESTRATION_SOP.md](ORCHESTRATION_SOP.md)**, and **[blackboard.json](../shared-context/blackboard.json)** to ensure behavioral alignment.
 - **FRESHNESS:** Prioritize reading the latest files over cached knowledge.
 - **REACT-GRAB ANCHOR:** For UI fixes, fetch the exact DOM fragment and source file first.
-6. **â„ï¸ FRESHNESS**: Data about Live Build status, Git state, or current errors is "Volatile". You **MUST** run fresh search/status tools before acting on volatile data.
-7. **ðŸ§  REFLECT**: After any major task completion, review the **Task Receipt** and trigger the [Cognitive Reflector](/reflect). Document the lesson learned in `.agents/docs/lessons_learned.md`.
+6. **❄️ FRESHNESS**: Data about Live Build status, Git state, or current errors is "Volatile". You **MUST** run fresh search/status tools before acting on volatile data.
+7. **🧠 REFLECT**: After any major task completion, review the **Task Receipt** and trigger the [Cognitive Reflector](/reflect). Document the lesson learned in `.agents/docs/lessons_learned.md`.
 
 - Agent **MUST** read `project_map.md` first when starting a session.
 - If a task requires security, Agent **MUST** automatically apply `link_safety_rules.md`.

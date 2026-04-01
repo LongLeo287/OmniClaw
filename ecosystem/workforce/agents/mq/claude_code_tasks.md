@@ -1,4 +1,4 @@
-﻿# [HANDOFF] Job Assignment Campaign: Building Skills for GCP Architect
+# [HANDOFF] Job Assignment Campaign: Building Skills for GCP Architect
 
 **From:** Antigravity (Chief Architect)
 **To:** Claude Code CLI (Implementation Engineer)

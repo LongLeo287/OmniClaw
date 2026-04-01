@@ -1,25 +1,25 @@
-# OmniClaw Corp â€” Escalation Rules
+# OmniClaw Corp — Escalation Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 2 (Operations)
 # Executed by: chief-of-staff, corp_orchestrator
 
 escalation_levels:
 
-  # â”€â”€â”€ LEVEL 1: Worker â†’ Dept Head â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── LEVEL 1: Worker → Dept Head ───────────────────
   level_1:
     from: "Worker Agent"
     to: "Department Head"
     triggers:
       - "Task BLOCKED for > 1 retry cycle (2-strike rule)"
       - "External API or tool failure with no fallback"
-      - "Ambiguous instructions â€” cannot determine intent"
+      - "Ambiguous instructions — cannot determine intent"
       - "Security concern detected in task scope"
     action: |
       Worker writes escalation note to subagents/mq/<dept>_escalation.md
       Dept Head reads, decides: reassign | provide guidance | escalate to C-Suite
     sla: "Dept Head responds within same session"
 
-  # â”€â”€â”€ LEVEL 2: Dept Head â†’ C-Suite â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── LEVEL 2: Dept Head → C-Suite ──────────────────
   level_2:
     from: "Department Head"
     to: "Relevant C-Suite (CTO / CMO / COO / CSO)"
@@ -38,7 +38,7 @@ escalation_levels:
       C-Suite reviews and responds in same file
     sla: "C-Suite responds within 24 hours"
 
-  # â”€â”€â”€ LEVEL 3: C-Suite â†’ CEO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── LEVEL 3: C-Suite → CEO ─────────────────────────
   level_3:
     from: "C-Suite Agent"
     to: "CEO (Human Operator)"
@@ -55,20 +55,20 @@ escalation_levels:
     sla: "CEO responds before next daily cycle"
     blocking: true  # work pauses on this item until CEO responds
 
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 # AUTO-ESCALATION RULES (triggered by kpi_scoreboard)
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 auto_escalation:
   - condition: "department.status == 'critical'"
-    action: "Immediately write to escalations.md â†’ notify CEO via Antigravity"
+    action: "Immediately write to escalations.md → notify CEO via Antigravity"
   - condition: "department.status == 'behind' for 2 days"
     action: "Level 2 escalation to C-Suite"
   - condition: "blackboard.handoff_trigger == 'BLOCKED'"
     action: "Level 1 escalation to Dept Head + Chief of Staff notified"
 
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 # FALSE ESCALATION PREVENTION
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 do_not_escalate:
   - "Routine task delays < 2 hours"
   - "Missing context solvable by RESEARCHER role"

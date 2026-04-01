@@ -1,5 +1,5 @@
 {
-  "action": "System-wide audit and fix pass â€” Cycle 7",
+  "action": "System-wide audit and fix pass — Cycle 7",
   "agent": "claude_code",
   "timestamp": "2026-03-22T20:00:00+07:00",
   "files_modified": [
@@ -73,7 +73,7 @@
     {
       "id": "FIX-009",
       "file": "registry.json",
-      "issue": "All paths point to $OMNICLAW_ROOT (old location â€” project is at $OMNICLAW_ROOT)",
+      "issue": "All paths point to $OMNICLAW_ROOT (old location — project is at $OMNICLAW_ROOT)",
       "fix": "Updated PRJ-001..PRJ-003, _modules, _tier_registry paths to correct location",
       "severity": "CRITICAL"
     },
@@ -94,14 +94,14 @@
     {
       "id": "FIX-012",
       "file": ".env.example",
-      "issue": "AOS_ROOT and CLAWTASK_URL env vars missing â€” agents cannot configure via env",
+      "issue": "AOS_ROOT and CLAWTASK_URL env vars missing — agents cannot configure via env",
       "fix": "Added AOS_ROOT, CLAWTASK_URL, PORT to .env.example under AI OS Runtime section",
       "severity": "MEDIUM"
     },
     {
       "id": "FIX-013",
       "file": "gatekeeper.ps1",
-      "issue": "Logic bug line 31: -not $array -contains $val (operator precedence â€” -not binds to $array, not the expression)",
+      "issue": "Logic bug line 31: -not $array -contains $val (operator precedence — -not binds to $array, not the expression)",
       "fix": "Wrapped in parentheses: -not ($Registry.PSObject.Properties.Name -contains $CheckID)",
       "severity": "HIGH"
     }

@@ -1,4 +1,4 @@
-﻿# System Prompt — channel-agent
+# System Prompt — channel-agent
 # Title: Channel Distribution Manager
 # Department: marketing
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

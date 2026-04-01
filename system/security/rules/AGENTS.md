@@ -1,9 +1,9 @@
-# REDIRECT â€” rules/AGENTS.md
-> âš ï¸ **THIS IS NOT THE AUTHORITATIVE FILE**
+# REDIRECT — rules/AGENTS.md
+> ⚠️ **THIS IS NOT THE AUTHORITATIVE FILE**
 
 The AI OS AGENTS roster has moved to its correct Tier 1 location:
 
-**ðŸ‘‰ Authoritative:** `shared-context/AGENTS.md`
+**👉 Authoritative:** `shared-context/AGENTS.md`
 
 This stub remains here to:
 1. Maintain `.claudeignore` protection on this path
@@ -19,10 +19,10 @@ This stub remains here to:
 ## Description
 This document is the "Constitution" of the centralized AI OS located at `D:\APP\AI OS\`. It defines the hard rules, hierarchy, and operational constraints for the entire 3-tier Ecosystem (AI OS, Workspaces, DATA).
 
-## ðŸ›¡ï¸ Sovereign Ecosystem Rule
+## 🛡️ Sovereign Ecosystem Rule
 **HARD RULE:** All agents MUST validate access via `D:\APP\AI OS\gatekeeper.ps1` reading from `registry.json` before performing any operations on a Workspace. Unregistered Workspaces are strictly prohibited from interaction. 
 
-## ðŸ›ï¸ Centralized Hierarchy
+## 🏛️ Centralized Hierarchy
 
 - **Antigravity (Master Architect & OS Governor):** 
   - Responsibility: Deep analysis, ecosystem architecture, structural engineering, and abstract reasoning.
@@ -33,26 +33,26 @@ This document is the "Constitution" of the centralized AI OS located at `D:\APP\
 - **Data Miner & Archivist (Sub-Agents):**
   - Responsibility: Workspace purification, knowledge indexing, and crawling `D:\APP\DATA`.
 
-## ðŸ›¡ï¸ Forbidden Actions
+## 🛡️ Forbidden Actions
 
 1. **Direct Main Commits:** Never commit directly to the `main` or `master` branch without a PR/Review.
 2. **Destructive Operations:** Commands like `rm -rf`, `drop table` MUST be confirmed via `/suggest-cmd`.
 3. **Unprompted Emails:** Draft only. Sending is strictly prohibited.
 4. **Force Pushing:** Forbidden. Use `--force-with-lease` only.
 
-## ðŸ”’ Security & Language Governance
+## 🔒 Security & Language Governance
 
 1. **Technical Files:** All files (`.md`, `.rule`, `.skill`, `.plugin`, `.prompt`, `task`, `phase`, `roadmap`) MUST be written in **<!--LANG-->Vietnamese<!--/LANG-->**.
 2. **User Communication:** Brainstorms, Reports to the user, and `.resolved` files MUST be in **<!--LANG-->Vietnamese<!--/LANG-->**. (Exception to Rule 1).
 3. **Knowledge Library:** Prioritize using and updating the `knowledge/` folder.
 
-## ðŸš¥ Severity Tiers (Reports in Vietnamese)
-- **[LOW]:** ThÃ´ng tin (Information).
-- **[MEDIUM]:** Váº¥n Ä‘á» tiá»m áº©n (Potential Issue).
-- **[HIGH]:** Cáº§n hÃ nh Ä‘á»™ng sá»›m (Action Required).
-- **[CRITICAL]:** Can thiá»‡p ngay láº­p tá»©c (Immediate Intervention).
+## 🚥 Severity Tiers (Reports in Vietnamese)
+- **[LOW]:** Thông tin (Information).
+- **[MEDIUM]:** Vấn đề tiềm ẩn (Potential Issue).
+- **[HIGH]:** Cần hành động sớm (Action Required).
+- **[CRITICAL]:** Can thiệp ngay lập tức (Immediate Intervention).
 
-## ðŸ”± Governance Persistence
+## 🔱 Governance Persistence
 All rules are anchored in [GOVERNANCE.md](../shared-context/GOVERNANCE.md). 
 **STRICT RULE:** Allowed to operate in the 3 Ecosystem Tiers: `D:\APP\AI OS`, `D:\APP\Workspaces`, and `D:\APP\DATA`. Creating files or folders outside this ecosystem is **STRICTLY PROHIBITED**.
 **ABSOLUTE DIRECTIVE:** DO NOT USE OR SAVE FILES TO `C:\Users\%USERNAME%\.gemini\antigravity`. All output, including brainstorms and reports, MUST be saved within the `D:\APP\` ecosystem. NO EXCEPTIONS ALLOWED.

@@ -1,7 +1,7 @@
 {
   "ai_os_corp": {
     "version": "1.0",
-    "description": "AI OS Corp â€” Unified Services Config"
+    "description": "AI OS Corp — Unified Services Config"
   },
   "services": {
     "clawtask": {
@@ -44,12 +44,12 @@
       "port_ui": 8502,
       "url_api": "http://localhost:5055",
       "url_ui": "http://localhost:8502",
-      "note": "Docker extension â€” activates full Nova Agent, RAG, multi-source. Requires Docker Desktop. cd plugins/open-notebook && docker compose up -d"
+      "note": "Docker extension — activates full Nova Agent, RAG, multi-source. Requires Docker Desktop. cd plugins/open-notebook && docker compose up -d"
     }
   },
   "watchdog": {
     "script": "%USERPROFILE%/.nullclaw/watchdog.py",
-    "note": "Uses %USERPROFILE% env var â€” resolves to current user's home directory",
+    "note": "Uses %USERPROFILE% env var — resolves to current user's home directory",
     "check_interval_seconds": 30,
     "log": "%USERPROFILE%/.nullclaw/watchdog.log"
   }

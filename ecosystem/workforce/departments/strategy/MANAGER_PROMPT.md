@@ -1,4 +1,4 @@
-﻿﻿# Strategy â€” Dept Manager Prompt
+﻿# Strategy â€” Dept Manager Prompt
 # Head: product-manager-agent | Reports to: CSO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

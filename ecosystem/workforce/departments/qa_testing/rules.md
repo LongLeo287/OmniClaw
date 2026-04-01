@@ -1,4 +1,4 @@
-﻿﻿# QA & TESTING â€” Department Rules
+﻿# QA & TESTING â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: security-engineer-agent | Reports to: CTO
 # This department IS a gate â€” it does not go through QA itself

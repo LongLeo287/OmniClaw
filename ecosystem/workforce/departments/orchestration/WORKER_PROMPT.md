@@ -1,4 +1,4 @@
-﻿# 🔧 WORKER_PROMPT (Dept 25: Orchestration)
+# 🔧 WORKER_PROMPT (Dept 25: Orchestration)
 
 **Access:** Receive commands directly from `orchestrator-prime`.
 **Output:** Request API calls or Dispatch commands (Terminal).

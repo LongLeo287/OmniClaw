@@ -1,4 +1,4 @@
-# Project: [PROJECT_NAME] â€” OmniClaw Connected
+# Project: [PROJECT_NAME] — OmniClaw Connected
 # PRJ-ID: PRJ-XXX
 # Status: active
 # Updated: [DATE]
@@ -9,7 +9,7 @@
 
 ---
 
-## ðŸ§­ Identity
+## 🧭 Identity
 
 - **Project name:** [PROJECT_NAME]
 - **Path:** [PROJECT_PATH]
@@ -18,7 +18,7 @@
 
 ---
 
-## ðŸ› ï¸ Skills Loaded
+## 🛠️ Skills Loaded
 
 <!-- List the OmniClaw skills relevant to this project -->
 
@@ -27,27 +27,27 @@ LOAD: $OMNICLAW_ROOT\skills\[skill-name]\SKILL.md
 ```
 
 Common options:
-- `ui-ux-pro-max` â€” Premium UI/UX design
-- `pos-event-sourcing` â€” POS audit & event tracing
-- `gas-sheets-optimizer` â€” Google Apps Script & Sheets
-- `knowledge_navigator` â€” Query OmniClaw knowledge base
+- `ui-ux-pro-max` — Premium UI/UX design
+- `pos-event-sourcing` — POS audit & event tracing
+- `gas-sheets-optimizer` — Google Apps Script & Sheets
+- `knowledge_navigator` — Query OmniClaw knowledge base
 
 ---
 
-## ðŸ“ Project Structure
+## 📁 Project Structure
 
 ```
 [PROJECT_PATH]/
-â”œâ”€â”€ [src or main code dir]/
-â”œâ”€â”€ [config files]
-â”œâ”€â”€ .agent/
-â”‚   â””â”€â”€ CLAUDE.md          â† this file (or in .clauderules)
-â””â”€â”€ DATA/ or docs/
+├── [src or main code dir]/
+├── [config files]
+├── .agent/
+│   └── CLAUDE.md          ← this file (or in .clauderules)
+└── DATA/ or docs/
 ```
 
 ---
 
-## âš¡ Quick Commands
+## ⚡ Quick Commands
 
 ```bash
 # Dev server
@@ -62,7 +62,7 @@ Common options:
 
 ---
 
-## ðŸ”— OmniClaw Resources
+## 🔗 OmniClaw Resources
 
 | Resource | Path |
 |----------|------|
@@ -74,7 +74,7 @@ Common options:
 
 ---
 
-## ðŸ”‘ Key Business Rules
+## 🔑 Key Business Rules
 
 <!-- Fill in project-specific rules here -->
 1. [Rule 1]
@@ -82,7 +82,7 @@ Common options:
 
 ---
 
-## âš ï¸ Safe vs Prohibited Actions
+## ⚠️ Safe vs Prohibited Actions
 
 **Safe (auto-approve):**
 - Reading files, running dev server, type checking

@@ -1,4 +1,4 @@
-# CLAUDE_CODE_MANAGER.md â€” Claude Code Fix-Retry Loop Rules
+# CLAUDE_CODE_MANAGER.md — Claude Code Fix-Retry Loop Rules
 # Version: 1.0 | Created: 2026-03-22
 # Referenced by: system/ops/workflows/execution_template.md
 # Authority: Tier 2 (Operations)
@@ -8,7 +8,7 @@
 ## Overview
 
 This document defines how Claude Code handles task failures, retries, and escalations.
-Every task follows the 2-Strike Rule â€” fail twice â†’ BLOCKED â†’ report.
+Every task follows the 2-Strike Rule — fail twice → BLOCKED → report.
 
 ---
 
@@ -16,34 +16,34 @@ Every task follows the 2-Strike Rule â€” fail twice â†’ BLOCKED â†�
 
 ```
 TASK STARTS
-    â”‚
-    â–¼
+    │
+    ▼
 ATTEMPT 1
-    â”‚
-    â”œâ”€â”€ SUCCESS â†’ write receipt â†’ update blackboard â†’ DONE
-    â””â”€â”€ FAIL
-          â”‚
-          â–¼
+    │
+    ├── SUCCESS → write receipt → update blackboard → DONE
+    └── FAIL
+          │
+          ▼
        Diagnose root cause:
-         â–¡ Missing file/resource?  â†’ check paths, read RULE-STORAGE-01
-         â–¡ Wrong tool?             â†’ check SKILL_REGISTRY for alternative
-         â–¡ Spec ambiguous?         â†’ re-read task_file, check context
-         â–¡ Permission error?       â†’ check gatekeeper, verify workspace
-         â–¡ Syntax/logic error?     â†’ fix and retry
-          â”‚
-          â–¼
+         □ Missing file/resource?  → check paths, read RULE-STORAGE-01
+         □ Wrong tool?             → check SKILL_REGISTRY for alternative
+         □ Spec ambiguous?         → re-read task_file, check context
+         □ Permission error?       → check gatekeeper, verify workspace
+         □ Syntax/logic error?     → fix and retry
+          │
+          ▼
 ATTEMPT 2 (different approach from Attempt 1)
-    â”‚
-    â”œâ”€â”€ SUCCESS â†’ write receipt â†’ update blackboard â†’ DONE
-    â””â”€â”€ FAIL
-          â”‚
-          â–¼
+    │
+    ├── SUCCESS → write receipt → update blackboard → DONE
+    └── FAIL
+          │
+          ▼
        2-STRIKE RULE TRIGGERED
-          â”‚
-          â–¼
+          │
+          ▼
        Set blackboard.json: handoff_trigger = "BLOCKED"
        Write L1 escalation to: subagents/mq/<dept>_escalation.md
-       STOP â€” do not attempt again without explicit instruction
+       STOP — do not attempt again without explicit instruction
 ```
 
 ---
@@ -54,7 +54,7 @@ ATTEMPT 2 (different approach from Attempt 1)
 |--------|--------|---------|
 | Strike 1 | Diagnose + try different approach | Mandatory |
 | Strike 2 | Write L1 escalation with both attempts documented | Mandatory |
-| After Strike 2 | STOP â€” set BLOCKED, wait for manager response | Mandatory |
+| After Strike 2 | STOP — set BLOCKED, wait for manager response | Mandatory |
 
 **NEVER:** retry the same approach that failed twice.
 **NEVER:** attempt a third time without manager instruction.
@@ -67,10 +67,10 @@ ATTEMPT 2 (different approach from Attempt 1)
 Write to `subagents/mq/<dept>_escalation.md`:
 
 ```markdown
-## L1 ESCALATION â€” [TASK-ID] â€” [DATETIME]
+## L1 ESCALATION — [TASK-ID] — [DATETIME]
 
 Agent: claude_code
-Task: [task-id] â€” [1-line description]
+Task: [task-id] — [1-line description]
 
 Attempt 1:
   Approach: [what was tried]
@@ -82,11 +82,11 @@ Attempt 2:
   Result: [error message or outcome]
   Root cause hypothesis: [why it also failed]
 
-Blocker: [specific reason â€” tool failure | ambiguous spec | missing resource | permission denied]
+Blocker: [specific reason — tool failure | ambiguous spec | missing resource | permission denied]
 
 Options:
-  A. [option] â€” Feasibility: [High/Med/Low]
-  B. [option] â€” Feasibility: [High/Med/Low]
+  A. [option] — Feasibility: [High/Med/Low]
+  B. [option] — Feasibility: [High/Med/Low]
 
 Recommendation: [A or B and why]
 
@@ -123,7 +123,7 @@ Claude Code resumes a BLOCKED task ONLY when:
 2. Blackboard `handoff_trigger` is reset to `"RESUME"` by manager
 3. New approach or resource is explicitly provided
 
-On resume: read the manager response â†’ attempt 3 (with new approach) â†’ if fails again â†’ L2 escalation.
+On resume: read the manager response → attempt 3 (with new approach) → if fails again → L2 escalation.
 
 ---
 
@@ -131,11 +131,11 @@ On resume: read the manager response â†’ attempt 3 (with new approach) â�
 
 Before any destructive file operation (delete, overwrite, move):
 ```
-â–¡ Is this file in the authorized workspace? (check gatekeeper)
-â–¡ Is there a backup or is this recoverable from git?
-â–¡ Did the task spec explicitly authorize this operation?
+□ Is this file in the authorized workspace? (check gatekeeper)
+□ Is there a backup or is this recoverable from git?
+□ Did the task spec explicitly authorize this operation?
 
-If any answer is NO â†’ ask CEO before proceeding
+If any answer is NO → ask CEO before proceeding
 ```
 
 ---

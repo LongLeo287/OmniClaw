@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿# CONTENT INTAKE & VETTING (CIV) Ã¢â‚¬â€ Department Rules
+﻿﻿﻿﻿﻿# CONTENT INTAKE & VETTING (CIV) Ã¢â‚¬â€ Department Rules
 # Version: 1.2 | Updated: 2026-03-24
 # Dept Head: intake-chief-agent | Reports to: COO
 # Mission: Create new content for OmniClaw

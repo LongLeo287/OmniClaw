@@ -27,11 +27,11 @@ emits_events:
   - insight_discovered
 listens_to: []
 ---
-# ðŸ§  Insight Engine Skill (Pattern Discovery)
+# 🧠 Insight Engine Skill (Pattern Discovery)
 
-This skill provides the OmniClaw with "Intuition" â€” finding non-obvious correlations across different knowledge domains.
+This skill provides the OmniClaw with "Intuition" — finding non-obvious correlations across different knowledge domains.
 
-## ðŸ› ï¸ Core Functions:
+## 🛠️ Core Functions:
 1.  **Correlation Scan (/correlate):**
     - Compare facts in `Cosmic Memory` with project files.
     - Find "Topic Clusters" (e.g., "Performance" notes often appear with "Storage" code).
@@ -41,7 +41,7 @@ This skill provides the OmniClaw with "Intuition" â€” finding non-obvious c
 3.  **Knowledge Gap Analysis (/gap):**
     - Identify areas where code exists but documentation or lessons-learned are missing.
 
-## ðŸ“‹ Instructions:
+## 📋 Instructions:
 Before starting a major feature or after a long debugging session:
 1. Run `/correlate` to check if there's an existing insight that can help.
 2. Log new insights to strictly at `.agents/knowledge-hub/graph_index.json`.

@@ -1,22 +1,22 @@
 # Department: operations
-ï»¿# post-session.md â€” OmniClaw Session Close Hook
+﻿# post-session.md — OmniClaw Session Close Hook
 # Version: 1.0 | Updated: 2026-03-14
 # Authority: Tier 2 (Operations)
 # Executed by: Any agent at end of every session (before disconnect)
 
 ---
 
-## AUTO-TRIGGER â€” Khi nÃ o cháº¡y?
+## AUTO-TRIGGER — Khi nào chạy?
 
-Antigravity Tá»° Äá»˜NG cháº¡y post-session khi nháº­n Báº¤T Ká»² signal nÃ o:
+Antigravity TỰ ĐỘNG chạy post-session khi nhận BẤT KỲ signal nào:
 
-| Signal | VÃ­ dá»¥ | Trigger |
+| Signal | Ví dụ | Trigger |
 |--------|-------|--------|
-| CEO nÃ³i káº¿t thÃºc | "káº¿t thÃºc phiÃªn" / "end session" / "táº¡m biá»‡t" / "xong rá»“i" | âœ… Cháº¡y ngay |
-| Task hoÃ n thÃ nh | CEO approve káº¿t quáº£ cuá»‘i, khÃ´ng há»i thÃªm | âœ… Cháº¡y ngay |
-| PhiÃªn má»›i báº¯t Ä‘áº§u | "báº¯t Ä‘áº§u phiÃªn má»›i" / "khá»Ÿi Ä‘á»™ng láº¡i" | âœ… Handoff session cÅ© trÆ°á»›c |
+| CEO nói kết thúc | "kết thúc phiên" / "end session" / "tạm biệt" / "xong rồi" | ✅ Chạy ngay |
+| Task hoàn thành | CEO approve kết quả cuối, không hỏi thêm | ✅ Chạy ngay |
+| Phiên mới bắt đầu | "bắt đầu phiên mới" / "khởi động lại" | ✅ Handoff session cũ trước |
 
-**KHÃ”NG Ä‘á»£i CEO nÃ³i:** "handoff" / "cáº­p nháº­t blackboard" / "viáº¿t brief" / "update HUD"
+**KHÔNG đợi CEO nói:** "handoff" / "cập nhật blackboard" / "viết brief" / "update HUD"
 
 ---
 ## Purpose
@@ -28,15 +28,15 @@ and leaving clear handoff notes for the next session.
 
 ## Execution Steps (Run in Order)
 
-### Step 0.5: LTM Auto-Save (Long-Term Memory â€” NEW)
+### Step 0.5: LTM Auto-Save (Long-Term Memory — NEW)
 ```
-Before closing session â€” save key context to vector memory:
+Before closing session — save key context to vector memory:
   python system/ops/scripts/save_session_memory.py --from-blackboard
   OR
-  python system/ops/scripts/save_session_memory.py "[tÃ³m táº¯t phiÃªn ngáº¯n gá»n]"
+  python system/ops/scripts/save_session_memory.py "[tóm tắt phiên ngắn gọn]"
 
 This ensures OmniClaw remembers what happened across sessions (vectorized, not just text).
-Silent fail if LTM offline â€” never block session close.
+Silent fail if LTM offline — never block session close.
 ```
 
 ### Step 1: Context Snapshot
@@ -69,26 +69,26 @@ If status = IDLE (nothing in progress):
 ### Step 3: Knowledge Update
 ```
 If any new knowledge was generated this session:
-  â†’ Update knowledge/knowledge_index.md with new entry
-  â†’ Save relevant notes to knowledge/[topic].md
+  → Update knowledge/knowledge_index.md with new entry
+  → Save relevant notes to knowledge/[topic].md
 
 If cognitive_reflector ran this session:
-  â†’ Ensure lessons are saved to cosmic_memory
+  → Ensure lessons are saved to cosmic_memory
 ```
 
 ### Step 3B: Autonomous Facility Sanitation (Dept 22)
 ```
-Tá»° Äá»˜NG CHáº Y á»ž CUá»I PHIÃŠN LÃ€M VIá»†C.
-Trigger: Gá»i ká»‹ch báº£n dá»n dáº¹p há»‡ luá»µ (omniclaw_deep_cleaner) Ä‘á»ƒ quÃ©t toÃ n cá»¥c.
+TỰ ĐỘNG CHẠY Ở CUỐI PHIÊN LÀM VIỆC.
+Trigger: Gọi kịch bản dọn dẹp hệ luỵ (omniclaw_deep_cleaner) để quét toàn cục.
 
 Script: python system/ops/scripts/omniclaw_deep_cleaner.py --auto-delete --stale-days 14
 
-Quy táº¯c dá»n dáº¹p (RULE-CLEANUP-01):
-1. QuÃ©t root directory ($OMNICLAW_ROOT) vÃ  Ä‘áº©y má»i file táº¡o nhÃ¡p láº¡c loÃ i (.md, .py, .txt, .log) khÃ´ng thuá»™c há»‡ thá»‘ng vÃ o `storage/vault/DATA/stray_files/` Ä‘á»ƒ khoanh vÃ¹ng rÃ¡c.
-2. XÃ³a sáº¡ch cÃ¡c repo má»“ cÃ´i/rá»—ng trong `brain/knowledge/repos/*`.
-3. Clear cÃ¡c report vÃ  log rÃ¡c cÅ© (>14 ngÃ y) khá»i `QUARANTINE/` vÃ  `storage/vault/DATA/`.
+Quy tắc dọn dẹp (RULE-CLEANUP-01):
+1. Quét root directory ($OMNICLAW_ROOT) và đẩy mọi file tạo nháp lạc loài (.md, .py, .txt, .log) không thuộc hệ thống vào `storage/vault/DATA/stray_files/` để khoanh vùng rác.
+2. Xóa sạch các repo mồ côi/rỗng trong `brain/knowledge/repos/*`.
+3. Clear các report và log rác cũ (>14 ngày) khỏi `QUARANTINE/` và `storage/vault/DATA/`.
 
-Silent fail náº¿u khÃ´ng cÃ³ gÃ¬ cáº§n dá»n â€” KHÃ”NG block session close.
+Silent fail nếu không có gì cần dọn — KHÔNG block session close.
 ```
 
 ### Step 4: Receipt Archive (if large)
@@ -96,51 +96,51 @@ Silent fail náº¿u khÃ´ng cÃ³ gÃ¬ cáº§n dá»n â€” KHÃ”NG b
 Check: telemetry/receipts/ file count
 
 If file count > 50:
-  â†’ Move receipts older than 7 days to telemetry/receipts/archive/
-  â†’ Log: "Archived [N] receipts"
+  → Move receipts older than 7 days to telemetry/receipts/archive/
+  → Log: "Archived [N] receipts"
 
-Do NOT delete receipts â€” only archive.
+Do NOT delete receipts — only archive.
 ```
 
 ### Step 5: Skill Registry Check
 ```
 If any new SKILL.md was created or modified this session:
-  â†’ Reminder: "Run skill_loader.ps1 to update registry"
+  → Reminder: "Run skill_loader.ps1 to update registry"
 
 If skills/experimental/ has files not yet reviewed:
-  â†’ Reminder: "N skills in experimental/ awaiting review"
+  → Reminder: "N skills in experimental/ awaiting review"
 ```
 
 ### Step 6: Session Close Announcement (Auto + Telegram notify)
 ```
 Output (Vietnamese):
 
-"ðŸ“‹ PhiÃªn lÃ m viá»‡c káº¿t thÃºc.
-- ÄÃ£ lÆ°u: context + decisions vÃ o smart_memory
-- Tráº¡ng thÃ¡i: [COMPLETE | IN_PROGRESS | BLOCKED]
-- Ghi chÃº cho phiÃªn sau: [1-2 cÃ¢u]
-- Nháº¯c nhá»Ÿ: [skill registry / experimental skills náº¿u cÃ³]"
+"📋 Phiên làm việc kết thúc.
+- Đã lưu: context + decisions vào smart_memory
+- Trạng thái: [COMPLETE | IN_PROGRESS | BLOCKED]
+- Ghi chú cho phiên sau: [1-2 câu]
+- Nhắc nhở: [skill registry / experimental skills nếu có]"
 ```
 
 ```powershell
-# BÃ¡o Star Office UI: phiÃªn Ä‘Ã£ Ä‘Ã³ng, chuyá»ƒn sang idle
-python "$OMNICLAW_ROOT\dashboard\set_state_aios.py" --state idle --detail "PhiÃªn lÃ m viá»‡c Ä‘Ã£ káº¿t thÃºc - Táº¡m biá»‡t!"
+# Báo Star Office UI: phiên đã đóng, chuyển sang idle
+python "$OMNICLAW_ROOT\dashboard\set_state_aios.py" --state idle --detail "Phiên làm việc đã kết thúc - Tạm biệt!"
 ```
 
 ### Step 7: HUD Auto-Update (non-blocking)
 ```
-Trigger: always run at session end â€” even if previous steps failed
+Trigger: always run at session end — even if previous steps failed
 
 powershell ops/scripts/update_hud.ps1 -Quiet
-â†’ Port check (Ollama:11434, ClawTask:7474, LightRAG:9621)
-â†’ Count open_items tá»« blackboard.json
-â†’ Count pending proposals tá»« corp/proposals/
-â†’ Update hud/STATUS.json (machine-readable)
-â†’ Update hud/HUD.md services table (2-way write)
-â†’ Create hud/snapshots/<date>_<time>.md (history)
-â†’ Telegram: session summary (náº¿u cÃ³ token)
+→ Port check (Ollama:11434, ClawTask:7474, LightRAG:9621)
+→ Count open_items từ blackboard.json
+→ Count pending proposals từ corp/proposals/
+→ Update hud/STATUS.json (machine-readable)
+→ Update hud/HUD.md services table (2-way write)
+→ Create hud/snapshots/<date>_<time>.md (history)
+→ Telegram: session summary (nếu có token)
 
-On failure: skip silently â€” log warning only, NEVER block session close
+On failure: skip silently — log warning only, NEVER block session close
 ```
 
 ---
@@ -150,6 +150,6 @@ On failure: skip silently â€” log warning only, NEVER block session close
 
 If any step fails:
 - Log warning, continue to next step
-- Critical: Step 1 (context snapshot) â€” retry once if fails
+- Critical: Step 1 (context snapshot) — retry once if fails
 - If Step 1 still fails: write manually to blackboard.json context field
 

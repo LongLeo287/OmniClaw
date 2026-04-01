@@ -1,4 +1,4 @@
-﻿# System Prompt — project-intake-agent
+# System Prompt — project-intake-agent
 # Title: Project Intake Screener
 # Department: planning_pmo
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

@@ -118,9 +118,9 @@ tai-video | trivy | understand-anything | vibe-kanban
 
 Ollama        :11434  LIVE   (gemma2:2b + nomic-embed-text)
 ClawTask API  :7474   LIVE   (8 modules: llm,ollama,bot,notebook,setup,gitnexus,ag_auto,deepagents)
-GitNexus      :4747   LIVE   (local code graph â€” ecosystem/tools/gitnexus/gitnexus_server.py)
-ag-auto-accept :7476  LIVE   (subprocess auto-accept â€” ecosystem/tools/ag-auto-accept/ag_auto_accept.py)
-DeepAgents ACP :8765  LIVE   (agent comms protocol â€” ecosystem/ecosystem/plugins/deepagents/main.py)
+GitNexus      :4747   LIVE   (local code graph — ecosystem/tools/gitnexus/gitnexus_server.py)
+ag-auto-accept :7476  LIVE   (subprocess auto-accept — ecosystem/tools/ag-auto-accept/ag_auto_accept.py)
+DeepAgents ACP :8765  LIVE   (agent comms protocol — ecosystem/ecosystem/plugins/deepagents/main.py)
 LightRAG      :9621   START: python system/ops/scripts/lightrag_server.py
 open-notebook :5055   FALLBACK: Claude Code RESEARCHER role
 Langfuse/LobeChat    [ASSIMILATED] -> monitor-agent & channel-agent (Plug & Play Strategy)

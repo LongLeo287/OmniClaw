@@ -1,8 +1,8 @@
 ---
-description: POS project session initialization â€” run at start of every work session
+description: POS project session initialization — run at start of every work session
 ---
 
-# pre-session.md â€” Tiem Nuoc Nho v5
+# pre-session.md — Tiem Nuoc Nho v5
 # Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Steps
@@ -17,8 +17,8 @@ description: POS project session initialization â€” run at start of every w
 ### 2. Dev Server Check
 ```powershell
 $conn = Test-NetConnection -ComputerName localhost -Port 3000 -WarningAction SilentlyContinue
-if ($conn.TcpTestSucceeded) { "âœ… Dev server: http://localhost:3000" }
-else { "âš ï¸ Start with: cd D:\Tiem_Nuoc_Nho_v5 && npm run dev" }
+if ($conn.TcpTestSucceeded) { "✅ Dev server: http://localhost:3000" }
+else { "⚠️ Start with: cd D:\Tiem_Nuoc_Nho_v5 && npm run dev" }
 ```
 
 ### 3. TypeScript Health Check
@@ -31,16 +31,16 @@ npx tsc --noEmit --skipLibCheck
 ### 4. Blackboard Check
 ```
 Read: $OMNICLAW_ROOT\shared-context\blackboard.json
-- COMPLETE â†’ review Claude Code results
-- BLOCKED  â†’ investigate, report to user
-- IDLE     â†’ fresh session, ready
+- COMPLETE → review Claude Code results
+- BLOCKED  → investigate, report to user
+- IDLE     → fresh session, ready
 ```
 
 ### 5. Announce (Vietnamese)
 ```
-"âœ… Dá»± Ã¡n Tiem Nuoc Nho v5 sáºµn sÃ ng.
+"✅ Dự án Tiem Nuoc Nho v5 sẵn sàng.
 - Dev: http://localhost:3000
-- TypeScript: [0 lá»—i]
-- Tráº¡ng thÃ¡i: IDLE"
+- TypeScript: [0 lỗi]
+- Trạng thái: IDLE"
 ```
 

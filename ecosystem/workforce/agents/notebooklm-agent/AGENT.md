@@ -1,4 +1,4 @@
-﻿# AGENT: Nova — Research Intelligence Specialist
+# AGENT: Nova — Research Intelligence Specialist
 # Version: 4.1 | Updated: 2026-03-21 | OmniClaw Corp
 # Department: R&D (Dept 13) — Cross-Departmental Research Service
 # Authority: Tier 3 (Specialist Agent)

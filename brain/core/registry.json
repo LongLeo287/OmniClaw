@@ -34,15 +34,15 @@
   },
   "PRJ-004": {
     "name": "Tiem Nuoc Nho v5",
-    "path": "D:\\Tiem_Nuoc_Nho_v5",
+    "path": "$WORKSPACE_ROOT\\Tiem_Nuoc_Nho_v5",
     "description": "POS / quản lý đơn hàng quán nước — React + GAS + Google Sheets",
     "status": "active",
     "skills_used": ["ui-ux-pro-max", "gas-sheets-optimizer", "pos-event-sourcing", "pos_event_sourcing_auditor"],
     "channels_enabled": false,
     "data_sources": ["google-sheets", "google-apps-script"],
     "contact_agent": "claude_code",
-    "config_path": "D:\\Tiem_Nuoc_Nho_v5\\CLAUDE.md",
-    "workflows_path": "D:\\Tiem_Nuoc_Nho_v5\\workflows\\",
+    "config_path": "$WORKSPACE_ROOT\\Tiem_Nuoc_Nho_v5\\CLAUDE.md",
+    "workflows_path": "$WORKSPACE_ROOT\\Tiem_Nuoc_Nho_v5\\workflows\\",
     "dev_url": "http://localhost:7475",
     "registered_at": "2026-03-16T09:29:00+07:00",
     "last_onboarded": "2026-03-19T09:58:00+07:00"

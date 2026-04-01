@@ -1,4 +1,4 @@
-﻿﻿# Monitoring & Inspection â€” Worker Prompt
+﻿# Monitoring & Inspection â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: process-monitor-agent | compliance-inspector-agent | performance-monitor-agent
 

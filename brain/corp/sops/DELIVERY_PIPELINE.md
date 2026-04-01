@@ -1,49 +1,49 @@
-# DELIVERY PIPELINE â€” SOP v1.0
-# OmniClaw Corp | Tier 1 â€” Operations
+# DELIVERY PIPELINE — SOP v1.0
+# OmniClaw Corp | Tier 1 — Operations
 # Effective: 2026-03-18
 
-> **Má»¥c Ä‘Ã­ch:** Quy trÃ¬nh hoÃ n chá»‰nh tá»« khi client ACCEPT proposal â†’ Deliver â†’ Invoice.
-> Tiáº¿p ná»‘i tá»« `CLIENT_INTAKE_GATEWAY.md` vÃ  `Proposal Engine`.
+> **Mục đích:** Quy trình hoàn chỉnh từ khi client ACCEPT proposal → Deliver → Invoice.
+> Tiếp nối từ `CLIENT_INTAKE_GATEWAY.md` và `Proposal Engine`.
 
 ---
 
-## Tá»•ng Quan Pipeline
+## Tổng Quan Pipeline
 
 ```
 PROPOSAL ACCEPTED
-      â”‚
-      â–¼
-[Phase 1: KICKOFF]        â”€ 1 ngÃ y
-  - XÃ¡c nháº­n scope
+      │
+      ▼
+[Phase 1: KICKOFF]        ─ 1 ngày
+  - Xác nhận scope
   - Assign team
   - Setup workspace
-      â”‚
-      â–¼
-[Phase 2: EXECUTION]      â”€ Theo timeline Ä‘Ã£ commit
-  - Dept leads nháº­n brief
-  - Agents thá»±c thi
+      │
+      ▼
+[Phase 2: EXECUTION]      ─ Theo timeline đã commit
+  - Dept leads nhận brief
+  - Agents thực thi
   - Progress tracking
-      â”‚
-      â–¼
-[Phase 3: QA & REVIEW]    â”€ 1-3 ngÃ y
-  - QA dept kiá»ƒm tra
+      │
+      ▼
+[Phase 3: QA & REVIEW]    ─ 1-3 ngày
+  - QA dept kiểm tra
   - Client review round 1
   - Revisions (2 rounds max)
-      â”‚
-      â–¼
-[Phase 4: DELIVERY]       â”€ 1 ngÃ y
+      │
+      ▼
+[Phase 4: DELIVERY]       ─ 1 ngày
   - Package deliverables
   - Handoff to client
   - Collect feedback
-      â”‚
-      â–¼
-[Phase 5: INVOICE & CLOSE]â”€ 1 ngÃ y
+      │
+      ▼
+[Phase 5: INVOICE & CLOSE]─ 1 ngày
   - Generate invoice
   - Payment tracking
   - Archive project
-      â”‚
-      â–¼
-[Phase 6: LEARNING LOOP]  â”€ Auto
+      │
+      ▼
+[Phase 6: LEARNING LOOP]  ─ Auto
   - corp_learning_loop retro
   - Update KPI scoreboard
   - Knowledge extraction
@@ -53,22 +53,22 @@ PROPOSAL ACCEPTED
 
 ## Phase 1: KICKOFF
 
-**Trigger:** Client reply "ACCEPT" | "Äá»“ng Ã½" | "Proceed" vÃ o proposal
+**Trigger:** Client reply "ACCEPT" | "Đồng ý" | "Proceed" vào proposal
 
 **Actions:**
-1. `project_intake_agent` â†’ update status: `ACCEPTED`
-2. Táº¡o **Project Workspace**:
+1. `project_intake_agent` → update status: `ACCEPTED`
+2. Tạo **Project Workspace**:
    ```
    shared-context/projects/<PROJECT-ID>/
-   â”œâ”€â”€ brief.json          â† copy intake record
-   â”œâ”€â”€ proposal.md         â† accepted proposal
-   â”œâ”€â”€ workspace/          â† working files
-   â”œâ”€â”€ deliverables/       â† final output
-   â””â”€â”€ comms_log.md        â† all client communications
+   ├── brief.json          ← copy intake record
+   ├── proposal.md         ← accepted proposal
+   ├── workspace/          ← working files
+   ├── deliverables/       ← final output
+   └── comms_log.md        ← all client communications
    ```
-3. Assign **Project Lead** tá»« operations
-4. Create department briefs â†’ gá»­i vÃ o `subagents/mq/<dept>_brief.md`
-5. Notify client: "âœ… Project [ID] Ä‘Ã£ Ä‘Æ°á»£c khá»Ÿi Ä‘á»™ng! Lead: [tÃªn agent]"
+3. Assign **Project Lead** từ operations
+4. Create department briefs → gửi vào `subagents/mq/<dept>_brief.md`
+5. Notify client: "✅ Project [ID] đã được khởi động! Lead: [tên agent]"
 
 ---
 
@@ -77,7 +77,7 @@ PROPOSAL ACCEPTED
 **Responsibility:** Dept leads + assigned agents
 
 **Progress Tracking:**
-- Má»—i agent update `shared-context/projects/<ID>/progress.json` sau má»—i task
+- Mỗi agent update `shared-context/projects/<ID>/progress.json` sau mỗi task
 - Format:
   ```json
   {
@@ -88,29 +88,29 @@ PROPOSAL ACCEPTED
     "timestamp": "..."
   }
   ```
-- `ops-router` (tinyclaw) check progress má»—i 4h â†’ report cho ops
+- `ops-router` (tinyclaw) check progress mỗi 4h → report cho ops
 
 **Communication Rules:**
-- Client update: má»—i 24-48h (tÃ¹y timeline)  
-- All comms log vÃ o `comms_log.md`
-- Blocker phÃ¡t sinh â†’ immediate ops notify
+- Client update: mỗi 24-48h (tùy timeline)  
+- All comms log vào `comms_log.md`
+- Blocker phát sinh → immediate ops notify
 
 ---
 
 ## Phase 3: QA & REVIEW
 
-**QA Checklist** (qa-agent thá»±c hiá»‡n):
-- [ ] Deliverables Ä‘Ãºng scope trong proposal
-- [ ] KhÃ´ng cÃ³ bug/error rÃµ rÃ ng
-- [ ] File format Ä‘Ãºng yÃªu cáº§u
-- [ ] Docs Ä‘áº§y Ä‘á»§
+**QA Checklist** (qa-agent thực hiện):
+- [ ] Deliverables đúng scope trong proposal
+- [ ] Không có bug/error rõ ràng
+- [ ] File format đúng yêu cầu
+- [ ] Docs đầy đủ
 
 **Client Review:**
-- Gá»­i deliverables preview qua channel gá»‘c
+- Gửi deliverables preview qua channel gốc
 - Wait 48h cho feedback
-- Round 1 revision náº¿u cáº§n
-- Round 2 revision (cuá»‘i) náº¿u cáº§n
-- > 2 rounds â†’ OOscope, charge thÃªm â†’ CEO approval
+- Round 1 revision nếu cần
+- Round 2 revision (cuối) nếu cần
+- > 2 rounds → OOscope, charge thêm → CEO approval
 
 ---
 
@@ -119,15 +119,15 @@ PROPOSAL ACCEPTED
 **Delivery Package:**
 ```
 deliverables/
-â”œâ”€â”€ [project-files...]
-â”œâ”€â”€ README.md           â† hÆ°á»›ng dáº«n sá»­ dá»¥ng
-â”œâ”€â”€ DELIVERY_RECEIPT.md â† confirm handoff
-â””â”€â”€ support_contact.md  â† liÃªn há»‡ há»— trá»£ sau delivery
+├── [project-files...]
+├── README.md           ← hướng dẫn sử dụng
+├── DELIVERY_RECEIPT.md ← confirm handoff
+└── support_contact.md  ← liên hệ hỗ trợ sau delivery
 ```
 
 **Handoff:**
-1. Zip vÃ  share qua channel (hoáº·c link Google Drive/cloud)
-2. Client kÃ½ nháº­n `DELIVERY_RECEIPT.md` (reply "RECEIVED" hoáº·c "âœ…")
+1. Zip và share qua channel (hoặc link Google Drive/cloud)
+2. Client ký nhận `DELIVERY_RECEIPT.md` (reply "RECEIVED" hoặc "✅")
 3. Update status: `DELIVERED`
 
 ---
@@ -141,20 +141,20 @@ shared-context/brain/corp/invoices/INVOICE-<YYYYMMDD>-<PROJECT-ID>.md
 Content:
   - Project summary
   - Deliverables listed
-  - Hours spent (náº¿u T&M)
+  - Hours spent (nếu T&M)
   - Amount due
   - Payment methods: [bank transfer / crypto / PayPal]
-  - Due: 7 ngÃ y
+  - Due: 7 ngày
 ```
 
 **Payment Status Tracking:**
 - `shared-context/brain/corp/invoices/_payment_tracker.json`
-- Reminder: +7 ngÃ y chÆ°a thanh toÃ¡n â†’ follow up
-- Reminder: +14 ngÃ y â†’ escalate
+- Reminder: +7 ngày chưa thanh toán → follow up
+- Reminder: +14 ngày → escalate
 
 **Project Close:**
 - Archive to: `shared-context/projects/archive/<PROJECT-ID>/`
-- Rating: thu tháº­p feedback 1-5 sao tá»« client
+- Rating: thu thập feedback 1-5 sao từ client
 - Update `corp/kpi_scoreboard.json`: projects_delivered + 1
 
 ---
@@ -164,9 +164,9 @@ Content:
 **Auto-trigger** sau khi invoice PAID:
 
 1. **corp_learning_loop** run retro cho project:
-   - GÃ¬ Ä‘Ã£ tá»‘t? â†’ document trong `knowledge/project_learnings/`
-   - GÃ¬ cáº§n cáº£i thiá»‡n?
-   - Skill gap phÃ¡t hiá»‡n? â†’ Ä‘á» xuáº¥t training
+   - Gì đã tốt? → document trong `knowledge/project_learnings/`
+   - Gì cần cải thiện?
+   - Skill gap phát hiện? → đề xuất training
    
 2. **KPI Update:**
    - Revenue realized
@@ -174,7 +174,7 @@ Content:
    - Delivery time vs estimate
 
 3. **Knowledge Extraction:**
-   - Náº¿u project táº¡o ra reusable code/skill â†’ Ä‘á» xuáº¥t thÃªm vÃ o SKILL_REGISTRY
+   - Nếu project tạo ra reusable code/skill → đề xuất thêm vào SKILL_REGISTRY
 
 ---
 
@@ -182,24 +182,24 @@ Content:
 
 ```
 INTAKE_RECEIVED
-    â†“
+    ↓
 PROPOSAL_SENT
-    â†“
-PROPOSAL_ACCEPTED  â†  PROPOSAL_REJECTED (archive)
-    â†“
+    ↓
+PROPOSAL_ACCEPTED  ←  PROPOSAL_REJECTED (archive)
+    ↓
 KICKOFF
-    â†“
+    ↓
 IN_EXECUTION
-    â†“
+    ↓
 IN_QA_REVIEW
-    â†“
+    ↓
 CLIENT_REVIEW
-    â†“
+    ↓
 DELIVERED
-    â†“
+    ↓
 INVOICE_SENT
-    â†“
-PAID â†’ CLOSED
+    ↓
+PAID → CLOSED
 ```
 
 ---
@@ -208,17 +208,17 @@ PAID â†’ CLOSED
 
 | Phase | Target Duration |
 |-------|----------------|
-| Intake â†’ Proposal | â‰¤ 2 giá» lÃ m viá»‡c |
-| Proposal â†’ Kickoff | â‰¤ 1 ngÃ y sau ACCEPT |
+| Intake → Proposal | ≤ 2 giờ làm việc |
+| Proposal → Kickoff | ≤ 1 ngày sau ACCEPT |
 | Execution | Per proposal timeline |
-| QA | â‰¤ 20% total timeline |
-| Delivery | â‰¤ 1 ngÃ y sau QA pass |
+| QA | ≤ 20% total timeline |
+| Delivery | ≤ 1 ngày sau QA pass |
 | Invoice | Ngay khi DELIVERED |
-| Payment | Client: 7 ngÃ y |
+| Payment | Client: 7 ngày |
 
 ---
 
-*ThÆ° má»¥c projects: `shared-context/projects/`*
+*Thư mục projects: `shared-context/projects/`*
 *Invoice: `shared-context/brain/corp/invoices/`*
 *Knowledge: `knowledge/project_learnings/`*
 

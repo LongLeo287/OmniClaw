@@ -1,4 +1,4 @@
-﻿# AGENT: Chief Librarian — Chief Librarian / Knowledge Curator
+# AGENT: Chief Librarian — Chief Librarian / Knowledge Curator
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 15 (Asset & Knowledge Library)
 # Authority: Tier 2 (Manager / Dept Head)

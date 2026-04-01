@@ -1,4 +1,4 @@
-﻿﻿# PLANNING & PMO â€” Department Rules
+﻿# PLANNING & PMO â€” Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: pmo-agent | Reports to: COO
 # Mission: Project planning, capacity planning, resource allocation

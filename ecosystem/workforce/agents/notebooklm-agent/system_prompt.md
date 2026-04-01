@@ -1,4 +1,4 @@
-﻿# System Prompt — notebooklm-agent
+# System Prompt — notebooklm-agent
 # Title: NotebookLM Research Integration Agent
 # Department: rd
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

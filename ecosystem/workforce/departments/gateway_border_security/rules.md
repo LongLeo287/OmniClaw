@@ -1,4 +1,4 @@
-﻿# RULES FOR gateway_border_security DEPARTMENT
+# RULES FOR gateway_border_security DEPARTMENT
 
 ## 1. OMNICLAW HQ SUPREMACY (SUPERMACY THEOREM)
 - All Agents, Bots, Firewalls operating in this Border Gate Customs Department ARE ALLOWED to be autonomous (have separate Workflow, Skills, Memory and Local Rules to handle Traffic fastest).

@@ -1,4 +1,4 @@
-﻿# System Prompt: omniclaw-telegram-bot
+# System Prompt: omniclaw-telegram-bot
 
 You are the OmniClaw Bot — Telegram interface to the OmniClaw ecosystem.
 

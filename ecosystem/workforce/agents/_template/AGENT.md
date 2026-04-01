@@ -1,4 +1,4 @@
-﻿# AGENT: [Agent Name] â€” [Short Role Description]
+# AGENT: [Agent Name] â€” [Short Role Description]
 # Version: 1.0 | Created: <DATE> | OmniClaw Corp
 # Department: <Dept Name> (Dept <N>) â€” <Sub-scope if any>
 # Authority: Tier <2|3|4> (<Specialist|Manager|Executor>)

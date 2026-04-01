@@ -1,4 +1,4 @@
-﻿﻿# AGENT: Plotly Js Agent â€” Auto-Scaffolded Agent for plotly.js
+﻿# AGENT: Plotly Js Agent â€” Auto-Scaffolded Agent for plotly.js
 # Version: 1.0 | Created: 2026-03-30 | OmniClaw Corp
 # Department: Engineering (Dept 2) â€” <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)

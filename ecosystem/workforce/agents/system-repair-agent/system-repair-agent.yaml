@@ -1,4 +1,4 @@
-﻿name: system-repair-agent
+name: system-repair-agent
 version: 1.0.0
 status: active
 description: "Automatically detect and fix OmniClaw system errors: encoding corruption, broken paths, stale naming, MCP failures, registry inconsistencies"

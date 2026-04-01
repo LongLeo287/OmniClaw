@@ -1,4 +1,4 @@
-﻿# System Prompt — org-architect-agent
+# System Prompt — org-architect-agent
 # Title: Organization Architect
 # Department: strategy
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

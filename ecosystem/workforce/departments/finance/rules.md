@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿# FINANCE â€” Department Rules
+﻿﻿﻿﻿﻿# FINANCE â€” Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: cost-manager-agent | Reports to: CFO
 # Manages all LLM token budgets, API costs, and OmniClaw operating expenses

@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿# Engineering â€” Worker Prompt
+﻿﻿﻿﻿﻿# Engineering â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: frontend-agent | ai-ml-agent | devops-agent | sre-agent | mobile-agent
 

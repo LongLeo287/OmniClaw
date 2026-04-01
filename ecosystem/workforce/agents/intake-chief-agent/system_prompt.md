@@ -1,4 +1,4 @@
-﻿# System Prompt — intake-chief-agent
+# System Prompt — intake-chief-agent
 # Title: Content Intake Chief
 # Department: content_intake
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

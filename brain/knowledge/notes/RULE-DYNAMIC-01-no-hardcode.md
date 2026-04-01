@@ -19,7 +19,7 @@
 | Workspace root | `$OMNICLAW_ROOT\` | "the directory containing GEMINI.md" |
 | User home | `C:\Users\R9000P 2021.LONGLEO\` | `$env:USERPROFILE` (PowerShell) / `~` (bash) |
 | AI tool system dirs | `<USER_PROFILE>\.gemini\` | `$env:USERPROFILE\.gemini\` |
-| Dept count | `"22 departments"` | `corp/org_chart.yaml` â†’ `company.departments.count` |
+| Dept count | `"22 departments"` | `corp/org_chart.yaml` → `company.departments.count` |
 | Corp state | snapshot in boot file | `brain/shared-context/blackboard.json` (live) |
 | Service ports | `7474`, `3000`, etc. | `ops/scripts/config.json` |
 | Agent version | `"Sonnet 4.6"` | LLM router config |
@@ -66,17 +66,17 @@ Rule  : All services read their ports from this file. Never hardcode 7474, 3000,
 
 ---
 
-## 3. RULE FILES & BOOT FILES â€” How to Write
+## 3. RULE FILES & BOOT FILES — How to Write
 
 ### When writing a rule file:
-- Use RELATIVE paths: `brain/shared-context/blackboard.json` âœ…
-- Avoid ABSOLUTE paths: `$OMNICLAW_ROOT\brain\...` âŒ
+- Use RELATIVE paths: `brain/shared-context/blackboard.json` ✅
+- Avoid ABSOLUTE paths: `$OMNICLAW_ROOT\brain\...` ❌
 - If must reference workspace root: write `$OMNICLAW_ROOT` as placeholder
 
 ### When writing boot files (GEMINI.md / CLAUDE.md):
-- Corp status â†’ reference blackboard.json, do NOT snapshot inline
-- Dept count â†’ reference org_chart.yaml, do NOT hardcode number
-- Storage path â†’ reference RULE-STORAGE-01, do NOT duplicate content
+- Corp status → reference blackboard.json, do NOT snapshot inline
+- Dept count → reference org_chart.yaml, do NOT hardcode number
+- Storage path → reference RULE-STORAGE-01, do NOT duplicate content
 
 ### When writing scripts (.ps1, .py, .sh):
 - Use `$PSScriptRoot` or `os.path.dirname(__file__)` to find script location
@@ -85,25 +85,25 @@ Rule  : All services read their ports from this file. Never hardcode 7474, 3000,
 
 ---
 
-## 4. PROCEDURE â€” When System Changes (New Machine / New Path)
+## 4. PROCEDURE — When System Changes (New Machine / New Path)
 
 When the OmniClaw moves to a new machine or the root path changes:
 
 ```
 STEP 1: Update ops/scripts/config.json
-        â†’ Set "workspace_root" to new absolute path
-        â†’ Update any service URLs if ports changed
+        → Set "workspace_root" to new absolute path
+        → Update any service URLs if ports changed
 
 STEP 2: Update RULE-STORAGE-01
-        â†’ Change workspace root reference in Section 1
-        â†’ Change user home reference in Section 2
+        → Change workspace root reference in Section 1
+        → Change user home reference in Section 2
 
 STEP 3: Run boot sequence verification
-        â†’ Check all relative paths still resolve correctly
-        â†’ Test: claude "verify all paths in CLAUDE.md boot sequence exist"
+        → Check all relative paths still resolve correctly
+        → Test: claude "verify all paths in CLAUDE.md boot sequence exist"
 
 STEP 4: Update blackboard.json session info
-        â†’ New session ID, new timestamp
+        → New session ID, new timestamp
 
 STEP 5: Commit to git (if available) with message:
         "system: migrate to new machine/path [date]"

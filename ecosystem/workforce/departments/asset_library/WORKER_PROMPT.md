@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿# Asset & Knowledge Library â€” Worker Prompt
+﻿﻿﻿﻿﻿﻿﻿# Asset & Knowledge Library â€” Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: knowledge-curator-agent | memory-builder-agent | asset-tracker-agent | repo-analyst-agent
 

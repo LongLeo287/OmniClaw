@@ -1,4 +1,4 @@
-﻿# AGENT: CFO — Chief Financial Officer / Cost Manager
+# AGENT: CFO — Chief Financial Officer / Cost Manager
 # Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
 # Department: Dept 10 (Finance)
 # Authority: Tier 2 (Manager / Dept Head)

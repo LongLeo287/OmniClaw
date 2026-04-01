@@ -1,58 +1,58 @@
-# OmniClaw Corp â€” Services
+# OmniClaw Corp — Services
 
-Folder táº­p trung toÃ n bá»™ dá»‹ch vá»¥. Má»i thá»© khá»Ÿi Ä‘á»™ng, dá»«ng, cáº¥u hÃ¬nh tá»« Ä‘Ã¢y.
+Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, cấu hình từ đây.
 
 ---
 
-## Cáº¥u trÃºc
+## Cấu trúc
 
 ```
 services/
-â”œâ”€â”€ boot.ps1        â† Khá»Ÿi Ä‘á»™ng táº¥t cáº£ (gá»i tá»« mÃ¡y hoáº·c bot /boot)
-â”œâ”€â”€ stop.ps1        â† Dá»«ng táº¥t cáº£
-â”œâ”€â”€ config.json     â† Cáº¥u hÃ¬nh táº­p trung (ports, keys, paths)
-â”œâ”€â”€ screenshot.py   â† Chá»¥p mÃ n hÃ¬nh â†’ gá»­i Telegram (/snap)
-â””â”€â”€ README.md       â† File nÃ y
+├── boot.ps1        ← Khởi động tất cả (gọi từ máy hoặc bot /boot)
+├── stop.ps1        ← Dừng tất cả
+├── config.json     ← Cấu hình tập trung (ports, keys, paths)
+├── screenshot.py   ← Chụp màn hình → gửi Telegram (/snap)
+└── README.md       ← File này
 ```
 
 ---
 
-## CÃ¡c dá»‹ch vá»¥
+## Các dịch vụ
 
-| # | TÃªn | Port | URL | Loáº¡i |
+| # | Tên | Port | URL | Loại |
 |---|-----|------|-----|------|
 | 1 | **ClawTask Dashboard** | 7474 | http://localhost:7474/ | Local |
 | 2 | **9router (LLM Gateway)** | 20128 | http://localhost:20128/ | Local |
 | 3 | **OmniClaw Bot (nullclaw)** | 3000 | http://localhost:3000/ | Local |
 | 4 | **Ollama (Local AI)** | 11434 | http://localhost:11434/ | Local |
-| 5 | **OpenRouter** | â€” | https://openrouter.ai/ | Cloud |
+| 5 | **OpenRouter** | — | https://openrouter.ai/ | Cloud |
 
 ---
 
-## CÃ¡ch khá»Ÿi Ä‘á»™ng
+## Cách khởi động
 
-### CÃ¡ch 1 â€” Tá»« mÃ¡y tÃ­nh (Desktop Shortcut)
-Double-click **"OmniClaw Boot"** trÃªn Desktop.
+### Cách 1 — Từ máy tính (Desktop Shortcut)
+Double-click **"OmniClaw Boot"** trên Desktop.
 
-### CÃ¡ch 2 â€” Tá»« Telegram Bot
-Nháº¯n `/boot` vÃ o **OmniClaw Bot** â€” bot tá»± gá»i `boot.ps1`.
+### Cách 2 — Từ Telegram Bot
+Nhắn `/boot` vào **OmniClaw Bot** — bot tự gọi `boot.ps1`.
 
-### CÃ¡ch 3 â€” Tá»± Ä‘á»™ng khi báº­t mÃ¡y
-Task Scheduler `AI_OS_Watchdog` tá»± start nullclaw bot khi Ä‘Äƒng nháº­p.
-Sau Ä‘Ã³ nháº¯n `/boot` náº¿u muá»‘n báº­t ná»‘t ClawTask + 9router + Ollama.
+### Cách 3 — Tự động khi bật máy
+Task Scheduler `AI_OS_Watchdog` tự start nullclaw bot khi đăng nhập.
+Sau đó nhắn `/boot` nếu muốn bật nốt ClawTask + 9router + Ollama.
 
 ---
 
-## Lá»‡nh thá»§ cÃ´ng
+## Lệnh thủ công
 
 ```powershell
-# Khá»Ÿi Ä‘á»™ng táº¥t cáº£
+# Khởi động tất cả
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1"
 
-# Xem tráº¡ng thÃ¡i (khÃ´ng start)
+# Xem trạng thái (không start)
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1" -Status
 
-# Dá»«ng táº¥t cáº£
+# Dừng tất cả
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\stop.ps1"
 ```
 
@@ -60,16 +60,16 @@ powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\stop.ps1"
 
 ## Telegram Commands (OmniClaw Bot)
 
-| Lá»‡nh | MÃ´ táº£ |
+| Lệnh | Mô tả |
 |------|-------|
 | `/sys` | Check CPU, RAM, Ports |
-| `/task` | Xem/ThÃªm task ClawTask |
+| `/task` | Xem/Thêm task ClawTask |
 | `/clawtask` | Link + status Dashboard |
-| `/snap` | Chá»¥p mÃ n hÃ¬nh â†’ gá»­i Ä‘Ã¢y |
+| `/snap` | Chụp màn hình → gửi đây |
 | `/log` | Xem watchdog log |
-| `/run <cmd>` | Cháº¡y PowerShell |
-| `/web <q>` | TÃ¬m Google/Ä‘á»c link |
-| `/boot` | Khá»Ÿi Ä‘á»™ng táº¥t cáº£ dá»‹ch vá»¥ |
-| `/stop` | Táº¯t táº¥t cáº£ dá»‹ch vá»¥ |
-| `/new` | XÃ³a lá»‹ch sá»­, báº¯t Ä‘áº§u láº¡i |
+| `/run <cmd>` | Chạy PowerShell |
+| `/web <q>` | Tìm Google/đọc link |
+| `/boot` | Khởi động tất cả dịch vụ |
+| `/stop` | Tắt tất cả dịch vụ |
+| `/new` | Xóa lịch sử, bắt đầu lại |
 

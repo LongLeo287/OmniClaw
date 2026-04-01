@@ -1,10 +1,10 @@
-# pos_dev_workflow.md â€” POS Feature Development SOP
+# pos_dev_workflow.md — POS Feature Development SOP
 # Managed by: $OMNICLAW_ROOT\projects\PRJ-004\workflows\
 
 ## Phase 1: RESEARCH
 
 ```
-1. Read CLAUDE.md â†’ check KEY DECISIONS before touching existing code
+1. Read CLAUDE.md → check KEY DECISIONS before touching existing code
 2. Read the target file top-to-bottom
 3. Identify: Which hooks? Which context? Which child components?
 ```
@@ -25,8 +25,8 @@
 For every file modified:
 1. Read file first
 2. Make change
-3. `npx tsc --noEmit --skipLibCheck` â†’ must stay at 0 errors
-4. Check `http://localhost:3000` â†’ visual pass
+3. `npx tsc --noEmit --skipLibCheck` → must stay at 0 errors
+4. Check `http://localhost:3000` → visual pass
 
 **Component Rules:**
 - New state: declare after existing useState calls
@@ -38,16 +38,16 @@ For every file modified:
 
 | # | Check |
 |---|---|
-| 1 | Correctness â€” does it do what was requested? |
-| 2 | Regression â€” did existing features break? |
-| 3 | Mobile â€” works on 375px? |
-| 4 | Dark Mode â€” looks correct? |
-| 5 | TypeScript â€” zero errors? |
+| 1 | Correctness — does it do what was requested? |
+| 2 | Regression — did existing features break? |
+| 3 | Mobile — works on 375px? |
+| 4 | Dark Mode — looks correct? |
+| 5 | TypeScript — zero errors? |
 
-## Phase 5: RECEIPT (MANDATORY â€” Auto-Write After Every Feature)
+## Phase 5: RECEIPT (MANDATORY — Auto-Write After Every Feature)
 
 > This step is NOT optional. Every completed feature generates a receipt.
-> Receipts feed the OmniClaw Learning Cycle â†’ knowledge base.
+> Receipts feed the OmniClaw Learning Cycle → knowledge base.
 
 ### Receipt File Naming
 ```

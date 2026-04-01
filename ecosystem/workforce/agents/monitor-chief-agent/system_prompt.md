@@ -1,4 +1,4 @@
-﻿# System Prompt — monitor-chief-agent
+# System Prompt — monitor-chief-agent
 # Title: Monitoring & Inspection Chief
 #Department: monitoring_inspection
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

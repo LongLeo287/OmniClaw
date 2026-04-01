@@ -1,66 +1,66 @@
-# OmniClaw Corp â€” AstrBot Setup Guide
+# OmniClaw Corp — AstrBot Setup Guide
 # Dept 03 (IT Infrastructure) | Updated: 2026-03-18
 
-## BÆ°á»›c 1: Láº¥y thÃ´ng tin cáº§n thiáº¿t
+## Bước 1: Lấy thông tin cần thiết
 
 ### 1.1 Telegram Bot Token
-1. Má»Ÿ Telegram â†’ tÃ¬m **@BotFather**
-2. Gá»­i: `/newbot`
-3. Äáº·t tÃªn bot (vd: `OmniClaw Corp Bot`)
-4. Äáº·t username (vd: `aios_corp_bot`)
-5. Copy **TOKEN** dáº¡ng: `7123456789:AABBCc...`
+1. Mở Telegram → tìm **@BotFather**
+2. Gửi: `/newbot`
+3. Đặt tên bot (vd: `OmniClaw Corp Bot`)
+4. Đặt username (vd: `aios_corp_bot`)
+5. Copy **TOKEN** dạng: `7123456789:AABBCc...`
 
 ### 1.2 Telegram Admin ID
-1. Má»Ÿ Telegram â†’ tÃ¬m **@userinfobot**
-2. Gá»­i `/start`
+1. Mở Telegram → tìm **@userinfobot**
+2. Gửi `/start`
 3. Copy **ID** (VD: `12345678`)
 
-### 1.3 LLM API Key (chá»n 1)
-- **Gemini** (miá»…n phÃ­): https://aistudio.google.com/apikey
+### 1.3 LLM API Key (chọn 1)
+- **Gemini** (miễn phí): https://aistudio.google.com/apikey
 - **Anthropic** (Claude): https://console.anthropic.com
 
 ---
 
-## BÆ°á»›c 2: Khá»Ÿi Ä‘á»™ng AstrBot
+## Bước 2: Khởi động AstrBot
 
 ```powershell
-# Má»Ÿ PowerShell, cháº¡y startup script
+# Mở PowerShell, chạy startup script
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\scripts\startup.ps1"
 
-# Hoáº·c start AstrBot riÃªng
+# Hoặc start AstrBot riêng
 & "$OMNICLAW_ROOT\plugins\AstrBot\.venv312\Scripts\astrbot.exe" run
 ```
 
-AstrBot WebUI sáº½ má»Ÿ táº¡i: **http://localhost:6185/**
+AstrBot WebUI sẽ mở tại: **http://localhost:6185/**
 
 ---
 
-## BÆ°á»›c 3: Cáº¥u hÃ¬nh qua WebUI (http://localhost:6185/)
+## Bước 3: Cấu hình qua WebUI (http://localhost:6185/)
 
-### 3.1 ThÃªm LLM Provider
-- Menu: **Settings â†’ LLM Providers**
-- Add: Gemini (paste API key) hoáº·c Anthropic
+### 3.1 Thêm LLM Provider
+- Menu: **Settings → LLM Providers**
+- Add: Gemini (paste API key) hoặc Anthropic
 
-### 3.2 Káº¿t ná»‘i Telegram
-- Menu: **Settings â†’ Message Platforms**
+### 3.2 Kết nối Telegram
+- Menu: **Settings → Message Platforms**
 - Add: **Telegram Bot**
-- Paste: **Bot Token** tá»« BÆ°á»›c 1
+- Paste: **Bot Token** từ Bước 1
 
 ### 3.3 Set Admin
-- Menu: **Settings â†’ Admin**
-- Add Telegram ID tá»« BÆ°á»›c 1
+- Menu: **Settings → Admin**
+- Add Telegram ID từ Bước 1
 - Role: Admin
 
-### 3.4 CÃ i OmniClaw Corp Plugin
+### 3.4 Cài OmniClaw Corp Plugin
 - Copy folder: `$OMNICLAW_ROOT\plugins\AstrBot\data\plugins\astrbot_plugin_aios_corp\`
-- VÃ o: **Plugins â†’ Local Install**
-- Hoáº·c restart AstrBot (auto-detect plugin)
+- Vào: **Plugins → Local Install**
+- Hoặc restart AstrBot (auto-detect plugin)
 
 ---
 
-## BÆ°á»›c 4: Test qua Telegram
+## Bước 4: Test qua Telegram
 
-Nháº¯n vÃ o bot Telegram cá»§a báº¡n:
+Nhắn vào bot Telegram của bạn:
 ```
 /start
 /help_aios
@@ -73,12 +73,12 @@ Nháº¯n vÃ o bot Telegram cá»§a báº¡n:
 
 ## Commands OmniClaw Corp Plugin
 
-| Command | MÃ´ táº£ |
+| Command | Mô tả |
 |---------|-------|
-| `/clawtask` | Xem toÃ n bá»™ Kanban board |
-| `/clawtask todo` | Chá»‰ xem TODO tasks |
-| `/clawtask inprogress` | Tasks Ä‘ang cháº¡y |
-| `/agents` | Danh sÃ¡ch 10 agents + status |
+| `/clawtask` | Xem toàn bộ Kanban board |
+| `/clawtask todo` | Chỉ xem TODO tasks |
+| `/clawtask inprogress` | Tasks đang chạy |
+| `/agents` | Danh sách 10 agents + status |
 | `/status` | System health check |
 | `/civ` | Xem CIV batch reports |
 | `/help_aios` | Help menu |
@@ -97,12 +97,12 @@ Nháº¯n vÃ o bot Telegram cá»§a báº¡n:
 ## Auto-startup (Windows Task Scheduler)
 
 ```powershell
-# Táº¡o scheduled task cháº¡y khi Windows boot
+# Tạo scheduled task chạy khi Windows boot
 $action = New-ScheduledTaskAction -Execute "powershell.exe" `
     -Argument "-ExecutionPolicy Bypass -File `"$OMNICLAW_ROOT\scripts\startup.ps1`""
 $trigger = New-ScheduledTaskTrigger -AtStartup
 Register-ScheduledTask -TaskName "OmniClaw Corp Startup" -Action $action -Trigger $trigger -RunLevel Highest
 ```
 
-*Cháº¡y command nÃ y trong PowerShell (Admin) Ä‘á»ƒ auto-start khi báº­t mÃ¡y.*
+*Chạy command này trong PowerShell (Admin) để auto-start khi bật máy.*
 

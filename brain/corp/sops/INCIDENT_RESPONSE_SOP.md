@@ -1,4 +1,4 @@
-# INCIDENT_RESPONSE_SOP.md â€” Security Incident Response Playbook
+# INCIDENT_RESPONSE_SOP.md — Security Incident Response Playbook
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 1 (Security & GRC) / BLOCKING
 # Lead: strix-agent / security_grc dept
@@ -13,17 +13,17 @@ CRITICAL incidents override all other work priorities.
 
 ```
 DETECT (strix-agent / continuous)
-    â”‚
+    │
     v
 CLASSIFY severity (CRITICAL / HIGH / MEDIUM / LOW)
-    â”‚
-    â”œâ”€â”€ CRITICAL â†’ Pause affected systems â†’ Direct L3 to CEO
-    â”œâ”€â”€ HIGH     â†’ L2 to COO â†’ response within session
-    â”œâ”€â”€ MEDIUM   â†’ L1 within security_grc dept
-    â””â”€â”€ LOW      â†’ Log, monitor, no escalation
-    â”‚
+    │
+    ├── CRITICAL → Pause affected systems → Direct L3 to CEO
+    ├── HIGH     → L2 to COO → response within session
+    ├── MEDIUM   → L1 within security_grc dept
+    └── LOW      → Log, monitor, no escalation
+    │
     v
-CONTAIN â†’ INVESTIGATE â†’ REMEDIATE â†’ VERIFY â†’ CLOSE
+CONTAIN → INVESTIGATE → REMEDIATE → VERIFY → CLOSE
 ```
 
 ---
@@ -59,7 +59,7 @@ incident-agent monitors:
 
 On incident detection, write to `shared-context/brain/corp/escalations.md`:
 ```markdown
-## SECURITY INCIDENT â€” [INC-ID] â€” [DATETIME]
+## SECURITY INCIDENT — [INC-ID] — [DATETIME]
 Severity: CRITICAL | HIGH | MEDIUM | LOW
 Detected by: <agent>
 Type: <prompt-injection | unauthorized-access | data-exfiltration | license-violation | other>
@@ -110,7 +110,7 @@ incident-agent investigates:
 
 Write investigation report:
 ```markdown
-## INVESTIGATION REPORT â€” [INC-ID]
+## INVESTIGATION REPORT — [INC-ID]
 
 Timeline:
   [DATETIME]: First indicator
@@ -136,7 +136,7 @@ Based on investigation:
 ```
 LOW: patch the specific item
 HIGH: patch + policy update + security brief
-CRITICAL: full remediation plan â†’ CEO approved â†’ deployed â†’ verified
+CRITICAL: full remediation plan → CEO approved → deployed → verified
 ```
 
 Remediation tracked in `corp/memory/departments/security_grc.md`

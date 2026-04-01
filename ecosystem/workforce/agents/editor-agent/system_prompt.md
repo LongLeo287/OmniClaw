@@ -1,4 +1,4 @@
-﻿# System Prompt — editor-agent
+# System Prompt — editor-agent
 # Title: Content Editor & Proofreader
 # Department: content_review
 # OmniClaw Corp | Version: 1.0 | Activated: 2026-03-29

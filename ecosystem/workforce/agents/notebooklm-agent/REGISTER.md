@@ -1,4 +1,4 @@
-﻿# Nova System Register v1.0
+# Nova System Register v1.0
 # Agent: Nova | Date: 2026-03-21 | OmniClaw Corp
 
 ## 📋 Identity

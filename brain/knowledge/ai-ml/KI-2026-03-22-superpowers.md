@@ -17,20 +17,20 @@ created: 2026-03-22T23:02:23.338520
 
 **Source:** [https://github.com/superpowers-ai/superpowers](https://github.com/superpowers-ai/superpowers)  
 **Stars:** 1k | **Type:** TOOL | **Dept:** engineering  
-**OmniClaw Compatible:** âœ… Compatible
+**OmniClaw Compatible:** ✅ Compatible
 
 ## Phase 3 Classification
 - **knowledge_type:** `TOOL`
 - **domains:** ai-ml, state-machine
 - **target_dept:** engineering
 - **relevant_agents:** corp_orchestrator
-- **security_gate:** PASS â€” community_vetted
+- **security_gate:** PASS — community_vetted
 
 ## OmniClaw Notes
-INSTALLED in ecosystem/plugins/superpowers/ â€” reference only
+INSTALLED in ecosystem/plugins/superpowers/ — reference only
 
 ## Integration
-ðŸ“– KI entry only â€” no plugin clone needed
+📖 KI entry only — no plugin clone needed
 
 ---
 *Ingested: 2026-03-22T23:02:23.338520 via knowledge-ingest.md Phase 1-3*
