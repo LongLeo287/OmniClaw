@@ -1,27 +1,27 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/AI%20OS-CORP-black?style=for-the-badge&logo=anthropic" alt="OmniClaw Banner">
+
   <h1>🌌 OmniClaw</h1>
-  <b>Hệ điều hành Multi-Agent Tự trị và Nguyên khối</b><br>
-  <br>
+  
+  <p align="center">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+CẬP+NHẬT+HỆ+THỐNG+MỖI+NGÀY;+🌌+OMNICLAW+ĐANG+TIẾN+HÓA...;+🛠️+THÊM+AGENT+MỚI+HÔM+NAY" alt="Typing SVG" />
+  </p>
 
-  [![Phiên bản](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
-  [![Giấy phép](https://img.shields.io/badge/License-MIT-green.svg)](#)
-  [![Nền tảng](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
-  [![Thảo luận](https://img.shields.io/badge/Tham_gia_C%E1%BB%99ng%20%C4%91%E1%BB%93ng-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/omniclaw-local/discussions)
-  
-  <br>
-  
-  [**🇺🇸 English Version**](README.md)
+  <b>Hệ điều hành Multi-Agent, Tự trị và Toàn diện</b><br><br>
+
+  [![Cập nhật hàng ngày](https://img.shields.io/badge/TRẠNG_THÁI-ĐANG_CẬP_NHẬT-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
+  [![Cập nhật lần cuối](https://img.shields.io/github/last-commit/LongLeo287/OmniClaw?label=CẬP%20NHẬT%20CUỐI&style=for-the-badge&color=brightgreen)](https://github.com/LongLeo287/OmniClaw/commits/main)
   
   <br>
 
-  [Giới thiệu](#-giới-thiệu-về-ai-os) •
-  [Điểm mạnh](#-điểm-mạnh-cốt-lõi--tại-sao-chọn-ai-os) •
-  [Kiến trúc](#-kiến-trúc--giao-thức-plugin-3-tầng) •
-  [Phòng ban](#-đội-ngũ-nhân- sự-của-ai-os) •
-  [Cài đặt](#-cài-đặt) •
-  [Thảo luận](https://github.com/LongLeo287/omniclaw-local/discussions) •
-  [Tri ân](#-lời-cảm-ơn--tri-ân)
+  [![Phiên bản](https://img.shields.io/badge/phiên_bản-12.0.0--cycle-blue.svg)](#)
+  [![Giấy phép](https://img.shields.io/badge/Giấy_phép-MIT-green.svg)](#)
+  [![Công nghệ](https://img.shields.io/badge/Sử_dụng-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
+  [![Thảo luận](https://img.shields.io/badge/Tham_gia_Cộng_đồng-Thảo_luận-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
+
+  <br><br>
+  [**🇺🇸 English**](README.md)
+  <br>
+</div>
 
 </div>
 

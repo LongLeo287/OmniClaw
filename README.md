@@ -6,6 +6,7 @@
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+SYSTEM+UPDATE+DAILY;+🌌+OMNICLAW+IS+EVOLVING...;+🛠️+NEW+AGENTS+ADDED+TODAY" alt="Typing SVG" />
   </p>
 
+<<<<<<< HEAD
 <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br><br>
 
 [![Daily Update](https://img.shields.io/badge/STATUS-UPDATING_DAILY-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
@@ -18,6 +19,20 @@
 [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
 [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
 
+=======
+  <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br><br>
+
+  [![Daily Update](https://img.shields.io/badge/STATUS-UPDATING_DAILY-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
+  [![Last Update](https://img.shields.io/github/last-commit/LongLeo287/OmniClaw?label=LAST%20UPDATE&style=for-the-badge&color=brightgreen)](https://github.com/LongLeo287/OmniClaw/commits/main)
+  
+  <br>
+
+  [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
+  [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
+  [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
+  [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
+  
+>>>>>>> 4a0414b3b7594c578daeccc6afbf3c396e3b53b8
   <br>
   
   [**🇻🇳 Vietnamese**](README-vn.md)
