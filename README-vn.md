@@ -1,6 +1,11 @@
 <div align="center">
 
-  <h1>🌌 OmniClaw</h1>
+  <img src="asset/omniclaw_banner.png" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
+  <br><br>
+  
+  <p align="center">
+    <img src="asset/omniclaw_logo.png" alt="OmniClaw Logo" width="100" />
+  </p>
   
   <p align="center">
     <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+CẬP+NHẬT+HỆ+THỐNG+MỖI+NGÀY;+🌌+OMNICLAW+ĐANG+TIẾN+HÓA...;+🛠️+THÊM+AGENT+MỚI+HÔM+NAY" alt="Typing SVG" />
