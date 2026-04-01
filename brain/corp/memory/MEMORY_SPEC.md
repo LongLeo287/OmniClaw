@@ -6,7 +6,7 @@
 
 ## Memory Layers Overview
 
-OmniClaw sử dụng **5 memory layers** với retention, ownership, và access khác nhau:
+OmniClaw utilizes **5 memory layers** with distinct retention, ownership, and access rules:
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
