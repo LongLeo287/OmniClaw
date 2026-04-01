@@ -392,3 +392,6 @@ system/security/QUARANTINE/*
 # --- Orphaned Embedded Repos (non-submodule gitlinks) ------
 system/security/rules/prompts/
 !system/security/rules/prompts/.gitkeep
+
+# AI OS Vector Database
+brain/memory/qdrant_db/
