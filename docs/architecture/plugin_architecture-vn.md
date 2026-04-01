@@ -30,8 +30,8 @@ Luật chơi khi bạn muốn dâng hiến mã nguồn cho OmniClaw:
 
 ---
 
-## 📖 Đặc Quyền Sinh Thái: Xuyên Không Vào Não (`brain/knowledge`)
+## 📖 Đặc Quyền Sinh Thái: Cấp Bậc Ecosystem Manager (`brain/knowledge`)
 
-Mặc dù cánh cửa Ghi chép (Intake) vào Tàng Kinh Các bị khóa chặt bởi OIW và Thằng Thủ Thư (Phòng 15), nhưng **Các Đặc Vụ và Phụ Kiện Rừng Rú (Tier 1 & Tier 2) thuộc Hệ sinh thái đều có "Thẻ Thỉnh Kinh Từ Xa" (Free-Pass Authority)**.
-* **Quyền hạn:** Bất cứ Plugin, Skill, hoặc Hệ lệnh nào xuất phát từ `ecosystem/` đều được Tự do Đọc mượt mà, Search Semantic, và lướt qua toàn bộ Mạng lưới Thư mục của `brain/knowledge/`.
-* **Giới hạn Thép:** Hệ Sinh thái chỉ đóng vai "Người Tiêu Thụ Tri Thức" (Consumers). Nghiêm cấm mọi Plugin có hành vi Trút dữ liệu thô, Sửa Luật lõi, hoặc Đổ rác vào Não mà không qua phễu `gitingest`.
+Mặc dù cánh cửa Ghi chép (Intake) bị khóa chặt bởi OIW và Thằng Thủ Thư (Phòng 15), **Ecosystem Manager (Thực thể cao nhất của hệ sinh thái) sở hữu "Thẻ Thỉnh Kinh Từ Xa" (Free-Pass Authority)**.
+* **Quyền hạn:** Chỉ có Chỉ huy cao nhất của `ecosystem/` mới được Tự do Đọc, Search Semantic, và lướt qua Mạng lưới Thư mục của `brain/knowledge/`. **Các Agent thường và Plugin tuyệt đối không có quyền này.**
+* **Tương đương Bảo vệ (Protection Equivalence):** Thư mục `ecosystem/` và `brain/knowledge/` có mức độ bảo vệ giống hệt nhau: **Chỉ Xem (Read-Only Vault)**. Các Đặc vụ không được phép sửa đổi, thay đổi cấu trúc ở hai thư mục lõi này.

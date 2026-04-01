@@ -56,9 +56,10 @@ While `brain/knowledge` is heavily guarded against raw intake bloat, the followi
 * **Role:** The Supreme Auditor. 
 * **Rights:** Full access to inspect, evaluate, and audit the entire knowledge structure. OA agents can freely traverse this folder to ensure all items comply with the Markdown Purity and Zero-Config standards.
 
-### 2. The Ecosystem (Plugins, Skills, Workforce Agents)
-* **Role:** The Consumers.
-* **Rights:** Unrestricted READ and TRAVERSAL access. Any agent operating from `ecosystem/` has full autonomy to enter the Brain, run Semantic Search, and retrieve the knowledge (`.md`) necessary to complete their missions. They consume the knowledge that Dept 15 has organized.
+### 2. The Ecosystem Manager (Highest Authority)
+* **Role:** The Orchestrator of the Ecosystem.
+* **Rights:** Unlike standard workforce agents or plugins (which DO NOT have a free-pass), the top-level **Ecosystem Manager** has Free-Pass READ and TRAVERSAL access to `brain/knowledge/`. 
+* **Protection Equivalence:** Both `brain/knowledge/` and `ecosystem/` are highly protected **View-Only Vaults**. Regular agents cannot modify them. They are strictly read-only spaces for fetching knowledge and tools.
 
 ---
 **Violation of these rules will result in Agent session termination by the OHD (OmniClaw Health Daemon).**

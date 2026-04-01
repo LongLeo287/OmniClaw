@@ -30,8 +30,8 @@ To build a skill or plugin for OmniClaw:
 
 ---
 
-## 📖 Ecosystem Free-Pass to Brain (`brain/knowledge`)
+## 📖 Ecosystem Manager Free-Pass to Brain (`brain/knowledge`)
 
-While the creation and ingestion of knowledge sets are tightly guarded by the OmniClaw Intake Workflow (OIW) and Dept 15, **Execution Agents and Plugins (Tier 1 & Tier 2) hold "Free-Pass" Authority.**
-* **What this means:** Any authenticated plugin, skill, or executing agent running from the `ecosystem/` can freely Read, Traverse, and Semantically Search the entire `brain/knowledge/` directory structure.
-* **Limitation:** Ecosystem plugins may NOT dump raw data, rewrite core rules, or bypass the `gitingest` mandate inside the Brain. They act strictly as Knowledge Consumers.
+While the creation and ingestion of knowledge sets are tightly guarded by the OmniClaw Intake Workflow (OIW) and Dept 15, the top-level **Ecosystem Manager holds "Free-Pass" Authority.**
+* **What this means:** The highest authority governing the `ecosystem/` can freely Read, Traverse, and Semantically Search the entire `brain/knowledge/` directory structure. **Standard agents and plugins DO NOT have this right.**
+* **Protection Equivalence:** The `ecosystem/` directory and the `brain/knowledge/` directory share the exact same security posture: they are **Read-Only Vaults**. Tools and algorithms can view them, but no unauthorized modification is permitted.
