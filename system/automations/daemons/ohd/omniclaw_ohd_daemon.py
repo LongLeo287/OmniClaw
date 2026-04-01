@@ -183,30 +183,7 @@ def audit_and_heal_entities():
                         with open(file_path, "r", encoding="utf-8") as f:
                             for _ in f: pass
                             
-                        # --- Auto-heal MOJIBAKE (Garbled Macaque encoding) for readable files ---
-                        if file_path.suffix in [".md", ".yaml", ".txt"]:
-                            try:
-                                if file_path.stat().st_size < 1024 * 1024:
-                                    b_content = file_path.read_bytes()
-                                    s_content = b_content.decode("utf-8")
-                                    if "\u00e2" in s_content or "\u00c3" in s_content or "\u00c4" in s_content:
-                                        # CP1252 mapping with missing Windows holes preserved
-                                        res = bytearray()
-                                        for ch in s_content:
-                                            try:
-                                                res.append(ch.encode("cp1252")[0])
-                                            except UnicodeEncodeError:
-                                                if ord(ch) in [0x81, 0x8D, 0x8F, 0x90, 0x9D]:
-                                                    res.append(ord(ch))
-                                                else:
-                                                    raise
-                                        
-                                        s_fixed = res.decode("utf-8")
-                                        if s_fixed != s_content:
-                                            file_path.write_bytes(s_fixed.encode("utf-8"))
-                                            logging.info(f"Auto-Healed DEEP MOJIBAKE in: {file_path.name}")
-                            except Exception as e:
-                                pass
+                        # Removed flawed MOJIBAKE heuristic as it destroys valid Vietnamese text (like 'â' which is \u00e2).
                                     
                     except UnicodeDecodeError:
                         try:
