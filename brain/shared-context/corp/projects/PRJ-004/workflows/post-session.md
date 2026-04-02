@@ -35,9 +35,9 @@ Copy-Item "$OMNICLAW_ROOT\scripts\memory\soul_backup.zip" `
 
 ### 4. Announce (Vietnamese)
 ```
-"✅ Phiên làm việc đã đóng.
-- Đã làm: [list]
-- Còn lại: [list]
+"✅ Session closed.
+- Did: [list]
+- Remaining: [list]
 - Backup: done"
 ```
 

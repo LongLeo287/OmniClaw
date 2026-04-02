@@ -8,8 +8,8 @@ schema: openclaw-pipeline-v1
 pipelines:
 
   CODE:
-    keywords: [code, viết, fix, bug, debug, build, app, feature, refactor, test, deploy, push, git]
-    description: "Tạo/sửa code, build app, deploy"
+    keywords: [code, write, fix, bug, debug, build, app, feature, refactor, test, deploy, push, git]
+    description: "Create/edit code, build app, deploy"
     workflows:
       - ops/workflows/create-plugin.md
       - ops/workflows/build-fast-index.md
@@ -17,30 +17,30 @@ pipelines:
     tool_hint: "shell + file_write"
 
   DESIGN:
-    keywords: [design, ui, ux, giao diện, màu sắc, layout, figma, css, component, dashboard]
-    description: "Thiết kế UI/UX, giao diện"
+    keywords: [design, ui, ux, interface, colors, layout, figma, css, component, dashboard]
+    description: "UI/UX design, interface"
     workflows:
       - ops/workflows/nemoclaw-slides.md
     agent: nemoclaw
     tool_hint: "file_write + web_fetch"
 
   DATA:
-    keywords: [data, database, sql, supabase, json, csv, phân tích, báo cáo, report, analytics, query]
-    description: "Truy vấn dữ liệu, phân tích"
+    keywords: [data, database, sql, supabase, json, csv, analysis, report, report, analytics, query]
+    description: "Data query, analysis"
     workflows:
       - ops/workflows/data-ingest.md
     agent: antigravity
     tool_hint: "shell + web_fetch"
 
   RESEARCH:
-    keywords: [tìm hiểu, nghiên cứu, search, so sánh, đánh giá, review, explain, giải thích, là gì]
-    description: "Tìm kiếm, giải thích, nghiên cứu"
+    keywords: [learn, research, search, compare, evaluate, review, explain, explain, what]
+    description: "Search, explain, research"
     agent: antigravity
     tool_hint: "web_search + file_read"
 
   OPS:
-    keywords: [khởi động, restart, stop, deploy, docker, service, task, monitor, log, health, check]
-    description: "Vận hành hệ thống, quản lý service"
+    keywords: [start, restart, stop, deploy, docker, service, task, monitor, log, health, check]
+    description: "System operation, service management"
     workflows:
       - ops/workflows/bot-reporting.md
       - ops/workflows/start-services.md
@@ -48,13 +48,13 @@ pipelines:
     tool_hint: "shell"
 
   PLAN:
-    keywords: [lên kế hoạch, plan, roadmap, okr, sprint, brainstorm, ý tưởng, idea, strategy]
-    description: "Lập kế hoạch, brainstorm"
+    keywords: [plan, plan, roadmap, okr, sprint, brainstorm, idea, idea, strategy]
+    description: "Planning, brainstorming"
     agent: antigravity
     tool_hint: "file_write"
 
   CHAT:
     keywords: []
-    description: "Hội thoại thông thường, câu hỏi nhanh"
+    description: "Common conversation, quick questions"
     agent: omniclaw_bot
     tool_hint: "none — respond directly"

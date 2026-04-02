@@ -8,10 +8,10 @@ knowledge_source: KI-agent-skills-repo
 # Agent Proposal: Microsoft Agent Skills Integrator
 
 ## Role
-Quản lý, đóng gói và cung cấp thư viện kỹ năng (skills) để nạp thẳng vào các Đặc vụ (Agents) thuộc hệ sinh thái OmniClaw.
+Manage, package and provide skill libraries to load directly into Agents of the OmniClaw ecosystem.
 
 ## Why needed
-Gap identified: Thiếu một Hub trung tâm hoặc chuyên gia xử lý tích hợp để bóc tách các skill từ repo microsoft/agent-skills thành dạng plugin chuẩn của OmniClaw.
+Gap identified: Lack of a central Hub or integration processing expert to extract skills from the microsoft/agent-skills repo into standard OmniClaw plugin form.
 Source: brain/knowledge/processed_repos/agent-skills_knowledge.md
 
 ## Proposed agent ID
@@ -26,8 +26,8 @@ engineering — reports to arch-chief-agent
 - skill_registry_manager (YES)
 
 ## Tools / permissions needed
-- Đọc xuất input output từ code Python repo agent-skills
-- Cấp quyền Write vào SKILL_REGISTRY.json và thư mục system/plugins/
+- Read input output from Python repo agent-skills code
+- Grant Write permission to SKILL_REGISTRY.json and system/plugins/ folder
 
 ## LLM tier
 balanced
@@ -36,12 +36,12 @@ balanced
 supervised
 
 ## KPIs
-- Số lượng Agent được bơm skill mới thành công
-- Tốc độ parse và adapt skill code (giây/skill)
+- Number of Agents successfully injected with new skills
+- Speed ​​of parsing and adapting skill code (seconds/skill)
 
 ## Sample tasks
-1. Trích xuất skill "Browser Control" từ repo microsoft và biến thành plugin OmniClaw.
-2. Cập nhật SKILL_REGISTRY.json để chia sẻ quyền dùng skill cho star-office-agent.
+1. Extract skill "Browser Control" from microsoft repo and turn it into OmniClaw plugin.
+2. Updated SKILL_REGISTRY.json to share skill permissions for star-office-agent.
 
 ## Integration
 - Reads from: brain/knowledge/processed_repos/agent-skills_knowledge.md

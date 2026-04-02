@@ -18,7 +18,7 @@
 |---------|-------------|--------|
 | C5-OPS-001 | telegram_notify.py module (5 functions) | ✅ DONE |
 | C5-OPS-002 | clawtask_api.py — 3 Telegram endpoints | ✅ DONE |
-| C5-OPS-003 | Docker rebuild với Telegram code | ✅ DONE |
+| C5-OPS-003 | Docker rebuild with Telegram code | ✅ DONE |
 | C5-RD-001 | Agent Swarm dispatch protocol (RD-001) | ✅ DONE |
 | C5-ENG-001 | swarm-dispatch.md — Phase 1 PoC plan | ✅ DONE |
 | C5-OPS-004 | Telegram token config — PENDING (CEO provide) | 🔴 NEEDS TOKEN |

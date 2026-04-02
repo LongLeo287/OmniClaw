@@ -1,39 +1,39 @@
 # SKILL: OpenClaw Core Tools
-# Thẩm quyền: Worker & Manager
-# Mô tả: Bộ công cụ CLI mạnh mẽ cho phép Agent lướt web, chạy code, hoặc quản lý memory.
+# Competence: Worker & Manager
+# Description: A powerful CLI toolkit that allows Agents to surf the web, run code, or manage memory.
 
-## Cài đặt & Require
-- Dành cho các Agent chạy trong môi trường có cài đặt `openclaw` CLI.
-- Xác nhận tool đã có sẵn trên máy bằng lệnh `npx openclaw status` (nếu dùng local) hoặc gọi `openclaw` trực tiếp.
+## Settings & Requirements
+- For agents running in environments with the `openclaw` CLI installed.
+- Confirm the tool is available on your device with the command `npx openclaw status` (if using locally) or call `openclaw` directly.
 
-## Cách Dùng
+## Use
 
-### 1. Trình Duyệt & Lướt Web (Browser & Search)
-Bạn có thể đọc nội dung một URL một cách đáng tin cậy:
+### 1. Browser & Surfing the Web (Browser & Search)
+You can reliably read the content of a URL:
 ```bash
 openclaw tools call web_fetch url="https://example.com"
 ```
-Quét nội dung tìm kiếm (Semantic Search):
+Scan search content (Semantic Search):
 ```bash
 openclaw tools call web_search query="latest framework changes"
 ```
 
-### 2. Thực thi Shell Code an toàn (Exec)
+### 2. Safe Shell Code Execution (Exec)
 ```bash
 openclaw tools call exec command="ls -la"
 ```
 
-### 3. Đánh Chỉ Mục (Memory Indexing)
-Nếu bạn thay đổi file trí nhớ trong thư mục `/memory/`, bạn cần bảo OpenClaw chạy index lại để Vector Search hoạt động:
+### 3. Memory Indexing
+If you change the memory file in the `/memory/` directory, you need to tell OpenClaw to run the index again for Vector Search to work:
 ```bash
 openclaw memory index
 ```
 
-### 4. Semantic Search trong Memory nội bộ
-Nếu bạn cần lục lại bài học cũ liên quan tới một Topic:
+### 4. Semantic Search in Internal Memory
+If you need to review old lessons related to a Topic:
 ```bash
-openclaw memory search "khái niệm cognitive reflection"
+openclaw memory search "cognitive reflection concept"
 ```
 
-## Chú ý (Việt ngữ)
-> **Dành cho Agent (Tự ngẫm):** Đây là công cụ hệ thống rất sâu. Chỉ dùng khi có chỉ thị rõ ràng hoặc khi các công cụ built-in của LLM không đủ năng lực (ví dụ cần bypass captcha, cần load Vector DB).
+## Attention (Vietnamese)
+> **For Agents (Self-reflection):** This is a very deep system tool. Only use when there is a clear directive or when LLM's built-in tools are not capable enough (for example, need to bypass captcha, need to load Vector DB).

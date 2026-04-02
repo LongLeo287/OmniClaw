@@ -140,7 +140,7 @@ DRAFT → ACTIVE → MAINTENANCE → ARCHIVED
 ## Quick Reference: Auto-Register Script
 
 ```powershell
-# Tạo project mới và register tự động:
+# Create new project and register automatically:
 .\scripts\register_project.ps1 `
   -Id "PRJ-005" `
   -Name "My New Project" `

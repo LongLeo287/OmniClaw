@@ -38,9 +38,9 @@ Read: $OMNICLAW_ROOT\shared-context\blackboard.json
 
 ### 5. Announce (Vietnamese)
 ```
-"✅ Dự án Tiem Nuoc Nho v5 sẵn sàng.
+"✅ Tiem Nuoc Nho v5 project is ready.
 - Dev: http://localhost:3000
-- TypeScript: [0 lỗi]
+- TypeScript: [0 errors]
 - Status: IDLE"
 ```
 

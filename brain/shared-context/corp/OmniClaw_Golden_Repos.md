@@ -1,244 +1,244 @@
 # 🌟 OmniClaw Golden Repositories (Top Priority)
 
-> Danh sách các Repo MỚI (đã được đối chiếu loại bỏ các repo đang có trong `plugin-catalog.md`). Được chấm điểm dựa trên Tech Stack và cấu trúc Agent/MCP/RAG.
+> List of NEW Repos (reconciled to remove existing repos in `plugin-catalog.md`). Scored based on Tech Stack and Agent/MCP/RAG structure.
 
-### 1. `agentops` (Điểm: 91/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=agentops)
-- **Đặc điểm nổi bật**: Agent
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate agentops`
-
----
-
-### 2. `Auto-Claude` (Điểm: 91/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=Auto-Claude)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate Auto-Claude`
+### 1. `agentops` (Score: 91/100)
+- **Link**: [GitHub](https://github.com/search?q=agentops)
+- **Outstanding features**: Agent
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate agentops`
 
 ---
 
-### 3. `claude-seo` (Điểm: 91/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=claude-seo)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate claude-seo`
+### 2. `Auto-Claude` (Score: 91/100)
+- **Link**: [GitHub](https://github.com/search?q=Auto-Claude)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate Auto-Claude`
 
 ---
 
-### 4. `knowledge_gitnexus` (Điểm: 91/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=knowledge_gitnexus)
-- **Đặc điểm nổi bật**: Agent
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate knowledge_gitnexus`
+### 3. `claude-seo` (Score: 91/100)
+- **Link**: [GitHub](https://github.com/search?q=claude-seo)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate claude-seo`
 
 ---
 
-### 5. `phoenix` (Điểm: 91/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=phoenix)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate phoenix`
+### 4. `knowledge_gitnexus` (Score: 91/100)
+- **Link**: [GitHub](https://github.com/search?q=knowledge_gitnexus)
+- **Outstanding features**: Agent
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate knowledge_gitnexus`
 
 ---
 
-### 6. `pragmastat` (Điểm: 74/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=pragmastat)
-- **Đặc điểm nổi bật**: RAG
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate pragmastat`
+### 5. `phoenix` (Score: 91/100)
+- **Link**: [GitHub](https://github.com/search?q=phoenix)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate phoenix`
 
 ---
 
-### 7. `llmfit` (Điểm: 64/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=llmfit)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate llmfit`
+### 6. `pragmastat` (Score: 74/100)
+- **Link**: [GitHub](https://github.com/search?q=pragmastat)
+- **Outstanding features**: RAG
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate pragmastat`
 
 ---
 
-### 8. `VibeSec-Skill` (Điểm: 64/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=VibeSec-Skill)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate VibeSec-Skill`
+### 7. `llmfit` (Score: 64/100)
+- **Link**: [GitHub](https://github.com/search?q=llmfit)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate llmfit`
 
 ---
 
-### 9. `BSA_Browser` (Điểm: 63/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=BSA_Browser)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate BSA_Browser`
+### 8. `VibeSec-Skill` (Score: 64/100)
+- **Link**: [GitHub](https://github.com/search?q=VibeSec-Skill)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate VibeSec-Skill`
 
 ---
 
-### 10. `SwiftUI-Agent-Skill` (Điểm: 56/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=SwiftUI-Agent-Skill)
-- **Đặc điểm nổi bật**: Agent
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate SwiftUI-Agent-Skill`
+### 9. `BSA_Browser` (Score: 63/100)
+- **Link**: [GitHub](https://github.com/search?q=BSA_Browser)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate BSA_Browser`
 
 ---
 
-### 11. `code-review-graph` (Điểm: 53/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=code-review-graph)
-- **Đặc điểm nổi bật**: Graph
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate code-review-graph`
+### 10. `SwiftUI-Agent-Skill` (Score: 56/100)
+- **Link**: [GitHub](https://github.com/search?q=SwiftUI-Agent-Skill)
+- **Outstanding features**: Agent
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate SwiftUI-Agent-Skill`
 
 ---
 
-### 12. `LitServe` (Điểm: 51/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=LitServe)
-- **Đặc điểm nổi bật**: RAG, Agent
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate LitServe`
+### 11. `code-review-graph` (Score: 53/100)
+- **Link**: [GitHub](https://github.com/search?q=code-review-graph)
+- **Outstanding features**: Graph
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate code-review-graph`
 
 ---
 
-### 13. `queryweaver` (Điểm: 51/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=queryweaver)
-- **Đặc điểm nổi bật**: MCP, Graph
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate queryweaver`
+### 12. `LitServe` (Score: 51/100)
+- **Link**: [GitHub](https://github.com/search?q=LitServe)
+- **Outstanding features**: RAG, Agent
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate LitServe`
 
 ---
 
-### 14. `langflow` (Điểm: 49/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=langflow)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate langflow`
+### 13. `queryweaver` (Score: 51/100)
+- **Link**: [GitHub](https://github.com/search?q=queryweaver)
+- **Outstanding features**: MCP, Graph
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate queryweaver`
 
 ---
 
-### 15. `openchatbi` (Điểm: 46/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=openchatbi)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate openchatbi`
+### 14. `langflow` (Score: 49/100)
+- **Link**: [GitHub](https://github.com/search?q=langflow)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate langflow`
 
 ---
 
-### 16. `awesome-copilot` (Điểm: 44/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=awesome-copilot)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate awesome-copilot`
+### 15. `openchatbi` (Score: 46/100)
+- **Link**: [GitHub](https://github.com/search?q=openchatbi)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate openchatbi`
 
 ---
 
-### 17. `skyvern` (Điểm: 43/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=skyvern)
-- **Đặc điểm nổi bật**: MCP
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate skyvern`
+### 16. `awesome-copilot` (Score: 44/100)
+- **Link**: [GitHub](https://github.com/search?q=awesome-copilot)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate awesome-copilot`
 
 ---
 
-### 18. `VMware-AIops` (Điểm: 43/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=VMware-AIops)
-- **Đặc điểm nổi bật**: MCP
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate VMware-AIops`
+### 17. `skyvern` (Score: 43/100)
+- **Link**: [GitHub](https://github.com/search?q=skyvern)
+- **Features**: MCP
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate skyvern`
 
 ---
 
-### 19. `awesome-llm-apps` (Điểm: 38/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=awesome-llm-apps)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate awesome-llm-apps`
+### 18. `VMware-AIops` (Score: 43/100)
+- **Link**: [GitHub](https://github.com/search?q=VMware-AIops)
+- **Features**: MCP
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate VMware-AIops`
 
 ---
 
-### 20. `isort` (Điểm: 38/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=isort)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate isort`
+### 19. `awesome-llm-apps` (Score: 38/100)
+- **Link**: [GitHub](https://github.com/search?q=awesome-llm-apps)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate awesome-llm-apps`
 
 ---
 
-### 21. `authentik` (Điểm: 36/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=authentik)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate authentik`
+### 20. `isort` (Score: 38/100)
+- **Link**: [GitHub](https://github.com/search?q=isort)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate isort`
 
 ---
 
-### 22. `pentest-ops` (Điểm: 36/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=pentest-ops)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate pentest-ops`
+### 21. `authentik` (Score: 36/100)
+- **Link**: [GitHub](https://github.com/search?q=authentik)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate authentik`
 
 ---
 
-### 23. `hindsight` (Điểm: 34/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=hindsight)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate hindsight`
+### 22. `pentest-ops` (Score: 36/100)
+- **Link**: [GitHub](https://github.com/search?q=pentest-ops)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate pentest-ops`
 
 ---
 
-### 24. `n8n` (Điểm: 34/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=n8n)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate n8n`
+### 23. `hindsight` (Score: 34/100)
+- **Link**: [GitHub](https://github.com/search?q=hindsight)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate hindsight`
 
 ---
 
-### 25. `awesome-claude-code` (Điểm: 31/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=awesome-claude-code)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate awesome-claude-code`
+### 24. `n8n` (Score: 34/100)
+- **Link**: [GitHub](https://github.com/search?q=n8n)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate n8n`
 
 ---
 
-### 26. `antigravity-deck-tysonnbt` (Điểm: 29/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=antigravity-deck-tysonnbt)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate antigravity-deck-tysonnbt`
+### 25. `awesome-claude-code` (Score: 31/100)
+- **Link**: [GitHub](https://github.com/search?q=awesome-claude-code)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate awesome-claude-code`
 
 ---
 
-### 27. `agentic-architectures` (Điểm: 28/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=agentic-architectures)
-- **Đặc điểm nổi bật**: Agent, Graph
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate agentic-architectures`
+### 26. `antigravity-deck-tysonnbt` (Score: 29/100)
+- **Link**: [GitHub](https://github.com/search?q=antigravity-deck-tysonnbt)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate antigravity-deck-tysonnbt`
 
 ---
 
-### 28. `agents` (Điểm: 28/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=agents)
-- **Đặc điểm nổi bật**: Agent
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate agents`
+### 27. `agentic-architectures` (Score: 28/100)
+- **Link**: [GitHub](https://github.com/search?q=agentic-architectures)
+- **Outstanding features**: Agent, Graph
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate agentic-architectures`
 
 ---
 
-### 29. `generative-ai-for-beginners` (Điểm: 28/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=generative-ai-for-beginners)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate generative-ai-for-beginners`
+### 28. `agents` (Score: 28/100)
+- **Link**: [GitHub](https://github.com/search?q=agents)
+- **Outstanding features**: Agent
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate agents`
 
 ---
 
-### 30. `grex` (Điểm: 28/100)
-- **Liên kết**: [GitHub](https://github.com/search?q=grex)
-- **Đặc điểm nổi bật**: Công cụ lõi
-- **Trạng thái**: 🆕 Mới 100% (Không trùng lặp plugin-catalog)
-- **Hành động**: `omniclaw integrate grex`
+### 29. `generative-ai-for-beginners` (Score: 28/100)
+- **Link**: [GitHub](https://github.com/search?q=generative-ai-for-beginners)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate generative-ai-for-beginners`
+
+---
+
+### 30. `grex` (Score: 28/100)
+- **Link**: [GitHub](https://github.com/search?q=grex)
+- **Features**: Core tools
+- **Condition**: 🆕 100% New (No duplicate plugin-catalog)
+- **Action**: `omniclaw integrate grex`
 
 ---
 

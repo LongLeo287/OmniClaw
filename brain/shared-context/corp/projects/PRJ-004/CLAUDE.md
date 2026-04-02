@@ -28,7 +28,7 @@ STEP 6 ──► Begin work
 |---|---|
 | **Project ID** | PRJ-004 |
 | **Name** | Tiem Nuoc Nho v5 |
-| **Type** | POS / Quản lý đơn hàng quán nước |
+| **Type** | POS / Restaurant order management |
 | **Stack** | React 18 + TypeScript + Vite + Express + Google Apps Script |
 | **Backend** | Google Sheets as database, GAS as API layer |
 | **Dev URL** | http://localhost:7475 (port 7475 — Playwright-accessible) |
@@ -89,7 +89,7 @@ D:\Tiem_Nuoc_Nho_v5\             ◄ Source code only
 ## ✅ ALL FEATURES COMPLETE
 
 - [x] QR Code checkout integration (GlobalQrModal connected in Cart.tsx L862)
-- [x] Order History fast-action buttons (Nhận / Hoàn tất / Hủy — OrderHistory.tsx L221)
+- [x] Order History fast-action buttons (Receive / Complete / Cancel — OrderHistory.tsx L221)
 - [x] Cart auto-save to localStorage (CartContext.tsx L21)
 - [x] TypeScript: 0 compile errors (tsc --noEmit exit 0)
 
