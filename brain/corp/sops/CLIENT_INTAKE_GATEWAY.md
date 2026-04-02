@@ -1,3 +1,9 @@
+---
+id: client_intake_gateway
+type: corp_document
+registered: true
+---
+
 # CLIENT INTAKE GATEWAY — SOP v1.0
 # OmniClaw | Tier 1 — Operations
 # Effective: 2026-03-18

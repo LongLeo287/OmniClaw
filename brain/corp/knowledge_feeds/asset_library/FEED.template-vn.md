@@ -1,3 +1,9 @@
+---
+id: feed.template-vn
+type: corp_document
+registered: true
+---
+
 # Điểm Tin Trí Thức (Knowledge Feed)
 
 **Nguồn Cấp:** [URL Dẫn Chứng / Tên Tài Liệu]

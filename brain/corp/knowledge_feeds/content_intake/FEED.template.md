@@ -1,3 +1,9 @@
+---
+id: feed.template
+type: corp_document
+registered: true
+---
+
 # Knowledge Feed Item
 
 **Source:** [URL or Document Name]

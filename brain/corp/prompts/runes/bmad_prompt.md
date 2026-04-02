@@ -1,5 +1,8 @@
 ---
 description: BMAD Method — product and feature discovery brainstorm. Use for new capabilities, scope definition, and hypothesis-driven planning.
+id: bmad_prompt
+type: corp_document
+registered: true
 ---
 ## MANDATORY DELIVERY RULE
 Write output to artifact file → notify_user → NEVER paste in chat

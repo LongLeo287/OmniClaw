@@ -1,3 +1,9 @@
+---
+id: report_prompt
+type: corp_document
+registered: true
+---
+
 ## Instructions
 
 After reading blackboard.json + receipts from Claude Code,

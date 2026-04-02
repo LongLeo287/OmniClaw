@@ -1,3 +1,9 @@
+---
+id: value_assessment_routing
+type: corp_document
+registered: true
+---
+
 # VALUE ASSESSMENT & ROUTING MATRIX
 # Version: 1.1 | Updated: 2026-03-17
 # Owner: classifier-agent + ingest-router-agent (CIV Dept 20)

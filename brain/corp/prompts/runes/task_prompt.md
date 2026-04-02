@@ -1,3 +1,9 @@
+---
+id: task_prompt
+type: corp_document
+registered: true
+---
+
 ﻿# task_prompt.md — Fill Template execution_template.md
 
 ## Instructions

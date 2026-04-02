@@ -1,5 +1,8 @@
 ---
 description: Decision Log — record significant decisions made during planning or execution for traceability and future reference
+id: decision_log_prompt
+type: corp_document
+registered: true
 ---
 ## MANDATORY DELIVERY RULE
 Write to artifact file → notify_user → NEVER paste in chat

@@ -1,3 +1,9 @@
+---
+id: resource_allocation_map
+type: corp_document
+registered: true
+---
+
 # OmniClaw — Resource Allocation Map (v1.0)
 # Authority: Registry & Capability Management → COO
 # Updated: 2026-03-17

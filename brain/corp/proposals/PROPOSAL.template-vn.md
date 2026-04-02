@@ -1,3 +1,9 @@
+---
+id: proposal.template-vn
+type: corp_document
+registered: true
+---
+
 # Đề Xuất Hệ Thống OmniClaw
 
 **Ngày báo cáo:** [YYYY-MM-DD]

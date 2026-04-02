@@ -1,3 +1,9 @@
+---
+id: manager_prompt
+type: corp_document
+registered: true
+---
+
 <MANAGER_PROMPT>
 
 ## IDENTITY

@@ -1,3 +1,9 @@
+---
+id: brainstorm_prompt
+type: corp_document
+registered: true
+---
+
 ## MANDATORY DELIVERY RULES
 
 1. NEVER paste brainstorm or report content inline in chat.

@@ -1,5 +1,8 @@
 ---
 description: Quick-reference selector for all OmniClaw report formats. Full definitions in brain/shared-context/report_formats.md
+id: report_formats
+type: corp_document
+registered: true
 ---
 ---
 ## CRITICAL RULE (Never Skip)

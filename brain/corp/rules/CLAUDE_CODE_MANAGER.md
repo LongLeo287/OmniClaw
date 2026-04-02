@@ -1,3 +1,9 @@
+---
+id: claude_code_manager
+type: corp_document
+registered: true
+---
+
 # CLAUDE_CODE_MANAGER.md — Claude Code Fix-Retry Loop Rules
 # Version: 1.0 | Created: 2026-03-22
 # Referenced by: system/ops/workflows/execution_template.md

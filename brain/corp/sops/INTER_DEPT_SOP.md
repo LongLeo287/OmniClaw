@@ -1,3 +1,9 @@
+---
+id: inter_dept_sop
+type: corp_document
+registered: true
+---
+
 # INTER_DEPT_SOP.md — Cross-Department Handoff Procedures
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 2 (Operations) / COO + Operations

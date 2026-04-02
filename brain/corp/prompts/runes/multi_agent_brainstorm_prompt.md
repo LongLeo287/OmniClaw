@@ -1,5 +1,8 @@
 ---
 description: Multi-Agent structured design review — simulate peer review with 4 constrained agent roles before implementation
+id: multi_agent_brainstorm_prompt
+type: corp_document
+registered: true
 ---
 ## MANDATORY DELIVERY RULE
 Write output to artifact file → notify_user → NEVER paste in chat

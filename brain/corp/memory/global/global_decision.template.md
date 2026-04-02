@@ -1,3 +1,9 @@
+---
+id: global_decision.template
+type: corp_document
+registered: true
+---
+
 # Global CEO Decision Log (Layer 2)
 
 ## [{DATE}] — {DECISION TITLE}

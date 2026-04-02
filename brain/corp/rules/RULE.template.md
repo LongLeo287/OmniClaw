@@ -1,3 +1,9 @@
+---
+id: rule.template
+type: corp_document
+registered: true
+---
+
 # System Rule / Guardrail
 
 **Rule Name:** [Title of the Rule]

@@ -1,3 +1,9 @@
+---
+id: dept_memory.template-vn
+type: corp_document
+registered: true
+---
+
 # Ký Ức Phòng Ban (Lớp 3)
 
 ## Chu Kỳ N — [{TỪ NGÀY - ĐẾN NGÀY}]

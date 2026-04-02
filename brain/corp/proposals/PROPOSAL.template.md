@@ -1,3 +1,9 @@
+---
+id: proposal.template
+type: corp_document
+registered: true
+---
+
 # OmniClaw System Proposal
 
 **Date:** [YYYY-MM-DD]

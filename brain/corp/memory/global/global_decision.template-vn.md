@@ -1,3 +1,9 @@
+---
+id: global_decision.template-vn
+type: corp_document
+registered: true
+---
+
 # Sổ Nhật Ký Quyết Định CEO (Lớp 2)
 
 ## [{NGÀY}] — {TÊN QUYẾT ĐỊNH}

@@ -1,3 +1,9 @@
+---
+id: enrichment_sop
+type: corp_document
+registered: true
+---
+
 # AGENT ENRICHMENT SOP
 # Version: 1.0 | Updated: 2026-03-17
 # Owner: OD&L (Dept 16) — training-agent

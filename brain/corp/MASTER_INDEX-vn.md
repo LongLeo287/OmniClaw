@@ -1,3 +1,9 @@
+---
+id: master_index-vn
+type: corp_document
+registered: true
+---
+
 # 🏛️ OmniClaw — Sơ đồ Tổng thể Hệ thống
 > **Danh bạ chính thức các Phòng ban, Agent và Quy trình (Sắp xếp theo ID)**
 

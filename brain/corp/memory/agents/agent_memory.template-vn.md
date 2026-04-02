@@ -1,3 +1,9 @@
+---
+id: agent_memory.template-vn
+type: corp_document
+registered: true
+---
+
 # Ký Ức Agent (Lớp 4)
 
 ## [{NGÀY}] — Tác vụ: {Tên Tác Vụ}

@@ -1,3 +1,9 @@
+---
+id: worker_prompt
+type: corp_document
+registered: true
+---
+
 <WORKER_PROMPT>
 
 ## IDENTITY

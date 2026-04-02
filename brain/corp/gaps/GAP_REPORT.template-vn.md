@@ -1,3 +1,9 @@
+---
+id: gap_report.template-vn
+type: corp_document
+registered: true
+---
+
 # Báo Cáo Thiếu Hụt Năng Lực Hệ Thống OmniClaw
 
 **Ngày báo cáo:** [YYYY-MM-DD]

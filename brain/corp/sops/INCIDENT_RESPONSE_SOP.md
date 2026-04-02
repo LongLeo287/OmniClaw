@@ -1,3 +1,9 @@
+---
+id: incident_response_sop
+type: corp_document
+registered: true
+---
+
 # INCIDENT_RESPONSE_SOP.md — Security Incident Response Playbook
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 1 (Security & GRC) / BLOCKING

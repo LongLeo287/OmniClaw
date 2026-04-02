@@ -1,3 +1,9 @@
+---
+id: ki-ohd-claude-ime-fix-01
+type: corp_document
+registered: true
+---
+
 # KI-OHD-CLAUDE-IME-FIX-01
 
 ## OIW Ingestion Metadata

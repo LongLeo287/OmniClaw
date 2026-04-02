@@ -1,3 +1,9 @@
+---
+id: pattern.template
+type: corp_document
+registered: true
+---
+
 # Recurring Pattern Log
 
 ## Pattern Title: {Description}

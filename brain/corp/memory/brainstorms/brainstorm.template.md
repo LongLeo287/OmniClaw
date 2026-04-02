@@ -1,3 +1,9 @@
+---
+id: brainstorm.template
+type: corp_document
+registered: true
+---
+
 # Brainstorm Session
 
 ## Topic: {Topic Name}

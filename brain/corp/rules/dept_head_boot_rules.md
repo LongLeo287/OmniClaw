@@ -1,3 +1,9 @@
+---
+id: dept_head_boot_rules
+type: corp_document
+registered: true
+---
+
 # DEPT HEAD BOOT RULES — Shared Baseline (v1.0)
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: COO | Applies to: ALL 20 dept heads

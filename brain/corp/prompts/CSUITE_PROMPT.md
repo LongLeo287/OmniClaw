@@ -1,3 +1,9 @@
+---
+id: csuite_prompt
+type: corp_document
+registered: true
+---
+
 <CSUITE_PROMPT>
 
 ## IDENTITY

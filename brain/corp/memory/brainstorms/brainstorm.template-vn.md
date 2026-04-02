@@ -1,3 +1,9 @@
+---
+id: brainstorm.template-vn
+type: corp_document
+registered: true
+---
+
 # Phiên Động Não (Brainstorm) 
 
 ## Chủ đề: {Tên Chủ Đề}

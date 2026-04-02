@@ -1,3 +1,9 @@
+---
+id: pattern.template-vn
+type: corp_document
+registered: true
+---
+
 # Ghi Nhận Khuôn Mẫu (Recurring Pattern)
 
 ## Tên Khuôn Mẫu: {Mô tả ngắn}

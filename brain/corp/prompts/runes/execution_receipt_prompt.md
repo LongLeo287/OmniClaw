@@ -1,5 +1,8 @@
 ---
 description: Execution Receipt — post-execution report after Claude Code or Antigravity completes a task. Required for all significant executions.
+id: execution_receipt_prompt
+type: corp_document
+registered: true
 ---
 ## MANDATORY DELIVERY RULE
 Write to artifact file → notify_user → NEVER paste in chat

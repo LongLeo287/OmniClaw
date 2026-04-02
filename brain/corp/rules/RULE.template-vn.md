@@ -1,3 +1,9 @@
+---
+id: rule.template-vn
+type: corp_document
+registered: true
+---
+
 # Luật Hệ Thống / Rào Chắn (Guardrail)
 
 **Tên Bộ Luật:** [Tên Quy Định]

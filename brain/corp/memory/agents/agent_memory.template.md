@@ -1,3 +1,9 @@
+---
+id: agent_memory.template
+type: corp_document
+registered: true
+---
+
 # Agent Task Memory (Layer 4)
 
 ## [{DATE}] — Task: {Task Name}

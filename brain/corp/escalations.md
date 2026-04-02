@@ -4,6 +4,8 @@ escalation_id: ESC-20260324-001
 level: 1=FYI
 origin_agent: Antigravity (Tier 1 Orchestrator)
 timestamp: 2026-03-24T12:11:00+07:00
+type: corp_document
+registered: true
 ---
 ## Summary
 BATCH-05 Plugin Integration: 2 items need to be processed by Dept 10 at the correct level

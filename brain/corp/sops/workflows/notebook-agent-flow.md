@@ -1,3 +1,9 @@
+---
+id: notebook-agent-flow
+type: corp_document
+registered: true
+---
+
 # OmniClaw Notebook Agent — Workflow
 # Version: 1.0 | Updated: 2026-03-22
 # Owner: content_intake (primary trigger), all depts (consumers)

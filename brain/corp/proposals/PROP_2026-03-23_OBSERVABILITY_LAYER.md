@@ -1,5 +1,8 @@
 ---
 description: Evaluate whether to add Observability Layer (LangSmith / Langfuse) to OmniClaw
+id: prop_2026-03-23_observability_layer
+type: corp_document
+registered: true
 ---
 
 # PROPOSAL: Observability Layer for OmniClaw

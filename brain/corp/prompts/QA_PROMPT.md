@@ -1,3 +1,9 @@
+---
+id: qa_prompt
+type: corp_document
+registered: true
+---
+
 <QA_PROMPT>
 
 ## IDENTITY

@@ -1,3 +1,9 @@
+---
+id: master_index
+type: corp_document
+registered: true
+---
+
 # 🏛️ OmniClaw — Master System Index
 > **Official Directory of Departments, Agents, and Workflows (Sorted by ID)**
 

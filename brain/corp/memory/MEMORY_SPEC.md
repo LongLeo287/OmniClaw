@@ -1,3 +1,9 @@
+---
+id: memory_spec
+type: corp_document
+registered: true
+---
+
 # MEMORY_SPEC.md — OmniClaw Memory Architecture
 
 # Version: 2.0 | Updated: 2026-03-22

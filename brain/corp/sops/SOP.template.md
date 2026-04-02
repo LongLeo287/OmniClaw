@@ -1,3 +1,9 @@
+---
+id: sop.template
+type: corp_document
+registered: true
+---
+
 # Standard Operating Procedure (SOP)
 
 **Process Name:** [SOP Name]

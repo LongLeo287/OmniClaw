@@ -1,3 +1,9 @@
+---
+id: reception_activation_guide
+type: corp_document
+registered: true
+---
+
 # RECEPTION DESK — Client Reception Activation Guide
 # Status: 🟡 BUILT — DORMANT (awaiting token)
 # Upon readiness: Read this document and execute sequentially

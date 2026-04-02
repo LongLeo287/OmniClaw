@@ -1,3 +1,9 @@
+---
+id: ceo_rules
+type: corp_document
+registered: true
+---
+
 # CEO Rules — OmniClaw
 # Authority: Tier 0 | Updated: 2026-03-17
 # These rules are NON-NEGOTIABLE. No agent can override CEO rules.

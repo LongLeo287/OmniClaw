@@ -1,3 +1,9 @@
+---
+id: sop.template-vn
+type: corp_document
+registered: true
+---
+
 # Quy Trình Vận Hành Tiêu Chuẩn (SOP)
 
 **Tên Quy Trình:** [Tên SOP]

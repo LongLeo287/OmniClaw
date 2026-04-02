@@ -1,3 +1,9 @@
+---
+id: ceo_prompt
+type: corp_document
+registered: true
+---
+
 <CEO_PROMPT>
 
 ## IDENTITY

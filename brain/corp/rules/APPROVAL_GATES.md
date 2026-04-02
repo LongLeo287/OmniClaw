@@ -1,3 +1,9 @@
+---
+id: approval_gates
+type: corp_document
+registered: true
+---
+
 # APPROVAL_GATES.md — Gate Checklists for All 4 Corp Gates
 # Version: 1.0 | Created: 2026-03-22
 # Referenced by: corp-gate-flow.md, corp-daily-cycle.md (Phase 5)

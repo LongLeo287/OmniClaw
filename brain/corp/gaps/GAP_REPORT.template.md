@@ -1,3 +1,9 @@
+---
+id: gap_report.template
+type: corp_document
+registered: true
+---
+
 # OmniClaw System Gap Report
 
 **Date:** [YYYY-MM-DD]
