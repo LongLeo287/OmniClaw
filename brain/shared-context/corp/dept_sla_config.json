@@ -4,7 +4,7 @@
         "updated": "2026-03-25",
         "description": "SLA targets per department — miss SLA → auto-escalation to CEO",
         "checker": "ops/scripts/sla_checker.py",
-        "escalation_channel": "Telegram @aios_corp_bot"
+        "escalation_channel": "Telegram @OmniClaw_corp_bot"
     },
     "defaults": {
         "brief_frequency_days": 1,

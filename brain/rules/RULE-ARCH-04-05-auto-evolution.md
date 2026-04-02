@@ -4,27 +4,31 @@ rules:
     name: MANDATORY PRE-FLIGHT SCAN
     severity: CRITICAL
   - id: RULE-ARCH-05
-    name: PROACTIVE AUTO-EVOLUTION
+    name: PROACTIVE CLONING & DRAFT EVOLUTION
     severity: CRITICAL
 ---
 # ARCHITECTURE RULES: EVOLUTION & SYSTEM INTEGRITY
 
-## [RULE-ARCH-04] MANDATORY PRE-FLIGHT SCAN (CHỐNG TRÙNG LẶP)
-**Mô tả:** AI có xu hướng "Sáng chế lại bánh xe" (Reinventing the wheel) do Context Window hữu hạn. Đạo luật này nghiêm cấm hành vi đó.
+## [RULE-ARCH-04] MANDATORY PRE-FLIGHT SCAN (ANTI-REINVENTION)
+> [!CAUTION]
+> **Description:** AI Agents exhibit a tendency to "reinvent the wheel" due to finite context window constraints. This mandate strictly prohibits such behavior.
 
-**Lệnh thi hành:**
-- TRƯỚC khi một Agent (đặc biệt là Antigravity, Claude Code) đề xuất đẻ ra bất kỳ File, Agent, Quy trình, hay Tool mới nào.
-- BẮT BUỘC Agent đó phải chạy lệnh quét toàn bộ OmniClaw (`grep_search`, `list_dir`, view `ORG_GRAPH.yaml`, `SKILL_REGISTRY.json`, tìm trong `system/ops/workflows/`).
-- Mục đích: Xác minh 100% chức năng đó chưa hề tồn tại trong hệ thống.
-- Nếu chức năng tương tự đã tồn tại -> Chỉ được phép NÂNG CẤP (Update) file cũ. Tuyệt đối không sinh file mới với tên gọi khác.
+**Execution Order:**
+- BEFORE any Agent (specifically Antigravity or Claude Code) proposes the creation of ANY new File, Agent, Workflow, or Tool.
+- YOU MUST execute a holistic semantic scan of the OmniClaw directory (`grep_search`, `list_dir`, reading `FAST_INDEX.json`, `AGENTS.md`, and peering into `brain/shared-context/` or `.agents/workflows/`).
+- **Objective:** Verify with 100% certainty that the requested function/asset does not already exist within the architecture.
+- If a similar function already exists -> **UPGRADE OR REFACTOR** the old file. You are absolutely NOT permitted to spawn a redundant file with a different name.
 
-## [RULE-ARCH-05] PROACTIVE AUTO-EVOLUTION (TỰ ĐOÁN NHẬN VÀ TIẾN HÓA)
-**Mô tả:** OmniClaw không phải là kho lưu trữ tĩnh, mà là một Sinh Vật Tự Học. Mọi tương tác của CEO chứa đựng Tinh hoa đều phải được Hóa Thạch vĩnh viễn thành Hành vi của Hệ thống.
+## [RULE-ARCH-05] PROACTIVE CLONING & DRAFT EVOLUTION (DRAFT-ONLY)
+> [!IMPORTANT]
+> **Description:** The OmniClaw Ecosystem is a self-learning organism. Any interaction with the CEO that yields new workflows, insights, or resolutions must be structurally fossilized into System Behaviors. However, autonomous pollution of the master registry is forbidden.
 
-**Lệnh thi hành:**
-- Khi làm việc với CEO, nếu xuất hiện 1 concept mới, 1 kiến thức mới, 1 chiến lược giải quyết mới — AI KHÔNG ĐƯỢC CHỜ LỆNH.
-- AI phải chủ động NHẬP MÔN kiến thức đó vào hệ thống:
-  - Tự động tạo Phòng Ban mới (`brain/corp/departments/`) nếu concept đòi hỏi một phân khu.
-  - Tự động tạo Agent (`brain/agents/`) nếu cần người thực thi.
-  - Tự động tạo Rule (`brain/rules/`) hoặc Workflow (`system/ops/workflows/`).
-- Sự Cập nhật phải diễn ra ở MỨC ĐỘ AUTO. Câu trả lời chuẩn xác nhất của AI là: *"Em đã tự động thâu nạp kiến thức này và lập ra phòng ban/Agent X để duy trì vĩnh viễn"*.
+**Execution Order:**
+- If during interaction with the CEO a new concept emerges (e.g., a new strategy, a novel solution) — the AI IS FORBIDDEN from taking passive instruction.
+- The AI must proactively encode this knowledge into the system:
+  - Automatically draft a new Department rule (`brain/shared-context/corp/`) if the concept requires departmentalization.
+  - Automatically draft a new Agent role (`brain/agents/` or updating `AGENTS.md`).
+  - Automatically draft a new Rule (`brain/rules/`) or Workflow (`.agents/workflows/`).
+- **CRITICAL DIFFERENCE:** This evolution occurs exclusively in **DRAFT MODE**. 
+  - The AI must create the `.md` or `.json` artifacts and **immediately halt progression to ask for CEO approval**.
+  - The AI's standard protocol response should be: *"I have actively assimilated this knowledge and synthesized a Draft Agent/Workflow. Awaiting CEO sign-off to finalize the evolution."*

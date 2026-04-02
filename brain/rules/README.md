@@ -1,28 +1,28 @@
-# ⚖️ MA TRẬN LUẬT (DEPARTMENTAL RULES)
-**Chức năng:** Thư mục này chứa các quy định, ranh giới quyền hạn, và SOP cấp độ Hệ thống dành riêng cho từng Phòng ban và Agent, thuộc kiến trúc Neural Link (OmniClaw Corp).
+# ⚖️ DEPARTMENTAL RULE MATRIX
+**Function:** This directory contains the specific regulations, boundaries of authority, and System-Level Standard Operating Procedures (SOPs) for individual Departments and Agents within the OmniClaw Ecosystem.
 
-## 🗂️ Quy Hoạch Không Gian Luật
-Để giữ cho `CLAUDE.md` và `GEMINI.md` gọn nhẹ (chỉ chứa System Boot Protocol), mọi Rule chi tiết về đặc vụ hoặc phòng ban sẽ được lưu tại đây. AI Agent chỉ tải tệp Rule của phòng ban nó vào bộ nhớ khi được kích hoạt.
+## 🗂️ Rule Space Architecture
+To keep `CLAUDE.md` and `GEMINI.md` lightweight (containing only the System Boot Protocol), all detailed rules regarding specific agents or departments are mandated to be stored here. AI Agents must implicitly load their respective departmental rule file into memory upon activation.
 
-### 🛡️ Cấu Trúc Rule Chuẩn (Đề Xuất):
-Tên file: `[dept_id]_rules.md` (vd: `engineering_rules.md`, `qa_testing_rules.md`)
+### 🛡️ Standard Rule Structure (Recommended):
+File naming convention: `[dept_id]_rules.md` (e.g., `engineering_rules.md`, `qa_testing_rules.md`)
 
 ```markdown
-# LUẬT PHÒNG BAN: [TÊN PHÒNG]
-**Mã phòng:** `[dept_id]`
+# DEPARTMENT RULES: [DEPT NAME]
+**Department ID:** `[dept_id]`
 
-## 1. Phạm Vi Quyền Hạn (Scope of Authority)
-- [Liệt kê các thư mục được phép đọc/ghi]
-- [Liệt kê các thao tác cấm kỵ (Blacklist)]
+## 1. Scope of Authority
+- [List permitted read/write directories]
+- [List strictly forbidden operations (Blacklist)]
 
-## 2. Tiêu Chuẩn Phê Duyệt (Approval Gates)
-- [Liệt kê các workflow cần qua bước QA/Security]
-- Mọi code commit phải có dấu của `[agent_name]`.
+## 2. Approval Gates (QA & Security)
+- [List workflows that require QA/Security sign-off]
+- All code commits must bear the stamp/sign-off of `[agent_name]`.
 
-## 3. Chính Sách Bộ Nhớ (Memory Policy)
-- Bộ nhớ của phòng này được cách ly tại `brain/memory/[dept_id]/`.
-- Cấm Agent phòng này đọc trộm Memory của `[phòng_ban_khác]`.
+## 3. Memory & Tenant Policy
+- This department's memory is isolated at `brain/memory/tenants/[dept_id]/`.
+- Agents within this department are STRICTLY FORBIDDEN from reading the cross-tenant memory of `[other_dept]`.
 ```
 
-## 🔄 Liên Kết (Mapping)
-Các tệp Rule này tự động được Ánh xạ (Map) vào Đồ thị Tổ chức thông qua nhánh `rules` (trong tương lai, khi Org Mapper cập nhật v4.0). Tạm thời, Agent tự tìm đọc file Rule của phòng mình theo nguyên tắc `Tên Phòng + _rules.md`.
+## 🔄 Dynamic Mapping
+These Rule files are dynamically mapped to the Organizational Graph. Agents are instructed to autonomously locate and adhere to their departmental ruleset based on the `[Dept Name] + _rules.md` naming convention.
