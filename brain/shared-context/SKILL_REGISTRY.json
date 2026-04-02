@@ -4,8 +4,8 @@
     "version": "2.1",
     "updated": "2026-03-29",
     "generated_by": "scripts/skill_loader.ps1",
-    "spec": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\skills\\SKILL_SPEC.md",
-    "loader": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\scripts\\skill_loader.ps1",
+    "spec": "$OMNICLAW_ROOT\\ecosystem\\skills\\SKILL_SPEC.md",
+    "loader": "$OMNICLAW_ROOT\\system\\ops\\scripts\\skill_loader.ps1",
     "total_entries": 199,
     "total_skills": 73,
     "total_plugins": 126,
@@ -100,7 +100,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\agentshield\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\agentshield\\SKILL.md",
       "description": "Security auditor for AI agent code. Scans agent prompts, skills, and code for security vulnerabilities, prompt injection risks, and unsafe patterns before deployment.",
       "domain": "core",
       "cost_tier": "standard",
@@ -121,7 +121,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\agentune\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\agentune\\SKILL.md",
       "description": "Background music player MCP for agents during coding sessions. Plays ambient soundscapes to improve focus. Low-distraction, browser-dashboard controlled.",
       "domain": "core",
       "cost_tier": "standard",
@@ -142,8 +142,8 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\awesome_tech_radar_skill\\SKILL.md",
-      "description": "Má» vÃ ng TÆ° Váº¥n Kiáº¿n TrÃºc tá»« Awesome List",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\awesome_tech_radar_skill\\SKILL.md",
+      "description": "M\u00e1\u00bb\u008f v\u00c3\u00a0ng T\u00c6\u00b0 V\u00e1\u00ba\u00a5n Ki\u00e1\u00ba\u00bfn Tr\u00c3\u00bac t\u00e1\u00bb\u00ab Awesome List",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -163,8 +163,8 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\channel_manager\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n gá»­i thÃ´ng bÃ¡o qua Telegram, routing alerts, hoáº·c quáº£n lÃ½ communication channels cá»§a OmniClaw.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\channel_manager\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n g\u00e1\u00bb\u00adi th\u00c3\u00b4ng b\u00c3\u00a1o qua Telegram, routing alerts, ho\u00e1\u00ba\u00b7c qu\u00e1\u00ba\u00a3n l\u00c3\u00bd communication channels c\u00e1\u00bb\u00a7a OmniClaw.",
       "domain": "integration",
       "cost_tier": "standard",
       "category": "",
@@ -184,7 +184,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\context7\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\context7\\SKILL.md",
       "description": "Fetch real-time, version-specific library documentation and code examples directly into the agent prompt. Use whenever writing code that depends on a third-party library, framework, or API.",
       "domain": "core",
       "cost_tier": "standard",
@@ -205,8 +205,8 @@
       "tier": 0,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\context_manager\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n quáº£n lÃ½ session state, inject working memory vÃ o context, hoáº·c theo dÃµi ngá»¯ cáº£nh xuyÃªn suá»‘t má»™t nhiá»‡m vá»¥ phá»©c táº¡p.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\context_manager\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n qu\u00e1\u00ba\u00a3n l\u00c3\u00bd session state, inject working memory v\u00c3\u00a0o context, ho\u00e1\u00ba\u00b7c theo d\u00c3\u00b5i ng\u00e1\u00bb\u00af c\u00e1\u00ba\u00a3nh xuy\u00c3\u00aan su\u00e1\u00bb\u2018t m\u00e1\u00bb\u2122t nhi\u00e1\u00bb\u2021m v\u00e1\u00bb\u00a5 ph\u00e1\u00bb\u00a9c t\u00e1\u00ba\u00a1p.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -226,7 +226,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\continuous-learning-v2\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\continuous-learning-v2\\SKILL.md",
       "description": "Structured self-improvement loop for AI agents. Captures lessons learned, identifies gaps, updates knowledge base, and evolves agent behavior over sessions.",
       "domain": "core",
       "cost_tier": "standard",
@@ -247,8 +247,8 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\dependabot-secretary\\SKILL.md",
-      "description": "Quáº£n lÃ½ vÃ  hÆ°á»›ng dáº«n cÃ¡c Agent khÃ¡c nhÆ°á»ng quyá»n Merging cho Bot tá»± Ä‘á»™ng cá»§a GitHub.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\dependabot-secretary\\SKILL.md",
+      "description": "Qu\u00e1\u00ba\u00a3n l\u00c3\u00bd v\u00c3\u00a0 h\u00c6\u00b0\u00e1\u00bb\u203ang d\u00e1\u00ba\u00abn c\u00c3\u00a1c Agent kh\u00c3\u00a1c nh\u00c6\u00b0\u00e1\u00bb\u009dng quy\u00e1\u00bb\u0081n Merging cho Bot t\u00e1\u00bb\u00b1 \u00c4\u2018\u00e1\u00bb\u2122ng c\u00e1\u00bb\u00a7a GitHub.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -268,7 +268,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\framework-standards\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\framework-standards\\SKILL.md",
       "description": "High-density coding standards and best practices for major frameworks. Auto-apply when writing code for Next.js, NestJS, FastAPI, Supabase, React, Vue, or other covered frameworks.",
       "domain": "core",
       "cost_tier": "standard",
@@ -289,7 +289,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\git-mcp\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\git-mcp\\SKILL.md",
       "description": "Read, search, and manipulate Git repositories directly through MCP. Use for code history analysis, commit inspection, diff viewing, branch management, and repository exploration within OmniClaw Corp.",
       "domain": "core",
       "cost_tier": "standard",
@@ -310,8 +310,8 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\knowledge_navigator\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n tÃ¬m kiáº¿m trong knowledge base ná»™i bá»™, navigate qua brain/knowledge/, hoáº·c cross-reference nhiá»u tÃ i liá»‡u.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\knowledge_navigator\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n t\u00c3\u00acm ki\u00e1\u00ba\u00bfm trong knowledge base n\u00e1\u00bb\u2122i b\u00e1\u00bb\u2122, navigate qua brain/knowledge/, ho\u00e1\u00ba\u00b7c cross-reference nhi\u00e1\u00bb\u0081u t\u00c3\u00a0i li\u00e1\u00bb\u2021u.",
       "domain": "knowledge",
       "cost_tier": "standard",
       "category": "",
@@ -331,8 +331,8 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\observability\\SKILL.md",
-      "description": "Track and visualize all LLM calls, tool invocations, and agent actions across OmniClaw Corp. Supports Langfuse (self-hosted/local) AND LangSmith (cloud). Zero configuration required â€” noop fallback if not set up.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\observability\\SKILL.md",
+      "description": "Track and visualize all LLM calls, tool invocations, and agent actions across OmniClaw Corp. Supports Langfuse (self-hosted/local) AND LangSmith (cloud). Zero configuration required \u00e2\u20ac\u201d noop fallback if not set up.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -352,8 +352,8 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\ontology_auditor\\SKILL.md",
-      "description": "SiÃªu ká»¹ nÄƒng quÃ©t rÃ¡c vÅ© trá»¥, Ä‘Ã³ng gÃ³i vÅ© khÃ­ má»“ cÃ´i vÃ  render láº¡i Org Graph.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\ontology_auditor\\SKILL.md",
+      "description": "Si\u00c3\u00aau k\u00e1\u00bb\u00b9 n\u00c4\u0192ng qu\u00c3\u00a9t r\u00c3\u00a1c v\u00c5\u00a9 tr\u00e1\u00bb\u00a5, \u00c4\u2018\u00c3\u00b3ng g\u00c3\u00b3i v\u00c5\u00a9 kh\u00c3\u00ad m\u00e1\u00bb\u201c c\u00c3\u00b4i v\u00c3\u00a0 render l\u00e1\u00ba\u00a1i Org Graph.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -373,8 +373,8 @@
       "tier": 0,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\orchestrator_pro\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n Ä‘iá»u phá»‘i nhiá»u agents/tasks song song, phÃ¢n chia cÃ´ng viá»‡c, hoáº·c quáº£n lÃ½ workflow phá»©c táº¡p Ä‘a bÆ°á»›c.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\orchestrator_pro\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n \u00c4\u2018i\u00e1\u00bb\u0081u ph\u00e1\u00bb\u2018i nhi\u00e1\u00bb\u0081u agents/tasks song song, ph\u00c3\u00a2n chia c\u00c3\u00b4ng vi\u00e1\u00bb\u2021c, ho\u00e1\u00ba\u00b7c qu\u00e1\u00ba\u00a3n l\u00c3\u00bd workflow ph\u00e1\u00bb\u00a9c t\u00e1\u00ba\u00a1p \u00c4\u2018a b\u00c6\u00b0\u00e1\u00bb\u203ac.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -394,8 +394,8 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\public_api_search_skill\\SKILL.md",
-      "description": "Tra cá»©u danh báº¡ Public APIs cho OmniClaw",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\public_api_search_skill\\SKILL.md",
+      "description": "Tra c\u00e1\u00bb\u00a9u danh b\u00e1\u00ba\u00a1 Public APIs cho OmniClaw",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -415,8 +415,8 @@
       "tier": 0,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\reasoning_engine\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n lÃ½ luáº­n phá»©c táº¡p, giáº£i quyáº¿t váº¥n Ä‘á» nhiá»u bÆ°á»›c, phÃ¢n tÃ­ch sÃ¢u hoáº·c Ä‘Æ°a ra quyáº¿t Ä‘á»‹nh kiáº¿n trÃºc.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\reasoning_engine\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n l\u00c3\u00bd lu\u00e1\u00ba\u00adn ph\u00e1\u00bb\u00a9c t\u00e1\u00ba\u00a1p, gi\u00e1\u00ba\u00a3i quy\u00e1\u00ba\u00bft v\u00e1\u00ba\u00a5n \u00c4\u2018\u00e1\u00bb\u0081 nhi\u00e1\u00bb\u0081u b\u00c6\u00b0\u00e1\u00bb\u203ac, ph\u00c3\u00a2n t\u00c3\u00adch s\u00c3\u00a2u ho\u00e1\u00ba\u00b7c \u00c4\u2018\u00c6\u00b0a ra quy\u00e1\u00ba\u00bft \u00c4\u2018\u00e1\u00bb\u2039nh ki\u00e1\u00ba\u00bfn tr\u00c3\u00bac.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -436,8 +436,8 @@
       "tier": 0,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\resilience_engine\\SKILL.md",
-      "description": "Load skill nÃ y khi gáº·p lá»—i, cáº§n recovery protocol, circuit breaker, hoáº·c xá»­ lÃ½ failure gracefully.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\resilience_engine\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi g\u00e1\u00ba\u00b7p l\u00e1\u00bb\u2014i, c\u00e1\u00ba\u00a7n recovery protocol, circuit breaker, ho\u00e1\u00ba\u00b7c x\u00e1\u00bb\u00ad l\u00c3\u00bd failure gracefully.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -457,7 +457,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\sequential-thinking\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\sequential-thinking\\SKILL.md",
       "description": "Dynamic and reflective problem-solving through thought sequences. Auto-activate for complex multi-step problems, debugging, system design decisions, and any task requiring deep reasoning. Anthropic official MCP server.",
       "domain": "core",
       "cost_tier": "standard",
@@ -478,8 +478,8 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\shell_assistant\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n cháº¡y terminal commands, automation scripts, hoáº·c system operations trÃªn Windows/Linux.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\shell_assistant\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n ch\u00e1\u00ba\u00a1y terminal commands, automation scripts, ho\u00e1\u00ba\u00b7c system operations tr\u00c3\u00aan Windows/Linux.",
       "domain": "devops",
       "cost_tier": "standard",
       "category": "",
@@ -499,8 +499,8 @@
       "tier": 0,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\smart_memory\\SKILL.md",
-      "description": "Load skill nÃ y Ä‘á»ƒ truy cáº­p long-term memory, lÆ°u kiáº¿n thá»©c má»›i, hoáº·c query LightRAG/claude-mem Ä‘á»ƒ nhá»› thÃ´ng tin tá»« cÃ¡c session trÆ°á»›c.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\smart_memory\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y \u00c4\u2018\u00e1\u00bb\u0192 truy c\u00e1\u00ba\u00adp long-term memory, l\u00c6\u00b0u ki\u00e1\u00ba\u00bfn th\u00e1\u00bb\u00a9c m\u00e1\u00bb\u203ai, ho\u00e1\u00ba\u00b7c query LightRAG/claude-mem \u00c4\u2018\u00e1\u00bb\u0192 nh\u00e1\u00bb\u203a th\u00c3\u00b4ng tin t\u00e1\u00bb\u00ab c\u00c3\u00a1c session tr\u00c6\u00b0\u00e1\u00bb\u203ac.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -520,8 +520,8 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\system_autofix\\SKILL.md",
-      "description": "Auto-detect and fix system integrity issues in OmniClaw â€” encoding corruption, broken paths, stale naming, MCP plugin failures, registry inconsistencies, and JSON/YAML syntax errors.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\system_autofix\\SKILL.md",
+      "description": "Auto-detect and fix system integrity issues in OmniClaw \u00e2\u20ac\u201d encoding corruption, broken paths, stale naming, MCP plugin failures, registry inconsistencies, and JSON/YAML syntax errors.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "system-maintenance",
@@ -541,8 +541,8 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\tai-video\\SKILL.md",
-      "description": "Táº£i video tá»« Facebook, YouTube, TikTok vÃ  hÃ ng nghÃ¬n trang web khÃ¡c báº±ng yt-dlp. KÃ­ch hoáº¡t khi user yÃªu cáº§u táº£i video, download video, lÆ°u video tá»« báº¥t ká»³ URL nÃ o.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\tai-video\\SKILL.md",
+      "description": "T\u00e1\u00ba\u00a3i video t\u00e1\u00bb\u00ab Facebook, YouTube, TikTok v\u00c3\u00a0 h\u00c3\u00a0ng ngh\u00c3\u00acn trang web kh\u00c3\u00a1c b\u00e1\u00ba\u00b1ng yt-dlp. K\u00c3\u00adch ho\u00e1\u00ba\u00a1t khi user y\u00c3\u00aau c\u00e1\u00ba\u00a7u t\u00e1\u00ba\u00a3i video, download video, l\u00c6\u00b0u video t\u00e1\u00bb\u00ab b\u00e1\u00ba\u00a5t k\u00e1\u00bb\u00b3 URL n\u00c3\u00a0o.",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -562,7 +562,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\trivy\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\trivy\\SKILL.md",
       "description": "Run Trivy vulnerability scanner on containers, code repos, Kubernetes configs, and IaC files. Use whenever evaluating a new repo, container image, or infra config for security issues.",
       "domain": "core",
       "cost_tier": "standard",
@@ -583,7 +583,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\understand-anything\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\understand-anything\\SKILL.md",
       "description": "Turn any codebase into an interactive knowledge graph you can explore, search, and ask questions about. Use when onboarding to a new codebase, doing impact analysis, or helping junior devs navigate complex repos.",
       "domain": "core",
       "cost_tier": "standard",
@@ -604,7 +604,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\vibe-kanban\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\vibe-kanban\\SKILL.md",
       "description": "AI-native Kanban board that orchestrates Claude Code, Codex, and other AI coding agents as workers. Use for managing multi-agent development tasks, parallel worktrees, and visual task tracking.",
       "domain": "core",
       "cost_tier": "standard",
@@ -625,8 +625,8 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\skills\\web_intelligence\\SKILL.md",
-      "description": "Load skill nÃ y khi cáº§n thu tháº­p thÃ´ng tin tá»« web, research online, scrape dá»¯ liá»‡u, hoáº·c tÃ¬m kiáº¿m tÃ i liá»‡u tá»« internet.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\web_intelligence\\SKILL.md",
+      "description": "Load skill n\u00c3\u00a0y khi c\u00e1\u00ba\u00a7n thu th\u00e1\u00ba\u00adp th\u00c3\u00b4ng tin t\u00e1\u00bb\u00ab web, research online, scrape d\u00e1\u00bb\u00af li\u00e1\u00bb\u2021u, ho\u00e1\u00ba\u00b7c t\u00c3\u00acm ki\u00e1\u00ba\u00bfm t\u00c3\u00a0i li\u00e1\u00bb\u2021u t\u00e1\u00bb\u00ab internet.",
       "domain": "research",
       "cost_tier": "standard",
       "category": "",
@@ -646,7 +646,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\ai-ml-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\ai-ml-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -676,7 +676,7 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\omniclaw_bot\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\omniclaw_bot\\SKILL.md",
       "description": "",
       "domain": "core",
       "cost_tier": "standard",
@@ -697,7 +697,7 @@
       "tier": 1,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\antigravity\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\antigravity\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -730,7 +730,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\antigravity-kit-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\antigravity-kit-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -745,75 +745,13 @@
       "_loaded_at": "2026-03-29T23:07:55+07:00"
     },
     {
-      "id": "archivist",
-      "name": "Archivist",
-      "version": "1.0.0",
-      "tier": 2,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\archivist\\SKILL.md",
-      "description": "File organization, log rotation, and knowledge indexing across workspaces.",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "",
-      "accessible_by": "Orchestrator",
-      "dependencies": [
-        "smart_memory",
-        "knowledge_enricher"
-      ],
-      "exposed_functions": [
-        "index_workspace",
-        "rotate_logs",
-        "aggregate_docs",
-        "purify_workspace"
-      ],
-      "consumed_by": {},
-      "emits_events": [
-        "workspace_indexed",
-        "logs_rotated"
-      ],
-      "listens_to": "session_end",
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
-      "id": "backend-architect-agent",
-      "name": "backend-architect-agent",
-      "version": "1.0",
-      "tier": 3,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\backend-architect-agent\\SKILL.md",
-      "description": ">",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "agents",
-      "accessible_by": [
-        "orchestrator_pro",
-        "antigravity"
-      ],
-      "dependencies": {},
-      "exposed_functions": [
-        "design_system_architecture",
-        "design_database_schema",
-        "write_api_spec",
-        "setup_caching_layer",
-        "review_security_posture"
-      ],
-      "consumed_by": {},
-      "emits_events": {},
-      "listens_to": {},
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
       "id": "channel-agent",
       "name": "channel-agent",
       "version": "1.0.0",
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\channel-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\channel-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -828,47 +766,13 @@
       "_loaded_at": "2026-03-29T23:07:55+07:00"
     },
     {
-      "id": "cognitive_reflector",
-      "name": "Cognitive Reflector",
-      "version": "1.0.0",
-      "tier": 2,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\cognitive_reflector\\SKILL.md",
-      "description": "Post-task reflection engine -- outcome vs plan comparison, lesson extraction.",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "",
-      "accessible_by": "All agents",
-      "dependencies": [
-        "cosmic_memory",
-        "insight_engine"
-      ],
-      "exposed_functions": [
-        "reflect_on_task",
-        "extract_lessons",
-        "update_knowledge"
-      ],
-      "consumed_by": {},
-      "emits_events": [
-        "reflection_complete",
-        "lessons_extracted"
-      ],
-      "listens_to": [
-        "task_complete",
-        "task_failed"
-      ],
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
       "id": "content-agent",
       "name": "content-agent",
       "version": "1.0",
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\content-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\content-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -899,7 +803,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\cost-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\cost-manager-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -920,7 +824,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\data-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\data-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -950,7 +854,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\devops-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\devops-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -980,7 +884,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\editor-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\editor-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1001,7 +905,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\frontend-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\frontend-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1031,7 +935,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\game-designer-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\game-designer-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1052,7 +956,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\growth-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\growth-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1082,7 +986,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\health-chief-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\health-chief-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1103,7 +1007,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\hr-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\hr-manager-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1124,7 +1028,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\intake-chief-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\intake-chief-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1145,29 +1049,8 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\it-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\it-manager-agent\\SKILL.md",
       "description": "General specialist agent",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "",
-      "accessible_by": {},
-      "dependencies": {},
-      "exposed_functions": [],
-      "consumed_by": {},
-      "emits_events": {},
-      "listens_to": {},
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
-      "id": "knowledge_agent",
-      "name": "knowledge_agent",
-      "version": "1.0",
-      "tier": 3,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\knowledge_agent\\SKILL.md",
-      "description": "Knowledge Base Curator â€” queries and manages 127-repo knowledge base",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -1187,7 +1070,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\legal-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\legal-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1208,7 +1091,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\library-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\library-manager-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1229,7 +1112,7 @@
       "tier": 2,
       "status": "ingested",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\maxkb-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\maxkb-agent\\SKILL.md",
       "description": "",
       "domain": "core",
       "cost_tier": "standard",
@@ -1250,7 +1133,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\mobile-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\mobile-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1271,7 +1154,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\monitor-chief-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\monitor-chief-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1292,7 +1175,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\nemoclaw\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\nemoclaw\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1328,7 +1211,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\notebooklm-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\notebooklm-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1349,7 +1232,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\orchestrator_pro\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\orchestrator_pro\\SKILL.md",
       "description": "Full multi-agent orchestration -- decompose, delegate, monitor, synthesize.",
       "domain": "core",
       "cost_tier": "standard",
@@ -1386,7 +1269,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\org-architect-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\org-architect-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1407,7 +1290,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\pmo-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\pmo-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1428,7 +1311,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\product-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\product-manager-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1458,49 +1341,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\project-intake-agent\\SKILL.md",
-      "description": "General specialist agent",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "",
-      "accessible_by": {},
-      "dependencies": {},
-      "exposed_functions": [],
-      "consumed_by": {},
-      "emits_events": {},
-      "listens_to": {},
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
-      "id": "rd-lead-agent",
-      "name": "rd-lead-agent",
-      "version": "1.0.0",
-      "tier": 3,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\rd-lead-agent\\SKILL.md",
-      "description": "General specialist agent",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "",
-      "accessible_by": {},
-      "dependencies": {},
-      "exposed_functions": [],
-      "consumed_by": {},
-      "emits_events": {},
-      "listens_to": {},
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
-      "id": "registry-manager-agent",
-      "name": "registry-manager-agent",
-      "version": "1.0.0",
-      "tier": 3,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\registry-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\project-intake-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1521,8 +1362,8 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\repo_ingest_agent\\SKILL.md",
-      "description": "Repository Ingestion Specialist â€” clone, scan, classify, register new repos",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\repo_ingest_agent\\SKILL.md",
+      "description": "Repository Ingestion Specialist \u00e2\u20ac\u201d clone, scan, classify, register new repos",
       "domain": "core",
       "cost_tier": "standard",
       "category": "",
@@ -1542,7 +1383,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\scrum-master-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\scrum-master-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1572,28 +1413,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\security-engineer-agent\\SKILL.md",
-      "description": ">",
-      "domain": "core",
-      "cost_tier": "standard",
-      "category": "agents",
-      "accessible_by": {},
-      "dependencies": {},
-      "exposed_functions": [],
-      "consumed_by": {},
-      "emits_events": {},
-      "listens_to": {},
-      "tags": {},
-      "_loaded_at": "2026-03-29T23:07:55+07:00"
-    },
-    {
-      "id": "software-architect-agent",
-      "name": "software-architect-agent",
-      "version": "1.0",
-      "tier": 3,
-      "status": "active",
-      "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\software-architect-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\security-engineer-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1614,7 +1434,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\sre-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\sre-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1635,7 +1455,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\strix-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\strix-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1656,7 +1476,7 @@
       "tier": 2,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\superpowers-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\superpowers-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1677,7 +1497,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\test-integration-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\test-integration-agent\\SKILL.md",
       "description": "Testing specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1698,7 +1518,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\test-manager-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\test-manager-agent\\SKILL.md",
       "description": "General specialist agent",
       "domain": "core",
       "cost_tier": "standard",
@@ -1719,7 +1539,7 @@
       "tier": 4,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\tinyclaw\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\tinyclaw\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1748,7 +1568,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\ui-ux-agent\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\ui-ux-agent\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1778,7 +1598,7 @@
       "tier": 3,
       "status": "active",
       "source": "skill",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\workforce\\agents\\web-researcher\\SKILL.md",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\workforce\\agents\\web-researcher\\SKILL.md",
       "description": ">",
       "domain": "core",
       "cost_tier": "standard",
@@ -1809,8 +1629,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\act\\manifest.json",
-      "description": "Run your GitHub Actions locally ðŸš€",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\act\\manifest.json",
+      "description": "Run your GitHub Actions locally \u00f0\u0178\u0161\u20ac",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -1832,7 +1652,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\agency_agents\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\agency_agents\\manifest.json",
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "accessible_by": [
         "Orchestrator"
@@ -1855,7 +1675,7 @@
       "tier": 3,
       "status": "planned",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ai-tagger\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ai-tagger\\manifest.json",
       "description": "Automatically classify and tag bookmarks using Claude AI",
       "accessible_by": [
         "Orchestrator"
@@ -1878,7 +1698,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\aider\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\aider\\manifest.json",
       "description": "aider is AI pair programming in your terminal",
       "accessible_by": [
         "Orchestrator"
@@ -1901,7 +1721,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\alamofire\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\alamofire\\manifest.json",
       "description": "Elegant HTTP Networking in Swift",
       "accessible_by": [
         "Orchestrator"
@@ -1924,8 +1744,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\angular\\manifest.json",
-      "description": "Deliver web apps with confidence ðŸš€",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\angular\\manifest.json",
+      "description": "Deliver web apps with confidence \u00f0\u0178\u0161\u20ac",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -1947,7 +1767,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\anime\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\anime\\manifest.json",
       "description": "JavaScript animation engine",
       "accessible_by": [
         "Orchestrator"
@@ -1970,7 +1790,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\anything_llm\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\anything_llm\\manifest.json",
       "description": "The all-in-one AI productivity accelerator. On device and privacy first with no annoying setup or configuration.",
       "accessible_by": [
         "Orchestrator"
@@ -1993,7 +1813,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\autogen\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\autogen\\manifest.json",
       "description": "A programming framework for agentic AI",
       "accessible_by": [
         "Orchestrator"
@@ -2016,7 +1836,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\autogpt\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\autogpt\\manifest.json",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
       "accessible_by": [
         "Orchestrator"
@@ -2039,7 +1859,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\autoresearch\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\autoresearch\\manifest.json",
       "description": "AI agents running research on single-GPU nanochat training automatically",
       "accessible_by": [
         "Orchestrator"
@@ -2062,8 +1882,8 @@
       "tier": 3,
       "status": "active",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\awesome\\manifest.json",
-      "description": "ðŸ˜Ž Awesome lists about all kinds of interesting topics",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\awesome\\manifest.json",
+      "description": "\u00f0\u0178\u02dc\u017d Awesome lists about all kinds of interesting topics",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2085,7 +1905,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\awesome_claude_skills\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\awesome_claude_skills\\manifest.json",
       "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
       "accessible_by": [
         "Orchestrator"
@@ -2108,7 +1928,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\awesome_go\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\awesome_go\\manifest.json",
       "description": "A curated list of awesome Go frameworks, libraries and software",
       "accessible_by": [
         "Orchestrator"
@@ -2131,7 +1951,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\awesome_llm_apps\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\awesome_llm_apps\\manifest.json",
       "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
       "accessible_by": [
         "Orchestrator"
@@ -2154,8 +1974,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\awesome_openclaw_skills\\manifest.json",
-      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.ðŸ¦ž",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\awesome_openclaw_skills\\manifest.json",
+      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.\u00f0\u0178\u00a6\u017e",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2177,7 +1997,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\bat\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\bat\\manifest.json",
       "description": "A cat(1) clone with wings.",
       "accessible_by": [
         "Orchestrator"
@@ -2200,8 +2020,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\browser_use\\manifest.json",
-      "description": "ðŸŒ Make websites accessible for AI agents. Automate tasks online with ease.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\browser_use\\manifest.json",
+      "description": "\u00f0\u0178\u0152\u0090 Make websites accessible for AI agents. Automate tasks online with ease.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2223,8 +2043,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\cli\\manifest.json",
-      "description": "GitHubâ€™s official command line tool",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\cli\\manifest.json",
+      "description": "GitHub\u00e2\u20ac\u2122s official command line tool",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2246,7 +2066,7 @@
       "tier": 3,
       "status": "planned",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\cloud-sync\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\cloud-sync\\manifest.json",
       "description": "Backup and sync bookmarks to cloud storage",
       "accessible_by": [
         "Orchestrator"
@@ -2269,7 +2089,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\codex\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\codex\\manifest.json",
       "description": "Lightweight coding agent that runs in your terminal",
       "accessible_by": [
         "Orchestrator"
@@ -2287,12 +2107,12 @@
     },
     {
       "id": "context7",
-      "name": "Context7 — Library Docs Real-Time",
+      "name": "Context7 \u2014 Library Docs Real-Time",
       "version": "latest",
       "tier": 3,
       "status": "active",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\context7\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\context7\\manifest.json",
       "description": null,
       "accessible_by": [
         "Orchestrator"
@@ -2315,8 +2135,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\crawl4ai\\manifest.json",
-      "description": "ðŸš€ðŸ¤– Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\crawl4ai\\manifest.json",
+      "description": "\u00f0\u0178\u0161\u20ac\u00f0\u0178\u00a4\u2013 Crawl4AI: Open-source LLM Friendly Web Crawler & Scraper. Don't be shy, join here: https://discord.gg/jP8KfhDhyN",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2338,7 +2158,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\create_react_app\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\create_react_app\\manifest.json",
       "description": "Set up a modern web app by running one command.",
       "accessible_by": [
         "Orchestrator"
@@ -2361,7 +2181,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\deepspeed\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\deepspeed\\manifest.json",
       "description": "DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.",
       "accessible_by": [
         "Orchestrator"
@@ -2384,7 +2204,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\deer_flow\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\deer_flow\\manifest.json",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
       "accessible_by": [
         "Orchestrator"
@@ -2407,7 +2227,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\developer_roadmap\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\developer_roadmap\\manifest.json",
       "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
       "accessible_by": [
         "Orchestrator"
@@ -2430,7 +2250,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\docling\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\docling\\manifest.json",
       "description": "Get your documents ready for gen AI",
       "accessible_by": [
         "Orchestrator"
@@ -2453,7 +2273,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\esbuild\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\esbuild\\manifest.json",
       "description": "An extremely fast bundler for the web",
       "accessible_by": [
         "Orchestrator"
@@ -2476,7 +2296,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\excalidraw\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\excalidraw\\manifest.json",
       "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
       "accessible_by": [
         "Orchestrator"
@@ -2499,7 +2319,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\fastapi\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\fastapi\\manifest.json",
       "description": "FastAPI framework, high performance, easy to learn, fast to code, ready for production",
       "accessible_by": [
         "Orchestrator"
@@ -2522,7 +2342,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\fd\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\fd\\manifest.json",
       "description": "A simple, fast and user-friendly alternative to 'find'",
       "accessible_by": [
         "Orchestrator"
@@ -2545,7 +2365,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\flowise\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\flowise\\manifest.json",
       "description": "Build AI Agents, Visually",
       "accessible_by": [
         "Orchestrator"
@@ -2568,7 +2388,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\gemini_cli\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\gemini_cli\\manifest.json",
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
       "accessible_by": [
         "Orchestrator"
@@ -2591,7 +2411,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\generative_ai_for_beginners\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\generative_ai_for_beginners\\manifest.json",
       "description": "21 Lessons, Get Started Building with Generative AI ",
       "accessible_by": [
         "Orchestrator"
@@ -2614,8 +2434,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\get_shit_done\\manifest.json",
-      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÃ‚CHES.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\get_shit_done\\manifest.json",
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by T\u00c3\u201aCHES.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2637,7 +2457,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\gitignore\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\gitignore\\manifest.json",
       "description": "A collection of useful .gitignore templates",
       "accessible_by": [
         "Orchestrator"
@@ -2660,7 +2480,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\go\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\go\\manifest.json",
       "description": "The Go programming language",
       "accessible_by": [
         "Orchestrator"
@@ -2683,7 +2503,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\gpt4all\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\gpt4all\\manifest.json",
       "description": "GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.",
       "accessible_by": [
         "Orchestrator"
@@ -2706,7 +2526,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\gpt4free\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\gpt4free\\manifest.json",
       "description": "The official gpt4free repository | various collection of powerful language models | opus 4.6 gpt 5.3 kimi 2.5 deepseek v3.2 gemini 3",
       "accessible_by": [
         "Orchestrator"
@@ -2729,8 +2549,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\gradio\\manifest.json",
-      "description": "Build and share delightful machine learning apps, all in Python. ðŸŒŸ Star to support our work!",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\gradio\\manifest.json",
+      "description": "Build and share delightful machine learning apps, all in Python. \u00f0\u0178\u0152\u0178 Star to support our work!",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2752,7 +2572,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\grpc\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\grpc\\manifest.json",
       "description": "C++ based gRPC (C++, Python, Ruby, Objective-C, PHP, C#)",
       "accessible_by": [
         "Orchestrator"
@@ -2775,7 +2595,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\gstack\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\gstack\\manifest.json",
       "description": "Use Garry Tan's exact Claude Code setup: 15 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
       "accessible_by": [
         "Orchestrator"
@@ -2798,7 +2618,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\helix\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\helix\\manifest.json",
       "description": "A post-modern modal text editor.",
       "accessible_by": [
         "Orchestrator"
@@ -2821,7 +2641,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\jquery\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\jquery\\manifest.json",
       "description": "jQuery JavaScript Library",
       "accessible_by": [
         "Orchestrator"
@@ -2844,8 +2664,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\jsoncrack_com\\manifest.json",
-      "description": "âœ¨ Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML and CSV into interactive graphs.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\jsoncrack_com\\manifest.json",
+      "description": "\u00e2\u0153\u00a8 Innovative and open-source visualization application that transforms various data formats, such as JSON, YAML, XML and CSV into interactive graphs.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -2867,7 +2687,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\kubernetes\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\kubernetes\\manifest.json",
       "description": "Production-Grade Container Scheduling and Management",
       "accessible_by": [
         "Orchestrator"
@@ -2890,7 +2710,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\langchain\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\langchain\\manifest.json",
       "description": "The agent engineering platform",
       "accessible_by": [
         "Orchestrator"
@@ -2913,7 +2733,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\langflow\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\langflow\\manifest.json",
       "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
       "accessible_by": [
         "Orchestrator"
@@ -2936,7 +2756,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\litellm\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\litellm\\manifest.json",
       "description": "Python SDK, Proxy Server (AI Gateway) to call 100+ LLM APIs in OpenAI (or native) format, with cost tracking, guardrails, loadbalancing and logging. [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, VLLM, NVIDIA NIM]",
       "accessible_by": [
         "Orchestrator"
@@ -2959,7 +2779,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\llamafactory\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\llamafactory\\manifest.json",
       "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
       "accessible_by": [
         "Orchestrator"
@@ -2982,7 +2802,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\llama_cpp\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\llama_cpp\\manifest.json",
       "description": "LLM inference in C/C++",
       "accessible_by": [
         "Orchestrator"
@@ -3005,7 +2825,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\llama_index\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\llama_index\\manifest.json",
       "description": "LlamaIndex is the leading document agent and OCR platform",
       "accessible_by": [
         "Orchestrator"
@@ -3028,7 +2848,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\llm_course\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\llm_course\\manifest.json",
       "description": "Course to get into Large Language Models (LLMs) with roadmaps and Colab notebooks.",
       "accessible_by": [
         "Orchestrator"
@@ -3051,8 +2871,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\lobehub\\manifest.json",
-      "description": "The ultimate space for work and life â€” to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level â€” enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\lobehub\\manifest.json",
+      "description": "The ultimate space for work and life \u00e2\u20ac\u201d to find, build, and collaborate with agent teammates that grow with you. We are taking agent harness to the next level \u00e2\u20ac\u201d enabling multi-agent collaboration, effortless agent team design, and introducing agents as the unit of work interaction.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3074,7 +2894,7 @@
       "tier": 3,
       "status": null,
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\LobsterBoard\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\LobsterBoard\\manifest.json",
       "description": "Self-hosted drag-and-drop dashboard builder with 60+ widgets, template gallery, custom pages, zero cloud dependencies. OpenClaw-compatible. One Node.js server, no build step.",
       "accessible_by": [
         "Orchestrator"
@@ -3097,7 +2917,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\localai\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\localai\\manifest.json",
       "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
       "accessible_by": [
         "Orchestrator"
@@ -3120,7 +2940,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\markitdown\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\markitdown\\manifest.json",
       "description": "Python tool for converting files and office documents to Markdown.",
       "accessible_by": [
         "Orchestrator"
@@ -3138,13 +2958,13 @@
     },
     {
       "id": "mem0",
-      "name": "mem0 â€” AI Agent Long-term Memory",
+      "name": "mem0 \u00e2\u20ac\u201d AI Agent Long-term Memory",
       "version": "1.0.0",
       "tier": 3,
       "status": "active",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\mem0\\manifest.json",
-      "description": "Persistent memory layer for AI agents â€” stores user preferences, facts, and context across sessions using vector search",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\mem0\\manifest.json",
+      "description": "Persistent memory layer for AI agents \u00e2\u20ac\u201d stores user preferences, facts, and context across sessions using vector search",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3170,7 +2990,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\milvus\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\milvus\\manifest.json",
       "description": "Milvus is a high-performance, cloud-native vector database built for scalable vector ANN search",
       "accessible_by": [
         "Orchestrator"
@@ -3193,8 +3013,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\mirofish\\manifest.json",
-      "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. ç®€æ´é€šç”¨çš„ç¾¤ä½“æ™ºèƒ½å¼•æ“Žï¼Œé¢„æµ‹ä¸‡ç‰©",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\mirofish\\manifest.json",
+      "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. \u00e7\u00ae\u20ac\u00e6\u00b4\u0081\u00e9\u20ac\u0161\u00e7\u201d\u00a8\u00e7\u0161\u201e\u00e7\u00be\u00a4\u00e4\u00bd\u201c\u00e6\u2122\u00ba\u00e8\u0192\u00bd\u00e5\u00bc\u2022\u00e6\u201c\u017d\u00ef\u00bc\u0152\u00e9\u00a2\u201e\u00e6\u00b5\u2039\u00e4\u00b8\u2021\u00e7\u2030\u00a9",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3216,8 +3036,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\mole\\manifest.json",
-      "description": "ðŸ¹ Deep clean and optimize your Mac.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\mole\\manifest.json",
+      "description": "\u00f0\u0178\u0090\u00b9 Deep clean and optimize your Mac.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3239,8 +3059,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\moneyprinterturbo\\manifest.json",
-      "description": "åˆ©ç”¨AIå¤§æ¨¡åž‹ï¼Œä¸€é”®ç”Ÿæˆé«˜æ¸…çŸ­è§†é¢‘ Generate short videos with one click using AI LLM.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\moneyprinterturbo\\manifest.json",
+      "description": "\u00e5\u02c6\u00a9\u00e7\u201d\u00a8AI\u00e5\u00a4\u00a7\u00e6\u00a8\u00a1\u00e5\u017e\u2039\u00ef\u00bc\u0152\u00e4\u00b8\u20ac\u00e9\u201d\u00ae\u00e7\u201d\u0178\u00e6\u02c6\u0090\u00e9\u00ab\u02dc\u00e6\u00b8\u2026\u00e7\u0178\u00ad\u00e8\u00a7\u2020\u00e9\u00a2\u2018 Generate short videos with one click using AI LLM.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3262,7 +3082,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\n8n\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\n8n\\manifest.json",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
       "accessible_by": [
         "Orchestrator"
@@ -3285,7 +3105,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\next_js\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\next_js\\manifest.json",
       "description": "The React Framework",
       "accessible_by": [
         "Orchestrator"
@@ -3308,8 +3128,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\node\\manifest.json",
-      "description": "Node.js JavaScript runtime âœ¨ðŸ¢ðŸš€âœ¨",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\node\\manifest.json",
+      "description": "Node.js JavaScript runtime \u00e2\u0153\u00a8\u00f0\u0178\u0090\u00a2\u00f0\u0178\u0161\u20ac\u00e2\u0153\u00a8",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3331,8 +3151,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ohmyzsh\\manifest.json",
-      "description": "ðŸ™ƒ   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ohmyzsh\\manifest.json",
+      "description": "\u00f0\u0178\u2122\u0192   A delightful community-driven (with 2,400+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up with the latest updates from the community.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3354,7 +3174,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\oh_my_openagent\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\oh_my_openagent\\manifest.json",
       "description": "omo; the best agent harness - previously oh-my-opencode",
       "accessible_by": [
         "Orchestrator"
@@ -3377,7 +3197,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ollama\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ollama\\manifest.json",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
       "accessible_by": [
         "Orchestrator"
@@ -3400,7 +3220,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\openai_cookbook\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\openai_cookbook\\manifest.json",
       "description": "Examples and guides for using the OpenAI API",
       "accessible_by": [
         "Orchestrator"
@@ -3423,8 +3243,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\openclaw\\manifest.json",
-      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. ðŸ¦ž ",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\openclaw\\manifest.json",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. \u00f0\u0178\u00a6\u017e ",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3446,7 +3266,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\opencode\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\opencode\\manifest.json",
       "description": "The open source coding agent.",
       "accessible_by": [
         "Orchestrator"
@@ -3469,7 +3289,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\pathway\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\pathway\\manifest.json",
       "description": "Python ETL framework for stream processing, real-time analytics, LLM pipelines, and RAG.",
       "accessible_by": [
         "Orchestrator"
@@ -3492,7 +3312,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\payload\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\payload\\manifest.json",
       "description": "Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.",
       "accessible_by": [
         "Orchestrator"
@@ -3515,7 +3335,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\pdf_js\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\pdf_js\\manifest.json",
       "description": "PDF Reader in JavaScript",
       "accessible_by": [
         "Orchestrator"
@@ -3538,8 +3358,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\plane\\manifest.json",
-      "description": "ðŸ”¥ðŸ”¥ðŸ”¥ Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\plane\\manifest.json",
+      "description": "\u00f0\u0178\u201d\u00a5\u00f0\u0178\u201d\u00a5\u00f0\u0178\u201d\u00a5 Open-source Jira, Linear, Monday, and ClickUp alternative. Plane is a modern project management platform to manage tasks, sprints, docs, and triage.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3561,7 +3381,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\playwright\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\playwright\\manifest.json",
       "description": "Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. ",
       "accessible_by": [
         "Orchestrator"
@@ -3579,12 +3399,12 @@
     },
     {
       "id": "port-killer",
-      "name": "Port Killer — GUI Port Manager",
+      "name": "Port Killer \u2014 GUI Port Manager",
       "version": "npm",
       "tier": 3,
       "status": "active",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\port-killer\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\port-killer\\manifest.json",
       "description": null,
       "accessible_by": [
         "Orchestrator"
@@ -3607,7 +3427,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\prettier\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\prettier\\manifest.json",
       "description": "Prettier is an opinionated code formatter.",
       "accessible_by": [
         "Orchestrator"
@@ -3630,7 +3450,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\private_gpt\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\private_gpt\\manifest.json",
       "description": "Interact with your documents using the power of GPT, 100% privately, no data leaks",
       "accessible_by": [
         "Orchestrator"
@@ -3653,7 +3473,7 @@
       "tier": 3,
       "status": "active",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\public-apis\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\public-apis\\manifest.json",
       "description": "A collective list of free APIs",
       "accessible_by": [
         "Orchestrator"
@@ -3676,7 +3496,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\public_apis\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\public_apis\\manifest.json",
       "description": "A collective list of free APIs",
       "accessible_by": [
         "Orchestrator"
@@ -3699,7 +3519,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\pytorch\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\pytorch\\manifest.json",
       "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
       "accessible_by": [
         "Orchestrator"
@@ -3722,7 +3542,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ragflow\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ragflow\\manifest.json",
       "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
       "accessible_by": [
         "Orchestrator"
@@ -3745,7 +3565,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\react\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\react\\manifest.json",
       "description": "The library for web and native user interfaces.",
       "accessible_by": [
         "Orchestrator"
@@ -3768,7 +3588,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ripgrep\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ripgrep\\manifest.json",
       "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",
       "accessible_by": [
         "Orchestrator"
@@ -3791,7 +3611,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ruff\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ruff\\manifest.json",
       "description": "An extremely fast Python linter and code formatter, written in Rust.",
       "accessible_by": [
         "Orchestrator"
@@ -3814,7 +3634,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\rust\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\rust\\manifest.json",
       "description": "Empowering everyone to build reliable and efficient software.",
       "accessible_by": [
         "Orchestrator"
@@ -3837,7 +3657,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\scrapy\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\scrapy\\manifest.json",
       "description": "Scrapy, a fast high-level web crawling & scraping framework for Python.",
       "accessible_by": [
         "Orchestrator"
@@ -3860,7 +3680,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\servers\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\servers\\manifest.json",
       "description": "Model Context Protocol Servers",
       "accessible_by": [
         "Orchestrator"
@@ -3883,7 +3703,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\skills\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\skills\\manifest.json",
       "description": "Public repository for Agent Skills",
       "accessible_by": [
         "Orchestrator"
@@ -3906,7 +3726,7 @@
       "tier": 3,
       "status": "planned",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\smart-search\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\smart-search\\manifest.json",
       "description": "Semantic search with fuzzy matching and AI embeddings",
       "accessible_by": [
         "Orchestrator"
@@ -3929,8 +3749,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\spec_kit\\manifest.json",
-      "description": "ðŸ’« Toolkit to help you get started with Spec-Driven Development",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\spec_kit\\manifest.json",
+      "description": "\u00f0\u0178\u2019\u00ab Toolkit to help you get started with Spec-Driven Development",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3952,8 +3772,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\streamlit\\manifest.json",
-      "description": "Streamlit â€” A faster way to build and share data apps.",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\streamlit\\manifest.json",
+      "description": "Streamlit \u00e2\u20ac\u201d A faster way to build and share data apps.",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -3975,7 +3795,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\superpowers\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\superpowers\\manifest.json",
       "description": "An agentic skills framework & software development methodology that works.",
       "accessible_by": [
         "Orchestrator"
@@ -3998,7 +3818,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\tmux\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\tmux\\manifest.json",
       "description": "tmux source code",
       "accessible_by": [
         "Orchestrator"
@@ -4021,7 +3841,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\tradingagents\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\tradingagents\\manifest.json",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "accessible_by": [
         "Orchestrator"
@@ -4044,8 +3864,8 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\transformers\\manifest.json",
-      "description": "ðŸ¤— Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\transformers\\manifest.json",
+      "description": "\u00f0\u0178\u00a4\u2014 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
       "accessible_by": [
         "Orchestrator"
       ],
@@ -4067,7 +3887,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\ui_ux_pro_max_skill\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\ui_ux_pro_max_skill\\manifest.json",
       "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
       "accessible_by": [
         "Orchestrator"
@@ -4090,7 +3910,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\unsloth\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\unsloth\\manifest.json",
       "description": "Unsloth Studio is a web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.",
       "accessible_by": [
         "Orchestrator"
@@ -4113,7 +3933,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\uv\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\uv\\manifest.json",
       "description": "An extremely fast Python package and project manager, written in Rust.",
       "accessible_by": [
         "Orchestrator"
@@ -4136,7 +3956,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\vite\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\vite\\manifest.json",
       "description": "Next generation frontend tooling. It's fast!",
       "accessible_by": [
         "Orchestrator"
@@ -4159,7 +3979,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\vllm\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\vllm\\manifest.json",
       "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
       "accessible_by": [
         "Orchestrator"
@@ -4182,7 +4002,7 @@
       "tier": 3,
       "status": "active",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\vscode\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\vscode\\manifest.json",
       "description": "Visual Studio Code",
       "accessible_by": [
         "Orchestrator"
@@ -4205,7 +4025,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\whisper\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\whisper\\manifest.json",
       "description": "Robust Speech Recognition via Large-Scale Weak Supervision",
       "accessible_by": [
         "Orchestrator"
@@ -4228,7 +4048,7 @@
       "tier": 3,
       "status": "registered",
       "source": "plugin",
-      "path": "D:\\LongLeo\\OmniClaw Corp\\OmniClaw\\ecosystem\\plugins\\yt_dlp\\manifest.json",
+      "path": "$OMNICLAW_ROOT\\ecosystem\\plugins\\yt_dlp\\manifest.json",
       "description": "A feature-rich command-line audio/video downloader",
       "accessible_by": [
         "Orchestrator"
@@ -4267,14 +4087,14 @@
     "path": "system/plugins/python_ast_parser.py"
   },
   "api_routing": {
-    "description": "Điều định tuyến Request và Webhook nhúng vào luồng hệ thống.",
+    "description": "\u0110i\u1ec1u \u0111\u1ecbnh tuy\u1ebfn Request v\u00e0 Webhook nh\u00fang v\u00e0o lu\u1ed3ng h\u1ec7 th\u1ed1ng.",
     "filepath": "system/bridge/api_gateway/main.py",
     "granted_to": [
       "bridge-commander-agent"
     ]
   },
   "passport_verify": {
-    "description": "Xác minh chuẩn Thẻ/Token kết nối mảng Remote Bridge Vault.",
+    "description": "X\u00e1c minh chu\u1ea9n Th\u1ebb/Token k\u1ebft n\u1ed1i m\u1ea3ng Remote Bridge Vault.",
     "filepath": "system/bridge/secrets_manager/passport_issuer.py",
     "granted_to": [
       "bridge-commander-agent",

@@ -21,7 +21,7 @@
 | C5-OPS-003 | Docker rebuild với Telegram code | ✅ DONE |
 | C5-RD-001 | Agent Swarm dispatch protocol (RD-001) | ✅ DONE |
 | C5-ENG-001 | swarm-dispatch.md — Phase 1 PoC plan | ✅ DONE |
-| C5-OPS-004 | Telegram token config — PENDING (Sếp provide) | 🔴 NEEDS TOKEN |
+| C5-OPS-004 | Telegram token config — PENDING (CEO provide) | 🔴 NEEDS TOKEN |
 
 **Velocity: 5/6 tasks — 83%**
 
@@ -30,7 +30,7 @@
 ## Telegram Integration Architecture
 
 ```
-Sếp → @LongLeo Bot (Telegram)
+CEO → @OmniAdmin Bot (Telegram)
          ↑
     Bot Token ([REDACTED]...)
          ↑
@@ -68,7 +68,7 @@ Supabase DB (22 tasks)
 
 | Item | Owner | Action |
 |------|-------|--------|
-| Telegram live | Sếp | Add full token `[REDACTED]HASH` + CHAT_ID to `tools/clawtask/.env` |
+| Telegram live | CEO | Add full token `[REDACTED]HASH` + CHAT_ID to `tools/clawtask/.env` |
 | Strix batch scan | Security | Run `nemoclaw-strix-scan.md` on 107 repos |
 | Agent Swarm Phase 2 | Engineering | Real multi-agent impl |
 | Corp Knowledge Graph | R&D | LightRAG/Cognee PoC |

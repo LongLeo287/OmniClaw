@@ -2,7 +2,7 @@
 **Last Updated:** 2026-03-23
 
 ## 🗺️ System Map (READ FIRST)
-- [AI_OS_SYSTEM_MAP.md](AI_OS_SYSTEM_MAP.md) — **MASTER REFERENCE** — Toàn bộ hệ thống AI OS Corp: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
+- [AI_OS_SYSTEM_MAP.md](AI_OS_SYSTEM_MAP.md) — **MASTER REFERENCE** — Toàn bộ hệ thống OmniClaw: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
 - [MASTER_SYSTEM_MAP.md](../../MASTER_SYSTEM_MAP.md) — **SYSTEM MAP v2 (2026-03-23)** — Boot → Corp Cycle 8-phase → 21 Depts → 3-Tier Plugin → Agent Memory → Knowledge Flow → Escalation → CLI Commands
 
 ## 🏛️ Governance & Identity (Tier 0-1)
@@ -110,7 +110,7 @@
 ### Plans & Roadmaps (1)
 | File | Topic |
 |------|-------|
-| knowledge/fine_tuning_plan_tinylora.md | TinyLoRA fine-tuning roadmap for 21 AI OS Corp agents |
+| knowledge/fine_tuning_plan_tinylora.md | TinyLoRA fine-tuning roadmap for 21 OmniClaw agents |
 
 ### Platform / Orchestration (1)
 | File | Topic |

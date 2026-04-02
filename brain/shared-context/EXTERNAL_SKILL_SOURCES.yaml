@@ -12,7 +12,7 @@ description: >
 
 defaults:
   fetch_policy:
-    destination: "AI_OS_ROOT\\skills\\experimental\\"
+    destination: "OMNICLAW_ROOT\\skills\\experimental\\"
     auto_register: false
     require_user_confirmation: true
   safety_gates:

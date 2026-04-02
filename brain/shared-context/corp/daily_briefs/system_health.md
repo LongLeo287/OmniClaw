@@ -74,7 +74,7 @@ OmniClaw Corp Root: $OMNICLAW_ROOT\
 │   └── 38 subagent persona dirs ✅
 ├── shared-context/
 │   ├── SKILL_REGISTRY.json (107 plugins) ✅
-│   ├── AI_OS_CONTEXT.md ✅
+│   ├── OMNICLAW_CONTEXT.md ✅
 │   └── blackboard.json ✅
 ├── workflows/ (25 files) ✅
 ├── tools/clawtask/ (Docker API running) ✅

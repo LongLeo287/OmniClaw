@@ -30,7 +30,7 @@ Content Intake (Ingestion) dept activated. This dept manages the pipeline for in
 ## Intake Pipeline
 
 ```
-Sếp/CEO nominates repo URL
+CEO/CEO nominates repo URL
       ↓
 Registry dept adds to EXTERNAL_SKILL_SOURCES.yaml (status: pending)
       ↓

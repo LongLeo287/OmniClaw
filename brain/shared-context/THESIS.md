@@ -58,7 +58,7 @@ This document defines the fundamental principles of the **AI Operating System** 
 - **`corp/prompts/runes/`** — Standardized ritual prompts and SOP templates
 - **`telemetry/receipts/`** — Cryptographically-auditable task receipts (JSON, per step)
 - **`ecosystem/skills/`** — 45+ loaded skill modules, queried via `SKILL_REGISTRY.json`
-- **`plugins/`** — managed via kho/plugins/registry.json (7 tier1, 7 tier2) (firecrawl, LightRAG, crewai, zeroleaks, etc.)
+- **`plugins/`** — managed via registry.json (7 tier1, 7 tier2) (firecrawl, LightRAG, crewai, zeroleaks, etc.)
 - **`brain/shared-context/report_formats.md`** — Standard output formats all agents must use when reporting to CEO (loaded at boot Step 6)
 
 All Agents must adhere to the global **Shared Context**:
@@ -75,14 +75,14 @@ Immutable references for the OmniClaw technical landscape. Loaded on-demand by a
 |--------|---------|--------|
 | `ecosystem/skills/` | 14 active installed skills (SKILL_REGISTRY.json) (SKILL.md per skill) | via SKILL_REGISTRY.json |
 | `brain/knowledge/` | Agent-curated knowledge index | via knowledge_navigator skill |
-| `plugins/` | managed via kho/plugins/registry.json (7 tier1, 7 tier2) (firecrawl, LightRAG, cognee, etc.) | via knowledge_navigator |
+| `plugins/` | managed via registry.json (7 tier1, 7 tier2) (firecrawl, LightRAG, cognee, etc.) | via knowledge_navigator |
 | `brain/shared-context/` | GOVERNANCE, AGENTS, SOUL, THESIS | loaded at boot |
 | `brain/agents/` | 99 agent definitions (brain/agents/) | loaded at boot |
 | `brain/agents/` | 52 named agents across 21 depts | loaded on-demand |
 | `ops/workflows/` | SOP workflow files | loaded on-demand |
 | `corp/org_chart.yaml` | Corp Mode company structure | via corp_orchestrator |
 | `corp/kpi_targets.yaml` | KPI targets per department | via corp_orchestrator |
-| `SKILL_REGISTRY.json` | Master registry of all 14 active skills + 8 kho (rules/prompts/memory/plugins/mcp/llm/cicd/brain) | queried at boot |
+| `SKILL_REGISTRY.json` | Master registry of all 14 active skills + 8 core repos (rules/prompts/memory/plugins/mcp/llm/cicd/brain) | queried at boot |
 
 ## 4. Memory (The "Record")
 

@@ -1,9 +1,9 @@
-import os
+﻿import os
 import shutil
 from pathlib import Path
 
 # Cấu hình đường dẫn
-repo_root = Path(r'D:\LongLeo\AI OS CORP\AI OS')
+repo_root = Path(r'D:\LongLeo\OmniClaw\AI OS')
 brain_km = repo_root / 'brain' / 'knowledge'
 storage_models = repo_root / 'storage' / 'models'
 storage_dbs = repo_root / 'storage' / 'databases'
@@ -91,3 +91,4 @@ print(f"🗑️ Deleted Dirs: {deleted_dirs}")
 print(f"🗑️ Deleted Files: {deleted_files}")
 print(f"📦 Moved Heavy Assets: {moved_files}")
 print(f"⚖️ Freed Space: {freed_bytes / (1024**3):.2f} GB")
+

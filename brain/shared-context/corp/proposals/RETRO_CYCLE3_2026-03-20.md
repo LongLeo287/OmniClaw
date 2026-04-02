@@ -61,9 +61,9 @@
 
 | Blocker | Cycles Blocked | Status | Owner |
 |---------|---------------|--------|-------|
-| ClawTask → Supabase | C1, C2, C3 | PRE-RESOLVED — `.env` set, requires Docker restart by Sếp | Engineering |
+| ClawTask → Supabase | C1, C2, C3 | PRE-RESOLVED — `.env` set, requires Docker restart by CEO | Engineering |
 | Docker CLI in PS PATH | C2, C3 | KNOWN — use Docker Desktop terminal | IT Infra |
-| Telegram bot token | C2, C3 | OPEN — Sếp to add `TELEGRAM_BOT_TOKEN` | Operations |
+| Telegram bot token | C2, C3 | OPEN — CEO to add `TELEGRAM_BOT_TOKEN` | Operations |
 
 ---
 
@@ -87,7 +87,7 @@
 
 ## Recommendations for Cycle 4
 
-1. **[ENG] Connect ClawTask → Supabase** — Sếp restart Docker with new .env (5 min)
+1. **[ENG] Connect ClawTask → Supabase** — CEO restart Docker with new .env (5 min)
 2. **[SEC] Retroactive batch Strix scan** — all 107 plugins (automated via NemoClaw)
 3. **[RD] NemoClaw security integration** — automated Strix pipeline (Proposal RD-003)
 4. **[OPS] Telegram bot activation** — add `TELEGRAM_BOT_TOKEN` to `tools/clawtask/.env`

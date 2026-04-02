@@ -39,6 +39,22 @@ TRASH_DIR_NAMES = {'__pycache__', '.pytest_cache'}
 PROTECTED_DIRS = {'.git', 'node_modules', 'venv', 'env', 'vault', 'QUARANTINE'}
 
 
+def is_hollow_dir(path_obj: Path) -> bool:
+    """Return True if the directory is completely empty or only contains .git/OS garbage."""
+    if not path_obj.is_dir():
+        return False
+    try:
+        contents = list(path_obj.iterdir())
+        if not contents:
+            return True
+        allowed_hollow_files = {'.git', 'Thumbs.db', 'desktop.ini', '.DS_Store'}
+        if all(item.name in allowed_hollow_files for item in contents):
+            return True
+    except Exception:
+        pass
+    return False
+
+
 def is_junk(path_obj: Path) -> bool:
     """Return True if the given path is classified as junk."""
     if path_obj.is_file():
@@ -108,11 +124,13 @@ def deploy_cleanup_crew(target_folders_list: list, base_path=AI_OS_ROOT, trash_v
                     except Exception:
                         pass
 
-            # Phase 2: Quarantine junk directories
+            # Phase 2: Quarantine junk directories and hollow directories
             for dir_name in list(dirs):
                 dir_path = current / dir_name
-                if is_junk(dir_path):
-                    dest = trash_vault / f"{dir_path.parent.name}_{dir_name}"
+                if is_junk(dir_path) or is_hollow_dir(dir_path):
+                    # For hollow directories, flag them with HOLLOW_ prefix
+                    prefix = "HOLLOW_" if is_hollow_dir(dir_path) else ""
+                    dest = trash_vault / f"{prefix}{dir_path.parent.name}_{dir_name}"
                     try:
                         shutil.move(str(dir_path), str(dest))
                         quarantine_count += 1

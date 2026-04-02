@@ -1,11 +1,11 @@
-import os
+﻿import os
 import re
 import sys
 import time
 from pathlib import Path
 
 # Thêm đường dẫn Local Module để tải trực tiếp thư viện deep_translator vừa tải về
-model_dir = Path(r"D:\LongLeo\AI OS CORP\AI OS\system\models")
+model_dir = Path(r"D:\LongLeo\OmniClaw\AI OS\system\models")
 sys.path.insert(0, str(model_dir))
 
 try:
@@ -14,7 +14,7 @@ except ImportError:
     print("pip install deep-translator if this fails")
     sys.exit(1)
 
-log_file = Path(r"D:\LongLeo\AI OS CORP\AI OS\storage\logs\daemons\omniclaw_translator.log")
+log_file = Path(r"D:\LongLeo\OmniClaw\AI OS\storage\logs\daemons\omniclaw_translator.log")
 log_file.parent.mkdir(parents=True, exist_ok=True)
 
 def log(m):
@@ -67,7 +67,7 @@ def translate_content(text):
         log(f"Error calling GoogleTranslator: {e}")
         return None
 
-root_dir = Path(r"D:\LongLeo\AI OS CORP\AI OS")
+root_dir = Path(r"D:\LongLeo\OmniClaw\AI OS")
 vn_pattern = re.compile(r'[áàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵđ]', re.IGNORECASE)
 
 processed = 0
@@ -119,3 +119,4 @@ for t in targets:
                 log(f"    -> Translation returned None.")
 
 log(f"\n[DAEMON STOP] Entire translation complete. Successfully cleaned {processed} files.")
+

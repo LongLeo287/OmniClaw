@@ -47,12 +47,12 @@ What are you presenting to CEO?
 
 ## A1: Visual Brainstorm
 
-**When:** Khám phá vấn đề, so sánh 2–3 hướng, đưa ra khuyến nghị
+**When:** Explore the problem, compare 2–3 directions, make recommendations
 **Rune:** `corp/prompts/runes/brainstorm_prompt.md`
 
 **Sections:**
-1. Mermaid flowchart — tổng quan vấn đề
-2. Comparison table — các options (Pros / Cons / Recommendation)
+1. Mermaid flowchart — problem overview
+2. Comparison table — options (Pros / Cons / Recommendation)
 3. Risks & open questions
 4. Antigravity's recommendation
 
@@ -60,12 +60,12 @@ What are you presenting to CEO?
 
 ## A2: Multi-Agent Review
 
-**When:** Kiến trúc phức tạp, rủi ro cao, cần stress-test từ nhiều góc nhìn
+**When:** Complex architecture, high risk, needs stress-testing from many perspectives
 **Rune:** `corp/prompts/runes/multi_agent_brainstorm_prompt.md`
 
 **Roles:**
-1. **Primary Designer** — thiết kế ban đầu (chạy A1 trước)
-2. **Skeptic** — "giả sử cái này fail, tại sao?"
+1. **Primary Designer** — initial design (runs A1 first)
+2. **Skeptic** — "let's say this fails, why?"
 3. **Constraint Guardian** — performance, security, maintainability
 4. **User Advocate** — UX, clarity, cognitive load
 5. **Arbiter** — final resolution + Decision Log
@@ -74,7 +74,7 @@ What are you presenting to CEO?
 
 ## A3: BMAD Method
 
-**When:** Feature mới, capability mới, xác định scope
+**When:** New feature, new capability, define scope
 **Rune:** `corp/prompts/runes/bmad_prompt.md`
 
 **Sections:**
@@ -88,7 +88,7 @@ What are you presenting to CEO?
 
 ## A4: Decision Log
 
-**When:** Ghi lại quyết định quan trọng đã được chọn
+**When:** Records the selected key decision
 **Rune:** `corp/prompts/runes/decision_log_prompt.md`
 
 **Sections:**
@@ -102,7 +102,7 @@ What are you presenting to CEO?
 
 ## A5: Execution Receipt
 
-**When:** Claude Code hoặc Antigravity hoàn thành task
+**When:** Claude Code or Antigravity completes the task
 **Rune:** `corp/prompts/runes/execution_receipt_prompt.md`
 
 **Sections:**

@@ -41,7 +41,7 @@ Connect ClawTask → Supabase. Automate security. Configure Telegram. Formalize 
 
 | Blocker | Owner | Resolution |
 |---------|-------|-----------|
-| Telegram token missing | Sếp | Add TELEGRAM_BOT_TOKEN to tools/clawtask/.env |
+| Telegram token missing | CEO | Add TELEGRAM_BOT_TOKEN to tools/clawtask/.env |
 | Strix batch scan 107 repos | Security | Run nemoclaw-strix-scan.md pipeline in background |
 
 ## Open for Cycle 5

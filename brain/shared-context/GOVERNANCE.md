@@ -32,7 +32,7 @@ This document is the **Single Source of Truth** for all AI agents regarding safe
 
 ## 🛾 Registered Ecosystem (Single Source of Truth)
 
-All authorized paths are relative to **AI_OS_ROOT** (directory containing GEMINI.md + CLAUDE.md).
+All authorized paths are relative to **OMNICLAW_ROOT** (directory containing GEMINI.md + CLAUDE.md).
 No agent hardcodes absolute paths — see `RULE-DYNAMIC-01` for full policy.
 
 ```
@@ -43,8 +43,8 @@ $OMNICLAW_ROOT/              ◄ Central OS (Tier 0 governance)
 └── plugins/               ◄ Skills, tools (vetted via CIV)
 ```
 
-**STRICTLY FORBIDDEN:** Creating files outside AI_OS_ROOT (except $env:USERPROFILE system dirs).
-**STRICTLY FORBIDDEN:** Saving output to system dirs (.gemini, .claude, .ollama — read-only for agents).
+**STRICTLY FORBIDDEN:** Creating files outside OMNICLAW_ROOT (except `$env:USERPROFILE` system dirs).
+**STRICTLY FORBIDDEN:** Saving output to system dirs (`.gemini`, `.claude`, `.ollama` — read-only for agents).
 **See also:** `RULE-STORAGE-01` | `RULE-STRUCTURE-01` | `RULE-DYNAMIC-01`
 
 ---
@@ -53,7 +53,7 @@ $OMNICLAW_ROOT/              ◄ Central OS (Tier 0 governance)
 
 | Document Type | Language |
 |--------------|----------|
-| Technical files (.md, .json, .ps1, .rule, .skill, .plugin, .prompt) | **English** |
+| Technical files (`.md`, `.json`, `.ps1`, `.rule`, `.skill`, `.plugin`, `.prompt`) | **English** |
 | User-facing brainstorms & reports | **Vietnamese** |
 | `.resolved` output files | **Vietnamese** |
 | Agent-to-agent messages (blackboard, handoff) | **English** |
@@ -85,7 +85,7 @@ All agents must verify their actions against `AGENTS.md` before execution. In ca
 | 🔒 **SYSTEM — NO TOUCH** | `$env:USERPROFILE\.codex\` | Codex data |
 | 🔒 **SYSTEM — NO TOUCH** | `$env:USERPROFILE\.nullclaw\` | NullClaw data |
 | 🔒 **SYSTEM — NO TOUCH** | `$env:USERPROFILE\.ollama\` | Ollama model weights |
-| ⚠️ **EXCEPTION** | `$env:USERPROFILE\...\antigravity\skills\` | Mirror from AI_OS_ROOT OK — source of truth = AI_OS_ROOT |
+| ⚠️ **EXCEPTION** | `$env:USERPROFILE\...\antigravity\skills\` | Mirror from OMNICLAW_ROOT OK — source of truth = OMNICLAW_ROOT |
 | ❌ **FORBIDDEN** | `C:\Desktop\`, `C:\Documents\`, `C:\Temp\` | Never create files here |
 
 **Violations** → Report immediately to Dept 20 (CIV) + CEO
@@ -188,7 +188,7 @@ GATE 2: Plugin Integration → ops/workflows/plugin-integration.md  (Owner: Dept
 ```
 Reading a repo README   ≠  Permission to clone
 Cloning a repo          ≠  Permission to use in OmniClaw
-Using in OmniClaw          ≠  Without APPROVE verdict + Security CLEAR
+Using in OmniClaw       ≠  Without APPROVE verdict + Security CLEAR
 ```
 
 **Violations** → Report immediately to Dept 20 (CIV) + Dept 10 (Security) + CEO
@@ -218,7 +218,7 @@ Store receipts in the workspace's `telemetry/receipts/` folder.
 
 ## 🏢 21-Department Authority Matrix (v2.0 — 2026-03-24)
 
-> Mỗi dept có quyền hạn riêng. Cross-dept action cần C-Suite approval.
+> Each dept has individual authority. Cross-dept action requires C-Suite approval.
 
 | # | Dept | Reports To | Gate? | Auto-Alert? | Max Authority |
 |---|------|-----------|-------|-------------|---------------|
@@ -251,7 +251,7 @@ Any dept → Security/GRC: required scan before new tool activation
 Any dept → CIV: required gate for ALL external content
 Engineering → QA: required gate before deploy
 Marketing/Support → Content Review: required gate before publish
-Legal → CEO: required for all contracts >  or risk flag
+Legal → CEO: required for all contracts > $10K or risk flag
 Strategy → CEO: proposals submitted, CEO decides each cycle
 `
 

@@ -22,7 +22,7 @@
 | C4-SEC-001 | `workflows/nemoclaw-strix-scan.md` — 7-step pipeline | ✅ DONE |
 | C4-ASSET-001 | `corp/asset_registry.json` — 30 assets catalogued | ✅ DONE |
 | C4-PMO-001 | Sprint board C4 (`daily_briefs/sprint_board_c4.md`) | ✅ DONE |
-| C4-OPS-001 | Telegram config — DEFERRED (token needed from Sếp) | 🔴 DEFERRED |
+| C4-OPS-001 | Telegram config — DEFERRED (token needed from CEO) | 🔴 DEFERRED |
 
 **Velocity: 6/7 tasks — 86%** (1 deferred, not blocked)
 
@@ -73,7 +73,7 @@ ClawTask API status:
 
 | Item | Owner | Priority | Cycle Target |
 |------|-------|---------|-------------|
-| Telegram bot token | Sếp add to .env | MEDIUM | 5 |
+| Telegram bot token | CEO add to .env | MEDIUM | 5 |
 | Strix batch scan 107 repos | Security + NemoClaw | MEDIUM | 5 |
 | Agent Swarm Mode | R&D + Engineering | HIGH | 5-6 |
 
@@ -81,7 +81,7 @@ ClawTask API status:
 
 ## Recommendations for Cycle 5
 
-1. **[OPS]** Sếp add `TELEGRAM_BOT_TOKEN` to `tools/clawtask/.env` → Telegram live
+1. **[OPS]** CEO add `TELEGRAM_BOT_TOKEN` to `tools/clawtask/.env` → Telegram live
 2. **[SEC]** Run `nemoclaw-strix-scan.md` pipeline — batch scan all 107 plugins
 3. **[ENG]** Implement `session-start health ping` in `antigravity-boot.md`
 4. **[RD]** Begin Agent Swarm Mode PoC (RD-001 proposal)

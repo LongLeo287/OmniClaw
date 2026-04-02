@@ -66,7 +66,7 @@ IF EXIST "%OMNICLAW_ROOT%\system\ops\secrets\MASTER.env" (
 api_key = "sk-abc123..."
 
 # BAD — hardcoded path on local machine
-ENV_FILE = r"D:\LongLeo\AI OS CORP\AI OS\system\ops\secrets\MASTER.env"
+ENV_FILE = r"D:\LongLeo\OmniClaw\AI OS\system\ops\secrets\MASTER.env"
 
 # GOOD — dynamic root + env var
 ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[N])))

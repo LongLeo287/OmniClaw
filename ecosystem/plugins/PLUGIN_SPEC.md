@@ -29,7 +29,7 @@ Plugins differ from Skills in that:
 | `cognitive` | Enhances agent reasoning or memory | `LightRAG`, `neural_memory` |
 | `data` | Integrates external or local data sources | `langextract`, `eco-ingest` |
 | `bridge` | Connects OmniClaw to external systems | `cloud-sync`, `notification_bridge` |
-| `ui` | Provides dashboard or visual capabilities | `ai-os-viewer`, `ui-ux-pro-max` |
+| `ui` | Provides dashboard or visual capabilities | `omniclaw-viewer`, `ui-ux-pro-max` |
 
 ---
 

@@ -25,9 +25,9 @@ across engineering, marketing, strategy, and operations.
 
 ### CEO Priorities this Cycle:
 1. **[Engineering]**: Fix Supabase `tasks` table — add `agent_id` column so ClawTask stores tasks correctly
-2. **[Registry]**: Register NVIDIA/NemoClaw + slide-deck-generator vào SKILL_REGISTRY với metadata đúng
+2. **[Registry]**: Register NVIDIA/NemoClaw + slide-deck-generator into SKILL_REGISTRY with correct metadata
 3. **[Operations]**: Verify ClawTask API (:7474) healthy, confirm Supabase backend active
-4. **[Strategy]**: Tạo OKR framework Cycle 1 — 3 objectives, 2 KRs mỗi objective
+4. **[Strategy]**: Create OKR framework Cycle 1 — 3 objectives, 2 KRs per objective
 5. **[System Health]**: Full health check — Docker, Supabase, MQ queues, memory architecture
 
 ### Budget constraint: Economy LLM tier for all tasks. Balanced for Strategy items.

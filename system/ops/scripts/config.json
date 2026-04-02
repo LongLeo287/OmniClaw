@@ -1,7 +1,7 @@
-{
+﻿{
   "ai_os_corp": {
     "version": "1.0",
-    "description": "AI OS Corp — Unified Services Config"
+    "description": "OmniClaw — Unified Services Config"
   },
   "services": {
     "clawtask": {
@@ -54,4 +54,5 @@
     "log": "%USERPROFILE%/.nullclaw/watchdog.log"
   }
 }
+
 

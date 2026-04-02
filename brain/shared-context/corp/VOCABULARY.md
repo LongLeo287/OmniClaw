@@ -24,7 +24,7 @@
 
 | Tier | Label | Description |
 |------|-------|-------------|
-| T0 | CEO | Sếp (human). Ultimate authority. |
+| T0 | CEO | CEO (human). Ultimate authority. |
 | T1 | Orchestrator | Antigravity. Corp-wide orchestration. Acts as CEO proxy. |
 | T2 | C-Suite | CTO, CMO, COO, CFO, CSO. Dept oversight + strategic decisions. |
 | T3 | Dept Head | Per-dept manager agents. Executes MQ tasks. Writes daily briefs. |

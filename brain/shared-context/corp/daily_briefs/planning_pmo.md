@@ -48,7 +48,7 @@ Activate 10+ departments and fix ClawTask Supabase backend.
 - PMO tracking now formalized
 
 ## Blockers
-- C2-ENG-001: Docker restart needed for ClawTask Supabase — requires Sếp to run `docker-manage.bat restart` in tools/clawtask/
+- C2-ENG-001: Docker restart needed for ClawTask Supabase — requires CEO to run `docker-manage.bat restart` in tools/clawtask/
 
 ## Handoff to Strategy
 PMO recommends: Cycle 3 should target 90%+ velocity with 15 planned tasks.

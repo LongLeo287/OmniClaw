@@ -41,6 +41,6 @@ Read: $OMNICLAW_ROOT\shared-context\blackboard.json
 "✅ Dự án Tiem Nuoc Nho v5 sẵn sàng.
 - Dev: http://localhost:3000
 - TypeScript: [0 lỗi]
-- Trạng thái: IDLE"
+- Status: IDLE"
 ```
 
