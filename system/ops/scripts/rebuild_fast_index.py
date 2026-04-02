@@ -13,7 +13,7 @@ import sys
 import shutil
 from datetime import datetime
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 OUTPUT    = os.path.join(AIOS_ROOT, "brain", "shared-context", "FAST_INDEX.json")
 DRY_RUN   = "--dry-run" in sys.argv
 
