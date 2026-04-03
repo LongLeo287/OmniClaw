@@ -141,7 +141,7 @@ Plotly.newPlot('myDiv', [{
 
 ## ag-live-code (zixfelw — VN dev)
 
-Live code viewer tích hợp với Antigravity — agent có thể stream code thay đổi real-time.
+Live code viewer tích hợp với Antigravity — agent có thể stream code Changes: real-time.
 **Status:** Track repo — evaluate khi cần real-time code collaboration feature.
 
 *KI Note v1.0 | 2026-03-23 | Consolidated misc references*

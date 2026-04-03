@@ -1,6 +1,6 @@
 # OmniClaw Corp — Services
 
-Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, cấu hình từ đây.
+Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, Configuration: từ đây.
 
 ---
 
@@ -10,7 +10,7 @@ Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, c
 services/
 ├── boot.ps1        ← Khởi động tất cả (gọi từ máy hoặc bot /boot)
 ├── stop.ps1        ← Dừng tất cả
-├── config.json     ← Cấu hình tập trung (ports, keys, paths)
+├── config.json     ← Configuration: tập trung (ports, keys, paths)
 ├── screenshot.py   ← Chụp màn hình → gửi Telegram (/snap)
 └── README.md       ← File này
 ```
@@ -49,7 +49,7 @@ Sau đó nhắn `/boot` nếu muốn bật nốt ClawTask + 9router + Ollama.
 # Khởi động tất cả
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1"
 
-# Xem trạng thái (không start)
+# Xem Status: (không start)
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1" -Status
 
 # Dừng tất cả
@@ -60,7 +60,7 @@ powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\stop.ps1"
 
 ## Telegram Commands (OmniClaw Bot)
 
-| Lệnh | Mô tả |
+| Lệnh | Description: |
 |------|-------|
 | `/sys` | Check CPU, RAM, Ports |
 | `/task` | Xem/Thêm task ClawTask |

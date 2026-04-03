@@ -1,3 +1,9 @@
+---
+id: readme
+type: system_rule
+registered: true
+---
+
 # ⚖️ DEPARTMENTAL RULE MATRIX
 **Function:** This directory contains the specific regulations, boundaries of authority, and System-Level Standard Operating Procedures (SOPs) for individual Departments and Agents within the OmniClaw Ecosystem.
 

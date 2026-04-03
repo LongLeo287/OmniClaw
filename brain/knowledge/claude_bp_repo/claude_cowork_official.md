@@ -20,7 +20,7 @@ tags: [claude-cowork, anthropic, desktop-app, agentic, file-automation, browser-
 
 > "Claude Cowork biến Claude thành một digital coworker — delegate outcomes, không phải prompts."
 
-Claude Cowork = **agentic mode** trong Claude Desktop App. Thay vì chat từng bước, user mô tả **outcome** muốn đạt được → Claude tự break down + execute.
+Claude Cowork = **agentic mode** trong Claude Desktop App. Thay vì chat từng bước, user Description: **outcome** muốn đạt được → Claude tự break down + execute.
 
 **Chạy trong:** Virtual machine (sandboxed) có file access
 
@@ -34,7 +34,7 @@ Claude Cowork = **agentic mode** trong Claude Desktop App. Thay vì chat từng 
 3. Mở Claude Desktop → tab "Cowork" 
    (switch từ chat mode sang task execution mode)
 4. Grant file access → chỉ định folders Claude được phép access
-5. Mô tả task → Claude trình bày plan → user approve → execute
+5. Description: task → Claude trình bày plan → user approve → execute
 ```
 
 ### Personalization

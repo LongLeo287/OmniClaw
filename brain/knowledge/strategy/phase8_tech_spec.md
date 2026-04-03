@@ -28,7 +28,7 @@ Mục tiêu: Đảm bảo UI mượt mà với 10,000+ bookmark.
 Thay vì render toàn bộ 10,000 `div` vào DOM, chúng ta chỉ duy trì khoảng 20-30 `div` tương ứng với vùng nhìn thấy (Viewport).
 
 ### Các bước triển khai
-1. **Cố định Item Height**: Mỗi dòng bookmark/folder phải có chiều cao cố định (ví dụ: `40px`).
+1. **Cố định Item Height**: Mỗi dòng bookmark/folder phải có chiều cao cố định (Example: `40px`).
 2. **Container Wrapper**: Một div mẹ có `overflow-y: auto` và tổng chiều cao là `count * 40px`.
 3. **Dynamic Rendering**:
    - Khi user cuộn: Tính toán `scrollTop`.

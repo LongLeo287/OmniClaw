@@ -2,9 +2,9 @@
 
 Chào mừng bạn đến với tài liệu hướng dẫn kỹ thuật dành cho lập trình viên. Tài liệu này giải thích các nguyên tắc thiết kế cốt lõi đứng sau Extension này.
 
-## 🏗 Kiến trúc: Domain-Driven Design (DDD)
+## 🏗 Architecture: Domain-Driven Design (DDD)
 Chúng ta tách biệt logic thành 4 lớp rõ rệt:
-1. **Entities (`src/core/entities`)**: Chứa logic nghiệp vụ thuần túy (ví dụ: `BookmarkEntity` xác định một bookmark hợp lệ).
+1. **Entities (`src/core/entities`)**: Chứa logic nghiệp vụ thuần túy (Example: `BookmarkEntity` xác định một bookmark hợp lệ).
 2. **Repositories (`src/services/BookmarkRepository.js`)**: Lớp truy xuất dữ liệu (Abstraction layer). Không quan tâm dữ liệu đến từ Chrome hay IndexedDB.
 3. **Services (`src/services`)**: Xử lý các nghiệp vụ phức tạp liên quan đến bên thứ 3 (Sync, AI, HTML Parsing).
 4. **UI Components (`src/ui/components`)**: Hoàn toàn không chứa logic lưu trữ. Chỉ nhận dữ liệu và render.
@@ -19,7 +19,7 @@ Extension sử dụng mô hình **Event-driven Hooks**. Bạn có thể đăng k
 `UI Event` -> `AppController` -> `BookmarkRepository` -> `Storage API` -> `SyncService` -> `Cloud`.
 
 ## 🎨 Design System
-Hệ thống sử dụng **CSS Variable Tokens**. Mọi thay đổi về màu sắc trong Settings thực chất là thay đổi giá trị của `--accent-primary` trong `:root`.
+Hệ thống sử dụng **CSS Variable Tokens**. Mọi Changes: về màu sắc trong Settings thực chất là Changes: giá trị của `--accent-primary` trong `:root`.
 
 ## 🚀 Định hướng Scalability
 Để hỗ trợ tree bookmark cực lớn:

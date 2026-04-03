@@ -1,3 +1,9 @@
+---
+id: oiw_intake_strict_rule
+type: system_rule
+registered: true
+---
+
 # OIW STRICT INTAKE & LIBRARY RULES
 
 > [!CAUTION]

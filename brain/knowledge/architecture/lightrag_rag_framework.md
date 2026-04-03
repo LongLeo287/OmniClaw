@@ -142,7 +142,7 @@ rag = LightRAG(
 Error: AttributeError __aenter__ hoặc KeyError history_messages
 → Quên gọi await rag.initialize_storages()
 
-Error: Kết quả embed lạ sau switch model
+Error: Result: embed lạ sau switch model
 → Phải clear data directory khi đổi embedding model
 
 Error: Ollama 8k context

@@ -1,68 +1,68 @@
 # Distilled Insights from Brain Sessions (03/2026)
-# Source: .gemini/antigravity/brain/ — Sessions tháng 3/2026
+# Source: .gemini/antigravity/brain/ — March 2026 Sessions
 # Generated: 2026-03-26 | By: facility-agent (Dept 22) + learning-agent (Dept 14)
-# Policy: APPEND ONLY — không ghi đè kiến thức hiện tại
+# Policy: APPEND ONLY — do not overwrite existing knowledge
 
 ---
 
-## 1. GitNexus — Bài Học Kinh Nghiệm
+## 1. GitNexus — Lessons Learned
 
-**Vấn đề được ghi nhận:**
-- CDP port 9222 thường xuyên trả lỗi 403 Forbidden khi Browser automation cố connect
-- `gitnexus serve :4747` bị crash sau một khoảng thời gian idle — cần restart daemon
-- Proxy endpoint `/api/gitnexus/api/repos` trả 502 khi server offline
+**Recorded Issues:**
+- CDP port 9222 frequently returns 403 Forbidden when Browser automation attempts to connect.
+- `gitnexus serve :4747` crashes after an idle period — requires daemon restart.
+- Proxy endpoint `/api/gitnexus/api/repos` returns 502 when server is offline.
 
-**Giải pháp đã tìm ra:**
-- Luôn kiểm tra `http://127.0.0.1:9222/json/version/` trước khi dùng Browser tool
-- Restart gitnexus bằng `gitnexus serve` trước mỗi session CodeIntel
-- Dùng cache-buster `?t=<timestamp>` khi reload trang để tránh stale cache
+**Discovered Solutions:**
+- Always perform a health check on `http://127.0.0.1:9222/json/version/` before establishing the Browser tool connection.
+- Restart gitnexus via `gitnexus serve` prior to each CodeIntel session.
+- Utilize the cache-buster `?t=<timestamp>` parameter upon page reload to prevent stale cache issues.
 
 **OmniClaw Impact:**
-- `it-manager-agent` cần thêm health check cho gitnexus vào Phase 0 (System Health)
-- Nên thêm auto-restart logic cho gitnexus vào `launcher/START OmniClaw.ps1`
+- `it-manager-agent` must implement a health check protocol for gitnexus in Phase 0 (System Health).
+- We should append auto-restart logic specifically for gitnexus within `launcher/START OmniClaw.ps1`.
 
 ---
 
-## 2. Browser Automation — Lỗi Phổ Biến
+## 2. Browser Automation — Common Errors
 
-**Patterns lỗi được ghi nhận:**
-- `ERR_CONNECTION_REFUSED` khi dev server (Vite/Next.js) chưa khởi động
-- Mixed Content/HTTPS issue khi embed HTTP resource trong HTTPS page
-- Browser tool mất nhiều lần retry (4+ lần) với các domain external
+**Recorded Error Patterns:**
+- `ERR_CONNECTION_REFUSED` occurs if the dev server (Vite/Next.js) has not fully initialized.
+- Mixed Content/HTTPS issues arise when embedding HTTP resources within HTTPS pages.
+- Browser tool connectivity is unstable, requiring multiple retries (4+ times) for external domains.
 
-**Best Practices rút ra:**
-- Luôn verify server đang chạy TRƯỚC khi mở browser (`Test-NetConnection`)
-- Dùng `http://127.0.0.1` thay vì `http://localhost` để tránh DNS lookup issues
-- Timeout 30s là không đủ cho các trang React/Svelte — tăng lên 60s
+**Extracted Best Practices:**
+- Definitively verify that the server is active BEFORE initializing browser interactions (`Test-NetConnection`).
+- Use `http://127.0.0.1` explicitly rather than `http://localhost` to avoid systemic DNS lookup failures.
+- The standard 30s timeout is insufficient for heavy React/Svelte pipelines — increase globally to 60s.
 
 ---
 
-## 3. Dự Án Tiệm Nước Nhỏ v5 — Kiến Trúc
+## 3. Tiem Nuoc Nho v5 Project — Architecture
 
-**Ghi nhận từ analysis.md (14/03):**
-- Web Fullstack với LadybugDB (custom storage layer)
-- OmniClaw integration điểm: client-facing + agent-assisted workflows
-- Cấu trúc: Frontend SPA + Backend Python FastAPI
+**Notes from analysis.md (14/03):**
+- Fullstack Web implementation using LadybugDB (custom storage layer).
+- OmniClaw integration points defined for: client-facing operations + agent-assisted workflows.
+- Architecture: Frontend SPA + Backend Python FastAPI.
 
-**Status tại thời điểm đó:** Đang phân tích cấu trúc code
+**Status At That Time:** Code structure analysis in progress.
 
 ---
 
 ## 4. OmniClaw Architecture — Snapshot 03/2026
 
-**Từ các scratchpad sessions:**
-- OmniClaw có 567,772 nodes và 1,472,756 edges trong GitNexus Code Intel (14/03)
-- nullclaw: 335 nodes, 319 edges (nhỏ hơn nhiều so với OmniClaw)
-- Sigma.js + graphology + ForceAtlas2 là tech stack cho LiveMap visualization
+**Extracted from Scratchpad Sessions:**
+- The overall OmniClaw matrix registered 567,772 nodes and 1,472,756 edges in GitNexus Code Intel logic (14/03).
+- nullclaw domain: 335 nodes, 319 edges (drastically smaller compared to OmniClaw Core).
+- Tech Stack for LiveMap visualization includes: Sigma.js + graphology + ForceAtlas2.
 
 ---
 
-## 5. ClawTask — Bugs Đã Fix
+## 5. ClawTask — Resolved Bugs
 
 **Session 21/03:**
-- Task checklist rendering issue (resolved)
-- Browser CDP connection reliability improved after session
+- Fixed the Task checklist rendering issue (resolved completely).
+- Browser CDP connection reliability measurably improved after this execution block.
 
 ---
 
-*Note: Screenshots và media files (*.webp, *.png) đi kèm các sessions này đã được xóa để tiết kiệm dung lượng sau khi đã distill kiến thức vào file này.*
+*Note: Screenshots and associative media files (*.webp, *.png) logged with these sessions were purged post-distillation to free up disk space.*

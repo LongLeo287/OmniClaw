@@ -9,17 +9,17 @@ description: Antigravity Boot Protocol — OmniClaw Corp context loading at sess
 
 ---
 
-## AUTO-TRIGGER — Khi nào AI phải khởi động?
+## AUTO-TRIGGER — When must AI boot?
 
-Antigravity TỰ ĐỘNG chạy quy trình Boot này (bằng lệnh `python system/ops/scripts/omniclaw_start.py` hoặc đọc Context) khi Sếp gõ 1 trong 3 câu lệnh sau vào chat:
+Antigravity AUTOMATICALLY runs this Boot process (via command `python system/ops/scripts/omniclaw_start.py` or by reading Context) when Boss types 1 of these 3 commands into chat:
 
-| Lệnh / Prompt từ Sếp | Hành động của AI |
+| Command / Prompt from Boss | AI Action |
 |----------------------|------------------|
-| `"Bắt đầu phiên làm việc"` | 🚀 Chạy tự động ngay |
-| `"Khởi động OmniClaw"` | 🚀 Chạy tự động ngay |
-| `"omniclaw start"` | 🚀 Chạy tự động ngay |
+| `"Bắt đầu phiên làm việc"` | 🚀 Run automatically immediately |
+| `"Khởi động OmniClaw"` | 🚀 Run automatically immediately |
+| `"omniclaw start"` | 🚀 Run automatically immediately |
 
-*(Ghi chú: Giống với logic của Post-Session, AI không được thắc mắc mà phải tiến hành Boot khi nhận 1 trong 3 Trigger trên).*
+*(Note: Similar to Post-Session logic, AI must not question but must proceed to Boot when receiving 1 of the 3 Triggers above).*
 
 ---
 

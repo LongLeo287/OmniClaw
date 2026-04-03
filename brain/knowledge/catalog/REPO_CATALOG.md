@@ -375,7 +375,7 @@
 
 > Không clone trực tiếp — truy cập qua lobehub.com hoặc import URL
 
-| Tài nguyên | URL | Mô tả |
+| Tài nguyên | URL | Description: |
 |-----------|-----|-------|
 | LobeHub Skills | https://lobehub.com/vi-VN/skills | Marketplace skills cho agents |
 | LobeHub Agents | https://lobehub.com/vi-VN/agent | Pre-built agents catalog |
@@ -411,7 +411,7 @@
 ## 🧠 NOTEBOOKLM INTEGRATION MAP
 
 > Dùng `gitingest` để convert repo → text digest, rồi load vào `open-notebook` hoặc Google NotebookLM.
-> Xem workflow đầy đủ: [`notebooklm-usecases.md`](notebooklm-usecases.md)
+> Xem workflow đầy đủ: [`notebooklm-usecases.md`](../ai-ml/notebooklm-usecases.md)
 
 ### Workflow chuẩn
 
@@ -443,7 +443,7 @@ Phòng nào nên nhận? Điểm chất lượng 1-10?"
 |---------------|-------------|-----------|
 | `knowledge/repos/awesome-generative-ai-guide` | State-of-art AI/LLM 2024-2025 | Literature review |
 | `knowledge/repos/awesome-llm-apps` | Ứng dụng LLM thực tế | App catalog brief |
-| `knowledge/repos/agentic-architectures` | Kiến trúc agent | Architecture briefing |
+| `knowledge/repos/agentic-architectures` | Architecture agent | Architecture briefing |
 | `knowledge/repos/learn-ai-engineering` | AI engineering patterns | Learning guide |
 | `knowledge/repos/awesome-notebooklm` | NLM best practices | NLM playbook |
 | `knowledge/repos/awesome-notebooks` | 1000+ Jupyter templates | Research templates |

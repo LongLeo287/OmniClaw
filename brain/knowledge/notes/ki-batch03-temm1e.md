@@ -8,7 +8,7 @@
 - **Batch:** 03
 
 ## Tóm Tắt
-TEMM1E là autonomous AI agent runtime viết bằng **Rust** — được mô tả là "SENTIENT and IMMORTAL" agent. Triển khai một lần, chạy mãi mãi. Giao tiếp qua Telegram, Discord, Slack, CLI.
+TEMM1E là autonomous AI agent runtime viết bằng **Rust** — được Description: là "SENTIENT and IMMORTAL" agent. Triển khai một lần, chạy mãi mãi. Giao tiếp qua Telegram, Discord, Slack, CLI.
 
 ## Architecture — "Tem's Mind"
 ```

@@ -1,3 +1,9 @@
+---
+id: global_blacklist
+type: system_rule
+registered: true
+---
+
 # ☠️ OMNICLAW GLOBAL BLACKLIST (WANTED POSTERS)
 
 > [!CAUTION]

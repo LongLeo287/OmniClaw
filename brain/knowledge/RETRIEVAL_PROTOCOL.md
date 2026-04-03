@@ -30,18 +30,18 @@ applies_to: [Antigravity, all agents needing fast data retrieval]
 ## Protocol 1 — TÌM FILE / THÔNG TIN (Find)
 
 ```
-BƯỚC 1: Phân loại domain trước (30 giây)
+Step 1: Phân loại domain trước (30 giây)
   → Là skill/plugin? → CAPABILITY_MAP.md section tương ứng
   → Là workflow? → AI_OS_SYSTEM_MAP.md Section 4
   → Là agent/dept? → AI_OS_SYSTEM_MAP.md Section 2 hoặc AGENTS.md
   → Là shared state? → AI_OS_SYSTEM_MAP.md Section 8
 
-BƯỚC 2: Narrowing (chỉ đọc nếu domain đã rõ)
+Step 2: Narrowing (chỉ đọc nếu domain đã rõ)
   → find_by_name với exact pattern (không dùng * nếu biết tên)
   → grep_search với term cụ thể trong folder đúng (không search toàn repo)
   → Không đọc file nếu chưa biết nó có liên quan
 
-BƯỚC 3: Confidence check
+Step 3: Confidence check
   → Confidence cao (domain match rõ) → proceed
   → Confidence thấp (domain mơ hồ) → readAI_OS_SYSTEM_MAP.md trước
   → Không tìm thấy → query: CAPABILITY_MAP decision tree
@@ -71,19 +71,19 @@ Học từ `gitnexus-exploring.md`:
 
 4. Full trace chỉ khi cần
    → GitNexus: READ gitnexus://repo/{name}/process/{name}
-   → OmniClaw: view_file chỉ những file đã identify ở bước 3
+   → OmniClaw: view_file chỉ những file đã identify ở Step 3:
 ```
 
 **Key rule:** Process/flow trước, file sau. "Nó thuộc workflow nào?" trước "nó ở file nào?"
 
 ---
 
-## Protocol 3 — TRƯỚC KHI THAY ĐỔI (Impact Analysis)
+## Protocol 3 — TRƯỚC KHI Changes: (Impact Analysis)
 
 Học từ `gitnexus-impact-analysis.md`:
 
 ```
-PHẢI làm trước mọi thay đổi quan trọng:
+PHẢI làm trước mọi Changes: quan trọng:
 
 gitnexus_impact({target: "X", direction: "upstream"})
 

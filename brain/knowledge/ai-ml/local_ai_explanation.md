@@ -31,13 +31,13 @@ mindmap
 ### 🏗️ 1. AI tích hợp sẵn trong trình duyệt (Built-in)
 **"Trình duyệt của bạn chính là bộ não"**
 *   **Công nghệ:** Google đang tích hợp trực tiếp mô hình **Gemini Nano** vào nhân Chrome.
-*   **Cách dùng:** Chúng ta chỉ cần gọi lệnh `window.ai.createTextSession()` để bắt đầu.
+*   **Usage:** Chúng ta chỉ cần gọi lệnh `window.ai.createTextSession()` để bắt đầu.
 *   **Lợi ích:** Không cần ký danh, không cần API Key, không giới hạn token.
 <!-- slide -->
 ### ⚙️ 2. Mô hình nén (Transformers.js)
 **"Gói gọn sức mạnh AI vào một tệp nhỏ"**
 *   **Công nghệ:** Chúng ta có thể tải các mô hình AI đã được nén nhỏ (VGG, BERT, MobileNet) và chạy bằng WebAssembly.
-*   **Cách dùng:** Chạy trực tiếp trên CPU/GPU của máy tính thông qua trình duyệt.
+*   **Usage:** Chạy trực tiếp trên CPU/GPU của máy tính thông qua trình duyệt.
 *   **Lợi ích:** Hoàn toàn offline, bạn rút dây mạng AI vẫn hoạt động bình thường.
 <!-- slide -->
 ### 💎 3. Không tốn phí, Không rò rỉ dữ liệu

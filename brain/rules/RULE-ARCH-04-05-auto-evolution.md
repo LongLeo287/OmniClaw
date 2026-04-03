@@ -6,6 +6,8 @@ rules:
   - id: RULE-ARCH-05
     name: PROACTIVE CLONING & DRAFT EVOLUTION
     severity: CRITICAL
+type: system_rule
+registered: true
 ---
 # ARCHITECTURE RULES: EVOLUTION & SYSTEM INTEGRITY
 

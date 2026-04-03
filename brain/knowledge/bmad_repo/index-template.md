@@ -60,7 +60,7 @@ This project consists of {{parts_count}} parts:
 
 {{#if is_single_part}}
 
-- [Architecture](./architecture.md) - Detailed technical architecture
+- [Architecture](../general/ARCHITECTURE.md) - Detailed technical architecture
 - [Component Inventory](./component-inventory.md) - Catalog of major components{{#if has_ui_components}} and UI elements{{/if}}
 - [Development Guide](./development-guide.md) - Local setup and development workflow
   {{#if has_api_docs}}- [API Contracts](./api-contracts.md) - API endpoints and schemas{{/if}}

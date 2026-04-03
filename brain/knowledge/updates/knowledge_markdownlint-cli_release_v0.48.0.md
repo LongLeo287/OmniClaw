@@ -4,7 +4,7 @@
 **Link Bản gốc:** https://github.com/igorshubovych/markdownlint-cli/releases/tag/v0.48.0
 **Thuộc Bộ phận:** knowledge_markdownlint-cli - knowledge
 
-## Chi tiết thay đổi (Release Notes)
+## Chi tiết Changes: (Release Notes)
 
 - Update all dependencies via `Dependabot`
 

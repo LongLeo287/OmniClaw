@@ -169,7 +169,7 @@ Keep messages under 72 characters. Each commit = one logical change.
 
 ## Code of Conduct
 
-By participating, you agree to abide by our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
+By participating, you agree to abide by our [Code of Conduct](../general/CODE_OF_CONDUCT.md).
 
 ## License
 

@@ -19,7 +19,7 @@ The weather orchestrator command is implemented in this repo as the entry point 
 
 ## Weather Orchestrator
 
-**File**: [`.claude/commands/weather-orchestrator.md`](../.claude/commands/weather-orchestrator.md)
+**File**: [`.claude/commands/weather-orchestrator.md`](weather-orchestrator.md)
 
 ```yaml
 ---
@@ -78,6 +78,6 @@ The weather orchestrator is the **Command** in the Command → Agent → Skill o
 
 | Component | Role | This Repo |
 |-----------|------|-----------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](../.claude/commands/weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](../.claude/agents/weather-agent.md) with [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) |
-| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) |
+| **Command** | Entry point, user interaction | [`/weather-orchestrator`](weather-orchestrator.md) |
+| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](weather-agent.md) with [`weather-fetcher`](../../../.claude/skills/supabase-postgres-best-practices/SKILL.md) |
+| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../../../.claude/skills/supabase-postgres-best-practices/SKILL.md) |

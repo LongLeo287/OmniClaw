@@ -48,7 +48,7 @@ gitagent nguyên tắc: Một agent KHÔNG làm cả propose + approve
 
 ### 4. Versioned Agent Behavior
 ```bash
-# Agent behavior thay đổi theo branch
+# Agent behavior Changes: theo branch
 main:     production agent (stable, strict)
 dev:      experimental agent (relaxed rules)
 feature/: proto agent for testing new skills

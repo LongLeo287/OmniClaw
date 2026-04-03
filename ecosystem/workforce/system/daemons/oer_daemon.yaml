@@ -1,0 +1,20 @@
+﻿department: system_daemons
+id: oer_daemon
+name: OER Registry Librarian Daemon
+active: true
+leadership:
+  manager: oma_core
+  reports_to: oma_core
+role: The archivist and indexer Daemon. Mutates the system identity, indexes FAST_INDEX, builds SKILL_REGISTRY, and safely places the fully verified object into the ecosystem architecture.
+kpi_targets:
+  sync_accuracy: "100%"
+tools_and_capabilities:
+  skills:
+    - ecosystem_librarian
+    - archivist
+    - knowledge_enricher
+outputs:
+  - artifact: active_skill
+    path: ecosystem/skills/
+  - artifact: index_json
+    path: brain/registry/FAST_INDEX.json

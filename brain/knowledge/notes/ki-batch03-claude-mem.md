@@ -30,7 +30,7 @@ Plugin Claude Code tự động **capture tất cả hành động** trong sessi
 - Semantic search qua MCP tools
 
 ## Liên Quan OmniClaw  
-- **CRITICAL CONNECTION**: Giải quyết đúng vấn đề "mất context" giữa sessions
+- **CRITICAL CONNECTION**: Giải quyết đúng Problem: "mất context" giữa sessions
 - Tương tự nhưng **tự động hơn** `brain/shared-context/blackboard.json`
 - Kết hợp với `pre-session.md` → inject memory tự động
 - Có thể thay thế/bổ sung cho manual `hot-cache.md` system

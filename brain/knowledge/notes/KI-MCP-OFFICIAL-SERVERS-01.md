@@ -15,7 +15,7 @@
 
 ## 1. Reference Servers (Anthropic Official — Install ngay)
 
-| Server | Chức năng | Install |
+| Server | Features: | Install |
 |--------|-----------|---------|
 | **Fetch** | Web content fetching → markdown cho LLM | `npx @modelcontextprotocol/server-fetch` |
 | **Filesystem** | Secure file operations + access control | `npx @modelcontextprotocol/server-filesystem` |

@@ -59,7 +59,7 @@ CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude
 
 Paste this prompt into Claude to bootstrap a complete time orchestrator workflow using agent teams:
 
-Main prompt: **[agent-teams-prompt.md](../agent-teams/agent-teams-prompt.md)**
+Main prompt: **[agent-teams-prompt.md](agent-teams-prompt.md)**
 
 ### Team Coordination Flow
 

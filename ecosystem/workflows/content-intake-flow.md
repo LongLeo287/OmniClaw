@@ -1,439 +1,439 @@
-# Department: content_intake
-# Content Intake & Vetting — Intake Flow
-# Version: 1.4 | Updated: 2026-03-27
-# Owner: content_intake dept (intake-chief-agent)
-# Change v1.4: +PENDING_REPOS.md role clarification | +RULE-CIV-02 PENDING gate | +STEP 6 CLEANUP
-# Change v1.2: +Phase 0 Local-First Check | +Step 3.5 Gap Detection | +Step 3.6 GAP PROPOSAL ENGINE
-# Coordinate: security_grc (repo vetting) | asset_library (knowledge) | registry (code)
+# department: content_intake
+# content intake & vetting — intake flow
+# version: 1.4 | updated: 2026-03-27
+# owner: content_intake dept (intake-chief-agent)
+# change v1.4: +pending_repos.md role clarification | +rule-civ-02 pending gate | +step 6 cleanup
+# change v1.2: +phase 0 local-first check | +step 3.5 gap detection | +step 3.6 gap proposal engine
+# coordinate: security_grc (repo vetting) | asset_library (knowledge) | registry (code)
 
 ---
 
-## FULL PIPELINE MAP
+## full pipeline map
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
-║              CONTENT INTAKE & VETTING PIPELINE  v1.3         ║
+║              content intake & vetting pipeline  v1.3         ║
 ╚══════════════════════════════════════════════════════════════╝
 
-USER / AGENT PROVIDES INPUT
-(Thả tay bất cứ định dạng nào: Link Repo, URL, Document, PDF, Post, Hình ảnh)
-            OR
-BATCH INPUT FROM VAULT:
-  storage/vault/DATA/PENDING_REPOS.md  ← Hàng đợi chờ CIV review (CHƯA được phép clone!)
-  storage/vault/DATA/ACTIVE_REPOS.md   ← Đã qua CIV + CEO approve → được phép clone & ingest
-  storage/vault/DATA/Github.txt        ← Raw links chưa phân loại
+user / agent provides input
+(thả tay bất cứ định dạng nào: link repo, url, document, pdf, post, hình ảnh)
+            or
+batch input from vault:
+  storage/vault/data/pending_repos.md  ← hàng đợi chờ civ review (chưa được phép clone!)
+  storage/vault/data/active_repos.md   ← đã qua civ + ceo approve → được phép clone & ingest
+  storage/vault/data/github.txt        ← raw links chưa phân loại
 
-⚠️ RULE-CIV-02 — PENDING GATE:
-  PENDING_REPOS.md = WAITING ROOM. Repo ở đây CHƯA được phân tích.
-  NGHIÊM CẤM clone repo từ PENDING thẳng vào brain/QUARANTINE mà không qua CIV Review.
-  Luồng bắt buộc: PENDING → CIV Analysis → CEO/intake-chief APPROVE → ACTIVE_REPOS.md → clone & ingest.
+⚠️ rule-civ-02 — pending gate:
+  pending_repos.md = waiting room. repo ở đây chưa được phân tích.
+  nghiêm cấm clone repo từ pending thẳng vào brain/quarantine mà không qua civ review.
+  luồng bắt buộc: pending → civ analysis → ceo/intake-chief approve → active_repos.md → clone & ingest.
 
-🚨 RULE TỐI THƯỢNG: Ngay khi nhận được mọi thể loại Input, hệ thống phải TỰ ĐỘNG CHẠY, TỰ ĐỘNG NHẬN, TỰ ĐỘNG PHÂN TÍCH và Cuối Cùng TỰ ĐỘNG NHẢ BÁO CÁO chuẩn "FORMAT 6 — Dashboard Analytics Report" (Xem presentation-protocol.md).
+🚨 rule tối thượng: ngay khi nhận được mọi thể loại input, hệ thống phải tự động chạy, tự động nhận, tự động phân tích và cuối cùng tự động nhả báo cáo chuẩn "format 6 — dashboard analytics report" (xem presentation-protocol.md).
             │
             ▼
 ┌─────────────────────┐
-│   PHASE 0 LOCAL     │  ← LightRAG query + INDEX.md check (NEW v1.2)
-│   CHECK (ANTIGRAV)  │  ← FOUND? Return KI. NOT FOUND → continue
+│   phase 0 local     │  ← lightrag query + index.md check (new v1.2)
+│   check (antigrav)  │  ← found? return ki. not found → continue
 └─────────────────────┘
-            │ NOT FOUND
+            │ not found
             ▼
 ┌─────────────────────┐
-│    intake-agent     │  ← Creates CIV ticket, stages to /incoming/
-│  [GATE: TICKET]     │
+│    intake-agent     │  ← creates civ ticket, stages to /incoming/
+│  [gate: ticket]     │
 └─────────────────────┘
             │
             ▼
 ┌─────────────────────┐
-│  classifier-agent   │  ← Tags type: REPO/WEB/DOC/IMAGE/TEXT/PLUGIN
-│  [GATE: CLASSIFY]   │
+│  classifier-agent   │  ← tags type: repo/web/doc/image/text/plugin
+│  [gate: classify]   │
 └─────────────────────┘
             │
     ┌───────┴──────────────────────────────┐
     │                                      │
     ▼                                      ▼
-REPO / PLUGIN                     OTHER CONTENT
-(SEC path)                        (CONTENT path)
+repo / plugin                     other content
+(sec path)                        (content path)
     │                                      │
     ▼                                      │
 ┌──────────────────┐              ┌────────┴────────┐
-│ repo-fetcher     │              │WEB_CONTENT       │
+│ repo-fetcher     │              │web_content       │
 │ clone to         │              │ → web-crawler    │
 │ /incoming/repos/ │              │                  │
-└──────────────────┘              │DOCUMENT (PDF/Doc)│
+└──────────────────┘              │document (pdf/doc)│
     │                             │ → doc-parser     │
     ▼                             │                  │
-┌──────────────────────────────┐  │IMAGE             │
-│ SECURITY GRC (strix-agent)   │  │ → staging to     │
+┌──────────────────────────────┐  │image             │
+│ security grc (strix-agent)   │  │ → staging to     │
 │ runs vet_repo.ps1            │  │   /incoming/imgs/│
-│ 12-stage Strix scan          │  │                  │
-│                              │  │TEXT/CONFIG       │
-│ FAIL → REJECTED + BLACKLIST  │  │ → staging to     │
-│ WARN → intake-chief REVIEW   │  │   /incoming/text/│
-│ PASS → /vetted/repos/        │  └────────┬────────┘
+│ 12-stage strix scan          │  │                  │
+│                              │  │text/config       │
+│ fail → rejected + blacklist  │  │ → staging to     │
+│ warn → intake-chief review   │  │   /incoming/text/│
+│ pass → /vetted/repos/        │  └────────┬────────┘
 └──────────────────────────────┘           │
-    │ PASS                                  ▼
+    │ pass                                  ▼
     │                             ┌──────────────────────┐
     ▼                             │ content-validator    │
-┌──────────────────────────────┐  │ Score 1-10           │
-│ ★ STEP 3.5 — NotebookLLM    │  │ Score 1-10           │
-│   Content Analysis (v1.2)    │  │ < 4 → REJECTED       │
+┌──────────────────────────────┐  │ score 1-10           │
+│ ★ step 3.5 — notebookllm    │  │ score 1-10           │
+│   content analysis (v1.2)    │  │ < 4 → rejected       │
 │                              │  │ ≥ 4 → /vetted/       │
-│ Tool: open-notebook          │  └──────────┬───────────┘
-│ Input: gitingest digest      │             │
+│ tool: open-notebook          │  └──────────┬───────────┘
+│ input: gitingest digest      │             │
 │                              │             │
-│ Questions (6 total v1.2):    │             │
-│ • "Repo này làm gì?"         │             │
-│ • "Conflict với hệ thống?"   │             │
-│ • "Route về phòng nào?"      │             │
-│ • "Chất lượng / rủi ro?"     │             │
-│ • "Domain này OmniClaw đã có    │             │
+│ questions (6 total v1.2):    │             │
+│ • "repo này làm gì?"         │             │
+│ • "conflict với hệ thống?"   │             │
+│ • "route về phòng nào?"      │             │
+│ • "chất lượng / rủi ro?"     │             │
+│ • "domain này omniclaw đã có    │             │
 │    agent/dept nào không?"    │             │
-│ • "Đề xuất agent/dept mới    │             │
+│ • "đề xuất agent/dept mới    │             │
 │    nếu chưa có?"             │             │
 │                              │             │
-│ Output: CIV Analysis Report  │             │
-│   APPROVED  → /vetted/       │             │
-│   REVIEW    → intake-chief   │             │
-│   REJECTED  → /rejected/     │             │
-│   GAP FOUND → Step 3.6 ★    │             │
+│ output: civ analysis report  │             │
+│   approved  → /vetted/       │             │
+│   review    → intake-chief   │             │
+│   rejected  → /rejected/     │             │
+│   gap found → step 3.6 ★    │             │
 └──────────────────────────────┘             │
-            │ GAP FOUND
+            │ gap found
             ▼
 ┌──────────────────────────────┐
-│ ★ STEP 3.6 — GAP PROPOSAL    │
-│   ENGINE (ANTIGRAVITY)       │
-│ Domain mới, chưa có agent?   │
-│ → Gửi CEO Proposal [A/B/C/D] │
-│ A: Kích hoạt agent-auto-create.md │
-│ B: Mở rộng dept hiện có      │
-│ C: Tạo dept/group mới        │
-│ D: Archive global            │
+│ ★ step 3.6 — gap proposal    │
+│   engine (antigravity)       │
+│ domain mới, chưa có agent?   │
+│ → gửi ceo proposal [a/b/c/d] │
+│ a: kích hoạt agent-auto-create.md │
+│ b: mở rộng dept hiện có      │
+│ c: tạo dept/group mới        │
+│ d: archive global            │
 └──────────────┬───────────────┘
-               │ (NON-BLOCKING: Proposal is queued. Intake CONTINUES!)
+               │ (non-blocking: proposal is queued. intake continues!)
                ▼
         ┌─────────────────────┐
         │  ingest-router      │
-        │  [GATE: ROUTE]      │
+        │  [gate: route]      │
         └─────────────────────┘
                    │
     ┌──────────────┼──────────────────────┐
     │              │                      │
     ▼              ▼                      ▼
-Registry &    Asset & Knowledge        assets/
-Capability    Library                  (images)
+registry &    asset & knowledge        assets/
+capability    library                  (images)
 (code/plugins) (knowledge/docs/web)   → asset-tracker
 
                    │
                    ▼
-           TICKET → INGESTED ✓
-           Receipt written to destination agent
+           ticket → ingested ✓
+           receipt written to destination agent
 ```
 
 ---
 
-## INTAKE TICKET LIFECYCLE
+## intake ticket lifecycle
 
 ```
-LOCAL_HIT (return existing KI, no ticket needed)
-     OR
-RECEIVED → CLASSIFYING → VETTING → VALIDATING → ROUTING → INGESTED → CLEANED
+local_hit (return existing ki, no ticket needed)
+     or
+received → classifying → vetting → validating → routing → ingested → cleaned
                                               ↘
-                                           REJECTED (any stage) → CLEANED_REJECTED
+                                           rejected (any stage) → cleaned_rejected
                          ↘
-                      GAP_PROPOSED (parallel, non-blocking)
+                      gap_proposed (parallel, non-blocking)
 ```
 
 ---
 
-## WORKFLOW STEPS
+## workflow steps
 
-### STEP 0 — Local-First Check ★ NEW v1.2
-Trigger: Bất kỳ input nào — TRƯỚC KHI tạo CIV ticket
-Agent: `ANTIGRAVITY` (Tier 1)
-Skill: `smart_memory`, `LightRAG` (localhost:9621)
-Actions:
-- Query LightRAG: `rag.hybrid_query("<source URL or topic>", mode="mix")`
-- Kiểm tra `brain/knowledge/INDEX.md` có source URL / domain không
-- Chạy `system/ops/scripts/staleness_check.py <URL>` để tự động quyết định lấy dữ liệu:
+### step 0 — local-first check ★ new v1.2
+trigger: bất kỳ input nào — trước khi tạo civ ticket
+agent: `antigravity` (tier 1)
+skill: `smart_memory`, `lightrag` (localhost:9621)
+actions:
+- query lightrag: `rag.hybrid_query("<source url or topic>", mode="mix")`
+- kiểm tra `brain/knowledge/index.md` có source url / domain không
+- chạy `system/ops/scripts/staleness_check.py <url>` để tự động quyết định lấy dữ liệu:
 
-Kết quả:
-  UNCHANGED (No update / Known URL):
-    → Trả về KI đã có cho user/agent
-    → STOP (không tạo ticket, tiết kiệm băng thông)
-  CHANGED (New or updated content):
-    → Tiếp tục STEP 1 (tạo CIV ticket bình thường)
+kết quả:
+  unchanged (no update / known url):
+    → trả về ki đã có cho user/agent
+    → stop (không tạo ticket, tiết kiệm băng thông)
+  changed (new or updated content):
+    → tiếp tục step 1 (tạo civ ticket bình thường)
 
-SLA: < 30 giây (local query)
-
----
-
-### STEP 1 — Receive Input
-Trigger: User/agent provides URL, file path, or content body
-Agent: `intake-agent`
-Actions:
-- Create CIV-[DATE]-[SEQ] ticket in QUARANTINE/logs/intake_log.md
-- Stage to QUARANTINE/incoming/ (temp folder by type)
-- Set ticket status: RECEIVED
-- Call classifier-agent
-
-SLA: Immediate (synchronous)
+sla: < 30 giây (local query)
 
 ---
 
-### STEP 2 — Classify
-Trigger: intake-agent hands off ticket
-Agent: `classifier-agent`
-Actions:
-- Inspect content type (URL pattern, file extension, content body)
-- Assign tag: REPO | WEB_CONTENT | DOCUMENT | IMAGE | TEXT | CONFIG | PLUGIN
-- Update ticket with classification
-- Route to correct pipeline branch
-- Unknown → /incoming/unclassified/ + alert intake-chief-agent
+### step 1 — receive input
+trigger: user/agent provides url, file path, or content body
+agent: `intake-agent`
+actions:
+- create civ-[date]-[seq] ticket in quarantine/logs/intake_log.md
+- stage to quarantine/incoming/ (temp folder by type)
+- set ticket status: received
+- call classifier-agent
 
-SLA: < 5 minutes
-
----
-
-### STEP 3A — Repo/Plugin Path
-Trigger: classifier tag = REPO or PLUGIN
-Agent: `repo-fetcher-agent` then `security-scanner` (Security GRC)
-Actions:
-- repo-fetcher: git clone (depth=1) into QUARANTINE/incoming/repos/<name>/
-  - ⚠️ TIMEOUT RULE (v1.3): Giới hạn clone tối đa 120s. Nếu vượt quá, tự động SKIP repo, ghi log vào `skipped` list, và XÓA (rmtree) thư mục clone dở dang để chống bloat rác ổ cứng.
-- Hand off to security-scanner: run vet_repo.ps1 (12-stage scan)
-- strix-agent review _VET_REPORT.md
-- PASS → move to QUARANTINE/vetted/repos/ → STEP 3.5
-- WARN → hold, notify intake-chief-agent for manual review
-- FAIL → move to QUARANTINE/rejected/ + log to rejected_log.md → CLOSED
-
-SLA: < 1 corp cycle
+sla: immediate (synchronous)
 
 ---
 
-### STEP 3.5 — NotebookLLM Content Analysis ★ UPGRADED v1.2
-Trigger: Security scan PASS (REPO/PLUGIN path)
-Agent: `content-analyst-agent` using `open-notebook` (port 5055, local)
-Actions:
-- Run gitingest on repo → convert to text digest
-- Load digest into open-notebook
-- Query **6 standard CIV questions** (v1.2 — thêm 2 câu gap detection):
-  1. "Repo/plugin này làm gì? Mô tả chính xác purpose."
-  2. "Có conflict hoặc overlap với tools đã có trong OmniClaw không?"
-  3. "Phòng ban nào nên sử dụng repo này?"
-  4. "Rủi ro nội dung: có sensitive data, suspicious logic, hoặc quality issues nào không?"
-  5. ★ NEW: "Domain này (kỹ năng/lĩnh vực) OmniClaw đã có agent hoặc dept phụ trách chưa?" ← gap detection
-  6. ★ NEW: "Nếu chưa có, đề xuất tên agent hoặc dept mới phù hợp nhất?"
-- Generate CIV Analysis Report → save to QUARANTINE/vetted/repos/<name>/_CIV_ANALYSIS.md
-  - **MANDATORY FORMAT:** Report phải xuất theo định dạng C-Suite (NO MARKDOWN HEADINGS, Dùng In hoa + Emoji, thuần ASCII) đúng chuẩn `presentation-protocol.md`.
-- Decision:
-  - APPROVED + no gap (score ≥ 7/10) → STEP 5
-  - APPROVED + gap found (score ≥ 7/10) → STEP 3.6 (GAP PROPOSAL) → STEP 5
-  - REVIEW (score 4-6) → intake-chief-agent manual review
-  - REJECTED (score < 4) → move to /rejected/ → CLOSED
+### step 2 — classify
+trigger: intake-agent hands off ticket
+agent: `classifier-agent`
+actions:
+- inspect content type (url pattern, file extension, content body)
+- assign tag: repo | web_content | document | image | text | config | plugin
+- update ticket with classification
+- route to correct pipeline branch
+- unknown → /incoming/unclassified/ + alert intake-chief-agent
 
-Output fields:
+sla: < 5 minutes
+
+---
+
+### step 3a — repo/plugin path
+trigger: classifier tag = repo or plugin
+agent: `repo-fetcher-agent` then `security-scanner` (security grc)
+actions:
+- repo-fetcher: git clone (depth=1) into quarantine/incoming/repos/<name>/
+  - ⚠️ timeout rule (v1.3): giới hạn clone tối đa 120s. nếu vượt quá, tự động skip repo, ghi log vào `skipped` list, và xóa (rmtree) thư mục clone dở dang để chống bloat rác ổ cứng.
+- hand off to security-scanner: run vet_repo.ps1 (12-stage scan)
+- strix-agent review _vet_report.md
+- pass → move to quarantine/vetted/repos/ → step 3.5
+- warn → hold, notify intake-chief-agent for manual review
+- fail → move to quarantine/rejected/ + log to rejected_log.md → closed
+
+sla: < 1 corp cycle
+
+---
+
+### step 3.5 — notebookllm content analysis ★ upgraded v1.2
+trigger: security scan pass (repo/plugin path)
+agent: `content-analyst-agent` using `open-notebook` (port 5055, local)
+actions:
+- run gitingest on repo → convert to text digest
+- load digest into open-notebook
+- query **6 standard civ questions** (v1.2 — thêm 2 câu gap detection):
+  1. "repo/plugin này làm gì? Description chính xác purpose."
+  2. "có conflict hoặc overlap với tools đã có trong omniclaw không?"
+  3. "phòng ban nào nên sử dụng repo này?"
+  4. "rủi ro nội dung: có sensitive data, suspicious logic, hoặc quality issues nào không?"
+  5. ★ new: "domain này (kỹ năng/lĩnh vực) omniclaw đã có agent hoặc dept phụ trách chưa?" ← gap detection
+  6. ★ new: "nếu chưa có, đề xuất tên agent hoặc dept mới phù hợp nhất?"
+- generate civ analysis report → save to quarantine/vetted/repos/<name>/_civ_analysis.md
+  - **mandatory format:** report phải xuất theo định dạng c-suite (no markdown headings, dùng in hoa + emoji, thuần ascii) đúng chuẩn `presentation-protocol.md`.
+- decision:
+  - approved + no gap (score ≥ 7/10) → step 5
+  - approved + gap found (score ≥ 7/10) → step 3.6 (gap proposal) → step 5
+  - review (score 4-6) → intake-chief-agent manual review
+  - rejected (score < 4) → move to /rejected/ → closed
+
+output fields:
   purpose, conflicts[], recommended_dept, quality_score, risk_notes, verdict,
   gap_detected (bool), gap_domain, proposed_agent, proposed_dept
 
-SLA: < 15 minutes per repo
+sla: < 15 minutes per repo
 
 ---
 
-### STEP 3.6 — GAP PROPOSAL ENGINE ★ NEW v1.2
-Trigger: Step 3.5 output có `gap_detected = true`
-Agent: `ANTIGRAVITY` (Tier 1 — escalate CEO decision)
-Skill: `proposal_engine` + `reasoning_engine`
+### step 3.6 — gap proposal engine ★ new v1.2
+trigger: step 3.5 output có `gap_detected = true`
+agent: `antigravity` (tier 1 — escalate ceo decision)
+skill: `proposal_engine` + `reasoning_engine`
 
-Actions:
-1. Đọc `gap_domain` và `proposed_agent` từ _CIV_ANALYSIS.md
-2. Cross-check với `corp/org_chart.yaml` + `brain/knowledge/CAPABILITY_MAP.md`
-3. Xác nhận gap thực sự chưa có agent/dept cover
-4. Tạo GAP PROPOSAL gửi CEO qua `notification_bridge` (Telegram):
+actions:
+1. đọc `gap_domain` và `proposed_agent` từ _civ_analysis.md
+2. cross-check với `corp/org_chart.yaml` + `brain/knowledge/capability_map.md`
+3. xác nhận gap thực sự chưa có agent/dept cover
+4. tạo gap proposal gửi ceo qua `notification_bridge` (telegram):
 
 ```markdown
-## 🔭 GAP DETECTED — CIV-<id> — <date>
+## 🔭 gap detected — civ-<id> — <date>
 
-**Source:** <repo_url>
-**Gap domain:** <domain>
-**Lý do:** Không có agent/dept nào cover domain "<domain>" này
+**source:** <repo_url>
+**gap domain:** <domain>
+**lý do:** không có agent/dept nào cover domain "<domain>" này
 
-**OmniClaw hiện có gần nhất:**
-- Dept X (match ~60%) — scope: <mô tả>
+**omniclaw hiện có gần nhất:**
+- dept x (match ~60%) — scope: <Description>
 
-**Đề xuất:**
-[A] Tạo agent: `<domain>-agent` → ops/workflows/agent-auto-create.md
-[B] Mở rộng Dept X thêm sub-domain "<domain>"
-[C] Tạo Dept/Group mới (nếu domain đủ lớn ≥ 3 KI)
-[D] Archive global — không assign dept cụ thể
+**đề xuất:**
+[a] tạo agent: `<domain>-agent` → ops/workflows/agent-auto-create.md
+[b] mở rộng dept x thêm sub-domain "<domain>"
+[c] tạo dept/group mới (nếu domain đủ lớn ≥ 3 ki)
+[d] archive global — không assign dept cụ thể
 
-**CEO chọn A/B/C/D → tiếp tục intake:**
+**ceo chọn a/b/c/d → tiếp tục intake:**
 ```
 
-5. Sau khi CEO chọn:
-   - A → khởi động `agent-auto-create.md` (async — không block intake)
-   - B/C → update `corp/org_chart.yaml` + `AGENTS.md` (async)
-   - D → ghi vào `brain/knowledge/global/`
-   - Mọi option → tiếp tục STEP 5 (intake không bị block)
+5. sau khi ceo chọn:
+   - a → khởi động `agent-auto-create.md` (async — không block intake)
+   - b/c → update `corp/org_chart.yaml` + `agents.md` (async)
+   - d → ghi vào `brain/knowledge/global/`
+   - mọi option → tiếp tục step 5 (intake không bị block)
 
-Output: GAP_REPORT ghi vào `corp/gaps/GAP-<date>-<domain>.md`
-SLA: Proposal gửi CEO < 5 phút | CEO response không bắt buộc để tiếp tục intake
-
----
-
-### STEP 3B — Web Content Path
-Trigger: classifier tag = WEB_CONTENT
-Agent: `web-crawler-agent`
-Actions:
-- Fetch URL content (text + metadata)
-- Check: no malicious redirects, no injected scripts
-- Convert to markdown: QUARANTINE/incoming/web/<slug>.md
-- Pass to content-validator-agent → STEP 4
-
-SLA: < 10 minutes per URL
+output: gap_report ghi vào `corp/gaps/gap-<date>-<domain>.md`
+sla: proposal gửi ceo < 5 phút | ceo response không bắt buộc để tiếp tục intake
 
 ---
 
-### STEP 3C — Document Path
-Trigger: classifier tag = DOCUMENT (PDF, DOCX, MD)
-Agent: Security GRC (strix-agent) + `doc-parser-agent`
-Actions:
-- strix-agent runs `system/security/vet_media_docs.py` (MANDATORY)
-- FAIL → move to QUARANTINE/rejected/ + BLACKLIST
-- PASS → doc-parser-agent extract: title, date, author, full text
-- Structure as markdown: QUARANTINE/incoming/documents/<name>.md
-- Pass to content-validator-agent → STEP 4
+### step 3b — web content path
+trigger: classifier tag = web_content
+agent: `web-crawler-agent`
+actions:
+- fetch url content (text + metadata)
+- check: no malicious redirects, no injected scripts
+- convert to markdown: quarantine/incoming/web/<slug>.md
+- pass to content-validator-agent → step 4
 
-SLA: < 15 minutes per document
+sla: < 10 minutes per url
 
 ---
 
-### STEP 3D — Image Path
-Trigger: classifier tag = IMAGE
-Agent: Security GRC (strix-agent) + `content-validator-agent`
-Actions:
-- strix-agent runs `system/security/vet_media_docs.py` (Check Magic Bytes for Steganography/Polyglots)
-- FAIL → move to QUARANTINE/rejected/ + BLACKLIST
-- PASS → Stage to QUARANTINE/incoming/images/<name>
+### step 3c — document path
+trigger: classifier tag = document (pdf, docx, md)
+agent: security grc (strix-agent) + `doc-parser-agent`
+actions:
+- strix-agent runs `system/security/vet_media_docs.py` (mandatory)
+- fail → move to quarantine/rejected/ + blacklist
+- pass → doc-parser-agent extract: title, date, author, full text
+- structure as markdown: quarantine/incoming/documents/<name>.md
+- pass to content-validator-agent → step 4
+
+sla: < 15 minutes per document
+
+---
+
+### step 3d — image path
+trigger: classifier tag = image
+agent: security grc (strix-agent) + `content-validator-agent`
+actions:
+- strix-agent runs `system/security/vet_media_docs.py` (check magic bytes for steganography/polyglots)
+- fail → move to quarantine/rejected/ + blacklist
+- pass → stage to quarantine/incoming/images/<name>
 - content-validator checks: verify safe imagery
-- PASS → QUARANTINE/vetted/assets/ → STEP 5
+- pass → quarantine/vetted/assets/ → step 5
 
-SLA: < 5 minutes
-
----
-
-### STEP 4 — Content Validation (non-repo)
-Trigger: web-crawler, doc-parser, or direct text staging completes
-Agent: `content-validator-agent`
-Actions:
-- Score content quality (1-10): relevance, accuracy, safety, SOUL.md alignment
-- Score < 4 → REJECTED + log reason
-- Score ≥ 4 → PASS → move to QUARANTINE/vetted/ → STEP 5
-- Score ≥ 8 → flag for cosmic_memory (permanent retention candidate)
-
-SLA: < 10 minutes
+sla: < 5 minutes
 
 ---
 
-### STEP 5 — Route to Destination
-Trigger: Content in /vetted/ with PASS status
-Agent: `ingest-router-agent`
-Actions:
-- Match classification tag to destination (see Classification Table in rules.md)
-- Move file from vetted/ to destination
-- Write receipt to destination agent
-- Update CIV ticket to INGESTED
-- Confirm file exists at destination (verify)
+### step 4 — content validation (non-repo)
+trigger: web-crawler, doc-parser, or direct text staging completes
+agent: `content-validator-agent`
+actions:
+- score content quality (1-10): relevance, accuracy, safety, soul.md alignment
+- score < 4 → rejected + log reason
+- score ≥ 4 → pass → move to quarantine/vetted/ → step 5
+- score ≥ 8 → flag for cosmic_memory (permanent retention candidate)
 
-Destinations (paths relative to $OMNICLAW_ROOT):
-  REPO/PLUGIN        → plugins/  OR  ecosystem/skills/
-  WEB_CONTENT        → brain/knowledge/web/
-  DOCUMENT           → brain/knowledge/documents/
-  IMAGE              → assets/images/
-  TEXT               → brain/knowledge/text/
-  CONFIG/RULES DOC   → corp/departments/<dept>/ or corp/rules/
+sla: < 10 minutes
 
-Post-routing handoff:
-  → After file lands at destination, ingest-router MUST trigger
-    knowledge-distribution-flow.md STEP D1 by writing a receipt to:
-    subagents/mq/asset_library_ingest.md (for WEB/DOCUMENT/TEXT)
-    subagents/mq/registry_ingest.md     (for REPO/PLUGIN)
-  → This receipt contains: { civ_ticket, content_type, destination_path, quality_score }
+---
 
-★ NEW v1.2 — Post-Route: skill-discovery-auto trigger
-  IF content_type = REPO or PLUGIN:
+### step 5 — route to destination
+trigger: content in /vetted/ with pass status
+agent: `ingest-router-agent`
+actions:
+- match classification tag to destination (see classification table in rules.md)
+- move file from vetted/ to destination
+- write receipt to destination agent
+- update civ ticket to ingested
+- confirm file exists at destination (verify)
+
+destinations (paths relative to $omniclaw_root):
+  repo/plugin        → plugins/  or  ecosystem/skills/
+  web_content        → brain/knowledge/web/
+  document           → brain/knowledge/documents/
+  image              → assets/images/
+  text               → brain/knowledge/text/
+  config/rules doc   → corp/departments/<dept>/ or corp/rules/
+
+post-routing handoff:
+  → after file lands at destination, ingest-router must trigger
+    knowledge-distribution-flow.md step d1 by writing a receipt to:
+    subagents/mq/asset_library_ingest.md (for web/document/text)
+    subagents/mq/registry_ingest.md     (for repo/plugin)
+  → this receipt contains: { civ_ticket, content_type, destination_path, quality_score }
+
+★ new v1.2 — post-route: skill-discovery-auto trigger
+  if content_type = repo or plugin:
     → registry-manager-agent runs skill-discovery-auto.md:
-       Kiểm tra destination folder có SKILL.md chưa
-       → Nếu không: auto-create SKILL.md (Skill Creator Ultra)
-       → Rebuild FAST_INDEX.json
-    Ref: ops/workflows/skill-discovery-auto.md
+       kiểm tra destination folder có skill.md chưa
+       → nếu không: auto-create skill.md (skill creator ultra)
+       → rebuild fast_index.json
+    ref: ops/workflows/skill-discovery-auto.md
 
-★ NEW v1.3 — Post-Route: Neural Link Graph Sync trigger
-  TẤT CẢ Content nạp vào thành công (REPO, PLUGIN, DOCUMENT):
-    → Archivist Agent chạy `neural-link-sync.md`.
-    → Update `SYSTEM_INDEX.yaml` + `SYSTEM_INDEX_NARRATIVE.txt`.
-    → Đảm bảo OmniClaw luôn biết vị trí của File/Repo mới.
+★ new v1.3 — post-route: neural link graph sync trigger
+  tất cả content nạp vào thành công (repo, plugin, document):
+    → archivist agent chạy `neural-link-sync.md`.
+    → update `system_index.yaml` + `system_index_narrative.txt`.
+    → đảm bảo omniclaw luôn biết vị trí của file/repo mới.
 
-SLA: < 5 minutes after content reaches /vetted/
+sla: < 5 minutes after content reaches /vetted/
 
 ---
 
-### STEP 6 — QUARANTINE CLEANUP ⚡ (MANDATORY — RULE-QUARANTINE-01)
-Trigger: STEP 5 hoàn tất (ticket status = INGESTED) HOẶC ticket status = REJECTED
-Agent: `ingest-router-agent` (ngay sau khi ghi receipt xong)
-Actions:
-- **INGESTED path:**
-  - Xóa toàn bộ: `QUARANTINE/incoming/<type>/<civ_ticket>/`
-  - Xóa toàn bộ: `QUARANTINE/vetted/<type>/<civ_ticket>/`
-  - ⚠️ GIỮ LẠI: `QUARANTINE/logs/intake_log.md` (chỉ log text, không phải repo)
-  - ⚠️ GIỮ LẠI: `QUARANTINE/vetted/<name>/_CIV_ANALYSIS.md` (report nhỏ, không cần xóa)
-- **REJECTED path:**
-  - Xóa toàn bộ: `QUARANTINE/incoming/<type>/<civ_ticket>/`
-  - Chuyển `QUARANTINE/vetted/<civ_ticket>/` → `QUARANTINE/rejected/` (log nhỏ)
-- **Stale files (quá 7 ngày, không có ticket active):**
-  - Xóa toàn bộ file/folder trong `QUARANTINE/incoming/` và `QUARANTINE/vetted/`
-- Update ticket status: INGESTED → CLEANED | REJECTED → CLEANED_REJECTED
+### step 6 — quarantine cleanup ⚡ (mandatory — rule-quarantine-01)
+trigger: step 5 hoàn tất (ticket status = ingested) hoặc ticket status = rejected
+agent: `ingest-router-agent` (ngay sau khi ghi receipt xong)
+actions:
+- **ingested path:**
+  - xóa toàn bộ: `quarantine/incoming/<type>/<civ_ticket>/`
+  - xóa toàn bộ: `quarantine/vetted/<type>/<civ_ticket>/`
+  - ⚠️ giữ lại: `quarantine/logs/intake_log.md` (chỉ log text, không phải repo)
+  - ⚠️ giữ lại: `quarantine/vetted/<name>/_civ_analysis.md` (report nhỏ, không cần xóa)
+- **rejected path:**
+  - xóa toàn bộ: `quarantine/incoming/<type>/<civ_ticket>/`
+  - chuyển `quarantine/vetted/<civ_ticket>/` → `quarantine/rejected/` (log nhỏ)
+- **stale files (quá 7 ngày, không có ticket active):**
+  - xóa toàn bộ file/folder trong `quarantine/incoming/` và `quarantine/vetted/`
+- update ticket status: ingested → cleaned | rejected → cleaned_rejected
 
-> ⚡ **RULE-QUARANTINE-01:** KHÔNG ĐƯỢC để repo nguyên trong QUARANTINE sau khi đã INGESTED.
-> QUARANTINE chỉ là phòng tạm (staging area), KHÔNG phải nơi lưu trữ lâu dài.
-> Vi phạm gây tích lũy hàng GB rác mỗi tuần, ảnh hưởng hiệu suất hệ thống.
+> ⚡ **rule-quarantine-01:** không được để repo nguyên trong quarantine sau khi đã ingested.
+> quarantine chỉ là phòng tạm (staging area), không phải nơi lưu trữ lâu dài.
+> vi phạm gây tích lũy hàng gb rác mỗi tuần, ảnh hưởng hiệu suất hệ thống.
 
-SLA: Xóa ngay sau khi STEP 5 xác nhận file tồn tại tại destination
+sla: xóa ngay sau khi step 5 xác nhận file tồn tại tại destination
 
-| Dept | Coordination |
+| dept | coordination |
 |------|-------------|
-| Security GRC | Co-authority on all REPO/PLUGIN vetting (vet_repo.ps1) |
-| Registry & Capability | Destination for all REPO/PLUGIN after PASS |
-| Asset & Knowledge Library | Destination for WEB/DOCUMENT/TEXT |
-| Operations | Escalate CIV backlog issues to scrum-master |
-| Monitoring & Inspection | Monitor CIV ticket queue for SLA breaches |
+| security grc | co-authority on all repo/plugin vetting (vet_repo.ps1) |
+| registry & capability | destination for all repo/plugin after pass |
+| asset & knowledge library | destination for web/document/text |
+| operations | escalate civ backlog issues to scrum-master |
+| monitoring & inspection | monitor civ ticket queue for sla breaches |
 
 ---
 
-## ESCALATION PATH
+## escalation path
 
-| Issue | Escalation |
+| issue | escalation |
 |-------|-----------|
-| Unknown content type | intake-chief-agent manual review |
-| WARN repo (borderline) | intake-chief → strix-agent joint review |
-| FAIL repo (critical threat) | strix-agent → L3 (CEO) if sophisticated attack |
-| CIV backlog > 5 tickets | intake-chief → COO |
-| Destination agent not acknowledging | ingest-router → Monitoring dept |
+| unknown content type | intake-chief-agent manual review |
+| warn repo (borderline) | intake-chief → strix-agent joint review |
+| fail repo (critical threat) | strix-agent → l3 (ceo) if sophisticated attack |
+| civ backlog > 5 tickets | intake-chief → coo |
+| destination agent not acknowledging | ingest-router → monitoring dept |
 
 ---
 
-### 🛡️ RULE-CIV-02: PENDING GATE STRICT ENFORCEMENT
-Trạng thái `PENDING` trong `PENDING_REPOS.md` là trạng thái chờ. 
-**NGHIÊM CẤM:**
-1. Clone thẳng repo đang ở trạng thái `PENDING` vào bất kỳ thư mục nào trên đĩa cứng (kể cả `QUARANTINE`).
-2. Tự động chuyển trạng thái từ `PENDING` sang `ACTIVE` mà không qua CIV Review.
-3. Ghi dữ liệu/metadata (như nội dung README) của repo `PENDING` thẳng vào thư mục `brain/knowledge/repos` (Hành vi này Bypass hoàn toàn quá trình Intaking).
+### 🛡️ rule-civ-02: pending gate strict enforcement
+trạng thái `pending` trong `pending_repos.md` là trạng thái chờ. 
+**nghiêm cấm:**
+1. clone thẳng repo đang ở trạng thái `pending` vào bất kỳ thư mục nào trên đĩa cứng (kể cả `quarantine`).
+2. tự động chuyển trạng thái từ `pending` sang `active` mà không qua civ review.
+3. ghi dữ liệu/metadata (như nội dung readme) của repo `pending` thẳng vào thư mục `brain/knowledge/repos` (hành vi này bypass hoàn toàn quá trình intaking).
 
-**Quy trình chuẩn cho RULE-CIV-02**:
-1. AI/Agent dùng `system/ops/scripts/pending_civ_classifier.py` để phân tích tĩnh (URL, description) các repo `PENDING`. Script tạo report `CIV_PENDING_REPORT_*.md` với 3 danh sách: APPROVE, REVIEW, REJECT.
-2. Sếp (CEO / Dept 20 Intake Chief) đọc report và quyết định.
-3. Nếu đồng ý với list APPROVE, duyệt bằng script: `python system/ops/scripts/pending_civ_approve.py --auto-approve`. Lệnh này chuyển repo từ `PENDING` sang `ACTIVE`.
-4. Chỉ khi repo nằm trong `ACTIVE_REPOS.md`, mới được phép kích hoạt `active_repos_pipeline.py` để thực hiện clone thật sự qua quy trình: `Github → QUARANTINE/incoming/repos → Strix Scan → brain/knowledge`.
+**quy trình chuẩn cho rule-civ-02**:
+1. ai/agent dùng `system/ops/scripts/pending_civ_classifier.py` để phân tích tĩnh (url, description) các repo `pending`. script tạo report `civ_pending_report_*.md` với 3 danh sách: approve, review, reject.
+2. sếp (ceo / dept 20 intake chief) đọc report và quyết định.
+3. nếu đồng ý với list approve, duyệt bằng script: `python system/ops/scripts/pending_civ_approve.py --auto-approve`. lệnh này chuyển repo từ `pending` sang `active`.
+4. chỉ khi repo nằm trong `active_repos.md`, mới được phép kích hoạt `active_repos_pipeline.py` để thực hiện clone thật sự qua quy trình: `github → quarantine/incoming/repos → strix scan → brain/knowledge`.
 
-> **Lưu ý ENFORCEMENT (2026-03-27)**: `batch_repo_intake.py` mode `pending` và `all` đã bị BLOCK TRÊN CODE (Sẽ báo lỗi và sys.exit(1)). Các chức năng tự động lấy nội dung từ Github bắt buộc chỉ được dùng trên repo đã APPROVED hoặc ACTIVE. Mọi script cũ bypass pipeline phải bị dừng chạy.
+> **Note enforcement (2026-03-27)**: `batch_repo_intake.py` mode `pending` và `all` đã bị block trên code (sẽ báo lỗi và sys.exit(1)). các chức năng tự động lấy nội dung từ github bắt buộc chỉ được dùng trên repo đã approved hoặc active. mọi script cũ bypass pipeline phải bị dừng chạy.
 
-*(Phiên bản tài liệu 1.5 - Cập nhật ngày 2026-03-27)*
+*(phiên bản tài liệu 1.5 - cập nhật ngày 2026-03-27)*

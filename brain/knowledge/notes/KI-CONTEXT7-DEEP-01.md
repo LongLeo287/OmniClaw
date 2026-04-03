@@ -6,9 +6,9 @@
 
 ---
 
-## 1. Vấn đề context7 giải quyết (WHY — Quan trọng nhất)
+## 1. Problem: context7 giải quyết (WHY — Quan trọng nhất)
 
-| Vấn đề | Mô tả | Tác động trong OmniClaw |
+| Problem: | Description: | Tác động trong OmniClaw |
 |--------|-------|---------------------|
 | ❌ Outdated training data | LLM biết API của Next.js 12, nhưng đang code với Next.js 15 | Agent viết code sai, debug mất giờ |
 | ❌ Hallucinated APIs | Agent "bịa" function không tồn tại | Code crash, mất trust |
@@ -59,12 +59,12 @@ npx ctx7 setup             # Auto-detect
 
 ## 4. MCP Tools (API)
 
-| Tool | Tham số | Chức năng |
+| Tool | Tham số | Features: |
 |------|---------|-----------|
 | `resolve-library-id` | `libraryName` (required), `query` (required) | Tìm library ID từ tên |
 | `query-docs` | `libraryId` (required), `query` (required) | Lấy documentation snippet |
 
-**Library ID format:** `/owner/repo` — ví dụ:
+**Library ID format:** `/owner/repo` — Example:
 - `/vercel/next.js` → Next.js docs
 - `/supabase/supabase` → Supabase docs  
 - `/facebook/react` → React docs
@@ -124,7 +124,7 @@ docs = requests.get("https://context7.com/api/v2/context",
 
 ## 6. Rate Limits & Plans
 
-| Tier | Rate limit | Cách dùng |
+| Tier | Rate limit | Usage: |
 |------|-----------|-----------|
 | Không có API key | Thấp (anonymous) | Demo/test |
 | Free API key | Cao hơn | OmniClaw daily use |
@@ -137,7 +137,7 @@ docs = requests.get("https://context7.com/api/v2/context",
 
 ## 7. Tích hợp vào OmniClaw — Action Plan
 
-### Bước 1: Cài CLI + Skill (Ngay hôm nay)
+### Step 1: Cài CLI + Skill (Ngay hôm nay)
 ```bash
 # Cho Antigravity (Cursor-compatible)
 npx ctx7 setup --cursor
@@ -146,14 +146,14 @@ npx ctx7 setup --cursor
 npx ctx7 setup --claude
 ```
 
-### Bước 2: Thêm Rule vào GEMINI.md + CLAUDE.md
+### Step 2: Thêm Rule vào GEMINI.md + CLAUDE.md
 ```
 Always use Context7 when needing library/API documentation, code generation,
 or setup steps — without requiring explicit user request.
 ```
 *(Rule tự động kích hoạt, không cần user gõ "use context7" mỗi lần)*
 
-### Bước 3: Đăng ký API key
+### Step 3: Đăng ký API key
 - Truy cập: context7.com/dashboard
 - Copy key vào: `$OMNICLAW_ROOT\MASTER.env`
 - Biến môi trường: `CONTEXT7_API_KEY=xxx`
@@ -211,7 +211,7 @@ ctx7 docs /vercel/next.js "middleware auth"
 | Firecrawl SDK methods | May hallucinate | Exact API |
 | Agent viết migration scripts | Generic | Version-aware |
 
-**Kết luận:** Context7 là layer **chống hallucination API** thiết yếu — đặc biệt quan trọng khi OmniClaw Corp build products với các library thay đổi nhanh (Next.js, Supabase, Tailwind v4...).
+**Kết luận:** Context7 là layer **chống hallucination API** thiết yếu — đặc biệt quan trọng khi OmniClaw Corp build products với các library Changes: nhanh (Next.js, Supabase, Tailwind v4...).
 
 ---
 

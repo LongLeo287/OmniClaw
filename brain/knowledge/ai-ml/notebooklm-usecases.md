@@ -18,7 +18,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 🔍 CIV — Content Intake & Vetting
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Repo analysis | Upload gitingest digest → "Repo này làm gì? Có conflict với hệ thống không?" |
 | Routing decision | "Phòng nào nên nhận repo này?" → nhận routing recommendation |
@@ -29,7 +29,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 🧪 R&D — Research & Development
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Literature synthesis | Upload 20 papers → "Tóm tắt state-of-the-art về X" |
 | Repo comparison | Upload 5 repos → "Framework nào phù hợp nhất cho OmniClaw?" |
@@ -41,7 +41,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 📋 Strategy & Planning
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Market report | Upload competitor analysis → structured report có citation |
 | SWOT analysis | Upload internal docs + market data → brainstorm SWOT |
@@ -53,7 +53,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 📣 Marketing & Content
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Podcast creation | Upload research paper → Audio Overview (MP3, 2 hosts) |
 | Campaign brainstorm | Upload briefs + references → brainstorm angles |
@@ -77,7 +77,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 🔒 Security GRC
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Threat report | Upload scan results → executive summary |
 | Policy comparison | Upload 2 security policies → diff + recommendations |
@@ -88,7 +88,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### ⚙️ Engineering & DevOps
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Code review brief | Upload PR diffs → structured review summary |
 | Architecture docs | Upload codebase digest → generate ADR (Architecture Decision Record) |
@@ -99,7 +99,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 📞 Client Reception (phòng lễ tân)
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Proposal research | Upload client brief + OmniClaw capabilities → draft proposal |
 | Client briefing | Upload conversation history → "Client cần gì nhất?" |
@@ -109,7 +109,7 @@ Output: Text / Audio / Quiz / Flashcard / Slide structure / Briefing doc / FAQ /
 
 ### 🏢 CEO / Executive
 
-| Task | Cách dùng |
+| Task | Usage: |
 |------|-----------|
 | Weekly digest | Upload all dept reports → 1-page CEO summary |
 | Brainstorm session | Upload context docs → structured brainstorm output |

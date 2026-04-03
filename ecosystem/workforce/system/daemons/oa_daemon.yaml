@@ -1,0 +1,18 @@
+﻿department: system_daemons
+id: oa_daemon
+name: OA Academy Auditor Daemon
+active: true
+leadership:
+  manager: oma_core
+  reports_to: oma_core
+role: The supreme Quality Control and Auditor Daemon. Validates structure, fixes missing logic via Repo Analyst, and generates the final compliance verdicts before handoff to OER.
+kpi_targets:
+  logic_generation_accuracy: "> 95%"
+tools_and_capabilities:
+  skills:
+    - ontology_auditor
+    - repo_analyst
+    - reasoning_engine
+outputs:
+  - artifact: validated_object
+    path: vault/tmp/oer_inbox/

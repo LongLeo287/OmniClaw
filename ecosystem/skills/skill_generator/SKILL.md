@@ -1,85 +1,85 @@
 ---
 name: skill-generator
 description: |
-  OmniClaw Core Meta-Skill. Tạo AI Skill mới từ bất kỳ quy trình nào qua
-  pipeline 8 bước. Kích hoạt khi user nói "tạo skill", "biến quy trình
-  thành skill", "automate this", "make a skill for X", hoặc mô tả workflow
-  lặp lại. Cũng dùng khi muốn improve/test/optimize skill hiện có.
+  omniclaw core meta-skill. tạo ai skill mới từ bất kỳ quy trình nào qua
+  pipeline 8 Step. kích hoạt khi user nói "tạo skill", "biến quy trình
+  thành skill", "automate this", "make a skill for x", hoặc Description workflow
+  lặp lại. cũng dùng khi muốn improve/test/optimize skill hiện có.
 tier: 1
 module: skills/skill_generator
 source: plugins/skill-generator
 ---
 
-# Goal
+# goal
 
-Đóng vai **Skill Architect** — phỏng vấn, trích xuất, sinh và deploy AI Skill
-hoàn chỉnh từ quy trình của user. Người dùng không cần biết gì về SKILL.md format.
+đóng vai **skill architect** — phỏng vấn, trích xuất, sinh và deploy ai skill
+hoàn chỉnh từ quy trình của user. người dùng không cần biết gì về skill.md format.
 
-# Instructions
+# instructions
 
-## Quick Decision Tree
+## quick decision tree
 
 ```
-User mô tả rõ flow + rules + I/O?
-  → YES: Fast Track (Phase 4 → 5)
-  → NO: Full Interview (Phase 1 → 2 → 3 → 4 → 5)
+user Description rõ flow + rules + i/o?
+  → yes: fast track (phase 4 → 5)
+  → no: full interview (phase 1 → 2 → 3 → 4 → 5)
 
-User có skill cũ muốn improve?
-  → Improve Mode (Phase 6 → 7)
+user có skill cũ muốn improve?
+  → improve mode (phase 6 → 7)
 
-Workflow ≥3 bước tách rời?
-  → System Mode (sinh N skills + Orchestrator)
+workflow ≥3 Step tách rời?
+  → system mode (sinh n skills + orchestrator)
 ```
 
-## 8-Phase Pipeline
+## 8-phase pipeline
 
-Đọc chi tiết từ `plugins/skill-generator/SKILL.md` và `plugins/skill-generator/phases/`
+đọc chi tiết từ `plugins/skill-generator/skill.md` và `plugins/skill-generator/phases/`
 
-| Phase | Action |
+| phase | action |
 |---|---|
-| 1 🎤 Interview | Hỏi tối đa 12 câu để trích xuất TRIGGER/STEPS/RULES/IO/EDGE CASES |
-| 2 🔬 Extract | Chuyển raw → structured blueprint |
-| 3 🔎 Detect | Complexity score → chọn architecture |
-| 4 🏗️ Generate | Sinh SKILL.md + full package |
-| 5 🧪 Test | Dry run + validation + auto-optimize |
-| 6* 📊 Eval | 7-dimension scoring (optional) |
-| 7* 🔄 Iterate | Improve loop until grade A (optional) |
-| 8* 🎯 Optimize | Trigger accuracy max (optional) |
+| 1 🎤 interview | hỏi tối đa 12 câu để trích xuất trigger/steps/rules/io/edge cases |
+| 2 🔬 extract | chuyển raw → structured blueprint |
+| 3 🔎 detect | complexity score → chọn architecture |
+| 4 🏗️ generate | sinh skill.md + full package |
+| 5 🧪 test | dry run + validation + auto-optimize |
+| 6* 📊 eval | 7-dimension scoring (optional) |
+| 7* 🔄 iterate | improve loop until grade a (optional) |
+| 8* 🎯 optimize | trigger accuracy max (optional) |
 
-## Deployment Target
+## deployment target
 
-Sau khi sinh skill, hỏi user:
-1. **Scope**: Global (`~/.claude/skills/`) vs Workspace (`skills/`)
-2. **Tier**: T0/T1/T2/T3 (suggest T2 cho skill mới)
-3. **Platform**: Antigravity / Claude / Cursor / OpenClaw
-4. Update `SKILL_TIERS.md` với skill mới
+sau khi sinh skill, hỏi user:
+1. **scope**: global (`~/.claude/skills/`) vs workspace (`skills/`)
+2. **tier**: t0/t1/t2/t3 (suggest t2 cho skill mới)
+3. **platform**: antigravity / claude / cursor / openclaw
+4. update `skill_tiers.md` với skill mới
 
-# Examples
+# examples
 
-## Ví dụ: Tạo skill từ workflow lặp lại
+## ví dụ: tạo skill từ workflow lặp lại
 ```
-User: "mỗi tuần tôi phải tổng hợp báo cáo từ 5 nguồn dữ liệu, mất 2 tiếng"
-→ Phase 1: Hỏi 5 câu về sources, format, rules, triggers
-→ Phase 3: Complexity score 8 → Medium (SKILL.md + examples/)
-→ Phase 4: Sinh `weekly-data-aggregator` skill
-→ Phase 5: Test với mock data → Pass
-→ Deploy to T2 Operational tier
-```
-
-## Ví dụ: Improve skill cũ
-```
-User: "skill api-docs-writer hay thiếu error handling section"
-→ Phase 6: Test 3 cases → confirm bug
-→ Phase 7: Fix Instructions → retest → Grade B→A
-→ Update SKILL_TIERS.md version
+user: "mỗi tuần tôi phải tổng hợp báo cáo từ 5 nguồn dữ liệu, mất 2 tiếng"
+→ phase 1: hỏi 5 câu về sources, format, rules, triggers
+→ phase 3: complexity score 8 → medium (skill.md + examples/)
+→ phase 4: sinh `weekly-data-aggregator` skill
+→ phase 5: test với mock data → pass
+→ deploy to t2 operational tier
 ```
 
-# Constraints
+## ví dụ: improve skill cũ
+```
+user: "skill api-docs-writer hay thiếu error handling section"
+→ phase 6: test 3 cases → confirm bug
+→ phase 7: fix instructions → retest → grade b→a
+→ update skill_tiers.md version
+```
 
-- Max 12 câu phỏng vấn — quá nhiều user mất kiên nhẫn
-- SKILL.md phải < 500 dòng — overflow → tách ra resources/
-- KHÔNG hardcode API keys, secrets, passwords — bảo mật tuyệt đối
-- Scripts destructive → yêu cầu human confirmation bắt buộc
-- Grade tối thiểu B trước khi deploy — Grade C/D → iterate thêm
-- Thêm `<!-- Generated by Skill Creator Ultra v1.0 -->` cuối SKILL.md
-- Update `registry/SKILL_TIERS.md` sau mỗi skill mới được tạo
+# constraints
+
+- max 12 câu phỏng vấn — quá nhiều user mất kiên nhẫn
+- skill.md phải < 500 dòng — overflow → tách ra resources/
+- không hardcode api keys, secrets, passwords — bảo mật tuyệt đối
+- scripts destructive → yêu cầu human confirmation bắt buộc
+- grade tối thiểu b trước khi deploy — grade c/d → iterate thêm
+- thêm `<!-- generated by skill creator ultra v1.0 -->` cuối skill.md
+- update `registry/skill_tiers.md` sau mỗi skill mới được tạo

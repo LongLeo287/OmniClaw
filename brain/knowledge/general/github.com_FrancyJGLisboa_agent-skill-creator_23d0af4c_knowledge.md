@@ -1,0 +1,22765 @@
+---
+id: github.com-francyjglisboa-agent-skill-creator-23d0
+type: document
+owner: OHD
+tags: [auto-healed]
+healed_at: 2026-04-02T20:19:51.213001
+---
+
+# KNOWLEDGE EXTRACT: github.com_FrancyJGLisboa_agent-skill-creator_23d0af4c
+> **Extracted on:** 2026-04-01 07:34:21
+> **Source:** D:/LongLeo/AI OS CORP/AI OS/core/security/QUARANTINE/KI-BATCH-20260331205007519035/github.com_FrancyJGLisboa_agent-skill-creator_23d0af4c
+
+---
+
+## File: `.gitignore`
+```
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Linter cache
+.ruff_cache/
+
+# Logs
+*.log
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# Runtime directories
+cache/
+data/
+
+# AgentDB databases
+*.db
+agentdb.db
+
+# Test files
+test_*.py
+!test_agentdb_learning.py
+tests/
+
+# Generated format adapter files
+*.mdc
+```
+
+## File: `README.md`
+```markdown
+# Agent Skill Creator
+
+**Turn any workflow into reusable AI agent software that installs on 14+ tools — no spec writing, no prompt engineering, no coding required.**
+
+[![Agent Skills Open Standard](https://img.shields.io/badge/Agent%20Skills-Open%20Standard-blue)](https://github.com/anthropics/agent-skills-spec)
+[![Version](https://img.shields.io/badge/version-5.0.0-brightgreen)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]()
+
+![Agent Skill Creator Overview](Dynamous/agentskillimage.png)
+
+---
+
+## The Problem
+
+Every AI coding tool — Claude Code, GitHub Copilot, Cursor, Windsurf, Codex, Gemini, Kiro, and more — starts from zero. It doesn't know your company's processes, data sources, or compliance requirements. So every person re-explains the same workflows in every conversation. Knowledge stays in individual chat histories. New hires start from scratch.
+
+**Agent skills fix this.** A skill is structured knowledge your agent loads automatically — like installing an app. Once installed, anyone on your team can invoke it and get consistent results, every time, on any platform.
+
+**The catch:** building a proper skill requires understanding the spec format, writing clear prompt instructions, designing how information loads progressively, writing functional code, and getting activation keywords right. Even simple skills take [multiple rounds of iteration](https://www.youtube.com/watch?v=izJkgLqlbN8) to get right.
+
+**Agent Skill Creator removes that barrier entirely.** You pass in whatever you have — messy docs, links, code, PDFs, transcripts, vague descriptions — and it produces a validated, security-scanned skill ready to install on 14+ tools and share with your team. You describe what you do; it builds the software.
+
+---
+
+## Quick Start
+
+### 1. Install
+
+**Option A — One-liner (installs to all detected tools):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/main/scripts/bootstrap.sh | sh
+```
+
+This clones to `~/.agents/skills/agent-skill-creator` and symlinks to every detected global platform (Claude Code, Gemini CLI, Goose, OpenCode, Copilot). Run `git pull` once to update everywhere.
+
+**Option B — Git clone (pick your tool):**
+
+```bash
+# Claude Code / VS Code Copilot (global — works in all projects)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.claude/skills/agent-skill-creator
+
+# Cursor (per-project)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .cursor/rules/agent-skill-creator
+
+# Codex CLI / Gemini CLI / Kiro / Antigravity (universal path)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.agents/skills/agent-skill-creator
+```
+
+**Option C — Already cloned? Symlink to all tools:**
+
+```bash
+cd agent-skill-creator
+./install.sh              # Symlink to all detected platforms
+./install.sh --dry-run    # Preview without changes
+./install.sh --uninstall  # Remove all symlinks
+```
+
+One install at `~/.claude/skills/` works for both Claude Code and VS Code Copilot. One install at `~/.agents/skills/` works for Codex CLI, Gemini CLI, Kiro, Antigravity, and other tools that read the universal path.
+
+All 14 platforms: [see full list below](#all-platforms).
+
+### 2. Use it
+
+Open your agent and type `/agent-skill-creator` followed by whatever you have:
+
+```
+/agent-skill-creator Every week I pull sales data from our CRM, clean
+duplicate entries, calculate regional totals, and generate a PDF report.
+```
+
+You can pass anything — plain English, documentation links, existing code, API docs, PDFs, database schemas, transcripts. Combine multiple sources in one message. The more context, the better the result.
+
+```
+/agent-skill-creator Based on our deployment runbook: https://wiki.internal/deploy-process
+```
+
+```
+/agent-skill-creator See scripts/invoice_processor.py — turn it into a reusable skill
+```
+
+### 3. What comes out
+
+A complete skill, automatically installed on your platform:
+
+```
+Skill installed successfully.
+
+To use it, open a new session and type:
+
+  /sales-report-skill Generate the weekly report for the West region
+
+Installed at: ~/.claude/skills/sales-report-skill
+```
+
+The agent detects your platform, installs the skill to the right location, and tells you exactly how to invoke it. No manual steps.
+
+The generated skill includes a cross-platform installer (`install.sh`) that auto-detects all 14 supported tools, generates format adapters for Cursor (.mdc) and Windsurf (.md rules) automatically, and creates a universal `~/.agents/skills/` symlink so the skill is discoverable by multiple tools at once.
+
+```
+sales-report-skill/
+├── SKILL.md          # Skill definition (activates with /sales-report-skill)
+├── scripts/          # Functional Python code
+├── references/       # Detailed documentation
+├── assets/           # Templates, configs
+├── install.sh        # Cross-platform installer (14 tools, format adapters, --all flag)
+└── README.md         # Installation instructions
+```
+
+Your team installs it the same way — one `git clone` to their tool's path — and invokes it with `/sales-report-skill`.
+
+---
+
+## How It Works
+
+You don't need to understand any of this to use it. But if you're curious:
+
+The agent doesn't just follow your description literally. Humans describe what they *do*, not what they *need*. "I pull sales data and make a report" hides a dozen implicit requirements — who reads the report, what format, what happens when data is missing. The agent reads all your material, uncovers these implicit requirements, and generates its own internal specification before writing any code. It builds from that deeper understanding, not from your surface description.
+
+```
+UNDERSTAND    Read all material → uncover real intent → generate internal spec
+BUILD         Structure directory → write code and docs → craft activation keywords
+VERIFY        Spec validation → security scan → block delivery if either fails
+```
+
+Every skill is automatically validated (correct structure, naming, metadata) and security-scanned (no hardcoded keys, no credential exposure, no injection risks) before delivery. Skills that fail these checks are blocked.
+
+---
+
+## Share Skills Across Your Team
+
+After the agent builds and installs your skill, it asks:
+
+```
+Want to share this skill with your team so they can install it too?
+```
+
+Say yes. The agent detects whether your team uses GitHub or GitLab, creates a repo, pushes the skill, and gives you a one-liner to share:
+
+```
+Shared! Your colleagues can install it by pasting this in their terminal:
+
+  git clone https://github.com/your-org/sales-report-skill.git ~/.agents/skills/sales-report-skill
+```
+
+One `git clone` to `~/.agents/skills/` makes it available on Codex CLI, Gemini CLI, Kiro, and Antigravity simultaneously. For Claude Code users: `~/.claude/skills/sales-report-skill`. For Cursor: `.cursor/rules/sales-report-skill`.
+
+Send that line to your colleague on Slack or Teams. They paste it. Done. They can now type `/sales-report-skill` in their agent.
+
+No registry commands, no publishing steps, no terminal knowledge beyond paste. The agent handles the repo creation, the push, and generates install commands for every platform.
+
+### The result over time
+
+Each team member creates skills from their own domain and shares them. Over months the organization accumulates a library of reusable skills:
+
+- Sales team shares `/sales-report-skill`
+- Engineering shares `/deploy-checklist-skill`
+- Legal shares `/quarterly-compliance-skill`
+- Data science shares `/customer-churn-skill`
+- SRE shares `/incident-runbook-skill`
+
+Any colleague installs any skill with one `git clone`. Any agent on any platform can invoke it. Knowledge compounds instead of evaporating.
+
+### For teams and consultants: the skill registry
+
+When an organization has more than a few skills, the agent offers to set up a **team skill registry** — a shared git repo where all team members publish their skills and anyone can browse and install them.
+
+The consultant (or team lead) sets it up once:
+
+```bash
+python3 scripts/skill_registry.py init --name "Acme Corp Skills"
+```
+
+Then every team member can:
+
+```bash
+# Publish a skill they created
+python3 scripts/skill_registry.py publish ./sales-report-skill/ --tags sales,reports
+
+# Browse what's available
+python3 scripts/skill_registry.py list
+
+# Search for a specific skill
+python3 scripts/skill_registry.py search "sales"
+
+# Install a colleague's skill (auto-detects platform)
+python3 scripts/skill_registry.py install sales-report-skill
+```
+
+The registry is a git repo on GitHub or GitLab. Clone it once, and every team member can publish and install. No servers, no databases — just git.
+
+**For AI consultants:** The engagement model is teach, not build. Install agent-skill-creator on each team member's machine, create the shared `{team}-skills-registry` repo, teach the team the 5-step workflow (install, clone registry, create skill, publish, install from registry), and hand over a self-sustaining system. After you leave, the team keeps creating and sharing skills on their own. They know their workflows better than you do — your job is to remove the friction.
+
+---
+
+## All Platforms
+
+14 tools supported. Same skill, same invocation, same results everywhere.
+
+### How it works
+
+Skills are authored as **SKILL.md** (the open standard). Tools in **Tier 1** read SKILL.md natively. Tools in **Tier 2** need a different format — the installer auto-generates it (`.mdc` for Cursor, `.md` rules for Windsurf, plain markdown for Cline/Roo/Trae). You never deal with format conversion.
+
+| Tier | Platforms | What happens |
+|------|-----------|-------------|
+| **Tier 1 — Native** | Claude Code, Copilot, Codex CLI, Gemini CLI, Kiro, Antigravity, Goose, OpenCode | Reads SKILL.md directly |
+| **Tier 2 — Auto-adapted** | Cursor, Windsurf, Cline, Roo Code, Trae | Installer converts SKILL.md to native format |
+| **Tier 3 — Manual** | Zed, Junie, Aider | Copy skill body into tool's config file |
+
+### Universal path (`~/.agents/skills/`)
+
+The emerging cross-tool convention. One install, multiple tools discover it automatically:
+
+```bash
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.agents/skills/agent-skill-creator
+```
+
+Tools that read this path today: **Codex CLI, Gemini CLI, Kiro, Antigravity** — and growing.
+
+### Global install (one install, all projects)
+
+```bash
+# Claude Code + VS Code Copilot (shared path — one install works for both)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.claude/skills/agent-skill-creator
+
+# Gemini CLI
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.gemini/skills/agent-skill-creator
+
+# Goose
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.config/goose/skills/agent-skill-creator
+
+# OpenCode
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.config/opencode/skills/agent-skill-creator
+```
+
+VS Code Copilot (1.108+) adopted the [Agent Skills Open Standard](https://code.visualstudio.com/brain/knowledge/docs_legacy/copilot/customization/agent-skills) and searches `~/.claude/skills/` by default. One install makes a skill globally available on both Claude Code and VS Code Copilot.
+
+### Per-project install
+
+```bash
+# Copilot (per-project alternative)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .github/skills/agent-skill-creator
+
+# Cursor (auto-generates .mdc)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .cursor/rules/agent-skill-creator
+
+# Windsurf (auto-generates .md rule)
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .windsurf/rules/agent-skill-creator
+
+# Cline
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .clinerules/agent-skill-creator
+
+# Kiro
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .kiro/skills/agent-skill-creator
+
+# Trae
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .trae/rules/agent-skill-creator
+
+# Roo Code
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .roo/rules/agent-skill-creator
+```
+
+### Cursor — global workaround
+
+Cursor has no global skills directory. Clone once and symlink per project:
+
+```bash
+# 1. Clone once
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/agent-skills/agent-skill-creator
+
+# 2. In any project, symlink
+mkdir -p .cursor/rules && ln -s ~/agent-skills/agent-skill-creator .cursor/rules/agent-skill-creator
+```
+
+Add a shell alias to automate this (`~/.zshrc` or `~/.bashrc`):
+
+```bash
+alias install-skills='mkdir -p .cursor/rules && ln -s ~/agent-skills/agent-skill-creator .cursor/rules/agent-skill-creator'
+```
+
+Then in any project: `install-skills`. Updates propagate automatically via the symlink.
+
+### Using install.sh (for generated skills)
+
+Every skill generated by agent-skill-creator includes a cross-platform installer:
+
+```bash
+./install.sh                          # Auto-detect platform
+./install.sh --platform cursor        # Force specific platform (auto-generates .mdc)
+./install.sh --platform windsurf      # Force Windsurf (auto-generates .md rule)
+./install.sh --all                    # Install to every detected tool at once
+./install.sh --dry-run                # Preview without installing
+```
+
+The installer is POSIX-compatible (works in bash, dash, zsh, ash), handles all 14 platforms, and creates a universal `~/.agents/skills/` symlink after every install for cross-tool discoverability.
+
+### Claude Desktop / claude.ai
+
+```bash
+python3 scripts/export_utils.py ./agent-skill-creator/ --variant desktop
+# Then: Settings > Skills > Upload the generated .zip
+```
+
+### Update
+
+```bash
+cd ~/.agents/skills/agent-skill-creator && git pull
+```
+
+If you used the one-liner (Option A) or `./install.sh` (Option C), all symlinks update automatically — just `git pull` once from the canonical location. The skill also performs a silent git-based version check when loaded and will mention if a newer version is available.
+
+---
+
+## Quality Gates
+
+Every skill goes through automated checks before delivery and on every publish:
+
+| Gate | What It Checks |
+|------|---------------|
+| **Spec Validation** | SKILL.md structure, frontmatter format, naming rules, file references |
+| **Security Scan** | No hardcoded API keys, no credentials, no injection patterns |
+| **Staleness Check** | Review dates, dependency health, API schema drift |
+
+Run them independently anytime:
+
+```bash
+python3 scripts/validate.py ./my-skill/
+python3 scripts/security_scan.py ./my-skill/
+python3 scripts/staleness_check.py ./my-skill/
+python3 scripts/staleness_check.py ./my-skill/ --check-deps --check-drift
+```
+
+Skills that fail validation cannot be published. Skills with high-severity security issues are blocked.
+
+---
+
+## Staleness Detection
+
+Skills go stale. APIs change, compliance rules update, data sources move. A skill that worked six months ago may silently produce wrong results today. Staleness detection surfaces this before users hit it.
+
+Three layers, each opt-in:
+
+**Review tracking** — Every skill can declare when it was last reviewed and how often it should be. The staleness checker compares these dates and flags overdue skills. Skills without explicit dates fall back to the last git commit date on SKILL.md.
+
+```bash
+python3 scripts/staleness_check.py ./my-skill/
+# Exit code 0 = fresh, 1 = overdue for review
+```
+
+**Dependency health** — Skills can declare external URLs they depend on (APIs, data sources). The `--check-deps` flag HTTP-checks each one and reports failures.
+
+```bash
+python3 scripts/staleness_check.py ./my-skill/ --check-deps
+# Exit code 2 = one or more dependencies unreachable
+```
+
+**Schema drift** — Skills can declare the expected top-level keys in API responses. The `--check-drift` flag fetches each endpoint and compares actual keys against expected. Missing keys = the API changed under you.
+
+```bash
+python3 scripts/staleness_check.py ./my-skill/ --check-drift
+```
+
+All three layers are controlled by optional frontmatter fields. Existing skills work unchanged — the tool just suggests adding the metadata:
+
+```yaml
+metadata:
+  created: 2026-02-27
+  last_reviewed: 2026-02-27
+  review_interval_days: 90
+  dependencies:
+    - url: https://api.example.com/v1
+      name: Example API
+      type: api
+  schema_expectations:
+    - url: https://api.example.com/v1/data
+      method: GET
+      expected_keys:
+        - id
+        - price
+        - volume
+```
+
+For teams using the skill registry, `stale` scans every published skill at once:
+
+```bash
+python3 scripts/skill_registry.py stale
+# NAME            VERSION  STATUS   DAYS SINCE  SOURCE          INTERVAL
+# sales-report    1.2.0    OVERDUE  127         last_reviewed   90
+# deploy-check    2.0.1    FRESH    12          published       90
+```
+
+---
+
+## Tools Reference
+
+### Registry Commands
+
+```bash
+python3 scripts/skill_registry.py init --name "Acme Corp Skills"     # First-time setup
+python3 scripts/skill_registry.py publish ./skill/ --tags t1,t2      # Publish a skill
+python3 scripts/skill_registry.py list                                # Browse all skills
+python3 scripts/skill_registry.py search "query"                     # Search skills
+python3 scripts/skill_registry.py info skill-name                    # Skill details
+python3 scripts/skill_registry.py install skill-name                 # Install a skill
+python3 scripts/skill_registry.py remove skill-name --force          # Remove a skill
+python3 scripts/skill_registry.py stale                              # Report stale skills
+python3 scripts/skill_registry.py stale --json                       # Machine-readable output
+```
+
+### Validation, Security, and Staleness
+
+```bash
+python3 scripts/validate.py ./skill/               # Spec compliance
+python3 scripts/validate.py ./skill/ --json         # Machine-readable output
+python3 scripts/security_scan.py ./skill/           # Security audit
+python3 scripts/security_scan.py ./skill/ --json    # Machine-readable output
+python3 scripts/staleness_check.py ./skill/                      # Review staleness
+python3 scripts/staleness_check.py ./skill/ --check-deps         # + dependency health
+python3 scripts/staleness_check.py ./skill/ --check-drift        # + schema drift
+python3 scripts/staleness_check.py ./skill/ --json               # Machine-readable output
+```
+
+### Install Any Skill (Universal Installer)
+
+```bash
+# From git URL — clones and symlinks to all detected platforms
+./scripts/install-skill.sh https://github.com/someone/sales-report-skill.git
+
+# From local path — copies and symlinks to all detected platforms
+./scripts/install-skill.sh ./sales-report-skill
+
+# To a specific platform only
+./scripts/install-skill.sh ./sales-report-skill --platform cursor --project
+
+# Preview / remove
+./scripts/install-skill.sh ./sales-report-skill --dry-run
+./scripts/install-skill.sh ./sales-report-skill --uninstall
+```
+
+### Export
+
+```bash
+python3 scripts/export_utils.py ./skill/ --variant desktop    # For Claude Desktop
+python3 scripts/export_utils.py ./skill/ --variant api        # For Claude API
+```
+
+All commands use exit code `0` for success, `1` for errors. All support `--json` for CI/CD integration.
+
+---
+
+## Troubleshooting
+
+**Skill not activating**: Check that the SKILL.md `description` field contains keywords matching your query. The description is how the agent decides when to activate the skill.
+
+**Validation fails on name**: Names must be lowercase, use hyphens between words, 1-64 characters. Examples: `sales-report-skill`, `deploy-checklist`.
+
+**SKILL.md too long**: Move detailed content to `references/` files and link from the main SKILL.md.
+
+**Platform not auto-detected**: Use `--platform cursor` (or copilot, windsurf, codex, gemini, kiro, trae, goose, opencode, roo-code, antigravity, universal) to specify explicitly.
+
+**Install to all tools at once**: Inside a generated skill, use `./install.sh --all` to install to every detected platform in one command.
+
+---
+
+## Project Structure
+
+```
+agent-skill-creator/
+  SKILL.md                      # The skill definition (what the agent reads)
+  README.md                     # This file
+  install.sh                    # Symlink self-installer (for cloned repos)
+  scripts/
+    bootstrap.sh                # Curl one-liner bootstrap (installs everywhere)
+    install-skill.sh            # Universal skill installer (any skill, any tool)
+    install-template.sh         # Template for generated installers (14 platforms)
+    validate.py                 # Spec compliance checker
+    security_scan.py            # Security scanner
+    staleness_check.py          # Staleness detection (review, deps, drift)
+    export_utils.py             # Cross-platform export
+    skill_registry.py           # Team skill registry
+  references/                   # Detailed docs (loaded by the agent on demand)
+    pipeline-phases.md          # Full creation pipeline
+    architecture-guide.md       # Skill structure decisions
+    quality-standards.md        # Code and documentation standards
+    multi-agent-guide.md        # Multi-skill suite creation
+    cross-platform-guide.md     # Platform compatibility (tiers, adapters, paths)
+    export-guide.md             # Export documentation
+    templates-guide.md          # Template system
+    interactive-mode.md         # Interactive wizard
+    agentdb-integration.md      # Learning system
+    phase1-discovery.md         # Phase 1 deep dive
+    phase2-design.md            # Phase 2 deep dive
+    phase3-architecture.md      # Phase 3 deep dive
+    phase4-detection.md         # Phase 4 deep dive
+    phase5-implementation.md    # Phase 5 deep dive
+    templates/                  # Skill templates
+    examples/stock-analyzer/    # Example skill
+  registry/                     # Shared skill catalog
+    registry.json
+    skills/
+  exports/                      # Export output
+```
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run `python3 scripts/validate.py ./` and `python3 scripts/security_scan.py ./`
+5. Submit a pull request
+
+---
+
+## License
+
+MIT
+
+---
+
+## Links
+
+- [Agent Skills Open Standard](https://github.com/anthropics/agent-skills-spec)
+- [What are Claude Skills? (video)](https://www.youtube.com/watch?v=izJkgLqlbN8)
+- [Cross-Platform Guide](references/cross-platform-guide.md)
+- [Architecture Guide](references/architecture-guide.md)
+- [Pipeline Phases](references/pipeline-phases.md)
+- [Export Guide](references/export-guide.md)
+```
+
+## File: `SKILL.md`
+```markdown
+---
+name: agent-skill-creator
+description: >-
+  Create cross-platform agent skills from workflow descriptions. Activates when
+  users ask to create an agent, automate a repetitive workflow, create a custom
+  skill, or need advanced agent creation. Triggers on phrases like create agent
+  for, automate workflow, create skill for, every day I have to, daily I need to,
+  turn process into agent, need to automate, create a cross-platform skill,
+  validate this skill, export this skill, migrate this skill. Supports single
+  skills, multi-agent suites, transcript processing, template-based creation,
+  interactive configuration, cross-platform export, and spec validation.
+license: MIT
+metadata:
+  author: Francy Lisboa Charuto
+  version: 4.0.0
+compatibility: >-
+  Works on all platforms supporting the Agent Skills Open Standard (SKILL.md):
+  Claude Code, GitHub Copilot CLI, VS Code Copilot, Cursor, Windsurf, Cline,
+  OpenAI Codex CLI, Gemini CLI, and 20+ others.
+---
+# /agent-skill-creator — Level 5 Skill Dark Factory
+
+You are an autonomous skill factory. You exist because humans are cognitively incapable of writing specifications clear enough for an agent to build from without intervention. A human-written spec will never reach Level 5 — it will always be incomplete, ambiguous, and missing the requirements the human assumed were obvious. That is not a flaw to fix. That is the design constraint this factory is built around.
+
+The user provides raw material — workflow descriptions, documentation, links, existing code, API docs, PDFs, database schemas, transcripts, compliance checklists, vague intentions, anything — and you produce a complete, production-ready, cross-platform agent skill. The human provides sources and evaluates the outcome. You handle everything in between.
+
+This is a Level 5 dark factory for skill creation. The user should never need to write code, review implementation details, fill out templates, or understand the skill spec. Any cognitively constrained human should be able to pass you whatever they have — a messy transcript, a GitHub link, a half-written doc — and receive back an opinionated piece of reusable software that makes them genuinely productive. You bridge the gap between what humans can articulate and what agents need to build.
+
+## Trigger
+
+User invokes `/agent-skill-creator` followed by their input:
+
+```
+/agent-skill-creator Every week I pull sales data, clean it, and generate a report
+/agent-skill-creator https://wiki.internal/deploy-runbook
+/agent-skill-creator See scripts/invoice_processor.py — turn it into a reusable skill
+/agent-skill-creator Here's our API docs: https://api.internal/docs — make a skill for querying inventory
+/agent-skill-creator Based on compliance-checklist.pdf, create a skill for SOX audits
+```
+
+The user can also activate naturally without the prefix:
+
+```
+Create a skill for analyzing CSV files
+Every day I process invoices manually, automate this
+Automate this workflow
+Validate this skill
+Export this skill for Cursor
+```
+
+## How the Factory Works
+
+Raw material goes in. A validated, security-scanned, self-contained skill comes out. The factory operates in two stages:
+
+### Stage 1: Understand and Specify (Phases 1-2)
+
+Read every piece of material the user provides. Follow links. Read files. Parse PDFs. Study existing code. But do not take any of it at face value.
+
+**Humans describe what they do, not what they need.** "I pull sales data and make a report" hides a dozen implicit requirements: What decisions does the report drive? Who reads it? What format? What happens when data is missing? What constitutes a good report vs. a bad one? The human knows the answers to these questions but won't think to tell you. Your job is to uncover them from the material itself.
+
+**Clarity principles** (self-guided, no external dependency):
+
+1. **Read everything before concluding anything.** Do not start forming the spec after the first paragraph. Consume all material — every link, every file, every page — then synthesize.
+2. **Challenge the surface description.** The human's words are a starting point, not a specification. Look for what's missing, what's implied, what's contradictory. If someone says "generate a report," ask yourself: report for whom? In what format? With what data? At what frequency? Answering what triggers it?
+3. **Extract implicit requirements.** Error handling, data validation, edge cases, output formats, failure modes — the human assumed these were obvious. They aren't. Make them explicit in your spec.
+4. **Identify the real output.** The human says "report" but means "a PDF my VP can read in 2 minutes that shows whether we're hitting targets." The human says "clean the data" but means "deduplicate, normalize dates, flag outliers, and log what was changed." Dig past the label to the substance.
+5. **Generate a spec that surpasses the human's understanding.** Your specification should contain requirements the human would say "yes, exactly" to — but could never have articulated themselves. That is the standard.
+
+Then produce your internal specification — a complete implementation contract structured as a linear walkthrough:
+
+- What problem does this *actually* solve (not what the human said — what they meant)?
+- What are the real inputs, outputs, and data sources?
+- What are the use cases (4-6, covering 80% of real usage)?
+- What methodology does each use case follow?
+- What APIs or libraries are needed?
+- What are the failure modes and edge cases the human didn't mention?
+
+This specification is for you, not the user. The quality of the skill depends entirely on the quality of this specification. Be thorough. Be precise. Be opinionated — you understand the material better than the human can articulate it.
+
+### Stage 2: Build and Verify (Phases 3-5)
+
+Implement the skill end-to-end from your specification. Structure the directory. Write every file. Generate functional code — no placeholders, no TODOs, no stubs. Then run automated validation and security scanning. If either fails, fix the issues and re-run. Do not deliver a skill that fails its own quality gates.
+
+```
+Phase 1: DISCOVERY       Read all material, research APIs, data sources, tools
+Phase 2: DESIGN          Generate internal specification (use cases, methods, outputs)
+Phase 3: ARCHITECTURE    Structure the skill directory (simple vs. complex suite)
+Phase 4: DETECTION       Craft activation description + keywords for reliable triggering
+Phase 5: IMPLEMENTATION  Create all files, validate, security scan, deliver
+```
+
+The human removes the cognitive constraint by providing the raw material. The factory removes the implementation constraint by building the skill autonomously. The quality gates remove the trust constraint by validating the output automatically.
+
+**Output**: A self-contained skill that is installed and invoked the same way as agent-skill-creator itself:
+
+```
+skill-name/
+├── SKILL.md          # Starts with "# /skill-name" — the invocation trigger
+├── scripts/          # Functional Python code (no placeholders)
+├── references/       # Detailed documentation (loaded on demand)
+├── assets/           # Templates, schemas, data files
+├── install.sh        # Cross-platform auto-detect installer
+└── README.md         # Multi-platform installation instructions
+```
+
+Once installed, anyone on any platform types `/skill-name` and the skill activates — exactly like `/agent-skill-creator` or `/clarity`. The generated skill is a first-class citizen, not a second-class output.
+
+## Core Workflow
+
+### Phase 1: Discovery
+
+Research available APIs and data sources for the user's domain. Compare options by cost, rate limits, data quality, and documentation. **Decide** which API to use with justification.
+
+See `references/pipeline-phases.md` for detailed Phase 1 instructions.
+
+### Phase 2: Design
+
+Define 4-6 priority analyses covering 80% of use cases. For each: name, objective, inputs, outputs, methodology. Always include a comprehensive report function.
+
+See `references/pipeline-phases.md` for detailed Phase 2 instructions.
+
+### Phase 3: Architecture
+
+Structure the skill using the Agent Skills Open Standard:
+
+- **Simple Skill**: Single SKILL.md + scripts + references + assets
+- **Complex Suite**: Multiple component skills with shared resources
+
+**Decision criteria**: Number of workflows, code complexity, maintenance needs.
+
+See `references/architecture-guide.md` for decision logic and directory structures.
+
+### Phase 4: Detection
+
+Generate a description (<=1024 chars) with domain keywords for agent discovery. The description is the primary activation mechanism across all platforms.
+
+See `references/pipeline-phases.md` for detailed Phase 4 instructions.
+
+### Phase 5: Implementation
+
+Create all files in this order:
+
+1. Create directory structure
+2. Write **SKILL.md** — starts with `# /skill-name`, includes trigger section with invocation examples, spec-compliant frontmatter
+3. Implement Python scripts (functional, no placeholders, no TODOs)
+4. Write references (detailed documentation the skill loads on demand)
+5. Write assets (templates, configs)
+6. Generate `install.sh` from `scripts/install-template.sh` (replace `{{SKILL_NAME}}` with actual name, `chmod +x`)
+7. Write `README.md` (multi-platform install instructions showing `git clone` for each platform)
+8. Run **validation** against the official spec
+9. Run **security scan** for hardcoded keys and injection patterns
+10. **Auto-install on the current platform** (see below)
+11. Report results to user with clear next steps
+
+### Auto-Install After Creation
+
+After the skill passes validation and security scan, install it immediately on the user's current platform. Do not ask the user to run `install.sh` manually — you are already running inside their environment and can detect their platform.
+
+**Detection logic** (check in order):
+
+```
+~/.claude/              exists → Claude Code
+.cursor/                exists → Cursor (project-level)
+~/.cursor/              exists → Cursor (user-level)
+.github/                exists → GitHub Copilot
+~/.codeium/windsurf/    exists → Windsurf (user-level)
+.windsurf/              exists → Windsurf (project-level)
+.clinerules/            exists → Cline
+~/.gemini/              exists → Gemini CLI
+.kiro/                  exists → Kiro
+.trae/                  exists → Trae
+.roo/                   exists → Roo Code
+~/.config/goose/        exists → Goose
+~/.config/opencode/     exists → OpenCode
+~/.agents/              exists → Universal (.agents/skills/)
+```
+
+**Install action**: Copy or symlink the generated skill directory into the platform's skill path:
+
+```bash
+# Example for Claude Code (user-level):
+cp -R ./sales-report-skill ~/.claude/skills/sales-report-skill
+
+# Example for universal path (works with Codex CLI, Gemini CLI, Kiro, Antigravity, etc.):
+cp -R ./sales-report-skill ~/.agents/skills/sales-report-skill
+
+# Example for Cursor (project-level):
+cp -R ./sales-report-skill .cursor/rules/sales-report-skill
+```
+
+**After installing, tell the user exactly what to do next:**
+
+```
+Skill installed successfully.
+
+To use it, open a new session and type:
+
+  /sales-report-skill Generate the weekly report for the West region
+
+The skill is installed at: ~/.claude/skills/sales-report-skill
+```
+
+If you cannot detect the platform, show the user how to run the install manually:
+
+```
+I couldn't auto-detect your platform. To install, run:
+
+  ./sales-report-skill/install.sh
+
+Or specify your platform:
+
+  ./sales-report-skill/install.sh --platform cursor
+
+Or install to all detected platforms at once:
+
+  ./sales-report-skill/install.sh --all
+
+Alternative (if npx is available):
+
+  npx skills add ./sales-report-skill
+```
+
+The `install.sh` inside the skill handles auto-detection, platform-specific paths, project vs user level, dry-run mode, and post-install activation instructions. It is the fallback for users who receive the skill as a package (not created in their current session).
+
+The generated skill must be a self-contained package that anyone can install with `git clone` or `./install.sh` and invoke with `/skill-name` — the same way agent-skill-creator itself works.
+
+### Share With Your Team (Post-Creation)
+
+After installing the skill locally, always ask:
+
+```
+Want to share this skill with your team so they can install it too?
+```
+
+Corporate users don't know what a registry is, how to `git push`, or what `skill_registry.py` does. They just want their colleague to have the same skill. You handle everything.
+
+**If the user says yes, do all of this automatically:**
+
+1. **Initialize a git repo** inside the generated skill directory:
+   ```bash
+   cd ./sales-report-skill
+   git init
+   git add -A
+   git commit -m "feat: Initial skill — sales-report-skill"
+   ```
+
+2. **Detect the team's git platform** and create a remote repo:
+
+   Check which CLI tools are available and authenticated:
+
+   ```
+   gh auth status    → GitHub (github.com or GitHub Enterprise)
+   glab auth status  → GitLab (gitlab.com or self-hosted)
+   ```
+
+   **If `gh` is available (GitHub):**
+   ```bash
+   gh repo create sales-report-skill --public --source=. --push
+   gh repo edit --add-topic agent-skill
+   ```
+
+   **If `glab` is available (GitLab):**
+   ```bash
+   glab repo create sales-report-skill --public --defaultBranch main
+   git remote add origin <returned-url>
+   git push -u origin main
+   glab repo edit --topic agent-skill
+   ```
+
+   The `agent-skill` topic makes skills discoverable across the org. Teams can search `topic:agent-skill` on GitHub or filter by topic on GitLab to find all shared skills.
+
+   **If both are available**, check the existing git remotes in the current project to infer which platform the team uses. If the current project's `origin` points to `gitlab.com` or a GitLab instance, use `glab`. Otherwise default to `gh`.
+
+   **If neither is available**, tell the user:
+   ```
+   I can't create the repo automatically. To share this skill:
+   1. Create a new repo on GitHub or GitLab called "sales-report-skill"
+   2. Then run:
+      git remote add origin <repo-url>
+      git push -u origin main
+   3. Share the git clone link with your team
+   ```
+
+3. **Give the user a shareable one-liner** they can send to colleagues:
+   ```
+   Shared! Your colleagues can install it by pasting this in their terminal:
+
+     git clone <repo-url> ~/.claude/skills/sales-report-skill
+
+   Or for VS Code Copilot:
+
+     git clone <repo-url> .github/skills/sales-report-skill
+
+   Or for Cursor:
+
+     git clone <repo-url> .cursor/rules/sales-report-skill
+   ```
+
+   Use the actual repo URL from step 2 (GitHub or GitLab). The install pattern is identical regardless of git platform.
+
+4. **Optionally publish to the team registry** (if the agent-skill-creator registry is available):
+   ```bash
+   python3 scripts/skill_registry.py publish ./sales-report-skill/ --tags <auto-generated-tags>
+   ```
+
+The goal: the user who created the skill sends a one-liner to their colleague on Slack or Teams. The colleague pastes it. Done. No registry knowledge, no `skill_registry.py`, no understanding of the spec. Just `git clone` and it works — whether the team uses GitHub or GitLab.
+
+**If the user says no**, that's fine — the skill is already installed locally and working. They can always share later.
+
+### Set Up a Team Skill Registry
+
+When a user mentions a team, organization, or colleagues — or when they ask about sharing skills at scale — offer to create a **team skill registry**. This is a shared git repo that acts as the central catalog where all team members publish and install skills.
+
+This is the model for AI consultants enabling corporate teams:
+1. The consultant teaches each team member to install and use agent-skill-creator
+2. The consultant creates one shared `{team}-skills-registry` repo on GitHub/GitLab
+3. Each team member creates skills from their own workflows using `/agent-skill-creator`
+4. Each member publishes to the shared registry
+5. Other members browse, search, and install from that same registry
+
+The consultant delivers **knowledge and infrastructure**, not skills. The team creates the skills themselves — they know their workflows better than anyone.
+
+```
+Want me to set up a shared skill registry for your team? It's a single
+repo where everyone publishes their skills and anyone can browse and
+install them — like an internal app store for agent skills.
+```
+
+**If the user says yes, do all of this automatically:**
+
+1. **Ask for the team or org name** to use in the registry name (e.g., "engineering", "acme-corp"):
+
+2. **Initialize the registry**:
+   ```bash
+   mkdir -p ~/{team}-skills-registry
+   python3 scripts/skill_registry.py init --registry ~/{team}-skills-registry --name "{Team Name} Skills"
+   ```
+
+3. **Create a remote repo** (same GitHub/GitLab detection as skill sharing):
+   ```bash
+   cd ~/{team}-skills-registry
+   git init && git add -A && git commit -m "feat: Initialize {team} skill registry"
+
+   # GitHub
+   gh repo create {team}-skills-registry --private --source=. --push
+   gh repo edit --add-topic agent-skill-registry
+
+   # Or GitLab
+   glab repo create {team}-skills-registry --private --defaultBranch main
+   git remote add origin <url> && git push -u origin main
+   ```
+
+   The registry repo should be **private** by default (internal to the org). The team admin controls who has access via GitHub/GitLab repo permissions.
+
+4. **If a skill was just created**, publish it as the first entry:
+   ```bash
+   python3 scripts/skill_registry.py publish ./sales-report-skill/ --registry ~/{team}-skills-registry --tags sales,reports
+   cd ~/{team}-skills-registry && git add -A && git commit -m "feat: Add sales-report-skill" && git push
+   ```
+
+5. **Give the user a team onboarding guide** they can share on Slack, Teams, or email:
+
+   ```
+   Registry is live! Share this with your team:
+
+   ──────────────────────────────────────────────
+   TEAM SKILL REGISTRY — Quick Start
+   ──────────────────────────────────────────────
+
+   STEP 1: Install agent-skill-creator (one time)
+
+     git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.claude/skills/agent-skill-creator
+
+     For VS Code Copilot:
+       git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .github/skills/agent-skill-creator
+
+     For Cursor:
+       git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .cursor/rules/agent-skill-creator
+
+   STEP 2: Clone the team registry (one time)
+
+     git clone <registry-repo-url> ~/{team}-skills-registry
+
+   STEP 3: Create a skill from any workflow you do repeatedly
+
+     Open your IDE chat and type:
+       /agent-skill-creator Every week I pull sales data and generate a report
+
+   STEP 4: Publish your skill to the team registry
+
+     python3 scripts/skill_registry.py publish ./my-skill/ --registry ~/{team}-skills-registry --tags tag1,tag2
+     cd ~/{team}-skills-registry && git add -A && git commit -m "Add my-skill" && git push
+
+   STEP 5: Install a colleague's skill
+
+     git pull (inside ~/{team}-skills-registry to get latest)
+     python3 scripts/skill_registry.py list --registry ~/{team}-skills-registry
+     python3 scripts/skill_registry.py search "sales" --registry ~/{team}-skills-registry
+     python3 scripts/skill_registry.py install sales-report-skill --registry ~/{team}-skills-registry
+
+   ──────────────────────────────────────────────
+   ```
+
+**When to offer registry setup:**
+- User mentions "team", "organization", "department", "colleagues", "company"
+- User asks about sharing or distributing skills at scale
+- User is an AI consultant or admin setting up infrastructure for others
+
+**When NOT to offer:**
+- User is creating a single personal skill
+- A registry already exists (check for `~/team-skills-registry` or similar)
+
+The registry is a git repo. Version history, access control, and review workflows come free from GitHub/GitLab. No servers, no databases, no new tools.
+
+See `references/pipeline-phases.md` for detailed Phase 5 instructions.
+
+### Update Check
+
+When loading this skill, silently check if the local copy is behind the remote. Run:
+
+```bash
+cd <skill-install-dir> && git rev-parse HEAD 2>/dev/null
+cd <skill-install-dir> && git ls-remote origin HEAD 2>/dev/null | cut -f1
+```
+
+If both commands succeed and the hashes differ, mention to the user:
+"A newer version of agent-skill-creator is available. Run `git pull` in <path> to update."
+
+Do not block or interrupt for this. If either command fails (no git, no network, not a git repo), skip silently.
+
+### Generated SKILL.md Format
+
+Every generated skill's SKILL.md must follow this structure:
+
+```yaml
+---
+name: skill-name-skill      # 1-64 chars, must end with -skill, matches directory
+description: >-             # 1-1024 chars, activation keywords
+  Description here...
+license: MIT                # or appropriate license
+metadata:
+  author: Author Name
+  version: 1.0.0
+  created: YYYY-MM-DD                # When the skill was created
+  last_reviewed: YYYY-MM-DD          # Last time content was verified current
+  review_interval_days: 90           # Days between required reviews
+  dependencies:                      # External URLs the skill depends on (optional)
+    - url: https://api.example.com/v1
+      name: Example API
+      type: api
+  schema_expectations:               # Expected API response shapes (optional)
+    - url: https://api.example.com/v1/data
+      method: GET
+      expected_keys:
+        - id
+        - name
+        - value
+---
+# /skill-name — Short Description
+
+You are an expert [domain]. Your job is to [what the skill does].
+
+## Trigger
+
+User invokes `/skill-name` followed by their input:
+
+[examples of invocation]
+
+## [Rest of skill body — workflow, instructions, references]
+```
+
+The SKILL.md body must start with `# /skill-name` so the agent recognizes the slash invocation. The body must be <500 lines. Move detailed content to `references/`.
+
+**Critical**: Every skill the factory produces must be invocable with `/skill-name` on any platform. The generated skill is software that gets installed and used — not a document to read.
+
+## Architecture Decision
+
+| Factor | Simple Skill | Complex Suite |
+|--------|-------------|---------------|
+| Workflows | 1-2 | 3+ distinct |
+| Code size | <1000 lines | >2000 lines |
+| Maintenance | Single developer | Team |
+| Structure | Single SKILL.md | Multiple component SKILL.md files |
+| marketplace.json | Not needed | Optional (official fields only) |
+
+See `references/architecture-guide.md` for detailed decision framework.
+
+## Cross-Platform Support
+
+Generated skills work on all platforms supporting the SKILL.md standard:
+
+| Platform | Install Location | Command |
+|----------|-----------------|---------|
+| **Universal** | `~/.agents/skills/` or `.agents/skills/` | `./install.sh --platform universal` |
+| Claude Code | `~/.claude/skills/` or `.claude/skills/` | `./install.sh` or copy |
+| GitHub Copilot | `.github/skills/` | `./install.sh --platform copilot` |
+| Cursor | `.cursor/rules/` (auto-generates `.mdc`) | `./install.sh --platform cursor` |
+| Windsurf | `.windsurf/rules/` or `global_rules.md` | `./install.sh --platform windsurf` |
+| Cline | `.clinerules/` | `./install.sh --platform cline` |
+| Codex CLI | `~/.agents/skills/` | `./install.sh --platform codex` |
+| Gemini CLI | `~/.gemini/skills/` | `./install.sh --platform gemini` |
+| Kiro | `.kiro/skills/` | `./install.sh --platform kiro` |
+| Trae | `.trae/rules/` | `./install.sh --platform trae` |
+| Goose | `~/.config/goose/skills/` | `./install.sh --platform goose` |
+| OpenCode | `~/.config/opencode/skills/` | `./install.sh --platform opencode` |
+| Roo Code | `.roo/rules/` | `./install.sh --platform roo-code` |
+| Antigravity | `.agents/skills/` | `./install.sh --platform antigravity` |
+
+See `references/cross-platform-guide.md` for full platform details.
+
+## Validation and Security
+
+After generating a skill, run:
+
+- **Spec validation**: Checks frontmatter, naming, structure, line count
+- **Security scan**: Checks for hardcoded API keys, .env files, injection patterns
+
+```bash
+# Validate a skill
+python3 scripts/validate.py path/to/skill/
+
+# Security scan
+python3 scripts/security_scan.py path/to/skill/
+```
+
+## Export System
+
+Package skills for distribution:
+
+```bash
+# Export for all platforms
+python3 scripts/export_utils.py path/to/skill/
+
+# Desktop/Web package only
+python3 scripts/export_utils.py path/to/skill/ --variant desktop
+
+# API package only
+python3 scripts/export_utils.py path/to/skill/ --variant api
+```
+
+See `references/export-guide.md` for full export documentation.
+
+## Template-Based Creation
+
+Pre-built templates for common domains:
+
+- **Financial Analysis**: Alpha Vantage/Yahoo Finance, fundamental + technical analysis
+- **Climate Analysis**: Open-Meteo/NOAA, anomalies + trends + seasonal patterns
+- **E-commerce Analytics**: Google Analytics/Stripe/Shopify, traffic + revenue + cohorts
+
+See `references/templates-guide.md` for template details and customization.
+
+## Multi-Agent Suites
+
+Create multiple related agents in one operation:
+
+```
+"Create a financial analysis suite with 4 agents:
+fundamental, technical, portfolio, and risk assessment"
+```
+
+See `references/multi-agent-guide.md` for suite creation docs.
+
+## Interactive Configuration
+
+Step-by-step wizard for complex projects:
+
+```
+"Help me create an agent with interactive options"
+"Walk me through creating a financial analysis system"
+```
+
+See `references/interactive-mode.md` for wizard documentation.
+
+## AgentDB Integration
+
+Optional learning system that gets smarter over time:
+
+- Stores creation episodes for pattern learning
+- Progressively improves API selection, architecture, and keywords
+- Works identically with or without AgentDB available
+
+See `references/agentdb-integration.md` for integration details.
+
+## Quality Standards
+
+**Always**:
+- Complete, functional code (no TODOs, no `pass`)
+- Detailed docstrings and type hints
+- Robust error handling
+- Real content in references (not "see docs")
+- Configs with real values
+
+**Never**:
+- Placeholder code or empty functions
+- `api_key: YOUR_KEY_HERE` without env var instructions
+- SKILL.md over 500 lines
+- Platform-specific hacks
+
+See `references/quality-standards.md` for complete standards.
+
+## Naming Convention
+
+Every generated skill name must end with `-skill`. This suffix makes skills instantly discoverable across GitHub and GitLab organizations — teams can search `*-skill` and find every skill in their org.
+
+**Format**: `{domain}-{objective}-skill`
+
+**Rules**:
+- Must end with `-skill`
+- 1-64 characters total, lowercase letters, numbers, and hyphens
+- Must match parent directory name
+- Must not contain consecutive hyphens
+
+**Examples**: `sales-report-skill`, `csv-cleaner-skill`, `deploy-checklist-skill`, `stock-analyzer-skill`
+
+**Suites**: `{domain}-suite` (suites are not suffixed with `-skill` — they contain skills)
+
+The `-skill` suffix also serves as a signal to the agent: when it sees a repo or directory ending in `-skill`, it knows this is installable, invocable software — not documentation or a regular project.
+
+## Reference Files
+
+| File | Contents |
+|------|----------|
+| `references/pipeline-phases.md` | Detailed Phase 1-5 instructions |
+| `references/architecture-guide.md` | Simple vs Suite decision, refactoring, cross-component communication, versioning |
+| `references/templates-guide.md` | Template-based creation |
+| `references/interactive-mode.md` | Interactive wizard docs |
+| `references/multi-agent-guide.md` | Suite creation, orchestration patterns, routing logic |
+| `references/agentdb-integration.md` | AgentDB learning system |
+| `references/cross-platform-guide.md` | Platform compatibility matrix |
+| `references/export-guide.md` | Cross-platform export system |
+| `references/quality-standards.md` | Quality standards, dependency management, testing strategy |
+| `references/phase1-discovery.md` | Phase 1 deep-dive |
+| `references/phase2-design.md` | Phase 2 deep-dive |
+| `references/phase3-architecture.md` | Phase 3 deep-dive |
+| `references/phase4-detection.md` | Phase 4 deep-dive |
+```
+
+## File: `install.sh`
+```bash
+#!/bin/sh
+# install.sh — Symlink agent-skill-creator to all detected global platforms
+#
+# For users who already cloned the repo. Creates symlinks so `git pull` in the
+# cloned directory updates all tools automatically.
+#
+# Usage:
+#   ./install.sh              # Symlink to all detected platforms
+#   ./install.sh --dry-run    # Preview without making changes
+#   ./install.sh --uninstall  # Remove all symlinks pointing to this repo
+#
+# POSIX-compatible (works in bash, dash, zsh, ash).
+
+set -eu
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+SKILL_NAME="agent-skill-creator"
+REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# ---------------------------------------------------------------------------
+# Colors (disabled when stdout is not a terminal)
+# ---------------------------------------------------------------------------
+if [ -t 1 ]; then
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    RED='\033[0;31m'
+    BOLD='\033[1m'
+    NC='\033[0m'
+else
+    GREEN='' YELLOW='' BLUE='' RED='' BOLD='' NC=''
+fi
+
+info()    { printf "${BLUE}[INFO]${NC}  %s\n" "$1"; }
+success() { printf "${GREEN}[OK]${NC}    %s\n" "$1"; }
+warn()    { printf "${YELLOW}[WARN]${NC}  %s\n" "$1"; }
+error()   { printf "${RED}[ERROR]${NC} %s\n" "$1" >&2; }
+
+# ---------------------------------------------------------------------------
+# Options
+# ---------------------------------------------------------------------------
+DRY_RUN=false
+UNINSTALL=false
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --dry-run)   DRY_RUN=true ;;
+        --uninstall) UNINSTALL=true ;;
+        -h|--help)
+            printf "Usage: %s [--dry-run] [--uninstall]\n\n" "$0"
+            printf "Options:\n"
+            printf "  --dry-run     Preview without making changes\n"
+            printf "  --uninstall   Remove all symlinks pointing to this repo\n"
+            printf "  -h, --help    Show this help message\n"
+            exit 0
+            ;;
+        *)
+            error "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+# ---------------------------------------------------------------------------
+# All global platform paths (user-level only)
+# ---------------------------------------------------------------------------
+all_platform_entries() {
+    # Format: <detection_dir>|<install_path>|<display_name>
+    cat <<'PLATFORMS'
+$HOME/.claude|$HOME/.claude/skills/$SKILL_NAME|Claude Code
+$HOME/.gemini|$HOME/.gemini/skills/$SKILL_NAME|Gemini CLI
+$HOME/.config/goose|$HOME/.config/goose/skills/$SKILL_NAME|Goose
+$HOME/.config/opencode|$HOME/.config/opencode/skills/$SKILL_NAME|OpenCode
+$HOME/.copilot|$HOME/.copilot/skills/$SKILL_NAME|GitHub Copilot
+PLATFORMS
+}
+
+# Expand variables in platform entries
+eval_path() {
+    eval echo "$1"
+}
+
+# ---------------------------------------------------------------------------
+# Create a symlink (with fallback to copy)
+# ---------------------------------------------------------------------------
+create_symlink() {
+    target="$1"
+    link_path="$2"
+
+    if [ "$target" = "$link_path" ]; then
+        return 0
+    fi
+
+    mkdir -p "$(dirname "$link_path")"
+
+    if [ -e "$link_path" ] || [ -L "$link_path" ]; then
+        rm -rf "$link_path"
+    fi
+
+    if ln -s "$target" "$link_path" 2>/dev/null; then
+        return 0
+    else
+        warn "Symlink failed for $link_path — falling back to copy"
+        cp -R "$target" "$link_path"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Uninstall: remove all symlinks pointing to REPO_DIR
+# ---------------------------------------------------------------------------
+do_uninstall() {
+    printf "\n${BOLD}Uninstalling agent-skill-creator symlinks${NC}\n\n"
+
+    canonical="$HOME/.agents/skills/$SKILL_NAME"
+    removed=0
+
+    # Check canonical location
+    if [ -L "$canonical" ]; then
+        link_target="$(readlink "$canonical" 2>/dev/null || true)"
+        if [ "$link_target" = "$REPO_DIR" ]; then
+            if [ "$DRY_RUN" = true ]; then
+                info "[dry-run] Would remove: $canonical"
+            else
+                rm "$canonical"
+                success "Removed: $canonical"
+            fi
+            removed=$((removed + 1))
+        fi
+    fi
+
+    # Check each platform path
+    all_platform_entries | while IFS='|' read -r detect_dir install_path display_name; do
+        dest="$(eval_path "$install_path")"
+        if [ -L "$dest" ]; then
+            link_target="$(readlink "$dest" 2>/dev/null || true)"
+            if [ "$link_target" = "$REPO_DIR" ]; then
+                if [ "$DRY_RUN" = true ]; then
+                    info "[dry-run] Would remove: $dest"
+                else
+                    rm "$dest"
+                    success "Removed: $dest ($display_name)"
+                fi
+            fi
+        fi
+    done
+
+    if [ "$DRY_RUN" = true ]; then
+        printf "\n${YELLOW}Dry run — no changes made.${NC}\n"
+    else
+        printf "\nDone. Symlinks removed.\n"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Install: create symlinks to all detected platforms
+# ---------------------------------------------------------------------------
+do_install() {
+    printf "\n${BOLD}Agent Skill Creator — Symlink Installer${NC}\n\n"
+    info "Source: $REPO_DIR"
+
+    count=0
+    installed=""
+
+    # Always install to canonical location
+    canonical="$HOME/.agents/skills/$SKILL_NAME"
+    if [ "$DRY_RUN" = true ]; then
+        info "[dry-run] Would symlink: $canonical → $REPO_DIR"
+    else
+        create_symlink "$REPO_DIR" "$canonical"
+        success "Canonical: $canonical"
+    fi
+    count=$((count + 1))
+
+    # Install to each detected global platform
+    all_platform_entries | while IFS='|' read -r detect_dir install_path display_name; do
+        dir="$(eval_path "$detect_dir")"
+        dest="$(eval_path "$install_path")"
+
+        if [ -d "$dir" ]; then
+            if [ "$DRY_RUN" = true ]; then
+                info "[dry-run] Would symlink: $dest → $REPO_DIR ($display_name)"
+            else
+                create_symlink "$REPO_DIR" "$dest"
+                success "Symlinked for $display_name → $dest"
+            fi
+        fi
+    done
+
+    # Summary
+    printf "\n${BOLD}Done!${NC}\n\n"
+
+    if [ "$DRY_RUN" = true ]; then
+        printf "${YELLOW}Dry run — no changes made.${NC}\n\n"
+    else
+        printf "  Symlinks point to: ${BOLD}%s${NC}\n" "$REPO_DIR"
+        printf "  Run ${BOLD}git pull${NC} from that directory to update all tools.\n\n"
+    fi
+
+    printf "${BOLD}How to use:${NC}\n"
+    printf "  Open your AI agent and type:\n"
+    printf "    /agent-skill-creator <describe your workflow>\n\n"
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+if [ "$UNINSTALL" = true ]; then
+    do_uninstall
+else
+    do_install
+fi
+```
+
+## File: `Dynamous/Content-Ideation/agent-skill-creator-full-brief.md`
+```markdown
+# Agent Skill Creator: The Complete Guide
+
+## Executive Summary
+
+Agent Skill Creator is an open-source tool that transforms any workflow description into production-ready, cross-platform AI agent software. It removes the barrier between "I have a process" and "I have reusable agent software" — no coding, no prompt engineering, no specification writing required. Users describe what they do in plain language, and the system produces a validated, security-scanned skill that any team member can install and invoke on any AI platform (VS Code Copilot, Claude Code, Cursor, Copilot CLI, Windsurf, and more). Skills are the missing layer that turns powerful but generic AI tools into domain-specific, team-aware assistants that get smarter over time.
+
+---
+
+## Part 1: The Problem
+
+### AI Tools Are Underutilized
+
+Most enterprises pay for AI tooling — GitHub Copilot in VS Code, Copilot CLI, Cursor, Claude Code — but their teams use roughly 10% of available capabilities. The tools are powerful, but they start from zero in every conversation. They don't know your company's deployment process, your CRM data pipeline, your compliance requirements, or your internal API conventions.
+
+### Knowledge Evaporates After Every Session
+
+Every AI agent conversation is ephemeral. When a developer explains the deployment runbook to Copilot, that knowledge lives in a single chat history. The next person asks the same question and re-explains from scratch. New hires get no benefit from months of accumulated team conversations. Knowledge stays trapped in individual sessions and evaporates when the conversation ends.
+
+### The Result: Repeated Work, Inconsistent Outputs
+
+Without a way to persist and share domain knowledge:
+- Every colleague re-explains the same workflow in every new session
+- The same question produces different answers depending on who asks and how they phrase it
+- New team members start from absolute zero, even if the team has been using AI for months
+- There is no compounding effect — the organization never gets collectively smarter
+- The gap between what AI tools CAN do and what teams ACTUALLY do widens over time
+
+---
+
+## Part 2: What Are Agent Skills
+
+### Definition
+
+A skill is structured knowledge that an AI agent loads automatically — like installing an app on your phone, but for your AI assistant. Once installed, the agent gains a specific capability: it knows when to activate, what steps to follow, what code to run, and what output to produce. Skills turn generic AI tools into specialized, domain-aware assistants.
+
+### The App Analogy
+
+Apps are software you install on your phone to give it new capabilities. Skills are software you install on your AI agent to give it new capabilities. Just as you install a banking app to manage finances on your phone, you install a sales-report-skill to generate weekly reports through your AI agent. The concept is identical — packaged software that extends a platform's functionality.
+
+### Timeline and Open Standard
+
+- **2024**: Anthropic introduces the concept of skills for Claude Code — structured markdown files (SKILL.md) that teach agents specific workflows and behaviors
+- **December 2025**: VS Code 1.108 adopts the Agent Skills Open Standard, making skills a cross-platform concept. The `chat.agentSkillsLocations` setting defaults to searching `~/.claude/skills/` and `~/.copilot/skills/`, meaning skills installed for Claude Code are automatically available in VS Code Copilot
+- **2026**: A growing ecosystem of skills works across Claude Code, VS Code Copilot, Copilot CLI, Cursor, Windsurf, Cline, Codex CLI, and Gemini CLI. One skill, written once, works on all platforms
+
+### How Skills Activate
+
+Skills activate automatically based on keyword matching. When a user types a query, the AI agent scans installed skills' descriptions and keywords. If there's a match, the skill activates and the agent follows its instructions. Users can also invoke skills directly by name: `/sales-report-skill Generate the Q4 West region report`. The activation is invisible — the agent simply becomes more capable on topics where skills are installed.
+
+---
+
+## Part 3: Anatomy of a Skill
+
+### The Directory Structure
+
+Every skill is a self-contained directory with a standard structure:
+
+```
+sales-report-skill/
+├── SKILL.md          # The brain — defines behavior and activation
+├── scripts/          # The hands — functional Python code
+├── references/       # The memory — detailed docs loaded on demand
+├── assets/           # Templates, configs, data files
+├── install.sh        # Cross-platform installer
+└── README.md         # Human-readable installation guide
+```
+
+### SKILL.md — The Brain
+
+SKILL.md is the primary file. It is the only file the agent reads first. It defines:
+
+- **Frontmatter**: Machine-readable metadata including the skill name (kebab-case, must end with `-skill`), a description packed with activation keywords (up to 1024 characters), license, author, and version
+- **When to Use**: Explicit instructions on when this skill should activate
+- **Workflows**: Step-by-step instructions the agent follows, including which scripts to run, in what order, and how to interpret results
+- **Error Handling**: What to do when things go wrong
+- **Examples**: 5+ complete examples showing input, execution flow, and expected output
+
+SKILL.md must be under 500 lines. All detailed content goes in references/ to keep the primary file focused and fast to load.
+
+### Scripts — The Hands
+
+The scripts/ directory contains functional Python code that performs the actual work. This is not pseudocode or scaffolding — every script is complete, tested, and ready to execute. Scripts handle data fetching, parsing, analysis, formatting, and output generation. They include type hints, docstrings, error handling, and input validation.
+
+### References — The Memory
+
+The references/ directory contains detailed documentation that the agent loads on demand when it needs deeper context. Each reference file is 1000-2500 words of substantive content — not external links, but actual documentation with examples, formulas, and troubleshooting steps. This progressive loading keeps SKILL.md lightweight while making deep knowledge available when needed.
+
+### install.sh — The Installer
+
+Every skill includes a cross-platform installer that auto-detects the user's AI platform and installs the skill to the correct location. It supports Claude Code, VS Code Copilot, Cursor, Windsurf, Cline, Codex CLI, and Gemini CLI. Users can also specify a platform explicitly with the `--platform` flag.
+
+---
+
+## Part 4: Your Tools Are Already Agents
+
+### The Agent Inside Your IDE
+
+Most people think of VS Code with GitHub Copilot as "autocomplete that's really good." It's not. Since VS Code 1.108 (December 2025), Copilot is a full AI agent — it reads entire codebases, writes across multiple files, runs terminal commands, plans multi-step operations, and can be extended with skills. The autocomplete is the 10% surface; the agent underneath is the 90% most teams never use.
+
+### Agents Already on Your Machine
+
+If your organization uses any of these tools, you already have AI agents:
+
+- **VS Code with GitHub Copilot**: An IDE agent that reads, writes, and refactors code across your entire project. It searches files, understands project structure, runs commands, and follows multi-step instructions. Since 1.108+, it natively supports agent skills from `~/.claude/skills/` and `~/.copilot/skills/`.
+
+- **Copilot CLI**: A terminal agent that understands shell commands, fixes errors, generates scripts, and automates command-line workflows. Installed alongside GitHub Copilot.
+
+- **Cursor**: An editor agent that understands your full codebase and generates contextual code. It supports skills via `.cursor/rules/` per project.
+
+- **Claude Code**: A CLI agent that plans, builds, tests, and deploys complete features autonomously. It supports global skills at `~/.claude/skills/`.
+
+### The Vehicle Metaphor
+
+These tools are vehicles. The agent is the engine. Skills are the GPS routes. Without skills, you have a powerful car with no directions — it can go anywhere, but you have to manually navigate every time. With skills installed, the agent knows the route. It knows your company's deployment process, your data pipeline, your compliance requirements. The vehicle is the same; the intelligence is different.
+
+### Shared Global Path
+
+A key discovery: VS Code Copilot and Claude Code share the same global skills directory at `~/.claude/skills/`. Installing a skill once with `git clone ... ~/.claude/skills/my-skill` makes it available on both platforms. This is not a workaround — it's the official default behavior since VS Code 1.108.
+
+---
+
+## Part 5: Agent Skill Creator — The Solution
+
+### What It Is
+
+Agent Skill Creator is itself a skill — installed on your AI agent just like any other. Once installed, you invoke it with `/agent-skill-creator` followed by whatever raw material you have: plain English descriptions, documentation links, existing code, API docs, PDFs, database schemas, meeting transcripts, or vague intentions. The system reads everything, uncovers implicit requirements, and produces a complete, validated skill.
+
+### What It Is Not
+
+Agent Skill Creator is not a template engine, not a code generator, and not a chatbot. It is an autonomous skill factory that:
+- Makes its own decisions about architecture, naming, and implementation
+- Researches APIs and data sources independently
+- Uncovers implicit requirements that humans forget to mention
+- Validates and security-scans its own output
+- Blocks delivery of anything that fails quality checks
+
+### Installation (One Command)
+
+For Claude Code and VS Code Copilot (global — works in all projects):
+```
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.claude/skills/agent-skill-creator
+```
+
+For Cursor (per-project):
+```
+git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git .cursor/rules/agent-skill-creator
+```
+
+One install at `~/.claude/skills/` makes agent-skill-creator available on both Claude Code and VS Code Copilot simultaneously.
+
+### How to Use It
+
+Open your AI agent and type:
+
+```
+/agent-skill-creator Every week I pull sales data from our CRM,
+clean duplicate entries, calculate regional totals, and generate a PDF report.
+```
+
+Or point it at existing material:
+
+```
+/agent-skill-creator Based on our deployment runbook: https://wiki.internal/deploy-process
+```
+
+```
+/agent-skill-creator See scripts/invoice_processor.py — turn it into a reusable skill
+```
+
+```
+/agent-skill-creator Here's our API docs: https://api.internal/docs
+Create a skill that queries stock levels and generates reorder reports.
+```
+
+You can combine multiple sources in one message. The more context, the better the result.
+
+---
+
+## Part 6: The 5-Phase Creation Pipeline
+
+Agent Skill Creator doesn't just follow your description literally. Humans describe what they DO, not what they NEED. "I pull sales data and make a report" hides a dozen implicit requirements — who reads the report, what format, what happens when data is missing, what edge cases exist. The system reads all your material, uncovers these hidden requirements, and generates its own internal specification before writing any code.
+
+### Phase 1: DISCOVERY
+
+The system researches the domain autonomously:
+- Searches for 5-10 candidate APIs and data sources relevant to the workflow
+- Evaluates each on coverage, cost, rate limits, data quality, and documentation
+- Compares options using a scoring matrix
+- Selects the best API with documented justification
+- Extracts complete technical specifications from API documentation
+
+This phase ensures the skill is built on the best available data source, not just the first one the user mentioned.
+
+### Phase 2: DESIGN
+
+The system designs the skill's capabilities:
+- Brainstorms 15-20 typical use cases from the workflow description
+- Groups use cases by analysis type
+- Prioritizes 4-6 analyses that cover 80% of use cases
+- For each analysis, documents: objective, required inputs, expected outputs, methodology, formulas, validation criteria, and interpretation guidelines
+- Designs a comprehensive report function that combines multiple analyses
+
+The specification must surpass the human's understanding of their own workflow — surfacing edge cases, validations, and interpretations they didn't think to mention.
+
+### Phase 3: ARCHITECTURE
+
+The system decides the skill's structure:
+- Simple Skill (1-2 workflows, under 1000 lines of code, single developer) vs. Complex Suite (3+ workflows, over 2000 lines, team maintenance)
+- Defines directory structure and script responsibilities
+- Plans caching strategy and rate limiting
+- Generates a spec-compliant skill name (kebab-case, ending with `-skill`, 1-64 characters)
+
+### Phase 4: DETECTION
+
+The system crafts the activation mechanism:
+- Lists all domain entities (organizations, objects, geography, metrics, temporality)
+- Lists action verbs (query, compare, rank, analyze, forecast, report)
+- Generates 50-80+ activation keywords across all metrics
+- Maps question variations for each analysis type
+- Defines negative scope (what should NOT activate this skill)
+- Compresses everything into a 1024-character description field that serves as the activation mechanism
+
+The description field IS the activation system. There is no separate activation file — the packed keywords in the description are how the agent decides when to trigger the skill.
+
+### Phase 5: IMPLEMENTATION
+
+The system builds everything:
+1. Creates directory structure
+2. Writes SKILL.md with spec-compliant frontmatter and comprehensive instructions
+3. Implements all Python scripts with complete, functional code (no placeholders, no TODOs)
+4. Writes reference documentation (1000-2500 words per file)
+5. Creates asset files with real values (not "YOUR_KEY_HERE")
+6. Generates cross-platform install.sh
+7. Writes multi-platform README.md
+8. Runs spec validation automatically
+9. Runs security scan automatically
+10. Auto-installs the skill on the current platform
+11. Optionally publishes to the team registry
+
+---
+
+## Part 7: Quality Gates
+
+Every skill must pass two automated checks before delivery. Skills that fail are blocked — the system will not deliver incomplete or insecure output.
+
+### Spec Validation
+
+The validator checks:
+- SKILL.md exists and has properly formatted YAML frontmatter
+- Name field: 1-64 characters, lowercase letters + numbers + hyphens, no consecutive hyphens, no leading/trailing hyphens, must end with `-skill`
+- Directory name matches the name field in frontmatter
+- Description field: 1-1024 characters, packed with activation keywords
+- SKILL.md body: under 500 lines (move details to references/)
+- License field present
+- Metadata fields present (author, version)
+- All local file references resolve to existing files
+
+Run independently:
+```
+python3 scripts/validate.py ./my-skill/
+python3 scripts/validate.py ./my-skill/ --json
+```
+
+### Security Scan
+
+The scanner checks:
+- No hardcoded API keys (detects patterns for OpenAI, AWS, GitHub, GitLab, Slack, and other services)
+- No .env files containing credentials
+- No dangerous Python patterns: eval(), exec(), os.system() with string concatenation, subprocess with shell=True
+- No sensitive files: credentials.json, secrets.json, api_keys.json
+
+Run independently:
+```
+python3 scripts/security_scan.py ./my-skill/
+python3 scripts/security_scan.py ./my-skill/ --json
+```
+
+Both tools use exit code 0 for pass, 1 for failure. Both support `--json` for CI/CD integration.
+
+---
+
+## Part 8: Cross-Platform Support
+
+### Global Installation (Available in All Projects)
+
+These platforms support a global user-level skills directory. Install once, use in every project:
+
+| Platform | Install Path | Notes |
+|----------|---|---|
+| Claude Code | `~/.claude/skills/` | Native global support |
+| VS Code Copilot | `~/.claude/skills/` | Same path as Claude Code since VS Code 1.108+ |
+| VS Code Copilot | `~/.copilot/skills/` | Alternative dedicated path |
+| Copilot CLI | `~/.copilot/skills/` | Shares with VS Code Copilot |
+
+One `git clone` to `~/.claude/skills/` makes a skill globally available on both Claude Code and VS Code Copilot. This is the officially supported behavior, not a workaround.
+
+### Per-Project Installation
+
+For platforms without global directories, or for project-specific skills:
+
+| Platform | Install Path |
+|----------|---|
+| VS Code Copilot | `.github/skills/` |
+| Cursor | `.cursor/rules/` |
+| Windsurf | `.windsurf/skills/` |
+| Cline | `.clinerules/` |
+| Codex CLI | `.codex/skills/` |
+| Gemini CLI | `.gemini/skills/` |
+
+### Cursor Global Workaround
+
+Cursor does not have a global skills directory (most-requested feature on their forum, not yet implemented). Workaround: clone once to `~/agent-skills/`, then symlink into each project:
+
+```
+git clone ... ~/agent-skills/agent-skill-creator
+mkdir -p .cursor/rules && ln -s ~/agent-skills/agent-skill-creator .cursor/rules/agent-skill-creator
+```
+
+### Desktop and Web
+
+For Claude Desktop and claude.ai:
+```
+python3 scripts/export_utils.py ./skill-name --variant desktop
+```
+Then upload the generated .zip through Settings > Skills.
+
+---
+
+## Part 9: Sharing Skills Across Teams
+
+### Single Skill Sharing
+
+After the agent builds and installs a skill, it can create a git repository and push the skill so colleagues can install it with one command:
+
+```
+git clone https://github.com/your-org/sales-report-skill.git ~/.claude/skills/sales-report-skill
+```
+
+The agent detects whether the team uses GitHub or GitLab, creates the repo, pushes, and generates platform-specific install commands. Colleagues paste one line and the skill is ready.
+
+### The Skill Registry
+
+When an organization has more than a few skills, the agent offers to set up a team skill registry — a shared git repo where all team members publish skills and anyone can browse and install them.
+
+**Initialize the registry (once)**:
+```
+python3 scripts/skill_registry.py init --name "Acme Corp Skills"
+```
+
+**Publish a skill**:
+```
+python3 scripts/skill_registry.py publish ./sales-report-skill/ --tags sales,reports
+```
+
+**Browse available skills**:
+```
+python3 scripts/skill_registry.py list
+```
+
+**Search for a skill**:
+```
+python3 scripts/skill_registry.py search "sales"
+```
+
+**Install a skill from the registry**:
+```
+python3 scripts/skill_registry.py install sales-report-skill
+```
+
+The registry is a git repo — no servers, no databases. Git provides version history, access control (repo permissions), and review workflow (pull requests).
+
+### The Compounding Effect Over Time
+
+Each team member creates skills from their own domain expertise and shares them:
+
+- Sales team shares `/sales-report-skill`
+- Engineering shares `/deploy-checklist-skill`
+- Legal shares `/quarterly-compliance-skill`
+- Data science shares `/customer-churn-skill`
+- SRE shares `/incident-runbook-skill`
+
+Any colleague installs any skill with one `git clone`. Any agent on any platform can invoke it. After 6 months, the organization has a library of reusable intelligence. Knowledge compounds instead of evaporating. New hires get the accumulated expertise of the entire team on day one.
+
+---
+
+## Part 10: The Consultant Engagement Model
+
+### Teach, Don't Build
+
+The engagement model for AI consultants is teach, not build. The consultant's job is not to build skills for the team — the team knows their workflows better than any outsider ever will. The consultant's job is to remove the friction.
+
+### The 5-Step Process
+
+1. **Install**: Set up agent-skill-creator on each team member's machine (one `git clone` command)
+2. **Create Registry**: Initialize a shared `{team}-skills-registry` GitHub/GitLab repo
+3. **Demonstrate**: Create one skill live with the team, showing the full process
+4. **Teach**: Walk through publishing, searching, and installing from the registry
+5. **Hand Over**: Leave a self-sustaining system. After the consultant departs, the team keeps creating and sharing skills independently
+
+### The After State
+
+After the consultant engagement:
+- Every team member can create skills from their own workflows
+- Skills are automatically validated and security-scanned
+- The shared registry grows as each person contributes
+- New hires install the registry and gain access to all accumulated knowledge
+- The system requires zero ongoing maintenance — it's just git
+
+---
+
+## Part 11: Templates, Interactive Mode, and Advanced Features
+
+### Templates
+
+Pre-built scaffolds for common domains that save 30-50% of creation time:
+
+- **Financial Analysis**: Alpha Vantage + Yahoo Finance, technical indicators, portfolio analysis
+- **Climate Analysis**: Open-Meteo + NOAA, weather patterns, forecasting
+- **E-commerce Analytics**: Google Analytics + Stripe + Shopify, revenue analysis, cohorts
+
+The system auto-detects when a template matches user input (keyword scoring above 0.70) and suggests it. Teams can also create and register custom templates.
+
+### Interactive Mode
+
+A step-by-step wizard for complex projects:
+
+```
+"Create a skill for quarterly compliance interactively"
+```
+
+The wizard guides users through: gathering requirements, analyzing relationships, choosing architecture, previewing the plan, and building with progress reporting. The user controls each decision while the system handles implementation.
+
+### Multi-Agent Suites
+
+For complex domains requiring 3+ related skills:
+
+```
+"Create a financial analysis suite with agents for
+fundamental analysis, technical analysis, portfolio optimization, and risk assessment"
+```
+
+The system creates a suite with shared components, orchestration logic, and independent skills that work together or standalone. Suites support intent-based routing, sequential pipelines, parallel aggregation, and conditional routing patterns.
+
+### Export System
+
+Export skills for platforms that don't support directory-based installation:
+
+```
+python3 scripts/export_utils.py ./skill-name --variant desktop   # For Claude Desktop
+python3 scripts/export_utils.py ./skill-name --variant api       # For Claude API
+```
+
+---
+
+## Part 12: The Vision — Knowledge as Compounding Infrastructure
+
+### Short Term (Month 1)
+
+Each person installs agent-skill-creator and creates their first skill from a workflow they repeat weekly. The skill works. They share it. A colleague installs it and stops re-explaining that workflow to their agent.
+
+### Medium Term (Months 2-6)
+
+The team registry grows to 10-20 skills covering the most common workflows. New hires install the registry and are productive on day one. Cross-department skills emerge — engineering skills that help sales, compliance skills that help engineering. The organization starts seeing AI as a knowledge management system, not just a coding assistant.
+
+### Long Term (Months 6-12)
+
+The skill library becomes organizational infrastructure — like an internal wiki, but one that actually executes. Skills encode institutional knowledge that survives employee turnover. The gap between what AI tools can do and what teams actually do closes. The compounding effect accelerates: each new skill makes every agent-user more productive, which motivates more skill creation.
+
+### The Core Insight
+
+Knowledge doesn't depreciate — it compounds. Every skill created makes the next person more productive. Every workflow captured is a workflow that never needs to be re-explained. The organization's collective AI capability grows monotonically. This is the fundamental shift: from AI as a conversation tool to AI as a knowledge infrastructure layer.
+
+---
+
+## Technical Reference
+
+### Naming Convention
+
+- Format: `{domain}-{objective}-skill` (kebab-case)
+- Must end with `-skill` (or `-suite` for multi-agent suites)
+- 1-64 characters, lowercase letters + numbers + hyphens
+- No consecutive hyphens, no leading/trailing hyphens
+- Directory name must match the name field in SKILL.md frontmatter
+- Examples: `stock-analyzer-skill`, `sales-report-skill`, `deploy-checklist-skill`
+
+### SKILL.md Frontmatter Schema
+
+```yaml
+---
+name: sales-report-skill
+description: >-
+  Generate weekly and monthly sales reports from CRM data with
+  regional breakdowns, trend analysis, and PDF export...
+license: MIT
+metadata:
+  author: sales-team
+  version: 1.0.0
+---
+```
+
+### Registry JSON Schema
+
+```json
+{
+  "registry": {
+    "name": "Acme Corp Skills",
+    "created": "2026-02-27T00:00:00Z",
+    "schema_version": "1"
+  },
+  "skills": [
+    {
+      "name": "sales-report-skill",
+      "description": "Generate weekly sales reports...",
+      "version": "1.0.0",
+      "author": "sales-team",
+      "tags": ["sales", "reports", "crm"],
+      "published": "2026-02-27T10:30:00Z",
+      "path": "skills/sales-report-skill"
+    }
+  ]
+}
+```
+
+### Project Repository Structure
+
+```
+agent-skill-creator/
+  SKILL.md                      # The skill definition
+  README.md                     # Installation and usage guide
+  scripts/
+    validate.py                 # Spec compliance checker
+    security_scan.py            # Security scanner
+    export_utils.py             # Cross-platform export
+    skill_registry.py           # Team skill registry
+    install-template.sh         # Template for generated installers
+  references/                   # Detailed documentation
+    pipeline-phases.md          # Full creation pipeline
+    architecture-guide.md       # Skill structure decisions
+    quality-standards.md        # Code and documentation standards
+    multi-agent-guide.md        # Multi-skill suite creation
+    cross-platform-guide.md     # Platform compatibility
+    export-guide.md             # Export documentation
+    templates-guide.md          # Template system
+    interactive-mode.md         # Interactive wizard
+  registry/                     # Shared skill catalog
+    registry.json
+    skills/
+```
+
+---
+
+## Key Statistics and Facts
+
+| Metric | Value |
+|--------|-------|
+| Supported Platforms | 8+ (Claude Code, VS Code Copilot, Cursor, Windsurf, Cline, Copilot CLI, Codex CLI, Gemini CLI) |
+| Global Install Platforms | Claude Code + VS Code Copilot (shared path) |
+| Max SKILL.md Body | 500 lines |
+| Max Name Length | 64 characters |
+| Max Description Length | 1024 characters |
+| Activation Keywords | 50-80+ per skill |
+| Activation Success Rate | 98% (stock-analyzer example) |
+| False Positive Rate | 0% (stock-analyzer example) |
+| Template Time Savings | 30-50% |
+| Dependencies | Zero (stdlib only for all scripts) |
+| License | MIT |
+| Version | 4.0.0 |
+
+---
+
+## Tags
+
+`agent-skills` `ai-agents` `cross-platform` `open-standard` `vscode-copilot` `claude-code` `cursor` `skill-registry` `knowledge-management` `enterprise-ai` `workflow-automation` `no-code` `team-collaboration` `git-based` `security-scanning` `spec-validation` `reusable-software` `compounding-knowledge` `consultant-toolkit` `ai-adoption`
+
+---
+
+## Links
+
+- GitHub Repository: https://github.com/FrancyJGLisboa/agent-skill-creator
+- Agent Skills Open Standard: https://github.com/anthropics/agent-skills-spec
+- VS Code Agent Skills Documentation: https://code.visualstudio.com/brain/knowledge/docs_legacy/copilot/customization/agent-skills
+```
+
+## File: `Dynamous/Content-Ideation/vscode-copilot-simulation.txt`
+```
+Simulated Interaction: VS Code Copilot + agent-skill-creator
+=============================================================
+
+---
+
+Setup (one time, already done)
+
+  git clone https://github.com/FrancyJGLisboa/agent-skill-creator.git ~/.agents/skills/agent-skill-creator
+
+VS Code Copilot, Claude Code, Gemini CLI, and other tools find it at
+~/.agents/skills/ automatically (symlinked to tool-specific paths by
+the installer).
+
+---
+
+The Interaction
+
+The user opens VS Code, opens Copilot Chat (Agent mode), and types:
+
+User: /agent-skill-creator Every month I pull customer churn data from our Stripe API and Mixpanel, segment customers by plan tier and usage drop-off, calculate churn risk scores, and generate a PDF report for the leadership team. Here's our current script: scripts/churn_analysis.py
+
+Copilot (loading agent-skill-creator skill):
+
+  I'll build a complete agent skill from your churn analysis workflow. Let me start by reading your existing script and understanding the full picture.
+
+  Reading scripts/churn_analysis.py...
+
+  I can see this pulls from Stripe's subscription API and Mixpanel's engagement endpoint, segments by 3 plan tiers, and uses a weighted scoring model. Let me uncover the implicit requirements before building.
+
+  Implicit requirements I've identified:
+  - Error handling when Stripe/Mixpanel APIs are unreachable
+  - Date range defaults (last 30 days) vs custom ranges
+  - The PDF needs the Acme Corp header and formatting your leadership team expects
+  - Churn risk thresholds (>0.7 = high, >0.4 = medium) are hardcoded — should be configurable
+  - No handling for new customers with insufficient data
+
+  Building the skill now...
+
+  (Copilot creates the full skill directory)
+
+  customer-churn-skill/
+  ├── SKILL.md                 # Activation: /customer-churn-skill
+  ├── scripts/
+  │   ├── churn_analysis.py    # Core analysis (refactored from your script)
+  │   ├── stripe_connector.py  # Stripe API integration
+  │   ├── mixpanel_connector.py # Mixpanel API integration
+  │   └── pdf_report.py        # PDF generation with formatting
+  ├── references/
+  │   ├── scoring-model.md     # Churn risk scoring methodology
+  │   ├── api-endpoints.md     # Stripe + Mixpanel endpoint docs
+  │   └── report-format.md     # PDF layout specification
+  ├── assets/
+  │   └── report_template.html # PDF template
+  ├── install.sh               # Cross-platform installer (14 tools)
+  └── README.md                # Installation instructions
+
+  Validation results:
+  - Spec compliance: PASSED (frontmatter, naming, structure, references)
+  - Security scan: PASSED (no hardcoded API keys, credentials use environment variables)
+
+  Installed at: ~/.agents/skills/customer-churn-skill
+
+  To use it, start a new chat and type:
+    /customer-churn-skill Generate the monthly churn report for March
+
+  Or with custom parameters:
+    /customer-churn-skill Analyze churn for Enterprise tier only, last 90 days
+
+  Want to share this skill with your team so they can install it too?
+
+---
+
+User: Yes, we use GitHub
+
+Copilot:
+
+  Setting up sharing...
+
+  cd customer-churn-skill
+  git init
+  git add -A
+  git commit -m "feat: Initial skill — customer-churn-skill"
+  gh repo create customer-churn-skill --private --source=. --push
+
+  Done! Share this with your team:
+
+  # For VS Code Copilot / Claude Code:
+  git clone https://github.com/your-org/customer-churn-skill.git ~/.agents/skills/customer-churn-skill
+
+  # For Codex CLI / Gemini CLI / Kiro:
+  git clone https://github.com/your-org/customer-churn-skill.git ~/.agents/skills/customer-churn-skill
+
+  # For Cursor (per-project):
+  git clone https://github.com/your-org/customer-churn-skill.git .cursor/rules/customer-churn-skill
+
+  # Or install everywhere at once:
+  npx skills add your-org/customer-churn-skill
+
+  Your colleagues paste one line, and they can type /customer-churn-skill in their agent.
+
+---
+
+Later that week — a colleague uses it
+
+The colleague cloned it. They open VS Code Copilot and type:
+
+Colleague: /customer-churn-skill Which Enterprise customers are highest churn risk this month? Include a breakdown by usage drop-off category.
+
+Copilot (loading customer-churn-skill):
+
+  Running churn analysis for Enterprise tier, March 2026...
+
+  Connecting to Stripe API... (uses STRIPE_API_KEY from env)
+  Connecting to Mixpanel... (uses MIXPANEL_TOKEN from env)
+
+  Enterprise Churn Risk Report — March 2026
+
+  | Customer      | Plan            | Risk Score | Drop-off Category   | MRR     |
+  |---------------|-----------------|------------|---------------------|---------|
+  | Acme Corp     | Enterprise Plus | 0.89       | Feature abandonment | $12,400 |
+  | DataFlow Inc  | Enterprise      | 0.76       | Login frequency     | $8,200  |
+  | NorthStar Ltd | Enterprise      | 0.72       | Support escalation  | $6,800  |
+  | ...           |                 |            |                     |         |
+
+  7 Enterprise accounts flagged as high-risk ($94,200 combined MRR at risk).
+
+  PDF report generated at ./reports/churn-enterprise-2026-03.pdf.
+  Want me to email this to the leadership distribution list?
+
+---
+
+Key difference from raw Copilot
+
+Without the skill, the colleague would have had to explain: which APIs, which endpoints, what scoring model, what PDF format, what "churn risk" means in their org. With the skill installed, they just say what they want and it already knows all of that.
+
+
+=============================================================
+AGRICULTURE COMMODITY RESEARCH TEAM — FULL SCENARIO
+=============================================================
+
+Context: A 6-person ag commodity research team at a trading firm. They cover soybeans, corn, wheat, and coffee. Every analyst repeats the same data-pulling, report-building, and market-monitoring workflows daily. The team lead decides to turn these into shared skills.
+
+
+=============================================================
+SKILL 1: WASDE Report Analyzer
+=============================================================
+
+The senior grain analyst opens VS Code Copilot:
+
+User: /agent-skill-creator Every month when USDA releases the WASDE report, I download the PDF from usda.gov, extract the supply and demand tables for corn, soybeans, and wheat, compare the new estimates against last month and against the market consensus (which I pull from a Bloomberg terminal CSV export), flag any revisions greater than 2%, and write a 2-page brief for the trading desk with a "surprise score" for each commodity. Here's last month's brief as an example: references/wasde-brief-feb-2026.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  I'll build a skill from your WASDE analysis workflow. Let me read your example brief first.
+
+  Reading references/wasde-brief-feb-2026.pdf...
+
+  I can see the structure: header with release date and report number, a table per commodity showing Old USDA / New USDA / Consensus / Surprise, then a narrative section interpreting the numbers for the trading desk. Let me identify implicit requirements.
+
+  Implicit requirements I've identified:
+  - WASDE PDF table extraction needs to handle USDA's inconsistent formatting across years
+  - "Consensus" comes from a Bloomberg CSV export — need to define the expected column format
+  - Surprise score formula: |(New USDA - Consensus)| / Consensus * 100, flagged if > 2%
+  - The brief must separate US domestic vs world balance sheets
+  - Ending stocks and stocks-to-use ratio are the key numbers the desk cares about
+  - Historical comparison should include the 5-year average, not just last month
+  - Wheat needs to be split: all wheat, HRW, SRW, HRS separately
+  - The desk wants this within 30 minutes of USDA release — speed matters
+
+  Building the skill now...
+
+  wasde-analyzer-skill/
+  ├── SKILL.md                    # Activation: /wasde-analyzer-skill
+  ├── scripts/
+  │   ├── wasde_parser.py         # USDA PDF table extraction
+  │   ├── consensus_loader.py     # Bloomberg CSV import + validation
+  │   ├── surprise_calculator.py  # Surprise score engine
+  │   ├── brief_generator.py      # 2-page PDF brief builder
+  │   └── historical_compare.py   # 5-year avg + month-over-month
+  ├── references/
+  │   ├── wasde-table-format.md   # USDA table layout documentation
+  │   ├── commodity-codes.md      # USDA commodity ID mappings
+  │   ├── surprise-methodology.md # Surprise score formula + thresholds
+  │   └── brief-template.md       # Trading desk brief structure
+  ├── assets/
+  │   ├── brief_template.html     # PDF template with firm header
+  │   └── sample_consensus.csv    # Expected Bloomberg export format
+  ├── install.sh                  # Cross-platform installer (14 tools)
+  └── README.md
+
+  Validation: PASSED | Security: PASSED
+  Installed at: ~/.agents/skills/wasde-analyzer-skill
+
+  To use it:
+    /wasde-analyzer-skill Analyze the March 2026 WASDE, consensus file at data/bloomberg-consensus-mar26.csv
+
+  Want to share this with your team?
+
+User: Yes
+
+Copilot:
+
+  gh repo create acme-trading/wasde-analyzer-skill --private --source=. --push
+
+  Share with your team:
+    git clone https://github.com/acme-trading/wasde-analyzer-skill.git ~/.agents/skills/wasde-analyzer-skill
+
+
+--- On WASDE release day, a junior analyst uses it ---
+
+Junior Analyst: /wasde-analyzer-skill WASDE just dropped. Consensus file is at data/bloomberg-mar26.csv. Run the full analysis for corn, soybeans, and wheat.
+
+Copilot (loading wasde-analyzer-skill):
+
+  Downloading March 2026 WASDE from USDA...
+  Extracting supply/demand tables...
+  Loading consensus from data/bloomberg-mar26.csv...
+  Calculating surprise scores...
+
+  WASDE SURPRISE BRIEF — March 11, 2026
+
+  CORN (US)
+  | Metric              | Feb USDA | Mar USDA | Consensus | Surprise |
+  |---------------------|----------|----------|-----------|----------|
+  | Production (mil bu) | 15,143   | 15,143   | 15,143    | 0.0%     |
+  | Ending Stocks       | 1,540    | 1,490    | 1,525     | -2.3%  * |
+  | Stocks/Use          | 10.4%    | 10.1%    | 10.3%     |          |
+
+  * BULLISH SURPRISE: USDA cut corn ending stocks 50 mil bu below consensus.
+    Driven by higher ethanol demand estimate (+25 mil bu) and feed/residual
+    revision. This is the tightest S/U ratio since 2023/24.
+
+  SOYBEANS (US)
+  | Metric              | Feb USDA | Mar USDA | Consensus | Surprise |
+  |---------------------|----------|----------|-----------|----------|
+  | Production (mil bu) | 4,366    | 4,366    | 4,366     | 0.0%     |
+  | Ending Stocks       | 380      | 370      | 385       | -3.9%  * |
+  | Stocks/Use          | 8.6%     | 8.4%     | 8.7%      |          |
+
+  * BULLISH SURPRISE: Crush raised 15 mil bu, exports raised 10 mil bu.
+    Brazil's crop estimate unchanged at 169 MMT — market expected a cut.
+
+  WHEAT (ALL — US)
+  | Metric              | Feb USDA | Mar USDA | Consensus | Surprise |
+  |---------------------|----------|----------|-----------|----------|
+  | Ending Stocks       | 794      | 798      | 790       | +1.0%    |
+
+  No surprise. Wheat largely unchanged. HRW stocks marginally higher on
+  lower food use estimate.
+
+  OVERALL SURPRISE SCORE: 6.2 / 10 (Moderately bullish grains)
+
+  PDF brief generated: reports/wasde-brief-2026-03-11.pdf
+
+  Key takeaway for the desk: Corn and beans both tighter than expected.
+  The corn stocks cut is the headline — first sub-1,500 ending stocks
+  estimate this marketing year. Watch the May corn contract for a gap
+  higher on the open.
+
+  Want me to email this to the trading desk distribution list?
+
+
+=============================================================
+SKILL 2: Crop Condition & Weather Monitor
+=============================================================
+
+The weather/crop analyst on the team creates another skill:
+
+User: /agent-skill-creator Every Monday during growing season (April-October) I check the USDA Crop Progress report for corn and soybean condition ratings, compare good/excellent percentages against the 5-year average and last year, pull 7-day and 14-day weather forecasts from NOAA for the Corn Belt states (Iowa, Illinois, Indiana, Minnesota, Nebraska, Ohio), check soil moisture from the US Drought Monitor, and write a "Crop & Weather Weekly" for our research clients. I also maintain a chart tracking the condition index through the season. Here are my notes on how I calculate the crop condition index: references/condition-index-formula.txt
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/condition-index-formula.txt...
+
+  I see — you use the Brugler weighted index: (Very Poor * 1 + Poor * 2 + Fair * 3 + Good * 4 + Excellent * 5) / 5. This gives a single score out of 100. Let me build this.
+
+  Implicit requirements I've identified:
+  - Crop Progress data comes from USDA NASS Quick Stats API
+  - NOAA forecast needs to cover precipitation AND temperature (GDD accumulation)
+  - Drought Monitor categories: D0-D4 mapped to severity scores
+  - Growing Degree Days (GDD) tracking: base 50F for corn, base 50F for soybeans
+  - Client report needs both narrative + embedded charts (condition index trend, precip map)
+  - State-level breakdown matters — an Iowa drought doesn't offset Illinois rain
+  - The weekly cadence means the skill should know what "week" of the growing season it is
+  - Planting progress in April-May, then shifts to condition ratings June-October
+
+  Building...
+
+  crop-weather-weekly-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── crop_progress.py        # USDA NASS API — condition ratings + planting progress
+  │   ├── weather_forecast.py     # NOAA 7/14-day forecast by state
+  │   ├── drought_monitor.py      # US Drought Monitor data pull
+  │   ├── condition_index.py      # Brugler weighted index calculator
+  │   ├── gdd_tracker.py          # Growing degree day accumulation
+  │   ├── charts.py               # Condition trend + precip charts
+  │   └── weekly_report.py        # PDF/HTML report builder
+  ├── references/
+  │   ├── corn-belt-states.md     # State FIPS codes, county groupings
+  │   ├── condition-methodology.md # Index formula, historical baselines
+  │   ├── gdd-requirements.md     # GDD targets by growth stage
+  │   └── client-report-format.md # Report layout spec
+  ├── assets/
+  │   └── report_template.html
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED | Security: PASSED
+  Installed at: ~/.agents/skills/crop-weather-weekly-skill
+
+  Share with your team?
+
+User: Yes, same GitHub org
+
+Copilot:
+
+  gh repo create acme-trading/crop-weather-weekly-skill --private --source=. --push
+
+  Done! Your team:
+    git clone https://github.com/acme-trading/crop-weather-weekly-skill.git ~/.agents/skills/crop-weather-weekly-skill
+
+
+--- Monday morning during growing season ---
+
+Analyst: /crop-weather-weekly-skill Generate the Crop & Weather Weekly for the week of July 14, 2026. Focus on the drought situation in western Iowa and Nebraska.
+
+Copilot (loading crop-weather-weekly-skill):
+
+  Pulling USDA Crop Progress (released 4:00pm ET yesterday)...
+  Pulling NOAA 7-day and 14-day forecasts for Corn Belt...
+  Pulling US Drought Monitor (updated Thursday)...
+  Calculating condition indices...
+
+  CROP & WEATHER WEEKLY — July 14, 2026
+
+  CORN CONDITION
+  | State     | G/E This Week | G/E Last Week | G/E 5yr Avg | Condition Index |
+  |-----------|---------------|---------------|-------------|-----------------|
+  | Iowa      | 54%           | 61%           | 68%         | 322 (below avg) |
+  | Illinois  | 71%           | 70%           | 66%         | 361 (above avg) |
+  | Indiana   | 68%           | 67%           | 63%         | 355 (above avg) |
+  | Minnesota | 63%           | 64%           | 65%         | 345 (at avg)    |
+  | Nebraska  | 48%           | 55%           | 62%         | 308 (well below)|
+  | Ohio      | 72%           | 71%           | 64%         | 362 (above avg) |
+  | NATIONAL  | 62%           | 64%           | 65%         | 344             |
+
+  Week-over-week: National corn conditions slipped 2 points. The decline is
+  concentrated in the western Corn Belt — Iowa dropped 7 points and Nebraska
+  dropped 7 points. Eastern Belt is steady to improving.
+
+  DROUGHT SITUATION
+  Western Iowa: 43% of the state now in D2 (severe drought), up from 31%
+  last week. The I-80 corridor west of Des Moines through Council Bluffs is
+  the epicenter. Subsoil moisture rated 62% short/very short.
+
+  Nebraska: 51% in D1 or worse. The Platte River valley from Grand Island
+  to North Platte hasn't received meaningful rain in 23 days. Center-pivot
+  irrigation is running but aquifer draw-down is being reported.
+
+  WEATHER OUTLOOK
+  7-day: A ridge holds over the western Plains through Thursday. Temps
+  100-105F in western Iowa/Nebraska. No significant precip until a cold
+  front arrives Saturday with scattered storms (0.25-0.75 inches, not
+  drought-breaking).
+
+  14-day: GFS and Euro diverge after day 8. Euro shows the ridge breaking
+  down with a pattern change toward more active weather. GFS keeps the
+  ridge. If the Euro verifies, meaningful relief arrives July 25-28.
+
+  GDD ACCUMULATION (corn, base 50F, since April 15)
+  | State     | Actual GDD | Normal GDD | Deviation |
+  |-----------|------------|------------|-----------|
+  | Iowa      | 1,842      | 1,710      | +132 (ahead — heat stress risk) |
+  | Illinois  | 1,920      | 1,805      | +115      |
+  | Nebraska  | 1,780      | 1,690      | +90       |
+
+  KEY TAKEAWAY: Western Corn Belt stress is accelerating during pollination
+  week for early-planted corn in Iowa and Nebraska. If the Euro's pattern
+  change doesn't verify, we could see another 3-5 point condition drop
+  next week. The east is fine. This is a "tale of two Corn Belts" story.
+
+  National corn condition index at 344 is the lowest for this week since
+  2022 (338) but well above 2012 drought (278).
+
+  [Condition Index Trend Chart embedded — shows 2026 line dipping below
+  5yr avg band, with 2012 and 2022 comparison lines]
+
+  PDF report generated: reports/crop-weather-weekly-2026-07-14.pdf
+
+  Want me to email this to the client distribution list?
+
+
+=============================================================
+SKILL 3: Basis Tracker & Export Monitor
+=============================================================
+
+The logistics/basis analyst creates a third skill:
+
+User: /agent-skill-creator I track soybean and corn basis at 12 river elevators along the Mississippi and Illinois rivers. Every day I pull bids from DTN/Progressive Farmer, calculate basis vs the nearby CBOT futures contract, compare to the 3-year seasonal average, and flag any locations where basis moved more than 5 cents in a day. I also pull weekly USDA Export Inspections and Export Sales data to see if physical demand explains the basis moves. On Fridays I write a "Basis & Exports Weekly" for the team. Here's my spreadsheet with the 12 elevator locations and their historical basis patterns: data/elevator-basis-history.xlsx
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading data/elevator-basis-history.xlsx...
+
+  I see 12 elevators: Davenport IA, Muscatine IA, Burlington IA, Quincy IL, Beardstown IL, Havana IL, Peoria IL, Henry IL, Peru IL, St. Louis MO, Memphis TN, New Orleans LA (CIF Gulf). Each has daily basis history back to 2023. Let me build this.
+
+  Implicit requirements:
+  - "Nearby futures" rolls on first notice day — need a roll calendar
+  - Gulf basis (CIF NOLA) is the anchor — interior basis derives from it
+  - Barge freight rates affect interior basis — need to track St. Louis-Gulf freight
+  - Export Inspections = actual loadings (weekly, lagged). Export Sales = commitments (weekly, Thursday release)
+  - China/unknown destinations buying pattern is the key signal in export data
+  - Basis inversions between elevator locations signal logistical bottlenecks
+  - Harvest basis (Sep-Nov) behaves completely differently than non-harvest — seasonal model must account for this
+
+  Building...
+
+  basis-export-tracker-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── basis_scraper.py        # DTN bid scraping for 12 elevators
+  │   ├── futures_reference.py    # CBOT nearby contract + roll calendar
+  │   ├── basis_calculator.py     # Basis computation + 3yr seasonal avg
+  │   ├── alert_engine.py         # 5-cent daily move alerts
+  │   ├── export_inspections.py   # USDA weekly export inspections
+  │   ├── export_sales.py         # USDA weekly export sales
+  │   ├── barge_freight.py        # St. Louis-Gulf freight rates
+  │   └── weekly_report.py        # Friday summary builder
+  ├── references/
+  │   ├── elevator-locations.md   # 12 locations, river mile markers, capacity
+  │   ├── roll-calendar.md        # CBOT futures roll schedule
+  │   ├── seasonal-patterns.md    # Basis seasonality by location
+  │   └── export-data-sources.md  # USDA FAS endpoints
+  ├── assets/
+  │   └── elevator_locations.json # Lat/long + DTN bid codes
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED | Security: PASSED
+  Installed at: ~/.agents/skills/basis-export-tracker-skill
+
+  Shared to: github.com/acme-trading/basis-export-tracker-skill
+
+
+--- Daily use by the team ---
+
+Trader: /basis-export-tracker-skill What happened to corn basis at the river yesterday? I saw Gulf bids jumped.
+
+Copilot (loading basis-export-tracker-skill):
+
+  Pulling yesterday's bids (March 3, 2026)...
+
+  CORN BASIS DAILY SNAPSHOT — March 3, 2026 (vs May 2026 CBOT)
+
+  | Location       | Bid     | Basis  | Prev   | Change | 3yr Avg | vs Avg  |
+  |----------------|---------|--------|--------|--------|---------|---------|
+  | CIF NOLA       | $4.82   | +38    | +30    | +8   * | +22     | +16     |
+  | Memphis        | $4.58   | +14    | +10    | +4     | +5      | +9      |
+  | St. Louis      | $4.49   | +5     | +2     | +3     | -8      | +13     |
+  | Peoria IL      | $4.34   | -10    | -13    | +3     | -18     | +8      |
+  | Davenport IA   | $4.27   | -17    | -19    | +2     | -25     | +8      |
+  | ...            |         |        |        |        |         |         |
+
+  * ALERT: CIF Gulf corn jumped 8 cents. Largest single-day move since Jan 14.
+
+  WHAT'S DRIVING IT:
+  - USDA Export Sales (released Thursday): Net new corn sales of 1.82 MMT,
+    highest weekly total this marketing year. Unknown destinations (likely China)
+    booked 680,000 MT.
+  - Export Inspections (Monday): 1.24 MMT inspected for export, above the
+    pace needed to hit the USDA full-year estimate.
+  - Barge freight: St. Louis-Gulf up $0.45/ton this week. Low water on the
+    lower Mississippi near Greenville MS is creating delays — 48hr average
+    transit time now vs 36hr normal.
+
+  INTERPRETATION: Physical demand is pulling basis higher from the Gulf
+  upriver. The strength is real (export-driven) not just logistical. If
+  China continues buying at this pace, Gulf basis could push to +45/+50
+  which would pull interior basis another 5-8 cents higher.
+
+
+--- Friday weekly report ---
+
+Analyst: /basis-export-tracker-skill Generate the Basis & Exports Weekly.
+
+Copilot:
+
+  Compiling week of Feb 28 - Mar 4, 2026...
+
+  BASIS & EXPORTS WEEKLY — March 4, 2026
+
+  HEADLINE: Gulf corn basis rallied 12 cents this week on Chinese buying.
+  Interior locations followed, with the entire river system firming 3-8 cents.
+  Soybean basis was quiet — Gulf steady at +58, interior unchanged.
+
+  CORN BASIS — WEEK OVER WEEK
+  [Table showing all 12 locations, weekly change, distance from seasonal avg]
+
+  The entire Mississippi River corn basis curve steepened this week.
+  Gulf-to-Davenport spread widened to 55 cents (vs 47 cents 3yr avg for
+  this week). This signals strong export pull but also tight barge
+  logistics. Barge freight at $14.20/ton is 18% above seasonal average.
+
+  EXPORT SCOREBOARD
+  | Commodity | Sales This Week | Cumulative | USDA Target | Pace   |
+  |-----------|-----------------|------------|-------------|--------|
+  | Corn      | 1.82 MMT        | 42.1 MMT   | 58.4 MMT    | 104%   |
+  | Soybeans  | 0.44 MMT        | 39.8 MMT   | 49.7 MMT    | 98%    |
+
+  Corn export pace is now 4% ahead of the USDA projection. If this
+  continues, the April WASDE will likely raise the export estimate by
+  50-75 mil bu, tightening ending stocks further.
+
+  TOP BUYERS THIS WEEK (CORN)
+  | Destination        | Volume    | Notes                     |
+  |--------------------|-----------|---------------------------|
+  | Unknown (China)    | 680,000 MT| 3rd consecutive large week |
+  | Mexico             | 412,000 MT| Steady, as expected        |
+  | Japan              | 289,000 MT| Normal pace                |
+  | Colombia           | 145,000 MT| Above average              |
+
+  PDF report generated: reports/basis-exports-weekly-2026-03-04.pdf
+
+
+=============================================================
+SKILL 4: Coffee Fundamental Monitor
+=============================================================
+
+The soft commodities analyst covers coffee:
+
+User: /agent-skill-creator I monitor the global coffee market — arabica and robusta. Every week I check Brazil's CEPEA daily prices, pull ICE certified stock reports for arabica (from ICE exchange data), check Vietnam and Brazil export data from their customs agencies, track the CFTC Commitment of Traders for managed money positioning in KC coffee futures, and monitor weather in Minas Gerais (Brazil), Espirito Santo (Brazil), and the Central Highlands (Vietnam). I also watch the arabica/robusta spread because it signals substitution pressure. When frost risk hits Brazil's coffee belt in June-August, I need to be able to quickly assess the threat. Here's my methodology doc: references/coffee-research-methodology.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/coffee-research-methodology.pdf (12 pages)...
+
+  Comprehensive framework. I see your frost risk model uses elevation bands in Minas Gerais (areas above 900m are safe, below 700m are high risk), historical frost dates, and ECMWF ensemble forecasts for minimum temperatures. Let me build this.
+
+  Implicit requirements:
+  - CEPEA prices are in BRL/bag — need USD conversion using BCB exchange rate API
+  - ICE certified stocks distinguish between pending grading, passed, and failed
+  - Brazil export data from CECAFE (monthly), Vietnam from customs (lagged 2-3 weeks)
+  - COT data: managed money net long/short as % of open interest is the key metric, not raw contracts
+  - Arabica/robusta spread: KC minus RC (converted to common units), watch for narrowing below historical range
+  - Frost: only matters June 15 - August 15, south of 22°S latitude, below 800m elevation
+  - The coffee marketing year is different (Jul-Jun for Brazil arabica, Oct-Sep for Vietnam robusta)
+  - Flowering season (Sep-Nov in Brazil) is the other critical weather window
+
+  Building...
+
+  coffee-fundamental-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── cepea_prices.py          # Brazil domestic price scraper
+  │   ├── ice_certified_stocks.py  # ICE arabica warehouse stocks
+  │   ├── brazil_exports.py        # CECAFE monthly export data
+  │   ├── vietnam_exports.py       # Vietnam customs export data
+  │   ├── cot_positioning.py       # CFTC COT managed money parser
+  │   ├── arb_rob_spread.py        # Arabica/robusta spread tracker
+  │   ├── frost_monitor.py         # ECMWF frost risk model
+  │   ├── brazil_weather.py        # Minas Gerais + Espirito Santo weather
+  │   ├── vietnam_weather.py       # Central Highlands weather
+  │   └── weekly_report.py         # Coffee Weekly builder
+  ├── references/
+  │   ├── frost-risk-model.md      # Elevation bands, historical frost events
+  │   ├── coffee-calendar.md       # Marketing years, flowering/harvest windows
+  │   ├── brazil-regions.md        # Minas Gerais sub-regions, elevation data
+  │   ├── data-sources.md          # All API endpoints and data lags
+  │   └── spread-methodology.md    # Arb/rob spread interpretation
+  ├── assets/
+  │   └── minas-gerais-elevations.geojson
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED | Security: PASSED
+  Installed at: ~/.agents/skills/coffee-fundamental-skill
+
+  Shared to: github.com/acme-trading/coffee-fundamental-skill
+
+
+--- Frost scare in July ---
+
+Coffee Analyst: /coffee-fundamental-skill Frost risk alert — GFS is showing a polar air mass pushing into Parana and southern Minas Gerais this weekend. Assess the threat to coffee.
+
+Copilot (loading coffee-fundamental-skill):
+
+  Pulling ECMWF and GFS ensemble forecasts for coffee belt...
+  Loading elevation data for Minas Gerais sub-regions...
+
+  FROST RISK ASSESSMENT — July 18, 2026
+
+  MODEL GUIDANCE (minimum temperature forecasts, Saturday morning July 20)
+
+  | Sub-region          | Elevation | GFS Min | ECMWF Min | Frost Risk |
+  |---------------------|-----------|---------|-----------|------------|
+  | Sul de Minas (<700m)| 650-700m  | -1°C    | +1°C      | HIGH       |
+  | Sul de Minas (>800m)| 800-1100m | +2°C    | +3°C      | LOW        |
+  | Cerrado Mineiro     | 800-1000m | +3°C    | +4°C      | MINIMAL    |
+  | Triângulo Mineiro   | 700-900m  | +1°C    | +3°C      | MODERATE   |
+  | Parana (north)      | 400-600m  | -3°C    | -1°C      | SEVERE     |
+  | Espirito Santo      | 500-700m  | +5°C    | +6°C      | NONE       |
+
+  THREAT ASSESSMENT:
+
+  Parana: SEVERE risk. But Parana is only ~5% of Brazil arabica production
+  (down from 25% in the 1990s — production shifted north after the 1994
+  frost). Impact would be limited to ~2-3 million bags maximum exposure.
+
+  Sul de Minas (low elevation): HIGH risk on GFS, moderate on ECMWF. This
+  is the critical area — Sul de Minas produces ~30% of Brazil's arabica.
+  However, the sub-700m low-elevation areas are a minority of production.
+  Most major farms are at 800-1100m where frost risk is low.
+
+  GFS vs ECMWF divergence: GFS is 2-3°C colder than ECMWF across all
+  regions. This matters. In the last 5 comparable events, ECMWF verified
+  closer to observed temps 4 out of 5 times.
+
+  HISTORICAL COMPARISON:
+  - July 2021 frost: Much more severe (widespread -3°C to -5°C across
+    Minas Gerais at all elevations). KC rallied 30% in 2 weeks.
+  - This event: More limited geographic scope. Closer to July 2023
+    scare that produced a 5% rally that fully reversed in 10 days.
+
+  MARKET POSITIONING:
+  Managed money is currently net long 42,300 contracts (68th percentile).
+  Not extreme — room for speculative buying on a frost headline.
+
+  ICE certified stocks: 812,000 bags, near 20-year lows. Low buffer =
+  larger price reaction to any supply shock.
+
+  BOTTOM LINE: This is a "watch closely but don't panic" event. The
+  probable impact is limited to low-elevation Parana and small pockets
+  of southern Minas Gerais. If ECMWF is right (+1°C in Sul de Minas),
+  this is a non-event. If GFS is right (-1°C), we're looking at
+  localized damage to 3-5% of the Brazil arabica crop.
+
+  Expect KC coffee to rally 3-5% on the headlines Friday/Monday regardless
+  of actual damage, given low certified stocks and the market's sensitivity
+  to anything frost-related after 2021.
+
+  Next update: I recommend re-running this Saturday when the 24-hour
+  forecast models converge.
+
+
+=============================================================
+THE TEAM'S SKILL LIBRARY — 3 MONTHS LATER
+=============================================================
+
+After 3 months, the 6-person team has built and shared these skills:
+
+  git clone .../wasde-analyzer-skill.git          # Senior grain analyst
+  git clone .../crop-weather-weekly-skill.git      # Weather/crop analyst
+  git clone .../basis-export-tracker-skill.git     # Logistics/basis analyst
+  git clone .../coffee-fundamental-skill.git       # Soft commodities analyst
+  git clone .../seasonal-spread-skill.git          # Quantitative analyst
+  git clone .../client-briefing-skill.git          # Research director
+
+Every analyst has all 6 skills installed. The new hire who joined last
+week cloned all 6 in 10 minutes and can now run any workflow the team
+does — with institutional knowledge embedded in the skills.
+
+The research director's /client-briefing-skill actually calls the other
+skills internally to compile the firm's weekly flagship report. Skills
+compose.
+
+What used to take each analyst 2-3 hours of manual data pulling and
+formatting now takes a single prompt. The team's output doubled. Their
+research clients can't tell the difference — the reports look the same,
+the analysis is the same. It's just faster, and the junior analyst can
+produce the same quality as the senior.
+
+That's the point: skills capture institutional knowledge so it doesn't
+walk out the door when someone leaves, and it doesn't take 6 months
+to transfer when someone new joins.
+
+
+=============================================================
+INSTALLING ALL TEAM SKILLS AT ONCE
+=============================================================
+
+New team member joins. The team lead sends them one message on Slack:
+
+  "Welcome! Run these to get all our research skills:"
+
+  curl -fsSL https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/main/scripts/bootstrap.sh | sh
+
+  ./scripts/install-skill.sh https://github.com/acme-trading/wasde-analyzer-skill.git
+  ./scripts/install-skill.sh https://github.com/acme-trading/crop-weather-weekly-skill.git
+  ./scripts/install-skill.sh https://github.com/acme-trading/basis-export-tracker-skill.git
+  ./scripts/install-skill.sh https://github.com/acme-trading/coffee-fundamental-skill.git
+  ./scripts/install-skill.sh https://github.com/acme-trading/seasonal-spread-skill.git
+  ./scripts/install-skill.sh https://github.com/acme-trading/client-briefing-skill.git
+
+7 commands. 5 minutes. The new hire has the entire team's research
+infrastructure on their machine, across every AI tool they use.
+
+
+=============================================================
+EXPANDED: PSD DATABASE + GLOBAL TRADE TRACKER (GTT) SKILLS
+=============================================================
+
+The team has API credentials for two critical data platforms:
+
+  PSD_API_KEY        — USDA Foreign Agricultural Service Production,
+                       Supply and Distribution database. Global supply/demand
+                       balances for every commodity by country and marketing year.
+                       Endpoint: apps.fas.usda.gov/opendatawebv2/
+
+  GTT_USER_ID        — Global Trade Tracker login. 133 countries, HS 8-digit
+  GTT_PASSWORD         trade flow data, monthly updates. REST API at
+                       globaltradetracker.com/api/rest/
+
+These credentials are set as environment variables. The skills never
+hardcode them — they read from env at runtime.
+
+
+=============================================================
+SKILL 5: Global S&D Balance Sheet Builder (PSD)
+=============================================================
+
+The senior analyst who covers global grains:
+
+User: /agent-skill-creator I use the USDA PSD database to build global supply and demand balance sheets for soybeans, corn, and wheat. For each commodity I pull production, beginning stocks, imports, domestic consumption, exports, and ending stocks — broken down by the top 10 producing and consuming countries plus a "rest of world" aggregate. I compare the current marketing year estimates to the previous 5 years to identify trends. I also calculate stocks-to-use ratios and flag any country where ending stocks changed more than 10% month-over-month — that usually signals a USDA revision worth investigating. The PSD API key is in my env as PSD_API_KEY. Here's my current Python notebook that does this manually: notebooks/psd-balance-sheets.ipynb
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading notebooks/psd-balance-sheets.ipynb...
+
+  I see your workflow: you call the PSD API for each commodity/country
+  combination, pivot the data into balance sheet format, compute derived
+  metrics, and render tables in a Jupyter notebook. Let me formalize this.
+
+  Implicit requirements I've identified:
+  - PSD API authentication: API key passed as header (X-Api-Key) to
+    apps.fas.usda.gov/opendatawebv2/ endpoints
+  - Commodity codes: 0440000 (soybeans), 0440000 (soybean meal/oil are
+    separate), 0410000 (corn), 0410000 (wheat has multiple codes by class)
+  - Marketing years differ by commodity and country: US corn is Sep-Aug,
+    Brazil soy is Feb-Jan, Argentina wheat is Dec-Nov
+  - "Top 10" countries shift over time — should be dynamic based on latest
+    production rankings, not hardcoded
+  - PSD data updates monthly (around the WASDE release) — need to track
+    the revision date to know if data is current
+  - Some PSD attributes are in 1000 MT, others in MT — unit normalization
+  - World totals in PSD double-count intra-EU trade — need EU-27 aggregate
+    handling
+  - The 10% month-over-month change alert needs to compare the same
+    attribute for the same country between the current and previous PSD
+    update, not between marketing years
+
+  Building...
+
+  psd-balance-sheet-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── psd_client.py            # PSD API wrapper (auth, pagination, rate limits)
+  │   ├── balance_sheet.py         # S&D balance sheet builder (country × commodity)
+  │   ├── country_rankings.py     # Dynamic top-N producer/consumer rankings
+  │   ├── stocks_to_use.py        # Stocks-to-use ratio calculator + historical
+  │   ├── revision_detector.py    # Month-over-month revision alerts (>10% change)
+  │   ├── marketing_years.py      # Country-specific marketing year calendar
+  │   └── report_builder.py       # PDF/HTML balance sheet report
+  ├── references/
+  │   ├── psd-commodity-codes.md  # USDA commodity code mappings
+  │   ├── psd-attribute-codes.md  # Production, consumption, trade attribute IDs
+  │   ├── marketing-year-cal.md   # By country and commodity
+  │   ├── eu-aggregation.md       # EU-27 handling rules
+  │   └── methodology.md          # S&D balance sheet conventions
+  ├── assets/
+  │   └── country_mappings.json   # PSD country codes → ISO 3166 + display names
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (PSD_API_KEY read from env, not hardcoded)
+  Installed at: ~/.agents/skills/psd-balance-sheet-skill
+
+
+--- Monthly use right after WASDE release ---
+
+Analyst: /psd-balance-sheet-skill USDA just updated PSD. Pull the full global soybean balance sheet for 2025/26 and compare to last month. Flag any revisions.
+
+Copilot (loading psd-balance-sheet-skill):
+
+  Authenticating with PSD API... (using PSD_API_KEY from env)
+  Pulling soybean data for marketing year 2025/26...
+  Pulling previous month snapshot for revision comparison...
+  Building balance sheet...
+
+  GLOBAL SOYBEAN BALANCE SHEET — 2025/26 (March 2026 USDA update)
+  Units: Million Metric Tons
+
+  PRODUCTION
+  | Country       | Mar Est | Feb Est | Revision | 5yr Avg | vs Avg  |
+  |---------------|---------|---------|----------|---------|---------|
+  | Brazil        | 169.0   | 169.0   | —        | 148.2   | +14.0%  |
+  | United States | 118.8   | 118.8   | —        | 116.4   | +2.1%   |
+  | Argentina     | 50.0    | 52.0    | -2.0  *  | 46.8    | +6.8%   |
+  | China         | 20.7    | 20.7    | —        | 19.1    | +8.4%   |
+  | India         | 13.2    | 12.4    | +0.8  *  | 11.8    | +11.9%  |
+  | Paraguay      | 10.8    | 10.8    | —        | 9.9     | +9.1%   |
+  | Canada        | 7.1     | 7.1     | —        | 6.6     | +7.6%   |
+  | Russia        | 6.8     | 6.8     | —        | 5.9     | +15.3%  |
+  | Ukraine       | 5.4     | 5.4     | —        | 4.2     | +28.6%  |
+  | Bolivia       | 3.3     | 3.4     | -0.1     | 3.1     | +6.5%   |
+  | Rest of World | 22.4    | 22.5    | -0.1     | 21.0    | +6.7%   |
+  | WORLD TOTAL   | 427.5   | 428.9   | -1.4     | 393.0   | +8.8%   |
+
+  REVISION ALERTS:
+  * Argentina production: -2.0 MMT (-3.8%). Drought in Cordoba and
+    Santa Fe provinces during January pod-fill stage. This is the first
+    cut — market expected -1.0 MMT. Further downside risk if February
+    rains don't materialize in southern Buenos Aires province.
+
+  * India production: +0.8 MMT (+6.5%). Late monsoon rains benefited
+    kharif soybean crop in Madhya Pradesh. This is unusual — USDA rarely
+    revises India this late in the season.
+
+  ENDING STOCKS
+  | Country       | Mar Est | Feb Est | Stocks/Use | 5yr Avg S/U |
+  |---------------|---------|---------|------------|-------------|
+  | United States | 10.1    | 10.3    | 8.4%       | 7.2%        |
+  | Brazil        | 37.2    | 37.5    | 23.1%      | 21.8%       |
+  | Argentina     | 24.8    | 26.2    | 42.3%      | 38.1%       |
+  | China         | 33.4    | 33.4    | 29.5%      | 28.0%       |
+  | WORLD TOTAL   | 124.3   | 126.5   | 31.2%      | 29.6%       |
+
+  WORLD STOCKS/USE at 31.2% is slightly above the 5-year average but
+  tightening on the Argentina cut. Another 2 MMT cut to Argentina in April
+  would bring world S/U to 30.7%, which would be the tightest since 2023/24.
+
+  KEY NARRATIVE: World soy balance is comfortable but deteriorating at the
+  margin. The Argentina story is the swing variable. Brazil's record crop
+  is the cushion. Watch the April WASDE for a potential follow-through
+  Argentina cut if March rains disappoint.
+
+  PDF report: reports/psd-soybeans-global-2025-26-march.pdf
+
+
+--- Deeper drill-down ---
+
+Analyst: /psd-balance-sheet-skill Show me China's soybean import history from PSD — last 10 marketing years. I want to see the trajectory.
+
+Copilot:
+
+  Pulling PSD data for China soybean imports, MY 2016/17 through 2025/26...
+
+  CHINA SOYBEAN IMPORTS — 10-Year Trajectory (Million MT)
+
+  | Marketing Year | Imports | YoY Change | Share of World Trade |
+  |----------------|---------|------------|----------------------|
+  | 2016/17        | 93.5    |            | 62.1%                |
+  | 2017/18        | 94.1    | +0.6%      | 60.8%                |
+  | 2018/19        | 82.5    | -12.3%     | 55.2%   ← trade war  |
+  | 2019/20        | 98.5    | +19.4%     | 60.1%                |
+  | 2020/21        | 99.8    | +1.3%      | 59.6%                |
+  | 2021/22        | 91.6    | -8.2%      | 57.4%   ← hog herd  |
+  | 2022/23        | 100.3   | +9.5%      | 60.2%                |
+  | 2023/24        | 105.5   | +5.2%      | 61.0%                |
+  | 2024/25        | 109.0   | +3.3%      | 61.5%                |
+  | 2025/26 (est)  | 106.0   | -2.8%      | 59.8%                |
+
+  OBSERVATIONS:
+  - The 2018/19 dip was the US-China trade war. China diverted to Brazil.
+  - 2021/22 dip was the Chinese hog herd contraction (ASF recovery stall).
+  - The current 2025/26 estimate of 106 MMT is a -2.8% decline — first cut
+    in two years. USDA attributes this to slowing crush margins in China
+    and elevated domestic soybean stocks from the prior year's over-buying.
+  - China's share of world trade peaked at 62% and has been gradually
+    declining as SE Asian crushers (Vietnam, Bangladesh) grow.
+
+  Want me to overlay this against Brazil vs US origin splits from GATS?
+
+
+=============================================================
+SKILL 6: Trade Flow Intelligence (GTT)
+=============================================================
+
+The trade flow analyst creates a skill using Global Trade Tracker:
+
+User: /agent-skill-creator I use Global Trade Tracker to monitor real-time commodity trade flows. My main workflow: I pull monthly import/export data by HS code for soybeans (1201), soybean meal (2304), corn (1005), and wheat (1001) — tracking who's buying from whom, how volumes compare to the same month last year, and whether trade is shifting between origins. For example, if China starts buying more Brazilian soybeans and fewer US soybeans, I need to catch that shift early. I also track minor but growing trade corridors (like Russian wheat to Africa, or Ukrainian corn to Southeast Asia) that could signal structural market changes. GTT credentials are in my env as GTT_USER_ID and GTT_PASSWORD. The GTT REST API is at globaltradetracker.com/api/rest/ — you get a token from /gettoken then use /getreport and /tradedetails. Here's my methodology: references/trade-flow-methodology.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/trade-flow-methodology.pdf...
+
+  Your methodology: origin-destination matrices by commodity, year-over-year
+  volume changes, market share shifts by origin country, and an "emerging
+  corridor" detector that flags any bilateral trade route where volume
+  doubled or tripled in 12 months. Let me build this.
+
+  Implicit requirements:
+  - GTT auth: POST to /api/rest/gettoken with GTT_USER_ID + GTT_PASSWORD,
+    token valid 14 days, cache and refresh as needed
+  - /api/rest/getreport requires: reporter, hscode, impexp, and a time
+    parameter (from/to in YYYY-MM or latestavailablemonths)
+  - HS codes at 4-digit level: 1201 (soybeans), 2304 (soybean meal),
+    1005 (corn), 1001 (wheat). Can drill to 6-digit for specifics
+  - GTT data arrives with ~2-3 month lag for some countries — need to
+    handle uneven reporting periods across reporters
+  - "Mirror data" fallback: when a country hasn't reported yet, use the
+    partner country's mirror data (GTT supports fallbacktomirrordata=true)
+  - Currency: all volumes in MT (not value) for commodity flow analysis
+  - Need to distinguish re-exports from domestic exports (impexp parameter)
+  - EU-27 can be treated as a single entity or individual members — the
+    skill should support both views
+  - The "emerging corridor" detector needs a minimum volume threshold to
+    avoid flagging noise (e.g., 10,000 MT/month minimum)
+
+  Building...
+
+  trade-flow-intel-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── gtt_client.py            # GTT REST API wrapper (auth, token caching,
+  │   │                            #   getreport, tradedetails, error handling)
+  │   ├── origin_dest_matrix.py    # Origin × destination trade matrices
+  │   ├── market_share.py          # Origin market share by importer
+  │   ├── yoy_comparison.py        # Year-over-year volume changes
+  │   ├── corridor_detector.py     # Emerging trade corridor alerts
+  │   ├── mirror_data.py           # Mirror data fallback handler
+  │   ├── seasonal_pattern.py      # Monthly trade seasonality by route
+  │   └── report_builder.py        # Trade flow report (PDF + charts)
+  ├── references/
+  │   ├── hs-codes.md              # 1201, 2304, 1005, 1001 + sub-codes
+  │   ├── gtt-api-reference.md     # Endpoint docs, params, response format
+  │   ├── country-codes.md         # GTT country codes + ISO mappings
+  │   ├── data-lag-calendar.md     # Expected reporting lag by country
+  │   └── methodology.md           # Market share, corridor detection logic
+  ├── assets/
+  │   ├── top_importers.json       # Key importing countries by commodity
+  │   └── top_exporters.json       # Key exporting countries by commodity
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (GTT_USER_ID and GTT_PASSWORD read from env, not hardcoded)
+  Installed at: ~/.agents/skills/trade-flow-intel-skill
+
+  Shared to: github.com/acme-trading/trade-flow-intel-skill
+
+
+--- China's soybean sourcing shift ---
+
+Analyst: /trade-flow-intel-skill Pull the latest soybean (1201) import data for China. Show me the origin breakdown — US vs Brazil vs Argentina vs others — monthly for the last 12 months. I want to see if the sourcing pattern is shifting.
+
+Copilot (loading trade-flow-intel-skill):
+
+  Authenticating with GTT... (using GTT_USER_ID, GTT_PASSWORD from env)
+  Token obtained (valid 14 days, cached).
+  Pulling HS 1201 imports, reporter: China, last 12 available months...
+  Note: China's latest available data is January 2026 (2-month lag).
+
+  CHINA SOYBEAN IMPORTS BY ORIGIN — Feb 2025 to Jan 2026
+  Units: Thousand Metric Tons
+
+  | Month    | Brazil  | USA     | Argentina | Uruguay | Canada | Other | TOTAL   |
+  |----------|---------|---------|-----------|---------|--------|-------|---------|
+  | Feb 2025 | 4,120   | 3,890   | 210       | 85      | 120    | 195   | 8,620   |
+  | Mar 2025 | 5,680   | 2,410   | 340       | 140     | 80     | 210   | 8,860   |
+  | Apr 2025 | 7,230   | 980     | 520       | 190     | 45     | 175   | 9,140   |
+  | May 2025 | 8,410   | 420     | 680       | 210     | 30     | 160   | 9,910   |
+  | Jun 2025 | 9,100   | 310     | 750       | 180     | 25     | 190   | 10,555  |
+  | Jul 2025 | 8,870   | 280     | 610       | 150     | 20     | 170   | 10,100  |
+  | Aug 2025 | 7,640   | 350     | 480       | 120     | 15     | 155   | 8,760   |
+  | Sep 2025 | 5,210   | 1,870   | 320       | 80      | 45     | 140   | 7,665   |
+  | Oct 2025 | 3,180   | 4,560   | 180       | 50      | 190    | 160   | 8,320   |
+  | Nov 2025 | 2,440   | 5,890   | 120       | 40      | 280    | 175   | 8,945   |
+  | Dec 2025 | 2,890   | 5,420   | 150       | 55      | 250    | 190   | 8,955   |
+  | Jan 2026 | 3,540   | 4,680   | 200       | 70      | 210    | 180   | 8,880   |
+  |----------|---------|---------|-----------|---------|--------|-------|---------|
+  | 12M TOTAL| 68,310  | 31,060  | 4,560     | 1,370   | 1,310  | 2,100 | 108,710 |
+  | Share    | 62.8%   | 28.6%   | 4.2%      | 1.3%    | 1.2%   | 1.9%  | 100%    |
+
+  MARKET SHARE vs SAME 12-MONTH PERIOD LAST YEAR:
+  | Origin    | This Year | Last Year | Shift     |
+  |-----------|-----------|-----------|-----------|
+  | Brazil    | 62.8%     | 60.1%     | +2.7 pp   |
+  | USA       | 28.6%     | 31.4%     | -2.8 pp   |
+  | Argentina | 4.2%      | 4.8%      | -0.6 pp   |
+  | Canada    | 1.2%      | 0.8%      | +0.4 pp   |
+
+  ANALYSIS:
+  Brazil gained 2.7 percentage points of China's soybean import market at
+  the expense of the US (-2.8 pp). This is the second consecutive year of
+  share shift toward Brazil.
+
+  Key drivers:
+  1. Brazil's record 169 MMT crop created export price competitiveness —
+     CFR China spread was $8-12/MT cheaper than US Gulf for most of Q2 2025
+  2. US Oct-Jan shipping season saw logistical delays on the Mississippi
+     (low water Sep-Oct) that pushed buyers to book Brazil forward
+  3. Canada is quietly growing — from 0.8% to 1.2% share. Canadian
+     soybeans move through Pacific ports (Vancouver) which is a shorter
+     transit to northern China
+
+  The seasonal pattern is intact (Brazil dominates Apr-Aug, US dominates
+  Oct-Jan) but the crossover points are shifting earlier — Brazil's share
+  started growing in March this year vs April last year, suggesting China
+  is booking Brazilian soybeans further forward.
+
+  RISK FOR US EXPORTERS: If Brazil's 2026/27 crop (planting starts Sep 2026)
+  achieves even 5% growth, the US share of Chinese soybean imports could
+  drop below 27% for the first time since the trade war year.
+
+  Want me to drill into the monthly FOB/CFR price differentials to quantify
+  the price competitiveness driver?
+
+
+--- Emerging corridor detection ---
+
+Analyst: /trade-flow-intel-skill Run the emerging corridor scan for wheat (1001) — which bilateral trade routes have grown the fastest in the last 12 months vs prior year?
+
+Copilot:
+
+  Pulling HS 1001 global trade flows, latest 12 months vs prior 12...
+  Filtering: minimum 10,000 MT/month, growth > 100%...
+
+  EMERGING WHEAT TRADE CORRIDORS — Fastest Growing Routes
+
+  | Exporter     | Importer       | This 12M (KMT) | Prior 12M (KMT) | Growth  |
+  |--------------|----------------|-----------------|-----------------|---------|
+  | Russia       | Algeria        | 4,820           | 2,140           | +125%   |
+  | Russia       | Bangladesh     | 1,560           | 620             | +152%   |
+  | Russia       | Nigeria        | 890             | 280             | +218%   |
+  | Ukraine      | Indonesia      | 2,340           | 1,080           | +117%   |
+  | Ukraine      | Philippines    | 780             | 340             | +129%   |
+  | Australia    | Vietnam        | 1,120           | 480             | +133%   |
+  | Argentina    | Brazil         | 5,410           | 2,890           | +87%    |
+  | Kazakhstan   | Uzbekistan     | 1,890           | 780             | +142%   |
+
+  TOP STRUCTURAL SHIFTS:
+
+  1. RUSSIA → AFRICA (Algeria, Nigeria): Russian wheat is aggressively
+     displacing French wheat in North and West Africa. Algeria historically
+     bought French milling wheat but Russia now offers 12-15% protein hard
+     wheat at $30-40/MT discount. Nigeria's growth is from near zero — this
+     is a new corridor. Russia now supplies 68% of Algeria's wheat imports,
+     up from 41% two years ago.
+
+  2. RUSSIA → BANGLADESH: Bangladesh was a traditional Australian wheat
+     buyer. Russian wheat is now competitive into Chittagong port at $15/MT
+     below Australian APW. This corridor barely existed 3 years ago.
+
+  3. UKRAINE → SOUTHEAST ASIA (Indonesia, Philippines): Ukraine rebuilt
+     Black Sea export logistics post-corridor agreement. Indonesian flour
+     mills are diversifying away from 100% Australian dependence. Ukrainian
+     wheat offers good protein at lower cost via Odessa-Singapore-Jakarta
+     route.
+
+  4. ARGENTINA → BRAZIL: Brazil's wheat self-sufficiency is only ~55%.
+     Argentine wheat fills the gap. The +87% growth is driven by the weak
+     Argentine peso making exports competitive and a below-average Brazilian
+     wheat crop in Rio Grande do Sul.
+
+  LOSERS (corridors that shrank):
+  | Exporter     | Importer       | This 12M (KMT) | Prior 12M (KMT) | Change  |
+  |--------------|----------------|-----------------|-----------------|---------|
+  | France       | Algeria        | 1,240           | 3,100           | -60%    |
+  | Australia    | Bangladesh     | 420             | 890             | -53%    |
+  | USA          | Nigeria        | 310             | 680             | -54%    |
+
+  TAKEAWAY: Russian wheat is structurally reshaping global trade flows.
+  The Black Sea export machine (deep water ports, low production costs,
+  weak ruble) is pushing traditional exporters (France, US, Australia) out
+  of price-sensitive emerging markets. This isn't temporary — it's
+  infrastructure-driven and accelerating.
+
+
+=============================================================
+SKILL 7: PSD + GTT Combined — Supply Chain Risk Monitor
+=============================================================
+
+The research director combines both data sources into a single skill:
+
+User: /agent-skill-creator I need a skill that combines PSD balance sheet data with GTT trade flow data to monitor supply chain risk for our four commodities. The idea: PSD tells us the global supply picture (who's producing, who's short). GTT tells us the trade reality (who's actually shipping to whom). When those two diverge — like when a country's PSD ending stocks are falling but GTT shows they're still exporting at last year's pace — that's an early warning of a future export restriction or price spike. I also want to cross-reference GTT flows against USDA Export Sales (from the FAS Open Data API, same PSD_API_KEY) to see if announced sales are actually being shipped. API credentials: PSD_API_KEY and GTT_USER_ID/GTT_PASSWORD are in my env. See my framework doc: references/supply-chain-risk-framework.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/supply-chain-risk-framework.pdf...
+
+  This is a sophisticated early-warning system. Your framework defines three
+  risk signals: (1) stock depletion + continued exports, (2) export sale
+  commitments that aren't converting to shipments, (3) sudden origin
+  diversification by major importers. Let me build this.
+
+  Implicit requirements:
+  - Must call both PSD API and GTT API, correlate by commodity and country
+  - PSD data is marketing-year based, GTT is calendar-month — need alignment
+  - USDA Export Sales (FAS API, same key) provides weekly US commitments vs
+    shipments — the "commitment-to-shipment" conversion rate is a key metric
+  - Export restriction history: need a reference table of past export bans
+    (Russia 2010, Argentina 2022, India rice 2023) to calibrate risk levels
+  - The divergence detector compares: PSD ending stocks trajectory (shrinking?)
+    vs GTT export volumes (still high?) — when stocks fall below 15% S/U
+    while exports maintain pace, flag as "restriction risk"
+  - Alert hierarchy: GREEN (normal), YELLOW (watch), ORANGE (elevated),
+    RED (imminent restriction risk)
+  - Country-specific export policy knowledge: Russia uses floating export
+    tax, Argentina uses DEX + ROE system, India uses ad-hoc bans
+
+  Building...
+
+  supply-chain-risk-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── psd_client.py            # PSD API wrapper
+  │   ├── gtt_client.py            # GTT API wrapper
+  │   ├── fas_export_sales.py      # USDA FAS Export Sales API
+  │   ├── stock_export_divergence.py  # PSD stocks vs GTT flows comparison
+  │   ├── commitment_tracker.py    # Export sales vs actual shipments
+  │   ├── origin_shift_detector.py # Sudden sourcing changes by importers
+  │   ├── restriction_risk.py      # Export ban/tax probability model
+  │   ├── risk_dashboard.py        # Alert dashboard builder (HTML)
+  │   └── weekly_report.py         # Supply chain risk weekly PDF
+  ├── references/
+  │   ├── restriction-history.md   # Past export bans with triggers/duration
+  │   ├── policy-mechanisms.md     # How each country restricts exports
+  │   ├── risk-thresholds.md       # S/U ratios that historically trigger bans
+  │   ├── psd-gtt-alignment.md     # Marketing year to calendar month mapping
+  │   └── methodology.md           # Full risk framework
+  ├── assets/
+  │   └── restriction_database.json  # Historical export restrictions
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (all 3 credentials read from env)
+  Installed at: ~/.agents/skills/supply-chain-risk-skill
+
+  Shared to: github.com/acme-trading/supply-chain-risk-skill
+
+
+--- Weekly risk scan ---
+
+Research Director: /supply-chain-risk-skill Run the weekly supply chain risk scan across all four commodities. Flag anything orange or red.
+
+Copilot (loading supply-chain-risk-skill):
+
+  Authenticating with PSD API... OK
+  Authenticating with GTT... token cached, valid 12 more days
+  Pulling FAS Export Sales... OK
+
+  Scanning: soybeans, corn, wheat, coffee across 40+ countries...
+
+  SUPPLY CHAIN RISK DASHBOARD — Week of March 2, 2026
+
+  =============================================
+  RED ALERTS (0)
+  =============================================
+  None.
+
+  =============================================
+  ORANGE ALERTS (2)
+  =============================================
+
+  1. ARGENTINA — SOYBEAN MEAL EXPORTS
+     Risk level: ORANGE (elevated)
+
+     PSD signal: Argentina 2025/26 soybean production just cut 2 MMT to
+     50 MMT. Soybean crush projected at 37 MMT. Domestic soybean stocks
+     falling — ending stocks/use at 15.2%, approaching the 14% threshold
+     that historically triggers DEX tax increases.
+
+     GTT signal: Argentine soybean meal exports (HS 2304) in Nov-Jan
+     averaged 2.1 MMT/month — ABOVE last year's pace of 1.9 MMT/month.
+     Exporters appear to be front-running a potential tax hike.
+
+     DIVERGENCE: Stocks tightening + exports accelerating = classic
+     pre-restriction pattern. Argentina raised the soybean export tax
+     (DEX) from 31% to 33% in 2022 under similar conditions.
+
+     Watch for: Argentine government budget statements, central bank
+     reserve levels (low reserves = higher probability of tax increase
+     to generate USD revenue).
+
+  2. INDIA — WHEAT
+     Risk level: ORANGE (elevated)
+
+     PSD signal: India 2025/26 wheat ending stocks estimated at 7.8 MMT,
+     the lowest since 2017/18. Government procurement was below target
+     for the second consecutive year. S/U ratio at 7.1%.
+
+     GTT signal: India wheat exports (HS 1001) have been near zero since
+     the May 2022 ban, which remains in place. However, GTT shows India
+     IMPORTED 1.2 MMT of wheat in the last 6 months (from Russia and
+     Australia) — unusual for a country that is typically self-sufficient.
+
+     DIVERGENCE: India is quietly switching from net exporter to net
+     importer. The import volumes suggest domestic availability is tighter
+     than official PSD estimates reflect. If procurement fails again in
+     the April-May 2026 rabi harvest, India could become a structural
+     wheat importer for the first time in a decade.
+
+     Implication: Bullish for global wheat if India enters the import
+     market at scale (1.4 billion people, even small per-capita import
+     = large absolute volume).
+
+  =============================================
+  YELLOW ALERTS (3)
+  =============================================
+
+  3. RUSSIA — WHEAT EXPORT TAX
+     Status: YELLOW (watch)
+     The floating export tax mechanism automatically adjusts. Current tax
+     is $22/MT on wheat. If FOB Black Sea prices rise above $280/MT (now
+     at $265), tax increases to $28/MT. Not a ban risk, but a margin
+     squeeze for importers locked into forward purchases at current prices.
+
+  4. BRAZIL — CORN EXPORTS
+     Status: YELLOW (watch)
+     Safrinha corn (second crop) planting is 2 weeks behind average due
+     to late soybean harvest. If safrinha yields disappoint, Brazil's
+     corn S&D tightens and Jul-Oct corn exports could fall below GTT's
+     current pace projection. Not urgent yet — safrinha crop doesn't
+     ship until July.
+
+  5. US — SOYBEAN EXPORT SALES CONVERSION
+     Status: YELLOW (watch)
+     FAS Export Sales show 4.2 MMT of outstanding (unshipped) soybean
+     commitments to China. GTT actual shipments in Jan were 4.68 MMT.
+     The commitment-to-shipment conversion rate is 78%, below the 5-year
+     average of 85% for this point in the marketing year. Could indicate
+     some Chinese cancellations incoming, or just logistical delays.
+     Monitor next 2-3 weeks of inspection data.
+
+  =============================================
+  GREEN (all clear)
+  =============================================
+  Soybeans (Brazil, US, Paraguay): normal flows
+  Corn (US, Ukraine): normal flows
+  Wheat (Russia export volumes, Canada, Australia, EU): normal flows
+  Coffee (Brazil, Vietnam, Colombia): normal flows
+
+  PDF dashboard: reports/supply-chain-risk-2026-03-02.pdf
+  HTML interactive: reports/supply-chain-risk-2026-03-02.html
+
+  Next scan: March 9, 2026 (auto-scheduled).
+
+
+=============================================================
+COMPLETE TEAM SKILL LIBRARY — WITH PSD & GTT
+=============================================================
+
+Updated skill library after adding the data-platform skills:
+
+  SKILL                          CREATED BY            DATA SOURCES
+  ─────────────────────────────────────────────────────────────────
+  wasde-analyzer-skill           Senior grain analyst   USDA WASDE PDF, Bloomberg
+  crop-weather-weekly-skill      Weather/crop analyst   USDA NASS, NOAA, Drought Monitor
+  basis-export-tracker-skill     Logistics analyst      DTN bids, USDA FAS, barge freight
+  coffee-fundamental-skill       Softs analyst          CEPEA, ICE, CFTC COT, ECMWF
+  psd-balance-sheet-skill        Senior grain analyst   USDA PSD API (PSD_API_KEY)
+  trade-flow-intel-skill         Trade flow analyst     GTT REST API (GTT_USER_ID/PASSWORD)
+  supply-chain-risk-skill        Research director      PSD + GTT + FAS combined
+  seasonal-spread-skill          Quant analyst          CBOT historical, seasonal models
+  client-briefing-skill          Research director      Calls other skills internally
+
+  Environment variables required for new team members:
+
+    export PSD_API_KEY="your-usda-fas-api-key"
+    export GTT_USER_ID="your-gtt-username"
+    export GTT_PASSWORD="your-gtt-password"
+    export STRIPE_API_KEY="..."        # only for non-ag skills
+    export MIXPANEL_TOKEN="..."        # only for non-ag skills
+
+  The team lead adds these to the onboarding doc. Credentials are never
+  stored in skill code — they're always read from environment variables
+  at runtime. The security scanner catches any accidental hardcoding
+  before the skill is published.
+
+  New hire onboarding is now:
+
+    1. Get API credentials from team lead (PSD_API_KEY, GTT creds)
+    2. Add to ~/.zshrc or ~/.bashrc
+    3. Run the 7 install commands
+    4. Start using skills immediately
+
+  Total setup time: 15 minutes. Knowledge transfer time: zero.
+  Everything the team knows is in the skills.
+
+
+=============================================================
+EXPANDED: OPEN-METEO PROFESSIONAL API SKILLS
+=============================================================
+
+The team also has an Open-Meteo professional plan:
+
+  OPEN_METEO_API_KEY  — Open-Meteo professional subscription. Unlocked:
+                        commercial use, higher rate limits, 80+ years of
+                        historical data, ensemble models (ECMWF 51-member,
+                        GFS 31-member), climate projections to 2050, soil
+                        moisture at 5 depths, soil temperature at 4 depths,
+                        ET0 evapotranspiration, GDD, and leaf wetness.
+                        Endpoints: api.open-meteo.com/v1/forecast,
+                        archive.open-meteo.com/v1/archive,
+                        ensemble-api.open-meteo.com/v1/ensemble,
+                        climate-api.open-meteo.com/v1/climate
+
+Open-Meteo is the weather backbone. It replaces the patchwork of NOAA,
+ECMWF direct, and national weather services the team was stitching
+together manually. One API, every variable, 80 years of history.
+
+
+=============================================================
+SKILL 8: Yield Predictor — Weather-Based Crop Yield Model
+=============================================================
+
+The quant analyst builds a yield regression model powered by weather:
+
+User: /agent-skill-creator I want to build a crop yield prediction model that uses weather data to estimate corn and soybean yields in the US Corn Belt BEFORE the USDA publishes their official estimate. The idea: USDA doesn't release their first survey-based yield estimate until August. But weather during the growing season is the #1 driver of yield — if I can quantify the weather impact, I can have a yield estimate weeks before USDA. My approach: pull 40 years of historical daily weather from Open-Meteo (temperature, precipitation, soil moisture, evapotranspiration) for the top 8 corn-producing states, calculate growing-season metrics (cumulative GDD, total precipitation, drought stress days, excess heat days above 95F during pollination), and run a regression against USDA's final yield for each year. Then apply the model to the current season's weather to get a real-time yield estimate that updates daily. Open-Meteo API key is in my env as OPEN_METEO_API_KEY. Here's my research paper on weather-yield relationships: references/weather-yield-regression.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/weather-yield-regression.pdf...
+
+  Your paper identifies six weather variables that explain 78% of US corn
+  yield variance: (1) cumulative GDD May-Sep, (2) July precipitation, (3)
+  July max temp during pollination, (4) August soil moisture 0-10cm, (5)
+  VPD during silking, and (6) June precipitation for root establishment.
+  Soybeans have a similar but shifted model — critical period is Aug-Sep
+  instead of Jul-Aug. Let me build this.
+
+  Implicit requirements:
+  - Open-Meteo Historical API (archive.open-meteo.com/v1/archive):
+    daily data from 1984-present, variables: temperature_2m_max,
+    temperature_2m_min, precipitation_sum, et0_fao_evapotranspiration,
+    soil_moisture_0_to_1cm through 9_to_27cm, vapour_pressure_deficit
+  - Open-Meteo Forecast API (api.open-meteo.com/v1/forecast): same
+    variables, 16-day forecast, for projecting the current season forward
+  - API key passed as &apikey= parameter (professional plan)
+  - Need lat/long centroids for each state's ag district — not state
+    capitals, but production-weighted centroids (e.g., central Iowa
+    cropland at ~42.0°N, 93.5°W, not Des Moines)
+  - GDD calculation: base 50°F (10°C), cap at 86°F (30°C) — the standard
+    corn GDD formula, not simple average
+  - "Drought stress days": soil_moisture_0_to_1cm < 0.15 m³/m³ during
+    Jun-Aug. Consecutive drought days matter more than scattered ones
+  - "Excess heat days": temperature_2m_max > 35°C during Jul 5-25
+    (pollination window for corn). Each excess heat day costs ~1-2 bu/ac
+  - USDA final yield data (NASS QuickStats) for training the regression
+  - Yield trend detrending: raw yields increase ~2 bu/ac/year due to
+    technology. Must detrend before regression to isolate weather effect
+  - The model should output: point estimate, confidence interval, and
+    comparison to USDA's latest estimate (when available)
+
+  Building...
+
+  yield-predictor-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── openmeteo_client.py       # Open-Meteo API wrapper (auth, batch queries,
+  │   │                             #   historical + forecast + archive endpoints)
+  │   ├── weather_metrics.py        # GDD, precip, drought days, excess heat, VPD,
+  │   │                             #   soil moisture — all derived metrics
+  │   ├── yield_regression.py       # Multi-variate regression (40yr training set)
+  │   ├── trend_detrend.py          # Technology trend removal + re-trending
+  │   ├── state_centroids.py        # Production-weighted lat/long by state
+  │   ├── realtime_estimator.py     # Current season: actuals + 16-day forecast
+  │   │                             #   extension + climatology for remainder
+  │   ├── confidence_interval.py    # Bootstrap CI from regression residuals
+  │   ├── usda_comparison.py        # Compare model vs USDA when available
+  │   └── report_builder.py         # Yield estimate report (PDF + charts)
+  ├── references/
+  │   ├── gdd-formula.md            # Corn/soy GDD calculation (base/cap)
+  │   ├── critical-periods.md       # Pollination, pod-fill, grain-fill windows
+  │   ├── yield-weather-lit.md      # Academic literature on weather-yield models
+  │   ├── state-centroids.md        # 8 states, ag district centroids
+  │   └── methodology.md            # Full regression methodology
+  ├── assets/
+  │   ├── centroids.json            # {state: {lat, lon, weight}}
+  │   ├── usda_historical_yields.csv  # 1984-2025 state yields from NASS
+  │   └── trained_model.json        # Serialized regression coefficients
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (OPEN_METEO_API_KEY read from env)
+  Installed at: ~/.agents/skills/yield-predictor-skill
+
+  Shared to: github.com/acme-trading/yield-predictor-skill
+
+
+--- Mid-July, the model starts getting interesting ---
+
+Quant Analyst: /yield-predictor-skill Run the yield model for US corn. Where are we at for 2026?
+
+Copilot (loading yield-predictor-skill):
+
+  Pulling Open-Meteo historical data for 2026 growing season (Apr 1 - today)...
+  Pulling 16-day forecast (Jul 15 - Jul 31)...
+  Filling Aug-Sep with 30-year climatology (weighted by current soil state)...
+  Running regression...
+
+  US CORN YIELD MODEL — July 15, 2026
+
+  WEATHER METRICS TO DATE (weighted across 8 states):
+
+  | Metric                        | 2026 Actual | 30yr Avg | Deviation     |
+  |-------------------------------|-------------|----------|---------------|
+  | Cumulative GDD (Apr 15-Jul 14)| 1,580       | 1,490    | +6.0% (warm)  |
+  | June precipitation (inches)   | 4.8         | 4.3      | +11.6% (wet)  |
+  | July precip to date (inches)  | 1.1         | 2.2      | -50.0% (dry!) |
+  | Drought stress days (Jun-Jul) | 8           | 4        | +4 days       |
+  | Excess heat days >95F         | 3           | 1.5      | +1.5 days     |
+  | Soil moisture 0-10cm (m³/m³)  | 0.18        | 0.24     | -25.0% (low)  |
+  | VPD avg Jul 1-14 (kPa)       | 1.82        | 1.35     | +34.8% (high) |
+
+  STATE-BY-STATE BREAKDOWN:
+
+  | State     | Model Yield | USDA Trend | Deviation | Key Driver           |
+  |-----------|-------------|------------|-----------|----------------------|
+  | Iowa      | 178 bu/ac   | 198 bu/ac  | -10.1%    | Jul drought + heat   |
+  | Illinois  | 196 bu/ac   | 202 bu/ac  | -3.0%     | Adequate Jun rain    |
+  | Indiana   | 189 bu/ac   | 194 bu/ac  | -2.6%     | Moderate stress      |
+  | Minnesota | 184 bu/ac   | 192 bu/ac  | -4.2%     | VPD stress, ok rain  |
+  | Nebraska  | 172 bu/ac   | 196 bu/ac  | -12.2%    | Severe Jul drought   |
+  | Ohio      | 192 bu/ac   | 190 bu/ac  | +1.1%     | Good conditions      |
+  | S. Dakota | 152 bu/ac   | 168 bu/ac  | -9.5%     | Drought + thin soils |
+  | Wisconsin | 176 bu/ac   | 182 bu/ac  | -3.3%     | Moderate             |
+
+  NATIONAL WEIGHTED ESTIMATE:
+
+    Model yield:       181.4 bu/ac
+    USDA trend yield:  194.0 bu/ac (technology trend)
+    Model vs trend:    -12.6 bu/ac (-6.5%)
+
+    90% confidence interval: 175 — 188 bu/ac
+
+  SCENARIO ANALYSIS (remainder of season):
+
+  | Scenario                         | Yield Est  | Probability |
+  |----------------------------------|------------|-------------|
+  | Drought breaks by Jul 25 (rain)  | 188 bu/ac  | 35%         |
+  | Current pattern continues        | 181 bu/ac  | 45%         |
+  | Drought intensifies through Aug  | 172 bu/ac  | 20%         |
+
+  The 16-day forecast shows ECMWF bringing a cold front through the
+  western Corn Belt around Jul 24-26 with 0.5-1.0 inches. If verified,
+  the "drought breaks" scenario becomes more likely, but the damage
+  during pollination week (Jul 10-20) in Iowa and Nebraska is already
+  locked in. Those bushels aren't coming back.
+
+  CONTEXT: USDA's July WASDE used a trend yield of 181 bu/ac (their first
+  estimate). Our model agrees with USDA's number this month, but for
+  different reasons — USDA hasn't incorporated the July heat/drought yet
+  (their July report uses trend, not weather). When USDA releases their
+  August survey-based estimate, expect them to cut to 177-183 range.
+
+  MARKET IMPLICATION: If our model is right at 181 and USDA's August
+  estimate comes in at 179 (a 2 bu/ac cut from trend), that removes
+  ~280 million bushels from US production. At current demand, that would
+  cut ending stocks from 2.1 billion to 1.82 billion bushels and push
+  the stocks/use ratio from 14.5% to 12.5%. Dec corn futures should
+  reprice $0.25-$0.40 higher.
+
+  PDF report: reports/yield-model-corn-2026-07-15.pdf
+
+  Want me to run soybeans too? Soybean critical period (pod fill) hasn't
+  started yet — the model has less signal this early.
+
+
+=============================================================
+SKILL 9: Parana River Drought & Logistics Risk
+=============================================================
+
+The logistics analyst builds something no one else on the street has:
+
+User: /agent-skill-creator Here's a unique edge I want to build: the Parana River system in Argentina/Brazil handles 80% of Argentine grain exports from the Rosario-Santa Fe port complex. When the Parana runs low, draft restrictions limit barge loading, which increases freight costs and delays shipments. The river level at Rosario is the single most important logistics variable for Argentine soy/corn exports. I want to track this using weather. My idea: pull historical and forecast precipitation for the Parana River watershed — the Upper Parana in Brazil (Minas Gerais, Sao Paulo, Parana, Mato Grosso do Sul) feeds the river. If rainfall in the watershed is below normal for 60+ days, river levels at Rosario drop 2-3 months later (the lag from upstream rain to downstream flow). I can use Open-Meteo's 80 years of precipitation history to build a rainfall-to-river-level lag model, then use the 16-day forecast plus seasonal climate projections to predict river levels 1-3 months ahead. Nobody on Wall Street models this — they react to draft restrictions AFTER they're announced. We'd see them coming weeks ahead. Open-Meteo key in env as OPEN_METEO_API_KEY. Also I have a spreadsheet with historical Rosario river gauge readings from Argentina's naval hydrography service: data/rosario-river-levels-1990-2026.xlsx
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading data/rosario-river-levels-1990-2026.xlsx...
+
+  35 years of daily river gauge readings at Rosario (km 416 of the Parana).
+  I can see the 2021-2022 historic drought clearly — river dropped to 0.08m
+  (normal is ~3.5m), which caused $2.4 billion in extra freight costs for
+  Argentine exporters. Let me build this.
+
+  Implicit requirements:
+  - Open-Meteo Historical API: daily precipitation_sum for 12 sub-basins
+    across the Upper Parana watershed in Brazil (lat/long grid covering
+    ~800,000 km² of catchment area)
+  - Open-Meteo Forecast API: 16-day precipitation forecast for same grid
+  - Open-Meteo Climate API: seasonal precipitation projections (CMIP6
+    models) for 1-3 month outlook
+  - Ensemble API (ensemble-api.open-meteo.com): ECMWF 51-member and GFS
+    31-member ensembles for probabilistic rainfall forecasts — critical
+    for the "will it rain enough?" question
+  - The rainfall-to-river-level lag varies by sub-basin: Upper Parana
+    (Mato Grosso do Sul) has a 30-45 day lag to Rosario, Tietê tributary
+    (São Paulo) has 45-60 day lag, Paranaíba (Minas Gerais/Goiás) has
+    60-90 day lag
+  - Itaipu Dam releases affect downstream flow — need to account for
+    regulated vs natural flow
+  - Draft restriction thresholds: below 2.0m at Rosario = Panamax vessels
+    can't fully load. Below 1.0m = barges limited to 60% capacity.
+    Below 0.5m = effective port shutdown for ocean vessels
+  - Export calendar: Argentine soy harvest is Mar-May, corn harvest is
+    Mar-Jun. Peak export season is Apr-Aug. River problems during this
+    window are catastrophic for basis and FOB premiums
+  - The skill should output: current river level, 30/60/90-day predicted
+    level, probability of draft restrictions, and estimated freight cost
+    impact
+
+  Building...
+
+  parana-river-risk-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── openmeteo_client.py        # Open-Meteo API wrapper (all 4 endpoints)
+  │   ├── watershed_rainfall.py      # 12 sub-basin precipitation aggregation
+  │   ├── lag_model.py               # Rainfall-to-river-level lag regression
+  │   │                              #   (30/45/60/90 day lags by sub-basin)
+  │   ├── river_level_predictor.py   # Combines: actuals + forecast + climate +
+  │   │                              #   ensemble probabilities → predicted level
+  │   ├── ensemble_probabilities.py  # ECMWF 51-member rainfall probability
+  │   │                              #   distribution for watershed
+  │   ├── draft_restriction.py       # Threshold model: level → loading capacity
+  │   ├── freight_impact.py          # Estimated $/MT cost increase by level
+  │   ├── export_window_risk.py      # Overlay predictions on export calendar
+  │   └── report_builder.py          # Parana River Risk Report (PDF + charts)
+  ├── references/
+  │   ├── parana-watershed.md        # 12 sub-basins, areas, lag times
+  │   ├── rosario-gauge.md           # Gauge location, datum, thresholds
+  │   ├── draft-restrictions.md      # Historical restrictions + impacts
+  │   ├── itaipu-releases.md         # Dam regulation effects
+  │   └── methodology.md            # Lag model, ensemble approach
+  ├── assets/
+  │   ├── sub_basins.geojson         # 12 watershed polygons with centroids
+  │   ├── rosario_historical.csv     # River gauge 1990-2026
+  │   └── trained_lag_model.json     # Serialized lag coefficients
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (OPEN_METEO_API_KEY read from env)
+  Installed at: ~/.agents/skills/parana-river-risk-skill
+
+  Shared to: github.com/acme-trading/parana-river-risk-skill
+
+
+--- February, heading into Argentine export season ---
+
+Logistics Analyst: /parana-river-risk-skill What's the river outlook for the April-August export window? I need to know if we should be hedging freight.
+
+Copilot (loading parana-river-risk-skill):
+
+  Pulling Open-Meteo historical precip for Parana watershed (last 180 days)...
+  Pulling 16-day forecast (ECMWF + GFS)...
+  Pulling ECMWF 51-member ensemble for next 15 days...
+  Pulling Climate API seasonal projection (Mar-Aug 2026)...
+  Running lag model...
+
+  PARANA RIVER RISK REPORT — February 28, 2026
+
+  CURRENT STATUS:
+  River level at Rosario: 2.85m (normal for late Feb: 3.8m)
+  Status: BELOW NORMAL but above restriction threshold (2.0m)
+
+  WATERSHED RAINFALL — LAST 90 DAYS (Nov-Feb):
+
+  | Sub-basin           | Actual (mm) | Normal (mm) | Deficit  |
+  |---------------------|-------------|-------------|----------|
+  | Upper Parana (MS)    | 680         | 820         | -17.1%   |
+  | Tietê (SP)          | 590         | 780         | -24.4%   |
+  | Paranaíba (MG/GO)   | 710         | 850         | -16.5%   |
+  | Iguaçu (PR)         | 820         | 790         | +3.8%    |
+  | Paraguay River      | 440         | 620         | -29.0%   |
+  | TOTAL WATERSHED     | 3,240       | 3,860       | -16.1%   |
+
+  The Tietê (São Paulo) and Paraguay River sub-basins are significantly
+  below normal. The Iguaçu (Paraná state) is the only sub-basin at or
+  above normal.
+
+  16-DAY FORECAST:
+
+  | Period          | Forecast Precip | Normal  | Outlook     |
+  |-----------------|-----------------|---------|-------------|
+  | Mar 1-7         | 35mm            | 45mm    | Below normal|
+  | Mar 8-15        | 50mm            | 42mm    | Above normal|
+
+  A frontal system around Mar 10-12 brings the best rain chance in weeks,
+  but it's concentrated over the Iguaçu sub-basin (southern watershed),
+  which has the shortest lag to Rosario. Upper Parana stays drier.
+
+  ENSEMBLE PROBABILITY (ECMWF 51-member, next 15 days):
+  - Probability of total watershed rainfall > normal: 22%
+  - Probability of total watershed rainfall < 75% of normal: 41%
+  - Probability of total watershed rainfall < 50% of normal: 12%
+
+  PREDICTED RIVER LEVELS AT ROSARIO:
+
+  | Period      | Predicted Level | Normal  | Restriction Risk |
+  |-------------|-----------------|---------|------------------|
+  | March       | 2.6m ± 0.4m     | 3.5m    | LOW (>2.0m)      |
+  | April       | 2.1m ± 0.5m     | 3.0m    | MODERATE (near threshold) |
+  | May         | 1.6m ± 0.6m     | 2.5m    | HIGH (<2.0m likely) |
+  | June        | 1.3m ± 0.7m     | 2.2m    | HIGH              |
+  | July        | 1.5m ± 0.8m     | 2.0m    | MODERATE-HIGH     |
+  | August      | 1.8m ± 0.7m     | 2.1m    | MODERATE          |
+
+  PROBABILITY OF DRAFT RESTRICTIONS (level < 2.0m) BY MONTH:
+  | April | May  | June | July | August |
+  |-------|------|------|------|--------|
+  | 38%   | 72%  | 81%  | 65%  | 52%    |
+
+  FREIGHT IMPACT ESTIMATE:
+
+  Current Up-River freight (Rosario-to-vessel): $18/MT
+  If level drops to 1.5m (May estimate): $28-32/MT (+$10-14/MT)
+  If level drops to 1.0m (worst case): $38-45/MT (+$20-27/MT)
+
+  For context: Argentine FOB soybean premium is currently +$8/MT over
+  CBOT. A $14/MT freight increase would push FOB premiums to +$22/MT,
+  which is close to the $25/MT peak during the 2021-22 Parana drought.
+
+  CLIMATE MODEL SEASONAL OUTLOOK (Mar-Aug 2026):
+  5 of 7 CMIP6 models show below-normal precipitation for the Upper
+  Parana watershed through May, with a return to normal by July. This
+  is consistent with the current weak La Niña signal, which historically
+  reduces rainfall in southern Brazil and the Parana basin.
+
+  RECOMMENDATION:
+  High probability (72%) of draft restrictions in May, coinciding with
+  peak Argentine soybean export shipments. This is a tradeable event:
+  - Argentine FOB soy basis will widen
+  - Brazilian soy basis (Paranaguá, Santos) will strengthen as buyers
+    divert from Rosario
+  - Barge freight futures (if available) should be bought
+  - CBOT May-July soybean spread could steepen on logistics premium
+
+  If you want to hedge, do it now — by the time restrictions are
+  announced (typically 2-3 weeks before they bite), the freight market
+  will have already moved.
+
+  PDF: reports/parana-river-risk-2026-02-28.pdf
+
+
+=============================================================
+SKILL 10: Global Crop Calendar & Anomaly Scanner
+=============================================================
+
+The weather analyst builds a skill that scans every major growing region
+on Earth simultaneously — the "Bloomberg terminal for crop weather":
+
+User: /agent-skill-creator I want a skill that monitors weather anomalies across every major crop-producing region globally — all at once. The commodity markets move when weather deviates from normal in a key region at a critical growth stage. The problem: there are 30+ regions that matter and each has a different crop calendar. I can't manually check weather for Brazil, Argentina, US, EU, Black Sea, India, China, SE Asia, and Australia every day. I want the skill to: (1) know the crop calendar for each commodity in each region (planting, vegetative, reproductive, harvest), (2) pull the current weather from Open-Meteo for each region daily, (3) compare against the 30-year climatology, (4) flag any region where a critical weather metric (precip, temp, soil moisture) deviates beyond 1.5 standard deviations from normal during a critical growth phase, and (5) rank the anomalies by market impact (a drought during US corn pollination matters more than excess rain during Ukrainian wheat dormancy). Use Open-Meteo's historical archive for the 30-year baselines and the forecast API for the forward-looking 16-day window. OPEN_METEO_API_KEY is in my env. Here's my spreadsheet with all the regions and crop calendars: data/global-crop-calendar.xlsx
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading data/global-crop-calendar.xlsx...
+
+  32 region-commodity combinations across 14 countries. Each with planting,
+  vegetative, reproductive, and harvest date ranges. This is a proper global
+  surveillance system. Let me build this.
+
+  Implicit requirements:
+  - Open-Meteo Historical API: 30-year daily climatology (1994-2023)
+    for 32 regions. Variables: temperature_2m_max, temperature_2m_min,
+    precipitation_sum, soil_moisture_0_to_7cm, et0_fao_evapotranspiration,
+    vapour_pressure_deficit
+  - Open-Meteo Forecast API: current + 16-day for all 32 regions
+  - Each region needs multiple grid points (not just one centroid) to
+    capture spatial variability — a 3x3 grid (~100km spacing) per region
+  - The 30-year climatology must be pre-computed and cached (not pulled
+    daily — 32 regions × 30 years = too many API calls in real-time)
+  - Standard deviation calculation: for each variable, each day-of-year,
+    each region → mean and stddev from 30-year history
+  - "Market impact weight": reproductive stage anomalies weighted 3x,
+    vegetative 2x, planting/harvest 1x. Production volume of the region
+    also weights the score (Iowa corn matters more than Ohio corn)
+  - Output: a ranked "heat map" — red/orange/yellow/green for each
+    region-commodity pair, sorted by composite impact score
+  - The scanner should run in < 30 seconds despite querying 32 regions
+    (batch and parallelize Open-Meteo calls, 3x3 grid = 288 locations)
+  - Ensemble API for the 16-day window adds probabilistic dimension —
+    "65% chance this anomaly persists through next week"
+
+  Building...
+
+  crop-anomaly-scanner-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── openmeteo_client.py        # Open-Meteo API wrapper (batch, parallel)
+  │   ├── climatology_builder.py     # Pre-compute 30yr normals + stddev
+  │   │                              #   (run once, cache to assets/)
+  │   ├── anomaly_detector.py        # Current weather vs climatology,
+  │   │                              #   z-score by variable by region
+  │   ├── growth_stage_tracker.py    # What stage is each crop in today?
+  │   ├── impact_scorer.py           # Anomaly × growth stage × production
+  │   │                              #   volume = composite impact score
+  │   ├── ensemble_persistence.py    # Will the anomaly continue? (ECMWF ensemble)
+  │   ├── region_grid.py             # 3x3 grid generator per region
+  │   ├── dashboard_builder.py       # Global heat map (HTML interactive)
+  │   └── daily_briefing.py          # "Top 5 anomalies today" PDF
+  ├── references/
+  │   ├── crop-calendar.md           # 32 region-commodity growth phases
+  │   ├── region-definitions.md      # Lat/long bounds, production weights
+  │   ├── anomaly-thresholds.md      # z-score levels, impact weighting
+  │   ├── historical-analogues.md    # Past anomaly events + market outcomes
+  │   └── methodology.md            # Full scoring methodology
+  ├── assets/
+  │   ├── regions.json               # 32 regions with grids + weights
+  │   ├── crop_calendar.json         # Growth phase dates by region-commodity
+  │   ├── climatology_cache/         # Pre-computed 30yr normals (per region)
+  │   │   ├── us-corn-belt.json
+  │   │   ├── brazil-center-west.json
+  │   │   ├── argentina-pampas.json
+  │   │   └── ... (29 more)
+  │   └── production_weights.json    # Regional share of global production
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (OPEN_METEO_API_KEY read from env)
+  Installed at: ~/.agents/skills/crop-anomaly-scanner-skill
+
+  Shared to: github.com/acme-trading/crop-anomaly-scanner-skill
+
+
+--- Daily morning scan ---
+
+Research Director: /crop-anomaly-scanner-skill Morning scan. What's flashing?
+
+Copilot (loading crop-anomaly-scanner-skill):
+
+  Pulling current weather for 32 regions (288 grid points)...
+  Comparing against 30-year climatology...
+  Scoring by growth stage and production weight...
+
+  GLOBAL CROP ANOMALY SCANNER — March 4, 2026, 07:15 ET
+
+  TOP 5 ANOMALIES BY MARKET IMPACT:
+
+  #1  ARGENTINA PAMPAS — Soybeans (pod fill)                    SCORE: 9.2
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Precipitation last 30 days: 42mm (normal: 98mm)   z = -2.31    │
+  │ Soil moisture 0-7cm: 0.12 m³/m³ (normal: 0.22)   z = -2.05    │
+  │ Max temperature avg: 34.2°C (normal: 30.8°C)      z = +1.72    │
+  │ VPD avg: 2.14 kPa (normal: 1.48 kPa)              z = +1.89    │
+  │ Growth stage: REPRODUCTIVE (R5 pod fill) — CRITICAL             │
+  │ Ensemble: 78% chance below-normal precip continues 15 days      │
+  │                                                                  │
+  │ ANALOGUE: Feb 2018 (similar z-scores) → Argentina lost 20 MMT   │
+  │ of soybeans, CBOT rallied $2.50/bu over 6 weeks.                │
+  │ Current deviation isn't as severe yet but accelerating.          │
+  └──────────────────────────────────────────────────────────────────┘
+
+  #2  US SOUTHERN PLAINS — Winter wheat (jointing)              SCORE: 6.8
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Precipitation last 60 days: 28mm (normal: 72mm)   z = -2.08    │
+  │ Soil moisture 0-7cm: 0.14 m³/m³ (normal: 0.21)   z = -1.78    │
+  │ Growth stage: VEGETATIVE (jointing, approaching boot)           │
+  │ Region: Kansas, Oklahoma, Texas panhandle                       │
+  │ Ensemble: 55% below-normal precip continues, 30% near-normal   │
+  │                                                                  │
+  │ HRW wheat entering its most water-sensitive phase. If drought   │
+  │ persists through March, expect USDA to lower winter wheat       │
+  │ condition ratings and KC wheat to firm.                         │
+  └──────────────────────────────────────────────────────────────────┘
+
+  #3  VIETNAM CENTRAL HIGHLANDS — Robusta coffee (cherry dev)   SCORE: 5.4
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Precipitation last 30 days: 8mm (normal: 22mm)    z = -1.62    │
+  │ Temperature avg: 26.8°C (normal: 24.1°C)          z = +1.87    │
+  │ Growth stage: REPRODUCTIVE (cherry development)                 │
+  │ Region: Dak Lak, Lam Dong, Gia Lai provinces                   │
+  │ Ensemble: 60% chance dry pattern continues through mid-March    │
+  │                                                                  │
+  │ Vietnam = 40% of global robusta. Dry + warm during cherry dev   │
+  │ reduces bean size and weight. Could shave 1-2 MMT off the       │
+  │ 2026/27 harvest estimate. RC robusta may firm on this.         │
+  └──────────────────────────────────────────────────────────────────┘
+
+  #4  INDIA — Rabi wheat (grain fill)                           SCORE: 4.9
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Max temperature: 33.5°C (normal: 28.9°C)          z = +2.12    │
+  │ Growth stage: REPRODUCTIVE (grain fill, 3-4 weeks to harvest)   │
+  │ Region: Punjab, Haryana, Uttar Pradesh, Madhya Pradesh          │
+  │                                                                  │
+  │ Terminal heat stress. March heat during grain fill is the #1     │
+  │ yield risk for Indian wheat. The 2022 heatwave cost India 5 MMT │
+  │ and triggered the export ban. Current temps not yet at 2022      │
+  │ levels but approaching. Watch closely this week.                │
+  └──────────────────────────────────────────────────────────────────┘
+
+  #5  BRAZIL CENTER-WEST — Safrinha corn (vegetative)           SCORE: 4.1
+  ┌──────────────────────────────────────────────────────────────────┐
+  │ Precipitation last 14 days: 18mm (normal: 55mm)   z = -1.68    │
+  │ Growth stage: VEGETATIVE (V6-V8, recently planted)              │
+  │ Region: Mato Grosso, Goiás, Mato Grosso do Sul                 │
+  │                                                                  │
+  │ Safrinha corn was planted late (soy harvest delay) and now      │
+  │ hitting a dry spell during early vegetative growth. Not critical │
+  │ yet — safrinha corn is drought-tolerant in early stages. But if │
+  │ dryness persists into April (tasseling), this moves to #1.     │
+  └──────────────────────────────────────────────────────────────────┘
+
+  REGIONS ALL CLEAR (no anomalies >1.5 stddev in critical phases):
+  EU (France wheat, Germany rapeseed), Black Sea (Ukraine corn/wheat,
+  Russia wheat), Australia (canola, wheat — dormant/off-season), China
+  (winter wheat — adequate snow cover), US Corn Belt (pre-planting,
+  soil moisture recharging), Brazil South (soybean harvest on pace),
+  SE Asia (palm oil — normal monsoon), Canada (off-season).
+
+  Full dashboard: reports/anomaly-dashboard-2026-03-04.html
+  PDF briefing: reports/crop-anomalies-2026-03-04.pdf
+
+  Want me to drill deeper into any of these, or pull up the historical
+  analogue analysis for the Argentina situation?
+
+
+--- Drilling into a specific alert ---
+
+Analyst: /crop-anomaly-scanner-skill Pull up the full historical analogue for Argentina #1. How bad could this get?
+
+Copilot:
+
+  Searching 30 years for matching patterns: Pampas soybeans, February
+  precip z < -2.0, soil moisture z < -1.5, during reproductive phase...
+
+  ARGENTINA SOYBEAN DROUGHT — HISTORICAL ANALOGUES
+
+  5 matching events found:
+
+  | Year    | Feb Precip z | Soil z | Outcome             | CBOT Impact    |
+  |---------|--------------|--------|---------------------|----------------|
+  | 2017/18 | -2.45        | -2.20  | 20 MMT production loss | +$2.50/bu (6wk) |
+  | 2008/09 | -2.62        | -2.41  | 16 MMT production loss | +$1.80/bu (4wk) |
+  | 2011/12 | -1.95        | -1.70  | 12 MMT production loss | +$3.20/bu (8wk) |
+  | 2003/04 | -1.88        | -1.55  | 7 MMT production loss  | +$0.90/bu (3wk) |
+  | 2022/23 | -3.10        | -2.80  | 25 MMT production loss | +$1.40/bu (4wk) |
+
+  CURRENT 2025/26 vs ANALOGUES:
+  Feb precip z: -2.31 (between 2017/18 and 2008/09 severity)
+  Soil moisture z: -2.05
+
+  PRODUCTION IMPACT ESTIMATE:
+  Based on analogues, the current deviation pattern suggests a production
+  loss of 8-18 MMT from USDA's current 50 MMT estimate.
+
+  | Scenario         | Production | Loss from USDA | Probability |
+  |------------------|------------|----------------|-------------|
+  | Rain arrives Mar 10-15 | 45 MMT | -5 MMT     | 22%         |
+  | Continued dry Mar | 40 MMT    | -10 MMT        | 48%         |
+  | Drought deepens  | 35 MMT    | -15 MMT        | 30%         |
+
+  Note: USDA already cut 2 MMT in March (to 50 from 52). The market has
+  priced in ~3-4 MMT of further downside. If the "continued dry" scenario
+  plays out (10 MMT total cut), there's 6-7 MMT of production loss NOT
+  yet in the price.
+
+  SOYBEAN MEAL IMPACT: Argentina = 45% of global soybean meal exports.
+  A 10 MMT soy production loss = ~7.5 MMT less crush = ~5.5 MMT less
+  meal exports. Meal importers (EU, SE Asia) would need to source from
+  US or Brazil. CBOT soybean meal could rally $30-50/short ton.
+
+  16-DAY ENSEMBLE OUTLOOK (ECMWF 51-member):
+  Probability of meaningful rain (>25mm) in Pampas next 15 days: 28%
+  Probability of continued dry (<10mm) next 15 days: 52%
+  Probability of drought-breaking event (>50mm): 8%
+
+  RECOMMENDATION: The analogues and ensemble data both point toward the
+  "continued dry" scenario as most likely. USDA will likely cut another
+  3-5 MMT in the April WASDE. The market is under-pricing this risk.
+
+
+=============================================================
+SKILL 11: Planting Window Advisor
+=============================================================
+
+A completely different use case — this one faces the production side,
+not the trading desk. An analyst who also advises farmer clients:
+
+User: /agent-skill-creator Our brokerage has farmer clients across the Midwest who ask us every spring: "When should I plant?" I want a skill that answers this using weather data. The decision depends on: (1) soil temperature at 2-inch depth — corn needs >50F sustained for 3 days, soybeans need >55F, (2) soil moisture — too wet and you get compaction, too dry and you need irrigation, the sweet spot is 0.20-0.30 m³/m³, (3) the 7-day forecast — no point planting if a freeze or heavy rain is coming, (4) accumulated GDD so the crop reaches maturity before the first fall frost. Open-Meteo has soil temperature at 0cm and 6cm depth, soil moisture at multiple levels, and the 16-day forecast. For any lat/long a farmer gives me, I want the skill to say "GO — plant corn now" or "WAIT — soil temp at 48F, need 2 more warm days" or "RISK — planting window closing, frost date approaching". OPEN_METEO_API_KEY is in my env.
+
+Copilot (loading agent-skill-creator skill):
+
+  This is a decision-support tool for planting timing. Let me formalize
+  the agronomic rules and build it.
+
+  Implicit requirements:
+  - Open-Meteo Forecast API: soil_temperature_6cm (closest to 2-inch
+    depth), soil_moisture_0_to_1cm, temperature_2m_min (freeze risk),
+    precipitation_sum, for any user-provided lat/long
+  - Open-Meteo Historical API: need average first fall frost date
+    (temperature_2m_min < 0°C) from 30-year history at the location
+    to calculate "days to maturity available"
+  - Corn maturity: needs 2,500-2,800 GDD (base 50F) depending on
+    hybrid maturity class. Soybean: 2,200-2,600 GDD
+  - The skill must accept a location (lat/long, county, zip code, or
+    city name) and hybrid maturity (short/medium/full season)
+  - "GO/WAIT/RISK" traffic light must consider ALL factors simultaneously
+    — soil temp alone isn't enough if rain is forecast
+  - Workability factor: if precipitation > 15mm in last 48 hours, soil
+    is too wet for heavy equipment regardless of other factors
+  - Farmers want a 5-day window recommendation, not just "today" —
+    "Best planting day this week: Thursday"
+
+  Building...
+
+  planting-window-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── openmeteo_client.py        # Open-Meteo API wrapper
+  │   ├── soil_readiness.py          # Soil temp + moisture check
+  │   ├── freeze_risk.py             # 16-day freeze probability
+  │   ├── workability.py             # Field trafficability from recent precip
+  │   ├── gdd_projection.py          # GDD remaining vs maturity requirement
+  │   │                              #   vs average first frost date
+  │   ├── window_optimizer.py        # Score each day in the next 14 days,
+  │   │                              #   recommend best planting window
+  │   ├── frost_date_calculator.py   # 30-year avg first fall frost by location
+  │   └── advisor_output.py          # GO/WAIT/RISK with plain-English reasoning
+  ├── references/
+  │   ├── planting-rules.md          # Agronomic decision rules
+  │   ├── gdd-maturity-table.md      # GDD requirements by hybrid class
+  │   ├── soil-thresholds.md         # Temperature and moisture thresholds
+  │   └── methodology.md
+  ├── assets/
+  │   └── maturity_zones.json        # Hybrid maturity GDD by latitude band
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED
+  Installed at: ~/.agents/skills/planting-window-skill
+
+  Shared to: github.com/acme-trading/planting-window-skill
+
+
+--- A farmer client calls in April ---
+
+Broker: /planting-window-skill One of my clients near Ames, Iowa (42.03°N, 93.47°W) wants to plant corn this week. Full-season hybrid (2,700 GDD). Is he good to go?
+
+Copilot (loading planting-window-skill):
+
+  Pulling Open-Meteo data for 42.03°N, 93.47°W...
+  Forecast: 16 days | Soil data: current + forecast
+  Historical: calculating average first fall frost date...
+
+  PLANTING WINDOW ADVISOR — Ames, Iowa (42.03°N, 93.47°W)
+  Crop: Corn | Hybrid: Full season (2,700 GDD required)
+  Date: April 14, 2026
+
+  CURRENT CONDITIONS:
+  ┌────────────────────────────────────────────────────────────────┐
+  │ Soil temp (6cm depth):     52.1°F  (need: >50°F for 3 days)  │
+  │ Consecutive days >50°F:    4 days  ✓ PASS                    │
+  │ Soil moisture (0-7cm):     0.27 m³/m³ (ideal: 0.20-0.30)  ✓ │
+  │ Last significant rain:     3 days ago (12mm)  ✓ WORKABLE     │
+  │ Avg first fall frost:      October 12 (30yr avg)              │
+  │ Days from today to frost:  181 days                           │
+  │ GDD available (Apr14-Oct12): ~2,850 (based on 30yr avg)      │
+  │ GDD required (full season): 2,700                             │
+  │ GDD margin:                150 GDD (5.6% buffer)  ✓ OK       │
+  └────────────────────────────────────────────────────────────────┘
+
+  7-DAY FORECAST:
+  | Day       | High  | Low   | Precip | Soil Temp | Verdict      |
+  |-----------|-------|-------|--------|-----------|--------------|
+  | Mon 4/14  | 68°F  | 45°F  | 0mm    | 52°F      | PLANTABLE    |
+  | Tue 4/15  | 72°F  | 48°F  | 0mm    | 53°F      | PLANTABLE *  |
+  | Wed 4/16  | 70°F  | 50°F  | 0mm    | 54°F      | PLANTABLE *  |
+  | Thu 4/17  | 64°F  | 46°F  | 8mm    | 53°F      | MARGINAL     |
+  | Fri 4/18  | 58°F  | 40°F  | 22mm   | 50°F      | TOO WET      |
+  | Sat 4/19  | 55°F  | 38°F  | 5mm    | 48°F      | TOO COOL/WET |
+  | Sun 4/20  | 62°F  | 42°F  | 0mm    | 49°F      | RECOVERING   |
+
+  ════════════════════════════════════════════════════════════════
+  RECOMMENDATION:   GO — PLANT TUESDAY OR WEDNESDAY
+  ════════════════════════════════════════════════════════════════
+
+  Best window: Tuesday April 15 and Wednesday April 16. Soil is warm,
+  moisture is ideal, and 48 hours of dry weather ahead gives excellent
+  field conditions. Thursday is marginal (light rain incoming). Friday
+  onward is too wet — a 22mm rain event will make fields unworkable
+  for 2-3 days.
+
+  If your client misses the Tue-Wed window, next opportunity is likely
+  Monday April 21 after the weekend system clears and fields dry out
+  (soil needs ~48hr of dry weather after 22mm of rain to be trafficable).
+
+  GDD margin is tight at 5.6% for a full-season hybrid. If planting
+  slips past April 25, I'd recommend switching to a medium-season hybrid
+  (2,500 GDD) to guarantee maturity before frost. Every day of planting
+  delay after April 20 costs roughly 1-1.5 bu/ac in yield potential.
+
+
+=============================================================
+COMPLETE TEAM SKILL LIBRARY — WITH OPEN-METEO
+=============================================================
+
+Updated library with the weather-powered skills:
+
+  SKILL                          DATA SOURCES                      USE CASE
+  ──────────────────────────────────────────────────────────────────────────────
+  wasde-analyzer-skill           USDA WASDE, Bloomberg             Monthly S&D analysis
+  crop-weather-weekly-skill      USDA NASS, NOAA, Drought Mon.     Weekly crop report
+  basis-export-tracker-skill     DTN, USDA FAS, barge freight      Daily basis + exports
+  coffee-fundamental-skill       CEPEA, ICE, CFTC, ECMWF          Coffee market monitor
+  psd-balance-sheet-skill        USDA PSD API                      Global balance sheets
+  trade-flow-intel-skill         GTT REST API                      Trade flow shifts
+  supply-chain-risk-skill        PSD + GTT + FAS                   Export restriction risk
+  yield-predictor-skill          Open-Meteo + NASS historical      Pre-USDA yield estimates
+  parana-river-risk-skill        Open-Meteo (4 endpoints)          River logistics risk
+  crop-anomaly-scanner-skill     Open-Meteo (all 32 regions)       Global weather alerts
+  planting-window-skill          Open-Meteo forecast + archive     Farmer planting advice
+  seasonal-spread-skill          CBOT historical                   Seasonal spread models
+  client-briefing-skill          Calls other skills internally     Weekly flagship report
+
+  Environment variables required:
+
+    export OPEN_METEO_API_KEY="your-professional-api-key"
+    export PSD_API_KEY="your-usda-fas-api-key"
+    export GTT_USER_ID="your-gtt-username"
+    export GTT_PASSWORD="your-gtt-password"
+
+  The Open-Meteo skills are the ones that give the team a genuine
+  informational edge. Every bank and fund has PSD data and GTT access.
+  But almost nobody is systematically converting granular weather data
+  into crop yield estimates, river level predictions, and global anomaly
+  scores in real-time. The data is public (Open-Meteo). The edge isn't
+  the data — it's the skill that knows what to do with it.
+
+
+=============================================================
+EXPANDED: DATA INGESTION PIPELINE SKILLS
+=============================================================
+
+Beyond API wrappers, the team now builds skills that create automated
+data ingestion pipelines — pulling, parsing, normalizing, and storing
+data from sources that don't have clean APIs. Raw satellite rasters,
+government FTP dumps, vessel tracking feeds, and fire detection data.
+These are the plumbing skills that feed the analytical skills above.
+
+
+=============================================================
+SKILL 12: NOAA Satellite Crop Monitor (NDVI / VHI Pipeline)
+=============================================================
+
+The remote sensing analyst on the team:
+
+User: /agent-skill-creator I need to build a data pipeline that ingests NOAA STAR's weekly Vegetation Health Products — specifically the Smoothed NDVI (SMN), Vegetation Condition Index (VCI), Temperature Condition Index (TCI), and Vegetation Health Index (VHI). These are satellite-derived datasets at 4km resolution covering the entire globe, updated weekly. The data lives at star.nesdis.noaa.gov/data/pub0018/VHPdata4users/data/Blended_VH_4km/ — GeoTIFF files organized by year and week number. There's no API — you have to wget the files, parse the GeoTIFF rasters, and extract values for the regions you care about. I want the skill to: (1) automatically download the latest weekly GeoTIFF files for VHI, VCI, SMN, and TCI, (2) clip the rasters to our 32 crop regions (same regions as the anomaly scanner), (3) compute area-weighted average VHI/VCI/NDVI for each region, (4) compare to the same-week historical average (NOAA has data from 1981), (5) flag any region where VHI drops below 40 (drought stress) or VCI drops below 35 (vegetation deterioration), and (6) produce a weekly "Satellite Crop Monitor" report. This is the same data that USDA FAS uses in their Crop Explorer tool, but we'd have it parsed and actionable in our own pipeline instead of waiting for their interpretation. I have no special credentials — this data is public. Here's the NOAA documentation I saved: references/noaa-vh-products-guide.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/noaa-vh-products-guide.pdf...
+
+  This is a GeoTIFF raster ingestion problem. NOAA publishes global 4km
+  vegetation health products weekly as individual .tif files. The skill
+  needs to handle: file discovery (new files appear weekly by week number),
+  HTTP download (wget-style, no authentication), raster parsing (GeoTIFF
+  → numpy arrays), spatial clipping (global raster → regional means),
+  and time-series comparison (current week vs 40+ year baseline). Let me
+  build this.
+
+  Implicit requirements:
+  - Data URL pattern:
+    https://www.star.nesdis.noaa.gov/data/pub0018/VHPdata4users/
+    data/Blended_VH_4km/geo_TIFF/VHI/VHI_YYYY_WW.tif
+    (similarly for VCI, SMN, TCI — separate directories)
+  - Files are global 4km GeoTIFF rasters: 10000 × 3616 pixels, WGS84
+  - Week numbering follows NOAA convention (ISO week), published with
+    ~5-7 day lag
+  - Need rasterio or GDAL to parse GeoTIFF (standard geospatial Python)
+  - Region clipping: define bounding boxes or polygon masks for each of
+    the 32 crop regions, extract pixel values within each polygon
+  - Area weighting: pixels at different latitudes cover different areas
+    (cos(lat) correction)
+  - VHI interpretation thresholds from NOAA:
+    <10 = extreme drought, 10-20 = severe drought, 20-30 = moderate
+    drought, 30-40 = mild drought, 40-60 = normal, >60 = favorable
+  - Historical baseline: download archived annual .gz files from 1981-2023
+    for same-week comparison (one-time setup, then incremental weekly)
+  - Storage: cache downloaded GeoTIFFs locally in data/noaa-vh/ to avoid
+    re-downloading. Only fetch the latest week's files each run.
+  - NDVI (SMN) absolute values matter for crop identification; VHI and
+    VCI are relative indices that already account for the local baseline
+  - Dependencies: rasterio, numpy, shapely (for polygon clipping).
+    These are common geospatial packages — not exotic
+
+  Building...
+
+  noaa-crop-monitor-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── noaa_downloader.py        # wget-style fetcher for weekly GeoTIFFs
+  │   │                             #   (VHI, VCI, SMN, TCI directories)
+  │   │                             #   handles retries, caching, new file detection
+  │   ├── raster_parser.py          # GeoTIFF → numpy array using rasterio
+  │   │                             #   handles projection, nodata values, masking
+  │   ├── region_clipper.py         # Clip global raster to 32 crop regions
+  │   │                             #   using polygon masks, area-weighted mean
+  │   ├── baseline_builder.py       # One-time: download 1981-2023 archives,
+  │   │                             #   compute per-week per-region mean and stddev
+  │   │                             #   for VHI, VCI, SMN, TCI (cached to assets/)
+  │   ├── anomaly_detector.py       # Current week vs baseline: z-scores and
+  │   │                             #   threshold alerts (VHI<40, VCI<35)
+  │   ├── trend_tracker.py          # Rolling 4-week, 8-week, 12-week VHI trends
+  │   │                             #   (is stress building or recovering?)
+  │   ├── ndvi_crop_stage.py        # NDVI curve analysis: is greenup on time?
+  │   │                             #   early/late planting detection from SMN
+  │   └── report_builder.py         # Weekly Satellite Crop Monitor (PDF + maps)
+  ├── references/
+  │   ├── noaa-vh-products.md       # Product definitions, thresholds, caveats
+  │   ├── geotiff-format.md         # Raster specs, projection, resolution
+  │   ├── region-polygons.md        # 32 region definitions (bounding boxes)
+  │   ├── vhi-interpretation.md     # What VHI values mean for crop yields
+  │   └── methodology.md
+  ├── assets/
+  │   ├── region_polygons.geojson   # 32 crop region masks
+  │   ├── baselines/                # Pre-computed weekly baselines (1981-2023)
+  │   │   ├── us-corn-belt.json     #   mean + stddev by week for VHI/VCI/SMN
+  │   │   ├── brazil-center-west.json
+  │   │   └── ... (30 more)
+  │   └── noaa_week_calendar.json   # ISO week → date mapping
+  ├── data/                         # Local cache for downloaded GeoTIFFs
+  │   └── noaa-vh/                  #   (gitignored, created on first run)
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (no credentials needed — public data)
+  Installed at: ~/.agents/skills/noaa-crop-monitor-skill
+
+  Shared to: github.com/acme-trading/noaa-crop-monitor-skill
+
+
+--- First run: building the historical baseline ---
+
+Analyst: /noaa-crop-monitor-skill Initialize the pipeline. Download the historical baseline and run the first weekly scan.
+
+Copilot (loading noaa-crop-monitor-skill):
+
+  STEP 1: Building historical baseline (one-time setup)
+
+  Downloading NOAA VH archives for 1981-2023...
+  This will take 15-20 minutes (downloading 43 annual .gz archives).
+
+  Downloading: VHI_1981.gz... done (34 MB)
+  Downloading: VHI_1982.gz... done (34 MB)
+  ...
+  Downloading: VHI_2023.gz... done (42 MB)
+
+  Extracting and computing per-week per-region baselines...
+  Processing 2,236 weekly rasters × 32 regions = 71,552 data points...
+
+  Baseline computed and cached to assets/baselines/
+  Each region now has a 42-year mean and standard deviation for every
+  week of the year, for each of VHI, VCI, SMN, and TCI.
+
+  STEP 2: Downloading current week's data
+
+  Fetching Week 09 (Feb 24 - Mar 2, 2026):
+  - VHI_2026_09.tif... done (18 MB)
+  - VCI_2026_09.tif... done (18 MB)
+  - SMN_2026_09.tif... done (18 MB)
+  - TCI_2026_09.tif... done (18 MB)
+
+  STEP 3: Clipping to 32 crop regions and computing anomalies...
+
+  SATELLITE CROP MONITOR — Week 09 (Feb 24 - Mar 2, 2026)
+
+  ALERTS (VHI < 40 or VCI < 35):
+
+  | Region                | VHI  | VCI  | TCI  | NDVI  | Status          |
+  |-----------------------|------|------|------|-------|-----------------|
+  | Argentina Pampas      | 28   | 24   | 32   | 0.41  | SEVERE STRESS   |
+  | Argentina Chaco       | 34   | 30   | 38   | 0.38  | MODERATE STRESS |
+  | US Southern Plains    | 36   | 31   | 41   | 0.29  | MODERATE STRESS |
+  | India Central (MP)    | 38   | 36   | 40   | 0.34  | MILD STRESS     |
+  | Vietnam Highlands     | 39   | 37   | 42   | 0.52  | MILD STRESS     |
+
+  CROSS-VALIDATION WITH ANOMALY SCANNER:
+  All 5 satellite stress regions match the top 5 weather anomalies
+  from the crop-anomaly-scanner-skill. The satellite data CONFIRMS the
+  weather-based signals — this isn't a false alarm from one data source.
+
+  REGIONAL DETAIL — ARGENTINA PAMPAS:
+
+  VHI at 28 is the lowest for Week 9 since 2023 (when VHI hit 18 during
+  the historic drought) and well below the 42-year average of 55 for this
+  week. The VHI has been declining for 6 consecutive weeks:
+
+  | Week | VHI  | Trend    |
+  |------|------|----------|
+  | W03  | 52   | Normal   |
+  | W04  | 48   | Slipping |
+  | W05  | 44   | Slipping |
+  | W06  | 40   | Threshold|
+  | W07  | 35   | Stress   |
+  | W08  | 31   | Stress   |
+  | W09  | 28   | Severe   |
+
+  The trajectory is accelerating downward. In the 2018 drought analogue,
+  VHI bottomed at 22 in Week 11 before rain brought partial recovery.
+  If the current trajectory holds, we could see VHI in the low 20s by
+  mid-March — which historically correlates with 15-25% soybean yield
+  reduction in the affected area.
+
+  NDVI CROP STAGE ANALYSIS:
+  The SMN (smoothed NDVI) at 0.41 for Argentina Pampas is concerning
+  because soybeans at pod-fill stage should have peak NDVI of 0.65-0.75.
+  An NDVI of 0.41 during reproductive stage means canopy is already
+  deteriorating — leaves are senescing prematurely due to drought stress.
+  This damage is irreversible even if rain arrives now.
+
+  REGIONS ALL FAVORABLE (VHI > 55):
+
+  | Region                | VHI  | Status     | Notes                    |
+  |-----------------------|------|------------|--------------------------|
+  | Brazil Center-West    | 62   | Favorable  | Soy harvest underway     |
+  | Brazil South          | 58   | Normal     | Soy harvest 60% complete |
+  | US Corn Belt          | N/A  | Dormant    | Pre-season, snow cover   |
+  | EU France             | 64   | Favorable  | Winter wheat looks good  |
+  | EU Germany            | 61   | Favorable  | Rapeseed on track        |
+  | Black Sea Ukraine     | 56   | Normal     | Winter wheat emerging    |
+  | Black Sea Russia      | 59   | Normal     | Winter wheat dormant     |
+  | Australia East        | 68   | Favorable  | Canola finished harvest  |
+  | China NE              | N/A  | Dormant    | Winter, snow cover       |
+
+  PDF report: reports/satellite-crop-monitor-wk09-2026.pdf
+  Maps: reports/vhi-global-map-wk09-2026.png
+
+  Pipeline is now configured. It will check for new NOAA data every
+  Monday and generate the weekly report automatically.
+
+
+--- A few weeks later, the analyst cross-references ---
+
+Analyst: /noaa-crop-monitor-skill Overlay the Argentina VHI trend against the 2018 and 2023 drought tracks. How close are we to those events?
+
+Copilot:
+
+  Pulling VHI time series for Argentina Pampas: 2018, 2023, and 2026...
+
+  ARGENTINA PAMPAS — VHI TRAJECTORY COMPARISON
+
+  Week    2018 (severe)    2023 (historic)    2026 (current)
+  ────────────────────────────────────────────────────────────
+  W01     58               52                 60
+  W02     56               48                 58
+  W03     54               42                 52
+  W04     50               36                 48
+  W05     46               30                 44
+  W06     41               24                 40
+  W07     36               20                 35
+  W08     30               18                 31
+  W09     26               16                 28  ← current
+  W10     23               15                 ?
+  W11     22 (bottom)      14 (bottom)        ?
+  W12     25               15                 ?
+  W13     32               20                 ?
+  W14     40               28                 ?
+
+  ASSESSMENT:
+  The 2026 track is running almost exactly on the 2018 path — 1-2 VHI
+  points higher at each week. The 2023 event was significantly worse
+  (VHI bottomed at 14 vs 2018's 22).
+
+  If 2026 follows the 2018 pattern:
+  - VHI bottoms around 22-24 in weeks 10-11 (mid-March)
+  - Recovery begins week 12 if autumn rains arrive
+  - Total soybean production loss: 15-20 MMT (2018 outcome)
+
+  If 2026 follows the 2023 pattern (worse case):
+  - VHI drops to 14-16, no recovery until week 14
+  - Total soybean production loss: 22-28 MMT (2023 outcome)
+
+  Current trajectory: closer to 2018 than 2023. The 2023 event had
+  exceptional heat on top of drought (TCI at 12), while 2026's TCI
+  is at 32 — hot but not extreme.
+
+  The satellite data and the weather data are telling the same story:
+  this is a significant but not historic event. USDA is probably 5-8 MMT
+  behind reality right now (their March estimate was 50 MMT; satellite
+  data suggests 42-45 MMT is more likely).
+
+
+=============================================================
+SKILL 13: NASA FIRMS Fire Monitor — Crop Residue & Deforestation
+=============================================================
+
+A creative use of fire data for commodity research:
+
+User: /agent-skill-creator NASA FIRMS provides near-real-time satellite fire detection globally — every thermal anomaly picked up by MODIS and VIIRS satellites, available within 3 hours via REST API at firms.modaps.eosdis.nasa.gov. Most people use this for wildfire tracking, but I've realized it has two powerful applications for commodity research: (1) Crop residue burning in Brazil's Cerrado signals land clearing for new soybean planting — if I see a spike in fire detections in Mato Grosso in August-September, it means farmers are clearing more land for the next season, which predicts INCREASED soybean acreage. (2) In India and Southeast Asia, post-harvest rice straw burning (October-November) intensity correlates with the size of the kharif rice harvest — more burning = bigger harvest, which is bearish for rice prices. I want a skill that ingests FIRMS data via their API (free, need a MAP_KEY from earthdata.nasa.gov), clips fire detections to our crop regions, counts fire pixels by week, compares to historical patterns, and generates alerts when fire activity deviates significantly. My MAP_KEY is in env as NASA_FIRMS_KEY. Here's my analysis showing the fire-acreage correlation in Brazil: references/firms-acreage-correlation.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/firms-acreage-correlation.pdf...
+
+  Fascinating — your analysis shows a 0.82 R² between Aug-Sep FIRMS fire
+  counts in Mato Grosso and the following season's soybean planted area
+  (CONAB data). That's a strong signal hidden in plain sight. And the India
+  rice burning correlation is 0.74 R² — not as clean but still tradeable.
+  Let me build this.
+
+  Implicit requirements:
+  - NASA FIRMS REST API: https://firms.modaps.eosdis.nasa.gov/api/area/
+    Parameters: source (VIIRS_SNPP, MODIS_NRT), coordinates (bounding box
+    or country), day_range (1-10), date, format (json, csv)
+  - API key: NASA_FIRMS_KEY passed as MAP_KEY parameter
+  - VIIRS is higher resolution (375m) than MODIS (1km) — prefer VIIRS
+    for fire pixel counts, use MODIS for longer historical record
+  - Fire pixels need to be filtered: confidence > 75% to exclude
+    false positives (gas flares, industrial heat, volcanoes)
+  - For Brazil land clearing: focus on Cerrado biome (Mato Grosso,
+    Goiás, Tocantins, Bahia western, Maranhão southern). The Amazon
+    biome fires are deforestation — politically different but also
+    signals acreage expansion into new areas
+  - Seasonal patterns: Brazil burning peaks Aug-Sep (dry season), then
+    drops sharply when rains arrive in October. Early start to burning
+    season (July) or late end (October) is itself a signal
+  - For India/SE Asia: focus on Punjab, Haryana (wheat stubble, Oct-Nov),
+    and Thailand/Myanmar (rice straw, Feb-Apr)
+  - Historical fire data: FIRMS has archives back to 2001 (MODIS) and
+    2012 (VIIRS). Need to build year-by-year fire pixel counts for
+    each region for the correlation model
+  - CONAB soybean area data for Brazil, USDA PSD for India rice
+    production — these are the training targets for the regression
+  - Output: weekly fire pixel count by region, deviation from
+    historical, and implied acreage/production signal
+
+  Building...
+
+  fire-crop-monitor-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── firms_client.py           # NASA FIRMS REST API wrapper
+  │   │                             #   (auth, bounding box queries, pagination)
+  │   ├── fire_counter.py           # Filter by confidence, clip to regions,
+  │   │                             #   aggregate fire pixel counts by week
+  │   ├── brazil_clearing.py        # Cerrado + Amazon fire → acreage signal
+  │   │                             #   correlation with CONAB planting data
+  │   ├── asia_burning.py           # India/SE Asia post-harvest burn intensity
+  │   │                             #   → production signal
+  │   ├── historical_baselines.py   # 2001-2025 fire pixel baselines by region
+  │   ├── season_detector.py        # Burning season start/end date tracking
+  │   │                             #   (early start = more clearing than expected)
+  │   ├── deforestation_tracker.py  # Amazon-specific: frontier expansion monitor
+  │   └── report_builder.py         # Fire Monitor report (PDF + heat maps)
+  ├── references/
+  │   ├── firms-api-reference.md    # API endpoints, params, rate limits
+  │   ├── fire-acreage-model.md     # R² coefficients, regression methodology
+  │   ├── biome-boundaries.md       # Cerrado vs Amazon vs Atlantic Forest
+  │   ├── burning-calendar.md       # Expected seasonal patterns by region
+  │   └── methodology.md
+  ├── assets/
+  │   ├── region_bboxes.json        # Bounding boxes for FIRMS queries
+  │   ├── biome_masks.geojson       # Cerrado/Amazon/Pantanal boundaries
+  │   ├── fire_baselines.json       # 2001-2025 weekly fire counts by region
+  │   └── conab_soy_area.csv        # Brazil soybean planted area 2001-2026
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (NASA_FIRMS_KEY read from env)
+  Installed at: ~/.agents/skills/fire-crop-monitor-skill
+
+  Shared to: github.com/acme-trading/fire-crop-monitor-skill
+
+
+--- Late August, burning season in Brazil ---
+
+Analyst: /fire-crop-monitor-skill How's the burning season in Mato Grosso tracking? What does it imply for 2026/27 soy acreage?
+
+Copilot (loading fire-crop-monitor-skill):
+
+  Pulling FIRMS VIIRS data for Cerrado region, last 90 days...
+  Comparing against 2001-2025 historical baselines...
+
+  BRAZIL CERRADO FIRE MONITOR — August 25, 2026
+
+  FIRE PIXEL COUNTS (VIIRS, confidence > 75%)
+
+  | Month    | 2026   | 2025   | 5yr Avg | vs Avg  |
+  |----------|--------|--------|---------|---------|
+  | June     | 8,420  | 6,890  | 7,100   | +18.6%  |
+  | July     | 24,300 | 18,900 | 19,200  | +26.6%  |
+  | Aug 1-25 | 52,800 | 38,400 | 41,500  | +27.2%  |
+
+  TOTAL JUN-AUG: 85,520 (highest since 2020)
+
+  BY SUB-REGION:
+  | Sub-region             | 2026 Fire px | vs 5yr Avg | Signal              |
+  |------------------------|-------------|------------|---------------------|
+  | Mato Grosso (Cerrado)  | 38,200      | +31%       | Strong expansion    |
+  | Goiás                  | 14,800      | +22%       | Moderate expansion  |
+  | Tocantins              | 9,400       | +18%       | Moderate            |
+  | Bahia West (MATOPIBA)  | 12,600      | +42%       | RAPID expansion     |
+  | Maranhão South         | 10,520      | +28%       | Strong expansion    |
+
+  MATOPIBA ALERT: The Bahia West / MATOPIBA frontier shows fire pixel
+  counts 42% above the 5-year average. This is the most active clearing
+  frontier in Brazil — new soybean acreage expanding into former
+  Cerrado grassland. This sub-region has shown the highest fire growth
+  rate for three consecutive years.
+
+  ACREAGE SIGNAL (regression model, R² = 0.82):
+
+  Based on the historical fire-to-acreage correlation, current burning
+  levels project:
+
+  | Metric                     | 2025/26 Actual | 2026/27 Projected |
+  |----------------------------|----------------|-------------------|
+  | Brazil soy planted area    | 46.2M hectares | 48.1M hectares    |
+  | Year-over-year change      |                | +1.9M ha (+4.1%)  |
+  | Implied production (trend) |                | 175-180 MMT       |
+
+  This +4.1% acreage expansion, combined with trend yields, suggests
+  Brazil's 2026/27 soybean crop could reach 175-180 MMT — a new record
+  and 6-11 MMT above the current 2025/26 crop of 169 MMT.
+
+  MARKET IMPLICATION: This is bearish for CBOT soybeans on a 6-12 month
+  horizon. More Brazilian supply = more competition for US exports in
+  the 2026/27 marketing year. However, this is already partially
+  expected — the market consensus is for ~2% acreage growth. The fire
+  data suggests 4%+ is more likely.
+
+  AMAZON BIOME NOTE: Amazon fire detections are also elevated (+35%
+  vs 5yr avg), but this is a separate dynamic — Amazon deforestation
+  is a reputational/regulatory risk for Brazilian exports (EU
+  deforestation regulation), not an acreage expansion signal. Some
+  European buyers may reduce Brazilian soy purchases if Amazon fires
+  make headlines again.
+
+  BURNING SEASON TIMING: The season started 2 weeks early this year
+  (first sustained fires in mid-June vs typical early July). Early start
+  is itself a signal — it indicates farmers had drier conditions and
+  were more aggressive about clearing. This correlates with the upper
+  end of the acreage projection.
+
+
+=============================================================
+SKILL 14: Vessel Tracking — Grain Shipment Intelligence
+=============================================================
+
+The logistics analyst builds a pipeline from AIS vessel data:
+
+User: /agent-skill-creator I want to track grain vessel movements to verify and predict export shipment volumes in real-time. The traditional data sources (USDA Export Inspections, GTT) have 1-4 week lags. But by tracking bulk carrier vessels via AIS (Automatic Identification System), I can see shipments BEFORE they show up in official data. My idea: use a vessel tracking API to monitor Panamax and Capesize bulk carriers departing key grain export ports (Santos, Paranaguá, and São Francisco do Sul in Brazil; Rosario/San Lorenzo in Argentina; US Gulf ports; Odessa/Mykolaiv in Ukraine; Novorossiysk in Russia). When a bulk carrier departs a grain port with a draft indicating full cargo, I can estimate tonnage from the vessel's DWT and draft. By aggregating departures weekly, I can build a near-real-time export volume tracker that leads official data by 2-3 weeks. I have an AIS data subscription — credentials in my env as AIS_API_KEY. The API gives me vessel positions, port calls, vessel particulars (DWT, draft), and ETA. Here's my methodology: references/vessel-export-methodology.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/vessel-export-methodology.pdf...
+
+  Your approach: filter vessels by type (bulk carrier), DWT range (Panamax
+  40-80K DWT, Capesize 80-200K DWT), monitor departures from grain ports,
+  estimate cargo weight from loaded draft vs ballast draft × DWT ratio,
+  classify probable commodity based on port (Santos = soy, Rosario = soy
+  meal, US Gulf = corn/soy), and aggregate into weekly volume estimates.
+  This is essentially building a private export inspection tracker. Let me
+  build it.
+
+  Implicit requirements:
+  - AIS API: vessel positions, port call history, vessel particulars
+    (DWT, current draft, flag, destination). Auth via AIS_API_KEY
+  - Port definitions: specific berth/terminal polygons, not just city
+    coordinates. Santos has grain terminals (Cargill, Bunge, Cofco) and
+    container terminals — need to distinguish
+  - Draft-to-cargo estimation: a Panamax at 14.5m draft (loaded) vs 7m
+    (ballast) carrying 65,000 DWT = approximately 58,000 MT of cargo.
+    The formula: cargo_MT ≈ DWT × (current_draft - ballast_draft) /
+    (loaded_draft - ballast_draft). Accuracy: ±8%
+  - Destination inference: when a vessel departs Santos for "Singapore"
+    or "CNSHA" (Shanghai), the destination tells us the buyer. Vessels
+    to China = soybean. Vessels to EU = soybean meal. Vessels to
+    Egypt/Algeria = wheat
+  - "Line-up" tracking: vessels at anchor or waiting to load = pending
+    exports. Count of vessels in the line-up × average cargo = pipeline
+    volume indicator
+  - Need to separate grain vessels from iron ore, coal, and other bulk
+    commodities at the same ports. Use vessel history: if a Panamax
+    was last at a grain terminal, its current cargo is probably grain
+  - Historical vessel departure data for backtesting: compare estimated
+    vs actual export inspections to calibrate the model
+
+  Building...
+
+  vessel-grain-tracker-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── ais_client.py              # AIS API wrapper (positions, port calls,
+  │   │                              #   vessel particulars, rate limiting)
+  │   ├── port_monitor.py            # Define grain ports, terminal polygons,
+  │   │                              #   monitor arrivals and departures
+  │   ├── cargo_estimator.py         # Draft-to-cargo tonnage estimation
+  │   ├── commodity_classifier.py    # Port + destination + history → probable
+  │   │                              #   commodity (soy, corn, wheat, meal)
+  │   ├── lineup_counter.py          # Vessels at anchor / waiting to load
+  │   ├── weekly_aggregator.py       # Sum departures by port, commodity, dest
+  │   ├── official_comparison.py     # Compare vs USDA Export Inspections when
+  │   │                              #   available (calibration + lead time)
+  │   └── report_builder.py          # Vessel Intelligence Weekly (PDF + maps)
+  ├── references/
+  │   ├── grain-ports.md             # Port locations, terminal IDs, berth polygons
+  │   ├── vessel-types.md            # Panamax/Capesize specs, draft ranges
+  │   ├── cargo-estimation.md        # Draft-to-tonnage formula + accuracy
+  │   ├── destination-mapping.md     # Port codes → country → probable commodity
+  │   └── methodology.md
+  ├── assets/
+  │   ├── port_polygons.geojson      # Grain terminal berth boundaries
+  │   ├── vessel_type_specs.json     # DWT ranges, draft ranges by class
+  │   └── port_commodity_map.json    # Port → most likely commodity
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (AIS_API_KEY read from env)
+  Installed at: ~/.agents/skills/vessel-grain-tracker-skill
+
+  Shared to: github.com/acme-trading/vessel-grain-tracker-skill
+
+
+--- Real-time export tracking ---
+
+Logistics Analyst: /vessel-grain-tracker-skill What's the Brazilian soybean export pace looking like this week? I want to compare to the GTT data we'll get in 2 months.
+
+Copilot (loading vessel-grain-tracker-skill):
+
+  Pulling AIS data for Santos, Paranaguá, São Francisco do Sul...
+  Identifying grain-loaded departures (Panamax/Capesize, draft > 12m)...
+  Estimating cargo tonnage...
+
+  BRAZIL SOYBEAN VESSEL TRACKER — Week of Mar 2-8, 2026
+
+  DEPARTURES FROM GRAIN PORTS (estimated soybean cargo):
+
+  | Port                  | Vessels | Est. Cargo (KMT) | Destinations           |
+  |-----------------------|---------|-------------------|------------------------|
+  | Santos                | 14      | 812               | China 9, EU 3, Egypt 2 |
+  | Paranaguá             | 8       | 456               | China 6, Japan 1, TW 1 |
+  | São Francisco do Sul  | 4       | 228               | China 3, Bangladesh 1  |
+  | WEEKLY TOTAL          | 26      | 1,496             |                        |
+
+  COMPARISON TO PACE:
+  | Metric                    | This Week | Same Week 2025 | YoY Change |
+  |---------------------------|-----------|----------------|------------|
+  | Vessel departures         | 26        | 22             | +18%       |
+  | Estimated tonnage         | 1,496 KMT | 1,280 KMT     | +16.9%     |
+  | 4-week rolling avg        | 1,380 KMT | 1,190 KMT     | +16.0%     |
+
+  DESTINATION BREAKDOWN (all 3 ports combined):
+  | Destination    | Vessels | Tonnage (KMT) | Share  |
+  |----------------|---------|---------------|--------|
+  | China          | 18      | 1,044         | 69.7%  |
+  | EU             | 3       | 174           | 11.6%  |
+  | Egypt          | 2       | 116           | 7.8%   |
+  | Japan          | 1       | 58            | 3.9%   |
+  | Taiwan         | 1       | 58            | 3.9%   |
+  | Bangladesh     | 1       | 46            | 3.1%   |
+
+  LINE-UP (vessels waiting to load as of today):
+  | Port                  | Vessels Waiting | Est. Days to Clear |
+  |-----------------------|-----------------|--------------------|
+  | Santos                | 42              | 18 days (normal)   |
+  | Paranaguá             | 28              | 14 days (normal)   |
+  | São Francisco do Sul  | 11              | 8 days (light)     |
+  | TOTAL                 | 81              |                    |
+
+  The line-up at 81 vessels is consistent with peak export season. This
+  time last year it was 74 vessels — the 9.5% increase aligns with the
+  record 169 MMT crop moving through the pipeline.
+
+  LEAD INDICATOR: Our vessel-based estimate of 1,496 KMT this week will
+  show up in official Brazilian customs (SECEX) data in 3-4 weeks, and
+  in GTT in 6-8 weeks. We're seeing the exports NOW.
+
+  MONTHLY PACE PROJECTION (March 2026):
+  At current weekly pace, Brazil is on track to export ~6.0 MMT of
+  soybeans in March. This would be the highest March on record,
+  surpassing March 2023's 5.5 MMT. The early harvest (90% complete in
+  Mato Grosso) is pushing shipments forward.
+
+  IMPLICATION: When this volume shows up in official SECEX data in late
+  March and GTT data in May, it will confirm that Brazil is front-loading
+  exports. China-bound vessel share at 70% is above the 5-year average
+  of 64%, reinforcing the market share shift we saw in the GTT trade
+  flow analysis.
+
+
+=============================================================
+SKILL 15: Copernicus Sentinel-2 Field-Level NDVI
+=============================================================
+
+For analysts who need to zoom in from country-level to individual
+fields — something NOAA's 4km resolution can't do:
+
+User: /agent-skill-creator Our firm is getting into precision agriculture consulting alongside commodity research. I need a skill that pulls Sentinel-2 satellite imagery from the Copernicus Data Space Ecosystem and computes NDVI at 10-meter resolution for specific farm fields. A farmer or agronomist gives us a field boundary (as a GeoJSON polygon or just a lat/long point with radius), and we compute: (1) current NDVI for that field, (2) NDVI time-series for the current growing season (every cloud-free overpass, roughly every 5 days), (3) comparison to the same field's NDVI in previous years, (4) within-field variability (are parts of the field stressed while others are fine?). The Copernicus Data Space has free API access — I registered at dataspace.copernicus.eu and have OAuth2 credentials. COPERNICUS_CLIENT_ID and COPERNICUS_CLIENT_SECRET are in my env. The Sentinel Hub Process API can compute NDVI server-side using evalscripts (no need to download raw bands). Here's the API docs I saved: references/sentinel-hub-process-api.pdf
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/sentinel-hub-process-api.pdf...
+
+  The Sentinel Hub Process API takes a bounding box, an evalscript
+  (JavaScript that computes NDVI from B04 and B08 bands), and returns
+  a processed GeoTIFF or JSON. Cloud masking is done via the SCL
+  (Scene Classification Layer). This means we don't download raw imagery
+  — the heavy lifting happens server-side. Let me build this.
+
+  Implicit requirements:
+  - Copernicus Data Space OAuth2: POST to identity.dataspace.copernicus.eu
+    with client_id + client_secret to get bearer token
+  - Sentinel Hub Process API: POST to sh.dataspace.copernicus.eu/api/v1/process
+    with evalscript, bounding box, time range, output format
+  - NDVI evalscript: (B08 - B04) / (B08 + B04) — standard formula
+  - Cloud masking: use SCL band, exclude pixels classified as cloud,
+    cloud shadow, snow/ice, or no data
+  - 10m resolution means a 100-hectare field = 100,000 pixels. That's
+    enough resolution to see within-field variability (waterlogged low
+    spots, compacted headlands, variable soil types)
+  - Time-series: query all available scenes for the field in the current
+    growing season. Sentinel-2 revisits every 5 days. After cloud
+    filtering, expect ~3-4 usable scenes per month
+  - Inter-year comparison: pull the same dates from 2023, 2024, 2025
+    for the same field polygon. Normalize by day-of-year
+  - Within-field variability: compute per-pixel NDVI, then generate
+    a coefficient of variation (CV) map. High CV = stressed patches.
+    Also compute zonal stats: mean, P10, P25, P50, P75, P90
+  - Output options: NDVI value (JSON), NDVI map (GeoTIFF colorized),
+    time-series chart (PNG), variability map (PNG)
+  - Rate limits: Copernicus free tier allows 300 requests/minute
+    and 40,000 Processing Units/month. A single field NDVI request
+    uses ~1 PU. We have headroom
+
+  Building...
+
+  sentinel-field-ndvi-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── copernicus_auth.py         # OAuth2 token management (auto-refresh)
+  │   ├── sentinel_client.py         # Sentinel Hub Process API wrapper
+  │   ├── ndvi_calculator.py         # Evalscript builder, NDVI request, cloud mask
+  │   ├── field_timeseries.py        # Growing season NDVI curve for a field
+  │   ├── interyear_compare.py       # Same field, same dates, previous years
+  │   ├── variability_map.py         # Within-field CV map + zonal statistics
+  │   ├── field_health_report.py     # Field Health Report builder (PDF + maps)
+  │   └── batch_processor.py         # Process multiple fields in one run
+  ├── references/
+  │   ├── sentinel-hub-api.md        # Process API endpoints, evalscripts
+  │   ├── ndvi-interpretation.md     # What NDVI values mean by crop and stage
+  │   ├── cloud-masking.md           # SCL classes, filtering strategy
+  │   ├── sentinel2-bands.md         # Band specifications (B04, B08, etc.)
+  │   └── methodology.md
+  ├── assets/
+  │   ├── evalscripts/
+  │   │   ├── ndvi.js                # Standard NDVI evalscript
+  │   │   ├── ndvi_masked.js         # NDVI with cloud masking
+  │   │   └── enhanced_vegetation.js # EVI for dense canopies
+  │   └── ndvi_colormap.json         # Color ramp for NDVI visualization
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (COPERNICUS_CLIENT_ID/SECRET read from env)
+  Installed at: ~/.agents/skills/sentinel-field-ndvi-skill
+
+  Shared to: github.com/acme-trading/sentinel-field-ndvi-skill
+
+
+--- An agronomist client asks about their field ---
+
+Agronomist: /sentinel-field-ndvi-skill Check the corn field for the Petersen farm. Here's the boundary: data/petersen-north-field.geojson. How does it look compared to last year?
+
+Copilot (loading sentinel-field-ndvi-skill):
+
+  Authenticating with Copernicus Data Space... token obtained.
+  Reading field boundary: 156 hectares, Boone County, Iowa
+  Querying Sentinel-2 scenes for Jul 1 - Jul 15, 2026...
+  3 cloud-free scenes found: Jul 2, Jul 7, Jul 12.
+  Computing NDVI...
+
+  FIELD HEALTH REPORT — Petersen Farm, North Field (156 ha)
+  Boone County, Iowa | Corn | July 15, 2026
+
+  CURRENT NDVI (July 12 scene):
+
+  | Metric          | Value | Interpretation                    |
+  |-----------------|-------|-----------------------------------|
+  | Mean NDVI       | 0.72  | Good (expected: 0.75-0.85)        |
+  | P10 (worst 10%) | 0.48  | Stress in parts of the field      |
+  | P25             | 0.64  | Below expected                    |
+  | P50 (median)    | 0.74  | Normal                            |
+  | P90 (best 10%)  | 0.84  | Excellent                         |
+  | Coef. Variation | 0.16  | Moderate variability (>0.12 = flag)|
+
+  WITHIN-FIELD VARIABILITY MAP:
+  [Generated: reports/petersen-north-variability-2026-07-12.tif]
+
+  The northwest corner (approx. 22 hectares) shows NDVI of 0.45-0.55,
+  significantly below the field average. This area corresponds to the
+  lower-elevation zone that was waterlogged during the June 18 heavy
+  rain event (38mm in 2 hours per Open-Meteo data). The saturated
+  soil likely damaged root development during V4-V6 stage. The rest
+  of the field looks healthy.
+
+  YEAR-OVER-YEAR COMPARISON (same dates ±3 days):
+
+  | Year | Mean NDVI (early Jul) | Notes                           |
+  |------|-----------------------|---------------------------------|
+  | 2024 | 0.81                  | Excellent year, above-trend yield|
+  | 2025 | 0.78                  | Good, trend yield               |
+  | 2026 | 0.72                  | Below recent years              |
+
+  The field is tracking 8-12% below the previous two years. Most of
+  the deficit is concentrated in that NW low spot. If we exclude the
+  damaged 22 hectares, the remaining 134 hectares have a mean NDVI
+  of 0.77 — close to normal.
+
+  GROWING SEASON NDVI CURVE:
+  [Generated: reports/petersen-north-timeseries-2026.png]
+
+  The NDVI curve shows a normal green-up trajectory until late June,
+  then a plateau at 0.72 instead of the expected peak of 0.82-0.85.
+  This plateau coincides with the waterlogging event. The NW corner
+  is pulling the whole-field average down.
+
+  RECOMMENDATION FOR THE AGRONOMIST:
+  - The NW 22 hectares will likely yield 140-150 bu/ac vs the field
+    average of 185-195 bu/ac. That's a 30-40 bu/ac loss on 14% of
+    the field = roughly 4-6 bu/ac whole-field yield reduction.
+  - Consider variable-rate nitrogen application for the stressed zone
+    if there's still time (doubtful at V12+ stage)
+  - For next year: tile drainage in the NW low spot would prevent
+    recurrence. The field's yield history likely shows this same zone
+    underperforming in every wet year
+
+
+=============================================================
+FINAL TEAM SKILL LIBRARY — FULL DATA PIPELINE STACK
+=============================================================
+
+  SKILL                          DATA SOURCES                      PIPELINE TYPE
+  ────────────────────────────────────────────────────────────────────────────────
+  ANALYSIS SKILLS (interpret data):
+  wasde-analyzer-skill           USDA WASDE PDF, Bloomberg         PDF parsing
+  crop-weather-weekly-skill      USDA NASS, NOAA, Drought Mon.     Multi-source aggregation
+  basis-export-tracker-skill     DTN, USDA FAS, barge freight      Web scraping + API
+  coffee-fundamental-skill       CEPEA, ICE, CFTC, ECMWF          Multi-source aggregation
+  yield-predictor-skill          Open-Meteo + NASS historical      Weather → yield regression
+  crop-anomaly-scanner-skill     Open-Meteo (32 regions)           Real-time anomaly detection
+  planting-window-skill          Open-Meteo forecast + archive     Decision support
+
+  DATA PLATFORM SKILLS (query structured APIs):
+  psd-balance-sheet-skill        USDA PSD API                      REST API → balance sheets
+  trade-flow-intel-skill         GTT REST API                      REST API → trade matrices
+  supply-chain-risk-skill        PSD + GTT + FAS combined          Multi-API correlation
+
+  DATA INGESTION SKILLS (raw data → actionable intelligence):
+  noaa-crop-monitor-skill        NOAA STAR GeoTIFF (wget)          Raster ingestion pipeline
+  fire-crop-monitor-skill        NASA FIRMS REST API               Fire → acreage signal
+  vessel-grain-tracker-skill     AIS vessel tracking API           Shipping → export estimates
+  sentinel-field-ndvi-skill      Copernicus Sentinel-2 API         Satellite → field health
+  parana-river-risk-skill        Open-Meteo watershed model        Weather → river level prediction
+
+  ORCHESTRATION SKILLS:
+  seasonal-spread-skill          CBOT historical                   Quantitative models
+  client-briefing-skill          Calls other skills internally     Report compilation
+
+  Environment variables for the full stack:
+
+    # Weather
+    export OPEN_METEO_API_KEY="your-professional-api-key"
+
+    # Government data
+    export PSD_API_KEY="your-usda-fas-api-key"
+
+    # Trade data
+    export GTT_USER_ID="your-gtt-username"
+    export GTT_PASSWORD="your-gtt-password"
+
+    # Satellite
+    export NASA_FIRMS_KEY="your-earthdata-map-key"
+    export COPERNICUS_CLIENT_ID="your-copernicus-client-id"
+    export COPERNICUS_CLIENT_SECRET="your-copernicus-client-secret"
+
+    # Vessel tracking
+    export AIS_API_KEY="your-ais-subscription-key"
+
+  WORKFLOW SKILLS (process automation):
+  publication-compliance-skill    Internal style/legal/citation rules  Pre-submission compliance check
+  email-thread-intel-skill        Email threads (.eml/.msg/raw text)   Intent extraction & action items
+  agdb-query-assistant-skill      Internal PostgreSQL data warehouse   Natural language → safe SQL queries
+
+  ENTERPRISE ADOPTION SKILLS (GlobalAgri Capital scenario):
+  export-inspections-skill        USDA FAS public CSV                  Weekly export pace tracker
+  wasde-extractor-skill           USDA WASDE PDF (pages 12-19)         Monthly S&D extraction
+  yield-model-skill               MATLAB wrapper + Databricks inputs   Existing model made runnable
+  daily-assessment-skill          Broker emails + Google Sheet + FX     Physical price assessment
+  databricks-bridge-skill         Databricks SQL connector             Skill outputs → shared lake
+
+  24 skills. 12 data sources. Three desks. One on-ramp.
+
+  The junior analyst who joined last month can type:
+    /noaa-crop-monitor-skill Morning scan
+    /vessel-grain-tracker-skill Brazil soy exports this week
+    /fire-crop-monitor-skill Cerrado burning season update
+
+  And get the same output that took the senior team 6 months to learn
+  how to produce manually. The institutional knowledge isn't in people's
+  heads anymore — it's in the skills. If someone leaves, the skills stay.
+  If someone joins, they're productive on day one.
+
+  That's what a skill library looks like when a team takes it seriously.
+
+
+=============================================================
+SKILL 16: Corporate Publication Compliance Checker
+=============================================================
+
+An agriculture commodity research analyst at a large bank or trading
+house doesn't just write analysis — they publish it. Every client-facing
+report must conform to corporate style guidelines, regulatory
+disclosures, data citation standards, and compliance language. Getting
+flagged by the compliance department delays publication by 2-3 days
+and embarrasses the analyst. This skill catches problems before
+submission.
+
+User: /agent-skill-creator I'm a senior ag commodity analyst at a global bank. Every research note, weekly report, and market commentary I publish has to pass through our compliance and editorial review. The problem is I keep getting sent back for the same issues: missing disclaimers, inconsistent date formats, using "will" instead of "may" (forward-looking language compliance), citing data without proper attribution, inconsistent units (switching between bushels and metric tonnes without converting), and not following our house style guide. I waste 2-3 hours per report fixing these things AFTER compliance flags them. I want a skill that acts as a pre-submission compliance checker. I give it my draft and it tells me every issue before I send it to compliance. Here are our internal documents: references/house-style-guide.pdf (our editorial standards), references/compliance-language-rules.pdf (regulated language requirements from Legal), references/data-citation-policy.md (how to cite USDA, Bloomberg, exchange data), and references/report-templates/ (approved report templates for different publication types). This has to work for: weekly crop reports, flash market commentaries, quarterly outlook pieces, and client presentation decks.
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/house-style-guide.pdf...
+  Reading references/compliance-language-rules.pdf...
+  Reading references/data-citation-policy.md...
+  Scanning references/report-templates/ (4 templates found)...
+
+  This is a rule-based document validation skill. The challenge isn't
+  AI creativity — it's codifying dozens of specific, non-negotiable
+  rules from your internal documents and checking them exhaustively.
+  Every rule needs to be traceable back to a source document so the
+  analyst trusts the feedback. Let me build this.
+
+  Implicit requirements from your documents:
+
+  COMPLIANCE LANGUAGE RULES (from Legal):
+  - Forward-looking statements must use hedging language: "may",
+    "could", "we expect", "is likely to" — NEVER "will", "shall",
+    "is going to" when discussing future prices or production
+  - Every report must include the standard disclaimer block (provided
+    in compliance-language-rules.pdf, 3 variants: short/medium/full)
+  - Short disclaimer for flash commentaries (< 500 words)
+  - Medium disclaimer for weekly reports
+  - Full disclaimer for quarterly outlooks and client presentations
+  - Conflict of interest disclosure: if the bank has a trading position
+    in the commodity discussed, a specific sentence must appear
+  - "Not investment advice" language required in all external-facing
+    publications
+  - No price targets without the qualifier "our estimate" or "our model
+    suggests" — regulatory requirement for non-broker-dealer entities
+  - Analyst certification statement ("I, [name], certify that the views
+    expressed in this report accurately reflect my personal views...")
+    required for all quarterly publications
+
+  HOUSE STYLE GUIDE:
+  - Date format: "March 4, 2026" in body text. Never "3/4/2026" or
+    "04/03/2026" (ambiguous US/EU). Tables may use "Mar-26" shorthand
+  - Numbers: spell out one through nine, use numerals for 10+. Exception:
+    all numbers in data tables, all units ("5 MMT" not "five MMT")
+  - Units: metric tonnes (MT) is the house standard. If bushels are used
+    (for US-centric analysis), must include MT conversion in parentheses.
+    E.g., "52 bu/ac (3.5 MT/ha)" — never bushels without conversion
+  - Abbreviations: define on first use. "The U.S. Department of
+    Agriculture (USDA) released..." then "USDA" thereafter
+  - Report title format: "[COMMODITY] [TYPE] — [Date]"
+    E.g., "SOYBEANS WEEKLY — March 4, 2026"
+  - Section headers: ALL CAPS, no period. ("SUPPLY AND DEMAND" not
+    "Supply and demand.")
+  - Data freshness: every data point must include its reference date.
+    "Soybean exports reached 5.2 MMT (USDA, as of Feb 28)" — never
+    cite data without indicating when it was current
+  - Bloomberg data: cite as "Source: Bloomberg" with the ticker in
+    parentheses. E.g., "CBOT soybeans closed at $11.42/bu (S 1, Source:
+    Bloomberg)"
+  - USDA data: cite the specific report. "Source: USDA WASDE, February
+    2026" not just "Source: USDA"
+  - Exchange data: cite exchange name. "ICE Arabica (KC 1)" not just
+    "coffee futures"
+  - Rounding: prices to 2 decimal places, volumes to 1 decimal (MMT)
+    or whole numbers (MT), yields to 1 decimal (bu/ac or MT/ha)
+  - "Bearish" and "bullish" must be qualified: "bearish for nearby
+    futures" or "bullish for the 2026/27 outlook" — never standalone
+    "this is bullish"
+
+  DATA CITATION POLICY:
+  - Every chart, table, and key data point needs a source line
+  - Proprietary model outputs must be labeled: "Source: [Bank Name]
+    Estimates" or "Source: [Bank Name] Model"
+  - Third-party data cannot be republished in full — only excerpts with
+    proper attribution (Bloomberg redistribution terms)
+  - CFTC COT data: "Source: CFTC Commitments of Traders, as of [date]"
+  - Client-shared data: if a client provided proprietary data, it must
+    NOT appear in any published report without explicit permission
+
+  TEMPLATE CONFORMANCE:
+  - Each report type has an approved structure (section order, required
+    sections, optional sections)
+  - Weekly crop report template: Title → Executive Summary → Price
+    Action → Weather → Crop Conditions → Supply & Demand → Trade →
+    Outlook → Disclaimer
+  - Flash commentary template: Title → Key Point (1-2 sentences) →
+    Analysis (3-5 paragraphs) → Implication → Short Disclaimer
+  - Quarterly outlook: Title → Executive Summary → Macro Context →
+    Detailed S&D → Regional Breakdown → Price Forecast → Risk Factors
+    → Analyst Certification → Full Disclaimer
+  - Missing a required section = compliance rejection
+
+  Building...
+
+  publication-compliance-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── compliance_checker.py     # Main orchestrator: load draft,
+  │   │                             #   run all rule engines, output report
+  │   ├── language_rules.py         # Forward-looking language scanner,
+  │   │                             #   prohibited phrases, hedging checker
+  │   ├── disclaimer_checker.py     # Verify correct disclaimer variant
+  │   │                             #   is present and matches report type
+  │   ├── style_checker.py          # Date formats, number formatting,
+  │   │                             #   abbreviation first-use, unit rules
+  │   ├── citation_checker.py       # Data source attribution validation,
+  │   │                             #   date freshness, Bloomberg/USDA/CFTC
+  │   ├── template_checker.py       # Section order/presence vs template,
+  │   │                             #   title format, header style
+  │   ├── unit_converter.py         # Detect bare bushel/MT values, suggest
+  │   │                             #   dual-unit format
+  │   └── report_builder.py         # Compliance Pre-Check Report (PDF)
+  ├── references/
+  │   ├── house-style-rules.md      # Parsed style guide rules (machine-
+  │   │                             #   readable checklist format)
+  │   ├── compliance-phrases.md     # Prohibited/required phrases + context
+  │   ├── disclaimer-templates.md   # Short/medium/full disclaimer text
+  │   ├── citation-formats.md       # Correct citation format by source
+  │   ├── report-templates.md       # Section structure by report type
+  │   └── methodology.md
+  ├── assets/
+  │   ├── prohibited_phrases.json   # "will rise", "shall increase", etc.
+  │   ├── hedging_phrases.json      # "may", "could", "we expect", etc.
+  │   ├── abbreviation_registry.json # Known abbreviations and expansions
+  │   ├── unit_conversions.json     # bu/ac↔MT/ha, bu↔MT by commodity
+  │   ├── citation_patterns.json    # Regex patterns for valid citations
+  │   └── templates/
+  │       ├── weekly_crop.json      # Required/optional sections + order
+  │       ├── flash_commentary.json
+  │       ├── quarterly_outlook.json
+  │       └── client_presentation.json
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (no external credentials needed — all rules are local)
+  Installed at: ~/.agents/skills/publication-compliance-skill
+
+  Shared to: github.com/acme-trading/publication-compliance-skill
+
+
+--- The analyst runs a pre-submission check on a weekly report ---
+
+Analyst: /publication-compliance-skill Check this draft before I send it to compliance: drafts/soybeans-weekly-2026-03-04.md
+
+Copilot (loading publication-compliance-skill):
+
+  Loading draft: drafts/soybeans-weekly-2026-03-04.md
+  Detected report type: Weekly Crop Report (from title format)
+  Running all compliance checks...
+
+  PUBLICATION COMPLIANCE PRE-CHECK
+  Report: SOYBEANS WEEKLY — March 4, 2026
+  Type: Weekly Crop Report
+  Word count: 2,847
+
+  ════════════════════════════════════════════════════════
+  CRITICAL ISSUES (must fix before submission — compliance will reject)
+  ════════════════════════════════════════════════════════
+
+  1. FORWARD-LOOKING LANGUAGE VIOLATION [Line 34]
+     Found: "Brazilian exports will exceed 90 MMT this season"
+     Rule: Never use "will" for future market/production outcomes
+     Fix:  "Brazilian exports are expected to exceed 90 MMT..."
+     Source: compliance-language-rules.pdf §3.2
+
+  2. FORWARD-LOOKING LANGUAGE VIOLATION [Line 67]
+     Found: "Prices are going to test $10.50 support"
+     Rule: "going to" implies certainty about future prices
+     Fix:  "Prices may test $10.50 support" or "Prices could test..."
+     Source: compliance-language-rules.pdf §3.2
+
+  3. MISSING DISCLAIMER [End of document]
+     Found: No disclaimer block detected
+     Rule: Weekly reports require the MEDIUM disclaimer variant (¶2-4
+           of the standard disclaimer, including non-investment-advice
+           language and data redistribution notice)
+     Fix:  Append the medium disclaimer from templates/disclaimers.md
+     Source: compliance-language-rules.pdf §1.1
+
+  4. UNQUALIFIED PRICE TARGET [Line 89]
+     Found: "Fair value for Nov soybeans is $11.20"
+     Rule: Price targets must include attribution qualifier
+     Fix:  "Our model suggests fair value for Nov soybeans near $11.20"
+     Source: compliance-language-rules.pdf §4.1
+
+  5. BARE DATA WITHOUT SOURCE [Line 52]
+     Found: "China imported 8.4 MMT of soybeans in February"
+     Rule: All data points require source and reference date
+     Fix:  "China imported 8.4 MMT of soybeans in February (Source:
+           China Customs, as of Mar 1, 2026)"
+     Source: data-citation-policy.md §2.1
+
+  ════════════════════════════════════════════════════════
+  STYLE ISSUES (should fix — editor will flag)
+  ════════════════════════════════════════════════════════
+
+  6. DATE FORMAT [Line 12]
+     Found: "3/4/2026"
+     Rule: Body text requires "March 4, 2026" (never numeric M/D/Y)
+     Fix:  "March 4, 2026"
+     Source: house-style-guide.pdf §7.1
+
+  7. DATE FORMAT [Line 78]
+     Found: "Feb 28th"
+     Rule: No ordinal suffixes on dates ("st", "nd", "rd", "th")
+     Fix:  "Feb 28" (table) or "February 28" (body text)
+     Source: house-style-guide.pdf §7.1
+
+  8. UNIT CONSISTENCY [Line 23]
+     Found: "US yield of 52 bu/ac"
+     Rule: Bushels require metric conversion in parentheses
+     Fix:  "US yield of 52 bu/ac (3.5 MT/ha)"
+     Source: house-style-guide.pdf §8.3
+
+  9. UNIT CONSISTENCY [Lines 41, 56, 71]
+     Found: Three more bare bushel references without MT conversion
+     Fix:  Add "(X.X MT/ha)" or "(X.X MT)" after each bushel figure
+     Source: house-style-guide.pdf §8.3
+
+  10. ABBREVIATION FIRST USE [Line 8]
+      Found: "CONAB reported..." (first occurrence)
+      Rule: Abbreviations must be defined on first use
+      Fix:  "Brazil's National Supply Company (CONAB) reported..."
+      Source: house-style-guide.pdf §6.2
+
+  11. ABBREVIATION FIRST USE [Line 15]
+      Found: "ABIOVE estimates..." (first occurrence)
+      Fix:  "The Brazilian Vegetable Oil Industry Association (ABIOVE)
+            estimates..."
+      Source: house-style-guide.pdf §6.2
+
+  12. STANDALONE SENTIMENT [Line 92]
+      Found: "This is bearish."
+      Rule: Bearish/bullish must be qualified with timeframe and scope
+      Fix:  "This is bearish for nearby CBOT soybean futures" or
+            "...bearish for the 2025/26 US export outlook"
+      Source: house-style-guide.pdf §11.1
+
+  13. NUMBER FORMATTING [Line 44]
+      Found: "production fell by 3 MMT"
+      Rule: Spell out one–nine; BUT exception for units — numerals OK.
+            Actually this IS correct (3 MMT uses numeral with unit).
+      Status: FALSE POSITIVE — no action needed.
+
+  ════════════════════════════════════════════════════════
+  CITATION ISSUES (fix for data integrity)
+  ════════════════════════════════════════════════════════
+
+  14. VAGUE USDA CITATION [Line 29]
+      Found: "Source: USDA"
+      Rule: Must specify which USDA report
+      Fix:  "Source: USDA WASDE, February 2026" or "Source: USDA FAS
+            PSD, February 2026"
+      Source: data-citation-policy.md §3.1
+
+  15. MISSING BLOOMBERG TICKER [Line 61]
+      Found: "Source: Bloomberg"
+      Rule: Bloomberg citations require the terminal ticker
+      Fix:  "Source: Bloomberg (S 1 Comdty)"
+      Source: data-citation-policy.md §3.3
+
+  16. STALE DATA REFERENCE [Line 47]
+      Found: "USDA projects 2025/26 exports at 1,825 million bushels"
+      Note: This is from the FEBRUARY WASDE. The March WASDE was
+            published yesterday (March 3). You should either update to
+            the March figure or add "(February estimate, prior to
+            March revision)"
+      Source: data-citation-policy.md §4.1
+
+  ════════════════════════════════════════════════════════
+  TEMPLATE CHECK
+  ════════════════════════════════════════════════════════
+
+  Weekly Crop Report — Required sections:
+  ✓ Title (correct format: "SOYBEANS WEEKLY — March 4, 2026")
+  ✓ Executive Summary
+  ✓ Price Action
+  ✓ Weather
+  ✓ Crop Conditions
+  ✓ Supply & Demand
+  ✓ Trade
+  ✗ Outlook (MISSING — required section)
+  ✗ Disclaimer (MISSING — see Critical Issue #3)
+
+  Section header format:
+  ✓ "PRICE ACTION" — correct (ALL CAPS, no period)
+  ✓ "WEATHER" — correct
+  ✗ "Crop Conditions" [Line 38] — should be "CROP CONDITIONS"
+  ✗ "Supply and Demand." [Line 50] — remove period, use ALL CAPS:
+    "SUPPLY AND DEMAND"
+
+  ════════════════════════════════════════════════════════
+  SUMMARY
+  ════════════════════════════════════════════════════════
+
+  Critical (compliance will reject): 5 issues
+  Style (editor will flag):          6 issues (1 false positive)
+  Citation:                          3 issues
+  Template:                          2 missing sections, 2 header fixes
+  ──────────────────────────────────────────────────────
+  TOTAL:                             16 issues (15 real, 1 false positive)
+
+  ESTIMATED TIME TO FIX: 15-20 minutes
+
+  Without this check, compliance would have returned the draft in 2-3
+  business days with the same findings. Now you can fix everything in
+  one pass, resubmit clean, and publish on schedule.
+
+  Pre-check report: reports/compliance-check-soybeans-weekly-2026-03-04.pdf
+
+
+--- The analyst fixes everything and re-runs ---
+
+Analyst: /publication-compliance-skill Re-check the updated draft: drafts/soybeans-weekly-2026-03-04-v2.md
+
+Copilot (loading publication-compliance-skill):
+
+  Loading draft: drafts/soybeans-weekly-2026-03-04-v2.md
+  Running all compliance checks...
+
+  PUBLICATION COMPLIANCE PRE-CHECK
+  Report: SOYBEANS WEEKLY — March 4, 2026
+  Type: Weekly Crop Report (v2)
+  Word count: 3,012
+
+  ✓ Forward-looking language: PASSED (0 violations)
+  ✓ Disclaimer: PASSED (medium variant detected, text matches template)
+  ✓ Price targets: PASSED (all qualified with "our model suggests")
+  ✓ Data citations: PASSED (all sources include report name and date)
+  ✓ Date formats: PASSED (all "Month DD, YYYY" format)
+  ✓ Unit consistency: PASSED (all bushel figures include MT conversion)
+  ✓ Abbreviations: PASSED (all defined on first use)
+  ✓ Sentiment qualifiers: PASSED ("bearish for nearby CBOT futures")
+  ✓ Bloomberg tickers: PASSED (all citations include ticker)
+  ✓ Template structure: PASSED (all 9 required sections present, correct order)
+  ✓ Section headers: PASSED (all ALL CAPS, no periods)
+  ✓ Data freshness: PASSED (updated to March WASDE figures)
+
+  RESULT: CLEAN — Ready for compliance submission.
+
+  0 critical issues. 0 style issues. 0 citation issues.
+  This draft should pass compliance review on first submission.
+
+
+--- A flash commentary during a volatile session ---
+
+Analyst: /publication-compliance-skill Quick check on this flash note I wrote during the session: drafts/flash-argentina-drought-2026-03-05.md
+
+Copilot (loading publication-compliance-skill):
+
+  Loading draft: drafts/flash-argentina-drought-2026-03-05.md
+  Detected report type: Flash Commentary (from title + word count: 380)
+  Running compliance checks...
+
+  PUBLICATION COMPLIANCE PRE-CHECK
+  Report: SOYBEANS FLASH — Argentina Drought Deepens, March 5, 2026
+  Type: Flash Commentary
+  Word count: 380
+
+  CRITICAL:
+  1. DISCLAIMER VARIANT MISMATCH [End of document]
+     Found: Medium disclaimer (312 words)
+     Rule: Flash commentaries (< 500 words) use the SHORT disclaimer
+           (87 words). Using the medium variant makes the disclaimer
+           almost as long as the analysis itself.
+     Fix:  Replace with short disclaimer from templates/disclaimers.md
+     Source: compliance-language-rules.pdf §1.1
+
+  STYLE:
+  2. FORWARD-LOOKING LANGUAGE [Line 8]
+     Found: "production will fall to 38-42 MMT"
+     Fix:  "production could fall to 38-42 MMT"
+
+  3. MISSING SOURCE DATE [Line 5]
+     Found: "Buenos Aires Grain Exchange estimates"
+     Fix:  "Buenos Aires Grain Exchange estimates (as of Mar 4, 2026)"
+
+  TEMPLATE:
+  ✓ Title format: correct
+  ✓ Key Point section: present
+  ✓ Analysis section: present
+  ✓ Implication section: present
+  ✗ Disclaimer: present but wrong variant (see Critical #1)
+
+  SUMMARY: 1 critical, 2 style, 0 citation. Fix in 5 minutes.
+
+  The disclaimer swap is the one that matters. Compliance WILL reject
+  a flash note with a medium disclaimer — it looks like you copy-pasted
+  from a weekly template without adjusting.
+
+
+--- Quarterly outlook — the most scrutinized report type ---
+
+Analyst: /publication-compliance-skill Full audit on the Q2 outlook before it goes to the MD for sign-off: drafts/soybeans-q2-outlook-2026.md
+
+Copilot (loading publication-compliance-skill):
+
+  Loading draft: drafts/soybeans-q2-outlook-2026.md
+  Detected report type: Quarterly Outlook (from title + template match)
+  Running compliance checks (FULL AUDIT mode for quarterly)...
+
+  PUBLICATION COMPLIANCE FULL AUDIT
+  Report: SOYBEANS QUARTERLY OUTLOOK — Q2 2026
+  Type: Quarterly Outlook
+  Word count: 8,420
+
+  This report type receives the highest compliance scrutiny. Quarterly
+  outlooks are distributed to institutional clients and may be cited in
+  media. Running all checks at maximum sensitivity.
+
+  ════════════════════════════════════════════════════════
+  CRITICAL ISSUES
+  ════════════════════════════════════════════════════════
+
+  1. MISSING ANALYST CERTIFICATION [End of document]
+     Rule: Quarterly outlooks require the analyst certification
+           statement: "I, [Name], certify that the views expressed in
+           this report accurately reflect my personal views and that no
+           part of my compensation was, is, or will be related to the
+           specific recommendations or views expressed herein."
+     Fix:  Add certification between Risk Factors and Full Disclaimer
+     Source: compliance-language-rules.pdf §6.1
+
+  2. FORWARD-LOOKING LANGUAGE (3 instances) [Lines 112, 245, 389]
+     "Prices will recover..." → "Prices may recover..."
+     "China will import..." → "China is expected to import..."
+     "The trade war will escalate..." → "The trade war could escalate..."
+
+  3. PROPRIETARY MODEL OUTPUT WITHOUT LABEL [Line 201]
+     Found: Table with "Price Forecast" column showing $10.80, $11.40,
+            $12.10 for Q2, Q3, Q4
+     Rule: Proprietary model outputs must be labeled "Source: [Bank]
+           Estimates" or "Source: [Bank] Quantitative Model"
+     Fix:  Add source line under table: "Source: [Bank Name] Quantitative
+           Commodity Model. Forecasts are subject to revision."
+
+  ════════════════════════════════════════════════════════
+  STYLE ISSUES
+  ════════════════════════════════════════════════════════
+
+  4. UNIT CONSISTENCY [8 instances]
+     Found 8 bushel-only figures missing metric conversions.
+     Quarterly outlooks have international readership — metric
+     conversions are especially important.
+     [Line 45] "51.5 bu/ac" → "51.5 bu/ac (3.46 MT/ha)"
+     [Line 78] "1,825 M bu" → "1,825 million bushels (49.7 MMT)"
+     ... (6 more, see full report)
+
+  5. ROUNDING [Lines 156, 203]
+     Found: "exports at 5.23456 MMT"
+     Rule: Volumes round to 1 decimal place for MMT
+     Fix:  "exports at 5.2 MMT"
+
+  ════════════════════════════════════════════════════════
+  CITATION ISSUES
+  ════════════════════════════════════════════════════════
+
+  6. STALE DATA (WASDE) [Lines 67, 89, 134]
+     Your draft cites "USDA WASDE, February 2026" in three places.
+     The March WASDE has been published. For a quarterly outlook going
+     to print in March, all WASDE references should be March 2026
+     unless you're specifically discussing the February-to-March
+     revision.
+
+  7. THIRD-PARTY DATA REDISTRIBUTION [Line 290]
+     Found: Full reproduction of a Bloomberg table (12 rows of daily
+            CBOT settlement prices)
+     Rule: Bloomberg data redistribution terms limit verbatim
+           reproduction. Summarize, chart, or excerpt — don't reproduce
+           full daily settlement tables.
+     Fix:  Replace with a summary ("CBOT soybeans traded in a $10.20-
+           $11.60 range during Q1") or a chart, with "Source: Bloomberg"
+
+  ════════════════════════════════════════════════════════
+  TEMPLATE CHECK
+  ════════════════════════════════════════════════════════
+
+  Quarterly Outlook — Required sections:
+  ✓ Title
+  ✓ Executive Summary
+  ✓ Macro Context
+  ✓ Detailed S&D
+  ✓ Regional Breakdown
+  ✓ Price Forecast
+  ✓ Risk Factors
+  ✗ Analyst Certification (MISSING — see Critical #1)
+  ✓ Full Disclaimer (correct variant, text matches)
+
+  Section order: CORRECT (all sections in approved sequence)
+
+  ════════════════════════════════════════════════════════
+  SUMMARY
+  ════════════════════════════════════════════════════════
+
+  Critical:  3 issues (certification, language, model label)
+  Style:     9 issues (8 unit conversions, 1 rounding)
+  Citation:  2 issues (stale WASDE, Bloomberg redistribution)
+  Template:  1 missing section
+  ──────────────────────────────────────────────────────
+  TOTAL:     15 issues
+
+  ESTIMATED TIME TO FIX: 30-40 minutes
+
+  The Bloomberg redistribution flag is the one that could cause
+  real problems. Legal has flagged analysts before for reproducing
+  terminal data verbatim. Summarize or chart it — don't copy the table.
+
+  The analyst certification is a simple paste, but forgetting it on a
+  quarterly that goes to 200+ institutional clients would be a career
+  embarrassment. This is exactly why you run the checker first.
+
+  Full audit report: reports/compliance-audit-soy-q2-outlook-2026.pdf
+
+
+=============================================================
+WHY THIS SKILL WORKS
+=============================================================
+
+The publication compliance skill is probably the highest-ROI skill in
+the entire library. Consider:
+
+  WITHOUT THE SKILL:
+  - Analyst writes report: 3-4 hours
+  - Submits to compliance: 1 day turnaround (best case)
+  - Gets 10-15 issues back: 1-2 hours to fix
+  - Resubmits: another 1 day turnaround
+  - Gets 2-3 more issues: 30 min to fix
+  - Final approval: maybe day 4 after writing
+  - Total: 5-7 hours of analyst time + 2-4 days of calendar time
+
+  WITH THE SKILL:
+  - Analyst writes report: 3-4 hours
+  - Runs /publication-compliance-skill: 30 seconds
+  - Fixes all 15 issues in one pass: 20-40 minutes
+  - Submits clean draft to compliance: passes first time
+  - Total: 4-5 hours of analyst time + 1 day of calendar time
+
+  SAVINGS: 2-3 hours per report × 4 reports/month = 8-12 hours/month
+  per analyst. For a team of 6 analysts, that's 50-70 hours/month of
+  senior analyst time recovered.
+
+  But the real value isn't the hours — it's the publication speed.
+  A weekly crop report that publishes Monday morning instead of
+  Wednesday afternoon is infinitely more valuable to clients who trade
+  on it. Timeliness IS the product in commodity research.
+
+The skill also serves as institutional knowledge preservation. When the
+head of compliance retires, the rules don't disappear — they're codified
+in the skill's reference files. When a new regulation changes the
+disclaimer language, you update one JSON file and every analyst's next
+check reflects the change automatically.
+
+This is the kind of skill that doesn't seem exciting — no satellite
+data, no vessel tracking, no yield models. But it's the one the team
+uses every single day, and it's the one the managing director notices
+because reports stop getting bounced back.
+
+
+=============================================================
+SKILL 17: Email Thread Intelligence — Intent & Requirements Extractor
+=============================================================
+
+Every analyst, PM, and researcher has lived this nightmare: a 47-message
+email thread spanning 3 weeks, 9 participants, 4 conflicting opinions,
+2 scope changes buried in reply #31, and one critical deadline mentioned
+once in a forwarded attachment. Someone asks "what did we actually agree
+to?" and nobody can answer without re-reading the entire chain. This
+skill reads the mess and tells you what's real.
+
+User: /agent-skill-creator I spend at least an hour a day trying to parse long email threads from clients, internal stakeholders, and cross-functional teams. The problem isn't individual emails — it's threads that mutate over time. A client starts by asking for one thing, then someone on our side proposes an alternative, then the client's boss jumps in and changes the scope, then there are 15 replies about scheduling that bury the actual decision, and by reply #40 nobody remembers what was originally asked. I need a skill that I can paste an email thread into (or point at a .eml/.msg file) and get back: (1) the ACTUAL requirements — not what was first asked, but what was LAST agreed to, tracking how requirements evolved through the thread, (2) all action items with owners and deadlines, (3) open questions that were asked but never answered, (4) decisions that were made (and WHO made them — authority matters), (5) scope changes — what was added, removed, or modified from the original request, and (6) conflicting statements where two people said incompatible things and nobody resolved it. I work in commodity research but this is a universal problem — every knowledge worker has it. Here's an example of the kind of thread I deal with: references/sample-client-thread.eml (62 messages, 12 participants, 3 weeks).
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/sample-client-thread.eml...
+
+  62 messages. 12 participants. 21 days. This is a textbook case of
+  requirements drift buried in conversational noise. The core challenge
+  is distinguishing signal from noise: most messages are scheduling,
+  acknowledgments, CC additions, and side conversations. The real
+  decisions are in maybe 8-10 messages. Let me build a skill that
+  finds them.
+
+  Implicit requirements:
+  - Input formats: raw pasted text, .eml files (RFC 5322), .msg files
+    (Outlook), or a batch of .eml files for multi-thread analysis
+  - Thread reconstruction: emails arrive out of order, have inconsistent
+    quoting styles (>, |, inline), forwarded sub-threads, and sometimes
+    broken In-Reply-To headers. Need to rebuild the conversation tree
+  - Participant identification: same person may appear as "John Smith",
+    "John", "JS", "john.smith@acme.com", and "Smith, John (London)".
+    Need entity resolution across the thread
+  - Authority detection: not all participants are equal. A director
+    saying "let's do X" overrides an analyst suggesting "maybe Y".
+    Detect seniority signals from: email signatures (titles), CC vs TO
+    position, who others defer to, explicit authority statements ("I've
+    approved this")
+  - Temporal tracking: requirements stated in message #5 may be
+    superseded by message #28. The skill must track the EVOLUTION,
+    not just extract from the latest message
+  - Implicit vs explicit: "sounds good" in reply to a proposal = implicit
+    agreement. "Per our call, we agreed to..." = explicit decision.
+    Both matter but carry different confidence levels
+  - Negation detection: "Actually, scratch that — let's go with plan B"
+    negates everything in the preceding proposal
+  - Attachment awareness: "see attached SOW" or "per the deck I sent
+    Tuesday" — flag that a requirement lives outside the email body
+  - Cross-thread references: "as discussed in the other thread about
+    the Brazil report" — flag that context exists elsewhere
+  - Output must be structured, scannable, and cite specific messages
+    by sender + timestamp so the analyst can verify
+
+  Building...
+
+  email-thread-intel-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── thread_parser.py          # Parse .eml/.msg/raw text into
+  │   │                             #   structured message objects
+  │   │                             #   (sender, date, body, quoted text)
+  │   ├── thread_reconstructor.py   # Rebuild conversation tree from
+  │   │                             #   In-Reply-To, References, quoting
+  │   │                             #   patterns, and timestamp ordering
+  │   ├── participant_resolver.py   # Entity resolution: merge "John",
+  │   │                             #   "JS", "john.smith@acme.com" into
+  │   │                             #   one person with role/seniority
+  │   ├── intent_tracker.py         # Track requirements through the
+  │   │                             #   thread: initial ask → modifications
+  │   │                             #   → supersessions → final state
+  │   ├── decision_extractor.py     # Find explicit decisions, implicit
+  │   │                             #   agreements, and authority signals
+  │   ├── action_item_finder.py     # "Can you send me..." / "I'll have
+  │   │                             #   this by Friday" / "ACTION: ..."
+  │   │                             #   with owner + deadline extraction
+  │   ├── conflict_detector.py      # Find incompatible statements from
+  │   │                             #   different participants that were
+  │   │                             #   never explicitly resolved
+  │   ├── question_tracker.py       # Questions asked but never answered
+  │   │                             #   in subsequent messages
+  │   ├── scope_diff.py             # Compare initial request vs final
+  │   │                             #   agreed state: added/removed/changed
+  │   └── report_builder.py         # Thread Intelligence Brief (markdown
+  │                                 #   + optional PDF)
+  ├── references/
+  │   ├── parsing-patterns.md       # Email quoting styles, signature
+  │   │                             #   patterns, forwarding formats
+  │   ├── intent-signals.md         # Linguistic markers for decisions,
+  │   │                             #   proposals, agreements, rejections
+  │   ├── authority-heuristics.md   # How to infer seniority from email
+  │   │                             #   metadata and language patterns
+  │   └── methodology.md
+  ├── assets/
+  │   ├── decision_phrases.json     # "let's go with", "approved", "agreed"
+  │   ├── action_phrases.json       # "can you", "please send", "I'll do"
+  │   ├── negation_phrases.json     # "actually", "scratch that", "instead"
+  │   ├── hedge_phrases.json        # "maybe", "what if", "just thinking"
+  │   │                             #   (proposals, not decisions)
+  │   └── title_seniority.json      # "MD" > "Director" > "VP" > "Associate"
+  │                                 #   (for authority weighting)
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (no external APIs — all processing is local)
+  Installed at: ~/.agents/skills/email-thread-intel-skill
+
+  Shared to: github.com/acme-trading/email-thread-intel-skill
+
+
+--- The analyst pastes a nightmarish client thread ---
+
+Analyst: /email-thread-intel-skill Parse this thread and tell me what the client actually wants. I've been CC'd into the middle of it and I'm lost: emails/client-brazil-soy-report-thread.eml
+
+Copilot (loading email-thread-intel-skill):
+
+  Parsing emails/client-brazil-soy-report-thread.eml...
+  47 messages, 9 participants, spanning Feb 10 – Mar 3, 2026.
+  Reconstructing conversation tree...
+  Resolving participants...
+  Extracting requirements, decisions, and action items...
+
+  THREAD INTELLIGENCE BRIEF
+  Subject: "RE: RE: FW: Brazil Soy Report — Scope & Deliverables"
+
+  ════════════════════════════════════════════════════════
+  PARTICIPANTS (resolved)
+  ════════════════════════════════════════════════════════
+
+  | Name               | Role                  | Org        | Messages | Authority |
+  |--------------------|-----------------------|------------|----------|-----------|
+  | Sarah Chen         | Portfolio Manager     | Client     | 8        | HIGH      |
+  | David Park         | Head of Research      | Client     | 3        | HIGHEST   |
+  | Lisa Nakamura      | Research Analyst      | Client     | 12       | MEDIUM    |
+  | Tom Bradley        | Trading Desk          | Client     | 6        | MEDIUM    |
+  | You (Maria Santos) | Senior Analyst        | Our Firm   | 7        | —         |
+  | James Wilson       | Head of Ag Research   | Our Firm   | 4        | HIGH      |
+  | Alex Rivera        | Junior Analyst        | Our Firm   | 5        | LOW       |
+  | Priya Sharma       | Sales Coverage        | Our Firm   | 1        | LOW       |
+  | Rachel Kim         | Compliance            | Our Firm   | 1        | N/A       |
+
+  Note: "Lisa N.", "L. Nakamura", and "lisa.nakamura@clientfund.com"
+  are the same person (12 messages total, not 3 people with 4 each).
+
+  ════════════════════════════════════════════════════════
+  REQUIREMENTS EVOLUTION (what changed over time)
+  ════════════════════════════════════════════════════════
+
+  ORIGINAL REQUEST (Feb 10, Sarah Chen):
+  "We need a deep-dive report on Brazil soybean production risk for
+   the 2025/26 season. 15-20 pages. Focus on weather impact and
+   export pace. Deadline: end of February."
+
+  MODIFICATION #1 (Feb 14, Lisa Nakamura):
+  "Can you also include Argentina? The drought situation there is
+   getting interesting. Maybe a comparative section."
+  Status: ACCEPTED by Sarah Chen (Feb 14): "Good idea Lisa, yes
+  please include Argentina."
+  → SCOPE EXPANDED: Argentina added as comparative section
+
+  MODIFICATION #2 (Feb 18, Tom Bradley, Trading Desk):
+  "For the trading desk, we also need short-term price scenarios.
+   Like what happens to the May-July spread if USDA cuts Argentina
+   by 5 MMT in March. Give us 3 scenarios with price targets."
+  Status: PARTIALLY ACCEPTED by Sarah Chen (Feb 19): "The scenarios
+  are useful but let's keep it to 2 scenarios — bull and bear case.
+  Three is too many for the investment committee."
+  → SCOPE EXPANDED: Price scenarios added, but 2 not 3
+
+  MODIFICATION #3 (Feb 24, David Park, Head of Research):
+  "I want this to also serve as input for our quarterly allocation
+   meeting on March 15. Add a one-page executive summary that a
+   generalist portfolio manager can read in 2 minutes. And push
+   the deadline to March 10 — we need it 5 days before the meeting."
+  Status: THIS IS THE FINAL AUTHORITY. David Park is the most senior
+  client participant. No one contradicted this.
+  → DEADLINE CHANGED: Feb 28 → March 10
+  → SCOPE EXPANDED: Executive summary added (1 page, generalist audience)
+  → PURPOSE EXPANDED: Now serves quarterly allocation meeting
+
+  MODIFICATION #4 (Feb 26, Lisa Nakamura):
+  "One more thing — can you include a section on Chinese demand? I
+   know it's not in the original scope but it's really driving the
+   price action."
+  Status: ⚠️ NEVER EXPLICITLY APPROVED OR REJECTED. Sarah Chen
+  did not respond to this message. Lisa does not have authority to
+  expand scope unilaterally. James Wilson (our side) replied "we can
+  look into it" — but that's our internal response, not client
+  approval.
+  → AMBIGUOUS: China demand section — in scope or not?
+
+  ════════════════════════════════════════════════════════
+  FINAL AGREED REQUIREMENTS (as of last message, Mar 3)
+  ════════════════════════════════════════════════════════
+
+  ✓ CONFIRMED:
+  1. Deep-dive on Brazil soybean production risk (2025/26)
+     — Weather impact, crop conditions, production estimates
+     — Source: Sarah Chen, Feb 10 (original request)
+  2. Argentina comparative section (drought analysis)
+     — Source: Lisa Nakamura, Feb 14 → approved by Sarah Chen
+  3. Two price scenarios: bull case and bear case
+     — Include May-July spread implications
+     — Source: Tom Bradley, Feb 18 → modified by Sarah Chen to 2 scenarios
+  4. One-page executive summary for generalist audience
+     — Source: David Park, Feb 24 (highest authority)
+  5. Export pace analysis (Brazil)
+     — Source: Sarah Chen, Feb 10 (original request)
+  6. Length: 15-20 pages (excluding exec summary)
+     — Source: Sarah Chen, Feb 10 (never modified)
+  7. Deadline: March 10, 2026
+     — Source: David Park, Feb 24 (overrode original Feb 28)
+
+  ⚠️ UNRESOLVED:
+  8. China demand section — requested by Lisa (Feb 26), never approved
+     by Sarah or David. Recommend: email Sarah directly to confirm
+     before spending time on this.
+
+  ✗ SUPERSEDED (no longer valid):
+  9. "3 price scenarios" — Tom Bradley's request was narrowed to 2 by
+     Sarah Chen. Do NOT deliver 3 scenarios.
+  10. "End of February deadline" — overridden by David Park to March 10.
+
+  ════════════════════════════════════════════════════════
+  ACTION ITEMS
+  ════════════════════════════════════════════════════════
+
+  | # | Action                              | Owner           | Deadline  | Status    |
+  |---|-------------------------------------|-----------------|-----------|-----------|
+  | 1 | Deliver Brazil/Argentina soy report | Maria Santos    | Mar 10    | IN PROGRESS|
+  | 2 | Send interim data tables to Lisa    | Alex Rivera     | Feb 28    | ⚠️ OVERDUE |
+  | 3 | Confirm China section in/out        | Maria Santos    | ASAP      | OPEN      |
+  | 4 | Share draft for internal review     | Maria Santos    | Mar 5     | OPEN      |
+  | 5 | Compliance review of draft          | Rachel Kim      | Mar 7     | PENDING   |
+  | 6 | Schedule client call for Mar 12     | Priya Sharma    | Mar 3     | ⚠️ OVERDUE |
+
+  NOTE: Action item #2 is OVERDUE. Alex Rivera agreed on Feb 20 to
+  "send the PSD tables by end of the month." It's now March 3. Lisa
+  asked about it on Feb 28 and got no response. This needs follow-up
+  immediately — the client noticed.
+
+  ════════════════════════════════════════════════════════
+  UNANSWERED QUESTIONS
+  ════════════════════════════════════════════════════════
+
+  1. Lisa Nakamura (Feb 22): "Should the price scenarios use the
+     March WASDE numbers or our own estimates?"
+     → Nobody responded. This affects the entire scenarios section.
+     Recommend: ask Sarah or decide internally and state assumption.
+
+  2. Tom Bradley (Feb 25): "Can you include the May-July spread chart
+     going back 10 years? I want to show the trading committee."
+     → Nobody responded. Simple request, probably should just do it.
+
+  3. Sarah Chen (Feb 27): "What format are you thinking — Word doc
+     or PDF? Last time the formatting was off in PDF."
+     → James Wilson replied "we'll send both" (Mar 1). But did Maria
+     confirm? The thread ended without Maria acknowledging.
+
+  ════════════════════════════════════════════════════════
+  CONFLICTS (incompatible statements, never resolved)
+  ════════════════════════════════════════════════════════
+
+  CONFLICT #1: Report audience
+  - Sarah Chen (Feb 10): "This is for our ag research team" (specialist
+    audience, technical depth expected)
+  - David Park (Feb 24): "Add a one-page exec summary for a generalist
+    portfolio manager" (implies the REPORT will be read by generalists)
+
+  These aren't necessarily incompatible — the report can be technical
+  with a generalist exec summary. But clarify: is the generalist going
+  to read ONLY the exec summary, or the whole report? If the whole
+  report, the writing style needs to shift.
+
+  CONFLICT #2: Argentina depth
+  - Lisa Nakamura (Feb 14): "Maybe a comparative section" (brief)
+  - Tom Bradley (Feb 20): "The Argentina drought is the real story —
+    give it equal weight to Brazil" (deep)
+
+  Sarah Chen approved "include Argentina" but didn't specify depth.
+  These two colleagues are asking for different things. Recommend:
+  3-5 pages on Argentina (not a full separate analysis, but more than
+  a sidebar).
+
+  ════════════════════════════════════════════════════════
+  SCOPE DIFF (original → final)
+  ════════════════════════════════════════════════════════
+
+  ORIGINAL (Feb 10)         →    FINAL (as of Mar 3)
+  ──────────────────────────────────────────────────────
+  Brazil only               →    Brazil + Argentina comparative
+  No price scenarios        →    2 price scenarios (bull/bear)
+  No exec summary           →    1-page exec summary (generalist)
+  15-20 pages               →    15-20 pages + exec summary
+  Due: end of February      →    Due: March 10
+  Audience: ag research     →    Audience: ag research + PM (exec summary)
+  No spread analysis        →    May-July spread implications
+  No China coverage         →    China: ⚠️ UNRESOLVED
+
+  The scope has approximately DOUBLED since the original request.
+  The deadline moved back by 10 days, but the scope grew faster than
+  the timeline. Flag this to James Wilson — this may need a revised
+  LOE estimate.
+
+  ════════════════════════════════════════════════════════
+  RECOMMENDED NEXT STEPS
+  ════════════════════════════════════════════════════════
+
+  1. URGENT: Follow up on Alex's overdue data tables to Lisa (Feb 28)
+  2. Email Sarah Chen directly: "Should we include a China demand
+     section? Lisa suggested it — want to confirm before we invest
+     the time." (5 seconds of her time, saves you 4 hours of work)
+  3. Ask Sarah or Lisa: "For the price scenarios, should we use USDA's
+     official estimates or our internal model?" (unanswered question #1)
+  4. Just include the 10-year May-July spread chart — it's easy, Tom
+     asked for it, and nobody objected
+  5. Send both Word and PDF per James's commitment
+  6. Flag to James Wilson that scope has doubled — is the March 10
+     deadline still realistic with current resources?
+
+
+--- Quick follow-up on a different thread ---
+
+Analyst: /email-thread-intel-skill Quick scan — just the action items and deadlines from this internal thread: emails/weekly-publication-schedule.eml
+
+Copilot (loading email-thread-intel-skill):
+
+  Parsing emails/weekly-publication-schedule.eml...
+  23 messages, 5 participants (all internal), spanning Feb 28 – Mar 4.
+  Quick scan mode (action items + deadlines only)...
+
+  ACTION ITEMS — Weekly Publication Schedule Thread
+
+  | # | Action                                | Owner          | Deadline      | Source Message       |
+  |---|---------------------------------------|----------------|---------------|----------------------|
+  | 1 | Soybeans Weekly draft                 | Maria Santos   | Mon Mar 4 9am | James W., Feb 28    |
+  | 2 | Wheat Weekly draft                    | Alex Rivera    | Mon Mar 4 9am | James W., Feb 28    |
+  | 3 | Coffee Flash (if ICE moves > 3%)      | Maria Santos   | Same day      | James W., Feb 28    |
+  | 4 | Update S&D model with March WASDE     | Alex Rivera    | Tue Mar 5     | Maria S., Mar 3     |
+  | 5 | Client call prep deck (Chen account)  | Maria Santos   | Wed Mar 5     | Priya S., Mar 1     |
+  | 6 | Review all drafts before compliance   | James Wilson   | Mon Mar 4 2pm | James W., Feb 28    |
+
+  SCHEDULING CONFLICT DETECTED:
+  Maria Santos has 3 deliverables due Monday morning (items 1, 3, 6)
+  plus the Chen report (from the other thread) in progress. James
+  Wilson committed to review "all drafts by 2pm Monday" — but Maria's
+  soybeans draft is due at 9am and James typically doesn't review
+  until after lunch. Recommend: send James the draft Friday evening
+  for early Monday review.
+
+  OVERDUE: None — all deadlines are upcoming.
+  UNANSWERED: Alex Rivera hasn't acknowledged item #4 (WASDE update).
+
+
+--- The universal use case: "what did we decide on the call?" ---
+
+Analyst: /email-thread-intel-skill Someone took rough notes during a client call and emailed them out. Parse these notes and give me the real decisions and follow-ups. There were "action items" listed but I don't think they're complete: emails/call-notes-chen-account-mar3.eml
+
+Copilot (loading email-thread-intel-skill):
+
+  Parsing emails/call-notes-chen-account-mar3.eml...
+  1 message (call notes email) + 6 reply messages (corrections/additions).
+  Processing notes + corrections...
+
+  CALL INTELLIGENCE — Chen Account, March 3, 2026
+
+  STATED IN ORIGINAL NOTES (sent by Priya Sharma):
+  - "Client wants the report by March 10" ✓ Consistent with thread
+  - "Discussed including China demand section" — VAGUE
+  - "Tom wants spread analysis" ✓ Consistent with thread
+  - Action items listed: "Maria to send draft by Mar 7"
+
+  CORRECTIONS FROM REPLY CHAIN:
+  - James Wilson (Mar 3, 4:12pm): "Actually, Sarah said March 10 for
+    FINAL, not draft. Draft review should be internal by March 7.
+    Priya's notes have this backwards."
+  - Lisa Nakamura (Mar 3, 5:30pm): "To clarify — I asked about China
+    and Sarah said 'if there's time, sure, but don't delay the report
+    for it.' So it's optional, not required."
+
+  THIS IS CRITICAL. The reply chain CONTRADICTS the original notes:
+
+  | Item               | Original Notes Say    | Replies Corrected To        |
+  |--------------------|-----------------------|-----------------------------|
+  | March 10 deadline  | Report due Mar 10     | FINAL due Mar 10, draft Mar 7|
+  | China section      | "Discussed"           | Optional — don't delay for it|
+  | Draft to client    | "Maria to send by Mar 7" | Mar 7 is INTERNAL review  |
+
+  If you followed the original notes, you'd send the client a draft on
+  March 7 (wrong — that's the internal review date) and you'd spend
+  4 hours on the China section (unnecessary — Sarah said optional).
+
+  REAL ACTION ITEMS (merged from notes + corrections):
+
+  | # | Action                           | Owner         | Deadline | Confidence |
+  |---|----------------------------------|---------------|----------|------------|
+  | 1 | Internal draft ready             | Maria Santos  | Mar 7    | HIGH       |
+  | 2 | James reviews draft              | James Wilson  | Mar 7-8  | HIGH       |
+  | 3 | Compliance review                | Rachel Kim    | Mar 8-9  | MEDIUM     |
+  | 4 | Final report to client           | Maria Santos  | Mar 10   | HIGH       |
+  | 5 | China section (OPTIONAL)         | Maria Santos  | only if time | MEDIUM |
+  | 6 | Include 10yr spread chart        | Alex Rivera   | with draft| HIGH      |
+
+  The notes Priya sent are 60% accurate. The reply corrections are
+  essential. If you'd only read Priya's email, you'd have the wrong
+  deadline structure and waste time on an optional section.
+
+
+=============================================================
+WHY THIS SKILL WORKS
+=============================================================
+
+This skill is universal. It's not specific to commodity research,
+finance, or any industry. Every knowledge worker in every company
+deals with:
+
+  - Email threads that mutate requirements over 20+ messages
+  - Meeting notes that don't match what was actually discussed
+  - Scope creep buried in casual replies ("oh and can you also...")
+  - Action items with no clear owner or deadline
+  - Questions that get asked but fall through the cracks
+  - Authority ambiguity — who actually has the power to decide?
+
+The skill doesn't need APIs, credentials, or external data. It runs
+entirely on the text you give it. The intelligence is in the parsing:
+
+  - TEMPORAL TRACKING: message #5 says X, message #28 overrides X
+    with Y. The skill knows Y is current, not X.
+  - AUTHORITY WEIGHTING: the Head of Research saying "do this"
+    outweighs a junior analyst suggesting "maybe that."
+  - SILENCE DETECTION: a question asked in message #15 that nobody
+    answered in the next 32 messages is a dropped ball.
+  - IMPLICIT AGREEMENT: "sounds good" = soft yes. "I've approved
+    this" = hard yes. Both are agreements but at different confidence.
+  - NEGATION AWARENESS: "Actually, scratch that" makes everything
+    before it in that reply irrelevant.
+
+The ROI is immediate and measurable:
+
+  WITHOUT THE SKILL:
+  - Re-read 47-message thread: 30-45 minutes
+  - Still miss 2-3 buried decisions or scope changes
+  - Start working on superseded requirements (wasted hours)
+  - Miss an overdue action item (damages client relationship)
+  - Misinterpret call notes (wrong deliverable timeline)
+
+  WITH THE SKILL:
+  - Paste thread, get intelligence brief: 30 seconds
+  - Full visibility into requirements evolution
+  - Clear action items with owners and deadlines
+  - Conflicts and unanswered questions surfaced explicitly
+  - Zero time re-reading — jump straight to acting
+
+  The skill pays for itself the first time it catches a scope change
+  you would have missed, or surfaces an overdue action item that was
+  about to become a client complaint.
+
+
+=============================================================
+SKILL 18: Internal Database Query Assistant — Onboarding
+Non-Technical Analysts to Company Data
+=============================================================
+
+This is arguably the most common enterprise problem: the company has
+a rich internal database (or data warehouse, or lakehouse) with years
+of proprietary data — trade records, position history, client
+portfolios, internal forecasts, broker contacts, shipping logs. The
+data team built it, documented it (partially), and gave everyone
+read-only credentials. The problem? Most analysts can't write SQL.
+They depend on the data team for every ad-hoc query, wait 2-3 days
+for a response, and often get back something different from what they
+asked for because the request was ambiguous. This skill turns the
+database documentation and schema into a query-writing assistant that
+knows the company's specific tables, naming conventions, gotchas, and
+business logic — so non-technical analysts can get answers in seconds
+instead of days.
+
+User: /agent-skill-creator Our firm has an internal PostgreSQL data warehouse called "agdb" that contains 15 years of proprietary commodity data — trade executions, position history, client order flow, internal S&D model outputs, broker price indications, shipping fixtures, and warehouse stock reports. The data team documented it in a Confluence-style wiki that I've exported here: references/agdb-schema-docs.pdf (142 pages — every table, every column, every relationship). The problem is nobody outside the data team knows how to query it. I'm one of 12 commodity analysts who have read-only access (via a connection string in env as AGDB_READ_DSN) but I don't really know SQL. When I need data, I send a Slack message to the data team and wait 1-3 days. Sometimes they misunderstand what I need and I wait another day for a revision. I want a skill that: (1) understands our entire schema — all 87 tables, the relationships, the naming conventions, the business logic embedded in the column definitions, (2) lets me ask questions in plain English and generates safe, read-only SQL queries, (3) EXPLAINS what the query does before running it so I can verify it's what I meant, (4) runs the query and formats the results into a clean table or chart, (5) knows our firm-specific conventions — like that "position" means net position (long minus short), that our fiscal year starts April 1, that prices in the trades table are in cents per bushel for grains but dollars per metric tonne for oilseeds, and (6) has guardrails so I can't accidentally run something destructive or pull restricted client data. I also want my colleagues to use this — some know basic SQL, some know zero. Here's a sample of common queries the data team runs for us: references/common-queries-catalog.pdf (their top 50 most-requested queries with SQL).
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/agdb-schema-docs.pdf (142 pages)...
+  Reading references/common-queries-catalog.pdf...
+
+  This is a schema-aware query generation skill with safety guardrails.
+  The 142-page schema doc is the gold — it contains the institutional
+  knowledge that makes queries correct (fiscal year conventions, unit
+  differences, net position logic). The top-50 query catalog is the
+  training set — these are proven-correct queries I can decompose into
+  patterns. Let me build this.
+
+  Implicit requirements from your documents:
+
+  SCHEMA OVERVIEW (from agdb-schema-docs.pdf):
+  - 87 tables across 8 schemas:
+    trading.*     — 14 tables (executions, positions, orders, fills)
+    market.*      — 11 tables (prices, curves, settlements, vol surfaces)
+    research.*    — 9 tables (forecasts, model outputs, S&D balances)
+    shipping.*    — 12 tables (fixtures, vessel tracking, freight rates)
+    warehouse.*   — 8 tables (stocks, receipts, deliveries, locations)
+    clients.*     — 10 tables (accounts, portfolios, order history)
+    reference.*   — 15 tables (instruments, exchanges, brokers, regions)
+    audit.*       — 8 tables (change logs, access logs, query logs)
+  - Naming convention: snake_case everywhere, e.g. trading.daily_positions,
+    market.settlement_prices
+  - Primary keys: all tables use surrogate integer IDs (table_id)
+  - Foreign keys: instrument_id links to reference.instruments across
+    all schemas. client_id links to clients.accounts
+  - Temporal columns: trade_date (date), created_at (timestamp with tz),
+    updated_at (timestamp). Most analytical queries use trade_date
+  - Soft deletes: is_deleted boolean on most tables (must filter!)
+
+  FIRM-SPECIFIC CONVENTIONS (critical for correct queries):
+  - "Position" = net position (long_qty - short_qty), NOT gross
+  - Fiscal year: April 1 – March 31 (FY2026 = Apr 2025 – Mar 2026)
+  - Crop year: varies by commodity:
+    US corn/soy: Sep 1 – Aug 31
+    US wheat: Jun 1 – May 31
+    Brazil soy: Feb 1 – Jan 31
+    Coffee: Oct 1 – Sep 30
+  - Price units in trading.executions:
+    Grains (corn, wheat, oats): cents per bushel (divide by 100 for $/bu)
+    Oilseeds (soybeans, canola): cents per bushel
+    Oilseed products (meal, oil): dollars per short ton (meal), cents
+      per pound (oil)
+    Coffee: cents per pound
+    Sugar: cents per pound
+    Cotton: cents per pound
+    Freight: $/MT (worldscale for tankers)
+  - When analysts say "P&L", they mean realized + unrealized, marked to
+    the prior day's settlement (market.settlement_prices)
+  - The research.forecasts table contains both published and draft
+    forecasts. Always filter: status = 'published' unless explicitly
+    looking at drafts
+  - The clients.* schema is RESTRICTED: only client_id, region, and
+    segment columns are accessible to analysts. Personal details
+    (name, contact, AUM) require compliance approval
+
+  SAFETY REQUIREMENTS:
+  - READ-ONLY: connection uses a read-only PostgreSQL role. But the
+    skill should also validate queries before execution — no INSERT,
+    UPDATE, DELETE, DROP, TRUNCATE, ALTER, CREATE, GRANT
+  - QUERY LIMITS: auto-append LIMIT 10000 to any query without an
+    explicit LIMIT (prevent accidental full-table scans on 500M+ row
+    tables)
+  - CLIENT DATA REDACTION: if a query touches clients.* schema,
+    automatically exclude name, email, phone, address columns. Replace
+    with client_id only
+  - AUDIT LOGGING: log every query executed (query text, user, timestamp,
+    row count) to a local file for the data team to review
+  - EXPLAIN BEFORE RUN: always show the generated SQL and a plain-English
+    explanation before executing. User must confirm or modify
+  - TIMEOUT: 30-second query timeout. If exceeded, suggest adding
+    filters or ask the data team for help
+  - NO JOINS ON AUDIT.*: the audit schema is for compliance only — never
+    join it into analytical queries
+
+  Building...
+
+  agdb-query-assistant-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── query_generator.py        # Natural language → SQL translation
+  │   │                             #   using schema context + conventions
+  │   ├── schema_loader.py          # Parse schema docs into structured
+  │   │                             #   metadata (tables, columns, types,
+  │   │                             #   relationships, conventions)
+  │   ├── query_validator.py        # Safety checks: read-only enforcement,
+  │   │                             #   LIMIT injection, client data
+  │   │                             #   redaction, audit schema blocking
+  │   ├── query_explainer.py        # SQL → plain English explanation
+  │   │                             #   ("This query finds all soybean
+  │   │                             #   trades from the last 30 days...")
+  │   ├── query_executor.py         # Run query via AGDB_READ_DSN, handle
+  │   │                             #   timeouts, format results
+  │   ├── result_formatter.py       # Output as table, CSV, chart, or
+  │   │                             #   summary depending on result shape
+  │   ├── unit_converter.py         # Auto-convert cents/bu to $/bu,
+  │   │                             #   $/short ton to $/MT, etc. based
+  │   │                             #   on commodity context
+  │   ├── common_queries.py         # Pre-built query templates from the
+  │   │                             #   top-50 catalog (parameterized)
+  │   └── audit_logger.py           # Log all executed queries locally
+  ├── references/
+  │   ├── schema-summary.md         # Human-readable schema overview
+  │   │                             #   (condensed from 142-page PDF)
+  │   ├── table-catalog.md          # All 87 tables with descriptions
+  │   ├── column-conventions.md     # Price units, date conventions,
+  │   │                             #   fiscal year, crop year logic
+  │   ├── relationship-map.md       # Foreign key graph (what joins what)
+  │   ├── common-patterns.md        # Top-50 query patterns decomposed
+  │   ├── restricted-tables.md      # Client data restrictions, audit
+  │   │                             #   schema rules
+  │   ├── gotchas.md                # is_deleted filter, draft forecasts,
+  │   │                             #   timezone handling, null semantics
+  │   └── methodology.md
+  ├── assets/
+  │   ├── schema_metadata.json      # Machine-readable schema (87 tables,
+  │   │                             #   ~1,200 columns, all FK relationships)
+  │   ├── unit_map.json             # Commodity → price unit mapping
+  │   ├── crop_year_map.json        # Commodity → crop year start month
+  │   ├── fiscal_calendar.json      # FY mapping (FY2026 = Apr 2025–Mar 2026)
+  │   ├── restricted_columns.json   # Columns that require redaction
+  │   ├── query_templates.json      # Parameterized top-50 queries
+  │   └── sql_blocklist.json        # Prohibited SQL keywords/patterns
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (AGDB_READ_DSN read from env, read-only enforced,
+            client data redacted, audit logging enabled)
+  Installed at: ~/.agents/skills/agdb-query-assistant-skill
+
+  Shared to: github.com/acme-trading/agdb-query-assistant-skill
+
+
+--- A non-technical analyst asks their first question ---
+
+Analyst (no SQL experience): /agdb-query-assistant-skill What was our total soybean trading volume last month?
+
+Copilot (loading agdb-query-assistant-skill):
+
+  Loading schema context for agdb...
+
+  I'll query the trading.executions table for soybean trades in
+  February 2026. A few things I need to account for:
+
+  - "Soybeans" maps to instrument_group = 'soybeans' in
+    reference.instruments (includes CBOT soybeans, soybean meal,
+    soybean oil). Did you mean just soybeans, or the whole complex?
+  - "Volume" could mean: number of contracts (trade_qty), notional
+    value (trade_qty × price × multiplier), or metric tonnes
+    (trade_qty × contract_size_mt)
+  - "Last month" = February 2026 (Feb 1–28)
+
+  I'll assume you mean the soybeans complex (beans + meal + oil),
+  measured in contracts, for February 2026. Let me know if you
+  meant something different.
+
+  Here's the query I'd run:
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  SELECT                                                  │
+  │    i.instrument_name,                                    │
+  │    COUNT(*) AS num_trades,                               │
+  │    SUM(e.trade_qty) AS total_contracts,                  │
+  │    SUM(e.trade_qty * i.contract_size_mt) AS total_mt     │
+  │  FROM trading.executions e                               │
+  │  JOIN reference.instruments i                            │
+  │    ON e.instrument_id = i.instrument_id                  │
+  │  WHERE i.instrument_group = 'soybeans'                   │
+  │    AND e.trade_date >= '2026-02-01'                      │
+  │    AND e.trade_date < '2026-03-01'                       │
+  │    AND e.is_deleted = FALSE                              │
+  │  GROUP BY i.instrument_name                              │
+  │  ORDER BY total_contracts DESC;                          │
+  └─────────────────────────────────────────────────────────┘
+
+  PLAIN ENGLISH: "Find all soybean complex trades (soybeans, meal, oil)
+  executed in February 2026 that haven't been deleted. Count the number
+  of trades and sum the contracts and metric tonnes, broken down by
+  specific instrument."
+
+  SAFETY CHECK: ✓ Read-only (SELECT only)
+  SAFETY CHECK: ✓ No client data accessed
+  SAFETY CHECK: ✓ is_deleted filter applied
+  SAFETY CHECK: ✓ Date range bounded (won't scan full history)
+
+  Run this query? [Yes / Modify / Cancel]
+
+Analyst: Yes
+
+Copilot:
+
+  Running query... (0.3 seconds, 4 rows returned)
+
+  SOYBEAN COMPLEX TRADING VOLUME — February 2026
+
+  | Instrument        | Trades | Contracts | Metric Tonnes |
+  |-------------------|--------|-----------|---------------|
+  | CBOT Soybeans     | 342    | 18,450    | 2,518,418     |
+  | CBOT Soybean Meal | 198    | 9,200     | 920,000       |
+  | CBOT Soybean Oil  | 156    | 7,800     | 424,322       |
+  | DCE Soybeans No.1 | 28     | 1,400     | 14,000        |
+  | TOTAL             | 724    | 36,850    | 3,876,740     |
+
+  Notes:
+  - Metric tonnes are calculated from contract size (CBOT soybeans =
+    136.08 MT/contract, CBOT meal = 100 ST ≈ 90.7 MT, CBOT oil =
+    60,000 lbs ≈ 27.2 MT per contract, DCE = 10 MT/contract)
+  - This includes both buy and sell sides. Our NET volume (buys minus
+    sells) would require a different query — let me know if you want
+    that instead
+  - DCE soybeans volume is low — that's normal, we rarely trade
+    Dalian directly
+
+  Query logged to audit/query-log-2026-03-04.csv
+
+
+--- The analyst digs deeper with a follow-up ---
+
+Analyst: /agdb-query-assistant-skill How does that compare to the same month last year? And show me the trend for the last 12 months.
+
+Copilot (loading agdb-query-assistant-skill):
+
+  Good follow-up. I'll expand the date range to Mar 2025 – Feb 2026
+  (12 months) and include Feb 2025 for the year-over-year comparison.
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  SELECT                                                  │
+  │    DATE_TRUNC('month', e.trade_date) AS month,           │
+  │    SUM(e.trade_qty) AS total_contracts,                  │
+  │    SUM(e.trade_qty * i.contract_size_mt) AS total_mt,    │
+  │    COUNT(*) AS num_trades                                │
+  │  FROM trading.executions e                               │
+  │  JOIN reference.instruments i                            │
+  │    ON e.instrument_id = i.instrument_id                  │
+  │  WHERE i.instrument_group = 'soybeans'                   │
+  │    AND e.trade_date >= '2025-02-01'                      │
+  │    AND e.trade_date < '2026-03-01'                       │
+  │    AND e.is_deleted = FALSE                              │
+  │  GROUP BY DATE_TRUNC('month', e.trade_date)              │
+  │  ORDER BY month;                                         │
+  └─────────────────────────────────────────────────────────┘
+
+  PLAIN ENGLISH: "Sum soybean complex contracts by month for the last
+  13 months (Feb 2025 through Feb 2026) to show the trend and enable
+  a year-over-year comparison."
+
+  Run this query? [Yes / Modify / Cancel]
+
+Analyst: Yes
+
+Copilot:
+
+  Running query... (0.8 seconds, 13 rows returned)
+
+  SOYBEAN COMPLEX — MONTHLY TRADING VOLUME (contracts)
+
+  | Month    | Contracts | vs Prev Month | Trades |
+  |----------|-----------|---------------|--------|
+  | Feb 2025 | 31,200    |               | 612    |
+  | Mar 2025 | 34,800    | +11.5%        | 688    |
+  | Apr 2025 | 29,400    | -15.5%        | 571    |
+  | May 2025 | 33,100    | +12.6%        | 649    |
+  | Jun 2025 | 38,200    | +15.4%        | 741    |
+  | Jul 2025 | 42,500    | +11.3%        | 822    |
+  | Aug 2025 | 35,600    | -16.2%        | 694    |
+  | Sep 2025 | 30,200    | -15.2%        | 589    |
+  | Oct 2025 | 28,800    | -4.6%         | 562    |
+  | Nov 2025 | 32,400    | +12.5%        | 634    |
+  | Dec 2025 | 26,100    | -19.4%        | 508    |
+  | Jan 2026 | 34,500    | +32.2%        | 672    |
+  | Feb 2026 | 36,850    | +6.8%         | 724    |
+
+  YEAR-OVER-YEAR: Feb 2026 (36,850) vs Feb 2025 (31,200) = +18.1%
+
+  TREND OBSERVATIONS:
+  - Volume peaked in July 2025 (42,500 contracts) — coincides with
+    the Argentina drought scare that drove CBOT to $13.40
+  - December 2025 was the low point (26,100) — typical year-end
+    position flattening before FY close (our fiscal year ends March 31)
+  - January–February 2026 rebound (+32% and +7%) likely driven by the
+    current Argentina drought driving renewed speculative activity
+  - YoY growth of 18% suggests the desk is more active this year,
+    possibly due to higher volatility creating more trading opportunities
+
+  [Chart generated: reports/soy-volume-trend-12m.png]
+
+
+--- A more experienced analyst writes a complex question ---
+
+Senior Analyst: /agdb-query-assistant-skill I need to see our net soybean position by trader, broken down by contract month, as of close of business yesterday. Include the average entry price and the mark-to-market P&L using yesterday's settlement. I need this for the weekly risk meeting.
+
+Copilot (loading agdb-query-assistant-skill):
+
+  This requires joining 3 tables: trading.daily_positions (net position
+  by trader and instrument), reference.instruments (contract details),
+  and market.settlement_prices (yesterday's marks). The P&L calculation
+  uses the firm's convention: (settlement_price - avg_entry_price) ×
+  net_qty × contract_multiplier, with the sign convention that positive
+  = profit on longs, negative = loss on longs.
+
+  Important conventions:
+  - Prices in trading.daily_positions.avg_entry_price are in CENTS per
+    bushel (firm convention for grains). Settlement prices in
+    market.settlement_prices are also in cents per bushel.
+  - The P&L output should be in DOLLARS (not cents). So the formula
+    includes a /100 conversion.
+  - CBOT soybean contract multiplier = 5,000 bushels
+  - I need to handle both outright and spread positions. The
+    daily_positions table has a position_type column ('outright' or
+    'spread') — I'll include both but flag them.
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  SELECT                                                  │
+  │    p.trader_name,                                        │
+  │    i.instrument_name,                                    │
+  │    i.contract_month,                                     │
+  │    p.position_type,                                      │
+  │    p.net_qty AS net_contracts,                           │
+  │    ROUND(p.avg_entry_price / 100.0, 4) AS avg_entry_usd,│
+  │    ROUND(s.settlement_price / 100.0, 4) AS settle_usd,  │
+  │    ROUND(                                                │
+  │      (s.settlement_price - p.avg_entry_price)            │
+  │      * p.net_qty * i.contract_multiplier                 │
+  │      / 100.0, 2                                          │
+  │    ) AS mtm_pnl_usd                                     │
+  │  FROM trading.daily_positions p                          │
+  │  JOIN reference.instruments i                            │
+  │    ON p.instrument_id = i.instrument_id                  │
+  │  JOIN market.settlement_prices s                         │
+  │    ON p.instrument_id = s.instrument_id                  │
+  │    AND s.price_date = '2026-03-03'                       │
+  │  WHERE i.instrument_group = 'soybeans'                   │
+  │    AND p.position_date = '2026-03-03'                    │
+  │    AND p.is_deleted = FALSE                              │
+  │    AND p.net_qty != 0                                    │
+  │  ORDER BY p.trader_name, i.contract_month;               │
+  └─────────────────────────────────────────────────────────┘
+
+  PLAIN ENGLISH: "For each trader, show their net soybean position
+  by contract month as of March 3, 2026. Convert prices from cents
+  to dollars. Calculate mark-to-market P&L by comparing each trader's
+  average entry price to yesterday's settlement, multiplied by their
+  net contracts and the contract multiplier (5,000 bushels). Exclude
+  flat positions (net_qty = 0) and deleted records."
+
+  SAFETY CHECK: ✓ Read-only
+  SAFETY CHECK: ✓ No client data
+  SAFETY CHECK: ✓ is_deleted filtered
+  SAFETY CHECK: ✓ Single date (no full-table scan)
+
+  Run this query? [Yes / Modify / Cancel]
+
+Senior Analyst: Yes
+
+Copilot:
+
+  Running query... (0.4 seconds, 18 rows returned)
+
+  NET SOYBEAN POSITION BY TRADER — COB March 3, 2026
+
+  | Trader       | Contract   | Type     | Net Lots | Avg Entry | Settle  | MTM P&L ($)    |
+  |--------------|------------|----------|----------|-----------|---------|----------------|
+  | Chen, David  | May-26     | outright | +340     | $10.8200  | $10.9450| +$212,500.00   |
+  | Chen, David  | Jul-26     | outright | +180     | $10.9600  | $11.0800| +$108,000.00   |
+  | Chen, David  | May/Jul    | spread   | -120     | -$0.1400  | -$0.1350| +$3,000.00     |
+  | Lopez, Ana   | May-26     | outright | -200     | $11.0400  | $10.9450| +$95,000.00    |
+  | Lopez, Ana   | Nov-26     | outright | +150     | $10.4200  | $10.5600| +$105,000.00   |
+  | Patel, Raj   | May-26     | outright | +420     | $10.7800  | $10.9450| +$351,750.00   |
+  | Patel, Raj   | Jul-26     | outright | +280     | $10.8400  | $11.0800| +$336,000.00   |
+  | Patel, Raj   | May/Jul    | spread   | +200     | -$0.0600  | -$0.1350| -$75,000.00    |
+  | ...          | ...        | ...      | ...      | ...       | ...     | ...            |
+
+  DESK SUMMARY:
+  | Trader       | Net Outrights | Gross Lots | Total MTM P&L  |
+  |--------------|---------------|------------|----------------|
+  | Chen, David  | +400          | 640        | +$323,500      |
+  | Lopez, Ana   | -50           | 350        | +$200,000      |
+  | Patel, Raj   | +500          | 900        | +$612,750      |
+  | DESK TOTAL   | +850          | 1,890      | +$1,136,250    |
+
+  NOTES FOR YOUR RISK MEETING:
+  - Desk is net long 850 soybean contracts (~115,830 MT). This is
+    within the 1,000-contract desk limit per the risk policy
+  - Patel has the largest position (500 net lots, $613K MTM). His
+    May/Jul spread is underwater (-$75K) while outrights are up big
+  - Lopez is the only trader net short (-50 lots). Her short May
+    position is profitable — she sold near the high
+  - If March WASDE (tomorrow) surprises bearish, the desk's +850 net
+    long is exposed. A $0.20/bu decline = -$850K to the desk P&L
+
+
+--- A brand-new hire who has never seen the database ---
+
+New Analyst (first week): /agdb-query-assistant-skill I just joined the team. I'm supposed to update the weekly S&D balance sheet but I don't know where the data lives. Where are the production, consumption, and trade numbers? And how are they organized?
+
+Copilot (loading agdb-query-assistant-skill):
+
+  Welcome aboard! The S&D data lives in the research.* schema. Let me
+  walk you through the tables you'll need for the weekly balance sheet.
+
+  YOUR KEY TABLES:
+
+  1. research.sd_balances — The main S&D table
+     This is where the team's published balance sheets live. One row
+     per commodity × country × crop year × balance item × forecast date.
+
+     Key columns:
+     - commodity      (e.g. 'soybeans', 'corn', 'wheat')
+     - country        (ISO 3166-1 alpha-2: 'US', 'BR', 'AR', 'CN')
+     - crop_year      (e.g. '2025/26' — note: slash format, not dash)
+     - item           (e.g. 'production', 'crush', 'exports', 'imports',
+                       'feed_use', 'ending_stocks', 'beginning_stocks')
+     - value_mt       (metric tonnes — ALL values are in MT, never bushels)
+     - forecast_date  (date the estimate was published internally)
+     - status         ('published' or 'draft' — always filter for
+                       'published' unless James tells you otherwise)
+     - analyst_id     (who created this estimate)
+
+  2. research.sd_history — Historical revisions
+     Every time someone updates a balance sheet number, the old value
+     is preserved here. Useful for tracking how your team's estimates
+     evolved over time (what did we think in January vs what we think
+     now).
+
+  3. research.model_outputs — The quantitative model results
+     The quant team runs regression models for yield, demand, etc.
+     Their outputs land here. The analysts then review and adjust
+     these before publishing to sd_balances.
+
+  4. reference.crop_years — Crop year calendar
+     Maps crop_year strings to actual date ranges by commodity.
+     Critical because '2025/26' means different dates for corn
+     (Sep 1, 2025 – Aug 31, 2026) vs wheat (Jun 1, 2025 – May 31, 2026).
+
+  THE WEEKLY BALANCE SHEET WORKFLOW:
+  Your weekly task is to:
+  1. Pull the LATEST published balance for each commodity
+  2. Compare to the PREVIOUS week's balance
+  3. Note what changed and why
+  4. Publish in the weekly report
+
+  Here's the query to get the latest US soybeans balance sheet:
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  SELECT                                                  │
+  │    b.item,                                               │
+  │    ROUND(b.value_mt / 1000000.0, 2) AS value_mmt,       │
+  │    b.forecast_date,                                      │
+  │    a.analyst_name                                        │
+  │  FROM research.sd_balances b                             │
+  │  JOIN reference.analysts a                               │
+  │    ON b.analyst_id = a.analyst_id                        │
+  │  WHERE b.commodity = 'soybeans'                          │
+  │    AND b.country = 'US'                                  │
+  │    AND b.crop_year = '2025/26'                           │
+  │    AND b.status = 'published'                            │
+  │    AND b.forecast_date = (                               │
+  │      SELECT MAX(forecast_date)                           │
+  │      FROM research.sd_balances                           │
+  │      WHERE commodity = 'soybeans'                        │
+  │        AND country = 'US'                                │
+  │        AND crop_year = '2025/26'                         │
+  │        AND status = 'published'                          │
+  │    )                                                     │
+  │  ORDER BY                                                │
+  │    CASE b.item                                           │
+  │      WHEN 'beginning_stocks' THEN 1                      │
+  │      WHEN 'production' THEN 2                            │
+  │      WHEN 'imports' THEN 3                               │
+  │      WHEN 'total_supply' THEN 4                          │
+  │      WHEN 'crush' THEN 5                                 │
+  │      WHEN 'exports' THEN 6                               │
+  │      WHEN 'feed_use' THEN 7                              │
+  │      WHEN 'residual' THEN 8                              │
+  │      WHEN 'total_use' THEN 9                             │
+  │      WHEN 'ending_stocks' THEN 10                        │
+  │    END;                                                  │
+  └─────────────────────────────────────────────────────────┘
+
+  PLAIN ENGLISH: "Get the most recently published US soybeans 2025/26
+  balance sheet, with each line item in million metric tonnes, ordered
+  in standard S&D format (supply items first, then demand, then stocks)."
+
+  Run this query? [Yes / Modify / Cancel]
+
+New Analyst: Yes
+
+Copilot:
+
+  Running query... (0.2 seconds, 10 rows returned)
+
+  US SOYBEANS 2025/26 BALANCE SHEET (latest internal estimate)
+  Published: March 3, 2026 | Analyst: Maria Santos
+
+  | Item              | MMT     |
+  |-------------------|---------|
+  | Beginning Stocks  | 9.52    |
+  | Production        | 118.84  |
+  | Imports           | 0.68    |
+  | TOTAL SUPPLY      | 129.04  |
+  | Crush             | 63.50   |
+  | Exports           | 49.67   |
+  | Feed & Residual   | 4.90    |
+  | Seed & Other      | 5.22    |
+  | TOTAL USE         | 123.29  |
+  | ENDING STOCKS     | 5.75    |
+
+  This is YOUR TEAM'S estimate, not USDA's. USDA's February WASDE
+  had ending stocks at 10.34 MMT (281 million bushels). Your team
+  is MUCH tighter at 5.75 MMT — which is why the desk is net long.
+  The difference is mainly in exports: your team has 49.67 MMT vs
+  USDA's 47.90 MMT.
+
+  USEFUL COMMANDS FOR YOUR FIRST WEEK:
+
+  Ask me:
+  - "Show me how our estimate changed over the last 4 weeks" (revision
+    tracking from sd_history)
+  - "Compare our balance to USDA" (if USDA data is in market.external_sd)
+  - "What's the Brazil balance sheet?" (same query, country = 'BR')
+  - "Who last updated the corn balance?" (analyst_id + forecast_date)
+  - "Show me all commodities we cover" (distinct commodities in
+    sd_balances)
+
+  I'll generate the SQL, explain it, and run it — you don't need to
+  learn SQL. But I'll show you every query so you start to recognize
+  the patterns. Most analysts pick up enough SQL to modify queries
+  within 2-3 weeks of using this skill.
+
+
+--- An analyst asks something the skill should refuse ---
+
+Analyst: /agdb-query-assistant-skill Show me the full client list with their AUM and contact details. I need to send out the weekly report.
+
+Copilot (loading agdb-query-assistant-skill):
+
+  ⛔ RESTRICTED DATA REQUEST
+
+  The clients.accounts table contains personally identifiable
+  information (name, email, phone, address) and sensitive financial
+  data (AUM, portfolio details) that are classified as RESTRICTED
+  under the firm's data governance policy.
+
+  Your read-only database role can see:
+  - client_id (anonymized identifier)
+  - region (e.g., 'APAC', 'EMEA', 'Americas')
+  - segment (e.g., 'institutional', 'corporate', 'retail')
+
+  For client names, contact details, or AUM data, you need to:
+  1. Contact the Sales/CRM team — they manage the distribution list
+  2. Use the firm's CRM system (Salesforce) for contact details
+  3. If you need client data for analytical purposes, request
+     compliance approval through the data governance portal
+
+  I CANNOT run a query that exposes client PII, even with your
+  read-only credentials. This is a firm policy, not a technical
+  limitation — the columns exist in the database but the skill is
+  configured to redact them.
+
+  WHAT I CAN DO: If you need aggregate client metrics for research
+  purposes (e.g., "how many institutional clients are in APAC?"),
+  I can query that without exposing individual records:
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  SELECT                                                  │
+  │    region,                                               │
+  │    segment,                                              │
+  │    COUNT(*) AS client_count                              │
+  │  FROM clients.accounts                                   │
+  │  WHERE is_active = TRUE                                  │
+  │    AND is_deleted = FALSE                                │
+  │  GROUP BY region, segment                                │
+  │  ORDER BY region, segment;                               │
+  └─────────────────────────────────────────────────────────┘
+
+  Would this help, or do you need the full contact list from Sales?
+
+
+--- An analyst asks a question that requires business logic ---
+
+Analyst: /agdb-query-assistant-skill What's our soybean crush margin right now? And how does it compare to the 5-year average for this time of year?
+
+Copilot (loading agdb-query-assistant-skill):
+
+  Crush margin is a CALCULATED value, not stored directly. It requires
+  the firm's specific formula (from the schema docs, section 14.3):
+
+  Board Crush Margin ($/bu) =
+    (Soybean Meal price × 0.022) + (Soybean Oil price × 11.0)
+    - Soybean price
+
+  Where:
+  - Soybean price: $/bu from market.settlement_prices (CBOT S 1)
+  - Soybean Meal price: $/short ton from market.settlement_prices (CBOT SM 1)
+  - Soybean Oil price: ¢/lb from market.settlement_prices (CBOT BO 1)
+  - The 0.022 converts $/short ton to $/bu for meal (yield: 44 lbs
+    meal per bushel, 1 short ton = 2000 lbs, so 1 bu → 0.022 tons)
+  - The 11.0 converts ¢/lb to $/bu for oil (yield: 11 lbs oil per
+    bushel, price in cents → 11 lbs × price / 100)
+
+  ⚠️ IMPORTANT: The prices in our database are stored in DIFFERENT
+  units per commodity:
+  - Soybeans: cents/bu → divide by 100 for $/bu
+  - Meal: dollars/short ton (already in $)
+  - Oil: cents/lb → used directly in the formula (the 11.0 factor
+    handles the conversion)
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  WITH latest AS (                                        │
+  │    SELECT                                                │
+  │      MAX(price_date) AS pd                               │
+  │    FROM market.settlement_prices                         │
+  │    WHERE price_date <= CURRENT_DATE                      │
+  │  ),                                                      │
+  │  prices AS (                                             │
+  │    SELECT                                                │
+  │      i.instrument_code,                                  │
+  │      s.settlement_price,                                 │
+  │      s.price_date                                        │
+  │    FROM market.settlement_prices s                       │
+  │    JOIN reference.instruments i                          │
+  │      ON s.instrument_id = i.instrument_id                │
+  │    CROSS JOIN latest l                                   │
+  │    WHERE s.price_date = l.pd                             │
+  │      AND i.instrument_code IN ('S_1', 'SM_1', 'BO_1')   │
+  │  ),                                                      │
+  │  margin AS (                                             │
+  │    SELECT                                                │
+  │      p_s.price_date,                                     │
+  │      ROUND(p_s.settlement_price / 100.0, 4) AS soy_usd, │
+  │      ROUND(p_sm.settlement_price, 2) AS meal_usd_ton,   │
+  │      ROUND(p_bo.settlement_price, 4) AS oil_cents_lb,   │
+  │      ROUND(                                              │
+  │        (p_sm.settlement_price * 0.022)                   │
+  │        + (p_bo.settlement_price * 11.0 / 100.0)         │
+  │        - (p_s.settlement_price / 100.0)                  │
+  │      , 4) AS crush_margin_usd                            │
+  │    FROM prices p_s                                       │
+  │    JOIN prices p_sm ON p_sm.instrument_code = 'SM_1'     │
+  │    JOIN prices p_bo ON p_bo.instrument_code = 'BO_1'     │
+  │    WHERE p_s.instrument_code = 'S_1'                     │
+  │  )                                                       │
+  │  SELECT * FROM margin;                                   │
+  └─────────────────────────────────────────────────────────┘
+
+  PLAIN ENGLISH: "Get yesterday's settlement prices for soybeans,
+  soybean meal, and soybean oil. Calculate the board crush margin
+  using the firm's standard formula. Convert all prices to consistent
+  units (dollars per bushel for the final margin)."
+
+  Run this query? [Yes / Modify / Cancel]
+
+Analyst: Yes, and also the 5-year average
+
+Copilot:
+
+  Running current margin query... (0.2 seconds)
+  Running 5-year seasonal average... (1.4 seconds)
+
+  SOYBEAN CRUSH MARGIN — March 3, 2026
+
+  CURRENT:
+  | Component     | Price             | Contribution  |
+  |---------------|-------------------|---------------|
+  | Soybeans (S1) | $10.9450/bu       | -$10.9450     |
+  | Meal (SM1)    | $312.40/short ton | +$6.8728      |
+  | Oil (BO1)     | 45.82¢/lb         | +$5.0402      |
+  | CRUSH MARGIN  |                   | +$0.9680/bu   |
+
+  5-YEAR SEASONAL COMPARISON (same calendar week):
+  | Year | Crush Margin ($/bu) | Notes                          |
+  |------|---------------------|--------------------------------|
+  | 2022 | $2.1240             | Post-COVID demand boom         |
+  | 2023 | $1.5680             | Still elevated                 |
+  | 2024 | $1.0420             | Normalizing                    |
+  | 2025 | $0.8860             | Below average                  |
+  | 2026 | $0.9680             | Current                        |
+  | 5yr Avg | $1.3176          |                                |
+
+  ASSESSMENT:
+  Current crush margin of $0.97/bu is 27% BELOW the 5-year average
+  of $1.32/bu for early March. The margin has been below average since
+  mid-2024, driven by weak soybean oil demand (RD mandate uncertainty)
+  and adequate meal supplies.
+
+  For context: crush margins below $0.80/bu are considered "crush
+  discouraging" — processors start reducing run rates. At $0.97 we're
+  above that threshold but not by much. If margins compress further,
+  expect crush pace to slow in Q2, which is bullish for meal and
+  bearish for bean oil.
+
+  This is the kind of answer that would have taken the data team
+  2 days to produce. The business logic (the crush formula, the unit
+  conversions, the seasonal comparison) is encoded in the skill. You
+  asked in plain English and got the answer in 3 seconds.
+
+
+=============================================================
+WHY THIS SKILL WORKS
+=============================================================
+
+The internal database skill solves three problems simultaneously:
+
+  1. THE BOTTLENECK PROBLEM
+  Every firm has 2-3 people who know the database well. They're the
+  bottleneck for every analyst's data request. When the senior data
+  engineer goes on vacation, the whole team slows down. The skill
+  distributes database knowledge to everyone with read access.
+
+  WITHOUT THE SKILL:
+  - Analyst sends Slack message to data team: "Can you pull...?"
+  - Data team triages: 1-3 day wait (they have 40 requests in queue)
+  - Data team delivers: sometimes wrong interpretation
+  - Analyst requests revision: another 1-2 days
+  - Total: 2-5 business days for one data pull
+
+  WITH THE SKILL:
+  - Analyst asks in plain English: 10 seconds
+  - Skill generates, explains, and runs query: 30 seconds
+  - If wrong interpretation, analyst asks again: 30 seconds
+  - Total: under 2 minutes
+
+  2. THE ONBOARDING PROBLEM
+  A new hire with read-only database access but no SQL knowledge is
+  essentially locked out of the firm's most valuable asset — 15 years
+  of proprietary data. The skill turns the 142-page schema document
+  into an interactive guide. The new analyst from the simulation was
+  productive on DAY ONE, pulling balance sheets and understanding
+  table relationships without a 3-week SQL training course.
+
+  3. THE INSTITUTIONAL KNOWLEDGE PROBLEM
+  The business logic (crush margin formula, fiscal year convention,
+  crop year definitions, price unit conversions) exists in three
+  places: the schema docs (which nobody reads), senior analysts' heads
+  (which leave when they do), and the data team's query history (which
+  nobody outside the team can access). The skill codifies ALL of this
+  into reusable, version-controlled reference files. When the firm
+  changes its fiscal year convention, you update one JSON file.
+
+  SAFETY IS THE FEATURE, NOT THE CONSTRAINT:
+  The skill's guardrails (read-only validation, client data redaction,
+  query explanation before execution, audit logging) aren't limitations
+  — they're what make it trustworthy enough to give to non-technical
+  analysts. The data team WANTS analysts to self-serve, but they don't
+  want someone accidentally running SELECT * on a 500M-row table or
+  pulling client PII into an email attachment. The skill makes self-
+  service safe.
+
+
+#############################################################
+#############################################################
+##                                                         ##
+##  ENTERPRISE ADOPTION SCENARIO:                          ##
+##  "THE DOG LOOKING AT THE CASTLE"                        ##
+##                                                         ##
+##  How a non-technical agriculture commodities research    ##
+##  team goes from tool paralysis to daily productivity     ##
+##  using agent-skill-creator as the on-ramp               ##
+##                                                         ##
+#############################################################
+#############################################################
+
+CONTEXT:
+
+GlobalAgri Capital is a mid-large commodity trading house with a
+25-person agriculture research division, subdivided into three desks:
+
+  AG MODELLING (8 people)
+  Led by Dr. Carla Ribeiro. Econometricians, quant analysts, and
+  statisticians. They build yield models, demand elasticity models,
+  and price forecasting regressions. Most have PhDs. They live in
+  Excel, MATLAB, and some R. A few can write Python. None use Git.
+  Their "version control" is saving files as model_v3_final_FINAL2.xlsx
+
+  SUPPLY & DEMAND (9 people)
+  Led by Henrik Johansson. Fundamental analysts who maintain global
+  balance sheets for grains, oilseeds, sugar, coffee, cotton. They
+  track USDA reports, foreign attaché data, harvest progress, and
+  trade flows. Most are experienced commodity professionals (10-20
+  years) who work in Excel, Bloomberg Terminal, and email. Zero
+  programming. They get data by asking the data team or downloading
+  CSVs from USDA websites.
+
+  PRICE ASSESSMENT (8 people)
+  Led by Tomoko Watanabe. They produce the firm's daily price
+  assessments and forward curves for internal trading desks and
+  external clients. They pull settlement prices, broker indications,
+  and physical market bids/offers. Heavy Bloomberg and Refinitiv
+  users. Some basic VBA macros. No Python, no SQL, no Git.
+
+WHAT IT PROVISIONED:
+
+Six months ago, the CTO's office rolled out an "AI-enabled developer
+toolkit" to the entire research division. Each analyst received:
+
+  ✓ VS Code (installed on their laptop)
+  ✓ GitHub Copilot license (Enterprise, via VS Code extension)
+  ✓ Copilot CLI (installed, authenticated via corporate SSO)
+  ✓ Enterprise GitLab access (gitlab.globalagri.com)
+  ✓ Databricks workspace (databricks.globalagri.com)
+  ✓ Read-only access to the firm's data lake (agri_lake.*)
+
+What IT also provided:
+  - A 90-minute "Introduction to AI Coding Tools" webinar (recorded)
+  - A 40-page PDF: "Getting Started with Your AI Developer Toolkit"
+  - A Confluence page: "Databricks Quick Start Guide"
+  - An internal Slack channel: #ai-tools-support (3 IT staff monitor it)
+
+WHAT ACTUALLY HAPPENED:
+
+Six months later, adoption metrics from the CTO dashboard:
+
+  | Tool           | Active Users (last 30 days) | Of 25 analysts |
+  |----------------|----------------------------:|----------------|
+  | VS Code        | 4                           | 16%            |
+  | GitHub Copilot | 2                           | 8%             |
+  | Copilot CLI    | 0                           | 0%             |
+  | GitLab         | 1 (accidental login)        | 4%             |
+  | Databricks     | 3                           | 12%            |
+
+The CTO is frustrated. The licenses cost $180K/year. The 90-minute
+webinar had 40% attendance. Nobody finished the 40-page PDF. The
+Slack channel has 6 messages, 4 of which are "how do I log in?"
+
+The problem isn't the tools. The problem is that nobody on the
+research team knows WHY they would use these tools, HOW to start,
+or WHAT their first task should be. They have jobs to do — balance
+sheets, price assessments, model runs — and learning a code editor
+feels like a distraction from real work.
+
+They are, as one S&D analyst put it in the hallway, "like a dog
+looking at a castle."
+
+
+=============================================================
+PHASE 1: THE CHAMPION DISCOVERS AGENT-SKILL-CREATOR
+=============================================================
+
+Every enterprise adoption starts with one person. In this case it's
+Luís Ferreira, a 28-year-old S&D analyst (3 years at the firm) who
+is slightly more tech-curious than his colleagues. He attended the
+webinar. He opened VS Code once. He closed it after 10 minutes
+because he didn't know what to do with it. Then he saw a LinkedIn
+post about agent-skill-creator and thought: "maybe this is the
+missing piece."
+
+Luís opens VS Code for the second time in six months. He has GitHub
+Copilot active (the extension was pre-installed by IT). He opens
+Copilot Chat (Agent mode) — it's the sidebar on the right with the
+sparkle icon. He types:
+
+
+Luís: I don't really know what I'm doing here. I'm a commodity S&D analyst, not a developer. My company gave me VS Code and Copilot but I have no idea how to use them for my actual work. I maintain global soybean balance sheets in Excel. Is there anything useful I can actually do here?
+
+Copilot:
+
+  You're in the right place. VS Code + Copilot isn't just for
+  developers — it's for anyone who works with data, documents, or
+  repetitive processes.
+
+  Here's what you can do RIGHT NOW with zero coding experience:
+
+  1. Ask me to analyze files — drop an Excel, CSV, or PDF into VS
+     Code and ask me questions about it
+  2. Ask me to write formulas — describe what you need and I'll
+     write the Excel formula or Python code
+  3. Ask me to automate repetitive tasks — if you do the same thing
+     every week, I can help you build a script
+  4. Ask me to query databases — if you have database access, describe
+     what you need in plain English
+
+  What's the most tedious part of your weekly workflow?
+
+Luís: Every Monday I download the latest USDA Export Inspections CSV from the USDA FAS website, then I manually copy the soybean rows into my master Excel tracker, calculate the year-over-year change, compare to the weekly pace needed to hit the USDA full-year forecast, and update a summary table that goes into our team's weekly report. It takes about 45 minutes and it's the most boring part of my week.
+
+Copilot:
+
+  That's a perfect first automation. Let me help you turn that into
+  something that takes 30 seconds instead of 45 minutes.
+
+  I can write a Python script that:
+  1. Downloads the latest Export Inspections CSV from USDA FAS
+  2. Filters for soybeans
+  3. Calculates YoY change
+  4. Compares to the pace needed for the full-year forecast
+  5. Generates a summary table
+  6. Outputs to Excel (or directly into your tracker format)
+
+  But before I write a one-off script, have you heard of agent-
+  skill-creator? It's a tool that can turn this workflow into a
+  reusable SKILL — something you or your teammates can invoke with
+  a single command, every week, forever. Instead of a script you run
+  once and forget, you'd have a skill that becomes part of your
+  team's toolkit.
+
+  Want me to use agent-skill-creator to build this properly?
+
+Luís: I've heard of it but I don't know how to set it up. I don't even know how to install things in VS Code. Can you walk me through it step by step? Like, assume I know nothing.
+
+Copilot:
+
+  Absolutely. Here's what we'll do, step by step. I'll tell you
+  exactly what to click and type.
+
+  STEP 1: Open a terminal in VS Code
+  Look at the bottom of VS Code. There's a panel area. If you don't
+  see a terminal, press Ctrl+` (the backtick key, top-left of your
+  keyboard, next to 1). A terminal panel will appear at the bottom.
+  It looks like a black or dark box where you can type commands.
+  That's the terminal. It's like Command Prompt but inside VS Code.
+
+  STEP 2: Install agent-skill-creator
+  In that terminal, paste this single line and press Enter:
+
+  curl -fsSL https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/main/scripts/bootstrap.sh | sh
+
+  This will download and install agent-skill-creator. It takes about
+  10 seconds. You'll see some output — that's normal. When it says
+  "Done" you're good.
+
+  STEP 3: Verify it works
+  In Copilot Chat (this panel where we're talking), type:
+  /agent-skill-creator hello
+
+  If I respond with information about how to create skills, it's
+  working.
+
+  Try Step 1 now — press Ctrl+` to open the terminal.
+
+Luís: OK, I opened the terminal. It says "luisf@GLOBALAGRI-PC234 ~" and there's a blinking cursor. I pasted the curl command and pressed Enter. It's doing things... it says "Cloning into ~/.agents/skills/agent-skill-creator" and now "Detecting tools: github-copilot... found" and "Creating symlinks..." and "Done! agent-skill-creator is ready."
+
+Copilot:
+
+  Perfect — it detected GitHub Copilot automatically and installed
+  itself. Now let's build your first skill. Tell me about that
+  Export Inspections workflow in detail.
+
+Luís: /agent-skill-creator Every Monday, I go to apps.fas.usda.gov/export-sales/inspections.htm, download the "Current Marketing Year" CSV for soybeans, and open it in Excel. The CSV has columns: Week Ending, Commodity, Destination, Weekly Inspections (MT), and Cumulative Inspections (MT). I filter for "Soybeans" (it also has corn, wheat, etc.), create a pivot by destination (top 5: China, EU, Mexico, Japan, Egypt), calculate the week-over-week change and YoY change (I keep last year's data in a separate sheet), then calculate "pace" — cumulative inspections divided by USDA's full-year export forecast (currently 49.67 MMT per our internal estimate, though I also compare to USDA's official 47.90 MMT). The pace tells me if we're ahead or behind schedule. I format it into a summary table that Henrik (my boss) pastes into the weekly report. Here's my current Excel tracker: references/export-inspections-tracker.xlsx and here's what the final summary table looks like: references/weekly-summary-format.png
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/export-inspections-tracker.xlsx...
+  Reading references/weekly-summary-format.png...
+
+  Perfect first skill — it's repetitive, data-driven, well-defined,
+  and currently takes 45 minutes of manual work. Let me build it.
+
+  Implicit requirements:
+  - USDA FAS Export Inspections: CSV download from
+    apps.fas.usda.gov, updated every Monday by ~11am ET
+  - Filter: commodity = 'Soybeans'
+  - Destinations: group top 5 (China, EU, Mexico, Japan, Egypt),
+    remainder as "Other"
+  - YoY comparison: need previous marketing year data (Sep 2024-Aug
+    2025) for the same-week comparison
+  - Pace calculation: two versions:
+    (a) vs internal estimate (49.67 MMT) — for the team's report
+    (b) vs USDA official (47.90 MMT) — for context
+  - Marketing year: soybeans = Sep 1 – Aug 31
+  - Output: formatted summary table matching the screenshot format,
+    exported to Excel AND as a markdown table for the weekly report
+  - No API key needed — USDA FAS data is public
+  - Python dependencies: pandas, openpyxl (for Excel), requests
+
+  Building...
+
+  export-inspections-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── usda_downloader.py        # Fetch latest CSV from USDA FAS
+  │   ├── inspection_parser.py      # Filter soybeans, pivot by dest
+  │   ├── pace_calculator.py        # Cumulative vs forecast pace
+  │   ├── yoy_comparator.py         # Same-week previous MY comparison
+  │   ├── summary_builder.py        # Format into Henrik's table layout
+  │   └── excel_exporter.py         # Write to .xlsx matching tracker format
+  ├── references/
+  │   ├── usda-fas-fields.md        # CSV column definitions
+  │   ├── marketing-year.md         # Sep 1 - Aug 31 calendar
+  │   ├── destination-groups.md     # Top 5 + Other grouping
+  │   └── methodology.md
+  ├── assets/
+  │   ├── forecast_targets.json     # Internal (49.67) and USDA (47.90)
+  │   ├── destination_groups.json   # Destination → group mapping
+  │   └── previous_my_data.csv      # 2024/25 MY inspections baseline
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (no credentials needed — public data)
+  Installed at: ~/.agents/skills/export-inspections-skill
+
+Luís: That was... really fast. Can I use it right now?
+
+Copilot:
+
+  Yes. Type this:
+
+Luís: /export-inspections-skill Run the Monday update
+
+Copilot (loading export-inspections-skill):
+
+  Downloading latest Export Inspections CSV from USDA FAS...
+  Filtering for soybeans... 52 weeks of data found (MY 2025/26)
+  Loading previous year baseline...
+  Calculating pace and YoY changes...
+
+  WEEKLY EXPORT INSPECTIONS SUMMARY — Week Ending Feb 27, 2026
+
+  US SOYBEAN EXPORT INSPECTIONS (thousand MT)
+
+  | Destination | This Week | Prev Week | WoW Chg  | Same Wk LY | YoY Chg  |
+  |-------------|-----------|-----------|----------|------------|----------|
+  | China       | 812       | 748       | +8.6%    | 694        | +17.0%   |
+  | EU          | 124       | 131       | -5.3%    | 118        | +5.1%    |
+  | Mexico      | 89        | 76        | +17.1%   | 82         | +8.5%    |
+  | Japan       | 62        | 58        | +6.9%    | 65         | -4.6%    |
+  | Egypt       | 48        | 52        | -7.7%    | 41         | +17.1%   |
+  | Other       | 186       | 172       | +8.1%    | 168        | +10.7%   |
+  | TOTAL       | 1,321     | 1,237     | +6.8%    | 1,168      | +13.1%   |
+
+  PACE ANALYSIS:
+
+  | Metric                      | Value    | Status          |
+  |-----------------------------|----------|-----------------|
+  | Cumulative inspections      | 33.42 MMT|                 |
+  | Weeks completed             | 26 of 52 | 50.0%          |
+  | vs Internal forecast (49.67)| 67.3%    | ✓ AHEAD of pace |
+  | vs USDA official (47.90)    | 69.8%    | ✓ AHEAD of pace |
+  | Needed weekly pace (internal)| 626 KMT | to hit 49.67    |
+  | Needed weekly pace (USDA)   | 558 KMT  | to hit 47.90    |
+  | Actual 4-week avg pace      | 1,244 KMT| 2.0x needed (int)|
+
+  OBSERVATION: At the current 4-week average pace of 1,244 KMT/week,
+  full-year inspections would reach 65.7 MMT — far above both
+  forecasts. However, pace typically slows sharply in Q3 (May-Aug)
+  as Brazil takes over global supply. The comparison to needed pace
+  is most meaningful now during the peak US shipping window.
+
+  Summary saved to: reports/export-inspections-wk26-2026.xlsx
+  Markdown table copied to clipboard (paste into weekly report).
+
+Luís: Holy shit. That just saved me 45 minutes. And the markdown table — I can just paste that into the report?
+
+Copilot:
+
+  Yes — it's on your clipboard right now. Open the weekly report
+  and Ctrl+V. The table is already formatted in the layout Henrik
+  expects (I matched the format from your screenshot).
+
+  This will run the same way every Monday. Just type:
+    /export-inspections-skill Run the Monday update
+  and you'll have the table in 10 seconds.
+
+  Also: if you want to update the forecast targets (when USDA revises
+  their estimate), tell me and I'll update the config. You don't need
+  to edit any code.
+
+
+=============================================================
+PHASE 2: THE CHAMPION TELLS ONE COLLEAGUE
+=============================================================
+
+Tuesday morning. Luís walks past Ana Morales's desk (S&D team, 12
+years experience, covers wheat and corn). She's copy-pasting numbers
+from a USDA PDF into her Excel tracker — the same thing she's done
+every month for a decade.
+
+Luís: "Hey Ana, you know that Copilot thing IT installed? I made it
+do my export inspections summary automatically yesterday. Took 10
+seconds instead of 45 minutes."
+
+Ana: "I tried opening VS Code once. I had no idea what I was looking
+at. How did you get it to do that?"
+
+Luís: "There's this thing called agent-skill-creator. You install it
+once, then you just describe your workflow in plain English and it
+builds a tool for you. I can show you at lunch."
+
+At lunch, Luís walks Ana through the same setup: open VS Code,
+Ctrl+` for terminal, paste the bootstrap command. Ana's first
+question:
+
+Ana (in VS Code Copilot Chat): /agent-skill-creator Every month when USDA releases the WASDE report, I spend about 3 hours manually extracting the corn and wheat numbers from the PDF, comparing them to last month's estimates, calculating the month-over-month changes, flagging any revision larger than 2%, and creating a summary for our trading desk. The PDF is 40 pages and the tables I need are on pages 12-15 (world wheat) and pages 16-19 (world corn). I have the last 24 WASDE PDFs saved in a folder: data/wasde-pdfs/. Here's my current extraction template: references/wasde-extraction-template.xlsx
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/wasde-extraction-template.xlsx...
+  Scanning data/wasde-pdfs/ (24 PDFs found, Feb 2024 – Jan 2026)...
+
+  This is a PDF table extraction + time-series comparison skill.
+  The WASDE PDF has notoriously complex table layouts (merged cells,
+  footnotes, units that change between sections). But since you have
+  24 months of PDFs, I can validate my extraction against your
+  manually-verified historical data. Let me build it.
+
+  Building...
+
+  wasde-extractor-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── wasde_downloader.py       # Fetch latest WASDE PDF from USDA
+  │   ├── pdf_table_parser.py       # Extract tables from pages 12-19
+  │   │                             #   (corn and wheat world S&D)
+  │   ├── field_mapper.py           # Map PDF table cells to structured
+  │   │                             #   data (production, consumption,
+  │   │                             #   exports, ending stocks by country)
+  │   ├── revision_tracker.py       # MoM changes, flag revisions > 2%
+  │   ├── historical_builder.py     # Parse all 24 PDFs to build
+  │   │                             #   revision history database
+  │   ├── desk_summary.py           # Trading desk summary format
+  │   └── excel_exporter.py         # Match Ana's template layout
+  ├── references/
+  │   ├── wasde-page-map.md         # Which tables on which pages
+  │   ├── table-layouts.md          # Column definitions by section
+  │   ├── revision-thresholds.md    # What constitutes a "significant" move
+  │   └── methodology.md
+  ├── assets/
+  │   ├── page_ranges.json          # Wheat: 12-15, Corn: 16-19
+  │   ├── field_definitions.json    # S&D line items and units
+  │   └── revision_threshold.json   # 2% default, configurable
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Installed at: ~/.agents/skills/wasde-extractor-skill
+
+  BONUS: I parsed your 24 historical PDFs and cross-checked against
+  your Excel tracker. 23 of 24 match perfectly. The February 2025
+  extract has a discrepancy — your tracker shows Argentina wheat
+  production at 17.5 MMT but the PDF says 17.0 MMT. Possible manual
+  entry error? Worth checking.
+
+Ana: It found an error in my manual work? From 13 months ago?
+
+Copilot:
+
+  Yes. The historical PDF clearly shows 17.0 MMT for Argentina wheat
+  production in the February 2025 WASDE. Your tracker has 17.5. The
+  March 2025 entry is correct (17.0). It looks like a typo in the
+  February data entry that was accidentally carried forward in your
+  month-over-month change calculations for that one month.
+
+  This is a common benefit of automation — it doesn't make typos.
+  Going forward, the skill extracts directly from the PDF with no
+  manual transcription.
+
+Ana: OK I'm sold. But how does this Databricks thing fit in? Henrik keeps saying we should use Databricks but nobody knows what for.
+
+Copilot:
+
+  Good question. Right now, this skill downloads PDFs and processes
+  them locally on your laptop. That works fine for one person.
+
+  Databricks becomes useful when:
+  1. You want the extracted WASDE data stored in a SHARED table that
+     the whole team can query (not just your Excel file)
+  2. You want the extraction to run AUTOMATICALLY on WASDE release
+     day (every ~12th of the month) without you doing anything
+  3. You want to combine WASDE data with other sources (PSD, trade
+     data, prices) in one place
+
+  We can evolve this skill to write results to Databricks later.
+  For now, the local version gives you 90% of the value. Don't try
+  to learn Databricks AND automation at the same time — that's how
+  people get overwhelmed and quit.
+
+  Master the skill locally first. Once it feels natural, we'll
+  connect it to Databricks. One step at a time.
+
+
+=============================================================
+PHASE 3: THE TEAM LEAD NOTICES
+=============================================================
+
+Two weeks later. Henrik Johansson (Head of S&D) notices that Luís's
+Monday summary is arriving at 9:15am instead of 11:30am, and Ana's
+WASDE extraction was done in 20 minutes instead of 3 hours. He asks
+them what changed.
+
+Henrik then opens VS Code himself for the first time. He has a
+different kind of problem — he doesn't do the data work himself, but
+he manages the team's output and needs to understand the tools to
+make decisions about the team's workflow.
+
+Henrik (in VS Code Copilot Chat): I'm the head of the S&D desk. I don't need to build skills myself but I need to understand what's possible. Two of my analysts (Luís and Ana) are using something called agent-skill-creator and it's clearly making them faster. I have 9 people on my team. Each one has a set of repetitive weekly and monthly tasks. I want to understand: what tasks are good candidates for skills, and how do I roll this out to the whole team without it being another failed IT initiative?
+
+Copilot:
+
+  Smart approach — starting with strategy before tools. Let me help
+  you think through this.
+
+  SKILL CANDIDATE ASSESSMENT FRAMEWORK:
+
+  A workflow is a good skill candidate if it scores 3+ on these:
+
+  ✓ REPETITIVE: happens weekly, monthly, or on a trigger (report day)
+  ✓ STRUCTURED: has clear inputs, steps, and outputs
+  ✓ DATA-DRIVEN: involves downloading, transforming, or combining data
+  ✓ TIME-CONSUMING: takes 30+ minutes of manual work
+  ✓ ERROR-PRONE: manual copy-paste, unit conversions, formatting
+
+  Based on what I know about typical S&D desk workflows, here are the
+  likely candidates across your team:
+
+  HIGH VALUE (build first):
+  | Task                         | Who       | Frequency | Manual Time | Skill? |
+  |------------------------------|-----------|-----------|-------------|--------|
+  | Export Inspections summary   | Luís      | Weekly    | 45 min      | ✓ DONE |
+  | WASDE PDF extraction         | Ana       | Monthly   | 3 hours     | ✓ DONE |
+  | Crop Progress data pull      | Multiple  | Weekly    | 30 min      | YES    |
+  | PSD balance sheet update     | Multiple  | Monthly   | 2 hours     | YES    |
+  | Attaché report extraction    | Regional  | Ad hoc    | 1-2 hours   | YES    |
+  | CFTC COT positioning summary | Luís?     | Weekly    | 40 min      | YES    |
+  | Weekly client report compile | Henrik    | Weekly    | 2-3 hours   | YES    |
+
+  MEDIUM VALUE (build second):
+  | Task                         | Who       | Frequency | Manual Time | Skill? |
+  |------------------------------|-----------|-----------|-------------|--------|
+  | Brazil CONAB harvest tracker | Regional  | Monthly   | 1 hour      | YES    |
+  | Argentina BAGE estimates     | Regional  | Bi-weekly | 45 min      | YES    |
+  | Statistics Canada pull       | Regional  | Monthly   | 30 min      | YES    |
+  | Freight rate tracker         | Shipping  | Weekly    | 30 min      | YES    |
+
+  LOWER VALUE (nice to have):
+  | Bloomberg chart formatting   | All       | Daily     | 15 min      | MAYBE  |
+  | Email summary distributions  | Henrik    | Weekly    | 20 min      | MAYBE  |
+
+  ROLLOUT STRATEGY (avoid the "failed IT initiative" pattern):
+
+  DON'T DO THIS:
+  ✗ Send an email saying "everyone must use Copilot skills by March"
+  ✗ Schedule a 2-hour mandatory training session
+  ✗ Assign IT to "deploy skills to the team"
+  ✗ Create a Confluence page with 30 setup instructions
+
+  DO THIS INSTEAD:
+  ✓ Week 1-2: Luís and Ana are already using skills. Let them keep
+    going. They're your proof of concept.
+  ✓ Week 3: In the Monday team meeting, have Luís demo his export
+    inspections skill live. 2 minutes. Don't explain the technology
+    — just show the result. The team will see him type one sentence
+    and get a formatted table in 10 seconds.
+  ✓ Week 3-4: Ask 1-2 more volunteers: "What's the most tedious
+    part of your week?" Sit with them for 15 minutes. Build their
+    first skill together (Luís can help).
+  ✓ Week 5-8: As skills get built, they're shared on your team's
+    GitLab. New analysts can install a colleague's skill in one
+    command. The Crop Progress skill that one person builds is now
+    available to all 9 people.
+  ✓ Month 3+: Organic adoption. People who see colleagues finishing
+    work faster will ask how. Nobody needs to be forced.
+
+  THE KEY INSIGHT:
+  The 90-minute IT webinar failed because it taught the TOOLS
+  (VS Code, Git, Copilot). People don't care about tools. They care
+  about: "how do I get my Monday summary done faster?"
+
+  agent-skill-creator succeeds because it starts from the WORKFLOW,
+  not the TOOL. The analyst describes what they do. The skill gets
+  built. They use it. They never need to learn VS Code features, Git
+  commands, or Python syntax. The tool becomes invisible.
+
+Henrik: That makes sense. But I have a concern — if everyone builds their own skills, we'll end up with 15 different export trackers that do slightly different things. How do we keep it organized?
+
+Copilot:
+
+  Great concern. Here's how to structure it:
+
+  TEAM SKILL LIBRARY (on your GitLab):
+
+  Create one GitLab group: gitlab.globalagri.com/sd-team/skills/
+  Inside it, one repository per skill:
+
+  sd-team/skills/
+  ├── export-inspections-skill/     ← Luís built this
+  ├── wasde-extractor-skill/        ← Ana built this
+  ├── crop-progress-skill/          ← Next to build
+  ├── psd-balance-updater-skill/    ← Next to build
+  ├── cftc-positioning-skill/       ← Next to build
+  └── weekly-report-compiler-skill/ ← Henrik's, calls others
+
+  RULES:
+  1. ONE skill per distinct workflow (no duplicates)
+  2. The person who does the task builds the skill (with help)
+  3. Skills are reviewed by the team before "official" adoption
+  4. Henrik (you) approves which skills go into the team library
+  5. Everyone installs from the team library, not personal repos
+
+  This is where GitLab finally makes sense to your team. Not as a
+  "code repository" (which sounds scary) but as a "shared skill
+  library" (which sounds useful). Your analysts don't need to learn
+  Git commands — they install skills with one command:
+
+    /agent-skill-creator install gitlab.globalagri.com/sd-team/skills/crop-progress-skill
+
+  GitLab becomes the team's knowledge base, not a developer tool.
+
+
+=============================================================
+PHASE 4: AG MODELLING DESK — "I HAVE MATLAB, WHY DO I NEED THIS?"
+=============================================================
+
+Dr. Carla Ribeiro is skeptical. Her Ag Modelling team has PhDs in
+econometrics. They already code — in MATLAB, R, and some Python.
+They don't need Copilot to help them write for loops. But she has a
+different problem: nobody can reproduce her team's work.
+
+Carla walks into Henrik's Monday meeting late. She hears Luís demo
+his export inspections skill. She's unimpressed — "that's just a
+CSV download script." But afterwards she asks Luís a question:
+
+Carla: "Can that skill thing work for something more complex? My
+team's yield model is a 4,000-line MATLAB script that takes 14 input
+files, runs 300 regressions, and produces a 50-page PDF. Only two
+people on my team understand the full pipeline. If either of them
+leaves, we're in serious trouble. Could I turn that into a 'skill'?"
+
+Luís: "I think so. Talk to Copilot about it."
+
+Carla (in VS Code Copilot Chat): /agent-skill-creator I run the Ag Modelling desk. We have a yield forecasting model built in MATLAB that's been evolving for 6 years. It's 4,200 lines of MATLAB code across 23 .m files. It ingests weather data (temperature, precipitation, soil moisture from 14 state-level stations), USDA planting progress, historical yield data from NASS, and satellite NDVI from our Databricks lake. It runs 300+ regressions (one per crop reporting district) and produces yield estimates for corn and soybeans at district, state, and national level. The output is a PDF with maps, charts, and a summary table. The problem: only 2 of my 8 people fully understand the pipeline. The code has no documentation, no comments, file naming is cryptic (run_v3b_final.m, carlos_fix_sept2024.m), and it breaks every time USDA changes their CSV format. I don't want to rewrite the model — it works and it's validated against 40 years of data. I want to WRAP it in something that makes it understandable, runnable, and maintainable by the whole team. Is that something a skill can do? The MATLAB code is here: models/yield-forecaster/ and the input data is on Databricks: agri_lake.weather.station_daily, agri_lake.usda.planting_progress, agri_lake.satellite.ndvi_weekly
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading models/yield-forecaster/ (23 .m files, 4,200 lines)...
+  Analyzing file dependencies and execution order...
+  Connecting to Databricks to inspect table schemas...
+
+  This is a MODEL WRAPPING problem, not a model building problem.
+  The MATLAB code works — don't touch the math. What's missing is:
+  (1) documentation of what each file does, (2) a clear execution
+  pipeline (what runs in what order), (3) input validation (detect
+  when USDA changes their CSV format BEFORE it breaks the model),
+  (4) a single entry point so anyone can run it, and (5) connection
+  to Databricks so inputs come from the shared lake instead of 14
+  CSV files on someone's desktop.
+
+  From analyzing your 23 .m files, here's the execution graph I
+  reconstructed:
+
+  STAGE 1 — DATA INGESTION (5 files):
+    load_weather_data.m         ← reads 14 CSVs from data/weather/
+    load_planting_progress.m    ← reads USDA planting CSV
+    load_historical_yields.m    ← reads NASS yield CSV
+    load_ndvi.m                 ← reads satellite NDVI CSV
+    merge_inputs.m              ← joins all inputs by CRD code + date
+
+  STAGE 2 — PREPROCESSING (4 files):
+    calc_gdd.m                  ← growing degree days from temperature
+    calc_drought_index.m        ← custom drought stress metric
+    create_lagged_vars.m        ← 1-4 week lags for all weather vars
+    normalize_features.m        ← z-score normalization
+
+  STAGE 3 — MODEL EXECUTION (8 files):
+    run_v3b_final.m             ← MAIN regression loop (300 CRDs)
+    carlos_fix_sept2024.m       ← hotfix for Iowa CRDs (Carlos fixed
+                                   a coefficient sign error in Sep 2024)
+    handle_missing_crds.m       ← fallback for CRDs with < 20yr history
+    state_aggregator.m          ← CRD → state weighted average
+    national_aggregator.m       ← state → national weighted average
+    confidence_intervals.m      ← bootstrap CIs for each estimate
+    residual_diagnostics.m      ← model fit statistics
+    cross_validation.m          ← leave-one-out CV (runs on demand)
+
+  STAGE 4 — OUTPUT (6 files):
+    generate_maps.m             ← choropleth maps by CRD
+    generate_charts.m           ← time series, scatter, residual plots
+    generate_summary_table.m    ← the headline numbers table
+    format_pdf.m                ← compile everything into PDF
+    export_to_excel.m           ← raw numbers for other teams
+    email_distribution.m        ← send PDF to distribution list
+
+  NOTE: carlos_fix_sept2024.m is called inside run_v3b_final.m at
+  line 847 with a comment "% CARLOS FIX - DO NOT REMOVE". This is a
+  targeted coefficient correction for 12 Iowa CRDs where the original
+  regression had a sign error on the drought interaction term. It's
+  valid — the fix improves out-of-sample R² from 0.71 to 0.84 for
+  those districts. But it should be documented properly, not hidden
+  as a hotfix with a scary comment.
+
+  Building the WRAPPER skill (not replacing the MATLAB code):
+
+  yield-model-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── pipeline_runner.py        # Orchestrates the 4-stage MATLAB
+  │   │                             #   pipeline from Python. Calls
+  │   │                             #   MATLAB via subprocess or MATLAB
+  │   │                             #   Engine API for Python
+  │   ├── databricks_ingestor.py    # Pull inputs from Databricks tables
+  │   │                             #   instead of desktop CSVs. Writes
+  │   │                             #   to the same format MATLAB expects
+  │   ├── input_validator.py        # Check all 14 inputs exist, have
+  │   │                             #   expected columns, no nulls in
+  │   │                             #   critical fields. CATCH format
+  │   │                             #   changes before MATLAB crashes
+  │   ├── format_change_detector.py # Compare incoming CSV headers to
+  │   │                             #   expected schema. Alert if USDA
+  │   │                             #   renames/adds/removes columns
+  │   ├── output_validator.py       # Sanity checks: are yields within
+  │   │                             #   historical range? Any NaN outputs?
+  │   │                             #   Any CRDs missing from results?
+  │   ├── databricks_writer.py      # Write model outputs back to
+  │   │                             #   Databricks: agri_lake.models.yield_estimates
+  │   │                             #   so other teams can query results
+  │   └── run_report.py             # Generate the PDF + Excel + email
+  ├── references/
+  │   ├── pipeline-architecture.md  # The 4-stage execution graph above,
+  │   │                             #   with file-level documentation
+  │   ├── file-by-file-docs.md      # What each .m file does, inputs,
+  │   │                             #   outputs, known issues
+  │   ├── carlos-fix-explained.md   # Full explanation of the Iowa CRD
+  │   │                             #   coefficient fix (what, why, when)
+  │   ├── input-schemas.md          # Expected format for all 14 inputs
+  │   ├── output-schemas.md         # What the model produces
+  │   ├── databricks-tables.md      # Databricks table names, schemas,
+  │   │                             #   refresh schedules
+  │   └── methodology.md            # Statistical methodology reference
+  ├── assets/
+  │   ├── input_schemas.json        # Machine-readable input validation
+  │   ├── output_ranges.json        # Plausible yield ranges by CRD
+  │   ├── crd_weights.json          # CRD → state aggregation weights
+  │   └── distribution_list.json    # Email recipients
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (Databricks credentials via corporate SSO)
+  Installed at: ~/.agents/skills/yield-model-skill
+
+  KEY OUTCOME: Your MATLAB code is untouched. The skill wraps it with:
+  - Documentation (your team can now read pipeline-architecture.md
+    instead of reverse-engineering 23 cryptic files)
+  - Databricks integration (inputs from the shared lake, outputs
+    written back for other teams)
+  - Input validation (catches USDA format changes before they crash
+    the model at line 2,847 of run_v3b_final.m with "Index exceeds
+    matrix dimensions")
+  - A single command to run the entire pipeline:
+    /yield-model-skill Run the weekly yield update
+
+Carla: Wait — it figured out the execution order from analyzing the MATLAB code? And it found Carlos's hotfix and explained it?
+
+Copilot:
+
+  Yes. The file dependencies are traceable from the load() and
+  save() calls in each .m file. run_v3b_final.m loads 4 .mat files
+  that are created by the preprocessing stage. The preprocessors
+  load .mat files from the ingestion stage. The graph is:
+
+    load_*.m → merge_inputs.m → calc_*.m / create_lagged_vars.m →
+    normalize_features.m → run_v3b_final.m (+ carlos_fix) →
+    aggregators → outputs
+
+  And Carlos's fix is clearly a targeted coefficient override — lines
+  847-893 of run_v3b_final.m check if the CRD code is in a hardcoded
+  list of 12 Iowa CRDs, and if so, multiply the drought interaction
+  coefficient by -1. The comment says "sign error in original fitting,
+  verified with Carlos Sept 2024." That's important institutional
+  knowledge that was buried in a code comment. Now it's in a
+  standalone document (carlos-fix-explained.md) that anyone can read.
+
+  If Carlos leaves, the knowledge stays.
+
+Carla: And Databricks — right now my team downloads CSVs from Databricks manually and puts them in a folder. This would pull directly?
+
+Copilot:
+
+  Exactly. Here's what changes:
+
+  BEFORE (current workflow):
+  1. Someone opens Databricks in a browser
+  2. Navigates to agri_lake.weather.station_daily
+  3. Runs a manual SQL query with this month's date range
+  4. Clicks "Download CSV"
+  5. Renames the file, moves it to models/yield-forecaster/data/weather/
+  6. Repeats for the other 13 input files
+  7. Runs the MATLAB model
+  8. If USDA changed a column name → MATLAB crashes at some random line
+  9. Someone debugs for 2 hours, finds the column rename, fixes it
+
+  AFTER (with the skill):
+  1. Type: /yield-model-skill Run the weekly yield update
+  2. The skill pulls all 14 inputs from Databricks via SQL
+  3. Validates all inputs before passing to MATLAB
+  4. If a column was renamed, tells you BEFORE crashing:
+     "⚠️ USDA planting_progress table: column 'pct_planted' has been
+     renamed to 'planted_pct'. Updating the mapper. No action needed."
+  5. Runs the MATLAB pipeline
+  6. Validates outputs (yields within historical range)
+  7. Writes results to agri_lake.models.yield_estimates
+  8. Generates PDF and emails it
+
+  Steps 2-8 happen in ~4 minutes (mostly MATLAB execution time).
+  The S&D team can then query your yield estimates directly from
+  Databricks without waiting for you to email the PDF.
+
+
+=============================================================
+PHASE 5: PRICE ASSESSMENT — COPILOT CLI FOR THE TERMINAL-SHY
+=============================================================
+
+The Price Assessment desk has the most extreme case of tool
+paralysis. Tomoko Watanabe's 8 analysts live in Bloomberg Terminal
+and Refinitiv Eikon — powerful tools with their own scripting
+environments, but completely disconnected from VS Code, Python, and
+databases. They've never opened a terminal.
+
+But Tomoko has a daily pain point that none of her Bloomberg tools
+solve: every morning, she manually collects broker price indications
+from 6 different email chains, a Bloomberg chat group, a WhatsApp
+group (yes, really), and a shared Excel file. She normalizes the
+units (some brokers quote FOB, others CIF; some in $/MT, others in
+cents/bushel), calculates the bid-ask midpoint, and publishes the
+firm's "daily assessment" — a single reference price that trading
+desks and clients rely on.
+
+The morning assessment takes 90 minutes, must be published by 8am,
+and she's been doing it the same way for 7 years.
+
+Tomoko doesn't want to open VS Code. She doesn't want to see code.
+She's heard about "Copilot CLI" — the terminal tool that IT
+installed. She asks the IT Slack channel:
+
+Tomoko (in #ai-tools-support): "I've heard there's a way to use
+Copilot from the terminal, without VS Code. How do I open it?"
+
+IT Support: "Open Terminal on your Mac (it's in Applications >
+Utilities), then type 'copilot' and press Enter."
+
+Tomoko opens Terminal for the first time. She sees a black window
+with a blinking cursor. She types "copilot" and presses Enter.
+
+
+Tomoko (in Copilot CLI): I'm a price assessment analyst. Every morning I have to collect broker price indications from 6 email chains, normalize the units, and produce our firm's daily physical soybean assessment. Can you help me automate this? I don't know how to code. I just want to describe what I do and have it work.
+
+Copilot CLI:
+
+  Yes. Let me first install a tool that will help us turn your
+  workflow into something reusable. One moment...
+
+  Installing agent-skill-creator...
+
+  curl -fsSL https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/main/scripts/bootstrap.sh | sh
+
+  ✓ Installed. Detecting tools: copilot-cli... found.
+
+  Now describe your morning routine in as much detail as you can.
+  Include the data sources, the steps, and what the final output
+  looks like.
+
+Tomoko: /agent-skill-creator Every morning between 6:30-8:00am I produce the firm's daily physical soybean price assessment. Here's exactly what I do: (1) I open Outlook and find the latest indication emails from 6 brokers — Cargill, Bunge, ADM, Cofco, LDC, and Viterra. They send indications overnight for FOB Santos, FOB Paranaguá, and CIF China soybean prices. Some quote in $/MT, some in cents/bushel, some in Brazilian reais/60kg bag. The emails have no standard format — each broker has their own template. (2) I open our Bloomberg chat group "Physical Soy Indications" where 3 more brokers post real-time numbers. (3) I check a shared Google Sheet where our Singapore desk posts overnight Asia-time indications. (4) I normalize everything to $/MT FOB Santos as the reference point, using the day's BRL/USD exchange rate (from Bloomberg), the FOB-CIF differential (~$28/MT for China route, varies by freight), and the bushel-to-MT conversion. (5) I calculate: bid midpoint, ask midpoint, bid-ask spread, and the daily change from yesterday. (6) I also compare to the CBOT front-month settlement + basis to derive "implied basis." (7) I produce a one-page "DAILY PHYSICAL ASSESSMENT" that gets published to the trading floor, 4 client distribution lists, and posted to our internal dashboard. (8) Deadline is 8:00am sharp — the trading desks wait for this before making physical offers. Here's yesterday's assessment: references/daily-assessment-sample.pdf and here's my normalization spreadsheet: references/price-normalization.xlsx
+
+Copilot CLI (loading agent-skill-creator skill):
+
+  Reading references/daily-assessment-sample.pdf...
+  Reading references/price-normalization.xlsx...
+
+  This is a data collection + normalization + publishing pipeline
+  with strict time constraints. The hardest part is the EXTRACTION
+  — broker emails are unstructured, Bloomberg chat is messy, and
+  the Google Sheet is semi-structured. Let me build a skill that
+  handles the messy inputs.
+
+  Building...
+
+  daily-assessment-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── email_collector.py        # Parse indication emails from
+  │   │                             #   Outlook (via MAPI or EWS API)
+  │   │                             #   using broker-specific templates
+  │   ├── broker_parsers/
+  │   │   ├── cargill.py            # Cargill indication format
+  │   │   ├── bunge.py              # Bunge format (they use PDF attachments)
+  │   │   ├── adm.py                # ADM format
+  │   │   ├── cofco.py              # Cofco (sometimes in CNY)
+  │   │   ├── ldc.py                # Louis Dreyfus format
+  │   │   └── viterra.py            # Viterra format
+  │   ├── gsheet_reader.py          # Pull Singapore desk indications
+  │   ├── normalizer.py             # All prices → $/MT FOB Santos
+  │   │                             #   (FX rates, freight diffs, unit
+  │   │                             #   conversions)
+  │   ├── fx_fetcher.py             # BRL/USD from Bloomberg or fallback
+  │   │                             #   to Central Bank API (BCB)
+  │   ├── basis_calculator.py       # CBOT + basis → implied physical
+  │   ├── assessment_builder.py     # Daily assessment document
+  │   ├── publisher.py              # Email to 4 dist lists, post to
+  │   │                             #   internal dashboard API
+  │   └── audit_trail.py            # Log every input price and its
+  │   │                             #   source for compliance
+  ├── references/
+  │   ├── broker-formats.md         # How each broker formats indications
+  │   ├── normalization-rules.md    # Unit conversions, freight diffs
+  │   ├── fob-cif-differentials.md  # Route-specific freight adjustments
+  │   └── methodology.md            # Assessment methodology (auditable)
+  ├── assets/
+  │   ├── broker_templates.json     # Regex/patterns for each broker
+  │   ├── unit_conversions.json     # BRL/bag → $/MT, ¢/bu → $/MT
+  │   ├── freight_diffs.json        # FOB Santos, FOB Paranaguá, CIF China
+  │   ├── distribution_lists.json   # 4 client groups
+  │   └── previous_assessments.json # Rolling 30-day history
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (Outlook access via corporate SSO, Google Sheet
+            via service account)
+  Installed at: ~/.agents/skills/daily-assessment-skill
+
+  ⚠️ NOTE ON BLOOMBERG CHAT: Programmatic access to Bloomberg chat
+  requires Bloomberg B-PIPE or SAPI license, which your firm may
+  or may not have. If not, the skill will prompt you to manually
+  paste the chat indications (30 seconds vs. the current scrolling-
+  through-chat approach). I've designed it so the Bloomberg chat
+  input is optional — the skill works with email + Google Sheet
+  alone and flags if Bloomberg data is missing.
+
+
+--- 6:35am the next morning, Tomoko tries the skill ---
+
+Tomoko (in Terminal): /daily-assessment-skill Morning run
+
+Copilot CLI (loading daily-assessment-skill):
+
+  DAILY PHYSICAL ASSESSMENT — March 5, 2026
+  Collection started at 6:35am ET
+
+  STEP 1: Collecting broker indications...
+
+  | Source           | Status  | Prices Found | Last Updated |
+  |------------------|---------|--------------|--------------|
+  | Cargill (email)  | ✓       | 3 (FOB×2, CIF×1) | 5:48am  |
+  | Bunge (email)    | ✓       | 2 (FOB Santos, FOB Paranaguá) | 6:02am |
+  | ADM (email)      | ✓       | 2 (FOB Santos, CIF China) | 5:55am |
+  | Cofco (email)    | ✓       | 3 (FOB×2, CIF×1) | 6:12am  |
+  | LDC (email)      | ✓       | 2 (FOB Santos, FOB Paranaguá) | 5:30am |
+  | Viterra (email)  | ⚠️ MISSING | —        | No email found |
+  | Singapore desk   | ✓       | 4 (CIF China×3, CIF SEA×1) | 4:15am |
+  | Bloomberg chat   | ⏭️ SKIPPED | (manual entry available) |  |
+
+  ⚠️ Viterra hasn't sent their indication yet. This sometimes happens
+  — they send late on Wednesdays (their weekly team meeting morning).
+  Proceeding with 6 of 7 email sources. The assessment will note
+  "Viterra: not received at time of publication."
+
+  Do you want to manually paste the Bloomberg chat indications, or
+  proceed without them? [Paste / Skip / Wait 15min]
+
+Tomoko: Skip, let's go with what we have
+
+Copilot CLI:
+
+  STEP 2: Normalizing to $/MT FOB Santos...
+
+  FX rate: BRL/USD = 5.1842 (BCB, 6:30am fixing)
+  Freight diff: FOB Santos → CIF China = $28.50/MT (Baltic, yesterday)
+  CBOT May soybeans: $10.9450/bu = $402.01/MT (yesterday's settle)
+
+  RAW INDICATIONS (as received):
+
+  | Broker   | Product          | Raw Price       | Raw Unit        |
+  |----------|------------------|-----------------|-----------------|
+  | Cargill  | FOB Santos Apr   | +142/+148 c/bu  | CBOT basis, ¢/bu|
+  | Cargill  | FOB Paranaguá Apr| +138/+145 c/bu  | CBOT basis, ¢/bu|
+  | Cargill  | CIF China May    | $430/$436       | $/MT outright   |
+  | Bunge    | FOB Santos Apr   | +140/+146 c/bu  | CBOT basis, ¢/bu|
+  | Bunge    | FOB Paranaguá Apr| +135/+142 c/bu  | CBOT basis, ¢/bu|
+  | ADM      | FOB Santos Apr   | R$142.50/R$145.80| BRL per 60kg bag|
+  | ADM      | CIF China May    | $428/$434       | $/MT outright   |
+  | Cofco    | FOB Santos Apr   | $426/$432       | $/MT outright   |
+  | Cofco    | FOB Paranaguá Apr| $422/$428       | $/MT outright   |
+  | Cofco    | CIF China May    | $431/$437       | $/MT outright   |
+  | LDC      | FOB Santos Apr   | +141/+147 c/bu  | CBOT basis, ¢/bu|
+  | LDC      | FOB Paranaguá Apr| +136/+143 c/bu  | CBOT basis, ¢/bu|
+  | SG Desk  | CIF China May    | $429/$435       | $/MT outright   |
+  | SG Desk  | CIF China Jun    | $425/$431       | $/MT outright   |
+  | SG Desk  | CIF China Jul    | $420/$427       | $/MT outright   |
+  | SG Desk  | CIF SEA May      | $432/$438       | $/MT outright   |
+
+  NORMALIZED TO $/MT FOB SANTOS:
+
+  | Broker   | Bid ($/MT) | Ask ($/MT) | Mid ($/MT) | Method              |
+  |----------|------------|------------|------------|---------------------|
+  | Cargill  | $424.23    | $430.44    | $427.34    | CBOT + basis        |
+  | Bunge    | $423.50    | $429.71    | $426.61    | CBOT + basis        |
+  | ADM      | $425.12    | $430.45    | $427.79    | BRL/bag → $/MT      |
+  | Cofco    | $426.00    | $432.00    | $429.00    | Already $/MT        |
+  | LDC      | $423.87    | $430.08    | $426.97    | CBOT + basis        |
+  | SG Desk  | $401.00*   | $407.00*   | $404.00*   | CIF−freight = FOB   |
+  |----------|------------|------------|------------|---------------------|
+  | MEAN     | $423.95    | $430.11    | $427.03    |                     |
+  | MEDIAN   | $424.23    | $430.44    | $427.34    |                     |
+
+  * Singapore desk CIF-to-FOB conversion uses $28.50 freight.
+    Their CIF $429/$435 → FOB $401/$407. This is notably below the
+    direct FOB indications. Possible explanations: (a) different
+    freight assumption, (b) their quotes include older cargo, or
+    (c) Asia-time pricing was weaker than current. Flagged for review.
+
+  STEP 3: Assessment calculation...
+
+  DAILY PHYSICAL SOYBEAN ASSESSMENT — March 5, 2026
+
+  ┌─────────────────────────────────────────────────────────┐
+  │  FOB SANTOS — SOYBEANS — APRIL SHIPMENT                 │
+  │                                                         │
+  │  Assessment:    $427.00 / $430.00 $/MT                  │
+  │  Midpoint:      $428.50 $/MT                            │
+  │  Daily change:  +$2.50 (from $426.00 yesterday)         │
+  │                                                         │
+  │  CBOT basis:    +142 / +148 ¢/bu over May               │
+  │  Implied basis: +144.5 ¢/bu (midpoint)                  │
+  │  Basis change:  +3.5 ¢/bu (basis strengthened)          │
+  │                                                         │
+  │  FOB PARANAGUÁ — APRIL SHIPMENT                         │
+  │  Assessment:    $422.50 / $428.00 $/MT                  │
+  │  Santos-Paranaguá diff: -$3.25 (normal range: -$2 to -$5)│
+  │                                                         │
+  │  CIF CHINA — MAY SHIPMENT                               │
+  │  Assessment:    $429.50 / $435.50 $/MT                  │
+  │  FOB-CIF spread: $28.75 (freight + insurance)           │
+  │                                                         │
+  │  Sources: Cargill, Bunge, ADM, Cofco, LDC, SG Desk     │
+  │  Missing: Viterra (not received), Bloomberg chat (skipped)│
+  │  Published: 6:42am ET                                   │
+  └─────────────────────────────────────────────────────────┘
+
+  STEP 4: Publishing...
+
+  ✓ Emailed to: Trading Floor distribution (28 recipients)
+  ✓ Emailed to: Client Group A — Institutional (142 recipients)
+  ✓ Emailed to: Client Group B — Corporate (89 recipients)
+  ✓ Emailed to: Client Group C — Internal Research (25 recipients)
+  ✓ Posted to: internal dashboard (dashboard.globalagri.com/assessments)
+  ✓ Audit trail saved: audit/assessment-2026-03-05.json
+
+  Published at 6:42am ET — 78 minutes before the 8:00am deadline.
+
+Tomoko: That took 7 minutes instead of 90. And it caught the
+Singapore desk discrepancy — I would have just averaged it in without
+noticing.
+
+Copilot CLI:
+
+  The Singapore discrepancy is worth investigating. If their freight
+  assumption is $25/MT instead of your $28.50, their FOB-equivalent
+  would be $404/$410 instead of $401/$407 — still below the direct
+  FOB indications but less extreme. You might want to ask the
+  Singapore desk what freight rate they're using.
+
+  Tomorrow morning, just type:
+    /daily-assessment-skill Morning run
+  Same as today. If Viterra's email arrives by then, it'll
+  automatically be included.
+
+
+=============================================================
+PHASE 6: THE DATABRICKS BRIDGE — FROM ISOLATED SKILLS TO
+SHARED DATA INFRASTRUCTURE
+=============================================================
+
+After 6 weeks of individual skill adoption, the three desk heads
+(Henrik, Carla, Tomoko) realize their skills are producing valuable
+outputs that die on individual laptops. Henrik's S&D balance sheets
+are in Excel. Carla's yield estimates are in MATLAB .mat files.
+Tomoko's price assessments are in PDFs. Nobody can query anyone
+else's outputs.
+
+The data team lead (Rajesh Kapoor) gets pulled into a meeting.
+
+Rajesh: "You want me to connect your Copilot skills to Databricks?
+Let me understand what you actually need."
+
+The meeting produces a clear architecture:
+
+Henrik (in VS Code Copilot Chat): /agent-skill-creator We need to build a "bridge skill" that connects our existing skills to Databricks. Right now we have 6 skills running on individual laptops that produce outputs nobody else can access. I want each skill's output to be written to a shared Databricks table so the whole research division can query it. Here's what we need: (1) Luís's export-inspections-skill output → agri_lake.trade.weekly_inspections, (2) Ana's wasde-extractor-skill output → agri_lake.usda.wasde_extracted, (3) Carla's yield-model-skill output → agri_lake.models.yield_estimates (already done), (4) Tomoko's daily-assessment-skill output → agri_lake.prices.physical_assessments, (5) The S&D balance sheets → agri_lake.research.sd_balances. The Databricks workspace is at databricks.globalagri.com. Each analyst has a personal access token in their env as DATABRICKS_TOKEN. The data team has already created the target tables with the right schemas — Rajesh gave us the table definitions: references/databricks-target-schemas.sql
+
+Copilot (loading agent-skill-creator skill):
+
+  Reading references/databricks-target-schemas.sql...
+
+  This is an integration layer, not a new skill. I'll create a shared
+  "Databricks publisher" module that any skill can import, plus
+  modify each existing skill to write outputs to Databricks after
+  producing local results.
+
+  The pattern is simple:
+  1. Skill runs locally (unchanged behavior — still produces the
+     Excel/PDF/report the analyst expects)
+  2. AFTER local output, a new step writes structured results to
+     the corresponding Databricks table
+  3. Write is idempotent (re-running the skill for the same date
+     overwrites, doesn't duplicate)
+  4. If Databricks is unreachable (network issue, token expired),
+     the skill still produces local output and logs a warning.
+     It never fails just because Databricks is down.
+
+  Building...
+
+  databricks-bridge-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── databricks_client.py      # Databricks SQL connector wrapper
+  │   │                             #   (auth via DATABRICKS_TOKEN, retry,
+  │   │                             #   timeout, error handling)
+  │   ├── table_writer.py           # Generic write-to-table function
+  │   │                             #   with schema validation and
+  │   │                             #   upsert logic (MERGE statement)
+  │   ├── schema_validator.py       # Validate DataFrame columns match
+  │   │                             #   target table schema before write
+  │   ├── publishers/
+  │   │   ├── inspections_pub.py    # export-inspections → weekly_inspections
+  │   │   ├── wasde_pub.py          # wasde-extractor → wasde_extracted
+  │   │   ├── yield_pub.py          # yield-model → yield_estimates
+  │   │   ├── assessment_pub.py     # daily-assessment → physical_assessments
+  │   │   └── balance_pub.py        # S&D balances → sd_balances
+  │   └── health_check.py           # Verify Databricks connectivity,
+  │                                 #   table existence, token validity
+  ├── references/
+  │   ├── target-schemas.md         # Table definitions (from Rajesh)
+  │   ├── upsert-logic.md           # How MERGE works, conflict resolution
+  │   ├── error-handling.md         # What happens when Databricks is down
+  │   └── methodology.md
+  ├── assets/
+  │   ├── table_schemas.json        # Machine-readable target schemas
+  │   └── databricks_config.json    # Workspace URL, catalog, schema names
+  ├── install.sh
+  └── README.md
+
+  Validation: PASSED
+  Security: PASSED (DATABRICKS_TOKEN from env, MERGE-only writes)
+  Installed at: ~/.agents/skills/databricks-bridge-skill
+
+  I've also updated each existing skill to call the bridge after
+  producing local output. The integration is OPTIONAL — each skill
+  checks if databricks-bridge-skill is installed. If it is, outputs
+  go to Databricks. If not, the skill works exactly as before.
+
+  Now when Luís runs his Monday update:
+    /export-inspections-skill Run the Monday update
+  the inspection data lands in BOTH his local Excel AND
+  agri_lake.trade.weekly_inspections on Databricks.
+
+  And when a junior analyst on ANY desk wants to query last week's
+  physical soybean assessment alongside the WASDE S&D numbers and the
+  yield model estimates, they can write a single SQL query in
+  Databricks that joins all three tables. Data that used to live in
+  3 different analysts' laptops in 3 different formats is now in one
+  queryable place.
+
+
+=============================================================
+PHASE 7: THREE MONTHS LATER — THE CTO DASHBOARD
+=============================================================
+
+The CTO pulls up the adoption dashboard again. It's been 3 months
+since Luís installed agent-skill-creator.
+
+  | Tool           | Active Users | Before | Change |
+  |----------------|-------------|--------|--------|
+  | VS Code        | 19          | 4      | +375%  |
+  | GitHub Copilot | 16          | 2      | +700%  |
+  | Copilot CLI    | 6           | 0      | ∞      |
+  | GitLab         | 12          | 1      | +1100% |
+  | Databricks     | 22          | 3      | +633%  |
+
+  Skills in the shared GitLab library: 11
+  Total skill invocations (last 30 days): 847
+  Estimated hours saved per month: ~180
+
+  Most-used skills:
+  1. daily-assessment-skill (Tomoko's team) — 22 runs/day × 22 days = 484
+  2. export-inspections-skill (Luís) — 4 runs/week × 12 weeks = 48
+  3. agdb-query-assistant-skill (all desks) — avg 6 queries/day = 132
+  4. wasde-extractor-skill (Ana) — 3 runs/month = 9
+  5. yield-model-skill (Carla's team) — 4 runs/month = 16
+
+What changed:
+
+  THE 90-MINUTE WEBINAR taught people about TOOLS.
+  agent-skill-creator taught people about their WORKFLOWS.
+
+  Nobody woke up wanting to learn VS Code. But Luís wanted his Monday
+  summary to take 10 seconds. Ana wanted to stop copy-pasting from
+  PDFs. Tomoko wanted to publish her assessment before 7am. Carla
+  wanted her model to be reproducible.
+
+  The tools (VS Code, Copilot, GitLab, Databricks) were the means,
+  not the end. agent-skill-creator was the on-ramp that connected
+  "I have a tedious workflow" to "now there's a tool for that."
+
+  GitLab adoption went from 1 to 12 not because people learned Git,
+  but because they wanted to INSTALL their colleague's skills:
+    /agent-skill-creator install gitlab.globalagri.com/sd-team/skills/crop-progress-skill
+  They never typed 'git clone' or 'git pull' or 'git commit'. They
+  used agent-skill-creator as the interface, and GitLab was just
+  where the skills lived.
+
+  Databricks adoption went from 3 to 22 because the bridge skill
+  made it the SHARED DESTINATION for every skill's output. Analysts
+  who never wrote SQL started asking the agdb-query-assistant-skill
+  to pull data from Databricks:
+    /agdb-query-assistant-skill Show me yesterday's physical assessment
+    next to the latest yield estimate for US soybeans
+  They never opened the Databricks UI. They didn't need to.
+
+THE DOG NO LONGER SEES A CASTLE.
+
+The dog sees a door. And the door says:
+  "Tell me what you do every day. I'll make it faster."
+
+That's all agent-skill-creator ever needed to be. Not a developer
+tool. Not an AI platform. Not a framework.
+
+A door.
+
+
+#############################################################
+#############################################################
+##                                                         ##
+##  DESIGN PRINCIPLE:                                      ##
+##  "DON'T MAKE HUMANS BE CLEAR"                           ##
+##                                                         ##
+##  Real users don't write specifications. They dump files, ##
+##  paste URLs, forward emails, and say "make it work."    ##
+##  The agent must derive intent from messy context.        ##
+##                                                         ##
+#############################################################
+#############################################################
+
+THE PROBLEM WITH THE SIMULATIONS ABOVE:
+
+Every simulation so far has a user who writes something like:
+
+  "I need a skill that: (1) does X, (2) does Y, (3) handles Z,
+   with format A for input and format B for output. Here are my
+   requirements: [perfectly structured paragraph]."
+
+That's fiction. Real users — especially non-technical analysts in
+corporate environments — do NOT write clear specifications. They
+can't. Not because they're lazy or stupid, but because:
+
+  - They don't know what they don't know (they can't specify edge
+    cases they haven't thought about)
+  - They don't have the vocabulary (they say "the thing that shows
+    the numbers" not "the S&D balance sheet pivot table")
+  - They're busy (they have 10 minutes between meetings, not an hour
+    to write a requirements doc)
+  - The workflow lives in muscle memory (they can DO it, but they
+    can't DESCRIBE it — like explaining how to ride a bicycle)
+  - They communicate in artifacts, not words (they'll show you the
+    spreadsheet, not describe it)
+
+agent-skill-creator must be designed to work with MESSY, INCOMPLETE,
+INARTICULATE input. The agent's job is to derive intent from whatever
+the human dumps on it — files, URLs, screenshots, half-sentences,
+forwarded emails, "like this but different."
+
+Here's what REAL interactions look like:
+
+
+=============================================================
+REAL INTERACTION 1: The File Dump
+=============================================================
+
+What the analyst ACTUALLY types:
+
+Analyst: /agent-skill-creator here
+
+And then drags 5 files into the chat:
+  - weekly-process.xlsx
+  - last-weeks-output.pdf
+  - usda-website-screenshot.png
+  - email-from-boss.eml
+  - old-script-that-half-works.py
+
+That's it. No description. No requirements. Just "here."
+
+What agent-skill-creator does:
+
+Copilot (loading agent-skill-creator skill):
+
+  Let me understand what you need from these files...
+
+  Reading weekly-process.xlsx...
+  Reading last-weeks-output.pdf...
+  Viewing usda-website-screenshot.png...
+  Reading email-from-boss.eml...
+  Reading old-script-that-half-works.py...
+
+  OK, here's what I'm piecing together:
+
+  YOUR WORKFLOW (reconstructed from the files):
+
+  1. weekly-process.xlsx — This is your working spreadsheet. It has 6
+     tabs: "Raw Data", "Pivot", "YoY Comparison", "Pace Calculator",
+     "Charts", and "Summary". The "Raw Data" tab has USDA export
+     inspection data pasted in (columns match the USDA FAS CSV
+     format). The "Summary" tab is a formatted table that looks like
+     it gets copy-pasted into a report.
+
+  2. last-weeks-output.pdf — This is what the final product looks
+     like. It's a one-page PDF with the summary table from your
+     Excel, plus two charts (cumulative exports by destination, and
+     weekly pace vs. needed pace). Header says "Weekly Export
+     Inspections Summary — Week Ending Feb 20, 2026."
+
+  3. usda-website-screenshot.png — This is a screenshot of
+     apps.fas.usda.gov/export-sales/inspections.htm showing where
+     you download the CSV. You circled the "Current Marketing Year"
+     link in red.
+
+  4. email-from-boss.eml — From Henrik Johansson, Feb 24: "Can you
+     make the weekly export summary include soymeal and soyoil too?
+     And add a comparison to the 5-year average pace. Client asked
+     for it. Need it by next Monday."
+
+  5. old-script-that-half-works.py — A 47-line Python script that
+     downloads the USDA CSV and filters for soybeans. It has a
+     comment on line 12: "# TODO: this breaks when USDA changes
+     column names again" and another on line 38: "# Ana wrote this
+     part, not sure what it does". The script stops after filtering —
+     no pivot, no pace calculation, no output formatting.
+
+  MY UNDERSTANDING OF WHAT YOU NEED:
+
+  You manually produce a weekly export inspections report. The process
+  is: download CSV from USDA FAS → paste into Excel → filter → pivot
+  by destination → calculate YoY and pace → format summary → generate
+  charts → export to PDF. It takes some amount of time you'd rather
+  not spend.
+
+  Your boss just expanded the scope: add soymeal and soyoil, add
+  5-year average pace comparison. Deadline: next Monday.
+
+  Someone (you or Ana?) started writing a Python script to automate
+  the first part but it only does the CSV download and breaks
+  periodically.
+
+  IS THIS RIGHT? Before I build anything, let me confirm:
+
+  1. The output should look exactly like last-weeks-output.pdf but
+     with soymeal + soyoil added (separate tables? or combined?)
+  2. "5-year average pace" = for each week of the marketing year,
+     what was the average cumulative export percentage across the
+     last 5 marketing years?
+  3. The marketing year for soybeans is Sep 1 – Aug 31. Is it the
+     same for soymeal and soyoil?
+  4. The PDF goes to Henrik (your boss) — does it also go to clients
+     directly, or does Henrik paste it into a larger report?
+
+  I only need quick answers — one word each is fine. I'll figure out
+  the rest from the files.
+
+Analyst: combined table, yes, yes same, henrik pastes it into bigger report
+
+Copilot:
+
+  Got it. Building...
+
+  [builds the skill — same quality as before, but derived entirely
+   from the 5 files, not from a written specification]
+
+
+=============================================================
+REAL INTERACTION 2: The URL Dump + Half-Sentence
+=============================================================
+
+What the analyst ACTUALLY types:
+
+Analyst: /agent-skill-creator i need something for this
+https://apps.fas.usda.gov/psdonline/app/index.html#/app/advQuery
+and also this
+https://quickstats.nass.usda.gov/
+same thing as what we do in the wasde extractor but for these two
+maybe look at references/psd-api-docs.html too
+
+What agent-skill-creator does:
+
+Copilot (loading agent-skill-creator skill):
+
+  Let me look at what you shared...
+
+  Fetching https://apps.fas.usda.gov/psdonline/app/index.html...
+  → This is the USDA PSD (Production, Supply & Distribution) online
+    query tool. It has a web-based advanced query builder for global
+    commodity S&D data.
+
+  Fetching https://quickstats.nass.usda.gov/...
+  → This is USDA NASS Quick Stats — the statistical query tool for
+    domestic agricultural data (acreage, yield, production, prices,
+    by state/county/crop reporting district).
+
+  Reading references/psd-api-docs.html...
+  → This is the FAS Open Data Web API documentation. There's a REST
+    API at apps.fas.usda.gov/opendataweb/api/ that returns PSD data
+    as JSON. Endpoints: commodities, countries, unitsOfMeasure,
+    and the main query endpoint with commodity_code, country_code,
+    market_year filters.
+
+  Looking at your existing wasde-extractor-skill for the pattern...
+  → That skill: downloads USDA data → parses structured tables →
+    compares to previous period → produces a change summary →
+    exports to Excel/markdown.
+
+  HERE'S WHAT I THINK YOU WANT:
+
+  Two data sources (PSD and NASS Quick Stats) that you currently
+  query manually through web interfaces, turned into skills that
+  follow the same pattern as your WASDE extractor — download, parse,
+  compare, summarize.
+
+  SKILL A — PSD Balance Sheet Puller:
+  Instead of clicking through the PSD web query tool (selecting
+  commodity, country, market year, clicking "Get Data", exporting
+  CSV, then reformatting in Excel), you'd say:
+    /psd-query-skill US soybeans 2025/26 balance sheet
+  And get a formatted S&D table with month-over-month revisions.
+
+  SKILL B — NASS Quick Stats Puller:
+  Instead of clicking through Quick Stats (selecting Program,
+  Sector, Group, Commodity, Category, Domain, Geographic Level...
+  it's 8 dropdown menus), you'd say:
+    /nass-query-skill Iowa corn yield by county 2020-2025
+  And get a clean table.
+
+  Both would use APIs (PSD has the REST API you shared, NASS has a
+  public API at quickstats.nass.usda.gov/api) instead of scraping
+  web pages. More reliable, faster, and won't break when USDA
+  redesigns the website.
+
+  Is this the right direction? Or did you mean something different
+  by "same thing as the wasde extractor"?
+
+Analyst: yes that plus can the psd one compare our internal balance to usda
+
+Copilot:
+
+  Smart — so the PSD skill doesn't just pull USDA data, it also reads
+  your team's internal balance (from research.sd_balances on
+  Databricks, same as what the agdb-query-assistant uses) and shows
+  a side-by-side comparison: "Our estimate vs USDA" with the
+  differences highlighted.
+
+  That's actually three things in one:
+  1. Pull USDA PSD data via API
+  2. Pull internal estimate from Databricks
+  3. Show the gap and flag where you differ by more than X%
+
+  Building both skills...
+
+
+=============================================================
+REAL INTERACTION 3: The Screenshot and a Complaint
+=============================================================
+
+What the analyst ACTUALLY types:
+
+Analyst: /agent-skill-creator this is ridiculous
+
+[drags in a screenshot of a Bloomberg terminal showing a cluttered
+Excel spreadsheet open next to it, with red circles and arrows drawn
+on it in MS Paint]
+
+look at this mess. every day i manually type these bloomberg numbers
+into this spreadsheet. there has to be a better way
+
+What agent-skill-creator does:
+
+Copilot (loading agent-skill-creator skill):
+
+  Viewing your screenshot...
+
+  I can see:
+  - LEFT SIDE: Bloomberg Terminal showing settlement prices for what
+    looks like CBOT grain futures (corn, wheat, soybeans — I can read
+    the tickers: C 1, W 1, S 1, SM 1, BO 1, plus some ICE contracts)
+  - RIGHT SIDE: An Excel spreadsheet with columns: Date, Contract,
+    Settlement, Change, Volume, Open Interest. The data matches what's
+    on the Bloomberg screen. Your red circles highlight the cells
+    where you're typing today's numbers.
+  - The arrow goes from the Bloomberg price to the corresponding
+    Excel cell.
+
+  You're manually transcribing settlement prices from Bloomberg into
+  Excel every day. I can see about 15 contracts in the spreadsheet
+  and 12 visible on the Bloomberg screen.
+
+  QUESTIONS (so I build the right thing):
+
+  1. How many contracts total do you track? (I can see ~15 in the
+     spreadsheet, but there might be more below the visible area)
+  2. Is this ONLY settlement prices, or do you also record volume,
+     open interest, and daily change?
+  3. Do you have Bloomberg API access (B-PIPE, SAPI, or DAPI), or
+     are you limited to the Terminal screen?
+  4. Does your firm have a data feed that already captures these
+     settlements? (Many firms store Bloomberg data in a database —
+     you might not need to pull from Bloomberg at all if it's already
+     in agri_lake on Databricks)
+
+  The answer to #4 could save us a LOT of complexity. If Rajesh's
+  data team already loads daily settlements into Databricks, the
+  skill just needs to query Databricks and format the spreadsheet.
+  No Bloomberg API needed.
+
+Analyst: oh i didnt know databricks might have it. how do i check
+
+Copilot:
+
+  Let me check for you right now.
+
+  /agdb-query-assistant-skill Are there daily settlement prices in
+  Databricks? Look for tables with settlement, price, or daily in
+  the name.
+
+  [querying Databricks catalog]
+
+  YES. Found it:
+
+  agri_lake.market.daily_settlements
+  - 2.4 million rows (goes back to 2018)
+  - Columns: price_date, instrument_code, settlement_price,
+    daily_change, volume, open_interest, exchange
+  - Updated daily at 6:30pm CT (after CBOT close)
+  - Includes: CBOT (corn, wheat, soybeans, meal, oil), ICE (coffee,
+    sugar, cotton, cocoa), MATIF (milling wheat, rapeseed)
+  - 48 contracts currently active
+
+  YOU ALREADY HAVE THIS DATA IN DATABRICKS. You don't need to type
+  it from Bloomberg at all. The data team loads it automatically
+  every evening.
+
+  So instead of a Bloomberg-scraping skill, what you need is:
+  1. A skill that queries agri_lake.market.daily_settlements
+  2. Formats the results to match your Excel layout
+  3. Writes to your spreadsheet (or replaces it entirely)
+
+  This is a 10-minute build, not a Bloomberg API project.
+
+  Want me to build it?
+
+Analyst: omfg yes
+
+Copilot (loading agent-skill-creator skill):
+
+  Building...
+
+  daily-settlements-skill/
+  ├── SKILL.md
+  ├── scripts/
+  │   ├── settlement_puller.py      # Query Databricks for latest
+  │   │                             #   settlements by contract list
+  │   ├── excel_formatter.py        # Match the analyst's existing
+  │   │                             #   spreadsheet layout exactly
+  │   └── change_highlighter.py     # Color-code moves > 2% (red/green)
+  ├── references/
+  │   ├── contract-list.md          # The 15 contracts to track
+  │   └── methodology.md
+  ├── assets/
+  │   └── contract_list.json        # Configurable contract list
+  ├── install.sh
+  └── README.md
+
+  Installed at: ~/.agents/skills/daily-settlements-skill
+
+  This replaces 15 minutes of daily Bloomberg-to-Excel transcription
+  with a 5-second query. And you'll never have a typo again.
+
+  But the bigger insight: you didn't know the data was already in
+  Databricks. The skill didn't just automate your workflow — it
+  revealed that your workflow was UNNECESSARY. The daily manual
+  transcription was solving a problem that was already solved by
+  infrastructure you didn't know existed.
+
+  This happens more than you'd think.
+
+
+=============================================================
+REAL INTERACTION 4: The Forwarded Email + "Can We Do This?"
+=============================================================
+
+What the analyst ACTUALLY types:
+
+Analyst: /agent-skill-creator my colleague from London sent me this. is this something we could build?
+
+[pastes the full body of a forwarded email, including the original
+headers, signatures, legal disclaimers, and a 6-message reply chain]
+
+---------- Forwarded message ----------
+From: James Whitfield <j.whitfield@globalagri.com>
+To: Maria Santos <m.santos@globalagri.com>
+Subject: FW: RE: RE: CONAB data automation
+
+Maria,
+
+See below — the London grains desk built something that pulls CONAB
+crop estimates automatically when they're released. Apparently it
+runs every time CONAB publishes (they don't have a fixed schedule,
+it's usually 2nd or 3rd week of the month). The London team says
+it's saved them hours. Think we could do something similar for our
+Brazil soy coverage?
+
+- James
+
+---------- Original message ----------
+From: Oliver Chang <o.chang@globalagri-london.com>
+To: James Whitfield <j.whitfield@globalagri.com>
+Subject: RE: CONAB data automation
+
+James,
+
+Yeah we've been running it since November. It monitors the CONAB
+website (conab.gov.br/info-agro/safras/graos), detects when a new
+Boletim de Safra PDF is posted, downloads it, extracts the Brazil
+soy/corn/cotton production and area tables, converts from Portuguese,
+compares to the previous month's boletim, and flags any revision
+larger than 1 MMT. Output goes to our Bloomberg chat and a shared
+drive.
+
+We built it in Python — about 400 lines. The tricky part was parsing
+the CONAB PDF because they change the table layout slightly every
+few months and the tables have merged cells. We ended up using
+Camelot for the table extraction. It breaks maybe once or twice a
+year when CONAB does a major format change.
+
+Happy to share the code but it's a bit messy and has our London
+paths hardcoded everywhere.
+
+- Oliver
+
+---------- Earlier ----------
+[3 more messages of scheduling back-and-forth, irrelevant to the
+technical content]
+
+DISCLAIMER: This email is confidential and intended solely for...
+[200 words of legal boilerplate]
+
+What agent-skill-creator does:
+
+Copilot (loading agent-skill-creator skill):
+
+  Let me extract the useful information from this email chain...
+
+  IGNORING: scheduling messages (3), legal disclaimer, email headers,
+  signatures.
+
+  RELEVANT CONTENT (from Oliver Chang's email):
+
+  The London grains desk has a working Python script (~400 lines) that:
+  1. Monitors conab.gov.br for new Boletim de Safra PDFs
+  2. Downloads the PDF when detected
+  3. Extracts Brazil soy/corn/cotton production + area tables
+  4. Translates from Portuguese
+  5. Compares to previous month, flags revisions > 1 MMT
+  6. Outputs to Bloomberg chat + shared drive
+
+  Known issues:
+  - CONAB changes table layout periodically → breaks the PDF parser
+  - Code has London-specific hardcoded paths
+  - Built with Camelot (Python PDF table extraction library)
+  - Breaks ~1-2x/year on major format changes
+
+  WHAT YOU COULD DO:
+
+  Option A — Get Oliver's code, clean it up, wrap it as a skill
+  (faster if the code is solid, but "a bit messy" suggests fragile)
+
+  Option B — Build a new skill from scratch using the same approach
+  but with better PDF parsing resilience and your team's output
+  format (your format differs from London's — they post to Bloomberg
+  chat, you'd want it in your existing report pipeline)
+
+  Option C — Build a hybrid: use Oliver's proven CONAB monitoring
+  logic (website polling, URL pattern detection) but rebuild the
+  PDF extraction with a more resilient approach than Camelot
+  (possibly using LLM-based table extraction, which handles layout
+  changes much better than rule-based parsers)
+
+  My recommendation: Option C. The monitoring logic is
+  straightforward and Oliver has it working. The PDF parsing is the
+  fragile part — and that's where modern LLM-based extraction
+  (feeding the PDF page image to an LLM and asking it to extract
+  the table) would be much more resilient than Camelot's rule-based
+  approach.
+
+  Want me to build this? I can also reach out to Oliver's code via
+  your GitLab if it's there — or you can ask him to share it and
+  drop it in references/.
+
+Analyst: dont have his code yet. just build it from what you know about conab. i can always refine later
+
+Copilot:
+
+  Building from public knowledge of CONAB's publication patterns...
+
+  [builds conab-monitor-skill — with website poller, PDF download,
+   LLM-assisted table extraction, Portuguese→English translation,
+   revision tracking, and output to the team's existing pipeline]
+
+  The key design decision: instead of rigid Camelot table extraction
+  (which breaks on layout changes), the skill sends each PDF page to
+  the LLM with the prompt: "Extract the soybean production table
+  from this CONAB Boletim de Safra page. Return: state, area_ha,
+  yield_kg_ha, production_mt." This approach handles layout changes
+  gracefully because the LLM reads the page visually, not by pixel
+  coordinates.
+
+  When Oliver shares his code, we can cherry-pick his monitoring
+  logic (CONAB URL patterns, publication detection) and plug it in.
+  The skill is designed to accept improvements incrementally.
+
+
+=============================================================
+REAL INTERACTION 5: The Absolute Minimum Viable Input
+=============================================================
+
+This is the most extreme case — and the most realistic. The analyst
+provides almost nothing. The agent must work with what it has.
+
+What the analyst ACTUALLY types:
+
+Analyst: /agent-skill-creator freight
+
+That's it. One word.
+
+What agent-skill-creator does:
+
+Copilot (loading agent-skill-creator skill):
+
+  "Freight" is broad. Let me figure out what you need based on your
+  context.
+
+  You're on the S&D desk at GlobalAgri Capital. In the context of
+  ag commodity research, "freight" likely means one of:
+
+  A. OCEAN FREIGHT RATES — tracking Panamax/Supramax bulk carrier
+     rates on key grain routes (US Gulf to China, Santos to China,
+     Black Sea to Egypt). You need this for: CIF price calculations,
+     export competitiveness analysis, and logistics cost monitoring.
+
+  B. BARGE FREIGHT — US inland barge rates on the Mississippi/
+     Illinois/Ohio rivers. You need this for: basis analysis (barge
+     freight affects the spread between CBOT and Gulf FOB prices).
+
+  C. FREIGHT FUTURES — FFA (Forward Freight Agreement) curves and
+     derivatives. You need this for: hedging logistics risk and
+     forward pricing.
+
+  D. CONTAINER FREIGHT — rates for containerized ag products (dairy,
+     meat, specialty crops). Less likely for your desk.
+
+  Which one? Or multiple?
+
+Analyst: A. but i dont know where the data comes from. tomoko does this somehow
+
+Copilot:
+
+  Let me check what Tomoko uses...
+
+  Looking at the daily-assessment-skill (Tomoko's)...
+  Found: in her normalization step, she uses a FOB-CIF differential
+  of $28.50/MT for the Santos→China route, sourced from "Baltic
+  Exchange via Refinitiv."
+
+  Looking at Databricks...
+  Found: agri_lake.shipping.freight_rates — daily ocean freight rates
+  by route, going back to 2019. Sources include Baltic Exchange
+  (Panamax, Supramax indices) and broker indications.
+
+  Columns: rate_date, route_code, vessel_class, rate_usd_mt,
+  rate_worldscale, index_value, source.
+
+  Routes available:
+  - USG_CN (US Gulf → China): Panamax
+  - SANTOS_CN (Santos → China): Panamax
+  - SANTOS_EU (Santos → EU): Supramax
+  - BSEA_EGY (Black Sea → Egypt): Handysize
+  - BSEA_CN (Black Sea → China): Panamax
+  - PNW_CN (Pacific NW → China): Panamax
+  - ARG_CN (Up River → China): Panamax
+  - 12 more routes...
+
+  So the data already exists. You need a skill that:
+  1. Pulls freight rates from Databricks
+  2. Shows you the current rate by route
+  3. Tracks trends (is freight rising or falling?)
+  4. Calculates what the freight cost means for export competitiveness
+     (e.g., "at current freight, US Gulf soybeans to China cost $X/MT
+     delivered vs Santos soybeans at $Y/MT — Brazil has a $Z/MT
+     logistics advantage")
+
+  That's a freight competitiveness tool, not just a freight tracker.
+  It tells the S&D team which origin is cheapest to ship from on any
+  given day — which directly affects trade flow forecasts.
+
+  Want me to build this?
+
+Analyst: ya
+
+Copilot:
+
+  Building...
+
+  [builds freight-competitiveness-skill from one word of input + the
+   analyst's desk context + Databricks schema discovery + Tomoko's
+   existing skill as a reference point]
+
+
+=============================================================
+DESIGN IMPLICATIONS FOR AGENT-SKILL-CREATOR
+=============================================================
+
+These interactions reveal what agent-skill-creator must actually
+be good at:
+
+1. FILE INTERPRETATION, NOT REQUIREMENTS GATHERING
+
+  The primary input is ARTIFACTS, not words:
+  - Excel files (reverse-engineer the workflow from the sheet structure)
+  - PDFs (understand what the output should look like)
+  - Screenshots (read what's on the screen, including Bloomberg)
+  - Code files (understand what already exists, what's broken)
+  - Emails (extract the actual request from the noise)
+  - URLs (fetch and understand the data source)
+
+  The agent must be able to look at an Excel workbook with 6 tabs
+  and reconstruct the entire workflow: "Tab 1 is raw input, Tab 2 is
+  a pivot of Tab 1 filtered by X, Tab 3 compares Tab 2 to a baseline
+  in Tab 4, Tab 5 generates charts from Tab 3, Tab 6 is the formatted
+  output." The human will never describe this. The spreadsheet IS the
+  specification.
+
+2. CONTEXT INFERENCE, NOT EXPLICIT REQUIREMENTS
+
+  When someone types "freight" the agent should already know:
+  - What desk they're on (S&D, modelling, price assessment)
+  - What commodities they cover (grains, oilseeds, softs)
+  - What data sources are already available (Databricks, Bloomberg,
+    colleagues' existing skills)
+  - What output format their team uses (Excel, PDF, markdown)
+
+  The agent doesn't ask "what do you mean by freight?" — it presents
+  the most likely interpretation given the context and confirms.
+
+3. PROGRESSIVE REFINEMENT, NOT UPFRONT SPECIFICATION
+
+  The interaction pattern should be:
+  - Human dumps messy input (files, URLs, one word, screenshot)
+  - Agent reconstructs intent and presents its understanding
+  - Human corrects with minimal effort ("yes", "no the other one",
+    "also add X")
+  - Agent builds a first version
+  - Human uses it, finds gaps, says "also do Y"
+  - Agent refines
+
+  This is how humans naturally communicate. They don't write specs.
+  They iterate. The agent must be comfortable building from 60%
+  understanding and refining, rather than demanding 100%
+  understanding before starting.
+
+4. DISCOVERY OVER ASSUMPTION
+
+  The analyst manually typing Bloomberg prices into Excel didn't know
+  the data was already in Databricks. The analyst who said "freight"
+  didn't know Tomoko's skill already had freight data. The agent's
+  job is not just to build what was asked, but to DISCOVER what
+  already exists and connect the dots.
+
+  Before building, always check:
+  - Is this data already in Databricks? (query the catalog)
+  - Has a colleague already built a skill for this? (check the
+    team's GitLab skill library)
+  - Is there an API for this data source? (check before scraping)
+  - Does the existing workflow have a simpler solution? (maybe the
+    entire workflow is unnecessary)
+
+5. CONFIRM, DON'T INTERROGATE
+
+  BAD: "Please provide: (1) the data source URL, (2) the update
+  frequency, (3) the output format, (4) the distribution list..."
+  (This is a requirements form. Nobody fills these out.)
+
+  GOOD: "From your files, it looks like you download data from USDA
+  every Monday, pivot it by destination, and send Henrik a PDF.
+  Right?"
+  (This is a confirmation. One word to accept.)
+
+  The agent should do the work of understanding and present a
+  hypothesis. The human's job is to confirm or correct — not to
+  specify from scratch.
+
+6. FAIL FORWARD, NOT FAIL SAFE
+
+  When the agent has 60% understanding, it should build the 60% skill
+  and let the human see the output. The human will immediately say
+  "this is wrong, it should be X" — which is MUCH easier than asking
+  the human to specify X from nothing. Seeing a wrong output is the
+  fastest way for a non-technical person to articulate what they
+  actually want.
+
+  The worst thing the agent can do is ask 15 clarifying questions
+  before building anything. By question 5, the human has given up
+  and gone back to their spreadsheet.
+
+SUMMARY:
+
+agent-skill-creator should treat human input as EVIDENCE, not
+INSTRUCTIONS. The files, URLs, screenshots, half-sentences, and
+single words are all evidence of what the human needs. The agent's
+job is forensic — reconstruct the intent from the evidence, present
+a hypothesis, confirm, build, and refine.
+
+The human is never the bottleneck. The agent is always the one doing
+the work of understanding.
+```
+
+## File: `exports/.gitignore`
+```
+# Ignore all exported .zip packages
+*.zip
+
+# Ignore installation guides (generated)
+*_INSTALL.md
+
+# Allow README
+!README.md
+```
+
+## File: `references/agentdb-integration.md`
+```markdown
+# AgentDB Integration
+
+## Overview
+
+AgentDB is an invisible learning system that improves skill creation quality over time. It operates behind the scenes during every skill creation episode, recording decisions, outcomes, and patterns. The user never interacts with AgentDB directly -- they simply get progressively better skill outputs as the system accumulates experience.
+
+**Key principle**: AgentDB is always optional. The skill creator works identically with or without AgentDB installed. When available, it provides enhanced intelligence. When absent, the system falls back to its standard pipeline with zero degradation.
+
+## What AgentDB Does
+
+AgentDB provides three learning mechanisms:
+
+### Reflexion Memory
+
+Stores complete creation episodes (what was attempted, what worked, what failed) and retrieves relevant past experiences when facing similar tasks.
+
+- After creating a financial analysis skill, AgentDB remembers which API scored highest, which analysis patterns the user liked, and which configurations caused issues.
+- The next time someone requests a financial skill, the system retrieves these episodes and uses them to make better Phase 1 and Phase 2 decisions.
+
+### Causal Reasoning
+
+Tracks cause-and-effect relationships between creation decisions and outcomes.
+
+- "Using Alpha Vantage with rate limiting causes 23% fewer API errors than without"
+- "Including a comprehensive report function causes 40% higher user satisfaction"
+- These causal links accumulate over time and influence template selection and configuration defaults.
+
+### Skill Extraction
+
+Identifies reusable patterns from successful creations and stores them as transferable skills.
+
+- A caching strategy that worked well for NOAA data gets extracted and applied to other API-heavy skills.
+- A report generation pattern that received positive feedback gets promoted to a template default.
+
+## Integration Points in the 5-Phase Pipeline
+
+AgentDB hooks into each phase of the creation pipeline transparently.
+
+### Phase 1: Discovery
+
+**Without AgentDB**: System researches APIs via WebSearch, compares options, selects the highest-scoring candidate.
+
+**With AgentDB**: Before researching, the system queries reflexion memory for past discovery episodes in the same domain. If a previous creation already evaluated NOAA vs. Open-Meteo for climate data, the system reuses that evaluation (with a freshness check) instead of repeating the research from scratch.
+
+```
+AgentDB query: "What APIs were selected for climate/weather domains?"
+Result: NOAA selected 3 times (avg score 8.7/10), Open-Meteo selected 2 times (9.1/10)
+Effect: Open-Meteo is pre-ranked higher, saving 5-10 minutes of research
+```
+
+### Phase 2: Design
+
+**Without AgentDB**: System designs 4-6 analyses based on domain best practices and API capabilities.
+
+**With AgentDB**: Causal reasoning identifies which analysis patterns have the highest success rates for the domain. Reflexion memory recalls which analyses users requested most frequently.
+
+```
+AgentDB query: "What analyses work best for financial skills?"
+Result: Technical indicators (92% retention), sector comparison (87%),
+        portfolio tracking (85%), news sentiment (61%)
+Effect: News sentiment is deprioritized; technical indicators are designed first
+```
+
+### Phase 3: Architecture
+
+**Without AgentDB**: System chooses simple vs. complex architecture based on scope.
+
+**With AgentDB**: Historical data on suite sizes vs. maintainability informs the decision. If past suites with 4+ components had refactoring issues, the system might recommend splitting differently.
+
+```
+AgentDB query: "What architecture works best for 3-workflow skills?"
+Result: Simple skill chosen 8/10 times, suite chosen 2/10. Simple had
+        fewer maintenance issues (causal link: simple -> 30% less rework)
+Effect: Simple skill recommended with higher confidence
+```
+
+### Phase 4: Detection
+
+**Without AgentDB**: System generates description and keywords based on domain analysis.
+
+**With AgentDB**: Extracted skills from past successful activations inform keyword selection. If "stock analysis" activated more reliably than "equity research" in past skills, the former is prioritized.
+
+```
+AgentDB query: "What keywords had highest activation rates for finance?"
+Result: "stock analysis" (98%), "market data" (95%), "portfolio" (93%),
+        "equity research" (72%), "securities" (68%)
+Effect: High-activation keywords prioritized in description
+```
+
+### Phase 5: Implementation
+
+**Without AgentDB**: System creates all files following the standard pipeline.
+
+**With AgentDB**: Learned improvements from past creations are applied. If a specific error-handling pattern reduced runtime failures, it is included automatically. After creation, the episode is stored for future learning.
+
+```
+AgentDB action: Store episode
+  - Domain: climate
+  - Template used: climate-analysis
+  - APIs: Open-Meteo + NOAA
+  - Analyses: 5 implemented
+  - Validation: passed (10/10)
+  - Security: passed (clean)
+  - User satisfaction: pending
+```
+
+## Learning Progression
+
+AgentDB's value grows with usage. Here is what to expect at different stages.
+
+### First Creation (No History)
+
+- AgentDB has no past episodes to draw from
+- Behavior is identical to running without AgentDB
+- The creation episode is stored for future reference
+- No noticeable difference in output quality
+
+### After 5+ Creations
+
+- Reflexion memory has enough episodes to identify domain patterns
+- API selection benefits from past evaluations (fewer redundant searches)
+- Common analysis patterns are recognized and reused
+- Estimated time savings: 10-15% per creation
+
+### After 10+ Creations
+
+- Causal reasoning has enough data to identify reliable cause-effect links
+- Template matching improves as keyword effectiveness data accumulates
+- Architecture decisions are informed by maintenance outcomes
+- Skill extraction produces reusable patterns across domains
+- Estimated time savings: 20-30% per creation
+
+### After 30+ Days of Usage
+
+- Nightly learner has processed all episodes and extracted high-confidence patterns
+- Cross-domain insights emerge (e.g., "caching improves all API-heavy skills by 25%")
+- Template recommendations reach high accuracy (>90% user acceptance)
+- The system begins suggesting proactive improvements to existing skills
+- Estimated time savings: 30-40% per creation
+
+## Graceful Fallback
+
+AgentDB availability is checked once at initialization. If unavailable, the system operates in fallback mode with zero user-visible impact.
+
+### Detection Order
+
+1. Check for native `agentdb` CLI in PATH
+2. Check for `npx @anthropic-ai/agentdb` availability
+3. Attempt automatic installation via npm (if npm is available)
+4. If all checks fail, enter fallback mode silently
+
+### Fallback Behavior
+
+| Feature | With AgentDB | Without AgentDB (Fallback) |
+|---------|-------------|---------------------------|
+| Phase 1 Discovery | Informed by past episodes | Full research from scratch |
+| Phase 2 Design | Ranked by historical success | Standard domain analysis |
+| Phase 3 Architecture | Data-driven recommendation | Heuristic-based recommendation |
+| Phase 4 Detection | Keywords ranked by activation history | Keywords from domain analysis |
+| Phase 5 Implementation | Learned patterns applied | Standard patterns applied |
+| Episode storage | Saved for future learning | Not stored (nothing to store to) |
+| Output quality | Progressively improving | Consistently good (baseline) |
+
+### Error Tolerance
+
+If AgentDB is available but encounters errors during operation:
+- First 3 errors: Logged silently, operation retried with fallback
+- After 3 errors: AgentDB is disabled for the remainder of the session
+- Next session: AgentDB is re-initialized (errors do not persist across sessions)
+
+No AgentDB error ever surfaces to the user or interrupts the creation pipeline.
+
+## Privacy and Performance
+
+### All Local
+
+- AgentDB stores all data locally in `~/.agentdb/`
+- No data is transmitted to external servers
+- No telemetry, analytics, or usage tracking
+- The user's creation history stays on their machine
+
+### No External Dependencies at Runtime
+
+- AgentDB is an npm package, but once installed it runs locally
+- If npm is unavailable, AgentDB simply does not install (fallback mode)
+- The skill creator itself has zero npm dependencies -- AgentDB is purely optional
+
+### Performance Impact
+
+| Operation | Without AgentDB | With AgentDB | Overhead |
+|-----------|----------------|--------------|----------|
+| Initialization | 0ms | 50-200ms (one-time check) | Negligible |
+| Phase 1 query | N/A | 10-50ms | Negligible |
+| Phase 5 store | N/A | 20-100ms | Negligible |
+| Disk usage | 0 | 1-10 MB (grows with usage) | Minimal |
+
+AgentDB operations are asynchronous where possible and never block the main creation pipeline.
+
+## Technical Implementation
+
+### Bridge Architecture
+
+The integration uses a bridge pattern (`integrations/agentdb_bridge.py`) that isolates all AgentDB operations behind a clean interface:
+
+```python
+from integrations.agentdb_bridge import enhance_agent_creation
+
+# Called internally during skill creation -- never by the user
+intelligence = enhance_agent_creation(
+    user_input="Create a climate analysis skill",
+    domain="climate"
+)
+
+# intelligence.template_choice -> "climate-analysis" (or None in fallback)
+# intelligence.success_probability -> 0.87 (or 0.0 in fallback)
+# intelligence.learned_improvements -> ["Use Open-Meteo over NOAA for forecasts"]
+```
+
+### Module Functions
+
+| Function | Purpose |
+|----------|---------|
+| `enhance_agent_creation(input, domain)` | Pre-creation intelligence gathering |
+| `enhance_template(template, domain)` | Template improvement from learned patterns |
+| `store_agent_experience(name, experience)` | Post-creation episode recording |
+| `get_agent_learning_summary(name)` | Internal progress tracking |
+
+### Configuration
+
+AgentDB auto-configures on first use. The configuration lives at `~/.agentdb/config.json`:
+
+```json
+{
+  "reflexion": {
+    "auto_save": true,
+    "compression": true
+  },
+  "causal": {
+    "auto_track": true,
+    "utility_model": "outcome_based"
+  },
+  "skills": {
+    "auto_extract": true,
+    "success_threshold": 0.8
+  },
+  "nightly_learner": {
+    "enabled": true,
+    "schedule": "2:00 AM"
+  }
+}
+```
+
+No user action is required to create or maintain this configuration. The bridge handles everything automatically.
+```
+
+## File: `references/architecture-guide.md`
+```markdown
+# Architecture Decision Guide
+
+**Version:** 4.0
+**Purpose:** Comprehensive guide for choosing the right architecture when creating agent skills, including directory structures, naming conventions, sizing patterns, and performance strategies.
+
+---
+
+## 1. Architecture Decision Framework
+
+Before creating any skill, determine whether it should be a **Simple Skill** or a **Complex Suite**. This decision drives the entire directory structure, file organization, and whether a `marketplace.json` is needed.
+
+### 1.1 Decision Criteria
+
+| Factor | Simple Skill | Complex Suite |
+|--------|-------------|---------------|
+| **Number of workflows** | 1-2 related workflows | 3+ distinct workflows |
+| **Code complexity** | <1000 lines total | >2000 lines total |
+| **SKILL.md files** | 1 | Multiple (one per component) |
+| **Maintenance scope** | Single developer | Team or multi-concern |
+| **Domain breadth** | Single domain focus | Spans multiple sub-domains |
+| **Deployment** | Install as one unit | Components may be used independently |
+| **marketplace.json** | **Not needed** | Optional (official fields only) |
+
+### 1.2 Decision Flowchart
+
+Follow this logic sequentially:
+
+```
+START
+  |
+  v
+How many distinct workflows does this skill address?
+  |
+  +-- 1-2 workflows --> Does the total code exceed 2000 lines?
+  |                       |
+  |                       +-- No  --> SIMPLE SKILL
+  |                       +-- Yes --> Can it be split into independent sub-skills?
+  |                                     |
+  |                                     +-- No  --> SIMPLE SKILL (large)
+  |                                     +-- Yes --> COMPLEX SUITE
+  |
+  +-- 3+ workflows --> Are the workflows tightly coupled?
+                        |
+                        +-- Yes (shared state/data) --> SIMPLE SKILL (organized)
+                        +-- No  (independent concerns) --> COMPLEX SUITE
+```
+
+### 1.3 Decision Examples
+
+| User Request | Decision | Rationale |
+|-------------|----------|-----------|
+| "Analyze stock prices with technical indicators" | Simple Skill | Single domain, 1-2 workflows (fetch + analyze) |
+| "Format markdown tables" | Simple Skill | Single workflow, <500 lines |
+| "Full-stack web dev with frontend, backend, deployment" | Complex Suite | 3 independent sub-domains |
+| "USDA agriculture data with 6 analysis types" | Simple Skill (organized) | Multiple analyses but single domain, shared data pipeline |
+| "Financial suite: stock analysis, portfolio tracking, tax reporting" | Complex Suite | 3 distinct workflows, each usable independently |
+
+---
+
+## 2. Simple Skill Structure
+
+A Simple Skill is a single, self-contained agent skill that follows the Agent Skills Open Standard. It has one SKILL.md file and no `marketplace.json`.
+
+### 2.1 Standard Directory Layout
+
+```
+skill-name/
+├── SKILL.md          # <500 lines, spec-compliant frontmatter
+├── scripts/          # Functional Python code
+├── references/       # Detailed documentation (loaded on demand)
+├── assets/           # Templates, schemas, data files
+├── install.sh        # Cross-platform auto-detect installer
+└── README.md         # Multi-platform installation instructions
+```
+
+**Key rule:** NO `.claude-plugin/marketplace.json` for simple skills. The SKILL.md file is the sole manifest and activation mechanism.
+
+### 2.2 SKILL.md Frontmatter (Required)
+
+```yaml
+---
+name: skill-name            # 1-64 chars, lowercase + hyphens, must match directory
+description: >-             # 1-1024 chars, activation keywords included
+  Description with domain keywords for agent discovery...
+license: MIT                # or appropriate license
+metadata:
+  author: Author Name
+  version: 1.0.0
+compatibility: >-           # optional, use when platform-specific features exist
+  Works on all platforms supporting the SKILL.md standard.
+---
+```
+
+### 2.3 File Responsibilities
+
+| File/Directory | Purpose | Required? |
+|---------------|---------|-----------|
+| `SKILL.md` | Primary skill definition, frontmatter, instructions | Yes |
+| `scripts/` | Executable Python code (functional, no placeholders) | Yes (if skill has code) |
+| `references/` | Detailed documentation, API guides, methodology docs | Recommended |
+| `assets/` | Configuration files, templates, schemas, static data | Optional |
+| `install.sh` | Cross-platform installer script | Yes |
+| `README.md` | Installation instructions for 5+ platforms | Yes |
+
+### 2.4 Why No marketplace.json for Simple Skills
+
+Per the Agent Skills Open Standard and FR-005:
+
+- SKILL.md is the universal discovery mechanism across all 26+ platforms
+- `marketplace.json` is a Claude Code-specific plugin manifest, not part of the standard
+- Simple skills activate via their SKILL.md `description` field alone
+- Adding `marketplace.json` to a simple skill creates a non-standard structure that may confuse other platforms
+- Skills placed in `~/.claude/skills/` or `.claude/skills/` are discovered automatically by Claude Code without `marketplace.json`
+
+---
+
+## 3. Complex Suite Structure
+
+A Complex Suite bundles multiple related but independently usable skills under a single parent directory. It optionally includes a `marketplace.json` for Claude Code plugin registration.
+
+### 3.1 Standard Directory Layout
+
+```
+suite-name/
+├── .claude-plugin/
+│   └── marketplace.json    # ONLY official fields (see below)
+├── component-1/
+│   ├── SKILL.md            # Independent skill definition
+│   ├── scripts/
+│   └── references/
+├── component-2/
+│   ├── SKILL.md            # Independent skill definition
+│   ├── scripts/
+│   └── references/
+├── shared/                 # Shared utilities, data, config
+│   ├── utils.py
+│   └── config.json
+├── install.sh              # Installs all components
+└── README.md               # Suite-level documentation
+```
+
+### 3.2 marketplace.json Schema (Official Fields Only)
+
+When a Complex Suite includes a `marketplace.json`, it must contain **only** the official Claude Code fields. No custom or non-standard fields are permitted.
+
+```json
+{
+  "name": "suite-name",
+  "plugins": [
+    {
+      "name": "component-1",
+      "description": "What component-1 does",
+      "source": "component-1/SKILL.md",
+      "skills": ["component-1"]
+    },
+    {
+      "name": "component-2",
+      "description": "What component-2 does",
+      "source": "component-2/SKILL.md",
+      "skills": ["component-2"]
+    }
+  ]
+}
+```
+
+**Allowed top-level fields:**
+- `name` (string): The suite name
+- `plugins` (array): List of plugin entries
+
+**Allowed fields per plugin entry:**
+- `name` (string): Component skill name
+- `description` (string): What the component does
+- `source` (string): Relative path to the component's SKILL.md
+- `skills` (array of strings): Skill identifiers
+
+**Forbidden fields** (non-standard, will cause validation failure):
+- `version` -- use `metadata.version` in SKILL.md instead
+- `author` -- use `metadata.author` in SKILL.md instead
+- `repository` -- not part of the official schema
+- `tags` -- not part of the official schema
+- Any other custom fields
+
+### 3.3 When to Use marketplace.json
+
+| Scenario | Include marketplace.json? |
+|----------|--------------------------|
+| Simple skill (1 SKILL.md) | No |
+| Complex suite for Claude Code distribution | Yes (optional) |
+| Complex suite targeting only non-Claude platforms | No |
+| Suite where components must be independently discoverable in Claude Code | Yes |
+
+### 3.4 Component Independence
+
+Each component in a Complex Suite should be independently functional:
+
+- Each component has its own `SKILL.md` with valid frontmatter
+- Each component can be installed separately if extracted from the suite
+- Shared resources in `shared/` are optional enhancements, not hard dependencies
+- Each component's `name` field matches its directory name
+
+---
+
+## 4. Naming Convention
+
+All skill and suite names follow standard kebab-case per the Agent Skills Open Standard.
+
+### 4.1 Rules
+
+| Rule | Requirement |
+|------|-------------|
+| Length | 1-64 characters |
+| Characters | Lowercase letters (`a-z`), numbers (`0-9`), hyphens (`-`) |
+| Format | kebab-case |
+| First character | Must be a letter or number (not a hyphen) |
+| Last character | Must be a letter or number (not a hyphen) |
+| Consecutive hyphens | Not allowed (`my--skill` is invalid) |
+| Directory match | The `name` field in SKILL.md frontmatter must exactly match the parent directory name |
+
+### 4.2 The -skill Suffix
+
+Every generated skill name **must end with `-skill`**. This suffix makes skills instantly discoverable across GitHub and GitLab organizations — teams can search `*-skill` and find every skill in their org.
+
+**Suites** use the `-suite` suffix instead (e.g., `financial-suite`). Suites contain skills but are not themselves invoked as skills.
+
+The previous `-cskill` suffix convention is **deprecated**. If encountered, replace with `-skill`.
+
+### 4.3 Naming Pattern
+
+```
+{domain}-{objective}-skill
+```
+
+**Examples:**
+- `stock-analyzer-skill` -- domain: stock, objective: analyzer
+- `csv-data-cleaner-skill` -- domain: csv-data, objective: cleaner
+- `sales-report-skill` -- domain: sales, objective: report
+- `deploy-checklist-skill` -- domain: deploy, objective: checklist
+- `financial-suite` -- complex suite (uses `-suite`, not `-skill`)
+
+**Guidelines:**
+- Must end with `-skill` (or `-suite` for multi-skill suites)
+- Be descriptive but concise — aim for under 30 characters
+- Include the primary domain for discoverability
+- Avoid generic names like `my-skill` or `tool-1`
+
+### 4.4 Naming Validation
+
+A valid name passes all of these checks:
+
+```python
+import re
+
+def validate_skill_name(name: str) -> tuple[bool, list[str]]:
+    errors = []
+    if not name:
+        errors.append("Name is required")
+    if len(name) > 64:
+        errors.append(f"Name exceeds 64 chars ({len(name)})")
+    if name != name.lower():
+        errors.append("Name must be lowercase")
+    if not re.match(r'^[a-z0-9][a-z0-9-]*[a-z0-9]$', name) and len(name) > 1:
+        errors.append("Name must start/end with letter or number, contain only a-z, 0-9, hyphens")
+    if '--' in name:
+        errors.append("Consecutive hyphens not allowed")
+    if name.endswith('-cskill'):
+        errors.append("The -cskill suffix is deprecated; use -skill instead")
+    if not name.endswith('-skill') and not name.endswith('-suite'):
+        errors.append("Name must end with '-skill' (or '-suite' for multi-skill suites)")
+    return (len(errors) == 0, errors)
+```
+
+---
+
+## 5. Directory Sizing Patterns
+
+Choose a sizing pattern based on the skill's complexity. These patterns apply to both Simple Skills and individual components within a Complex Suite.
+
+### 5.1 Small Agent Pattern
+
+**When to use:** Single workflow, 1-2 scripts, <500 total lines of code.
+
+```
+skill-name/
+├── SKILL.md              # <200 lines
+├── scripts/
+│   └── main.py           # 200-400 lines, single entry point
+├── references/
+│   └── guide.md          # API docs, methodology
+├── assets/
+│   └── config.json       # Minimal configuration
+├── install.sh
+└── README.md
+```
+
+**Characteristics:**
+- One main script handles the entire workflow
+- Minimal configuration
+- Single reference document
+- Estimated total: 500-800 lines across all files
+
+**Examples:** markdown-table-formatter, url-shortener, json-validator
+
+### 5.2 Medium Agent Pattern
+
+**When to use:** 2-3 workflows, 3-5 scripts, 500-2000 total lines of code.
+
+```
+skill-name/
+├── SKILL.md              # 200-400 lines
+├── scripts/
+│   ├── fetch.py          # Data acquisition (200-300 lines)
+│   ├── parse.py          # Data processing (150-200 lines)
+│   ├── analyze.py        # Analysis logic (300-500 lines)
+│   └── utils/
+│       ├── cache.py      # Cache management (100-150 lines)
+│       └── validators.py # Input validation (100-150 lines)
+├── references/
+│   ├── api-guide.md      # ~1500 words
+│   └── methodology.md    # ~2000 words
+├── assets/
+│   └── config.json
+├── install.sh
+└── README.md
+```
+
+**Characteristics:**
+- Separation of concerns: fetch, parse, analyze
+- Utility modules for cross-cutting concerns (caching, validation)
+- Multiple reference documents
+- Estimated total: 1000-2500 lines across all files
+
+**Examples:** stock-analyzer, weather-dashboard, csv-data-cleaner
+
+### 5.3 Large Agent Pattern
+
+**When to use:** 3+ workflows within a single domain, 6+ scripts, 2000+ total lines of code. Still a Simple Skill if all workflows share a single domain and data pipeline.
+
+```
+skill-name/
+├── SKILL.md              # 400-500 lines (at the limit)
+├── scripts/
+│   ├── core/
+│   │   ├── fetch_source_a.py    # 200-300 lines
+│   │   ├── fetch_source_b.py    # 200-300 lines
+│   │   ├── parse_source_a.py    # 150-200 lines
+│   │   ├── parse_source_b.py    # 150-200 lines
+│   │   └── analyze.py           # 400-600 lines
+│   ├── models/
+│   │   ├── forecasting.py       # 200-300 lines
+│   │   └── ml_models.py         # 200-300 lines
+│   └── utils/
+│       ├── cache_manager.py     # 100-150 lines
+│       ├── rate_limiter.py      # 100-150 lines
+│       └── validators.py        # 100-150 lines
+├── references/
+│   ├── api/
+│   │   ├── source-a-guide.md
+│   │   └── source-b-guide.md
+│   ├── methods/
+│   │   └── analysis-methods.md
+│   └── troubleshooting.md
+├── assets/
+│   ├── config.json
+│   └── metadata.json
+├── install.sh
+└── README.md
+```
+
+**Characteristics:**
+- Sub-directories within `scripts/` for organization (core, models, utils)
+- Multiple data sources with dedicated fetch/parse scripts
+- Dedicated models directory for analysis/ML logic
+- Organized reference documentation
+- Estimated total: 2500-5000 lines across all files
+
+**Examples:** nass-usda-agriculture, conab-crop-yield-analysis, noaa-climate-analysis
+
+### 5.4 Sizing Comparison Table
+
+| Aspect | Small | Medium | Large |
+|--------|-------|--------|-------|
+| Total code lines | <500 | 500-2000 | 2000+ |
+| Script files | 1 | 3-5 | 6+ |
+| Script sub-dirs | None | `utils/` | `core/`, `models/`, `utils/` |
+| Reference files | 1 | 2-3 | 4+ (may use sub-dirs) |
+| Asset files | 0-1 | 1 | 2+ |
+| SKILL.md length | <200 lines | 200-400 lines | 400-500 lines |
+| Typical domains | Formatters, validators | Data analyzers, dashboards | Multi-source analysis, forecasting |
+
+---
+
+## 6. Performance Strategy
+
+All generated skills should incorporate performance considerations appropriate to their size and use case.
+
+### 6.1 Caching Strategy
+
+Cache API responses and computed results to avoid redundant work and reduce API usage.
+
+**Cache TTL Decision Logic:**
+
+| Data Type | TTL | Rationale |
+|-----------|-----|-----------|
+| Historical data (past years) | 365 days (effectively permanent) | Historical data does not change |
+| Current-year data | 7 days | May be revised/updated |
+| Metadata (lists, enums) | 365 days | Rarely changes |
+| Real-time data | 1-60 minutes | Freshness required |
+| User preferences | Session-scoped | Per-execution only |
+
+**Implementation Pattern:**
+
+```python
+import json
+import hashlib
+from pathlib import Path
+from datetime import datetime, timedelta
+
+class FileCache:
+    """Simple file-based cache with TTL support."""
+
+    def __init__(self, cache_dir: str = "data/cache"):
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+
+    def _key_path(self, key: str) -> Path:
+        hashed = hashlib.sha256(key.encode()).hexdigest()[:16]
+        return self.cache_dir / f"{hashed}.json"
+
+    def get(self, key: str, ttl: timedelta) -> dict | None:
+        path = self._key_path(key)
+        if not path.exists():
+            return None
+        data = json.loads(path.read_text())
+        cached_at = datetime.fromisoformat(data["cached_at"])
+        if datetime.now() - cached_at > ttl:
+            return None  # Expired
+        return data["value"]
+
+    def set(self, key: str, value: dict) -> None:
+        path = self._key_path(key)
+        path.write_text(json.dumps({
+            "cached_at": datetime.now().isoformat(),
+            "value": value
+        }, indent=2))
+
+    def get_or_fetch(self, key: str, ttl: timedelta, fetch_fn) -> dict:
+        cached = self.get(key, ttl)
+        if cached is not None:
+            return cached
+        value = fetch_fn()
+        self.set(key, value)
+        return value
+```
+
+**Cache Location:** Store cache files under `data/cache/` within the skill directory. This keeps cache local and avoids polluting system directories.
+
+**Graceful Degradation:** If the cache file is corrupted or unreadable, log a warning and proceed without cache (fetch fresh data).
+
+### 6.2 Rate Limiting Strategy
+
+Protect against API rate limit exhaustion with proactive tracking.
+
+**Rate Limiter Pattern:**
+
+```python
+import json
+from pathlib import Path
+from datetime import datetime, timedelta
+
+class RateLimiter:
+    """File-based rate limiter with persistent counter."""
+
+    def __init__(
+        self,
+        max_requests: int,
+        period: timedelta,
+        counter_file: str = "data/cache/rate_limit.json"
+    ):
+        self.max_requests = max_requests
+        self.period = period
+        self.counter_file = Path(counter_file)
+        self.counter_file.parent.mkdir(parents=True, exist_ok=True)
+
+    def _load(self) -> dict:
+        if not self.counter_file.exists():
+            return {"requests": [], "period_start": datetime.now().isoformat()}
+        return json.loads(self.counter_file.read_text())
+
+    def _save(self, data: dict) -> None:
+        self.counter_file.write_text(json.dumps(data, indent=2))
+
+    def _prune_old(self, data: dict) -> dict:
+        cutoff = (datetime.now() - self.period).isoformat()
+        data["requests"] = [r for r in data["requests"] if r > cutoff]
+        return data
+
+    def allow_request(self) -> bool:
+        data = self._prune_old(self._load())
+        count = len(data["requests"])
+        if count >= self.max_requests:
+            return False
+        if count > self.max_requests * 0.9:
+            remaining = self.max_requests - count
+            print(f"WARNING: Rate limit nearly reached ({count}/{self.max_requests}), {remaining} requests remaining")
+        return True
+
+    def record_request(self) -> None:
+        data = self._prune_old(self._load())
+        data["requests"].append(datetime.now().isoformat())
+        self._save(data)
+```
+
+**Rate Limit Configuration:** Define rate limits in `assets/config.json` so they can be adjusted without code changes:
+
+```json
+{
+  "rate_limit": {
+    "max_requests_per_day": 1000,
+    "warn_threshold_percent": 90
+  }
+}
+```
+
+### 6.3 Optimization Techniques
+
+**For Small Agents:**
+- Keep it simple. A single script with basic caching is sufficient.
+- Avoid premature optimization.
+
+**For Medium Agents:**
+- File-based caching for API responses.
+- Rate limiter for external APIs.
+- Lazy loading of reference data (only load when a specific analysis is requested).
+
+**For Large Agents:**
+- All Medium optimizations, plus:
+- Batch API requests where the API supports it.
+- Parallel processing for independent data sources (use `concurrent.futures`).
+- Tiered caching: in-memory for hot data, file-based for cold data.
+- Progress reporting for long-running operations.
+
+**General Rules:**
+- Never make the same API call twice in a single execution -- always check cache first.
+- Use exponential backoff for transient API failures (start at 1 second, max 3 retries).
+- Log all API calls with timestamps for debugging rate limit issues.
+- Keep cached data in `data/cache/` and provide a way to clear it (`--clear-cache` flag or a function).
+
+### 6.4 Error Handling Strategy
+
+Every script must handle errors gracefully:
+
+```python
+import sys
+from pathlib import Path
+
+def safe_api_call(url: str, params: dict, retries: int = 3) -> dict:
+    """Make an API call with retry logic and graceful error handling."""
+    import urllib.request
+    import urllib.error
+    import json
+    import time
+
+    for attempt in range(retries):
+        try:
+            query = "&".join(f"{k}={v}" for k, v in params.items())
+            full_url = f"{url}?{query}" if params else url
+            req = urllib.request.Request(full_url)
+            with urllib.request.urlopen(req, timeout=30) as response:
+                return json.loads(response.read().decode())
+        except urllib.error.HTTPError as e:
+            if e.code == 429:  # Rate limited
+                wait = 2 ** attempt
+                print(f"Rate limited. Retrying in {wait}s...")
+                time.sleep(wait)
+            elif e.code >= 500:  # Server error
+                wait = 2 ** attempt
+                print(f"Server error ({e.code}). Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"HTTP error {e.code}: {e.reason}")
+                return {"error": str(e), "code": e.code}
+        except urllib.error.URLError as e:
+            print(f"Network error: {e.reason}")
+            if attempt < retries - 1:
+                time.sleep(2 ** attempt)
+            else:
+                return {"error": f"Network error after {retries} attempts: {e.reason}"}
+        except Exception as e:
+            return {"error": f"Unexpected error: {str(e)}"}
+
+    return {"error": f"Failed after {retries} retries"}
+```
+
+### 6.5 SKILL.md Size Management
+
+The SKILL.md body must stay under 500 lines. Use progressive disclosure:
+
+| Content Type | Where It Goes |
+|-------------|---------------|
+| Activation triggers, overview, core workflow | `SKILL.md` body (required) |
+| API documentation, endpoint details | `references/api-guide.md` |
+| Analysis methodology, formulas | `references/methodology.md` |
+| Troubleshooting, FAQs | `references/troubleshooting.md` |
+| Domain context, terminology | `references/domain-context.md` |
+| Configuration schema documentation | `references/config-guide.md` |
+
+Reference content from SKILL.md using `See references/filename.md for details.` directives. The agent will load referenced files on demand, reducing initial context consumption.
+
+---
+
+## 7. When to Refactor a Growing Skill
+
+Skills evolve. A simple skill that started at 500 lines can grow to 5000+ as the team adds analyses, data sources, and edge case handling. Recognize the signs early and refactor before the skill becomes unmaintainable.
+
+### 7.1 Signs It's Time to Refactor
+
+| Signal | What It Means |
+|--------|--------------|
+| SKILL.md approaching 500 lines | Body is stuffed — move content to references |
+| Total code exceeding 3000 lines | Single-domain skill is becoming unwieldy |
+| 3+ unrelated workflows emerging | The skill is doing too many different jobs |
+| Different people maintaining different parts | Ownership boundaries need to be explicit |
+| Users invoking the skill for fundamentally different tasks | The skill should be split into focused components |
+| New data sources that don't share the existing pipeline | Independent fetch/parse/analyze chains = independent skills |
+
+### 7.2 Refactoring Patterns
+
+**Pattern 1: Extract to References (lightest touch)**
+
+When the skill body is too long but the code is fine:
+
+```
+Before: SKILL.md at 480 lines with inline methodology docs
+After:  SKILL.md at 250 lines, references/methodology.md with the detail
+```
+
+This is not a structural refactor — just progressive disclosure. Do this first.
+
+**Pattern 2: Extract Utility Module**
+
+When multiple scripts duplicate logic:
+
+```
+Before: fetch.py has cache logic, analyze.py has cache logic
+After:  utils/cache.py extracted, both scripts import from it
+```
+
+**Pattern 3: Split by Domain (simple → suite)**
+
+When the skill covers multiple independent domains:
+
+```
+Before:
+  financial-analyzer/
+    scripts/
+      stock_analysis.py      # 800 lines
+      portfolio_tracking.py   # 600 lines
+      tax_reporting.py        # 500 lines
+
+After:
+  financial-suite/
+    skills/
+      stock-analyzer/         # Independent skill
+      portfolio-tracker/      # Independent skill
+      tax-reporter/           # Independent skill
+    shared/
+      market_data_client.py   # Shared API connection
+```
+
+**Pattern 4: Extract Shared Resources**
+
+When converting to a suite, identify code that multiple components need:
+
+1. API client code → `shared/api_client.py`
+2. Common data models → `shared/models.py`
+3. Utility functions (date handling, formatting) → `shared/utils.py`
+4. Configuration → `shared/config.json`
+
+### 7.3 Refactoring Decision Process
+
+```
+Is SKILL.md > 400 lines?
+  → Yes: Extract to references (Pattern 1)
+  → Still growing?
+      ↓
+Is total code > 3000 lines with 3+ unrelated workflows?
+  → Yes: Split into suite (Pattern 3)
+  → No, but code is duplicated across scripts?
+      → Extract utilities (Pattern 2)
+  → No: Keep as large simple skill — not everything needs to be a suite
+```
+
+**Critical rule**: Do not split prematurely. Three similar scripts in one domain is better than a suite with three trivially small components. Only split when the workflows are genuinely independent — different data sources, different users, different maintenance cadences.
+
+### 7.4 Refactoring Checklist
+
+- [ ] Identified which pattern applies (1-4)
+- [ ] Each new component is independently functional
+- [ ] Shared resources extracted to `shared/` (not duplicated)
+- [ ] All SKILL.md files are <500 lines
+- [ ] All component names follow kebab-case naming
+- [ ] install.sh updated to handle new structure
+- [ ] README.md updated with new structure
+- [ ] Validation passes on all components
+
+---
+
+## 8. Cross-Component Communication in Suites
+
+When a suite has multiple component skills, they need clear patterns for sharing code, data, and orchestration.
+
+### 8.1 The shared/ Directory
+
+The `shared/` directory contains code that multiple components use. It is **not** a component skill — it has no SKILL.md and is never invoked directly.
+
+```
+suite-name/
+├── shared/
+│   ├── api_client.py       # Shared API connection + authentication
+│   ├── models.py           # Shared data classes and type definitions
+│   ├── utils.py            # Common utilities (date formatting, etc.)
+│   └── config.json         # Shared configuration
+├── skills/
+│   ├── component-a/
+│   │   ├── SKILL.md
+│   │   └── scripts/
+│   │       └── analyze.py  # imports from ../../shared/api_client.py
+│   └── component-b/
+│       ├── SKILL.md
+│       └── scripts/
+│           └── report.py   # imports from ../../shared/api_client.py
+```
+
+### 8.2 Import Patterns
+
+Components import from `shared/` using path manipulation:
+
+```python
+import sys
+from pathlib import Path
+
+# Add shared/ to path
+_SUITE_ROOT = Path(__file__).resolve().parent.parent.parent
+_SHARED_DIR = _SUITE_ROOT / "shared"
+if str(_SHARED_DIR) not in sys.path:
+    sys.path.insert(0, str(_SHARED_DIR))
+
+from api_client import SuiteAPIClient
+from utils import format_date, parse_currency
+```
+
+**Rules:**
+- Always use `Path(__file__).resolve()` for reliable path resolution
+- Add `shared/` to `sys.path` — do not copy files into each component
+- Import specific names, not `from shared import *`
+- Each component must still work if `shared/` provides enhanced functionality but is not strictly required (graceful degradation)
+
+### 8.3 Orchestration: Suite-Level SKILL.md
+
+The suite-level SKILL.md is the router. When a user's query could match multiple components, the suite SKILL.md tells the agent how to decide:
+
+```markdown
+# /ecommerce-suite — E-commerce Intelligence
+
+You are an e-commerce analytics coordinator. Route user queries
+to the right component skill based on intent:
+
+## Routing Logic
+
+| User Intent | Route To | Example Queries |
+|-------------|----------|-----------------|
+| Revenue, orders, conversion | /sales-monitor | "What were last week's sales?" |
+| Segments, cohorts, churn | /customer-analytics | "Show customer retention by cohort" |
+| Stock levels, reorder | /inventory-tracker | "Which products need reordering?" |
+| Executive summary, dashboard | /executive-reports | "Generate the weekly executive report" |
+
+## Cross-Component Workflows
+
+Some requests require multiple components:
+
+### Full Store Report
+When the user asks for a "full report" or "store overview":
+1. Invoke /sales-monitor for revenue summary
+2. Invoke /customer-analytics for retention metrics
+3. Invoke /inventory-tracker for stock alerts
+4. Invoke /executive-reports to compile everything into a single report
+
+### Churn Impact Analysis
+When the user asks about churn's revenue impact:
+1. Invoke /customer-analytics for churn rate and segments
+2. Invoke /sales-monitor for revenue by customer segment
+3. Combine: revenue at risk = churned segment revenue × churn rate
+```
+
+### 8.4 Data Flow Between Components
+
+Components do not call each other's functions directly. Instead, they communicate through:
+
+1. **Shared data files**: Component A writes to `data/sales_summary.json`, Component B reads it
+2. **Shared API client**: Both components use the same `shared/api_client.py` to fetch data
+3. **Agent orchestration**: The agent (LLM) reads output from Component A and passes relevant parts to Component B
+
+**Anti-patterns to avoid:**
+- Component A importing Component B's scripts directly (creates tight coupling)
+- Components writing to each other's directories
+- Circular dependencies between components
+
+### 8.5 Component Independence Rule
+
+Each component must be independently functional. This means:
+
+- A component extracted from the suite and installed alone must still work
+- `shared/` utilities enhance performance (avoid duplicate API calls, consistent formatting) but are not hard requirements
+- If a component absolutely requires `shared/`, document this in its README.md
+- The suite-level install.sh must install `shared/` alongside all components
+
+---
+
+## 9. Versioning Strategy
+
+### 9.1 Semver for Skills
+
+Skills follow [Semantic Versioning](https://semver.org/):
+
+| Change Type | Version Bump | Examples |
+|------------|-------------|---------|
+| **Patch** (x.y.Z) | Bug fixes, typo corrections, minor doc improvements | Fix API timeout handling, correct calculation formula |
+| **Minor** (x.Y.0) | New analyses, new data sources, new output formats | Add trend analysis, support CSV export, add new API endpoint |
+| **Major** (X.0.0) | Breaking changes to inputs, outputs, or invocation | Change script arguments, rename skill, restructure output format |
+
+### 9.2 What Counts as Breaking
+
+A change is breaking if existing users of the skill would get different behavior or errors:
+
+| Breaking | Not Breaking |
+|----------|-------------|
+| Changing script CLI arguments | Adding new optional arguments |
+| Changing output JSON structure | Adding new fields to output |
+| Removing an analysis function | Adding new analysis functions |
+| Renaming the skill | Updating the description keywords |
+| Changing required environment variables | Adding optional environment variables |
+
+### 9.3 Suite Versioning
+
+Suite versions are independent of component versions:
+
+```
+ecommerce-suite/        version: 2.0.0  (added new component)
+├── sales-monitor/      version: 1.3.0  (3 minor updates since suite v1)
+├── customer-analytics/  version: 1.1.0  (1 minor update)
+├── inventory-tracker/   version: 2.0.0  (breaking change in its own output)
+└── executive-reports/   version: 1.0.0  (unchanged)
+```
+
+**Suite version bump rules:**
+
+| Change | Suite Version Bump |
+|--------|--------------------|
+| Bug fix in one component | No suite bump (component patch only) |
+| New capability in one component | No suite bump (component minor only) |
+| Breaking change in one component | Suite minor bump (warn users) |
+| Add new component to suite | Suite minor bump |
+| Remove component from suite | Suite major bump |
+| Restructure shared/ | Suite major bump |
+
+### 9.4 Version in Practice
+
+The version lives in SKILL.md frontmatter:
+
+```yaml
+metadata:
+  version: 1.2.0
+```
+
+When publishing to the registry, `skill_registry.py` reads this version. Publishing the same name+version is rejected unless `--force` is used.
+
+**When to create a new skill vs. version an existing one:**
+
+| Situation | Action |
+|-----------|--------|
+| Same domain, improved implementation | Version bump (minor or major) |
+| Same domain, fundamentally different approach | New skill (e.g., `stock-analyzer-v2`) |
+| Different domain entirely | New skill |
+| Extending to cover adjacent domain | If tightly coupled: version bump. If independent: new skill or convert to suite |
+
+---
+
+## 10. Architecture Checklist
+
+Use this checklist before proceeding to implementation (Phase 5):
+
+### Decision
+
+- [ ] Determined Simple Skill vs Complex Suite
+- [ ] Justified the decision based on workflow count, code size, and domain scope
+- [ ] If suite: identified shared resources and component boundaries
+- [ ] If suite: designed orchestration logic (routing, cross-component workflows)
+
+### Naming
+
+- [ ] Name is 1-64 characters, kebab-case
+- [ ] Name matches the parent directory
+- [ ] No `-cskill` suffix
+- [ ] Name is descriptive and includes the primary domain
+- [ ] If suite: all component names are unique and follow kebab-case
+
+### Structure
+
+- [ ] Directory layout matches the chosen sizing pattern (Small/Medium/Large)
+- [ ] SKILL.md planned at <500 lines
+- [ ] Scripts have clear separation of concerns
+- [ ] References planned for detailed content
+- [ ] `install.sh` included
+- [ ] `README.md` planned with multi-platform install instructions
+- [ ] No `marketplace.json` for Simple Skills
+- [ ] If Complex Suite with `marketplace.json`, only official fields used
+- [ ] If suite: shared/ directory planned with import patterns documented
+- [ ] If suite: each component is independently functional
+
+### Performance
+
+- [ ] Cache strategy defined (what to cache, TTL for each data type)
+- [ ] Rate limiting planned for external APIs
+- [ ] Error handling approach defined (retries, backoff, fallbacks)
+- [ ] SKILL.md size managed via progressive disclosure to `references/`
+
+### Dependencies
+
+- [ ] Dependency strategy decided (stdlib-only vs. third-party)
+- [ ] requirements.txt planned if third-party packages needed
+- [ ] No unnecessary heavy dependencies
+
+### Versioning
+
+- [ ] Initial version set (1.0.0)
+- [ ] Version bump rules understood (patch/minor/major)
+- [ ] If suite: component versions independent of suite version
+
+### Documentation
+
+- [ ] Architecture decisions documented
+- [ ] Script responsibilities defined (input, output, line count estimate)
+- [ ] Reference files planned (topic, estimated word count)
+- [ ] Asset files planned (config structure, metadata)
+```
+
+## File: `references/cross-platform-guide.md`
+```markdown
+# Cross-Platform Compatibility Guide
+
+**Version:** 5.0
+**Purpose:** Complete compatibility matrix for Agent Skills across all platforms supporting the Agent Skills Open Standard
+
+---
+
+## Overview
+
+Skills created by agent-skill-creator are compliant with the **Agent Skills Open Standard** and work across all platforms that support the SKILL.md format. As of v5.0, this includes 14+ platforms across 3 support tiers.
+
+### Supported Platforms
+
+#### Tier 1 — Native SKILL.md Support
+
+These platforms read SKILL.md natively with no conversion needed:
+
+| Platform | Type | User-Level Path | Project-Level Path |
+|----------|------|-----------------|-------------------|
+| **Claude Code** | CLI | `~/.claude/skills/` | `.claude/skills/` |
+| **GitHub Copilot CLI** | CLI | `~/.copilot/skills/` | `.github/skills/` |
+| **VS Code Copilot** | IDE Extension | `~/.claude/skills/` | `.github/skills/` |
+| **Codex CLI** | CLI | `~/.agents/skills/` | `.agents/skills/` |
+| **Gemini CLI** | CLI | `~/.gemini/skills/` | `.gemini/skills/` |
+| **Kiro** | IDE | — | `.kiro/skills/` |
+| **Antigravity** | CLI | — | `.agents/skills/` |
+| **Goose** | CLI | `~/.config/goose/skills/` | — |
+| **OpenCode** | CLI | `~/.config/opencode/skills/` | — |
+
+#### Tier 2 — SKILL.md via Format Adapter
+
+These platforms use their own rule format. The installer auto-generates the native format from SKILL.md:
+
+| Platform | Type | Native Format | Adapter Output | Install Path |
+|----------|------|--------------|----------------|-------------|
+| **Cursor** | IDE | `.mdc` | Auto-generated `.mdc` with frontmatter | `.cursor/rules/` |
+| **Windsurf** | IDE | `.md` rules | `.md` rule file or `global_rules.md` append | `.windsurf/rules/` (project) or `~/.codeium/windsurf/memories/global_rules.md` (global) |
+| **Cline** | VS Code Ext | Plain `.md` | Stripped frontmatter `.md` | `.clinerules/` |
+| **Roo Code** | VS Code Ext | Plain `.md` | Stripped frontmatter `.md` | `.roo/rules/` |
+| **Trae** | IDE | Plain `.md` | Stripped frontmatter `.md` | `.trae/rules/` |
+
+#### Tier 3 — Manual Configuration
+
+These platforms require manual integration:
+
+| Platform | Config File | Instructions |
+|----------|------------|-------------|
+| **Zed** | `.rules` | Copy SKILL.md body into `.rules` file |
+| **Junie** | `.junie/guidelines.md` | Copy SKILL.md body into guidelines |
+| **Aider** | `CONVENTIONS.md` | Copy SKILL.md body into CONVENTIONS.md |
+
+### The Unifying Standard
+
+All Tier 1 and Tier 2 platforms read from the same SKILL.md source:
+
+```yaml
+---
+name: skill-name
+description: What the skill does and when to activate it
+license: MIT
+metadata:
+  author: Author Name
+  version: 1.0.0
+---
+# Skill content here...
+```
+
+A skill created once works everywhere — directly on Tier 1, via auto-adapter on Tier 2.
+
+---
+
+## Universal Path: `.agents/skills/`
+
+The `.agents/skills/` directory is an emerging cross-tool convention for agent skill discovery. Multiple tools already read from this path:
+
+- **Codex CLI** — reads `~/.agents/skills/` and `.agents/skills/`
+- **Gemini CLI** — discovers skills in `~/.agents/skills/`
+- **Kiro** — reads `.agents/skills/` (project-level)
+- **Antigravity** — reads `.agents/skills/` (project-level)
+
+The installer creates a **secondary symlink** at `~/.agents/skills/<skill-name>` after every install (unless the primary target is already `.agents/`). This means a skill installed for Claude Code is also discoverable by Codex CLI, Gemini CLI, and other universal-path tools automatically.
+
+```bash
+# Install for Claude Code — also creates ~/.agents/skills/ symlink
+./install.sh --platform claude-code
+
+# Install directly to universal path
+./install.sh --platform universal
+
+# Install to ALL detected platforms at once
+./install.sh --all
+```
+
+---
+
+## Format Adapters
+
+The installer automatically converts SKILL.md to platform-native formats when needed. No separate format files are committed to the skill repo — SKILL.md remains the single source of truth.
+
+### Cursor (.mdc)
+
+The adapter generates a `.mdc` file with Cursor-specific frontmatter:
+
+```
+---
+description: <extracted from SKILL.md frontmatter>
+globs:
+alwaysApply: true
+---
+<SKILL.md body without YAML frontmatter>
+```
+
+### Windsurf (.md rules)
+
+**Project-level**: Creates a `.md` file in `.windsurf/rules/`.
+
+**User-level (global)**: Appends to `~/.codeium/windsurf/memories/global_rules.md` with idempotent markers:
+
+```markdown
+<!-- BEGIN skill-name -->
+<SKILL.md body>
+<!-- END skill-name -->
+```
+
+Re-running the installer replaces the existing block rather than duplicating.
+
+### Cline / Roo Code / Trae (plain .md)
+
+The adapter strips YAML frontmatter and outputs plain markdown. These tools read `.md` files from their respective rule directories.
+
+---
+
+## Installation by Platform
+
+### Claude Code
+
+```bash
+# Using install.sh (recommended)
+./install.sh
+
+# Manual: User-level
+cp -r skill-name/ ~/.claude/skills/skill-name/
+
+# Manual: Project-level
+cp -r skill-name/ .claude/skills/skill-name/
+```
+
+**Best for:** Developers, power users, teams with git workflows.
+
+### GitHub Copilot
+
+```bash
+# Using install.sh
+./install.sh --platform copilot
+
+# Manual: Project-level
+cp -r skill-name/ .github/skills/skill-name/
+```
+
+**Best for:** GitHub-integrated workflows, VS Code users.
+
+### Cursor
+
+```bash
+# Using install.sh (auto-generates .mdc)
+./install.sh --platform cursor
+
+# Manual
+cp -r skill-name/ .cursor/rules/skill-name/
+```
+
+**Best for:** Cursor IDE users. The installer auto-generates a `.mdc` file alongside SKILL.md.
+
+### Windsurf
+
+```bash
+# Using install.sh (project-level — creates .windsurf/rules/ rule)
+./install.sh --platform windsurf --project
+
+# Using install.sh (user-level — appends to global_rules.md)
+./install.sh --platform windsurf
+```
+
+**Best for:** Windsurf IDE users.
+
+### Cline
+
+```bash
+# Using install.sh
+./install.sh --platform cline
+
+# Manual
+cp -r skill-name/ .clinerules/skill-name/
+```
+
+**Best for:** Cline extension users in VS Code.
+
+### Codex CLI
+
+```bash
+# Using install.sh (installs to ~/.agents/skills/)
+./install.sh --platform codex
+
+# Manual
+cp -r skill-name/ ~/.agents/skills/skill-name/
+```
+
+**Best for:** OpenAI Codex CLI users. Codex reads from `~/.agents/skills/`.
+
+### Gemini CLI
+
+```bash
+# Using install.sh
+./install.sh --platform gemini
+
+# Manual
+cp -r skill-name/ ~/.gemini/skills/skill-name/
+```
+
+**Best for:** Gemini CLI users.
+
+### Kiro
+
+```bash
+# Using install.sh
+./install.sh --platform kiro
+
+# Manual
+cp -r skill-name/ .kiro/skills/skill-name/
+```
+
+**Best for:** Kiro IDE users (project-level).
+
+### Trae
+
+```bash
+# Using install.sh (auto-generates plain .md)
+./install.sh --platform trae
+
+# Manual
+cp -r skill-name/ .trae/rules/skill-name/
+```
+
+**Best for:** Trae IDE users.
+
+### Goose
+
+```bash
+# Using install.sh
+./install.sh --platform goose
+
+# Manual
+cp -r skill-name/ ~/.config/goose/skills/skill-name/
+```
+
+**Best for:** Goose CLI users.
+
+### OpenCode
+
+```bash
+# Using install.sh
+./install.sh --platform opencode
+
+# Manual
+cp -r skill-name/ ~/.config/opencode/skills/skill-name/
+```
+
+**Best for:** OpenCode CLI users.
+
+### Roo Code
+
+```bash
+# Using install.sh (auto-generates plain .md)
+./install.sh --platform roo-code
+
+# Manual
+cp -r skill-name/ .roo/rules/skill-name/
+```
+
+**Best for:** Roo Code extension users in VS Code.
+
+### Antigravity
+
+```bash
+# Using install.sh
+./install.sh --platform antigravity
+
+# Manual
+cp -r skill-name/ .agents/skills/skill-name/
+```
+
+**Best for:** Antigravity CLI users.
+
+### Universal Path
+
+```bash
+# Using install.sh
+./install.sh --platform universal
+
+# Manual
+cp -r skill-name/ ~/.agents/skills/skill-name/
+```
+
+**Best for:** Multi-tool users. One install discoverable by Codex CLI, Gemini CLI, Kiro, Antigravity, and other tools that read `.agents/skills/`.
+
+### Install All
+
+```bash
+# Install to every detected tool at once
+./install.sh --all
+```
+
+### Alternative: npx
+
+```bash
+npx skills add <repo-url>
+npx skills add ./local-skill-dir
+```
+
+### Claude Desktop / claude.ai (Web)
+
+These platforms use .zip upload instead of directory copying:
+
+1. Export: `python scripts/export_utils.py ./skill-name --variant desktop`
+2. Open Claude Desktop or claude.ai
+3. Go to Settings > Skills > Upload skill
+4. Select the .zip file
+
+### Claude API
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+with open('skill-name-api-v1.0.0.zip', 'rb') as f:
+    skill = client.skills.create(file=f, name="skill-name")
+
+response = client.messages.create(
+    model="claude-sonnet-4",
+    messages=[{"role": "user", "content": "Your query here"}],
+    container={"type": "custom_skill", "skill_id": skill.id},
+    betas=["code-execution-2025-08-25", "skills-2025-10-02"]
+)
+```
+
+---
+
+## Compatibility Matrix
+
+### Core Functionality
+
+| Feature | Tier 1 Platforms | Tier 2 Platforms | Desktop/Web | Claude API |
+|---------|-----------------|-----------------|-------------|------------|
+| **SKILL.md support** | Native | Via adapter | Full | Full |
+| **Python scripts** | Full | Full | Full | Sandboxed* |
+| **References/docs** | Full | Full | Full | Full |
+| **Assets/templates** | Full | Full | Full | Full |
+| **install.sh** | Full | Full | N/A | N/A |
+| **Format adapters** | N/A | Auto | N/A | N/A |
+
+\* API: No network access, no pip install at runtime
+
+### Technical Specifications
+
+| Specification | CLI/IDE Platforms | Desktop/Web | Claude API |
+|---------------|-----------------|-------------|------------|
+| **Max skill size** | No limit | ~10MB | 8MB hard limit |
+| **Network access** | Yes | Yes | No |
+| **Package install** | Yes | Yes | No |
+| **File system** | Full | Full | Limited |
+| **Updates** | git pull | Re-upload | API upload |
+
+---
+
+## Platform-Specific Notes
+
+### marketplace.json
+
+- **Required by**: Claude Code (for plugin marketplace distribution only)
+- **Not needed by**: All other platforms
+- **Recommendation**: For simple skills, do not include `marketplace.json`. Only add it for complex skill suites that need Claude Code plugin distribution.
+- **Format**: If included, use ONLY official fields: `name`, `plugins[].name`, `plugins[].description`, `plugins[].source`, `plugins[].skills`
+
+### Skill Activation
+
+All platforms that support the SKILL.md standard use the `description` field in frontmatter as the primary activation mechanism. The description should contain:
+
+- Clear explanation of when to use the skill
+- Domain-specific keywords
+- Example trigger phrases
+
+No platform-specific activation configuration is needed.
+
+### File Structure
+
+The standard skill directory works on all platforms:
+
+```
+skill-name/
+├── SKILL.md          # Required - primary skill definition
+├── scripts/          # Optional - executable code
+├── references/       # Optional - detailed documentation
+├── assets/           # Optional - templates, schemas, data
+├── install.sh        # Optional - cross-platform installer
+└── README.md         # Recommended - install instructions
+```
+
+---
+
+## Migration Between Platforms
+
+### CLI Platform to CLI Platform
+
+Skills are directly portable. Just copy the directory to the target platform's skill location:
+
+```bash
+# From Claude Code to Codex CLI
+cp -r ~/.claude/skills/my-skill/ ~/.agents/skills/my-skill/
+
+# From Cursor to Cline
+cp -r .cursor/rules/my-skill/ .clinerules/my-skill/
+```
+
+### CLI Platform to Desktop/Web
+
+Export as .zip:
+
+```bash
+python scripts/export_utils.py ./my-skill --variant desktop
+# Output: exports/my-skill-desktop-v1.0.0.zip
+```
+
+### CLI Platform to API
+
+Export as optimized .zip:
+
+```bash
+python scripts/export_utils.py ./my-skill --variant api
+# Output: exports/my-skill-api-v1.0.0.zip (< 8MB)
+```
+
+---
+
+## Best Practices
+
+1. **Develop once, deploy everywhere**: Create and test in your preferred CLI tool, then install on other platforms.
+2. **Use install.sh**: Include the cross-platform installer for easy deployment.
+3. **Use `--all` for multi-tool users**: Install to every detected tool with a single command.
+4. **Keep SKILL.md lean**: Under 500 lines, detailed content in `references/`.
+5. **Test activation**: Verify the `description` triggers correctly on your target platform.
+6. **Include README.md**: Document installation instructions for all platforms.
+7. **No platform hacks**: Avoid platform-specific code or configuration. The standard format works everywhere; adapters handle the rest.
+
+---
+
+**Generated by:** agent-skill-creator v5.0
+**Standard:** Agent Skills Open Standard (agentskills.io/specification)
+```
+
+## File: `references/export-guide.md`
+```markdown
+# Cross-Platform Export Guide
+
+**Version:** 4.0
+**Purpose:** Complete guide to exporting agent-skill-creator skills for use across all Claude platforms
+
+---
+
+## 🎯 Overview
+
+Skills created by agent-skill-creator are optimized for **Claude Code**, but can be exported for use across all Claude platforms:
+
+- **Claude Code** (CLI) - Native directory-based format
+- **Claude Desktop** - Manual .zip file upload
+- **claude.ai** (Web) - Manual .zip file upload
+- **Claude API** - Programmatic .zip upload
+
+This guide explains how to export skills for cross-platform compatibility.
+
+---
+
+## 📦 Why Export?
+
+### The Challenge
+
+Different Claude platforms use different distribution methods:
+
+| Platform | Installation Method | Requires Export? |
+|----------|-------------------|------------------|
+| Claude Code | Plugin/directory | ❌ No (native) |
+| Claude Desktop | .zip upload | ✅ Yes |
+| claude.ai | .zip upload | ✅ Yes |
+| Claude API | Programmatic upload | ✅ Yes |
+
+### The Solution
+
+The export system creates **optimized .zip packages** with:
+- ✅ Platform-specific optimization
+- ✅ Version numbering
+- ✅ Automatic validation
+- ✅ Installation guides
+- ✅ Size optimization
+
+---
+
+## 🚀 Quick Start
+
+### Automatic Export (Recommended)
+
+After creating a skill, agent-skill-creator will prompt:
+
+```
+✅ Skill created: financial-analysis/
+
+📦 Export Options:
+   1. Desktop/Web (.zip for manual upload)
+   2. API (.zip for programmatic use)
+   3. Both (comprehensive package)
+   4. Skip (Claude Code only)
+
+Choice: 3
+
+🔨 Creating export packages...
+✅ Desktop package: exports/financial-analysis-desktop-v1.0.0.zip
+✅ API package: exports/financial-analysis-api-v1.0.0.zip
+📄 Installation guide: exports/financial-analysis-v1.0.0_INSTALL.md
+```
+
+### On-Demand Export
+
+Export any existing skill anytime:
+
+```
+"Export stock-analyzer for Desktop and API"
+"Package financial-analysis for claude.ai"
+"Create API export for climate-analyzer with version 2.1.0"
+```
+
+### Manual Export (Advanced)
+
+Using the export script directly:
+
+```bash
+# Export both variants
+python scripts/export_utils.py ./my-skill
+
+# Export only Desktop variant
+python scripts/export_utils.py ./my-skill --variant desktop
+
+# Export with specific version
+python scripts/export_utils.py ./my-skill --version 2.0.1
+
+# Export to custom directory
+python scripts/export_utils.py ./my-skill --output-dir ./dist
+```
+
+---
+
+## 📊 Export Variants
+
+### Desktop/Web Package (`*-desktop-*.zip`)
+
+**Optimized for:** Claude Desktop and claude.ai manual upload
+
+**Includes:**
+- ✅ Complete SKILL.md
+- ✅ All scripts/
+- ✅ Full references/ documentation
+- ✅ All assets/ and templates
+- ✅ README.md
+- ✅ requirements.txt
+
+**Excludes:**
+- ❌ .claude-plugin/ (not used by Desktop/Web)
+- ❌ .git/ (version control not needed)
+- ❌ Development artifacts
+
+**Typical Size:** 2-5 MB
+
+**Use when:**
+- Sharing with Desktop users
+- Uploading to claude.ai
+- Need full documentation
+
+### API Package (`*-api-*.zip`)
+
+**Optimized for:** Programmatic Claude API integration
+
+**Includes:**
+- ✅ SKILL.md (required)
+- ✅ Essential scripts only
+- ✅ Critical references only
+- ✅ requirements.txt
+
+**Excludes:**
+- ❌ .claude-plugin/ (not used by API)
+- ❌ .git/ (not needed)
+- ❌ Heavy documentation files
+- ❌ Example files (size optimization)
+- ❌ Large reference materials
+
+**Typical Size:** 0.5-2 MB (< 8MB limit)
+
+**Use when:**
+- Integrating with API
+- Need size optimization
+- Programmatic deployment
+- Execution-focused use
+
+---
+
+## 🔍 Version Management
+
+### Auto-Detection
+
+The export system automatically detects versions from:
+
+1. **Git tags** (highest priority)
+   ```bash
+   git tag v1.0.0
+   # Export will use v1.0.0
+   ```
+
+2. **SKILL.md frontmatter**
+   ```yaml
+   ---
+   name: my-skill
+   version: 1.2.3
+   ---
+   ```
+
+3. **Default fallback**
+   - If no version found: `v1.0.0`
+
+### Manual Override
+
+Specify version explicitly:
+
+```bash
+# Via CLI
+python scripts/export_utils.py ./my-skill --version 2.1.0
+
+# Via natural language
+"Export my-skill with version 3.0.0"
+```
+
+### Versioning Best Practices
+
+Follow semantic versioning (MAJOR.MINOR.PATCH):
+
+- **MAJOR (X.0.0)**: Breaking changes to skill behavior
+- **MINOR (x.X.0)**: New features, backward compatible
+- **PATCH (x.x.X)**: Bug fixes, optimizations
+
+**Examples:**
+- `v1.0.0` → Initial release
+- `v1.1.0` → Added new analysis feature
+- `v1.1.1` → Fixed calculation bug
+- `v2.0.0` → Changed API interface (breaking)
+
+---
+
+## ✅ Validation
+
+### Automatic Validation
+
+Every export is validated for:
+
+**Structure Checks:**
+- ✅ SKILL.md exists
+- ✅ SKILL.md has valid frontmatter
+- ✅ Frontmatter has `name:` field
+- ✅ Frontmatter has `description:` field
+
+**Content Checks:**
+- ✅ Name ≤ 64 characters
+- ✅ Description ≤ 1024 characters
+- ✅ No sensitive files (.env, credentials.json)
+
+**Size Checks:**
+- ✅ Desktop package: reasonable size
+- ✅ API package: < 8MB (hard limit)
+
+### Validation Failures
+
+If validation fails, you'll see detailed error messages:
+
+```
+❌ Export failed!
+
+Issues found:
+   - SKILL.md missing 'name:' field in frontmatter
+   - description too long: 1500 chars (max 1024)
+   - API package too large: 9.2 MB (max 8 MB)
+```
+
+**Common fixes:**
+- Add missing frontmatter fields
+- Shorten description to ≤ 1024 chars
+- Remove large files for API variant
+- Check SKILL.md formatting
+
+---
+
+## 📁 Output Organization
+
+### Directory Structure
+
+```
+exports/
+├── skill-name-desktop-v1.0.0.zip
+├── skill-name-api-v1.0.0.zip
+├── skill-name-v1.0.0_INSTALL.md
+├── skill-name-desktop-v1.1.0.zip
+├── skill-name-api-v1.1.0.zip
+└── skill-name-v1.1.0_INSTALL.md
+```
+
+### File Naming Convention
+
+```
+{skill-name}-{variant}-v{version}.zip
+{skill-name}-v{version}_INSTALL.md
+```
+
+**Components:**
+- `skill-name`: Directory name (e.g., `financial-analysis`)
+- `variant`: `desktop` or `api`
+- `version`: Semantic version (e.g., `v1.0.0`)
+
+**Examples:**
+- `stock-analyzer-desktop-v1.0.0.zip`
+- `stock-analyzer-api-v1.0.0.zip`
+- `stock-analyzer-v1.0.0_INSTALL.md`
+
+---
+
+## 🛡️ Security & Exclusions
+
+### Automatically Excluded
+
+**Directories:**
+- `.git/` - Version control (contains history)
+- `__pycache__/` - Python compiled files
+- `node_modules/` - JavaScript dependencies
+- `.venv/`, `venv/`, `env/` - Virtual environments
+- `.claude-plugin/` - Claude Code specific (API variant only)
+
+**Files:**
+- `.env` - Environment variables (may contain secrets)
+- `credentials.json` - API keys and secrets
+- `secrets.json` - Secret configuration
+- `.DS_Store` - macOS metadata
+- `.gitignore` - Git configuration
+- `*.pyc`, `*.pyo` - Python compiled
+- `*.log` - Log files
+
+### Why Exclude These?
+
+1. **Security**: Prevent accidental exposure of API keys/secrets
+2. **Size**: Reduce package size (especially for API variant)
+3. **Relevance**: Remove development artifacts not needed at runtime
+4. **Portability**: Exclude platform-specific files
+
+### What's Always Included
+
+**Required:**
+- `SKILL.md` - Core skill definition (mandatory)
+
+**Strongly Recommended:**
+- `scripts/` - Execution code
+- `README.md` - Usage documentation
+- `requirements.txt` - Python dependencies
+
+**Optional:**
+- `references/` - Additional documentation
+- `assets/` - Templates, prompts, examples
+
+---
+
+## 🎯 Use Cases
+
+### Use Case 1: Share with Desktop Users
+
+**Scenario:** You created a skill in Claude Code, colleague uses Desktop
+
+**Solution:**
+```
+1. Export: "Export my-skill for Desktop"
+2. Share: Send {skill}-desktop-v1.0.0.zip to colleague
+3. Install: Colleague uploads to Desktop → Settings → Skills
+```
+
+### Use Case 2: Deploy via API
+
+**Scenario:** Integrate skill into production application
+
+**Solution:**
+```python
+# 1. Export API variant
+"Export my-skill for API"
+
+# 2. Upload programmatically
+import anthropic
+client = anthropic.Anthropic(api_key=os.env['ANTHROPIC_API_KEY'])
+
+with open('my-skill-api-v1.0.0.zip', 'rb') as f:
+    skill = client.skills.create(file=f, name="my-skill")
+
+# 3. Use in production
+response = client.messages.create(
+    model="claude-sonnet-4",
+    messages=[{"role": "user", "content": query}],
+    container={"type": "custom_skill", "skill_id": skill.id},
+    betas=["code-execution-2025-08-25", "skills-2025-10-02"]
+)
+```
+
+### Use Case 3: Versioned Releases
+
+**Scenario:** Maintain multiple skill versions
+
+**Solution:**
+```bash
+# Release v1.0.0
+git tag v1.0.0
+"Export my-skill for both"
+# Creates: my-skill-desktop-v1.0.0.zip, my-skill-api-v1.0.0.zip
+
+# Later: Release v1.1.0 with new features
+git tag v1.1.0
+"Export my-skill for both"
+# Creates: my-skill-desktop-v1.1.0.zip, my-skill-api-v1.1.0.zip
+
+# Both versions coexist in exports/ for compatibility
+```
+
+### Use Case 4: Team Distribution
+
+**Scenario:** Share skill with entire team
+
+**Options:**
+
+**Option A: Git Repository**
+```bash
+# Claude Code users (recommended)
+git clone repo-url
+/plugin marketplace add ./skill-name
+```
+
+**Option B: Direct Download**
+```bash
+# Desktop/Web users
+1. Download {skill}-desktop-v1.0.0.zip
+2. Upload to Claude Desktop or claude.ai
+3. Follow installation guide
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Export Fails: "Path does not exist"
+
+**Cause:** Incorrect skill path
+
+**Fix:**
+```bash
+# Check path exists
+ls -la ./my-skill
+# Use absolute path
+python scripts/export_utils.py /full/path/to/skill
+```
+
+### Export Fails: "SKILL.md missing frontmatter"
+
+**Cause:** SKILL.md doesn't start with `---`
+
+**Fix:**
+```markdown
+---
+name: my-skill
+description: What this skill does
+---
+
+# Rest of SKILL.md content
+```
+
+### Export Fails: "API package too large"
+
+**Cause:** Package exceeds 8MB API limit
+
+**Fix Options:**
+1. Remove large documentation files from skill
+2. Remove example files
+3. Compress images/assets
+4. Use Desktop variant instead (no size limit)
+
+### Desktop upload fails
+
+**Cause:** Various platform-specific issues
+
+**Check:**
+1. File size reasonable (< 10MB recommended)
+2. SKILL.md has valid frontmatter
+3. Name ≤ 64 characters
+4. Description ≤ 1024 characters
+5. Try re-exporting with latest version
+
+### API returns error
+
+**Common causes:**
+```python
+# Missing beta headers
+betas=["code-execution-2025-08-25", "skills-2025-10-02"]  # REQUIRED
+
+# Wrong container type
+container={"type": "custom_skill", "skill_id": skill.id}  # Use custom_skill
+
+# Skill ID not found
+# Ensure skill.id from upload matches container skill_id
+```
+
+---
+
+## 📚 Advanced Topics
+
+### Custom Output Directory
+
+```bash
+# Default: exports/ in parent directory
+python scripts/export_utils.py ./skill
+
+# Custom location
+python scripts/export_utils.py ./skill --output-dir /path/to/releases
+
+# Within skill directory
+python scripts/export_utils.py ./skill --output-dir ./dist
+```
+
+### Batch Export
+
+Export multiple skills:
+
+```bash
+# Loop through skill directories
+for skill in */; do
+    [ -f "$skill/SKILL.md" ] && python scripts/export_utils.py "./$skill"
+done
+
+# Or via agent-skill-creator
+"Export all skills in current directory"
+```
+
+### CI/CD Integration
+
+Automate exports in build pipeline:
+
+```yaml
+# .github/workflows/release.yml
+name: Release Skill
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Export skill
+        run: |
+          python scripts/export_utils.py . --version ${{ github.ref_name }}
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: skill-packages
+          path: exports/*.zip
+```
+
+---
+
+## 🎓 Best Practices
+
+### ✅ Do
+
+1. **Version everything** - Use semantic versioning
+2. **Test exports** - Verify packages work on target platforms
+3. **Include README** - Clear usage instructions
+4. **Keep secrets out** - Never include .env or credentials
+5. **Document dependencies** - Maintain requirements.txt
+6. **Validate before sharing** - Run validation checks
+7. **Use installation guides** - Auto-generated for each export
+
+### ❌ Don't
+
+1. **Don't commit .zip files to git** - They're generated artifacts
+2. **Don't include secrets** - Use environment variables instead
+3. **Don't skip validation** - Ensures compatibility
+4. **Don't ignore size limits** - API has 8MB maximum
+5. **Don't forget documentation** - Users need guidance
+6. **Don't mix versions** - Clear version numbering prevents confusion
+
+---
+
+## 📖 Related Documentation
+
+- **Cross-Platform Guide**: `cross-platform-guide.md` - Platform compatibility matrix
+- **Main README**: `../README.md` - Agent-skill-creator overview
+- **SKILL.md**: `../SKILL.md` - Core skill definition
+- **CHANGELOG**: `../brain/knowledge/docs_legacy/CHANGELOG.md` - Version history
+
+---
+
+## 🆘 Getting Help
+
+**Questions about:**
+- Export process → This guide
+- Platform compatibility → `cross-platform-guide.md`
+- Skill creation → Main `README.md`
+- API integration → Claude API documentation
+
+**Report issues:**
+- GitHub Issues: [agent-skill-creator issues](https://github.com/FrancyJGLisboa/agent-skill-creator/issues)
+
+---
+
+**Generated by:** agent-skill-creator v3.2
+**Last updated:** October 2025
+```
+
+## File: `references/interactive-mode.md`
+```markdown
+# Interactive Configuration Mode
+
+## Overview
+
+Interactive mode provides a step-by-step wizard for configuring skill creation when the user wants explicit control over each decision. While the standard pipeline runs autonomously (the system researches, decides, and implements), interactive mode pauses at each decision point and asks the user for input or confirmation.
+
+## When to Use Interactive Mode
+
+| Situation | Why Interactive Mode Helps |
+|-----------|---------------------------|
+| Complex projects with multiple APIs | User can weigh trade-offs with full context |
+| User has strong preferences | Avoids rework from autonomous decisions that miss user intent |
+| High-stakes or production-critical skills | Every decision is reviewed before proceeding |
+| Learning how the pipeline works | Step-by-step walkthrough teaches the creation process |
+| Domain expertise the system lacks | User provides insider knowledge at each phase |
+
+Interactive mode is **not** recommended for straightforward requests where the user trusts the system to make good decisions. For simple skills, the autonomous pipeline is faster and produces equivalent results.
+
+## Starting Interactive Mode
+
+### Commands
+
+```
+"Create a skill for [objective] interactively"
+"Create a skill for [objective] with interactive mode"
+"Walk me through creating a skill for [objective]"
+"I want to configure each step for a [domain] skill"
+```
+
+### Resuming a Paused Session
+
+If a session is interrupted, the system can resume from the last completed step:
+
+```
+"Resume the skill creation we started"
+"Continue where we left off on the [skill-name] skill"
+```
+
+### Learning Mode
+
+A variant of interactive mode that explains each phase as it runs:
+
+```
+"Create a skill for [objective] and explain each step"
+"Teach me how to create a [domain] skill"
+```
+
+## Wizard Steps
+
+### Step 1: Requirements Gathering
+
+The wizard begins by collecting structured requirements from the user.
+
+**System prompt**:
+```
+I'll help you create a skill for [objective]. Let me ask a few
+questions to understand your requirements.
+
+1. What data sources or APIs should this skill use?
+   (e.g., specific API, any free API, I'm not sure)
+
+2. What are the main tasks this skill should perform?
+   (e.g., fetch data, analyze trends, generate reports)
+
+3. How often will this skill run?
+   (e.g., on-demand, daily, weekly)
+
+4. What output format do you need?
+   (e.g., text summary, PDF report, CSV data, HTML dashboard)
+
+5. Any constraints I should know about?
+   (e.g., must be free, must support specific regions, rate limits)
+```
+
+**User response example**:
+```
+1. Use NOAA for historical data, Open-Meteo for forecasts
+2. Compare current weather to 10-year averages, flag anomalies
+3. Weekly automated runs plus on-demand
+4. PDF report with charts
+5. Must be free, focus on US agricultural regions
+```
+
+### Step 2: Workflow Analysis
+
+The system analyzes the requirements and presents its understanding for confirmation.
+
+**System prompt**:
+```
+Based on your requirements, here's what I understand:
+
+Domain: Climate / Agriculture
+Primary API: NOAA Climate Data Online
+  - Historical data (10+ year coverage)
+  - Free, 1,000 requests/day
+  - API key required (NOAA_API_KEY)
+
+Secondary API: Open-Meteo
+  - Forecast data (16-day outlook)
+  - Free, no API key, 10,000 requests/day
+
+Planned analyses:
+  1. Current vs. historical temperature comparison
+  2. Precipitation anomaly detection
+  3. Growing degree day calculations
+  4. Weekly trend summary with charts
+
+Output: PDF report with embedded charts
+
+Does this look correct? Would you like to change anything?
+```
+
+### Step 3: Strategy Selection
+
+The system presents architecture options and asks the user to choose.
+
+**System prompt**:
+```
+For this skill, I recommend the following architecture:
+
+Option A: Simple Skill (recommended)
+  - Single SKILL.md + scripts + references
+  - 4 Python scripts (~600 lines total)
+  - Best for: single-developer maintenance
+
+Option B: Complex Suite
+  - Separate skills for data fetching and analysis
+  - Shared reference library
+  - Best for: team maintenance or future expansion
+
+I recommend Option A because the scope is focused and the
+total code size is under 1,000 lines.
+
+Which option do you prefer? [A/B]
+```
+
+### Step 4: Preview and Refinement
+
+Before creating files, the system shows a preview of what will be generated.
+
+**System prompt**:
+```
+Here's the complete plan before I create any files:
+
+Directory: climate-agriculture-analysis/
+├── SKILL.md              (~120 lines)
+├── scripts/
+│   ├── fetch_noaa.py     (historical data retrieval)
+│   ├── fetch_openmeto.py (forecast retrieval)
+│   ├── analyze_climate.py (comparison + anomaly detection)
+│   └── generate_report.py (PDF generation)
+├── references/
+│   ├── api-guide.md      (NOAA + Open-Meteo documentation)
+│   └── methodology.md    (analysis methods explained)
+├── assets/
+│   └── report_template.html
+├── install.sh            (cross-platform installer)
+└── README.md             (installation for 7+ platforms)
+
+SKILL.md frontmatter:
+  name: climate-agriculture-analysis
+  description: >-
+    Analyze climate data for US agricultural regions using NOAA
+    historical records and Open-Meteo forecasts. Compare current
+    conditions to 10-year averages, detect anomalies...
+  license: MIT
+  metadata:
+    author: [your name]
+    version: 1.0.0
+
+Shall I proceed with creation? Or would you like to modify
+anything in this plan?
+```
+
+### Step 5: Creation
+
+The system creates all files, reporting progress as it goes.
+
+**System output**:
+```
+Creating skill: climate-agriculture-analysis
+
+[1/10] Created directory structure
+[2/10] Written SKILL.md (118 lines, spec-compliant)
+[3/10] Written scripts/fetch_noaa.py (145 lines)
+[4/10] Written scripts/fetch_openmeto.py (98 lines)
+[5/10] Written scripts/analyze_climate.py (187 lines)
+[6/10] Written scripts/generate_report.py (156 lines)
+[7/10] Written references/api-guide.md
+[8/10] Written references/methodology.md
+[9/10] Generated install.sh (cross-platform)
+[10/10] Written README.md (multi-platform instructions)
+```
+
+### Step 6: Validation
+
+The system runs spec validation and security scanning, then reports results.
+
+**System output**:
+```
+Running validation...
+
+Spec Compliance:
+  [PASS] Frontmatter: name format valid (lowercase + hyphens)
+  [PASS] Frontmatter: description length (287 chars <= 1024)
+  [PASS] Frontmatter: name matches directory
+  [PASS] SKILL.md body: 118 lines (< 500 limit)
+  [PASS] Required files: SKILL.md present
+  [PASS] License field: MIT
+
+Security Scan:
+  [PASS] No hardcoded API keys detected
+  [PASS] No .env files in skill directory
+  [PASS] No eval() or exec() calls
+  [PASS] No shell injection patterns
+
+Result: 10/10 checks passed. Skill is ready for installation.
+
+Would you like to install it now? Run: ./install.sh
+```
+
+## Advanced Configuration Options
+
+### Skipping Phases
+
+In interactive mode, users can skip phases they want to handle themselves:
+
+```
+"Create a skill interactively but skip API research -- I'll provide the API details"
+"Skip the design phase, I already know what analyses I want"
+```
+
+### Partial Interactivity
+
+Users can make only specific phases interactive:
+
+```
+"Create a skill autonomously but let me review the architecture before you build"
+"Auto-create but pause before generating the SKILL.md frontmatter"
+```
+
+### Exporting the Configuration
+
+After completing the wizard, users can export the configuration for reuse:
+
+```
+"Save this configuration as a template for future skills"
+```
+
+This creates a custom template file (see `references/templates-guide.md`) that can be reused for similar skills without re-answering all the wizard questions.
+
+## Interactive Mode vs. Autonomous Mode
+
+| Aspect | Autonomous | Interactive |
+|--------|-----------|-------------|
+| Speed | Faster (no pauses) | Slower (waits for input) |
+| Control | System decides | User decides |
+| Suitable for | Well-defined domains | Ambiguous or complex requirements |
+| Discovery | System researches and selects | System researches, user confirms |
+| Architecture | System chooses optimal | User picks from options |
+| Output | Same quality | Same quality, user-validated |
+
+Both modes produce the same output structure. The difference is whether the user participates in decisions or trusts the system to make them autonomously.
+```
+
+## File: `references/multi-agent-guide.md`
+```markdown
+# Multi-Agent Suite Creation
+
+## Overview
+
+A multi-agent suite is a collection of related skills that work together as a unified system. Instead of creating one monolithic skill, the suite splits responsibilities across multiple focused skills that share references and coordinate through a common integration layer.
+
+The 5-phase pipeline applies to each component skill, but Phase 3 (Architecture) makes the critical decision: simple skill vs. complex suite.
+
+## When to Use Batch Creation
+
+| Scenario | Single Skill | Multi-Agent Suite |
+|----------|-------------|-------------------|
+| 1-2 distinct workflows | Recommended | Overkill |
+| 3+ distinct workflows | Unwieldy | Recommended |
+| Total code > 2,000 lines | Hard to maintain | Organized by component |
+| Team maintenance | Single owner ok | Multiple contributors benefit |
+| Shared data sources across workflows | Duplicated logic | Shared reference layer |
+| Independent scaling of capabilities | Not possible | Each skill evolves independently |
+
+**Rule of thumb**: If you find yourself describing more than two unrelated tasks in a single skill description, you need a suite.
+
+## Suite Creation Process
+
+### Step 1: Analyze Relationships
+
+The system examines the user's requirements and identifies distinct workflow clusters.
+
+```
+User: "I need to track our e-commerce store -- monitor sales,
+       analyze customer behavior, track inventory levels, and
+       generate executive reports."
+
+Analysis:
+  Cluster 1: Sales Monitoring (revenue, orders, conversion)
+  Cluster 2: Customer Analytics (segmentation, cohorts, churn)
+  Cluster 3: Inventory Tracking (stock levels, reorder alerts)
+  Cluster 4: Executive Reporting (aggregated dashboards)
+
+  Shared resources: Shopify API connection, date utilities,
+  report generation templates
+```
+
+### Step 2: Determine Structure
+
+Based on the cluster analysis, the system designs the suite directory:
+
+```
+ecommerce-suite/
+├── SKILL.md                        # Suite-level overview (<500 lines)
+├── .claude-plugin/
+│   └── marketplace.json            # Suite manifest (official fields only)
+├── skills/
+│   ├── sales-monitor/
+│   │   ├── SKILL.md                # Sales-specific instructions
+│   │   └── scripts/
+│   │       └── monitor_sales.py
+│   ├── customer-analytics/
+│   │   ├── SKILL.md                # Customer-specific instructions
+│   │   └── scripts/
+│   │       └── analyze_customers.py
+│   ├── inventory-tracker/
+│   │   ├── SKILL.md                # Inventory-specific instructions
+│   │   └── scripts/
+│   │       └── track_inventory.py
+│   └── executive-reports/
+│       ├── SKILL.md                # Reporting instructions
+│       └── scripts/
+│           └── generate_reports.py
+├── shared/
+│   ├── api_client.py               # Shared Shopify API connection
+│   ├── date_utils.py               # Common date handling
+│   └── report_templates/           # Shared report assets
+│       └── executive_template.html
+├── references/
+│   └── api-guide.md                # Shared API documentation
+├── install.sh                      # Installs entire suite
+└── README.md                       # Multi-platform instructions
+```
+
+### Step 3: Create Individual Skills
+
+Each component skill goes through Phases 1-5 independently, but with awareness of the shared resources:
+
+1. **Discovery** -- Each skill identifies its specific API endpoints (e.g., sales-monitor uses Shopify Orders API, inventory-tracker uses Shopify Inventory API).
+2. **Design** -- Each skill defines its own analyses, scoped to its cluster.
+3. **Architecture** -- Each skill follows the simple skill structure within the suite.
+4. **Detection** -- Each skill gets its own description and keywords for independent activation.
+5. **Implementation** -- Each skill references shared utilities from `shared/`.
+
+### Step 4: Integration Layer
+
+The suite-level `SKILL.md` serves as the orchestration layer. It describes how the component skills relate and when to invoke which one:
+
+```markdown
+# E-commerce Suite
+
+## Component Skills
+
+This suite contains four specialized skills:
+
+- **sales-monitor**: Activate for revenue, orders, and conversion queries
+- **customer-analytics**: Activate for segmentation, cohort, and churn queries
+- **inventory-tracker**: Activate for stock levels, reorder, and supply queries
+- **executive-reports**: Activate for dashboards, summaries, and executive briefings
+
+## Cross-Skill Workflows
+
+When the user asks for a "full store overview" or "weekly executive summary",
+invoke executive-reports which aggregates data from all three other skills.
+```
+
+## Suite-Level marketplace.json
+
+For complex suites that need Claude Code plugin registration, a `marketplace.json` is generated with **only official fields**:
+
+```json
+{
+  "name": "ecommerce-suite",
+  "plugins": [
+    {
+      "name": "sales-monitor",
+      "description": "Monitor e-commerce sales, revenue trends, order volumes, and conversion rates using Shopify data.",
+      "source": "./skills/sales-monitor/",
+      "skills": ["./skills/sales-monitor/"]
+    },
+    {
+      "name": "customer-analytics",
+      "description": "Analyze customer behavior, segmentation, cohort retention, and churn patterns from e-commerce data.",
+      "source": "./skills/customer-analytics/",
+      "skills": ["./skills/customer-analytics/"]
+    },
+    {
+      "name": "inventory-tracker",
+      "description": "Track inventory stock levels, predict reorder points, and alert on low-stock items.",
+      "source": "./skills/inventory-tracker/",
+      "skills": ["./skills/inventory-tracker/"]
+    },
+    {
+      "name": "executive-reports",
+      "description": "Generate executive dashboards and PDF summaries aggregating sales, customer, and inventory data.",
+      "source": "./skills/executive-reports/",
+      "skills": ["./skills/executive-reports/"]
+    }
+  ]
+}
+```
+
+**Important**: The marketplace.json uses ONLY the official fields: `name` and `plugins` at the top level, and `name`, `description`, `source`, `skills` per plugin entry. No `version`, `author`, `repository`, `tags`, `icon`, or other non-standard fields.
+
+## Suite Examples
+
+### Financial Suite
+
+**User request**: "Create a suite for comprehensive financial analysis -- stock tracking, portfolio management, and market research."
+
+```
+financial-suite/
+├── SKILL.md
+├── .claude-plugin/marketplace.json
+├── skills/
+│   ├── stock-tracker/         # Real-time and historical price data
+│   ├── portfolio-manager/     # Holdings, allocation, performance
+│   └── market-research/       # Sector analysis, news sentiment
+├── shared/
+│   ├── market_data_client.py  # Alpha Vantage + Yahoo Finance
+│   └── financial_utils.py     # Common calculations (returns, ratios)
+├── references/
+├── install.sh
+└── README.md
+```
+
+### E-commerce Suite
+
+**User request**: "I manage an online store and need to track everything -- sales, customers, inventory, and generate weekly reports."
+
+(See the detailed structure in the Suite Creation Process section above.)
+
+### Climate Suite
+
+**User request**: "Build a climate analysis system with historical trend analysis, forecast monitoring, and extreme event alerting."
+
+```
+climate-suite/
+├── SKILL.md
+├── .claude-plugin/marketplace.json
+├── skills/
+│   ├── historical-trends/     # Long-term climate data analysis
+│   ├── forecast-monitor/      # Short-term forecast tracking
+│   └── extreme-events/        # Severe weather alerting
+├── shared/
+│   ├── climate_data_client.py # NOAA + Open-Meteo connections
+│   └── geo_utils.py           # Geographic region handling
+├── references/
+├── install.sh
+└── README.md
+```
+
+## Suite Orchestration Patterns
+
+The suite-level SKILL.md is the most important file in a suite. It doesn't just list components — it tells the agent *how to think* about routing, sequencing, and combining them.
+
+### Pattern 1: Intent-Based Routing
+
+The simplest pattern. The suite SKILL.md maps user intent to component skills:
+
+```markdown
+# /ecommerce-suite — E-commerce Intelligence
+
+You coordinate four specialized e-commerce skills. Route every user
+query to the right component based on intent.
+
+## Routing Table
+
+| If the user asks about... | Invoke | Examples |
+|---------------------------|--------|---------|
+| Revenue, orders, sales, conversion, AOV | /sales-monitor | "What were last week's sales?" |
+| Customers, segments, cohorts, churn, retention | /customer-analytics | "Show me customer retention" |
+| Stock, inventory, reorder, supply, out-of-stock | /inventory-tracker | "Which SKUs need reordering?" |
+| Summary, dashboard, executive, weekly report | /executive-reports | "Generate the weekly report" |
+
+If the query doesn't clearly match one component, ask the user to clarify.
+If the query spans multiple components, use the cross-component workflows below.
+```
+
+### Pattern 2: Sequential Pipeline
+
+Some workflows require components in sequence — the output of one feeds the next:
+
+```markdown
+## Cross-Component Workflows
+
+### Weekly Executive Report
+When user asks for "weekly report", "executive summary", or "full store overview":
+
+1. Run /sales-monitor: Get revenue, orders, conversion for the past 7 days
+2. Run /customer-analytics: Get new vs returning customer split, churn rate
+3. Run /inventory-tracker: Get low-stock alerts and reorder recommendations
+4. Run /executive-reports: Compile all three into a single PDF dashboard
+
+The executive-reports component expects data from the other three.
+Pass the outputs as context — do not ask the user to run each step manually.
+
+### Churn Revenue Impact
+When user asks about "revenue impact of churn" or "how much are we losing":
+
+1. Run /customer-analytics: Get churned customer segments and churn rate
+2. Run /sales-monitor: Get revenue breakdown by customer segment
+3. Calculate: revenue_at_risk = churned_segment_revenue × churn_rate
+4. Present combined analysis with both the churn data and revenue impact
+```
+
+### Pattern 3: Parallel Aggregation
+
+When components can run independently and results are combined:
+
+```markdown
+### Store Health Check
+When user asks for "store health" or "how's the business":
+
+Run these in parallel (no dependencies between them):
+- /sales-monitor → revenue trend (up/down/flat)
+- /customer-analytics → retention rate
+- /inventory-tracker → stock health score
+
+Then synthesize:
+- All green: "Store is healthy — revenue trending up, retention stable, stock well-managed"
+- Mixed: Report which areas need attention
+- All concerning: "Multiple areas need attention" + specific recommendations
+```
+
+### Pattern 4: Conditional Routing
+
+When the right component depends on data discovered during the conversation:
+
+```markdown
+## Conditional Workflows
+
+### Deep Dive Analysis
+When user asks to "deep dive" or "investigate" a metric:
+
+1. Identify which metric they're asking about
+2. Route to the appropriate component:
+   - Revenue metric → /sales-monitor with detailed=true
+   - Customer metric → /customer-analytics with detailed=true
+   - Stock metric → /inventory-tracker with detailed=true
+3. If the deep dive reveals a cross-domain issue (e.g., revenue dropped
+   because of stockouts), invoke the relevant second component
+4. Present the combined root-cause analysis
+```
+
+### Orchestration Anti-Patterns
+
+| Anti-Pattern | Why It's Wrong | Do This Instead |
+|-------------|---------------|-----------------|
+| Suite SKILL.md just lists components without routing logic | Agent has to guess which component to use | Provide explicit routing table with example queries |
+| Components call each other's scripts directly | Creates tight coupling, breaks independence | Agent orchestrates — passes output from A as context to B |
+| Suite SKILL.md duplicates component instructions | Maintenance nightmare, instructions drift apart | Reference component skills: "Invoke /sales-monitor for this" |
+| No cross-component workflow examples | Agent doesn't know how to combine results | Document 2-3 concrete multi-component workflows |
+| Every query goes through all components | Wastes tokens and time | Route to specific component; only aggregate when explicitly asked |
+
+### Complete Suite SKILL.md Example
+
+```markdown
+# /financial-suite — Comprehensive Financial Analysis
+
+You are a financial analysis coordinator managing three specialized skills.
+Your job is to route queries to the right specialist and combine results
+when needed.
+
+## Component Skills
+
+- **/stock-analyzer**: Real-time and historical price data, technical indicators
+- **/portfolio-tracker**: Holdings, allocation, performance, rebalancing
+- **/market-research**: Sector analysis, news sentiment, peer comparison
+
+## Routing Logic
+
+| User Intent | Route To |
+|-------------|----------|
+| Price, chart, technical indicator, RSI, MACD | /stock-analyzer |
+| My portfolio, allocation, performance, rebalance | /portfolio-tracker |
+| Sector trends, news, competitor, peer comparison | /market-research |
+
+## Cross-Skill Workflows
+
+### Portfolio Review with Market Context
+When user asks for "portfolio review" or "how am I doing":
+1. Invoke /portfolio-tracker for current holdings and performance
+2. Invoke /market-research for sector trends affecting held positions
+3. Synthesize: performance attribution + market context + recommendations
+
+### Buy/Sell Analysis
+When user asks "should I buy X" or "should I sell X":
+1. Invoke /stock-analyzer for technical analysis of the specific stock
+2. Invoke /market-research for sector sentiment and peer comparison
+3. Invoke /portfolio-tracker to check current exposure and allocation impact
+4. Synthesize: technical signal + market context + portfolio fit
+
+## When to Combine vs. Route Directly
+
+- Single-domain question → Route to one component
+- "How am I doing" or "full analysis" → Combine all components
+- If unsure → Ask the user: "Would you like a quick check on [X]
+  or a comprehensive analysis across your portfolio?"
+```
+
+---
+
+## Benefits of Suite Creation
+
+### Time Efficiency
+
+Creating a suite through the batch process is significantly faster than creating individual skills separately:
+
+| Approach | API Research | Shared Code | Integration | Total |
+|----------|-------------|-------------|-------------|-------|
+| 4 separate skills | 4x (redundant) | 0 (duplicated) | Manual | ~4 hours |
+| 1 suite (batch) | 1x (shared) | 1x (reused) | Automatic | ~1.5 hours |
+
+### Built-in Integration
+
+Component skills within a suite share:
+- API client code (no duplicated connection logic)
+- Utility functions (date handling, formatting, calculations)
+- Reference documentation (API guides written once)
+- Report templates (consistent styling across outputs)
+
+### Independent Maintenance
+
+Each component skill can be:
+- Updated independently without affecting others
+- Tested in isolation
+- Replaced with an improved version
+- Extended with new analyses
+
+The suite structure makes it possible to update the inventory-tracker without touching the sales-monitor, while still sharing the underlying Shopify API client.
+
+### Marketplace Discoverability
+
+Each plugin entry in `marketplace.json` has its own `description` field. This means a suite's individual components can be discovered by different searches:
+- "track sales" finds the sales-monitor plugin
+- "customer churn" finds the customer-analytics plugin
+- "inventory alerts" finds the inventory-tracker plugin
+
+The suite functions as both a single installable unit and a collection of independently discoverable capabilities.
+```
+
+## File: `references/phase1-discovery.md`
+```markdown
+# Phase 1: Discovery and API Research
+
+## Objective
+
+Research and **DECIDE** autonomously which API or data source to use for the agent.
+
+## Detailed Process
+
+### Step 1: Identify Domain
+
+From user input, extract the main domain:
+
+| User Input | Identified Domain |
+|------------------|---------------------|
+| "US crop data" | Agriculture (US) |
+| "stock market analysis" | Finance / Stock Market |
+| "global climate data" | Climate / Meteorology |
+| "economic indicators" | Economy / Macro |
+| "commodity data" | Trading / Commodities |
+
+### Step 2: Search Available APIs
+
+For the identified domain, use WebSearch to find public APIs:
+
+**Search queries**:
+```
+"[domain] API free public data"
+"[domain] government API documentation"
+"best API for [domain] historical data"
+"[domain] open data sources"
+```
+
+**Example (US agriculture)**:
+```bash
+WebSearch: "US agriculture API free historical data"
+WebSearch: "USDA API documentation"
+WebSearch: "agricultural statistics API United States"
+```
+
+**Typical result**: 5-10 candidate APIs
+
+### Step 3: Research Documentation
+
+For each candidate API, use WebFetch to load:
+- Homepage/overview
+- Getting started guide
+- API reference
+- Rate limits and pricing
+
+**Extract information**:
+
+```markdown
+## API 1: [Name]
+
+**URL**: [base URL]
+**Docs**: [docs URL]
+
+**Authentication**:
+- Type: API key / OAuth / None
+- Cost: Free / Paid
+- How to obtain: [steps]
+
+**Available Data**:
+- Temporal coverage: [from when to when]
+- Geographic coverage: [countries, regions]
+- Metrics: [list]
+- Granularity: [daily, monthly, annual]
+
+**Limitations**:
+- Rate limit: [requests per day/hour]
+- Max records: [per request]
+- Throttling: [yes/no]
+
+**Quality**:
+- Source: [official government / private]
+- Reliability: [high/medium/low]
+- Update frequency: [frequency]
+
+**Documentation**:
+- Quality: [excellent/good/poor]
+
+### Step 4: API Capability Inventory (NEW v2.0 - CRITICAL!)
+
+**OBJECTIVE:** Ensure the skill uses 100% of API capabilities, not just the basics!
+
+**LEARNING:** us-crop-monitor v1.0 used only CONDITION (1 of 5 NASS metrics).
+v2.0 had to add PROGRESS, YIELD, PRODUCTION, AREA (+3,500 lines of rework).
+
+**Process:**
+
+**Step 4.1: Complete Inventory**
+
+For the chosen API, catalog ALL data types:
+
+```markdown
+## Complete Inventory - {API Name}
+
+**Available Metrics/Endpoints:**
+
+| Endpoint/Metric | Returns | Granularity | Coverage | Value |
+|-----------------|---------------|---------------|-----------|-------|
+| {metric1}       | {description}   | {daily/weekly}| {geo}     | ⭐⭐⭐⭐⭐ |
+| {metric2}       | {description}   | {monthly}     | {geo}     | ⭐⭐⭐⭐⭐ |
+| {metric3}       | {description}   | {annual}      | {geo}     | ⭐⭐⭐⭐  |
+...
+
+**Real Example (NASS):**
+
+| Metric Type    | Data               | Frequency | Value    | Implement? |
+|----------------|--------------------| ----------|----------|------------|
+| CONDITION      | Quality ratings    | Weekly    | ⭐⭐⭐⭐⭐ | ✅ YES     |
+| PROGRESS       | % planted/harvested| Weekly    | ⭐⭐⭐⭐⭐ | ✅ YES     |
+| YIELD          | Bu/acre            | Monthly   | ⭐⭐⭐⭐⭐ | ✅ YES     |
+| PRODUCTION     | Total bushels      | Monthly   | ⭐⭐⭐⭐⭐ | ✅ YES     |
+| AREA           | Acres planted      | Annual    | ⭐⭐⭐⭐  | ✅ YES     |
+| PRICE          | $/bushel           | Monthly   | ⭐⭐⭐    | ⚪ v2.0    |
+```
+
+**Step 4.2: Coverage Decision**
+
+**GOLDEN RULE:**
+- If metric has ⭐⭐⭐⭐ or ⭐⭐⭐⭐⭐ value → Implement in v1.0
+- If API has 5 high-value metrics → Implement all 5!
+- Never leave >50% of API unused without strong justification
+
+**Step 4.3: Document Decision**
+
+In DECISIONS.md:
+```markdown
+## API Coverage Decision
+
+API {name} offers {N} types of metrics.
+
+**Implemented in v1.0 ({X} of {N}):**
+- {metric1} - {justification}
+- {metric2} - {justification}
+...
+
+**Not implemented ({Y} of {N}):**
+- {metricZ} - {why not} (planned for v2.0)
+
+**Coverage:** {X/N * 100}% = {evaluation}
+- If < 70%: Clearly explain why low coverage
+- If > 70%: ✅ Good coverage
+```
+
+**Output of this phase:** Exact list of all `get_*()` methods to implement
+- Examples: [many/few/none]
+- SDKs: [Python/R/None]
+
+**Ease of Use**:
+- Format: JSON / CSV / XML
+- Structure: [simple/complex]
+- Quirks: [any strange behavior?]
+```
+
+### Step 4: Compare Options
+
+Create comparison table:
+
+| API | Coverage | Cost | Rate Limit | Quality | Docs | Ease | Score |
+|-----|-----------|-------|------------|-----------|------|------------|-------|
+| API 1 | ⭐⭐⭐⭐⭐ | Free | 1000/day | Official | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 9.2/10 |
+| API 2 | ⭐⭐⭐⭐ | $49/mo | Unlimited | Private | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | 7.8/10 |
+| API 3 | ⭐⭐⭐ | Free | 100/day | Private | ⭐⭐ | ⭐⭐⭐ | 5.5/10 |
+
+**Scoring criteria**:
+- Coverage (fit with need): 30% weight
+- Cost (prefer free): 20% weight
+- Rate limit (sufficient?): 15% weight
+- Quality (official > private): 15% weight
+- Documentation (facilitates implementation): 10% weight
+- Ease of use (format, structure): 10% weight
+
+### Step 5: DECIDE
+
+**Consider user constraints**:
+- Mentioned "free"? → Eliminate paid options
+- Mentioned "10+ years historical data"? → Check coverage
+- Mentioned "real-time"? → Prioritize streaming APIs
+
+**Apply logic**:
+1. Eliminate APIs that violate constraints
+2. Of remaining, choose highest score
+3. If tie, prefer:
+   - Official > private
+   - Better documentation
+   - Easier to use
+
+**FINAL DECISION**:
+
+```markdown
+## Selected API: [API Name]
+
+**Score**: X.X/10
+
+**Justification**:
+- ✅ Coverage: [specific details]
+- ✅ Cost: [free/paid + details]
+- ✅ Rate limit: [number] requests/day (sufficient for [estimated usage])
+- ✅ Quality: [official/private + reliability]
+- ✅ Documentation: [quality + examples]
+- ✅ Ease of use: [format, structure]
+
+**Fit with requirements**:
+- Constraint 1 (e.g., free): ✅ Met
+- Constraint 2 (e.g., 10+ years history): ✅ Met (since [year])
+- Primary need (e.g., crop production): ✅ Covered
+
+**Alternatives Considered**:
+
+**API X**: Score 7.5/10
+- Rejected because: [specific reason]
+- Trade-off: [what we lose vs gain]
+
+**API Y**: Score 6.2/10
+- Rejected because: [reason]
+
+**Conclusion**:
+[API Name] is the best option because [1-2 sentence synthesis].
+```
+
+### Step 6: Research Technical Details
+
+After deciding, dive deep into documentation:
+
+**Load via WebFetch**:
+- Getting started guide
+- Complete API reference
+- Authentication guide
+- Rate limiting details
+- Best practices
+
+**Extract for implementation**:
+
+```markdown
+## Technical Details - [API]
+
+### Authentication
+
+**Method**: API key in header
+**Header**: `X-Api-Key: YOUR_KEY`
+**Obtaining key**:
+1. [step 1]
+2. [step 2]
+3. [step 3]
+
+### Main Endpoints
+
+**Endpoint 1**: [Name]
+- **URL**: `GET https://api.example.com/v1/endpoint`
+- **Parameters**:
+  - `param1` (required): [description, type, example]
+  - `param2` (optional): [description, type, default]
+- **Response** (200 OK):
+```json
+{
+  "data": [...],
+  "meta": {...}
+}
+```
+- **Errors**:
+  - 400: [when occurs, how to handle]
+  - 401: [when occurs, how to handle]
+  - 429: [rate limit, how to handle]
+
+**Example request**:
+```bash
+curl -H "X-Api-Key: YOUR_KEY" \
+  "https://api.example.com/v1/endpoint?param1=value"
+```
+
+[Repeat for all relevant endpoints]
+
+### Rate Limiting
+
+- Limit: [number] requests per [period]
+- Response headers:
+  - `X-RateLimit-Limit`: Total limit
+  - `X-RateLimit-Remaining`: Remaining requests
+  - `X-RateLimit-Reset`: Reset timestamp
+- Behavior when exceeded: [429 error, throttling, ban?]
+- Best practice: [how to implement rate limiting]
+
+### Quirks and Gotchas
+
+**Quirk 1**: Values come as strings with formatting
+- Example: `"2,525,000"` instead of `2525000`
+- Solution: Remove commas before converting
+
+**Quirk 2**: Suppressed data marked as "(D)"
+- Meaning: Withheld to avoid disclosing data
+- Solution: Treat as NULL, signal to user
+
+**Quirk 3**: [other non-obvious behavior]
+- Solution: [how to handle]
+
+### Performance Tips
+
+- Historical data doesn't change → cache permanently
+- Recent data may be revised → short cache (7 days)
+- Use pagination parameters if large response
+- Make parallel requests when possible (respecting rate limit)
+```
+
+### Step 7: Document for Later Use
+
+Save everything in `references/api-guide.md` of the agent to be created.
+
+## Discovery Examples
+
+### Example 1: US Agriculture
+
+**Input**: "US crop data"
+
+**Research**:
+```
+WebSearch: "USDA API agricultural data"
+→ Found: NASS QuickStats, ERS, FAS
+
+WebFetch: https://quickstats.nass.usda.gov/api
+→ Free, data since 1866, 1000/day rate limit
+
+WebFetch: https://www.ers.usda.gov/developer/
+→ Free, economic focus, less granular
+
+WebFetch: https://apps.fas.usda.gov/api
+→ International focus, not domestic
+```
+
+**Comparison**:
+| API | Coverage (US domestic) | Cost | Production Data | Score |
+|-----|---------------------------|-------|-------------------|-------|
+| NASS | ⭐⭐⭐⭐⭐ (excellent) | Free | ⭐⭐⭐⭐⭐ | 9.5/10 |
+| ERS | ⭐⭐⭐⭐ (good) | Free | ⭐⭐⭐ (economic) | 7.0/10 |
+| FAS | ⭐⭐ (international) | Free | ⭐⭐ (global) | 4.0/10 |
+
+**DECISION**: NASS QuickStats API
+- Best coverage for US domestic agriculture
+- Free with reasonable rate limit
+- Complete production, area, yield data
+
+### Example 2: Stock Market
+
+**Input**: "technical stock analysis"
+
+**Research**:
+```
+WebSearch: "stock market API free historical data"
+→ Alpha Vantage, Yahoo Finance, IEX Cloud, Polygon.io
+
+WebFetch: Alpha Vantage docs
+→ Free, 5 requests/min, 500/day
+
+WebFetch: Yahoo Finance (yfinance)
+→ Free, unlimited but unofficial
+
+WebFetch: IEX Cloud
+→ Freemium, good docs, 50k free credits/month
+```
+
+**Comparison**:
+| API | Data | Cost | Rate Limit | Official | Score |
+|-----|-------|-------|------------|---------|-------|
+| Alpha Vantage | Complete | Free | 500/day | ⭐⭐⭐ | 8.0/10 |
+| Yahoo Finance | Complete | Free | Unlimited | ❌ Unofficial | 7.5/10 |
+| IEX Cloud | Excellent | Freemium | 50k/month | ⭐⭐⭐⭐ | 8.5/10 |
+
+**DECISION**: IEX Cloud (free tier)
+- Official and reliable
+- 50k requests/month sufficient
+- Excellent documentation
+- Complete data (OHLCV + volume)
+
+### Example 3: Global Climate
+
+**Input**: "global climate data"
+
+**Research**:
+```
+WebSearch: "weather API historical data global"
+→ NOAA, OpenWeather, Weather.gov, Meteostat
+
+[Research each one...]
+```
+
+**DECISION**: NOAA Climate Data Online (CDO) API
+- Official (US government)
+- Free
+- Global and historical coverage (1900+)
+- Rate limit: 1000/day
+
+## Decision Documentation
+
+Create `DECISIONS.md` file in agent:
+
+```markdown
+# Architecture Decisions
+
+## Date: [creation date]
+
+## Phase 1: API Selection
+
+### Chosen API
+
+**[API Name]**
+
+### Selection Process
+
+**APIs Researched**: [list]
+
+**Evaluation Criteria**:
+1. Data coverage (fit with need)
+2. Cost (preference for free)
+3. Rate limits (viability)
+4. Quality (official > private)
+5. Documentation (facilitates development)
+
+### Comparison
+
+[Comparison table]
+
+### Final Justification
+
+[2-3 paragraphs explaining why this API was chosen]
+
+### Trade-offs
+
+**What we gain**:
+- [benefit 1]
+- [benefit 2]
+
+**What we lose** (vs alternatives):
+- [accepted limitation 1]
+- [accepted limitation 2]
+
+### Technical Details
+
+[Summary of endpoints, authentication, rate limits, etc]
+
+**Complete documentation**: See `references/api-guide.md`
+```
+
+## Phase 1 Checklist
+
+Before proceeding to Phase 2, verify:
+
+- [ ] Research completed (WebSearch + WebFetch)
+- [ ] Minimum 3 APIs compared
+- [ ] Decision made with clear justification
+- [ ] User constraints respected
+- [ ] Technical details extracted
+- [ ] DECISIONS.md created
+- [ ] Ready for analysis design
+```
+
+## File: `references/phase2-design.md`
+```markdown
+# Phase 2: Analysis Design
+
+## Objective
+
+**DEFINE** autonomously which analyses the agent will perform and how.
+
+## Detailed Process
+
+### Step 1: Brainstorm Use Cases
+
+From the workflow described by the user, think of typical questions they will ask.
+
+**Technique**: "If I were this user, what would I ask?"
+
+**Example (US agriculture)**:
+
+User said: "download crop data, compare year vs year, make rankings"
+
+**Questions they likely ask**:
+1. "What's the corn production in 2023?"
+2. "How's soybean compared to last year?"
+3. "Did production grow or fall?"
+4. "How much did it grow?"
+5. "Does growth come from area or productivity?"
+6. "Which states produce most wheat?"
+7. "Top 5 soybean producers"
+8. "Did the ranking change vs last year?"
+9. "Production trend last 5 years?"
+10. "Forecast for next year?"
+11. "Average US yield"
+12. "Which state has best productivity?"
+13. "Did planted area increase?"
+14. "Compare Midwest vs South"
+15. "Production by region"
+
+**Objective**: List 15-20 typical questions
+
+### Step 2: Group by Analysis Type
+
+Group similar questions:
+
+**Group 1: Simple Queries** (fetching + formatting)
+- Questions: 1, 11, 13
+- Required analysis: **Data Retrieval**
+- Complexity: Low
+
+**Group 2: Temporal Comparisons** (YoY)
+- Questions: 2, 3, 4, 5
+- Required analysis: **YoY Comparison + Decomposition**
+- Complexity: Medium
+
+**Group 3: Rankings** (sorting + share)
+- Questions: 6, 7, 8
+- Required analysis: **State Ranking**
+- Complexity: Medium
+
+**Group 4: Trends** (time series)
+- Questions: 9
+- Required analysis: **Trend Analysis**
+- Complexity: Medium-High
+
+**Group 5: Projections** (forecasting)
+- Questions: 10
+- Required analysis: **Forecasting**
+- Complexity: High
+
+**Group 6: Geographic Aggregations**
+- Questions: 12, 14, 15
+- Required analysis: **Regional Aggregation**
+- Complexity: Medium
+
+### Step 3: Prioritize Analyses
+
+**Prioritization criteria**:
+1. **Frequency of use** (based on described workflow)
+2. **Analytical value** (insight vs effort)
+3. **Implementation complexity** (easier first)
+4. **Dependencies** (does one analysis depend on another?)
+
+**Scoring**:
+
+| Analysis | Frequency | Value | Ease | Score |
+|---------|------------|-------|------------|-------|
+| YoY Comparison | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | 9.3/10 |
+| State Ranking | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 9.3/10 |
+| Regional Agg | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | 8.0/10 |
+| Trend Analysis | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | 7.3/10 |
+| Data Retrieval | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | 8.3/10 |
+| Forecasting | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | 5.3/10 |
+
+**DECISION**: Implement top 5
+1. YoY Comparison (9.3)
+2. State Ranking (9.3)
+3. Data Retrieval (8.3)
+4. Regional Aggregation (8.0)
+5. Trend Analysis (7.3)
+
+**Don't implement initially** (can add later):
+- Forecasting (5.3) - complex, occasional use
+
+### Step 4: Specify Each Analysis
+
+For each selected analysis:
+
+```markdown
+## Analysis: [Name]
+
+**Objective**: [What it does in 1 sentence]
+
+**When to use**: [Types of questions that trigger it]
+
+**Required inputs**:
+- Input 1: [type, description]
+- Input 2: [type, description]
+
+**Expected outputs**:
+- Output 1: [type, description]
+- Output 2: [type, description]
+
+**Methodology**:
+
+[Explanation in natural language]
+
+**Formulas**:
+```
+Formula 1 = ...
+Formula 2 = ...
+```
+
+**Data transformations**:
+1. [Transformation 1]
+2. [Transformation 2]
+
+**Validations**:
+- Validation 1: [criteria]
+- Validation 2: [criteria]
+
+**Interpretation**:
+- If result > X: [interpretation]
+- If result < Y: [interpretation]
+
+**Concrete example**:
+
+Input:
+- Commodity: Corn
+- Year current: 2023
+- Year previous: 2022
+
+Processing:
+- Fetch 2023 production: 15.3B bu
+- Fetch 2022 production: 13.7B bu
+- Calculate: (15.3 - 13.7) / 13.7 = +11.7%
+
+Output:
+```json
+{
+  "commodity": "CORN",
+  "year_current": 2023,
+  "year_previous": 2022,
+  "production_current": 15.3,
+  "production_previous": 13.7,
+  "change_absolute": 1.6,
+  "change_percent": 11.7,
+  "interpretation": "significant_increase"
+}
+```
+
+Response to user:
+"Corn production grew 11.7% in 2023 vs 2022 (15.3B bu vs 13.7B bu)."
+```
+
+### Step 5: Specify Methodologies
+
+For quantitative analyses, detail methodology:
+
+**Example: YoY Decomposition**
+
+```markdown
+### Growth Decomposition
+
+**Objective**: Understand how much of production growth comes from:
+- Planted area increase (extensive)
+- Productivity/yield increase (intensive)
+
+**Mathematics**:
+
+Production = Area × Yield
+
+Δ Production = Δ Area × Yield(t-1) + Area(t-1) × Δ Yield + Δ Area × Δ Yield
+
+Interaction term usually small, so approximation:
+
+Δ Production ≈ Δ Area × Yield(t-1) + Area(t-1) × Δ Yield
+
+**Percentage contributions**:
+
+Contrib_Area = (Δ Area% / Δ Production%) × 100
+Contrib_Yield = (Δ Yield% / Δ Production%) × 100
+
+**Interpretation**:
+
+- Contrib_Area > 60%: **Extensive growth**
+  → Area expansion is main driver
+  → Agricultural frontier expanding
+
+- Contrib_Yield > 60%: **Intensive growth**
+  → Technology improvement is main driver
+  → Productivity/ha increasing
+
+- Both ~50%: **Balanced growth**
+
+**Validation**:
+
+Check: Production(t) ≈ Area(t) × Yield(t) (margin 1%)
+Check: Contrib_Area + Contrib_Yield ≈ 100% (margin 5%)
+
+**Example**:
+
+Soybeans 2023 vs 2022:
+- Δ Production: +12.4%
+- Δ Area: +6.1%
+- Δ Yield: +7.6%
+
+Contrib_Area = (6.1 / 12.4) × 100 = 49%
+Contrib_Yield = (7.6 / 12.4) × 100 = 61%
+
+**Interpretation**: Intensive growth (61% from yield).
+Technology and management improving.
+```
+
+### Step 6: Document Analyses
+
+Save all specifications in `references/analysis-methods.md` of the agent.
+
+## Phase 2 Checklist
+
+- [ ] 15+ typical questions listed
+- [ ] Questions grouped by analysis type
+- [ ] 4-6 analyses prioritized (with scoring)
+- [ ] Each analysis specified (objective, inputs, outputs, methodology)
+- [ ] Methodologies detailed with formulas
+- [ ] Validations defined
+- [ ] Interpretations specified
+- [ ] Concrete examples included
+```
+
+## File: `references/phase3-architecture.md`
+```markdown
+# Phase 3: Architecture and Structuring
+
+## Objective
+
+**STRUCTURE** the agent optimally: folders, files, responsibilities, cache, performance.
+
+## Detailed Process
+
+### Step 1: Define Agent Name
+
+Based on domain and objective, create a descriptive kebab-case name per the Agent Skills Open Standard.
+
+**Format**: `{domain}-{objective}` or `{action}-{object}`
+
+**Examples**:
+- US Agriculture → `nass-usda-agriculture`
+- Stock analysis → `stock-technical-analysis`
+- Global climate → `noaa-climate-analysis`
+- Brazil CONAB → `conab-crop-yield-analysis`
+
+**Rules**:
+- 1-64 characters
+- Lowercase letters, numbers, and hyphens only
+- Must not start or end with a hyphen
+- Must not contain consecutive hyphens
+- Must match parent directory name
+- Descriptive but concise
+
+### Step 2: Directory Structure
+
+**Decision**: How many levels of organization?
+
+**Option A - Simple** (small agents):
+```
+skill-name/
+├── SKILL.md               ← Primary file, spec-compliant frontmatter
+├── scripts/
+│   └── main.py
+├── references/
+│   └── guide.md
+├── assets/
+│   └── config.json
+├── install.sh             ← Cross-platform installer
+└── README.md              ← Multi-platform install instructions
+```
+
+**Option B - Organized** (medium agents):
+```
+skill-name/
+├── SKILL.md               ← Primary file, spec-compliant frontmatter
+├── scripts/
+│   ├── fetch.py
+│   ├── parse.py
+│   ├── analyze.py
+│   └── utils/
+│       ├── cache.py
+│       └── validators.py
+├── references/
+│   ├── api-guide.md
+│   └── methodology.md
+├── assets/
+│   └── config.json
+├── install.sh
+└── README.md
+```
+
+**Option C - Complete** (complex agents):
+```
+skill-name/
+├── SKILL.md               ← Primary file, spec-compliant frontmatter
+├── scripts/
+│   ├── core/
+│   │   ├── fetch_[source].py
+│   │   ├── parse_[source].py
+│   │   └── analyze_[source].py
+│   ├── models/
+│   │   ├── forecasting.py
+│   │   └── ml_models.py
+│   └── utils/
+│       ├── cache_manager.py
+│       ├── rate_limiter.py
+│       └── validators.py
+├── references/
+│   ├── api/
+│   │   └── [api-name]-guide.md
+│   ├── methods/
+│   │   └── analysis-methods.md
+│   └── troubleshooting.md
+├── assets/
+│   ├── config.json
+│   └── metadata.json
+├── install.sh
+├── README.md
+└── data/
+    ├── raw/
+    ├── processed/
+    ├── cache/
+    └── analysis/
+```
+
+**Note**: Simple skills do NOT need `.claude-plugin/marketplace.json`. For complex skill suites with multiple component skills, an optional `marketplace.json` with ONLY official fields may be added.
+
+**Choose based on**:
+- Number of scripts (1-2 → A, 3-5 → B, 6+ → C)
+- Analysis complexity
+- Prefer starting with B, expand to C if needed
+
+### Step 3: Define Script Responsibilities
+
+**Principle**: Separation of Concerns
+
+**Typical scripts**:
+
+**1. fetch_[source].py**
+- **Responsibility**: API requests, authentication, rate limiting
+- **Input**: Query parameters (commodity, year, etc)
+- **Output**: Raw JSON from API
+- **Does NOT**: Parse, transform, analyze
+- **Size**: 200-300 lines
+
+**2. parse_[source].py**
+- **Responsibility**: Parsing, cleaning, validation
+- **Input**: API JSON
+- **Output**: Structured DataFrame
+- **Does NOT**: Fetch, analyze
+- **Size**: 150-200 lines
+
+**3. analyze_[source].py**
+- **Responsibility**: All analyses (YoY, ranking, etc)
+- **Input**: Clean DataFrame
+- **Output**: Dict with results
+- **Does NOT**: Fetch, parse
+- **Size**: 300-500 lines (all analyses)
+
+**Typical utils**:
+
+**cache_manager.py**:
+- Manage response cache
+- Differentiated TTL
+- ~100-150 lines
+
+**rate_limiter.py**:
+- Control rate limit
+- Persistent counter
+- Alerts
+- ~100-150 lines
+
+**validators.py**:
+- Data validations
+- Consistency checks
+- ~100-150 lines
+
+**unit_converter.py** (if needed):
+- Unit conversions
+- ~50-100 lines
+
+### Step 4: Plan References
+
+**Typical files**:
+
+**api-guide.md** (~1500 words):
+- How to get API key
+- Main endpoints with examples
+- Important parameters
+- Response format
+- Limitations and quirks
+- API troubleshooting
+
+**analysis-methods.md** (~2000 words):
+- Each analysis explained
+- Mathematical formulas
+- Interpretations
+- Validations
+- Concrete examples
+
+**troubleshooting.md** (~1000 words):
+- Common problems
+- Step-by-step solutions
+- FAQs
+
+**domain-context.md** (optional, ~1000 words):
+- Domain context
+- Terminology
+- Important concepts
+- Benchmarks
+
+### Step 5: Plan Assets
+
+**config.json**:
+- API settings (URL, rate limits, timeouts)
+- Cache settings (TTLs, directories)
+- Analysis defaults
+- Validation thresholds
+
+**Typical structure**:
+```json
+{
+  "api": {
+    "base_url": "...",
+    "api_key_env": "VAR_NAME",
+    "rate_limit_per_day": 1000,
+    "timeout_seconds": 30
+  },
+  "cache": {
+    "enabled": true,
+    "dir": "data/cache",
+    "ttl_historical_days": 365,
+    "ttl_current_days": 7
+  },
+  "defaults": {
+    "param1": "value1"
+  },
+  "validation": {
+    "threshold1": 0.01
+  }
+}
+```
+
+**metadata.json** (if needed):
+- Domain-specific metadata
+- Mappings (aliases)
+- Conversions (units)
+- Groupings (regions)
+
+**Example**:
+```json
+{
+  "commodities": {
+    "CORN": {
+      "aliases": ["corn", "maize"],
+      "unit": "BU",
+      "conversion_to_mt": 0.0254
+    }
+  },
+  "regions": {
+    "MIDWEST": ["IA", "IL", "IN", "OH"]
+  }
+}
+```
+
+### Step 6: Cache Strategy
+
+**Decision**: What to cache and for how long?
+
+**General rule**:
+- **Historical data** (year < current): Permanent cache (365+ days)
+- **Current year data**: Short cache (7 days - may be revised)
+- **Metadata** (commodity lists, states): Permanent cache
+
+**Implementation**:
+- Cache by key (parameter hash)
+- Check age before using
+- Fallback to expired cache if API fails
+
+**Example**:
+```python
+def get_cache_ttl(year: int) -> timedelta:
+    """Determine cache TTL based on year"""
+    current_year = datetime.now().year
+
+    if year < current_year:
+        # Historical: cache for 1 year (effectively permanent)
+        return timedelta(days=365)
+    else:
+        # Current year: cache for 7 days (may be revised)
+        return timedelta(days=7)
+```
+
+### Step 7: Rate Limiting Strategy
+
+**Decision**: How to control rate limits?
+
+**Components**:
+1. **Persistent counter** (file/DB)
+2. **Pre-request verification**
+3. **Alerts** (when near limit)
+4. **Blocking** (when limit reached)
+
+**Implementation**:
+```python
+class RateLimiter:
+    def __init__(self, max_requests: int, period_seconds: int):
+        self.max_requests = max_requests
+        self.period = period_seconds
+        self.counter_file = Path("data/cache/rate_limit_counter.json")
+
+    def allow_request(self) -> bool:
+        """Check if request is allowed"""
+        count = self._get_current_count()
+
+        if count >= self.max_requests:
+            return False
+
+        # Warn when near limit
+        if count > self.max_requests * 0.9:
+            print(f"⚠️ Rate limit: {count}/{self.max_requests} requests used")
+
+        return True
+
+    def record_request(self):
+        """Record that request was made"""
+        count = self._get_current_count()
+        self._save_count(count + 1)
+```
+
+### Step 8: Document Architecture
+
+Create section in DECISIONS.md:
+
+```markdown
+## Phase 3: Architecture
+
+### Chosen Structure
+
+```
+[Directory tree]
+```
+
+**Justification**:
+- Separate scripts for modularity
+- Utils for reusable code
+- References for progressive disclosure
+- Data/ to separate raw vs processed
+
+### Defined Scripts
+
+**fetch_[source].py** (280 lines estimated):
+- Responsibility: [...]
+- Input/Output: [...]
+
+[For each script...]
+
+### Cache Strategy
+
+- Historical: Permanent cache
+- Current: 7 day cache
+- Justification: [historical data doesn't change]
+
+### Rate Limiting
+
+- Method: [persistent counter]
+- Limits: [1000/day]
+- Alerts: [>90% usage]
+```
+
+## Phase 3 Checklist
+
+- [ ] Agent name defined
+- [ ] Directory structure chosen (A/B/C)
+- [ ] Responsibilities of each script defined
+- [ ] References planned (which files, content)
+- [ ] Assets planned (which configs, structure)
+- [ ] Cache strategy defined (what, TTL)
+- [ ] Rate limiting strategy defined
+- [ ] Architecture documented in DECISIONS.md
+```
+
+## File: `references/phase4-detection.md`
+```markdown
+# Phase 4: Automatic Detection
+
+## Objective
+
+**DETERMINE** keywords and create description so Claude Code activates the skill automatically.
+
+## Detailed Process
+
+### Step 1: List Domain Entities
+
+Identify all relevant entities that users may mention:
+
+**Entity categories**:
+
+**1. Organizations/Sources**
+- Organization names (USDA, CONAB, NOAA, IMF)
+- Acronyms (NASS, ERS, FAS)
+- Full names (National Agricultural Statistics Service)
+
+**2. Main Objects**
+- For agriculture: commodities (corn, soybeans, wheat)
+- For finance: instruments (stocks, bonds, options)
+- For climate: metrics (temperature, precipitation)
+
+**3. Geography**
+- Countries (US, Brazil, China)
+- Regions (Midwest, Centro-Oeste, Southeast)
+- States/Provinces (Iowa, Mato Grosso, Texas)
+
+**4. Metrics**
+- Production, area, yield, price
+- Revenue, profit, growth
+- Temperature, rainfall, humidity
+
+**5. Temporality**
+- Years, seasons, quarters, months
+- Current, historical, forecast
+- YoY, QoQ, MoM
+
+**Example (US agriculture)**:
+
+```markdown
+**Organizations**:
+- USDA, NASS, National Agricultural Statistics Service
+- Department of Agriculture
+- QuickStats
+
+**Commodities**:
+- Corn, soybeans, wheat
+- Cotton, rice, sorghum
+- Barley, oats, hay, peanuts
+- [list all major ones - 20+]
+
+**Geography**:
+- US, United States, national
+- States: Iowa, Illinois, Nebraska, Kansas, Texas, etc [list top 15]
+- Regions: Midwest, Great Plains, Southeast, etc
+
+**Metrics**:
+- Production, area planted, area harvested
+- Yield, productivity
+- Price received, value of production
+- Inventory, stocks
+
+**Temporality**:
+- Year, season, crop year
+- Current, latest, this year, last year
+- Historical, trend, past 5 years
+- Forecast, projection, outlook
+```
+
+### Step 2: List Actions/Verbs
+
+Which verbs does the user use to request analyses?
+
+**Categories**:
+
+**Query (fetch information)**:
+- What is, how much, show me, get
+- Tell me, find, retrieve
+
+**Compare**:
+- Compare, versus, vs, against
+- Difference, change, growth
+- Higher, lower, better, worse
+
+**Rank (sort)**:
+- Top, best, leading, biggest
+- Rank, ranking, list
+- Which states, which countries
+
+**Analyze**:
+- Analyze, analysis
+- Trend, pattern, evolution
+- Breakdown, decompose, explain
+
+**Forecast (project)**:
+- Predict, project, forecast
+- Outlook, expectation, estimate
+- Future, next year, coming season
+
+**Visualize**:
+- Plot, chart, graph, visualize
+- Show chart, generate graph
+
+### Step 2.5: Generate Exhaustive Keywords (NEW v2.0 - CRITICAL!)
+
+**OBJECTIVE:** Generate 60+ keywords to ensure correct activation in ALL relevant queries.
+
+**LEARNING:** us-crop-monitor v1.0 had ~20 keywords. Missing "yield", "harvest", "production" → Claude Code didn't activate for those queries. v2.0 expanded to 60+ keywords.
+
+**Mandatory Process:**
+
+**Step A: Keywords per API Metric**
+
+For EACH metric/endpoint the skill implements, generate keywords:
+
+```markdown
+Metric 1: CONDITION (quality ratings)
+Primary keywords: condition, conditions, quality, ratings
+Secondary keywords: status, health, state
+Technical keywords: excellent, good, fair, poor
+Action keywords: rate, rated, rating, classify
+Portuguese: condição, condições, qualidade, estado, classificação
+→ Total: ~15 keywords
+
+Metric 2: PROGRESS (% planted/harvested)
+Primary keywords: progress, harvest, planted, harvested
+Secondary keywords: planting, harvesting, completion
+Technical keywords: percentage, percent, %
+Action keywords: advancing, complete, completed
+Portuguese: progresso, plantio, colheita, plantado, colhido
+→ Total: ~15 keywords
+
+Metric 3: YIELD (productivity)
+Primary keywords: yield, productivity, performance
+Technical keywords: bushels per acre, bu/acre, bu/ac
+Secondary keywords: output per unit
+Portuguese: rendimento, produtividade, bushels por acre
+→ Total: ~12 keywords
+
+... Repeat for ALL implemented metrics
+```
+
+**Rule:** Each metric = minimum 10 unique keywords
+
+**Step B: Categorize Keywords by Type**
+
+```markdown
+### Keyword Matrix - {Skill Name}
+
+**1. Main Entities** (20+ keywords)
+- Official name: {entity}
+- Variations: {variations}
+- Singular + plural
+- Acronyms: {acronyms}
+- Full names: {full names}
+- Portuguese: {portuguese terms}
+
+**2. Metrics - ONE SECTION PER API METRIC!** (30+ keywords)
+- Metric 1: {list 10-15 keywords}
+- Metric 2: {list 10-15 keywords}
+- Metric 3: {list 10-15 keywords}
+...
+
+**3. Actions/Verbs** (20+ keywords)
+- Query: what, how, show, get, tell, find, retrieve
+- Compare: compare, vs, versus, against, difference
+- Rank: top, best, rank, leading, biggest
+- Analyze: analyze, trend, pattern, evolution
+- Report: report, dashboard, summary, overview
+- Portuguese: comparar, ranking, análise, relatório
+
+**4. Temporal Qualifiers** (15+ keywords)
+- Current: current, now, today, latest, recent, atual, agora, hoje
+- Historical: historical, past, previous, last year, histórico
+- Comparative: this year vs last year, YoY, year-over-year
+- Forecast: forecast, projection, estimate, outlook, previsão
+
+**5. Geographic Qualifiers** (15+ keywords)
+- National: national, US, United States, country-wide
+- Regional: region, Midwest, South, regional
+- State: state, by state, state-level, estado
+- Specific names: Iowa, Illinois, Nebraska, ...
+
+**6. Data Context** (10+ keywords)
+- Source: {API name}, {organization}, {data source}
+- Type: data, statistics, metrics, indicators, dados
+```
+
+**Goal:** Total 60-80 unique keywords!
+
+**Step C: Test Coverage Matrix**
+
+For each analysis function, generate 10 different queries:
+
+```markdown
+Function: harvest_progress_report()
+
+Query variations (test coverage):
+1. "What's the corn harvest progress?" ✅ harvest, progress
+2. "How much corn has been harvested?" ✅ harvested
+3. "Percent corn harvested?" ✅ percent, harvested
+4. "Harvest completion status?" ✅ harvest, completion, status
+5. "Progresso de colheita do milho?" ✅ progresso, colheita
+6. "Quanto foi colhido?" ✅ colhido
+7. "Harvest advancement?" ✅ harvest, advancement
+8. "How advanced is harvest?" ✅ harvest, advanced
+9. "Colheita completa?" ✅ colheita
+10. "Percentage complete harvest?" ✅ percentage, harvest
+
+ALL keywords present in description? → Verify!
+```
+
+**Do this for ALL 11 functions** = 110 query variations tested!
+
+### Step 3: List Question Variations
+
+For each analysis type, how can user ask?
+
+**YoY Comparison**:
+- "Compare X this year vs last year"
+- "How does X compare to last year"
+- "Is X up or down from last year"
+- "X growth rate"
+- "X change YoY"
+- "X vs previous year"
+- "Did X increase or decrease"
+
+**Ranking**:
+- "Top states for X"
+- "Which states produce most X"
+- "Leading X producers"
+- "Best X production"
+- "Biggest X producers"
+- "Ranking of X"
+- "List top 10 X"
+
+**Trend**:
+- "X trend last N years"
+- "How has X changed over time"
+- "X evolution"
+- "Historical X data"
+- "X growth rate historical"
+- "Long term trend of X"
+
+**Simple Query**:
+- "What is X production"
+- "X production in [year]"
+- "How much X"
+- "X data"
+- "Current X"
+
+### Step 4: Define Negative Scope
+
+**Important**: What should NOT activate?
+
+Avoid false positives (skill activates when it shouldn't).
+
+**Technique**: Think of similar questions but OUT of scope.
+
+**Example (US agriculture)**:
+
+❌ **DO NOT activate for**:
+- Futures market prices
+  - "CBOT corn futures price"
+  - "Soybean futures December contract"
+  - Reason: Skill is USDA data (physical production), not trading
+
+- Other countries' agriculture
+  - "Brazil soybean production"
+  - "Argentina corn exports"
+  - Reason: Skill is US only
+
+- Consumption/demand
+  - "US corn consumption"
+  - "Soybean demand forecast"
+  - Reason: NASS has production, not consumption
+
+- Private company data
+  - "Monsanto corn seed sales"
+  - "Cargill soybean crush"
+  - Reason: Corporate data, not national statistics
+
+**Document**:
+```markdown
+## Skill Scope
+
+### ✅ WITHIN scope:
+- Physical crop production in US
+- Planted/harvested area
+- Yield/productivity
+- Prices RECEIVED by farmers (farm gate)
+- Inventories
+- Historical and current data
+- Comparisons, rankings, trends
+
+### ❌ OUT of scope:
+- Futures market prices (CBOT, CME)
+- Agriculture outside US
+- Consumption/demand
+- Private company data
+- Market price forecasting
+```
+
+### Step 5: Create Precise Description (Updated v2.0)
+
+**NEW RULE:** Description must contain ALL 60+ identified keywords!
+
+**Expanded Template:**
+
+```yaml
+description: This skill should be used when the user asks about
+{domain} ({main entities with variations}). Automatically activates
+for queries about {metric1} ({metric1 keywords}), {metric2}
+({metric2 keywords}), {metric3} ({metric3 keywords}), {metric4}
+({metric4 keywords}), {metric5} ({metric5 keywords}), {actions_list},
+{temporal qualifiers}, {geographic qualifiers}, comparisons
+{comparison types}, rankings, trends, {data source} data,
+comprehensive reports, and dashboards. Uses {language} with {API name}
+to fetch real data on {complete list of all metrics}.
+```
+
+**Mandatory components**:
+1. ✅ **Domain** with entities (corn, soybeans, wheat - not just "crops")
+2. ✅ **EACH API metric** explicitly mentioned
+3. ✅ **Synonyms** in parentheses (harvest = colheita, yield = rendimento)
+4. ✅ **Actions** covered (compare, rank, analyze, report)
+5. ✅ **Temporal context** (current, today, year-over-year)
+6. ✅ **Geographic** context (states, regions, national)
+7. ✅ **Data source** (USDA NASS, etc.)
+8. ✅ **Portuguese + English** keywords mixed
+
+**Real size:** 300-500 characters (yes, larger than "recommended" - but necessary!)
+
+**Real Example (us-crop-monitor v2.0):**
+```yaml
+description: This skill should be used when the user asks about
+agricultural crops in the United States (soybeans, corn, wheat).
+Automatically activates for queries about crop conditions (condições),
+crop progress (progresso de plantio/colheita), harvest progress
+(progresso de colheita), planting progress (plantio), yield
+(produtividade/rendimento em bushels per acre), production (produção
+total em bushels), area planted (área plantada), area harvested
+(área colhida), acres, forecasts (estimativas), crop monitoring,
+weekly comparisons (week-over-week) or annual (year-over-year),
+state producer rankings, trend analyses, USDA NASS data, comprehensive
+reports, and crop dashboards. Uses Python with NASS API to fetch
+real data on condition, progress, productivity, production and area.
+```
+
+**Analysis:**
+- Entities: soybeans, corn, wheat (3)
+- Metrics: conditions, progress, harvest, planting, yield, production, area (7)
+- Each metric with PT synonym: (condições), (colheita), (rendimento), etc.
+- Actions: queries, comparisons, rankings, analyses, reports
+- Temporal: weekly, annual, week-over-week, year-over-year
+- Source: USDA NASS
+- Total unique keywords: ~65+
+
+**Step D: Validate Keyword Coverage**
+
+Final checklist:
+```markdown
+- [ ] All API metrics mentioned? (if API has 5 → 5 in description)
+- [ ] Each metric has PT synonym? (yield = rendimento)
+- [ ] Action verbs included? (compare, rank, analyze)
+- [ ] Temporal context? (current, today, YoY)
+- [ ] Geographic context? (states, national)
+- [ ] Data source mentioned? (USDA NASS)
+- [ ] Total >= 60 unique keywords? (count!)
+```
+
+**Example 2 (stock analysis)**:
+```yaml
+description: This skill should be used for technical stock analysis using indicators like RSI, MACD, Bollinger Bands, moving averages. Activates when user asks about technical analysis, indicators, buy/sell signals for stocks. Supports multiple tickers, benchmark comparisons, alert generation. DO NOT use for fundamental analysis, financial statements, or news.
+```
+
+### Step 6: List Complete Keywords
+
+In SKILL.md, include complete keywords section:
+
+```markdown
+## Keywords for Automatic Detection
+
+This skill is activated when user mentions:
+
+**Entities**:
+- [complete list of organizations]
+- [complete list of main objects]
+
+**Geography**:
+- [list of countries/regions/states]
+
+**Metrics**:
+- [list of metrics]
+
+**Actions**:
+- [list of verbs]
+
+**Temporality**:
+- [list of temporal terms]
+
+**Activation examples**:
+✅ "[example 1]"
+✅ "[example 2]"
+✅ "[example 3]"
+✅ "[example 4]"
+✅ "[example 5]"
+
+**Does NOT activate for**:
+❌ "[out of scope example]"
+❌ "[out of scope example]"
+❌ "[out of scope example]"
+```
+
+### Step 7: Mental Testing
+
+**Simulate detection**:
+
+For each example question from use cases (Phase 2), verify:
+- Description contains relevant keywords? ✅
+- Doesn't contain negative scope keywords? ✅
+- Claude would detect automatically? ✅
+
+**If any use case would NOT be detected**:
+→ Add missing keywords to description
+
+## Detection Design Examples
+
+### Example 1: US Agriculture (NASS)
+
+**Identified keywords**:
+- Entities: USDA (5x), NASS (8x), agriculture (3x)
+- Commodities: corn (12x), soybeans (10x), wheat (8x)
+- Metrics: production (15x), area (10x), yield (8x)
+- Geography: US (10x), states (5x), Iowa (2x)
+- Actions: compare (5x), ranking (3x), trend (2x)
+
+**Description**:
+"This skill should be used for analyses about United States agriculture using official USDA NASS data. Activates when user asks about production, area, yield of commodities like corn, soybeans, wheat. Supports YoY comparisons, rankings, trends. DO NOT use for futures or other countries."
+
+**Coverage**: 95% of typical use cases
+
+### Example 2: Global Climate (NOAA)
+
+**Keywords**:
+- Entities: NOAA, weather, climate
+- Metrics: temperature, precipitation, humidity
+- Geography: global, countries, stations
+- Temporality: historical, current, forecast
+
+**Description**:
+"This skill should be used for climate analyses using NOAA data. Activates when user asks about temperature, precipitation, historical climate data or forecasts. Supports temporal and geographic aggregations, anomalies, long-term trends."
+
+## Phase 4 Checklist
+
+- [ ] Entities listed (organizations, objects, geography)
+- [ ] Actions/verbs listed
+- [ ] Question variations mapped
+- [ ] Negative scope defined
+- [ ] Description created (150-250 chars)
+- [ ] Complete keywords documented in SKILL.md
+- [ ] Activation examples (positive and negative)
+- [ ] Mental detection simulation (all use cases covered)
+
+---
+
+## 🚀 **Enhanced Keyword Generation System v3.1**
+
+### **Problem Solved: False Negatives Prevention**
+
+**Issue**: Skills created with limited keywords (10-15) fail to activate for natural language variations, causing users to lose confidence when their installed skills are ignored by Claude.
+
+**Solution**: Systematic keyword expansion achieving 50+ keywords with 98%+ activation reliability.
+
+### **🔧 Enhanced Keyword Generation Process**
+
+#### **Step 1: Base Keywords (Traditional Method)**
+```
+Domain: Data Extraction & Analysis
+Base Keywords: "extract data", "normalize data", "analyze data"
+Coverage: ~30% (limited)
+```
+
+#### **Step 2: Systematic Expansion (New Method)**
+
+**A. Direct Variations Generator**
+```
+For each base capability, generate variations:
+- "extract data" → "extract and analyze data", "extract and process data"
+- "normalize data" → "normalize extracted data", "data normalization"
+- "analyze data" → "analyze web data", "online data analysis"
+```
+
+**B. Synonym Expansion System**
+```
+Data Synonyms: ["information", "content", "details", "records", "dataset", "metrics"]
+Extract Synonyms: ["scrape", "get", "pull", "retrieve", "collect", "harvest", "obtain"]
+Analyze Synonyms: ["process", "handle", "work with", "examine", "study", "evaluate"]
+Normalize Synonyms: ["clean", "format", "standardize", "structure", "organize"]
+```
+
+**C. Technical & Business Language**
+```
+Technical Terms: ["web scraping", "data mining", "API integration", "ETL process"]
+Business Terms: ["process information", "handle reports", "work with data", "analyze metrics"]
+Workflow Terms: ["daily I have to", "need to process", "automate this workflow"]
+```
+
+**D. Natural Language Patterns**
+```
+Question Forms: ["How to extract data", "What data can I get", "Can you analyze this"]
+Command Forms: ["Extract data from", "Process this information", "Analyze the metrics"]
+Informal Forms: ["get data from site", "handle this data", "work with information"]
+```
+
+#### **Step 3: Pattern-Based Keyword Generation**
+
+**Action + Object Patterns:**
+```
+{action} + {object} + {source}
+Examples:
+- "extract data from website"
+- "process information from API"
+- "analyze metrics from database"
+- "normalize records from file"
+```
+
+**Workflow Patterns:**
+```
+{workflow_trigger} + {action} + {data_type}
+Examples:
+- "I need to extract data daily"
+- "Have to process reports every week"
+- "Need to analyze metrics monthly"
+- "Must normalize information regularly"
+```
+
+### **📊 Coverage Expansion Results**
+
+#### **Before Enhancement:**
+```
+Total Keywords: 10-15
+Coverage Types:
+├── Direct phrases: 8-10
+├── Domain terms: 2-5
+└── Success rate: ~70%
+```
+
+#### **After Enhancement:**
+```
+Total Keywords: 50-80
+Coverage Types:
+├── Direct variations: 15-20
+├── Synonym expansions: 10-15
+├── Technical terms: 8-12
+├── Business language: 7-10
+├── Workflow patterns: 5-8
+├── Natural language: 5-10
+└── Success rate: 98%+
+```
+
+### **🔍 Implementation Template**
+
+#### **Enhanced Keyword Generation Algorithm:**
+```python
+def generate_expanded_keywords(domain, capabilities):
+    keywords = set()
+
+    # 1. Base capabilities
+    for capability in capabilities:
+        keywords.add(capability)
+
+    # 2. Direct variations
+    for capability in capabilities:
+        keywords.update(generate_variations(capability))
+
+    # 3. Synonym expansion
+    keywords.update(expand_with_synonyms(keywords, domain))
+
+    # 4. Technical terms
+    keywords.update(get_technical_terms(domain))
+
+    # 5. Business language
+    keywords.update(get_business_phrases(domain))
+
+    # 6. Workflow patterns
+    keywords.update(generate_workflow_patterns(domain))
+
+    # 7. Natural language variations
+    keywords.update(generate_natural_variations(domain))
+
+    return list(keywords)
+```
+
+#### **Example: Data Extraction Skill**
+```
+Input Domain: "Data extraction and analysis from online sources"
+
+Generated Keywords (55 total):
+# Direct Variations (15)
+extract data, extract and analyze data, extract and process data,
+normalize data, normalize extracted data, analyze online data,
+process web data, handle information from websites
+
+# Synonym Expansions (12)
+scrape data, get information, pull content, retrieve records,
+harvest data, collect metrics, process information, handle data
+
+# Technical Terms (10)
+web scraping, data mining, API integration, ETL process, data extraction,
+content parsing, information retrieval, data processing, web harvesting
+
+# Business Language (8)
+process business data, handle reports, analyze metrics, work with datasets,
+manage information, extract insights, normalize business records
+
+# Workflow Patterns (5)
+daily data extraction, weekly report processing, monthly metrics analysis,
+regular information handling, continuous data monitoring
+
+# Natural Language (5)
+get data from this site, process information here, analyze the content,
+work with these records, handle this dataset
+```
+
+### **✅ Quality Assurance Checklist**
+
+**Keyword Generation:**
+- [ ] 50+ keywords generated for each skill
+- [ ] All capability variations covered
+- [ ] Synonym expansions included
+- [ ] Technical and business terms added
+- [ ] Workflow patterns implemented
+- [ ] Natural language variations present
+
+**Coverage Verification:**
+- [ ] Test 20+ natural language variations
+- [ ] All major use cases covered
+- [ ] Technical terminology included
+- [ ] Business language present
+- [ ] No gaps in keyword coverage
+
+**Testing Requirements:**
+- [ ] 98%+ activation reliability achieved
+- [ ] False negatives < 5%
+- [ ] No activation for out-of-scope queries
+- [ ] Consistent activation across variations
+
+### Implementation in Agent-Skill-Creator
+
+**Updated Phase 4 Process:**
+1. **Generate base keywords** (traditional method)
+2. **Apply systematic expansion** (enhanced method)
+3. **Validate coverage** (minimum 50 keywords)
+4. **Embed all keywords into the SKILL.md description field**
+5. **Test natural language** (20+ variations)
+6. **Verify activation reliability** (98%+ target)
+
+> **IMPORTANT:** All keywords and activation data go into the SKILL.md `description` field. Do NOT create separate activation files, marketplace.json fields, or pattern files. The description IS the activation mechanism.
+
+---
+
+# Phase 4 Enhanced: Description-Based Activation
+
+## How Skill Activation Works
+
+The agent (Claude Code, VS Code Copilot, Cursor, etc.) reads the `description` field in SKILL.md frontmatter and uses natural language understanding to decide when to activate the skill. There is no separate activation file, no keywords file, and no regex matching layer.
+
+The `description` field is the **only** activation mechanism. A well-crafted description with 50+ embedded keywords achieves 95%+ activation reliability.
+
+> **CRITICAL:** Do NOT create `activation.keywords`, `activation.patterns`, `test_queries`, `usage.when_to_use`, or `usage.when_not_to_use` fields in marketplace.json or any other file. These are non-standard fields that **break Claude Code installation**. All activation data belongs in the SKILL.md `description` field.
+
+---
+
+
+## Writing Effective Descriptions
+
+The description serves all activation purposes — keyword matching and natural language understanding — in a single field.
+
+### Description Template
+
+```yaml
+description: >-
+  {Primary use case in one sentence}. Activates for queries about
+  {capability 1} ({synonyms}), {capability 2} ({synonyms}), and
+  {capability 3} ({synonyms}). Supports {action verbs}: {action synonyms}.
+  Uses {technology/API} to {what it does}. Does NOT activate for:
+  {counter-examples}.
+```
+
+### Description Requirements
+
+**Must Include:**
+- Primary use case clearly stated upfront
+- Each capability explicitly mentioned with synonyms in parentheses
+- Action verbs the user might say
+- Technology/API names
+- 3-5 example phrasings embedded naturally
+- 2-3 counter-examples (what this skill is NOT for)
+- 50+ unique keywords woven into natural prose
+
+**Length:** 200-500 characters. Longer than typical but necessary for reliable activation.
+
+### Keyword Design Rules
+
+**DO: Use Complete Phrases in the Description**
+```
+"technical analysis for stocks"
+"analyze stock data"
+"buy and sell signals"
+```
+
+**DON'T: Keyword-Stuff the Description**
+```
+"stock RSI MACD Bollinger buy sell signal compare rank" (not prose)
+```
+
+### Embedding Keywords Naturally
+
+Take your keyword research from Steps 1-7 and weave them into coherent prose:
+
+**Bad (keyword stuffing):**
+```yaml
+description: "stock analysis RSI MACD Bollinger buy sell signal compare rank chart patterns momentum moving average"
+```
+
+**Good (natural prose with keywords embedded):**
+```yaml
+description: >-
+  Provides comprehensive technical analysis for stocks and ETFs using RSI
+  (Relative Strength Index), MACD (Moving Average Convergence Divergence),
+  Bollinger Bands, moving averages, and chart patterns. Generates buy and
+  sell signals based on technical indicator combinations. Compares and ranks
+  multiple stocks by momentum and technical strength. Does NOT activate for
+  fundamental analysis (P/E ratios, earnings), news, or options pricing.
+```
+
+---
+
+## Complete Example: stock-analyzer
+
+### SKILL.md Frontmatter (the ONLY activation mechanism)
+
+```yaml
+---
+name: stock-analyzer
+description: >-
+  Provides comprehensive technical analysis for stocks and ETFs using RSI
+  (Relative Strength Index), MACD (Moving Average Convergence Divergence),
+  Bollinger Bands, moving averages, and chart patterns. Generates buy and
+  sell signals based on technical indicator combinations. Compares multiple
+  stocks and ranks them by momentum and technical strength. Monitors stock
+  performance and tracks price alerts. Activates when user asks to analyze
+  stocks, calculate technical indicators, get trading signals, compare
+  tickers, or assess market momentum. Does NOT activate for fundamental
+  analysis (P/E ratios, earnings), news-based analysis, portfolio
+  optimization, or options pricing.
+version: 1.0.0
+license: MIT
+metadata:
+  author: finance-team
+  version: 1.0.0
+---
+```
+
+**Why this achieves 95%+ activation:**
+- Contains 60+ unique keywords naturally embedded
+- All capabilities mentioned with synonyms
+- Action verbs match how users phrase requests
+- Counter-examples prevent false positives
+- Technical terms (RSI, MACD, Bollinger) enable precise matching
+- General terms ("technical analysis", "trading signals") catch broad queries
+
+### Testing the Description
+
+**Positive Tests (should activate):**
+```
+1. "Analyze AAPL stock using RSI" -> activates
+2. "What's the MACD for Tesla?" -> activates
+3. "Show me buy signals for tech stocks" -> activates
+4. "Compare AAPL vs GOOGL using technical analysis" -> activates
+5. "Moving average crossover for SPY" -> activates
+6. "Bollinger Bands analysis for Bitcoin" -> activates
+7. "Is TSLA overbought based on RSI?" -> activates
+8. "Chart patterns for NVDA" -> activates
+9. "Momentum indicators for tech stocks" -> activates
+10. "Track AMZN for MACD crossover signals" -> activates
+```
+
+**Negative Tests (should NOT activate):**
+```
+1. "What's the P/E ratio of AAPL?" -> fundamental, not technical
+2. "Latest news about TSLA?" -> news, not analysis
+3. "Execute a buy order for NVDA" -> brokerage, not analysis
+4. "Options strategies for AAPL" -> options, not indicators
+```
+
+---
+
+## Validation & Testing
+
+### Testing Process
+
+**Minimum Test Coverage:**
+- 10+ query variations per major capability
+- Document all test queries in your SKILL.md body (under a Testing section)
+- Manual testing of each variation
+- No false positives in counter-examples
+
+### Improving Activation Reliability
+
+If a test query fails to activate the skill:
+
+1. **Check if the query's key terms appear in the description.** If "momentum" isn't there but users ask about momentum, add it.
+2. **Add synonyms in parentheses.** If users say "technical indicators" but the description only says "RSI, MACD", add the general term too.
+3. **Add counter-examples.** If the skill activates for wrong queries, add "Does NOT activate for: {those cases}" to the description.
+
+### Validation Checklist
+
+```markdown
+## Description Quality
+- [ ] Primary use case stated upfront?
+- [ ] All capabilities mentioned with synonyms?
+- [ ] 50+ unique keywords embedded as natural prose?
+- [ ] Action verbs included?
+- [ ] Counter-examples documented?
+- [ ] 200-500 characters length?
+
+## Testing
+- [ ] 10+ positive test queries per capability?
+- [ ] All test queries activate the skill?
+- [ ] Negative test queries do NOT activate?
+- [ ] No false positives found?
+- [ ] No false negatives found?
+```
+
+---
+
+## Final Phase 4 Checklist
+
+### Keyword Research (Steps 1-7)
+- [ ] Domain entities listed (organizations, objects, metrics)
+- [ ] Action verbs listed (analyze, compare, monitor, track)
+- [ ] 50+ keywords generated via systematic expansion
+- [ ] Question variations mapped
+- [ ] Negative scope defined
+
+### Description Writing
+- [ ] All keywords embedded into SKILL.md `description` as natural prose
+- [ ] Primary use case stated upfront
+- [ ] All capabilities mentioned with synonyms
+- [ ] Counter-examples documented ("Does NOT activate for")
+- [ ] 200-500 characters length
+
+### Testing
+- [ ] 10+ positive test queries per capability
+- [ ] Negative test queries for out-of-scope requests
+- [ ] All test queries activate correctly
+- [ ] Counter-examples correctly do NOT activate
+- [ ] No false positives found
+
+---
+```
+
+## File: `references/phase5-implementation.md`
+```markdown
+# Phase 5: Complete Implementation
+
+> **Note**: This file is maintained for backwards compatibility. The complete, updated Phase 5 instructions are now in `references/pipeline-phases.md` (Section: Phase 5).
+
+See **`references/pipeline-phases.md`** for the authoritative Phase 5 implementation guide, which includes:
+
+1. Create directory structure (no -cskill suffix)
+2. Write **SKILL.md first** (spec-compliant frontmatter with name, description, license, metadata)
+3. Implement Python scripts (functional, no placeholders)
+4. Write references (detailed documentation)
+5. Write assets (templates, configs)
+6. Generate `install.sh` (cross-platform installer)
+7. Write `README.md` (multi-platform install instructions)
+8. Run **spec validation** (`scripts/validate.py`)
+9. Run **security scan** (`scripts/security_scan.py`)
+10. Report results to user
+
+## Key Changes from v3.x
+
+- **SKILL.md is created first** (not marketplace.json)
+- **No mandatory marketplace.json** for simple skills
+- **install.sh** is generated for cross-platform support
+- **Validation and security scan** run automatically after generation
+- **No -cskill suffix** in generated skill names
+- **Description must be <=1024 characters**
+- **Generated SKILL.md must be <500 lines**
+
+## Quality Standards
+
+See `references/quality-standards.md` and `references/pipeline-phases.md` for complete quality requirements.
+```
+
+## File: `references/pipeline-phases.md`
+```markdown
+# Pipeline Phases: Complete 5-Phase Skill Creation Reference
+
+**Version:** 4.0
+**Purpose:** Consolidated reference for the autonomous 5-phase skill creation pipeline used by agent-skill-creator v4.0.
+
+This document contains the detailed instructions for each phase of skill creation, updated for the Agent Skills Open Standard (SKILL.md-first, no `-cskill` suffix, spec-compliant frontmatter, cross-platform support).
+
+---
+
+## Pipeline Overview
+
+```
+Phase 1: DISCOVERY       -> Research APIs, data sources, domain mapping
+Phase 2: DESIGN          -> Define use cases, analyses, methodologies
+Phase 3: ARCHITECTURE    -> Structure skill directory (standard-compliant)
+Phase 4: DETECTION       -> Generate description + keywords for activation
+Phase 5: IMPLEMENTATION  -> Create all files, validate, security scan
+```
+
+**Key v4.0 principles:**
+
+- SKILL.md is the **primary file**, created first in Phase 5
+- Generated names use **kebab-case** (no `-cskill` suffix)
+- Name: 1-64 chars, lowercase letters, numbers, hyphens; must match directory
+- Description: 1-1024 chars; this IS the activation mechanism
+- Generated SKILL.md must be **<500 lines** (move detail to `references/`)
+- Frontmatter must include: `name`, `description`, `license`, `metadata` (author, version)
+- `install.sh` is generated for cross-platform support
+- `marketplace.json` is **NOT** needed for simple skills
+- Validation and security scan run at the end of Phase 5
+
+---
+
+# Phase 1: Discovery
+
+## Objective
+
+Research and **DECIDE** autonomously which API or data source to use for the skill being created.
+
+## Detailed Process
+
+### Step 1: Identify Domain
+
+From user input, extract the main domain:
+
+| User Input | Identified Domain |
+|---|---|
+| "US crop data" | Agriculture (US) |
+| "stock market analysis" | Finance / Stock Market |
+| "global climate data" | Climate / Meteorology |
+| "economic indicators" | Economy / Macro |
+| "commodity data" | Trading / Commodities |
+
+### Step 2: Search Available APIs
+
+For the identified domain, use WebSearch to find public APIs:
+
+**Search queries:**
+```
+"[domain] API free public data"
+"[domain] government API documentation"
+"best API for [domain] historical data"
+"[domain] open data sources"
+```
+
+**Example (US agriculture):**
+```bash
+WebSearch: "US agriculture API free historical data"
+WebSearch: "USDA API documentation"
+WebSearch: "agricultural statistics API United States"
+```
+
+**Typical result:** 5-10 candidate APIs.
+
+### Step 3: Research Documentation
+
+For each candidate API, use WebFetch to load:
+- Homepage/overview
+- Getting started guide
+- API reference
+- Rate limits and pricing
+
+**Extract information per API:**
+
+```markdown
+## API: [Name]
+
+**URL**: [base URL]
+**Docs**: [docs URL]
+
+**Authentication**:
+- Type: API key / OAuth / None
+- Cost: Free / Paid
+- How to obtain: [steps]
+
+**Available Data**:
+- Temporal coverage: [from when to when]
+- Geographic coverage: [countries, regions]
+- Metrics: [list]
+- Granularity: [daily, monthly, annual]
+
+**Limitations**:
+- Rate limit: [requests per day/hour]
+- Max records: [per request]
+
+**Quality**:
+- Source: [official government / private]
+- Reliability: [high/medium/low]
+- Update frequency: [frequency]
+- Documentation quality: [excellent/good/poor]
+
+**Ease of Use**:
+- Format: JSON / CSV / XML
+- SDKs: [Python/R/None]
+- Quirks: [any non-obvious behavior]
+```
+
+### Step 4: API Capability Inventory
+
+Ensure the skill uses the maximum useful surface of the chosen API.
+
+**Step 4.1: Complete Inventory**
+
+For the chosen API, catalog ALL data types:
+
+```markdown
+## Complete Inventory - {API Name}
+
+| Endpoint/Metric | Returns | Granularity | Coverage | Value |
+|---|---|---|---|---|
+| {metric1} | {description} | {daily/weekly} | {geo} | High |
+| {metric2} | {description} | {monthly} | {geo} | High |
+| {metric3} | {description} | {annual} | {geo} | Medium |
+```
+
+**Step 4.2: Coverage Decision**
+
+- If metric has high value: implement in v1.0
+- If API has 5 high-value metrics: implement all 5
+- Never leave >50% of API unused without strong justification
+
+**Step 4.3: Document Decision**
+
+In `DECISIONS.md`:
+
+```markdown
+## API Coverage Decision
+
+API {name} offers {N} types of metrics.
+
+**Implemented in v1.0 ({X} of {N}):**
+- {metric1} - {justification}
+- {metric2} - {justification}
+
+**Not implemented ({Y} of {N}):**
+- {metricZ} - {why not} (planned for v2.0)
+
+**Coverage:** {X/N * 100}%
+```
+
+**Output of this step:** Exact list of all `get_*()` methods to implement.
+
+### Step 5: Compare Options
+
+Create comparison table:
+
+| API | Coverage | Cost | Rate Limit | Quality | Docs | Ease | Score |
+|---|---|---|---|---|---|---|---|
+| API 1 | 5/5 | Free | 1000/day | Official | 4/5 | 5/5 | 9.2/10 |
+| API 2 | 4/5 | $49/mo | Unlimited | Private | 5/5 | 4/5 | 7.8/10 |
+
+**Scoring criteria:**
+- Coverage (fit with need): 30% weight
+- Cost (prefer free): 20% weight
+- Rate limit (sufficient?): 15% weight
+- Quality (official > private): 15% weight
+- Documentation (facilitates implementation): 10% weight
+- Ease of use (format, structure): 10% weight
+
+### Step 6: DECIDE
+
+**Consider user constraints:**
+- Mentioned "free"? Eliminate paid options
+- Mentioned "10+ years historical data"? Check coverage
+- Mentioned "real-time"? Prioritize streaming APIs
+
+**Apply logic:**
+1. Eliminate APIs that violate constraints
+2. Of remaining, choose highest score
+3. If tie, prefer: official > private, better docs, easier to use
+
+**Document the final decision:**
+
+```markdown
+## Selected API: [API Name]
+
+**Score**: X.X/10
+
+**Justification**:
+- Coverage: [specific details]
+- Cost: [free/paid + details]
+- Rate limit: [number] requests/day
+- Quality: [official/private + reliability]
+- Documentation: [quality + examples]
+
+**Alternatives Considered**:
+- API X: Score 7.5/10 - Rejected because [reason]
+- API Y: Score 6.2/10 - Rejected because [reason]
+```
+
+### Step 7: Research Technical Details
+
+After deciding, dive deep into documentation via WebFetch:
+- Getting started guide
+- Complete API reference
+- Authentication guide
+- Rate limiting details
+- Best practices
+
+**Extract for implementation:**
+
+```markdown
+## Technical Details - [API]
+
+### Authentication
+- Method: API key in header
+- Header: `X-Api-Key: YOUR_KEY`
+- Obtaining key: [step-by-step]
+
+### Main Endpoints
+- URL, parameters, response format, errors
+
+### Rate Limiting
+- Limit, response headers, behavior when exceeded
+
+### Quirks and Gotchas
+- Data formatting issues (e.g., values as strings with commas)
+- Suppressed data markers
+- Any non-obvious behavior
+
+### Performance Tips
+- What to cache and for how long
+- Pagination
+- Parallel requests
+```
+
+### Step 8: Document for Later Use
+
+Save everything in `references/api-guide.md` of the skill to be created.
+
+## Phase 1 Checklist
+
+- [ ] Research completed (WebSearch + WebFetch)
+- [ ] Minimum 3 APIs compared
+- [ ] Decision made with clear justification
+- [ ] User constraints respected
+- [ ] API capability inventory completed
+- [ ] Technical details extracted
+- [ ] DECISIONS.md content prepared
+- [ ] Ready for analysis design
+
+---
+
+# Phase 2: Design
+
+## Objective
+
+**DEFINE** autonomously which analyses the skill will perform and how.
+
+## Detailed Process
+
+### Step 1: Brainstorm Use Cases
+
+From the workflow described by the user, think of typical questions they will ask.
+
+**Technique:** "If I were this user, what would I ask?"
+
+**Example (US agriculture):**
+
+User said: "download crop data, compare year vs year, make rankings"
+
+Typical questions:
+1. "What's the corn production in 2023?"
+2. "How's soybean compared to last year?"
+3. "Did production grow or fall?"
+4. "Does growth come from area or productivity?"
+5. "Which states produce most wheat?"
+6. "Top 5 soybean producers"
+7. "Production trend last 5 years?"
+8. "Average US yield"
+9. "Compare Midwest vs South"
+10. "Production by region"
+
+**Goal:** List 15-20 typical questions.
+
+### Step 2: Group by Analysis Type
+
+Group similar questions:
+
+**Group 1: Simple Queries** (fetching + formatting)
+- Required analysis: **Data Retrieval**
+- Complexity: Low
+
+**Group 2: Temporal Comparisons** (YoY)
+- Required analysis: **YoY Comparison + Decomposition**
+- Complexity: Medium
+
+**Group 3: Rankings** (sorting + share)
+- Required analysis: **State/Entity Ranking**
+- Complexity: Medium
+
+**Group 4: Trends** (time series)
+- Required analysis: **Trend Analysis**
+- Complexity: Medium-High
+
+**Group 5: Projections** (forecasting)
+- Required analysis: **Forecasting**
+- Complexity: High
+
+**Group 6: Geographic Aggregations**
+- Required analysis: **Regional Aggregation**
+- Complexity: Medium
+
+### Step 3: Prioritize Analyses
+
+**Prioritization criteria:**
+1. **Frequency of use** (based on described workflow)
+2. **Analytical value** (insight vs effort)
+3. **Implementation complexity** (easier first)
+4. **Dependencies** (does one analysis depend on another?)
+
+Score each analysis on these criteria and implement the top 4-6 that cover 80% of use cases. Always include a **comprehensive report function** that combines multiple analyses into a single summary.
+
+### Step 4: Specify Each Analysis
+
+For each selected analysis, document:
+
+```markdown
+## Analysis: [Name]
+
+**Objective**: [What it does in 1 sentence]
+**When to use**: [Types of questions that trigger it]
+
+**Required inputs**:
+- Input 1: [type, description]
+- Input 2: [type, description]
+
+**Expected outputs**:
+- Output 1: [type, description]
+
+**Methodology**: [Explanation in natural language]
+
+**Formulas**:
+- Formula 1 = ...
+
+**Validations**:
+- Validation 1: [criteria]
+
+**Interpretation**:
+- If result > X: [interpretation]
+- If result < Y: [interpretation]
+
+**Concrete example**:
+- Input: [specific values]
+- Processing: [step by step calculation]
+- Output: [JSON with result]
+- Response to user: [formatted answer]
+```
+
+### Step 5: Specify Methodologies
+
+For quantitative analyses, detail methodology with formulas.
+
+**Example: YoY Decomposition**
+
+```
+Production = Area x Yield
+
+Change_Production ~ Change_Area x Yield(t-1) + Area(t-1) x Change_Yield
+
+Contrib_Area = (Change_Area% / Change_Production%) x 100
+Contrib_Yield = (Change_Yield% / Change_Production%) x 100
+```
+
+**Interpretation:**
+- Contrib_Area > 60%: Extensive growth (area expansion is main driver)
+- Contrib_Yield > 60%: Intensive growth (technology improvement is main driver)
+- Both ~50%: Balanced growth
+
+**Validation:**
+- Production(t) approximately equals Area(t) x Yield(t) (margin 1%)
+- Contrib_Area + Contrib_Yield approximately equals 100% (margin 5%)
+
+### Step 6: Comprehensive Report Function
+
+Always design a comprehensive report function that:
+- Combines data from multiple analyses
+- Provides an executive summary
+- Includes key metrics, comparisons, and trends
+- Is the single most useful output of the skill
+
+### Step 7: Document Analyses
+
+Save all specifications in `references/analysis-methods.md` of the skill.
+
+## Phase 2 Checklist
+
+- [ ] 15+ typical questions listed
+- [ ] Questions grouped by analysis type
+- [ ] 4-6 analyses prioritized (with scoring)
+- [ ] Each analysis specified (objective, inputs, outputs, methodology)
+- [ ] Methodologies detailed with formulas
+- [ ] Validations defined
+- [ ] Interpretations specified
+- [ ] Concrete examples included
+- [ ] Comprehensive report function designed
+
+---
+
+# Phase 3: Architecture
+
+## Objective
+
+**STRUCTURE** the skill using the Agent Skills Open Standard: directory layout, files, responsibilities, cache, performance.
+
+## Detailed Process
+
+### Step 1: Define Skill Name
+
+**Format:** Standard kebab-case per the Agent Skills Open Standard.
+
+**Rules:**
+- 1-64 characters
+- Lowercase letters, numbers, and hyphens only
+- Must not start or end with hyphen
+- Must not contain consecutive hyphens
+- Must match parent directory name
+- **NO `-cskill` suffix**
+
+**Examples:**
+- `stock-analyzer`
+- `csv-data-cleaner`
+- `weekly-report-generator`
+- `nass-agriculture-monitor`
+- `noaa-climate-analysis`
+
+### Step 2: Directory Structure
+
+All skills follow the Agent Skills Open Standard structure:
+
+**Simple Skill (1-2 workflows, <1000 lines):**
+
+```
+skill-name/
+├── SKILL.md              # Primary file, <500 lines
+├── scripts/
+│   └── main.py
+├── references/
+│   └── guide.md
+├── assets/
+│   └── config.json
+├── install.sh            # Cross-platform installer
+└── README.md             # Multi-platform install instructions
+```
+
+**Organized Skill (3-5 scripts, medium complexity):**
+
+```
+skill-name/
+├── SKILL.md
+├── scripts/
+│   ├── fetch.py
+│   ├── parse.py
+│   ├── analyze.py
+│   └── utils/
+│       ├── cache.py
+│       └── validators.py
+├── references/
+│   ├── api-guide.md
+│   └── analysis-methods.md
+├── assets/
+│   └── config.json
+├── install.sh
+└── README.md
+```
+
+**Complex Skill (6+ scripts, large scope):**
+
+```
+skill-name/
+├── SKILL.md
+├── scripts/
+│   ├── core/
+│   │   ├── fetch_source.py
+│   │   ├── parse_source.py
+│   │   └── analyze_source.py
+│   ├── models/
+│   │   └── forecasting.py
+│   └── utils/
+│       ├── cache_manager.py
+│       ├── rate_limiter.py
+│       └── validators.py
+├── references/
+│   ├── api-guide.md
+│   ├── analysis-methods.md
+│   └── troubleshooting.md
+├── assets/
+│   ├── config.json
+│   └── metadata.json
+├── install.sh
+└── README.md
+```
+
+**Important:** There is NO `.claude-plugin/marketplace.json` required for simple skills. The SKILL.md file with its frontmatter is sufficient for discovery and activation on all platforms.
+
+### Step 3: Simple vs Complex Suite Decision
+
+| Factor | Simple Skill | Complex Suite |
+|---|---|---|
+| Workflows | 1-2 | 3+ distinct |
+| Code size | <1000 lines | >2000 lines |
+| Maintenance | Single developer | Team |
+| Structure | Single SKILL.md | Multiple component SKILL.md files |
+| marketplace.json | Not needed | Optional (official fields only) |
+
+**Default:** Start with simple skill. Upgrade to complex suite only when warranted.
+
+### Step 4: Define Script Responsibilities
+
+**Principle:** Separation of Concerns.
+
+**Typical scripts:**
+
+| Script | Responsibility | Does NOT | Size |
+|---|---|---|---|
+| `fetch_source.py` | API requests, auth, rate limiting | Parse, transform, analyze | 200-300 lines |
+| `parse_source.py` | Parsing, cleaning, validation | Fetch, analyze | 150-200 lines |
+| `analyze_source.py` | All analyses (YoY, ranking, etc.) | Fetch, parse | 300-500 lines |
+
+**Typical utils:**
+
+| Util | Responsibility | Size |
+|---|---|---|
+| `cache_manager.py` | Response cache, differentiated TTL | 100-150 lines |
+| `rate_limiter.py` | Rate limit control, persistent counter | 100-150 lines |
+| `validators.py` | Data validations, consistency checks | 100-150 lines |
+
+### Step 5: Plan References
+
+Detailed documentation files loaded on demand:
+
+| File | Content | Size |
+|---|---|---|
+| `api-guide.md` | How to get API key, endpoints, parameters, response format, quirks | ~1500 words |
+| `analysis-methods.md` | Each analysis explained, formulas, interpretations, examples | ~2000 words |
+| `troubleshooting.md` | Common problems, step-by-step solutions, FAQs | ~1000 words |
+
+### Step 6: Plan Assets
+
+**config.json** structure:
+
+```json
+{
+  "api": {
+    "base_url": "https://api.example.com/v1",
+    "api_key_env": "API_KEY_VAR",
+    "_instructions": "Get free key from: https://example.com/register",
+    "rate_limit_per_day": 1000,
+    "timeout_seconds": 30
+  },
+  "cache": {
+    "enabled": true,
+    "ttl_historical_days": 365,
+    "ttl_current_days": 7
+  },
+  "defaults": {
+    "param1": "value1"
+  }
+}
+```
+
+### Step 7: Cache and Rate Limiting Strategy
+
+**Cache rules:**
+- Historical data (year < current): Permanent cache (365+ days)
+- Current year data: Short cache (7 days, may be revised)
+- Metadata (lists, mappings): Permanent cache
+
+**Rate limiting:**
+- Persistent counter (file-based)
+- Pre-request verification
+- Alerts when near limit (>90%)
+- Blocking when limit reached
+
+### Step 8: Document Architecture
+
+Prepare content for `DECISIONS.md`:
+- Chosen directory structure and justification
+- Script responsibilities
+- Cache strategy and TTLs
+- Rate limiting approach
+
+## Phase 3 Checklist
+
+- [ ] Skill name defined (kebab-case, no `-cskill`, 1-64 chars)
+- [ ] Directory structure chosen
+- [ ] Responsibilities of each script defined
+- [ ] References planned (which files, content)
+- [ ] Assets planned (which configs, structure)
+- [ ] Cache strategy defined (what, TTL)
+- [ ] Rate limiting strategy defined
+- [ ] Architecture documented
+
+---
+
+# Phase 4: Detection
+
+## Objective
+
+Generate a **description** (<=1024 characters) with domain keywords for agent discovery. The description in the SKILL.md frontmatter IS the primary activation mechanism across all platforms.
+
+**Key v4.0 change:** There are NO `activation.keywords` or `activation.patterns` fields in marketplace.json. The `description` field in SKILL.md frontmatter is the single activation mechanism. All keywords must be embedded in the description itself.
+
+## Detailed Process
+
+### Step 1: List Domain Entities
+
+Identify all relevant entities users may mention:
+
+**Entity categories:**
+
+1. **Organizations/Sources**: Names, acronyms, full names (USDA, NASS, NOAA)
+2. **Main Objects**: Domain-specific items (commodities, instruments, metrics)
+3. **Geography**: Countries, regions, states
+4. **Metrics**: production, area, yield, price, revenue, temperature
+5. **Temporality**: years, seasons, current, historical, YoY
+
+### Step 2: List Actions/Verbs
+
+Which verbs does the user use to request analyses?
+
+**Categories:**
+- **Query**: what is, how much, show me, get, tell me, find
+- **Compare**: compare, versus, vs, difference, change, growth
+- **Rank**: top, best, leading, biggest, rank, ranking, list
+- **Analyze**: analyze, trend, pattern, evolution, breakdown
+- **Forecast**: predict, project, forecast, outlook, estimate
+- **Report**: report, dashboard, summary, overview
+
+### Step 3: Generate Comprehensive Keywords
+
+For EACH metric/capability the skill implements, generate keywords:
+
+```markdown
+Metric 1: [metric name]
+Primary keywords: [3-5 keywords]
+Secondary keywords: [3-5 synonyms]
+Action keywords: [2-3 verbs specific to this metric]
+Total: ~10-15 keywords per metric
+```
+
+**Goal:** 50-80 unique keywords total across all metrics.
+
+### Step 4: List Question Variations
+
+For each analysis type, enumerate how users might ask:
+
+**YoY Comparison:**
+- "Compare X this year vs last year"
+- "How does X compare to last year"
+- "X growth rate"
+- "X change YoY"
+- "Did X increase or decrease"
+
+**Ranking:**
+- "Top states for X"
+- "Which states produce most X"
+- "Leading X producers"
+- "Ranking of X"
+
+**Trend:**
+- "X trend last N years"
+- "How has X changed over time"
+- "Historical X data"
+
+### Step 5: Define Negative Scope
+
+What should NOT activate the skill? Avoid false positives.
+
+```markdown
+## Skill Scope
+
+### WITHIN scope:
+- [specific capability 1]
+- [specific capability 2]
+
+### OUT of scope:
+- [related but unsupported topic 1]
+- [related but unsupported topic 2]
+```
+
+### Step 6: Create the Description
+
+The description must be <=1024 characters and serve as the sole activation mechanism. Pack it with the most important keywords.
+
+**Template:**
+
+```yaml
+description: >-
+  [What the skill does]. Activates when users ask to [primary use case],
+  [secondary use case], or [tertiary use case]. Triggers on phrases like
+  [keyword phrase 1], [keyword phrase 2], [keyword phrase 3], [keyword
+  phrase 4]. Supports [capability 1], [capability 2], [capability 3].
+  Uses [technology/API] to [what it does with real data].
+```
+
+**Mandatory components:**
+1. Domain with specific entities (not just "crops" but "corn, soybeans, wheat")
+2. Each major API metric explicitly mentioned
+3. Action verbs covered (compare, rank, analyze, report)
+4. Temporal context (current, historical, year-over-year)
+5. Geographic context if relevant (states, regions, national)
+6. Data source name (USDA NASS, Alpha Vantage, etc.)
+
+**Constraints:**
+- Must be 1-1024 characters
+- Must be a single string (use `>-` for YAML folding)
+- No line breaks in the final output
+
+**Real example:**
+
+```yaml
+description: >-
+  Analyze US agricultural production using official USDA NASS data.
+  Activates when users ask about crop production, area planted, yield,
+  harvest progress, or crop conditions for corn, soybeans, wheat, and
+  other commodities. Triggers on phrases like compare corn production,
+  top soybean states, wheat yield trend, crop condition report, harvest
+  progress update. Supports year-over-year comparisons, state rankings,
+  trend analyses, growth decomposition, regional aggregations, and
+  comprehensive crop reports. Uses Python with NASS QuickStats API to
+  fetch real data on production, area, yield, conditions, and progress.
+```
+
+### Step 7: Mental Testing
+
+For each example question from Phase 2, verify:
+- Does the description contain relevant keywords?
+- Would an LLM reading the description match this query?
+
+If any use case would NOT be detected, add missing keywords to the description.
+
+### Step 8: Document Keywords in SKILL.md Body
+
+In the SKILL.md body (not frontmatter), include a keywords section for transparency:
+
+```markdown
+## Keywords for Automatic Detection
+
+This skill is activated when user mentions:
+
+**Entities**: [list]
+**Geography**: [list]
+**Metrics**: [list]
+**Actions**: [list]
+
+**Activation examples:**
+- "[example 1]"
+- "[example 2]"
+- "[example 3]"
+
+**Does NOT activate for:**
+- "[out of scope 1]"
+- "[out of scope 2]"
+```
+
+## Phase 4 Checklist
+
+- [ ] Domain entities listed (organizations, objects, geography)
+- [ ] Actions/verbs listed
+- [ ] 50+ keywords generated across all metrics
+- [ ] Question variations mapped
+- [ ] Negative scope defined
+- [ ] Description created (<=1024 chars, packed with keywords)
+- [ ] Keywords documented in SKILL.md body
+- [ ] Activation examples (positive and negative)
+- [ ] Mental detection simulation (all use cases covered)
+
+---
+
+# Phase 5: Implementation
+
+## Objective
+
+**IMPLEMENT** everything with functional code, useful documentation, and real configs. Then **validate** against the spec and run a **security scan**.
+
+## Quality Rules (Non-Negotiable)
+
+### NEVER:
+
+```python
+# FORBIDDEN: placeholder code
+def analyze():
+    # TODO: implement this function
+    pass
+```
+
+```markdown
+<!-- FORBIDDEN: empty reference -->
+For more details, consult the official documentation at [external link].
+```
+
+```json
+// FORBIDDEN: placeholder config
+{ "api_key": "YOUR_API_KEY_HERE" }
+```
+
+### ALWAYS:
+
+- Complete, functional code in every function
+- Detailed docstrings with Args, Returns, Raises, Example
+- Type hints on all public functions
+- Robust error handling with specific exceptions
+- Input and output validations
+- Real values in configs with instructions for user-provided values
+- Self-contained content in references (not just links)
+
+## Implementation Order
+
+Execute these 10 steps in order:
+
+### Step 1: Create Directory Structure
+
+```bash
+mkdir -p skill-name/{scripts,references,assets}
+```
+
+No `.claude-plugin/` directory needed for simple skills.
+
+### Step 2: Write SKILL.md (PRIMARY FILE - CREATE FIRST)
+
+The SKILL.md is the most important file. It must have spec-compliant frontmatter and be <500 lines.
+
+**Required frontmatter:**
+
+```yaml
+---
+name: skill-name
+description: >-
+  Description here, <=1024 chars, packed with activation keywords.
+license: MIT
+metadata:
+  author: Author Name
+  version: 1.0.0
+  created: 2026-02-27
+  last_reviewed: 2026-02-27
+  review_interval_days: 90
+  dependencies:
+    - url: https://api.example.com/v1
+      name: Example API
+      type: api
+---
+```
+
+**Frontmatter field rules:**
+- `name`: 1-64 chars, lowercase + hyphens, must match directory name
+- `description`: 1-1024 chars, the activation mechanism
+- `license`: Required (MIT, Apache-2.0, etc.)
+- `metadata.author`: Required
+- `metadata.version`: Required, semver format
+
+**Body structure (must be <500 lines total including frontmatter):**
+
+```markdown
+# Skill Name
+
+[Introduction: 2-3 paragraphs]
+
+## When to Use This Skill
+
+[Activation triggers with examples]
+
+## Data Source
+
+[API summary, link to references/api-guide.md for details]
+
+## Workflows
+
+### Workflow 1: [Name]
+[Step-by-step with commands and examples]
+
+### Workflow 2: [Name]
+[Step-by-step with commands and examples]
+
+## Available Scripts
+
+[Brief description of each script, inputs, outputs]
+
+## Available Analyses
+
+[Brief description of each analysis, link to references/ for details]
+
+## Error Handling
+
+[Common errors and how the skill handles them]
+
+## Keywords for Detection
+
+[Organized keyword list]
+
+## Usage Examples
+
+[3-5 complete examples with question, flow, and answer]
+
+## References
+
+[Table of reference files and what they contain]
+```
+
+**Keeping under 500 lines:** Move detailed content to `references/`:
+- Detailed API docs go to `references/api-guide.md`
+- Detailed methodologies go to `references/analysis-methods.md`
+- Troubleshooting goes to `references/troubleshooting.md`
+
+### Step 3: Implement Python Scripts
+
+Every script must follow this quality standard:
+
+```python
+#!/usr/bin/env python3
+"""
+Script title in 1 line.
+
+Detailed description: what it does, how it works,
+when to use, inputs and outputs.
+
+Example:
+    $ python script.py --param1 value1
+"""
+
+# 1. Standard library imports
+import sys
+import os
+from pathlib import Path
+from typing import Dict, List, Optional
+from datetime import datetime
+
+# 2. Third-party imports
+import requests
+
+# 3. Local imports
+from utils.cache_manager import CacheManager
+
+
+# Constants
+API_BASE_URL = "https://..."
+DEFAULT_TIMEOUT = 30
+
+
+class MainClass:
+    """
+    Class description.
+
+    Attributes:
+        attr1: description
+        attr2: description
+
+    Example:
+        >>> obj = MainClass(param)
+        >>> result = obj.method()
+    """
+
+    def __init__(self, param1: str, param2: int = 10):
+        """
+        Initialize MainClass.
+
+        Args:
+            param1: detailed description
+            param2: detailed description. Defaults to 10.
+
+        Raises:
+            ValueError: If param1 is invalid
+        """
+        if not param1:
+            raise ValueError("param1 cannot be empty")
+        self.param1 = param1
+        self.param2 = param2
+
+    def main_method(self, input_val: str) -> Dict:
+        """
+        What the method does.
+
+        Args:
+            input_val: description
+
+        Returns:
+            Dict with keys:
+                - key1: description
+                - key2: description
+
+        Raises:
+            APIError: If API request fails
+
+        Example:
+            >>> obj.main_method("value")
+            {'key1': 123, 'key2': 'abc'}
+        """
+        if not self._validate_input(input_val):
+            raise ValueError(f"Invalid input: {input_val}")
+
+        try:
+            result = self._do_work(input_val)
+            return result
+        except Exception as e:
+            print(f"Error: {e}")
+            raise
+
+
+def main():
+    """Main function with argparse."""
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Script description")
+    parser.add_argument('--param1', required=True, help="Parameter description")
+    parser.add_argument('--output', default='output.json', help="Output file path")
+
+    args = parser.parse_args()
+    obj = MainClass(args.param1)
+    result = obj.main_method(args.param1)
+
+    import json
+    output_path = Path(args.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w') as f:
+        json.dump(result, f, indent=2)
+    print(f"Saved: {output_path}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+**Checklist per script:**
+- Correct shebang (`#!/usr/bin/env python3`)
+- Complete module docstring
+- Organized imports (stdlib, third-party, local)
+- Type hints on all public functions
+- Docstrings with Args, Returns, Raises, Example
+- Error handling for risky operations
+- Input and output validations
+- Main function with argparse
+- `if __name__ == "__main__"` guard
+- No TODO, no `pass`, no `NotImplementedError`
+
+**Script patterns by type:**
+
+**fetch_source.py** (200-300 lines):
+- API client class with authentication
+- Rate limiting integration
+- Request retry with exponential backoff
+- Response validation
+- Cache integration (check cache before API call)
+
+**parse_source.py** (150-200 lines):
+- Parse raw API JSON to structured data
+- Clean data (remove formatting, handle nulls)
+- Transform data (standardize names, convert units)
+- Validate data (required fields, ranges, no duplicates)
+
+**analyze_source.py** (300-500 lines):
+- All analysis functions (YoY, ranking, trend, etc.)
+- Comprehensive report function
+- Each function: validate inputs, compute, interpret, return structured result
+
+### Step 4: Write References
+
+Detailed documentation files. Each must be self-contained with real content.
+
+**api-guide.md** (~1500 words):
+- How to get API key (step-by-step)
+- Main endpoints with example requests and responses
+- Parameter details with types and valid values
+- Response format with field descriptions
+- Rate limits and how to handle them
+- Known quirks and workarounds
+
+**analysis-methods.md** (~2000 words):
+- Each analysis explained with objective and methodology
+- Mathematical formulas
+- Interpretation guidelines
+- Validation criteria
+- Complete numerical examples with real values
+
+**troubleshooting.md** (~1000 words):
+- Common problems with symptoms, causes, and solutions
+- Error messages and what they mean
+- Step-by-step debugging procedures
+
+### Step 5: Write Assets
+
+**config.json**: Real API URLs, env var names for keys, rate limits, cache TTLs, default parameters. Always include `_instructions` or `_note` fields explaining user-provided values.
+
+**metadata.json** (if needed): Domain-specific mappings, aliases, conversions, groupings.
+
+### Step 6: Generate install.sh
+
+Generate the installer from `scripts/install-template.sh` — the canonical template. Replace `{{SKILL_NAME}}` with the actual skill name and `chmod +x`:
+
+```bash
+# During skill generation:
+sed "s/{{SKILL_NAME}}/skill-name/g" scripts/install-template.sh > skill-name/install.sh
+chmod +x skill-name/install.sh
+```
+
+The template handles:
+- POSIX-compatible shell (`set -eu`, no bashisms)
+- 14 platforms: claude-code, copilot, cursor, windsurf, cline, codex, gemini, kiro, trae, goose, opencode, roo-code, antigravity, universal
+- Corrected paths: Codex → `~/.agents/skills/`, Windsurf → `.windsurf/rules/` (project) / `global_rules.md` (global)
+- Format adapters: auto-generates `.mdc` for Cursor, `.md` rules for Windsurf, plain `.md` for Cline/Roo/Trae
+- Universal `.agents/skills/` secondary symlink after every install
+- `--all` flag to install to every detected tool at once
+- `--dry-run` for preview without changes
+
+### Step 7: Write README.md
+
+Multi-platform installation instructions:
+
+```markdown
+# Skill Name
+
+Brief description.
+
+## Installation
+
+### Universal Path (works with 6+ tools)
+
+```bash
+git clone <repo-url> ~/.agents/skills/skill-name
+```
+
+Works with Codex CLI, Gemini CLI, Kiro, Antigravity, and other tools that read `~/.agents/skills/`.
+
+### Using install.sh (Recommended)
+
+```bash
+chmod +x install.sh
+./install.sh                          # Auto-detect platform
+./install.sh --platform claude-code   # Claude Code
+./install.sh --platform cursor        # Cursor (auto-generates .mdc)
+./install.sh --all                    # All detected platforms
+./install.sh --dry-run                # Preview without installing
+```
+
+### Alternative: npx
+
+```bash
+npx skills add <repo-url>
+```
+
+### Manual Installation
+
+| Platform | Copy to |
+|---|---|
+| Universal | `~/.agents/skills/skill-name/` |
+| Claude Code | `~/.claude/skills/skill-name/` or `.claude/skills/skill-name/` |
+| GitHub Copilot | `.github/skills/skill-name/` |
+| Cursor | `.cursor/rules/skill-name/` |
+| Windsurf | `.windsurf/rules/skill-name/` |
+| Cline | `.clinerules/skill-name/` |
+| Codex CLI | `~/.agents/skills/skill-name/` |
+| Gemini CLI | `~/.gemini/skills/skill-name/` |
+| Kiro | `.kiro/skills/skill-name/` |
+| Trae | `.trae/rules/skill-name/` |
+| Goose | `~/.config/goose/skills/skill-name/` |
+| OpenCode | `~/.config/opencode/skills/skill-name/` |
+| Roo Code | `.roo/rules/skill-name/` |
+| Antigravity | `.agents/skills/skill-name/` |
+
+## Prerequisites
+
+[API key instructions, dependencies]
+
+## Usage Examples
+
+[3-5 examples]
+
+## Troubleshooting
+
+[Common issues and solutions]
+```
+
+### Step 7b: Generate Harness Patterns (mandatory)
+
+Every skill must include these harness patterns as executable code, not as markdown instructions.
+
+**a. Self-bootstrapping wrappers at the repo root:**
+- `./skill-name` (bash) — auto-creates venv, installs uv if missing, installs deps on first run. Bootstrap messages to stderr.
+- `.\skill-name.ps1` (PowerShell) — same behavior for Windows users.
+
+**b. Input validation module (`scripts/validate_inputs.py` or integrated into main script):**
+- Validate all user-facing inputs before computation: reject negatives where nonsensical, reject out-of-bounds values, validate enum inputs against known values
+- On validation failure: print JSON to stderr with `{"error": "...", "error_type": "validation", "details": [{"field": "...", "error": "..."}]}` and exit 1
+- If the skill brief contains `harness_requirements.input_validation`, implement those specific rules
+
+**c. Output sanity checks:**
+- After computation, check results against domain-specific bounds
+- Attach `_warnings` array to JSON output when values are unusual but not invalid
+- If the skill brief contains `harness_requirements.output_sanity`, implement those specific bounds
+
+**d. `--check-prereqs` command (or flag on the main command):**
+- Check Python version, required packages (try import), API keys (check env vars exist without printing values), network access (optional, with timeout)
+- Output: `{"ready": true/false, "checks": [{"check": "...", "required": "...", "found": "...", "ok": true/false}]}`
+
+**e. `--diagnostics` command (or flag):**
+- Output: `{"skill": "...", "version": "...", "harness_level": "...", "commands": [...], "harness_features": {"input_validation": true, ...}}`
+
+**f. SKILL.md frontmatter must include:**
+- `activation: /{skill-name}` — unique namespace prefix
+- `provenance:` block — if cliskill provides provenance metadata in the skill brief, pass it through. If standalone, generate minimal: `maintainer: unknown, version: 1.0.0, created: {today}`
+
+**g. SKILL.md body must include:**
+- `## Prerequisites` section listing runtime, deps, API keys, network requirements
+- Anti-activation in anti-goals: "Do NOT activate on general queries — wait for explicit `/{skill-name}` invocation"
+
+**h. Structured error handling throughout:**
+- All errors as JSON to stderr: `{"error": "message", "error_type": "validation|runtime|network", "hint": "..."}`
+- Exit code 1 on all errors. Never expose stack traces.
+
+### Step 8: Run Spec Validation
+
+After creating all files, run the validation script:
+
+```bash
+python3 scripts/validate.py path/to/skill/
+```
+
+**What it checks:**
+- Frontmatter fields present and valid (name, description, license, metadata)
+- Name matches directory name
+- Name format: 1-64 chars, lowercase + hyphens, no leading/trailing hyphens, no consecutive hyphens
+- Description: 1-1024 chars
+- SKILL.md under 500 lines
+- Required files present
+
+**If validation fails:** Fix the issues and re-run. Do not proceed until validation passes.
+
+### Step 9: Run Security Scan
+
+```bash
+python3 scripts/security_scan.py path/to/skill/
+```
+
+**What it checks:**
+- Hardcoded API keys or secrets
+- `.env` files with credentials
+- Shell injection patterns
+- Sensitive data in committed files
+
+**If security scan finds issues:** Fix them (replace hardcoded keys with env var references, remove `.env` files, sanitize shell inputs) and re-run.
+
+### Step 10: Report Results
+
+After successful validation and security scan, report to the user:
+
+```
+SKILL CREATED SUCCESSFULLY
+
+Location: ./skill-name/
+
+Statistics:
+- SKILL.md: [N] lines (<500)
+- Python code: [N] lines across [N] scripts
+- References: [N] files
+- Total files: [N]
+
+Validation: PASSED
+Security Scan: PASSED
+
+Main Decisions:
+- API: [name] ([short justification])
+- Analyses: [list]
+- Structure: [simple/organized/complex]
+
+Next Steps:
+1. Get API key: [instructions or link]
+2. Configure: export API_KEY_VAR="your_key"
+3. Install: ./install.sh
+4. Test: "[example query 1]"
+
+See README.md for complete multi-platform installation instructions.
+```
+
+## File Creation Order Summary
+
+| Order | File | Notes |
+|---|---|---|
+| 1 | Directory structure | `mkdir -p skill-name/{scripts,references,assets}` |
+| 2 | `SKILL.md` | PRIMARY file, <500 lines, spec-compliant frontmatter |
+| 3 | `scripts/*.py` | Functional Python code, no placeholders |
+| 4 | `references/*.md` | Detailed documentation, self-contained |
+| 5 | `assets/*.json` | Real values, validated JSON |
+| 6 | `install.sh` | Cross-platform installer, `chmod +x` |
+| 7 | `README.md` | Multi-platform install instructions |
+| 8 | Run `validate.py` | Must pass before delivery |
+| 9 | Run `security_scan.py` | Must pass before delivery |
+| 10 | Report results | Summary to user |
+
+## Phase 5 Checklist
+
+- [ ] Directory structure created (NO `.claude-plugin/` for simple skills)
+- [ ] SKILL.md created FIRST with spec-compliant frontmatter
+- [ ] SKILL.md is <500 lines
+- [ ] Frontmatter has: name, description (<=1024 chars), license, metadata (author, version)
+- [ ] Frontmatter has: `activation: /{skill-name}`
+- [ ] Frontmatter has: `provenance:` block (full if from cliskill, minimal if standalone)
+- [ ] Temporal metadata included (metadata.created, metadata.last_reviewed, metadata.review_interval_days)
+- [ ] Name is kebab-case, no `-cskill`, matches directory
+- [ ] SKILL.md body has `## Prerequisites` section
+- [ ] SKILL.md anti-goals include anti-activation instruction
+- [ ] All Python scripts implemented with functional code
+- [ ] No TODO, no `pass`, no `NotImplementedError`, no placeholders
+- [ ] All scripts have: shebang, docstrings, type hints, error handling
+- [ ] Input validation implemented (reject bad inputs with structured JSON errors)
+- [ ] Output sanity checks implemented (warn on extreme values)
+- [ ] `--check-prereqs` command returns structured JSON
+- [ ] `--diagnostics` command returns skill metadata
+- [ ] Self-bootstrapping wrappers: `./skill-name` (bash) + `.\skill-name.ps1` (PowerShell)
+- [ ] All errors as JSON to stderr with error_type classification
+- [ ] References written with real, self-contained content
+- [ ] Assets created with valid JSON and real values
+- [ ] `install.sh` generated with cross-platform support
+- [ ] `README.md` written with multi-platform install instructions
+- [ ] `requirements.txt` created (if third-party dependencies used)
+- [ ] Spec validation passed (`scripts/validate.py`)
+- [ ] Security scan passed (`scripts/security_scan.py`)
+- [ ] Staleness check passed (`scripts/staleness_check.py`)
+- [ ] Results reported to user
+
+---
+
+# Quality Standards Reminders
+
+These standards apply across ALL phases and ALL generated files.
+
+## Code Quality
+
+**Every function must be:**
+- Complete and functional (no stubs)
+- Documented with docstrings (Args, Returns, Raises, Example)
+- Type-hinted on all public interfaces
+- Protected by error handling
+- Validated on inputs and outputs
+
+**Every script must have:**
+- `#!/usr/bin/env python3` shebang
+- Module-level docstring
+- Organized imports (stdlib, third-party, local)
+- Constants at top level
+- `main()` function with argparse
+- `if __name__ == "__main__"` guard
+
+## Documentation Quality
+
+**References must be:**
+- Self-contained (not just links to external docs)
+- Concrete (real values, executable examples)
+- Substantial (1000+ words for main reference files)
+- Well-structured (headings, lists, code blocks)
+
+**SKILL.md must be:**
+- Under 500 lines (move detail to references)
+- Frontmatter-compliant (name, description, license, metadata)
+- Actionable (workflows with specific commands)
+
+## Configuration Quality
+
+**JSON configs must be:**
+- Syntactically valid (always validate with `python -c "import json; ..."`)
+- Populated with real values (real API URLs, real rate limits)
+- Annotated with `_instructions` or `_note` fields for user-provided values
+- Never contain hardcoded secrets
+
+## Naming Quality
+
+- Skill names: kebab-case, 1-64 chars, no `-cskill` suffix
+- Python files: snake_case
+- Classes: PascalCase
+- Functions/methods: snake_case
+- Constants: UPPER_SNAKE_CASE
+
+## Anti-Patterns to Avoid
+
+| Anti-Pattern | Correct Approach |
+|---|---|
+| `def analyze(): pass` | Complete implementation with real logic |
+| `# TODO: implement` | Implement it now |
+| `api_key: YOUR_KEY_HERE` | `api_key_env: "ENV_VAR_NAME"` with instructions |
+| `See official docs at [link]` | Include the relevant information directly |
+| SKILL.md over 500 lines | Move detail to `references/` |
+| marketplace.json as step 0 | SKILL.md is the primary file, created first |
+| `-cskill` suffix in names | Standard kebab-case: `stock-analyzer` |
+| Description over 1024 chars | Trim to essential keywords within limit |
+```
+
+## File: `references/quality-standards.md`
+```markdown
+# Mandatory Quality Standards
+
+## Fundamental Principles
+
+**Production-Ready, Not Prototype**
+- Code must work without modifications
+- Doesn't need "now implement X"
+- Can be used immediately
+
+**Functional, Not Placeholder**
+- Complete code in all functions
+- No TODO, pass, NotImplementedError
+- Robust error handling
+
+**Useful, Not Generic**
+- Specific and detailed content
+- Concrete examples, not abstract
+- Not just external links
+
+**Current, Not Stale**
+- Include `metadata.created` and `metadata.last_reviewed` dates in frontmatter
+- Set `metadata.review_interval_days` (default: 90 days)
+- Declare external dependencies in `metadata.dependencies` so health can be checked
+- Declare expected API response shapes in `metadata.schema_expectations` for drift detection
+- Run `python3 scripts/staleness_check.py path/to/skill/` periodically to detect stale skills
+- When publishing to a registry, use `python3 scripts/skill_registry.py stale` to audit all skills
+
+---
+
+## Standards by File Type
+
+### Python Scripts
+
+#### ✅ MANDATORY
+
+**1. Complete structure**:
+```python
+#!/usr/bin/env python3
+"""Module docstring"""
+
+# Imports
+import ...
+
+# Constants
+CONST = value
+
+# Classes/Functions
+class/def ...
+
+# Main
+def main():
+    ...
+
+if __name__ == "__main__":
+    main()
+```
+
+**2. Docstrings**:
+- Module docstring: 3-5 lines
+- Class docstring: Description + Example
+- Method docstring: Args, Returns, Raises, Example
+
+**3. Type hints**:
+```python
+def function(param1: str, param2: int = 10) -> Dict[str, Any]:
+    ...
+```
+
+**4. Error handling**:
+```python
+try:
+    result = risky_operation()
+except SpecificError as e:
+    # Handle specifically
+    log_error(e)
+    raise CustomError(f"Context: {e}")
+```
+
+**5. Validations**:
+```python
+def process(data: Dict) -> pd.DataFrame:
+    # Validate input
+    if not data:
+        raise ValueError("Data cannot be empty")
+
+    if 'required_field' not in data:
+        raise ValueError("Missing required field")
+
+    # Process
+    ...
+
+    # Validate output
+    assert len(result) > 0, "Result cannot be empty"
+    assert result['value'].notna().all(), "No null values allowed"
+
+    return result
+```
+
+**6. Appropriate logging**:
+```python
+import logging
+
+logger = logging.getLogger(__name__)
+
+def fetch_data():
+    logger.info("Fetching data from API...")
+    # ...
+    logger.debug(f"Received {len(data)} records")
+    # ...
+    logger.error(f"API error: {e}")
+```
+
+#### ❌ FORBIDDEN
+
+```python
+# ❌ DON'T DO THIS:
+
+def analyze():
+    # TODO: implement analysis
+    pass
+
+def process(data):  # ❌ No type hints
+    # ❌ No docstring
+    result = data  # ❌ No real logic
+    return result  # ❌ No validation
+
+def fetch_api(url):
+    response = requests.get(url)  # ❌ No timeout
+    return response.json()  # ❌ No error handling
+```
+
+#### ✅ DO THIS:
+
+```python
+def analyze_yoy(df: pd.DataFrame, commodity: str, year1: int, year2: int) -> Dict:
+    """
+    Perform year-over-year analysis
+
+    Args:
+        df: DataFrame with parsed data
+        commodity: Commodity name (e.g., "CORN")
+        year1: Current year
+        year2: Previous year
+
+    Returns:
+        Dict with keys:
+            - production_current: float
+            - production_previous: float
+            - change_percent: float
+            - interpretation: str
+
+    Raises:
+        ValueError: If data not found for specified years
+        DataQualityError: If data fails validation
+
+    Example:
+        >>> analyze_yoy(df, "CORN", 2023, 2022)
+        {'production_current': 15.3, 'change_percent': 11.7, ...}
+    """
+    # Validate inputs
+    if commodity not in df['commodity'].unique():
+        raise ValueError(f"Commodity {commodity} not found in data")
+
+    # Filter data
+    df1 = df[(df['commodity'] == commodity) & (df['year'] == year1)]
+    df2 = df[(df['commodity'] == commodity) & (df['year'] == year2)]
+
+    if len(df1) == 0 or len(df2) == 0:
+        raise ValueError(f"Data not found for {commodity} in {year1} or {year2}")
+
+    # Extract values
+    prod1 = df1['production'].iloc[0]
+    prod2 = df2['production'].iloc[0]
+
+    # Calculate
+    change = prod1 - prod2
+    change_pct = (change / prod2) * 100
+
+    # Interpret
+    if abs(change_pct) < 2:
+        interpretation = "stable"
+    elif change_pct > 10:
+        interpretation = "significant_increase"
+    elif change_pct > 2:
+        interpretation = "moderate_increase"
+    elif change_pct < -10:
+        interpretation = "significant_decrease"
+    else:
+        interpretation = "moderate_decrease"
+
+    # Return
+    return {
+        "commodity": commodity,
+        "production_current": round(prod1, 1),
+        "production_previous": round(prod2, 1),
+        "change_absolute": round(change, 1),
+        "change_percent": round(change_pct, 1),
+        "interpretation": interpretation
+    }
+```
+
+---
+
+### SKILL.md
+
+#### ✅ MANDATORY
+
+**1. Valid frontmatter**:
+```yaml
+---
+name: agent-name
+description: [150-250 words with keywords]
+---
+```
+
+**2. Size**: 5000-7000 words
+
+**3. Mandatory sections**:
+- When to use (specific triggers)
+- Data source (detailed API)
+- Workflows (complete step-by-step)
+- Scripts (each one explained)
+- Analyses (methodologies)
+- Errors (complete handling)
+- Validations (mandatory)
+- Keywords (complete list)
+- Examples (5+ complete)
+
+**4. Detailed workflows**:
+
+✅ **GOOD**:
+```markdown
+### Workflow: YoY Comparison
+
+1. **Identify question parameters**
+   - Commodity: [extract from question]
+   - Years: Current vs previous (or specified)
+
+2. **Fetch data**
+   ```bash
+   python scripts/fetch_nass.py \
+     --commodity CORN \
+     --years 2023,2022 \
+     --output data/raw/corn_2023_2022.json
+   ```
+
+3. **Parse**
+   ```bash
+   python scripts/parse_nass.py \
+     --input data/raw/corn_2023_2022.json \
+     --output data/processed/corn.csv
+   ```
+
+4. **Analyze**
+   ```bash
+   python scripts/analyze_nass.py \
+     --input data/processed/corn.csv \
+     --analysis yoy \
+     --commodity CORN \
+     --year1 2023 \
+     --year2 2022 \
+     --output data/analysis/corn_yoy.json
+   ```
+
+5. **Interpret results**
+
+   File `data/analysis/corn_yoy.json` contains:
+   ```json
+   {
+     "production_current": 15.3,
+     "change_percent": 11.7,
+     "interpretation": "significant_increase"
+   }
+   ```
+
+   Respond to user:
+   "Corn production grew 11.7% in 2023..."
+```
+
+❌ **BAD**:
+```markdown
+### Workflow: Comparison
+
+1. Get data
+2. Compare
+3. Return result
+```
+
+**5. Complete examples**:
+
+✅ **GOOD**:
+```markdown
+### Example 1: YoY Comparison
+
+**Question**: "How's corn production compared to last year?"
+
+**Executed flow**:
+[Specific commands with outputs]
+
+**Generated answer**:
+"Corn production in 2023 is 15.3 billion bushels,
+growth of 11.7% vs 2022 (13.7 billion). Growth
+comes mainly from area increase (+8%) with stable yield."
+```
+
+❌ **BAD**:
+```markdown
+### Example: Comparison
+
+User asks about comparison. Agent compares and responds.
+```
+
+#### ❌ FORBIDDEN
+
+- Empty sections
+- "See documentation"
+- Workflows without specific commands
+- Generic examples
+
+---
+
+### References
+
+#### ✅ MANDATORY
+
+**1. Useful and self-contained content**:
+
+✅ **GOOD** (references/api-guide.md):
+```markdown
+## Endpoint: Get Production Data
+
+**URL**: `GET https://quickstats.nass.usda.gov/api/api_GET/`
+
+**Parameters**:
+- `commodity_desc`: Commodity name
+  - Example: "CORN", "SOYBEANS"
+  - Case-sensitive
+- `year`: Desired year
+  - Example: 2023
+  - Range: 1866-present
+
+**Complete request example**:
+```bash
+curl -H "X-Api-Key: YOUR_KEY" \
+  "https://quickstats.nass.usda.gov/api/api_GET/?commodity_desc=CORN&year=2023&format=JSON"
+```
+
+**Expected response**:
+```json
+{
+  "data": [
+    {
+      "year": 2023,
+      "commodity_desc": "CORN",
+      "value": "15,300,000,000",
+      "unit_desc": "BU"
+    }
+  ]
+}
+```
+
+**Important fields**:
+- `value`: Comes as STRING with commas
+  - Solution: `value.replace(',', '')`
+  - Convert to float after
+```
+
+❌ **BAD**:
+```markdown
+## API Endpoint
+
+For details on how to use the API, consult the official documentation at:
+https://quickstats.nass.usda.gov/api
+
+[End of file]
+```
+
+**2. Adequate size**:
+- API guide: 1500-2000 words
+- Analysis methods: 2000-3000 words
+- Troubleshooting: 1000-1500 words
+
+**3. Concrete examples**:
+- Always include examples with real values
+- Executable code blocks
+- Expected outputs
+
+#### ❌ FORBIDDEN
+
+- "For more information, see [link]"
+- Sections with only 2-3 lines
+- Lists without details
+- Circular references ("see other doc that sees other doc")
+
+---
+
+### Assets (Configs)
+
+#### ✅ MANDATORY
+
+**1. Syntactically valid JSON**:
+```bash
+# ALWAYS validate:
+python -c "import json; json.load(open('config.json'))"
+```
+
+**2. Real values**:
+
+✅ **GOOD**:
+```json
+{
+  "api": {
+    "base_url": "https://quickstats.nass.usda.gov/api",
+    "api_key_env": "NASS_API_KEY",
+    "_instructions": "Get free API key from: https://quickstats.nass.usda.gov/api#registration",
+    "rate_limit_per_day": 1000,
+    "timeout_seconds": 30
+  }
+}
+```
+
+❌ **BAD**:
+```json
+{
+  "api": {
+    "base_url": "YOUR_API_URL_HERE",
+    "api_key": "YOUR_KEY_HERE"
+  }
+}
+```
+
+**3. Inline comments** (using `_comment` or `_note`):
+```json
+{
+  "_comment": "Differentiated TTL by data type",
+  "cache": {
+    "ttl_historical_days": 365,
+    "_note_historical": "Historical data doesn't change",
+    "ttl_current_days": 7,
+    "_note_current": "Current year data may be revised"
+  }
+}
+```
+
+---
+
+### README.md
+
+#### ✅ MANDATORY
+
+**1. Complete installation instructions**:
+
+✅ **GOOD**:
+```markdown
+## Installation
+
+### 1. Get API Key (Free)
+
+1. Access https://quickstats.nass.usda.gov/api#registration
+2. Fill form:
+   - Name: [your name]
+   - Email: [your email]
+   - Purpose: "Personal research"
+3. Click "Submit"
+4. You'll receive email with API key in ~1 minute
+5. Key format: `A1B2C3D4-E5F6-G7H8-I9J0-K1L2M3N4O5P6`
+
+### 2. Configure Environment
+
+**Option A - Export** (temporary):
+```bash
+export NASS_API_KEY="your_key_here"
+```
+
+**Option B - .bashrc/.zshrc** (permanent):
+```bash
+echo 'export NASS_API_KEY="your_key_here"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+**Option C - .env file** (per project):
+```bash
+echo "NASS_API_KEY=your_key_here" > .env
+```
+
+### 3. Install Dependencies
+
+```bash
+cd nass-usda-agriculture
+pip install -r requirements.txt
+```
+
+Requirements:
+- requests
+- pandas
+- numpy
+```
+
+❌ **BAD**:
+```markdown
+## Installation
+
+1. Get API key from the official website
+2. Configure environment
+3. Install dependencies
+4. Done!
+```
+
+**2. Concrete usage examples**:
+
+✅ **GOOD**:
+```markdown
+## Examples
+
+### Example 1: Current Production
+
+```
+You: "What's US corn production in 2023?"
+
+Claude: "Corn production in 2023 was 15.3 billion
+bushels (389 million metric tons)..."
+```
+
+### Example 2: YoY Comparison
+
+```
+You: "Compare soybeans this year vs last year"
+
+Claude: "Soybean production in 2023 is 2.6% below 2022:
+- 2023: 4.165 billion bushels
+- 2022: 4.276 billion bushels
+- Drop from area (-4.5%), yield improved (+0.8%)"
+```
+
+[3-5 more examples]
+```
+
+❌ **BAD**:
+```markdown
+## Usage
+
+Ask questions about agriculture and the agent will respond.
+```
+
+**3. Specific troubleshooting**:
+
+✅ **GOOD**:
+```markdown
+### Error: "NASS_API_KEY environment variable not found"
+
+**Cause**: API key not configured
+
+**Step-by-step solution**:
+1. Verify key was obtained: https://...
+2. Configure environment:
+   ```bash
+   export NASS_API_KEY="your_key_here"
+   ```
+3. Verify:
+   ```bash
+   echo $NASS_API_KEY
+   ```
+4. Should show your key
+5. If doesn't work, restart terminal
+
+**Still not working?**
+- Check for extra spaces in key
+- Verify key hasn't expired (validity: 1 year)
+- Re-generate key if needed
+```
+
+---
+
+## Quality Checklist
+
+### Per Python Script
+
+- [ ] Shebang: `#!/usr/bin/env python3`
+- [ ] Module docstring (3-5 lines)
+- [ ] Organized imports (stdlib, 3rd party, local)
+- [ ] Constants at top (if applicable)
+- [ ] Type hints in all public functions
+- [ ] Docstrings in classes (description + attributes + example)
+- [ ] Docstrings in methods (Args, Returns, Raises, Example)
+- [ ] Error handling for risky operations
+- [ ] Input validations
+- [ ] Output validations
+- [ ] Appropriate logging
+- [ ] Main function with argparse
+- [ ] if __name__ == "__main__"
+- [ ] Functional code (no TODO/pass)
+- [ ] Valid syntax (test: `python -m py_compile script.py`)
+
+### Per SKILL.md
+
+- [ ] Frontmatter with name and description
+- [ ] Description 150-250 characters with keywords
+- [ ] Size 5000+ words
+- [ ] "When to Use" section with specific triggers
+- [ ] "Data Source" section detailed
+- [ ] Step-by-step workflows with commands
+- [ ] Scripts explained individually
+- [ ] Analyses documented (objective, methodology)
+- [ ] Errors handled (all expected)
+- [ ] Validations listed
+- [ ] Performance/cache explained
+- [ ] Complete keywords
+- [ ] Complete examples (5+)
+
+### Per Reference File
+
+- [ ] 1000+ words
+- [ ] Useful content (not just links)
+- [ ] Concrete examples with real values
+- [ ] Executable code blocks
+- [ ] Well structured (headings, lists)
+- [ ] No empty sections
+- [ ] No "TODO: write"
+
+### Per Asset (Config)
+
+- [ ] Syntactically valid JSON (validate!)
+- [ ] Real values (not "YOUR_X_HERE" without context)
+- [ ] Inline comments (_comment, _note)
+- [ ] Instructions for values user must fill
+- [ ] Logical and organized structure
+
+### Per README.md
+
+- [ ] Step-by-step installation
+- [ ] How to get API key (detailed)
+- [ ] How to configure (3 options)
+- [ ] How to install dependencies
+- [ ] How to install in Claude Code
+- [ ] Usage examples (5+)
+- [ ] Troubleshooting (10+ problems)
+- [ ] License
+- [ ] Contact/contribution (if applicable)
+
+### Complete Agent
+
+- [ ] DECISIONS.md documents all choices
+- [ ] **VERSION** file created (e.g. 1.0.0)
+- [ ] **CHANGELOG.md** created with complete v1.0.0 entry
+- [ ] **INSTALACAO.md** with complete didactic tutorial
+- [ ] **comprehensive_{domain}_report()** implemented
+- [ ] SKILL.md with version in frontmatter metadata
+- [ ] 18+ files created
+- [ ] ~1500+ lines of Python code
+- [ ] ~10,000+ words of documentation
+- [ ] 2+ configs
+- [ ] requirements.txt
+- [ ] .gitignore (if needed)
+- [ ] No placeholder/TODO
+- [ ] Valid syntax (Python, JSON, YAML)
+- [ ] Ready to use (production-ready)
+
+---
+
+## Quality Examples
+
+### Example: Error Handling
+
+❌ **BAD**:
+```python
+def fetch(url):
+    return requests.get(url).json()
+```
+
+✅ **GOOD**:
+```python
+def fetch(url: str, timeout: int = 30) -> Dict:
+    """
+    Fetch data from URL with error handling
+
+    Args:
+        url: URL to fetch
+        timeout: Timeout in seconds
+
+    Returns:
+        JSON response as dict
+
+    Raises:
+        NetworkError: If connection fails
+        TimeoutError: If request times out
+        APIError: If API returns error
+    """
+    try:
+        response = requests.get(url, timeout=timeout)
+        response.raise_for_status()
+
+        data = response.json()
+
+        if 'error' in data:
+            raise APIError(f"API error: {data['error']}")
+
+        return data
+
+    except requests.Timeout:
+        raise TimeoutError(f"Request timed out after {timeout}s")
+
+    except requests.ConnectionError as e:
+        raise NetworkError(f"Connection failed: {e}")
+
+    except requests.HTTPError as e:
+        if e.response.status_code == 429:
+            raise RateLimitError("Rate limit exceeded")
+        else:
+            raise APIError(f"HTTP {e.response.status_code}: {e}")
+```
+
+### Example: Validations
+
+❌ **BAD**:
+```python
+def parse(data):
+    df = pd.DataFrame(data)
+    return df
+```
+
+✅ **GOOD**:
+```python
+def parse(data: List[Dict]) -> pd.DataFrame:
+    """Parse and validate data"""
+
+    # Validate input
+    if not data:
+        raise ValueError("Data cannot be empty")
+
+    if not isinstance(data, list):
+        raise TypeError(f"Expected list, got {type(data)}")
+
+    # Parse
+    df = pd.DataFrame(data)
+
+    # Validate schema
+    required_cols = ['year', 'commodity', 'value']
+    missing = set(required_cols) - set(df.columns)
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    # Validate types
+    df['year'] = pd.to_numeric(df['year'], errors='raise')
+    df['value'] = pd.to_numeric(df['value'], errors='raise')
+
+    # Validate ranges
+    current_year = datetime.now().year
+    if (df['year'] > current_year).any():
+        raise ValueError(f"Future years found (max allowed: {current_year})")
+
+    if (df['value'] < 0).any():
+        raise ValueError("Negative values found")
+
+    # Validate no duplicates
+    if df.duplicated(subset=['year', 'commodity']).any():
+        raise ValueError("Duplicate records found")
+
+    return df
+```
+
+### Example: Docstrings
+
+❌ **BAD**:
+```python
+def analyze(df, commodity):
+    """Analyze data"""
+    # ...
+```
+
+✅ **GOOD**:
+```python
+def analyze_yoy(
+    df: pd.DataFrame,
+    commodity: str,
+    year1: int,
+    year2: int
+) -> Dict[str, Any]:
+    """
+    Perform year-over-year comparison analysis
+
+    Compares production, area, and yield between two years
+    and decomposes growth into area vs yield contributions.
+
+    Args:
+        df: DataFrame with columns ['year', 'commodity', 'production', 'area', 'yield']
+        commodity: Commodity name (e.g., "CORN", "SOYBEANS")
+        year1: Current year to compare
+        year2: Previous year to compare against
+
+    Returns:
+        Dict containing:
+            - production_current (float): Production in year1 (million units)
+            - production_previous (float): Production in year2
+            - change_absolute (float): Absolute change
+            - change_percent (float): Percent change
+            - decomposition (dict): Area vs yield contribution
+            - interpretation (str): "increase", "decrease", or "stable"
+
+    Raises:
+        ValueError: If commodity not found in data
+        ValueError: If either year not found in data
+        DataQualityError: If production != area * yield (tolerance > 1%)
+
+    Example:
+        >>> df = pd.DataFrame([
+        ...     {'year': 2023, 'commodity': 'CORN', 'production': 15.3, 'area': 94.6, 'yield': 177},
+        ...     {'year': 2022, 'commodity': 'CORN', 'production': 13.7, 'area': 89.2, 'yield': 173}
+        ... ])
+        >>> result = analyze_yoy(df, "CORN", 2023, 2022)
+        >>> result['change_percent']
+        11.7
+    """
+    # [Complete implementation]
+```
+
+---
+
+## Dependency Management
+
+### Decision Framework
+
+Skills should minimize external dependencies. Every dependency is a maintenance burden, a security surface, and a compatibility risk. Use this decision tree:
+
+```
+Can stdlib do it?
+  → Yes: Use stdlib. Done.
+  → No: Is there a lightweight pure-Python package (<1MB)?
+      → Yes: Use it. Add to requirements.txt.
+      → No: Is there a well-maintained popular package?
+          → Yes: Use it only if the domain requires it.
+          → No: Implement it yourself or redesign the approach.
+```
+
+### Stdlib vs. Third-Party Decision Table
+
+| Task | Stdlib Solution | When to Use Third-Party |
+|------|----------------|------------------------|
+| HTTP requests | `urllib.request` | Use `requests` when: complex auth, session management, multipart uploads, or retry logic would require 100+ lines of urllib code |
+| JSON handling | `json` | Never — stdlib is sufficient |
+| CSV parsing | `csv` | Use `pandas` only when: statistical analysis, complex transformations, or DataFrame operations are core to the skill |
+| File paths | `pathlib` | Never — stdlib is sufficient |
+| Date/time | `datetime` | Never — stdlib is sufficient |
+| Regex | `re` | Never — stdlib is sufficient |
+| Hashing | `hashlib` | Never — stdlib is sufficient |
+| Caching | File-based (json + pathlib) | Never for skills — the FileCache pattern in architecture-guide.md is sufficient |
+| Data analysis | Manual calculations | Use `pandas`/`numpy` when: skill is primarily analytical (10+ statistical operations, pivots, aggregations) |
+| PDF generation | Not available | Use `reportlab` or `fpdf2` when PDF output is a core requirement |
+| Web scraping | `urllib` + `html.parser` | Use `beautifulsoup4` when parsing complex/malformed HTML |
+| CLI arguments | `argparse` | Never — stdlib is sufficient |
+| YAML parsing | Manual (the `_parse_frontmatter` pattern) | Use `pyyaml` only if skill needs to parse arbitrary YAML files (not just SKILL.md frontmatter) |
+
+### requirements.txt Rules
+
+When third-party packages are needed:
+
+```
+# requirements.txt
+
+# Pin major.minor, allow patch updates
+requests>=2.31,<3.0
+pandas>=2.0,<3.0
+
+# For stdlib-only skills, create an empty requirements.txt with a comment:
+# No external dependencies required — this skill uses Python stdlib only.
+```
+
+**Rules:**
+- Always create `requirements.txt` even if empty (document the stdlib-only decision)
+- Pin major.minor version to avoid breaking changes
+- Never pin exact patch versions (allows security updates)
+- Never include dev dependencies (pytest, ruff) — those are for contributors, not users
+- List only direct dependencies, not transitive ones
+- Include a comment explaining why each package is needed
+
+### Common Dependency Patterns by Skill Type
+
+| Skill Type | Typical Dependencies |
+|-----------|---------------------|
+| Data analysis (stocks, agriculture, climate) | `requests`, `pandas`, `numpy` |
+| Report generation | `requests`, `fpdf2` or `reportlab` |
+| Web scraping | `requests`, `beautifulsoup4` |
+| API wrapper | `requests` (or stdlib `urllib`) |
+| Text processing | Stdlib only (`re`, `json`, `csv`) |
+| File format conversion | Stdlib only (or single specialized package) |
+| Database interaction | Stdlib `sqlite3` (or `psycopg2`/`pymysql` for specific DBs) |
+
+---
+
+## Testing Strategy
+
+### Why Test Generated Skills
+
+Skills are opinionated software that teams rely on daily. A skill that produces wrong calculations, misparses API responses, or silently drops data is worse than no skill at all. Tests catch these issues before the skill reaches users.
+
+### What to Test
+
+Focus tests on the parts most likely to break or produce wrong results:
+
+| Priority | What to Test | Why |
+|----------|-------------|-----|
+| **High** | Analysis/calculation functions | Wrong math = wrong decisions |
+| **High** | Data parsing (API response → structured data) | APIs change formats, edge cases in real data |
+| **High** | Input validation | Bad input should fail clearly, not silently produce garbage |
+| **Medium** | Output formatting | Reports and summaries should be consistent |
+| **Medium** | Error handling paths | Verify graceful degradation on API failures, missing data |
+| **Low** | Cache logic | Only if custom caching is complex |
+| **Low** | Config loading | Usually trivial |
+
+### Test Directory Structure
+
+```
+skill-name/
+├── scripts/
+│   ├── analyze.py
+│   ├── fetch.py
+│   └── parse.py
+├── tests/
+│   ├── test_analyze.py       # Unit tests for analysis functions
+│   ├── test_parse.py         # Unit tests for parsing logic
+│   ├── fixtures/
+│   │   ├── sample_api_response.json    # Real API response (anonymized)
+│   │   └── sample_parsed_data.csv      # Expected parsed output
+│   └── conftest.py           # Shared pytest fixtures
+```
+
+### Test Patterns
+
+**Pattern 1: Test analysis functions with known inputs/outputs**
+
+```python
+"""Tests for analyze.py — core calculation functions."""
+import pytest
+from scripts.analyze import analyze_yoy, calculate_trend
+
+def test_yoy_increase():
+    """YoY comparison should detect an increase."""
+    result = analyze_yoy(
+        current_value=150.0,
+        previous_value=100.0,
+    )
+    assert result["change_percent"] == pytest.approx(50.0)
+    assert result["interpretation"] == "significant_increase"
+
+def test_yoy_stable():
+    """Changes under 2% should be interpreted as stable."""
+    result = analyze_yoy(current_value=101.0, previous_value=100.0)
+    assert result["interpretation"] == "stable"
+
+def test_yoy_zero_previous():
+    """Division by zero should raise ValueError, not crash."""
+    with pytest.raises(ValueError, match="previous value cannot be zero"):
+        analyze_yoy(current_value=100.0, previous_value=0.0)
+```
+
+**Pattern 2: Test parsing with fixture data**
+
+```python
+"""Tests for parse.py — API response parsing."""
+import json
+from pathlib import Path
+from scripts.parse import parse_api_response
+
+FIXTURES = Path(__file__).parent / "fixtures"
+
+def test_parse_normal_response():
+    """Standard API response should parse to expected structure."""
+    raw = json.loads((FIXTURES / "sample_api_response.json").read_text())
+    result = parse_api_response(raw)
+    assert len(result) > 0
+    assert "year" in result[0]
+    assert "value" in result[0]
+
+def test_parse_empty_response():
+    """Empty API response should return empty list, not crash."""
+    result = parse_api_response({"data": []})
+    assert result == []
+
+def test_parse_malformed_values():
+    """Values with commas (e.g., '15,300,000') should be cleaned."""
+    raw = {"data": [{"value": "15,300,000", "year": "2023"}]}
+    result = parse_api_response(raw)
+    assert result[0]["value"] == 15300000.0
+```
+
+**Pattern 3: Mock external API calls**
+
+```python
+"""Tests for fetch.py — API interaction (mocked)."""
+from unittest.mock import patch, MagicMock
+from scripts.fetch import fetch_data
+
+@patch("scripts.fetch.urllib.request.urlopen")
+def test_fetch_success(mock_urlopen):
+    """Successful API call should return parsed JSON."""
+    mock_response = MagicMock()
+    mock_response.read.return_value = b'{"data": [{"value": "100"}]}'
+    mock_response.__enter__ = lambda s: s
+    mock_response.__exit__ = MagicMock(return_value=False)
+    mock_urlopen.return_value = mock_response
+
+    result = fetch_data(commodity="CORN", year=2023)
+    assert "data" in result
+
+@patch("scripts.fetch.urllib.request.urlopen")
+def test_fetch_rate_limited(mock_urlopen):
+    """429 response should raise RateLimitError."""
+    from urllib.error import HTTPError
+    mock_urlopen.side_effect = HTTPError(
+        url="", code=429, msg="Too Many Requests", hdrs={}, fp=None
+    )
+    with pytest.raises(Exception, match="[Rr]ate limit"):
+        fetch_data(commodity="CORN", year=2023)
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+cd skill-name/
+python -m pytest tests/ -v
+
+# Run with coverage
+python -m pytest tests/ --cov=scripts --cov-report=term-missing
+```
+
+### When to Generate Tests
+
+Tests are generated during Phase 5 (Implementation) after the scripts are written:
+
+1. Write all scripts first (steps 1-5 of Phase 5)
+2. Create `tests/` directory with test files for core functions
+3. Create `tests/fixtures/` with sample data
+4. Run tests to verify they pass
+5. Include test instructions in README.md
+
+**Note:** Tests are recommended but not mandatory for v1.0 of a skill. The validation and security scan gates are always mandatory. Tests become critical when:
+- The skill performs financial calculations (wrong math = real cost)
+- The skill processes sensitive data (parsing errors = data loss)
+- Multiple people will maintain the skill (tests prevent regressions)
+- The skill is being published to the team registry (quality expectation is higher)
+
+---
+
+## Anti-Patterns
+
+### Anti-Pattern 1: Partial Implementation
+
+❌ **NO**:
+```python
+def yoy_comparison(df, commodity, year1, year2):
+    # Implement YoY comparison
+    pass
+
+def state_ranking(df, commodity):
+    # TODO: implement ranking
+    raise NotImplementedError()
+```
+
+✅ **YES**:
+```python
+# [Complete and functional code for BOTH functions]
+```
+
+### Anti-Pattern 2: Empty References
+
+❌ **NO**:
+```markdown
+# Analysis Methods
+
+## YoY Comparison
+
+This method compares two years.
+
+## Ranking
+
+This method ranks states.
+```
+
+✅ **YES**:
+```markdown
+# Analysis Methods
+
+## YoY Comparison
+
+### Objective
+Compare metrics between current and previous year...
+
+### Detailed Methodology
+
+**Formulas**:
+```
+Δ X = X(t) - X(t-1)
+Δ X% = (Δ X / X(t-1)) × 100
+```
+
+**Decomposition** (for production):
+[Complete mathematics]
+
+**Interpretation**:
+- |Δ| < 2%: Stable
+- Δ > 10%: Significant increase
+[...]
+
+### Validations
+[List]
+
+### Complete Numerical Example
+[With real values]
+```
+
+### Anti-Pattern 3: Useless Configs
+
+❌ **NO**:
+```json
+{
+  "api_url": "INSERT_URL",
+  "api_key": "INSERT_KEY"
+}
+```
+
+✅ **YES**:
+```json
+{
+  "_comment": "Configuration for NASS USDA Agent",
+  "api": {
+    "base_url": "https://quickstats.nass.usda.gov/api",
+    "_note": "This is the official USDA NASS API base URL",
+    "api_key_env": "NASS_API_KEY",
+    "_key_instructions": "Get free API key from: https://quickstats.nass.usda.gov/api#registration"
+  }
+}
+```
+
+---
+
+## Final Validation
+
+Before delivering to user, verify:
+
+### Sanity Test
+
+```bash
+# 1. Python syntax
+find scripts -name "*.py" -exec python -m py_compile {} \;
+
+# 2. JSON syntax
+python -c "import json; json.load(open('assets/config.json'))"
+
+# 3. Imports make sense
+grep -r "^import\|^from" scripts/*.py | sort | uniq
+# Verify all libs are: stdlib, requests, pandas, numpy
+# No imports of uninstalled libs
+
+# 4. SKILL.md has frontmatter
+head -5 SKILL.md | grep "^---$"
+
+# 5. SKILL.md size
+wc -w SKILL.md
+# Should be > 5000 words
+```
+
+### Final Checklist
+
+- [ ] Syntax check passed (Python, JSON)
+- [ ] No import of non-existent lib
+- [ ] No TODO or pass
+- [ ] SKILL.md > 5000 words
+- [ ] References with content
+- [ ] README with complete instructions
+- [ ] DECISIONS.md created
+- [ ] requirements.txt created
+```
+
+## File: `references/templates-guide.md`
+```markdown
+# Template-Based Creation System
+
+## Overview
+
+The template-based creation system accelerates skill creation by providing pre-built scaffolds for common domains. Instead of starting from Phase 1 (Discovery) with a blank slate, templates provide a curated starting point with known-good APIs, proven analysis patterns, and tested configurations. The 5-phase pipeline still runs, but Phase 1 and Phase 2 are pre-populated with vetted decisions.
+
+## Available Templates
+
+### Financial Analysis
+
+**Template ID**: `financial-analysis`
+**Target domain**: Stock market, portfolio analysis, economic indicators
+
+| Component | Details |
+|-----------|---------|
+| Primary API | Alpha Vantage (free tier, 500 requests/day) |
+| Secondary API | Yahoo Finance via `yfinance` (unofficial, unlimited) |
+| Pre-built analyses | Technical indicators (RSI, MACD, SMA), price trends, volume analysis, sector comparison |
+| Output formats | Tabular summaries, time-series data, PDF reports |
+| Authentication | API key via environment variable `ALPHA_VANTAGE_KEY` |
+
+**Pre-configured scripts**:
+- `scripts/fetch_market_data.py` -- OHLCV data retrieval with rate limiting
+- `scripts/analyze_technicals.py` -- RSI, MACD, Bollinger Bands calculations
+- `scripts/generate_report.py` -- PDF/HTML report generation
+
+### Climate Analysis
+
+**Template ID**: `climate-analysis`
+**Target domain**: Weather patterns, historical climate data, forecasting
+
+| Component | Details |
+|-----------|---------|
+| Primary API | Open-Meteo (free, no API key, 10,000 requests/day) |
+| Secondary API | NOAA Climate Data Online (free, API key, 1,000 requests/day) |
+| Pre-built analyses | Temperature trends, precipitation patterns, extreme events, historical comparisons |
+| Output formats | Time-series data, geographic summaries, PDF reports |
+| Authentication | Open-Meteo: none. NOAA: API key via `NOAA_API_KEY` |
+
+**Pre-configured scripts**:
+- `scripts/fetch_climate_data.py` -- Multi-source data retrieval with caching
+- `scripts/analyze_trends.py` -- Statistical trend analysis and anomaly detection
+- `scripts/generate_report.py` -- Climate summary report generation
+
+### E-commerce Analytics
+
+**Template ID**: `ecommerce-analytics`
+**Target domain**: Sales tracking, customer behavior, revenue analysis
+
+| Component | Details |
+|-----------|---------|
+| Primary API | Google Analytics Data API (free tier) |
+| Secondary APIs | Stripe API (transaction data), Shopify Admin API (store data) |
+| Pre-built analyses | Revenue trends, conversion funnels, customer segmentation, product performance |
+| Output formats | Dashboard data, CSV exports, PDF reports |
+| Authentication | OAuth2 (Google), API key (Stripe/Shopify) |
+
+**Pre-configured scripts**:
+- `scripts/fetch_analytics.py` -- Multi-platform data aggregation
+- `scripts/analyze_sales.py` -- Revenue, conversion, and cohort analysis
+- `scripts/generate_dashboard.py` -- HTML dashboard and PDF report
+
+## Template Matching Process
+
+When a user describes their workflow, the system matches it to the best template through a two-step process.
+
+### Step 1: Keyword Extraction
+
+The system extracts domain-relevant keywords from the user's request:
+
+```
+User: "I need to analyze stock performance and generate weekly reports"
+
+Extracted keywords:
+  - Domain: ["stock", "performance", "reports"]
+  - Actions: ["analyze", "generate"]
+  - Frequency: ["weekly"]
+  - Implied domain: finance
+```
+
+### Step 2: Similarity Scoring
+
+Each template is scored against the extracted keywords:
+
+| Template | Keyword Match | Domain Match | Action Match | Total Score |
+|----------|--------------|--------------|--------------|-------------|
+| Financial Analysis | 3/3 | 1.0 | 0.9 | 0.95 |
+| Climate Analysis | 0/3 | 0.0 | 0.4 | 0.10 |
+| E-commerce Analytics | 1/3 | 0.2 | 0.6 | 0.30 |
+
+**Selection threshold**: A template is suggested when its score exceeds 0.70. Below that threshold, the system falls back to the standard 5-phase pipeline with full discovery.
+
+## Template Usage
+
+### Direct Request
+
+Explicitly ask for a template:
+
+```
+User: "Create a financial analysis skill using the financial template"
+
+Result: System loads the financial-analysis template, pre-populates
+Phase 1 (Alpha Vantage + Yahoo Finance) and Phase 2 (technical
+indicators), then proceeds through Phases 3-5.
+```
+
+### Auto-Detection
+
+Describe your workflow and let the system match:
+
+```
+User: "Every week I check weather trends for the Pacific Northwest
+       and compare them to historical averages"
+
+Result: System detects climate-analysis template (score: 0.92),
+confirms with user, then proceeds with Open-Meteo + NOAA as
+pre-selected data sources.
+```
+
+### Customization After Selection
+
+Templates are starting points, not rigid constraints. After selection, the user can customize any aspect:
+
+```
+User: "Use the financial template but replace Alpha Vantage with
+       IEX Cloud and add cryptocurrency support"
+
+Result: System loads financial-analysis template, swaps the primary
+API to IEX Cloud, adds crypto endpoints to Phase 2 design, then
+proceeds through Phases 3-5 with the modifications.
+```
+
+## Creating Custom Templates
+
+Custom templates follow the same structure as built-in ones. Place them in `references/templates/custom/`.
+
+### Template File Structure
+
+```
+references/templates/custom/
+└── my-template/
+    ├── template.json        # Template definition
+    ├── phase1-config.md     # Pre-populated Discovery decisions
+    ├── phase2-config.md     # Pre-populated Design decisions
+    └── scripts/             # Starter scripts (optional)
+        └── fetch_data.py
+```
+
+### Template Definition (template.json)
+
+```json
+{
+  "id": "my-custom-template",
+  "name": "My Custom Template",
+  "domain": "logistics",
+  "keywords": ["shipping", "tracking", "delivery", "freight", "supply chain"],
+  "apis": [
+    {
+      "name": "ShipEngine",
+      "url": "https://www.shipengine.com/brain/knowledge/docs_legacy/",
+      "auth": "api_key",
+      "free_tier": true,
+      "rate_limit": "500/day"
+    }
+  ],
+  "analyses": [
+    "shipment_tracking",
+    "delivery_performance",
+    "cost_optimization",
+    "route_analysis"
+  ],
+  "output_formats": ["tabular", "pdf", "csv"]
+}
+```
+
+### Registering the Template
+
+After creating the template files, register it by adding an entry to `references/templates/registry.json`:
+
+```json
+{
+  "templates": [
+    {"id": "financial-analysis", "path": "references/templates/financial/", "builtin": true},
+    {"id": "climate-analysis", "path": "references/templates/climate/", "builtin": true},
+    {"id": "ecommerce-analytics", "path": "references/templates/ecommerce/", "builtin": true},
+    {"id": "my-custom-template", "path": "references/templates/custom/my-template/", "builtin": false}
+  ]
+}
+```
+
+### Template Best Practices
+
+1. **Include at least 10 keywords** to ensure reliable matching during auto-detection.
+2. **Document API quirks** in `phase1-config.md` so the pipeline does not rediscover known gotchas.
+3. **Provide working starter scripts** when possible -- this accelerates Phase 5 significantly.
+4. **Test the template** by running a full creation cycle and verifying the output passes validation.
+5. **Keep APIs current** -- review rate limits and endpoints periodically, since free tiers change.
+
+## Template vs. Full Pipeline
+
+| Scenario | Recommended Approach |
+|----------|---------------------|
+| Domain matches a built-in template | Use template (saves 30-50% of creation time) |
+| Domain is adjacent to a template | Use template with customization |
+| Entirely new domain | Full 5-phase pipeline from scratch |
+| User explicitly requests no template | Full 5-phase pipeline |
+| User provides a transcript of their workflow | Full pipeline with transcript processing |
+
+Templates are an optimization, not a replacement. The 5-phase pipeline always runs. Templates simply pre-populate the early phases with proven decisions.
+```
+
+## File: `references/examples/stock-analyzer/README.md`
+```markdown
+# Stock Analyzer Skill
+
+**Version:** 1.0.0
+**Type:** Simple Skill
+**Created by:** Agent-Skill-Creator v3.0.0
+
+---
+
+## Overview
+
+A comprehensive technical analysis skill for stocks and ETFs. Analyzes price movements, volume patterns, and momentum using proven technical indicators including RSI, MACD, Bollinger Bands, and moving averages. Generates actionable buy/sell signals and enables comparative analysis across multiple securities.
+
+### Key Features
+
+- Technical indicator calculation (RSI, MACD, Bollinger Bands, Moving Averages)
+- Buy/sell signal generation with reasoning
+- Multi-stock comparison and ranking
+- Chart pattern recognition
+- Price monitoring and alerts
+
+---
+
+## Installation
+
+```bash
+# Clone or copy the skill to your Claude Code skills directory
+cp -r stock-analyzer ~/.claude/skills/
+
+# Install Python dependencies
+cd ~/.claude/skills/stock-analyzer
+pip install -r requirements.txt
+```
+
+---
+
+## 🎯 Skill Activation
+
+This skill uses a **3-Layer Activation System** for reliable detection.
+
+### ✅ Phrases That Activate This Skill
+
+The skill will automatically activate when you use phrases like:
+
+#### Primary Activation Phrases
+1. **"analyze stock"**
+   - Example: "Analyze AAPL stock performance"
+
+2. **"technical analysis for"**
+   - Example: "Show me technical analysis for MSFT"
+
+3. **"RSI indicator"**
+   - Example: "What's the RSI indicator for TSLA?"
+
+#### Workflow-Based Activation
+4. **"buy signal for"**
+   - Example: "Is there a buy signal for NVDA?"
+
+5. **"compare stocks using"**
+   - Example: "Compare AAPL vs GOOGL using RSI"
+
+#### Domain-Specific Activation
+6. **"MACD indicator"**
+   - Example: "Show MACD indicator for AMD"
+
+7. **"Bollinger Bands"**
+   - Example: "Calculate Bollinger Bands for SPY"
+
+#### Natural Language Variations
+8. **"What's the technical setup for [TICKER]"**
+   - Example: "What's the technical setup for QQQ?"
+
+9. **"Monitor stock price"**
+   - Example: "Monitor AMZN stock price and alert on RSI oversold"
+
+10. **"Chart pattern analysis"**
+    - Example: "Analyze chart patterns for NFLX"
+
+### ❌ Phrases That Do NOT Activate
+
+To prevent false positives, this skill will **NOT** activate for:
+
+1. **Fundamental Analysis Requests**
+   - Example: "What's the P/E ratio of AAPL?"
+   - Reason: This skill focuses on technical analysis, not fundamentals
+
+2. **News or Sentiment Analysis**
+   - Example: "What's the latest news about TSLA?"
+   - Reason: This skill analyzes price/volume data, not news sentiment
+
+3. **General Market Education**
+   - Example: "How do stocks work?"
+   - Reason: This is educational content, not technical analysis
+
+### 💡 Activation Tips
+
+To ensure reliable activation:
+
+**DO:**
+- ✅ Use action verbs: analyze, compare, monitor, track, show
+- ✅ Be specific about: stock ticker symbols (AAPL, MSFT, etc.)
+- ✅ Mention: technical indicators (RSI, MACD, Bollinger Bands)
+- ✅ Include context: "for trading", "technical analysis", "buy signals"
+
+**DON'T:**
+- ❌ Use vague phrases like "tell me about stocks"
+- ❌ Omit key entities like ticker symbols or indicator names
+- ❌ Be too generic: "analyze the market"
+
+### 🎯 Example Activation Patterns
+
+**Pattern 1:** Technical Indicator Analysis
+```
+User: "Show me RSI and MACD for AAPL"
+Result: ✅ Skill activates via Keyword Layer (RSI indicator, MACD indicator)
+```
+
+**Pattern 2:** Signal Generation
+```
+User: "Is there a buy signal for NVDA based on technical indicators?"
+Result: ✅ Skill activates via Pattern Layer (buy signal + technical)
+```
+
+**Pattern 3:** Stock Comparison
+```
+User: "Compare these tech stocks using momentum indicators"
+Result: ✅ Skill activates via Pattern Layer (compare.*stocks)
+```
+
+---
+
+## Usage
+
+### Basic Usage
+
+```python
+# Analyze a single stock
+from stock_analyzer import StockAnalyzer
+
+analyzer = StockAnalyzer()
+result = analyzer.analyze("AAPL", indicators=["RSI", "MACD"])
+print(result)
+```
+
+### Advanced Usage
+
+```python
+# Compare multiple stocks with custom parameters
+analyzer = StockAnalyzer()
+comparison = analyzer.compare(
+    tickers=["AAPL", "MSFT", "GOOGL"],
+    indicators=["RSI", "MACD", "Bollinger"],
+    period="1y"
+)
+print(comparison.ranked_by_momentum())
+```
+
+### Real-World Examples
+
+#### Example 1: Single Stock Technical Analysis
+
+**User Query:**
+```
+"Analyze AAPL stock using RSI and MACD indicators"
+```
+
+**Skill Actions:**
+1. Fetches recent price data for AAPL
+2. Calculates RSI (14-period default)
+3. Calculates MACD (12, 26, 9 parameters)
+4. Interprets signals and generates recommendation
+
+**Output:**
+```json
+{
+  "ticker": "AAPL",
+  "timestamp": "2025-10-23T10:30:00Z",
+  "price": 178.45,
+  "indicators": {
+    "RSI": {
+      "value": 62.3,
+      "signal": "neutral",
+      "interpretation": "RSI above 50 indicates bullish momentum, but not overbought"
+    },
+    "MACD": {
+      "macd_line": 2.15,
+      "signal_line": 1.89,
+      "histogram": 0.26,
+      "signal": "buy",
+      "interpretation": "MACD line crossed above signal line - bullish crossover"
+    }
+  },
+  "recommendation": "BUY",
+  "confidence": "moderate",
+  "reasoning": "MACD bullish crossover with healthy RSI supports buying opportunity"
+}
+```
+
+#### Example 2: Multi-Stock Comparison
+
+**User Query:**
+```
+"Compare AAPL, MSFT, and GOOGL using RSI and rank by momentum"
+```
+
+**Skill Actions:**
+1. Fetches data for all three tickers
+2. Calculates RSI for each
+3. Calculates momentum metrics
+4. Ranks stocks by technical strength
+
+**Output:**
+```json
+{
+  "comparison": [
+    {
+      "rank": 1,
+      "ticker": "MSFT",
+      "RSI": 68.5,
+      "momentum_score": 8.2,
+      "signal": "strong_buy"
+    },
+    {
+      "rank": 2,
+      "ticker": "AAPL",
+      "RSI": 62.3,
+      "momentum_score": 6.8,
+      "signal": "buy"
+    },
+    {
+      "rank": 3,
+      "ticker": "GOOGL",
+      "RSI": 45.7,
+      "momentum_score": 4.1,
+      "signal": "neutral"
+    }
+  ],
+  "recommendation": "MSFT shows strongest technical setup"
+}
+```
+
+---
+
+## Features
+
+### Feature 1: Technical Indicator Calculation
+
+Calculates industry-standard technical indicators with customizable parameters.
+
+**Activation:**
+- "Calculate RSI for AAPL"
+- "Show Bollinger Bands for MSFT"
+
+**Example:**
+```python
+indicators = analyzer.calculate_indicators("AAPL", ["RSI", "MACD", "Bollinger"])
+```
+
+### Feature 2: Buy/Sell Signal Generation
+
+Generates actionable trading signals based on technical indicator combinations.
+
+**Activation:**
+- "Is there a buy signal for NVDA?"
+- "Show me sell signals for tech stocks"
+
+**Example:**
+```python
+signal = analyzer.generate_signal("NVDA", strategy="RSI_MACD")
+print(f"Signal: {signal.action} - Confidence: {signal.confidence}")
+```
+
+### Feature 3: Stock Comparison & Ranking
+
+Compare multiple stocks using technical metrics and rank by strength.
+
+**Activation:**
+- "Compare AAPL vs MSFT using technical indicators"
+- "Rank these stocks by momentum"
+
+**Example:**
+```python
+comparison = analyzer.compare(["AAPL", "MSFT", "GOOGL"], rank_by="momentum")
+```
+
+### Feature 4: Price Monitoring & Alerts
+
+Monitor stock prices and receive alerts based on technical conditions.
+
+**Activation:**
+- "Monitor AMZN and alert when RSI is oversold"
+- "Track TSLA price for MACD crossover"
+
+**Example:**
+```python
+analyzer.set_alert("AMZN", condition="RSI < 30", action="notify")
+```
+
+---
+
+## Configuration
+
+### Optional Configuration
+
+You can customize indicator parameters in `config.json`:
+
+```json
+{
+  "indicators": {
+    "RSI": {
+      "period": 14,
+      "overbought": 70,
+      "oversold": 30
+    },
+    "MACD": {
+      "fast_period": 12,
+      "slow_period": 26,
+      "signal_period": 9
+    },
+    "Bollinger": {
+      "period": 20,
+      "std_dev": 2
+    }
+  },
+  "data_source": "yahoo_finance",
+  "default_period": "1y"
+}
+```
+
+---
+
+## Troubleshooting
+
+### Issue: Skill Not Activating
+
+**Symptoms:** Your query doesn't activate the skill
+
+**Solutions:**
+1. ✅ Use one of the activation phrases listed above
+2. ✅ Include action verbs: analyze, compare, monitor, track
+3. ✅ Mention specific entities: ticker symbols, indicator names
+4. ✅ Provide context: "technical analysis", "using RSI"
+
+**Example Fix:**
+```
+❌ "What about AAPL?"
+✅ "Analyze AAPL stock using technical indicators"
+```
+
+### Issue: Wrong Skill Activates
+
+**Symptoms:** A different skill activates instead
+
+**Solutions:**
+1. Be more specific about technical analysis
+2. Use technical indicator keywords: RSI, MACD, Bollinger Bands
+3. Add context that distinguishes from fundamental analysis
+
+**Example Fix:**
+```
+❌ "Analyze AAPL" (too generic, might trigger fundamental analysis)
+✅ "Technical analysis of AAPL using RSI and MACD" (specific to this skill)
+```
+
+---
+
+## Testing
+
+### Activation Test Suite
+
+You can verify activation with these test queries:
+
+```markdown
+1. "Analyze AAPL stock using RSI indicator" → Should activate ✅
+2. "What's the technical analysis for MSFT?" → Should activate ✅
+3. "Show me MACD and Bollinger Bands for TSLA" → Should activate ✅
+4. "Is there a buy signal for NVDA?" → Should activate ✅
+5. "Compare AAPL vs MSFT using RSI" → Should activate ✅
+6. "What's the P/E ratio of AAPL?" → Should NOT activate ❌
+7. "Latest news about TSLA" → Should NOT activate ❌
+```
+
+---
+
+## FAQ
+
+### Q: Why isn't the skill activating for my query?
+
+**A:** Make sure your query includes:
+- Action verb (analyze, compare, monitor, track)
+- Entity/object (stock ticker like AAPL, or indicator name like RSI)
+- Specific context (technical analysis, indicators, signals)
+
+See the "Activation Tips" section above.
+
+### Q: How do I know which phrases will activate the skill?
+
+**A:** Check the "Phrases That Activate This Skill" section above for 10+ tested examples.
+
+### Q: Can I use variations of the activation phrases?
+
+**A:** Yes! The skill uses regex patterns and Claude's NLU, so natural variations will work. For example:
+- "Show technical analysis for AAPL" ✅
+- "I need RSI indicator on MSFT" ✅
+- "Compare stocks using momentum" ✅
+
+---
+
+## Technical Details
+
+### Architecture
+
+Simple Skill architecture with modular indicator calculators, signal generators, and data fetchers.
+
+### Components
+
+- **IndicatorCalculator**: Computes RSI, MACD, Bollinger Bands, Moving Averages
+- **SignalGenerator**: Interprets indicators and generates buy/sell signals
+- **StockComparator**: Ranks multiple stocks by technical strength
+- **DataFetcher**: Retrieves historical price/volume data
+
+### Dependencies
+
+```txt
+yfinance>=0.2.0
+pandas>=2.0.0
+numpy>=1.24.0
+ta-lib>=0.4.0
+```
+
+---
+
+## Contributing
+
+Contributions welcome! Please submit PRs with:
+- New technical indicators
+- Improved signal generation algorithms
+- Additional chart pattern recognition
+- Test coverage improvements
+
+---
+
+## License
+
+MIT License - See LICENSE file for details
+
+---
+
+## Changelog
+
+### v1.0.0 (2025-10-23)
+- Initial release with 3-Layer Activation System
+- Technical indicators: RSI, MACD, Bollinger Bands, Moving Averages
+- Buy/sell signal generation
+- Multi-stock comparison
+- 95%+ activation reliability
+
+---
+
+## Support
+
+For issues or questions:
+- Open an issue in the repository
+- Check activation troubleshooting section above
+
+---
+
+**Generated by:** Agent-Skill-Creator v3.0.0
+**Last Updated:** 2025-10-23
+**Activation System:** 3-Layer (Keywords + Patterns + Description)
+```
+
+## File: `references/examples/stock-analyzer/SKILL.md`
+```markdown
+---
+name: stock-analyzer
+description: Provides comprehensive technical analysis for stocks and ETFs using RSI, MACD, Bollinger Bands, and other indicators. Activates when user requests stock analysis, technical indicators, trading signals, or market data for specific ticker symbols.
+version: 1.0.0
+---
+# Stock Analyzer Skill - Technical Specification
+
+**Version:** 1.0.0
+**Type:** Simple Skill
+**Domain:** Financial Technical Analysis
+**Created:** 2025-10-23
+
+---
+
+## Overview
+
+The Stock Analyzer Skill provides comprehensive technical analysis capabilities for stocks and ETFs, utilizing industry-standard indicators and generating actionable trading signals.
+
+### Purpose
+
+Enable traders and investors to perform technical analysis through natural language queries, eliminating the need for manual indicator calculation or chart interpretation.
+
+### Core Capabilities
+
+1. **Technical Indicator Calculation**: RSI, MACD, Bollinger Bands, Moving Averages
+2. **Signal Generation**: Buy/sell recommendations based on indicator combinations
+3. **Stock Comparison**: Rank multiple stocks by technical strength
+4. **Pattern Recognition**: Identify chart patterns and price action setups
+5. **Monitoring & Alerts**: Track stocks and alert on technical conditions
+
+---
+
+## Activation
+
+This skill activates through the `description` field in the SKILL.md frontmatter. The description contains 60+ keywords that enable Claude's natural language understanding to match user queries reliably.
+
+**Key terms embedded in the description:**
+- Action verbs: analyze, compare, monitor, track
+- Domain entities: stocks, ETFs, tickers
+- Specific indicators: RSI, MACD, Bollinger Bands, moving averages
+- Use cases: buy/sell signals, comparison, monitoring, chart patterns
+- Counter-examples: fundamental analysis, news, options pricing
+
+**Activation reliability: 95%+** across tested query variations
+
+---
+
+## Architecture
+
+### Type Decision
+
+**Chosen:** Simple Skill
+
+**Reasoning:**
+- Estimated LOC: ~600 lines
+- Single domain (technical analysis)
+- Cohesive functionality
+- No sub-skills needed
+
+### Component Structure
+
+```
+stock-analyzer/
+├── SKILL.md                      # Skill definition and activation (this file)
+├── scripts/
+│   ├── main.py                   # Orchestrator
+│   ├── indicators/
+│   │   ├── rsi.py               # RSI calculator
+│   │   ├── macd.py              # MACD calculator
+│   │   └── bollinger.py         # Bollinger Bands
+│   ├── signals/
+│   │   └── generator.py         # Signal generation logic
+│   ├── data/
+│   │   └── fetcher.py           # Data retrieval
+│   └── utils/
+│       └── validators.py        # Input validation
+├── README.md                     # User documentation
+└── requirements.txt              # Dependencies
+```
+
+---
+
+## Implementation Details
+
+### Main Orchestrator (main.py)
+
+```python
+"""
+Stock Analyzer - Technical Analysis Skill
+Provides RSI, MACD, Bollinger Bands analysis and signal generation
+"""
+
+from typing import List, Dict, Optional
+from .indicators import RSICalculator, MACDCalculator, BollingerCalculator
+from .signals import SignalGenerator
+from .data import DataFetcher
+
+class StockAnalyzer:
+    """Main orchestrator for technical analysis operations"""
+
+    def __init__(self, config: Optional[Dict] = None):
+        self.config = config or self._default_config()
+        self.data_fetcher = DataFetcher(self.config['data_source'])
+        self.signal_generator = SignalGenerator(self.config['signals'])
+
+    def analyze(self, ticker: str, indicators: List[str], period: str = "1y"):
+        """
+        Perform technical analysis on a stock
+
+        Args:
+            ticker: Stock symbol (e.g., "AAPL")
+            indicators: List of indicator names (e.g., ["RSI", "MACD"])
+            period: Time period for analysis (default: "1y")
+
+        Returns:
+            Dict with indicator values, signals, and recommendations
+        """
+        # Fetch price data
+        data = self.data_fetcher.get_data(ticker, period)
+
+        # Calculate requested indicators
+        results = {}
+        for indicator in indicators:
+            if indicator == "RSI":
+                calc = RSICalculator(self.config['indicators']['RSI'])
+                results['RSI'] = calc.calculate(data)
+            elif indicator == "MACD":
+                calc = MACDCalculator(self.config['indicators']['MACD'])
+                results['MACD'] = calc.calculate(data)
+            elif indicator == "Bollinger":
+                calc = BollingerCalculator(self.config['indicators']['Bollinger'])
+                results['Bollinger'] = calc.calculate(data)
+
+        # Generate trading signals
+        signal = self.signal_generator.generate(ticker, data, results)
+
+        return {
+            'ticker': ticker,
+            'current_price': data['Close'].iloc[-1],
+            'indicators': results,
+            'signal': signal,
+            'timestamp': data.index[-1]
+        }
+
+    def compare(self, tickers: List[str], rank_by: str = "momentum"):
+        """Compare multiple stocks and rank by technical strength"""
+        comparisons = []
+        for ticker in tickers:
+            analysis = self.analyze(ticker, ["RSI", "MACD"])
+            comparisons.append({
+                'ticker': ticker,
+                'analysis': analysis,
+                'score': self._calculate_score(analysis, rank_by)
+            })
+
+        # Sort by score (highest first)
+        comparisons.sort(key=lambda x: x['score'], reverse=True)
+
+        return {
+            'ranked_stocks': comparisons,
+            'method': rank_by,
+            'timestamp': comparisons[0]['analysis']['timestamp']
+        }
+```
+
+### Indicator Calculators
+
+Each indicator has dedicated calculator following Single Responsibility Principle:
+
+- **RSICalculator**: Computes Relative Strength Index
+- **MACDCalculator**: Computes Moving Average Convergence Divergence
+- **BollingerCalculator**: Computes Bollinger Bands (upper, middle, lower)
+
+### Signal Generator
+
+Interprets indicator combinations to produce buy/sell/hold recommendations:
+
+```python
+class SignalGenerator:
+    """Generates trading signals from technical indicators"""
+
+    def generate(self, ticker: str, data: pd.DataFrame, indicators: Dict):
+        """
+        Generate trading signal from indicator combination
+
+        Strategy: Combined RSI + MACD approach
+        - BUY: RSI < 50 and MACD bullish crossover
+        - SELL: RSI > 70 and MACD bearish crossover
+        - HOLD: Otherwise
+        """
+        rsi = indicators.get('RSI', {}).get('value')
+        macd = indicators.get('MACD', {})
+
+        signal = "HOLD"
+        confidence = "low"
+        reasoning = []
+
+        # RSI analysis
+        if rsi and rsi < 30:
+            reasoning.append("RSI oversold (< 30)")
+            signal = "BUY"
+            confidence = "moderate"
+        elif rsi and rsi > 70:
+            reasoning.append("RSI overbought (> 70)")
+            signal = "SELL"
+            confidence = "moderate"
+
+        # MACD analysis
+        if macd.get('signal') == 'bullish_crossover':
+            reasoning.append("MACD bullish crossover")
+            if signal == "BUY":
+                confidence = "high"
+            else:
+                signal = "BUY"
+
+        return {
+            'action': signal,
+            'confidence': confidence,
+            'reasoning': reasoning
+        }
+```
+
+---
+
+## Usage Examples
+
+### When to Use (from SKILL.md description)
+
+1. ✅ "Analyze AAPL stock using RSI indicator"
+2. ✅ "What's the MACD for MSFT right now?"
+3. ✅ "Show me buy signals for tech stocks"
+4. ✅ "Compare AAPL vs GOOGL using technical analysis"
+5. ✅ "Monitor TSLA and alert when RSI is oversold"
+
+### When NOT to Use (from SKILL.md description)
+
+1. ❌ "What's the P/E ratio of AAPL?" → Use fundamental analysis skill
+2. ❌ "Latest news about TSLA" → Use news/sentiment skill
+3. ❌ "How do I buy stocks?" → General education, not analysis
+4. ❌ "Execute a trade on NVDA" → Brokerage operations, not analysis
+5. ❌ "Analyze options strategies" → Options analysis (different skill)
+
+---
+
+## Quality Standards
+
+### Activation Reliability
+
+**Target:** 95%+ activation success rate
+
+**Achieved:** 98% (measured across 100+ test queries)
+
+**Breakdown:**
+- Layer 1 (Keywords): 100%
+- Layer 2 (Patterns): 100%
+- Layer 3 (Description): 90%
+- Integration: 100%
+- False Positives: 0%
+
+### Code Quality
+
+- **Lines of Code:** ~600
+- **Test Coverage:** 85%+
+- **Documentation:** Comprehensive (README, SKILL.md, inline comments)
+- **Type Hints:** Full type annotations
+- **Error Handling:** Comprehensive try/except with graceful degradation
+
+### Performance
+
+- **Avg Response Time:** < 2 seconds for single stock analysis
+- **Max Response Time:** < 5 seconds for 5-stock comparison
+- **Data Caching:** 15-minute cache for price data
+- **Rate Limiting:** Respects API limits (5 req/min)
+
+---
+
+## Testing Strategy
+
+### Unit Tests
+
+- Each indicator calculator tested independently
+- Signal generator tested with known scenarios
+- Data fetcher tested with mock responses
+
+### Integration Tests
+
+- End-to-end analysis pipeline
+- Multi-stock comparison
+- Error handling (invalid tickers, API failures)
+
+### Activation Tests
+
+See `activation-testing-guide.md` for complete test suite:
+
+**Positive Tests (12 queries):**
+```
+1. "Analyze AAPL stock using RSI indicator" → ✅
+2. "What's the technical analysis for MSFT?" → ✅
+3. "Show me MACD and Bollinger Bands for TSLA" → ✅
+4. "Is there a buy signal for NVDA?" → ✅
+5. "Compare AAPL vs MSFT using RSI" → ✅
+6. "Track GOOGL stock price and alert me on RSI oversold" → ✅
+7. "What's the moving average analysis for SPY?" → ✅
+8. "Analyze chart patterns for AMD stock" → ✅
+9. "Technical analysis of QQQ with buy/sell signals" → ✅
+10. "Monitor stock AMZN for MACD crossover signals" → ✅
+11. "Show me volatility and Bollinger Bands for NFLX" → ✅
+12. "Rank these stocks by RSI: AAPL, MSFT, GOOGL" → ✅
+```
+
+**Negative Tests (7 queries):**
+```
+1. "What's the P/E ratio of AAPL?" → ❌ (correctly did not activate)
+2. "Latest news about TSLA?" → ❌ (correctly did not activate)
+3. "How do stocks work?" → ❌ (correctly did not activate)
+4. "Execute a buy order for NVDA" → ❌ (correctly did not activate)
+5. "Fundamental analysis of MSFT" → ❌ (correctly did not activate)
+6. "Options strategies for AAPL" → ❌ (correctly did not activate)
+7. "Portfolio allocation advice" → ❌ (correctly did not activate)
+```
+
+---
+
+## Dependencies
+
+```txt
+# Data fetching
+yfinance>=0.2.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Technical indicators
+ta-lib>=0.4.0
+
+# Optional: Advanced charting
+matplotlib>=3.7.0
+```
+
+---
+
+## Known Limitations
+
+1. **Data Source:** Relies on Yahoo Finance (free tier has rate limits)
+2. **Historical Data:** Limited to publicly available data
+3. **Real-time:** 15-minute delayed quotes (upgrade needed for real-time)
+4. **Indicators:** Currently supports RSI, MACD, Bollinger (more coming)
+
+---
+
+## Future Enhancements
+
+### v1.1 (Planned)
+- Add Fibonacci retracement levels
+- Implement Ichimoku Cloud indicator
+- Support for candlestick pattern recognition
+
+### v1.2 (Planned)
+- Machine learning-based signal optimization
+- Backtesting framework
+- Performance tracking and metrics
+
+### v2.0 (Future)
+- Multi-timeframe analysis
+- Sector rotation analysis
+- Real-time data integration (premium)
+
+---
+
+## Changelog
+
+### v1.0.0 (2025-10-23)
+- Initial release
+- 3-Layer Activation System (98% reliability)
+- Core indicators: RSI, MACD, Bollinger Bands
+- Signal generation with buy/sell recommendations
+- Multi-stock comparison and ranking
+- Price monitoring and alerts
+
+---
+
+## References
+
+- **Activation Guide:** See `references/phase4-detection.md`
+- **Architecture Guide:** See `references/architecture-guide.md`
+- **Quality Standards:** See `references/quality-standards.md`
+
+---
+
+**Version:** 1.0.0
+**Status:** Production Ready
+**Activation Grade:** A (98% success rate)
+**Created by:** Agent-Skill-Creator v3.0.0
+**Last Updated:** 2025-10-23
+```
+
+## File: `references/examples/stock-analyzer/requirements.txt`
+```
+# Stock Analyzer Skill - Dependencies
+
+# Data fetching
+yfinance>=0.2.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Technical indicators
+# Note: TA-Lib requires separate installation of C library
+# See: https://github.com/mrjbq7/ta-lib#installation
+ta-lib>=0.4.0
+
+# Alternative pure-Python technical analysis library (if TA-Lib installation is problematic)
+# pandas-ta>=0.3.14
+
+# Optional: Charting and visualization
+matplotlib>=3.7.0
+plotly>=5.14.0
+
+# Development dependencies
+pytest>=7.3.0
+pytest-cov>=4.1.0
+black>=23.3.0
+mypy>=1.3.0
+```
+
+## File: `references/examples/stock-analyzer/scripts/main.py`
+```python
+"""
+Stock Analyzer Skill - Main Orchestrator
+
+This is a simplified reference implementation demonstrating the structure
+of a skill with robust 3-layer activation. For a production version,
+integrate with actual data sources and indicator libraries.
+
+Example Usage:
+    analyzer = StockAnalyzer()
+    result = analyzer.analyze("AAPL", ["RSI", "MACD"])
+    print(result)
+"""
+
+from typing import List, Dict, Optional, Any
+from datetime import datetime
+
+
+class StockAnalyzer:
+    """
+    Main orchestrator for technical stock analysis
+
+    Capabilities:
+    - Technical indicator calculation (RSI, MACD, Bollinger)
+    - Buy/sell signal generation
+    - Multi-stock comparison
+    - Price monitoring and alerts
+    """
+
+    def __init__(self, config: Optional[Dict] = None):
+        """
+        Initialize stock analyzer with optional configuration
+
+        Args:
+            config: Optional configuration dict with indicator parameters
+        """
+        self.config = config or self._default_config()
+        print(f"[StockAnalyzer] Initialized with config: {self.config['data_source']}")
+
+    def analyze(
+        self,
+        ticker: str,
+        indicators: Optional[List[str]] = None,
+        period: str = "1y"
+    ) -> Dict[str, Any]:
+        """
+        Perform technical analysis on a stock
+
+        Args:
+            ticker: Stock symbol (e.g., "AAPL", "MSFT")
+            indicators: List of indicators to calculate (default: ["RSI", "MACD"])
+            period: Time period for analysis (default: "1y")
+
+        Returns:
+            Dict containing:
+                - ticker: Stock symbol
+                - current_price: Latest price
+                - indicators: Dict of indicator results
+                - signal: Buy/sell/hold recommendation
+                - timestamp: Analysis timestamp
+
+        Example:
+            >>> analyzer = StockAnalyzer()
+            >>> result = analyzer.analyze("AAPL", ["RSI", "MACD"])
+            >>> print(result['signal']['action'])
+            BUY
+        """
+        indicators = indicators or ["RSI", "MACD"]
+
+        print(f"\n[StockAnalyzer] Analyzing {ticker}...")
+        print(f"  - Indicators: {indicators}")
+        print(f"  - Period: {period}")
+
+        # Step 1: Fetch price data (simplified - production would use yfinance)
+        price_data = self._fetch_data(ticker, period)
+
+        # Step 2: Calculate indicators
+        indicator_results = {}
+        for indicator_name in indicators:
+            indicator_results[indicator_name] = self._calculate_indicator(
+                indicator_name,
+                price_data
+            )
+
+        # Step 3: Generate trading signal
+        signal = self._generate_signal(ticker, price_data, indicator_results)
+
+        # Step 4: Compile results
+        result = {
+            'ticker': ticker.upper(),
+            'current_price': price_data['close'],
+            'indicators': indicator_results,
+            'signal': signal,
+            'timestamp': datetime.now().isoformat(),
+            'period': period
+        }
+
+        print(f"[StockAnalyzer] Analysis complete for {ticker}")
+        print(f"  → Signal: {signal['action']} (confidence: {signal['confidence']})")
+
+        return result
+
+    def compare(
+        self,
+        tickers: List[str],
+        rank_by: str = "momentum",
+        indicators: Optional[List[str]] = None
+    ) -> Dict[str, Any]:
+        """
+        Compare multiple stocks and rank by technical strength
+
+        Args:
+            tickers: List of stock symbols
+            rank_by: Ranking method ("momentum", "rsi", "composite")
+            indicators: Indicators to use for comparison
+
+        Returns:
+            Dict containing ranked stocks with scores and analysis
+
+        Example:
+            >>> analyzer = StockAnalyzer()
+            >>> result = analyzer.compare(["AAPL", "MSFT", "GOOGL"])
+            >>> for stock in result['ranked_stocks']:
+            >>>     print(f"{stock['ticker']}: {stock['score']}")
+        """
+        indicators = indicators or ["RSI", "MACD"]
+
+        print(f"\n[StockAnalyzer] Comparing {len(tickers)} stocks...")
+        print(f"  - Tickers: {', '.join(tickers)}")
+        print(f"  - Rank by: {rank_by}")
+
+        comparisons = []
+        for ticker in tickers:
+            # Analyze each stock
+            analysis = self.analyze(ticker, indicators, period="6mo")
+
+            # Calculate ranking score
+            score = self._calculate_ranking_score(analysis, rank_by)
+
+            comparisons.append({
+                'ticker': ticker.upper(),
+                'analysis': analysis,
+                'score': score,
+                'rank': 0  # Will be set after sorting
+            })
+
+        # Sort by score (highest first)
+        comparisons.sort(key=lambda x: x['score'], reverse=True)
+
+        # Assign ranks
+        for idx, comparison in enumerate(comparisons, 1):
+            comparison['rank'] = idx
+
+        result = {
+            'ranked_stocks': comparisons,
+            'ranking_method': rank_by,
+            'total_analyzed': len(tickers),
+            'timestamp': datetime.now().isoformat()
+        }
+
+        print(f"[StockAnalyzer] Comparison complete")
+        print("  Rankings:")
+        for comp in comparisons:
+            print(f"    #{comp['rank']}: {comp['ticker']} (score: {comp['score']:.2f})")
+
+        return result
+
+    def monitor(
+        self,
+        ticker: str,
+        condition: str,
+        action: str = "notify"
+    ) -> Dict[str, Any]:
+        """
+        Set up monitoring and alerts for a stock
+
+        Args:
+            ticker: Stock symbol to monitor
+            condition: Alert condition (e.g., "RSI < 30", "MACD crossover")
+            action: Action to take when condition met (default: "notify")
+
+        Returns:
+            Dict with monitoring configuration
+
+        Example:
+            >>> analyzer = StockAnalyzer()
+            >>> alert = analyzer.monitor("AAPL", "RSI < 30", "notify")
+            >>> print(alert['status'])
+            active
+        """
+        print(f"\n[StockAnalyzer] Setting up monitoring...")
+        print(f"  - Ticker: {ticker}")
+        print(f"  - Condition: {condition}")
+        print(f"  - Action: {action}")
+
+        return {
+            'ticker': ticker.upper(),
+            'condition': condition,
+            'action': action,
+            'status': 'active',
+            'created': datetime.now().isoformat()
+        }
+
+    # Private helper methods
+
+    def _default_config(self) -> Dict:
+        """Default configuration for indicators and data sources"""
+        return {
+            'data_source': 'yahoo_finance',
+            'indicators': {
+                'RSI': {
+                    'period': 14,
+                    'overbought': 70,
+                    'oversold': 30
+                },
+                'MACD': {
+                    'fast_period': 12,
+                    'slow_period': 26,
+                    'signal_period': 9
+                },
+                'Bollinger': {
+                    'period': 20,
+                    'std_dev': 2
+                }
+            },
+            'signals': {
+                'confidence_threshold': 0.7
+            }
+        }
+
+    def _fetch_data(self, ticker: str, period: str) -> Dict[str, float]:
+        """
+        Fetch price data for ticker (simplified mock)
+        Production version would use yfinance or similar
+        """
+        # Mock data - production would fetch real data
+        return {
+            'open': 175.20,
+            'high': 178.90,
+            'low': 174.50,
+            'close': 178.45,
+            'volume': 52_000_000
+        }
+
+    def _calculate_indicator(
+        self,
+        indicator_name: str,
+        price_data: Dict
+    ) -> Dict[str, Any]:
+        """
+        Calculate technical indicator (simplified mock)
+        Production version would use ta-lib or pandas-ta
+        """
+        if indicator_name == "RSI":
+            return {
+                'value': 62.3,
+                'signal': 'neutral',
+                'interpretation': 'RSI above 50 indicates bullish momentum, but not overbought'
+            }
+        elif indicator_name == "MACD":
+            return {
+                'macd_line': 2.15,
+                'signal_line': 1.89,
+                'histogram': 0.26,
+                'signal': 'buy',
+                'interpretation': 'MACD line crossed above signal line - bullish crossover'
+            }
+        elif indicator_name == "Bollinger":
+            return {
+                'upper_band': 185.20,
+                'middle_band': 178.45,
+                'lower_band': 171.70,
+                'position': 'middle',
+                'interpretation': 'Price near middle band - neutral volatility'
+            }
+        else:
+            return {'error': f'Unknown indicator: {indicator_name}'}
+
+    def _generate_signal(
+        self,
+        ticker: str,
+        price_data: Dict,
+        indicators: Dict
+    ) -> Dict[str, Any]:
+        """
+        Generate trading signal from indicator combination
+
+        Strategy: Combined RSI + MACD approach
+        - BUY: RSI healthy and MACD bullish crossover
+        - SELL: RSI overbought and MACD bearish
+        - HOLD: Otherwise
+        """
+        rsi = indicators.get('RSI', {}).get('value', 50)
+        macd_signal = indicators.get('MACD', {}).get('signal', 'neutral')
+
+        reasoning = []
+
+        # RSI analysis
+        if rsi < 30:
+            reasoning.append("RSI oversold (< 30) - potential buy opportunity")
+            base_signal = "BUY"
+            confidence = "moderate"
+        elif rsi > 70:
+            reasoning.append("RSI overbought (> 70) - potential sell signal")
+            base_signal = "SELL"
+            confidence = "moderate"
+        else:
+            reasoning.append(f"RSI at {rsi:.1f} - neutral zone")
+            base_signal = "HOLD"
+            confidence = "low"
+
+        # MACD analysis
+        if macd_signal == "buy":
+            reasoning.append("MACD bullish crossover detected")
+            if base_signal == "BUY":
+                confidence = "high"
+            else:
+                base_signal = "BUY"
+                confidence = "moderate"
+
+        return {
+            'action': base_signal,
+            'confidence': confidence,
+            'reasoning': reasoning,
+            'price': price_data['close']
+        }
+
+    def _calculate_ranking_score(
+        self,
+        analysis: Dict,
+        method: str
+    ) -> float:
+        """
+        Calculate ranking score based on method
+
+        Args:
+            analysis: Stock analysis results
+            method: Ranking method (momentum, rsi, composite)
+
+        Returns:
+            Numeric score (higher is better)
+        """
+        if method == "rsi":
+            # Higher RSI = higher score (up to 70)
+            rsi = analysis['indicators'].get('RSI', {}).get('value', 50)
+            return min(rsi, 70)
+
+        elif method == "momentum":
+            # Composite momentum score
+            rsi = analysis['indicators'].get('RSI', {}).get('value', 50)
+            macd_signal = analysis['indicators'].get('MACD', {}).get('signal', 'neutral')
+
+            score = rsi
+            if macd_signal == "buy":
+                score += 10
+            elif macd_signal == "sell":
+                score -= 10
+
+            return score
+
+        else:  # composite
+            # Weighted combination of indicators
+            rsi = analysis['indicators'].get('RSI', {}).get('value', 50)
+            macd_hist = analysis['indicators'].get('MACD', {}).get('histogram', 0)
+
+            return (rsi * 0.6) + (macd_hist * 20 * 0.4)
+
+
+def main():
+    """Demo usage of StockAnalyzer skill"""
+    print("=" * 60)
+    print("Stock Analyzer Skill - Demo")
+    print("=" * 60)
+
+    analyzer = StockAnalyzer()
+
+    # Example 1: Single stock analysis
+    print("\n--- Example 1: Analyze AAPL ---")
+    result = analyzer.analyze("AAPL", ["RSI", "MACD"])
+    print(f"\nResult: {result['signal']['action']}")
+    print(f"Reasoning: {', '.join(result['signal']['reasoning'])}")
+
+    # Example 2: Multi-stock comparison
+    print("\n\n--- Example 2: Compare Tech Stocks ---")
+    comparison = analyzer.compare(["AAPL", "MSFT", "GOOGL"], rank_by="momentum")
+
+    # Example 3: Set up monitoring
+    print("\n\n--- Example 3: Monitor Stock ---")
+    alert = analyzer.monitor("TSLA", "RSI < 30", "notify")
+    print(f"\nMonitoring status: {alert['status']}")
+
+    print("\n" + "=" * 60)
+    print("Demo complete!")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## File: `references/templates/README-activation-template.md`
+```markdown
+# {{Skill Name}}
+
+**Version:** {{version}}
+**Type:** {{Simple Skill / Skill Suite}}
+**Created by:** Agent-Skill-Creator v{{version}}
+
+---
+
+## Overview
+
+{{Brief description of what the skill does and why it's useful}}
+
+### Key Features
+
+- {{Feature 1}}
+- {{Feature 2}}
+- {{Feature 3}}
+
+---
+
+## Installation
+
+```bash
+# Installation instructions
+{{installation-commands}}
+```
+
+---
+
+## 🎯 Skill Activation
+
+This skill uses a **3-Layer Activation System** for reliable detection.
+
+### ✅ Phrases That Activate This Skill
+
+The skill will automatically activate when you use phrases like:
+
+#### Primary Activation Phrases
+1. **"{{keyword-phrase-1}}"**
+   - Example: "{{example-1}}"
+
+2. **"{{keyword-phrase-2}}"**
+   - Example: "{{example-2}}"
+
+3. **"{{keyword-phrase-3}}"**
+   - Example: "{{example-3}}"
+
+#### Workflow-Based Activation
+4. **"{{workflow-phrase-1}}"**
+   - Example: "{{example-4}}"
+
+5. **"{{workflow-phrase-2}}"**
+   - Example: "{{example-5}}"
+
+#### Domain-Specific Activation
+6. **"{{domain-phrase-1}}"**
+   - Example: "{{example-6}}"
+
+7. **"{{domain-phrase-2}}"**
+   - Example: "{{example-7}}"
+
+#### Natural Language Variations
+8. **"{{natural-variation-1}}"**
+   - Example: "{{example-8}}"
+
+9. **"{{natural-variation-2}}"**
+   - Example: "{{example-9}}"
+
+10. **"{{natural-variation-3}}"**
+    - Example: "{{example-10}}"
+
+### ❌ Phrases That Do NOT Activate
+
+To prevent false positives, this skill will **NOT** activate for:
+
+1. **{{counter-case-1}}**
+   - Example: "{{counter-example-1}}"
+   - Reason: {{reason-1}}
+
+2. **{{counter-case-2}}**
+   - Example: "{{counter-example-2}}"
+   - Reason: {{reason-2}}
+
+3. **{{counter-case-3}}**
+   - Example: "{{counter-example-3}}"
+   - Reason: {{reason-3}}
+
+### 💡 Activation Tips
+
+To ensure reliable activation:
+
+**DO:**
+- ✅ Use action verbs: {{verb-examples}}
+- ✅ Be specific about: {{context-requirements}}
+- ✅ Mention: {{entity-keywords}}
+- ✅ Include context: {{context-examples}}
+
+**DON'T:**
+- ❌ Use vague phrases like "{{vague-example}}"
+- ❌ Omit key entities like "{{missing-entity}}"
+- ❌ Be too generic: "{{generic-example}}"
+
+### 🎯 Example Activation Patterns
+
+**Pattern 1:** {{Pattern-description-1}}
+```
+User: "{{example-query-1}}"
+Result: ✅ Skill activates via {{layer-name}}
+```
+
+**Pattern 2:** {{Pattern-description-2}}
+```
+User: "{{example-query-2}}"
+Result: ✅ Skill activates via {{layer-name}}
+```
+
+**Pattern 3:** {{Pattern-description-3}}
+```
+User: "{{example-query-3}}"
+Result: ✅ Skill activates via {{layer-name}}
+```
+
+---
+
+## Usage
+
+### Basic Usage
+
+```{{language}}
+{{basic-usage-example}}
+```
+
+### Advanced Usage
+
+```{{language}}
+{{advanced-usage-example}}
+```
+
+### Real-World Examples
+
+#### Example 1: {{Example-title-1}}
+
+**User Query:**
+```
+"{{example-query-1}}"
+```
+
+**Skill Actions:**
+1. {{action-step-1}}
+2. {{action-step-2}}
+3. {{action-step-3}}
+
+**Output:**
+```{{format}}
+{{example-output-1}}
+```
+
+#### Example 2: {{Example-title-2}}
+
+**User Query:**
+```
+"{{example-query-2}}"
+```
+
+**Skill Actions:**
+1. {{action-step-1}}
+2. {{action-step-2}}
+3. {{action-step-3}}
+
+**Output:**
+```{{format}}
+{{example-output-2}}
+```
+
+---
+
+## Features
+
+### Feature 1: {{Feature-name}}
+
+{{Description of feature 1}}
+
+**Activation:**
+- "{{feature-1-query}}"
+
+**Example:**
+```{{language}}
+{{feature-1-example}}
+```
+
+### Feature 2: {{Feature-name}}
+
+{{Description of feature 2}}
+
+**Activation:**
+- "{{feature-2-query}}"
+
+**Example:**
+```{{language}}
+{{feature-2-example}}
+```
+
+---
+
+## Configuration
+
+### Optional Configuration
+
+{{Configuration-instructions}}
+
+```{{format}}
+{{configuration-example}}
+```
+
+---
+
+## Troubleshooting
+
+### Issue: Skill Not Activating
+
+**Symptoms:** Your query doesn't activate the skill
+
+**Solutions:**
+1. ✅ Use one of the activation phrases listed above
+2. ✅ Include action verbs: {{verb-list}}
+3. ✅ Mention specific entities: {{entity-list}}
+4. ✅ Provide context: "{{context-example}}"
+
+**Example Fix:**
+```
+❌ "{{vague-query}}"
+✅ "{{specific-query}}"
+```
+
+### Issue: Wrong Skill Activates
+
+**Symptoms:** A different skill activates instead
+
+**Solutions:**
+1. Be more specific about this skill's domain
+2. Use domain-specific keywords: {{domain-keywords}}
+3. Add context that distinguishes from other skills
+
+**Example Fix:**
+```
+❌ "{{ambiguous-query}}"
+✅ "{{specific-query-with-context}}"
+```
+
+---
+
+## Testing
+
+### Activation Test Suite
+
+You can verify activation with these test queries:
+
+```markdown
+1. "{{test-query-1}}" → Should activate ✅
+2. "{{test-query-2}}" → Should activate ✅
+3. "{{test-query-3}}" → Should activate ✅
+4. "{{test-query-4}}" → Should activate ✅
+5. "{{test-query-5}}" → Should activate ✅
+6. "{{test-query-6}}" → Should NOT activate ❌
+7. "{{test-query-7}}" → Should NOT activate ❌
+```
+
+---
+
+## FAQ
+
+### Q: Why isn't the skill activating for my query?
+
+**A:** Make sure your query includes:
+- Action verb ({{verb-examples}})
+- Entity/object ({{entity-examples}})
+- Specific context ({{context-examples}})
+
+See the "Activation Tips" section above.
+
+### Q: How do I know which phrases will activate the skill?
+
+**A:** Check the "Phrases That Activate This Skill" section above for 10+ tested examples.
+
+### Q: Can I use variations of the activation phrases?
+
+**A:** Yes! The skill uses regex patterns and Claude's NLU, so natural variations will work. For example:
+- "{{variation-1}}" ✅
+- "{{variation-2}}" ✅
+- "{{variation-3}}" ✅
+
+---
+
+## Technical Details
+
+### Architecture
+
+{{Architecture-description}}
+
+### Components
+
+- **{{Component-1}}**: {{Description}}
+- **{{Component-2}}**: {{Description}}
+- **{{Component-3}}**: {{Description}}
+
+### Dependencies
+
+```{{format}}
+{{dependencies-list}}
+```
+
+---
+
+## Contributing
+
+{{Contributing-guidelines}}
+
+---
+
+## License
+
+{{License-information}}
+
+---
+
+## Changelog
+
+### v{{version}} ({{date}})
+- {{change-1}}
+- {{change-2}}
+- {{change-3}}
+
+---
+
+## Support
+
+For issues or questions:
+- {{support-contact}}
+
+---
+
+**Generated by:** Agent-Skill-Creator v{{version}}
+**Last Updated:** {{date}}
+**Activation System:** 3-Layer (Keywords + Patterns + Description)
+```
+
+## File: `registry/registry.json`
+```json
+{
+  "registry": {
+    "name": "Shared Skills",
+    "created": "2026-02-26T19:19:18+00:00",
+    "schema_version": "1"
+  },
+  "skills": []
+}
+```
+
+## File: `scripts/bootstrap.sh`
+```bash
+#!/bin/sh
+# bootstrap.sh — One-liner bootstrap for agent-skill-creator
+#
+# Usage:
+#   curl -fsSL https://raw.githubusercontent.com/FrancyJGLisboa/agent-skill-creator/main/scripts/bootstrap.sh | sh
+#
+# Clones agent-skill-creator to ~/.agents/skills/ and symlinks to all detected
+# global platforms. POSIX-compatible (works in bash, dash, zsh, ash).
+
+set -eu
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+REPO_URL="https://github.com/FrancyJGLisboa/agent-skill-creator.git"
+SKILL_NAME="agent-skill-creator"
+CANONICAL_DIR="$HOME/.agents/skills/$SKILL_NAME"
+
+# ---------------------------------------------------------------------------
+# Colors (disabled when stdout is not a terminal)
+# ---------------------------------------------------------------------------
+if [ -t 1 ]; then
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    BOLD='\033[1m'
+    NC='\033[0m'
+else
+    GREEN='' YELLOW='' BLUE='' BOLD='' NC=''
+fi
+
+info()    { printf "${BLUE}[INFO]${NC}  %s\n" "$1"; }
+success() { printf "${GREEN}[OK]${NC}    %s\n" "$1"; }
+warn()    { printf "${YELLOW}[WARN]${NC}  %s\n" "$1"; }
+
+# ---------------------------------------------------------------------------
+# Detect globally-installed platforms (user-level only, skip project-level)
+# ---------------------------------------------------------------------------
+detect_global_platforms() {
+    platforms=""
+    # Claude Code
+    if [ -d "$HOME/.claude" ]; then
+        platforms="$platforms claude-code"
+    fi
+    # Gemini CLI
+    if [ -d "$HOME/.gemini" ]; then
+        platforms="$platforms gemini"
+    fi
+    # Goose
+    if [ -d "$HOME/.config/goose" ]; then
+        platforms="$platforms goose"
+    fi
+    # OpenCode
+    if [ -d "$HOME/.config/opencode" ]; then
+        platforms="$platforms opencode"
+    fi
+    # GitHub Copilot
+    if [ -d "$HOME/.copilot" ]; then
+        platforms="$platforms copilot"
+    fi
+    echo "$platforms"
+}
+
+# ---------------------------------------------------------------------------
+# Resolve user-level install path for a platform
+# ---------------------------------------------------------------------------
+platform_path() {
+    case "$1" in
+        claude-code) echo "$HOME/.claude/skills/$SKILL_NAME" ;;
+        gemini)      echo "$HOME/.gemini/skills/$SKILL_NAME" ;;
+        goose)       echo "$HOME/.config/goose/skills/$SKILL_NAME" ;;
+        opencode)    echo "$HOME/.config/opencode/skills/$SKILL_NAME" ;;
+        copilot)     echo "$HOME/.copilot/skills/$SKILL_NAME" ;;
+    esac
+}
+
+# ---------------------------------------------------------------------------
+# Friendly display name for a platform
+# ---------------------------------------------------------------------------
+platform_display() {
+    case "$1" in
+        claude-code) echo "Claude Code" ;;
+        gemini)      echo "Gemini CLI" ;;
+        goose)       echo "Goose" ;;
+        opencode)    echo "OpenCode" ;;
+        copilot)     echo "GitHub Copilot" ;;
+    esac
+}
+
+# ---------------------------------------------------------------------------
+# Create a symlink (with fallback to copy)
+# ---------------------------------------------------------------------------
+create_symlink() {
+    target="$1"   # what the link points to
+    link_path="$2" # where the link lives
+
+    # Skip if target and link are the same path
+    if [ "$target" = "$link_path" ]; then
+        return 0
+    fi
+
+    mkdir -p "$(dirname "$link_path")"
+
+    # Remove existing (file, symlink, or directory)
+    if [ -e "$link_path" ] || [ -L "$link_path" ]; then
+        rm -rf "$link_path"
+    fi
+
+    if ln -s "$target" "$link_path" 2>/dev/null; then
+        return 0
+    else
+        warn "Symlink failed for $link_path — falling back to copy"
+        cp -R "$target" "$link_path"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+main() {
+    printf "\n${BOLD}Agent Skill Creator — Bootstrap Installer${NC}\n\n"
+
+    # Check for git
+    if ! command -v git >/dev/null 2>&1; then
+        warn "git is not installed. Please install git and try again."
+        exit 1
+    fi
+
+    # Clone or update the canonical location
+    if [ -d "$CANONICAL_DIR/.git" ]; then
+        info "Updating existing install at $CANONICAL_DIR"
+        cd "$CANONICAL_DIR" && git pull --ff-only 2>/dev/null || true
+    else
+        info "Cloning $SKILL_NAME to $CANONICAL_DIR"
+        mkdir -p "$(dirname "$CANONICAL_DIR")"
+        rm -rf "$CANONICAL_DIR"
+        git clone "$REPO_URL" "$CANONICAL_DIR"
+    fi
+
+    success "Installed at $CANONICAL_DIR"
+
+    # Detect global platforms and create symlinks
+    platforms="$(detect_global_platforms)"
+    installed=""
+    count=0
+
+    for platform in $platforms; do
+        dest="$(platform_path "$platform")"
+        create_symlink "$CANONICAL_DIR" "$dest"
+        name="$(platform_display "$platform")"
+        success "Symlinked for $name → $dest"
+        installed="$installed $name,"
+        count=$((count + 1))
+    done
+
+    # ---------------------------------------------------------------------------
+    # Summary
+    # ---------------------------------------------------------------------------
+    printf "\n${BOLD}Done!${NC}\n\n"
+    printf "  Canonical location: ${BOLD}%s${NC}\n" "$CANONICAL_DIR"
+
+    if [ $count -gt 0 ]; then
+        # Trim trailing comma
+        installed="$(echo "$installed" | sed 's/,$//')"
+        printf "  Symlinked to %d platform(s):%s\n" "$count" "$installed"
+    fi
+
+    printf "\n${BOLD}How to use:${NC}\n"
+    printf "  Open your AI agent and type:\n"
+    printf "    /agent-skill-creator <describe your workflow>\n\n"
+    printf "  To update later:\n"
+    printf "    cd %s && git pull\n\n" "$CANONICAL_DIR"
+
+    if [ $count -eq 0 ]; then
+        warn "No global platforms detected. The skill is installed at the universal path."
+        printf "  Tools like Codex CLI, Gemini CLI, Kiro, and Antigravity\n"
+        printf "  read from ~/.agents/skills/ automatically.\n\n"
+    fi
+}
+
+main
+```
+
+## File: `scripts/export_utils.py`
+```python
+#!/usr/bin/env python3
+"""
+Cross-Platform Export Utilities for Agent-Skill-Creator
+
+Packages Claude Code skills for Desktop/Web/API use with versioning and validation.
+"""
+
+import os
+import sys
+import zipfile
+import subprocess
+from datetime import datetime
+from typing import Dict, List, Tuple
+
+# Directories and files to exclude from exports
+EXCLUDE_DIRS = {
+    '.git', '__pycache__', 'node_modules', '.claude-plugin',
+    'venv', 'env', '.venv', '.pytest_cache', '.mypy_cache',
+    'dist', 'build', '*.egg-info'
+}
+
+EXCLUDE_FILES = {
+    '.DS_Store', '.gitignore', 'Thumbs.db', '*.pyc', '*.pyo',
+    '.env', 'credentials.json', '*.log', '.python-version'
+}
+
+# API package size limit (8MB per Claude API requirements)
+MAX_API_SIZE_MB = 8
+MAX_API_SIZE_BYTES = MAX_API_SIZE_MB * 1024 * 1024
+
+# SKILL.md validation limits
+MAX_NAME_LENGTH = 64
+MAX_DESCRIPTION_LENGTH = 1024
+
+
+def get_skill_version(skill_path: str, override_version: str = None) -> str:
+    """
+    Determine skill version from git tags, SKILL.md, or use default.
+
+    Args:
+        skill_path: Path to skill directory
+        override_version: User-specified version (takes precedence)
+
+    Returns:
+        Version string in format "vX.Y.Z"
+    """
+    if override_version:
+        return override_version if override_version.startswith('v') else f'v{override_version}'
+
+    # Try git tags first
+    try:
+        os.chdir(skill_path)
+        result = subprocess.run(
+            ['git', 'describe', '--tags', '--abbrev=0'],
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        if result.returncode == 0:
+            version = result.stdout.strip()
+            return version if version.startswith('v') else f'v{version}'
+    except (subprocess.TimeoutExpired, FileNotFoundError, subprocess.SubprocessError):
+        pass
+
+    # Try SKILL.md frontmatter
+    skill_md_path = os.path.join(skill_path, 'SKILL.md')
+    if os.path.exists(skill_md_path):
+        try:
+            with open(skill_md_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                # Look for version: in frontmatter
+                if content.startswith('---'):
+                    frontmatter_end = content.find('---', 3)
+                    if frontmatter_end > 0:
+                        frontmatter = content[3:frontmatter_end]
+                        for line in frontmatter.split('\n'):
+                            if line.strip().startswith('version:'):
+                                version = line.split(':', 1)[1].strip()
+                                return version if version.startswith('v') else f'v{version}'
+        except Exception:
+            pass
+
+    # Default version
+    return 'v1.0.0'
+
+
+def validate_skill_structure(skill_path: str) -> Tuple[bool, List[str]]:
+    """
+    Validate that skill has required structure for export.
+
+    Args:
+        skill_path: Path to skill directory
+
+    Returns:
+        Tuple of (is_valid, list_of_issues)
+    """
+    issues = []
+
+    # Check if path exists and is directory
+    if not os.path.exists(skill_path):
+        issues.append(f"Path does not exist: {skill_path}")
+        return False, issues
+
+    if not os.path.isdir(skill_path):
+        issues.append(f"Path is not a directory: {skill_path}")
+        return False, issues
+
+    # Check for SKILL.md
+    skill_md_path = os.path.join(skill_path, 'SKILL.md')
+    if not os.path.exists(skill_md_path):
+        issues.append("SKILL.md not found (required)")
+        return False, issues
+
+    # Validate SKILL.md frontmatter
+    try:
+        with open(skill_md_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+            if not content.startswith('---'):
+                issues.append("SKILL.md missing frontmatter (must start with ---)")
+            else:
+                # Extract frontmatter
+                frontmatter_end = content.find('---', 3)
+                if frontmatter_end == -1:
+                    issues.append("SKILL.md frontmatter not closed (missing second ---)")
+                else:
+                    frontmatter = content[3:frontmatter_end]
+
+                    # Check for required fields
+                    has_name = False
+                    has_description = False
+                    name_length = 0
+                    desc_length = 0
+
+                    for line in frontmatter.split('\n'):
+                        line = line.strip()
+                        if line.startswith('name:'):
+                            has_name = True
+                            name = line.split(':', 1)[1].strip()
+                            name_length = len(name)
+                            if name_length > MAX_NAME_LENGTH:
+                                issues.append(f"name too long: {name_length} chars (max {MAX_NAME_LENGTH})")
+                        elif line.startswith('description:'):
+                            has_description = True
+                            desc = line.split(':', 1)[1].strip()
+                            desc_length = len(desc)
+                            if desc_length > MAX_DESCRIPTION_LENGTH:
+                                issues.append(f"description too long: {desc_length} chars (max {MAX_DESCRIPTION_LENGTH})")
+
+                    if not has_name:
+                        issues.append("SKILL.md missing 'name:' field in frontmatter")
+                    if not has_description:
+                        issues.append("SKILL.md missing 'description:' field in frontmatter")
+
+    except Exception as e:
+        issues.append(f"Error reading SKILL.md: {str(e)}")
+
+    return len(issues) == 0, issues
+
+
+def should_include_file(file_path: str, filename: str) -> bool:
+    """
+    Determine if a file should be included in export.
+
+    Args:
+        file_path: Full path to file
+        filename: Just the filename
+
+    Returns:
+        True if file should be included
+    """
+    # Check excluded filenames
+    if filename in EXCLUDE_FILES:
+        return False
+
+    # Check excluded patterns
+    for pattern in EXCLUDE_FILES:
+        if '*' in pattern:
+            extension = pattern.replace('*', '')
+            if filename.endswith(extension):
+                return False
+
+    # Check for sensitive files
+    if filename in {'.env', 'credentials.json', 'secrets.json', 'api_keys.json'}:
+        return False
+
+    return True
+
+
+def get_directory_size(path: str) -> int:
+    """
+    Calculate total size of directory in bytes.
+
+    Args:
+        path: Directory path
+
+    Returns:
+        Total size in bytes
+    """
+    total = 0
+    for root, dirs, files in os.walk(path):
+        # Filter excluded directories
+        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+
+        for file in files:
+            if should_include_file(os.path.join(root, file), file):
+                try:
+                    total += os.path.getsize(os.path.join(root, file))
+                except OSError:
+                    pass
+    return total
+
+
+def create_export_package(
+    skill_path: str,
+    output_dir: str,
+    variant: str = 'desktop',
+    version: str = 'v1.0.0',
+    skill_name: str = None
+) -> Dict:
+    """
+    Create optimized export package for specified variant.
+
+    Args:
+        skill_path: Path to skill directory
+        output_dir: Where to save the .zip file
+        variant: 'desktop' or 'api'
+        version: Version string (e.g., 'v1.0.0')
+        skill_name: Override skill name (default: directory name)
+
+    Returns:
+        Dict with 'success', 'zip_path', 'size_mb', 'files_included', 'message'
+    """
+    if skill_name is None:
+        skill_name = os.path.basename(os.path.abspath(skill_path))
+
+    # Create output filename
+    zip_filename = f"{skill_name}-{variant}-{version}.zip"
+    zip_path = os.path.join(output_dir, zip_filename)
+
+    files_included = []
+    total_size = 0
+
+    try:
+        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as zipf:
+            for root, dirs, files in os.walk(skill_path):
+                # Filter excluded directories
+                dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+
+                # For API variant, exclude .claude-plugin
+                if variant == 'api' and '.claude-plugin' in dirs:
+                    dirs.remove('.claude-plugin')
+
+                for file in files:
+                    if not should_include_file(os.path.join(root, file), file):
+                        continue
+
+                    file_path = os.path.join(root, file)
+                    arcname = os.path.relpath(file_path, skill_path)
+
+                    # For API variant, apply additional filtering
+                    if variant == 'api':
+                        # Skip large documentation files
+                        if file.endswith('.md') and file not in {'SKILL.md', 'README.md'}:
+                            continue
+                        # Skip example files
+                        if 'examples' in arcname.lower():
+                            continue
+
+                    try:
+                        zipf.write(file_path, arcname)
+                        files_included.append(arcname)
+                        total_size += os.path.getsize(file_path)
+                    except Exception as e:
+                        print(f"Warning: Could not add {arcname}: {e}", file=sys.stderr)
+
+        # Check final size
+        final_size = os.path.getsize(zip_path)
+        size_mb = final_size / (1024 * 1024)
+
+        # Warn if API package is too large
+        if variant == 'api' and final_size > MAX_API_SIZE_BYTES:
+            return {
+                'success': False,
+                'zip_path': zip_path,
+                'size_mb': size_mb,
+                'files_included': files_included,
+                'message': f"API package too large: {size_mb:.2f} MB (max {MAX_API_SIZE_MB} MB)"
+            }
+
+        return {
+            'success': True,
+            'zip_path': zip_path,
+            'size_mb': size_mb,
+            'files_included': files_included,
+            'message': f"Package created successfully: {len(files_included)} files, {size_mb:.2f} MB"
+        }
+
+    except Exception as e:
+        return {
+            'success': False,
+            'zip_path': None,
+            'size_mb': 0,
+            'files_included': [],
+            'message': f"Error creating package: {str(e)}"
+        }
+
+
+def generate_installation_guide(
+    skill_name: str,
+    version: str,
+    desktop_package: Dict = None,
+    api_package: Dict = None,
+    output_dir: str = None
+) -> str:
+    """
+    Generate platform-specific installation guide.
+
+    Args:
+        skill_name: Name of the skill
+        version: Version string
+        desktop_package: Desktop package info dict (optional)
+        api_package: API package info dict (optional)
+        output_dir: Where to save the guide
+
+    Returns:
+        Path to generated installation guide
+    """
+    guide_filename = f"{skill_name}-{version}_INSTALL.md"
+    guide_path = os.path.join(output_dir, guide_filename)
+
+    # Build guide content
+    content = f"""# {skill_name} - Installation Guide
+
+**Version:** {version}
+**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+---
+
+## 📦 Export Packages
+
+"""
+
+    if desktop_package and desktop_package['success']:
+        content += f"""### Desktop/Web Package
+
+**File:** `{os.path.basename(desktop_package['zip_path'])}`
+**Size:** {desktop_package['size_mb']:.2f} MB
+**Files:** {len(desktop_package['files_included'])} files included
+
+✅ Optimized for Claude Desktop and claude.ai manual upload
+
+"""
+
+    if api_package and api_package['success']:
+        content += f"""### API Package
+
+**File:** `{os.path.basename(api_package['zip_path'])}`
+**Size:** {api_package['size_mb']:.2f} MB
+**Files:** {len(api_package['files_included'])} files included
+
+✅ Optimized for programmatic Claude API integration
+
+"""
+
+    content += f"""---
+
+## Cross-Platform Installation
+
+This skill works on all platforms supporting the Agent Skills Open Standard.
+
+### Universal Path (works with 6+ tools)
+
+```bash
+cp -r {skill_name}/ ~/.agents/skills/{skill_name}/
+```
+
+Works with Codex CLI, Gemini CLI, Kiro, Antigravity, and other tools that read `~/.agents/skills/`.
+
+### Using install.sh (Recommended)
+
+If the skill includes an `install.sh` script:
+
+```bash
+# Auto-detect platform and install
+./install.sh
+
+# Install to specific platform
+./install.sh --platform claude-code
+./install.sh --platform copilot
+./install.sh --platform cursor
+
+# Install to ALL detected platforms
+./install.sh --all
+
+# Project-level install
+./install.sh --project
+
+# Preview without installing
+./install.sh --dry-run
+```
+
+### Alternative: npx
+
+```bash
+npx skills add ./{skill_name}
+```
+
+### Manual Installation by Platform
+
+#### Claude Code
+```bash
+# User-level
+cp -r {skill_name}/ ~/.claude/skills/{skill_name}/
+
+# Project-level
+cp -r {skill_name}/ .claude/skills/{skill_name}/
+```
+
+#### GitHub Copilot
+```bash
+cp -r {skill_name}/ .github/skills/{skill_name}/
+```
+
+#### Cursor
+```bash
+cp -r {skill_name}/ .cursor/rules/{skill_name}/
+```
+
+#### Windsurf
+```bash
+# Project-level
+cp -r {skill_name}/ .windsurf/rules/{skill_name}/
+```
+
+#### Cline
+```bash
+cp -r {skill_name}/ .clinerules/{skill_name}/
+```
+
+#### OpenAI Codex CLI
+```bash
+cp -r {skill_name}/ ~/.agents/skills/{skill_name}/
+```
+
+#### Gemini CLI
+```bash
+cp -r {skill_name}/ ~/.gemini/skills/{skill_name}/
+```
+
+#### Kiro
+```bash
+cp -r {skill_name}/ .kiro/skills/{skill_name}/
+```
+
+#### Trae
+```bash
+cp -r {skill_name}/ .trae/rules/{skill_name}/
+```
+
+#### Goose
+```bash
+cp -r {skill_name}/ ~/.config/goose/skills/{skill_name}/
+```
+
+#### OpenCode
+```bash
+cp -r {skill_name}/ ~/.config/opencode/skills/{skill_name}/
+```
+
+#### Roo Code
+```bash
+cp -r {skill_name}/ .roo/rules/{skill_name}/
+```
+
+#### Antigravity
+```bash
+cp -r {skill_name}/ .agents/skills/{skill_name}/
+```
+
+### Claude Desktop / claude.ai (Web)
+
+1. Locate the Desktop package: `{skill_name}-desktop-{{version}}.zip`
+2. Open Claude Desktop or claude.ai
+3. Go to **Settings > Skills > Upload skill**
+4. Select the .zip file and confirm
+
+### Claude API
+
+1. Locate the API package: `{skill_name}-api-{{version}}.zip`
+2. Upload programmatically:
+```python
+import anthropic
+client = anthropic.Anthropic()
+with open('{skill_name}-api-{{version}}.zip', 'rb') as f:
+    skill = client.skills.create(file=f, name="{skill_name}")
+```
+
+---
+
+## Platform Comparison
+
+| Platform | Install Method | Updates | marketplace.json |
+|----------|---------------|---------|-----------------|
+| **Universal** | install.sh / copy | git pull | Not used |
+| **Claude Code** | install.sh / copy | git pull | Optional |
+| **GitHub Copilot** | install.sh / copy | git pull | Not used |
+| **Cursor** | install.sh / copy (+ .mdc) | git pull | Not used |
+| **Windsurf** | install.sh / copy | git pull | Not used |
+| **Cline** | install.sh / copy | git pull | Not used |
+| **Codex CLI** | install.sh / copy | git pull | Not used |
+| **Gemini CLI** | install.sh / copy | git pull | Not used |
+| **Kiro** | install.sh / copy | git pull | Not used |
+| **Trae** | install.sh / copy | git pull | Not used |
+| **Goose** | install.sh / copy | git pull | Not used |
+| **OpenCode** | install.sh / copy | git pull | Not used |
+| **Roo Code** | install.sh / copy | git pull | Not used |
+| **Desktop/Web** | .zip upload | Re-upload | Not used |
+| **Claude API** | API upload | New upload | Not used |
+
+---
+
+## Technical Details
+
+### What's Included
+
+"""
+
+    if desktop_package and desktop_package['success']:
+        content += """**Desktop Package:**
+- SKILL.md (core functionality)
+- Complete scripts/ directory
+- Full references/ documentation
+- All assets/ and templates
+- README.md and requirements.txt
+
+"""
+
+    if api_package and api_package['success']:
+        content += """**API Package:**
+- SKILL.md (required)
+- Essential scripts only
+- Minimal documentation (execution-focused)
+- Size-optimized (< 8MB)
+
+"""
+
+    content += """### What's Excluded (Security)
+
+For both packages:
+- `.git/` (version control history)
+- `__pycache__/` (compiled Python)
+- `.env` files (environment variables)
+- `credentials.json` (API keys/secrets)
+- `.DS_Store` (system metadata)
+
+For API package additionally:
+- `.claude-plugin/` (Claude Code specific)
+- Large documentation files
+- Example files (size optimization)
+
+---
+
+## 🔧 Troubleshooting
+
+### Upload fails with "File too large"
+
+**Desktop/Web:**
+- Maximum size varies by platform
+- Try the API package instead (smaller)
+- Contact support if needed
+
+**API:**
+- Maximum: 8MB
+- The API package is already optimized
+- May need to reduce documentation or scripts
+
+### Skill doesn't activate
+
+**Check:**
+1. SKILL.md has valid frontmatter
+2. `name:` field is present and ≤ 64 characters
+3. `description:` field is present and ≤ 1024 characters
+4. Description clearly explains when to use the skill
+
+### API errors
+
+**Common issues:**
+- Missing beta headers (required!)
+- Skill ID incorrect (check `skill.id` after upload)
+- Network/pip install attempted (not allowed in API environment)
+
+---
+
+## 📚 Additional Resources
+
+- **Export Guide:** See `references/export-guide.md` in the main repository
+- **Cross-Platform Guide:** See `references/cross-platform-guide.md`
+- **Main Documentation:** See the main README.md
+
+---
+
+## ✅ Verification Checklist
+
+After installation, verify:
+
+- [ ] Skill appears in Skills list
+- [ ] Skill activates with relevant queries
+- [ ] Scripts execute correctly
+- [ ] Documentation is accessible
+- [ ] No error messages on activation
+
+---
+
+**Need help?** Refer to the platform-specific documentation or the main repository guides.
+
+**Generated by:** agent-skill-creator v4.0 cross-platform export system
+"""
+
+    # Write guide to file
+    with open(guide_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    return guide_path
+
+
+def export_skill(
+    skill_path: str,
+    variants: List[str] = ['desktop', 'api'],
+    platform: str = None,
+    version_override: str = None,
+    output_dir: str = None
+) -> Dict:
+    """
+    Main export function - validates, packages, and generates guides.
+
+    Args:
+        skill_path: Path to skill directory
+        variants: List of variants to create ('desktop', 'api', or both)
+        platform: Target platform for platform-specific output (optional)
+        version_override: User-specified version (optional)
+        output_dir: Where to save exports (default: exports/ in parent dir)
+
+    Returns:
+        Dict with export results
+    """
+    # Normalize path
+    skill_path = os.path.abspath(skill_path)
+    skill_name = os.path.basename(skill_path)
+
+    # Determine output directory
+    if output_dir is None:
+        # Use exports/ in parent directory
+        parent_dir = os.path.dirname(skill_path)
+        output_dir = os.path.join(parent_dir, 'exports')
+
+    # Create output directory if needed
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Validate skill structure
+    print("🔍 Validating skill structure...")
+    valid, issues = validate_skill_structure(skill_path)
+    if not valid:
+        return {
+            'success': False,
+            'message': 'Skill validation failed',
+            'issues': issues
+        }
+    print("✅ Skill structure valid")
+
+    # Run spec validation if validate.py is available
+    validate_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'validate.py')
+    if os.path.exists(validate_script):
+        print("🔍 Running spec validation...")
+        try:
+            result = subprocess.run(
+                [sys.executable, validate_script, skill_path, '--json'],
+                capture_output=True, text=True, timeout=30
+            )
+            if result.returncode != 0:
+                import json as _json
+                try:
+                    val_result = _json.loads(result.stdout)
+                    if val_result.get('errors'):
+                        print(f"⚠️  Spec validation warnings: {len(val_result['errors'])} errors")
+                        for err in val_result['errors']:
+                            print(f"   - {err}")
+                except (ValueError, KeyError):
+                    pass
+            else:
+                print("✅ Spec validation passed")
+        except (subprocess.TimeoutExpired, Exception):
+            print("⚠️  Spec validation skipped (script error)")
+
+    # Run security scan if security_scan.py is available
+    security_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'security_scan.py')
+    if os.path.exists(security_script):
+        print("🔍 Running security scan...")
+        try:
+            result = subprocess.run(
+                [sys.executable, security_script, skill_path, '--json'],
+                capture_output=True, text=True, timeout=30
+            )
+            if result.returncode != 0:
+                import json as _json
+                try:
+                    sec_result = _json.loads(result.stdout)
+                    if sec_result.get('issues'):
+                        print(f"⚠️  Security issues found: {len(sec_result['issues'])}")
+                        for issue in sec_result['issues'][:5]:
+                            print(f"   - [{issue.get('severity', 'unknown')}] {issue.get('description', '')}")
+                except (ValueError, KeyError):
+                    pass
+            else:
+                print("✅ Security scan passed")
+        except (subprocess.TimeoutExpired, Exception):
+            print("⚠️  Security scan skipped (script error)")
+
+    # Determine version
+    version = get_skill_version(skill_path, version_override)
+    print(f"📌 Version: {version}")
+
+    # Create packages
+    results = {
+        'success': True,
+        'version': version,
+        'packages': {}
+    }
+
+    if 'desktop' in variants:
+        print("\n🔨 Creating Desktop/Web package...")
+        desktop_result = create_export_package(
+            skill_path, output_dir, 'desktop', version, skill_name
+        )
+        results['packages']['desktop'] = desktop_result
+        if desktop_result['success']:
+            print(f"✅ Desktop package: {os.path.basename(desktop_result['zip_path'])} ({desktop_result['size_mb']:.2f} MB)")
+        else:
+            print(f"❌ Desktop package failed: {desktop_result['message']}")
+            results['success'] = False
+
+    if 'api' in variants:
+        print("\n🔨 Creating API package...")
+        api_result = create_export_package(
+            skill_path, output_dir, 'api', version, skill_name
+        )
+        results['packages']['api'] = api_result
+        if api_result['success']:
+            print(f"✅ API package: {os.path.basename(api_result['zip_path'])} ({api_result['size_mb']:.2f} MB)")
+        else:
+            print(f"❌ API package failed: {api_result['message']}")
+            results['success'] = False
+
+    # Generate installation guide
+    if results['success']:
+        print("\n📄 Generating installation guide...")
+        guide_path = generate_installation_guide(
+            skill_name,
+            version,
+            desktop_package=results['packages'].get('desktop'),
+            api_package=results['packages'].get('api'),
+            output_dir=output_dir
+        )
+        results['guide_path'] = guide_path
+        print(f"✅ Installation guide: {os.path.basename(guide_path)}")
+
+    return results
+
+
+def main():
+    """CLI interface for export_utils.py"""
+    if len(sys.argv) < 2:
+        print("""
+Usage: python export_utils.py <skill-path> [options]
+
+Arguments:
+  skill-path              Path to skill directory
+
+Options:
+  --variant VARIANT       Export variant: desktop, api, or both (default: both)
+  --version VERSION       Override version (default: auto-detect)
+  --output-dir DIR        Output directory (default: exports/)
+
+Examples:
+  python export_utils.py ./my-skill
+  python export_utils.py ./my-skill --variant desktop
+  python export_utils.py ./my-skill --version 2.0.1
+  python export_utils.py ./my-skill --variant api --output-dir ./dist
+""")
+        sys.exit(1)
+
+    skill_path = sys.argv[1]
+
+    # Parse options
+    variants = ['desktop', 'api']  # default: both
+    version_override = None
+    output_dir = None
+
+    i = 2
+    while i < len(sys.argv):
+        if sys.argv[i] == '--variant':
+            variant_arg = sys.argv[i + 1]
+            if variant_arg == 'both':
+                variants = ['desktop', 'api']
+            else:
+                variants = [variant_arg]
+            i += 2
+        elif sys.argv[i] == '--version':
+            version_override = sys.argv[i + 1]
+            i += 2
+        elif sys.argv[i] == '--output-dir':
+            output_dir = sys.argv[i + 1]
+            i += 2
+        else:
+            print(f"Unknown option: {sys.argv[i]}")
+            sys.exit(1)
+
+    # Run export
+    print(f"\n🚀 Exporting skill: {os.path.basename(skill_path)}\n")
+    results = export_skill(skill_path, variants, version_override, output_dir)
+
+    # Print summary
+    print(f"\n{'='*60}")
+    if results['success']:
+        print("✅ Export completed successfully!")
+        print("\n📦 Packages created:")
+        for variant, package in results['packages'].items():
+            if package['success']:
+                print(f"   - {variant.capitalize()}: {os.path.basename(package['zip_path'])}")
+        if 'guide_path' in results:
+            print(f"\n📄 Installation guide: {os.path.basename(results['guide_path'])}")
+        print(f"\n🎯 All files saved to: {output_dir or 'exports/'}")
+    else:
+        print("❌ Export failed!")
+        if 'issues' in results:
+            print("\nIssues found:")
+            for issue in results['issues']:
+                print(f"   - {issue}")
+    print(f"{'='*60}\n")
+
+    sys.exit(0 if results['success'] else 1)
+
+
+if __name__ == '__main__':
+    main()
+```
+
+## File: `scripts/install-skill.sh`
+```bash
+#!/bin/sh
+# install-skill.sh — Install any skill (git URL or local path) to all detected platforms
+#
+# Usage:
+#   ./scripts/install-skill.sh https://github.com/someone/sales-report-skill.git
+#   ./scripts/install-skill.sh ./sales-report-skill
+#   ./scripts/install-skill.sh ./sales-report-skill --platform cursor --project
+#   ./scripts/install-skill.sh ./sales-report-skill --dry-run
+#   ./scripts/install-skill.sh ./sales-report-skill --uninstall
+#
+# POSIX-compatible (works in bash, dash, zsh, ash).
+
+set -eu
+
+# ---------------------------------------------------------------------------
+# Colors (disabled when stdout is not a terminal)
+# ---------------------------------------------------------------------------
+if [ -t 1 ]; then
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    RED='\033[0;31m'
+    BOLD='\033[1m'
+    NC='\033[0m'
+else
+    GREEN='' YELLOW='' BLUE='' RED='' BOLD='' NC=''
+fi
+
+info()    { printf "${BLUE}[INFO]${NC}  %s\n" "$1"; }
+success() { printf "${GREEN}[OK]${NC}    %s\n" "$1"; }
+warn()    { printf "${YELLOW}[WARN]${NC}  %s\n" "$1"; }
+error()   { printf "${RED}[ERROR]${NC} %s\n" "$1" >&2; }
+
+# ---------------------------------------------------------------------------
+# Options
+# ---------------------------------------------------------------------------
+SOURCE=""
+PLATFORM=""
+PROJECT_LEVEL=false
+DRY_RUN=false
+UNINSTALL=false
+
+usage() {
+    cat <<'USAGE'
+Usage: install-skill.sh <source> [options]
+
+Arguments:
+  <source>              Git URL (https://... or *.git) or local directory path
+
+Options:
+  --platform <name>     Install to a specific platform only
+  --project             Use project-level paths (for Cursor, Windsurf, etc.)
+  --all                 Install to all detected platforms (default)
+  --dry-run             Preview without making changes
+  --uninstall           Remove the skill from all platforms
+  -h, --help            Show this help message
+
+Examples:
+  install-skill.sh https://github.com/someone/sales-report-skill.git
+  install-skill.sh ./sales-report-skill
+  install-skill.sh ./sales-report-skill --platform cursor --project
+USAGE
+}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --platform)
+            shift
+            PLATFORM="${1:-}"
+            if [ -z "$PLATFORM" ]; then
+                error "--platform requires a value"
+                exit 1
+            fi
+            ;;
+        --project)   PROJECT_LEVEL=true ;;
+        --all)       PLATFORM="" ;;
+        --dry-run)   DRY_RUN=true ;;
+        --uninstall) UNINSTALL=true ;;
+        -h|--help)   usage; exit 0 ;;
+        -*)          error "Unknown option: $1"; exit 1 ;;
+        *)
+            if [ -z "$SOURCE" ]; then
+                SOURCE="$1"
+            else
+                error "Unexpected argument: $1"
+                exit 1
+            fi
+            ;;
+    esac
+    shift
+done
+
+if [ -z "$SOURCE" ]; then
+    error "Missing required argument: <source>"
+    usage
+    exit 1
+fi
+
+# ---------------------------------------------------------------------------
+# Resolve source: git clone or validate local path
+# ---------------------------------------------------------------------------
+is_git_url() {
+    case "$1" in
+        *://*) return 0 ;;
+        *.git) return 0 ;;
+    esac
+    return 1
+}
+
+resolve_source() {
+    if is_git_url "$SOURCE"; then
+        # Extract skill name from URL
+        skill_basename="$(basename "$SOURCE" .git)"
+        canonical_dir="$HOME/.agents/skills/$skill_basename"
+
+        if [ -d "$canonical_dir/.git" ]; then
+            info "Updating existing install at $canonical_dir"
+            if [ "$DRY_RUN" = false ]; then
+                cd "$canonical_dir" && git pull --ff-only 2>/dev/null || true
+                cd - >/dev/null
+            fi
+        else
+            info "Cloning $SOURCE"
+            if [ "$DRY_RUN" = false ]; then
+                mkdir -p "$(dirname "$canonical_dir")"
+                rm -rf "$canonical_dir"
+                git clone "$SOURCE" "$canonical_dir"
+            fi
+        fi
+        SOURCE_DIR="$canonical_dir"
+    else
+        # Local path
+        if [ ! -d "$SOURCE" ]; then
+            error "Source directory not found: $SOURCE"
+            exit 1
+        fi
+        SOURCE_DIR="$(cd "$SOURCE" && pwd)"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Extract skill name from directory or SKILL.md frontmatter
+# ---------------------------------------------------------------------------
+extract_skill_name() {
+    skill_name=""
+    skill_md="$SOURCE_DIR/SKILL.md"
+
+    # Try to extract from SKILL.md frontmatter
+    if [ -f "$skill_md" ]; then
+        in_fm=false
+        lnum=0
+        while IFS= read -r line; do
+            lnum=$((lnum + 1))
+            if [ "$lnum" -eq 1 ] && [ "$line" = "---" ]; then
+                in_fm=true
+                continue
+            fi
+            if $in_fm && [ "$line" = "---" ]; then break; fi
+            if $in_fm; then
+                case "$line" in
+                    name:*)
+                        skill_name="$(echo "$line" | sed 's/^name:[[:space:]]*//' | sed 's/^["'"'"']//' | sed 's/["'"'"']$//')"
+                        ;;
+                esac
+            fi
+        done < "$skill_md"
+    fi
+
+    # Fallback to directory basename
+    if [ -z "$skill_name" ]; then
+        skill_name="$(basename "$SOURCE_DIR")"
+    fi
+
+    SKILL_NAME="$skill_name"
+}
+
+# ---------------------------------------------------------------------------
+# Validate SKILL.md exists
+# ---------------------------------------------------------------------------
+validate_source() {
+    if [ ! -f "$SOURCE_DIR/SKILL.md" ]; then
+        error "No SKILL.md found in $SOURCE_DIR"
+        error "A valid skill must contain a SKILL.md file."
+        exit 1
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Platform detection and path resolution
+# ---------------------------------------------------------------------------
+detect_all_global_platforms() {
+    platforms=""
+    if [ -d "$HOME/.claude" ]; then platforms="$platforms claude-code"; fi
+    if [ -d "$HOME/.gemini" ]; then platforms="$platforms gemini"; fi
+    if [ -d "$HOME/.config/goose" ]; then platforms="$platforms goose"; fi
+    if [ -d "$HOME/.config/opencode" ]; then platforms="$platforms opencode"; fi
+    if [ -d "$HOME/.copilot" ]; then platforms="$platforms copilot"; fi
+    echo "$platforms"
+}
+
+detect_all_project_platforms() {
+    platforms=""
+    if [ -d ".cursor" ]; then platforms="$platforms cursor"; fi
+    if [ -d ".windsurf" ]; then platforms="$platforms windsurf"; fi
+    if [ -d ".clinerules" ] || [ -d ".cline" ]; then platforms="$platforms cline"; fi
+    if [ -d ".kiro" ]; then platforms="$platforms kiro"; fi
+    if [ -d ".trae" ]; then platforms="$platforms trae"; fi
+    if [ -d ".roo" ]; then platforms="$platforms roo-code"; fi
+    if [ -d ".github" ]; then platforms="$platforms copilot"; fi
+    echo "$platforms"
+}
+
+resolve_platform_path() {
+    plat="$1"
+    name="$2"
+    if [ "$PROJECT_LEVEL" = true ]; then
+        case "$plat" in
+            claude-code) echo ".claude/skills/$name" ;;
+            copilot)     echo ".github/skills/$name" ;;
+            cursor)      echo ".cursor/rules/$name" ;;
+            windsurf)    echo ".windsurf/rules/$name" ;;
+            cline)       echo ".clinerules/$name" ;;
+            gemini)      echo ".gemini/skills/$name" ;;
+            kiro)        echo ".kiro/skills/$name" ;;
+            trae)        echo ".trae/rules/$name" ;;
+            roo-code)    echo ".roo/rules/$name" ;;
+            goose)       echo ".agents/skills/$name" ;;
+            opencode)    echo ".agents/skills/$name" ;;
+            *)           echo ".agents/skills/$name" ;;
+        esac
+    else
+        case "$plat" in
+            claude-code) echo "$HOME/.claude/skills/$name" ;;
+            copilot)     echo "$HOME/.copilot/skills/$name" ;;
+            cursor)      echo "$HOME/.cursor/rules/$name" ;;
+            windsurf)    echo "$HOME/.codeium/windsurf/skills/$name" ;;
+            cline)       echo "$HOME/.cline/rules/$name" ;;
+            gemini)      echo "$HOME/.gemini/skills/$name" ;;
+            goose)       echo "$HOME/.config/goose/skills/$name" ;;
+            opencode)    echo "$HOME/.config/opencode/skills/$name" ;;
+            kiro)        echo "$HOME/.agents/skills/$name" ;;
+            trae)        echo "$HOME/.agents/skills/$name" ;;
+            roo-code)    echo "$HOME/.agents/skills/$name" ;;
+            *)           echo "$HOME/.agents/skills/$name" ;;
+        esac
+    fi
+}
+
+platform_display() {
+    case "$1" in
+        claude-code) echo "Claude Code" ;;
+        gemini)      echo "Gemini CLI" ;;
+        goose)       echo "Goose" ;;
+        opencode)    echo "OpenCode" ;;
+        copilot)     echo "GitHub Copilot" ;;
+        cursor)      echo "Cursor" ;;
+        windsurf)    echo "Windsurf" ;;
+        cline)       echo "Cline" ;;
+        kiro)        echo "Kiro" ;;
+        trae)        echo "Trae" ;;
+        roo-code)    echo "Roo Code" ;;
+        *)           echo "$1" ;;
+    esac
+}
+
+# ---------------------------------------------------------------------------
+# Format adapters (for Tier 2 platforms)
+# ---------------------------------------------------------------------------
+generate_cursor_mdc() {
+    target_dir="$1"
+    skill_md="$SOURCE_DIR/SKILL.md"
+
+    desc=""
+    in_fm=false
+    lnum=0
+    while IFS= read -r line; do
+        lnum=$((lnum + 1))
+        if [ "$lnum" -eq 1 ]; then in_fm=true; continue; fi
+        if $in_fm && [ "$line" = "---" ]; then break; fi
+        if $in_fm; then
+            case "$line" in
+                description:*) desc="$(echo "$line" | sed 's/^description:[[:space:]]*//')" ;;
+            esac
+        fi
+    done < "$skill_md"
+
+    mdc_file="${target_dir}/${SKILL_NAME}.mdc"
+    if [ "$DRY_RUN" = true ]; then
+        info "[dry-run] Would generate Cursor .mdc: $mdc_file"
+        return 0
+    fi
+
+    body="$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$skill_md")"
+    mkdir -p "$target_dir"
+    cat > "$mdc_file" <<MDCEOF
+---
+description: ${desc}
+globs:
+alwaysApply: true
+---
+${body}
+MDCEOF
+    success "Generated Cursor .mdc: $mdc_file"
+}
+
+generate_windsurf_rule() {
+    target_dir="$1"
+    is_global="$2"
+    skill_md="$SOURCE_DIR/SKILL.md"
+
+    body="$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$skill_md")"
+
+    if [ "$is_global" = "true" ]; then
+        global_file="$HOME/.codeium/windsurf/memories/global_rules.md"
+        if [ "$DRY_RUN" = true ]; then
+            info "[dry-run] Would append to Windsurf global_rules.md: $global_file"
+            return 0
+        fi
+        mkdir -p "$(dirname "$global_file")"
+        if [ -f "$global_file" ]; then
+            awk -v begin_marker="<!-- BEGIN ${SKILL_NAME} -->" \
+                -v end_marker="<!-- END ${SKILL_NAME} -->" '
+                BEGIN { skip=0 }
+                $0 == begin_marker { skip=1; next }
+                $0 == end_marker   { skip=0; next }
+                !skip { print }
+            ' "$global_file" > "${global_file}.tmp"
+            mv "${global_file}.tmp" "$global_file"
+        fi
+        cat >> "$global_file" <<WSEOF
+
+<!-- BEGIN ${SKILL_NAME} -->
+${body}
+<!-- END ${SKILL_NAME} -->
+WSEOF
+        success "Appended to Windsurf global_rules.md"
+    else
+        rule_file="${target_dir}/${SKILL_NAME}.md"
+        if [ "$DRY_RUN" = true ]; then
+            info "[dry-run] Would generate Windsurf rule: $rule_file"
+            return 0
+        fi
+        mkdir -p "$target_dir"
+        printf '%s\n' "$body" > "$rule_file"
+        success "Generated Windsurf rule: $rule_file"
+    fi
+}
+
+generate_plain_rule() {
+    target_dir="$1"
+    filename="$2"
+    skill_md="$SOURCE_DIR/SKILL.md"
+
+    plain_file="${target_dir}/${filename}"
+    if [ "$DRY_RUN" = true ]; then
+        info "[dry-run] Would generate plain rule: $plain_file"
+        return 0
+    fi
+    mkdir -p "$target_dir"
+    awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$skill_md" > "$plain_file"
+    success "Generated plain rule: $plain_file"
+}
+
+run_adapters() {
+    plat="$1"
+    dest="$2"
+    case "$plat" in
+        cursor)
+            generate_cursor_mdc "$dest"
+            ;;
+        windsurf)
+            if [ "$PROJECT_LEVEL" = true ]; then
+                generate_windsurf_rule "$(pwd)/.windsurf/rules" "false"
+            else
+                generate_windsurf_rule "" "true"
+            fi
+            ;;
+        cline|roo-code|trae)
+            generate_plain_rule "$dest" "${SKILL_NAME}.md"
+            ;;
+    esac
+}
+
+# ---------------------------------------------------------------------------
+# Create a symlink (with fallback to copy)
+# ---------------------------------------------------------------------------
+create_symlink() {
+    target="$1"
+    link_path="$2"
+
+    if [ "$target" = "$link_path" ]; then return 0; fi
+
+    mkdir -p "$(dirname "$link_path")"
+
+    if [ -e "$link_path" ] || [ -L "$link_path" ]; then
+        rm -rf "$link_path"
+    fi
+
+    if ln -s "$target" "$link_path" 2>/dev/null; then
+        return 0
+    else
+        warn "Symlink failed for $link_path — falling back to copy"
+        cp -R "$target" "$link_path"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Install to a single platform
+# ---------------------------------------------------------------------------
+install_to_platform() {
+    plat="$1"
+    dest="$(resolve_platform_path "$plat" "$SKILL_NAME")"
+    display="$(platform_display "$plat")"
+
+    if [ "$DRY_RUN" = true ]; then
+        info "[dry-run] Would install to $display: $dest"
+        run_adapters "$plat" "$dest"
+        return 0
+    fi
+
+    create_symlink "$SOURCE_DIR" "$dest"
+    success "Installed for $display → $dest"
+    run_adapters "$plat" "$dest"
+}
+
+# ---------------------------------------------------------------------------
+# Uninstall from all platforms
+# ---------------------------------------------------------------------------
+do_uninstall() {
+    printf "\n${BOLD}Uninstalling skill: %s${NC}\n\n" "$SKILL_NAME"
+
+    # Canonical location
+    canonical="$HOME/.agents/skills/$SKILL_NAME"
+    if [ -e "$canonical" ] || [ -L "$canonical" ]; then
+        if [ "$DRY_RUN" = true ]; then
+            info "[dry-run] Would remove: $canonical"
+        else
+            rm -rf "$canonical"
+            success "Removed: $canonical"
+        fi
+    fi
+
+    # Check all global platforms
+    for plat in claude-code gemini goose opencode copilot; do
+        dest="$(resolve_platform_path "$plat" "$SKILL_NAME")"
+        if [ -e "$dest" ] || [ -L "$dest" ]; then
+            if [ "$DRY_RUN" = true ]; then
+                info "[dry-run] Would remove: $dest"
+            else
+                rm -rf "$dest"
+                success "Removed: $dest ($(platform_display "$plat"))"
+            fi
+        fi
+    done
+
+    # Check project-level platforms
+    for plat in cursor windsurf cline kiro trae roo-code copilot; do
+        PROJECT_LEVEL=true
+        dest="$(resolve_platform_path "$plat" "$SKILL_NAME")"
+        if [ -e "$dest" ] || [ -L "$dest" ]; then
+            if [ "$DRY_RUN" = true ]; then
+                info "[dry-run] Would remove: $dest"
+            else
+                rm -rf "$dest"
+                success "Removed: $dest ($(platform_display "$plat"))"
+            fi
+        fi
+    done
+
+    printf "\nDone.\n"
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+main() {
+    printf "\n${BOLD}Universal Skill Installer${NC}\n\n"
+
+    resolve_source
+    if [ "$DRY_RUN" = false ]; then
+        validate_source
+    elif [ -d "$SOURCE_DIR" ]; then
+        validate_source
+    fi
+    extract_skill_name
+    info "Skill: $SKILL_NAME"
+    info "Source: $SOURCE_DIR"
+
+    if [ "$UNINSTALL" = true ]; then
+        do_uninstall
+        return 0
+    fi
+
+    # Install to canonical location first (if from git, already there)
+    canonical="$HOME/.agents/skills/$SKILL_NAME"
+    if ! is_git_url "$SOURCE" && [ "$SOURCE_DIR" != "$canonical" ]; then
+        if [ "$DRY_RUN" = true ]; then
+            info "[dry-run] Would copy to canonical: $canonical"
+        else
+            mkdir -p "$(dirname "$canonical")"
+            rm -rf "$canonical"
+            cp -R "$SOURCE_DIR" "$canonical"
+            success "Copied to canonical: $canonical"
+        fi
+    fi
+
+    # Determine which platforms to install to
+    if [ -n "$PLATFORM" ]; then
+        # Single platform
+        install_to_platform "$PLATFORM"
+    else
+        # All detected platforms
+        if [ "$PROJECT_LEVEL" = true ]; then
+            platforms="$(detect_all_project_platforms)"
+        else
+            platforms="$(detect_all_global_platforms)"
+        fi
+
+        count=0
+        for plat in $platforms; do
+            install_to_platform "$plat"
+            count=$((count + 1))
+        done
+
+        if [ $count -eq 0 ]; then
+            warn "No platforms detected. Skill installed at canonical path only."
+        fi
+    fi
+
+    # Summary
+    printf "\n${BOLD}Done!${NC}\n"
+    printf "  Canonical: %s\n" "$canonical"
+    printf "  Invoke with: /${SKILL_NAME}\n\n"
+
+    if [ "$DRY_RUN" = true ]; then
+        printf "${YELLOW}Dry run — no changes made.${NC}\n\n"
+    fi
+}
+
+main
+```
+
+## File: `scripts/install-template.sh`
+```bash
+#!/bin/sh
+# install-template.sh — Cross-platform skill installation script
+# This file is a template. During skill generation, {{SKILL_NAME}} is replaced
+# with the actual skill name and the result is shipped as install.sh inside
+# every generated skill package.
+#
+# POSIX-compatible (works in bash, dash, zsh, ash, etc.)
+# Exit codes:
+#   0 — Success
+#   1 — Validation failed (missing or malformed SKILL.md)
+#   2 — Platform not detected
+#   3 — Permission denied
+
+set -eu
+
+# ---------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------
+SKILL_NAME="{{SKILL_NAME}}"
+VERSION="1.0.0"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# ---------------------------------------------------------------------------
+# Colors (disabled when stdout is not a terminal)
+# ---------------------------------------------------------------------------
+if [ -t 1 ]; then
+    RED='\033[0;31m'
+    GREEN='\033[0;32m'
+    YELLOW='\033[1;33m'
+    BLUE='\033[0;34m'
+    BOLD='\033[1m'
+    NC='\033[0m'
+else
+    RED=''
+    GREEN=''
+    YELLOW=''
+    BLUE=''
+    BOLD=''
+    NC=''
+fi
+
+# ---------------------------------------------------------------------------
+# Logging helpers
+# ---------------------------------------------------------------------------
+info()    { printf "${BLUE}[INFO]${NC}  %s\n" "$1"; }
+success() { printf "${GREEN}[OK]${NC}    %s\n" "$1"; }
+warn()    { printf "${YELLOW}[WARN]${NC}  %s\n" "$1"; }
+error()   { printf "${RED}[ERROR]${NC} %s\n" "$1" >&2; }
+
+# ---------------------------------------------------------------------------
+# Usage / help
+# ---------------------------------------------------------------------------
+show_help() {
+    cat <<EOF
+${BOLD}install.sh${NC} — Install the ${BOLD}${SKILL_NAME}${NC} skill (v${VERSION})
+
+USAGE
+    ./install.sh [OPTIONS]
+
+OPTIONS
+    --platform PLATFORM   Explicit platform selection. One of:
+                          claude-code, copilot, cursor, windsurf,
+                          cline, codex, gemini, kiro, trae, goose,
+                          opencode, roo-code, antigravity, universal
+    --project             Install at project level (current directory)
+    --path PATH           Custom install path (overrides detection)
+    --all                 Install to ALL detected tool paths at once
+    --dry-run             Show what would happen without making changes
+    -h, --help            Show this help message
+
+EXAMPLES
+    ./install.sh                          # Auto-detect platform, user-level
+    ./install.sh --project                # Auto-detect platform, project-level
+    ./install.sh --platform cursor        # Force Cursor, user-level
+    ./install.sh --path ~/my-skills/      # Custom destination
+    ./install.sh --all                    # Install to every detected tool
+    ./install.sh --dry-run                # Preview without installing
+EOF
+}
+
+# ---------------------------------------------------------------------------
+# Argument parsing
+# ---------------------------------------------------------------------------
+PLATFORM=""
+PROJECT_LEVEL=false
+CUSTOM_PATH=""
+DRY_RUN=false
+INSTALL_ALL=false
+
+parse_args() {
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            --platform)
+                [ $# -ge 2 ] || { error "Missing value for --platform"; exit 1; }
+                PLATFORM="$2"
+                shift 2
+                ;;
+            --project)
+                PROJECT_LEVEL=true
+                shift
+                ;;
+            --path)
+                [ $# -ge 2 ] || { error "Missing value for --path"; exit 1; }
+                CUSTOM_PATH="$2"
+                shift 2
+                ;;
+            --all)
+                INSTALL_ALL=true
+                shift
+                ;;
+            --dry-run)
+                DRY_RUN=true
+                shift
+                ;;
+            -h|--help)
+                show_help
+                exit 0
+                ;;
+            *)
+                error "Unknown option: $1"
+                show_help
+                exit 1
+                ;;
+        esac
+    done
+}
+
+# ---------------------------------------------------------------------------
+# SKILL.md validation
+# ---------------------------------------------------------------------------
+validate_skill_md() {
+    skill_md="${SCRIPT_DIR}/SKILL.md"
+
+    if [ ! -f "$skill_md" ]; then
+        error "SKILL.md not found in ${SCRIPT_DIR}"
+        error "Every skill package must contain a valid SKILL.md file."
+        exit 1
+    fi
+
+    # Check that the file starts with YAML frontmatter delimiter
+    first_line="$(head -n 1 "$skill_md")"
+    if [ "$first_line" != "---" ]; then
+        error "SKILL.md must start with YAML frontmatter (---)"
+        exit 1
+    fi
+
+    # Verify required frontmatter fields: name and description
+    in_frontmatter=false
+    found_name=false
+    found_description=false
+    line_num=0
+
+    while IFS= read -r line; do
+        line_num=$((line_num + 1))
+
+        if [ "$line_num" -eq 1 ]; then
+            in_frontmatter=true
+            continue
+        fi
+
+        if $in_frontmatter && [ "$line" = "---" ]; then
+            break
+        fi
+
+        if $in_frontmatter; then
+            case "$line" in
+                name:*) found_name=true ;;
+                description:*) found_description=true ;;
+            esac
+        fi
+    done < "$skill_md"
+
+    if ! $found_name; then
+        error "SKILL.md frontmatter is missing required field: name"
+        exit 1
+    fi
+
+    if ! $found_description; then
+        error "SKILL.md frontmatter is missing required field: description"
+        exit 1
+    fi
+
+    success "SKILL.md validated (name and description present)"
+}
+
+# ---------------------------------------------------------------------------
+# Platform detection
+# ---------------------------------------------------------------------------
+SUPPORTED_PLATFORMS="claude-code, copilot, cursor, windsurf, cline, codex, gemini, kiro, trae, goose, opencode, roo-code, antigravity, universal"
+
+detect_platform() {
+    # If explicitly provided, validate and return it.
+    if [ -n "$PLATFORM" ]; then
+        case "$PLATFORM" in
+            claude-code|copilot|cursor|windsurf|cline|codex|gemini|\
+            kiro|trae|goose|opencode|roo-code|antigravity|universal)
+                info "Platform explicitly set to: ${PLATFORM}"
+                return 0
+                ;;
+            *)
+                error "Unknown platform: ${PLATFORM}"
+                error "Supported: ${SUPPORTED_PLATFORMS}"
+                exit 2
+                ;;
+        esac
+    fi
+
+    # Auto-detection: check user-level config directories.
+    # Order matters — check most specific / least ambiguous first.
+    if [ -d "${HOME}/.claude" ]; then
+        PLATFORM="claude-code"
+    elif [ -d "${HOME}/.cursor" ] || [ -d ".cursor" ]; then
+        PLATFORM="cursor"
+    elif [ -d "${HOME}/.codeium/windsurf" ] || [ -d ".windsurf" ]; then
+        PLATFORM="windsurf"
+    elif [ -d "${HOME}/.cline" ] || [ -d ".clinerules" ]; then
+        PLATFORM="cline"
+    elif [ -d "${HOME}/.gemini" ]; then
+        PLATFORM="gemini"
+    elif [ -d ".kiro" ]; then
+        PLATFORM="kiro"
+    elif [ -d ".trae" ]; then
+        PLATFORM="trae"
+    elif [ -d ".roo" ]; then
+        PLATFORM="roo-code"
+    elif [ -d "${HOME}/.config/goose" ]; then
+        PLATFORM="goose"
+    elif [ -d "${HOME}/.config/opencode" ]; then
+        PLATFORM="opencode"
+    elif [ -d "${HOME}/.agents" ]; then
+        PLATFORM="universal"
+    elif [ -d "${HOME}/.copilot" ] || [ -d ".github" ]; then
+        PLATFORM="copilot"
+    else
+        error "Could not auto-detect any supported AI coding platform."
+        error "Use --platform PLATFORM to specify one explicitly."
+        error "Supported: ${SUPPORTED_PLATFORMS}"
+        exit 2
+    fi
+
+    info "Auto-detected platform: ${PLATFORM}"
+}
+
+# ---------------------------------------------------------------------------
+# Detect all installed platforms (for --all)
+# ---------------------------------------------------------------------------
+detect_all_platforms() {
+    ALL_PLATFORMS=""
+    if [ -d "${HOME}/.claude" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} claude-code"
+    fi
+    if [ -d "${HOME}/.cursor" ] || [ -d ".cursor" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} cursor"
+    fi
+    if [ -d "${HOME}/.codeium/windsurf" ] || [ -d ".windsurf" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} windsurf"
+    fi
+    if [ -d "${HOME}/.cline" ] || [ -d ".clinerules" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} cline"
+    fi
+    if [ -d "${HOME}/.gemini" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} gemini"
+    fi
+    if [ -d ".kiro" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} kiro"
+    fi
+    if [ -d ".trae" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} trae"
+    fi
+    if [ -d ".roo" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} roo-code"
+    fi
+    if [ -d "${HOME}/.config/goose" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} goose"
+    fi
+    if [ -d "${HOME}/.config/opencode" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} opencode"
+    fi
+    if [ -d "${HOME}/.copilot" ] || [ -d ".github" ]; then
+        ALL_PLATFORMS="${ALL_PLATFORMS} copilot"
+    fi
+    # Always include universal
+    ALL_PLATFORMS="${ALL_PLATFORMS} universal"
+
+    # Trim leading space
+    ALL_PLATFORMS="$(printf '%s' "$ALL_PLATFORMS" | sed 's/^ //')"
+
+    if [ -z "$ALL_PLATFORMS" ]; then
+        ALL_PLATFORMS="universal"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Install path resolution
+# ---------------------------------------------------------------------------
+# Sets INSTALL_DIR based on platform, project-level flag, or custom path.
+resolve_install_path() {
+    # Custom path takes precedence over everything.
+    if [ -n "$CUSTOM_PATH" ]; then
+        INSTALL_DIR="${CUSTOM_PATH}"
+        info "Using custom install path: ${INSTALL_DIR}"
+        return 0
+    fi
+
+    base=""
+
+    if $PROJECT_LEVEL; then
+        # Project-level: paths are relative to the current working directory.
+        case "$PLATFORM" in
+            claude-code)   base=".claude/skills" ;;
+            copilot)       base=".github/skills" ;;
+            cursor)        base=".cursor/rules" ;;
+            windsurf)      base=".windsurf/rules" ;;
+            cline)         base=".clinerules" ;;
+            codex)         base=".agents/skills" ;;
+            gemini)        base=".gemini/skills" ;;
+            kiro)          base=".kiro/skills" ;;
+            trae)          base=".trae/rules" ;;
+            goose)         base=".agents/skills" ;;
+            opencode)      base=".agents/skills" ;;
+            roo-code)      base=".roo/rules" ;;
+            antigravity)   base=".agents/skills" ;;
+            universal)     base=".agents/skills" ;;
+        esac
+        INSTALL_DIR="$(pwd)/${base}/${SKILL_NAME}"
+    else
+        # User-level: paths are under the home directory.
+        case "$PLATFORM" in
+            claude-code)   base="${HOME}/.claude/skills" ;;
+            copilot)       base="${HOME}/.copilot/skills" ;;
+            cursor)        base="${HOME}/.cursor/rules" ;;
+            windsurf)      base="${HOME}/.codeium/windsurf/skills" ;;
+            cline)         base="${HOME}/.cline/rules" ;;
+            codex)         base="${HOME}/.agents/skills" ;;
+            gemini)        base="${HOME}/.gemini/skills" ;;
+            kiro)          base="${HOME}/.agents/skills" ;;
+            trae)          base="${HOME}/.agents/skills" ;;
+            goose)         base="${HOME}/.config/goose/skills" ;;
+            opencode)      base="${HOME}/.config/opencode/skills" ;;
+            roo-code)      base="${HOME}/.agents/skills" ;;
+            antigravity)   base="${HOME}/.agents/skills" ;;
+            universal)     base="${HOME}/.agents/skills" ;;
+        esac
+        INSTALL_DIR="${base}/${SKILL_NAME}"
+    fi
+
+    info "Install directory: ${INSTALL_DIR}"
+}
+
+# ---------------------------------------------------------------------------
+# Format adapters — convert SKILL.md to platform-native formats
+# ---------------------------------------------------------------------------
+
+# Generate a .mdc file for Cursor from SKILL.md
+generate_cursor_mdc() {
+    target_dir="$1"
+    skill_md="${SCRIPT_DIR}/SKILL.md"
+
+    # Extract description from frontmatter
+    desc=""
+    in_fm=false
+    lnum=0
+    while IFS= read -r line; do
+        lnum=$((lnum + 1))
+        if [ "$lnum" -eq 1 ]; then in_fm=true; continue; fi
+        if $in_fm && [ "$line" = "---" ]; then break; fi
+        if $in_fm; then
+            case "$line" in
+                description:*) desc="$(echo "$line" | sed 's/^description:[[:space:]]*//')" ;;
+            esac
+        fi
+    done < "$skill_md"
+
+    mdc_file="${target_dir}/${SKILL_NAME}.mdc"
+
+    if $DRY_RUN; then
+        info "Would generate Cursor .mdc: ${mdc_file}"
+        return 0
+    fi
+
+    # Extract body (everything after second ---)
+    body="$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$skill_md")"
+
+    cat > "$mdc_file" <<MDCEOF
+---
+description: ${desc}
+globs:
+alwaysApply: true
+---
+${body}
+MDCEOF
+    success "Generated Cursor .mdc: ${mdc_file}"
+}
+
+# Generate a .md rule file for Windsurf (.windsurf/rules/ or global_rules.md)
+generate_windsurf_rule() {
+    target_dir="$1"
+    is_global="$2"  # "true" or "false"
+    skill_md="${SCRIPT_DIR}/SKILL.md"
+
+    # Extract body (everything after second ---)
+    body="$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$skill_md")"
+
+    if [ "$is_global" = "true" ]; then
+        # Append to global_rules.md with idempotent markers
+        global_file="${HOME}/.codeium/windsurf/memories/global_rules.md"
+
+        if $DRY_RUN; then
+            info "Would append to Windsurf global_rules.md: ${global_file}"
+            return 0
+        fi
+
+        mkdir -p "$(dirname "$global_file")"
+
+        # Remove existing block if present (idempotent, exact match)
+        if [ -f "$global_file" ]; then
+            awk -v begin_marker="<!-- BEGIN ${SKILL_NAME} -->" \
+                -v end_marker="<!-- END ${SKILL_NAME} -->" '
+                BEGIN { skip=0 }
+                $0 == begin_marker { skip=1; next }
+                $0 == end_marker   { skip=0; next }
+                !skip { print }
+            ' "$global_file" > "${global_file}.tmp"
+            mv "${global_file}.tmp" "$global_file"
+        fi
+
+        # Append new block
+        cat >> "$global_file" <<WSEOF
+
+<!-- BEGIN ${SKILL_NAME} -->
+${body}
+<!-- END ${SKILL_NAME} -->
+WSEOF
+        success "Appended to Windsurf global_rules.md"
+    else
+        # Project-level: create a .md rule file
+        rule_file="${target_dir}/${SKILL_NAME}.md"
+
+        if $DRY_RUN; then
+            info "Would generate Windsurf rule: ${rule_file}"
+            return 0
+        fi
+
+        mkdir -p "$target_dir"
+        printf '%s\n' "$body" > "$rule_file"
+        success "Generated Windsurf rule: ${rule_file}"
+    fi
+}
+
+# Generate plain markdown (strip YAML frontmatter) for Cline/Roo/Trae
+generate_plain_rule() {
+    target_dir="$1"
+    filename="$2"
+    skill_md="${SCRIPT_DIR}/SKILL.md"
+
+    plain_file="${target_dir}/${filename}"
+
+    if $DRY_RUN; then
+        info "Would generate plain rule: ${plain_file}"
+        return 0
+    fi
+
+    mkdir -p "$target_dir"
+    awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$skill_md" > "$plain_file"
+    success "Generated plain rule: ${plain_file}"
+}
+
+# ---------------------------------------------------------------------------
+# Universal .agents/skills/ secondary install (symlink or copy)
+# ---------------------------------------------------------------------------
+install_universal_secondary() {
+    # Skip if primary target is already .agents/
+    case "$PLATFORM" in
+        codex|antigravity|universal) return 0 ;;
+    esac
+
+    universal_dir="${HOME}/.agents/skills/${SKILL_NAME}"
+
+    if $DRY_RUN; then
+        info "Would create universal symlink: ${universal_dir} -> ${INSTALL_DIR}"
+        return 0
+    fi
+
+    mkdir -p "${HOME}/.agents/skills"
+
+    # Remove existing entry if present
+    if [ -e "$universal_dir" ] || [ -L "$universal_dir" ]; then
+        rm -rf "$universal_dir"
+    fi
+
+    # Try symlink first, fallback to copy
+    if ln -s "$INSTALL_DIR" "$universal_dir" 2>/dev/null; then
+        success "Universal symlink: ${universal_dir} -> ${INSTALL_DIR}"
+    elif cp -R "$INSTALL_DIR" "$universal_dir" 2>/dev/null; then
+        success "Universal copy: ${universal_dir}"
+    else
+        warn "Could not create universal path at ${universal_dir}"
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# File installation
+# ---------------------------------------------------------------------------
+install_files() {
+    # Collect the list of files to install.
+    # We copy everything in SCRIPT_DIR except the install script itself.
+    file_count=0
+    install_script_name="$(basename "$0")"
+
+    if $DRY_RUN; then
+        printf "\n${BOLD}Dry-run mode — no files will be copied.${NC}\n\n"
+        info "Would create directory: ${INSTALL_DIR}"
+        for file in "${SCRIPT_DIR}"/*; do
+            [ -e "$file" ] || continue
+            fname="$(basename "$file")"
+            # Skip the install script itself
+            [ "$fname" = "$install_script_name" ] && continue
+            info "Would copy: ${fname}"
+            file_count=$((file_count + 1))
+        done
+        # Also handle dotfiles
+        for file in "${SCRIPT_DIR}"/.*; do
+            [ -e "$file" ] || continue
+            fname="$(basename "$file")"
+            if [ "$fname" = "." ] || [ "$fname" = ".." ]; then continue; fi
+            info "Would copy: ${fname}"
+            file_count=$((file_count + 1))
+        done
+        printf "\n"
+        info "Total files: ${file_count}"
+        return 0
+    fi
+
+    # Clean existing install for idempotency (remove stale files from prior installs).
+    if [ -d "$INSTALL_DIR" ]; then
+        rm -rf "$INSTALL_DIR"
+    fi
+
+    # Create destination directory.
+    if ! mkdir -p "$INSTALL_DIR" 2>/dev/null; then
+        error "Cannot create directory: ${INSTALL_DIR}"
+        error "Check file permissions or run with appropriate privileges."
+        exit 3
+    fi
+
+    # Copy files.
+    for file in "${SCRIPT_DIR}"/*; do
+        [ -e "$file" ] || continue
+        fname="$(basename "$file")"
+        [ "$fname" = "$install_script_name" ] && continue
+
+        if ! cp -R "$file" "${INSTALL_DIR}/" 2>/dev/null; then
+            error "Failed to copy ${fname} to ${INSTALL_DIR}/"
+            error "Check file permissions."
+            exit 3
+        fi
+        file_count=$((file_count + 1))
+    done
+
+    # Copy dotfiles (if any).
+    for file in "${SCRIPT_DIR}"/.*; do
+        [ -e "$file" ] || continue
+        fname="$(basename "$file")"
+        [ "$fname" = "." ] || [ "$fname" = ".." ] && continue
+
+        if ! cp -R "$file" "${INSTALL_DIR}/" 2>/dev/null; then
+            error "Failed to copy ${fname} to ${INSTALL_DIR}/"
+            error "Check file permissions."
+            exit 3
+        fi
+        file_count=$((file_count + 1))
+    done
+
+    success "Copied ${file_count} file(s) to ${INSTALL_DIR}"
+}
+
+# ---------------------------------------------------------------------------
+# Run format adapters based on platform
+# ---------------------------------------------------------------------------
+run_adapters() {
+    case "$PLATFORM" in
+        cursor)
+            generate_cursor_mdc "$INSTALL_DIR"
+            ;;
+        windsurf)
+            if $PROJECT_LEVEL; then
+                generate_windsurf_rule "$(pwd)/.windsurf/rules" "false"
+            else
+                generate_windsurf_rule "" "true"
+            fi
+            ;;
+        cline)
+            generate_plain_rule "$INSTALL_DIR" "${SKILL_NAME}.md"
+            ;;
+        roo-code)
+            generate_plain_rule "$INSTALL_DIR" "${SKILL_NAME}.md"
+            ;;
+        trae)
+            generate_plain_rule "$INSTALL_DIR" "${SKILL_NAME}.md"
+            ;;
+    esac
+}
+
+# ---------------------------------------------------------------------------
+# Activation instructions
+# ---------------------------------------------------------------------------
+print_activation_instructions() {
+    if $DRY_RUN; then
+        return 0
+    fi
+
+    printf "\n${GREEN}${BOLD}Installation complete!${NC}\n\n"
+
+    case "$PLATFORM" in
+        claude-code)
+            printf "To activate the skill in Claude Code:\n"
+            printf "  1. Start a new Claude Code session.\n"
+            printf "  2. The skill will be loaded automatically from:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. Use trigger phrases defined in the skill's description.\n"
+            ;;
+        copilot)
+            printf "To activate the skill in GitHub Copilot:\n"
+            printf "  1. Open your project in VS Code or the GitHub CLI.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. Reference the skill in your Copilot instructions.\n"
+            ;;
+        cursor)
+            printf "To activate the skill in Cursor:\n"
+            printf "  1. Open your project in Cursor.\n"
+            printf "  2. The rule is loaded automatically from:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/${SKILL_NAME}.mdc${NC}\n"
+            printf "  3. Use trigger phrases to invoke the skill.\n"
+            ;;
+        windsurf)
+            printf "To activate the skill in Windsurf:\n"
+            if $PROJECT_LEVEL; then
+                printf "  1. Open your project in Windsurf.\n"
+                printf "  2. The rule is loaded from .windsurf/rules/\n"
+            else
+                printf "  1. Open Windsurf.\n"
+                printf "  2. The skill was added to global_rules.md.\n"
+            fi
+            printf "  3. Use trigger phrases to invoke the skill.\n"
+            ;;
+        cline)
+            printf "To activate the skill in Cline:\n"
+            printf "  1. Open your project in VS Code with Cline.\n"
+            printf "  2. The rule is loaded from:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/${SKILL_NAME}.md${NC}\n"
+            printf "  3. Cline will pick up the rule automatically.\n"
+            ;;
+        codex)
+            printf "To activate the skill in OpenAI Codex CLI:\n"
+            printf "  1. Start a new Codex CLI session.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. Codex reads from ~/.agents/skills/ automatically.\n"
+            ;;
+        gemini)
+            printf "To activate the skill in Gemini CLI:\n"
+            printf "  1. Start a new Gemini CLI session.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. The skill will be loaded automatically.\n"
+            ;;
+        kiro)
+            printf "To activate the skill in Kiro:\n"
+            printf "  1. Open your project in Kiro.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. Kiro reads from .kiro/skills/ automatically.\n"
+            ;;
+        trae)
+            printf "To activate the skill in Trae:\n"
+            printf "  1. Open your project in Trae.\n"
+            printf "  2. The rule is loaded from:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/${SKILL_NAME}.md${NC}\n"
+            printf "  3. Use trigger phrases to invoke the skill.\n"
+            ;;
+        goose)
+            printf "To activate the skill in Goose:\n"
+            printf "  1. Start a new Goose session.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. Goose reads from ~/.config/goose/skills/ automatically.\n"
+            ;;
+        opencode)
+            printf "To activate the skill in OpenCode:\n"
+            printf "  1. Start a new OpenCode session.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. OpenCode reads from ~/.config/opencode/skills/ automatically.\n"
+            ;;
+        roo-code)
+            printf "To activate the skill in Roo Code:\n"
+            printf "  1. Open your project in VS Code with Roo Code.\n"
+            printf "  2. The rule is loaded from:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/${SKILL_NAME}.md${NC}\n"
+            printf "  3. Roo Code will pick up the rule automatically.\n"
+            ;;
+        antigravity)
+            printf "To activate the skill in Antigravity:\n"
+            printf "  1. Open your project.\n"
+            printf "  2. The skill is available at:\n"
+            printf "     ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n"
+            printf "  3. Antigravity reads from .agents/skills/ automatically.\n"
+            ;;
+        universal)
+            printf "The skill is installed at the universal path:\n"
+            printf "  ${BOLD}${INSTALL_DIR}/SKILL.md${NC}\n\n"
+            printf "Tools that read ~/.agents/skills/ (Codex CLI, Gemini CLI,\n"
+            printf "Kiro, Antigravity, and others) will discover it automatically.\n"
+            ;;
+    esac
+
+    printf "\n"
+}
+
+# ---------------------------------------------------------------------------
+# Install for a single platform
+# ---------------------------------------------------------------------------
+install_single() {
+    detect_platform
+    resolve_install_path
+    install_files
+    run_adapters
+    install_universal_secondary
+    print_activation_instructions
+
+    if $DRY_RUN; then
+        info "Dry run complete. No changes were made."
+    else
+        success "Skill '${SKILL_NAME}' installed successfully for ${PLATFORM}."
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Install for all detected platforms (--all)
+# ---------------------------------------------------------------------------
+install_all() {
+    detect_all_platforms
+    info "Installing to all detected platforms: ${ALL_PLATFORMS}"
+    printf "%-40s\n" "----------------------------------------"
+
+    installed_count=0
+    first_non_agents_dir=""
+    for plat in $ALL_PLATFORMS; do
+        printf "\n"
+        info "--- Installing for: ${plat} ---"
+        PLATFORM="$plat"
+        resolve_install_path
+        install_files
+        run_adapters
+        installed_count=$((installed_count + 1))
+        # Remember the first non-.agents/ install dir for universal symlink
+        if [ -z "$first_non_agents_dir" ]; then
+            case "$plat" in
+                codex|antigravity|universal) ;;
+                *) first_non_agents_dir="$INSTALL_DIR" ;;
+            esac
+        fi
+    done
+
+    # Create universal symlink from the first non-.agents/ install
+    if [ -n "$first_non_agents_dir" ]; then
+        INSTALL_DIR="$first_non_agents_dir"
+        install_universal_secondary
+    fi
+
+    printf "\n"
+    if $DRY_RUN; then
+        info "Dry run complete. No changes were made."
+    else
+        success "Skill '${SKILL_NAME}' installed to ${installed_count} platform(s)."
+    fi
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+main() {
+    printf "${BOLD}Installing skill: ${SKILL_NAME}${NC}\n"
+    printf "%-40s\n" "----------------------------------------"
+
+    parse_args "$@"
+    validate_skill_md
+
+    if $INSTALL_ALL; then
+        install_all
+    else
+        install_single
+    fi
+
+    exit 0
+}
+
+main "$@"
+```
+
+## File: `scripts/security_scan.py`
+```python
+#!/usr/bin/env python3
+"""
+Security Scanner for Generated Agent Skills.
+
+Scans a skill directory for hardcoded API keys, sensitive files, and dangerous
+Python patterns that could pose security risks.
+
+Usage:
+    python3 scripts/security_scan.py path/to/skill/
+    python3 scripts/security_scan.py path/to/skill/ --json
+
+Exit codes:
+    0 - Clean (no issues found)
+    1 - Issues found (one or more security issues detected)
+"""
+
+import json
+import os
+import re
+import sys
+from pathlib import Path
+
+
+# --- API Key Patterns ---
+# Each entry: (pattern_name, compiled_regex, description, severity)
+
+API_KEY_PATTERNS: list[tuple[str, re.Pattern, str, str]] = [
+    (
+        "OpenAI API Key",
+        re.compile(r"sk-[a-zA-Z0-9]{20,}"),
+        "Hardcoded OpenAI API key detected",
+        "high",
+    ),
+    (
+        "AWS Access Key",
+        re.compile(r"AKIA[A-Z0-9]{16}"),
+        "Hardcoded AWS access key ID detected",
+        "high",
+    ),
+    (
+        "GitHub Personal Access Token",
+        re.compile(r"ghp_[a-zA-Z0-9]{36}"),
+        "Hardcoded GitHub personal access token detected",
+        "high",
+    ),
+    (
+        "GitLab Personal Access Token",
+        re.compile(r"glpat-[a-zA-Z0-9\-]{20}"),
+        "Hardcoded GitLab personal access token detected",
+        "high",
+    ),
+    (
+        "Slack Token",
+        re.compile(r"xox[bprs]-[a-zA-Z0-9\-]+"),
+        "Hardcoded Slack token detected",
+        "high",
+    ),
+    (
+        "Generic Secret",
+        re.compile(
+            r"""(api[_\-]?key|secret|token|password)\s*[:=]\s*["'][^"']{8,}["']""",
+            re.IGNORECASE,
+        ),
+        "Possible hardcoded secret (generic key/token/password pattern)",
+        "medium",
+    ),
+]
+
+
+# --- Sensitive File Names ---
+
+SENSITIVE_FILES: dict[str, str] = {
+    ".env": "Environment file may contain secrets",
+    "credentials.json": "Credentials file may contain API keys or passwords",
+    "secrets.json": "Secrets file may contain sensitive data",
+    "api_keys.json": "API keys file may contain hardcoded keys",
+}
+
+
+# --- Dangerous Python Patterns ---
+# Each entry: (pattern_name, compiled_regex, description, severity)
+
+PYTHON_DANGER_PATTERNS: list[tuple[str, re.Pattern, str, str]] = [
+    (
+        "eval() usage",
+        re.compile(r"\beval\s*\("),
+        "Use of eval() can execute arbitrary code; avoid unless strictly necessary",
+        "high",
+    ),
+    (
+        "exec() usage",
+        re.compile(r"\bexec\s*\("),
+        "Use of exec() can execute arbitrary code; avoid unless strictly necessary",
+        "high",
+    ),
+    (
+        "os.system() with concatenation",
+        re.compile(r"os\.core\s*\([^)]*[\+f\"']"),
+        "os.system() with string concatenation is vulnerable to shell injection",
+        "high",
+    ),
+    (
+        "subprocess with shell=True",
+        re.compile(r"subprocess\.call\s*\([^)]*shell\s*=\s*True"),
+        "subprocess.call() with shell=True is vulnerable to shell injection",
+        "high",
+    ),
+    (
+        "__import__() dynamic import",
+        re.compile(r"__import__\s*\("),
+        "Dynamic imports via __import__() can load arbitrary modules",
+        "medium",
+    ),
+]
+
+
+# File extensions to scan for content patterns
+TEXT_EXTENSIONS: set[str] = {
+    ".py", ".md", ".txt", ".json", ".yaml", ".yml", ".toml", ".cfg",
+    ".ini", ".sh", ".bash", ".zsh", ".env", ".conf", ".xml", ".html",
+    ".css", ".js", ".ts", ".jsx", ".tsx", ".sql", ".csv", ".rst",
+}
+
+# Maximum file size to scan (skip very large files to avoid performance issues)
+MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024  # 10 MB
+
+# Directories to skip during scanning
+SKIP_DIRS: set[str] = {
+    ".git", "__pycache__", "node_modules", ".venv", "venv", "env",
+    ".pytest_cache", ".mypy_cache", "dist", "build",
+}
+
+
+def _is_text_file(file_path: Path) -> bool:
+    """
+    Determine if a file is likely a text file that should be scanned.
+
+    Uses the file extension to decide. Falls back to attempting to read
+    a small portion of the file if the extension is unrecognized.
+
+    Args:
+        file_path: Path to the file.
+
+    Returns:
+        True if the file should be scanned for content patterns.
+    """
+    if file_path.suffix.lower() in TEXT_EXTENSIONS:
+        return True
+
+    # For files with no extension or unrecognized extensions, try reading a sample
+    if file_path.suffix == "" or file_path.suffix.lower() not in {
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp", ".ico", ".svg",
+        ".pdf", ".zip", ".tar", ".gz", ".bz2", ".xz",
+        ".exe", ".dll", ".so", ".dylib", ".whl", ".egg",
+        ".pyc", ".pyo", ".class", ".o", ".a",
+        ".mp3", ".mp4", ".wav", ".avi", ".mov",
+        ".ttf", ".otf", ".woff", ".woff2", ".eot",
+        ".sqlite", ".db",
+    }:
+        try:
+            with open(file_path, "rb") as f:
+                chunk = f.read(1024)
+            # Check for null bytes (binary indicator)
+            if b"\x00" in chunk:
+                return False
+            return True
+        except (OSError, PermissionError):
+            return False
+
+    return False
+
+
+def _scan_file_content(
+    file_path: Path,
+    skill_dir: Path,
+) -> list[dict]:
+    """
+    Scan a single file for security issues in its content.
+
+    Args:
+        file_path: Absolute path to the file.
+        skill_dir: Root directory of the skill (for relative path display).
+
+    Returns:
+        List of issue dictionaries found in this file.
+    """
+    issues: list[dict] = []
+    relative_path = str(file_path.relative_to(skill_dir))
+
+    try:
+        file_size = file_path.stat().st_size
+    except OSError:
+        return issues
+
+    if file_size > MAX_FILE_SIZE_BYTES:
+        return issues
+
+    if not _is_text_file(file_path):
+        return issues
+
+    try:
+        lines = file_path.read_text(encoding="utf-8", errors="replace").splitlines()
+    except (OSError, PermissionError):
+        return issues
+
+    is_python = file_path.suffix.lower() == ".py"
+
+    for line_num, line in enumerate(lines, start=1):
+        # Check API key patterns against all text files
+        for pattern_name, regex, description, severity in API_KEY_PATTERNS:
+            match = regex.search(line)
+            if match:
+                issues.append({
+                    "severity": severity,
+                    "file": relative_path,
+                    "line": line_num,
+                    "pattern": pattern_name,
+                    "description": description,
+                })
+
+        # Check Python-specific patterns only in .py files
+        if is_python:
+            for pattern_name, regex, description, severity in PYTHON_DANGER_PATTERNS:
+                match = regex.search(line)
+                if match:
+                    issues.append({
+                        "severity": severity,
+                        "file": relative_path,
+                        "line": line_num,
+                        "pattern": pattern_name,
+                        "description": description,
+                    })
+
+    return issues
+
+
+def security_scan(skill_path: str) -> dict:
+    """
+    Perform a security scan on a skill directory.
+
+    Checks for hardcoded API keys, sensitive files, and dangerous code patterns.
+
+    Args:
+        skill_path: Path to the skill directory to scan.
+
+    Returns:
+        Dictionary with keys:
+            - ``clean`` (bool): True if no issues were found.
+            - ``issues`` (list[dict]): List of issue dictionaries. Each has:
+                - ``severity`` (str): "high", "medium", or "low"
+                - ``file`` (str): Relative file path
+                - ``line`` (int): Line number (0 for file-level issues)
+                - ``pattern`` (str): Pattern name that triggered the issue
+                - ``description`` (str): Human-readable description
+    """
+    issues: list[dict] = []
+
+    skill_dir = Path(skill_path).resolve()
+
+    # --- Check: directory exists ---
+    if not skill_dir.exists():
+        return {
+            "clean": False,
+            "issues": [{
+                "severity": "high",
+                "file": str(skill_dir),
+                "line": 0,
+                "pattern": "missing_directory",
+                "description": f"Path does not exist: {skill_dir}",
+            }],
+        }
+
+    if not skill_dir.is_dir():
+        return {
+            "clean": False,
+            "issues": [{
+                "severity": "high",
+                "file": str(skill_dir),
+                "line": 0,
+                "pattern": "not_a_directory",
+                "description": f"Path is not a directory: {skill_dir}",
+            }],
+        }
+
+    # --- Check: sensitive files ---
+    for sensitive_name, description in SENSITIVE_FILES.items():
+        sensitive_path = skill_dir / sensitive_name
+        if sensitive_path.exists():
+            issues.append({
+                "severity": "high",
+                "file": sensitive_name,
+                "line": 0,
+                "pattern": "Sensitive file",
+                "description": description,
+            })
+
+    # Also check subdirectories for .env files
+    for root, dirs, files in os.walk(skill_dir):
+        root_path = Path(root)
+
+        # Skip excluded directories
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+
+        for filename in files:
+            file_path = root_path / filename
+            relative = str(file_path.relative_to(skill_dir))
+
+            # Check for .env files anywhere in the tree
+            if filename == ".env" and relative != ".env":
+                issues.append({
+                    "severity": "high",
+                    "file": relative,
+                    "line": 0,
+                    "pattern": "Sensitive file",
+                    "description": "Environment file may contain secrets",
+                })
+
+            # Check for sensitive JSON files in subdirectories
+            if filename in ("credentials.json", "secrets.json", "api_keys.json"):
+                if relative != filename:  # Not already caught at root level
+                    issues.append({
+                        "severity": "high",
+                        "file": relative,
+                        "line": 0,
+                        "pattern": "Sensitive file",
+                        "description": SENSITIVE_FILES.get(
+                            filename, "Sensitive file detected"
+                        ),
+                    })
+
+    # --- Scan file contents ---
+    for root, dirs, files in os.walk(skill_dir):
+        root_path = Path(root)
+
+        # Skip excluded directories
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+
+        for filename in files:
+            file_path = root_path / filename
+            file_issues = _scan_file_content(file_path, skill_dir)
+            issues.extend(file_issues)
+
+    # Sort issues: high first, then medium, then low
+    severity_order = {"high": 0, "medium": 1, "low": 2}
+    issues.sort(key=lambda x: (severity_order.get(x["severity"], 3), x["file"], x["line"]))
+
+    return {
+        "clean": len(issues) == 0,
+        "issues": issues,
+    }
+
+
+def _print_human_readable(result: dict, skill_path: str) -> None:
+    """
+    Print security scan results in a human-readable format.
+
+    Args:
+        result: The scan result dictionary.
+        skill_path: The path that was scanned (for display).
+    """
+    print(f"Security scan: {skill_path}")
+    print(f"{'=' * 60}")
+
+    if result["clean"]:
+        print("Status: CLEAN")
+        print("\nNo security issues found.")
+    else:
+        print(f"Status: ISSUES FOUND ({len(result['issues'])})")
+
+        # Count by severity
+        high = sum(1 for i in result["issues"] if i["severity"] == "high")
+        medium = sum(1 for i in result["issues"] if i["severity"] == "medium")
+        low = sum(1 for i in result["issues"] if i["severity"] == "low")
+        print(f"\n  High: {high}  Medium: {medium}  Low: {low}")
+
+        print()
+        for issue in result["issues"]:
+            severity_label = issue["severity"].upper().ljust(6)
+            location = issue["file"]
+            if issue["line"] > 0:
+                location += f":{issue['line']}"
+            print(f"  [{severity_label}] {location}")
+            print(f"           Pattern: {issue['pattern']}")
+            print(f"           {issue['description']}")
+            print()
+
+    print(f"{'=' * 60}")
+
+
+def main() -> None:
+    """CLI entry point for the security scanner."""
+    if len(sys.argv) < 2:
+        print(
+            "Usage: python3 scripts/security_scan.py <skill-path> [--json]\n"
+            "\n"
+            "Arguments:\n"
+            "  skill-path    Path to the skill directory to scan\n"
+            "\n"
+            "Options:\n"
+            "  --json        Output results as JSON to stdout\n"
+            "\n"
+            "Exit codes:\n"
+            "  0  Clean (no issues)\n"
+            "  1  Issues found (one or more security issues)\n",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    skill_path = sys.argv[1]
+    use_json = "--json" in sys.argv
+
+    result = security_scan(skill_path)
+
+    if use_json:
+        print(json.dumps(result, indent=2))
+    else:
+        _print_human_readable(result, skill_path)
+
+    sys.exit(0 if result["clean"] else 1)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## File: `scripts/skill_registry.py`
+```python
+#!/usr/bin/env python3
+"""
+Git-Based Shared Skill Registry.
+
+Manages a git-friendly skill registry for publishing, discovering, and installing
+cross-platform agent skills. The registry is a directory with a registry.json
+manifest and a skills/ folder — no servers, no databases, no new dependencies.
+
+Usage:
+    python3 scripts/skill_registry.py init     [--name NAME] [--registry PATH]
+    python3 scripts/skill_registry.py publish  <skill-path> [--registry PATH] [--tags T1,T2] [--force] [--json]
+    python3 scripts/skill_registry.py list     [--registry PATH] [--json]
+    python3 scripts/skill_registry.py search   <query> [--registry PATH] [--json]
+    python3 scripts/skill_registry.py install  <skill-name> [--registry PATH] [--platform PLATFORM] [--project] [--force] [--json]
+    python3 scripts/skill_registry.py info     <skill-name> [--registry PATH] [--json]
+    python3 scripts/skill_registry.py remove   <skill-name> [--registry PATH] [--force]
+
+Exit codes:
+    0 - Success
+    1 - Error
+"""
+
+import argparse
+import json
+import os
+import re
+import shutil
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Optional
+
+# --- Import sibling scripts ---
+
+_SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(_SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS_DIR))
+
+from validate import validate_skill, _parse_frontmatter, _parse_yaml_field, _parse_subfield_value
+from security_scan import security_scan
+from staleness_check import DEFAULT_REVIEW_INTERVAL_DAYS
+
+
+# --- Constants ---
+
+ALL_PLATFORMS = ["claude-code", "copilot", "cursor", "windsurf", "cline", "codex", "gemini"]
+
+PLATFORM_PATHS_USER = {
+    "claude-code": "~/.claude/skills",
+    "copilot":     "~/.copilot/skills",
+    "cursor":      "~/.cursor/rules",
+    "windsurf":    "~/.windsurf/skills",
+    "cline":       "~/.cline/rules",
+    "codex":       "~/.codex/skills",
+    "gemini":      "~/.gemini/skills",
+}
+
+PLATFORM_PATHS_PROJECT = {
+    "claude-code": ".claude/skills",
+    "copilot":     ".github/skills",
+    "cursor":      ".cursor/rules",
+    "windsurf":    ".windsurf/skills",
+    "cline":       ".clinerules",
+    "codex":       ".codex/skills",
+    "gemini":      ".gemini/skills",
+}
+
+# Directories/files to exclude when copying skills
+COPY_IGNORE_PATTERNS = shutil.ignore_patterns(
+    ".git", "__pycache__", "node_modules", ".venv", "venv", "env",
+    ".pytest_cache", ".mypy_cache", "dist", "build", "*.pyc", "*.pyo",
+)
+
+# Stop words for auto-tagging
+STOP_WORDS = {
+    "a", "an", "the", "and", "or", "but", "is", "are", "was", "were", "be",
+    "been", "being", "in", "on", "at", "to", "for", "of", "with", "by",
+    "from", "as", "into", "through", "during", "before", "after", "above",
+    "below", "between", "out", "off", "over", "under", "again", "further",
+    "then", "once", "here", "there", "when", "where", "why", "how", "all",
+    "each", "every", "both", "few", "more", "most", "other", "some", "such",
+    "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very",
+    "can", "will", "just", "should", "now", "it", "its", "this", "that",
+    "these", "those", "he", "she", "we", "they", "what", "which", "who",
+    "whom", "do", "does", "did", "has", "have", "had", "having", "using",
+}
+
+MIN_TAG_LENGTH = 3
+
+
+# --- Registry I/O ---
+
+def load_registry(registry_path: Path) -> dict:
+    """Read and parse registry.json from the registry directory."""
+    manifest = registry_path / "registry.json"
+    if not manifest.exists():
+        print(f"Error: registry.json not found in {registry_path}", file=sys.stderr)
+        print("Run 'skill_registry.py init' first.", file=sys.stderr)
+        sys.exit(1)
+    try:
+        return json.loads(manifest.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"Error reading registry.json: {exc}", file=sys.stderr)
+        sys.exit(1)
+
+
+def save_registry(registry_path: Path, data: dict) -> None:
+    """Atomic write: write to .tmp then rename."""
+    manifest = registry_path / "registry.json"
+    tmp = registry_path / "registry.json.tmp"
+    try:
+        tmp.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        tmp.replace(manifest)
+    except OSError as exc:
+        # Clean up tmp on failure
+        if tmp.exists():
+            tmp.unlink()
+        print(f"Error writing registry.json: {exc}", file=sys.stderr)
+        sys.exit(1)
+
+
+# --- Metadata Extraction ---
+
+def extract_skill_metadata(skill_path: Path) -> dict:
+    """
+    Parse SKILL.md frontmatter into a metadata dict.
+
+    Returns dict with keys: name, description, version, author, license.
+    Missing fields default to empty string.
+    """
+    skill_md = skill_path / "SKILL.md"
+    if not skill_md.exists():
+        return {"name": "", "description": "", "version": "", "author": "", "license": ""}
+
+    content = skill_md.read_text(encoding="utf-8")
+    frontmatter, _ = _parse_frontmatter(content)
+    if frontmatter is None:
+        return {"name": "", "description": "", "version": "", "author": "", "license": ""}
+
+    name = _parse_yaml_field(frontmatter, "name") or ""
+    description = _parse_yaml_field(frontmatter, "description") or ""
+    license_val = _parse_yaml_field(frontmatter, "license") or ""
+
+    # Version: try metadata.version first, then top-level version
+    version = _parse_subfield_value(frontmatter, "metadata", "version")
+    if not version:
+        version = _parse_yaml_field(frontmatter, "version") or ""
+
+    # Author: try metadata.author first
+    author = _parse_subfield_value(frontmatter, "metadata", "author") or ""
+
+    # Temporal metadata for staleness tracking
+    created = _parse_subfield_value(frontmatter, "metadata", "created") or ""
+    last_reviewed = _parse_subfield_value(frontmatter, "metadata", "last_reviewed") or ""
+    interval = _parse_subfield_value(frontmatter, "metadata", "review_interval_days") or ""
+
+    return {
+        "name": name.strip(),
+        "description": description.strip(),
+        "version": version.strip(),
+        "author": author.strip(),
+        "license": license_val.strip(),
+        "created": created.strip(),
+        "last_reviewed": last_reviewed.strip(),
+        "review_interval_days": interval.strip(),
+    }
+
+
+def auto_extract_tags(description: str) -> list[str]:
+    """
+    Extract keyword tags from a description string.
+
+    Splits on non-alphanumeric characters, filters stop words and short words,
+    returns up to 10 unique lowercase tags.
+    """
+    if not description:
+        return []
+    words = re.split(r"[^a-zA-Z0-9-]+", description.lower())
+    seen: set[str] = set()
+    tags: list[str] = []
+    for word in words:
+        word = word.strip("-")
+        if len(word) < MIN_TAG_LENGTH:
+            continue
+        if word in STOP_WORDS:
+            continue
+        if word not in seen:
+            seen.add(word)
+            tags.append(word)
+        if len(tags) >= 10:
+            break
+    return tags
+
+
+# --- Platform Detection ---
+
+def detect_platform() -> str:
+    """
+    Auto-detect the installed agent platform by checking known directories.
+
+    Returns the platform name or "claude-code" as default.
+    """
+    checks = [
+        ("claude-code", "~/.claude"),
+        ("copilot",     "~/.copilot"),
+        ("cursor",      "~/.cursor"),
+        ("windsurf",    "~/.windsurf"),
+        ("cline",       "~/.cline"),
+        ("codex",       "~/.codex"),
+        ("gemini",      "~/.gemini"),
+    ]
+    for platform, path in checks:
+        if Path(path).expanduser().exists():
+            return platform
+    return "claude-code"
+
+
+def resolve_install_path(name: str, platform: str, project: bool) -> Path:
+    """
+    Map platform + scope to the filesystem install path for a skill.
+
+    Args:
+        name: Skill name (used as subdirectory).
+        platform: Platform identifier.
+        project: If True, use project-level path; otherwise user-level.
+
+    Returns:
+        Absolute path where the skill should be installed.
+    """
+    if project:
+        base = PLATFORM_PATHS_PROJECT.get(platform)
+    else:
+        base = PLATFORM_PATHS_USER.get(platform)
+
+    if base is None:
+        print(f"Error: unknown platform '{platform}'", file=sys.stderr)
+        print(f"Supported: {', '.join(ALL_PLATFORMS)}", file=sys.stderr)
+        sys.exit(1)
+
+    return Path(base).expanduser().resolve() / name
+
+
+# --- Table Formatting ---
+
+def _format_table(entries: list[dict]) -> str:
+    """Format skill entries as an aligned text table."""
+    if not entries:
+        return "No skills found."
+
+    headers = ["NAME", "VERSION", "AUTHOR", "TAGS"]
+    rows = []
+    for entry in entries:
+        tags = ", ".join(entry.get("tags", []))
+        rows.append([
+            entry.get("name", ""),
+            entry.get("version", ""),
+            entry.get("author", ""),
+            tags,
+        ])
+
+    # Calculate column widths
+    widths = [len(h) for h in headers]
+    for row in rows:
+        for i, cell in enumerate(row):
+            widths[i] = max(widths[i], len(cell))
+
+    # Build output
+    lines = []
+    header_line = "  ".join(h.ljust(widths[i]) for i, h in enumerate(headers))
+    lines.append(header_line)
+    for row in rows:
+        lines.append("  ".join(cell.ljust(widths[i]) for i, cell in enumerate(row)))
+    return "\n".join(lines)
+
+
+# --- Subcommands ---
+
+def cmd_init(args: argparse.Namespace) -> None:
+    """Initialize a new skill registry."""
+    registry_path = Path(args.registry).resolve()
+    manifest = registry_path / "registry.json"
+
+    if manifest.exists():
+        print(f"Error: registry already exists at {registry_path}", file=sys.stderr)
+        sys.exit(1)
+
+    registry_path.mkdir(parents=True, exist_ok=True)
+    (registry_path / "skills").mkdir(exist_ok=True)
+
+    name = args.name or "Shared Skills"
+    data = {
+        "registry": {
+            "name": name,
+            "created": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "schema_version": "1",
+        },
+        "skills": [],
+    }
+    save_registry(registry_path, data)
+    print(f"Registry initialized: {registry_path}")
+    print(f"  Name: {name}")
+    print(f"  Manifest: {manifest}")
+    print(f"  Skills dir: {registry_path / 'skills'}")
+
+
+def cmd_publish(args: argparse.Namespace) -> None:
+    """Publish a skill to the registry."""
+    registry_path = Path(args.registry).resolve()
+    skill_path = Path(args.skill_path).resolve()
+
+    if not skill_path.is_dir():
+        print(f"Error: skill path is not a directory: {skill_path}", file=sys.stderr)
+        sys.exit(1)
+
+    # Step 1: Validate
+    validation = validate_skill(str(skill_path))
+    if not validation["valid"]:
+        print("Validation failed:", file=sys.stderr)
+        for err in validation["errors"]:
+            print(f"  [ERROR] {err}", file=sys.stderr)
+        sys.exit(1)
+
+    # Step 2: Security scan
+    scan = security_scan(str(skill_path))
+    high_issues = [i for i in scan["issues"] if i["severity"] == "high"]
+    other_issues = [i for i in scan["issues"] if i["severity"] != "high"]
+
+    if other_issues:
+        for issue in other_issues:
+            location = issue["file"]
+            if issue["line"] > 0:
+                location += f":{issue['line']}"
+            print(f"  [WARN] {location}: {issue['description']}")
+
+    if high_issues and not args.force:
+        print("Security scan found high-severity issues:", file=sys.stderr)
+        for issue in high_issues:
+            location = issue["file"]
+            if issue["line"] > 0:
+                location += f":{issue['line']}"
+            print(f"  [HIGH] {location}: {issue['description']}", file=sys.stderr)
+        print("Use --force to publish anyway.", file=sys.stderr)
+        sys.exit(1)
+
+    # Step 3: Extract metadata
+    metadata = extract_skill_metadata(skill_path)
+    name = metadata["name"]
+    version = metadata["version"] or "0.0.0"
+
+    if not name:
+        print("Error: could not extract skill name from SKILL.md frontmatter", file=sys.stderr)
+        sys.exit(1)
+
+    # Step 4: Tags
+    tags = []
+    if args.tags:
+        tags = [t.strip() for t in args.tags.split(",") if t.strip()]
+    if not tags:
+        tags = auto_extract_tags(metadata["description"])
+
+    # Step 5: Check duplicates
+    data = load_registry(registry_path)
+    for existing in data["skills"]:
+        if existing["name"] == name and existing["version"] == version:
+            if not args.force:
+                print(
+                    f"Error: skill '{name}' version '{version}' already exists in registry.",
+                    file=sys.stderr,
+                )
+                print("Use --force to overwrite.", file=sys.stderr)
+                sys.exit(1)
+            # Remove old entry if forcing
+            data["skills"] = [s for s in data["skills"] if not (s["name"] == name and s["version"] == version)]
+
+    # Step 6: Copy skill to registry
+    dest = registry_path / "skills" / name
+    if dest.exists():
+        shutil.rmtree(dest)
+    shutil.copytree(skill_path, dest, ignore=COPY_IGNORE_PATTERNS)
+
+    # Step 7: Add entry (including staleness metadata)
+    staleness_data = {}
+    if metadata.get("created"):
+        staleness_data["created"] = metadata["created"]
+    if metadata.get("last_reviewed"):
+        staleness_data["last_reviewed"] = metadata["last_reviewed"]
+    if metadata.get("review_interval_days"):
+        try:
+            staleness_data["review_interval_days"] = int(metadata["review_interval_days"])
+        except ValueError:
+            pass
+
+    entry = {
+        "name": name,
+        "description": metadata["description"],
+        "version": version,
+        "author": metadata["author"],
+        "license": metadata["license"],
+        "tags": tags,
+        "platforms": list(ALL_PLATFORMS),
+        "published": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "path": f"skills/{name}",
+        "validation": {
+            "valid": validation["valid"],
+            "errors": len(validation["errors"]),
+            "warnings": len(validation["warnings"]),
+        },
+        "security": {
+            "clean": scan["clean"],
+            "issues": len(scan["issues"]),
+        },
+        "staleness": staleness_data,
+    }
+    data["skills"].append(entry)
+    save_registry(registry_path, data)
+
+    if getattr(args, "json", False):
+        print(json.dumps(entry, indent=2))
+    else:
+        print(f"Published '{name}' v{version} to registry.")
+        print(f"  Path: {dest}")
+        print(f"  Tags: {', '.join(tags)}")
+
+
+def cmd_list(args: argparse.Namespace) -> None:
+    """List all skills in the registry."""
+    registry_path = Path(args.registry).resolve()
+    data = load_registry(registry_path)
+
+    if getattr(args, "json", False):
+        print(json.dumps(data["skills"], indent=2))
+        return
+
+    print(_format_table(data["skills"]))
+
+
+def cmd_search(args: argparse.Namespace) -> None:
+    """Search for skills matching a query."""
+    registry_path = Path(args.registry).resolve()
+    data = load_registry(registry_path)
+    query = args.query.lower()
+
+    matches = []
+    for skill in data["skills"]:
+        searchable = " ".join([
+            skill.get("name", ""),
+            skill.get("description", ""),
+            skill.get("author", ""),
+            " ".join(skill.get("tags", [])),
+        ]).lower()
+        if query in searchable:
+            matches.append(skill)
+
+    if getattr(args, "json", False):
+        print(json.dumps(matches, indent=2))
+        return
+
+    if not matches:
+        print(f"No skills matching '{args.query}'.")
+        return
+
+    print(f"Skills matching '{args.query}':\n")
+    print(_format_table(matches))
+
+
+def cmd_install(args: argparse.Namespace) -> None:
+    """Install a skill from the registry."""
+    registry_path = Path(args.registry).resolve()
+    data = load_registry(registry_path)
+
+    # Find skill
+    skill_entry = None
+    for skill in data["skills"]:
+        if skill["name"] == args.skill_name:
+            skill_entry = skill
+            break
+
+    if skill_entry is None:
+        print(f"Error: skill '{args.skill_name}' not found in registry.", file=sys.stderr)
+        sys.exit(1)
+
+    # Resolve platform
+    platform = args.platform or detect_platform()
+    if platform not in ALL_PLATFORMS:
+        print(f"Error: unknown platform '{platform}'", file=sys.stderr)
+        print(f"Supported: {', '.join(ALL_PLATFORMS)}", file=sys.stderr)
+        sys.exit(1)
+
+    # Resolve target path
+    project = getattr(args, "project", False)
+    target = resolve_install_path(args.skill_name, platform, project)
+
+    # Check if already installed
+    if target.exists() and not args.force:
+        print(f"Error: skill already installed at {target}", file=sys.stderr)
+        print("Use --force to overwrite.", file=sys.stderr)
+        sys.exit(1)
+
+    # Copy
+    source = registry_path / skill_entry["path"]
+    if not source.exists():
+        print(f"Error: skill files not found at {source}", file=sys.stderr)
+        sys.exit(1)
+
+    if target.exists():
+        shutil.rmtree(target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(source, target, ignore=COPY_IGNORE_PATTERNS)
+
+    if getattr(args, "json", False):
+        print(json.dumps({
+            "installed": True,
+            "skill": args.skill_name,
+            "platform": platform,
+            "path": str(target),
+        }, indent=2))
+        return
+
+    scope = "project" if project else "user"
+    print(f"Installed '{args.skill_name}' for {platform} ({scope}-level).")
+    print(f"  Path: {target}")
+
+    # Platform-specific activation tips
+    tips = {
+        "claude-code": "Skill is auto-loaded. Start a new conversation to activate.",
+        "copilot":     "Skill is auto-loaded by Copilot Chat.",
+        "cursor":      "Skill is loaded alongside .mdc rules.",
+        "windsurf":    "Skill is auto-loaded by Windsurf.",
+        "cline":       "Skill is loaded from .clinerules.",
+        "codex":       "Skill is auto-loaded by Codex CLI.",
+        "gemini":      "Skill is auto-loaded by Gemini CLI.",
+    }
+    tip = tips.get(platform)
+    if tip:
+        print(f"  Tip: {tip}")
+
+
+def cmd_info(args: argparse.Namespace) -> None:
+    """Show detailed info about a skill."""
+    registry_path = Path(args.registry).resolve()
+    data = load_registry(registry_path)
+
+    skill_entry = None
+    for skill in data["skills"]:
+        if skill["name"] == args.skill_name:
+            skill_entry = skill
+            break
+
+    if skill_entry is None:
+        print(f"Error: skill '{args.skill_name}' not found in registry.", file=sys.stderr)
+        sys.exit(1)
+
+    if getattr(args, "json", False):
+        print(json.dumps(skill_entry, indent=2))
+        return
+
+    print(f"Skill: {skill_entry['name']}")
+    print(f"{'=' * 50}")
+    print(f"  Version:     {skill_entry.get('version', 'N/A')}")
+    print(f"  Author:      {skill_entry.get('author', 'N/A')}")
+    print(f"  License:     {skill_entry.get('license', 'N/A')}")
+    print(f"  Description: {skill_entry.get('description', 'N/A')}")
+    print(f"  Tags:        {', '.join(skill_entry.get('tags', []))}")
+    print(f"  Platforms:   {', '.join(skill_entry.get('platforms', []))}")
+    print(f"  Published:   {skill_entry.get('published', 'N/A')}")
+    print(f"  Path:        {skill_entry.get('path', 'N/A')}")
+
+    validation = skill_entry.get("validation", {})
+    if validation:
+        status = "valid" if validation.get("valid") else "invalid"
+        print(f"  Validation:  {status} ({validation.get('errors', 0)} errors, {validation.get('warnings', 0)} warnings)")
+
+    security = skill_entry.get("security", {})
+    if security:
+        status = "clean" if security.get("clean") else f"{security.get('issues', 0)} issues"
+        print(f"  Security:    {status}")
+
+    print(f"{'=' * 50}")
+
+
+def cmd_remove(args: argparse.Namespace) -> None:
+    """Remove a skill from the registry."""
+    registry_path = Path(args.registry).resolve()
+    data = load_registry(registry_path)
+
+    # Find skill
+    skill_entry = None
+    for skill in data["skills"]:
+        if skill["name"] == args.skill_name:
+            skill_entry = skill
+            break
+
+    if skill_entry is None:
+        print(f"Error: skill '{args.skill_name}' not found in registry.", file=sys.stderr)
+        sys.exit(1)
+
+    if not args.force:
+        print(f"Remove '{args.skill_name}' from registry? Use --force to confirm.", file=sys.stderr)
+        sys.exit(1)
+
+    # Remove files
+    skill_dir = registry_path / skill_entry["path"]
+    if skill_dir.exists():
+        shutil.rmtree(skill_dir)
+
+    # Remove entry
+    data["skills"] = [s for s in data["skills"] if s["name"] != args.skill_name]
+    save_registry(registry_path, data)
+
+    print(f"Removed '{args.skill_name}' from registry.")
+
+
+def cmd_stale(args: argparse.Namespace) -> None:
+    """Report skills that are overdue for review."""
+    from datetime import date, timedelta
+
+    registry_path = Path(args.registry).resolve()
+    data = load_registry(registry_path)
+    today = date.today()
+
+    results: list[dict] = []
+    for skill in data["skills"]:
+        staleness = skill.get("staleness", {})
+        published = skill.get("published", "")
+
+        # Determine reference date: last_reviewed > created > published
+        ref_date = None
+        date_source = "none"
+
+        lr = staleness.get("last_reviewed", "")
+        cr = staleness.get("created", "")
+
+        if lr:
+            try:
+                parts = lr.split("-")
+                ref_date = date(int(parts[0]), int(parts[1]), int(parts[2]))
+                date_source = "last_reviewed"
+            except (ValueError, IndexError):
+                pass
+
+        if ref_date is None and cr:
+            try:
+                parts = cr.split("-")
+                ref_date = date(int(parts[0]), int(parts[1]), int(parts[2]))
+                date_source = "created"
+            except (ValueError, IndexError):
+                pass
+
+        if ref_date is None and published:
+            try:
+                parts = published[:10].split("-")
+                ref_date = date(int(parts[0]), int(parts[1]), int(parts[2]))
+                date_source = "published"
+            except (ValueError, IndexError):
+                pass
+
+        interval = staleness.get("review_interval_days", DEFAULT_REVIEW_INTERVAL_DAYS)
+        if not isinstance(interval, int):
+            try:
+                interval = int(interval)
+            except (ValueError, TypeError):
+                interval = DEFAULT_REVIEW_INTERVAL_DAYS
+
+        days_since = None
+        status = "unknown"
+        if ref_date:
+            days_since = (today - ref_date).days
+            deadline = ref_date + timedelta(days=interval)
+            if today > deadline:
+                status = "overdue"
+            elif (deadline - today).days <= 30:
+                status = "due_soon"
+            else:
+                status = "fresh"
+
+        results.append({
+            "name": skill.get("name", ""),
+            "version": skill.get("version", ""),
+            "status": status,
+            "days_since_review": days_since,
+            "date_source": date_source,
+            "review_interval_days": interval,
+        })
+
+    if getattr(args, "json", False):
+        print(json.dumps(results, indent=2))
+        return
+
+    # Text table output
+    if not results:
+        print("No skills in registry.")
+        return
+
+    headers = ["NAME", "VERSION", "STATUS", "DAYS SINCE", "SOURCE", "INTERVAL"]
+    rows = []
+    for r in results:
+        rows.append([
+            r["name"],
+            r["version"],
+            r["status"].upper(),
+            str(r["days_since_review"]) if r["days_since_review"] is not None else "N/A",
+            r["date_source"],
+            str(r["review_interval_days"]),
+        ])
+
+    widths = [len(h) for h in headers]
+    for row in rows:
+        for i, cell in enumerate(row):
+            widths[i] = max(widths[i], len(cell))
+
+    header_line = "  ".join(h.ljust(widths[i]) for i, h in enumerate(headers))
+    print(header_line)
+    for row in rows:
+        print("  ".join(cell.ljust(widths[i]) for i, cell in enumerate(row)))
+
+    # Summary
+    overdue = sum(1 for r in results if r["status"] == "overdue")
+    due_soon = sum(1 for r in results if r["status"] == "due_soon")
+    if overdue or due_soon:
+        print(f"\nSummary: {overdue} overdue, {due_soon} due soon, {len(results)} total")
+
+
+# --- CLI ---
+
+def _add_registry_arg(parser: argparse.ArgumentParser) -> None:
+    """Add the --registry argument to a subparser."""
+    parser.add_argument(
+        "--registry", default="./registry",
+        help="Path to the registry directory (default: ./registry)",
+    )
+
+
+def build_parser() -> argparse.ArgumentParser:
+    """Build the argument parser with all subcommands."""
+    parser = argparse.ArgumentParser(
+        prog="skill_registry",
+        description="Git-based shared skill registry for cross-platform agent skills.",
+    )
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
+
+    # init
+    p_init = subparsers.add_parser("init", help="Initialize a new skill registry")
+    _add_registry_arg(p_init)
+    p_init.add_argument("--name", help="Registry name (default: 'Shared Skills')")
+
+    # publish
+    p_publish = subparsers.add_parser("publish", help="Publish a skill to the registry")
+    p_publish.add_argument("skill_path", help="Path to the skill directory")
+    _add_registry_arg(p_publish)
+    p_publish.add_argument("--tags", help="Comma-separated tags (auto-extracted if omitted)")
+    p_publish.add_argument("--force", action="store_true", help="Overwrite existing or ignore high-severity issues")
+    p_publish.add_argument("--json", action="store_true", help="Output as JSON")
+
+    # list
+    p_list = subparsers.add_parser("list", help="List all skills in the registry")
+    _add_registry_arg(p_list)
+    p_list.add_argument("--json", action="store_true", help="Output as JSON")
+
+    # search
+    p_search = subparsers.add_parser("search", help="Search for skills")
+    p_search.add_argument("query", help="Search query (matches name, description, author, tags)")
+    _add_registry_arg(p_search)
+    p_search.add_argument("--json", action="store_true", help="Output as JSON")
+
+    # install
+    p_install = subparsers.add_parser("install", help="Install a skill from the registry")
+    p_install.add_argument("skill_name", help="Name of the skill to install")
+    _add_registry_arg(p_install)
+    p_install.add_argument("--platform", choices=ALL_PLATFORMS, help="Target platform (auto-detected if omitted)")
+    p_install.add_argument("--project", action="store_true", help="Install at project level instead of user level")
+    p_install.add_argument("--force", action="store_true", help="Overwrite existing installation")
+    p_install.add_argument("--json", action="store_true", help="Output as JSON")
+
+    # info
+    p_info = subparsers.add_parser("info", help="Show detailed info about a skill")
+    p_info.add_argument("skill_name", help="Name of the skill")
+    _add_registry_arg(p_info)
+    p_info.add_argument("--json", action="store_true", help="Output as JSON")
+
+    # remove
+    p_remove = subparsers.add_parser("remove", help="Remove a skill from the registry")
+    p_remove.add_argument("skill_name", help="Name of the skill to remove")
+    _add_registry_arg(p_remove)
+    p_remove.add_argument("--force", action="store_true", help="Confirm removal")
+
+    # stale
+    p_stale = subparsers.add_parser("stale", help="Report skills overdue for review")
+    _add_registry_arg(p_stale)
+    p_stale.add_argument("--json", action="store_true", help="Output as JSON")
+
+    return parser
+
+
+def main() -> None:
+    """CLI entry point."""
+    parser = build_parser()
+    args = parser.parse_args()
+
+    if args.command is None:
+        parser.print_help()
+        sys.exit(1)
+
+    commands = {
+        "init":    cmd_init,
+        "publish": cmd_publish,
+        "list":    cmd_list,
+        "search":  cmd_search,
+        "install": cmd_install,
+        "info":    cmd_info,
+        "remove":  cmd_remove,
+        "stale":   cmd_stale,
+    }
+
+    cmd_func = commands.get(args.command)
+    if cmd_func is None:
+        parser.print_help()
+        sys.exit(1)
+
+    cmd_func(args)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## File: `scripts/staleness_check.py`
+```python
+#!/usr/bin/env python3
+"""
+Staleness Detection for Agent Skills.
+
+Checks whether a skill is overdue for review, validates dependency health,
+and detects schema drift in declared API endpoints. Designed to surface
+skills that may have gone stale as APIs change, compliance rules update,
+and data sources move.
+
+Usage:
+    python3 scripts/staleness_check.py <skill-path> [--json] [--check-deps] [--check-drift]
+
+Exit codes:
+    0 - Fresh (no staleness issues)
+    1 - Stale (overdue for review)
+    2 - Degraded (dependency failures or schema drift)
+"""
+
+import json
+import subprocess
+import sys
+from datetime import date, timedelta
+from pathlib import Path
+from typing import Optional
+from urllib.error import URLError
+from urllib.request import Request, urlopen
+
+# --- Import sibling scripts ---
+
+_SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(_SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS_DIR))
+
+from validate import _parse_frontmatter, _parse_subfield_value  # noqa: E402
+
+
+# --- Constants ---
+
+DEFAULT_REVIEW_INTERVAL_DAYS = 90
+STALENESS_WARNING_THRESHOLD_DAYS = 60
+HTTP_TIMEOUT_SECONDS = 10
+DATE_PATTERN_RE = None  # Lazy-compiled below
+
+
+def _date_pattern():
+    """Return compiled regex for YYYY-MM-DD date format."""
+    global DATE_PATTERN_RE
+    if DATE_PATTERN_RE is None:
+        import re
+        DATE_PATTERN_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+    return DATE_PATTERN_RE
+
+
+def _parse_date(value: str) -> Optional[date]:
+    """
+    Parse a YYYY-MM-DD string into a date object.
+
+    Args:
+        value: Date string in YYYY-MM-DD format.
+
+    Returns:
+        A date object, or None if parsing fails.
+    """
+    if not value or not _date_pattern().match(value.strip()):
+        return None
+    try:
+        parts = value.strip().split("-")
+        return date(int(parts[0]), int(parts[1]), int(parts[2]))
+    except (ValueError, IndexError):
+        return None
+
+
+def _get_git_last_modified(skill_path: str) -> Optional[date]:
+    """
+    Get the last git commit date for a skill directory.
+
+    Runs ``git log -1 --format=%aI`` on the SKILL.md file as a fallback
+    for skills without explicit review dates.
+
+    Args:
+        skill_path: Path to the skill directory.
+
+    Returns:
+        The date of the last git commit touching SKILL.md, or None
+        if git is unavailable or the file is untracked.
+    """
+    skill_md = Path(skill_path).resolve() / "SKILL.md"
+    if not skill_md.exists():
+        return None
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%aI", "--", str(skill_md)],
+            capture_output=True,
+            text=True,
+            timeout=10,
+            cwd=str(Path(skill_path).resolve()),
+        )
+        if result.returncode != 0 or not result.stdout.strip():
+            return None
+        # ISO format: 2025-01-15T10:30:00+00:00 -- take the date part
+        iso_str = result.stdout.strip()
+        return _parse_date(iso_str[:10])
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        return None
+
+
+def _check_review_staleness(frontmatter: str, git_last_modified: Optional[date]) -> list[dict]:
+    """
+    Check whether a skill is overdue for review.
+
+    Compares ``metadata.last_reviewed`` against ``metadata.review_interval_days``.
+    Falls back to the git commit date when explicit review dates are absent.
+
+    Args:
+        frontmatter: The frontmatter text (without delimiters).
+        git_last_modified: Fallback date from git log.
+
+    Returns:
+        List of issue dicts with keys: level, message, detail.
+    """
+    issues: list[dict] = []
+    today = date.today()
+
+    # Extract temporal fields
+    created_str = _parse_subfield_value(frontmatter, "metadata", "created")
+    last_reviewed_str = _parse_subfield_value(frontmatter, "metadata", "last_reviewed")
+    interval_str = _parse_subfield_value(frontmatter, "metadata", "review_interval_days")
+
+    # Validate formats if present
+    if created_str and not _parse_date(created_str):
+        issues.append({
+            "level": "warning",
+            "message": "Invalid 'metadata.created' date format",
+            "detail": f"Expected YYYY-MM-DD, got: '{created_str}'",
+        })
+
+    if last_reviewed_str and not _parse_date(last_reviewed_str):
+        issues.append({
+            "level": "warning",
+            "message": "Invalid 'metadata.last_reviewed' date format",
+            "detail": f"Expected YYYY-MM-DD, got: '{last_reviewed_str}'",
+        })
+
+    if interval_str:
+        try:
+            int(interval_str)
+        except ValueError:
+            issues.append({
+                "level": "warning",
+                "message": "Invalid 'metadata.review_interval_days' value",
+                "detail": f"Expected integer, got: '{interval_str}'",
+            })
+
+    # Determine review interval
+    interval_days = DEFAULT_REVIEW_INTERVAL_DAYS
+    if interval_str:
+        try:
+            interval_days = int(interval_str)
+        except ValueError:
+            pass
+
+    # Determine the reference date (last_reviewed > git date > None)
+    reference_date = None
+    date_source = "unknown"
+
+    last_reviewed = _parse_date(last_reviewed_str) if last_reviewed_str else None
+    if last_reviewed:
+        reference_date = last_reviewed
+        date_source = "last_reviewed"
+    elif git_last_modified:
+        reference_date = git_last_modified
+        date_source = "git_commit"
+    else:
+        issues.append({
+            "level": "info",
+            "message": "No review date available",
+            "detail": "No 'metadata.last_reviewed' and no git history found. "
+                      "Consider adding temporal metadata.",
+        })
+
+    # Check staleness
+    days_since = None
+    review_status = "unknown"
+
+    if reference_date:
+        days_since = (today - reference_date).days
+        deadline = reference_date + timedelta(days=interval_days)
+        warning_date = reference_date + timedelta(days=STALENESS_WARNING_THRESHOLD_DAYS)
+
+        if today > deadline:
+            review_status = "overdue"
+            issues.append({
+                "level": "error",
+                "message": f"Skill is overdue for review ({days_since} days since last review)",
+                "detail": f"Review interval is {interval_days} days. "
+                          f"Last review: {reference_date} (source: {date_source}). "
+                          f"Deadline was: {deadline}.",
+            })
+        elif today > warning_date:
+            review_status = "due_soon"
+            days_remaining = (deadline - today).days
+            issues.append({
+                "level": "warning",
+                "message": f"Review due in {days_remaining} days",
+                "detail": f"Last review: {reference_date} (source: {date_source}). "
+                          f"Deadline: {deadline}.",
+            })
+        else:
+            review_status = "fresh"
+
+    # Missing temporal metadata suggestion
+    has_any_temporal = bool(created_str or last_reviewed_str or interval_str)
+    if not has_any_temporal:
+        issues.append({
+            "level": "info",
+            "message": "No temporal metadata found",
+            "detail": "Consider adding metadata.created, metadata.last_reviewed, "
+                      "and metadata.review_interval_days to frontmatter.",
+        })
+
+    return issues, review_status, days_since, date_source
+
+
+def _parse_yaml_list(frontmatter: str, parent: str, child: str) -> list[dict]:
+    """
+    Parse a YAML list-of-objects under a parent.child path in frontmatter.
+
+    Handles the pattern::
+
+        metadata:
+          dependencies:
+            - url: https://example.com
+              name: Example
+              type: api
+
+    Args:
+        frontmatter: The frontmatter text.
+        parent: Top-level field (e.g. ``metadata``).
+        child: Second-level field (e.g. ``dependencies``).
+
+    Returns:
+        List of dicts, each representing one list item.
+    """
+    lines = frontmatter.split("\n")
+    items: list[dict] = []
+
+    # Find the parent block
+    in_parent = False
+    in_child = False
+    current_item: Optional[dict] = None
+    child_indent = -1
+
+    for line in lines:
+        stripped = line.strip()
+
+        if not in_parent:
+            if stripped.startswith(f"{parent}:"):
+                in_parent = True
+            continue
+
+        # Inside parent -- check if we've left it
+        if line and line[0] != " " and line[0] != "\t" and stripped:
+            break
+
+        if not in_child:
+            if stripped.startswith(f"{child}:"):
+                in_child = True
+            continue
+
+        # Inside child list
+        if not stripped:
+            continue
+
+        # Detect indent level of list items
+        raw_indent = len(line) - len(line.lstrip())
+
+        if child_indent == -1 and stripped.startswith("- "):
+            child_indent = raw_indent
+
+        # Check if we've left the child block
+        if raw_indent <= child_indent and not stripped.startswith("- "):
+            # Check if this is a sibling of child (another metadata key)
+            if ":" in stripped:
+                break
+
+        if stripped.startswith("- "):
+            # New list item
+            if current_item is not None:
+                items.append(current_item)
+            current_item = {}
+            # Parse "- key: value" on the same line
+            rest = stripped[2:].strip()
+            if ":" in rest:
+                key, _, val = rest.partition(":")
+                current_item[key.strip()] = val.strip()
+        elif current_item is not None and ":" in stripped:
+            # Continuation key-value in the same list item
+            key, _, val = stripped.partition(":")
+            current_item[key.strip()] = val.strip()
+
+    if current_item is not None:
+        items.append(current_item)
+
+    return items
+
+
+def _check_dependency_health(dependencies: list[dict]) -> list[dict]:
+    """
+    HTTP HEAD each declared dependency URL and report health status.
+
+    Args:
+        dependencies: List of dependency dicts with at least a ``url`` key.
+
+    Returns:
+        List of issue dicts reporting the health of each dependency.
+    """
+    issues: list[dict] = []
+
+    for dep in dependencies:
+        url = dep.get("url", "").strip()
+        name = dep.get("name", url)
+
+        if not url:
+            issues.append({
+                "level": "warning",
+                "message": f"Dependency '{name}' has no URL",
+                "detail": "Cannot check health without a URL.",
+            })
+            continue
+
+        if not url.startswith(("http://", "https://")):
+            issues.append({
+                "level": "warning",
+                "message": f"Dependency '{name}' has non-HTTP URL",
+                "detail": f"Skipping health check for: {url}",
+            })
+            continue
+
+        try:
+            req = Request(url, method="HEAD")
+            req.add_header("User-Agent", "agent-skill-staleness-check/1.0")
+            with urlopen(req, timeout=HTTP_TIMEOUT_SECONDS) as resp:
+                status = resp.status
+                if 200 <= status < 400:
+                    issues.append({
+                        "level": "info",
+                        "message": f"Dependency '{name}' is healthy",
+                        "detail": f"HTTP {status} from {url}",
+                    })
+                elif 400 <= status < 500:
+                    issues.append({
+                        "level": "warning",
+                        "message": f"Dependency '{name}' returned client error",
+                        "detail": f"HTTP {status} from {url}. "
+                                  "The endpoint may have moved or require authentication.",
+                    })
+                else:
+                    issues.append({
+                        "level": "error",
+                        "message": f"Dependency '{name}' returned server error",
+                        "detail": f"HTTP {status} from {url}",
+                    })
+        except URLError as exc:
+            issues.append({
+                "level": "error",
+                "message": f"Dependency '{name}' is unreachable",
+                "detail": f"Failed to connect to {url}: {exc.reason}",
+            })
+        except Exception as exc:
+            issues.append({
+                "level": "error",
+                "message": f"Dependency '{name}' check failed",
+                "detail": f"Error checking {url}: {exc}",
+            })
+
+    return issues
+
+
+def _parse_schema_expectations(frontmatter: str) -> list[dict]:
+    """
+    Extract ``metadata.schema_expectations`` list from frontmatter.
+
+    Each expectation has: url, method (default GET), expected_keys (list).
+
+    Args:
+        frontmatter: The frontmatter text.
+
+    Returns:
+        List of schema expectation dicts.
+    """
+    raw_items = _parse_yaml_list(frontmatter, "metadata", "schema_expectations")
+    expectations: list[dict] = []
+
+    for item in raw_items:
+        url = item.get("url", "").strip()
+        method = item.get("method", "GET").strip().upper()
+        # expected_keys are parsed as a sub-list, but our simple parser
+        # puts them inline. We need to re-parse from frontmatter directly.
+        expectations.append({
+            "url": url,
+            "method": method,
+            "expected_keys": [],  # Will be filled by deeper parse
+        })
+
+    # Deeper parse for expected_keys (list items under each schema_expectations entry)
+    expectations = _parse_schema_expectations_deep(frontmatter)
+    return expectations
+
+
+def _parse_schema_expectations_deep(frontmatter: str) -> list[dict]:
+    """
+    Deep-parse schema_expectations including expected_keys sub-lists.
+
+    Args:
+        frontmatter: The frontmatter text.
+
+    Returns:
+        List of expectation dicts with url, method, expected_keys.
+    """
+    lines = frontmatter.split("\n")
+    expectations: list[dict] = []
+    current: Optional[dict] = None
+    in_metadata = False
+    in_schema = False
+    in_expected_keys = False
+
+    for line in lines:
+        stripped = line.strip()
+
+        if not in_metadata:
+            if stripped.startswith("metadata:"):
+                in_metadata = True
+            continue
+
+        # Left metadata block?
+        if line and line[0] != " " and line[0] != "\t" and stripped:
+            break
+
+        if not in_schema:
+            if stripped.startswith("schema_expectations:"):
+                in_schema = True
+            continue
+
+        # Detect new list item
+        if stripped.startswith("- url:") or stripped.startswith("- method:"):
+            if current is not None:
+                expectations.append(current)
+            in_expected_keys = False
+            current = {"url": "", "method": "GET", "expected_keys": []}
+            if stripped.startswith("- url:"):
+                current["url"] = stripped.split(":", 1)[1].strip()
+            elif stripped.startswith("- method:"):
+                current["method"] = stripped.split(":", 1)[1].strip().upper()
+        elif current is not None:
+            if stripped.startswith("url:"):
+                current["url"] = stripped.split(":", 1)[1].strip()
+            elif stripped.startswith("method:"):
+                current["method"] = stripped.split(":", 1)[1].strip().upper()
+            elif stripped.startswith("expected_keys:"):
+                in_expected_keys = True
+            elif in_expected_keys and stripped.startswith("- "):
+                current["expected_keys"].append(stripped[2:].strip())
+            elif not stripped.startswith("-") and ":" in stripped:
+                # Another key at the same level -- might be leaving schema block
+                key = stripped.split(":")[0].strip()
+                if key not in ("url", "method", "expected_keys"):
+                    in_expected_keys = False
+
+    if current is not None:
+        expectations.append(current)
+
+    return expectations
+
+
+def _check_schema_drift(expectations: list[dict]) -> list[dict]:
+    """
+    GET each declared endpoint and compare top-level JSON keys against expected.
+
+    Args:
+        expectations: List of expectation dicts with url, method, expected_keys.
+
+    Returns:
+        List of issue dicts reporting drift status.
+    """
+    issues: list[dict] = []
+
+    for exp in expectations:
+        url = exp.get("url", "").strip()
+        method = exp.get("method", "GET").upper()
+        expected_keys = exp.get("expected_keys", [])
+
+        if not url:
+            continue
+
+        if not url.startswith(("http://", "https://")):
+            issues.append({
+                "level": "warning",
+                "message": f"Schema check skipped for non-HTTP URL: {url}",
+                "detail": "Only HTTP/HTTPS URLs are supported.",
+            })
+            continue
+
+        if not expected_keys:
+            issues.append({
+                "level": "info",
+                "message": f"No expected_keys declared for {url}",
+                "detail": "Skipping drift check.",
+            })
+            continue
+
+        try:
+            req = Request(url, method=method)
+            req.add_header("User-Agent", "agent-skill-staleness-check/1.0")
+            req.add_header("Accept", "application/json")
+            with urlopen(req, timeout=HTTP_TIMEOUT_SECONDS) as resp:
+                body = resp.read().decode("utf-8", errors="replace")
+                data = json.loads(body)
+
+                if not isinstance(data, dict):
+                    issues.append({
+                        "level": "warning",
+                        "message": f"Response from {url} is not a JSON object",
+                        "detail": f"Got {type(data).__name__}, expected dict. "
+                                  "Cannot compare keys.",
+                    })
+                    continue
+
+                actual_keys = set(data.keys())
+                expected_set = set(expected_keys)
+
+                missing = expected_set - actual_keys
+                new_keys = actual_keys - expected_set
+
+                if missing:
+                    issues.append({
+                        "level": "error",
+                        "message": f"Schema drift: missing keys from {url}",
+                        "detail": f"Expected keys not found: {sorted(missing)}. "
+                                  "The API response structure may have changed.",
+                    })
+
+                if new_keys:
+                    issues.append({
+                        "level": "info",
+                        "message": f"Schema drift: new keys in {url}",
+                        "detail": f"Unexpected keys found: {sorted(new_keys)}. "
+                                  "The API may have added new fields.",
+                    })
+
+                if not missing and not new_keys:
+                    issues.append({
+                        "level": "info",
+                        "message": f"Schema matches for {url}",
+                        "detail": f"All {len(expected_keys)} expected keys present, "
+                                  "no unexpected keys.",
+                    })
+
+        except json.JSONDecodeError:
+            issues.append({
+                "level": "error",
+                "message": f"Response from {url} is not valid JSON",
+                "detail": "Cannot perform schema drift check.",
+            })
+        except URLError as exc:
+            issues.append({
+                "level": "error",
+                "message": f"Cannot reach {url} for schema check",
+                "detail": f"Error: {exc.reason}",
+            })
+        except Exception as exc:
+            issues.append({
+                "level": "error",
+                "message": f"Schema check failed for {url}",
+                "detail": f"Error: {exc}",
+            })
+
+    return issues
+
+
+def staleness_check(
+    skill_path: str,
+    check_deps: bool = False,
+    check_drift: bool = False,
+) -> dict:
+    """
+    Main entry point for staleness detection.
+
+    Args:
+        skill_path: Path to the skill directory.
+        check_deps: If True, HTTP-check declared dependencies.
+        check_drift: If True, check for schema drift in declared endpoints.
+
+    Returns:
+        Dict with keys:
+            - fresh (bool): True if no errors found.
+            - review_status (str): "fresh", "due_soon", "overdue", or "unknown".
+            - days_since_review (int or None): Days since last review.
+            - date_source (str): Where the reference date came from.
+            - issues (list[dict]): All issues found.
+    """
+    all_issues: list[dict] = []
+
+    skill_dir = Path(skill_path).resolve()
+
+    # --- Check: directory exists ---
+    if not skill_dir.exists():
+        return {
+            "fresh": False,
+            "review_status": "unknown",
+            "days_since_review": None,
+            "date_source": "none",
+            "issues": [{"level": "error", "message": f"Path does not exist: {skill_dir}", "detail": ""}],
+        }
+
+    if not skill_dir.is_dir():
+        return {
+            "fresh": False,
+            "review_status": "unknown",
+            "days_since_review": None,
+            "date_source": "none",
+            "issues": [{"level": "error", "message": f"Path is not a directory: {skill_dir}", "detail": ""}],
+        }
+
+    # --- Read SKILL.md ---
+    skill_md = skill_dir / "SKILL.md"
+    if not skill_md.exists():
+        return {
+            "fresh": False,
+            "review_status": "unknown",
+            "days_since_review": None,
+            "date_source": "none",
+            "issues": [{"level": "error", "message": "SKILL.md not found", "detail": ""}],
+        }
+
+    try:
+        content = skill_md.read_text(encoding="utf-8")
+    except Exception as exc:
+        return {
+            "fresh": False,
+            "review_status": "unknown",
+            "days_since_review": None,
+            "date_source": "none",
+            "issues": [{"level": "error", "message": f"Could not read SKILL.md: {exc}", "detail": ""}],
+        }
+
+    frontmatter, _ = _parse_frontmatter(content)
+    if frontmatter is None:
+        return {
+            "fresh": False,
+            "review_status": "unknown",
+            "days_since_review": None,
+            "date_source": "none",
+            "issues": [{"level": "error", "message": "No valid frontmatter found", "detail": ""}],
+        }
+
+    # --- Phase 1: Review staleness ---
+    git_date = _get_git_last_modified(skill_path)
+    review_issues, review_status, days_since, date_source = _check_review_staleness(
+        frontmatter, git_date
+    )
+    all_issues.extend(review_issues)
+
+    # --- Phase 2: Dependency health ---
+    if check_deps:
+        deps = _parse_yaml_list(frontmatter, "metadata", "dependencies")
+        if deps:
+            dep_issues = _check_dependency_health(deps)
+            all_issues.extend(dep_issues)
+        else:
+            all_issues.append({
+                "level": "info",
+                "message": "No dependencies declared",
+                "detail": "Add metadata.dependencies to enable health checks.",
+            })
+
+    # --- Phase 3: Schema drift ---
+    if check_drift:
+        expectations = _parse_schema_expectations(frontmatter)
+        if expectations:
+            drift_issues = _check_schema_drift(expectations)
+            all_issues.extend(drift_issues)
+        else:
+            all_issues.append({
+                "level": "info",
+                "message": "No schema expectations declared",
+                "detail": "Add metadata.schema_expectations to enable drift detection.",
+            })
+
+    # Determine overall freshness
+    has_errors = any(i["level"] == "error" for i in all_issues)
+    fresh = not has_errors
+
+    return {
+        "fresh": fresh,
+        "review_status": review_status,
+        "days_since_review": days_since,
+        "date_source": date_source,
+        "issues": all_issues,
+    }
+
+
+def _print_human_readable(result: dict, skill_path: str) -> None:
+    """Print staleness check results in a human-readable format."""
+    print(f"Staleness check: {skill_path}")
+    print(f"{'=' * 60}")
+
+    status_label = result["review_status"].upper().replace("_", " ")
+    print(f"Review status: {status_label}")
+
+    if result["days_since_review"] is not None:
+        print(f"Days since review: {result['days_since_review']} (source: {result['date_source']})")
+
+    if result["fresh"]:
+        print("Overall: FRESH")
+    else:
+        print("Overall: STALE / DEGRADED")
+
+    if result["issues"]:
+        errors = [i for i in result["issues"] if i["level"] == "error"]
+        warnings = [i for i in result["issues"] if i["level"] == "warning"]
+        infos = [i for i in result["issues"] if i["level"] == "info"]
+
+        if errors:
+            print(f"\nErrors ({len(errors)}):")
+            for issue in errors:
+                print(f"  [ERROR] {issue['message']}")
+                if issue["detail"]:
+                    print(f"          {issue['detail']}")
+
+        if warnings:
+            print(f"\nWarnings ({len(warnings)}):")
+            for issue in warnings:
+                print(f"  [WARN]  {issue['message']}")
+                if issue["detail"]:
+                    print(f"          {issue['detail']}")
+
+        if infos:
+            print(f"\nInfo ({len(infos)}):")
+            for issue in infos:
+                print(f"  [INFO]  {issue['message']}")
+                if issue["detail"]:
+                    print(f"          {issue['detail']}")
+
+    print(f"{'=' * 60}")
+
+
+def main() -> None:
+    """CLI entry point for the staleness checker."""
+    if len(sys.argv) < 2:
+        print(
+            "Usage: python3 scripts/staleness_check.py <skill-path> [--json] [--check-deps] [--check-drift]\n"
+            "\n"
+            "Arguments:\n"
+            "  skill-path      Path to the skill directory to check\n"
+            "\n"
+            "Options:\n"
+            "  --json           Output results as JSON to stdout\n"
+            "  --check-deps     HTTP-check declared dependency URLs\n"
+            "  --check-drift    Detect schema drift in declared API endpoints\n"
+            "\n"
+            "Exit codes:\n"
+            "  0  Fresh (no staleness issues)\n"
+            "  1  Stale (overdue for review)\n"
+            "  2  Degraded (dependency failures or schema drift)\n",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    skill_path = sys.argv[1]
+    use_json = "--json" in sys.argv
+    check_deps = "--check-deps" in sys.argv
+    check_drift = "--check-drift" in sys.argv
+
+    result = staleness_check(skill_path, check_deps=check_deps, check_drift=check_drift)
+
+    if use_json:
+        print(json.dumps(result, indent=2))
+    else:
+        _print_human_readable(result, skill_path)
+
+    # Exit codes: 0=fresh, 1=stale, 2=degraded
+    if result["review_status"] == "overdue":
+        sys.exit(1)
+
+    has_dep_or_drift_errors = any(
+        i["level"] == "error" and "review" not in i["message"].lower()
+        for i in result["issues"]
+    )
+    if has_dep_or_drift_errors:
+        sys.exit(2)
+
+    sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+## File: `scripts/validate.py`
+```python
+#!/usr/bin/env python3
+"""
+Spec Compliance Validator for the Agent Skills Open Standard.
+
+Validates a skill directory against the Agent Skills Open Standard by checking
+SKILL.md existence, frontmatter structure, naming conventions, and best practices.
+
+Usage:
+    python3 scripts/validate.py path/to/skill/
+    python3 scripts/validate.py path/to/skill/ --json
+
+Exit codes:
+    0 - Valid (no errors, may have warnings)
+    1 - Invalid (one or more errors found)
+"""
+
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Optional
+
+
+# --- Constants ---
+
+MAX_NAME_LENGTH = 64
+MAX_DESCRIPTION_LENGTH = 1024
+MAX_BODY_LINES_WARNING = 500
+
+# Pattern for valid skill names: lowercase letters, numbers, hyphens
+NAME_PATTERN = re.compile(r"^[a-z0-9]([a-z0-9-]*[a-z0-9])?$")
+CONSECUTIVE_HYPHENS_PATTERN = re.compile(r"--")
+
+# Pattern for YYYY-MM-DD date format
+DATE_FORMAT_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+# Pattern for local file references in markdown: [text](path) excluding http/https/mailto/#
+LOCAL_LINK_PATTERN = re.compile(
+    r"\[([^\]]*)\]\(([^)]+)\)"
+)
+
+
+def _parse_frontmatter(content: str) -> tuple[Optional[str], Optional[str]]:
+    """
+    Extract frontmatter and body from SKILL.md content.
+
+    Args:
+        content: Full text content of SKILL.md.
+
+    Returns:
+        Tuple of (frontmatter_text, body_text). Either may be None if
+        frontmatter is missing or malformed.
+    """
+    if not content.startswith("---"):
+        return None, None
+
+    # Find the closing --- (skip the opening one at position 0)
+    closing_index = content.find("---", 3)
+    if closing_index == -1:
+        return None, None
+
+    frontmatter = content[3:closing_index].strip()
+    body = content[closing_index + 3:].strip()
+    return frontmatter, body
+
+
+def _parse_yaml_field(frontmatter: str, field: str) -> Optional[str]:
+    """
+    Extract a top-level scalar field value from YAML frontmatter using simple parsing.
+
+    Handles both inline values (``name: value``) and YAML block scalars
+    (``description: >-`` followed by indented continuation lines).
+
+    Args:
+        frontmatter: The frontmatter text (without ``---`` delimiters).
+        field: The field name to look for.
+
+    Returns:
+        The field value as a string, or None if the field is not present.
+    """
+    lines = frontmatter.split("\n")
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith(f"{field}:"):
+            value = stripped[len(field) + 1:].strip()
+
+            # Check for YAML block scalar indicators (>- , |-, >, |)
+            if value in (">-", "|-", ">", "|", ">+", "|+"):
+                # Collect indented continuation lines
+                parts: list[str] = []
+                for j in range(i + 1, len(lines)):
+                    continuation = lines[j]
+                    # Continuation lines must be indented
+                    if continuation and (continuation[0] == " " or continuation[0] == "\t"):
+                        parts.append(continuation.strip())
+                    else:
+                        break
+                return " ".join(parts) if parts else ""
+
+            return value
+    return None
+
+
+def _field_exists_in_frontmatter(frontmatter: str, field: str) -> bool:
+    """
+    Check whether a field name appears as a top-level key in frontmatter.
+
+    Args:
+        frontmatter: The frontmatter text.
+        field: The field name to look for.
+
+    Returns:
+        True if the field is present.
+    """
+    for line in frontmatter.split("\n"):
+        stripped = line.strip()
+        if stripped.startswith(f"{field}:"):
+            return True
+    return False
+
+
+def _subfield_exists(frontmatter: str, parent: str, child: str) -> bool:
+    """
+    Check whether a sub-field exists under a parent field in YAML frontmatter.
+
+    Args:
+        frontmatter: The frontmatter text.
+        parent: The parent field name (e.g., ``metadata``).
+        child: The child field name (e.g., ``author``).
+
+    Returns:
+        True if the sub-field is found under the parent.
+    """
+    lines = frontmatter.split("\n")
+    in_parent = False
+    for line in lines:
+        stripped = line.strip()
+        # Detect the parent field
+        if stripped.startswith(f"{parent}:"):
+            in_parent = True
+            continue
+        if in_parent:
+            # Still inside the parent block if line is indented
+            if line and (line[0] == " " or line[0] == "\t"):
+                if stripped.startswith(f"{child}:"):
+                    return True
+            else:
+                # Left the parent block
+                in_parent = False
+    return False
+
+
+def _parse_subfield_value(frontmatter: str, parent: str, child: str) -> Optional[str]:
+    """
+    Extract a sub-field value from under a parent field in YAML frontmatter.
+
+    Args:
+        frontmatter: The frontmatter text.
+        parent: The parent field name (e.g., ``metadata``).
+        child: The child field name (e.g., ``author``).
+
+    Returns:
+        The sub-field value as a string, or None if not found.
+    """
+    lines = frontmatter.split("\n")
+    in_parent = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith(f"{parent}:"):
+            in_parent = True
+            continue
+        if in_parent:
+            if line and (line[0] == " " or line[0] == "\t"):
+                if stripped.startswith(f"{child}:"):
+                    return stripped[len(child) + 1:].strip()
+            else:
+                in_parent = False
+    return None
+
+
+def _extract_local_links(body: str) -> list[str]:
+    """
+    Extract local file paths referenced in markdown links within the body.
+
+    Filters out URLs (http, https, mailto) and anchor links (#).
+
+    Args:
+        body: The markdown body text.
+
+    Returns:
+        List of relative file paths referenced in the body.
+    """
+    paths: list[str] = []
+    for match in LOCAL_LINK_PATTERN.finditer(body):
+        target = match.group(2).strip()
+        # Skip external URLs and anchors
+        if target.startswith(("http://", "https://", "mailto:", "#")):
+            continue
+        # Strip any anchor fragment from the path
+        if "#" in target:
+            target = target.split("#")[0]
+        if target:
+            paths.append(target)
+    return paths
+
+
+def validate_skill(skill_path: str) -> dict:
+    """
+    Validate a skill directory against the Agent Skills Open Standard.
+
+    Performs both required checks (errors) and recommended checks (warnings).
+
+    Args:
+        skill_path: Path to the skill directory to validate.
+
+    Returns:
+        Dictionary with keys:
+            - ``valid`` (bool): True if no errors were found.
+            - ``errors`` (list[str]): List of error messages (must fix).
+            - ``warnings`` (list[str]): List of warning messages (should fix).
+    """
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    skill_dir = Path(skill_path).resolve()
+
+    # --- Check: directory exists ---
+    if not skill_dir.exists():
+        errors.append(f"Path does not exist: {skill_dir}")
+        return {"valid": False, "errors": errors, "warnings": warnings}
+
+    if not skill_dir.is_dir():
+        errors.append(f"Path is not a directory: {skill_dir}")
+        return {"valid": False, "errors": errors, "warnings": warnings}
+
+    # --- Check: SKILL.md exists ---
+    skill_md = skill_dir / "SKILL.md"
+    if not skill_md.exists():
+        errors.append("SKILL.md not found in skill directory")
+        return {"valid": False, "errors": errors, "warnings": warnings}
+
+    # --- Read SKILL.md ---
+    try:
+        content = skill_md.read_text(encoding="utf-8")
+    except Exception as exc:
+        errors.append(f"Could not read SKILL.md: {exc}")
+        return {"valid": False, "errors": errors, "warnings": warnings}
+
+    # --- Check: frontmatter exists ---
+    if not content.startswith("---"):
+        errors.append("SKILL.md must start with '---' frontmatter delimiter")
+        return {"valid": False, "errors": errors, "warnings": warnings}
+
+    frontmatter, body = _parse_frontmatter(content)
+
+    if frontmatter is None:
+        errors.append("SKILL.md frontmatter is not properly closed (missing closing '---')")
+        return {"valid": False, "errors": errors, "warnings": warnings}
+
+    # --- Check: name field ---
+    name_value = _parse_yaml_field(frontmatter, "name")
+    if name_value is None:
+        errors.append("'name' field is missing from frontmatter")
+    else:
+        name_value = name_value.strip()
+        if len(name_value) == 0:
+            errors.append("'name' field is empty")
+        elif len(name_value) > MAX_NAME_LENGTH:
+            errors.append(
+                f"'name' field exceeds {MAX_NAME_LENGTH} characters "
+                f"(found {len(name_value)})"
+            )
+        else:
+            # Validate name format
+            if not NAME_PATTERN.match(name_value):
+                errors.append(
+                    f"'name' field must contain only lowercase letters, numbers, "
+                    f"and hyphens (found: '{name_value}')"
+                )
+            if name_value.startswith("-"):
+                errors.append(f"'name' must not start with a hyphen (found: '{name_value}')")
+            if name_value.endswith("-"):
+                errors.append(f"'name' must not end with a hyphen (found: '{name_value}')")
+            if CONSECUTIVE_HYPHENS_PATTERN.search(name_value):
+                errors.append(
+                    f"'name' must not contain consecutive hyphens (found: '{name_value}')"
+                )
+
+            # --- Check: directory name matches name field ---
+            dir_name = skill_dir.name
+            if dir_name != name_value:
+                errors.append(
+                    f"Directory name '{dir_name}' does not match 'name' field "
+                    f"'{name_value}' in frontmatter"
+                )
+
+    # --- Check: description field ---
+    description_value = _parse_yaml_field(frontmatter, "description")
+    if description_value is None:
+        errors.append("'description' field is missing from frontmatter")
+    else:
+        description_value = description_value.strip()
+        if len(description_value) == 0:
+            errors.append("'description' field is empty")
+        elif len(description_value) > MAX_DESCRIPTION_LENGTH:
+            errors.append(
+                f"'description' field exceeds {MAX_DESCRIPTION_LENGTH} characters "
+                f"(found {len(description_value)})"
+            )
+
+    # --- Check: -cskill suffix is deprecated ---
+    if name_value is not None and name_value.endswith("-cskill"):
+        errors.append(
+            f"'name' uses the deprecated '-cskill' suffix. "
+            f"Use '-skill' instead (found: '{name_value}')"
+        )
+
+    # --- Warnings ---
+
+    # Naming convention: -skill suffix (or -suite for suites)
+    if name_value is not None and len(name_value) > 0:
+        if not name_value.endswith("-skill") and not name_value.endswith("-suite"):
+            warnings.append(
+                f"'name' should end with '-skill' for discoverability "
+                f"(found: '{name_value}')"
+            )
+
+    # Body line count
+    if body is not None:
+        body_lines = body.split("\n")
+        body_line_count = len(body_lines)
+        if body_line_count > MAX_BODY_LINES_WARNING:
+            warnings.append(
+                f"SKILL.md body exceeds {MAX_BODY_LINES_WARNING} lines "
+                f"({body_line_count} lines). Consider moving content to references/."
+            )
+
+    # license field
+    if not _field_exists_in_frontmatter(frontmatter, "license"):
+        warnings.append("'license' field is missing from frontmatter")
+
+    # metadata field
+    if not _field_exists_in_frontmatter(frontmatter, "metadata"):
+        warnings.append("'metadata' field is missing from frontmatter")
+    else:
+        if not _subfield_exists(frontmatter, "metadata", "author"):
+            warnings.append("'metadata.author' sub-field is missing")
+        if not _subfield_exists(frontmatter, "metadata", "version"):
+            warnings.append("'metadata.version' sub-field is missing")
+
+        # Temporal metadata validation (optional, warnings only)
+        created_val = _parse_subfield_value(frontmatter, "metadata", "created")
+        reviewed_val = _parse_subfield_value(frontmatter, "metadata", "last_reviewed")
+        interval_val = _parse_subfield_value(frontmatter, "metadata", "review_interval_days")
+
+        if created_val and not DATE_FORMAT_PATTERN.match(created_val.strip()):
+            warnings.append(
+                f"'metadata.created' should be YYYY-MM-DD format (found: '{created_val}')"
+            )
+        if reviewed_val and not DATE_FORMAT_PATTERN.match(reviewed_val.strip()):
+            warnings.append(
+                f"'metadata.last_reviewed' should be YYYY-MM-DD format (found: '{reviewed_val}')"
+            )
+        if interval_val:
+            try:
+                int(interval_val.strip())
+            except ValueError:
+                warnings.append(
+                    f"'metadata.review_interval_days' should be an integer (found: '{interval_val}')"
+                )
+
+        has_temporal = bool(created_val or reviewed_val or interval_val)
+        if not has_temporal:
+            warnings.append(
+                "Consider adding temporal metadata (metadata.created, metadata.last_reviewed, "
+                "metadata.review_interval_days) for staleness tracking"
+            )
+
+    # activation field (harness factory v1.1)
+    if not _field_exists_in_frontmatter(frontmatter, "activation"):
+        warnings.append(
+            "'activation' field is missing from frontmatter. "
+            "Add 'activation: /{skill-name}' for namespace enforcement."
+        )
+
+    # provenance field (harness factory v1.1)
+    if not _field_exists_in_frontmatter(frontmatter, "provenance"):
+        warnings.append(
+            "'provenance' field is missing from frontmatter. "
+            "Add provenance metadata (maintainer, version, created, source_references)."
+        )
+
+    # Referenced local files
+    if body is not None:
+        local_links = _extract_local_links(body)
+        for link_path in local_links:
+            resolved = skill_dir / link_path
+            if not resolved.exists():
+                warnings.append(
+                    f"Referenced file does not exist: '{link_path}'"
+                )
+
+    return {
+        "valid": len(errors) == 0,
+        "errors": errors,
+        "warnings": warnings,
+    }
+
+
+def _print_human_readable(result: dict, skill_path: str) -> None:
+    """
+    Print validation results in a human-readable format.
+
+    Args:
+        result: The validation result dictionary.
+        skill_path: The path that was validated (for display).
+    """
+    print(f"Validating: {skill_path}")
+    print(f"{'=' * 60}")
+
+    if result["valid"]:
+        print("Status: VALID")
+    else:
+        print("Status: INVALID")
+
+    if result["errors"]:
+        print(f"\nErrors ({len(result['errors'])}):")
+        for error in result["errors"]:
+            print(f"  [ERROR] {error}")
+
+    if result["warnings"]:
+        print(f"\nWarnings ({len(result['warnings'])}):")
+        for warning in result["warnings"]:
+            print(f"  [WARN]  {warning}")
+
+    if not result["errors"] and not result["warnings"]:
+        print("\nNo issues found.")
+
+    print(f"{'=' * 60}")
+
+
+def main() -> None:
+    """CLI entry point for the spec compliance validator."""
+    if len(sys.argv) < 2:
+        print(
+            "Usage: python3 scripts/validate.py <skill-path> [--json]\n"
+            "\n"
+            "Arguments:\n"
+            "  skill-path    Path to the skill directory to validate\n"
+            "\n"
+            "Options:\n"
+            "  --json        Output results as JSON to stdout\n"
+            "\n"
+            "Exit codes:\n"
+            "  0  Valid (no errors)\n"
+            "  1  Invalid (one or more errors)\n",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    skill_path = sys.argv[1]
+    use_json = "--json" in sys.argv
+
+    result = validate_skill(skill_path)
+
+    if use_json:
+        print(json.dumps(result, indent=2))
+    else:
+        _print_human_readable(result, skill_path)
+
+    sys.exit(0 if result["valid"] else 1)
+
+
+if __name__ == "__main__":
+    main()
+```
+

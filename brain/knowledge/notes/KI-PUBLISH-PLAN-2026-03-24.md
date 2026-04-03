@@ -7,12 +7,12 @@
 ## BỐI CẢNH
 
 OmniClaw Corp hiện chạy full local trên máy CEO.
-Vấn đề: hệ thống nặng (~GB do plugins, vector DB, models) → không thể push raw lên GitHub.
+Problem: hệ thống nặng (~GB do plugins, vector DB, models) → không thể push raw lên GitHub.
 Câu hỏi cốt lõi: **Distribute OmniClaw cho user khác như thế nào?**
 
 ---
 
-## KIẾN TRÚC PHÂN PHỐI (2-Tier)
+## Architecture PHÂN PHỐI (2-Tier)
 
 ### Tier 1 — GitHub Core (~5MB)
 ```
@@ -144,7 +144,7 @@ Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (đã pending)
 
 ## FILES CẦN LÀM NGAY (khi CEO quyết định push)
 
-| File | Mô tả | Thời gian |
+| File | Description: | Thời gian |
 |------|-------|----------|
 | `.gitignore` | Exclude plugins/, DB, secrets | 5 phút |
 | `requirements.txt` | pip dependencies pinned | 5 phút |

@@ -1,310 +1,310 @@
-# Department: operations
+# department: operations
 ---
-description: OmniClaw Corp V3.1 — Quy trình khởi động toàn hệ thống, từ boot AI agent đến Corp Daily Cycle
----
-
-# 🚀 OmniClaw STARTUP — Quy Trình Khởi Động Hệ Thống
-**Version:** 1.0 | **Date:** 2026-03-26 | **Authority:** Tier 0  
-**Trigger:** Đầu mỗi ngày làm việc hoặc khi mở session mới  
-**Script tự động:** `python system/ops/omniclaw_startup.py`
-
+description: omniclaw corp v3.1 — quy trình khởi động toàn hệ thống, từ boot ai agent đến corp daily cycle
 ---
 
-## TỔNG QUAN — 3 Giai Đoạn Khởi Động
+# 🚀 omniclaw startup — quy trình khởi động hệ thống
+**version:** 1.0 | **date:** 2026-03-26 | **authority:** tier 0  
+**trigger:** đầu mỗi ngày làm việc hoặc khi mở session mới  
+**script tự động:** `python system/ops/omniclaw_startup.py`
+
+---
+
+## tổng quan — 3 giai đoạn khởi động
 
 ```
-GIAI ĐOẠN 1: SYSTEM BOOT        (30 giây)
-  → Kiểm tra services, files, ports
-  → Tự động khởi động services thiếu
+giai đoạn 1: system boot        (30 giây)
+  → kiểm tra services, files, ports
+  → tự động khởi động services thiếu
 
-GIAI ĐOẠN 2: AGENT BOOT         (1-2 phút)  
-  → Load context 9-step sequence (GEMINI.md)
-  → Register session vào blackboard
-  → Kiểm tra escalations, KPI, proposals
+giai đoạn 2: agent boot         (1-2 phút)  
+  → load context 9-step sequence (gemini.md)
+  → register session vào blackboard
+  → kiểm tra escalations, kpi, proposals
 
-GIAI ĐOẠN 3: CORP ACTIVATION    (theo yêu cầu)
-  → CEO quyết định: Corp Cycle hay Direct Task
-  → Trigger: "omniclaw corp start" hoặc task trực tiếp
+giai đoạn 3: corp activation    (theo yêu cầu)
+  → ceo quyết định: corp cycle hay direct task
+  → trigger: "omniclaw corp start" hoặc task trực tiếp
 ```
 
 ---
 
-## GIAI ĐOẠN 1 — SYSTEM BOOT
+## giai đoạn 1 — system boot
 
-### BƯỚC 1.1: Khởi Động Tự Động (chạy script)
+### Step 1.1: khởi động tự động (chạy script)
 
 ```powershell
-# Lệnh duy nhất cần nhớ:
+# lệnh duy nhất cần nhớ:
 python system/ops/omniclaw_startup.py
 
-# Hoặc full verbose:
+# hoặc full verbose:
 python system/ops/omniclaw_startup.py --verbose
 
-# Chỉ kiểm tra không khởi động:
+# chỉ kiểm tra không khởi động:
 python system/ops/omniclaw_startup.py --check-only
 ```
 
-### BƯỚC 1.2: Script Kiểm Tra (tự động)
+### Step 1.2: script kiểm tra (tự động)
 
-Script sẽ tự động kiểm tra và báo cáo:
+script sẽ tự động kiểm tra và báo cáo:
 
-| Service | Port | Auto-Start? |
+| service | port | auto-start? |
 |---------|------|-------------|
-| Ollama (local LLM) | 11434 | ❌ Thủ công |
-| ClawTask API | 7474 | ✅ Tự động |
-| GitNexus | 4747 | ✅ Tự động |
-| ag-auto-accept | 7476 | ✅ Tự động |
-| LightRAG (RAG) | 9621 | ✅ Tự động |
-| Telegram Bot | — | ✅ Verify token |
+| ollama (local llm) | 11434 | ❌ thủ công |
+| clawtask api | 7474 | ✅ tự động |
+| gitnexus | 4747 | ✅ tự động |
+| ag-auto-accept | 7476 | ✅ tự động |
+| lightrag (rag) | 9621 | ✅ tự động |
+| telegram bot | — | ✅ verify token |
 
-### BƯỚC 1.3: File Integrity Check
+### Step 1.3: file integrity check
 
-Script kiểm tra 6 file quan trọng (STOP nếu thiếu):
+script kiểm tra 6 file quan trọng (stop nếu thiếu):
 
 ```
 ✅ brain/shared-context/blackboard.json
-✅ brain/shared-context/SKILL_REGISTRY.json
+✅ brain/shared-context/skill_registry.json
 ✅ brain/shared-context/corp/kpi_scoreboard.json
 ✅ brain/shared-context/corp/escalations.md
 ✅ brain/corp/org_chart.yaml (relative corp/)
-✅ GEMINI.md
+✅ gemini.md
 ```
 
 ---
 
-## GIAI ĐOẠN 2 — AGENT BOOT (GEMINI.md 9-Step Sequence)
+## giai đoạn 2 — agent boot (gemini.md 9-step sequence)
 
-> **Áp dụng cho:** Antigravity (Gemini) | Bắt buộc mỗi session
+> **áp dụng cho:** antigravity (gemini) | bắt buộc mỗi session
 
 ```
-STEP 1  → Read GEMINI.md               ← ENTRY POINT (file này)
-STEP 2  → Load SOUL.md                 ← Identity & Core Values
-STEP 3  → Load GOVERNANCE.md           ← Rules & Authority
-STEP 4  → Load AGENTS.md               ← 99 Agent Roster
-STEP 5  → Load THESIS.md               ← Strategy & 40 Pillars
-STEP 6  → Load report_formats.md       ← Output Format Guide
-STEP 7  → Check blackboard.json        ← Active tasks & state
-STEP 8  → Load SKILL_REGISTRY.json     ← 20 Skills available
-STEP 9  → BEGIN WORK                   ← Sẵn sàng nhận lệnh
+step 1  → read gemini.md               ← entry point (file này)
+step 2  → load soul.md                 ← identity & core values
+step 3  → load governance.md           ← rules & authority
+step 4  → load agents.md               ← 99 agent roster
+step 5  → load thesis.md               ← strategy & 40 pillars
+step 6  → load report_formats.md       ← output format guide
+step 7  → check blackboard.json        ← active tasks & state
+step 8  → load skill_registry.json     ← 20 skills available
+step 9  → begin work                   ← sẵn sàng nhận lệnh
 ```
 
-**Rules bắt buộc:**
-- Skip bất kỳ step → Vi phạm governance. Log warning + report CEO.
-- File missing → Skip step, continue, báo CEO.
-- HARD RULE: Không đọc sai boot file (Gemini ≠ Claude Code).
+**rules bắt buộc:**
+- skip bất kỳ step → vi phạm governance. log warning + report ceo.
+- file missing → skip step, continue, báo ceo.
+- hard rule: không đọc sai boot file (gemini ≠ claude code).
 
-### BƯỚC 2.1: Đọc Blackboard State
+### Step 2.1: đọc blackboard state
 
 ```json
-// Đọc brain/shared-context/blackboard.json
+// đọc brain/shared-context/blackboard.json
 {
-  "open_items": [...],          // ← Việc còn tồn đọng
-  "active_campaign": "...",     // ← Campaign đang chạy
-  "handoff_trigger": "IDLE",    // ← IDLE = sẵn sàng
-  "corp_cycle_status": "IDLE"   // ← IDLE = OK start cycle
+  "open_items": [...],          // ← việc còn tồn đọng
+  "active_campaign": "...",     // ← campaign đang chạy
+  "handoff_trigger": "idle",    // ← idle = sẵn sàng
+  "corp_cycle_status": "idle"   // ← idle = ok start cycle
 }
 ```
 
-**STOP nếu:** `corp_cycle_status = "RUNNING"` → Cycle trước chưa xong!
+**stop nếu:** `corp_cycle_status = "running"` → cycle trước chưa xong!
 
-### BƯỚC 2.2: Register Session
+### Step 2.2: register session
 
 ```json
-// Update blackboard.json:
+// update blackboard.json:
 {
-  "target_agent": "Antigravity",
-  "status": "ACTIVE",
-  "session_start": "<ISO timestamp>",
-  "handoff_trigger": "ACTIVE"
+  "target_agent": "antigravity",
+  "status": "active",
+  "session_start": "<iso timestamp>",
+  "handoff_trigger": "active"
 }
 ```
 
-### BƯỚC 2.3: CEO Briefing (auto-generated)
+### Step 2.3: ceo briefing (auto-generated)
 
 ```
-📊 OmniClaw Corp Status — <DATE>
+📊 omniclaw corp status — <date>
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🏢 System:   <overall_status from kpi_scoreboard>
-🔋 Services: <N> LIVE | <M> DOWN
-📋 Blackboard: <summary từ last session>
-⚠️  Open Items: <N> pending tasks
-📌 Escalations: <L2/L3 nếu có>
-🎯 Campaign: <active_campaign>
-🧠 Skills: <N> available
-🔌 MCPs: 8 configured
+🏢 system:   <overall_status from kpi_scoreboard>
+🔋 services: <n> live | <m> down
+📋 blackboard: <summary từ last session>
+⚠️  open items: <n> pending tasks
+📌 escalations: <l2/l3 nếu có>
+🎯 campaign: <active_campaign>
+🧠 skills: <n> available
+🔌 mcps: 8 configured
 
-→ Sẵn sàng nhận lệnh. Corp Cycle hay Direct Task?
+→ sẵn sàng nhận lệnh. corp cycle hay direct task?
 ```
 
 ---
 
-## GIAI ĐOẠN 3 — CORP ACTIVATION
+## giai đoạn 3 — corp activation
 
-### Option A: Corp Daily Cycle (khuyến nghị buổi sáng)
+### option a: corp daily cycle (khuyến nghị buổi sáng)
 
 ```powershell
-omniclaw corp start   # Full 8-phase cycle
-# OR
+omniclaw corp start   # full 8-phase cycle
+# or
 python ops/omniclaw.py corp start
 ```
 
-Flow: Phase 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7  
-Xem chi tiết: `ecosystem/workflows/corp-daily-cycle.md`
+flow: phase 0 → 1 → 2 → 3 → 4 → 5 → 6 → 7  
+xem chi tiết: `ecosystem/workflows/corp-daily-cycle.md`
 
-### Option B: Status Check nhanh
+### option b: status check nhanh
 
 ```powershell
-python system/ops/omniclaw_orchestrator.py once   # Update HUD + Telegram
-python ops/scripts/system_pulse.py            # Health check 5-min
+python system/ops/omniclaw_orchestrator.py once   # update hud + telegram
+python ops/scripts/system_pulse.py            # health check 5-min
 python ops/scripts/dept_health.py             # 21 dept health
 ```
 
-### Option C: Nhiệm Vụ Trực Tiếp (Direct Task)
+### option c: nhiệm vụ trực tiếp (direct task)
 
-CEO giao task trực tiếp → Antigravity plan → Handoff Claude Code
+ceo giao task trực tiếp → antigravity plan → handoff claude code
 
 ```
-1. Antigravity: Plan + write implementation_plan.md
-2. CEO: Approve (LGTM)
-3. Antigravity: Write blackboard.json handoff_trigger=ACTIVE
-4. Claude Code: Execute + write receipts
-5. Antigravity: Review + report Vietnamese
+1. antigravity: plan + write implementation_plan.md
+2. ceo: approve (lgtm)
+3. antigravity: write blackboard.json handoff_trigger=active
+4. claude code: execute + write receipts
+5. antigravity: review + report vietnamese
 ```
 
 ---
 
-## QUICK REFERENCE — LỆNH KHỞI ĐỘNG
+## quick reference — lệnh khởi động
 
 ```powershell
-# === KHỞI ĐỘNG NHANH (1 lệnh) ===
+# === khởi động nhanh (1 lệnh) ===
 python system/ops/omniclaw_startup.py
 
-# === DATA VAULT (SYNC DỮ LIỆU) ===
-powershell "D:\LongLeo\OmniClaw Corp\OmniClaw REMOTE\scripts\setup.ps1" # (Kéo Data: chạy setup)
-python system/ops/scripts/omniclaw_data_push.py                  # (Đẩy Data: Sync lên Mây)
+# === data vault (sync dữ liệu) ===
+powershell "d:\longleo\omniclaw corp\omniclaw remote\scripts\setup.ps1" # (kéo data: chạy setup)
+python system/ops/scripts/omniclaw_data_push.py                  # (đẩy data: sync lên mây)
 
-# === ORCHESTRATOR ===
-python system/ops/omniclaw_orchestrator.py once      # Update HUD + dispatch
-python system/ops/omniclaw_orchestrator.py routes    # Xem 77 routing rules
+# === orchestrator ===
+python system/ops/omniclaw_orchestrator.py once      # update hud + dispatch
+python system/ops/omniclaw_orchestrator.py routes    # xem 77 routing rules
 
-# === TELEGRAM ===
-python system/ops/telegram_dispatch.py status    # Gửi system status
-python system/ops/telegram_dispatch.py test      # Test kết nối
+# === telegram ===
+python system/ops/telegram_dispatch.py status    # gửi system status
+python system/ops/telegram_dispatch.py test      # test kết nối
 
-# === CORP CYCLE ===
-python ops/omniclaw.py corp start    # Full cycle
-python ops/omniclaw.py corp brief    # CEO brief only
-python ops/omniclaw.py status        # Current status
+# === corp cycle ===
+python ops/omniclaw.py corp start    # full cycle
+python ops/omniclaw.py corp brief    # ceo brief only
+python ops/omniclaw.py status        # current status
 
-# === SERVICES THỦ CÔNG ===
-python system/ops/scripts/lightrag_server.py          # LightRAG :9621
-docker compose up -d infra/observability/             # Langfuse :3100
+# === services thủ công ===
+python system/ops/scripts/lightrag_server.py          # lightrag :9621
+docker compose up -d infra/observability/             # langfuse :3100
 ```
 
 ---
 
-## SƠ ĐỒ KHỞI ĐỘNG
+## sơ đồ khởi động
 
 ```
-CEO mở máy
+ceo mở máy
     │
     ▼
-[TERMINAL] python system/ops/omniclaw_startup.py
+[terminal] python system/ops/omniclaw_startup.py
     │
-    ├─ [1.1] Check blackboard.json       ✅ PASS / ❌ STOP
-    ├─ [1.2] Check 6 critical files      ✅ PASS / ⚠️ WARN
-    ├─ [1.3] Check ports                 ✅ LIVE  / 🔴 DOWN
-    ├─ [1.4] Check SKILL_REGISTRY        ✅ FRESH / ⚠️ OLD
-    ├─ [1.5] Update HUD STATUS.json      ✅ DONE
-    └─ [1.6] Send Telegram boot report   ✅ SENT
-    │
-    ▼
-[AI AGENT] Antigravity đọc GEMINI.md
-    │
-    ├─ STEP 2: SOUL.md          ← Identity
-    ├─ STEP 3: GOVERNANCE.md    ← Rules
-    ├─ STEP 4: AGENTS.md        ← Roster
-    ├─ STEP 5: THESIS.md        ← Strategy
-    ├─ STEP 6: report_formats   ← Output format
-    ├─ STEP 7: blackboard.json  ← State check
-    ├─ STEP 8: SKILL_REGISTRY   ← Load skills
-    └─ STEP 9: BEGIN WORK
+    ├─ [1.1] check blackboard.json       ✅ pass / ❌ stop
+    ├─ [1.2] check 6 critical files      ✅ pass / ⚠️ warn
+    ├─ [1.3] check ports                 ✅ live  / 🔴 down
+    ├─ [1.4] check skill_registry        ✅ fresh / ⚠️ old
+    ├─ [1.5] update hud status.json      ✅ done
+    └─ [1.6] send telegram boot report   ✅ sent
     │
     ▼
-[CEO] Nhận briefing từ Antigravity:
+[ai agent] antigravity đọc gemini.md
     │
-    ├─ Corp Cycle? → "omniclaw corp start"
-    ├─ Direct Task? → Mô tả task
-    └─ Status Check? → "omniclaw status" hoặc HUD
+    ├─ step 2: soul.md          ← identity
+    ├─ step 3: governance.md    ← rules
+    ├─ step 4: agents.md        ← roster
+    ├─ step 5: thesis.md        ← strategy
+    ├─ step 6: report_formats   ← output format
+    ├─ step 7: blackboard.json  ← state check
+    ├─ step 8: skill_registry   ← load skills
+    └─ step 9: begin work
+    │
+    ▼
+[ceo] nhận briefing từ antigravity:
+    │
+    ├─ corp cycle? → "omniclaw corp start"
+    ├─ direct task? → Description task
+    └─ status check? → "omniclaw status" hoặc hud
 ```
 
 ---
 
-## CÁC TRƯỜNG HỢP ĐẶC BIỆT
+## các trường hợp đặc biệt
 
-### Trường hợp 1: Blackboard `corp_cycle_status = "RUNNING"`
+### trường hợp 1: blackboard `corp_cycle_status = "running"`
 ```
-→ Cycle trước chưa xong. KHÔNG start cycle mới.
-→ Đọc escalations.md để hiểu tình trạng.
-→ CEO quyết định: Reset hay tiếp tục?
-→ Reset: Set blackboard corp_cycle_status = "IDLE"
-```
-
-### Trường hợp 2: Có L3 Escalation mở
-```
-→ KHÔNG start Corp Cycle.
-→ Báo cáo CEO ngay lập tức.
-→ CEO resolve L3 trước khi start.
+→ cycle trước chưa xong. không start cycle mới.
+→ đọc escalations.md để hiểu tình trạng.
+→ ceo quyết định: reset hay tiếp tục?
+→ reset: set blackboard corp_cycle_status = "idle"
 ```
 
-### Trường hợp 3: Service quan trọng DOWN
+### trường hợp 2: có l3 escalation mở
 ```
-Ollama DOWN → Không dùng local LLM được. Dùng API thay thế.
-ClawTask DOWN → Mất task tracking. Chạy: npm start --prefix ecosystem/tools/clawtask
-LightRAG DOWN → CIV pipeline bị ảnh hưởng. Fallback: Claude Code RESEARCHER
-Telegram DOWN → Mất notification. Check .env BOT_TOKEN.
+→ không start corp cycle.
+→ báo cáo ceo ngay lập tức.
+→ ceo resolve l3 trước khi start.
 ```
 
-### Trường hợp 4: SKILL_REGISTRY > 7 ngày chưa cập nhật
+### trường hợp 3: service quan trọng down
 ```
-→ Warning. Không STOP.
-→ Chạy: python system/ops/omniclaw_orchestrator.py once (tự update)
-→ Hoặc: powershell ops/scripts/skill_loader.ps1
+ollama down → không dùng local llm được. dùng api thay thế.
+clawtask down → mất task tracking. chạy: npm start --prefix ecosystem/tools/clawtask
+lightrag down → civ pipeline bị ảnh hưởng. fallback: claude code researcher
+telegram down → mất notification. check .env bot_token.
+```
+
+### trường hợp 4: skill_registry > 7 ngày chưa cập nhật
+```
+→ warning. không stop.
+→ chạy: python system/ops/omniclaw_orchestrator.py once (tự update)
+→ hoặc: powershell ops/scripts/skill_loader.ps1
 ```
 
 ---
 
-## SECURITY CHECKLIST (mỗi boot)
+## security checklist (mỗi boot)
 
 ```
-☐ SkillSentry 9-layer scanner: ACTIVE (passive monitoring)
-☐ Không có credentials trong project files
+☐ skillsentry 9-layer scanner: active (passive monitoring)
+☐ không có credentials trong project files
 ☐ .env không được commit vào git
-☐ Strix-agent sẵn sàng scan tool mới
-☐ GEMINI.md có "HARD RULE" còn hiệu lực
+☐ strix-agent sẵn sàng scan tool mới
+☐ gemini.md có "hard rule" còn hiệu lực
 ```
 
 ---
 
-## SESSION CLOSE PROTOCOL
+## session close protocol
 
-Khi kết thúc session (đọc `post-session.md` để chi tiết):
+khi kết thúc session (đọc `post-session.md` để chi tiết):
 
 ```
-1. Update blackboard.json:
-   - status: "IDLE"
-   - handoff_trigger: "COMPLETE" hoặc "BLOCKED"
+1. update blackboard.json:
+   - status: "idle"
+   - handoff_trigger: "complete" hoặc "blocked"
    - summary: <tóm tắt session>
 
-2. Mark tasks trong ClawTask: done/blocked
+2. mark tasks trong clawtask: done/blocked
 
-3. L2/L3 issues → write to corp/escalations.md
+3. l2/l3 issues → write to corp/escalations.md
 
-4. Auto: powershell ops/scripts/update_hud.ps1 (HUD snapshot)
+4. auto: powershell ops/scripts/update_hud.ps1 (hud snapshot)
 ```
 
 ---
 
-*v1.0 | 2026-03-26 | OmniClaw Corp V3.1 | Owner: Antigravity*  
-*Xem thêm: GEMINI.md, antigravity-boot.md, pre-session.md, corp-daily-cycle.md*
+*v1.0 | 2026-03-26 | omniclaw corp v3.1 | owner: antigravity*  
+*xem thêm: gemini.md, antigravity-boot.md, pre-session.md, corp-daily-cycle.md*

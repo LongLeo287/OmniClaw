@@ -1,0 +1,21863 @@
+---
+id: github.com-micromatch-picomatch-850840ae-knowledge
+type: document
+owner: OHD
+tags: [auto-healed]
+healed_at: 2026-04-02T20:20:25.100943
+---
+
+# KNOWLEDGE EXTRACT: github.com_micromatch_picomatch_850840ae
+> **Extracted on:** 2026-04-01 11:53:45
+> **Source:** D:/LongLeo/AI OS CORP/AI OS/system/security/QUARANTINE/KI-BATCH-20260331205007521554/github.com_micromatch_picomatch_850840ae
+
+---
+
+## File: `.editorconfig`
+```
+# http://editorconfig.org/
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[test/{actual/expected,fixtures}/*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false
+```
+
+## File: `.eslintrc.json`
+```json
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+
+  "env": {
+    "es6": true,
+    "node": true
+  },
+
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+
+  "rules": {
+    "accessor-pairs": 2,
+    "arrow-parens": [2, "as-needed"],
+    "arrow-spacing": [2, { "before": true, "after": true }],
+    "block-spacing": [2, "always"],
+    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+    "comma-dangle": [2, "never"],
+    "comma-spacing": [2, { "before": false, "after": true }],
+    "comma-style": [2, "last"],
+    "constructor-super": 2,
+    "curly": [2, "multi-line"],
+    "dot-location": [2, "property"],
+    "eol-last": 2,
+    "eqeqeq": [2, "allow-null"],
+    "generator-star-spacing": [2, { "before": true, "after": true }],
+    "handle-callback-err": [2, "^(err|error)$"],
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "key-spacing": [2, { "beforeColon": false, "afterColon": true }],
+    "keyword-spacing": [2, { "before": true, "after": true }],
+    "new-cap": [2, { "newIsCap": true, "capIsNew": false }],
+    "new-parens": 2,
+    "no-array-constructor": 2,
+    "no-caller": 2,
+    "no-class-assign": 2,
+    "no-cond-assign": 2,
+    "no-const-assign": 2,
+    "no-control-regex": 2,
+    "no-debugger": 2,
+    "no-delete-var": 2,
+    "no-dupe-args": 2,
+    "no-dupe-class-members": 2,
+    "no-dupe-keys": 2,
+    "no-duplicate-case": 2,
+    "no-empty-character-class": 2,
+    "no-eval": 2,
+    "no-ex-assign": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-extra-boolean-cast": 2,
+    "no-extra-parens": [2, "functions"],
+    "no-fallthrough": 2,
+    "no-floating-decimal": 2,
+    "no-func-assign": 2,
+    "no-implied-eval": 2,
+    "no-implicit-coercion": 2,
+    "no-inner-declarations": [2, "functions"],
+    "no-invalid-regexp": 2,
+    "no-irregular-whitespace": 2,
+    "no-iterator": 2,
+    "no-label-var": 2,
+    "no-labels": 2,
+    "no-lone-blocks": 2,
+    "no-lonely-if": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multi-spaces": 0,
+    "no-multi-str": 2,
+    "no-multiple-empty-lines": [2, { "max": 1 }],
+    "no-native-reassign": 2,
+    "no-negated-in-lhs": 2,
+    "no-new": 2,
+    "no-new-func": 2,
+    "no-new-object": 2,
+    "no-new-require": 2,
+    "no-new-wrappers": 2,
+    "no-obj-calls": 2,
+    "no-octal": 2,
+    "no-octal-escape": 2,
+    "no-proto": 2,
+    "no-redeclare": 2,
+    "no-regex-spaces": 2,
+    "no-return-assign": 2,
+    "no-self-compare": 2,
+    "no-sequences": 2,
+    "no-shadow-restricted-names": 2,
+    "no-spaced-func": 2,
+    "no-sparse-arrays": 2,
+    "no-this-before-super": 2,
+    "no-throw-literal": 2,
+    "no-trailing-spaces": 2,
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-unexpected-multiline": 2,
+    "no-unneeded-ternary": [2, { "defaultAssignment": false }],
+    "no-unreachable": 2,
+    "no-unused-expressions": 2,
+    "no-unused-vars": [2, { "vars": "all", "args": "none" }],
+    "no-useless-call": 2,
+    "no-with": 2,
+    "object-curly-spacing": ["error", "always", { "objectsInObjects": true }],
+    "one-var": [2, { "initialized": "never" }],
+    "operator-linebreak": [0, "after", { "overrides": { "?": "before", ":": "before" } }],
+    "padded-blocks": [0, "never"],
+    "prefer-const": [2, { "destructuring": "all", "ignoreReadBeforeAssign": false }],
+    "quotes": [2, "single", "avoid-escape"],
+    "radix": 2,
+    "semi": [2, "always"],
+    "semi-spacing": [2, { "before": false, "after": true }],
+    "space-before-blocks": [2, "always"],
+    "space-before-function-paren": [2, { "anonymous": "never", "named": "never", "asyncArrow": "always" }],
+    "space-in-parens": [2, "never"],
+    "space-infix-ops": 2,
+    "space-unary-ops": [2, { "words": true, "nonwords": false }],
+    "spaced-comment": [0, "always", { "markers": ["global", "globals", "eslint", "eslint-disable", "*package", "!", ","] }],
+    "strict": 2,
+    "use-isnan": 2,
+    "valid-typeof": 2,
+    "wrap-iife": [2, "any"],
+    "yoda": [2, "never"]
+  }
+}
+```
+
+## File: `.gitattributes`
+```
+# Enforce Unix newlines
+* text eol=lf
+
+# binaries
+*.ai binary
+*.psd binary
+*.jpg binary
+*.gif binary
+*.png binary
+*.jpeg binary
+```
+
+## File: `.gitignore`
+```
+# always ignore files
+*.DS_Store
+.idea
+.vscode
+*.sublime-*
+
+# test related, or directories generated by tests
+test/actual
+actual
+coverage
+.nyc*
+
+# npm
+node_modules
+npm-debug.log
+
+# yarn
+yarn.lock
+yarn-error.log
+
+# misc
+_gh_pages
+_draft
+_drafts
+bower_components
+vendor
+temp
+tmp
+TODO.md
+package-lock.json
+*.code-*
+```
+
+## File: `.npmrc`
+```
+package-lock=false
+```
+
+## File: `.verb.md`
+```markdown
+<h1 align="center">Picomatch</h1>
+
+<p align="center">
+  <a href="https://npmjs.org/package/{%= name %}">
+    <img src="https://img.shields.io/npm/v/{%= name %}.svg" alt="version">
+  </a>
+  <a href="https://github.com/{%= repository %}/actions?workflow=Tests">
+    <img src="https://github.com/{%= repository %}/workflows/Tests/badge.svg" alt="test status">
+  </a>
+  <a href="https://coveralls.io/github/{%= repository %}">
+    <img src="https://img.shields.io/coveralls/github/{%= repository %}/master.svg" alt="coverage status">
+  </a>
+  <a href="https://npmjs.org/package/{%= name %}">
+    <img src="https://img.shields.io/npm/dm/{%= name %}.svg" alt="downloads">
+  </a>
+</p>
+
+<br>
+<br>
+
+<p align="center">
+<strong>Blazing fast and accurate glob matcher written in JavaScript.</strong></br>
+<em>No dependencies and full support for standard and extended Bash glob features, including braces, extglobs, POSIX brackets, and regular expressions.</em>
+</p>
+
+<br>
+<br>
+
+## Why picomatch?
+
+- **Lightweight** - No dependencies
+- **Minimal** - Tiny API surface. Main export is a function that takes a glob pattern and returns a matcher function.
+- **Fast** - Loads in about 2ms (that's several times faster than a [single frame of a HD movie](http://www.endmemo.com/sconvert/framespersecondframespermillisecond.php) at 60fps)
+- **Performant** - Use the returned matcher function to speed up repeat matching (like when watching files)
+- **Accurate matching** - Using wildcards (`*` and `?`), globstars (`**`) for nested directories, [advanced globbing](#advanced-globbing) with extglobs, braces, and POSIX brackets, and support for escaping special characters with `\` or quotes.
+- **Well tested** - Thousands of unit tests
+
+See the [library comparison](#library-comparisons) to other libraries.
+
+<br>
+<br>
+
+## Table of Contents
+
+<details><summary> Click to expand </summary>
+
+<!-- toc -->
+
+</details>
+
+<br>
+<br>
+
+## Install
+
+Install with [npm](https://www.npmjs.com/):
+
+```sh
+npm install --save picomatch
+```
+
+<br>
+
+## Usage
+
+The main export is a function that takes a glob pattern and an options object and returns a function for matching strings.
+
+```js
+const pm = require('{%= name %}');
+const isMatch = pm('*.js');
+
+console.log(isMatch('abcd')); //=> false
+console.log(isMatch('a.js')); //=> true
+console.log(isMatch('a.md')); //=> false
+console.log(isMatch('a/b.js')); //=> false
+```
+
+<br>
+
+## API
+
+{%= apidocs("./lib/picomatch.js") %}
+
+<br>
+
+## Options
+
+### Picomatch options
+
+The following options may be used with the main `picomatch()` function or any of the methods on the picomatch API.
+
+| **Option** | **Type** | **Default value** | **Description** |
+| --- | --- | --- | --- |
+| `basename`            | `boolean`      | `false`     | If set, then patterns without slashes will be matched against the basename of the path if it contains slashes.  For example, `a?b` would match the path `/xyz/123/acb`, but not `/xyz/acb/123`. |
+| `bash`                | `boolean`      | `false`     | Follow bash matching rules more strictly - disallows backslashes as escape characters, and treats single stars as globstars (`**`). |
+| `capture`             | `boolean`      | `undefined` | Return regex matches in supporting methods. |
+| `contains`            | `boolean`      | `undefined` | Allows glob to match any part of the given string(s). |
+| `debug`               | `boolean`      | `undefined` | Debug regular expressions when an error is thrown. |
+| `dot`                 | `boolean`      | `false`     | Enable dotfile matching. By default, dotfiles are ignored unless a `.` is explicitly defined in the pattern, or `options.dot` is true |
+| `expandRange`         | `function`     | `undefined` | Custom function for expanding ranges in brace patterns, such as `{a..z}`. The function receives the range values as two arguments, and it must return a string to be used in the generated regex. It's recommended that returned strings be wrapped in parentheses. |
+| `fastpaths`           | `boolean`      | `true`      | To speed up processing, full parsing is skipped for a handful common glob patterns. Disable this behavior by setting this option to `false`. |
+| `flags`               | `string`      | `undefined` | Regex flags to use in the generated regex. If defined, the `nocase` option will be overridden. |
+| [format](#optionsformat) | `function` | `undefined` | Custom function for formatting the returned string. This is useful for removing leading slashes, converting Windows paths to Posix paths, etc. |
+| `ignore`              | `array|string` | `undefined` | One or more glob patterns for excluding strings that should not be matched from the result. |
+| `keepQuotes`          | `boolean`      | `false`     | Retain quotes in the generated regex, since quotes may also be used as an alternative to backslashes.  |
+| `literalBrackets`     | `boolean`      | `undefined` | When `true`, brackets in the glob pattern will be escaped so that only literal brackets will be matched. |
+| `matchBase`           | `boolean`      | `false`     | Alias for `basename` |
+| `maxLength`           | `number`      | `65536`     | Limit the max length of the input string. An error is thrown if the input string is longer than this value. |
+| `maxExtglobRecursion` | `number\|boolean` | `0` | Limit nested quantified extglobs and other risky repeated extglob forms. When the limit is exceeded, the extglob is treated as a literal string instead of being compiled to regex. Set to `false` to disable this safeguard. |
+| `nobrace`             | `boolean`      | `false`     | Disable brace matching, so that `{a,b}` and `{1..3}` would be treated as literal characters. |
+| `nobracket`           | `boolean`      | `undefined` | Disable matching with regex brackets. |
+| `nocase`              | `boolean`      | `false`     | Make matching case-insensitive. Equivalent to the regex `i` flag. Note that this option is overridden by the `flags` option. |
+| `noext`               | `boolean`      | `false`     | Alias for `noextglob` |
+| `noextglob`           | `boolean`      | `false`     | Disable support for matching with extglobs (like `+(a|b)`) |
+| `noglobstar`          | `boolean`      | `false`     | Disable support for matching nested directories with globstars (`**`) |
+| `nonegate`            | `boolean`      | `false`     | Disable support for negating with leading `!` |
+| [onIgnore](#optionsonIgnore) | `function` | `undefined` | Function to be called on ignored items. |
+| [onMatch](#optionsonMatch) | `function` | `undefined` | Function to be called on matched items. |
+| [onResult](#optionsonResult) | `function` | `undefined` | Function to be called on all items, regardless of whether or not they are matched or ignored. |
+| `posix`               | `boolean`      | `false`     | Support POSIX character classes ("posix brackets"). |
+| `prepend`             | `boolean`      | `undefined` | String to prepend to the generated regex used for matching. |
+| `regex`               | `boolean`      | `false`     | Use regular expression rules for `+` (instead of matching literal `+`), and for stars that follow closing parentheses or brackets (as in `)*` and `]*`). |
+| `strictBrackets`      | `boolean`      | `undefined` | Throw an error if brackets, braces, or parens are imbalanced. |
+| `strictSlashes`       | `boolean`      | `undefined` | When true, picomatch won't match trailing slashes with single stars. |
+| `unescape`            | `boolean`      | `undefined` | Remove backslashes preceding escaped characters in the glob pattern. By default, backslashes are retained. |
+| `windows`             | `boolean`      | `false`     | Also accept backslashes as the path separator. |
+
+### Scan Options
+
+In addition to the main [picomatch options](#picomatch-options), the following options may also be used with the [.scan](#scan) method.
+
+| **Option** | **Type** | **Default value** | **Description** |
+| --- | --- | --- | --- |
+| `tokens` | `boolean` | `false` | When `true`, the returned object will include an array of tokens (objects), representing each path "segment" in the scanned glob pattern |
+| `parts` | `boolean` | `false` | When `true`, the returned object will include an array of strings representing each path "segment" in the scanned glob pattern. This is automatically enabled when `options.tokens` is true |
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+const result = picomatch.scan('!./foo/*.js', { tokens: true });
+console.log(result);
+// {
+//   prefix: '!./',
+//   input: '!./foo/*.js',
+//   start: 3,
+//   base: 'foo',
+//   glob: '*.js',
+//   isBrace: false,
+//   isBracket: false,
+//   isGlob: true,
+//   isExtglob: false,
+//   isGlobstar: false,
+//   negated: true,
+//   maxDepth: 2,
+//   tokens: [
+//     { value: '!./', depth: 0, isGlob: false, negated: true, isPrefix: true },
+//     { value: 'foo', depth: 1, isGlob: false },
+//     { value: '*.js', depth: 1, isGlob: true }
+//   ],
+//   slashes: [ 2, 6 ],
+//   parts: [ 'foo', '*.js' ]
+// }
+```
+
+<br>
+
+### Options Examples
+
+#### options.expandRange
+
+**Type**: `function`
+
+**Default**: `undefined`
+
+Custom function for expanding ranges in brace patterns. The [fill-range][] library is ideal for this purpose, or you can use custom code to do whatever you need.
+
+**Example**
+
+The following example shows how to create a glob that matches a folder
+
+
+```js
+const fill = require('fill-range');
+const regex = pm.makeRe('foo/{01..25}/bar', {
+  expandRange(a, b) {
+    return `(${fill(a, b, { toRegex: true })})`;
+  }
+});
+
+console.log(regex);
+//=> /^(?:foo\/((?:0[1-9]|1[0-9]|2[0-5]))\/bar)$/
+
+console.log(regex.test('foo/00/bar'))  // false
+console.log(regex.test('foo/01/bar'))  // true
+console.log(regex.test('foo/10/bar')) // true
+console.log(regex.test('foo/22/bar')) // true
+console.log(regex.test('foo/25/bar')) // true
+console.log(regex.test('foo/26/bar')) // false
+```
+
+#### options.format
+
+**Type**: `function`
+
+**Default**: `undefined`
+
+Custom function for formatting strings before they're matched.
+
+**Example**
+
+```js
+// strip leading './' from strings
+const format = str => str.replace(/^\.\//, '');
+const isMatch = picomatch('foo/*.js', { format });
+console.log(isMatch('./foo/bar.js')); //=> true
+```
+
+#### options.onMatch
+
+```js
+const onMatch = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+};
+
+const isMatch = picomatch('*', { onMatch });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+#### options.onIgnore
+
+```js
+const onIgnore = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+};
+
+const isMatch = picomatch('*', { onIgnore, ignore: 'f*' });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+#### options.onResult
+
+```js
+const onResult = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+};
+
+const isMatch = picomatch('*', { onResult, ignore: 'f*' });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+<br>
+<br>
+
+## Globbing features
+
+- [Basic globbing](#basic-globbing) (Wildcard matching)
+- [Advanced globbing](#advanced-globbing) (extglobs, posix brackets, brace matching)
+
+### Basic globbing
+
+| **Character** | **Description** |
+| --- | --- |
+| `*` | Matches any character zero or more times, excluding path separators. Does _not match_ path separators or hidden files or directories ("dotfiles"), unless explicitly enabled by setting the `dot` option to `true`. |
+| `**` | Matches any character zero or more times, including path separators. Note that `**` will only match path separators (`/`, and `\\` with the `windows` option) when they are the only characters in a path segment. Thus, `foo**/bar` is equivalent to `foo*/bar`, and `foo/a**b/bar` is equivalent to `foo/a*b/bar`, and _more than two_ consecutive stars in a glob path segment are regarded as _a single star_. Thus, `foo/***/bar` is equivalent to `foo/*/bar`. |
+| `?` | Matches any character excluding path separators one time. Does _not match_ path separators or leading dots.  |
+| `[abc]` | Matches any characters inside the brackets. For example, `[abc]` would match the characters `a`, `b` or `c`, and nothing else. |
+
+#### Matching behavior vs. Bash
+
+Picomatch's matching features and expected results in unit tests are based on Bash's unit tests and the Bash 4.3 specification, with the following exceptions:
+
+- Bash will match `foo/bar/baz` with `*`. Picomatch only matches nested directories with `**`.
+- Bash greedily matches with negated extglobs. For example, Bash 4.3 says that `!(foo)*` should match `foo` and `foobar`, since the trailing `*` bracktracks to match the preceding pattern. This is very memory-inefficient, and IMHO, also incorrect. Picomatch would return `false ` for both `foo` and `foobar`.
+
+<br>
+
+### Advanced globbing
+
+- [extglobs](#extglobs)
+- [POSIX brackets](#posix-brackets)
+- [Braces](#brace-expansion)
+
+
+#### Extglobs
+
+| **Pattern** | **Description** |
+| --- | --- |
+| `@(pattern)` | Match _only one_ consecutive occurrence of `pattern` |
+| `*(pattern)` | Match _zero or more_ consecutive occurrences of `pattern` |
+| `+(pattern)` | Match _one or more_ consecutive occurrences of `pattern` |
+| `?(pattern)` | Match _zero or **one**_ consecutive occurrences of `pattern` |
+| `!(pattern)` | Match _anything but_ `pattern` |
+
+
+**Examples**
+
+```js
+const pm = require('picomatch');
+
+// *(pattern) matches ZERO or more of "pattern"
+console.log(pm.isMatch('a', 'a*(z)')); // true
+console.log(pm.isMatch('az', 'a*(z)')); // true
+console.log(pm.isMatch('azzz', 'a*(z)')); // true
+
+// +(pattern) matches ONE or more of "pattern"
+console.log(pm.isMatch('a', 'a+(z)')); // false
+console.log(pm.isMatch('az', 'a+(z)')); // true
+console.log(pm.isMatch('azzz', 'a+(z)')); // true
+
+// supports multiple extglobs
+console.log(pm.isMatch('foo.bar', '!(foo).!(bar)')); // false
+
+// supports nested extglobs
+console.log(pm.isMatch('foo.bar', '!(!(foo)).!(!(bar))')); // true
+
+// risky quantified extglobs are treated literally by default
+console.log(pm.makeRe('+(a|aa)'));
+//=> /^(?:\+\(a\|aa\))$/
+
+// increase the limit to allow a small amount of nested quantified extglobs
+console.log(pm.isMatch('aaa', '+(+(a))', { maxExtglobRecursion: 1 })); // true
+```
+
+#### POSIX brackets
+
+POSIX classes are disabled by default. Enable this feature by setting the `posix` option to true.
+
+**Enable POSIX bracket support**
+
+```js
+console.log(pm.makeRe('[[:word:]]+', { posix: true }));
+//=> /^(?:(?=.)[A-Za-z0-9_]+\/?)$/
+```
+
+**Supported POSIX classes**
+
+The following named POSIX bracket expressions are supported:
+
+- `[:alnum:]` - Alphanumeric characters, equ `[a-zA-Z0-9]`
+- `[:alpha:]` - Alphabetical characters, equivalent to `[a-zA-Z]`.
+- `[:ascii:]` - ASCII characters, equivalent to `[\\x00-\\x7F]`.
+- `[:blank:]` - Space and tab characters, equivalent to `[ \\t]`.
+- `[:cntrl:]` - Control characters, equivalent to `[\\x00-\\x1F\\x7F]`.
+- `[:digit:]` - Numerical digits, equivalent to `[0-9]`.
+- `[:graph:]` - Graph characters, equivalent to `[\\x21-\\x7E]`.
+- `[:lower:]` - Lowercase letters, equivalent to `[a-z]`.
+- `[:print:]` - Print characters, equivalent to `[\\x20-\\x7E ]`.
+- `[:punct:]` - Punctuation and symbols, equivalent to ``[\\-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~]``.
+- `[:space:]` - Extended space characters, equivalent to `[ \\t\\r\\n\\v\\f]`.
+- `[:upper:]` - Uppercase letters, equivalent to `[A-Z]`.
+- `[:word:]` -  Word characters (letters, numbers and underscores), equivalent to `[A-Za-z0-9_]`.
+- `[:xdigit:]` - Hexadecimal digits, equivalent to `[A-Fa-f0-9]`.
+
+
+See the [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html) for more information.
+
+### Braces
+
+Picomatch does not do brace expansion. For [brace expansion][brace-expansion] and advanced matching with braces, use [micromatch][] instead. Picomatch has very basic support for braces.
+
+
+### Matching special characters as literals
+
+If you wish to match the following special characters in a filepath, and you want to use these characters in your glob pattern, they must be escaped with backslashes or quotes:
+
+**Special Characters**
+
+Some characters that are used for matching in regular expressions are also regarded as valid file path characters on some platforms.
+
+To match any of the following characters as literals: `$^*+?()[]{}|` or a leading `!`, you must escape the character with a backslash, or wrap a sequence of characters in quotes.
+
+Examples:
+
+```js
+console.log(pm.makeRe('foo/bar \\(1\\)'));
+console.log(pm.makeRe('foo/bar \\(1\\)'));
+```
+
+<br>
+<br>
+
+## Library Comparisons
+
+The following table shows which features are supported by [minimatch][], [micromatch][], [picomatch][], [nanomatch][], [extglob][], [braces][], and [expand-brackets][].
+
+| **Feature** | `minimatch` | `micromatch` | `picomatch` | `nanomatch` | `extglob` | `braces` | `expand-brackets` |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Wildcard matching (`*?+`) | ✔ | ✔ | ✔ | ✔ | - | - | - |
+| Advancing globbing        | ✔ | ✔ | ✔ | - | - | - | - |
+| Brace _matching_          | ✔ | ✔ | ✔ | - | - | ✔ | - |
+| Brace _expansion_         | ✔ | ✔ | - | - | - | ✔ | - |
+| Extglobs                  | partial | ✔ | ✔ | - | ✔ | - | - |
+| Posix brackets            | - | ✔ | ✔ | - | - | - | ✔ |
+| Regular expression syntax | - | ✔ | ✔ | ✔ | ✔ | - | ✔ |
+| File system operations    | - | - | - | - | - | - | - |
+
+<br>
+<br>
+
+
+## Benchmarks
+
+Performance comparison of picomatch and minimatch.
+
+```
+# .makeRe star (*)
+  picomatch x 3,251,247 ops/sec ±0.25% (95 runs sampled)
+  minimatch x 497,224 ops/sec ±0.11% (100 runs sampled)
+
+# .makeRe star; dot=true (*)
+  picomatch x 2,624,035 ops/sec ±0.16% (98 runs sampled)
+  minimatch x 446,244 ops/sec ±0.63% (99 runs sampled)
+
+# .makeRe globstar (**)
+  picomatch x 2,524,465 ops/sec ±0.13% (99 runs sampled)
+  minimatch x 1,396,257 ops/sec ±0.58% (96 runs sampled)
+
+# .makeRe globstars (**/**/**)
+  picomatch x 2,545,674 ops/sec ±0.10% (99 runs sampled)
+  minimatch x 1,196,835 ops/sec ±0.63% (98 runs sampled)
+
+# .makeRe with leading star (*.txt)
+  picomatch x 2,537,708 ops/sec ±0.11% (100 runs sampled)
+  minimatch x 345,284 ops/sec ±0.64% (96 runs sampled)
+
+# .makeRe - basic braces ({a,b,c}*.txt)
+  picomatch x 505,430 ops/sec ±1.04% (94 runs sampled)
+  minimatch x 107,991 ops/sec ±0.54% (99 runs sampled)
+
+# .makeRe - short ranges ({a..z}*.txt)
+  picomatch x 371,179 ops/sec ±2.91% (77 runs sampled)
+  minimatch x 14,104 ops/sec ±0.61% (99 runs sampled)
+
+# .makeRe - medium ranges ({1..100000}*.txt)
+  picomatch x 384,958 ops/sec ±1.70% (82 runs sampled)
+  minimatch x 2.55 ops/sec ±3.22% (11 runs sampled)
+
+# .makeRe - long ranges ({1..10000000}*.txt)
+  picomatch x 382,552 ops/sec ±1.52% (71 runs sampled)
+  minimatch x 0.83 ops/sec ±5.67% (7 runs sampled))
+```
+
+
+<br>
+<br>
+
+
+## Philosophies
+
+The goal of this library is to be blazing fast, without compromising on accuracy.
+
+**Accuracy**
+
+The number one of goal of this library is accuracy. However, it's not unusual for different glob implementations to have different rules for matching behavior, even with simple wildcard matching. It gets increasingly more complicated when combinations of different features are combined, like when extglobs are combined with globstars, braces, slashes, and so on: `!(**/{a,b,*/c})`.
+
+Thus, given that there is no canonical glob specification to use as a single source of truth when differences of opinion arise regarding behavior, sometimes we have to implement our best judgement and rely on feedback from users to make improvements.
+
+**Performance**
+
+Although this library performs well in benchmarks, and in most cases it's faster than other popular libraries we benchmarked against, we will always choose accuracy over performance. It's not helpful to anyone if our library is faster at returning the wrong answer.
+
+<br>
+<br>
+
+
+## About
+
+<details>
+<summary><strong>Contributing</strong></summary>
+
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
+
+Please read the [contributing guide](../bmad_repo/CONTRIBUTING.md) for advice on opening issues, pull requests, and coding standards.
+
+</details>
+
+<details>
+<summary><strong>Running Tests</strong></summary>
+
+Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
+
+```sh
+npm install && npm test
+```
+
+</details>
+
+<details>
+<summary><strong>Building docs</strong></summary>
+
+_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_
+
+To generate the readme, run the following command:
+
+```sh
+npm install -g verbose/verb#dev verb-generate-readme && verb
+```
+
+</details>
+
+### Author
+
+**Jon Schlinkert**
+
+* [GitHub Profile](https://github.com/jonschlinkert)
+* [Twitter Profile](https://twitter.com/jonschlinkert)
+* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)
+
+### License
+
+Copyright © 2017-present, [Jon Schlinkert](https://github.com/jonschlinkert).
+Released under the [MIT License](LICENSE).
+
+[dotfiles]: https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory
+[brace-expansion]: https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html
+```
+
+## File: `CHANGELOG.md`
+```markdown
+# Release history
+
+**All notable changes to this project will be documented in this file.**
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+<details>
+  <summary><strong>Guiding Principles</strong></summary>
+
+- Changelogs are for humans, not machines.
+- There should be an entry for every single version.
+- The same types of changes should be grouped.
+- Versions and sections should be linkable.
+- The latest version comes first.
+- The release date of each versions is displayed.
+- Mention whether you follow Semantic Versioning.
+
+</details>
+
+<details>
+  <summary><strong>Types of changes</strong></summary>
+
+Changelog entries are classified using the following labels _(from [keep-a-changelog](http://keepachangelog.com/)_):
+
+- `Added` for new features.
+- `Changed` for changes in existing functionality.
+- `Deprecated` for soon-to-be removed features.
+- `Removed` for now removed features.
+- `Fixed` for any bug fixes.
+- `Security` in case of vulnerabilities.
+
+</details>
+
+## 4.0.0 (2024-02-07)
+
+### Fixes
+
+* Fix bad text values in parse #126, thanks to @connor4312
+
+### Changed
+
+* Remove process global to work outside of node #129, thanks to @styfle
+* Add sideEffects to package.json #128, thanks to @frandiox
+* Removed `os`, make compatible browser environment. See #124, thanks to @gwsbhqt
+
+## 3.0.1
+
+### Fixes
+
+* Support stars in negation extglobs with expression after closing parenthesis #102, thanks to @mrmlnc
+
+
+## 2.3.1 (2022-01-02)
+
+### Fixed
+
+* Fixes bug when a pattern containing an expression after the closing parenthesis (`/!(*.d).{ts,tsx}`) was incorrectly converted to regexp ([9f241ef](https://github.com/micromatch/picomatch/commit/9f241ef)).
+
+### Changed
+
+* Some documentation improvements ([f81d236](https://github.com/micromatch/picomatch/commit/f81d236), [421e0e7](https://github.com/micromatch/picomatch/commit/421e0e7)).
+
+## 2.3.0 (2021-05-21)
+
+### Fixed
+
+* Fixes bug where file names with two dots were not being matched consistently with negation extglobs containing a star ([56083ef](https://github.com/micromatch/picomatch/commit/56083ef))
+
+## 2.2.3 (2021-04-10)
+
+### Fixed
+
+* Do not skip pattern seperator for square brackets ([fb08a30](https://github.com/micromatch/picomatch/commit/fb08a30)).
+* Set negatedExtGlob also if it does not span the whole pattern ([032e3f5](https://github.com/micromatch/picomatch/commit/032e3f5)).
+
+## 2.2.2 (2020-03-21)
+
+### Fixed
+
+* Correctly handle parts of the pattern after parentheses in the `scan` method ([e15b920](https://github.com/micromatch/picomatch/commit/e15b920)).
+
+## 2.2.1 (2020-01-04)
+
+* Fixes [#49](https://github.com/micromatch/picomatch/issues/49), so that braces with no sets or ranges are now propertly treated as literals.
+
+## 2.2.0 (2020-01-04)
+
+* Disable fastpaths mode for the parse method ([5b8d33f](https://github.com/micromatch/picomatch/commit/5b8d33f))
+* Add `tokens`, `slashes`, and `parts` to the object returned by `picomatch.scan()`.
+
+## 2.1.0 (2019-10-31)
+
+* add benchmarks for scan ([4793b92](https://github.com/micromatch/picomatch/commit/4793b92))
+* Add eslint object-curly-spacing rule ([707c650](https://github.com/micromatch/picomatch/commit/707c650))
+* Add prefer-const eslint rule ([5c7501c](https://github.com/micromatch/picomatch/commit/5c7501c))
+* Add support for nonegate in scan API ([275c9b9](https://github.com/micromatch/picomatch/commit/275c9b9))
+* Change lets to consts. Move root import up. ([4840625](https://github.com/micromatch/picomatch/commit/4840625))
+* closes https://github.com/micromatch/picomatch/issues/21 ([766bcb0](https://github.com/micromatch/picomatch/commit/766bcb0))
+* Fix "Extglobs" table in readme ([eb19da8](https://github.com/micromatch/picomatch/commit/eb19da8))
+* fixes https://github.com/micromatch/picomatch/issues/20 ([9caca07](https://github.com/micromatch/picomatch/commit/9caca07))
+* fixes https://github.com/micromatch/picomatch/issues/26 ([fa58f45](https://github.com/micromatch/picomatch/commit/fa58f45))
+* Lint test ([d433a34](https://github.com/micromatch/picomatch/commit/d433a34))
+* lint unit tests ([0159b55](https://github.com/micromatch/picomatch/commit/0159b55))
+* Make scan work with noext ([6c02e03](https://github.com/micromatch/picomatch/commit/6c02e03))
+* minor linting ([c2a2b87](https://github.com/micromatch/picomatch/commit/c2a2b87))
+* minor parser improvements ([197671d](https://github.com/micromatch/picomatch/commit/197671d))
+* remove eslint since it... ([07876fa](https://github.com/micromatch/picomatch/commit/07876fa))
+* remove funding file ([8ebe96d](https://github.com/micromatch/picomatch/commit/8ebe96d))
+* Remove unused funks ([cbc6d54](https://github.com/micromatch/picomatch/commit/cbc6d54))
+* Run eslint during pretest, fix existing eslint findings ([0682367](https://github.com/micromatch/picomatch/commit/0682367))
+* support `noparen` in scan ([3d37569](https://github.com/micromatch/picomatch/commit/3d37569))
+* update changelog ([7b34e77](https://github.com/micromatch/picomatch/commit/7b34e77))
+* update travis ([777f038](https://github.com/micromatch/picomatch/commit/777f038))
+* Use eslint-disable-next-line instead of eslint-disable ([4e7c1fd](https://github.com/micromatch/picomatch/commit/4e7c1fd))
+
+## 2.0.7 (2019-05-14)
+
+* 2.0.7 ([9eb9a71](https://github.com/micromatch/picomatch/commit/9eb9a71))
+* supports lookbehinds ([1f63f7e](https://github.com/micromatch/picomatch/commit/1f63f7e))
+* update .verb.md file with typo change ([2741279](https://github.com/micromatch/picomatch/commit/2741279))
+* fix: typo in README ([0753e44](https://github.com/micromatch/picomatch/commit/0753e44))
+
+## 2.0.4 (2019-04-10)
+
+### Fixed
+
+- Readme link [fixed](https://github.com/micromatch/picomatch/pull/13/commits/a96ab3aa2b11b6861c23289964613d85563b05df) by @danez.
+- `options.capture` now works as expected when fastpaths are enabled. See https://github.com/micromatch/picomatch/pull/12/commits/26aefd71f1cfaf95c37f1c1fcab68a693b037304. Thanks to @DrPizza.
+
+## 2.0.0 (2019-04-10)
+
+### Added
+
+- Adds support for `options.onIgnore`. See the readme for details
+- Adds support for `options.onResult`. See the readme for details
+
+### Breaking changes
+
+- The unixify option was renamed to `windows`
+- caching and all related options and methods have been removed
+
+## 1.0.0 (2018-11-05)
+
+- adds `.onMatch` option
+- improvements to `.scan` method
+- numerous improvements and optimizations for matching and parsing
+- better windows path handling
+
+## 0.1.0 - 2017-04-13
+
+First release.
+
+
+[keep-a-changelog]: https://github.com/olivierlacan/keep-a-changelog
+```
+
+## File: `LICENSE`
+```
+The MIT License (MIT)
+
+Copyright (c) 2017-present, Jon Schlinkert.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+
+## File: `README.md`
+```markdown
+<h1 align="center">Picomatch</h1>
+
+<p align="center">
+<a href="https://npmjs.org/package/picomatch">
+<img src="https://img.shields.io/npm/v/picomatch.svg" alt="version">
+</a>
+<a href="https://github.com/micromatch/picomatch/actions/workflows/test.yml">
+<img src="https://github.com/micromatch/picomatch/actions/workflows/test.yml/badge.svg?branch=master" alt="test status">
+</a>
+<a href="https://coveralls.io/github/micromatch/picomatch">
+<img src="https://img.shields.io/coveralls/github/micromatch/picomatch/master.svg" alt="coverage status">
+</a>
+<a href="https://npmjs.org/package/picomatch">
+<img src="https://img.shields.io/npm/dw/picomatch" alt="downloads">
+</a>
+</p>
+
+<br>
+<br>
+
+<p align="center">
+<strong>Blazing fast and accurate glob matcher written in JavaScript.</strong></br>
+<em>No dependencies and full support for standard and extended Bash glob features, including braces, extglobs, POSIX brackets, and regular expressions.</em>
+</p>
+
+<br>
+<br>
+
+## Why picomatch?
+
+* **Lightweight** - No dependencies
+* **Minimal** - Tiny API surface. Main export is a function that takes a glob pattern and returns a matcher function.
+* **Fast** - Loads in about 2ms (that's several times faster than a [single frame of a HD movie](http://www.endmemo.com/sconvert/framespersecondframespermillisecond.php) at 60fps)
+* **Performant** - Use the returned matcher function to speed up repeat matching (like when watching files)
+* **Accurate matching** - Using wildcards (`*` and `?`), globstars (`**`) for nested directories, [advanced globbing](#advanced-globbing) with extglobs, braces, and POSIX brackets, and support for escaping special characters with `\` or quotes.
+* **Well tested** - Thousands of unit tests
+
+See the [library comparison](#library-comparisons) to other libraries.
+
+<br>
+<br>
+
+## Table of Contents
+
+<details><summary> Click to expand </summary>
+
+- [Install](#install)
+- [Usage](#usage)
+- [API](#api)
+  * [picomatch](#picomatch)
+  * [.test](#test)
+  * [.matchBase](#matchbase)
+  * [.isMatch](#ismatch)
+  * [.parse](#parse)
+  * [.scan](#scan)
+  * [.compileRe](#compilere)
+  * [.makeRe](#makere)
+  * [.toRegex](#toregex)
+- [Options](#options)
+  * [Picomatch options](#picomatch-options)
+  * [Scan Options](#scan-options)
+  * [Options Examples](#options-examples)
+- [Globbing features](#globbing-features)
+  * [Basic globbing](#basic-globbing)
+  * [Advanced globbing](#advanced-globbing)
+  * [Braces](#braces)
+  * [Matching special characters as literals](#matching-special-characters-as-literals)
+- [Library Comparisons](#library-comparisons)
+- [Benchmarks](#benchmarks)
+- [Philosophies](#philosophies)
+- [About](#about)
+  * [Author](#author)
+  * [License](#license)
+
+_(TOC generated by [verb](https://github.com/verbose/verb) using [markdown-toc](https://github.com/jonschlinkert/markdown-toc))_
+
+</details>
+
+<br>
+<br>
+
+## Install
+
+Install with [npm](https://www.npmjs.com/):
+
+```sh
+npm install --save picomatch
+```
+
+<br>
+
+## Usage
+
+The main export is a function that takes a glob pattern and an options object and returns a function for matching strings.
+
+```js
+const pm = require('picomatch');
+const isMatch = pm('*.js');
+
+console.log(isMatch('abcd')); //=> false
+console.log(isMatch('a.js')); //=> true
+console.log(isMatch('a.md')); //=> false
+console.log(isMatch('a/b.js')); //=> false
+```
+
+<br>
+
+## API
+
+### [picomatch](lib/picomatch.js#L31)
+
+Creates a matcher function from one or more glob patterns. The returned function takes a string to match as its first argument, and returns true if the string is a match. The returned matcher function also takes a boolean as the second argument that, when true, returns an object with additional information.
+
+**Params**
+
+* `globs` **{String|Array}**: One or more glob patterns.
+* `options` **{Object=}**
+* `returns` **{Function=}**: Returns a matcher function.
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch(glob[, options]);
+
+const isMatch = picomatch('*.!(*a)');
+console.log(isMatch('a.a')); //=> false
+console.log(isMatch('a.b')); //=> true
+```
+
+**Example without node.js**
+
+For environments without `node.js`, `picomatch/posix` provides you a dependency-free matcher, without automatic OS detection.
+
+```js
+const picomatch = require('picomatch/posix');
+// the same API, defaulting to posix paths
+const isMatch = picomatch('a/*');
+console.log(isMatch('a\\b')); //=> false
+console.log(isMatch('a/b')); //=> true
+
+// you can still configure the matcher function to accept windows paths
+const isMatch = picomatch('a/*', { options: windows });
+console.log(isMatch('a\\b')); //=> true
+console.log(isMatch('a/b')); //=> true
+```
+
+### [.test](lib/picomatch.js#L116)
+
+Test `input` with the given `regex`. This is used by the main `picomatch()` function to test the input string.
+
+**Params**
+
+* `input` **{String}**: String to test.
+* `regex` **{RegExp}**
+* `returns` **{Object}**: Returns an object with matching info.
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch.test(input, regex[, options]);
+
+console.log(picomatch.test('foo/bar', /^(?:([^/]*?)\/([^/]*?))$/));
+// { isMatch: true, match: [ 'foo/', 'foo', 'bar' ], output: 'foo/bar' }
+```
+
+### [.matchBase](lib/picomatch.js#L160)
+
+Match the basename of a filepath.
+
+**Params**
+
+* `input` **{String}**: String to test.
+* `glob` **{RegExp|String}**: Glob pattern or regex created by [.makeRe](#makeRe).
+* `returns` **{Boolean}**
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch.matchBase(input, glob[, options]);
+console.log(picomatch.matchBase('foo/bar.js', '*.js'); // true
+```
+
+### [.isMatch](lib/picomatch.js#L182)
+
+Returns true if **any** of the given glob `patterns` match the specified `string`.
+
+**Params**
+
+* **{String|Array}**: str The string to test.
+* **{String|Array}**: patterns One or more glob patterns to use for matching.
+* **{Object}**: See available [options](#options).
+* `returns` **{Boolean}**: Returns true if any patterns match `str`
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch.isMatch(string, patterns[, options]);
+
+console.log(picomatch.isMatch('a.a', ['b.*', '*.a'])); //=> true
+console.log(picomatch.isMatch('a.a', 'b.*')); //=> false
+```
+
+### [.parse](lib/picomatch.js#L198)
+
+Parse a glob pattern to create the source string for a regular expression.
+
+**Params**
+
+* `pattern` **{String}**
+* `options` **{Object}**
+* `returns` **{Object}**: Returns an object with useful properties and output to be used as a regex source string.
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+const result = picomatch.parse(pattern[, options]);
+```
+
+### [.scan](lib/picomatch.js#L230)
+
+Scan a glob pattern to separate the pattern into segments.
+
+**Params**
+
+* `input` **{String}**: Glob pattern to scan.
+* `options` **{Object}**
+* `returns` **{Object}**: Returns an object with
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch.scan(input[, options]);
+
+const result = picomatch.scan('!./foo/*.js');
+console.log(result);
+{ prefix: '!./',
+  input: '!./foo/*.js',
+  start: 3,
+  base: 'foo',
+  glob: '*.js',
+  isBrace: false,
+  isBracket: false,
+  isGlob: true,
+  isExtglob: false,
+  isGlobstar: false,
+  negated: true }
+```
+
+### [.compileRe](lib/picomatch.js#L244)
+
+Compile a regular expression from the `state` object returned by the
+[parse()](#parse) method.
+
+**Params**
+
+* `state` **{Object}**
+* `options` **{Object}**
+* `returnOutput` **{Boolean}**: Intended for implementors, this argument allows you to return the raw output from the parser.
+* `returnState` **{Boolean}**: Adds the state to a `state` property on the returned regex. Useful for implementors and debugging.
+* `returns` **{RegExp}**
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+const state = picomatch.parse('*.js');
+// picomatch.compileRe(state[, options]);
+
+console.log(picomatch.compileRe(state));
+//=> /^(?:(?!\.)(?=.)[^/]*?\.js)$/
+```
+
+### [.makeRe](lib/picomatch.js#L285)
+
+Create a regular expression from a parsed glob pattern.
+
+**Params**
+
+* `state` **{String}**: The object returned from the `.parse` method.
+* `options` **{Object}**
+* `returnOutput` **{Boolean}**: Implementors may use this argument to return the compiled output, instead of a regular expression. This is not exposed on the options to prevent end-users from mutating the result.
+* `returnState` **{Boolean}**: Implementors may use this argument to return the state from the parsed glob with the returned regular expression.
+* `returns` **{RegExp}**: Returns a regex created from the given pattern.
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch.makeRe(state[, options]);
+
+const result = picomatch.makeRe('*.js');
+console.log(result);
+//=> /^(?:(?!\.)(?=.)[^/]*?\.js)$/
+```
+
+### [.toRegex](lib/picomatch.js#L320)
+
+Create a regular expression from the given regex source string.
+
+**Params**
+
+* `source` **{String}**: Regular expression source string.
+* `options` **{Object}**
+* `returns` **{RegExp}**
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+// picomatch.toRegex(source[, options]);
+
+const { output } = picomatch.parse('*.js');
+console.log(picomatch.toRegex(output));
+//=> /^(?:(?!\.)(?=.)[^/]*?\.js)$/
+```
+
+<br>
+
+## Options
+
+### Picomatch options
+
+The following options may be used with the main `picomatch()` function or any of the methods on the picomatch API.
+
+| **Option** | **Type** | **Default value** | **Description** |
+| --- | --- | --- | --- |
+| `basename`            | `boolean`      | `false`     | If set, then patterns without slashes will be matched against the basename of the path if it contains slashes.  For example, `a?b` would match the path `/xyz/123/acb`, but not `/xyz/acb/123`. |
+| `bash`                | `boolean`      | `false`     | Follow bash matching rules more strictly - disallows backslashes as escape characters, and treats single stars as globstars (`**`). |
+| `capture`             | `boolean`      | `undefined` | Return regex matches in supporting methods. |
+| `contains`            | `boolean`      | `undefined` | Allows glob to match any part of the given string(s). |
+| `debug`               | `boolean`      | `undefined` | Debug regular expressions when an error is thrown. |
+| `dot`                 | `boolean`      | `false`     | Enable dotfile matching. By default, dotfiles are ignored unless a `.` is explicitly defined in the pattern, or `options.dot` is true |
+| `expandRange`         | `function`     | `undefined` | Custom function for expanding ranges in brace patterns, such as `{a..z}`. The function receives the range values as two arguments, and it must return a string to be used in the generated regex. It's recommended that returned strings be wrapped in parentheses. |
+| `fastpaths`           | `boolean`      | `true`      | To speed up processing, full parsing is skipped for a handful common glob patterns. Disable this behavior by setting this option to `false`. |
+| `flags`               | `string`      | `undefined` | Regex flags to use in the generated regex. If defined, the `nocase` option will be overridden. |
+| [format](#optionsformat) | `function` | `undefined` | Custom function for formatting the returned string. This is useful for removing leading slashes, converting Windows paths to Posix paths, etc. |
+| `ignore`              | `array\|string` | `undefined` | One or more glob patterns for excluding strings that should not be matched from the result. |
+| `keepQuotes`          | `boolean`      | `false`     | Retain quotes in the generated regex, since quotes may also be used as an alternative to backslashes.  |
+| `literalBrackets`     | `boolean`      | `undefined` | When `true`, brackets in the glob pattern will be escaped so that only literal brackets will be matched. |
+| `matchBase`           | `boolean`      | `false`     | Alias for `basename` |
+| `maxLength`           | `number`      | `65536`     | Limit the max length of the input string. An error is thrown if the input string is longer than this value. |
+| `maxExtglobRecursion` | `number\|boolean` | `0` | Limit nested quantified extglobs and other risky repeated extglob forms. When the limit is exceeded, the extglob is treated as a literal string instead of being compiled to regex. Set to `false` to disable this safeguard. |
+| `nobrace`             | `boolean`      | `false`     | Disable brace matching, so that `{a,b}` and `{1..3}` would be treated as literal characters. |
+| `nobracket`           | `boolean`      | `undefined` | Disable matching with regex brackets. |
+| `nocase`              | `boolean`      | `false`     | Make matching case-insensitive. Equivalent to the regex `i` flag. Note that this option is overridden by the `flags` option. |
+| `noext`               | `boolean`      | `false`     | Alias for `noextglob` |
+| `noextglob`           | `boolean`      | `false`     | Disable support for matching with extglobs (like `+(a\|b)`) |
+| `noglobstar`          | `boolean`      | `false`     | Disable support for matching nested directories with globstars (`**`) |
+| `nonegate`            | `boolean`      | `false`     | Disable support for negating with leading `!` |
+| [onIgnore](#optionsonIgnore) | `function` | `undefined` | Function to be called on ignored items. |
+| [onMatch](#optionsonMatch) | `function` | `undefined` | Function to be called on matched items. |
+| [onResult](#optionsonResult) | `function` | `undefined` | Function to be called on all items, regardless of whether or not they are matched or ignored. |
+| `posix`               | `boolean`      | `false`     | Support POSIX character classes ("posix brackets"). |
+| `prepend`             | `boolean`      | `undefined` | String to prepend to the generated regex used for matching. |
+| `regex`               | `boolean`      | `false`     | Use regular expression rules for `+` (instead of matching literal `+`), and for stars that follow closing parentheses or brackets (as in `)*` and `]*`). |
+| `strictBrackets`      | `boolean`      | `undefined` | Throw an error if brackets, braces, or parens are imbalanced. |
+| `strictSlashes`       | `boolean`      | `undefined` | When true, picomatch won't match trailing slashes with single stars. |
+| `unescape`            | `boolean`      | `undefined` | Remove backslashes preceding escaped characters in the glob pattern. By default, backslashes are retained. |
+| `windows`             | `boolean`      | `false`     | Also accept backslashes as the path separator. |
+
+### Scan Options
+
+In addition to the main [picomatch options](#picomatch-options), the following options may also be used with the [.scan](#scan) method.
+
+| **Option** | **Type** | **Default value** | **Description** |
+| --- | --- | --- | --- |
+| `tokens` | `boolean` | `false` | When `true`, the returned object will include an array of tokens (objects), representing each path "segment" in the scanned glob pattern |
+| `parts` | `boolean` | `false` | When `true`, the returned object will include an array of strings representing each path "segment" in the scanned glob pattern. This is automatically enabled when `options.tokens` is true |
+
+**Example**
+
+```js
+const picomatch = require('picomatch');
+const result = picomatch.scan('!./foo/*.js', { tokens: true });
+console.log(result);
+// {
+//   prefix: '!./',
+//   input: '!./foo/*.js',
+//   start: 3,
+//   base: 'foo',
+//   glob: '*.js',
+//   isBrace: false,
+//   isBracket: false,
+//   isGlob: true,
+//   isExtglob: false,
+//   isGlobstar: false,
+//   negated: true,
+//   maxDepth: 2,
+//   tokens: [
+//     { value: '!./', depth: 0, isGlob: false, negated: true, isPrefix: true },
+//     { value: 'foo', depth: 1, isGlob: false },
+//     { value: '*.js', depth: 1, isGlob: true }
+//   ],
+//   slashes: [ 2, 6 ],
+//   parts: [ 'foo', '*.js' ]
+// }
+```
+
+<br>
+
+### Options Examples
+
+#### options.expandRange
+
+**Type**: `function`
+
+**Default**: `undefined`
+
+Custom function for expanding ranges in brace patterns. The [fill-range](https://github.com/jonschlinkert/fill-range) library is ideal for this purpose, or you can use custom code to do whatever you need.
+
+**Example**
+
+The following example shows how to create a glob that matches a folder
+
+```js
+const fill = require('fill-range');
+const regex = pm.makeRe('foo/{01..25}/bar', {
+  expandRange(a, b) {
+    return `(${fill(a, b, { toRegex: true })})`;
+  }
+});
+
+console.log(regex);
+//=> /^(?:foo\/((?:0[1-9]|1[0-9]|2[0-5]))\/bar)$/
+
+console.log(regex.test('foo/00/bar'))  // false
+console.log(regex.test('foo/01/bar'))  // true
+console.log(regex.test('foo/10/bar')) // true
+console.log(regex.test('foo/22/bar')) // true
+console.log(regex.test('foo/25/bar')) // true
+console.log(regex.test('foo/26/bar')) // false
+```
+
+#### options.format
+
+**Type**: `function`
+
+**Default**: `undefined`
+
+Custom function for formatting strings before they're matched.
+
+**Example**
+
+```js
+// strip leading './' from strings
+const format = str => str.replace(/^\.\//, '');
+const isMatch = picomatch('foo/*.js', { format });
+console.log(isMatch('./foo/bar.js')); //=> true
+```
+
+#### options.onMatch
+
+```js
+const onMatch = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+};
+
+const isMatch = picomatch('*', { onMatch });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+#### options.onIgnore
+
+```js
+const onIgnore = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+};
+
+const isMatch = picomatch('*', { onIgnore, ignore: 'f*' });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+#### options.onResult
+
+```js
+const onResult = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+};
+
+const isMatch = picomatch('*', { onResult, ignore: 'f*' });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+<br>
+<br>
+
+## Globbing features
+
+* [Basic globbing](#basic-globbing) (Wildcard matching)
+* [Advanced globbing](#advanced-globbing) (extglobs, posix brackets, brace matching)
+
+### Basic globbing
+
+| **Character** | **Description** |
+| --- | --- |
+| `*` | Matches any character zero or more times, excluding path separators. Does _not match_ path separators or hidden files or directories ("dotfiles"), unless explicitly enabled by setting the `dot` option to `true`. |
+| `**` | Matches any character zero or more times, including path separators. Note that `**` will only match path separators (`/`, and `\\` with the `windows` option) when they are the only characters in a path segment. Thus, `foo**/bar` is equivalent to `foo*/bar`, and `foo/a**b/bar` is equivalent to `foo/a*b/bar`, and _more than two_ consecutive stars in a glob path segment are regarded as _a single star_. Thus, `foo/***/bar` is equivalent to `foo/*/bar`. |
+| `?` | Matches any character excluding path separators one time. Does _not match_ path separators or leading dots.  |
+| `[abc]` | Matches any characters inside the brackets. For example, `[abc]` would match the characters `a`, `b` or `c`, and nothing else. |
+
+#### Matching behavior vs. Bash
+
+Picomatch's matching features and expected results in unit tests are based on Bash's unit tests and the Bash 4.3 specification, with the following exceptions:
+
+* Bash will match `foo/bar/baz` with `*`. Picomatch only matches nested directories with `**`.
+* Bash greedily matches with negated extglobs. For example, Bash 4.3 says that `!(foo)*` should match `foo` and `foobar`, since the trailing `*` bracktracks to match the preceding pattern. This is very memory-inefficient, and IMHO, also incorrect. Picomatch would return `false` for both `foo` and `foobar`.
+
+<br>
+
+### Advanced globbing
+
+* [extglobs](#extglobs)
+* [POSIX brackets](#posix-brackets)
+* [Braces](#brace-expansion)
+
+#### Extglobs
+
+| **Pattern** | **Description** |
+| --- | --- |
+| `@(pattern)` | Match _only one_ consecutive occurrence of `pattern` |
+| `*(pattern)` | Match _zero or more_ consecutive occurrences of `pattern` |
+| `+(pattern)` | Match _one or more_ consecutive occurrences of `pattern` |
+| `?(pattern)` | Match _zero or **one**_ consecutive occurrences of `pattern` |
+| `!(pattern)` | Match _anything but_ `pattern` |
+
+**Examples**
+
+```js
+const pm = require('picomatch');
+
+// *(pattern) matches ZERO or more of "pattern"
+console.log(pm.isMatch('a', 'a*(z)')); // true
+console.log(pm.isMatch('az', 'a*(z)')); // true
+console.log(pm.isMatch('azzz', 'a*(z)')); // true
+
+// +(pattern) matches ONE or more of "pattern"
+console.log(pm.isMatch('a', 'a+(z)')); // false
+console.log(pm.isMatch('az', 'a+(z)')); // true
+console.log(pm.isMatch('azzz', 'a+(z)')); // true
+
+// supports multiple extglobs
+console.log(pm.isMatch('foo.bar', '!(foo).!(bar)')); // false
+
+// supports nested extglobs
+console.log(pm.isMatch('foo.bar', '!(!(foo)).!(!(bar))')); // true
+
+// risky quantified extglobs are treated literally by default
+console.log(pm.makeRe('+(a|aa)'));
+//=> /^(?:\+\(a\|aa\))$/
+
+// increase the limit to allow a small amount of nested quantified extglobs
+console.log(pm.isMatch('aaa', '+(+(a))', { maxExtglobRecursion: 1 })); // true
+```
+
+#### POSIX brackets
+
+POSIX classes are disabled by default. Enable this feature by setting the `posix` option to true.
+
+**Enable POSIX bracket support**
+
+```js
+console.log(pm.makeRe('[[:word:]]+', { posix: true }));
+//=> /^(?:(?=.)[A-Za-z0-9_]+\/?)$/
+```
+
+**Supported POSIX classes**
+
+The following named POSIX bracket expressions are supported:
+
+* `[:alnum:]` - Alphanumeric characters, equ `[a-zA-Z0-9]`
+* `[:alpha:]` - Alphabetical characters, equivalent to `[a-zA-Z]`.
+* `[:ascii:]` - ASCII characters, equivalent to `[\\x00-\\x7F]`.
+* `[:blank:]` - Space and tab characters, equivalent to `[ \\t]`.
+* `[:cntrl:]` - Control characters, equivalent to `[\\x00-\\x1F\\x7F]`.
+* `[:digit:]` - Numerical digits, equivalent to `[0-9]`.
+* `[:graph:]` - Graph characters, equivalent to `[\\x21-\\x7E]`.
+* `[:lower:]` - Lowercase letters, equivalent to `[a-z]`.
+* `[:print:]` - Print characters, equivalent to `[\\x20-\\x7E ]`.
+* `[:punct:]` - Punctuation and symbols, equivalent to `[\\-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~]`.
+* `[:space:]` - Extended space characters, equivalent to `[ \\t\\r\\n\\v\\f]`.
+* `[:upper:]` - Uppercase letters, equivalent to `[A-Z]`.
+* `[:word:]` -  Word characters (letters, numbers and underscores), equivalent to `[A-Za-z0-9_]`.
+* `[:xdigit:]` - Hexadecimal digits, equivalent to `[A-Fa-f0-9]`.
+
+See the [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html) for more information.
+
+### Braces
+
+Picomatch only does [brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) of comma-delimited lists (e.g. `a/{b,c}/d`). For advanced matching with braces, use [micromatch](https://github.com/micromatch/micromatch), which supports advanced syntax such as ranges (e.g. `{01..03}`) and increments (e.g. `{2..10..2}`).
+
+### Matching special characters as literals
+
+If you wish to match the following special characters in a filepath, and you want to use these characters in your glob pattern, they must be escaped with backslashes or quotes:
+
+**Special Characters**
+
+Some characters that are used for matching in regular expressions are also regarded as valid file path characters on some platforms.
+
+To match any of the following characters as literals: `$^*+?()[]
+
+Examples:
+
+```js
+console.log(pm.makeRe('foo/bar \\(1\\)'));
+console.log(pm.makeRe('foo/bar \\(1\\)'));
+```
+
+<br>
+<br>
+
+## Library Comparisons
+
+The following table shows which features are supported by [minimatch](https://github.com/isaacs/minimatch), [micromatch](https://github.com/micromatch/micromatch), [picomatch](https://github.com/micromatch/picomatch), [nanomatch](https://github.com/micromatch/nanomatch), [extglob](https://github.com/micromatch/extglob), [braces](https://github.com/micromatch/braces), and [expand-brackets](https://github.com/micromatch/expand-brackets).
+
+| **Feature** | `minimatch` | `micromatch` | `picomatch` | `nanomatch` | `extglob` | `braces` | `expand-brackets` |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Wildcard matching (`*?+`) | ✔ | ✔ | ✔ | ✔ | - | - | - |
+| Advancing globbing        | ✔ | ✔ | ✔ | - | - | - | - |
+| Brace _matching_          | ✔ | ✔ | ✔ | - | - | ✔ | - |
+| Brace _expansion_         | ✔ | ✔ | - | - | - | ✔ | - |
+| Extglobs                  | partial | ✔ | ✔ | - | ✔ | - | - |
+| Posix brackets            | - | ✔ | ✔ | - | - | - | ✔ |
+| Regular expression syntax | - | ✔ | ✔ | ✔ | ✔ | - | ✔ |
+| File system operations    | - | - | - | - | - | - | - |
+
+<br>
+<br>
+
+## Benchmarks
+
+Performance comparison of picomatch and minimatch.
+
+```
+# .makeRe star (*)
+  picomatch x 3,251,247 ops/sec ±0.25% (95 runs sampled)
+  minimatch x 497,224 ops/sec ±0.11% (100 runs sampled)
+
+# .makeRe star; dot=true (*)
+  picomatch x 2,624,035 ops/sec ±0.16% (98 runs sampled)
+  minimatch x 446,244 ops/sec ±0.63% (99 runs sampled)
+
+# .makeRe globstar (**)
+  picomatch x 2,524,465 ops/sec ±0.13% (99 runs sampled)
+  minimatch x 1,396,257 ops/sec ±0.58% (96 runs sampled)
+
+# .makeRe globstars (**/**/**)
+  picomatch x 2,545,674 ops/sec ±0.10% (99 runs sampled)
+  minimatch x 1,196,835 ops/sec ±0.63% (98 runs sampled)
+
+# .makeRe with leading star (*.txt)
+  picomatch x 2,537,708 ops/sec ±0.11% (100 runs sampled)
+  minimatch x 345,284 ops/sec ±0.64% (96 runs sampled)
+
+# .makeRe - basic braces ({a,b,c}*.txt)
+  picomatch x 505,430 ops/sec ±1.04% (94 runs sampled)
+  minimatch x 107,991 ops/sec ±0.54% (99 runs sampled)
+
+# .makeRe - short ranges ({a..z}*.txt)
+  picomatch x 371,179 ops/sec ±2.91% (77 runs sampled)
+  minimatch x 14,104 ops/sec ±0.61% (99 runs sampled)
+
+# .makeRe - medium ranges ({1..100000}*.txt)
+  picomatch x 384,958 ops/sec ±1.70% (82 runs sampled)
+  minimatch x 2.55 ops/sec ±3.22% (11 runs sampled)
+
+# .makeRe - long ranges ({1..10000000}*.txt)
+  picomatch x 382,552 ops/sec ±1.52% (71 runs sampled)
+  minimatch x 0.83 ops/sec ±5.67% (7 runs sampled))
+```
+
+<br>
+<br>
+
+## Philosophies
+
+The goal of this library is to be blazing fast, without compromising on accuracy.
+
+**Accuracy**
+
+The number one of goal of this library is accuracy. However, it's not unusual for different glob implementations to have different rules for matching behavior, even with simple wildcard matching. It gets increasingly more complicated when combinations of different features are combined, like when extglobs are combined with globstars, braces, slashes, and so on: `!(**/{a,b,*/c})`.
+
+Thus, given that there is no canonical glob specification to use as a single source of truth when differences of opinion arise regarding behavior, sometimes we have to implement our best judgement and rely on feedback from users to make improvements.
+
+**Performance**
+
+Although this library performs well in benchmarks, and in most cases it's faster than other popular libraries we benchmarked against, we will always choose accuracy over performance. It's not helpful to anyone if our library is faster at returning the wrong answer.
+
+<br>
+<br>
+
+## About
+
+<details>
+<summary><strong>Contributing</strong></summary>
+
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
+
+Please read the [contributing guide](../bmad_repo/CONTRIBUTING.md) for advice on opening issues, pull requests, and coding standards.
+
+</details>
+
+<details>
+<summary><strong>Running Tests</strong></summary>
+
+Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
+
+```sh
+npm install && npm test
+```
+
+</details>
+
+<details>
+<summary><strong>Building docs</strong></summary>
+
+_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_
+
+To generate the readme, run the following command:
+
+```sh
+npm install -g verbose/verb#dev verb-generate-readme && verb
+```
+
+</details>
+
+### Author
+
+**Jon Schlinkert**
+
+* [GitHub Profile](https://github.com/jonschlinkert)
+* [Twitter Profile](https://twitter.com/jonschlinkert)
+* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)
+
+### License
+
+Copyright © 2017-present, [Jon Schlinkert](https://github.com/jonschlinkert).
+Released under the [MIT License](LICENSE).
+```
+
+## File: `index.js`
+```javascript
+'use strict';
+
+const pico = require('./lib/picomatch');
+const utils = require('./lib/utils');
+
+function picomatch(glob, options, returnState = false) {
+  // default to os.platform()
+  if (options && (options.windows === null || options.windows === undefined)) {
+    // don't mutate the original options object
+    options = { ...options, windows: utils.isWindows() };
+  }
+
+  return pico(glob, options, returnState);
+}
+
+Object.assign(picomatch, pico);
+module.exports = picomatch;
+```
+
+## File: `package.json`
+```json
+{
+  "name": "picomatch",
+  "description": "Blazing fast and accurate glob matcher written in JavaScript, with no dependencies and full support for standard and extended Bash glob features, including braces, extglobs, POSIX brackets, and regular expressions.",
+  "version": "4.0.4",
+  "homepage": "https://github.com/micromatch/picomatch",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "funding": "https://github.com/sponsors/jonschlinkert",
+  "repository": "micromatch/picomatch",
+  "bugs": {
+    "url": "https://github.com/micromatch/picomatch/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "posix.js",
+    "lib"
+  ],
+  "sideEffects": false,
+  "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "lint": "eslint --cache --cache-location node_modules/.cache/.eslintcache --report-unused-disable-directives --ignore-path .gitignore .",
+    "mocha": "mocha --reporter dot",
+    "test": "npm run lint && npm run mocha",
+    "test:ci": "npm run test:cover",
+    "test:cover": "nyc npm run mocha"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "fill-range": "^7.0.1",
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^10.4.0",
+    "nyc": "^15.1.0"
+  },
+  "keywords": [
+    "glob",
+    "match",
+    "picomatch"
+  ],
+  "nyc": {
+    "reporter": [
+      "html",
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "verb": {
+    "toc": {
+      "render": true,
+      "method": "preWrite",
+      "maxdepth": 3
+    },
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    },
+    "related": {
+      "list": [
+        "braces",
+        "micromatch"
+      ]
+    },
+    "reflinks": [
+      "braces",
+      "expand-brackets",
+      "extglob",
+      "fill-range",
+      "micromatch",
+      "minimatch",
+      "nanomatch",
+      "picomatch"
+    ]
+  }
+}
+```
+
+## File: `posix.js`
+```javascript
+'use strict';
+
+module.exports = require('./lib/picomatch');
+```
+
+## File: `renovate.json`
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":configMigration",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": [
+        "npm"
+      ],
+      "enabled": false
+    }
+  ]
+}
+```
+
+## File: `bench/.npmrc`
+```
+package-lock=false
+```
+
+## File: `bench/first-match-minimatch.js`
+```javascript
+'use strict';
+
+const mm = require('minimatch');
+
+console.time('minimatch');
+console.log(mm.makeRe('**/*').test('foo/bar/baz/qux.js'));
+console.timeEnd('minimatch');
+```
+
+## File: `bench/first-match-picomatch.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+console.time('picomatch');
+console.log(pm.makeRe('**/*').test('foo/bar/baz/qux.js'));
+console.timeEnd('picomatch');
+```
+
+## File: `bench/glob-parent.js`
+```javascript
+'use strict';
+
+const { Suite } = require('benchmark');
+const { red } = require('ansi-colors');
+const argv = require('minimist')(process.argv.slice(2));
+const parent = require('glob-parent');
+const scan = require('../lib/scan');
+
+/**
+ * Setup
+ */
+
+const cycle = (e, newline) => {
+  process.stdout.write(`\u001b[G  ${e.target}${newline ? '\n' : ''}`);
+};
+
+function bench(name, options) {
+  const config = { name, ...options };
+
+  const suite = new Suite(config);
+  const add = suite.add.bind(suite);
+  suite.on('error', console.error);
+
+  if (argv.run && name !== argv.run) {
+    suite.add = () => suite;
+    return suite;
+  }
+
+  console.log(`\n${red(config.name)}`);
+  suite.add = (key, fn, opts) => {
+    if (typeof fn !== 'function') opts = fn;
+
+    add(key, {
+      onCycle: e => cycle(e),
+      onComplete: e => cycle(e, true),
+      fn,
+      ...opts
+    });
+    return suite;
+  };
+
+  return suite;
+}
+
+bench('*.js')
+  .add('picomatch.scan', () => scan('*.js'))
+  .add('   glob-parent', () => parent('*.js'))
+  .run();
+
+bench('foo/bar/baz')
+  .add('picomatch.scan', () => scan('foo/bar/baz'))
+  .add('   glob-parent', () => parent('foo/bar/baz'))
+  .run();
+
+bench('foo/*.js')
+  .add('picomatch.scan', () => scan('foo/*.js'))
+  .add('   glob-parent', () => parent('foo/*.js'))
+  .run();
+
+bench('foo/{a,b}/*.js')
+  .add('picomatch.scan', () => scan('foo/{a,b}/*.js'))
+  .add('   glob-parent', () => parent('foo/{a,b}/*.js'))
+  .run();
+
+bench('*.js { parts: true, tokens: true }')
+  .add('picomatch.scan', () => scan('*.js', { parts: true, tokens: true }))
+  .add('   glob-parent', () => parent('*.js'))
+  .run();
+
+bench('foo/bar/baz { parts: true, tokens: true }')
+  .add('picomatch.scan', () => scan('foo/bar/baz', { parts: true, tokens: true }))
+  .add('   glob-parent', () => parent('foo/bar/baz'))
+  .run();
+
+bench('foo/*.js { parts: true, tokens: true }')
+  .add('picomatch.scan', () => scan('foo/*.js', { parts: true, tokens: true }))
+  .add('   glob-parent', () => parent('foo/*.js'))
+  .run();
+
+bench('foo/{a,b}/*.js { parts: true, tokens: true }')
+  .add('picomatch.scan', () => scan('foo/{a,b}/*.js', { parts: true, tokens: true }))
+  .add('   glob-parent', () => parent('foo/{a,b}/*.js'))
+  .run();
+```
+
+## File: `bench/index.js`
+```javascript
+'use strict';
+
+const { Suite } = require('benchmark');
+const { red } = require('ansi-colors');
+const minimist = require('minimist');
+const mm = require('minimatch');
+const pm = require('..');
+
+const argv = minimist(process.argv.slice(2));
+
+/**
+ * Setup
+ */
+
+const cycle = (e, newline) => {
+  process.stdout.write(`\u001b[G  ${e.target}${newline ? '\n' : ''}`);
+};
+
+const bench = (name, options) => {
+  const config = { name, ...options };
+  const suite = new Suite(config);
+  const add = suite.add.bind(suite);
+  suite.on('error', console.error);
+
+  if (argv.run && !new RegExp(argv.run).test(name)) {
+    suite.add = () => suite;
+    return suite;
+  }
+
+  console.log(`\n# ${config.name}`);
+  suite.add = (key, fn, opts) => {
+    if (typeof fn !== 'function') opts = fn;
+
+    add(key, {
+      onCycle: e => cycle(e),
+      onComplete: e => cycle(e, true),
+      fn,
+      ...opts
+    });
+    return suite;
+  };
+
+  return suite;
+};
+
+bench(`${red('.makeRe')} star (*)`)
+  .add('picomatch', () => pm.makeRe('*'))
+  .add('minimatch', () => mm.makeRe('*'))
+  .run();
+
+bench(`${red('.makeRe')} star; dot=true (*)`)
+  .add('picomatch', () => pm.makeRe('*', { dot: true }))
+  .add('minimatch', () => mm.makeRe('*', { dot: true }))
+  .run();
+
+bench(`${red('.makeRe')} globstar (**)`)
+  .add('picomatch', () => pm.makeRe('**'))
+  .add('minimatch', () => mm.makeRe('**'))
+  .run();
+
+bench(`${red('.makeRe')} globstars (**/**/**)`)
+  .add('picomatch', () => pm.makeRe('**/**/**'))
+  .add('minimatch', () => mm.makeRe('**/**/**'))
+  .run();
+
+bench(`${red('.makeRe')} with leading star (*.txt)`)
+  .add('picomatch', () => pm.makeRe('*.txt'))
+  .add('minimatch', () => mm.makeRe('*.txt'))
+  .run();
+
+bench(`${red('.makeRe')} - basic braces ({a,b,c}*.txt)`)
+  .add('picomatch', () => pm.makeRe('{a,b,c}*.txt'))
+  .add('minimatch', () => mm.makeRe('{a,b,c}*.txt'))
+  .run();
+
+bench(`${red('.makeRe')} - short ranges ({a..z}*.txt)`)
+  .add('picomatch', () => pm.makeRe('{a..z}*.txt'))
+  .add('minimatch', () => mm.makeRe('{a..z}*.txt'))
+  .run();
+
+bench(`${red('.makeRe')} - medium ranges ({1..100000}*.txt)`)
+  .add('picomatch', () => pm.makeRe('{1..100000}*.txt'))
+  .add('minimatch', () => mm.makeRe('{1..100000}*.txt'))
+  .run();
+
+bench(`${red('.makeRe')} - long ranges ({1..10000000}*.txt)`)
+  .add('picomatch', () => pm.makeRe('{1..10000000}*.txt'))
+  .add('minimatch', () => mm.makeRe('{1..10000000}*.txt'))
+  .run();
+```
+
+## File: `bench/load-time.js`
+```javascript
+'use strict';
+
+console.log('# Load time');
+console.time('picomatch');
+exports.pm = require('..');
+console.timeEnd('picomatch');
+console.time('minimatch');
+exports.mm = require('minimatch');
+console.timeEnd('minimatch');
+console.log();
+```
+
+## File: `bench/package.json`
+```json
+{
+  "name": "picomatch-benchmarks",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "ansi-colors": "^4.1.3",
+    "benchmark": "^2.1.4",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "glob-parent": "^6.0.2",
+    "minimatch": "^10.2.4"
+  },
+  "lintDeps": {
+    "devDependencies": {
+      "files": {
+        "patterns": [
+          "*.js"
+        ]
+      }
+    }
+  }
+}
+```
+
+## File: `examples/extglob-negated.js`
+```javascript
+'use strict';
+
+const picomatch = require('..');
+
+const fixtures = [
+  ['/file.d.ts', false],
+  ['/file.ts', true],
+  ['/file.d.something.ts', true],
+  ['/file.dhello.ts', true]
+];
+
+const pattern = '/!(*.d).ts';
+const isMatch = picomatch(pattern);
+
+console.log(fixtures.map(f => [isMatch(f[0]), f[1]]));
+```
+
+## File: `examples/extglob.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+console.log(pm.makeRe('(a|b|c)'));
+console.log(pm.makeRe('!(a|b|c)'));
+console.log(pm.makeRe('*(a|b|c)'));
+console.log(pm.makeRe('+(a|b|c)'));
+console.log(pm.makeRe('?(a|b|c)'));
+console.log(pm.makeRe('@(a|b|c)'));
+console.log('---');
+console.log();
+
+console.log(pm.makeRe('(a|b|c)', { noext: true }));
+console.log(pm.makeRe('!(a|b|c)', { noext: true }));
+console.log(pm.makeRe('*(a|b|c)', { noext: true }));
+console.log(pm.makeRe('+(a|b|c)', { noext: true }));
+console.log(pm.makeRe('?(a|b|c)', { noext: true }));
+console.log(pm.makeRe('@(a|b|c)', { noext: true }));
+console.log('---');
+console.log();
+```
+
+## File: `examples/makeRe.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+console.log(pm.makeRe('*'));
+// /^(?:(?!\.)(?=.)[^\\\/]*?\/?)$/
+
+console.log(pm.makeRe('*', { dot: true }));
+// /^(?:(?!\.{1,2}(?:\/|$))(?=.)[^\\\/]*?\/?)$/
+```
+
+## File: `examples/match.js`
+```javascript
+'use strict';
+
+const path = require('path');
+// const assert = require('assert');
+const pm = require('..');
+
+/**
+ * Example function for matching an array of strings
+ */
+
+const match = (list, pattern, options = {}) => {
+  let normalize = false;
+  if (pattern.startsWith('./')) {
+    pattern = pattern.slice(2);
+    normalize = true;
+  }
+
+  const isMatch = pm(pattern, options);
+  const matches = new Set();
+  for (let ele of list) {
+    if (normalize === true || options.normalize === true) {
+      ele = path.posix.normalize(ele);
+    }
+    if (isMatch(ele)) {
+      matches.add(options.onMatch ? options.onMatch(ele) : ele);
+    }
+  }
+  return [...matches];
+};
+
+const fixtures = ['a.md', 'a/b.md', './a.md', './a/b.md', 'a/b/c.md', './a/b/c.md', '.\\a\\b\\c.md', 'a\\b\\c.md'];
+
+console.log(path.posix.normalize('./{a,b,c}/*.md'));
+console.log(match(fixtures, './**/*.md'));
+// assert.deepEqual(match(fixtures, '**/*.md'), ['a.md', 'a/b.md', 'a/b/c.md', 'a\\b\\c.md']);
+// assert.deepEqual(match(fixtures, '**/*.md', { normalize: true, windows: true }), ['a.md', 'a/b.md', 'a/b/c.md', 'a\\b\\c.md']);
+// assert.deepEqual(match(fixtures, '*.md'), ['a.md']);
+// assert.deepEqual(match(fixtures, '*.md', { normalize: true, windows: true }), ['a.md']);
+// assert.deepEqual(match(fixtures, '*.md'), ['a.md']);
+// assert.deepEqual(match(fixtures, '*/*.md', { normalize: true, windows: true }), ['a/b.md']);
+// assert.deepEqual(match(fixtures, '*/*.md'), ['a/b.md']);
+// assert.deepEqual(match(fixtures, './**/*.md', { normalize: true, windows: true }), ['a.md', 'a/b.md', 'a/b/c.md', 'a\\b\\c.md', './a.md', './a/b.md', '.\\a\\b\\c.md', 'a\\b\\c.md']);
+// assert.deepEqual(match(fixtures, './**/*.md'), ['a.md', 'a/b.md', 'a/b/c.md']);
+// assert.deepEqual(match(fixtures, './*.md', { normalize: true, windows: true }), ['a.md', './a.md']);
+// assert.deepEqual(match(fixtures, './*.md'), ['a.md']);
+// assert.deepEqual(match(fixtures, './*/*.md', { normalize: true, windows: true }), ['a/b.md', './a/b.md']);
+// assert.deepEqual(match(fixtures, './*/*.md'), ['a/b.md']);
+// assert.deepEqual(match(['./a'], 'a'), ['./a'], { normalize: true, windows: true });
+// assert.deepEqual(match(['./a'], 'a'), ['a']);
+```
+
+## File: `examples/option-expandRange.js`
+```javascript
+'use strict';
+
+const fill = require('fill-range');
+const pm = require('..');
+const regex = pm.makeRe('foo/{01..25}/bar', {
+  expandRange(a, b) {
+    return `(${fill(a, b, { toRegex: true })})`;
+  }
+});
+
+console.log(regex);
+//=> /^(?:foo\/((?:0[1-9]|1[0-9]|2[0-5]))\/bar)$/
+
+console.log(regex.test('foo/00/bar')); // false
+console.log(regex.test('foo/01/bar')); // true
+console.log(regex.test('foo/10/bar')); // true
+console.log(regex.test('foo/22/bar')); // true
+console.log(regex.test('foo/25/bar')); // true
+console.log(regex.test('foo/26/bar')); // false
+```
+
+## File: `examples/option-ignore.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+const isMatch = pm.matcher('*', { ignore: 'f*' });
+console.log(isMatch('foo')); //=> false
+console.log(isMatch('bar')); //=> true
+console.log(isMatch('baz')); //=> true
+```
+
+## File: `examples/option-onIgnore.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+const onIgnore = ({ glob, regex, input, output }) => {
+  console.log({ glob, regex, input, output });
+  // { glob: '*', regex: /^(?:(?!\.)(?=.)[^\/]*?\/?)$/, input: 'foo', output: 'foo' }
+};
+
+const isMatch = pm.matcher('*', { onIgnore, ignore: 'f*' });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+## File: `examples/option-onMatch.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+const onMatch = ({ glob, regex, input, output }) => {
+  console.log({ input, output });
+  // { input: 'some\\path', output: 'some/path' }
+  // { input: 'some\\path', output: 'some/path' }
+  // { input: 'some\\path', output: 'some/path' }
+};
+
+const isMatch = pm.matcher('**', { onMatch, windows: true });
+isMatch('some\\path');
+isMatch('some\\path');
+isMatch('some\\path');
+```
+
+## File: `examples/option-onResult.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+const onResult = ({ glob, regex, input, output }) => {
+  console.log({ input, output });
+};
+
+const isMatch = pm.matcher('*', { onResult, ignore: 'f*' });
+isMatch('foo');
+isMatch('bar');
+isMatch('baz');
+```
+
+## File: `examples/regex-quantifier.js`
+```javascript
+'use strict';
+
+const pico = require('..');
+
+/**
+ * See: https://github.com/gulpjs/glob-parent/issues/39#issuecomment-794075641
+ */
+
+const files = [
+  'data/100-123a_files/0/',
+  'data/100-123a_files/1/',
+  'data/100-123a_files/2/',
+  'data/100-123a_files/3/',
+  'data/100-123b_files/0/',
+  'data/100-123b_files/1/',
+  'data/100-123b_files/2/',
+  'data/100-123b_files/3/',
+  'data/100-123a_files/4/',
+  'data/100-123ax_files/0/',
+  'data/100-123A_files/0/',
+  'data/100-123A_files/1/',
+  'data/100-123A_files/2/',
+  'data/100-123A_files/3/',
+  'data/100-123B_files/0/',
+  'data/100-123B_files/1/',
+  'data/100-123B_files/2/',
+  'data/100-123B_files/3/',
+  'data/100-123A_files/4/',
+  'data/100-123AX_files/0/'
+];
+
+// ? is a wildcard for matching one character
+// by escaping \\{0,3}, and then using `{ unescape: true }, we tell
+// picomatch to treat those characters as a regex quantifier, versus
+// a brace pattern.
+
+const isMatch = pico('data/100-123?\\{0,3}_files/{0..3}/', { unescape: true });
+console.log(files.filter(name => isMatch(name)));
+
+// Alternatively, we can use a regex character class to be more specific
+// In the following example, we'll only match uppercase alpha characters
+const isMatch2 = pico('data/100-123[A-Z]*_files/{0..3}/', { unescape: true });
+console.log(files.filter(name => isMatch2(name)));
+```
+
+## File: `examples/scan.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+console.log(pm.scan('foo/bar/*/*/*.js'));
+console.log(pm.scan('foo/(*|**a).js'));
+console.log(pm.scan('foo/**/(*|a).js'));
+console.log(pm.scan('foo/**/(**|a).js'));
+console.log(pm.scan('foo/**/{**/*,}.js'));
+console.log(pm.scan('foo/{**/*,}.js'));
+console.log(pm.scan('/{**/*,}.js'));
+console.log(pm.scan('/[*/].js'));
+console.log(pm.scan('/(**/*|*).js'));
+console.log(pm.scan('foo/**/*.js'));
+console.log(pm.scan('foo/bar/*.js'));
+console.log(pm.scan('foo/*.js'));
+console.log(pm.scan('/foo'));
+```
+
+## File: `examples/test.js`
+```javascript
+'use strict';
+
+const pm = require('..');
+
+console.log(pm.test('foo/bar', /^(?:([^/]*?)\/([^/]*?))$/));
+// { isMatch: true, match: [ 'foo/', 'foo', 'bar' ], output: 'foo/bar' }
+```
+
+## File: `examples/windows.js`
+```javascript
+'use strict';
+
+const path = require('path');
+const pm = require('..');
+const { sep } = path;
+
+console.log();
+console.log('======= POSIX =======');
+console.log();
+
+console.log(pm.makeRe('*\\*'));
+console.log(pm.makeRe('*\\*').test('foo/bar'));
+console.log(pm.makeRe('*\\*').test('foo\\bar'));
+console.log(pm.makeRe('*\\\\*'));
+console.log(pm.makeRe('*\\\\*').test('foo/bar'));
+console.log(pm.makeRe('*\\\\*').test('foo\\bar'));
+console.log(pm.makeRe('*/*'));
+console.log(pm.makeRe('*/*').test('foo/bar'));
+console.log(pm.makeRe('*/*').test('foo\\bar'));
+
+console.log();
+console.log('======= WINDOWS =======');
+console.log();
+
+path.sep = '\\';
+console.log(pm.makeRe('*\\*'));
+console.log(pm.makeRe('*\\*').test('foo/bar'));
+console.log(pm.makeRe('*\\*').test('foo\\bar'));
+console.log(pm.makeRe('*\\\\*'));
+console.log(pm.makeRe('*\\\\*').test('foo/bar'));
+console.log(pm.makeRe('*\\\\*').test('foo\\bar'));
+console.log(pm.makeRe('*/*'));
+console.log(pm.makeRe('*/*').test('foo/bar'));
+console.log(pm.makeRe('*/*').test('foo\\bar'));
+path.sep = sep;
+```
+
+## File: `lib/constants.js`
+```javascript
+'use strict';
+
+const WIN_SLASH = '\\\\/';
+const WIN_NO_SLASH = `[^${WIN_SLASH}]`;
+
+const DEFAULT_MAX_EXTGLOB_RECURSION = 0;
+
+/**
+ * Posix glob regex
+ */
+
+const DOT_LITERAL = '\\.';
+const PLUS_LITERAL = '\\+';
+const QMARK_LITERAL = '\\?';
+const SLASH_LITERAL = '\\/';
+const ONE_CHAR = '(?=.)';
+const QMARK = '[^/]';
+const END_ANCHOR = `(?:${SLASH_LITERAL}|$)`;
+const START_ANCHOR = `(?:^|${SLASH_LITERAL})`;
+const DOTS_SLASH = `${DOT_LITERAL}{1,2}${END_ANCHOR}`;
+const NO_DOT = `(?!${DOT_LITERAL})`;
+const NO_DOTS = `(?!${START_ANCHOR}${DOTS_SLASH})`;
+const NO_DOT_SLASH = `(?!${DOT_LITERAL}{0,1}${END_ANCHOR})`;
+const NO_DOTS_SLASH = `(?!${DOTS_SLASH})`;
+const QMARK_NO_DOT = `[^.${SLASH_LITERAL}]`;
+const STAR = `${QMARK}*?`;
+const SEP = '/';
+
+const POSIX_CHARS = {
+  DOT_LITERAL,
+  PLUS_LITERAL,
+  QMARK_LITERAL,
+  SLASH_LITERAL,
+  ONE_CHAR,
+  QMARK,
+  END_ANCHOR,
+  DOTS_SLASH,
+  NO_DOT,
+  NO_DOTS,
+  NO_DOT_SLASH,
+  NO_DOTS_SLASH,
+  QMARK_NO_DOT,
+  STAR,
+  START_ANCHOR,
+  SEP
+};
+
+/**
+ * Windows glob regex
+ */
+
+const WINDOWS_CHARS = {
+  ...POSIX_CHARS,
+
+  SLASH_LITERAL: `[${WIN_SLASH}]`,
+  QMARK: WIN_NO_SLASH,
+  STAR: `${WIN_NO_SLASH}*?`,
+  DOTS_SLASH: `${DOT_LITERAL}{1,2}(?:[${WIN_SLASH}]|$)`,
+  NO_DOT: `(?!${DOT_LITERAL})`,
+  NO_DOTS: `(?!(?:^|[${WIN_SLASH}])${DOT_LITERAL}{1,2}(?:[${WIN_SLASH}]|$))`,
+  NO_DOT_SLASH: `(?!${DOT_LITERAL}{0,1}(?:[${WIN_SLASH}]|$))`,
+  NO_DOTS_SLASH: `(?!${DOT_LITERAL}{1,2}(?:[${WIN_SLASH}]|$))`,
+  QMARK_NO_DOT: `[^.${WIN_SLASH}]`,
+  START_ANCHOR: `(?:^|[${WIN_SLASH}])`,
+  END_ANCHOR: `(?:[${WIN_SLASH}]|$)`,
+  SEP: '\\'
+};
+
+/**
+ * POSIX Bracket Regex
+ */
+
+const POSIX_REGEX_SOURCE = {
+  __proto__: null,
+  alnum: 'a-zA-Z0-9',
+  alpha: 'a-zA-Z',
+  ascii: '\\x00-\\x7F',
+  blank: ' \\t',
+  cntrl: '\\x00-\\x1F\\x7F',
+  digit: '0-9',
+  graph: '\\x21-\\x7E',
+  lower: 'a-z',
+  print: '\\x20-\\x7E ',
+  punct: '\\-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~',
+  space: ' \\t\\r\\n\\v\\f',
+  upper: 'A-Z',
+  word: 'A-Za-z0-9_',
+  xdigit: 'A-Fa-f0-9'
+};
+
+module.exports = {
+  DEFAULT_MAX_EXTGLOB_RECURSION,
+  MAX_LENGTH: 1024 * 64,
+  POSIX_REGEX_SOURCE,
+
+  // regular expressions
+  REGEX_BACKSLASH: /\\(?![*+?^${}(|)[\]])/g,
+  REGEX_NON_SPECIAL_CHARS: /^[^@![\].,$*+?^{}()|\\/]+/,
+  REGEX_SPECIAL_CHARS: /[-*+?.^${}(|)[\]]/,
+  REGEX_SPECIAL_CHARS_BACKREF: /(\\?)((\W)(\3*))/g,
+  REGEX_SPECIAL_CHARS_GLOBAL: /([-*+?.^${}(|)[\]])/g,
+  REGEX_REMOVE_BACKSLASH: /(?:\[.*?[^\\]\]|\\(?=.))/g,
+
+  // Replace globs with equivalent patterns to reduce parsing time.
+  REPLACEMENTS: {
+    __proto__: null,
+    '***': '*',
+    '**/**': '**',
+    '**/**/**': '**'
+  },
+
+  // Digits
+  CHAR_0: 48, /* 0 */
+  CHAR_9: 57, /* 9 */
+
+  // Alphabet chars.
+  CHAR_UPPERCASE_A: 65, /* A */
+  CHAR_LOWERCASE_A: 97, /* a */
+  CHAR_UPPERCASE_Z: 90, /* Z */
+  CHAR_LOWERCASE_Z: 122, /* z */
+
+  CHAR_LEFT_PARENTHESES: 40, /* ( */
+  CHAR_RIGHT_PARENTHESES: 41, /* ) */
+
+  CHAR_ASTERISK: 42, /* * */
+
+  // Non-alphabetic chars.
+  CHAR_AMPERSAND: 38, /* & */
+  CHAR_AT: 64, /* @ */
+  CHAR_BACKWARD_SLASH: 92, /* \ */
+  CHAR_CARRIAGE_RETURN: 13, /* \r */
+  CHAR_CIRCUMFLEX_ACCENT: 94, /* ^ */
+  CHAR_COLON: 58, /* : */
+  CHAR_COMMA: 44, /* , */
+  CHAR_DOT: 46, /* . */
+  CHAR_DOUBLE_QUOTE: 34, /* " */
+  CHAR_EQUAL: 61, /* = */
+  CHAR_EXCLAMATION_MARK: 33, /* ! */
+  CHAR_FORM_FEED: 12, /* \f */
+  CHAR_FORWARD_SLASH: 47, /* / */
+  CHAR_GRAVE_ACCENT: 96, /* ` */
+  CHAR_HASH: 35, /* # */
+  CHAR_HYPHEN_MINUS: 45, /* - */
+  CHAR_LEFT_ANGLE_BRACKET: 60, /* < */
+  CHAR_LEFT_CURLY_BRACE: 123, /* { */
+  CHAR_LEFT_SQUARE_BRACKET: 91, /* [ */
+  CHAR_LINE_FEED: 10, /* \n */
+  CHAR_NO_BREAK_SPACE: 160, /* \u00A0 */
+  CHAR_PERCENT: 37, /* % */
+  CHAR_PLUS: 43, /* + */
+  CHAR_QUESTION_MARK: 63, /* ? */
+  CHAR_RIGHT_ANGLE_BRACKET: 62, /* > */
+  CHAR_RIGHT_CURLY_BRACE: 125, /* } */
+  CHAR_RIGHT_SQUARE_BRACKET: 93, /* ] */
+  CHAR_SEMICOLON: 59, /* ; */
+  CHAR_SINGLE_QUOTE: 39, /* ' */
+  CHAR_SPACE: 32, /*   */
+  CHAR_TAB: 9, /* \t */
+  CHAR_UNDERSCORE: 95, /* _ */
+  CHAR_VERTICAL_LINE: 124, /* | */
+  CHAR_ZERO_WIDTH_NOBREAK_SPACE: 65279, /* \uFEFF */
+
+  /**
+   * Create EXTGLOB_CHARS
+   */
+
+  extglobChars(chars) {
+    return {
+      '!': { type: 'negate', open: '(?:(?!(?:', close: `))${chars.STAR})` },
+      '?': { type: 'qmark', open: '(?:', close: ')?' },
+      '+': { type: 'plus', open: '(?:', close: ')+' },
+      '*': { type: 'star', open: '(?:', close: ')*' },
+      '@': { type: 'at', open: '(?:', close: ')' }
+    };
+  },
+
+  /**
+   * Create GLOB_CHARS
+   */
+
+  globChars(win32) {
+    return win32 === true ? WINDOWS_CHARS : POSIX_CHARS;
+  }
+};
+```
+
+## File: `lib/parse.js`
+```javascript
+'use strict';
+
+const constants = require('./constants');
+const utils = require('./utils');
+
+/**
+ * Constants
+ */
+
+const {
+  MAX_LENGTH,
+  POSIX_REGEX_SOURCE,
+  REGEX_NON_SPECIAL_CHARS,
+  REGEX_SPECIAL_CHARS_BACKREF,
+  REPLACEMENTS
+} = constants;
+
+/**
+ * Helpers
+ */
+
+const expandRange = (args, options) => {
+  if (typeof options.expandRange === 'function') {
+    return options.expandRange(...args, options);
+  }
+
+  args.sort();
+  const value = `[${args.join('-')}]`;
+
+  try {
+    /* eslint-disable-next-line no-new */
+    new RegExp(value);
+  } catch (ex) {
+    return args.map(v => utils.escapeRegex(v)).join('..');
+  }
+
+  return value;
+};
+
+/**
+ * Create the message for a syntax error
+ */
+
+const syntaxError = (type, char) => {
+  return `Missing ${type}: "${char}" - use "\\\\${char}" to match literal characters`;
+};
+
+const splitTopLevel = input => {
+  const parts = [];
+  let bracket = 0;
+  let paren = 0;
+  let quote = 0;
+  let value = '';
+  let escaped = false;
+
+  for (const ch of input) {
+    if (escaped === true) {
+      value += ch;
+      escaped = false;
+      continue;
+    }
+
+    if (ch === '\\') {
+      value += ch;
+      escaped = true;
+      continue;
+    }
+
+    if (ch === '"') {
+      quote = quote === 1 ? 0 : 1;
+      value += ch;
+      continue;
+    }
+
+    if (quote === 0) {
+      if (ch === '[') {
+        bracket++;
+      } else if (ch === ']' && bracket > 0) {
+        bracket--;
+      } else if (bracket === 0) {
+        if (ch === '(') {
+          paren++;
+        } else if (ch === ')' && paren > 0) {
+          paren--;
+        } else if (ch === '|' && paren === 0) {
+          parts.push(value);
+          value = '';
+          continue;
+        }
+      }
+    }
+
+    value += ch;
+  }
+
+  parts.push(value);
+  return parts;
+};
+
+const isPlainBranch = branch => {
+  let escaped = false;
+
+  for (const ch of branch) {
+    if (escaped === true) {
+      escaped = false;
+      continue;
+    }
+
+    if (ch === '\\') {
+      escaped = true;
+      continue;
+    }
+
+    if (/[?*+@!()[\]{}]/.test(ch)) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const normalizeSimpleBranch = branch => {
+  let value = branch.trim();
+  let changed = true;
+
+  while (changed === true) {
+    changed = false;
+
+    if (/^@\([^\\()[\]{}|]+\)$/.test(value)) {
+      value = value.slice(2, -1);
+      changed = true;
+    }
+  }
+
+  if (!isPlainBranch(value)) {
+    return;
+  }
+
+  return value.replace(/\\(.)/g, '$1');
+};
+
+const hasRepeatedCharPrefixOverlap = branches => {
+  const values = branches.map(normalizeSimpleBranch).filter(Boolean);
+
+  for (let i = 0; i < values.length; i++) {
+    for (let j = i + 1; j < values.length; j++) {
+      const a = values[i];
+      const b = values[j];
+      const char = a[0];
+
+      if (!char || a !== char.repeat(a.length) || b !== char.repeat(b.length)) {
+        continue;
+      }
+
+      if (a === b || a.startsWith(b) || b.startsWith(a)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+
+const parseRepeatedExtglob = (pattern, requireEnd = true) => {
+  if ((pattern[0] !== '+' && pattern[0] !== '*') || pattern[1] !== '(') {
+    return;
+  }
+
+  let bracket = 0;
+  let paren = 0;
+  let quote = 0;
+  let escaped = false;
+
+  for (let i = 1; i < pattern.length; i++) {
+    const ch = pattern[i];
+
+    if (escaped === true) {
+      escaped = false;
+      continue;
+    }
+
+    if (ch === '\\') {
+      escaped = true;
+      continue;
+    }
+
+    if (ch === '"') {
+      quote = quote === 1 ? 0 : 1;
+      continue;
+    }
+
+    if (quote === 1) {
+      continue;
+    }
+
+    if (ch === '[') {
+      bracket++;
+      continue;
+    }
+
+    if (ch === ']' && bracket > 0) {
+      bracket--;
+      continue;
+    }
+
+    if (bracket > 0) {
+      continue;
+    }
+
+    if (ch === '(') {
+      paren++;
+      continue;
+    }
+
+    if (ch === ')') {
+      paren--;
+
+      if (paren === 0) {
+        if (requireEnd === true && i !== pattern.length - 1) {
+          return;
+        }
+
+        return {
+          type: pattern[0],
+          body: pattern.slice(2, i),
+          end: i
+        };
+      }
+    }
+  }
+};
+
+const getStarExtglobSequenceOutput = pattern => {
+  let index = 0;
+  const chars = [];
+
+  while (index < pattern.length) {
+    const match = parseRepeatedExtglob(pattern.slice(index), false);
+
+    if (!match || match.type !== '*') {
+      return;
+    }
+
+    const branches = splitTopLevel(match.body).map(branch => branch.trim());
+    if (branches.length !== 1) {
+      return;
+    }
+
+    const branch = normalizeSimpleBranch(branches[0]);
+    if (!branch || branch.length !== 1) {
+      return;
+    }
+
+    chars.push(branch);
+    index += match.end + 1;
+  }
+
+  if (chars.length < 1) {
+    return;
+  }
+
+  const source = chars.length === 1
+    ? utils.escapeRegex(chars[0])
+    : `[${chars.map(ch => utils.escapeRegex(ch)).join('')}]`;
+
+  return `${source}*`;
+};
+
+const repeatedExtglobRecursion = pattern => {
+  let depth = 0;
+  let value = pattern.trim();
+  let match = parseRepeatedExtglob(value);
+
+  while (match) {
+    depth++;
+    value = match.body.trim();
+    match = parseRepeatedExtglob(value);
+  }
+
+  return depth;
+};
+
+const analyzeRepeatedExtglob = (body, options) => {
+  if (options.maxExtglobRecursion === false) {
+    return { risky: false };
+  }
+
+  const max =
+    typeof options.maxExtglobRecursion === 'number'
+      ? options.maxExtglobRecursion
+      : constants.DEFAULT_MAX_EXTGLOB_RECURSION;
+
+  const branches = splitTopLevel(body).map(branch => branch.trim());
+
+  if (branches.length > 1) {
+    if (
+      branches.some(branch => branch === '') ||
+      branches.some(branch => /^[*?]+$/.test(branch)) ||
+      hasRepeatedCharPrefixOverlap(branches)
+    ) {
+      return { risky: true };
+    }
+  }
+
+  for (const branch of branches) {
+    const safeOutput = getStarExtglobSequenceOutput(branch);
+    if (safeOutput) {
+      return { risky: true, safeOutput };
+    }
+
+    if (repeatedExtglobRecursion(branch) > max) {
+      return { risky: true };
+    }
+  }
+
+  return { risky: false };
+};
+
+/**
+ * Parse the given input string.
+ * @param {String} input
+ * @param {Object} options
+ * @return {Object}
+ */
+
+const parse = (input, options) => {
+  if (typeof input !== 'string') {
+    throw new TypeError('Expected a string');
+  }
+
+  input = REPLACEMENTS[input] || input;
+
+  const opts = { ...options };
+  const max = typeof opts.maxLength === 'number' ? Math.min(MAX_LENGTH, opts.maxLength) : MAX_LENGTH;
+
+  let len = input.length;
+  if (len > max) {
+    throw new SyntaxError(`Input length: ${len}, exceeds maximum allowed length: ${max}`);
+  }
+
+  const bos = { type: 'bos', value: '', output: opts.prepend || '' };
+  const tokens = [bos];
+
+  const capture = opts.capture ? '' : '?:';
+
+  // create constants based on platform, for windows or posix
+  const PLATFORM_CHARS = constants.globChars(opts.windows);
+  const EXTGLOB_CHARS = constants.extglobChars(PLATFORM_CHARS);
+
+  const {
+    DOT_LITERAL,
+    PLUS_LITERAL,
+    SLASH_LITERAL,
+    ONE_CHAR,
+    DOTS_SLASH,
+    NO_DOT,
+    NO_DOT_SLASH,
+    NO_DOTS_SLASH,
+    QMARK,
+    QMARK_NO_DOT,
+    STAR,
+    START_ANCHOR
+  } = PLATFORM_CHARS;
+
+  const globstar = opts => {
+    return `(${capture}(?:(?!${START_ANCHOR}${opts.dot ? DOTS_SLASH : DOT_LITERAL}).)*?)`;
+  };
+
+  const nodot = opts.dot ? '' : NO_DOT;
+  const qmarkNoDot = opts.dot ? QMARK : QMARK_NO_DOT;
+  let star = opts.bash === true ? globstar(opts) : STAR;
+
+  if (opts.capture) {
+    star = `(${star})`;
+  }
+
+  // minimatch options support
+  if (typeof opts.noext === 'boolean') {
+    opts.noextglob = opts.noext;
+  }
+
+  const state = {
+    input,
+    index: -1,
+    start: 0,
+    dot: opts.dot === true,
+    consumed: '',
+    output: '',
+    prefix: '',
+    backtrack: false,
+    negated: false,
+    brackets: 0,
+    braces: 0,
+    parens: 0,
+    quotes: 0,
+    globstar: false,
+    tokens
+  };
+
+  input = utils.removePrefix(input, state);
+  len = input.length;
+
+  const extglobs = [];
+  const braces = [];
+  const stack = [];
+  let prev = bos;
+  let value;
+
+  /**
+   * Tokenizing helpers
+   */
+
+  const eos = () => state.index === len - 1;
+  const peek = state.peek = (n = 1) => input[state.index + n];
+  const advance = state.advance = () => input[++state.index] || '';
+  const remaining = () => input.slice(state.index + 1);
+  const consume = (value = '', num = 0) => {
+    state.consumed += value;
+    state.index += num;
+  };
+
+  const append = token => {
+    state.output += token.output != null ? token.output : token.value;
+    consume(token.value);
+  };
+
+  const negate = () => {
+    let count = 1;
+
+    while (peek() === '!' && (peek(2) !== '(' || peek(3) === '?')) {
+      advance();
+      state.start++;
+      count++;
+    }
+
+    if (count % 2 === 0) {
+      return false;
+    }
+
+    state.negated = true;
+    state.start++;
+    return true;
+  };
+
+  const increment = type => {
+    state[type]++;
+    stack.push(type);
+  };
+
+  const decrement = type => {
+    state[type]--;
+    stack.pop();
+  };
+
+  /**
+   * Push tokens onto the tokens array. This helper speeds up
+   * tokenizing by 1) helping us avoid backtracking as much as possible,
+   * and 2) helping us avoid creating extra tokens when consecutive
+   * characters are plain text. This improves performance and simplifies
+   * lookbehinds.
+   */
+
+  const push = tok => {
+    if (prev.type === 'globstar') {
+      const isBrace = state.braces > 0 && (tok.type === 'comma' || tok.type === 'brace');
+      const isExtglob = tok.extglob === true || (extglobs.length && (tok.type === 'pipe' || tok.type === 'paren'));
+
+      if (tok.type !== 'slash' && tok.type !== 'paren' && !isBrace && !isExtglob) {
+        state.output = state.output.slice(0, -prev.output.length);
+        prev.type = 'star';
+        prev.value = '*';
+        prev.output = star;
+        state.output += prev.output;
+      }
+    }
+
+    if (extglobs.length && tok.type !== 'paren') {
+      extglobs[extglobs.length - 1].inner += tok.value;
+    }
+
+    if (tok.value || tok.output) append(tok);
+    if (prev && prev.type === 'text' && tok.type === 'text') {
+      prev.output = (prev.output || prev.value) + tok.value;
+      prev.value += tok.value;
+      return;
+    }
+
+    tok.prev = prev;
+    tokens.push(tok);
+    prev = tok;
+  };
+
+  const extglobOpen = (type, value) => {
+    const token = { ...EXTGLOB_CHARS[value], conditions: 1, inner: '' };
+
+    token.prev = prev;
+    token.parens = state.parens;
+    token.output = state.output;
+    token.startIndex = state.index;
+    token.tokensIndex = tokens.length;
+    const output = (opts.capture ? '(' : '') + token.open;
+
+    increment('parens');
+    push({ type, value, output: state.output ? '' : ONE_CHAR });
+    push({ type: 'paren', extglob: true, value: advance(), output });
+    extglobs.push(token);
+  };
+
+  const extglobClose = token => {
+    const literal = input.slice(token.startIndex, state.index + 1);
+    const body = input.slice(token.startIndex + 2, state.index);
+    const analysis = analyzeRepeatedExtglob(body, opts);
+
+    if ((token.type === 'plus' || token.type === 'star') && analysis.risky) {
+      const safeOutput = analysis.safeOutput
+        ? (token.output ? '' : ONE_CHAR) + (opts.capture ? `(${analysis.safeOutput})` : analysis.safeOutput)
+        : undefined;
+      const open = tokens[token.tokensIndex];
+
+      open.type = 'text';
+      open.value = literal;
+      open.output = safeOutput || utils.escapeRegex(literal);
+
+      for (let i = token.tokensIndex + 1; i < tokens.length; i++) {
+        tokens[i].value = '';
+        tokens[i].output = '';
+        delete tokens[i].suffix;
+      }
+
+      state.output = token.output + open.output;
+      state.backtrack = true;
+
+      push({ type: 'paren', extglob: true, value, output: '' });
+      decrement('parens');
+      return;
+    }
+
+    let output = token.close + (opts.capture ? ')' : '');
+    let rest;
+
+    if (token.type === 'negate') {
+      let extglobStar = star;
+
+      if (token.inner && token.inner.length > 1 && token.inner.includes('/')) {
+        extglobStar = globstar(opts);
+      }
+
+      if (extglobStar !== star || eos() || /^\)+$/.test(remaining())) {
+        output = token.close = `)$))${extglobStar}`;
+      }
+
+      if (token.inner.includes('*') && (rest = remaining()) && /^\.[^\\/.]+$/.test(rest)) {
+        // Any non-magical string (`.ts`) or even nested expression (`.{ts,tsx}`) can follow after the closing parenthesis.
+        // In this case, we need to parse the string and use it in the output of the original pattern.
+        // Suitable patterns: `/!(*.d).ts`, `/!(*.d).{ts,tsx}`, `**/!(*-dbg).@(js)`.
+        //
+        // Disabling the `fastpaths` option due to a problem with parsing strings as `.ts` in the pattern like `**/!(*.d).ts`.
+        const expression = parse(rest, { ...options, fastpaths: false }).output;
+
+        output = token.close = `)${expression})${extglobStar})`;
+      }
+
+      if (token.prev.type === 'bos') {
+        state.negatedExtglob = true;
+      }
+    }
+
+    push({ type: 'paren', extglob: true, value, output });
+    decrement('parens');
+  };
+
+  /**
+   * Fast paths
+   */
+
+  if (opts.fastpaths !== false && !/(^[*!]|[/()[\]{}"])/.test(input)) {
+    let backslashes = false;
+
+    let output = input.replace(REGEX_SPECIAL_CHARS_BACKREF, (m, esc, chars, first, rest, index) => {
+      if (first === '\\') {
+        backslashes = true;
+        return m;
+      }
+
+      if (first === '?') {
+        if (esc) {
+          return esc + first + (rest ? QMARK.repeat(rest.length) : '');
+        }
+        if (index === 0) {
+          return qmarkNoDot + (rest ? QMARK.repeat(rest.length) : '');
+        }
+        return QMARK.repeat(chars.length);
+      }
+
+      if (first === '.') {
+        return DOT_LITERAL.repeat(chars.length);
+      }
+
+      if (first === '*') {
+        if (esc) {
+          return esc + first + (rest ? star : '');
+        }
+        return star;
+      }
+      return esc ? m : `\\${m}`;
+    });
+
+    if (backslashes === true) {
+      if (opts.unescape === true) {
+        output = output.replace(/\\/g, '');
+      } else {
+        output = output.replace(/\\+/g, m => {
+          return m.length % 2 === 0 ? '\\\\' : (m ? '\\' : '');
+        });
+      }
+    }
+
+    if (output === input && opts.contains === true) {
+      state.output = input;
+      return state;
+    }
+
+    state.output = utils.wrapOutput(output, state, options);
+    return state;
+  }
+
+  /**
+   * Tokenize input until we reach end-of-string
+   */
+
+  while (!eos()) {
+    value = advance();
+
+    if (value === '\u0000') {
+      continue;
+    }
+
+    /**
+     * Escaped characters
+     */
+
+    if (value === '\\') {
+      const next = peek();
+
+      if (next === '/' && opts.bash !== true) {
+        continue;
+      }
+
+      if (next === '.' || next === ';') {
+        continue;
+      }
+
+      if (!next) {
+        value += '\\';
+        push({ type: 'text', value });
+        continue;
+      }
+
+      // collapse slashes to reduce potential for exploits
+      const match = /^\\+/.exec(remaining());
+      let slashes = 0;
+
+      if (match && match[0].length > 2) {
+        slashes = match[0].length;
+        state.index += slashes;
+        if (slashes % 2 !== 0) {
+          value += '\\';
+        }
+      }
+
+      if (opts.unescape === true) {
+        value = advance();
+      } else {
+        value += advance();
+      }
+
+      if (state.brackets === 0) {
+        push({ type: 'text', value });
+        continue;
+      }
+    }
+
+    /**
+     * If we're inside a regex character class, continue
+     * until we reach the closing bracket.
+     */
+
+    if (state.brackets > 0 && (value !== ']' || prev.value === '[' || prev.value === '[^')) {
+      if (opts.posix !== false && value === ':') {
+        const inner = prev.value.slice(1);
+        if (inner.includes('[')) {
+          prev.posix = true;
+
+          if (inner.includes(':')) {
+            const idx = prev.value.lastIndexOf('[');
+            const pre = prev.value.slice(0, idx);
+            const rest = prev.value.slice(idx + 2);
+            const posix = POSIX_REGEX_SOURCE[rest];
+            if (posix) {
+              prev.value = pre + posix;
+              state.backtrack = true;
+              advance();
+
+              if (!bos.output && tokens.indexOf(prev) === 1) {
+                bos.output = ONE_CHAR;
+              }
+              continue;
+            }
+          }
+        }
+      }
+
+      if ((value === '[' && peek() !== ':') || (value === '-' && peek() === ']')) {
+        value = `\\${value}`;
+      }
+
+      if (value === ']' && (prev.value === '[' || prev.value === '[^')) {
+        value = `\\${value}`;
+      }
+
+      if (opts.posix === true && value === '!' && prev.value === '[') {
+        value = '^';
+      }
+
+      prev.value += value;
+      append({ value });
+      continue;
+    }
+
+    /**
+     * If we're inside a quoted string, continue
+     * until we reach the closing double quote.
+     */
+
+    if (state.quotes === 1 && value !== '"') {
+      value = utils.escapeRegex(value);
+      prev.value += value;
+      append({ value });
+      continue;
+    }
+
+    /**
+     * Double quotes
+     */
+
+    if (value === '"') {
+      state.quotes = state.quotes === 1 ? 0 : 1;
+      if (opts.keepQuotes === true) {
+        push({ type: 'text', value });
+      }
+      continue;
+    }
+
+    /**
+     * Parentheses
+     */
+
+    if (value === '(') {
+      increment('parens');
+      push({ type: 'paren', value });
+      continue;
+    }
+
+    if (value === ')') {
+      if (state.parens === 0 && opts.strictBrackets === true) {
+        throw new SyntaxError(syntaxError('opening', '('));
+      }
+
+      const extglob = extglobs[extglobs.length - 1];
+      if (extglob && state.parens === extglob.parens + 1) {
+        extglobClose(extglobs.pop());
+        continue;
+      }
+
+      push({ type: 'paren', value, output: state.parens ? ')' : '\\)' });
+      decrement('parens');
+      continue;
+    }
+
+    /**
+     * Square brackets
+     */
+
+    if (value === '[') {
+      if (opts.nobracket === true || !remaining().includes(']')) {
+        if (opts.nobracket !== true && opts.strictBrackets === true) {
+          throw new SyntaxError(syntaxError('closing', ']'));
+        }
+
+        value = `\\${value}`;
+      } else {
+        increment('brackets');
+      }
+
+      push({ type: 'bracket', value });
+      continue;
+    }
+
+    if (value === ']') {
+      if (opts.nobracket === true || (prev && prev.type === 'bracket' && prev.value.length === 1)) {
+        push({ type: 'text', value, output: `\\${value}` });
+        continue;
+      }
+
+      if (state.brackets === 0) {
+        if (opts.strictBrackets === true) {
+          throw new SyntaxError(syntaxError('opening', '['));
+        }
+
+        push({ type: 'text', value, output: `\\${value}` });
+        continue;
+      }
+
+      decrement('brackets');
+
+      const prevValue = prev.value.slice(1);
+      if (prev.posix !== true && prevValue[0] === '^' && !prevValue.includes('/')) {
+        value = `/${value}`;
+      }
+
+      prev.value += value;
+      append({ value });
+
+      // when literal brackets are explicitly disabled
+      // assume we should match with a regex character class
+      if (opts.literalBrackets === false || utils.hasRegexChars(prevValue)) {
+        continue;
+      }
+
+      const escaped = utils.escapeRegex(prev.value);
+      state.output = state.output.slice(0, -prev.value.length);
+
+      // when literal brackets are explicitly enabled
+      // assume we should escape the brackets to match literal characters
+      if (opts.literalBrackets === true) {
+        state.output += escaped;
+        prev.value = escaped;
+        continue;
+      }
+
+      // when the user specifies nothing, try to match both
+      prev.value = `(${capture}${escaped}|${prev.value})`;
+      state.output += prev.value;
+      continue;
+    }
+
+    /**
+     * Braces
+     */
+
+    if (value === '{' && opts.nobrace !== true) {
+      increment('braces');
+
+      const open = {
+        type: 'brace',
+        value,
+        output: '(',
+        outputIndex: state.output.length,
+        tokensIndex: state.tokens.length
+      };
+
+      braces.push(open);
+      push(open);
+      continue;
+    }
+
+    if (value === '}') {
+      const brace = braces[braces.length - 1];
+
+      if (opts.nobrace === true || !brace) {
+        push({ type: 'text', value, output: value });
+        continue;
+      }
+
+      let output = ')';
+
+      if (brace.dots === true) {
+        const arr = tokens.slice();
+        const range = [];
+
+        for (let i = arr.length - 1; i >= 0; i--) {
+          tokens.pop();
+          if (arr[i].type === 'brace') {
+            break;
+          }
+          if (arr[i].type !== 'dots') {
+            range.unshift(arr[i].value);
+          }
+        }
+
+        output = expandRange(range, opts);
+        state.backtrack = true;
+      }
+
+      if (brace.comma !== true && brace.dots !== true) {
+        const out = state.output.slice(0, brace.outputIndex);
+        const toks = state.tokens.slice(brace.tokensIndex);
+        brace.value = brace.output = '\\{';
+        value = output = '\\}';
+        state.output = out;
+        for (const t of toks) {
+          state.output += (t.output || t.value);
+        }
+      }
+
+      push({ type: 'brace', value, output });
+      decrement('braces');
+      braces.pop();
+      continue;
+    }
+
+    /**
+     * Pipes
+     */
+
+    if (value === '|') {
+      if (extglobs.length > 0) {
+        extglobs[extglobs.length - 1].conditions++;
+      }
+      push({ type: 'text', value });
+      continue;
+    }
+
+    /**
+     * Commas
+     */
+
+    if (value === ',') {
+      let output = value;
+
+      const brace = braces[braces.length - 1];
+      if (brace && stack[stack.length - 1] === 'braces') {
+        brace.comma = true;
+        output = '|';
+      }
+
+      push({ type: 'comma', value, output });
+      continue;
+    }
+
+    /**
+     * Slashes
+     */
+
+    if (value === '/') {
+      // if the beginning of the glob is "./", advance the start
+      // to the current index, and don't add the "./" characters
+      // to the state. This greatly simplifies lookbehinds when
+      // checking for BOS characters like "!" and "." (not "./")
+      if (prev.type === 'dot' && state.index === state.start + 1) {
+        state.start = state.index + 1;
+        state.consumed = '';
+        state.output = '';
+        tokens.pop();
+        prev = bos; // reset "prev" to the first token
+        continue;
+      }
+
+      push({ type: 'slash', value, output: SLASH_LITERAL });
+      continue;
+    }
+
+    /**
+     * Dots
+     */
+
+    if (value === '.') {
+      if (state.braces > 0 && prev.type === 'dot') {
+        if (prev.value === '.') prev.output = DOT_LITERAL;
+        const brace = braces[braces.length - 1];
+        prev.type = 'dots';
+        prev.output += value;
+        prev.value += value;
+        brace.dots = true;
+        continue;
+      }
+
+      if ((state.braces + state.parens) === 0 && prev.type !== 'bos' && prev.type !== 'slash') {
+        push({ type: 'text', value, output: DOT_LITERAL });
+        continue;
+      }
+
+      push({ type: 'dot', value, output: DOT_LITERAL });
+      continue;
+    }
+
+    /**
+     * Question marks
+     */
+
+    if (value === '?') {
+      const isGroup = prev && prev.value === '(';
+      if (!isGroup && opts.noextglob !== true && peek() === '(' && peek(2) !== '?') {
+        extglobOpen('qmark', value);
+        continue;
+      }
+
+      if (prev && prev.type === 'paren') {
+        const next = peek();
+        let output = value;
+
+        if ((prev.value === '(' && !/[!=<:]/.test(next)) || (next === '<' && !/<([!=]|\w+>)/.test(remaining()))) {
+          output = `\\${value}`;
+        }
+
+        push({ type: 'text', value, output });
+        continue;
+      }
+
+      if (opts.dot !== true && (prev.type === 'slash' || prev.type === 'bos')) {
+        push({ type: 'qmark', value, output: QMARK_NO_DOT });
+        continue;
+      }
+
+      push({ type: 'qmark', value, output: QMARK });
+      continue;
+    }
+
+    /**
+     * Exclamation
+     */
+
+    if (value === '!') {
+      if (opts.noextglob !== true && peek() === '(') {
+        if (peek(2) !== '?' || !/[!=<:]/.test(peek(3))) {
+          extglobOpen('negate', value);
+          continue;
+        }
+      }
+
+      if (opts.nonegate !== true && state.index === 0) {
+        negate();
+        continue;
+      }
+    }
+
+    /**
+     * Plus
+     */
+
+    if (value === '+') {
+      if (opts.noextglob !== true && peek() === '(' && peek(2) !== '?') {
+        extglobOpen('plus', value);
+        continue;
+      }
+
+      if ((prev && prev.value === '(') || opts.regex === false) {
+        push({ type: 'plus', value, output: PLUS_LITERAL });
+        continue;
+      }
+
+      if ((prev && (prev.type === 'bracket' || prev.type === 'paren' || prev.type === 'brace')) || state.parens > 0) {
+        push({ type: 'plus', value });
+        continue;
+      }
+
+      push({ type: 'plus', value: PLUS_LITERAL });
+      continue;
+    }
+
+    /**
+     * Plain text
+     */
+
+    if (value === '@') {
+      if (opts.noextglob !== true && peek() === '(' && peek(2) !== '?') {
+        push({ type: 'at', extglob: true, value, output: '' });
+        continue;
+      }
+
+      push({ type: 'text', value });
+      continue;
+    }
+
+    /**
+     * Plain text
+     */
+
+    if (value !== '*') {
+      if (value === '$' || value === '^') {
+        value = `\\${value}`;
+      }
+
+      const match = REGEX_NON_SPECIAL_CHARS.exec(remaining());
+      if (match) {
+        value += match[0];
+        state.index += match[0].length;
+      }
+
+      push({ type: 'text', value });
+      continue;
+    }
+
+    /**
+     * Stars
+     */
+
+    if (prev && (prev.type === 'globstar' || prev.star === true)) {
+      prev.type = 'star';
+      prev.star = true;
+      prev.value += value;
+      prev.output = star;
+      state.backtrack = true;
+      state.globstar = true;
+      consume(value);
+      continue;
+    }
+
+    let rest = remaining();
+    if (opts.noextglob !== true && /^\([^?]/.test(rest)) {
+      extglobOpen('star', value);
+      continue;
+    }
+
+    if (prev.type === 'star') {
+      if (opts.noglobstar === true) {
+        consume(value);
+        continue;
+      }
+
+      const prior = prev.prev;
+      const before = prior.prev;
+      const isStart = prior.type === 'slash' || prior.type === 'bos';
+      const afterStar = before && (before.type === 'star' || before.type === 'globstar');
+
+      if (opts.bash === true && (!isStart || (rest[0] && rest[0] !== '/'))) {
+        push({ type: 'star', value, output: '' });
+        continue;
+      }
+
+      const isBrace = state.braces > 0 && (prior.type === 'comma' || prior.type === 'brace');
+      const isExtglob = extglobs.length && (prior.type === 'pipe' || prior.type === 'paren');
+      if (!isStart && prior.type !== 'paren' && !isBrace && !isExtglob) {
+        push({ type: 'star', value, output: '' });
+        continue;
+      }
+
+      // strip consecutive `/**/`
+      while (rest.slice(0, 3) === '/**') {
+        const after = input[state.index + 4];
+        if (after && after !== '/') {
+          break;
+        }
+        rest = rest.slice(3);
+        consume('/**', 3);
+      }
+
+      if (prior.type === 'bos' && eos()) {
+        prev.type = 'globstar';
+        prev.value += value;
+        prev.output = globstar(opts);
+        state.output = prev.output;
+        state.globstar = true;
+        consume(value);
+        continue;
+      }
+
+      if (prior.type === 'slash' && prior.prev.type !== 'bos' && !afterStar && eos()) {
+        state.output = state.output.slice(0, -(prior.output + prev.output).length);
+        prior.output = `(?:${prior.output}`;
+
+        prev.type = 'globstar';
+        prev.output = globstar(opts) + (opts.strictSlashes ? ')' : '|$)');
+        prev.value += value;
+        state.globstar = true;
+        state.output += prior.output + prev.output;
+        consume(value);
+        continue;
+      }
+
+      if (prior.type === 'slash' && prior.prev.type !== 'bos' && rest[0] === '/') {
+        const end = rest[1] !== void 0 ? '|$' : '';
+
+        state.output = state.output.slice(0, -(prior.output + prev.output).length);
+        prior.output = `(?:${prior.output}`;
+
+        prev.type = 'globstar';
+        prev.output = `${globstar(opts)}${SLASH_LITERAL}|${SLASH_LITERAL}${end})`;
+        prev.value += value;
+
+        state.output += prior.output + prev.output;
+        state.globstar = true;
+
+        consume(value + advance());
+
+        push({ type: 'slash', value: '/', output: '' });
+        continue;
+      }
+
+      if (prior.type === 'bos' && rest[0] === '/') {
+        prev.type = 'globstar';
+        prev.value += value;
+        prev.output = `(?:^|${SLASH_LITERAL}|${globstar(opts)}${SLASH_LITERAL})`;
+        state.output = prev.output;
+        state.globstar = true;
+        consume(value + advance());
+        push({ type: 'slash', value: '/', output: '' });
+        continue;
+      }
+
+      // remove single star from output
+      state.output = state.output.slice(0, -prev.output.length);
+
+      // reset previous token to globstar
+      prev.type = 'globstar';
+      prev.output = globstar(opts);
+      prev.value += value;
+
+      // reset output with globstar
+      state.output += prev.output;
+      state.globstar = true;
+      consume(value);
+      continue;
+    }
+
+    const token = { type: 'star', value, output: star };
+
+    if (opts.bash === true) {
+      token.output = '.*?';
+      if (prev.type === 'bos' || prev.type === 'slash') {
+        token.output = nodot + token.output;
+      }
+      push(token);
+      continue;
+    }
+
+    if (prev && (prev.type === 'bracket' || prev.type === 'paren') && opts.regex === true) {
+      token.output = value;
+      push(token);
+      continue;
+    }
+
+    if (state.index === state.start || prev.type === 'slash' || prev.type === 'dot') {
+      if (prev.type === 'dot') {
+        state.output += NO_DOT_SLASH;
+        prev.output += NO_DOT_SLASH;
+
+      } else if (opts.dot === true) {
+        state.output += NO_DOTS_SLASH;
+        prev.output += NO_DOTS_SLASH;
+
+      } else {
+        state.output += nodot;
+        prev.output += nodot;
+      }
+
+      if (peek() !== '*') {
+        state.output += ONE_CHAR;
+        prev.output += ONE_CHAR;
+      }
+    }
+
+    push(token);
+  }
+
+  while (state.brackets > 0) {
+    if (opts.strictBrackets === true) throw new SyntaxError(syntaxError('closing', ']'));
+    state.output = utils.escapeLast(state.output, '[');
+    decrement('brackets');
+  }
+
+  while (state.parens > 0) {
+    if (opts.strictBrackets === true) throw new SyntaxError(syntaxError('closing', ')'));
+    state.output = utils.escapeLast(state.output, '(');
+    decrement('parens');
+  }
+
+  while (state.braces > 0) {
+    if (opts.strictBrackets === true) throw new SyntaxError(syntaxError('closing', '}'));
+    state.output = utils.escapeLast(state.output, '{');
+    decrement('braces');
+  }
+
+  if (opts.strictSlashes !== true && (prev.type === 'star' || prev.type === 'bracket')) {
+    push({ type: 'maybe_slash', value: '', output: `${SLASH_LITERAL}?` });
+  }
+
+  // rebuild the output if we had to backtrack at any point
+  if (state.backtrack === true) {
+    state.output = '';
+
+    for (const token of state.tokens) {
+      state.output += token.output != null ? token.output : token.value;
+
+      if (token.suffix) {
+        state.output += token.suffix;
+      }
+    }
+  }
+
+  return state;
+};
+
+/**
+ * Fast paths for creating regular expressions for common glob patterns.
+ * This can significantly speed up processing and has very little downside
+ * impact when none of the fast paths match.
+ */
+
+parse.fastpaths = (input, options) => {
+  const opts = { ...options };
+  const max = typeof opts.maxLength === 'number' ? Math.min(MAX_LENGTH, opts.maxLength) : MAX_LENGTH;
+  const len = input.length;
+  if (len > max) {
+    throw new SyntaxError(`Input length: ${len}, exceeds maximum allowed length: ${max}`);
+  }
+
+  input = REPLACEMENTS[input] || input;
+
+  // create constants based on platform, for windows or posix
+  const {
+    DOT_LITERAL,
+    SLASH_LITERAL,
+    ONE_CHAR,
+    DOTS_SLASH,
+    NO_DOT,
+    NO_DOTS,
+    NO_DOTS_SLASH,
+    STAR,
+    START_ANCHOR
+  } = constants.globChars(opts.windows);
+
+  const nodot = opts.dot ? NO_DOTS : NO_DOT;
+  const slashDot = opts.dot ? NO_DOTS_SLASH : NO_DOT;
+  const capture = opts.capture ? '' : '?:';
+  const state = { negated: false, prefix: '' };
+  let star = opts.bash === true ? '.*?' : STAR;
+
+  if (opts.capture) {
+    star = `(${star})`;
+  }
+
+  const globstar = opts => {
+    if (opts.noglobstar === true) return star;
+    return `(${capture}(?:(?!${START_ANCHOR}${opts.dot ? DOTS_SLASH : DOT_LITERAL}).)*?)`;
+  };
+
+  const create = str => {
+    switch (str) {
+      case '*':
+        return `${nodot}${ONE_CHAR}${star}`;
+
+      case '.*':
+        return `${DOT_LITERAL}${ONE_CHAR}${star}`;
+
+      case '*.*':
+        return `${nodot}${star}${DOT_LITERAL}${ONE_CHAR}${star}`;
+
+      case '*/*':
+        return `${nodot}${star}${SLASH_LITERAL}${ONE_CHAR}${slashDot}${star}`;
+
+      case '**':
+        return nodot + globstar(opts);
+
+      case '**/*':
+        return `(?:${nodot}${globstar(opts)}${SLASH_LITERAL})?${slashDot}${ONE_CHAR}${star}`;
+
+      case '**/*.*':
+        return `(?:${nodot}${globstar(opts)}${SLASH_LITERAL})?${slashDot}${star}${DOT_LITERAL}${ONE_CHAR}${star}`;
+
+      case '**/.*':
+        return `(?:${nodot}${globstar(opts)}${SLASH_LITERAL})?${DOT_LITERAL}${ONE_CHAR}${star}`;
+
+      default: {
+        const match = /^(.*?)\.(\w+)$/.exec(str);
+        if (!match) return;
+
+        const source = create(match[1]);
+        if (!source) return;
+
+        return source + DOT_LITERAL + match[2];
+      }
+    }
+  };
+
+  const output = utils.removePrefix(input, state);
+  let source = create(output);
+
+  if (source && opts.strictSlashes !== true) {
+    source += `${SLASH_LITERAL}?`;
+  }
+
+  return source;
+};
+
+module.exports = parse;
+```
+
+## File: `lib/picomatch.js`
+```javascript
+'use strict';
+
+const scan = require('./scan');
+const parse = require('./parse');
+const utils = require('./utils');
+const constants = require('./constants');
+const isObject = val => val && typeof val === 'object' && !Array.isArray(val);
+
+/**
+ * Creates a matcher function from one or more glob patterns. The
+ * returned function takes a string to match as its first argument,
+ * and returns true if the string is a match. The returned matcher
+ * function also takes a boolean as the second argument that, when true,
+ * returns an object with additional information.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch(glob[, options]);
+ *
+ * const isMatch = picomatch('*.!(*a)');
+ * console.log(isMatch('a.a')); //=> false
+ * console.log(isMatch('a.b')); //=> true
+ * ```
+ * @name picomatch
+ * @param {String|Array} `globs` One or more glob patterns.
+ * @param {Object=} `options`
+ * @return {Function=} Returns a matcher function.
+ * @api public
+ */
+
+const picomatch = (glob, options, returnState = false) => {
+  if (Array.isArray(glob)) {
+    const fns = glob.map(input => picomatch(input, options, returnState));
+    const arrayMatcher = str => {
+      for (const isMatch of fns) {
+        const state = isMatch(str);
+        if (state) return state;
+      }
+      return false;
+    };
+    return arrayMatcher;
+  }
+
+  const isState = isObject(glob) && glob.tokens && glob.input;
+
+  if (glob === '' || (typeof glob !== 'string' && !isState)) {
+    throw new TypeError('Expected pattern to be a non-empty string');
+  }
+
+  const opts = options || {};
+  const posix = opts.windows;
+  const regex = isState
+    ? picomatch.compileRe(glob, options)
+    : picomatch.makeRe(glob, options, false, true);
+
+  const state = regex.state;
+  delete regex.state;
+
+  let isIgnored = () => false;
+  if (opts.ignore) {
+    const ignoreOpts = { ...options, ignore: null, onMatch: null, onResult: null };
+    isIgnored = picomatch(opts.ignore, ignoreOpts, returnState);
+  }
+
+  const matcher = (input, returnObject = false) => {
+    const { isMatch, match, output } = picomatch.test(input, regex, options, { glob, posix });
+    const result = { glob, state, regex, posix, input, output, match, isMatch };
+
+    if (typeof opts.onResult === 'function') {
+      opts.onResult(result);
+    }
+
+    if (isMatch === false) {
+      result.isMatch = false;
+      return returnObject ? result : false;
+    }
+
+    if (isIgnored(input)) {
+      if (typeof opts.onIgnore === 'function') {
+        opts.onIgnore(result);
+      }
+      result.isMatch = false;
+      return returnObject ? result : false;
+    }
+
+    if (typeof opts.onMatch === 'function') {
+      opts.onMatch(result);
+    }
+    return returnObject ? result : true;
+  };
+
+  if (returnState) {
+    matcher.state = state;
+  }
+
+  return matcher;
+};
+
+/**
+ * Test `input` with the given `regex`. This is used by the main
+ * `picomatch()` function to test the input string.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch.test(input, regex[, options]);
+ *
+ * console.log(picomatch.test('foo/bar', /^(?:([^/]*?)\/([^/]*?))$/));
+ * // { isMatch: true, match: [ 'foo/', 'foo', 'bar' ], output: 'foo/bar' }
+ * ```
+ * @param {String} `input` String to test.
+ * @param {RegExp} `regex`
+ * @return {Object} Returns an object with matching info.
+ * @api public
+ */
+
+picomatch.test = (input, regex, options, { glob, posix } = {}) => {
+  if (typeof input !== 'string') {
+    throw new TypeError('Expected input to be a string');
+  }
+
+  if (input === '') {
+    return { isMatch: false, output: '' };
+  }
+
+  const opts = options || {};
+  const format = opts.format || (posix ? utils.toPosixSlashes : null);
+  let match = input === glob;
+  let output = (match && format) ? format(input) : input;
+
+  if (match === false) {
+    output = format ? format(input) : input;
+    match = output === glob;
+  }
+
+  if (match === false || opts.capture === true) {
+    if (opts.matchBase === true || opts.basename === true) {
+      match = picomatch.matchBase(input, regex, options, posix);
+    } else {
+      match = regex.exec(output);
+    }
+  }
+
+  return { isMatch: Boolean(match), match, output };
+};
+
+/**
+ * Match the basename of a filepath.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch.matchBase(input, glob[, options]);
+ * console.log(picomatch.matchBase('foo/bar.js', '*.js'); // true
+ * ```
+ * @param {String} `input` String to test.
+ * @param {RegExp|String} `glob` Glob pattern or regex created by [.makeRe](#makeRe).
+ * @return {Boolean}
+ * @api public
+ */
+
+picomatch.matchBase = (input, glob, options) => {
+  const regex = glob instanceof RegExp ? glob : picomatch.makeRe(glob, options);
+  return regex.test(utils.basename(input));
+};
+
+/**
+ * Returns true if **any** of the given glob `patterns` match the specified `string`.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch.isMatch(string, patterns[, options]);
+ *
+ * console.log(picomatch.isMatch('a.a', ['b.*', '*.a'])); //=> true
+ * console.log(picomatch.isMatch('a.a', 'b.*')); //=> false
+ * ```
+ * @param {String|Array} str The string to test.
+ * @param {String|Array} patterns One or more glob patterns to use for matching.
+ * @param {Object} [options] See available [options](#options).
+ * @return {Boolean} Returns true if any patterns match `str`
+ * @api public
+ */
+
+picomatch.isMatch = (str, patterns, options) => picomatch(patterns, options)(str);
+
+/**
+ * Parse a glob pattern to create the source string for a regular
+ * expression.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * const result = picomatch.parse(pattern[, options]);
+ * ```
+ * @param {String} `pattern`
+ * @param {Object} `options`
+ * @return {Object} Returns an object with useful properties and output to be used as a regex source string.
+ * @api public
+ */
+
+picomatch.parse = (pattern, options) => {
+  if (Array.isArray(pattern)) return pattern.map(p => picomatch.parse(p, options));
+  return parse(pattern, { ...options, fastpaths: false });
+};
+
+/**
+ * Scan a glob pattern to separate the pattern into segments.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch.scan(input[, options]);
+ *
+ * const result = picomatch.scan('!./foo/*.js');
+ * console.log(result);
+ * { prefix: '!./',
+ *   input: '!./foo/*.js',
+ *   start: 3,
+ *   base: 'foo',
+ *   glob: '*.js',
+ *   isBrace: false,
+ *   isBracket: false,
+ *   isGlob: true,
+ *   isExtglob: false,
+ *   isGlobstar: false,
+ *   negated: true }
+ * ```
+ * @param {String} `input` Glob pattern to scan.
+ * @param {Object} `options`
+ * @return {Object} Returns an object with
+ * @api public
+ */
+
+picomatch.scan = (input, options) => scan(input, options);
+
+/**
+ * Compile a regular expression from the `state` object returned by the
+ * [parse()](#parse) method.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * const state = picomatch.parse('*.js');
+ * // picomatch.compileRe(state[, options]);
+ *
+ * console.log(picomatch.compileRe(state));
+ * //=> /^(?:(?!\.)(?=.)[^/]*?\.js)$/
+ * ```
+ * @param {Object} `state`
+ * @param {Object} `options`
+ * @param {Boolean} `returnOutput` Intended for implementors, this argument allows you to return the raw output from the parser.
+ * @param {Boolean} `returnState` Adds the state to a `state` property on the returned regex. Useful for implementors and debugging.
+ * @return {RegExp}
+ * @api public
+ */
+
+picomatch.compileRe = (state, options, returnOutput = false, returnState = false) => {
+  if (returnOutput === true) {
+    return state.output;
+  }
+
+  const opts = options || {};
+  const prepend = opts.contains ? '' : '^';
+  const append = opts.contains ? '' : '$';
+
+  let source = `${prepend}(?:${state.output})${append}`;
+  if (state && state.negated === true) {
+    source = `^(?!${source}).*$`;
+  }
+
+  const regex = picomatch.toRegex(source, options);
+  if (returnState === true) {
+    regex.state = state;
+  }
+
+  return regex;
+};
+
+/**
+ * Create a regular expression from a parsed glob pattern.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch.makeRe(state[, options]);
+ *
+ * const result = picomatch.makeRe('*.js');
+ * console.log(result);
+ * //=> /^(?:(?!\.)(?=.)[^/]*?\.js)$/
+ * ```
+ * @param {String} `state` The object returned from the `.parse` method.
+ * @param {Object} `options`
+ * @param {Boolean} `returnOutput` Implementors may use this argument to return the compiled output, instead of a regular expression. This is not exposed on the options to prevent end-users from mutating the result.
+ * @param {Boolean} `returnState` Implementors may use this argument to return the state from the parsed glob with the returned regular expression.
+ * @return {RegExp} Returns a regex created from the given pattern.
+ * @api public
+ */
+
+picomatch.makeRe = (input, options = {}, returnOutput = false, returnState = false) => {
+  if (!input || typeof input !== 'string') {
+    throw new TypeError('Expected a non-empty string');
+  }
+
+  let parsed = { negated: false, fastpaths: true };
+
+  if (options.fastpaths !== false && (input[0] === '.' || input[0] === '*')) {
+    parsed.output = parse.fastpaths(input, options);
+  }
+
+  if (!parsed.output) {
+    parsed = parse(input, options);
+  }
+
+  return picomatch.compileRe(parsed, options, returnOutput, returnState);
+};
+
+/**
+ * Create a regular expression from the given regex source string.
+ *
+ * ```js
+ * const picomatch = require('picomatch');
+ * // picomatch.toRegex(source[, options]);
+ *
+ * const { output } = picomatch.parse('*.js');
+ * console.log(picomatch.toRegex(output));
+ * //=> /^(?:(?!\.)(?=.)[^/]*?\.js)$/
+ * ```
+ * @param {String} `source` Regular expression source string.
+ * @param {Object} `options`
+ * @return {RegExp}
+ * @api public
+ */
+
+picomatch.toRegex = (source, options) => {
+  try {
+    const opts = options || {};
+    return new RegExp(source, opts.flags || (opts.nocase ? 'i' : ''));
+  } catch (err) {
+    if (options && options.debug === true) throw err;
+    return /$^/;
+  }
+};
+
+/**
+ * Picomatch constants.
+ * @return {Object}
+ */
+
+picomatch.constants = constants;
+
+/**
+ * Expose "picomatch"
+ */
+
+module.exports = picomatch;
+```
+
+## File: `lib/scan.js`
+```javascript
+'use strict';
+
+const utils = require('./utils');
+const {
+  CHAR_ASTERISK,             /* * */
+  CHAR_AT,                   /* @ */
+  CHAR_BACKWARD_SLASH,       /* \ */
+  CHAR_COMMA,                /* , */
+  CHAR_DOT,                  /* . */
+  CHAR_EXCLAMATION_MARK,     /* ! */
+  CHAR_FORWARD_SLASH,        /* / */
+  CHAR_LEFT_CURLY_BRACE,     /* { */
+  CHAR_LEFT_PARENTHESES,     /* ( */
+  CHAR_LEFT_SQUARE_BRACKET,  /* [ */
+  CHAR_PLUS,                 /* + */
+  CHAR_QUESTION_MARK,        /* ? */
+  CHAR_RIGHT_CURLY_BRACE,    /* } */
+  CHAR_RIGHT_PARENTHESES,    /* ) */
+  CHAR_RIGHT_SQUARE_BRACKET  /* ] */
+} = require('./constants');
+
+const isPathSeparator = code => {
+  return code === CHAR_FORWARD_SLASH || code === CHAR_BACKWARD_SLASH;
+};
+
+const depth = token => {
+  if (token.isPrefix !== true) {
+    token.depth = token.isGlobstar ? Infinity : 1;
+  }
+};
+
+/**
+ * Quickly scans a glob pattern and returns an object with a handful of
+ * useful properties, like `isGlob`, `path` (the leading non-glob, if it exists),
+ * `glob` (the actual pattern), `negated` (true if the path starts with `!` but not
+ * with `!(`) and `negatedExtglob` (true if the path starts with `!(`).
+ *
+ * ```js
+ * const pm = require('picomatch');
+ * console.log(pm.scan('foo/bar/*.js'));
+ * { isGlob: true, input: 'foo/bar/*.js', base: 'foo/bar', glob: '*.js' }
+ * ```
+ * @param {String} `str`
+ * @param {Object} `options`
+ * @return {Object} Returns an object with tokens and regex source string.
+ * @api public
+ */
+
+const scan = (input, options) => {
+  const opts = options || {};
+
+  const length = input.length - 1;
+  const scanToEnd = opts.parts === true || opts.scanToEnd === true;
+  const slashes = [];
+  const tokens = [];
+  const parts = [];
+
+  let str = input;
+  let index = -1;
+  let start = 0;
+  let lastIndex = 0;
+  let isBrace = false;
+  let isBracket = false;
+  let isGlob = false;
+  let isExtglob = false;
+  let isGlobstar = false;
+  let braceEscaped = false;
+  let backslashes = false;
+  let negated = false;
+  let negatedExtglob = false;
+  let finished = false;
+  let braces = 0;
+  let prev;
+  let code;
+  let token = { value: '', depth: 0, isGlob: false };
+
+  const eos = () => index >= length;
+  const peek = () => str.charCodeAt(index + 1);
+  const advance = () => {
+    prev = code;
+    return str.charCodeAt(++index);
+  };
+
+  while (index < length) {
+    code = advance();
+    let next;
+
+    if (code === CHAR_BACKWARD_SLASH) {
+      backslashes = token.backslashes = true;
+      code = advance();
+
+      if (code === CHAR_LEFT_CURLY_BRACE) {
+        braceEscaped = true;
+      }
+      continue;
+    }
+
+    if (braceEscaped === true || code === CHAR_LEFT_CURLY_BRACE) {
+      braces++;
+
+      while (eos() !== true && (code = advance())) {
+        if (code === CHAR_BACKWARD_SLASH) {
+          backslashes = token.backslashes = true;
+          advance();
+          continue;
+        }
+
+        if (code === CHAR_LEFT_CURLY_BRACE) {
+          braces++;
+          continue;
+        }
+
+        if (braceEscaped !== true && code === CHAR_DOT && (code = advance()) === CHAR_DOT) {
+          isBrace = token.isBrace = true;
+          isGlob = token.isGlob = true;
+          finished = true;
+
+          if (scanToEnd === true) {
+            continue;
+          }
+
+          break;
+        }
+
+        if (braceEscaped !== true && code === CHAR_COMMA) {
+          isBrace = token.isBrace = true;
+          isGlob = token.isGlob = true;
+          finished = true;
+
+          if (scanToEnd === true) {
+            continue;
+          }
+
+          break;
+        }
+
+        if (code === CHAR_RIGHT_CURLY_BRACE) {
+          braces--;
+
+          if (braces === 0) {
+            braceEscaped = false;
+            isBrace = token.isBrace = true;
+            finished = true;
+            break;
+          }
+        }
+      }
+
+      if (scanToEnd === true) {
+        continue;
+      }
+
+      break;
+    }
+
+    if (code === CHAR_FORWARD_SLASH) {
+      slashes.push(index);
+      tokens.push(token);
+      token = { value: '', depth: 0, isGlob: false };
+
+      if (finished === true) continue;
+      if (prev === CHAR_DOT && index === (start + 1)) {
+        start += 2;
+        continue;
+      }
+
+      lastIndex = index + 1;
+      continue;
+    }
+
+    if (opts.noext !== true) {
+      const isExtglobChar = code === CHAR_PLUS
+        || code === CHAR_AT
+        || code === CHAR_ASTERISK
+        || code === CHAR_QUESTION_MARK
+        || code === CHAR_EXCLAMATION_MARK;
+
+      if (isExtglobChar === true && peek() === CHAR_LEFT_PARENTHESES) {
+        isGlob = token.isGlob = true;
+        isExtglob = token.isExtglob = true;
+        finished = true;
+        if (code === CHAR_EXCLAMATION_MARK && index === start) {
+          negatedExtglob = true;
+        }
+
+        if (scanToEnd === true) {
+          while (eos() !== true && (code = advance())) {
+            if (code === CHAR_BACKWARD_SLASH) {
+              backslashes = token.backslashes = true;
+              code = advance();
+              continue;
+            }
+
+            if (code === CHAR_RIGHT_PARENTHESES) {
+              isGlob = token.isGlob = true;
+              finished = true;
+              break;
+            }
+          }
+          continue;
+        }
+        break;
+      }
+    }
+
+    if (code === CHAR_ASTERISK) {
+      if (prev === CHAR_ASTERISK) isGlobstar = token.isGlobstar = true;
+      isGlob = token.isGlob = true;
+      finished = true;
+
+      if (scanToEnd === true) {
+        continue;
+      }
+      break;
+    }
+
+    if (code === CHAR_QUESTION_MARK) {
+      isGlob = token.isGlob = true;
+      finished = true;
+
+      if (scanToEnd === true) {
+        continue;
+      }
+      break;
+    }
+
+    if (code === CHAR_LEFT_SQUARE_BRACKET) {
+      while (eos() !== true && (next = advance())) {
+        if (next === CHAR_BACKWARD_SLASH) {
+          backslashes = token.backslashes = true;
+          advance();
+          continue;
+        }
+
+        if (next === CHAR_RIGHT_SQUARE_BRACKET) {
+          isBracket = token.isBracket = true;
+          isGlob = token.isGlob = true;
+          finished = true;
+          break;
+        }
+      }
+
+      if (scanToEnd === true) {
+        continue;
+      }
+
+      break;
+    }
+
+    if (opts.nonegate !== true && code === CHAR_EXCLAMATION_MARK && index === start) {
+      negated = token.negated = true;
+      start++;
+      continue;
+    }
+
+    if (opts.noparen !== true && code === CHAR_LEFT_PARENTHESES) {
+      isGlob = token.isGlob = true;
+
+      if (scanToEnd === true) {
+        while (eos() !== true && (code = advance())) {
+          if (code === CHAR_LEFT_PARENTHESES) {
+            backslashes = token.backslashes = true;
+            code = advance();
+            continue;
+          }
+
+          if (code === CHAR_RIGHT_PARENTHESES) {
+            finished = true;
+            break;
+          }
+        }
+        continue;
+      }
+      break;
+    }
+
+    if (isGlob === true) {
+      finished = true;
+
+      if (scanToEnd === true) {
+        continue;
+      }
+
+      break;
+    }
+  }
+
+  if (opts.noext === true) {
+    isExtglob = false;
+    isGlob = false;
+  }
+
+  let base = str;
+  let prefix = '';
+  let glob = '';
+
+  if (start > 0) {
+    prefix = str.slice(0, start);
+    str = str.slice(start);
+    lastIndex -= start;
+  }
+
+  if (base && isGlob === true && lastIndex > 0) {
+    base = str.slice(0, lastIndex);
+    glob = str.slice(lastIndex);
+  } else if (isGlob === true) {
+    base = '';
+    glob = str;
+  } else {
+    base = str;
+  }
+
+  if (base && base !== '' && base !== '/' && base !== str) {
+    if (isPathSeparator(base.charCodeAt(base.length - 1))) {
+      base = base.slice(0, -1);
+    }
+  }
+
+  if (opts.unescape === true) {
+    if (glob) glob = utils.removeBackslashes(glob);
+
+    if (base && backslashes === true) {
+      base = utils.removeBackslashes(base);
+    }
+  }
+
+  const state = {
+    prefix,
+    input,
+    start,
+    base,
+    glob,
+    isBrace,
+    isBracket,
+    isGlob,
+    isExtglob,
+    isGlobstar,
+    negated,
+    negatedExtglob
+  };
+
+  if (opts.tokens === true) {
+    state.maxDepth = 0;
+    if (!isPathSeparator(code)) {
+      tokens.push(token);
+    }
+    state.tokens = tokens;
+  }
+
+  if (opts.parts === true || opts.tokens === true) {
+    let prevIndex;
+
+    for (let idx = 0; idx < slashes.length; idx++) {
+      const n = prevIndex ? prevIndex + 1 : start;
+      const i = slashes[idx];
+      const value = input.slice(n, i);
+      if (opts.tokens) {
+        if (idx === 0 && start !== 0) {
+          tokens[idx].isPrefix = true;
+          tokens[idx].value = prefix;
+        } else {
+          tokens[idx].value = value;
+        }
+        depth(tokens[idx]);
+        state.maxDepth += tokens[idx].depth;
+      }
+      if (idx !== 0 || value !== '') {
+        parts.push(value);
+      }
+      prevIndex = i;
+    }
+
+    if (prevIndex && prevIndex + 1 < input.length) {
+      const value = input.slice(prevIndex + 1);
+      parts.push(value);
+
+      if (opts.tokens) {
+        tokens[tokens.length - 1].value = value;
+        depth(tokens[tokens.length - 1]);
+        state.maxDepth += tokens[tokens.length - 1].depth;
+      }
+    }
+
+    state.slashes = slashes;
+    state.parts = parts;
+  }
+
+  return state;
+};
+
+module.exports = scan;
+```
+
+## File: `lib/utils.js`
+```javascript
+/*global navigator*/
+'use strict';
+
+const {
+  REGEX_BACKSLASH,
+  REGEX_REMOVE_BACKSLASH,
+  REGEX_SPECIAL_CHARS,
+  REGEX_SPECIAL_CHARS_GLOBAL
+} = require('./constants');
+
+exports.isObject = val => val !== null && typeof val === 'object' && !Array.isArray(val);
+exports.hasRegexChars = str => REGEX_SPECIAL_CHARS.test(str);
+exports.isRegexChar = str => str.length === 1 && exports.hasRegexChars(str);
+exports.escapeRegex = str => str.replace(REGEX_SPECIAL_CHARS_GLOBAL, '\\$1');
+exports.toPosixSlashes = str => str.replace(REGEX_BACKSLASH, '/');
+
+exports.isWindows = () => {
+  if (typeof navigator !== 'undefined' && navigator.platform) {
+    const platform = navigator.platform.toLowerCase();
+    return platform === 'win32' || platform === 'windows';
+  }
+
+  if (typeof process !== 'undefined' && process.platform) {
+    return process.platform === 'win32';
+  }
+
+  return false;
+};
+
+exports.removeBackslashes = str => {
+  return str.replace(REGEX_REMOVE_BACKSLASH, match => {
+    return match === '\\' ? '' : match;
+  });
+};
+
+exports.escapeLast = (input, char, lastIdx) => {
+  const idx = input.lastIndexOf(char, lastIdx);
+  if (idx === -1) return input;
+  if (input[idx - 1] === '\\') return exports.escapeLast(input, char, idx - 1);
+  return `${input.slice(0, idx)}\\${input.slice(idx)}`;
+};
+
+exports.removePrefix = (input, state = {}) => {
+  let output = input;
+  if (output.startsWith('./')) {
+    output = output.slice(2);
+    state.prefix = './';
+  }
+  return output;
+};
+
+exports.wrapOutput = (input, state = {}, options = {}) => {
+  const prepend = options.contains ? '' : '^';
+  const append = options.contains ? '' : '$';
+
+  let output = `${prepend}(?:${input})${append}`;
+  if (state.negated === true) {
+    output = `(?:^(?!${output}).*$)`;
+  }
+  return output;
+};
+
+exports.basename = (path, { windows } = {}) => {
+  const segs = path.split(windows ? /[\\/]/ : '/');
+  const last = segs[segs.length - 1];
+
+  if (last === '') {
+    return segs[segs.length - 2];
+  }
+
+  return last;
+};
+```
+
+## File: `test/.eslintrc.json`
+```json
+{
+  "extends": [
+    "../.eslintrc.json"
+  ],
+  "env": {
+    "mocha": true
+  }
+}
+```
+
+## File: `test/api.picomatch.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const picomatch = require('..');
+const { isMatch } = picomatch;
+
+const assertTokens = (actual, expected) => {
+  const keyValuePairs = actual.map(token => [token.type, token.value]);
+  assert.deepStrictEqual(keyValuePairs, expected);
+};
+
+describe('picomatch', () => {
+  describe('validation', () => {
+    it('should throw an error when invalid arguments are given', () => {
+      assert.throws(() => isMatch('foo', ''), /Expected pattern to be a non-empty string/);
+      assert.throws(() => isMatch('foo', null), /Expected pattern to be a non-empty string/);
+    });
+  });
+
+  describe('multiple patterns', () => {
+    it('should return true when any of the patterns match', () => {
+      assert(isMatch('.', ['.', 'foo']));
+      assert(isMatch('a', ['a', 'foo']));
+      assert(isMatch('ab', ['*', 'foo', 'bar']));
+      assert(isMatch('ab', ['*b', 'foo', 'bar']));
+      assert(isMatch('ab', ['./*', 'foo', 'bar']));
+      assert(isMatch('ab', ['a*', 'foo', 'bar']));
+      assert(isMatch('ab', ['ab', 'foo']));
+    });
+
+    it('should return false when none of the patterns match', () => {
+      assert(!isMatch('/ab', ['/a', 'foo']));
+      assert(!isMatch('/ab', ['?/?', 'foo', 'bar']));
+      assert(!isMatch('/ab', ['a/*', 'foo', 'bar']));
+      assert(!isMatch('a/b/c', ['a/b', 'foo']));
+      assert(!isMatch('ab', ['*/*', 'foo', 'bar']));
+      assert(!isMatch('ab', ['/a', 'foo', 'bar']));
+      assert(!isMatch('ab', ['a', 'foo']));
+      assert(!isMatch('ab', ['b', 'foo']));
+      assert(!isMatch('ab', ['c', 'foo', 'bar']));
+      assert(!isMatch('abcd', ['ab', 'foo']));
+      assert(!isMatch('abcd', ['bc', 'foo']));
+      assert(!isMatch('abcd', ['c', 'foo']));
+      assert(!isMatch('abcd', ['cd', 'foo']));
+      assert(!isMatch('abcd', ['d', 'foo']));
+      assert(!isMatch('abcd', ['f', 'foo', 'bar']));
+      assert(!isMatch('ef', ['/*', 'foo', 'bar']));
+    });
+  });
+
+  describe('file extensions', () => {
+    it('should match files that contain the given extension:', () => {
+      assert(!isMatch('.c.md', '*.md'));
+      assert(!isMatch('.c.md', '.c.'));
+      assert(!isMatch('.c.md', '.md'));
+      assert(!isMatch('.md', '*.md'));
+      assert(!isMatch('.md', '.m'));
+      assert(!isMatch('a/b/c.md', '*.md'));
+      assert(!isMatch('a/b/c.md', '.md'));
+      assert(!isMatch('a/b/c.md', 'a/*.md'));
+      assert(!isMatch('a/b/c/c.md', '*.md'));
+      assert(!isMatch('a/b/c/c.md', 'c.js'));
+      assert(isMatch('.c.md', '.*.md'));
+      assert(isMatch('.md', '.md'));
+      assert(isMatch('a/b/c.js', 'a/**/*.*'));
+      assert(isMatch('a/b/c.md', '**/*.md'));
+      assert(isMatch('a/b/c.md', 'a/*/*.md'));
+      assert(isMatch('c.md', '*.md'));
+    });
+  });
+
+  describe('dot files', () => {
+    it('should not match dotfiles when a leading dot is not defined in a path segment', () => {
+      assert(!isMatch('.a', '(a)*'));
+      assert(!isMatch('.a', '*(a|b)'));
+      assert(!isMatch('.a', '*.md'));
+      assert(!isMatch('.a', '*[a]'));
+      assert(!isMatch('.a', '*[a]*'));
+      assert(!isMatch('.a', '*a'));
+      assert(!isMatch('.a', '*a*'));
+      assert(!isMatch('.a.md', 'a/b/c/*.md'));
+      assert(!isMatch('.ab', '*.*'));
+      assert(!isMatch('.abc', '.a'));
+      assert(!isMatch('.ba', '.a'));
+      assert(!isMatch('.c.md', '*.md'));
+      assert(!isMatch('.md', 'a/b/c/*.md'));
+      assert(!isMatch('.txt', '.md'));
+      assert(!isMatch('.verb.txt', '*.md'));
+      assert(!isMatch('a/.c.md', '*.md'));
+      assert(!isMatch('a/b/d/.md', 'a/b/c/*.md'));
+      assert(isMatch('.a', '.a'));
+      assert(isMatch('.ab', '.*'));
+      assert(isMatch('.ab', '.a*'));
+      assert(isMatch('.b', '.b*'));
+      assert(isMatch('.md', '.md'));
+      assert(isMatch('a/.c.md', 'a/.c.md'));
+      assert(isMatch('a/b/c/.xyz.md', 'a/b/c/.*.md'));
+      assert(isMatch('a/b/c/d.a.md', 'a/b/c/*.md'));
+    });
+
+    it('should match dotfiles when options.dot is true', () => {
+      assert(!isMatch('a/b/c/.xyz.md', '.*.md', { dot: true }));
+      assert(isMatch('.c.md', '*.md', { dot: true }));
+      assert(isMatch('.c.md', '.*', { dot: true }));
+      assert(isMatch('a/b/c/.xyz.md', '**/*.md', { dot: true }));
+      assert(isMatch('a/b/c/.xyz.md', '**/.*.md', { dot: true }));
+      assert(isMatch('a/b/c/.xyz.md', 'a/b/c/*.md', { dot: true }));
+      assert(isMatch('a/b/c/.xyz.md', 'a/b/c/.*.md', { dot: true }));
+    });
+  });
+
+  describe('matching:', () => {
+    it('should escape plus signs to match string literals', () => {
+      assert(isMatch('a+b/src/glimini.js', 'a+b/src/*.js'));
+      assert(isMatch('+b/src/glimini.js', '+b/src/*.js'));
+      assert(isMatch('coffee+/src/glimini.js', 'coffee+/src/*.js'));
+      assert(isMatch('coffee+/src/glimini.js', 'coffee+/src/*'));
+    });
+
+    it('should match with non-glob patterns', () => {
+      assert(isMatch('.', '.'));
+      assert(isMatch('/a', '/a'));
+      assert(!isMatch('/ab', '/a'));
+      assert(isMatch('a', 'a'));
+      assert(!isMatch('ab', '/a'));
+      assert(!isMatch('ab', 'a'));
+      assert(isMatch('ab', 'ab'));
+      assert(!isMatch('abcd', 'cd'));
+      assert(!isMatch('abcd', 'bc'));
+      assert(!isMatch('abcd', 'ab'));
+    });
+
+    it('should match file names', () => {
+      assert(isMatch('a.b', 'a.b'));
+      assert(isMatch('a.b', '*.b'));
+      assert(isMatch('a.b', 'a.*'));
+      assert(isMatch('a.b', '*.*'));
+      assert(isMatch('a-b.c-d', 'a*.c*'));
+      assert(isMatch('a-b.c-d', '*b.*d'));
+      assert(isMatch('a-b.c-d', '*.*'));
+      assert(isMatch('a-b.c-d', '*.*-*'));
+      assert(isMatch('a-b.c-d', '*-*.*-*'));
+      assert(isMatch('a-b.c-d', '*.c-*'));
+      assert(isMatch('a-b.c-d', '*.*-d'));
+      assert(isMatch('a-b.c-d', 'a-*.*-d'));
+      assert(isMatch('a-b.c-d', '*-b.c-*'));
+      assert(isMatch('a-b.c-d', '*-b*c-*'));
+      assert(!isMatch('a-b.c-d', '*-bc-*'));
+    });
+
+    it('should match with common glob patterns', () => {
+      assert(!isMatch('/ab', './*/'));
+      assert(!isMatch('/ef', '*'));
+      assert(!isMatch('ab', './*/'));
+      assert(!isMatch('ef', '/*'));
+      assert(isMatch('/ab', '/*'));
+      assert(isMatch('/cd', '/*'));
+      assert(isMatch('ab', '*'));
+      assert(isMatch('ab', './*'));
+      assert(isMatch('ab', 'ab'));
+      assert(isMatch('ab/', './*/'));
+    });
+
+    it('should match files with the given extension', () => {
+      assert(!isMatch('.md', '*.md'));
+      assert(isMatch('.md', '.md'));
+      assert(!isMatch('.c.md', '*.md'));
+      assert(isMatch('.c.md', '.*.md'));
+      assert(isMatch('c.md', '*.md'));
+      assert(isMatch('c.md', '*.md'));
+      assert(!isMatch('a/b/c/c.md', '*.md'));
+      assert(!isMatch('a/b/c.md', 'a/*.md'));
+      assert(isMatch('a/b/c.md', 'a/*/*.md'));
+      assert(isMatch('a/b/c.md', '**/*.md'));
+      assert(isMatch('a/b/c.js', 'a/**/*.*'));
+    });
+
+    it('should match wildcards', () => {
+      assert(!isMatch('a/b/c/z.js', '*.js'));
+      assert(!isMatch('a/b/z.js', '*.js'));
+      assert(!isMatch('a/z.js', '*.js'));
+      assert(isMatch('z.js', '*.js'));
+
+      assert(isMatch('z.js', 'z*.js'));
+      assert(isMatch('a/z.js', 'a/z*.js'));
+      assert(isMatch('a/z.js', '*/z*.js'));
+    });
+
+    it('should match globstars', () => {
+      assert(isMatch('a/b/c/z.js', '**/*.js'));
+      assert(isMatch('a/b/z.js', '**/*.js'));
+      assert(isMatch('a/z.js', '**/*.js'));
+      assert(isMatch('a/b/c/d/e/z.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/c/d/z.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/c/z.js', 'a/b/c/**/*.js'));
+      assert(isMatch('a/b/c/z.js', 'a/b/c**/*.js'));
+      assert(isMatch('a/b/c/z.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/z.js', 'a/b/**/*.js'));
+
+      assert(!isMatch('a/z.js', 'a/b/**/*.js'));
+      assert(!isMatch('z.js', 'a/b/**/*.js'));
+
+      // https://github.com/micromatch/micromatch/issues/15
+      assert(isMatch('z.js', 'z*'));
+      assert(isMatch('z.js', '**/z*'));
+      assert(isMatch('z.js', '**/z*.js'));
+      assert(isMatch('z.js', '**/*.js'));
+      assert(isMatch('foo', '**/foo'));
+    });
+
+    it('issue #23', () => {
+      assert(!isMatch('zzjs', 'z*.js'));
+      assert(!isMatch('zzjs', '*z.js'));
+    });
+
+    it('issue #24 - should match zero or more directories', () => {
+      assert(!isMatch('a/b/c/d/', 'a/b/**/f'));
+      assert(isMatch('a', 'a/**'));
+      assert(isMatch('a', '**'));
+      assert(isMatch('a/', '**'));
+      assert(isMatch('a/b-c/d/e/z.js', 'a/b-*/**/z.js'));
+      assert(isMatch('a/b-c/z.js', 'a/b-*/**/z.js'));
+      assert(isMatch('a/b/c/d', '**'));
+      assert(isMatch('a/b/c/d/', '**'));
+      assert(isMatch('a/b/c/d/', '**/**'));
+      assert(isMatch('a/b/c/d/', '**/b/**'));
+      assert(isMatch('a/b/c/d/', 'a/b/**'));
+      assert(isMatch('a/b/c/d/', 'a/b/**/'));
+      assert(isMatch('a/b/c/d/', 'a/b/**/c/**/'));
+      assert(isMatch('a/b/c/d/', 'a/b/**/c/**/d/'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/**/*.*'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/*.*'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/c/**/d/*.*'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/d/**/*.*'));
+      assert(isMatch('a/b/c/d/g/e.f', 'a/b/**/d/**/*.*'));
+      assert(isMatch('a/b/c/d/g/g/e.f', 'a/b/**/d/**/*.*'));
+    });
+
+    it('should match slashes', () => {
+      assert(!isMatch('bar/baz/foo', '*/foo'));
+      assert(!isMatch('deep/foo/bar', '**/bar/*'));
+      assert(!isMatch('deep/foo/bar/baz/x', '*/bar/**'));
+      assert(!isMatch('foo/bar', 'foo?bar'));
+      assert(!isMatch('foo/bar/baz', '**/bar*'));
+      assert(!isMatch('foo/bar/baz', '**/bar**'));
+      assert(!isMatch('foo/baz/bar', 'foo**bar'));
+      assert(!isMatch('foo/baz/bar', 'foo*bar'));
+      assert(!isMatch('deep/foo/bar/baz', '**/bar/*/'));
+      assert(!isMatch('deep/foo/bar/baz/', '**/bar/*', { strictSlashes: true }));
+      assert(isMatch('deep/foo/bar/baz/', '**/bar/*'));
+      assert(isMatch('deep/foo/bar/baz', '**/bar/*'));
+      assert(isMatch('foo', 'foo/**'));
+      assert(isMatch('deep/foo/bar/baz/', '**/bar/*{,/}'));
+      assert(isMatch('a/b/j/c/z/x.md', 'a/**/j/**/z/*.md'));
+      assert(isMatch('a/j/z/x.md', 'a/**/j/**/z/*.md'));
+      assert(isMatch('bar/baz/foo', '**/foo'));
+      assert(isMatch('deep/foo/bar/', '**/bar/**'));
+      assert(isMatch('deep/foo/bar/baz', '**/bar/*'));
+      assert(isMatch('deep/foo/bar/baz/', '**/bar/*/'));
+      assert(isMatch('deep/foo/bar/baz/', '**/bar/**'));
+      assert(isMatch('deep/foo/bar/baz/x', '**/bar/*/*'));
+      assert(isMatch('foo/b/a/z/bar', 'foo/**/**/bar'));
+      assert(isMatch('foo/b/a/z/bar', 'foo/**/bar'));
+      assert(isMatch('foo/bar', 'foo/**/**/bar'));
+      assert(isMatch('foo/bar', 'foo/**/bar'));
+      assert(isMatch('foo/bar', 'foo[/]bar'));
+      assert(isMatch('foo/bar/baz/x', '*/bar/**'));
+      assert(isMatch('foo/baz/bar', 'foo/**/**/bar'));
+      assert(isMatch('foo/baz/bar', 'foo/**/bar'));
+      assert(isMatch('foobazbar', 'foo**bar'));
+      assert(isMatch('XXX/foo', '**/foo'));
+
+      // https://github.com/micromatch/micromatch/issues/89
+      assert(isMatch('foo//baz.md', 'foo//baz.md'));
+      assert(isMatch('foo//baz.md', 'foo//*baz.md'));
+      assert(isMatch('foo//baz.md', 'foo{/,//}baz.md'));
+      assert(isMatch('foo/baz.md', 'foo{/,//}baz.md'));
+      assert(!isMatch('foo//baz.md', 'foo/+baz.md'));
+      assert(!isMatch('foo//baz.md', 'foo//+baz.md'));
+      assert(!isMatch('foo//baz.md', 'foo/baz.md'));
+      assert(!isMatch('foo/baz.md', 'foo//baz.md'));
+    });
+
+    it('question marks should not match slashes', () => {
+      assert(!isMatch('aaa/bbb', 'aaa?bbb'));
+    });
+
+    it('should not match dotfiles when `dot` or `dotfiles` are not set', () => {
+      assert(!isMatch('.c.md', '*.md'));
+      assert(!isMatch('a/.c.md', '*.md'));
+      assert(isMatch('a/.c.md', 'a/.c.md'));
+      assert(!isMatch('.a', '*.md'));
+      assert(!isMatch('.verb.txt', '*.md'));
+      assert(isMatch('a/b/c/.xyz.md', 'a/b/c/.*.md'));
+      assert(isMatch('.md', '.md'));
+      assert(!isMatch('.txt', '.md'));
+      assert(isMatch('.md', '.md'));
+      assert(isMatch('.a', '.a'));
+      assert(isMatch('.b', '.b*'));
+      assert(isMatch('.ab', '.a*'));
+      assert(isMatch('.ab', '.*'));
+      assert(!isMatch('.ab', '*.*'));
+      assert(!isMatch('.md', 'a/b/c/*.md'));
+      assert(!isMatch('.a.md', 'a/b/c/*.md'));
+      assert(isMatch('a/b/c/d.a.md', 'a/b/c/*.md'));
+      assert(!isMatch('a/b/d/.md', 'a/b/c/*.md'));
+    });
+
+    it('should match dotfiles when `dot` or `dotfiles` is set', () => {
+      assert(isMatch('.c.md', '*.md', { dot: true }));
+      assert(isMatch('.c.md', '.*', { dot: true }));
+      assert(isMatch('a/b/c/.xyz.md', 'a/b/c/*.md', { dot: true }));
+      assert(isMatch('a/b/c/.xyz.md', 'a/b/c/.*.md', { dot: true }));
+    });
+  });
+
+  describe('.parse', () => {
+    describe('tokens', () => {
+      it('should return result for pattern that matched by fastpath', () => {
+        const { tokens } = picomatch.parse('a*.txt');
+
+        const expected = [
+          ['bos', ''],
+          ['text', 'a'],
+          ['star', '*'],
+          ['text', '.txt']
+        ];
+
+        assertTokens(tokens, expected);
+      });
+
+      it('should return result for pattern', () => {
+        const { tokens } = picomatch.parse('{a,b}*');
+
+        const expected = [
+          ['bos', ''],
+          ['brace', '{'],
+          ['text', 'a'],
+          ['comma', ','],
+          ['text', 'b'],
+          ['brace', '}'],
+          ['star', '*'],
+          ['maybe_slash', '']
+        ];
+
+        assertTokens(tokens, expected);
+      });
+
+      it('pictomatch issue#125, issue#100', () => {
+        const { tokens } = picomatch.parse('foo.(m|c|)js');
+
+        const expected = [
+          ['bos', { output: '', value: '' }],
+          ['text', { output: 'foo.', value: 'foo.' }],
+          ['paren', { output: undefined, value: '(' }],
+          ['text', { output: 'm|c|', value: 'm|c|' }],
+          ['paren', { output: ')', value: ')' }],
+          ['text', { output: undefined, value: 'js' }]
+        ];
+
+        const keyValuePairs = tokens.map(token => [token.type, { output: token.output, value: token.value }]);
+        assert.deepStrictEqual(keyValuePairs, expected);
+      });
+    });
+  });
+
+  describe('state', () => {
+    describe('negatedExtglob', () => {
+      it('should return true', () => {
+        assert(picomatch('!(abc)', {}, true).state.negatedExtglob);
+        assert(picomatch('!(abc)**', {}, true).state.negatedExtglob);
+        assert(picomatch('!(abc)/**', {}, true).state.negatedExtglob);
+      });
+
+      it('should return false', () => {
+        assert(!picomatch('(!(abc))', {}, true).state.negatedExtglob);
+        assert(!picomatch('**!(abc)', {}, true).state.negatedExtglob);
+      });
+    });
+  });
+});
+```
+
+## File: `test/api.posix.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const picomatch = require('../posix');
+
+describe('picomatch/posix', () => {
+  it('should use posix paths only by default', () => {
+    const match = picomatch('a/**');
+    assert(match('a/b'));
+    assert(!match('a\\b'));
+  });
+  it('should still be manually configurable to accept non-posix paths', () => {
+    const match = picomatch('a/**', { windows: true });
+    assert(match('a\\b'));
+    assert(match('a/b'));
+  });
+});
+```
+
+## File: `test/api.scan.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const scan = require('../lib/scan');
+const base = (...args) => scan(...args).base;
+const both = (...args) => {
+  const { base, glob } = scan(...args);
+  return [base, glob];
+};
+
+/**
+ * @param {String} pattern
+ * @param {String[]} parts
+ */
+function assertParts(pattern, parts) {
+  const info = scan(pattern, { parts: true });
+
+  assert.deepStrictEqual(info.parts, parts);
+}
+
+/**
+ * Most of the unit tests in this file were from https://github.com/es128/glob-parent
+ * and https://github.com/jonschlinkert/glob-base. Both libraries use a completely
+ * different approach to separating the glob pattern from the "path" from picomatch,
+ * and both libraries use path.dirname. Picomatch does not.
+ */
+
+describe('picomatch', () => {
+  describe('.scan', () => {
+    it('should get the "base" and "glob" from a pattern', () => {
+      assert.deepStrictEqual(both('foo/bar'), ['foo/bar', '']);
+      assert.deepStrictEqual(both('foo/@bar'), ['foo/@bar', '']);
+      assert.deepStrictEqual(both('foo/@bar\\+'), ['foo/@bar\\+', '']);
+      assert.deepStrictEqual(both('foo/bar+'), ['foo/bar+', '']);
+      assert.deepStrictEqual(both('foo/bar*'), ['foo', 'bar*']);
+    });
+
+    it('should handle leading "./"', () => {
+      assert.deepStrictEqual(scan('./foo/bar/*.js'), {
+        input: './foo/bar/*.js',
+        prefix: './',
+        start: 2,
+        base: 'foo/bar',
+        glob: '*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should detect braces', () => {
+      assert.deepStrictEqual(scan('foo/{a,b,c}/*.js', { scanToEnd: true }), {
+        input: 'foo/{a,b,c}/*.js',
+        prefix: '',
+        start: 0,
+        base: 'foo',
+        glob: '{a,b,c}/*.js',
+        isBrace: true,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should detect globstars', () => {
+      assert.deepStrictEqual(scan('./foo/**/*.js', { scanToEnd: true }), {
+        input: './foo/**/*.js',
+        prefix: './',
+        start: 2,
+        base: 'foo',
+        glob: '**/*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: true,
+        isExtglob: false,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should detect extglobs', () => {
+      assert.deepStrictEqual(scan('./foo/@(foo)/*.js'), {
+        input: './foo/@(foo)/*.js',
+        prefix: './',
+        start: 2,
+        base: 'foo',
+        glob: '@(foo)/*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: true,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should detect extglobs and globstars', () => {
+      assert.deepStrictEqual(scan('./foo/@(bar)/**/*.js', { parts: true }), {
+        input: './foo/@(bar)/**/*.js',
+        prefix: './',
+        start: 2,
+        base: 'foo',
+        glob: '@(bar)/**/*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: true,
+        isExtglob: true,
+        negated: false,
+        negatedExtglob: false,
+        slashes: [1, 5, 12, 15],
+        parts: ['foo', '@(bar)', '**', '*.js']
+      });
+    });
+
+    it('should handle leading "!"', () => {
+      assert.deepStrictEqual(scan('!foo/bar/*.js'), {
+        input: '!foo/bar/*.js',
+        prefix: '!',
+        start: 1,
+        base: 'foo/bar',
+        glob: '*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: true,
+        negatedExtglob: false
+      });
+    });
+
+    it('should detect negated extglobs at the begining', () => {
+      assert.deepStrictEqual(scan('!(foo)*'), {
+        input: '!(foo)*',
+        prefix: '',
+        start: 0,
+        base: '',
+        glob: '!(foo)*',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: true,
+        negated: false,
+        negatedExtglob: true
+      });
+
+      assert.deepStrictEqual(scan('!(foo)'), {
+        input: '!(foo)',
+        prefix: '',
+        start: 0,
+        base: '',
+        glob: '!(foo)',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: true,
+        negated: false,
+        negatedExtglob: true
+      });
+    });
+
+    it('should not detect negated extglobs in the middle', () => {
+      assert.deepStrictEqual(scan('test/!(foo)/*'), {
+        input: 'test/!(foo)/*',
+        prefix: '',
+        start: 0,
+        base: 'test',
+        glob: '!(foo)/*',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: true,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should handle leading "./" when negated', () => {
+      assert.deepStrictEqual(scan('./!foo/bar/*.js'), {
+        input: './!foo/bar/*.js',
+        prefix: './!',
+        start: 3,
+        base: 'foo/bar',
+        glob: '*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: true,
+        negatedExtglob: false
+      });
+
+      assert.deepStrictEqual(scan('!./foo/bar/*.js'), {
+        input: '!./foo/bar/*.js',
+        prefix: '!./',
+        start: 3,
+        base: 'foo/bar',
+        glob: '*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: true,
+        negatedExtglob: false
+      });
+    });
+
+    it('should recognize leading ./', () => {
+      assert.strictEqual(base('./(a|b)'), '');
+    });
+
+    it('should strip glob magic to return base path', () => {
+      assert.strictEqual(base('.'), '.');
+      assert.strictEqual(base('.*'), '');
+      assert.strictEqual(base('/.*'), '/');
+      assert.strictEqual(base('/.*/'), '/');
+      assert.strictEqual(base('a/.*/b'), 'a');
+      assert.strictEqual(base('a*/.*/b'), '');
+      assert.strictEqual(base('*/a/b/c'), '');
+      assert.strictEqual(base('*'), '');
+      assert.strictEqual(base('*/'), '');
+      assert.strictEqual(base('*/*'), '');
+      assert.strictEqual(base('*/*/'), '');
+      assert.strictEqual(base('**'), '');
+      assert.strictEqual(base('**/'), '');
+      assert.strictEqual(base('**/*'), '');
+      assert.strictEqual(base('**/*/'), '');
+      assert.strictEqual(base('/*.js'), '/');
+      assert.strictEqual(base('*.js'), '');
+      assert.strictEqual(base('**/*.js'), '');
+      assert.strictEqual(base('/root/path/to/*.js'), '/root/path/to');
+      assert.strictEqual(base('[a-z]'), '');
+      assert.strictEqual(base('chapter/foo [bar]/'), 'chapter');
+      assert.strictEqual(base('path/!/foo'), 'path/!/foo');
+      assert.strictEqual(base('path/!/foo/'), 'path/!/foo/');
+      assert.strictEqual(base('path/!subdir/foo.js'), 'path/!subdir/foo.js');
+      assert.strictEqual(base('path/**/*'), 'path');
+      assert.strictEqual(base('path/**/subdir/foo.*'), 'path');
+      assert.strictEqual(base('path/*/foo'), 'path');
+      assert.strictEqual(base('path/*/foo/'), 'path');
+      assert.strictEqual(base('path/+/foo'), 'path/+/foo', 'plus sign must be escaped');
+      assert.strictEqual(base('path/+/foo/'), 'path/+/foo/', 'plus sign must be escaped');
+      assert.strictEqual(base('path/?/foo'), 'path', 'qmarks must be escaped');
+      assert.strictEqual(base('path/?/foo/'), 'path', 'qmarks must be escaped');
+      assert.strictEqual(base('path/@/foo'), 'path/@/foo');
+      assert.strictEqual(base('path/@/foo/'), 'path/@/foo/');
+      assert.strictEqual(base('path/[a-z]'), 'path');
+      assert.strictEqual(base('path/subdir/**/foo.js'), 'path/subdir');
+      assert.strictEqual(base('path/to/*.js'), 'path/to');
+    });
+
+    it('should respect escaped characters', () => {
+      assert.strictEqual(base('path/\\*\\*/subdir/foo.*'), 'path/\\*\\*/subdir');
+      assert.strictEqual(base('path/\\[\\*\\]/subdir/foo.*'), 'path/\\[\\*\\]/subdir');
+      assert.strictEqual(base('path/\\[foo bar\\]/subdir/foo.*'), 'path/\\[foo bar\\]/subdir');
+      assert.strictEqual(base('path/\\[bar]/'), 'path/\\[bar]/');
+      assert.strictEqual(base('path/\\[bar]'), 'path/\\[bar]');
+      assert.strictEqual(base('[bar]'), '');
+      assert.strictEqual(base('[bar]/'), '');
+      assert.strictEqual(base('./\\[bar]'), '\\[bar]');
+      assert.strictEqual(base('\\[bar]/'), '\\[bar]/');
+      assert.strictEqual(base('\\[bar\\]/'), '\\[bar\\]/');
+      assert.strictEqual(base('[bar\\]/'), '[bar\\]/');
+      assert.strictEqual(base('path/foo \\[bar]/'), 'path/foo \\[bar]/');
+      assert.strictEqual(base('\\[bar]'), '\\[bar]');
+      assert.strictEqual(base('[bar\\]'), '[bar\\]');
+    });
+
+    it('should return full non-glob paths', () => {
+      assert.strictEqual(base('path'), 'path');
+      assert.strictEqual(base('path/foo'), 'path/foo');
+      assert.strictEqual(base('path/foo/'), 'path/foo/');
+      assert.strictEqual(base('path/foo/bar.js'), 'path/foo/bar.js');
+    });
+
+    it('should not return glob when noext is true', () => {
+      assert.deepStrictEqual(scan('./foo/bar/*.js', { noext: true }), {
+        input: './foo/bar/*.js',
+        prefix: './',
+        start: 2,
+        base: 'foo/bar/*.js',
+        glob: '',
+        isBrace: false,
+        isBracket: false,
+        isGlob: false,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should respect nonegate opts', () => {
+      assert.deepStrictEqual(scan('!foo/bar/*.js', { nonegate: true }), {
+        input: '!foo/bar/*.js',
+        prefix: '',
+        start: 0,
+        base: '!foo/bar',
+        glob: '*.js',
+        isBrace: false,
+        isBracket: false,
+        isGlob: true,
+        isGlobstar: false,
+        isExtglob: false,
+        negated: false,
+        negatedExtglob: false
+      });
+    });
+
+    it('should return parts of the pattern', () => {
+      // Right now it returns []
+      // assertParts('', ['']);
+      // assertParts('*', ['*']);
+      // assertParts('.*', ['.*']);
+      // assertParts('**', ['**']);
+      // assertParts('foo', ['foo']);
+      // assertParts('foo*', ['foo*']);
+      // assertParts('/', ['', '']);
+      // assertParts('/*', ['', '*']);
+      // assertParts('./', ['']);
+      // assertParts('{1..9}', ['{1..9}']);
+      // assertParts('c!(.)z', ['c!(.)z']);
+      // assertParts('(b|a).(a)', ['(b|a).(a)']);
+      // assertParts('+(a|b\\[)*', ['+(a|b\\[)*']);
+      // assertParts('@(a|b).md', ['@(a|b).md']);
+      // assertParts('(a/b)', ['(a/b)']);
+      // assertParts('(a\\b)', ['(a\\b)']);
+      // assertParts('foo\\[a\\/]', ['foo\\[a\\/]']);
+      // assertParts('foo[/]bar', ['foo[/]bar']);
+      // assertParts('/dev\\/@(tcp|udp)\\/*\\/*', ['', '/dev\\/@(tcp|udp)\\/*\\/*']);
+
+      // Right now it returns ['*']
+      // assertParts('*/', ['*', '']);
+
+      // Right now it returns ['!(!(bar)', 'baz)']
+      // assertParts('!(!(bar)/baz)', ['!(!(bar)/baz)']);
+
+      assertParts('./foo', ['foo']);
+      assertParts('../foo', ['..', 'foo']);
+
+      assertParts('foo/bar', ['foo', 'bar']);
+      assertParts('foo/*', ['foo', '*']);
+      assertParts('foo/**', ['foo', '**']);
+      assertParts('foo/**/*', ['foo', '**', '*']);
+      assertParts('フォルダ/**/*', ['フォルダ', '**', '*']);
+
+      assertParts('foo/!(abc)', ['foo', '!(abc)']);
+      assertParts('c/!(z)/v', ['c', '!(z)', 'v']);
+      assertParts('c/@(z)/v', ['c', '@(z)', 'v']);
+      assertParts('foo/(bar|baz)', ['foo', '(bar|baz)']);
+      assertParts('foo/(bar|baz)*', ['foo', '(bar|baz)*']);
+      assertParts('**/*(W*, *)*', ['**', '*(W*, *)*']);
+      assertParts('a/**@(/x|/z)/*.md', ['a', '**@(/x|/z)', '*.md']);
+      assertParts('foo/(bar|baz)/*.js', ['foo', '(bar|baz)', '*.js']);
+
+      assertParts('XXX/*/*/12/*/*/m/*/*', ['XXX', '*', '*', '12', '*', '*', 'm', '*', '*']);
+      assertParts('foo/\\"**\\"/bar', ['foo', '\\"**\\"', 'bar']);
+
+      assertParts('[0-9]/[0-9]', ['[0-9]', '[0-9]']);
+      assertParts('foo/[0-9]/[0-9]', ['foo', '[0-9]', '[0-9]']);
+      assertParts('foo[0-9]/bar[0-9]', ['foo[0-9]', 'bar[0-9]']);
+    });
+  });
+
+  describe('.base (glob2base test patterns)', () => {
+    it('should get a base name', () => {
+      assert.strictEqual(base('js/*.js'), 'js');
+    });
+
+    it('should get a base name from a nested glob', () => {
+      assert.strictEqual(base('js/**/test/*.js'), 'js');
+    });
+
+    it('should get a base name from a flat file', () => {
+      assert.strictEqual(base('js/test/wow.js'), 'js/test/wow.js'); // differs
+    });
+
+    it('should get a base name from character class pattern', () => {
+      assert.strictEqual(base('js/t[a-z]st}/*.js'), 'js');
+    });
+
+    it('should get a base name from extglob', () => {
+      assert.strictEqual(base('js/t+(wo|est)/*.js'), 'js');
+    });
+
+    it('should get a base name from a path with non-exglob parens', () => {
+      assert.strictEqual(base('(a|b)'), '');
+      assert.strictEqual(base('foo/(a|b)'), 'foo');
+      assert.strictEqual(base('/(a|b)'), '/');
+      assert.strictEqual(base('a/(b c)'), 'a');
+      assert.strictEqual(base('foo/(b c)/baz'), 'foo');
+      assert.strictEqual(base('a/(b c)/'), 'a');
+      assert.strictEqual(base('a/(b c)/d'), 'a');
+      assert.strictEqual(base('a/(b c)', { noparen: true }), 'a/(b c)');
+      assert.strictEqual(base('a/(b c)/', { noparen: true }), 'a/(b c)/');
+      assert.strictEqual(base('a/(b c)/d', { noparen: true }), 'a/(b c)/d');
+      assert.strictEqual(base('foo/(b c)/baz', { noparen: true }), 'foo/(b c)/baz');
+      assert.strictEqual(base('path/(foo bar)/subdir/foo.*', { noparen: true }), 'path/(foo bar)/subdir');
+      assert.strictEqual(base('a/\\(b c)'), 'a/\\(b c)', 'parens must be escaped');
+      assert.strictEqual(base('a/\\+\\(b c)/foo'), 'a/\\+\\(b c)/foo', 'parens must be escaped');
+      assert.strictEqual(base('js/t(wo|est)/*.js'), 'js');
+      assert.strictEqual(base('js/t/(wo|est)/*.js'), 'js/t');
+      assert.strictEqual(base('path/(foo bar)/subdir/foo.*'), 'path', 'parens must be escaped');
+      assert.strictEqual(base('path/(foo/bar|baz)'), 'path');
+      assert.strictEqual(base('path/(foo/bar|baz)/'), 'path');
+      assert.strictEqual(base('path/(to|from)'), 'path');
+      assert.strictEqual(base('path/\\(foo/bar|baz)/'), 'path/\\(foo/bar|baz)/');
+      assert.strictEqual(base('path/\\*(a|b)'), 'path');
+      assert.strictEqual(base('path/\\*(a|b)/subdir/foo.*'), 'path');
+      assert.strictEqual(base('path/\\*/(a|b)/subdir/foo.*'), 'path/\\*');
+      assert.strictEqual(base('path/\\*\\(a\\|b\\)/subdir/foo.*'), 'path/\\*\\(a\\|b\\)/subdir');
+    });
+  });
+
+  describe('technically invalid windows globs', () => {
+    it('should support simple globs with backslash path separator', () => {
+      assert.strictEqual(base('C:\\path\\*.js'), 'C:\\path\\*.js');
+      assert.strictEqual(base('C:\\\\path\\\\*.js'), '');
+      assert.strictEqual(base('C:\\\\path\\*.js'), 'C:\\\\path\\*.js');
+    });
+  });
+
+  describe('glob base >', () => {
+    it('should parse globs', () => {
+      assert.deepStrictEqual(both('!foo'), ['foo', '']);
+      assert.deepStrictEqual(both('*'), ['', '*']);
+      assert.deepStrictEqual(both('**'), ['', '**']);
+      assert.deepStrictEqual(both('**/*.md'), ['', '**/*.md']);
+      assert.deepStrictEqual(both('**/*.min.js'), ['', '**/*.min.js']);
+      assert.deepStrictEqual(both('**/*foo.js'), ['', '**/*foo.js']);
+      assert.deepStrictEqual(both('**/.*'), ['', '**/.*']);
+      assert.deepStrictEqual(both('**/d'), ['', '**/d']);
+      assert.deepStrictEqual(both('*.*'), ['', '*.*']);
+      assert.deepStrictEqual(both('*.js'), ['', '*.js']);
+      assert.deepStrictEqual(both('*.md'), ['', '*.md']);
+      assert.deepStrictEqual(both('*.min.js'), ['', '*.min.js']);
+      assert.deepStrictEqual(both('*/*'), ['', '*/*']);
+      assert.deepStrictEqual(both('*/*/*/*'), ['', '*/*/*/*']);
+      assert.deepStrictEqual(both('*/*/*/e'), ['', '*/*/*/e']);
+      assert.deepStrictEqual(both('*/b/*/e'), ['', '*/b/*/e']);
+      assert.deepStrictEqual(both('*b'), ['', '*b']);
+      assert.deepStrictEqual(both('.*'), ['', '.*']);
+      assert.deepStrictEqual(both('*'), ['', '*']);
+      assert.deepStrictEqual(both('a/**/j/**/z/*.md'), ['a', '**/j/**/z/*.md']);
+      assert.deepStrictEqual(both('a/**/z/*.md'), ['a', '**/z/*.md']);
+      assert.deepStrictEqual(both('node_modules/*-glob/**/*.js'), ['node_modules', '*-glob/**/*.js']);
+      assert.deepStrictEqual(both('{a/b/{c,/foo.js}/e.f.g}'), ['', '{a/b/{c,/foo.js}/e.f.g}']);
+      assert.deepStrictEqual(both('.a*'), ['', '.a*']);
+      assert.deepStrictEqual(both('.b*'), ['', '.b*']);
+      assert.deepStrictEqual(both('/*'), ['/', '*']);
+      assert.deepStrictEqual(both('a/***'), ['a', '***']);
+      assert.deepStrictEqual(both('a/**/b/*.{foo,bar}'), ['a', '**/b/*.{foo,bar}']);
+      assert.deepStrictEqual(both('a/**/c/*'), ['a', '**/c/*']);
+      assert.deepStrictEqual(both('a/**/c/*.md'), ['a', '**/c/*.md']);
+      assert.deepStrictEqual(both('a/**/e'), ['a', '**/e']);
+      assert.deepStrictEqual(both('a/**/j/**/z/*.md'), ['a', '**/j/**/z/*.md']);
+      assert.deepStrictEqual(both('a/**/z/*.md'), ['a', '**/z/*.md']);
+      assert.deepStrictEqual(both('a/**c*'), ['a', '**c*']);
+      assert.deepStrictEqual(both('a/**c/*'), ['a', '**c/*']);
+      assert.deepStrictEqual(both('a/*/*/e'), ['a', '*/*/e']);
+      assert.deepStrictEqual(both('a/*/c/*.md'), ['a', '*/c/*.md']);
+      assert.deepStrictEqual(both('a/b/**/c{d,e}/**/xyz.md'), ['a/b', '**/c{d,e}/**/xyz.md']);
+      assert.deepStrictEqual(both('a/b/**/e'), ['a/b', '**/e']);
+      assert.deepStrictEqual(both('a/b/*.{foo,bar}'), ['a/b', '*.{foo,bar}']);
+      assert.deepStrictEqual(both('a/b/*/e'), ['a/b', '*/e']);
+      assert.deepStrictEqual(both('a/b/.git/'), ['a/b/.git/', '']);
+      assert.deepStrictEqual(both('a/b/.git/**'), ['a/b/.git', '**']);
+      assert.deepStrictEqual(both('a/b/.{foo,bar}'), ['a/b', '.{foo,bar}']);
+      assert.deepStrictEqual(both('a/b/c/*'), ['a/b/c', '*']);
+      assert.deepStrictEqual(both('a/b/c/**/*.min.js'), ['a/b/c', '**/*.min.js']);
+      assert.deepStrictEqual(both('a/b/c/*.md'), ['a/b/c', '*.md']);
+      assert.deepStrictEqual(both('a/b/c/.*.md'), ['a/b/c', '.*.md']);
+      assert.deepStrictEqual(both('a/b/{c,.gitignore,{a,b}}/{a,b}/abc.foo.js'), ['a/b', '{c,.gitignore,{a,b}}/{a,b}/abc.foo.js']);
+      assert.deepStrictEqual(both('a/b/{c,/.gitignore}'), ['a/b', '{c,/.gitignore}']);
+      assert.deepStrictEqual(both('a/b/{c,d}/'), ['a/b', '{c,d}/']);
+      assert.deepStrictEqual(both('a/b/{c,d}/e/f.g'), ['a/b', '{c,d}/e/f.g']);
+      assert.deepStrictEqual(both('b/*/*/*'), ['b', '*/*/*']);
+    });
+
+    it('should support file extensions', () => {
+      assert.deepStrictEqual(both('.md'), ['.md', '']);
+    });
+
+    it('should support negation pattern', () => {
+      assert.deepStrictEqual(both('!*.min.js'), ['', '*.min.js']);
+      assert.deepStrictEqual(both('!foo'), ['foo', '']);
+      assert.deepStrictEqual(both('!foo/*.js'), ['foo', '*.js']);
+      assert.deepStrictEqual(both('!foo/(a|b).min.js'), ['foo', '(a|b).min.js']);
+      assert.deepStrictEqual(both('!foo/[a-b].min.js'), ['foo', '[a-b].min.js']);
+      assert.deepStrictEqual(both('!foo/{a,b}.min.js'), ['foo', '{a,b}.min.js']);
+      assert.deepStrictEqual(both('a/b/c/!foo'), ['a/b/c/!foo', '']);
+    });
+
+    it('should support extglobs', () => {
+      assert.deepStrictEqual(both('/a/b/!(a|b)/e.f.g/'), ['/a/b', '!(a|b)/e.f.g/']);
+      assert.deepStrictEqual(both('/a/b/@(a|b)/e.f.g/'), ['/a/b', '@(a|b)/e.f.g/']);
+      assert.deepStrictEqual(both('@(a|b)/e.f.g/'), ['', '@(a|b)/e.f.g/']);
+      assert.strictEqual(base('path/!(to|from)'), 'path');
+      assert.strictEqual(base('path/*(to|from)'), 'path');
+      assert.strictEqual(base('path/+(to|from)'), 'path');
+      assert.strictEqual(base('path/?(to|from)'), 'path');
+      assert.strictEqual(base('path/@(to|from)'), 'path');
+    });
+
+    it('should support regex character classes', () => {
+      const opts = { unescape: true };
+      assert.deepStrictEqual(both('[a-c]b*'), ['', '[a-c]b*']);
+      assert.deepStrictEqual(both('[a-j]*[^c]'), ['', '[a-j]*[^c]']);
+      assert.deepStrictEqual(both('[a-j]*[^c]b/c'), ['', '[a-j]*[^c]b/c']);
+      assert.deepStrictEqual(both('[a-j]*[^c]bc'), ['', '[a-j]*[^c]bc']);
+      assert.deepStrictEqual(both('[ab][ab]'), ['', '[ab][ab]']);
+      assert.deepStrictEqual(both('foo/[a-b].min.js'), ['foo', '[a-b].min.js']);
+      assert.strictEqual(base('path/foo[a\\/]/', opts), 'path');
+      assert.strictEqual(base('path/foo\\[a\\/]/', opts), 'path/foo[a\\/]/');
+      assert.strictEqual(base('foo[a\\/]', opts), '');
+      assert.strictEqual(base('foo\\[a\\/]', opts), 'foo[a\\/]');
+    });
+
+    it('should support qmarks', () => {
+      assert.deepStrictEqual(both('?'), ['', '?']);
+      assert.deepStrictEqual(both('?/?'), ['', '?/?']);
+      assert.deepStrictEqual(both('??'), ['', '??']);
+      assert.deepStrictEqual(both('???'), ['', '???']);
+      assert.deepStrictEqual(both('?a'), ['', '?a']);
+      assert.deepStrictEqual(both('?b'), ['', '?b']);
+      assert.deepStrictEqual(both('a?b'), ['', 'a?b']);
+      assert.deepStrictEqual(both('a/?/c.js'), ['a', '?/c.js']);
+      assert.deepStrictEqual(both('a/?/c.md'), ['a', '?/c.md']);
+      assert.deepStrictEqual(both('a/?/c/?/*/f.js'), ['a', '?/c/?/*/f.js']);
+      assert.deepStrictEqual(both('a/?/c/?/*/f.md'), ['a', '?/c/?/*/f.md']);
+      assert.deepStrictEqual(both('a/?/c/?/e.js'), ['a', '?/c/?/e.js']);
+      assert.deepStrictEqual(both('a/?/c/?/e.md'), ['a', '?/c/?/e.md']);
+      assert.deepStrictEqual(both('a/?/c/???/e.js'), ['a', '?/c/???/e.js']);
+      assert.deepStrictEqual(both('a/?/c/???/e.md'), ['a', '?/c/???/e.md']);
+      assert.deepStrictEqual(both('a/??/c.js'), ['a', '??/c.js']);
+      assert.deepStrictEqual(both('a/??/c.md'), ['a', '??/c.md']);
+      assert.deepStrictEqual(both('a/???/c.js'), ['a', '???/c.js']);
+      assert.deepStrictEqual(both('a/???/c.md'), ['a', '???/c.md']);
+      assert.deepStrictEqual(both('a/????/c.js'), ['a', '????/c.js']);
+    });
+
+    it('should support non-glob patterns', () => {
+      assert.deepStrictEqual(both(''), ['', '']);
+      assert.deepStrictEqual(both('.'), ['.', '']);
+      assert.deepStrictEqual(both('a'), ['a', '']);
+      assert.deepStrictEqual(both('.a'), ['.a', '']);
+      assert.deepStrictEqual(both('/a'), ['/a', '']);
+      assert.deepStrictEqual(both('a/'), ['a/', '']);
+      assert.deepStrictEqual(both('/a/'), ['/a/', '']);
+      assert.deepStrictEqual(both('/a/b/c'), ['/a/b/c', '']);
+      assert.deepStrictEqual(both('/a/b/c/'), ['/a/b/c/', '']);
+      assert.deepStrictEqual(both('a/b/c/'), ['a/b/c/', '']);
+      assert.deepStrictEqual(both('a.min.js'), ['a.min.js', '']);
+      assert.deepStrictEqual(both('a/.x.md'), ['a/.x.md', '']);
+      assert.deepStrictEqual(both('a/b/.gitignore'), ['a/b/.gitignore', '']);
+      assert.deepStrictEqual(both('a/b/c/d.md'), ['a/b/c/d.md', '']);
+      assert.deepStrictEqual(both('a/b/c/d.e.f/g.min.js'), ['a/b/c/d.e.f/g.min.js', '']);
+      assert.deepStrictEqual(both('a/b/.git'), ['a/b/.git', '']);
+      assert.deepStrictEqual(both('a/b/.git/'), ['a/b/.git/', '']);
+      assert.deepStrictEqual(both('a/b/c'), ['a/b/c', '']);
+      assert.deepStrictEqual(both('a/b/c.d/e.md'), ['a/b/c.d/e.md', '']);
+      assert.deepStrictEqual(both('a/b/c.md'), ['a/b/c.md', '']);
+      assert.deepStrictEqual(both('a/b/c.min.js'), ['a/b/c.min.js', '']);
+      assert.deepStrictEqual(both('a/b/git/'), ['a/b/git/', '']);
+      assert.deepStrictEqual(both('aa'), ['aa', '']);
+      assert.deepStrictEqual(both('ab'), ['ab', '']);
+      assert.deepStrictEqual(both('bb'), ['bb', '']);
+      assert.deepStrictEqual(both('c.md'), ['c.md', '']);
+      assert.deepStrictEqual(both('foo'), ['foo', '']);
+    });
+  });
+
+  describe('braces', () => {
+    it('should recognize brace sets', () => {
+      assert.strictEqual(base('path/{to,from}'), 'path');
+      assert.strictEqual(base('path/{foo,bar}/'), 'path');
+      assert.strictEqual(base('js/{src,test}/*.js'), 'js');
+      assert.strictEqual(base('{a,b}'), '');
+      assert.strictEqual(base('/{a,b}'), '/');
+      assert.strictEqual(base('/{a,b}/'), '/');
+    });
+
+    it('should recognize brace ranges', () => {
+      assert.strictEqual(base('js/test{0..9}/*.js'), 'js');
+    });
+
+    it('should respect brace enclosures with embedded separators', () => {
+      const opts = { unescape: true };
+      assert.strictEqual(base('path/{,/,bar/baz,qux}/', opts), 'path');
+      assert.strictEqual(base('path/\\{,/,bar/baz,qux}/', opts), 'path/{,/,bar/baz,qux}/');
+      assert.strictEqual(base('path/\\{,/,bar/baz,qux\\}/', opts), 'path/{,/,bar/baz,qux}/');
+      assert.strictEqual(base('/{,/,bar/baz,qux}/', opts), '/');
+      assert.strictEqual(base('/\\{,/,bar/baz,qux}/', opts), '/{,/,bar/baz,qux}/');
+      assert.strictEqual(base('{,/,bar/baz,qux}', opts), '');
+      assert.strictEqual(base('\\{,/,bar/baz,qux\\}', opts), '{,/,bar/baz,qux}');
+      assert.strictEqual(base('\\{,/,bar/baz,qux}/', opts), '{,/,bar/baz,qux}/');
+    });
+
+    it('should handle escaped nested braces', () => {
+      const opts = { unescape: true };
+      assert.strictEqual(base('\\{../,./,\\{bar,/baz},qux}', opts), '{../,./,{bar,/baz},qux}');
+      assert.strictEqual(base('\\{../,./,\\{bar,/baz},qux}/', opts), '{../,./,{bar,/baz},qux}/');
+      assert.strictEqual(base('path/\\{,/,bar/{baz,qux}}/', opts), 'path/{,/,bar/{baz,qux}}/');
+      assert.strictEqual(base('path/\\{../,./,\\{bar,/baz},qux}/', opts), 'path/{../,./,{bar,/baz},qux}/');
+      assert.strictEqual(base('path/\\{../,./,\\{bar,/baz},qux}/', opts), 'path/{../,./,{bar,/baz},qux}/');
+      assert.strictEqual(base('path/\\{../,./,{bar,/baz},qux}/', opts), 'path/{../,./,{bar,/baz},qux}/');
+      assert.strictEqual(base('path/{,/,bar/\\{baz,qux}}/', opts), 'path');
+    });
+
+    it('should recognize escaped braces', () => {
+      const opts = { unescape: true };
+      assert.strictEqual(base('\\{foo,bar\\}', opts), '{foo,bar}');
+      assert.strictEqual(base('\\{foo,bar\\}/', opts), '{foo,bar}/');
+      assert.strictEqual(base('\\{foo,bar}/', opts), '{foo,bar}/');
+      assert.strictEqual(base('path/\\{foo,bar}/', opts), 'path/{foo,bar}/');
+    });
+
+    it('should get a base name from a complex brace glob', () => {
+      assert.strictEqual(base('one/{foo,bar}/**/{baz,qux}/*.txt'), 'one');
+      assert.strictEqual(base('two/baz/**/{abc,xyz}/*.js'), 'two/baz');
+      assert.strictEqual(base('foo/{bar,baz}/**/aaa/{bbb,ccc}'), 'foo');
+    });
+
+    it('should support braces: no path', () => {
+      assert.deepStrictEqual(both('/a/b/{c,/foo.js}/e.f.g/'), ['/a/b', '{c,/foo.js}/e.f.g/']);
+      assert.deepStrictEqual(both('{a/b/c.js,/a/b/{c,/foo.js}/e.f.g/}'), ['', '{a/b/c.js,/a/b/{c,/foo.js}/e.f.g/}']);
+      assert.deepStrictEqual(both('/a/b/{c,d}/'), ['/a/b', '{c,d}/']);
+      assert.deepStrictEqual(both('/a/b/{c,d}/*.js'), ['/a/b', '{c,d}/*.js']);
+      assert.deepStrictEqual(both('/a/b/{c,d}/*.min.js'), ['/a/b', '{c,d}/*.min.js']);
+      assert.deepStrictEqual(both('/a/b/{c,d}/e.f.g/'), ['/a/b', '{c,d}/e.f.g/']);
+      assert.deepStrictEqual(both('{.,*}'), ['', '{.,*}']);
+    });
+
+    it('should support braces in filename', () => {
+      assert.deepStrictEqual(both('a/b/.{c,.gitignore}'), ['a/b', '.{c,.gitignore}']);
+      assert.deepStrictEqual(both('a/b/.{c,/.gitignore}'), ['a/b', '.{c,/.gitignore}']);
+      assert.deepStrictEqual(both('a/b/.{foo,bar}'), ['a/b', '.{foo,bar}']);
+      assert.deepStrictEqual(both('a/b/{c,.gitignore}'), ['a/b', '{c,.gitignore}']);
+      assert.deepStrictEqual(both('a/b/{c,/.gitignore}'), ['a/b', '{c,/.gitignore}']);
+      assert.deepStrictEqual(both('a/b/{c,/gitignore}'), ['a/b', '{c,/gitignore}']);
+      assert.deepStrictEqual(both('a/b/{c,d}'), ['a/b', '{c,d}']);
+    });
+
+    it('should support braces in dirname', () => {
+      assert.deepStrictEqual(both('a/b/{c,./d}/e/f.g'), ['a/b', '{c,./d}/e/f.g']);
+      assert.deepStrictEqual(both('a/b/{c,./d}/e/f.min.g'), ['a/b', '{c,./d}/e/f.min.g']);
+      assert.deepStrictEqual(both('a/b/{c,.gitignore,{a,./b}}/{a,b}/abc.foo.js'), ['a/b', '{c,.gitignore,{a,./b}}/{a,b}/abc.foo.js']);
+      assert.deepStrictEqual(both('a/b/{c,.gitignore,{a,b}}/{a,b}/*.foo.js'), ['a/b', '{c,.gitignore,{a,b}}/{a,b}/*.foo.js']);
+      assert.deepStrictEqual(both('a/b/{c,.gitignore,{a,b}}/{a,b}/abc.foo.js'), ['a/b', '{c,.gitignore,{a,b}}/{a,b}/abc.foo.js']);
+      assert.deepStrictEqual(both('a/b/{c,/d}/e/f.g'), ['a/b', '{c,/d}/e/f.g']);
+      assert.deepStrictEqual(both('a/b/{c,/d}/e/f.min.g'), ['a/b', '{c,/d}/e/f.min.g']);
+      assert.deepStrictEqual(both('a/b/{c,d}/'), ['a/b', '{c,d}/']);
+      assert.deepStrictEqual(both('a/b/{c,d}/*.js'), ['a/b', '{c,d}/*.js']);
+      assert.deepStrictEqual(both('a/b/{c,d}/*.min.js'), ['a/b', '{c,d}/*.min.js']);
+      assert.deepStrictEqual(both('a/b/{c,d}/e.f.g/'), ['a/b', '{c,d}/e.f.g/']);
+      assert.deepStrictEqual(both('a/b/{c,d}/e/f.g'), ['a/b', '{c,d}/e/f.g']);
+      assert.deepStrictEqual(both('a/b/{c,d}/e/f.min.g'), ['a/b', '{c,d}/e/f.min.g']);
+      assert.deepStrictEqual(both('foo/{a,b}.min.js'), ['foo', '{a,b}.min.js']);
+    });
+  });
+});
+```
+
+## File: `test/bash.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+// $echo a/{1..3}/b
+describe('from the Bash 4.3 spec/unit tests', () => {
+  it('should handle "regular globbing"', () => {
+    assert(!isMatch('*', 'a*'));
+    assert(!isMatch('**', 'a*'));
+    assert(!isMatch('\\*', 'a*'));
+    assert(!isMatch('a/*', 'a*'));
+    assert(!isMatch('b', 'a*'));
+    assert(!isMatch('bc', 'a*'));
+    assert(!isMatch('bcd', 'a*'));
+    assert(!isMatch('bdir/', 'a*'));
+    assert(!isMatch('Beware', 'a*'));
+    assert(isMatch('a', 'a*'));
+    assert(isMatch('ab', 'a*'));
+    assert(isMatch('abc', 'a*'));
+
+    assert(!isMatch('*', '\\a*'));
+    assert(!isMatch('**', '\\a*'));
+    assert(!isMatch('\\*', '\\a*'));
+
+    assert(isMatch('a', '\\a*'));
+    assert(!isMatch('a/*', '\\a*'));
+    assert(isMatch('abc', '\\a*'));
+    assert(isMatch('abd', '\\a*'));
+    assert(isMatch('abe', '\\a*'));
+    assert(!isMatch('b', '\\a*'));
+    assert(!isMatch('bb', '\\a*'));
+    assert(!isMatch('bcd', '\\a*'));
+    assert(!isMatch('bdir/', '\\a*'));
+    assert(!isMatch('Beware', '\\a*'));
+    assert(!isMatch('c', '\\a*'));
+    assert(!isMatch('ca', '\\a*'));
+    assert(!isMatch('cb', '\\a*'));
+    assert(!isMatch('d', '\\a*'));
+    assert(!isMatch('dd', '\\a*'));
+    assert(!isMatch('de', '\\a*'));
+  });
+
+  it('should match directories', () => {
+    assert(!isMatch('*', 'b*/'));
+    assert(!isMatch('**', 'b*/'));
+    assert(!isMatch('\\*', 'b*/'));
+    assert(!isMatch('a', 'b*/'));
+    assert(!isMatch('a/*', 'b*/'));
+    assert(!isMatch('abc', 'b*/'));
+    assert(!isMatch('abd', 'b*/'));
+    assert(!isMatch('abe', 'b*/'));
+    assert(!isMatch('b', 'b*/'));
+    assert(!isMatch('bb', 'b*/'));
+    assert(!isMatch('bcd', 'b*/'));
+    assert(isMatch('bdir/', 'b*/'));
+    assert(!isMatch('Beware', 'b*/'));
+    assert(!isMatch('c', 'b*/'));
+    assert(!isMatch('ca', 'b*/'));
+    assert(!isMatch('cb', 'b*/'));
+    assert(!isMatch('d', 'b*/'));
+    assert(!isMatch('dd', 'b*/'));
+    assert(!isMatch('de', 'b*/'));
+  });
+
+  it('should use escaped characters as literals', () => {
+    assert(!isMatch('*', '\\^'));
+    assert(!isMatch('**', '\\^'));
+    assert(!isMatch('\\*', '\\^'));
+    assert(!isMatch('a', '\\^'));
+    assert(!isMatch('a/*', '\\^'));
+    assert(!isMatch('abc', '\\^'));
+    assert(!isMatch('abd', '\\^'));
+    assert(!isMatch('abe', '\\^'));
+    assert(!isMatch('b', '\\^'));
+    assert(!isMatch('bb', '\\^'));
+    assert(!isMatch('bcd', '\\^'));
+    assert(!isMatch('bdir/', '\\^'));
+    assert(!isMatch('Beware', '\\^'));
+    assert(!isMatch('c', '\\^'));
+    assert(!isMatch('ca', '\\^'));
+    assert(!isMatch('cb', '\\^'));
+    assert(!isMatch('d', '\\^'));
+    assert(!isMatch('dd', '\\^'));
+    assert(!isMatch('de', '\\^'));
+
+    assert(isMatch('*', '\\*'));
+    assert(isMatch('\\*', '\\*'));
+    assert(!isMatch('**', '\\*'));
+    assert(!isMatch('a', '\\*'));
+    assert(!isMatch('a/*', '\\*'));
+    assert(!isMatch('abc', '\\*'));
+    assert(!isMatch('abd', '\\*'));
+    assert(!isMatch('abe', '\\*'));
+    assert(!isMatch('b', '\\*'));
+    assert(!isMatch('bb', '\\*'));
+    assert(!isMatch('bcd', '\\*'));
+    assert(!isMatch('bdir/', '\\*'));
+    assert(!isMatch('Beware', '\\*'));
+    assert(!isMatch('c', '\\*'));
+    assert(!isMatch('ca', '\\*'));
+    assert(!isMatch('cb', '\\*'));
+    assert(!isMatch('d', '\\*'));
+    assert(!isMatch('dd', '\\*'));
+    assert(!isMatch('de', '\\*'));
+
+    assert(!isMatch('*', 'a\\*'));
+    assert(!isMatch('**', 'a\\*'));
+    assert(!isMatch('\\*', 'a\\*'));
+    assert(!isMatch('a', 'a\\*'));
+    assert(!isMatch('a/*', 'a\\*'));
+    assert(!isMatch('abc', 'a\\*'));
+    assert(!isMatch('abd', 'a\\*'));
+    assert(!isMatch('abe', 'a\\*'));
+    assert(!isMatch('b', 'a\\*'));
+    assert(!isMatch('bb', 'a\\*'));
+    assert(!isMatch('bcd', 'a\\*'));
+    assert(!isMatch('bdir/', 'a\\*'));
+    assert(!isMatch('Beware', 'a\\*'));
+    assert(!isMatch('c', 'a\\*'));
+    assert(!isMatch('ca', 'a\\*'));
+    assert(!isMatch('cb', 'a\\*'));
+    assert(!isMatch('d', 'a\\*'));
+    assert(!isMatch('dd', 'a\\*'));
+    assert(!isMatch('de', 'a\\*'));
+
+    assert(isMatch('aqa', '*q*'));
+    assert(isMatch('aaqaa', '*q*'));
+    assert(!isMatch('*', '*q*'));
+    assert(!isMatch('**', '*q*'));
+    assert(!isMatch('\\*', '*q*'));
+    assert(!isMatch('a', '*q*'));
+    assert(!isMatch('a/*', '*q*'));
+    assert(!isMatch('abc', '*q*'));
+    assert(!isMatch('abd', '*q*'));
+    assert(!isMatch('abe', '*q*'));
+    assert(!isMatch('b', '*q*'));
+    assert(!isMatch('bb', '*q*'));
+    assert(!isMatch('bcd', '*q*'));
+    assert(!isMatch('bdir/', '*q*'));
+    assert(!isMatch('Beware', '*q*'));
+    assert(!isMatch('c', '*q*'));
+    assert(!isMatch('ca', '*q*'));
+    assert(!isMatch('cb', '*q*'));
+    assert(!isMatch('d', '*q*'));
+    assert(!isMatch('dd', '*q*'));
+    assert(!isMatch('de', '*q*'));
+
+    assert(isMatch('*', '\\**'));
+    assert(isMatch('**', '\\**'));
+    assert(!isMatch('\\*', '\\**'));
+    assert(!isMatch('a', '\\**'));
+    assert(!isMatch('a/*', '\\**'));
+    assert(!isMatch('abc', '\\**'));
+    assert(!isMatch('abd', '\\**'));
+    assert(!isMatch('abe', '\\**'));
+    assert(!isMatch('b', '\\**'));
+    assert(!isMatch('bb', '\\**'));
+    assert(!isMatch('bcd', '\\**'));
+    assert(!isMatch('bdir/', '\\**'));
+    assert(!isMatch('Beware', '\\**'));
+    assert(!isMatch('c', '\\**'));
+    assert(!isMatch('ca', '\\**'));
+    assert(!isMatch('cb', '\\**'));
+    assert(!isMatch('d', '\\**'));
+    assert(!isMatch('dd', '\\**'));
+    assert(!isMatch('de', '\\**'));
+  });
+
+  it('should work for quoted characters', () => {
+    assert(!isMatch('*', '"***"'));
+    assert(!isMatch('**', '"***"'));
+    assert(!isMatch('\\*', '"***"'));
+    assert(!isMatch('a', '"***"'));
+    assert(!isMatch('a/*', '"***"'));
+    assert(!isMatch('abc', '"***"'));
+    assert(!isMatch('abd', '"***"'));
+    assert(!isMatch('abe', '"***"'));
+    assert(!isMatch('b', '"***"'));
+    assert(!isMatch('bb', '"***"'));
+    assert(!isMatch('bcd', '"***"'));
+    assert(!isMatch('bdir/', '"***"'));
+    assert(!isMatch('Beware', '"***"'));
+    assert(!isMatch('c', '"***"'));
+    assert(!isMatch('ca', '"***"'));
+    assert(!isMatch('cb', '"***"'));
+    assert(!isMatch('d', '"***"'));
+    assert(!isMatch('dd', '"***"'));
+    assert(!isMatch('de', '"***"'));
+    assert(isMatch('***', '"***"'));
+
+    assert(!isMatch('*', "'***'"));
+    assert(!isMatch('**', "'***'"));
+    assert(!isMatch('\\*', "'***'"));
+    assert(!isMatch('a', "'***'"));
+    assert(!isMatch('a/*', "'***'"));
+    assert(!isMatch('abc', "'***'"));
+    assert(!isMatch('abd', "'***'"));
+    assert(!isMatch('abe', "'***'"));
+    assert(!isMatch('b', "'***'"));
+    assert(!isMatch('bb', "'***'"));
+    assert(!isMatch('bcd', "'***'"));
+    assert(!isMatch('bdir/', "'***'"));
+    assert(!isMatch('Beware', "'***'"));
+    assert(!isMatch('c', "'***'"));
+    assert(!isMatch('ca', "'***'"));
+    assert(!isMatch('cb', "'***'"));
+    assert(!isMatch('d', "'***'"));
+    assert(!isMatch('dd', "'***'"));
+    assert(!isMatch('de', "'***'"));
+    assert(isMatch('\'***\'', "'***'"));
+
+    assert(!isMatch('*', '"***"'));
+    assert(!isMatch('**', '"***"'));
+    assert(!isMatch('\\*', '"***"'));
+    assert(!isMatch('a', '"***"'));
+    assert(!isMatch('a/*', '"***"'));
+    assert(!isMatch('abc', '"***"'));
+    assert(!isMatch('abd', '"***"'));
+    assert(!isMatch('abe', '"***"'));
+    assert(!isMatch('b', '"***"'));
+    assert(!isMatch('bb', '"***"'));
+    assert(!isMatch('bcd', '"***"'));
+    assert(!isMatch('bdir/', '"***"'));
+    assert(!isMatch('Beware', '"***"'));
+    assert(!isMatch('c', '"***"'));
+    assert(!isMatch('ca', '"***"'));
+    assert(!isMatch('cb', '"***"'));
+    assert(!isMatch('d', '"***"'));
+    assert(!isMatch('dd', '"***"'));
+    assert(!isMatch('de', '"***"'));
+
+    assert(isMatch('*', '"*"*'));
+    assert(isMatch('**', '"*"*'));
+    assert(!isMatch('\\*', '"*"*'));
+    assert(!isMatch('a', '"*"*'));
+    assert(!isMatch('a/*', '"*"*'));
+    assert(!isMatch('abc', '"*"*'));
+    assert(!isMatch('abd', '"*"*'));
+    assert(!isMatch('abe', '"*"*'));
+    assert(!isMatch('b', '"*"*'));
+    assert(!isMatch('bb', '"*"*'));
+    assert(!isMatch('bcd', '"*"*'));
+    assert(!isMatch('bdir/', '"*"*'));
+    assert(!isMatch('Beware', '"*"*'));
+    assert(!isMatch('c', '"*"*'));
+    assert(!isMatch('ca', '"*"*'));
+    assert(!isMatch('cb', '"*"*'));
+    assert(!isMatch('d', '"*"*'));
+    assert(!isMatch('dd', '"*"*'));
+    assert(!isMatch('de', '"*"*'));
+  });
+
+  it('should match escaped quotes', () => {
+    assert(!isMatch('*', '\\"**\\"'));
+    assert(!isMatch('**', '\\"**\\"'));
+    assert(!isMatch('\\*', '\\"**\\"'));
+    assert(!isMatch('a', '\\"**\\"'));
+    assert(!isMatch('a/*', '\\"**\\"'));
+    assert(!isMatch('abc', '\\"**\\"'));
+    assert(!isMatch('abd', '\\"**\\"'));
+    assert(!isMatch('abe', '\\"**\\"'));
+    assert(!isMatch('b', '\\"**\\"'));
+    assert(!isMatch('bb', '\\"**\\"'));
+    assert(!isMatch('bcd', '\\"**\\"'));
+    assert(!isMatch('bdir/', '\\"**\\"'));
+    assert(!isMatch('Beware', '\\"**\\"'));
+    assert(!isMatch('c', '\\"**\\"'));
+    assert(!isMatch('ca', '\\"**\\"'));
+    assert(!isMatch('cb', '\\"**\\"'));
+    assert(!isMatch('d', '\\"**\\"'));
+    assert(!isMatch('dd', '\\"**\\"'));
+    assert(!isMatch('de', '\\"**\\"'));
+    assert(isMatch('"**"', '\\"**\\"'));
+
+    assert(!isMatch('*', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('**', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('\\*', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('a', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('a/*', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('abc', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('abd', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('abe', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('b', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('bb', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('bcd', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('bdir/', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('Beware', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('c', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('ca', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('cb', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('d', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('dd', 'foo/\\"**\\"/bar'));
+    assert(!isMatch('de', 'foo/\\"**\\"/bar'));
+    assert(isMatch('foo/"**"/bar', 'foo/\\"**\\"/bar'));
+
+    assert(!isMatch('*', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('**', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('\\*', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('a', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('a/*', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('abc', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('abd', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('abe', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('b', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('bb', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('bcd', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('bdir/', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('Beware', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('c', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('ca', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('cb', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('d', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('dd', 'foo/\\"*\\"/bar'));
+    assert(!isMatch('de', 'foo/\\"*\\"/bar'));
+    assert(isMatch('foo/"*"/bar', 'foo/\\"*\\"/bar'));
+    assert(isMatch('foo/"a"/bar', 'foo/\\"*\\"/bar'));
+    assert(isMatch('foo/"b"/bar', 'foo/\\"*\\"/bar'));
+    assert(isMatch('foo/"c"/bar', 'foo/\\"*\\"/bar'));
+    assert(!isMatch("foo/'*'/bar", 'foo/\\"*\\"/bar'));
+    assert(!isMatch("foo/'a'/bar", 'foo/\\"*\\"/bar'));
+    assert(!isMatch("foo/'b'/bar", 'foo/\\"*\\"/bar'));
+    assert(!isMatch("foo/'c'/bar", 'foo/\\"*\\"/bar'));
+
+    assert(!isMatch('*', 'foo/"*"/bar'));
+    assert(!isMatch('**', 'foo/"*"/bar'));
+    assert(!isMatch('\\*', 'foo/"*"/bar'));
+    assert(!isMatch('a', 'foo/"*"/bar'));
+    assert(!isMatch('a/*', 'foo/"*"/bar'));
+    assert(!isMatch('abc', 'foo/"*"/bar'));
+    assert(!isMatch('abd', 'foo/"*"/bar'));
+    assert(!isMatch('abe', 'foo/"*"/bar'));
+    assert(!isMatch('b', 'foo/"*"/bar'));
+    assert(!isMatch('bb', 'foo/"*"/bar'));
+    assert(!isMatch('bcd', 'foo/"*"/bar'));
+    assert(!isMatch('bdir/', 'foo/"*"/bar'));
+    assert(!isMatch('Beware', 'foo/"*"/bar'));
+    assert(!isMatch('c', 'foo/"*"/bar'));
+    assert(!isMatch('ca', 'foo/"*"/bar'));
+    assert(!isMatch('cb', 'foo/"*"/bar'));
+    assert(!isMatch('d', 'foo/"*"/bar'));
+    assert(!isMatch('dd', 'foo/"*"/bar'));
+    assert(!isMatch('de', 'foo/"*"/bar'));
+    assert(isMatch('foo/*/bar', 'foo/"*"/bar'));
+    assert(isMatch('foo/"*"/bar', 'foo/"*"/bar'));
+    assert(!isMatch('foo/"a"/bar', 'foo/"*"/bar'));
+    assert(!isMatch('foo/"b"/bar', 'foo/"*"/bar'));
+    assert(!isMatch('foo/"c"/bar', 'foo/"*"/bar'));
+    assert(!isMatch("foo/'*'/bar", 'foo/"*"/bar'));
+    assert(!isMatch("foo/'a'/bar", 'foo/"*"/bar'));
+    assert(!isMatch("foo/'b'/bar", 'foo/"*"/bar'));
+    assert(!isMatch("foo/'c'/bar", 'foo/"*"/bar'));
+
+    assert(!isMatch('*', "\\'**\\'"));
+    assert(!isMatch('**', "\\'**\\'"));
+    assert(!isMatch('\\*', "\\'**\\'"));
+    assert(!isMatch('a', "\\'**\\'"));
+    assert(!isMatch('a/*', "\\'**\\'"));
+    assert(!isMatch('abc', "\\'**\\'"));
+    assert(!isMatch('abd', "\\'**\\'"));
+    assert(!isMatch('abe', "\\'**\\'"));
+    assert(!isMatch('b', "\\'**\\'"));
+    assert(!isMatch('bb', "\\'**\\'"));
+    assert(!isMatch('bcd', "\\'**\\'"));
+    assert(!isMatch('bdir/', "\\'**\\'"));
+    assert(!isMatch('Beware', "\\'**\\'"));
+    assert(!isMatch('c', "\\'**\\'"));
+    assert(!isMatch('ca', "\\'**\\'"));
+    assert(!isMatch('cb', "\\'**\\'"));
+    assert(!isMatch('d', "\\'**\\'"));
+    assert(!isMatch('dd', "\\'**\\'"));
+    assert(!isMatch('de', "\\'**\\'"));
+    assert(isMatch("'**'", "\\'**\\'"));
+  });
+
+  it("Pattern from Larry Wall's Configure that caused bash to blow up:", () => {
+    assert(!isMatch('*', '[a-c]b*'));
+    assert(!isMatch('**', '[a-c]b*'));
+    assert(!isMatch('\\*', '[a-c]b*'));
+    assert(!isMatch('a', '[a-c]b*'));
+    assert(!isMatch('a/*', '[a-c]b*'));
+    assert(isMatch('abc', '[a-c]b*'));
+    assert(isMatch('abd', '[a-c]b*'));
+    assert(isMatch('abe', '[a-c]b*'));
+    assert(!isMatch('b', '[a-c]b*'));
+    assert(isMatch('bb', '[a-c]b*'));
+    assert(!isMatch('bcd', '[a-c]b*'));
+    assert(!isMatch('bdir/', '[a-c]b*'));
+    assert(!isMatch('Beware', '[a-c]b*'));
+    assert(!isMatch('c', '[a-c]b*'));
+    assert(!isMatch('ca', '[a-c]b*'));
+    assert(isMatch('cb', '[a-c]b*'));
+    assert(!isMatch('d', '[a-c]b*'));
+    assert(!isMatch('dd', '[a-c]b*'));
+    assert(!isMatch('de', '[a-c]b*'));
+  });
+
+  it('should support character classes', () => {
+    assert(!isMatch('*', 'a*[^c]'));
+    assert(!isMatch('**', 'a*[^c]'));
+    assert(!isMatch('\\*', 'a*[^c]'));
+    assert(!isMatch('a', 'a*[^c]'));
+    assert(!isMatch('a/*', 'a*[^c]'));
+    assert(!isMatch('abc', 'a*[^c]'));
+    assert(isMatch('abd', 'a*[^c]'));
+    assert(isMatch('abe', 'a*[^c]'));
+    assert(!isMatch('b', 'a*[^c]'));
+    assert(!isMatch('bb', 'a*[^c]'));
+    assert(!isMatch('bcd', 'a*[^c]'));
+    assert(!isMatch('bdir/', 'a*[^c]'));
+    assert(!isMatch('Beware', 'a*[^c]'));
+    assert(!isMatch('c', 'a*[^c]'));
+    assert(!isMatch('ca', 'a*[^c]'));
+    assert(!isMatch('cb', 'a*[^c]'));
+    assert(!isMatch('d', 'a*[^c]'));
+    assert(!isMatch('dd', 'a*[^c]'));
+    assert(!isMatch('de', 'a*[^c]'));
+    assert(!isMatch('baz', 'a*[^c]'));
+    assert(!isMatch('bzz', 'a*[^c]'));
+    assert(!isMatch('BZZ', 'a*[^c]'));
+    assert(!isMatch('beware', 'a*[^c]'));
+    assert(!isMatch('BewAre', 'a*[^c]'));
+
+    assert(isMatch('a-b', 'a[X-]b'));
+    assert(isMatch('aXb', 'a[X-]b'));
+
+    assert(!isMatch('*', '[a-y]*[^c]'));
+    assert(isMatch('a*', '[a-y]*[^c]', { bash: true }));
+    assert(!isMatch('**', '[a-y]*[^c]'));
+    assert(!isMatch('\\*', '[a-y]*[^c]'));
+    assert(!isMatch('a', '[a-y]*[^c]'));
+    assert(isMatch('a123b', '[a-y]*[^c]', { bash: true }));
+    assert(!isMatch('a123c', '[a-y]*[^c]', { bash: true }));
+    assert(isMatch('ab', '[a-y]*[^c]', { bash: true }));
+    assert(!isMatch('a/*', '[a-y]*[^c]'));
+    assert(!isMatch('abc', '[a-y]*[^c]'));
+    assert(isMatch('abd', '[a-y]*[^c]'));
+    assert(isMatch('abe', '[a-y]*[^c]'));
+    assert(!isMatch('b', '[a-y]*[^c]'));
+    assert(isMatch('bd', '[a-y]*[^c]', { bash: true }));
+    assert(isMatch('bb', '[a-y]*[^c]'));
+    assert(isMatch('bcd', '[a-y]*[^c]'));
+    assert(isMatch('bdir/', '[a-y]*[^c]'));
+    assert(!isMatch('Beware', '[a-y]*[^c]'));
+    assert(!isMatch('c', '[a-y]*[^c]'));
+    assert(isMatch('ca', '[a-y]*[^c]'));
+    assert(isMatch('cb', '[a-y]*[^c]'));
+    assert(!isMatch('d', '[a-y]*[^c]'));
+    assert(isMatch('dd', '[a-y]*[^c]'));
+    assert(isMatch('dd', '[a-y]*[^c]', { regex: true }));
+    assert(isMatch('dd', '[a-y]*[^c]'));
+    assert(isMatch('de', '[a-y]*[^c]'));
+    assert(isMatch('baz', '[a-y]*[^c]'));
+    assert(isMatch('bzz', '[a-y]*[^c]'));
+    assert(isMatch('bzz', '[a-y]*[^c]'));
+    assert(!isMatch('bzz', '[a-y]*[^c]', { regex: true }));
+    assert(!isMatch('BZZ', '[a-y]*[^c]'));
+    assert(isMatch('beware', '[a-y]*[^c]'));
+    assert(!isMatch('BewAre', '[a-y]*[^c]'));
+
+    assert(isMatch('a*b/ooo', 'a\\*b/*'));
+    assert(isMatch('a*b/ooo', 'a\\*?/*'));
+
+    assert(!isMatch('*', 'a[b]c'));
+    assert(!isMatch('**', 'a[b]c'));
+    assert(!isMatch('\\*', 'a[b]c'));
+    assert(!isMatch('a', 'a[b]c'));
+    assert(!isMatch('a/*', 'a[b]c'));
+    assert(isMatch('abc', 'a[b]c'));
+    assert(!isMatch('abd', 'a[b]c'));
+    assert(!isMatch('abe', 'a[b]c'));
+    assert(!isMatch('b', 'a[b]c'));
+    assert(!isMatch('bb', 'a[b]c'));
+    assert(!isMatch('bcd', 'a[b]c'));
+    assert(!isMatch('bdir/', 'a[b]c'));
+    assert(!isMatch('Beware', 'a[b]c'));
+    assert(!isMatch('c', 'a[b]c'));
+    assert(!isMatch('ca', 'a[b]c'));
+    assert(!isMatch('cb', 'a[b]c'));
+    assert(!isMatch('d', 'a[b]c'));
+    assert(!isMatch('dd', 'a[b]c'));
+    assert(!isMatch('de', 'a[b]c'));
+    assert(!isMatch('baz', 'a[b]c'));
+    assert(!isMatch('bzz', 'a[b]c'));
+    assert(!isMatch('BZZ', 'a[b]c'));
+    assert(!isMatch('beware', 'a[b]c'));
+    assert(!isMatch('BewAre', 'a[b]c'));
+
+    assert(!isMatch('*', 'a["b"]c'));
+    assert(!isMatch('**', 'a["b"]c'));
+    assert(!isMatch('\\*', 'a["b"]c'));
+    assert(!isMatch('a', 'a["b"]c'));
+    assert(!isMatch('a/*', 'a["b"]c'));
+    assert(isMatch('abc', 'a["b"]c'));
+    assert(!isMatch('abd', 'a["b"]c'));
+    assert(!isMatch('abe', 'a["b"]c'));
+    assert(!isMatch('b', 'a["b"]c'));
+    assert(!isMatch('bb', 'a["b"]c'));
+    assert(!isMatch('bcd', 'a["b"]c'));
+    assert(!isMatch('bdir/', 'a["b"]c'));
+    assert(!isMatch('Beware', 'a["b"]c'));
+    assert(!isMatch('c', 'a["b"]c'));
+    assert(!isMatch('ca', 'a["b"]c'));
+    assert(!isMatch('cb', 'a["b"]c'));
+    assert(!isMatch('d', 'a["b"]c'));
+    assert(!isMatch('dd', 'a["b"]c'));
+    assert(!isMatch('de', 'a["b"]c'));
+    assert(!isMatch('baz', 'a["b"]c'));
+    assert(!isMatch('bzz', 'a["b"]c'));
+    assert(!isMatch('BZZ', 'a["b"]c'));
+    assert(!isMatch('beware', 'a["b"]c'));
+    assert(!isMatch('BewAre', 'a["b"]c'));
+
+    assert(!isMatch('*', 'a[\\\\b]c'));
+    assert(!isMatch('**', 'a[\\\\b]c'));
+    assert(!isMatch('\\*', 'a[\\\\b]c'));
+    assert(!isMatch('a', 'a[\\\\b]c'));
+    assert(!isMatch('a/*', 'a[\\\\b]c'));
+    assert(isMatch('abc', 'a[\\\\b]c'));
+    assert(!isMatch('abd', 'a[\\\\b]c'));
+    assert(!isMatch('abe', 'a[\\\\b]c'));
+    assert(!isMatch('b', 'a[\\\\b]c'));
+    assert(!isMatch('bb', 'a[\\\\b]c'));
+    assert(!isMatch('bcd', 'a[\\\\b]c'));
+    assert(!isMatch('bdir/', 'a[\\\\b]c'));
+    assert(!isMatch('Beware', 'a[\\\\b]c'));
+    assert(!isMatch('c', 'a[\\\\b]c'));
+    assert(!isMatch('ca', 'a[\\\\b]c'));
+    assert(!isMatch('cb', 'a[\\\\b]c'));
+    assert(!isMatch('d', 'a[\\\\b]c'));
+    assert(!isMatch('dd', 'a[\\\\b]c'));
+    assert(!isMatch('de', 'a[\\\\b]c'));
+    assert(!isMatch('baz', 'a[\\\\b]c'));
+    assert(!isMatch('bzz', 'a[\\\\b]c'));
+    assert(!isMatch('BZZ', 'a[\\\\b]c'));
+    assert(!isMatch('beware', 'a[\\\\b]c'));
+    assert(!isMatch('BewAre', 'a[\\\\b]c'));
+
+    assert(!isMatch('*', 'a[\\b]c'));
+    assert(!isMatch('**', 'a[\\b]c'));
+    assert(!isMatch('\\*', 'a[\\b]c'));
+    assert(!isMatch('a', 'a[\\b]c'));
+    assert(!isMatch('a/*', 'a[\\b]c'));
+    assert(!isMatch('abc', 'a[\\b]c'));
+    assert(!isMatch('abd', 'a[\\b]c'));
+    assert(!isMatch('abe', 'a[\\b]c'));
+    assert(!isMatch('b', 'a[\\b]c'));
+    assert(!isMatch('bb', 'a[\\b]c'));
+    assert(!isMatch('bcd', 'a[\\b]c'));
+    assert(!isMatch('bdir/', 'a[\\b]c'));
+    assert(!isMatch('Beware', 'a[\\b]c'));
+    assert(!isMatch('c', 'a[\\b]c'));
+    assert(!isMatch('ca', 'a[\\b]c'));
+    assert(!isMatch('cb', 'a[\\b]c'));
+    assert(!isMatch('d', 'a[\\b]c'));
+    assert(!isMatch('dd', 'a[\\b]c'));
+    assert(!isMatch('de', 'a[\\b]c'));
+    assert(!isMatch('baz', 'a[\\b]c'));
+    assert(!isMatch('bzz', 'a[\\b]c'));
+    assert(!isMatch('BZZ', 'a[\\b]c'));
+    assert(!isMatch('beware', 'a[\\b]c'));
+    assert(!isMatch('BewAre', 'a[\\b]c'));
+
+    assert(!isMatch('*', 'a[b-d]c'));
+    assert(!isMatch('**', 'a[b-d]c'));
+    assert(!isMatch('\\*', 'a[b-d]c'));
+    assert(!isMatch('a', 'a[b-d]c'));
+    assert(!isMatch('a/*', 'a[b-d]c'));
+    assert(isMatch('abc', 'a[b-d]c'));
+    assert(!isMatch('abd', 'a[b-d]c'));
+    assert(!isMatch('abe', 'a[b-d]c'));
+    assert(!isMatch('b', 'a[b-d]c'));
+    assert(!isMatch('bb', 'a[b-d]c'));
+    assert(!isMatch('bcd', 'a[b-d]c'));
+    assert(!isMatch('bdir/', 'a[b-d]c'));
+    assert(!isMatch('Beware', 'a[b-d]c'));
+    assert(!isMatch('c', 'a[b-d]c'));
+    assert(!isMatch('ca', 'a[b-d]c'));
+    assert(!isMatch('cb', 'a[b-d]c'));
+    assert(!isMatch('d', 'a[b-d]c'));
+    assert(!isMatch('dd', 'a[b-d]c'));
+    assert(!isMatch('de', 'a[b-d]c'));
+    assert(!isMatch('baz', 'a[b-d]c'));
+    assert(!isMatch('bzz', 'a[b-d]c'));
+    assert(!isMatch('BZZ', 'a[b-d]c'));
+    assert(!isMatch('beware', 'a[b-d]c'));
+    assert(!isMatch('BewAre', 'a[b-d]c'));
+
+    assert(!isMatch('*', 'a?c'));
+    assert(!isMatch('**', 'a?c'));
+    assert(!isMatch('\\*', 'a?c'));
+    assert(!isMatch('a', 'a?c'));
+    assert(!isMatch('a/*', 'a?c'));
+    assert(isMatch('abc', 'a?c'));
+    assert(!isMatch('abd', 'a?c'));
+    assert(!isMatch('abe', 'a?c'));
+    assert(!isMatch('b', 'a?c'));
+    assert(!isMatch('bb', 'a?c'));
+    assert(!isMatch('bcd', 'a?c'));
+    assert(!isMatch('bdir/', 'a?c'));
+    assert(!isMatch('Beware', 'a?c'));
+    assert(!isMatch('c', 'a?c'));
+    assert(!isMatch('ca', 'a?c'));
+    assert(!isMatch('cb', 'a?c'));
+    assert(!isMatch('d', 'a?c'));
+    assert(!isMatch('dd', 'a?c'));
+    assert(!isMatch('de', 'a?c'));
+    assert(!isMatch('baz', 'a?c'));
+    assert(!isMatch('bzz', 'a?c'));
+    assert(!isMatch('BZZ', 'a?c'));
+    assert(!isMatch('beware', 'a?c'));
+    assert(!isMatch('BewAre', 'a?c'));
+
+    assert(isMatch('man/man1/bash.1', '*/man*/bash.*'));
+
+    assert(isMatch('*', '[^a-c]*'));
+    assert(isMatch('**', '[^a-c]*'));
+    assert(!isMatch('a', '[^a-c]*'));
+    assert(!isMatch('a/*', '[^a-c]*'));
+    assert(!isMatch('abc', '[^a-c]*'));
+    assert(!isMatch('abd', '[^a-c]*'));
+    assert(!isMatch('abe', '[^a-c]*'));
+    assert(!isMatch('b', '[^a-c]*'));
+    assert(!isMatch('bb', '[^a-c]*'));
+    assert(!isMatch('bcd', '[^a-c]*'));
+    assert(!isMatch('bdir/', '[^a-c]*'));
+    assert(isMatch('Beware', '[^a-c]*'));
+    assert(isMatch('Beware', '[^a-c]*', { bash: true }));
+    assert(!isMatch('c', '[^a-c]*'));
+    assert(!isMatch('ca', '[^a-c]*'));
+    assert(!isMatch('cb', '[^a-c]*'));
+    assert(isMatch('d', '[^a-c]*'));
+    assert(isMatch('dd', '[^a-c]*'));
+    assert(isMatch('de', '[^a-c]*'));
+    assert(!isMatch('baz', '[^a-c]*'));
+    assert(!isMatch('bzz', '[^a-c]*'));
+    assert(isMatch('BZZ', '[^a-c]*'));
+    assert(!isMatch('beware', '[^a-c]*'));
+    assert(isMatch('BewAre', '[^a-c]*'));
+  });
+
+  it('should support basic wildmatch (brackets) features', () => {
+    assert(!isMatch('aab', 'a[]-]b'));
+    assert(!isMatch('ten', '[ten]'));
+    assert(isMatch(']', ']'));
+    assert(isMatch('a-b', 'a[]-]b'));
+    assert(isMatch('a]b', 'a[]-]b'));
+    assert(isMatch('a]b', 'a[]]b'));
+    assert(isMatch('aab', 'a[\\]a\\-]b'));
+    assert(isMatch('ten', 't[a-g]n'));
+    assert(isMatch('ton', 't[^a-g]n'));
+  });
+
+  it('should support extended slash-matching features', () => {
+    assert(!isMatch('foo/bar', 'f[^eiu][^eiu][^eiu][^eiu][^eiu]r'));
+    assert(isMatch('foo/bar', 'foo[/]bar'));
+    assert(isMatch('foo-bar', 'f[^eiu][^eiu][^eiu][^eiu][^eiu]r'));
+  });
+
+  it('should match escaped characters', () => {
+    if (process.platform !== 'win32') {
+      assert(isMatch('\\*', '\\*'));
+      assert(isMatch('XXX/\\', '[A-Z]+/\\\\'));
+    }
+
+    assert(isMatch('[ab]', '\\[ab]'));
+    assert(isMatch('[ab]', '[\\[:]ab]'));
+  });
+
+  it('should consolidate extra stars', () => {
+    assert(!isMatch('bbc', 'a**c'));
+    assert(isMatch('abc', 'a**c'));
+    assert(!isMatch('bbd', 'a**c'));
+
+    assert(!isMatch('bbc', 'a***c'));
+    assert(isMatch('abc', 'a***c'));
+    assert(!isMatch('bbd', 'a***c'));
+
+    assert(!isMatch('bbc', 'a*****?c'));
+    assert(isMatch('abc', 'a*****?c'));
+    assert(!isMatch('bbc', 'a*****?c'));
+
+    assert(isMatch('bbc', '?*****??'));
+    assert(isMatch('abc', '?*****??'));
+
+    assert(isMatch('bbc', '*****??'));
+    assert(isMatch('abc', '*****??'));
+
+    assert(isMatch('bbc', '?*****?c'));
+    assert(isMatch('abc', '?*****?c'));
+
+    assert(isMatch('bbc', '?***?****c'));
+    assert(isMatch('abc', '?***?****c'));
+    assert(!isMatch('bbd', '?***?****c'));
+
+    assert(isMatch('bbc', '?***?****?'));
+    assert(isMatch('abc', '?***?****?'));
+
+    assert(isMatch('bbc', '?***?****'));
+    assert(isMatch('abc', '?***?****'));
+
+    assert(isMatch('bbc', '*******c'));
+    assert(isMatch('abc', '*******c'));
+
+    assert(isMatch('bbc', '*******?'));
+    assert(isMatch('abc', '*******?'));
+
+    assert(isMatch('abcdecdhjk', 'a*cd**?**??k'));
+    assert(isMatch('abcdecdhjk', 'a**?**cd**?**??k'));
+    assert(isMatch('abcdecdhjk', 'a**?**cd**?**??k***'));
+    assert(isMatch('abcdecdhjk', 'a**?**cd**?**??***k'));
+    assert(isMatch('abcdecdhjk', 'a**?**cd**?**??***k**'));
+    assert(isMatch('abcdecdhjk', 'a****c**?**??*****'));
+  });
+
+  it('none of these should output anything', () => {
+    assert(!isMatch('abc', '??**********?****?'));
+    assert(!isMatch('abc', '??**********?****c'));
+    assert(!isMatch('abc', '?************c****?****'));
+    assert(!isMatch('abc', '*c*?**'));
+    assert(!isMatch('abc', 'a*****c*?**'));
+    assert(!isMatch('abc', 'a********???*******'));
+    assert(!isMatch('a', '[]'));
+    assert(!isMatch('[', '[abc'));
+  });
+});
+```
+
+## File: `test/bash.spec.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('bash.spec', () => {
+  describe('dotglob', () => {
+    it('"a/b/.x" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x', '**/.x/**', { bash: true }));
+    });
+
+    it('".x" should match "**/.x/**"', () => {
+      assert(isMatch('.x', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/" should match "**/.x/**"', () => {
+      assert(isMatch('.x/', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/a" should match "**/.x/**"', () => {
+      assert(isMatch('.x/a', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/a/b" should match "**/.x/**"', () => {
+      assert(isMatch('.x/a/b', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/.x" should match "**/.x/**"', () => {
+      assert(isMatch('.x/.x', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/.x" should match "**/.x/**"', () => {
+      assert(isMatch('a/.x', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/c" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/c', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/c/d" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/c/d', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/c/d/e" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/c/d/e', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/.x/b" should match "**/.x/**"', () => {
+      assert(isMatch('a/.x/b', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/.x/b/.x/c" should not match "**/.x/**"', () => {
+      assert(!isMatch('a/.x/b/.x/c', '**/.x/**', { bash: true }));
+    });
+
+    it('".bashrc" should not match "?bashrc"', () => {
+      assert(!isMatch('.bashrc', '?bashrc', { bash: true }));
+    });
+
+    it('should match trailing slashes with stars', () => {
+      assert(isMatch('.bar.baz/', '.*.*', { bash: true }));
+    });
+
+    it('".bar.baz/" should match ".*.*/"', () => {
+      assert(isMatch('.bar.baz/', '.*.*/', { bash: true }));
+    });
+
+    it('".bar.baz" should match ".*.*"', () => {
+      assert(isMatch('.bar.baz', '.*.*', { bash: true }));
+    });
+  });
+
+  describe('glob', () => {
+    it('"a/b/.x" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x', '**/.x/**', { bash: true }));
+    });
+
+    it('".x" should match "**/.x/**"', () => {
+      assert(isMatch('.x', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/" should match "**/.x/**"', () => {
+      assert(isMatch('.x/', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/a" should match "**/.x/**"', () => {
+      assert(isMatch('.x/a', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/a/b" should match "**/.x/**"', () => {
+      assert(isMatch('.x/a/b', '**/.x/**', { bash: true }));
+    });
+
+    it('".x/.x" should match "**/.x/**"', () => {
+      assert(isMatch('.x/.x', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/.x" should match "**/.x/**"', () => {
+      assert(isMatch('a/.x', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/c" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/c', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/c/d" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/c/d', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/c/d/e" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/c/d/e', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/b/.x/" should match "**/.x/**"', () => {
+      assert(isMatch('a/b/.x/', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/.x/b" should match "**/.x/**"', () => {
+      assert(isMatch('a/.x/b', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/.x/b/.x/c" should not match "**/.x/**"', () => {
+      assert(!isMatch('a/.x/b/.x/c', '**/.x/**', { bash: true }));
+    });
+
+    it('"a/c/b" should match "a/*/b"', () => {
+      assert(isMatch('a/c/b', 'a/*/b', { bash: true }));
+    });
+
+    it('"a/.d/b" should not match "a/*/b"', () => {
+      assert(!isMatch('a/.d/b', 'a/*/b', { bash: true }));
+    });
+
+    it('"a/./b" should not match "a/*/b"', () => {
+      assert(!isMatch('a/./b', 'a/*/b', { bash: true }));
+    });
+
+    it('"a/../b" should not match "a/*/b"', () => {
+      assert(!isMatch('a/../b', 'a/*/b', { bash: true }));
+    });
+
+    it('"ab" should match "ab**"', () => {
+      assert(isMatch('ab', 'ab**', { bash: true }));
+    });
+
+    it('"abcdef" should match "ab**"', () => {
+      assert(isMatch('abcdef', 'ab**', { bash: true }));
+    });
+
+    it('"abef" should match "ab**"', () => {
+      assert(isMatch('abef', 'ab**', { bash: true }));
+    });
+
+    it('"abcfef" should match "ab**"', () => {
+      assert(isMatch('abcfef', 'ab**', { bash: true }));
+    });
+
+    it('"ab" should not match "ab***ef"', () => {
+      assert(!isMatch('ab', 'ab***ef', { bash: true }));
+    });
+
+    it('"abcdef" should match "ab***ef"', () => {
+      assert(isMatch('abcdef', 'ab***ef', { bash: true }));
+    });
+
+    it('"abef" should match "ab***ef"', () => {
+      assert(isMatch('abef', 'ab***ef', { bash: true }));
+    });
+
+    it('"abcfef" should match "ab***ef"', () => {
+      assert(isMatch('abcfef', 'ab***ef', { bash: true }));
+    });
+
+    it('".bashrc" should not match "?bashrc"', () => {
+      assert(!isMatch('.bashrc', '?bashrc', { bash: true }));
+    });
+
+    it('"abbc" should not match "ab?bc"', () => {
+      assert(!isMatch('abbc', 'ab?bc', { bash: true }));
+    });
+
+    it('"abc" should not match "ab?bc"', () => {
+      assert(!isMatch('abc', 'ab?bc', { bash: true }));
+    });
+
+    it('"a.a" should match "[a-d]*.[a-b]"', () => {
+      assert(isMatch('a.a', '[a-d]*.[a-b]', { bash: true }));
+    });
+
+    it('"a.b" should match "[a-d]*.[a-b]"', () => {
+      assert(isMatch('a.b', '[a-d]*.[a-b]', { bash: true }));
+    });
+
+    it('"c.a" should match "[a-d]*.[a-b]"', () => {
+      assert(isMatch('c.a', '[a-d]*.[a-b]', { bash: true }));
+    });
+
+    it('"a.a.a" should match "[a-d]*.[a-b]"', () => {
+      assert(isMatch('a.a.a', '[a-d]*.[a-b]', { bash: true }));
+    });
+
+    it('"a.a.a" should match "[a-d]*.[a-b]*.[a-b]"', () => {
+      assert(isMatch('a.a.a', '[a-d]*.[a-b]*.[a-b]', { bash: true }));
+    });
+
+    it('"a.a" should match "*.[a-b]"', () => {
+      assert(isMatch('a.a', '*.[a-b]', { bash: true }));
+    });
+
+    it('"a.b" should match "*.[a-b]"', () => {
+      assert(isMatch('a.b', '*.[a-b]', { bash: true }));
+    });
+
+    it('"a.a.a" should match "*.[a-b]"', () => {
+      assert(isMatch('a.a.a', '*.[a-b]', { bash: true }));
+    });
+
+    it('"c.a" should match "*.[a-b]"', () => {
+      assert(isMatch('c.a', '*.[a-b]', { bash: true }));
+    });
+
+    it('"d.a.d" should not match "*.[a-b]"', () => {
+      assert(!isMatch('d.a.d', '*.[a-b]', { bash: true }));
+    });
+
+    it('"a.bb" should not match "*.[a-b]"', () => {
+      assert(!isMatch('a.bb', '*.[a-b]', { bash: true }));
+    });
+
+    it('"a.ccc" should not match "*.[a-b]"', () => {
+      assert(!isMatch('a.ccc', '*.[a-b]', { bash: true }));
+    });
+
+    it('"c.ccc" should not match "*.[a-b]"', () => {
+      assert(!isMatch('c.ccc', '*.[a-b]', { bash: true }));
+    });
+
+    it('"a.a" should match "*.[a-b]*"', () => {
+      assert(isMatch('a.a', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"a.b" should match "*.[a-b]*"', () => {
+      assert(isMatch('a.b', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"a.a.a" should match "*.[a-b]*"', () => {
+      assert(isMatch('a.a.a', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"c.a" should match "*.[a-b]*"', () => {
+      assert(isMatch('c.a', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"d.a.d" should match "*.[a-b]*"', () => {
+      assert(isMatch('d.a.d', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"d.a.d" should not match "*.[a-b]*.[a-b]*"', () => {
+      assert(!isMatch('d.a.d', '*.[a-b]*.[a-b]*', { bash: true }));
+    });
+
+    it('"d.a.d" should match "*.[a-d]*.[a-d]*"', () => {
+      assert(isMatch('d.a.d', '*.[a-d]*.[a-d]*', { bash: true }));
+    });
+
+    it('"a.bb" should match "*.[a-b]*"', () => {
+      assert(isMatch('a.bb', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"a.ccc" should not match "*.[a-b]*"', () => {
+      assert(!isMatch('a.ccc', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"c.ccc" should not match "*.[a-b]*"', () => {
+      assert(!isMatch('c.ccc', '*.[a-b]*', { bash: true }));
+    });
+
+    it('"a.a" should match "*[a-b].[a-b]*"', () => {
+      assert(isMatch('a.a', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"a.b" should match "*[a-b].[a-b]*"', () => {
+      assert(isMatch('a.b', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"a.a.a" should match "*[a-b].[a-b]*"', () => {
+      assert(isMatch('a.a.a', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"c.a" should not match "*[a-b].[a-b]*"', () => {
+      assert(!isMatch('c.a', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"d.a.d" should not match "*[a-b].[a-b]*"', () => {
+      assert(!isMatch('d.a.d', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"a.bb" should match "*[a-b].[a-b]*"', () => {
+      assert(isMatch('a.bb', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"a.ccc" should not match "*[a-b].[a-b]*"', () => {
+      assert(!isMatch('a.ccc', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"c.ccc" should not match "*[a-b].[a-b]*"', () => {
+      assert(!isMatch('c.ccc', '*[a-b].[a-b]*', { bash: true }));
+    });
+
+    it('"abd" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('abd', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"abe" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('abe', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"bb" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('bb', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"bcd" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('bcd', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"ca" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('ca', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"cb" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('cb', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"dd" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('dd', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"de" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('de', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"bdir/" should match "[a-y]*[^c]"', () => {
+      assert(isMatch('bdir/', '[a-y]*[^c]', { bash: true }));
+    });
+
+    it('"abd" should match "**/*"', () => {
+      assert(isMatch('abd', '**/*', { bash: true }));
+    });
+  });
+
+  describe('globstar', () => {
+    it('"a.js" should match "**/*.js"', () => {
+      assert(isMatch('a.js', '**/*.js', { bash: true }));
+    });
+
+    it('"a/a.js" should match "**/*.js"', () => {
+      assert(isMatch('a/a.js', '**/*.js', { bash: true }));
+    });
+
+    it('"a/a/b.js" should match "**/*.js"', () => {
+      assert(isMatch('a/a/b.js', '**/*.js', { bash: true }));
+    });
+
+    it('"a/b/z.js" should match "a/b/**/*.js"', () => {
+      assert(isMatch('a/b/z.js', 'a/b/**/*.js', { bash: true }));
+    });
+
+    it('"a/b/c/z.js" should match "a/b/**/*.js"', () => {
+      assert(isMatch('a/b/c/z.js', 'a/b/**/*.js', { bash: true }));
+    });
+
+    it('"foo.md" should match "**/*.md"', () => {
+      assert(isMatch('foo.md', '**/*.md', { bash: true }));
+    });
+
+    it('"foo/bar.md" should match "**/*.md"', () => {
+      assert(isMatch('foo/bar.md', '**/*.md', { bash: true }));
+    });
+
+    it('"foo/bar" should match "foo/**/bar"', () => {
+      assert(isMatch('foo/bar', 'foo/**/bar', { bash: true }));
+    });
+
+    it('"foo/bar" should match "foo/**bar"', () => {
+      assert(isMatch('foo/bar', 'foo/**bar', { bash: true }));
+    });
+
+    it('"ab/a/d" should match "**/*"', () => {
+      assert(isMatch('ab/a/d', '**/*', { bash: true }));
+    });
+
+    it('"ab/b" should match "**/*"', () => {
+      assert(isMatch('ab/b', '**/*', { bash: true }));
+    });
+
+    it('"a/b/c/d/a.js" should match "**/*"', () => {
+      assert(isMatch('a/b/c/d/a.js', '**/*', { bash: true }));
+    });
+
+    it('"a/b/c.js" should match "**/*"', () => {
+      assert(isMatch('a/b/c.js', '**/*', { bash: true }));
+    });
+
+    it('"a/b/c.txt" should match "**/*"', () => {
+      assert(isMatch('a/b/c.txt', '**/*', { bash: true }));
+    });
+
+    it('"a/b/.js/c.txt" should match "**/*"', () => {
+      assert(isMatch('a/b/.js/c.txt', '**/*', { bash: true }));
+    });
+
+    it('"a.js" should match "**/*"', () => {
+      assert(isMatch('a.js', '**/*', { bash: true }));
+    });
+
+    it('"za.js" should match "**/*"', () => {
+      assert(isMatch('za.js', '**/*', { bash: true }));
+    });
+
+    it('"ab" should match "**/*"', () => {
+      assert(isMatch('ab', '**/*', { bash: true }));
+    });
+
+    it('"a.b" should match "**/*"', () => {
+      assert(isMatch('a.b', '**/*', { bash: true }));
+    });
+
+    it('"foo/" should match "foo/**/"', () => {
+      assert(isMatch('foo/', 'foo/**/', { bash: true }));
+    });
+
+    it('"foo/bar" should not match "foo/**/"', () => {
+      assert(!isMatch('foo/bar', 'foo/**/', { bash: true }));
+    });
+
+    it('"foo/bazbar" should not match "foo/**/"', () => {
+      assert(!isMatch('foo/bazbar', 'foo/**/', { bash: true }));
+    });
+
+    it('"foo/barbar" should not match "foo/**/"', () => {
+      assert(!isMatch('foo/barbar', 'foo/**/', { bash: true }));
+    });
+
+    it('"foo/bar/baz/qux" should not match "foo/**/"', () => {
+      assert(!isMatch('foo/bar/baz/qux', 'foo/**/', { bash: true }));
+    });
+
+    it('"foo/bar/baz/qux/" should match "foo/**/"', () => {
+      assert(isMatch('foo/bar/baz/qux/', 'foo/**/', { bash: true }));
+    });
+  });
+});
+```
+
+## File: `test/braces.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const fill = require('fill-range');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+describe('braces', () => {
+  it('should not match with brace patterns when disabled', () => {
+    assert.deepStrictEqual(match(['a', 'b', 'c'], '{a,b,c,d}'), ['a', 'b', 'c']);
+    assert.deepStrictEqual(match(['a', 'b', 'c'], '{a,b,c,d}', { nobrace: true }), []);
+    assert.deepStrictEqual(match(['1', '2', '3'], '{1..2}', { nobrace: true }), []);
+    assert(!isMatch('a/a', 'a/{a,b}', { nobrace: true }));
+    assert(!isMatch('a/b', 'a/{a,b}', { nobrace: true }));
+    assert(!isMatch('a/c', 'a/{a,b}', { nobrace: true }));
+    assert(!isMatch('b/b', 'a/{a,b}', { nobrace: true }));
+    assert(!isMatch('b/b', 'a/{a,b,c}', { nobrace: true }));
+    assert(!isMatch('a/c', 'a/{a,b,c}', { nobrace: true }));
+    assert(!isMatch('a/a', 'a/{a..c}', { nobrace: true }));
+    assert(!isMatch('a/b', 'a/{a..c}', { nobrace: true }));
+    assert(!isMatch('a/c', 'a/{a..c}', { nobrace: true }));
+  });
+
+  it('should treat single-set braces as literals', () => {
+    assert(isMatch('a {abc} b', 'a {abc} b'));
+    assert(isMatch('a {a-b-c} b', 'a {a-b-c} b'));
+    assert(isMatch('a {a.c} b', 'a {a.c} b'));
+  });
+
+  it('should match literal braces when escaped', () => {
+    assert(isMatch('a {1,2}', 'a \\{1,2\\}'));
+    assert(isMatch('a {a..b}', 'a \\{a..b\\}'));
+  });
+
+  it('should match using brace patterns', () => {
+    assert(!isMatch('a/c', 'a/{a,b}'));
+    assert(!isMatch('b/b', 'a/{a,b,c}'));
+    assert(!isMatch('b/b', 'a/{a,b}'));
+    assert(isMatch('a/a', 'a/{a,b}'));
+    assert(isMatch('a/b', 'a/{a,b}'));
+    assert(isMatch('a/c', 'a/{a,b,c}'));
+  });
+
+  it('should support brace ranges', () => {
+    assert(isMatch('a/a', 'a/{a..c}'));
+    assert(isMatch('a/b', 'a/{a..c}'));
+    assert(isMatch('a/c', 'a/{a..c}'));
+  });
+
+  it('should support Kleene stars', () => {
+    assert(isMatch('ab', '{ab,c}*'));
+    assert(isMatch('abab', '{ab,c}*'));
+    assert(isMatch('abc', '{ab,c}*'));
+    assert(isMatch('c', '{ab,c}*'));
+    assert(isMatch('cab', '{ab,c}*'));
+    assert(isMatch('cc', '{ab,c}*'));
+    assert(isMatch('ababab', '{ab,c}*'));
+    assert(isMatch('ababc', '{ab,c}*'));
+    assert(isMatch('abcab', '{ab,c}*'));
+    assert(isMatch('abcc', '{ab,c}*'));
+    assert(isMatch('cabab', '{ab,c}*'));
+    assert(isMatch('cabc', '{ab,c}*'));
+    assert(isMatch('ccab', '{ab,c}*'));
+    assert(isMatch('ccc', '{ab,c}*'));
+  });
+
+  it('should not convert braces inside brackets', () => {
+    assert(isMatch('foo{}baz', 'foo[{a,b}]+baz'));
+    assert(isMatch('{a}{b}{c}', '[abc{}]+'));
+  });
+
+  it('should support braces containing slashes', () => {
+    assert(isMatch('a', '{/,}a/**'));
+    assert(isMatch('aa.txt', 'a{a,b/}*.txt'));
+    assert(isMatch('ab/.txt', 'a{a,b/}*.txt'));
+    assert(isMatch('ab/a.txt', 'a{a,b/}*.txt'));
+    assert(isMatch('a/', 'a/**{/,}'));
+    assert(isMatch('a/a', 'a/**{/,}'));
+    assert(isMatch('a/a/', 'a/**{/,}'));
+  });
+
+  it('should support braces with empty elements', () => {
+    assert(!isMatch('abc.txt', 'a{,b}.txt'));
+    assert(!isMatch('abc.txt', 'a{a,b,}.txt'));
+    assert(!isMatch('abc.txt', 'a{b,}.txt'));
+    assert(isMatch('a.txt', 'a{,b}.txt'));
+    assert(isMatch('a.txt', 'a{b,}.txt'));
+    assert(isMatch('aa.txt', 'a{a,b,}.txt'));
+    assert(isMatch('aa.txt', 'a{a,b,}.txt'));
+    assert(isMatch('ab.txt', 'a{,b}.txt'));
+    assert(isMatch('ab.txt', 'a{b,}.txt'));
+  });
+
+  it('should support braces with slashes and empty elements', () => {
+    assert(isMatch('a.txt', 'a{,/}*.txt'));
+    assert(isMatch('ab.txt', 'a{,/}*.txt'));
+    assert(isMatch('a/b.txt', 'a{,/}*.txt'));
+    assert(isMatch('a/ab.txt', 'a{,/}*.txt'));
+  });
+
+  it('should support braces with stars', () => {
+    assert(isMatch('a.txt', 'a{,.*{foo,db},\\(bar\\)}.txt'));
+    assert(!isMatch('adb.txt', 'a{,.*{foo,db},\\(bar\\)}.txt'));
+    assert(isMatch('a.db.txt', 'a{,.*{foo,db},\\(bar\\)}.txt'));
+
+    assert(isMatch('a.txt', 'a{,*.{foo,db},\\(bar\\)}.txt'));
+    assert(!isMatch('adb.txt', 'a{,*.{foo,db},\\(bar\\)}.txt'));
+    assert(isMatch('a.db.txt', 'a{,*.{foo,db},\\(bar\\)}.txt'));
+
+    assert(isMatch('a', 'a{,.*{foo,db},\\(bar\\)}'));
+    assert(!isMatch('adb', 'a{,.*{foo,db},\\(bar\\)}'));
+    assert(isMatch('a.db', 'a{,.*{foo,db},\\(bar\\)}'));
+
+    assert(isMatch('a', 'a{,*.{foo,db},\\(bar\\)}'));
+    assert(!isMatch('adb', 'a{,*.{foo,db},\\(bar\\)}'));
+    assert(isMatch('a.db', 'a{,*.{foo,db},\\(bar\\)}'));
+
+    assert(!isMatch('a', '{,.*{foo,db},\\(bar\\)}'));
+    assert(!isMatch('adb', '{,.*{foo,db},\\(bar\\)}'));
+    assert(!isMatch('a.db', '{,.*{foo,db},\\(bar\\)}'));
+    assert(isMatch('.db', '{,.*{foo,db},\\(bar\\)}'));
+
+    assert(!isMatch('a', '{,*.{foo,db},\\(bar\\)}'));
+    assert(isMatch('a', '{*,*.{foo,db},\\(bar\\)}'));
+    assert(!isMatch('adb', '{,*.{foo,db},\\(bar\\)}'));
+    assert(isMatch('a.db', '{,*.{foo,db},\\(bar\\)}'));
+  });
+
+  it('should support braces in patterns with globstars', () => {
+    assert(!isMatch('a/b/c/xyz.md', 'a/b/**/c{d,e}/**/xyz.md'));
+    assert(!isMatch('a/b/d/xyz.md', 'a/b/**/c{d,e}/**/xyz.md'));
+    assert(isMatch('a/b/cd/xyz.md', 'a/b/**/c{d,e}/**/xyz.md'));
+    assert(isMatch('a/b/c/xyz.md', 'a/b/**/{c,d,e}/**/xyz.md'));
+    assert(isMatch('a/b/d/xyz.md', 'a/b/**/{c,d,e}/**/xyz.md'));
+  });
+
+  it('should support braces with globstars, slashes and empty elements', () => {
+    assert(isMatch('a.txt', 'a{,/**/}*.txt'));
+    assert(isMatch('a/b.txt', 'a{,/**/,/}*.txt'));
+    assert(isMatch('a/x/y.txt', 'a{,/**/}*.txt'));
+    assert(!isMatch('a/x/y/z', 'a{,/**/}*.txt'));
+  });
+
+  it('should support braces with globstars and empty elements', () => {
+    assert(isMatch('a/b/foo/bar/baz.qux', 'a/b{,/**}/bar{,/**}/*.*'));
+    assert(isMatch('a/b/bar/baz.qux', 'a/b{,/**}/bar{,/**}/*.*'));
+  });
+
+  it('should support Kleene plus', () => {
+    assert(isMatch('ab', '{ab,c}+'));
+    assert(isMatch('abab', '{ab,c}+'));
+    assert(isMatch('abc', '{ab,c}+'));
+    assert(isMatch('c', '{ab,c}+'));
+    assert(isMatch('cab', '{ab,c}+'));
+    assert(isMatch('cc', '{ab,c}+'));
+    assert(isMatch('ababab', '{ab,c}+'));
+    assert(isMatch('ababc', '{ab,c}+'));
+    assert(isMatch('abcab', '{ab,c}+'));
+    assert(isMatch('abcc', '{ab,c}+'));
+    assert(isMatch('cabab', '{ab,c}+'));
+    assert(isMatch('cabc', '{ab,c}+'));
+    assert(isMatch('ccab', '{ab,c}+'));
+    assert(isMatch('ccc', '{ab,c}+'));
+    assert(isMatch('ccc', '{a,b,c}+'));
+
+    assert(isMatch('a', '{a,b,c}+'));
+    assert(isMatch('b', '{a,b,c}+'));
+    assert(isMatch('c', '{a,b,c}+'));
+    assert(isMatch('aa', '{a,b,c}+'));
+    assert(isMatch('ab', '{a,b,c}+'));
+    assert(isMatch('ac', '{a,b,c}+'));
+    assert(isMatch('ba', '{a,b,c}+'));
+    assert(isMatch('bb', '{a,b,c}+'));
+    assert(isMatch('bc', '{a,b,c}+'));
+    assert(isMatch('ca', '{a,b,c}+'));
+    assert(isMatch('cb', '{a,b,c}+'));
+    assert(isMatch('cc', '{a,b,c}+'));
+    assert(isMatch('aaa', '{a,b,c}+'));
+    assert(isMatch('aab', '{a,b,c}+'));
+    assert(isMatch('abc', '{a,b,c}+'));
+  });
+
+  it('should support braces', () => {
+    assert(isMatch('a', '{a,b,c}'));
+    assert(isMatch('b', '{a,b,c}'));
+    assert(isMatch('c', '{a,b,c}'));
+    assert(!isMatch('aa', '{a,b,c}'));
+    assert(!isMatch('bb', '{a,b,c}'));
+    assert(!isMatch('cc', '{a,b,c}'));
+  });
+
+  it('should match special chars and expand ranges in parentheses', () => {
+    const expandRange = (a, b) => `(${fill(a, b, { toRegex: true })})`;
+
+    assert(!isMatch('foo/bar - 1', '*/* {4..10}', { expandRange }));
+    assert(!isMatch('foo/bar - copy (1)', '*/* - * \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar (1)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(isMatch('foo/bar (4)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(isMatch('foo/bar (7)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar (42)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(isMatch('foo/bar (42)', '*/* \\({4..43}\\)', { expandRange }));
+    assert(isMatch('foo/bar - copy [1]', '*/* \\[{0..5}\\]', { expandRange }));
+    assert(isMatch('foo/bar - foo + bar - copy [1]', '*/* \\[{0..5}\\]', { expandRange }));
+    assert(!isMatch('foo/bar - 1', '*/* \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar - copy (1)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar (1)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(isMatch('foo/bar (4)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(isMatch('foo/bar (7)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar (42)', '*/* \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar - copy [1]', '*/* \\({4..10}\\)', { expandRange }));
+    assert(!isMatch('foo/bar - foo + bar - copy [1]', '*/* \\({4..10}\\)', { expandRange }));
+  });
+});
+```
+
+## File: `test/brackets.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('brackets', () => {
+  describe('trailing stars', () => {
+    it('should support stars following brackets', () => {
+      assert(isMatch('a', '[a]*'));
+      assert(isMatch('aa', '[a]*'));
+      assert(isMatch('aaa', '[a]*'));
+      assert(isMatch('az', '[a-z]*'));
+      assert(isMatch('zzz', '[a-z]*'));
+    });
+
+    it('should match slashes defined in brackets', () => {
+      assert(isMatch('foo/bar', 'foo[/]bar'));
+      assert(isMatch('foo/bar/', 'foo[/]bar[/]'));
+      assert(isMatch('foo/bar/baz', 'foo[/]bar[/]baz'));
+    });
+
+    it('should not match slashes following brackets', () => {
+      assert(!isMatch('a/b', '[a]*'));
+    });
+  });
+});
+```
+
+## File: `test/dotfiles.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+describe('dotfiles', () => {
+  describe('normal', () => {
+    it('should not match dotfiles by default:', () => {
+      assert.deepStrictEqual(match(['.dotfile'], '*'), []);
+      assert.deepStrictEqual(match(['.dotfile'], '**'), []);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '*.md'), []);
+      assert.deepStrictEqual(match(['a/b', 'a/.b', '.a/b', '.a/.b'], '**'), ['a/b']);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile'], '*.*'), []);
+    });
+  });
+
+  describe('leading dot', () => {
+    it('should match dotfiles when a leading dot is defined in the path:', () => {
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '**/.*'), ['a/b/c/.dotfile.md']);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '**/.*.md'), ['a/b/c/.dotfile.md']);
+    });
+
+    it('should use negation patterns on dotfiles:', () => {
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '!.*'), ['c', 'c.md']);
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '!.b'), ['.a', 'c', 'c.md']);
+    });
+
+    it('should match dotfiles when there is a leading dot:', () => {
+      const opts = { dot: true };
+      assert.deepStrictEqual(match(['.dotfile'], '*', opts), ['.dotfile']);
+      assert.deepStrictEqual(match(['.dotfile'], '**', opts), ['.dotfile']);
+      assert.deepStrictEqual(match(['a/b', 'a/.b', '.a/b', '.a/.b'], '**', opts), ['a/b', 'a/.b', '.a/b', '.a/.b']);
+      assert.deepStrictEqual(match(['a/b', 'a/.b', 'a/.b', '.a/.b'], 'a/{.*,**}', opts), ['a/b', 'a/.b']);
+      assert.deepStrictEqual(match(['a/b', 'a/.b', 'a/.b', '.a/.b'], '{.*,**}', {}), ['a/b']);
+      assert.deepStrictEqual(match(['a/b', 'a/.b', 'a/.b', '.a/.b'], '{.*,**}', opts), ['a/b', 'a/.b', '.a/.b']);
+      assert.deepStrictEqual(match(['.dotfile'], '.dotfile', opts), ['.dotfile']);
+      assert.deepStrictEqual(match(['.dotfile.md'], '.*.md', opts), ['.dotfile.md']);
+    });
+
+    it('should match dotfiles when there is not a leading dot:', () => {
+      const opts = { dot: true };
+      assert.deepStrictEqual(match(['.dotfile'], '*.*', opts), ['.dotfile']);
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '*.*', opts), ['.a', '.b', 'c.md']);
+      assert.deepStrictEqual(match(['.dotfile'], '*.md', opts), []);
+      assert.deepStrictEqual(match(['.verb.txt'], '*.md', opts), []);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile'], '*.md', opts), []);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '*.md', opts), []);
+      assert.deepStrictEqual(match(['a/b/c/.verb.md'], '**/*.md', opts), ['a/b/c/.verb.md']);
+      assert.deepStrictEqual(match(['foo.md'], '*.md', opts), ['foo.md']);
+    });
+
+    it('should use negation patterns on dotfiles:', () => {
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '!.*'), ['c', 'c.md']);
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '!(.*)'), ['c', 'c.md']);
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '!(.*)*'), ['c', 'c.md']);
+      assert.deepStrictEqual(match(['.a', '.b', 'c', 'c.md'], '!*.*'), ['.a', '.b', 'c']);
+    });
+  });
+
+  describe('options.dot', () => {
+    it('should match dotfiles when `options.dot` is true:', () => {
+      const fixtures = ['a/./b', 'a/../b', 'a/c/b', 'a/.d/b'];
+      assert.deepStrictEqual(match(['.dotfile'], '*.*', { dot: true }), ['.dotfile']);
+      assert.deepStrictEqual(match(['.dotfile'], '*.md', { dot: true }), []);
+      assert.deepStrictEqual(match(['.dotfile'], '.dotfile', { dot: true }), ['.dotfile']);
+      assert.deepStrictEqual(match(['.dotfile.md'], '.*.md', { dot: true }), ['.dotfile.md']);
+      assert.deepStrictEqual(match(['.verb.txt'], '*.md', { dot: true }), []);
+      assert.deepStrictEqual(match(['.verb.txt'], '*.md', { dot: true }), []);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile'], '*.md', { dot: true }), []);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '**/*.md', { dot: true }), ['a/b/c/.dotfile.md']);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '**/.*', { dot: false }), ['a/b/c/.dotfile.md']);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '**/.*.md', { dot: false }), ['a/b/c/.dotfile.md']);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '*.md', { dot: false }), []);
+      assert.deepStrictEqual(match(['a/b/c/.dotfile.md'], '*.md', { dot: true }), []);
+      assert.deepStrictEqual(match(['a/b/c/.verb.md'], '**/*.md', { dot: true }), ['a/b/c/.verb.md']);
+      assert.deepStrictEqual(match(['d.md'], '*.md', { dot: true }), ['d.md']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/b', { dot: true }), ['a/c/b', 'a/.d/b']);
+      assert.deepStrictEqual(match(fixtures, 'a/.*/b'), ['a/.d/b']);
+      assert.deepStrictEqual(match(fixtures, 'a/.*/b', { dot: true }), ['a/.d/b']);
+    });
+
+    it('should match dotfiles when `options.dot` is true', () => {
+      assert(isMatch('.dot', '**/*dot', { dot: true }));
+      assert(isMatch('.dot', '*dot', { dot: true }));
+      assert(isMatch('.dot', '?dot', { dot: true }));
+      assert(isMatch('.dotfile.js', '.*.js', { dot: true }));
+      assert(isMatch('/a/b/.dot', '/**/*dot', { dot: true }));
+      assert(isMatch('/a/b/.dot', '**/*dot', { dot: true }));
+      assert(isMatch('/a/b/.dot', '**/.[d]ot', { dot: true }));
+      assert(isMatch('/a/b/.dot', '**/?dot', { dot: true }));
+      assert(isMatch('/a/b/.dot', '/**/.[d]ot', { dot: true }));
+      assert(isMatch('/a/b/.dot', '/**/?dot', { dot: true }));
+      assert(isMatch('a/b/.dot', '**/*dot', { dot: true }));
+      assert(isMatch('a/b/.dot', '**/.[d]ot', { dot: true }));
+      assert(isMatch('a/b/.dot', '**/?dot', { dot: true }));
+    });
+
+    it('should not match dotfiles when `options.dot` is false', () => {
+      assert(!isMatch('a/b/.dot', '**/*dot', { dot: false }));
+      assert(!isMatch('a/b/.dot', '**/?dot', { dot: false }));
+    });
+
+    it('should not match dotfiles when `.dot` is not defined and a dot is not in the glob pattern', () => {
+      assert(!isMatch('a/b/.dot', '**/*dot'));
+      assert(!isMatch('a/b/.dot', '**/?dot'));
+    });
+  });
+
+  describe('valid dotfiles', () => {
+    it('micromatch issue#63 (dots)', () => {
+      assert(!isMatch('/aaa/.git/foo', '/aaa/**/*'));
+      assert(!isMatch('/aaa/bbb/.git', '/aaa/bbb/*'));
+      assert(!isMatch('/aaa/bbb/.git', '/aaa/bbb/**'));
+      assert(!isMatch('/aaa/bbb/ccc/.git', '/aaa/bbb/**'));
+      assert(!isMatch('aaa/bbb/.git', 'aaa/bbb/**'));
+      assert(isMatch('/aaa/bbb/', '/aaa/bbb/**'));
+      assert(isMatch('/aaa/bbb/foo', '/aaa/bbb/**'));
+
+      assert(isMatch('/aaa/.git/foo', '/aaa/**/*', { dot: true }));
+      assert(isMatch('/aaa/bbb/.git', '/aaa/bbb/*', { dot: true }));
+      assert(isMatch('/aaa/bbb/.git', '/aaa/bbb/**', { dot: true }));
+      assert(isMatch('/aaa/bbb/ccc/.git', '/aaa/bbb/**', { dot: true }));
+      assert(isMatch('aaa/bbb/.git', 'aaa/bbb/**', { dot: true }));
+    });
+
+    it('should not match dotfiles with single stars by default', () => {
+      assert(isMatch('foo', '*'));
+      assert(isMatch('foo/bar', '*/*'));
+      assert(!isMatch('.foo', '*'));
+      assert(!isMatch('.foo/bar', '*/*'));
+      assert(!isMatch('.foo/.bar', '*/*'));
+      assert(!isMatch('foo/.bar', '*/*'));
+      assert(!isMatch('foo/.bar/baz', '*/*/*'));
+    });
+
+    it('should work with dots in the path', () => {
+      assert(isMatch('../test.js', '../*.js'));
+      assert(isMatch('../.test.js', '../*.js', { dot: true }));
+      assert(!isMatch('../.test.js', '../*.js'));
+    });
+
+    it('should not match dotfiles with globstar by default', () => {
+      assert(!isMatch('.foo', '**/**'));
+      assert(!isMatch('.foo', '**'));
+      assert(!isMatch('.foo', '**/*'));
+      assert(!isMatch('bar/.foo', '**/*'));
+      assert(!isMatch('.bar', '**/*'));
+      assert(!isMatch('foo/.bar', '**/*'));
+      assert(!isMatch('foo/.bar', '**/*a*'));
+    });
+
+    it('should match dotfiles when a leading dot is in the pattern', () => {
+      assert(!isMatch('foo', '**/.*a*'));
+      assert(isMatch('.bar', '**/.*a*'));
+      assert(isMatch('foo/.bar', '**/.*a*'));
+      assert(isMatch('.foo', '**/.*'));
+
+      assert(!isMatch('foo', '.*a*'));
+      assert(isMatch('.bar', '.*a*'));
+      assert(!isMatch('bar', '.*a*'));
+
+      assert(!isMatch('foo', '.b*'));
+      assert(isMatch('.bar', '.b*'));
+      assert(!isMatch('bar', '.b*'));
+
+      assert(!isMatch('foo', '.*r'));
+      assert(isMatch('.bar', '.*r'));
+      assert(!isMatch('bar', '.*r'));
+    });
+
+    it('should not match a dot when the dot is not explicitly defined', () => {
+      assert(!isMatch('.dot', '**/*dot'));
+      assert(!isMatch('.dot', '**/?dot'));
+      assert(!isMatch('.dot', '*/*dot'));
+      assert(!isMatch('.dot', '*/?dot'));
+      assert(!isMatch('.dot', '*dot'));
+      assert(!isMatch('.dot', '/*dot'));
+      assert(!isMatch('.dot', '/?dot'));
+      assert(!isMatch('/.dot', '**/*dot'));
+      assert(!isMatch('/.dot', '**/?dot'));
+      assert(!isMatch('/.dot', '*/*dot'));
+      assert(!isMatch('/.dot', '*/?dot'));
+      assert(!isMatch('/.dot', '/*dot'));
+      assert(!isMatch('/.dot', '/?dot'));
+      assert(!isMatch('abc/.dot', '*/*dot'));
+      assert(!isMatch('abc/.dot', '*/?dot'));
+      assert(!isMatch('abc/.dot', 'abc/*dot'));
+      assert(!isMatch('abc/abc/.dot', '**/*dot'));
+      assert(!isMatch('abc/abc/.dot', '**/?dot'));
+    });
+
+    it('should not match leading dots with question marks', () => {
+      assert(!isMatch('.dot', '?dot'));
+      assert(!isMatch('/.dot', '/?dot'));
+      assert(!isMatch('abc/.dot', 'abc/?dot'));
+    });
+
+    it('should match double dots when defined in pattern', () => {
+      assert(!isMatch('../../b', '**/../*'));
+      assert(!isMatch('../../b', '*/../*'));
+      assert(!isMatch('../../b', '../*'));
+      assert(!isMatch('../abc', '*/../*'));
+      assert(!isMatch('../abc', '*/../*'));
+      assert(!isMatch('../c/d', '**/../*'));
+      assert(!isMatch('../c/d', '*/../*'));
+      assert(!isMatch('../c/d', '../*'));
+      assert(!isMatch('abc', '**/../*'));
+      assert(!isMatch('abc', '*/../*'));
+      assert(!isMatch('abc', '../*'));
+      assert(!isMatch('abc/../abc', '../*'));
+      assert(!isMatch('abc/../abc', '../*'));
+      assert(!isMatch('abc/../', '**/../*'));
+
+      assert(isMatch('..', '..'));
+      assert(isMatch('../b', '../*'));
+      assert(isMatch('../../b', '../../*'));
+      assert(isMatch('../../..', '../../..'));
+      assert(isMatch('../abc', '**/../*'));
+      assert(isMatch('../abc', '../*'));
+      assert(isMatch('abc/../abc', '**/../*'));
+      assert(isMatch('abc/../abc', '*/../*'));
+      assert(isMatch('abc/../abc', '**/../*'));
+      assert(isMatch('abc/../abc', '*/../*'));
+    });
+
+    it('should not match double dots when not defined in pattern', async () => {
+      assert(!isMatch('../abc', '**/*'));
+      assert(!isMatch('../abc', '**/**/**'));
+      assert(!isMatch('../abc', '**/**/abc'));
+      assert(!isMatch('../abc', '**/**/abc/**'));
+      assert(!isMatch('../abc', '**/*/*'));
+      assert(!isMatch('../abc', '**/abc/**'));
+      assert(!isMatch('../abc', '*/*'));
+      assert(!isMatch('../abc', '*/abc/**'));
+      assert(!isMatch('abc/../abc', '**/*'));
+      assert(!isMatch('abc/../abc', '**/*/*'));
+      assert(!isMatch('abc/../abc', '**/*/abc'));
+      assert(!isMatch('abc/../abc', '*/**/*'));
+      assert(!isMatch('abc/../abc', '*/*/*'));
+      assert(!isMatch('abc/../abc', 'abc/**/*'));
+      assert(!isMatch('abc/../abc', '**/**/*'));
+      assert(!isMatch('abc/../abc', '**/*/*'));
+      assert(!isMatch('abc/../abc', '*/**/*'));
+      assert(!isMatch('abc/../abc', '*/*/*'));
+
+      assert(!isMatch('../abc', '**/**/**', { dot: true }));
+      assert(!isMatch('../abc', '**/**/abc', { dot: true }));
+      assert(!isMatch('../abc', '**/**/abc/**', { dot: true }));
+      assert(!isMatch('../abc', '**/abc/**', { dot: true }));
+      assert(!isMatch('../abc', '*/abc/**', { dot: true }));
+
+      assert(!isMatch('../abc', '**/*/*', { dot: true }));
+      assert(!isMatch('../abc', '*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '**/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '*/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '**/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '*/*/*', { dot: true }));
+      assert(!isMatch('abc/..', '**/*', { dot: true }));
+      assert(!isMatch('abc/..', '*/*', { dot: true }));
+      assert(!isMatch('abc/abc/..', '*/**/*', { dot: true }));
+
+      assert(!isMatch('abc/../abc', 'abc/**/*'));
+      assert(!isMatch('abc/../abc', 'abc/**/*', { dot: true }));
+      assert(!isMatch('abc/../abc', 'abc/**/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', 'abc/*/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', 'abc/**/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', 'abc/*/*/*', { dot: true }));
+      assert(!isMatch('abc/..', 'abc/**/*', { dot: true }));
+      assert(!isMatch('abc/..', 'abc/*/*', { dot: true }));
+      assert(!isMatch('abc/abc/..', 'abc/*/**/*', { dot: true }));
+
+      assert(!isMatch('../abc', '**/*/*', { dot: true }));
+      assert(!isMatch('../abc', '*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '**/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '*/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '**/*/*', { dot: true }));
+      assert(!isMatch('abc/../abc', '*/*/*', { dot: true }));
+      assert(!isMatch('abc/..', '**/*', { dot: true }));
+      assert(!isMatch('abc/..', '*/*', { dot: true }));
+      assert(!isMatch('abc/abc/..', '*/**/*', { dot: true }));
+
+      assert(!isMatch('abc/../abc', 'abc/**/*', { strictSlashes: true }));
+      assert(!isMatch('abc/../abc', 'abc/**/*/*', { strictSlashes: true }));
+      assert(!isMatch('abc/../abc', 'abc/**/*/*', { strictSlashes: true }));
+      assert(!isMatch('abc/../abc', 'abc/*/*/*', { strictSlashes: true }));
+      assert(!isMatch('abc/../abc', 'abc/**/*/*', { strictSlashes: true }));
+      assert(!isMatch('abc/../abc', 'abc/*/*/*', { strictSlashes: true }));
+      assert(!isMatch('abc/..', 'abc/**/*', { strictSlashes: true }));
+      assert(!isMatch('abc/..', 'abc/*/*', { strictSlashes: true }));
+      assert(!isMatch('abc/abc/..', 'abc/*/**/*', { strictSlashes: true }));
+    });
+
+    it('should not match single exclusive dots when not defined in pattern', async () => {
+      assert(!isMatch('.', '**'));
+      assert(!isMatch('abc/./abc', '**'));
+      assert(!isMatch('abc/abc/.', '**'));
+      assert(!isMatch('abc/abc/./abc', '**'));
+
+      assert(!isMatch('.', '**', { dot: true }));
+      assert(!isMatch('..', '**', { dot: true }));
+      assert(!isMatch('../', '**', { dot: true }));
+      assert(!isMatch('/../', '**', { dot: true }));
+      assert(!isMatch('/..', '**', { dot: true }));
+      assert(!isMatch('abc/./abc', '**', { dot: true }));
+      assert(!isMatch('abc/abc/.', '**', { dot: true }));
+      assert(!isMatch('abc/abc/./abc', '**', { dot: true }));
+    });
+
+    it('should match leading dots in root path when glob is prefixed with **/', () => {
+      assert(!isMatch('.abc/.abc', '**/.abc/**'));
+      assert(isMatch('.abc', '**/.abc/**'));
+      assert(isMatch('.abc/', '**/.abc/**'));
+      assert(isMatch('.abc/abc', '**/.abc/**'));
+      assert(isMatch('.abc/abc/b', '**/.abc/**'));
+      assert(isMatch('abc/.abc/b', '**/.abc/**'));
+      assert(isMatch('abc/abc/.abc', '**/.abc'));
+      assert(isMatch('abc/abc/.abc', '**/.abc/**'));
+      assert(isMatch('abc/abc/.abc/', '**/.abc/**'));
+      assert(isMatch('abc/abc/.abc/abc', '**/.abc/**'));
+      assert(isMatch('abc/abc/.abc/c/d', '**/.abc/**'));
+      assert(isMatch('abc/abc/.abc/c/d/e', '**/.abc/**'));
+    });
+
+    it('should match a dot when the dot is explicitly defined', () => {
+      assert(isMatch('/.dot', '**/.dot*'));
+      assert(isMatch('aaa/bbb/.dot', '**/.dot*'));
+      assert(isMatch('aaa/.dot', '*/.dot*'));
+      assert(isMatch('.aaa.bbb', '.*.*'));
+      assert(isMatch('.aaa.bbb', '.*.*'));
+      assert(!isMatch('.aaa.bbb/', '.*.*', { strictSlashes: true }));
+      assert(!isMatch('.aaa.bbb', '.*.*/'));
+      assert(isMatch('.aaa.bbb/', '.*.*/'));
+      assert(isMatch('.aaa.bbb/', '.*.*{,/}'));
+      assert(isMatch('.aaa.bbb', '.*.bbb'));
+      assert(isMatch('.dotfile.js', '.*.js'));
+      assert(isMatch('.dot', '.*ot'));
+      assert(isMatch('.dot.bbb.ccc', '.*ot.*.*'));
+      assert(isMatch('.dot', '.d?t'));
+      assert(isMatch('.dot', '.dot*'));
+      assert(isMatch('/.dot', '/.dot*'));
+    });
+
+    it('should match dots defined in brackets', () => {
+      assert(isMatch('/.dot', '**/.[d]ot'));
+      assert(isMatch('aaa/.dot', '**/.[d]ot'));
+      assert(isMatch('aaa/bbb/.dot', '**/.[d]ot'));
+      assert(isMatch('aaa/.dot', '*/.[d]ot'));
+      assert(isMatch('.dot', '.[d]ot'));
+      assert(isMatch('.dot', '.[d]ot'));
+      assert(isMatch('/.dot', '/.[d]ot'));
+    });
+  });
+});
+```
+
+## File: `test/dots-invalid.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('invalid (exclusive) dots', () => {
+  describe('double dots', () => {
+    describe('no options', () => {
+      describe('should not match leading double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('../abc', '*/*'));
+          assert(!isMatch('../abc', '*/abc'));
+          assert(!isMatch('../abc', '*/abc/*'));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('../abc', '.*/*'));
+          assert(!isMatch('../abc', '.*/abc'));
+
+          assert(!isMatch('../abc', '*./*'));
+          assert(!isMatch('../abc', '*./abc'));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('../abc', '**'));
+          assert(!isMatch('../abc', '**/**'));
+          assert(!isMatch('../abc', '**/**/**'));
+
+          assert(!isMatch('../abc', '**/abc'));
+          assert(!isMatch('../abc', '**/abc/**'));
+
+          assert(!isMatch('../abc', 'abc/**'));
+          assert(!isMatch('../abc', 'abc/**/**'));
+          assert(!isMatch('../abc', 'abc/**/**/**'));
+
+          assert(!isMatch('../abc', '**/abc'));
+          assert(!isMatch('../abc', '**/abc/**'));
+          assert(!isMatch('../abc', '**/abc/**/**'));
+
+          assert(!isMatch('../abc', '**/**/abc/**'));
+          assert(!isMatch('../abc', '**/**/abc/**/**'));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('../abc', '.**'));
+          assert(!isMatch('../abc', '.**/**'));
+          assert(!isMatch('../abc', '.**/abc'));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('../abc', '*.*/**'));
+          assert(!isMatch('../abc', '*.*/abc'));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('../abc', '**./**'));
+          assert(!isMatch('../abc', '**./abc'));
+        });
+      });
+
+      describe('should not match nested double-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/../abc', '*/*'));
+          assert(!isMatch('/../abc', '/*/*'));
+          assert(!isMatch('/../abc', '*/*/*'));
+
+          assert(!isMatch('abc/../abc', '*/*/*'));
+          assert(!isMatch('abc/../abc/abc', '*/*/*/*'));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/../abc', '*/.*/*'));
+          assert(!isMatch('/../abc', '/.*/*'));
+
+          assert(!isMatch('/../abc', '*/*.*/*'));
+          assert(!isMatch('/../abc', '/*.*/*'));
+
+          assert(!isMatch('/../abc', '*/*./*'));
+          assert(!isMatch('/../abc', '/*./*'));
+
+          assert(!isMatch('abc/../abc', '*/.*/*'));
+          assert(!isMatch('abc/../abc', '*/*.*/*'));
+          assert(!isMatch('abc/../abc', '*/*./*'));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/../abc', '**'));
+          assert(!isMatch('/../abc', '**/**'));
+          assert(!isMatch('/../abc', '/**/**'));
+          assert(!isMatch('/../abc', '**/**/**'));
+
+          assert(!isMatch('abc/../abc', '**/**/**'));
+          assert(!isMatch('abc/../abc/abc', '**/**/**/**'));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/.**/**'));
+          assert(!isMatch('/../abc', '/.**/**'));
+
+          assert(!isMatch('abc/../abc', '**/.**/**'));
+          assert(!isMatch('abc/../abc', '/.**/**'));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/../abc', '**/**./**'));
+          assert(!isMatch('/../abc', '/**./**'));
+
+          assert(!isMatch('abc/../abc', '**/**./**'));
+          assert(!isMatch('abc/../abc', '/**./**'));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/**.**/**'));
+          assert(!isMatch('/../abc', '**/*.*/**'));
+
+          assert(!isMatch('/../abc', '/**.**/**'));
+          assert(!isMatch('/../abc', '/*.*/**'));
+
+          assert(!isMatch('abc/../abc', '**/**.**/**'));
+          assert(!isMatch('abc/../abc', '**/*.*/**'));
+
+          assert(!isMatch('abc/../abc', '/**.**/**'));
+          assert(!isMatch('abc/../abc', '/*.*/**'));
+        });
+      });
+
+      describe('should not match trailing double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/..', '*/*'));
+          assert(!isMatch('abc/..', '*/*/'));
+          assert(!isMatch('abc/..', '*/*/*'));
+
+          assert(!isMatch('abc/../', '*/*'));
+          assert(!isMatch('abc/../', '*/*/'));
+          assert(!isMatch('abc/../', '*/*/*'));
+
+          assert(!isMatch('abc/../abc/../', '*/*/*/*'));
+          assert(!isMatch('abc/../abc/../', '*/*/*/*/'));
+          assert(!isMatch('abc/../abc/abc/../', '*/*/*/*/*'));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/..', '*/.*'));
+          assert(!isMatch('abc/..', '*/.*/'));
+          assert(!isMatch('abc/..', '*/.*/*'));
+
+          assert(!isMatch('abc/../', '*/.*'));
+          assert(!isMatch('abc/../', '*/.*/'));
+          assert(!isMatch('abc/../', '*/.*/*'));
+
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*'));
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*/'));
+          assert(!isMatch('abc/../abc/abc/../', '*/.*/*/.*/*'));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/..', '*/*.'));
+          assert(!isMatch('abc/..', '*/*./'));
+          assert(!isMatch('abc/..', '*/*./*'));
+
+          assert(!isMatch('abc/../', '*/*.'));
+          assert(!isMatch('abc/../', '*/*./'));
+          assert(!isMatch('abc/../', '*/*./*'));
+
+          assert(!isMatch('abc/../abc/../', '*/*./*/*.'));
+          assert(!isMatch('abc/../abc/../', '*/*./*/*./'));
+          assert(!isMatch('abc/../abc/abc/../', '*/*./*/*./*'));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/..', '**/**'));
+          assert(!isMatch('abc/..', '**/**/'));
+          assert(!isMatch('abc/..', '**/**/**'));
+
+          assert(!isMatch('abc/../', '**/**'));
+          assert(!isMatch('abc/../', '**/**/'));
+          assert(!isMatch('abc/../', '**/**/**'));
+
+          assert(!isMatch('abc/../abc/../', '**/**/**/**'));
+          assert(!isMatch('abc/../abc/../', '**/**/**/**/'));
+          assert(!isMatch('abc/../abc/abc/../', '**/**/**/**/**'));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/.**'));
+          assert(!isMatch('abc/..', '**/.**/'));
+          assert(!isMatch('abc/..', '**/.**/**'));
+
+          assert(!isMatch('abc/../', '**/.**'));
+          assert(!isMatch('abc/../', '**/.**/'));
+          assert(!isMatch('abc/../', '**/.**/**'));
+
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**'));
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**/'));
+          assert(!isMatch('abc/../abc/abc/../', '**/.**/**/.**/**'));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/**.**'));
+          assert(!isMatch('abc/..', '**/**.**/'));
+          assert(!isMatch('abc/..', '**/**.**/**'));
+
+          assert(!isMatch('abc/../', '**/**.**'));
+          assert(!isMatch('abc/../', '**/**.**/'));
+          assert(!isMatch('abc/../', '**/**.**/**'));
+
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**'));
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**/'));
+          assert(!isMatch('abc/../abc/abc/../', '**/**.**/**/.**/**'));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/..', '**/**.'));
+          assert(!isMatch('abc/..', '**/**./'));
+          assert(!isMatch('abc/..', '**/**./**'));
+
+          assert(!isMatch('abc/../', '**/**.'));
+          assert(!isMatch('abc/../', '**/**./'));
+          assert(!isMatch('abc/../', '**/**./**'));
+
+          assert(!isMatch('abc/../abc/../', '**/**./**/**.'));
+          assert(!isMatch('abc/../abc/../', '**/**./**/**./'));
+          assert(!isMatch('abc/../abc/abc/../', '**/**./**/**./**'));
+        });
+      });
+    });
+
+    describe('options = { dot: true }', () => {
+      describe('should not match leading double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('../abc', '*/*', { dot: true }));
+          assert(!isMatch('../abc', '*/abc', { dot: true }));
+          assert(!isMatch('../abc', '*/abc/*', { dot: true }));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('../abc', '.*/*', { dot: true }));
+          assert(!isMatch('../abc', '.*/abc', { dot: true }));
+
+          assert(!isMatch('../abc', '*./*', { dot: true }));
+          assert(!isMatch('../abc', '*./abc', { dot: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('../abc', '**', { dot: true }));
+          assert(!isMatch('../abc', '**/**', { dot: true }));
+          assert(!isMatch('../abc', '**/**/**', { dot: true }));
+
+          assert(!isMatch('../abc', '**/abc', { dot: true }));
+          assert(!isMatch('../abc', '**/abc/**', { dot: true }));
+
+          assert(!isMatch('../abc', 'abc/**', { dot: true }));
+          assert(!isMatch('../abc', 'abc/**/**', { dot: true }));
+          assert(!isMatch('../abc', 'abc/**/**/**', { dot: true }));
+
+          assert(!isMatch('../abc', '**/abc', { dot: true }));
+          assert(!isMatch('../abc', '**/abc/**', { dot: true }));
+          assert(!isMatch('../abc', '**/abc/**/**', { dot: true }));
+
+          assert(!isMatch('../abc', '**/**/abc/**', { dot: true }));
+          assert(!isMatch('../abc', '**/**/abc/**/**', { dot: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('../abc', '.**', { dot: true }));
+          assert(!isMatch('../abc', '.**/**', { dot: true }));
+          assert(!isMatch('../abc', '.**/abc', { dot: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('../abc', '*.*/**', { dot: true }));
+          assert(!isMatch('../abc', '*.*/abc', { dot: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('../abc', '**./**', { dot: true }));
+          assert(!isMatch('../abc', '**./abc', { dot: true }));
+        });
+      });
+
+      describe('should not match nested double-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/../abc', '*/*', { dot: true }));
+          assert(!isMatch('/../abc', '/*/*', { dot: true }));
+          assert(!isMatch('/../abc', '*/*/*', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '*/*/*', { dot: true }));
+          assert(!isMatch('abc/../abc/abc', '*/*/*/*', { dot: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/../abc', '*/.*/*', { dot: true }));
+          assert(!isMatch('/../abc', '/.*/*', { dot: true }));
+
+          assert(!isMatch('/../abc', '*/*.*/*', { dot: true }));
+          assert(!isMatch('/../abc', '/*.*/*', { dot: true }));
+
+          assert(!isMatch('/../abc', '*/*./*', { dot: true }));
+          assert(!isMatch('/../abc', '/*./*', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '*/.*/*', { dot: true }));
+          assert(!isMatch('abc/../abc', '*/*.*/*', { dot: true }));
+          assert(!isMatch('abc/../abc', '*/*./*', { dot: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/../abc', '**', { dot: true }));
+          assert(!isMatch('/../abc', '**/**', { dot: true }));
+          assert(!isMatch('/../abc', '/**/**', { dot: true }));
+          assert(!isMatch('/../abc', '**/**/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '**/**/**', { dot: true }));
+          assert(!isMatch('abc/../abc/abc', '**/**/**/**', { dot: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/.**/**', { dot: true }));
+          assert(!isMatch('/../abc', '/.**/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '**/.**/**', { dot: true }));
+          assert(!isMatch('abc/../abc', '/.**/**', { dot: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/../abc', '**/**./**', { dot: true }));
+          assert(!isMatch('/../abc', '/**./**', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '**/**./**', { dot: true }));
+          assert(!isMatch('abc/../abc', '/**./**', { dot: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/**.**/**', { dot: true }));
+          assert(!isMatch('/../abc', '**/*.*/**', { dot: true }));
+
+          assert(!isMatch('/../abc', '/**.**/**', { dot: true }));
+          assert(!isMatch('/../abc', '/*.*/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '**/**.**/**', { dot: true }));
+          assert(!isMatch('abc/../abc', '**/*.*/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc', '/**.**/**', { dot: true }));
+          assert(!isMatch('abc/../abc', '/*.*/**', { dot: true }));
+        });
+      });
+
+      describe('should not match trailing double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/..', '*/*', { dot: true }));
+          assert(!isMatch('abc/..', '*/*/', { dot: true }));
+          assert(!isMatch('abc/..', '*/*/*', { dot: true }));
+
+          assert(!isMatch('abc/../', '*/*', { dot: true }));
+          assert(!isMatch('abc/../', '*/*/', { dot: true }));
+          assert(!isMatch('abc/../', '*/*/*', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/*/*/*', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '*/*/*/*/', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/*/*/*/*', { dot: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/..', '*/.*', { dot: true }));
+          assert(!isMatch('abc/..', '*/.*/', { dot: true }));
+          assert(!isMatch('abc/..', '*/.*/*', { dot: true }));
+
+          assert(!isMatch('abc/../', '*/.*', { dot: true }));
+          assert(!isMatch('abc/../', '*/.*/', { dot: true }));
+          assert(!isMatch('abc/../', '*/.*/*', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*/', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/.*/*/.*/*', { dot: true }));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/..', '*/*.', { dot: true }));
+          assert(!isMatch('abc/..', '*/*./', { dot: true }));
+          assert(!isMatch('abc/..', '*/*./*', { dot: true }));
+
+          assert(!isMatch('abc/../', '*/*.', { dot: true }));
+          assert(!isMatch('abc/../', '*/*./', { dot: true }));
+          assert(!isMatch('abc/../', '*/*./*', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/*./*/*.', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '*/*./*/*./', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/*./*/*./*', { dot: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/..', '**/**', { dot: true }));
+          assert(!isMatch('abc/..', '**/**/', { dot: true }));
+          assert(!isMatch('abc/..', '**/**/**', { dot: true }));
+
+          assert(!isMatch('abc/../', '**/**', { dot: true }));
+          assert(!isMatch('abc/../', '**/**/', { dot: true }));
+          assert(!isMatch('abc/../', '**/**/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**/**/**', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '**/**/**/**/', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**/**/**/**', { dot: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/.**', { dot: true }));
+          assert(!isMatch('abc/..', '**/.**/', { dot: true }));
+          assert(!isMatch('abc/..', '**/.**/**', { dot: true }));
+
+          assert(!isMatch('abc/../', '**/.**', { dot: true }));
+          assert(!isMatch('abc/../', '**/.**/', { dot: true }));
+          assert(!isMatch('abc/../', '**/.**/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**/', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/.**/**/.**/**', { dot: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/**.**', { dot: true }));
+          assert(!isMatch('abc/..', '**/**.**/', { dot: true }));
+          assert(!isMatch('abc/..', '**/**.**/**', { dot: true }));
+
+          assert(!isMatch('abc/../', '**/**.**', { dot: true }));
+          assert(!isMatch('abc/../', '**/**.**/', { dot: true }));
+          assert(!isMatch('abc/../', '**/**.**/**', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**/', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**.**/**/.**/**', { dot: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/..', '**/**.', { dot: true }));
+          assert(!isMatch('abc/..', '**/**./', { dot: true }));
+          assert(!isMatch('abc/..', '**/**./**', { dot: true }));
+
+          assert(!isMatch('abc/../', '**/**.', { dot: true }));
+          assert(!isMatch('abc/../', '**/**./', { dot: true }));
+          assert(!isMatch('abc/../', '**/**./**', { dot: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**./**/**.', { dot: true }));
+          assert(!isMatch('abc/../abc/../', '**/**./**/**./', { dot: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**./**/**./**', { dot: true }));
+        });
+      });
+    });
+
+    describe('options = { strictSlashes: true }', () => {
+      describe('should not match leading double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('../abc', '*/*', { strictSlashes: true }));
+          assert(!isMatch('../abc', '*/abc', { strictSlashes: true }));
+          assert(!isMatch('../abc', '*/abc/*', { strictSlashes: true }));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('../abc', '.*/*', { strictSlashes: true }));
+          assert(!isMatch('../abc', '.*/abc', { strictSlashes: true }));
+
+          assert(!isMatch('../abc', '*./*', { strictSlashes: true }));
+          assert(!isMatch('../abc', '*./abc', { strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('../abc', '**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('../abc', '**/abc', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**/abc/**', { strictSlashes: true }));
+
+          assert(!isMatch('../abc', 'abc/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', 'abc/**/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', 'abc/**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('../abc', '**/abc', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**/abc/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**/abc/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('../abc', '**/**/abc/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**/**/abc/**/**', { strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('../abc', '.**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '.**/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '.**/abc', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('../abc', '*.*/**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '*.*/abc', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('../abc', '**./**', { strictSlashes: true }));
+          assert(!isMatch('../abc', '**./abc', { strictSlashes: true }));
+        });
+      });
+
+      describe('should not match nested double-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/../abc', '*/*', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*/*', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '*/*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '*/*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc', '*/*/*/*', { strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/../abc', '*/.*/*', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('/../abc', '*/*.*/*', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('/../abc', '*/*./*', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*./*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '*/.*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '*/*.*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '*/*./*', { strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/../abc', '**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '**/**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/**/**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc', '**/**/**/**', { strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/.**/**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/.**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '/.**/**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/../abc', '**/**./**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/**./**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/**./**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '/**./**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '**/*.*/**', { strictSlashes: true }));
+
+          assert(!isMatch('/../abc', '/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*.*/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '**/*.*/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '/*.*/**', { strictSlashes: true }));
+        });
+      });
+
+      describe('should not match trailing double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/..', '*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*/', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*/', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/*/*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '*/*/*/*/', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/*/*/*/*', { strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/..', '*/.*', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/.*/', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '*/.*', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/.*/', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*/', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/.*/*/.*/*', { strictSlashes: true }));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/..', '*/*.', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*./', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*./*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '*/*.', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*./', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*./*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/*./*/*.', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '*/*./*/*./', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/*./*/*./*', { strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/..', '**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**/', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**/', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**/**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/**/**/**/', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**/**/**/**', { strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/.**', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/.**', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/.**/**/.**/**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/**.**', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/**.**', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**.**/**/.**/**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/..', '**/**.', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**./', { strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**./**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/**.', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**./', { strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**./**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**./**/**.', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/**./**/**./', { strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**./**/**./**', { strictSlashes: true }));
+        });
+      });
+    });
+
+    describe('options = { dot: true, strictSlashes: true }', () => {
+      describe('should not match leading double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('../abc', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '*/abc', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '*/abc/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('../abc', '.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '.*/abc', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('../abc', '*./*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '*./abc', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('../abc', '**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('../abc', '**/abc', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**/abc/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('../abc', 'abc/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', 'abc/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', 'abc/**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('../abc', '**/abc', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**/abc/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**/abc/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('../abc', '**/**/abc/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**/**/abc/**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('../abc', '.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '.**/abc', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('../abc', '*.*/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '*.*/abc', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('../abc', '**./**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('../abc', '**./abc', { dot: true, strictSlashes: true }));
+        });
+      });
+
+      describe('should not match nested double-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/../abc', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '*/*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '*/*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc', '*/*/*/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/../abc', '*/.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('/../abc', '*/*.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('/../abc', '*/*./*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*./*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '*/.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '*/*.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '*/*./*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/../abc', '**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc', '**/**/**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '/.**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/../abc', '**/**./**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/**./**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/**./**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '/**./**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/../abc', '**/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '**/*.*/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('/../abc', '/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/../abc', '/*.*/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '**/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '**/*.*/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc', '/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc', '/*.*/**', { dot: true, strictSlashes: true }));
+        });
+      });
+
+      describe('should not match trailing double-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/..', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/*/*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '*/*/*/*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/*/*/*/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/..', '*/.*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/.*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '*/.*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/.*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '*/.*/*/.*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/.*/*/.*/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/..', '*/*.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '*/*./*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '*/*.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '*/*./*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '*/*./*/*.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '*/*./*/*./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '*/*./*/*./*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/..', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/**/**/**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**/**/**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/.**/**/.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/.**/**/.**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/..', '**/**.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/**.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/**.**/**/**.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**.**/**/.**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/..', '**/**.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/..', '**/**./**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../', '**/**.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../', '**/**./**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/../abc/../', '**/**./**/**.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/../', '**/**./**/**./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/../abc/abc/../', '**/**./**/**./**', { dot: true, strictSlashes: true }));
+        });
+      });
+    });
+  });
+
+  describe('single dots', () => {
+    describe('no options', () => {
+      describe('should not match leading single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('./abc', '*'));
+          assert(!isMatch('./abc', '*/*'));
+          assert(!isMatch('./abc', '*/abc'));
+          assert(!isMatch('./abc', '*/abc/*'));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('./abc', '.*/*'));
+          assert(!isMatch('./abc', '.*/abc'));
+
+          assert(!isMatch('./abc', '*./*'));
+          assert(!isMatch('./abc', '*./abc'));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('./abc', '**'));
+          assert(!isMatch('./abc', '**/**'));
+          assert(!isMatch('./abc', '**/**/**'));
+
+          assert(!isMatch('./abc', '**/abc'));
+          assert(!isMatch('./abc', '**/abc/**'));
+
+          assert(!isMatch('./abc', 'abc/**'));
+          assert(!isMatch('./abc', 'abc/**/**'));
+          assert(!isMatch('./abc', 'abc/**/**/**'));
+
+          assert(!isMatch('./abc', '**/abc'));
+          assert(!isMatch('./abc', '**/abc/**'));
+          assert(!isMatch('./abc', '**/abc/**/**'));
+
+          assert(!isMatch('./abc', '**/**/abc/**'));
+          assert(!isMatch('./abc', '**/**/abc/**/**'));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('./abc', '.**'));
+          assert(!isMatch('./abc', '.**/**'));
+          assert(!isMatch('./abc', '.**/abc'));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('./abc', '*.*/**'));
+          assert(!isMatch('./abc', '*.*/abc'));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('./abc', '**./**'));
+          assert(!isMatch('./abc', '**./abc'));
+        });
+      });
+
+      describe('should not match nested single-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/./abc', '*/*'));
+          assert(!isMatch('/./abc', '/*/*'));
+          assert(!isMatch('/./abc', '*/*/*'));
+
+          assert(!isMatch('abc/./abc', '*/*/*'));
+          assert(!isMatch('abc/./abc/abc', '*/*/*/*'));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/./abc', '*/.*/*'));
+          assert(!isMatch('/./abc', '/.*/*'));
+
+          assert(!isMatch('/./abc', '*/*.*/*'));
+          assert(!isMatch('/./abc', '/*.*/*'));
+
+          assert(!isMatch('/./abc', '*/*./*'));
+          assert(!isMatch('/./abc', '/*./*'));
+
+          assert(!isMatch('abc/./abc', '*/.*/*'));
+          assert(!isMatch('abc/./abc', '*/*.*/*'));
+          assert(!isMatch('abc/./abc', '*/*./*'));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/./abc', '**'));
+          assert(!isMatch('/./abc', '**/**'));
+          assert(!isMatch('/./abc', '/**/**'));
+          assert(!isMatch('/./abc', '**/**/**'));
+
+          assert(!isMatch('abc/./abc', '**/**/**'));
+          assert(!isMatch('abc/./abc/abc', '**/**/**/**'));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/.**/**'));
+          assert(!isMatch('/./abc', '/.**/**'));
+
+          assert(!isMatch('abc/./abc', '**/.**/**'));
+          assert(!isMatch('abc/./abc', '/.**/**'));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/./abc', '**/**./**'));
+          assert(!isMatch('/./abc', '/**./**'));
+
+          assert(!isMatch('abc/./abc', '**/**./**'));
+          assert(!isMatch('abc/./abc', '/**./**'));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/**.**/**'));
+          assert(!isMatch('/./abc', '**/*.*/**'));
+
+          assert(!isMatch('/./abc', '/**.**/**'));
+          assert(!isMatch('/./abc', '/*.*/**'));
+
+          assert(!isMatch('abc/./abc', '**/**.**/**'));
+          assert(!isMatch('abc/./abc', '**/*.*/**'));
+
+          assert(!isMatch('abc/./abc', '/**.**/**'));
+          assert(!isMatch('abc/./abc', '/*.*/**'));
+        });
+      });
+
+      describe('should not match trailing single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/.', '*/*'));
+          assert(!isMatch('abc/.', '*/*/'));
+          assert(!isMatch('abc/.', '*/*/*'));
+
+          assert(!isMatch('abc/./', '*/*'));
+          assert(!isMatch('abc/./', '*/*/'));
+          assert(!isMatch('abc/./', '*/*/*'));
+
+          assert(!isMatch('abc/./abc/./', '*/*/*/*'));
+          assert(!isMatch('abc/./abc/./', '*/*/*/*/'));
+          assert(!isMatch('abc/./abc/abc/./', '*/*/*/*/*'));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/.', '*/.*'));
+          assert(!isMatch('abc/.', '*/.*/'));
+          assert(!isMatch('abc/.', '*/.*/*'));
+
+          assert(!isMatch('abc/./', '*/.*'));
+          assert(!isMatch('abc/./', '*/.*/'));
+          assert(!isMatch('abc/./', '*/.*/*'));
+
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*'));
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*/'));
+          assert(!isMatch('abc/./abc/abc/./', '*/.*/*/.*/*'));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/.', '*/*.'));
+          assert(!isMatch('abc/.', '*/*./'));
+          assert(!isMatch('abc/.', '*/*./*'));
+
+          assert(!isMatch('abc/./', '*/*.'));
+          assert(!isMatch('abc/./', '*/*./'));
+          assert(!isMatch('abc/./', '*/*./*'));
+
+          assert(!isMatch('abc/./abc/./', '*/*./*/*.'));
+          assert(!isMatch('abc/./abc/./', '*/*./*/*./'));
+          assert(!isMatch('abc/./abc/abc/./', '*/*./*/*./*'));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/.', '**/**'));
+          assert(!isMatch('abc/.', '**/**/'));
+          assert(!isMatch('abc/.', '**/**/**'));
+
+          assert(!isMatch('abc/./', '**/**'));
+          assert(!isMatch('abc/./', '**/**/'));
+          assert(!isMatch('abc/./', '**/**/**'));
+
+          assert(!isMatch('abc/./abc/./', '**/**/**/**'));
+          assert(!isMatch('abc/./abc/./', '**/**/**/**/'));
+          assert(!isMatch('abc/./abc/abc/./', '**/**/**/**/**'));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/.**'));
+          assert(!isMatch('abc/.', '**/.**/'));
+          assert(!isMatch('abc/.', '**/.**/**'));
+
+          assert(!isMatch('abc/./', '**/.**'));
+          assert(!isMatch('abc/./', '**/.**/'));
+          assert(!isMatch('abc/./', '**/.**/**'));
+
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**'));
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**/'));
+          assert(!isMatch('abc/./abc/abc/./', '**/.**/**/.**/**'));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/**.**'));
+          assert(!isMatch('abc/.', '**/**.**/'));
+          assert(!isMatch('abc/.', '**/**.**/**'));
+
+          assert(!isMatch('abc/./', '**/**.**'));
+          assert(!isMatch('abc/./', '**/**.**/'));
+          assert(!isMatch('abc/./', '**/**.**/**'));
+
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**'));
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**/'));
+          assert(!isMatch('abc/./abc/abc/./', '**/**.**/**/.**/**'));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/.', '**/**.'));
+          assert(!isMatch('abc/.', '**/**./'));
+          assert(!isMatch('abc/.', '**/**./**'));
+
+          assert(!isMatch('abc/./', '**/**.'));
+          assert(!isMatch('abc/./', '**/**./'));
+          assert(!isMatch('abc/./', '**/**./**'));
+
+          assert(!isMatch('abc/./abc/./', '**/**./**/**.'));
+          assert(!isMatch('abc/./abc/./', '**/**./**/**./'));
+          assert(!isMatch('abc/./abc/abc/./', '**/**./**/**./**'));
+        });
+      });
+    });
+
+    describe('options = { dot: true }', () => {
+      describe('should not match leading single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('./abc', '*/*', { dot: true }));
+          assert(!isMatch('./abc', '*/abc', { dot: true }));
+          assert(!isMatch('./abc', '*/abc/*', { dot: true }));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('./abc', '.*/*', { dot: true }));
+          assert(!isMatch('./abc', '.*/abc', { dot: true }));
+
+          assert(!isMatch('./abc', '*./*', { dot: true }));
+          assert(!isMatch('./abc', '*./abc', { dot: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('./abc', '**', { dot: true }));
+          assert(!isMatch('./abc', '**/**', { dot: true }));
+          assert(!isMatch('./abc', '**/**/**', { dot: true }));
+
+          assert(!isMatch('./abc', '**/abc', { dot: true }));
+          assert(!isMatch('./abc', '**/abc/**', { dot: true }));
+
+          assert(!isMatch('./abc', 'abc/**', { dot: true }));
+          assert(!isMatch('./abc', 'abc/**/**', { dot: true }));
+          assert(!isMatch('./abc', 'abc/**/**/**', { dot: true }));
+
+          assert(!isMatch('./abc', '**/abc', { dot: true }));
+          assert(!isMatch('./abc', '**/abc/**', { dot: true }));
+          assert(!isMatch('./abc', '**/abc/**/**', { dot: true }));
+
+          assert(!isMatch('./abc', '**/**/abc/**', { dot: true }));
+          assert(!isMatch('./abc', '**/**/abc/**/**', { dot: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('./abc', '.**', { dot: true }));
+          assert(!isMatch('./abc', '.**/**', { dot: true }));
+          assert(!isMatch('./abc', '.**/abc', { dot: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('./abc', '*.*/**', { dot: true }));
+          assert(!isMatch('./abc', '*.*/abc', { dot: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('./abc', '**./**', { dot: true }));
+          assert(!isMatch('./abc', '**./abc', { dot: true }));
+        });
+      });
+
+      describe('should not match nested single-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/./abc', '*/*', { dot: true }));
+          assert(!isMatch('/./abc', '/*/*', { dot: true }));
+          assert(!isMatch('/./abc', '*/*/*', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '*/*/*', { dot: true }));
+          assert(!isMatch('abc/./abc/abc', '*/*/*/*', { dot: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/./abc', '*/.*/*', { dot: true }));
+          assert(!isMatch('/./abc', '/.*/*', { dot: true }));
+
+          assert(!isMatch('/./abc', '*/*.*/*', { dot: true }));
+          assert(!isMatch('/./abc', '/*.*/*', { dot: true }));
+
+          assert(!isMatch('/./abc', '*/*./*', { dot: true }));
+          assert(!isMatch('/./abc', '/*./*', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '*/.*/*', { dot: true }));
+          assert(!isMatch('abc/./abc', '*/*.*/*', { dot: true }));
+          assert(!isMatch('abc/./abc', '*/*./*', { dot: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/./abc', '**', { dot: true }));
+          assert(!isMatch('/./abc', '**/**', { dot: true }));
+          assert(!isMatch('/./abc', '/**/**', { dot: true }));
+          assert(!isMatch('/./abc', '**/**/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '**/**/**', { dot: true }));
+          assert(!isMatch('abc/./abc/abc', '**/**/**/**', { dot: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/.**/**', { dot: true }));
+          assert(!isMatch('/./abc', '/.**/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '**/.**/**', { dot: true }));
+          assert(!isMatch('abc/./abc', '/.**/**', { dot: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/./abc', '**/**./**', { dot: true }));
+          assert(!isMatch('/./abc', '/**./**', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '**/**./**', { dot: true }));
+          assert(!isMatch('abc/./abc', '/**./**', { dot: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/**.**/**', { dot: true }));
+          assert(!isMatch('/./abc', '**/*.*/**', { dot: true }));
+
+          assert(!isMatch('/./abc', '/**.**/**', { dot: true }));
+          assert(!isMatch('/./abc', '/*.*/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '**/**.**/**', { dot: true }));
+          assert(!isMatch('abc/./abc', '**/*.*/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc', '/**.**/**', { dot: true }));
+          assert(!isMatch('abc/./abc', '/*.*/**', { dot: true }));
+        });
+      });
+
+      describe('should not match trailing single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/.', '*/*', { dot: true }));
+          assert(!isMatch('abc/.', '*/*/', { dot: true }));
+          assert(!isMatch('abc/.', '*/*/*', { dot: true }));
+
+          assert(!isMatch('abc/./', '*/*', { dot: true }));
+          assert(!isMatch('abc/./', '*/*/', { dot: true }));
+          assert(!isMatch('abc/./', '*/*/*', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/*/*/*', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '*/*/*/*/', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/*/*/*/*', { dot: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/.', '*/.*', { dot: true }));
+          assert(!isMatch('abc/.', '*/.*/', { dot: true }));
+          assert(!isMatch('abc/.', '*/.*/*', { dot: true }));
+
+          assert(!isMatch('abc/./', '*/.*', { dot: true }));
+          assert(!isMatch('abc/./', '*/.*/', { dot: true }));
+          assert(!isMatch('abc/./', '*/.*/*', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*/', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/.*/*/.*/*', { dot: true }));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/.', '*/*.', { dot: true }));
+          assert(!isMatch('abc/.', '*/*./', { dot: true }));
+          assert(!isMatch('abc/.', '*/*./*', { dot: true }));
+
+          assert(!isMatch('abc/./', '*/*.', { dot: true }));
+          assert(!isMatch('abc/./', '*/*./', { dot: true }));
+          assert(!isMatch('abc/./', '*/*./*', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/*./*/*.', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '*/*./*/*./', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/*./*/*./*', { dot: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/.', '**/**', { dot: true }));
+          assert(!isMatch('abc/.', '**/**/', { dot: true }));
+          assert(!isMatch('abc/.', '**/**/**', { dot: true }));
+
+          assert(!isMatch('abc/./', '**/**', { dot: true }));
+          assert(!isMatch('abc/./', '**/**/', { dot: true }));
+          assert(!isMatch('abc/./', '**/**/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**/**/**', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '**/**/**/**/', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**/**/**/**', { dot: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/.**', { dot: true }));
+          assert(!isMatch('abc/.', '**/.**/', { dot: true }));
+          assert(!isMatch('abc/.', '**/.**/**', { dot: true }));
+
+          assert(!isMatch('abc/./', '**/.**', { dot: true }));
+          assert(!isMatch('abc/./', '**/.**/', { dot: true }));
+          assert(!isMatch('abc/./', '**/.**/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**/', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/.**/**/.**/**', { dot: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/**.**', { dot: true }));
+          assert(!isMatch('abc/.', '**/**.**/', { dot: true }));
+          assert(!isMatch('abc/.', '**/**.**/**', { dot: true }));
+
+          assert(!isMatch('abc/./', '**/**.**', { dot: true }));
+          assert(!isMatch('abc/./', '**/**.**/', { dot: true }));
+          assert(!isMatch('abc/./', '**/**.**/**', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**/', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**.**/**/.**/**', { dot: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/.', '**/**.', { dot: true }));
+          assert(!isMatch('abc/.', '**/**./', { dot: true }));
+          assert(!isMatch('abc/.', '**/**./**', { dot: true }));
+
+          assert(!isMatch('abc/./', '**/**.', { dot: true }));
+          assert(!isMatch('abc/./', '**/**./', { dot: true }));
+          assert(!isMatch('abc/./', '**/**./**', { dot: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**./**/**.', { dot: true }));
+          assert(!isMatch('abc/./abc/./', '**/**./**/**./', { dot: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**./**/**./**', { dot: true }));
+        });
+      });
+    });
+
+    describe('options = { strictSlashes: true }', () => {
+      describe('should not match leading single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('./abc', '*/*', { strictSlashes: true }));
+          assert(!isMatch('./abc', '*/abc', { strictSlashes: true }));
+          assert(!isMatch('./abc', '*/abc/*', { strictSlashes: true }));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('./abc', '.*/*', { strictSlashes: true }));
+          assert(!isMatch('./abc', '.*/abc', { strictSlashes: true }));
+
+          assert(!isMatch('./abc', '*./*', { strictSlashes: true }));
+          assert(!isMatch('./abc', '*./abc', { strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('./abc', '**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('./abc', '**/abc', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**/abc/**', { strictSlashes: true }));
+
+          assert(!isMatch('./abc', 'abc/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', 'abc/**/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', 'abc/**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('./abc', '**/abc', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**/abc/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**/abc/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('./abc', '**/**/abc/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**/**/abc/**/**', { strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('./abc', '.**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '.**/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '.**/abc', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('./abc', '*.*/**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '*.*/abc', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('./abc', '**./**', { strictSlashes: true }));
+          assert(!isMatch('./abc', '**./abc', { strictSlashes: true }));
+        });
+      });
+
+      describe('should not match nested single-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/./abc', '*/*', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*/*', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '*/*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '*/*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc', '*/*/*/*', { strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/./abc', '*/.*/*', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('/./abc', '*/*.*/*', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('/./abc', '*/*./*', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*./*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '*/.*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '*/*.*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '*/*./*', { strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/./abc', '**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '**/**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/**/**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc', '**/**/**/**', { strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/.**/**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/.**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '/.**/**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/./abc', '**/**./**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/**./**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/**./**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '/**./**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '**/*.*/**', { strictSlashes: true }));
+
+          assert(!isMatch('/./abc', '/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*.*/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '**/*.*/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '/**.**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '/*.*/**', { strictSlashes: true }));
+        });
+      });
+
+      describe('should not match trailing single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/.', '*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*/', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*/', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/*/*/*', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '*/*/*/*/', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/*/*/*/*', { strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/.', '*/.*', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/.*/', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '*/.*', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/.*/', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/.*/*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*/', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/.*/*/.*/*', { strictSlashes: true }));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/.', '*/*.', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*./', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*./*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '*/*.', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*./', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*./*', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/*./*/*.', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '*/*./*/*./', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/*./*/*./*', { strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/.', '**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**/', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**/', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**/**/**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/**/**/**/', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**/**/**/**', { strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/.**', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/.**', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/.**/**/.**/**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/**.**', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/**.**', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**.**/**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**/', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**.**/**/.**/**', { strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/.', '**/**.', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**./', { strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**./**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/**.', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**./', { strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**./**', { strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**./**/**.', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/**./**/**./', { strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**./**/**./**', { strictSlashes: true }));
+        });
+      });
+    });
+
+    describe('options = { dot: true, strictSlashes: true }', () => {
+      describe('should not match leading single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('./abc', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '*/abc', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '*/abc/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + single star', () => {
+          assert(!isMatch('./abc', '.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '.*/abc', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('./abc', '*./*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '*./abc', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('./abc', '**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('./abc', '**/abc', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**/abc/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('./abc', 'abc/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', 'abc/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', 'abc/**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('./abc', '**/abc', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**/abc/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**/abc/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('./abc', '**/**/abc/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**/**/abc/**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('./abc', '.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '.**/abc', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('./abc', '*.*/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '*.*/abc', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('./abc', '**./**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('./abc', '**./abc', { dot: true, strictSlashes: true }));
+        });
+      });
+
+      describe('should not match nested single-dots', () => {
+        it('with star', () => {
+          assert(!isMatch('/./abc', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '*/*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '*/*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc', '*/*/*/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('/./abc', '*/.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('/./abc', '*/*.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('/./abc', '*/*./*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*./*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '*/.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '*/*.*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '*/*./*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('/./abc', '**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc', '**/**/**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '/.**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('/./abc', '**/**./**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/**./**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/**./**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '/**./**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('/./abc', '**/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '**/*.*/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('/./abc', '/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('/./abc', '/*.*/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '**/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '**/*.*/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc', '/**.**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc', '/*.*/**', { dot: true, strictSlashes: true }));
+        });
+      });
+
+      describe('should not match trailing single-dots', () => {
+        it('with single star', () => {
+          assert(!isMatch('abc/.', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/*/*/*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '*/*/*/*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/*/*/*/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + star', () => {
+          assert(!isMatch('abc/.', '*/.*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/.*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '*/.*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/.*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/.*/*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '*/.*/*/.*/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/.*/*/.*/*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with star + dot', () => {
+          assert(!isMatch('abc/.', '*/*.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '*/*./*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '*/*.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '*/*./*', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '*/*./*/*.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '*/*./*/*./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '*/*./*/*./*', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar', () => {
+          assert(!isMatch('abc/.', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**/**/**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/**/**/**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**/**/**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/.**/**/.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/.**/**/.**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot + globstar', () => {
+          assert(!isMatch('abc/.', '**/**.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/**.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**.**/**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/**.**/**/**.**/', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**.**/**/.**/**', { dot: true, strictSlashes: true }));
+        });
+
+        it('with globstar + dot', () => {
+          assert(!isMatch('abc/.', '**/**.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/.', '**/**./**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./', '**/**.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./', '**/**./**', { dot: true, strictSlashes: true }));
+
+          assert(!isMatch('abc/./abc/./', '**/**./**/**.', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/./', '**/**./**/**./', { dot: true, strictSlashes: true }));
+          assert(!isMatch('abc/./abc/abc/./', '**/**./**/**./**', { dot: true, strictSlashes: true }));
+        });
+      });
+    });
+  });
+});
+```
+
+## File: `test/extglobs-bash.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+/**
+ * Some of tests were converted from bash 4.3, 4.4, and minimatch unit tests.
+ */
+
+describe('extglobs (bash)', () => {
+  it('should not match empty string with "*(0|1|3|5|7|9)"', () => {
+    assert(!isMatch('', '*(0|1|3|5|7|9)', { bash: true, windows: true }));
+  });
+
+  it('"*(a|b[)" should not match "*(a|b\\[)"', () => {
+    assert(!isMatch('*(a|b[)', '*(a|b\\[)', { bash: true, windows: true }));
+  });
+
+  it('"*(a|b[)" should not match "\\*\\(a|b\\[\\)"', () => {
+    assert(!isMatch('*(a|b[)', '\\*\\(a|b\\[\\)', { bash: true, windows: true }));
+  });
+
+  it('"***" should match "\\*\\*\\*"', () => {
+    assert(isMatch('***', '\\*\\*\\*', { bash: true, windows: true }));
+  });
+
+  it('"-adobe-courier-bold-o-normal--12-120-75-75-/-70-iso8859-1" should not match "-*-*-*-*-*-*-12-*-*-*-m-*-*-*"', () => {
+    assert(!isMatch('-adobe-courier-bold-o-normal--12-120-75-75-/-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*', { bash: true, windows: true }));
+  });
+
+  it('"-adobe-courier-bold-o-normal--12-120-75-75-m-70-iso8859-1" should match "-*-*-*-*-*-*-12-*-*-*-m-*-*-*"', () => {
+    assert(isMatch('-adobe-courier-bold-o-normal--12-120-75-75-m-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*', { bash: true, windows: true }));
+  });
+
+  it('"-adobe-courier-bold-o-normal--12-120-75-75-X-70-iso8859-1" should not match "-*-*-*-*-*-*-12-*-*-*-m-*-*-*"', () => {
+    assert(!isMatch('-adobe-courier-bold-o-normal--12-120-75-75-X-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*', { bash: true, windows: true }));
+  });
+
+  it('"/dev/udp/129.22.8.102/45" should match "/dev\\/@(tcp|udp)\\/*\\/*"', () => {
+    assert(isMatch('/dev/udp/129.22.8.102/45', '/dev\\/@(tcp|udp)\\/*\\/*', { bash: true, windows: true }));
+  });
+
+  it('"/x/y/z" should match "/x/y/z"', () => {
+    assert(isMatch('/x/y/z', '/x/y/z', { bash: true, windows: true }));
+  });
+
+  it('"0377" should match "+([0-7])"', () => {
+    assert(isMatch('0377', '+([0-7])', { bash: true, windows: true }));
+  });
+
+  it('"07" should match "+([0-7])"', () => {
+    assert(isMatch('07', '+([0-7])', { bash: true, windows: true }));
+  });
+
+  it('"09" should not match "+([0-7])"', () => {
+    assert(!isMatch('09', '+([0-7])', { bash: true, windows: true }));
+  });
+
+  it('"1" should match "0|[1-9]*([0-9])"', () => {
+    assert(isMatch('1', '0|[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"12" should match "0|[1-9]*([0-9])"', () => {
+    assert(isMatch('12', '0|[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "(a+|b)*"', () => {
+    assert(!isMatch('123abc', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "(a+|b)+"', () => {
+    assert(!isMatch('123abc', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should match "*?(a)bc"', () => {
+    assert(isMatch('123abc', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('123abc', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab**"', () => {
+    assert(!isMatch('123abc', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab**(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('123abc', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab***ef"', () => {
+    assert(!isMatch('123abc', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"123abc" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"12abc" should not match "0|[1-9]*([0-9])"', () => {
+    assert(!isMatch('12abc', '0|[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"137577991" should match "*(0|1|3|5|7|9)"', () => {
+    assert(isMatch('137577991', '*(0|1|3|5|7|9)', { bash: true, windows: true }));
+  });
+
+  it('"2468" should not match "*(0|1|3|5|7|9)"', () => {
+    assert(!isMatch('2468', '*(0|1|3|5|7|9)', { bash: true, windows: true }));
+  });
+
+  it('"?a?b" should match "\\??\\?b"', () => {
+    assert(isMatch('?a?b', '\\??\\?b', { bash: true, windows: true }));
+  });
+
+  it('"\\a\\b\\c" should not match "abc"', () => {
+    assert(!isMatch('\\a\\b\\c', 'abc', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a" should not match "!(a)"', () => {
+    assert(!isMatch('a', '!(a)', { bash: true, windows: true }));
+  });
+
+  it('"a" should not match "!(a)*"', () => {
+    assert(!isMatch('a', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "(a)"', () => {
+    assert(isMatch('a', '(a)', { bash: true, windows: true }));
+  });
+
+  it('"a" should not match "(b)"', () => {
+    assert(!isMatch('a', '(b)', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "*(a)"', () => {
+    assert(isMatch('a', '*(a)', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "+(a)"', () => {
+    assert(isMatch('a', '+(a)', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "?"', () => {
+    assert(isMatch('a', '?', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "?(a|b)"', () => {
+    assert(isMatch('a', '?(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a" should not match "??"', () => {
+    assert(!isMatch('a', '??', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "a!(b)*"', () => {
+    assert(isMatch('a', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "a?(a|b)"', () => {
+    assert(isMatch('a', 'a?(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a" should match "a?(x)"', () => {
+    assert(isMatch('a', 'a?(x)', { bash: true, windows: true }));
+  });
+
+  it('"a" should not match "a??b"', () => {
+    assert(!isMatch('a', 'a??b', { bash: true, windows: true }));
+  });
+
+  it('"a" should not match "b?(a|b)"', () => {
+    assert(!isMatch('a', 'b?(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a((((b" should match "a(*b"', () => {
+    assert(isMatch('a((((b', 'a(*b', { bash: true, windows: true }));
+  });
+
+  it('"a((((b" should not match "a(b"', () => {
+    assert(!isMatch('a((((b', 'a(b', { bash: true, windows: true }));
+  });
+
+  it('"a((((b" should not match "a\\(b"', () => {
+    assert(!isMatch('a((((b', 'a\\(b', { bash: true, windows: true }));
+  });
+
+  it('"a((b" should match "a(*b"', () => {
+    assert(isMatch('a((b', 'a(*b', { bash: true, windows: true }));
+  });
+
+  it('"a((b" should not match "a(b"', () => {
+    assert(!isMatch('a((b', 'a(b', { bash: true, windows: true }));
+  });
+
+  it('"a((b" should not match "a\\(b"', () => {
+    assert(!isMatch('a((b', 'a\\(b', { bash: true, windows: true }));
+  });
+
+  it('"a(b" should match "a(*b"', () => {
+    assert(isMatch('a(b', 'a(*b', { bash: true, windows: true }));
+  });
+
+  it('"a(b" should match "a(b"', () => {
+    assert(isMatch('a(b', 'a(b', { bash: true, windows: true }));
+  });
+
+  it('"a\\(b" should match "a\\(b"', () => {
+    assert(isMatch('a\\(b', 'a\\(b', { bash: true, windows: true }));
+  });
+
+  it('"a(b" should match "a\\(b"', () => {
+    assert(isMatch('a(b', 'a\\(b', { bash: true, windows: true }));
+  });
+
+  it('"a." should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a.', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a." should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"a." should match "*.!(a)"', () => {
+    assert(isMatch('a.', '*.!(a)', { bash: true, windows: true }));
+  });
+
+  it('"a." should match "*.!(a|b|c)"', () => {
+    assert(isMatch('a.', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"a." should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('a.', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"a." should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.a', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('a.a', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.a', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('a.a', '!*.(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.a', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should match "(a|d).(a|b)*"', () => {
+    assert(isMatch('a.a', '(a|d).(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should match "(b|a).(a)"', () => {
+    assert(isMatch('a.a', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.a', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "*.!(a)"', () => {
+    assert(!isMatch('a.a', '*.!(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('a.a', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(isMatch('a.a', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.a', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"a.a" should match "@(b|a).@(a)"', () => {
+    assert(isMatch('a.a', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.a.a" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.a.a', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.a.a" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.a.a', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.a.a" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('a.a.a', '!*.(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a.a.a" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.a.a', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.a.a" should match "*.!(a)"', () => {
+    assert(isMatch('a.a.a', '*.!(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.a.a" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.a.a', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"a.aa.a" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('a.aa.a', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.aa.a" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('a.aa.a', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a.abcd', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should not match "!(*.a|*.b|*.c)*"', () => {
+    assert(!isMatch('a.abcd', '!(*.a|*.b|*.c)*', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should match "*!(*.a|*.b|*.c)*"', () => {
+    assert(isMatch('a.abcd', '*!(*.a|*.b|*.c)*', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.abcd', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('a.abcd', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should not match "*.!(a|b|c)*"', () => {
+    assert(!isMatch('a.abcd', '*.!(a|b|c)*', { bash: true, windows: true }));
+  });
+
+  it('"a.abcd" should match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(isMatch('a.abcd', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "!(*.*)"', () => {
+    assert(!isMatch('a.b', '!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.b', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('a.b', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.b', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('a.b', '!*.(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.b', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should match "(a|d).(a|b)*"', () => {
+    assert(isMatch('a.b', '(a|d).(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.b', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should match "*.!(a)"', () => {
+    assert(isMatch('a.b', '*.!(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('a.b', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(isMatch('a.b', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"a.b" should match "*.+(b|d)"', () => {
+    assert(isMatch('a.b', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.bb', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.bb', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should match "!*.(a|b)"', () => {
+    assert(isMatch('a.bb', '!*.(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.bb', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should not match "!*.*(a|b)"', () => {
+    assert(!isMatch('a.bb', '!*.*(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should match "(a|d).(a|b)*"', () => {
+    assert(isMatch('a.bb', '(a|d).(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('a.bb', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should match "*.+(b|d)"', () => {
+    assert(isMatch('a.bb', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"a.bb" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('a.bb', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"a.c" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('a.c', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.c" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.c', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.c" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('a.c', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"a.c" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('a.c', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"a.c.d" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a.c.d', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.c.d" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.c.d', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"a.c.d" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('a.c.d', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"a.c.d" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('a.c.d', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"a.ccc" should match "!(*.[a-b]*)"', () => {
+    assert(isMatch('a.ccc', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.ccc" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('a.ccc', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"a.ccc" should match "!*.(a|b)"', () => {
+    assert(isMatch('a.ccc', '!*.(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"a.ccc" should match "!*.(a|b)*"', () => {
+    assert(isMatch('a.ccc', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"a.ccc" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.ccc', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"a.js" should not match "!(*.js)"', () => {
+    assert(!isMatch('a.js', '!(*.js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js" should match "*!(.js)"', () => {
+    assert(isMatch('a.js', '*!(.js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js" should not match "*.!(js)"', () => {
+    assert(!isMatch('a.js', '*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js" should not match "a.!(js)"', () => {
+    assert(!isMatch('a.js', 'a.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js" should not match "a.!(js)*"', () => {
+    assert(!isMatch('a.js', 'a.!(js)*', { bash: true, windows: true }));
+  });
+
+  it('"a.js.js" should not match "!(*.js)"', () => {
+    assert(!isMatch('a.js.js', '!(*.js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js.js" should match "*!(.js)"', () => {
+    assert(isMatch('a.js.js', '*!(.js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js.js" should match "*.!(js)"', () => {
+    assert(isMatch('a.js.js', '*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"a.js.js" should match "*.*(js).js"', () => {
+    assert(isMatch('a.js.js', '*.*(js).js', { bash: true, windows: true }));
+  });
+
+  it('"a.md" should match "!(*.js)"', () => {
+    assert(isMatch('a.md', '!(*.js)', { bash: true, windows: true }));
+  });
+
+  it('"a.md" should match "*!(.js)"', () => {
+    assert(isMatch('a.md', '*!(.js)', { bash: true, windows: true }));
+  });
+
+  it('"a.md" should match "*.!(js)"', () => {
+    assert(isMatch('a.md', '*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"a.md" should match "a.!(js)"', () => {
+    assert(isMatch('a.md', 'a.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"a.md" should match "a.!(js)*"', () => {
+    assert(isMatch('a.md', 'a.!(js)*', { bash: true, windows: true }));
+  });
+
+  it('"a.md.js" should not match "*.*(js).js"', () => {
+    assert(!isMatch('a.md.js', '*.*(js).js', { bash: true, windows: true }));
+  });
+
+  it('"a.txt" should match "a.!(js)"', () => {
+    assert(isMatch('a.txt', 'a.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"a.txt" should match "a.!(js)*"', () => {
+    assert(isMatch('a.txt', 'a.!(js)*', { bash: true, windows: true }));
+  });
+
+  it('"a/!(z)" should match "a/!(z)"', () => {
+    assert(isMatch('a/!(z)', 'a/!(z)', { bash: true, windows: true }));
+  });
+
+  it('"a/b" should match "a/!(z)"', () => {
+    assert(isMatch('a/b', 'a/!(z)', { bash: true, windows: true }));
+  });
+
+  it('"a/b/c.txt" should not match "*/b/!(*).txt"', () => {
+    assert(!isMatch('a/b/c.txt', '*/b/!(*).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/b/c.txt" should not match "*/b/!(c).txt"', () => {
+    assert(!isMatch('a/b/c.txt', '*/b/!(c).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/b/c.txt" should match "*/b/!(cc).txt"', () => {
+    assert(isMatch('a/b/c.txt', '*/b/!(cc).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/b/cc.txt" should not match "*/b/!(*).txt"', () => {
+    assert(!isMatch('a/b/cc.txt', '*/b/!(*).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/b/cc.txt" should not match "*/b/!(c).txt"', () => {
+    assert(!isMatch('a/b/cc.txt', '*/b/!(c).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/b/cc.txt" should not match "*/b/!(cc).txt"', () => {
+    assert(!isMatch('a/b/cc.txt', '*/b/!(cc).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/dir/foo.txt" should match "*/dir/**/!(bar).txt"', () => {
+    assert(isMatch('a/dir/foo.txt', '*/dir/**/!(bar).txt', { bash: true, windows: true }));
+  });
+
+  it('"a/z" should not match "a/!(z)"', () => {
+    assert(!isMatch('a/z', 'a/!(z)', { bash: true, windows: true }));
+  });
+
+  it('"a\\(b" should not match "a(*b"', () => {
+    assert(!isMatch('a\\(b', 'a(*b', { bash: true, windows: true }));
+  });
+
+  it('"a\\(b" should not match "a(b"', () => {
+    assert(!isMatch('a\\(b', 'a(b', { bash: true, windows: true }));
+  });
+
+  it('"a\\z" should match "a\\z"', () => {
+    assert(isMatch('a\\\\z', 'a\\\\z', { bash: true, windows: false }));
+  });
+
+  it('"a\\z" should match "a\\z"', () => {
+    assert(isMatch('a\\\\z', 'a\\\\z', { bash: true, windows: true }));
+  });
+
+  it('"a\\b" should match "a/b"', () => {
+    assert(isMatch('a\\b', 'a/b', { windows: true }));
+  });
+
+  it('"a\\z" should match "a\\z"', () => {
+    assert(isMatch('a\\\\z', 'a\\\\z', { bash: true, windows: true }));
+    assert(isMatch('a\\z', 'a\\z', { bash: true, windows: true }));
+  });
+
+  it('"a\\z" should not match "a\\z"', () => {
+    assert(isMatch('a\\z', 'a\\z', { bash: true, windows: true }));
+  });
+
+  it('"aa" should not match "!(a!(b))"', () => {
+    assert(!isMatch('aa', '!(a!(b))', { bash: true, windows: true }));
+  });
+
+  it('"aa" should match "!(a)"', () => {
+    assert(isMatch('aa', '!(a)', { bash: true, windows: true }));
+  });
+
+  it('"aa" should not match "!(a)*"', () => {
+    assert(!isMatch('aa', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"aa" should not match "?"', () => {
+    assert(!isMatch('aa', '?', { bash: true, windows: true }));
+  });
+
+  it('"aa" should not match "@(a)b"', () => {
+    assert(!isMatch('aa', '@(a)b', { bash: true, windows: true }));
+  });
+
+  it('"aa" should match "a!(b)*"', () => {
+    assert(isMatch('aa', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"aa" should not match "a??b"', () => {
+    assert(!isMatch('aa', 'a??b', { bash: true, windows: true }));
+  });
+
+  it('"aa.aa" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('aa.aa', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"aa.aa" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('aa.aa', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"aaa" should not match "!(a)*"', () => {
+    assert(!isMatch('aaa', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"aaa" should match "a!(b)*"', () => {
+    assert(isMatch('aaa', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"aaaaaaabababab" should match "*ab"', () => {
+    assert(isMatch('aaaaaaabababab', '*ab', { bash: true, windows: true }));
+  });
+
+  it('"aaac" should match "*(@(a))a@(c)"', () => {
+    assert(isMatch('aaac', '*(@(a))a@(c)', { bash: true, windows: true }));
+  });
+
+  it('"aaaz" should match "[a*(]*z"', () => {
+    assert(isMatch('aaaz', '[a*(]*z', { bash: true, windows: true }));
+  });
+
+  it('"aab" should not match "!(a)*"', () => {
+    assert(!isMatch('aab', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"aab" should not match "?"', () => {
+    assert(!isMatch('aab', '?', { bash: true, windows: true }));
+  });
+
+  it('"aab" should not match "??"', () => {
+    assert(!isMatch('aab', '??', { bash: true, windows: true }));
+  });
+
+  it('"aab" should not match "@(c)b"', () => {
+    assert(!isMatch('aab', '@(c)b', { bash: true, windows: true }));
+  });
+
+  it('"aab" should match "a!(b)*"', () => {
+    assert(isMatch('aab', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"aab" should not match "a??b"', () => {
+    assert(!isMatch('aab', 'a??b', { bash: true, windows: true }));
+  });
+
+  it('"aac" should match "*(@(a))a@(c)"', () => {
+    assert(isMatch('aac', '*(@(a))a@(c)', { bash: true, windows: true }));
+  });
+
+  it('"aac" should not match "*(@(a))b@(c)"', () => {
+    assert(!isMatch('aac', '*(@(a))b@(c)', { bash: true, windows: true }));
+  });
+
+  it('"aax" should not match "a!(a*|b)"', () => {
+    assert(!isMatch('aax', 'a!(a*|b)', { bash: true, windows: true }));
+  });
+
+  it('"aax" should match "a!(x*|b)"', () => {
+    assert(isMatch('aax', 'a!(x*|b)', { bash: true, windows: true }));
+  });
+
+  it('"aax" should match "a?(a*|b)"', () => {
+    assert(isMatch('aax', 'a?(a*|b)', { bash: true, windows: true }));
+  });
+
+  it('"aaz" should match "[a*(]*z"', () => {
+    assert(isMatch('aaz', '[a*(]*z', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "!(*.*)"', () => {
+    assert(isMatch('ab', '!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "!(a!(b))"', () => {
+    assert(isMatch('ab', '!(a!(b))', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "!(a)*"', () => {
+    assert(!isMatch('ab', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "@(a+|b)*"', () => {
+    assert(isMatch('ab', '@(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "(a+|b)+"', () => {
+    assert(isMatch('ab', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "*?(a)bc"', () => {
+    assert(!isMatch('ab', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a!(*(b|B))"', () => {
+    assert(!isMatch('ab', 'a!(*(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a!(@(b|B))"', () => {
+    assert(!isMatch('ab', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"aB" should not match "a!(@(b|B))"', () => {
+    assert(!isMatch('aB', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a!(b)*"', () => {
+    assert(!isMatch('ab', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a(*b"', () => {
+    assert(!isMatch('ab', 'a(*b', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a(b"', () => {
+    assert(!isMatch('ab', 'a(b', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('ab', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "a/b"', () => {
+    assert(!isMatch('ab', 'a/b', { windows: true }));
+  });
+
+  it('"ab" should not match "a\\(b"', () => {
+    assert(!isMatch('ab', 'a\\(b', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "ab*(e|f)"', () => {
+    assert(isMatch('ab', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "ab**"', () => {
+    assert(isMatch('ab', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"ab" should match "ab**(e|f)"', () => {
+    assert(isMatch('ab', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('ab', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "ab***ef"', () => {
+    assert(!isMatch('ab', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('ab', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('ab', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"ab" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('ab', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should match "**/*X*/**/*i"', () => {
+    assert(isMatch('ab/cXd/efXg/hi', '**/*X*/**/*i', { bash: true, windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should match "*/*X*/*/*i"', () => {
+    assert(isMatch('ab/cXd/efXg/hi', '*/*X*/*/*i', { bash: true, windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should match "*X*i"', () => {
+    assert(isMatch('ab/cXd/efXg/hi', '*X*i', { bash: true, windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should match "*Xg*i"', () => {
+    assert(isMatch('ab/cXd/efXg/hi', '*Xg*i', { bash: true, windows: true }));
+  });
+
+  it('"ab]" should match "a!(@(b|B))"', () => {
+    assert(isMatch('ab]', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"abab" should match "(a+|b)*"', () => {
+    assert(isMatch('abab', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"abab" should match "(a+|b)+"', () => {
+    assert(isMatch('abab', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abab', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abab', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abab', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abab" should match "ab**"', () => {
+    assert(isMatch('abab', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"abab" should match "ab**(e|f)"', () => {
+    assert(isMatch('abab', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abab', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "ab***ef"', () => {
+    assert(!isMatch('abab', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('abab', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abab', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abab" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('abab', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abb" should match "!(*.*)"', () => {
+    assert(isMatch('abb', '!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"abb" should not match "!(a)*"', () => {
+    assert(!isMatch('abb', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"abb" should not match "a!(b)*"', () => {
+    assert(!isMatch('abb', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"abbcd" should match "@(ab|a*(b))*(c)d"', () => {
+    assert(isMatch('abbcd', '@(ab|a*(b))*(c)d', { bash: true, windows: true }));
+  });
+
+  it('"abc" should not match "\\a\\b\\c"', () => {
+    assert(!isMatch('abc', '\\a\\b\\c', { bash: true, windows: true }));
+  });
+
+  it('"aBc" should match "a!(@(b|B))"', () => {
+    assert(isMatch('aBc', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"abcd" should match "?@(a|b)*@(c)d"', () => {
+    assert(isMatch('abcd', '?@(a|b)*@(c)d', { bash: true, windows: true }));
+  });
+
+  it('"abcd" should match "@(ab|a*@(b))*(c)d"', () => {
+    assert(isMatch('abcd', '@(ab|a*@(b))*(c)d', { bash: true, windows: true }));
+  });
+
+  it('"abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txt" should match "**/*a*b*g*n*t"', () => {
+    assert(isMatch('abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txt', '**/*a*b*g*n*t', { bash: true, windows: true }));
+  });
+
+  it('"abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txtz" should not match "**/*a*b*g*n*t"', () => {
+    assert(!isMatch('abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txtz', '**/*a*b*g*n*t', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should match "(a+|b)*"', () => {
+    assert(isMatch('abcdef', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abcdef', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abcdef', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abcdef', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abcdef', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should match "ab**"', () => {
+    assert(isMatch('abcdef', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should match "ab**(e|f)"', () => {
+    assert(isMatch('abcdef', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abcdef', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should match "ab***ef"', () => {
+    assert(isMatch('abcdef', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should match "ab*+(e|f)"', () => {
+    assert(isMatch('abcdef', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should match "ab*d+(e|f)"', () => {
+    assert(isMatch('abcdef', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcdef" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('abcdef', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should match "(a+|b)*"', () => {
+    assert(isMatch('abcfef', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abcfef', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abcfef', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abcfef', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abcfef', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should match "ab**"', () => {
+    assert(isMatch('abcfef', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should match "ab**(e|f)"', () => {
+    assert(isMatch('abcfef', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abcfef', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should match "ab***ef"', () => {
+    assert(isMatch('abcfef', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should match "ab*+(e|f)"', () => {
+    assert(isMatch('abcfef', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abcfef', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfef" should match "ab?*(e|f)"', () => {
+    assert(isMatch('abcfef', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should match "(a+|b)*"', () => {
+    assert(isMatch('abcfefg', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abcfefg', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abcfefg', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abcfefg', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should match "ab**"', () => {
+    assert(isMatch('abcfefg', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should match "ab**(e|f)"', () => {
+    assert(isMatch('abcfefg', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should match "ab**(e|f)g"', () => {
+    assert(isMatch('abcfefg', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab***ef"', () => {
+    assert(!isMatch('abcfefg', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abcx" should match "!([[*])*"', () => {
+    assert(isMatch('abcx', '!([[*])*', { bash: true, windows: true }));
+  });
+
+  it('"abcx" should match "+(a|b\\[)*"', () => {
+    assert(isMatch('abcx', '+(a|b\\[)*', { bash: true, windows: true }));
+  });
+
+  it('"abcx" should not match "[a*(]*z"', () => {
+    assert(!isMatch('abcx', '[a*(]*z', { bash: true, windows: true }));
+  });
+
+  it('"abcXdefXghi" should match "*X*i"', () => {
+    assert(isMatch('abcXdefXghi', '*X*i', { bash: true, windows: true }));
+  });
+
+  it('"abcz" should match "!([[*])*"', () => {
+    assert(isMatch('abcz', '!([[*])*', { bash: true, windows: true }));
+  });
+
+  it('"abcz" should match "+(a|b\\[)*"', () => {
+    assert(isMatch('abcz', '+(a|b\\[)*', { bash: true, windows: true }));
+  });
+
+  it('"abcz" should match "[a*(]*z"', () => {
+    assert(isMatch('abcz', '[a*(]*z', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "(a+|b)*"', () => {
+    assert(isMatch('abd', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abd', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abd', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "a!(*(b|B))"', () => {
+    assert(isMatch('abd', 'a!(*(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "a!(@(b|B))"', () => {
+    assert(isMatch('abd', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "a!(@(b|B))d"', () => {
+    assert(!isMatch('abd', 'a!(@(b|B))d', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "a(b*(foo|bar))d"', () => {
+    assert(isMatch('abd', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "a+(b|c)d"', () => {
+    assert(isMatch('abd', 'a+(b|c)d', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "a[b*(foo|bar)]d"', () => {
+    assert(isMatch('abd', 'a[b*(foo|bar)]d', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abd', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "ab**"', () => {
+    assert(isMatch('abd', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "ab**(e|f)"', () => {
+    assert(isMatch('abd', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abd', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "ab***ef"', () => {
+    assert(!isMatch('abd', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('abd', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abd" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abd', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abd" should match "ab?*(e|f)"', () => {
+    assert(isMatch('abd', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "(a+|b)*"', () => {
+    assert(isMatch('abef', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"abef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abef', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"abef" should not match "*(a+|b)"', () => {
+    assert(!isMatch('abef', '*(a+|b)', { bash: true, windows: true }));
+  });
+
+  it('"abef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abef', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"abef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abef', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "ab*(e|f)"', () => {
+    assert(isMatch('abef', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "ab**"', () => {
+    assert(isMatch('abef', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "ab**(e|f)"', () => {
+    assert(isMatch('abef', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abef', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "ab***ef"', () => {
+    assert(isMatch('abef', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "ab*+(e|f)"', () => {
+    assert(isMatch('abef', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abef" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abef', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abef" should match "ab?*(e|f)"', () => {
+    assert(isMatch('abef', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should not match "a!(*)"', () => {
+    assert(!isMatch('abz', 'a!(*)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should match "a!(z)"', () => {
+    assert(isMatch('abz', 'a!(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should match "a*!(z)"', () => {
+    assert(isMatch('abz', 'a*!(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should not match "a*(z)"', () => {
+    assert(!isMatch('abz', 'a*(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should match "a**(z)"', () => {
+    assert(isMatch('abz', 'a**(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should match "a*@(z)"', () => {
+    assert(isMatch('abz', 'a*@(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should not match "a+(z)"', () => {
+    assert(!isMatch('abz', 'a+(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should not match "a?(z)"', () => {
+    assert(!isMatch('abz', 'a?(z)', { bash: true, windows: true }));
+  });
+
+  it('"abz" should not match "a@(z)"', () => {
+    assert(!isMatch('abz', 'a@(z)', { bash: true, windows: true }));
+  });
+
+  it('"ac" should not match "!(a)*"', () => {
+    assert(!isMatch('ac', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"ac" should match "*(@(a))a@(c)"', () => {
+    assert(isMatch('ac', '*(@(a))a@(c)', { bash: true, windows: true }));
+  });
+
+  it('"ac" should match "a!(*(b|B))"', () => {
+    assert(isMatch('ac', 'a!(*(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"ac" should match "a!(@(b|B))"', () => {
+    assert(isMatch('ac', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"ac" should match "a!(b)*"', () => {
+    assert(isMatch('ac', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should match "(a+|b)*"', () => {
+    assert(isMatch('accdef', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('accdef', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('accdef', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('accdef', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab**"', () => {
+    assert(!isMatch('accdef', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab**(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('accdef', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab***ef"', () => {
+    assert(!isMatch('accdef', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"accdef" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"acd" should match "(a+|b)*"', () => {
+    assert(isMatch('acd', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "(a+|b)+"', () => {
+    assert(!isMatch('acd', '(a+|b)+', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "*?(a)bc"', () => {
+    assert(!isMatch('acd', '*?(a)bc', { bash: true, windows: true }));
+  });
+
+  it('"acd" should match "@(ab|a*(b))*(c)d"', () => {
+    assert(isMatch('acd', '@(ab|a*(b))*(c)d', { bash: true, windows: true }));
+  });
+
+  it('"acd" should match "a!(*(b|B))"', () => {
+    assert(isMatch('acd', 'a!(*(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"acd" should match "a!(@(b|B))"', () => {
+    assert(isMatch('acd', 'a!(@(b|B))', { bash: true, windows: true }));
+  });
+
+  it('"acd" should match "a!(@(b|B))d"', () => {
+    assert(isMatch('acd', 'a!(@(b|B))d', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('acd', 'a(b*(foo|bar))d', { bash: true, windows: true }));
+  });
+
+  it('"acd" should match "a+(b|c)d"', () => {
+    assert(isMatch('acd', 'a+(b|c)d', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "a[b*(foo|bar)]d"', () => {
+    assert(!isMatch('acd', 'a[b*(foo|bar)]d', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('acd', 'ab*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab**"', () => {
+    assert(!isMatch('acd', 'ab**', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab**(e|f)"', () => {
+    assert(!isMatch('acd', 'ab**(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('acd', 'ab**(e|f)g', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab***ef"', () => {
+    assert(!isMatch('acd', 'ab***ef', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('acd', 'ab*+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('acd', 'ab*d+(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"acd" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('acd', 'ab?*(e|f)', { bash: true, windows: true }));
+  });
+
+  it('"ax" should match "?(a*|b)"', () => {
+    assert(isMatch('ax', '?(a*|b)', { bash: true, windows: true }));
+  });
+
+  it('"ax" should not match "a?(b*)"', () => {
+    assert(!isMatch('ax', 'a?(b*)', { bash: true, windows: true }));
+  });
+
+  it('"axz" should not match "a+(z)"', () => {
+    assert(!isMatch('axz', 'a+(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should not match "a!(*)"', () => {
+    assert(!isMatch('az', 'a!(*)', { bash: true, windows: true }));
+  });
+
+  it('"az" should not match "a!(z)"', () => {
+    assert(!isMatch('az', 'a!(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a*!(z)"', () => {
+    assert(isMatch('az', 'a*!(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a*(z)"', () => {
+    assert(isMatch('az', 'a*(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a**(z)"', () => {
+    assert(isMatch('az', 'a**(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a*@(z)"', () => {
+    assert(isMatch('az', 'a*@(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a+(z)"', () => {
+    assert(isMatch('az', 'a+(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a?(z)"', () => {
+    assert(isMatch('az', 'a?(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should match "a@(z)"', () => {
+    assert(isMatch('az', 'a@(z)', { bash: true, windows: true }));
+  });
+
+  it('"az" should not match "a\\z"', () => {
+    assert(!isMatch('az', 'a\\\\z', { bash: true, windows: false }));
+  });
+
+  it('"az" should not match "a\\z"', () => {
+    assert(!isMatch('az', 'a\\\\z', { bash: true, windows: true }));
+  });
+
+  it('"b" should match "!(a)*"', () => {
+    assert(isMatch('b', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"b" should match "(a+|b)*"', () => {
+    assert(isMatch('b', '(a+|b)*', { bash: true, windows: true }));
+  });
+
+  it('"b" should not match "a!(b)*"', () => {
+    assert(!isMatch('b', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"b.a" should match "(b|a).(a)"', () => {
+    assert(isMatch('b.a', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"b.a" should match "@(b|a).@(a)"', () => {
+    assert(isMatch('b.a', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"b/a" should not match "!(b/a)"', () => {
+    assert(!isMatch('b/a', '!(b/a)', { bash: true, windows: true }));
+  });
+
+  it('"b/b" should match "!(b/a)"', () => {
+    assert(isMatch('b/b', '!(b/a)', { bash: true, windows: true }));
+  });
+
+  it('"b/c" should match "!(b/a)"', () => {
+    assert(isMatch('b/c', '!(b/a)', { bash: true, windows: true }));
+  });
+
+  it('"b/c" should not match "b/!(c)"', () => {
+    assert(!isMatch('b/c', 'b/!(c)', { bash: true, windows: true }));
+  });
+
+  it('"b/c" should match "b/!(cc)"', () => {
+    assert(isMatch('b/c', 'b/!(cc)', { bash: true, windows: true }));
+  });
+
+  it('"b/c.txt" should not match "b/!(c).txt"', () => {
+    assert(!isMatch('b/c.txt', 'b/!(c).txt', { bash: true, windows: true }));
+  });
+
+  it('"b/c.txt" should match "b/!(cc).txt"', () => {
+    assert(isMatch('b/c.txt', 'b/!(cc).txt', { bash: true, windows: true }));
+  });
+
+  it('"b/cc" should match "b/!(c)"', () => {
+    assert(isMatch('b/cc', 'b/!(c)', { bash: true, windows: true }));
+  });
+
+  it('"b/cc" should not match "b/!(cc)"', () => {
+    assert(!isMatch('b/cc', 'b/!(cc)', { bash: true, windows: true }));
+  });
+
+  it('"b/cc.txt" should not match "b/!(c).txt"', () => {
+    assert(!isMatch('b/cc.txt', 'b/!(c).txt', { bash: true, windows: true }));
+  });
+
+  it('"b/cc.txt" should not match "b/!(cc).txt"', () => {
+    assert(!isMatch('b/cc.txt', 'b/!(cc).txt', { bash: true, windows: true }));
+  });
+
+  it('"b/ccc" should match "b/!(c)"', () => {
+    assert(isMatch('b/ccc', 'b/!(c)', { bash: true, windows: true }));
+  });
+
+  it('"ba" should match "!(a!(b))"', () => {
+    assert(isMatch('ba', '!(a!(b))', { bash: true, windows: true }));
+  });
+
+  it('"ba" should match "b?(a|b)"', () => {
+    assert(isMatch('ba', 'b?(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"baaac" should not match "*(@(a))a@(c)"', () => {
+    assert(!isMatch('baaac', '*(@(a))a@(c)', { bash: true, windows: true }));
+  });
+
+  it('"bar" should match "!(foo)"', () => {
+    assert(isMatch('bar', '!(foo)', { bash: true, windows: true }));
+  });
+
+  it('"bar" should match "!(foo)*"', () => {
+    assert(isMatch('bar', '!(foo)*', { bash: true, windows: true }));
+  });
+
+  it('"bar" should match "!(foo)b*"', () => {
+    assert(isMatch('bar', '!(foo)b*', { bash: true, windows: true }));
+  });
+
+  it('"bar" should match "*(!(foo))"', () => {
+    assert(isMatch('bar', '*(!(foo))', { bash: true, windows: true }));
+  });
+
+  it('"baz" should match "!(foo)*"', () => {
+    assert(isMatch('baz', '!(foo)*', { bash: true, windows: true }));
+  });
+
+  it('"baz" should match "!(foo)b*"', () => {
+    assert(isMatch('baz', '!(foo)b*', { bash: true, windows: true }));
+  });
+
+  it('"baz" should match "*(!(foo))"', () => {
+    assert(isMatch('baz', '*(!(foo))', { bash: true, windows: true }));
+  });
+
+  it('"bb" should match "!(a!(b))"', () => {
+    assert(isMatch('bb', '!(a!(b))', { bash: true, windows: true }));
+  });
+
+  it('"bb" should match "!(a)*"', () => {
+    assert(isMatch('bb', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"bb" should not match "a!(b)*"', () => {
+    assert(!isMatch('bb', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"bb" should not match "a?(a|b)"', () => {
+    assert(!isMatch('bb', 'a?(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"bbc" should match "!([[*])*"', () => {
+    assert(isMatch('bbc', '!([[*])*', { bash: true, windows: true }));
+  });
+
+  it('"bbc" should not match "+(a|b\\[)*"', () => {
+    assert(!isMatch('bbc', '+(a|b\\[)*', { bash: true, windows: true }));
+  });
+
+  it('"bbc" should not match "[a*(]*z"', () => {
+    assert(!isMatch('bbc', '[a*(]*z', { bash: true, windows: true }));
+  });
+
+  it('"bz" should not match "a+(z)"', () => {
+    assert(!isMatch('bz', 'a+(z)', { bash: true, windows: true }));
+  });
+
+  it('"c" should not match "*(@(a))a@(c)"', () => {
+    assert(!isMatch('c', '*(@(a))a@(c)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('c.a', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('c.a', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('c.a', '!*.(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('c.a', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('c.a', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "*.!(a)"', () => {
+    assert(!isMatch('c.a', '*.!(a)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('c.a', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"c.a" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('c.a', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"c.c" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('c.c', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"c.c" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('c.c', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"c.c" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('c.c', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"c.c" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('c.c', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"c.ccc" should match "!(*.[a-b]*)"', () => {
+    assert(isMatch('c.ccc', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"c.ccc" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('c.ccc', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"c.js" should not match "!(*.js)"', () => {
+    assert(!isMatch('c.js', '!(*.js)', { bash: true, windows: true }));
+  });
+
+  it('"c.js" should match "*!(.js)"', () => {
+    assert(isMatch('c.js', '*!(.js)', { bash: true, windows: true }));
+  });
+
+  it('"c.js" should not match "*.!(js)"', () => {
+    assert(!isMatch('c.js', '*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"c/a/v" should match "c/!(z)/v"', () => {
+    assert(isMatch('c/a/v', 'c/!(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/a/v" should not match "c/*(z)/v"', () => {
+    assert(!isMatch('c/a/v', 'c/*(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/a/v" should not match "c/+(z)/v"', () => {
+    assert(!isMatch('c/a/v', 'c/+(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/a/v" should not match "c/@(z)/v"', () => {
+    assert(!isMatch('c/a/v', 'c/@(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should not match "*(z)"', () => {
+    assert(!isMatch('c/z/v', '*(z)', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should not match "+(z)"', () => {
+    assert(!isMatch('c/z/v', '+(z)', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should not match "?(z)"', () => {
+    assert(!isMatch('c/z/v', '?(z)', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should not match "c/!(z)/v"', () => {
+    assert(!isMatch('c/z/v', 'c/!(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should match "c/*(z)/v"', () => {
+    assert(isMatch('c/z/v', 'c/*(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should match "c/+(z)/v"', () => {
+    assert(isMatch('c/z/v', 'c/+(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should match "c/@(z)/v"', () => {
+    assert(isMatch('c/z/v', 'c/@(z)/v', { bash: true, windows: true }));
+  });
+
+  it('"c/z/v" should match "c/z/v"', () => {
+    assert(isMatch('c/z/v', 'c/z/v', { bash: true, windows: true }));
+  });
+
+  it('"cc.a" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('cc.a', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"cc.a" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('cc.a', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"ccc" should match "!(a)*"', () => {
+    assert(isMatch('ccc', '!(a)*', { bash: true, windows: true }));
+  });
+
+  it('"ccc" should not match "a!(b)*"', () => {
+    assert(!isMatch('ccc', 'a!(b)*', { bash: true, windows: true }));
+  });
+
+  it('"cow" should match "!(*.*)"', () => {
+    assert(isMatch('cow', '!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"cow" should not match "!(*.*)."', () => {
+    assert(!isMatch('cow', '!(*.*).', { bash: true, windows: true }));
+  });
+
+  it('"cow" should not match ".!(*.*)"', () => {
+    assert(!isMatch('cow', '.!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a!(*)"', () => {
+    assert(!isMatch('cz', 'a!(*)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a!(z)"', () => {
+    assert(!isMatch('cz', 'a!(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a*!(z)"', () => {
+    assert(!isMatch('cz', 'a*!(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a*(z)"', () => {
+    assert(!isMatch('cz', 'a*(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a**(z)"', () => {
+    assert(!isMatch('cz', 'a**(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a*@(z)"', () => {
+    assert(!isMatch('cz', 'a*@(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a+(z)"', () => {
+    assert(!isMatch('cz', 'a+(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a?(z)"', () => {
+    assert(!isMatch('cz', 'a?(z)', { bash: true, windows: true }));
+  });
+
+  it('"cz" should not match "a@(z)"', () => {
+    assert(!isMatch('cz', 'a@(z)', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('d.a.d', '!(*.[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('d.a.d', '!(*[a-b].[a-b]*)', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('d.a.d', '!*.(a|b)*', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should match "!*.*(a|b)"', () => {
+    assert(isMatch('d.a.d', '!*.*(a|b)', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should not match "!*.{a,b}*"', () => {
+    assert(!isMatch('d.a.d', '!*.{a,b}*', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should match "*.!(a)"', () => {
+    assert(isMatch('d.a.d', '*.!(a)', { bash: true, windows: true }));
+  });
+
+  it('"d.a.d" should match "*.+(b|d)"', () => {
+    assert(isMatch('d.a.d', '*.+(b|d)', { bash: true, windows: true }));
+  });
+
+  it('"d.d" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('d.d', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"d.d" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('d.d', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"d.d" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('d.d', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"d.d" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('d.d', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"d.js.d" should match "!(*.js)"', () => {
+    assert(isMatch('d.js.d', '!(*.js)', { bash: true, windows: true }));
+  });
+
+  it('"d.js.d" should match "*!(.js)"', () => {
+    assert(isMatch('d.js.d', '*!(.js)', { bash: true, windows: true }));
+  });
+
+  it('"d.js.d" should match "*.!(js)"', () => {
+    assert(isMatch('d.js.d', '*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"dd.aa.d" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('dd.aa.d', '(b|a).(a)', { bash: true, windows: true }));
+  });
+
+  it('"dd.aa.d" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('dd.aa.d', '@(b|a).@(a)', { bash: true, windows: true }));
+  });
+
+  it('"def" should not match "()ef"', () => {
+    assert(!isMatch('def', '()ef', { bash: true, windows: true }));
+  });
+
+  it('"e.e" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('e.e', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"e.e" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('e.e', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"e.e" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('e.e', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"e.e" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('e.e', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"ef" should match "()ef"', () => {
+    assert(isMatch('ef', '()ef', { bash: true, windows: true }));
+  });
+
+  it('"effgz" should match "@(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('effgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { bash: true, windows: true }));
+  });
+
+  it('"efgz" should match "@(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('efgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { bash: true, windows: true }));
+  });
+
+  it('"egz" should match "@(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('egz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { bash: true, windows: true }));
+  });
+
+  it('"egz" should not match "@(b+(c)d|e+(f)g?|?(h)i@(j|k))"', () => {
+    assert(!isMatch('egz', '@(b+(c)d|e+(f)g?|?(h)i@(j|k))', { bash: true, windows: true }));
+  });
+
+  it('"egzefffgzbcdij" should match "*(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('egzefffgzbcdij', '*(b+(c)d|e*(f)g?|?(h)i@(j|k))', { bash: true, windows: true }));
+  });
+
+  it('"f" should not match "!(f!(o))"', () => {
+    assert(!isMatch('f', '!(f!(o))', { bash: true, windows: true }));
+  });
+
+  it('"f" should match "!(f(o))"', () => {
+    assert(isMatch('f', '!(f(o))', { bash: true, windows: true }));
+  });
+
+  it('"f" should not match "!(f)"', () => {
+    assert(!isMatch('f', '!(f)', { bash: true, windows: true }));
+  });
+
+  it('"f" should not match "*(!(f))"', () => {
+    assert(!isMatch('f', '*(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"f" should not match "+(!(f))"', () => {
+    assert(!isMatch('f', '+(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"f.a" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('f.a', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"f.a" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('f.a', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"f.a" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('f.a', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"f.f" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('f.f', '!(*.a|*.b|*.c)', { bash: true, windows: true }));
+  });
+
+  it('"f.f" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('f.f', '*!(.a|.b|.c)', { bash: true, windows: true }));
+  });
+
+  it('"f.f" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('f.f', '*.!(a|b|c)', { bash: true, windows: true }));
+  });
+
+  it('"f.f" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('f.f', '*.(a|b|@(ab|a*@(b))*(c)d)', { bash: true, windows: true }));
+  });
+
+  it('"fa" should not match "!(f!(o))"', () => {
+    assert(!isMatch('fa', '!(f!(o))', { bash: true, windows: true }));
+  });
+
+  it('"fa" should match "!(f(o))"', () => {
+    assert(isMatch('fa', '!(f(o))', { bash: true, windows: true }));
+  });
+
+  it('"fb" should not match "!(f!(o))"', () => {
+    assert(!isMatch('fb', '!(f!(o))', { bash: true, windows: true }));
+  });
+
+  it('"fb" should match "!(f(o))"', () => {
+    assert(isMatch('fb', '!(f(o))', { bash: true, windows: true }));
+  });
+
+  it('"fff" should match "!(f)"', () => {
+    assert(isMatch('fff', '!(f)', { bash: true, windows: true }));
+  });
+
+  it('"fff" should match "*(!(f))"', () => {
+    assert(isMatch('fff', '*(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"fff" should match "+(!(f))"', () => {
+    assert(isMatch('fff', '+(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"fffooofoooooffoofffooofff" should match "*(*(f)*(o))"', () => {
+    assert(isMatch('fffooofoooooffoofffooofff', '*(*(f)*(o))', { bash: true, windows: true }));
+  });
+
+  it('"ffo" should match "*(f*(o))"', () => {
+    assert(isMatch('ffo', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"file.C" should not match "*.c?(c)"', () => {
+    assert(!isMatch('file.C', '*.c?(c)', { bash: true, windows: true }));
+  });
+
+  it('"file.c" should match "*.c?(c)"', () => {
+    assert(isMatch('file.c', '*.c?(c)', { bash: true, windows: true }));
+  });
+
+  it('"file.cc" should match "*.c?(c)"', () => {
+    assert(isMatch('file.cc', '*.c?(c)', { bash: true, windows: true }));
+  });
+
+  it('"file.ccc" should not match "*.c?(c)"', () => {
+    assert(!isMatch('file.ccc', '*.c?(c)', { bash: true, windows: true }));
+  });
+
+  it('"fo" should match "!(f!(o))"', () => {
+    assert(isMatch('fo', '!(f!(o))', { bash: true, windows: true }));
+  });
+
+  it('"fo" should not match "!(f(o))"', () => {
+    assert(!isMatch('fo', '!(f(o))', { bash: true, windows: true }));
+  });
+
+  it('"fofo" should match "*(f*(o))"', () => {
+    assert(isMatch('fofo', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"fofoofoofofoo" should match "*(fo|foo)"', () => {
+    assert(isMatch('fofoofoofofoo', '*(fo|foo)', { bash: true, windows: true }));
+  });
+
+  it('"fofoofoofofoo" should match "*(fo|foo)"', () => {
+    assert(isMatch('fofoofoofofoo', '*(fo|foo)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "!(!(foo))"', () => {
+    assert(isMatch('foo', '!(!(foo))', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "!(f)"', () => {
+    assert(isMatch('foo', '!(f)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)"', () => {
+    assert(!isMatch('foo', '!(foo)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)*"', () => {
+    assert(!isMatch('foo', '!(foo)*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)*"', () => {
+    assert(!isMatch('foo', '!(foo)*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)+"', () => {
+    assert(!isMatch('foo', '!(foo)+', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foo', '!(foo)b*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "!(x)"', () => {
+    assert(isMatch('foo', '!(x)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "!(x)*"', () => {
+    assert(isMatch('foo', '!(x)*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "*"', () => {
+    assert(isMatch('foo', '*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "*(!(f))"', () => {
+    assert(isMatch('foo', '*(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "*(!(foo))"', () => {
+    assert(!isMatch('foo', '*(!(foo))', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "*(@(a))a@(c)"', () => {
+    assert(!isMatch('foo', '*(@(a))a@(c)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "*(@(foo))"', () => {
+    assert(isMatch('foo', '*(@(foo))', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "*(a|b\\[)"', () => {
+    assert(!isMatch('foo', '*(a|b\\[)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "*(a|b\\[)|f*"', () => {
+    assert(isMatch('foo', '*(a|b\\[)|f*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "@(*(a|b\\[)|f*)"', () => {
+    assert(isMatch('foo', '@(*(a|b\\[)|f*)', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "*/*/*"', () => {
+    assert(!isMatch('foo', '*/*/*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "*f"', () => {
+    assert(!isMatch('foo', '*f', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "*foo*"', () => {
+    assert(isMatch('foo', '*foo*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "+(!(f))"', () => {
+    assert(isMatch('foo', '+(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "??"', () => {
+    assert(!isMatch('foo', '??', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "???"', () => {
+    assert(isMatch('foo', '???', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "bar"', () => {
+    assert(!isMatch('foo', 'bar', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "f*"', () => {
+    assert(isMatch('foo', 'f*', { bash: true, windows: true }));
+  });
+
+  it('"foo" should not match "fo"', () => {
+    assert(!isMatch('foo', 'fo', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "foo"', () => {
+    assert(isMatch('foo', 'foo', { bash: true, windows: true }));
+  });
+
+  it('"foo" should match "{*(a|b\\[),f*}"', () => {
+    assert(isMatch('foo', '{*(a|b\\[),f*}', { bash: true, windows: true }));
+  });
+
+  it('"foo*" should match "foo\\*"', () => {
+    assert(isMatch('foo*', 'foo\\*', { bash: true, windows: false }));
+  });
+
+  it('"foo*bar" should match "foo\\*bar"', () => {
+    assert(isMatch('foo*bar', 'foo\\*bar', { bash: true, windows: true }));
+  });
+
+  it('"foo.js" should not match "!(foo).js"', () => {
+    assert(!isMatch('foo.js', '!(foo).js', { bash: true, windows: true }));
+  });
+
+  it('"foo.js.js" should match "*.!(js)"', () => {
+    assert(isMatch('foo.js.js', '*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"foo.js.js" should not match "*.!(js)*"', () => {
+    assert(!isMatch('foo.js.js', '*.!(js)*', { bash: true, windows: true }));
+  });
+
+  it('"foo.js.js" should not match "*.!(js)*.!(js)"', () => {
+    assert(!isMatch('foo.js.js', '*.!(js)*.!(js)', { bash: true, windows: true }));
+  });
+
+  it('"foo.js.js" should not match "*.!(js)+"', () => {
+    assert(!isMatch('foo.js.js', '*.!(js)+', { bash: true, windows: true }));
+  });
+
+  it('"foo.txt" should match "**/!(bar).txt"', () => {
+    assert(isMatch('foo.txt', '**/!(bar).txt', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar" should not match "*/*/*"', () => {
+    assert(!isMatch('foo/bar', '*/*/*', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar" should match "foo/!(foo)"', () => {
+    assert(isMatch('foo/bar', 'foo/!(foo)', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar" should match "foo/*"', () => {
+    assert(isMatch('foo/bar', 'foo/*', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar" should match "foo/bar"', () => {
+    assert(isMatch('foo/bar', 'foo/bar', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar" should not match "foo?bar"', () => {
+    assert(!isMatch('foo/bar', 'foo?bar', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar" should match "foo[/]bar"', () => {
+    assert(isMatch('foo/bar', 'foo[/]bar', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar/baz.jsx" should match "foo/bar/**/*.+(js|jsx)"', () => {
+    assert(isMatch('foo/bar/baz.jsx', 'foo/bar/**/*.+(js|jsx)', { bash: true, windows: true }));
+  });
+
+  it('"foo/bar/baz.jsx" should match "foo/bar/*.+(js|jsx)"', () => {
+    assert(isMatch('foo/bar/baz.jsx', 'foo/bar/*.+(js|jsx)', { bash: true, windows: true }));
+  });
+
+  it('"foo/bb/aa/rr" should match "**/**/**"', () => {
+    assert(isMatch('foo/bb/aa/rr', '**/**/**', { bash: true, windows: true }));
+  });
+
+  it('"foo/bb/aa/rr" should match "*/*/*"', () => {
+    assert(isMatch('foo/bb/aa/rr', '*/*/*', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "*/*/*"', () => {
+    assert(isMatch('foo/bba/arr', '*/*/*', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo*"', () => {
+    assert(isMatch('foo/bba/arr', 'foo*', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo**"', () => {
+    assert(isMatch('foo/bba/arr', 'foo**', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo/*"', () => {
+    assert(isMatch('foo/bba/arr', 'foo/*', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo/**"', () => {
+    assert(isMatch('foo/bba/arr', 'foo/**', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo/**arr"', () => {
+    assert(isMatch('foo/bba/arr', 'foo/**arr', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/**z"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/**z', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo/*arr"', () => {
+    assert(isMatch('foo/bba/arr', 'foo/*arr', { bash: true, windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/*z"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/*z', { bash: true, windows: true }));
+  });
+
+  it('"foob" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foob', '!(foo)b*', { bash: true, windows: true }));
+  });
+
+  it('"foob" should not match "(foo)bb"', () => {
+    assert(!isMatch('foob', '(foo)bb', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should match "!(foo)"', () => {
+    assert(isMatch('foobar', '!(foo)', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should not match "!(foo)*"', () => {
+    assert(!isMatch('foobar', '!(foo)*', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should not match "!(foo)*"', () => {
+    assert(!isMatch('foobar', '!(foo)*', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foobar', '!(foo)b*', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should match "*(!(foo))"', () => {
+    assert(isMatch('foobar', '*(!(foo))', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should match "*ob*a*r*"', () => {
+    assert(isMatch('foobar', '*ob*a*r*', { bash: true, windows: true }));
+  });
+
+  it('"foobar" should match "foo\\*bar"', () => {
+    assert(isMatch('foobar', 'foo*bar', { bash: true, windows: true }));
+  });
+
+  it('"foobb" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foobb', '!(foo)b*', { bash: true, windows: true }));
+  });
+
+  it('"foobb" should match "(foo)bb"', () => {
+    assert(isMatch('foobb', '(foo)bb', { bash: true, windows: true }));
+  });
+
+  it('"(foo)bb" should match "\\(foo\\)bb"', () => {
+    assert(isMatch('(foo)bb', '\\(foo\\)bb', { bash: true, windows: true }));
+  });
+
+  it('"foofoofo" should match "@(foo|f|fo)*(f|of+(o))"', () => {
+    assert(isMatch('foofoofo', '@(foo|f|fo)*(f|of+(o))', { bash: true, windows: true }));
+  });
+
+  it('"foofoofo" should match "@(foo|f|fo)*(f|of+(o))"', () => {
+    assert(isMatch('foofoofo', '@(foo|f|fo)*(f|of+(o))', { bash: true, windows: true }));
+  });
+
+  it('"fooofoofofooo" should match "*(f*(o))"', () => {
+    assert(isMatch('fooofoofofooo', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"foooofo" should match "*(f*(o))"', () => {
+    assert(isMatch('foooofo', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"foooofof" should match "*(f*(o))"', () => {
+    assert(isMatch('foooofof', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"foooofof" should not match "*(f+(o))"', () => {
+    assert(!isMatch('foooofof', '*(f+(o))', { bash: true, windows: true }));
+  });
+
+  it('"foooofofx" should not match "*(f*(o))"', () => {
+    assert(!isMatch('foooofofx', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"foooxfooxfoxfooox" should match "*(f*(o)x)"', () => {
+    assert(isMatch('foooxfooxfoxfooox', '*(f*(o)x)', { bash: true, windows: true }));
+  });
+
+  it('"foooxfooxfxfooox" should match "*(f*(o)x)"', () => {
+    assert(isMatch('foooxfooxfxfooox', '*(f*(o)x)', { bash: true, windows: true }));
+  });
+
+  it('"foooxfooxofoxfooox" should not match "*(f*(o)x)"', () => {
+    assert(!isMatch('foooxfooxofoxfooox', '*(f*(o)x)', { bash: true, windows: true }));
+  });
+
+  it('"foot" should match "@(!(z*)|*x)"', () => {
+    assert(isMatch('foot', '@(!(z*)|*x)', { bash: true, windows: true }));
+  });
+
+  it('"foox" should match "@(!(z*)|*x)"', () => {
+    assert(isMatch('foox', '@(!(z*)|*x)', { bash: true, windows: true }));
+  });
+
+  it('"fz" should not match "*(z)"', () => {
+    assert(!isMatch('fz', '*(z)', { bash: true, windows: true }));
+  });
+
+  it('"fz" should not match "+(z)"', () => {
+    assert(!isMatch('fz', '+(z)', { bash: true, windows: true }));
+  });
+
+  it('"fz" should not match "?(z)"', () => {
+    assert(!isMatch('fz', '?(z)', { bash: true, windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(moo).!(cow)"', () => {
+    assert(!isMatch('moo.cow', '!(moo).!(cow)', { bash: true, windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*).!(*)"', () => {
+    assert(!isMatch('moo.cow', '!(*).!(*)', { bash: true, windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*.*).!(*.*)"', () => {
+    assert(!isMatch('moo.cow', '!(*.*).!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"mad.moo.cow" should not match "!(*.*).!(*.*)"', () => {
+    assert(!isMatch('mad.moo.cow', '!(*.*).!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"mad.moo.cow" should not match ".!(*.*)"', () => {
+    assert(!isMatch('mad.moo.cow', '.!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"Makefile" should match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(isMatch('Makefile', '!(*.c|*.h|Makefile.in|config*|README)', { bash: true, windows: true }));
+  });
+
+  it('"Makefile.in" should not match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(!isMatch('Makefile.in', '!(*.c|*.h|Makefile.in|config*|README)', { bash: true, windows: true }));
+  });
+
+  it('"moo" should match "!(*.*)"', () => {
+    assert(isMatch('moo', '!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"moo" should not match "!(*.*)."', () => {
+    assert(!isMatch('moo', '!(*.*).', { bash: true, windows: true }));
+  });
+
+  it('"moo" should not match ".!(*.*)"', () => {
+    assert(!isMatch('moo', '.!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*.*)"', () => {
+    assert(!isMatch('moo.cow', '!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*.*)."', () => {
+    assert(!isMatch('moo.cow', '!(*.*).', { bash: true, windows: true }));
+  });
+
+  it('"moo.cow" should not match ".!(*.*)"', () => {
+    assert(!isMatch('moo.cow', '.!(*.*)', { bash: true, windows: true }));
+  });
+
+  it('"mucca.pazza" should not match "mu!(*(c))?.pa!(*(z))?"', () => {
+    assert(!isMatch('mucca.pazza', 'mu!(*(c))?.pa!(*(z))?', { bash: true, windows: true }));
+  });
+
+  it('"ofoofo" should match "*(of+(o))"', () => {
+    assert(isMatch('ofoofo', '*(of+(o))', { bash: true, windows: true }));
+  });
+
+  it('"ofoofo" should match "*(of+(o)|f)"', () => {
+    assert(isMatch('ofoofo', '*(of+(o)|f)', { bash: true, windows: true }));
+  });
+
+  it('"ofooofoofofooo" should not match "*(f*(o))"', () => {
+    assert(!isMatch('ofooofoofofooo', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"ofoooxoofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxo', '*(*(of*(o)x)o)', { bash: true, windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxoofoooxoofxo', '*(*(of*(o)x)o)', { bash: true, windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxofo" should not match "*(*(of*(o)x)o)"', () => {
+    assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(*(of*(o)x)o)', { bash: true, windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxoo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxoofoooxoofxoo', '*(*(of*(o)x)o)', { bash: true, windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxooofxofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(*(of*(o)x)o)', { bash: true, windows: true }));
+  });
+
+  it('"ofxoofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofxoofxo', '*(*(of*(o)x)o)', { bash: true, windows: true }));
+  });
+
+  it('"oofooofo" should match "*(of|oof+(o))"', () => {
+    assert(isMatch('oofooofo', '*(of|oof+(o))', { bash: true, windows: true }));
+  });
+
+  it('"ooo" should match "!(f)"', () => {
+    assert(isMatch('ooo', '!(f)', { bash: true, windows: true }));
+  });
+
+  it('"ooo" should match "*(!(f))"', () => {
+    assert(isMatch('ooo', '*(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"ooo" should match "+(!(f))"', () => {
+    assert(isMatch('ooo', '+(!(f))', { bash: true, windows: true }));
+  });
+
+  it('"oxfoxfox" should not match "*(oxf+(ox))"', () => {
+    assert(!isMatch('oxfoxfox', '*(oxf+(ox))', { bash: true, windows: true }));
+  });
+
+  it('"oxfoxoxfox" should match "*(oxf+(ox))"', () => {
+    assert(isMatch('oxfoxoxfox', '*(oxf+(ox))', { bash: true, windows: true }));
+  });
+
+  it('"para" should match "para*([0-9])"', () => {
+    assert(isMatch('para', 'para*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"para" should not match "para+([0-9])"', () => {
+    assert(!isMatch('para', 'para+([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"para.38" should match "para!(*.[00-09])"', () => {
+    assert(isMatch('para.38', 'para!(*.[00-09])', { bash: true, windows: true }));
+  });
+
+  it('"para.graph" should match "para!(*.[0-9])"', () => {
+    assert(isMatch('para.graph', 'para!(*.[0-9])', { bash: true, windows: true }));
+  });
+
+  it('"para13829383746592" should match "para*([0-9])"', () => {
+    assert(isMatch('para13829383746592', 'para*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"para381" should not match "para?([345]|99)1"', () => {
+    assert(!isMatch('para381', 'para?([345]|99)1', { bash: true, windows: true }));
+  });
+
+  it('"para39" should match "para!(*.[0-9])"', () => {
+    assert(isMatch('para39', 'para!(*.[0-9])', { bash: true, windows: true }));
+  });
+
+  it('"para987346523" should match "para+([0-9])"', () => {
+    assert(isMatch('para987346523', 'para+([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"para991" should match "para?([345]|99)1"', () => {
+    assert(isMatch('para991', 'para?([345]|99)1', { bash: true, windows: true }));
+  });
+
+  it('"paragraph" should match "para!(*.[0-9])"', () => {
+    assert(isMatch('paragraph', 'para!(*.[0-9])', { bash: true, windows: true }));
+  });
+
+  it('"paragraph" should not match "para*([0-9])"', () => {
+    assert(!isMatch('paragraph', 'para*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"paragraph" should match "para@(chute|graph)"', () => {
+    assert(isMatch('paragraph', 'para@(chute|graph)', { bash: true, windows: true }));
+  });
+
+  it('"paramour" should not match "para@(chute|graph)"', () => {
+    assert(!isMatch('paramour', 'para@(chute|graph)', { bash: true, windows: true }));
+  });
+
+  it('"parse.y" should match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(isMatch('parse.y', '!(*.c|*.h|Makefile.in|config*|README)', { bash: true, windows: true }));
+  });
+
+  it('"shell.c" should not match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(!isMatch('shell.c', '!(*.c|*.h|Makefile.in|config*|README)', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;" should not match "*\\;[1-9]*([0-9])"', () => {
+    assert(!isMatch('VMS.FILE;', '*\\;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;0" should not match "*\\;[1-9]*([0-9])"', () => {
+    assert(!isMatch('VMS.FILE;0', '*\\;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;9" should match "*\\;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;9', '*\\;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;1" should match "*\\;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;1', '*\\;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;1" should match "*;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;1', '*;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;139" should match "*\\;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;139', '*\\;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"VMS.FILE;1N" should not match "*\\;[1-9]*([0-9])"', () => {
+    assert(!isMatch('VMS.FILE;1N', '*\\;[1-9]*([0-9])', { bash: true, windows: true }));
+  });
+
+  it('"xfoooofof" should not match "*(f*(o))"', () => {
+    assert(!isMatch('xfoooofof', '*(f*(o))', { bash: true, windows: true }));
+  });
+
+  it('"XXX/adobe/courier/bold/o/normal//12/120/75/75/m/70/iso8859/1" should match "XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*"', () => {
+    assert(isMatch('XXX/adobe/courier/bold/o/normal//12/120/75/75/m/70/iso8859/1', 'XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*', { bash: true, windows: false }));
+  });
+
+  it('"XXX/adobe/courier/bold/o/normal//12/120/75/75/X/70/iso8859/1" should not match "XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*"', () => {
+    assert(!isMatch('XXX/adobe/courier/bold/o/normal//12/120/75/75/X/70/iso8859/1', 'XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*', { bash: true, windows: true }));
+  });
+
+  it('"z" should match "*(z)"', () => {
+    assert(isMatch('z', '*(z)', { bash: true, windows: true }));
+  });
+
+  it('"z" should match "+(z)"', () => {
+    assert(isMatch('z', '+(z)', { bash: true, windows: true }));
+  });
+
+  it('"z" should match "?(z)"', () => {
+    assert(isMatch('z', '?(z)', { bash: true, windows: true }));
+  });
+
+  it('"zf" should not match "*(z)"', () => {
+    assert(!isMatch('zf', '*(z)', { bash: true, windows: true }));
+  });
+
+  it('"zf" should not match "+(z)"', () => {
+    assert(!isMatch('zf', '+(z)', { bash: true, windows: true }));
+  });
+
+  it('"zf" should not match "?(z)"', () => {
+    assert(!isMatch('zf', '?(z)', { bash: true, windows: true }));
+  });
+
+  it('"zoot" should not match "@(!(z*)|*x)"', () => {
+    assert(!isMatch('zoot', '@(!(z*)|*x)', { bash: true, windows: true }));
+  });
+
+  it('"zoox" should match "@(!(z*)|*x)"', () => {
+    assert(isMatch('zoox', '@(!(z*)|*x)', { bash: true, windows: true }));
+  });
+
+  it('"zz" should not match "(a+|b)*"', () => {
+    assert(!isMatch('zz', '(a+|b)*', { bash: true, windows: true }));
+  });
+});
+
+```
+
+## File: `test/extglobs-minimatch.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+/**
+ * Some of tests were converted from bash 4.3, 4.4, and minimatch unit tests.
+ */
+
+describe('extglobs (minimatch)', () => {
+  it('should not match empty string with "*(0|1|3|5|7|9)"', () => {
+    assert(!isMatch('', '*(0|1|3|5|7|9)', { windows: true }));
+  });
+
+  it('"*(a|b[)" should not match "*(a|b\\[)"', () => {
+    assert(!isMatch('*(a|b[)', '*(a|b\\[)', { windows: true }));
+  });
+
+  it('"*(a|b[)" should match "\\*\\(a\\|b\\[\\)"', () => {
+    assert(isMatch('*(a|b[)', '\\*\\(a\\|b\\[\\)', { windows: true }));
+  });
+
+  it('"***" should match "\\*\\*\\*"', () => {
+    assert(isMatch('***', '\\*\\*\\*', { windows: true }));
+  });
+
+  it('"-adobe-courier-bold-o-normal--12-120-75-75-/-70-iso8859-1" should not match "-*-*-*-*-*-*-12-*-*-*-m-*-*-*"', () => {
+    assert(!isMatch('-adobe-courier-bold-o-normal--12-120-75-75-/-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*', { windows: true }));
+  });
+
+  it('"-adobe-courier-bold-o-normal--12-120-75-75-m-70-iso8859-1" should match "-*-*-*-*-*-*-12-*-*-*-m-*-*-*"', () => {
+    assert(isMatch('-adobe-courier-bold-o-normal--12-120-75-75-m-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*', { windows: true }));
+  });
+
+  it('"-adobe-courier-bold-o-normal--12-120-75-75-X-70-iso8859-1" should not match "-*-*-*-*-*-*-12-*-*-*-m-*-*-*"', () => {
+    assert(!isMatch('-adobe-courier-bold-o-normal--12-120-75-75-X-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*', { windows: true }));
+  });
+
+  it('"/dev/udp/129.22.8.102/45" should match "/dev\\/@(tcp|udp)\\/*\\/*"', () => {
+    assert(isMatch('/dev/udp/129.22.8.102/45', '/dev\\/@(tcp|udp)\\/*\\/*', { windows: true }));
+  });
+
+  it('"/x/y/z" should match "/x/y/z"', () => {
+    assert(isMatch('/x/y/z', '/x/y/z', { windows: true }));
+  });
+
+  it('"0377" should match "+([0-7])"', () => {
+    assert(isMatch('0377', '+([0-7])', { windows: true }));
+  });
+
+  it('"07" should match "+([0-7])"', () => {
+    assert(isMatch('07', '+([0-7])', { windows: true }));
+  });
+
+  it('"09" should not match "+([0-7])"', () => {
+    assert(!isMatch('09', '+([0-7])', { windows: true }));
+  });
+
+  it('"1" should match "0|[1-9]*([0-9])"', () => {
+    assert(isMatch('1', '0|[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"12" should match "0|[1-9]*([0-9])"', () => {
+    assert(isMatch('12', '0|[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"123abc" should not match "(a+|b)*"', () => {
+    assert(!isMatch('123abc', '(a+|b)*', { windows: true }));
+  });
+
+  it('"123abc" should not match "(a+|b)+"', () => {
+    assert(!isMatch('123abc', '(a+|b)+', { windows: true }));
+  });
+
+  it('"123abc" should match "*?(a)bc"', () => {
+    assert(isMatch('123abc', '*?(a)bc', { windows: true }));
+  });
+
+  it('"123abc" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('123abc', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab**"', () => {
+    assert(!isMatch('123abc', 'ab**', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab**(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('123abc', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab***ef"', () => {
+    assert(!isMatch('123abc', 'ab***ef', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"123abc" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('123abc', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"12abc" should not match "0|[1-9]*([0-9])"', () => {
+    assert(!isMatch('12abc', '0|[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"137577991" should match "*(0|1|3|5|7|9)"', () => {
+    assert(isMatch('137577991', '*(0|1|3|5|7|9)', { windows: true }));
+  });
+
+  it('"2468" should not match "*(0|1|3|5|7|9)"', () => {
+    assert(!isMatch('2468', '*(0|1|3|5|7|9)', { windows: true }));
+  });
+
+  it('"?a?b" should match "\\??\\?b"', () => {
+    assert(isMatch('?a?b', '\\??\\?b', { windows: true }));
+  });
+
+  it('"\\a\\b\\c" should not match "abc"', () => {
+    assert(!isMatch('\\a\\b\\c', 'abc', { windows: true }));
+  });
+
+  it('"a" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a" should not match "!(a)"', () => {
+    assert(!isMatch('a', '!(a)', { windows: true }));
+  });
+
+  it('"a" should not match "!(a)*"', () => {
+    assert(!isMatch('a', '!(a)*', { windows: true }));
+  });
+
+  it('"a" should match "(a)"', () => {
+    assert(isMatch('a', '(a)', { windows: true }));
+  });
+
+  it('"a" should not match "(b)"', () => {
+    assert(!isMatch('a', '(b)', { windows: true }));
+  });
+
+  it('"a" should match "*(a)"', () => {
+    assert(isMatch('a', '*(a)', { windows: true }));
+  });
+
+  it('"a" should match "+(a)"', () => {
+    assert(isMatch('a', '+(a)', { windows: true }));
+  });
+
+  it('"a" should match "?"', () => {
+    assert(isMatch('a', '?', { windows: true }));
+  });
+
+  it('"a" should match "?(a|b)"', () => {
+    assert(isMatch('a', '?(a|b)', { windows: true }));
+  });
+
+  it('"a" should not match "??"', () => {
+    assert(!isMatch('a', '??', { windows: true }));
+  });
+
+  it('"a" should match "a!(b)*"', () => {
+    assert(isMatch('a', 'a!(b)*', { windows: true }));
+  });
+
+  it('"a" should match "a?(a|b)"', () => {
+    assert(isMatch('a', 'a?(a|b)', { windows: true }));
+  });
+
+  it('"a" should match "a?(x)"', () => {
+    assert(isMatch('a', 'a?(x)', { windows: true }));
+  });
+
+  it('"a" should not match "a??b"', () => {
+    assert(!isMatch('a', 'a??b', { windows: true }));
+  });
+
+  it('"a" should not match "b?(a|b)"', () => {
+    assert(!isMatch('a', 'b?(a|b)', { windows: true }));
+  });
+
+  it('"a((((b" should match "a(*b"', () => {
+    assert(isMatch('a((((b', 'a(*b', { windows: true }));
+  });
+
+  it('"a((((b" should not match "a(b"', () => {
+    assert(!isMatch('a((((b', 'a(b', { windows: true }));
+  });
+
+  it('"a((((b" should not match "a\\(b"', () => {
+    assert(!isMatch('a((((b', 'a\\(b', { windows: true }));
+  });
+
+  it('"a((b" should match "a(*b"', () => {
+    assert(isMatch('a((b', 'a(*b', { windows: true }));
+  });
+
+  it('"a((b" should not match "a(b"', () => {
+    assert(!isMatch('a((b', 'a(b', { windows: true }));
+  });
+
+  it('"a((b" should not match "a\\(b"', () => {
+    assert(!isMatch('a((b', 'a\\(b', { windows: true }));
+  });
+
+  it('"a(b" should match "a(*b"', () => {
+    assert(isMatch('a(b', 'a(*b', { windows: true }));
+  });
+
+  it('"a(b" should match "a(b"', () => {
+    assert(isMatch('a(b', 'a(b', { windows: true }));
+  });
+
+  it('"a(b" should match "a\\(b"', () => {
+    assert(isMatch('a(b', 'a\\(b', { windows: true }));
+  });
+
+  it('"a." should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a.', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a." should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"a." should match "*.!(a)"', () => {
+    assert(isMatch('a.', '*.!(a)', { windows: true }));
+  });
+
+  it('"a." should match "*.!(a|b|c)"', () => {
+    assert(isMatch('a.', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"a." should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('a.', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"a." should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"a.a" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.a', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"a.a" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('a.a', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a.a" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.a', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"a.a" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('a.a', '!*.(a|b)', { windows: true }));
+  });
+
+  it('"a.a" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.a', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"a.a" should match "(a|d).(a|b)*"', () => {
+    assert(isMatch('a.a', '(a|d).(a|b)*', { windows: true }));
+  });
+
+  it('"a.a" should match "(b|a).(a)"', () => {
+    assert(isMatch('a.a', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"a.a" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.a', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"a.a" should not match "*.!(a)"', () => {
+    assert(!isMatch('a.a', '*.!(a)', { windows: true }));
+  });
+
+  it('"a.a" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('a.a', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"a.a" should match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(isMatch('a.a', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"a.a" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.a', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"a.a" should match "@(b|a).@(a)"', () => {
+    assert(isMatch('a.a', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"a.a.a" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.a.a', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"a.a.a" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.a.a', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"a.a.a" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('a.a.a', '!*.(a|b)', { windows: true }));
+  });
+
+  it('"a.a.a" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.a.a', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"a.a.a" should match "*.!(a)"', () => {
+    assert(isMatch('a.a.a', '*.!(a)', { windows: true }));
+  });
+
+  it('"a.a.a" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.a.a', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"a.aa.a" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('a.aa.a', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"a.aa.a" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('a.aa.a', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"a.abcd" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a.abcd', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a.abcd" should not match "!(*.a|*.b|*.c)*"', () => {
+    assert(!isMatch('a.abcd', '!(*.a|*.b|*.c)*', { windows: true }));
+  });
+
+  it('"a.abcd" should match "*!(*.a|*.b|*.c)*"', () => {
+    assert(isMatch('a.abcd', '*!(*.a|*.b|*.c)*', { windows: true }));
+  });
+
+  it('"a.abcd" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.abcd', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"a.abcd" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('a.abcd', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"a.abcd" should not match "*.!(a|b|c)*"', () => {
+    assert(!isMatch('a.abcd', '*.!(a|b|c)*', { windows: true }));
+  });
+
+  it('"a.abcd" should match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(isMatch('a.abcd', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"a.b" should not match "!(*.*)"', () => {
+    assert(!isMatch('a.b', '!(*.*)', { windows: true }));
+  });
+
+  it('"a.b" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.b', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"a.b" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('a.b', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a.b" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.b', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"a.b" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('a.b', '!*.(a|b)', { windows: true }));
+  });
+
+  it('"a.b" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.b', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"a.b" should match "(a|d).(a|b)*"', () => {
+    assert(isMatch('a.b', '(a|d).(a|b)*', { windows: true }));
+  });
+
+  it('"a.b" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.b', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"a.b" should match "*.!(a)"', () => {
+    assert(isMatch('a.b', '*.!(a)', { windows: true }));
+  });
+
+  it('"a.b" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('a.b', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"a.b" should match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(isMatch('a.b', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"a.b" should match "*.+(b|d)"', () => {
+    assert(isMatch('a.b', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"a.bb" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('a.bb', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"a.bb" should not match "!(*[a-b].[a-b]*)"', () => {
+    assert(!isMatch('a.bb', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"a.bb" should match "!*.(a|b)"', () => {
+    assert(isMatch('a.bb', '!*.(a|b)', { windows: true }));
+  });
+
+  it('"a.bb" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('a.bb', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"a.bb" should not match "!*.*(a|b)"', () => {
+    assert(!isMatch('a.bb', '!*.*(a|b)', { windows: true }));
+  });
+
+  it('"a.bb" should match "(a|d).(a|b)*"', () => {
+    assert(isMatch('a.bb', '(a|d).(a|b)*', { windows: true }));
+  });
+
+  it('"a.bb" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('a.bb', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"a.bb" should match "*.+(b|d)"', () => {
+    assert(isMatch('a.bb', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"a.bb" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('a.bb', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"a.c" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('a.c', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a.c" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.c', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"a.c" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('a.c', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"a.c" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('a.c', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"a.c.d" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('a.c.d', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"a.c.d" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('a.c.d', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"a.c.d" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('a.c.d', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"a.c.d" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('a.c.d', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"a.ccc" should match "!(*.[a-b]*)"', () => {
+    assert(isMatch('a.ccc', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"a.ccc" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('a.ccc', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"a.ccc" should match "!*.(a|b)"', () => {
+    assert(isMatch('a.ccc', '!*.(a|b)', { windows: true }));
+  });
+
+  it('"a.ccc" should match "!*.(a|b)*"', () => {
+    assert(isMatch('a.ccc', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"a.ccc" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('a.ccc', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"a.js" should not match "!(*.js)"', () => {
+    assert(!isMatch('a.js', '!(*.js)', { windows: true }));
+  });
+
+  it('"a.js" should match "*!(.js)"', () => {
+    assert(isMatch('a.js', '*!(.js)', { windows: true }));
+  });
+
+  it('"a.js" should not match "*.!(js)"', () => {
+    assert(!isMatch('a.js', '*.!(js)', { windows: true }));
+  });
+
+  it('"a.js" should not match "a.!(js)"', () => {
+    assert(!isMatch('a.js', 'a.!(js)', { windows: true }));
+  });
+
+  it('"a.js" should not match "a.!(js)*"', () => {
+    assert(!isMatch('a.js', 'a.!(js)*', { windows: true }));
+  });
+
+  it('"a.js.js" should not match "!(*.js)"', () => {
+    assert(!isMatch('a.js.js', '!(*.js)', { windows: true }));
+  });
+
+  it('"a.js.js" should match "*!(.js)"', () => {
+    assert(isMatch('a.js.js', '*!(.js)', { windows: true }));
+  });
+
+  it('"a.js.js" should match "*.!(js)"', () => {
+    assert(isMatch('a.js.js', '*.!(js)', { windows: true }));
+  });
+
+  it('"a.js.js" should match "*.*(js).js"', () => {
+    assert(isMatch('a.js.js', '*.*(js).js', { windows: true }));
+  });
+
+  it('"a.md" should match "!(*.js)"', () => {
+    assert(isMatch('a.md', '!(*.js)', { windows: true }));
+  });
+
+  it('"a.md" should match "*!(.js)"', () => {
+    assert(isMatch('a.md', '*!(.js)', { windows: true }));
+  });
+
+  it('"a.md" should match "*.!(js)"', () => {
+    assert(isMatch('a.md', '*.!(js)', { windows: true }));
+  });
+
+  it('"a.md" should match "a.!(js)"', () => {
+    assert(isMatch('a.md', 'a.!(js)', { windows: true }));
+  });
+
+  it('"a.md" should match "a.!(js)*"', () => {
+    assert(isMatch('a.md', 'a.!(js)*', { windows: true }));
+  });
+
+  it('"a.md.js" should not match "*.*(js).js"', () => {
+    assert(!isMatch('a.md.js', '*.*(js).js', { windows: true }));
+  });
+
+  it('"a.txt" should match "a.!(js)"', () => {
+    assert(isMatch('a.txt', 'a.!(js)', { windows: true }));
+  });
+
+  it('"a.txt" should match "a.!(js)*"', () => {
+    assert(isMatch('a.txt', 'a.!(js)*', { windows: true }));
+  });
+
+  it('"a/!(z)" should match "a/!(z)"', () => {
+    assert(isMatch('a/!(z)', 'a/!(z)', { windows: true }));
+  });
+
+  it('"a/b" should match "a/!(z)"', () => {
+    assert(isMatch('a/b', 'a/!(z)', { windows: true }));
+  });
+
+  it('"a/b/c.txt" should not match "*/b/!(*).txt"', () => {
+    assert(!isMatch('a/b/c.txt', '*/b/!(*).txt', { windows: true }));
+  });
+
+  it('"a/b/c.txt" should not match "*/b/!(c).txt"', () => {
+    assert(!isMatch('a/b/c.txt', '*/b/!(c).txt', { windows: true }));
+  });
+
+  it('"a/b/c.txt" should match "*/b/!(cc).txt"', () => {
+    assert(isMatch('a/b/c.txt', '*/b/!(cc).txt', { windows: true }));
+  });
+
+  it('"a/b/cc.txt" should not match "*/b/!(*).txt"', () => {
+    assert(!isMatch('a/b/cc.txt', '*/b/!(*).txt', { windows: true }));
+  });
+
+  it('"a/b/cc.txt" should not match "*/b/!(c).txt"', () => {
+    assert(!isMatch('a/b/cc.txt', '*/b/!(c).txt', { windows: true }));
+  });
+
+  it('"a/b/cc.txt" should not match "*/b/!(cc).txt"', () => {
+    assert(!isMatch('a/b/cc.txt', '*/b/!(cc).txt', { windows: true }));
+  });
+
+  it('"a/dir/foo.txt" should match "*/dir/**/!(bar).txt"', () => {
+    assert(isMatch('a/dir/foo.txt', '*/dir/**/!(bar).txt', { windows: true }));
+  });
+
+  it('"a/z" should not match "a/!(z)"', () => {
+    assert(!isMatch('a/z', 'a/!(z)', { windows: true }));
+  });
+
+  it('"a\\(b" should not match "a(*b"', () => {
+    assert(!isMatch('a\\(b', 'a(*b', { windows: true }));
+  });
+
+  it('"a\\(b" should not match "a(b"', () => {
+    assert(!isMatch('a\\(b', 'a(b', { windows: true }));
+  });
+
+  it('"a\\z" should match "a\\z"', () => {
+    assert(isMatch('a\\\\z', 'a\\\\z', { windows: false }));
+  });
+
+  it('"a\\z" should match "a\\z"', () => {
+    assert(isMatch('a\\\\z', 'a\\\\z', { windows: true }));
+  });
+
+  it('"a\\b" should match "a/b"', () => {
+    assert(isMatch('a\\b', 'a/b', { windows: true }));
+  });
+
+  it('"a\\z" should match "a\\z"', () => {
+    assert(isMatch('a\\z', 'a\\\\z', { windows: false }));
+  });
+
+  it('"a\\z" should not match "a\\z"', () => {
+    assert(isMatch('a\\z', 'a\\z', { windows: true }));
+  });
+
+  it('"aa" should not match "!(a!(b))"', () => {
+    assert(!isMatch('aa', '!(a!(b))', { windows: true }));
+  });
+
+  it('"aa" should match "!(a)"', () => {
+    assert(isMatch('aa', '!(a)', { windows: true }));
+  });
+
+  it('"aa" should not match "!(a)*"', () => {
+    assert(!isMatch('aa', '!(a)*', { windows: true }));
+  });
+
+  it('"aa" should not match "?"', () => {
+    assert(!isMatch('aa', '?', { windows: true }));
+  });
+
+  it('"aa" should not match "@(a)b"', () => {
+    assert(!isMatch('aa', '@(a)b', { windows: true }));
+  });
+
+  it('"aa" should match "a!(b)*"', () => {
+    assert(isMatch('aa', 'a!(b)*', { windows: true }));
+  });
+
+  it('"aa" should not match "a??b"', () => {
+    assert(!isMatch('aa', 'a??b', { windows: true }));
+  });
+
+  it('"aa.aa" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('aa.aa', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"aa.aa" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('aa.aa', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"aaa" should not match "!(a)*"', () => {
+    assert(!isMatch('aaa', '!(a)*', { windows: true }));
+  });
+
+  it('"aaa" should match "a!(b)*"', () => {
+    assert(isMatch('aaa', 'a!(b)*', { windows: true }));
+  });
+
+  it('"aaaaaaabababab" should match "*ab"', () => {
+    assert(isMatch('aaaaaaabababab', '*ab', { windows: true }));
+  });
+
+  it('"aaac" should match "*(@(a))a@(c)"', () => {
+    assert(isMatch('aaac', '*(@(a))a@(c)', { windows: true }));
+  });
+
+  it('"aaaz" should match "[a*(]*z"', () => {
+    assert(isMatch('aaaz', '[a*(]*z', { windows: true }));
+  });
+
+  it('"aab" should not match "!(a)*"', () => {
+    assert(!isMatch('aab', '!(a)*', { windows: true }));
+  });
+
+  it('"aab" should not match "?"', () => {
+    assert(!isMatch('aab', '?', { windows: true }));
+  });
+
+  it('"aab" should not match "??"', () => {
+    assert(!isMatch('aab', '??', { windows: true }));
+  });
+
+  it('"aab" should not match "@(c)b"', () => {
+    assert(!isMatch('aab', '@(c)b', { windows: true }));
+  });
+
+  it('"aab" should match "a!(b)*"', () => {
+    assert(isMatch('aab', 'a!(b)*', { windows: true }));
+  });
+
+  it('"aab" should not match "a??b"', () => {
+    assert(!isMatch('aab', 'a??b', { windows: true }));
+  });
+
+  it('"aac" should match "*(@(a))a@(c)"', () => {
+    assert(isMatch('aac', '*(@(a))a@(c)', { windows: true }));
+  });
+
+  it('"aac" should not match "*(@(a))b@(c)"', () => {
+    assert(!isMatch('aac', '*(@(a))b@(c)', { windows: true }));
+  });
+
+  it('"aax" should not match "a!(a*|b)"', () => {
+    assert(!isMatch('aax', 'a!(a*|b)', { windows: true }));
+  });
+
+  it('"aax" should match "a!(x*|b)"', () => {
+    assert(isMatch('aax', 'a!(x*|b)', { windows: true }));
+  });
+
+  it('"aax" should match "a?(a*|b)"', () => {
+    assert(isMatch('aax', 'a?(a*|b)', { windows: true }));
+  });
+
+  it('"aaz" should match "[a*(]*z"', () => {
+    assert(isMatch('aaz', '[a*(]*z', { windows: true }));
+  });
+
+  it('"ab" should match "!(*.*)"', () => {
+    assert(isMatch('ab', '!(*.*)', { windows: true }));
+  });
+
+  it('"ab" should match "!(a!(b))"', () => {
+    assert(isMatch('ab', '!(a!(b))', { windows: true }));
+  });
+
+  it('"ab" should not match "!(a)*"', () => {
+    assert(!isMatch('ab', '!(a)*', { windows: true }));
+  });
+
+  it('"ab" should match "(a+|b)*"', () => {
+    assert(isMatch('ab', '(a+|b)*', { windows: true }));
+  });
+
+  it('"ab" should match "(a+|b)+"', () => {
+    assert(isMatch('ab', '(a+|b)+', { windows: true }));
+  });
+
+  it('"ab" should not match "*?(a)bc"', () => {
+    assert(!isMatch('ab', '*?(a)bc', { windows: true }));
+  });
+
+  it('"ab" should not match "a!(*(b|B))"', () => {
+    assert(!isMatch('ab', 'a!(*(b|B))', { windows: true }));
+  });
+
+  it('"ab" should not match "a!(@(b|B))"', () => {
+    assert(!isMatch('ab', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"aB" should not match "a!(@(b|B))"', () => {
+    assert(!isMatch('aB', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"ab" should not match "a!(b)*"', () => {
+    assert(!isMatch('ab', 'a!(b)*', { windows: true }));
+  });
+
+  it('"ab" should not match "a(*b"', () => {
+    assert(!isMatch('ab', 'a(*b', { windows: true }));
+  });
+
+  it('"ab" should not match "a(b"', () => {
+    assert(!isMatch('ab', 'a(b', { windows: true }));
+  });
+
+  it('"ab" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('ab', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"ab" should not match "a/b"', () => {
+    assert(!isMatch('ab', 'a/b', { windows: true }));
+  });
+
+  it('"ab" should not match "a\\(b"', () => {
+    assert(!isMatch('ab', 'a\\(b', { windows: true }));
+  });
+
+  it('"ab" should match "ab*(e|f)"', () => {
+    assert(isMatch('ab', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"ab" should match "ab**"', () => {
+    assert(isMatch('ab', 'ab**', { windows: true }));
+  });
+
+  it('"ab" should match "ab**(e|f)"', () => {
+    assert(isMatch('ab', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"ab" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('ab', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"ab" should not match "ab***ef"', () => {
+    assert(!isMatch('ab', 'ab***ef', { windows: true }));
+  });
+
+  it('"ab" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('ab', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"ab" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('ab', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"ab" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('ab', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should match "**/*X*/**/*i"', () => {
+    assert(isMatch('ab/cXd/efXg/hi', '**/*X*/**/*i', { windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should match "*/*X*/*/*i"', () => {
+    assert(isMatch('ab/cXd/efXg/hi', '*/*X*/*/*i', { windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should not match "*X*i"', () => {
+    assert(!isMatch('ab/cXd/efXg/hi', '*X*i', { windows: true }));
+  });
+
+  it('"ab/cXd/efXg/hi" should not match "*Xg*i"', () => {
+    assert(!isMatch('ab/cXd/efXg/hi', '*Xg*i', { windows: true }));
+  });
+
+  it('"ab]" should match "a!(@(b|B))"', () => {
+    assert(isMatch('ab]', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"abab" should match "(a+|b)*"', () => {
+    assert(isMatch('abab', '(a+|b)*', { windows: true }));
+  });
+
+  it('"abab" should match "(a+|b)+"', () => {
+    assert(isMatch('abab', '(a+|b)+', { windows: true }));
+  });
+
+  it('"abab" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abab', '*?(a)bc', { windows: true }));
+  });
+
+  it('"abab" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abab', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"abab" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abab', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"abab" should match "ab**"', () => {
+    assert(isMatch('abab', 'ab**', { windows: true }));
+  });
+
+  it('"abab" should match "ab**(e|f)"', () => {
+    assert(isMatch('abab', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"abab" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abab', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"abab" should not match "ab***ef"', () => {
+    assert(!isMatch('abab', 'ab***ef', { windows: true }));
+  });
+
+  it('"abab" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('abab', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"abab" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abab', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"abab" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('abab', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"abb" should match "!(*.*)"', () => {
+    assert(isMatch('abb', '!(*.*)', { windows: true }));
+  });
+
+  it('"abb" should not match "!(a)*"', () => {
+    assert(!isMatch('abb', '!(a)*', { windows: true }));
+  });
+
+  it('"abb" should not match "a!(b)*"', () => {
+    assert(!isMatch('abb', 'a!(b)*', { windows: true }));
+  });
+
+  it('"abbcd" should match "@(ab|a*(b))*(c)d"', () => {
+    assert(isMatch('abbcd', '@(ab|a*(b))*(c)d', { windows: true }));
+  });
+
+  it('"abc" should not match "\\a\\b\\c"', () => {
+    assert(!isMatch('abc', '\\a\\b\\c', { windows: true }));
+  });
+
+  it('"aBc" should match "a!(@(b|B))"', () => {
+    assert(isMatch('aBc', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"abcd" should match "?@(a|b)*@(c)d"', () => {
+    assert(isMatch('abcd', '?@(a|b)*@(c)d', { windows: true }));
+  });
+
+  it('"abcd" should match "@(ab|a*@(b))*(c)d"', () => {
+    assert(isMatch('abcd', '@(ab|a*@(b))*(c)d', { windows: true }));
+  });
+
+  it('"abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txt" should match "**/*a*b*g*n*t"', () => {
+    assert(isMatch('abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txt', '**/*a*b*g*n*t', { windows: true }));
+  });
+
+  it('"abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txtz" should not match "**/*a*b*g*n*t"', () => {
+    assert(!isMatch('abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txtz', '**/*a*b*g*n*t', { windows: true }));
+  });
+
+  it('"abcdef" should match "(a+|b)*"', () => {
+    assert(isMatch('abcdef', '(a+|b)*', { windows: true }));
+  });
+
+  it('"abcdef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abcdef', '(a+|b)+', { windows: true }));
+  });
+
+  it('"abcdef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abcdef', '*?(a)bc', { windows: true }));
+  });
+
+  it('"abcdef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abcdef', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"abcdef" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abcdef', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"abcdef" should match "ab**"', () => {
+    assert(isMatch('abcdef', 'ab**', { windows: true }));
+  });
+
+  it('"abcdef" should match "ab**(e|f)"', () => {
+    assert(isMatch('abcdef', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"abcdef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abcdef', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"abcdef" should match "ab***ef"', () => {
+    assert(isMatch('abcdef', 'ab***ef', { windows: true }));
+  });
+
+  it('"abcdef" should match "ab*+(e|f)"', () => {
+    assert(isMatch('abcdef', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"abcdef" should match "ab*d+(e|f)"', () => {
+    assert(isMatch('abcdef', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"abcdef" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('abcdef', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"abcfef" should match "(a+|b)*"', () => {
+    assert(isMatch('abcfef', '(a+|b)*', { windows: true }));
+  });
+
+  it('"abcfef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abcfef', '(a+|b)+', { windows: true }));
+  });
+
+  it('"abcfef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abcfef', '*?(a)bc', { windows: true }));
+  });
+
+  it('"abcfef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abcfef', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"abcfef" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abcfef', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"abcfef" should match "ab**"', () => {
+    assert(isMatch('abcfef', 'ab**', { windows: true }));
+  });
+
+  it('"abcfef" should match "ab**(e|f)"', () => {
+    assert(isMatch('abcfef', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"abcfef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abcfef', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"abcfef" should match "ab***ef"', () => {
+    assert(isMatch('abcfef', 'ab***ef', { windows: true }));
+  });
+
+  it('"abcfef" should match "ab*+(e|f)"', () => {
+    assert(isMatch('abcfef', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"abcfef" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abcfef', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"abcfef" should match "ab?*(e|f)"', () => {
+    assert(isMatch('abcfef', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"abcfefg" should match "(a+|b)*"', () => {
+    assert(isMatch('abcfefg', '(a+|b)*', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abcfefg', '(a+|b)+', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abcfefg', '*?(a)bc', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abcfefg', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"abcfefg" should match "ab**"', () => {
+    assert(isMatch('abcfefg', 'ab**', { windows: true }));
+  });
+
+  it('"abcfefg" should match "ab**(e|f)"', () => {
+    assert(isMatch('abcfefg', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"abcfefg" should match "ab**(e|f)g"', () => {
+    assert(isMatch('abcfefg', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab***ef"', () => {
+    assert(!isMatch('abcfefg', 'ab***ef', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"abcfefg" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('abcfefg', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"abcx" should match "!([[*])*"', () => {
+    assert(isMatch('abcx', '!([[*])*', { windows: true }));
+  });
+
+  it('"abcx" should match "+(a|b\\[)*"', () => {
+    assert(isMatch('abcx', '+(a|b\\[)*', { windows: true }));
+  });
+
+  it('"abcx" should not match "[a*(]*z"', () => {
+    assert(!isMatch('abcx', '[a*(]*z', { windows: true }));
+  });
+
+  it('"abcXdefXghi" should match "*X*i"', () => {
+    assert(isMatch('abcXdefXghi', '*X*i', { windows: true }));
+  });
+
+  it('"abcz" should match "!([[*])*"', () => {
+    assert(isMatch('abcz', '!([[*])*', { windows: true }));
+  });
+
+  it('"abcz" should match "+(a|b\\[)*"', () => {
+    assert(isMatch('abcz', '+(a|b\\[)*', { windows: true }));
+  });
+
+  it('"abcz" should match "[a*(]*z"', () => {
+    assert(isMatch('abcz', '[a*(]*z', { windows: true }));
+  });
+
+  it('"abd" should match "(a+|b)*"', () => {
+    assert(isMatch('abd', '(a+|b)*', { windows: true }));
+  });
+
+  it('"abd" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abd', '(a+|b)+', { windows: true }));
+  });
+
+  it('"abd" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abd', '*?(a)bc', { windows: true }));
+  });
+
+  it('"abd" should match "a!(*(b|B))"', () => {
+    assert(isMatch('abd', 'a!(*(b|B))', { windows: true }));
+  });
+
+  it('"abd" should match "a!(@(b|B))"', () => {
+    assert(isMatch('abd', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"abd" should not match "a!(@(b|B))d"', () => {
+    assert(!isMatch('abd', 'a!(@(b|B))d', { windows: true }));
+  });
+
+  it('"abd" should match "a(b*(foo|bar))d"', () => {
+    assert(isMatch('abd', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"abd" should match "a+(b|c)d"', () => {
+    assert(isMatch('abd', 'a+(b|c)d', { windows: true }));
+  });
+
+  it('"abd" should match "a[b*(foo|bar)]d"', () => {
+    assert(isMatch('abd', 'a[b*(foo|bar)]d', { windows: true }));
+  });
+
+  it('"abd" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('abd', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"abd" should match "ab**"', () => {
+    assert(isMatch('abd', 'ab**', { windows: true }));
+  });
+
+  it('"abd" should match "ab**(e|f)"', () => {
+    assert(isMatch('abd', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"abd" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abd', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"abd" should not match "ab***ef"', () => {
+    assert(!isMatch('abd', 'ab***ef', { windows: true }));
+  });
+
+  it('"abd" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('abd', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"abd" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abd', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"abd" should match "ab?*(e|f)"', () => {
+    assert(isMatch('abd', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"abef" should match "(a+|b)*"', () => {
+    assert(isMatch('abef', '(a+|b)*', { windows: true }));
+  });
+
+  it('"abef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('abef', '(a+|b)+', { windows: true }));
+  });
+
+  it('"abef" should not match "*(a+|b)"', () => {
+    assert(!isMatch('abef', '*(a+|b)', { windows: true }));
+  });
+
+  it('"abef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('abef', '*?(a)bc', { windows: true }));
+  });
+
+  it('"abef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('abef', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"abef" should match "ab*(e|f)"', () => {
+    assert(isMatch('abef', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"abef" should match "ab**"', () => {
+    assert(isMatch('abef', 'ab**', { windows: true }));
+  });
+
+  it('"abef" should match "ab**(e|f)"', () => {
+    assert(isMatch('abef', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"abef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('abef', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"abef" should match "ab***ef"', () => {
+    assert(isMatch('abef', 'ab***ef', { windows: true }));
+  });
+
+  it('"abef" should match "ab*+(e|f)"', () => {
+    assert(isMatch('abef', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"abef" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('abef', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"abef" should match "ab?*(e|f)"', () => {
+    assert(isMatch('abef', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"abz" should not match "a!(*)"', () => {
+    assert(!isMatch('abz', 'a!(*)', { windows: true }));
+  });
+
+  it('"abz" should match "a!(z)"', () => {
+    assert(isMatch('abz', 'a!(z)', { windows: true }));
+  });
+
+  it('"abz" should match "a*!(z)"', () => {
+    assert(isMatch('abz', 'a*!(z)', { windows: true }));
+  });
+
+  it('"abz" should not match "a*(z)"', () => {
+    assert(!isMatch('abz', 'a*(z)', { windows: true }));
+  });
+
+  it('"abz" should match "a**(z)"', () => {
+    assert(isMatch('abz', 'a**(z)', { windows: true }));
+  });
+
+  it('"abz" should match "a*@(z)"', () => {
+    assert(isMatch('abz', 'a*@(z)', { windows: true }));
+  });
+
+  it('"abz" should not match "a+(z)"', () => {
+    assert(!isMatch('abz', 'a+(z)', { windows: true }));
+  });
+
+  it('"abz" should not match "a?(z)"', () => {
+    assert(!isMatch('abz', 'a?(z)', { windows: true }));
+  });
+
+  it('"abz" should not match "a@(z)"', () => {
+    assert(!isMatch('abz', 'a@(z)', { windows: true }));
+  });
+
+  it('"ac" should not match "!(a)*"', () => {
+    assert(!isMatch('ac', '!(a)*', { windows: true }));
+  });
+
+  it('"ac" should match "*(@(a))a@(c)"', () => {
+    assert(isMatch('ac', '*(@(a))a@(c)', { windows: true }));
+  });
+
+  it('"ac" should match "a!(*(b|B))"', () => {
+    assert(isMatch('ac', 'a!(*(b|B))', { windows: true }));
+  });
+
+  it('"ac" should match "a!(@(b|B))"', () => {
+    assert(isMatch('ac', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"ac" should match "a!(b)*"', () => {
+    assert(isMatch('ac', 'a!(b)*', { windows: true }));
+  });
+
+  it('"accdef" should match "(a+|b)*"', () => {
+    assert(isMatch('accdef', '(a+|b)*', { windows: true }));
+  });
+
+  it('"accdef" should not match "(a+|b)+"', () => {
+    assert(!isMatch('accdef', '(a+|b)+', { windows: true }));
+  });
+
+  it('"accdef" should not match "*?(a)bc"', () => {
+    assert(!isMatch('accdef', '*?(a)bc', { windows: true }));
+  });
+
+  it('"accdef" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('accdef', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab**"', () => {
+    assert(!isMatch('accdef', 'ab**', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab**(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('accdef', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab***ef"', () => {
+    assert(!isMatch('accdef', 'ab***ef', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"accdef" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('accdef', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"acd" should match "(a+|b)*"', () => {
+    assert(isMatch('acd', '(a+|b)*', { windows: true }));
+  });
+
+  it('"acd" should not match "(a+|b)+"', () => {
+    assert(!isMatch('acd', '(a+|b)+', { windows: true }));
+  });
+
+  it('"acd" should not match "*?(a)bc"', () => {
+    assert(!isMatch('acd', '*?(a)bc', { windows: true }));
+  });
+
+  it('"acd" should match "@(ab|a*(b))*(c)d"', () => {
+    assert(isMatch('acd', '@(ab|a*(b))*(c)d', { windows: true }));
+  });
+
+  it('"acd" should match "a!(*(b|B))"', () => {
+    assert(isMatch('acd', 'a!(*(b|B))', { windows: true }));
+  });
+
+  it('"acd" should match "a!(@(b|B))"', () => {
+    assert(isMatch('acd', 'a!(@(b|B))', { windows: true }));
+  });
+
+  it('"acd" should match "a!(@(b|B))d"', () => {
+    assert(isMatch('acd', 'a!(@(b|B))d', { windows: true }));
+  });
+
+  it('"acd" should not match "a(b*(foo|bar))d"', () => {
+    assert(!isMatch('acd', 'a(b*(foo|bar))d', { windows: true }));
+  });
+
+  it('"acd" should match "a+(b|c)d"', () => {
+    assert(isMatch('acd', 'a+(b|c)d', { windows: true }));
+  });
+
+  it('"acd" should not match "a[b*(foo|bar)]d"', () => {
+    assert(!isMatch('acd', 'a[b*(foo|bar)]d', { windows: true }));
+  });
+
+  it('"acd" should not match "ab*(e|f)"', () => {
+    assert(!isMatch('acd', 'ab*(e|f)', { windows: true }));
+  });
+
+  it('"acd" should not match "ab**"', () => {
+    assert(!isMatch('acd', 'ab**', { windows: true }));
+  });
+
+  it('"acd" should not match "ab**(e|f)"', () => {
+    assert(!isMatch('acd', 'ab**(e|f)', { windows: true }));
+  });
+
+  it('"acd" should not match "ab**(e|f)g"', () => {
+    assert(!isMatch('acd', 'ab**(e|f)g', { windows: true }));
+  });
+
+  it('"acd" should not match "ab***ef"', () => {
+    assert(!isMatch('acd', 'ab***ef', { windows: true }));
+  });
+
+  it('"acd" should not match "ab*+(e|f)"', () => {
+    assert(!isMatch('acd', 'ab*+(e|f)', { windows: true }));
+  });
+
+  it('"acd" should not match "ab*d+(e|f)"', () => {
+    assert(!isMatch('acd', 'ab*d+(e|f)', { windows: true }));
+  });
+
+  it('"acd" should not match "ab?*(e|f)"', () => {
+    assert(!isMatch('acd', 'ab?*(e|f)', { windows: true }));
+  });
+
+  it('"axz" should not match "a+(z)"', () => {
+    assert(!isMatch('axz', 'a+(z)', { windows: true }));
+  });
+
+  it('"az" should not match "a!(*)"', () => {
+    assert(!isMatch('az', 'a!(*)', { windows: true }));
+  });
+
+  it('"az" should not match "a!(z)"', () => {
+    assert(!isMatch('az', 'a!(z)', { windows: true }));
+  });
+
+  it('"az" should match "a*!(z)"', () => {
+    assert(isMatch('az', 'a*!(z)', { windows: true }));
+  });
+
+  it('"az" should match "a*(z)"', () => {
+    assert(isMatch('az', 'a*(z)', { windows: true }));
+  });
+
+  it('"az" should match "a**(z)"', () => {
+    assert(isMatch('az', 'a**(z)', { windows: true }));
+  });
+
+  it('"az" should match "a*@(z)"', () => {
+    assert(isMatch('az', 'a*@(z)', { windows: true }));
+  });
+
+  it('"az" should match "a+(z)"', () => {
+    assert(isMatch('az', 'a+(z)', { windows: true }));
+  });
+
+  it('"az" should match "a?(z)"', () => {
+    assert(isMatch('az', 'a?(z)', { windows: true }));
+  });
+
+  it('"az" should match "a@(z)"', () => {
+    assert(isMatch('az', 'a@(z)', { windows: true }));
+  });
+
+  it('"az" should not match "a\\z"', () => {
+    assert(!isMatch('az', 'a\\\\z', { windows: false }));
+  });
+
+  it('"az" should not match "a\\z"', () => {
+    assert(!isMatch('az', 'a\\\\z', { windows: true }));
+  });
+
+  it('"b" should match "!(a)*"', () => {
+    assert(isMatch('b', '!(a)*', { windows: true }));
+  });
+
+  it('"b" should match "(a+|b)*"', () => {
+    assert(isMatch('b', '(a+|b)*', { windows: true }));
+  });
+
+  it('"b" should not match "a!(b)*"', () => {
+    assert(!isMatch('b', 'a!(b)*', { windows: true }));
+  });
+
+  it('"b.a" should match "(b|a).(a)"', () => {
+    assert(isMatch('b.a', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"b.a" should match "@(b|a).@(a)"', () => {
+    assert(isMatch('b.a', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"b/a" should not match "!(b/a)"', () => {
+    assert(!isMatch('b/a', '!(b/a)', { windows: true }));
+  });
+
+  it('"b/b" should match "!(b/a)"', () => {
+    assert(isMatch('b/b', '!(b/a)', { windows: true }));
+  });
+
+  it('"b/c" should match "!(b/a)"', () => {
+    assert(isMatch('b/c', '!(b/a)', { windows: true }));
+  });
+
+  it('"b/c" should not match "b/!(c)"', () => {
+    assert(!isMatch('b/c', 'b/!(c)', { windows: true }));
+  });
+
+  it('"b/c" should match "b/!(cc)"', () => {
+    assert(isMatch('b/c', 'b/!(cc)', { windows: true }));
+  });
+
+  it('"b/c.txt" should not match "b/!(c).txt"', () => {
+    assert(!isMatch('b/c.txt', 'b/!(c).txt', { windows: true }));
+  });
+
+  it('"b/c.txt" should match "b/!(cc).txt"', () => {
+    assert(isMatch('b/c.txt', 'b/!(cc).txt', { windows: true }));
+  });
+
+  it('"b/cc" should match "b/!(c)"', () => {
+    assert(isMatch('b/cc', 'b/!(c)', { windows: true }));
+  });
+
+  it('"b/cc" should not match "b/!(cc)"', () => {
+    assert(!isMatch('b/cc', 'b/!(cc)', { windows: true }));
+  });
+
+  it('"b/cc.txt" should not match "b/!(c).txt"', () => {
+    assert(!isMatch('b/cc.txt', 'b/!(c).txt', { windows: true }));
+  });
+
+  it('"b/cc.txt" should not match "b/!(cc).txt"', () => {
+    assert(!isMatch('b/cc.txt', 'b/!(cc).txt', { windows: true }));
+  });
+
+  it('"b/ccc" should match "b/!(c)"', () => {
+    assert(isMatch('b/ccc', 'b/!(c)', { windows: true }));
+  });
+
+  it('"ba" should match "!(a!(b))"', () => {
+    assert(isMatch('ba', '!(a!(b))', { windows: true }));
+  });
+
+  it('"ba" should match "b?(a|b)"', () => {
+    assert(isMatch('ba', 'b?(a|b)', { windows: true }));
+  });
+
+  it('"baaac" should not match "*(@(a))a@(c)"', () => {
+    assert(!isMatch('baaac', '*(@(a))a@(c)', { windows: true }));
+  });
+
+  it('"bar" should match "!(foo)"', () => {
+    assert(isMatch('bar', '!(foo)', { windows: true }));
+  });
+
+  it('"bar" should match "!(foo)*"', () => {
+    assert(isMatch('bar', '!(foo)*', { windows: true }));
+  });
+
+  it('"bar" should match "!(foo)b*"', () => {
+    assert(isMatch('bar', '!(foo)b*', { windows: true }));
+  });
+
+  it('"bar" should match "*(!(foo))"', () => {
+    assert(isMatch('bar', '*(!(foo))', { windows: true }));
+  });
+
+  it('"baz" should match "!(foo)*"', () => {
+    assert(isMatch('baz', '!(foo)*', { windows: true }));
+  });
+
+  it('"baz" should match "!(foo)b*"', () => {
+    assert(isMatch('baz', '!(foo)b*', { windows: true }));
+  });
+
+  it('"baz" should match "*(!(foo))"', () => {
+    assert(isMatch('baz', '*(!(foo))', { windows: true }));
+  });
+
+  it('"bb" should match "!(a!(b))"', () => {
+    assert(isMatch('bb', '!(a!(b))', { windows: true }));
+  });
+
+  it('"bb" should match "!(a)*"', () => {
+    assert(isMatch('bb', '!(a)*', { windows: true }));
+  });
+
+  it('"bb" should not match "a!(b)*"', () => {
+    assert(!isMatch('bb', 'a!(b)*', { windows: true }));
+  });
+
+  it('"bb" should not match "a?(a|b)"', () => {
+    assert(!isMatch('bb', 'a?(a|b)', { windows: true }));
+  });
+
+  it('"bbc" should match "!([[*])*"', () => {
+    assert(isMatch('bbc', '!([[*])*', { windows: true }));
+  });
+
+  it('"bbc" should not match "+(a|b\\[)*"', () => {
+    assert(!isMatch('bbc', '+(a|b\\[)*', { windows: true }));
+  });
+
+  it('"bbc" should not match "[a*(]*z"', () => {
+    assert(!isMatch('bbc', '[a*(]*z', { windows: true }));
+  });
+
+  it('"bz" should not match "a+(z)"', () => {
+    assert(!isMatch('bz', 'a+(z)', { windows: true }));
+  });
+
+  it('"c" should not match "*(@(a))a@(c)"', () => {
+    assert(!isMatch('c', '*(@(a))a@(c)', { windows: true }));
+  });
+
+  it('"c.a" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('c.a', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"c.a" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('c.a', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"c.a" should not match "!*.(a|b)"', () => {
+    assert(!isMatch('c.a', '!*.(a|b)', { windows: true }));
+  });
+
+  it('"c.a" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('c.a', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"c.a" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('c.a', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"c.a" should not match "*.!(a)"', () => {
+    assert(!isMatch('c.a', '*.!(a)', { windows: true }));
+  });
+
+  it('"c.a" should not match "*.+(b|d)"', () => {
+    assert(!isMatch('c.a', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"c.a" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('c.a', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"c.c" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('c.c', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"c.c" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('c.c', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"c.c" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('c.c', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"c.c" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('c.c', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"c.ccc" should match "!(*.[a-b]*)"', () => {
+    assert(isMatch('c.ccc', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"c.ccc" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('c.ccc', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"c.js" should not match "!(*.js)"', () => {
+    assert(!isMatch('c.js', '!(*.js)', { windows: true }));
+  });
+
+  it('"c.js" should match "*!(.js)"', () => {
+    assert(isMatch('c.js', '*!(.js)', { windows: true }));
+  });
+
+  it('"c.js" should not match "*.!(js)"', () => {
+    assert(!isMatch('c.js', '*.!(js)', { windows: true }));
+  });
+
+  it('"c/a/v" should match "c/!(z)/v"', () => {
+    assert(isMatch('c/a/v', 'c/!(z)/v', { windows: true }));
+  });
+
+  it('"c/a/v" should not match "c/*(z)/v"', () => {
+    assert(!isMatch('c/a/v', 'c/*(z)/v', { windows: true }));
+  });
+
+  it('"c/a/v" should not match "c/+(z)/v"', () => {
+    assert(!isMatch('c/a/v', 'c/+(z)/v', { windows: true }));
+  });
+
+  it('"c/a/v" should not match "c/@(z)/v"', () => {
+    assert(!isMatch('c/a/v', 'c/@(z)/v', { windows: true }));
+  });
+
+  it('"c/z/v" should not match "*(z)"', () => {
+    assert(!isMatch('c/z/v', '*(z)', { windows: true }));
+  });
+
+  it('"c/z/v" should not match "+(z)"', () => {
+    assert(!isMatch('c/z/v', '+(z)', { windows: true }));
+  });
+
+  it('"c/z/v" should not match "?(z)"', () => {
+    assert(!isMatch('c/z/v', '?(z)', { windows: true }));
+  });
+
+  it('"c/z/v" should not match "c/!(z)/v"', () => {
+    assert(!isMatch('c/z/v', 'c/!(z)/v', { windows: true }));
+  });
+
+  it('"c/z/v" should match "c/*(z)/v"', () => {
+    assert(isMatch('c/z/v', 'c/*(z)/v', { windows: true }));
+  });
+
+  it('"c/z/v" should match "c/+(z)/v"', () => {
+    assert(isMatch('c/z/v', 'c/+(z)/v', { windows: true }));
+  });
+
+  it('"c/z/v" should match "c/@(z)/v"', () => {
+    assert(isMatch('c/z/v', 'c/@(z)/v', { windows: true }));
+  });
+
+  it('"c/z/v" should match "c/z/v"', () => {
+    assert(isMatch('c/z/v', 'c/z/v', { windows: true }));
+  });
+
+  it('"cc.a" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('cc.a', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"cc.a" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('cc.a', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"ccc" should match "!(a)*"', () => {
+    assert(isMatch('ccc', '!(a)*', { windows: true }));
+  });
+
+  it('"ccc" should not match "a!(b)*"', () => {
+    assert(!isMatch('ccc', 'a!(b)*', { windows: true }));
+  });
+
+  it('"cow" should match "!(*.*)"', () => {
+    assert(isMatch('cow', '!(*.*)', { windows: true }));
+  });
+
+  it('"cow" should not match "!(*.*)."', () => {
+    assert(!isMatch('cow', '!(*.*).', { windows: true }));
+  });
+
+  it('"cow" should not match ".!(*.*)"', () => {
+    assert(!isMatch('cow', '.!(*.*)', { windows: true }));
+  });
+
+  it('"cz" should not match "a!(*)"', () => {
+    assert(!isMatch('cz', 'a!(*)', { windows: true }));
+  });
+
+  it('"cz" should not match "a!(z)"', () => {
+    assert(!isMatch('cz', 'a!(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a*!(z)"', () => {
+    assert(!isMatch('cz', 'a*!(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a*(z)"', () => {
+    assert(!isMatch('cz', 'a*(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a**(z)"', () => {
+    assert(!isMatch('cz', 'a**(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a*@(z)"', () => {
+    assert(!isMatch('cz', 'a*@(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a+(z)"', () => {
+    assert(!isMatch('cz', 'a+(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a?(z)"', () => {
+    assert(!isMatch('cz', 'a?(z)', { windows: true }));
+  });
+
+  it('"cz" should not match "a@(z)"', () => {
+    assert(!isMatch('cz', 'a@(z)', { windows: true }));
+  });
+
+  it('"d.a.d" should not match "!(*.[a-b]*)"', () => {
+    assert(!isMatch('d.a.d', '!(*.[a-b]*)', { windows: true }));
+  });
+
+  it('"d.a.d" should match "!(*[a-b].[a-b]*)"', () => {
+    assert(isMatch('d.a.d', '!(*[a-b].[a-b]*)', { windows: true }));
+  });
+
+  it('"d.a.d" should not match "!*.(a|b)*"', () => {
+    assert(!isMatch('d.a.d', '!*.(a|b)*', { windows: true }));
+  });
+
+  it('"d.a.d" should match "!*.*(a|b)"', () => {
+    assert(isMatch('d.a.d', '!*.*(a|b)', { windows: true }));
+  });
+
+  it('"d.a.d" should not match "!*.{a,b}*"', () => {
+    assert(!isMatch('d.a.d', '!*.{a,b}*', { windows: true }));
+  });
+
+  it('"d.a.d" should match "*.!(a)"', () => {
+    assert(isMatch('d.a.d', '*.!(a)', { windows: true }));
+  });
+
+  it('"d.a.d" should match "*.+(b|d)"', () => {
+    assert(isMatch('d.a.d', '*.+(b|d)', { windows: true }));
+  });
+
+  it('"d.d" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('d.d', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"d.d" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('d.d', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"d.d" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('d.d', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"d.d" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('d.d', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"d.js.d" should match "!(*.js)"', () => {
+    assert(isMatch('d.js.d', '!(*.js)', { windows: true }));
+  });
+
+  it('"d.js.d" should match "*!(.js)"', () => {
+    assert(isMatch('d.js.d', '*!(.js)', { windows: true }));
+  });
+
+  it('"d.js.d" should match "*.!(js)"', () => {
+    assert(isMatch('d.js.d', '*.!(js)', { windows: true }));
+  });
+
+  it('"dd.aa.d" should not match "(b|a).(a)"', () => {
+    assert(!isMatch('dd.aa.d', '(b|a).(a)', { windows: true }));
+  });
+
+  it('"dd.aa.d" should not match "@(b|a).@(a)"', () => {
+    assert(!isMatch('dd.aa.d', '@(b|a).@(a)', { windows: true }));
+  });
+
+  it('"def" should not match "()ef"', () => {
+    assert(!isMatch('def', '()ef', { windows: true }));
+  });
+
+  it('"e.e" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('e.e', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"e.e" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('e.e', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"e.e" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('e.e', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"e.e" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('e.e', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"ef" should match "()ef"', () => {
+    assert(isMatch('ef', '()ef', { windows: true }));
+  });
+
+  it('"effgz" should match "@(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('effgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+  });
+
+  it('"efgz" should match "@(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('efgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+  });
+
+  it('"egz" should match "@(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('egz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+  });
+
+  it('"egz" should not match "@(b+(c)d|e+(f)g?|?(h)i@(j|k))"', () => {
+    assert(!isMatch('egz', '@(b+(c)d|e+(f)g?|?(h)i@(j|k))', { windows: true }));
+  });
+
+  it('"egzefffgzbcdij" should match "*(b+(c)d|e*(f)g?|?(h)i@(j|k))"', () => {
+    assert(isMatch('egzefffgzbcdij', '*(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+  });
+
+  it('"f" should not match "!(f!(o))"', () => {
+    assert(!isMatch('f', '!(f!(o))', { windows: true }));
+  });
+
+  it('"f" should match "!(f(o))"', () => {
+    assert(isMatch('f', '!(f(o))', { windows: true }));
+  });
+
+  it('"f" should not match "!(f)"', () => {
+    assert(!isMatch('f', '!(f)', { windows: true }));
+  });
+
+  it('"f" should not match "*(!(f))"', () => {
+    assert(!isMatch('f', '*(!(f))', { windows: true }));
+  });
+
+  it('"f" should not match "+(!(f))"', () => {
+    assert(!isMatch('f', '+(!(f))', { windows: true }));
+  });
+
+  it('"f.a" should not match "!(*.a|*.b|*.c)"', () => {
+    assert(!isMatch('f.a', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"f.a" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('f.a', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"f.a" should not match "*.!(a|b|c)"', () => {
+    assert(!isMatch('f.a', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"f.f" should match "!(*.a|*.b|*.c)"', () => {
+    assert(isMatch('f.f', '!(*.a|*.b|*.c)', { windows: true }));
+  });
+
+  it('"f.f" should match "*!(.a|.b|.c)"', () => {
+    assert(isMatch('f.f', '*!(.a|.b|.c)', { windows: true }));
+  });
+
+  it('"f.f" should match "*.!(a|b|c)"', () => {
+    assert(isMatch('f.f', '*.!(a|b|c)', { windows: true }));
+  });
+
+  it('"f.f" should not match "*.(a|b|@(ab|a*@(b))*(c)d)"', () => {
+    assert(!isMatch('f.f', '*.(a|b|@(ab|a*@(b))*(c)d)', { windows: true }));
+  });
+
+  it('"fa" should not match "!(f!(o))"', () => {
+    assert(!isMatch('fa', '!(f!(o))', { windows: true }));
+  });
+
+  it('"fa" should match "!(f(o))"', () => {
+    assert(isMatch('fa', '!(f(o))', { windows: true }));
+  });
+
+  it('"fb" should not match "!(f!(o))"', () => {
+    assert(!isMatch('fb', '!(f!(o))', { windows: true }));
+  });
+
+  it('"fb" should match "!(f(o))"', () => {
+    assert(isMatch('fb', '!(f(o))', { windows: true }));
+  });
+
+  it('"fff" should match "!(f)"', () => {
+    assert(isMatch('fff', '!(f)', { windows: true }));
+  });
+
+  it('"fff" should match "*(!(f))"', () => {
+    assert(isMatch('fff', '*(!(f))', { windows: true }));
+  });
+
+  it('"fff" should match "+(!(f))"', () => {
+    assert(isMatch('fff', '+(!(f))', { windows: true }));
+  });
+
+  it('"fffooofoooooffoofffooofff" should match "*(*(f)*(o))"', () => {
+    assert(isMatch('fffooofoooooffoofffooofff', '*(*(f)*(o))', { windows: true }));
+  });
+
+  it('"ffo" should match "*(f*(o))"', () => {
+    assert(isMatch('ffo', '*(f*(o))', { windows: true }));
+  });
+
+  it('"file.C" should not match "*.c?(c)"', () => {
+    assert(!isMatch('file.C', '*.c?(c)', { windows: true }));
+  });
+
+  it('"file.c" should match "*.c?(c)"', () => {
+    assert(isMatch('file.c', '*.c?(c)', { windows: true }));
+  });
+
+  it('"file.cc" should match "*.c?(c)"', () => {
+    assert(isMatch('file.cc', '*.c?(c)', { windows: true }));
+  });
+
+  it('"file.ccc" should not match "*.c?(c)"', () => {
+    assert(!isMatch('file.ccc', '*.c?(c)', { windows: true }));
+  });
+
+  it('"fo" should match "!(f!(o))"', () => {
+    assert(isMatch('fo', '!(f!(o))', { windows: true }));
+  });
+
+  it('"fo" should not match "!(f(o))"', () => {
+    assert(!isMatch('fo', '!(f(o))', { windows: true }));
+  });
+
+  it('"fofo" should match "*(f*(o))"', () => {
+    assert(isMatch('fofo', '*(f*(o))', { windows: true }));
+  });
+
+  it('"fofoofoofofoo" should match "*(fo|foo)"', () => {
+    assert(isMatch('fofoofoofofoo', '*(fo|foo)', { windows: true }));
+  });
+
+  it('"fofoofoofofoo" should match "*(fo|foo)"', () => {
+    assert(isMatch('fofoofoofofoo', '*(fo|foo)', { windows: true }));
+  });
+
+  it('"foo" should match "!(!(foo))"', () => {
+    assert(isMatch('foo', '!(!(foo))', { windows: true }));
+  });
+
+  it('"foo" should match "!(f)"', () => {
+    assert(isMatch('foo', '!(f)', { windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)"', () => {
+    assert(!isMatch('foo', '!(foo)', { windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)*"', () => {
+    assert(!isMatch('foo', '!(foo)*', { windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)*"', () => {
+    assert(!isMatch('foo', '!(foo)*', { windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)+"', () => {
+    assert(!isMatch('foo', '!(foo)+', { windows: true }));
+  });
+
+  it('"foo" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foo', '!(foo)b*', { windows: true }));
+  });
+
+  it('"foo" should match "!(x)"', () => {
+    assert(isMatch('foo', '!(x)', { windows: true }));
+  });
+
+  it('"foo" should match "!(x)*"', () => {
+    assert(isMatch('foo', '!(x)*', { windows: true }));
+  });
+
+  it('"foo" should match "*"', () => {
+    assert(isMatch('foo', '*', { windows: true }));
+  });
+
+  it('"foo" should match "*(!(f))"', () => {
+    assert(isMatch('foo', '*(!(f))', { windows: true }));
+  });
+
+  it('"foo" should not match "*(!(foo))"', () => {
+    assert(!isMatch('foo', '*(!(foo))', { windows: true }));
+  });
+
+  it('"foo" should not match "*(@(a))a@(c)"', () => {
+    assert(!isMatch('foo', '*(@(a))a@(c)', { windows: true }));
+  });
+
+  it('"foo" should match "*(@(foo))"', () => {
+    assert(isMatch('foo', '*(@(foo))', { windows: true }));
+  });
+
+  it('"foo" should not match "*(a|b\\[)"', () => {
+    assert(!isMatch('foo', '*(a|b\\[)', { windows: true }));
+  });
+
+  it('"foo" should match "*(a|b\\[)|f*"', () => {
+    assert(isMatch('foo', '*(a|b\\[)|f*', { windows: true }));
+  });
+
+  it('"foo" should match "@(*(a|b\\[)|f*)"', () => {
+    assert(isMatch('foo', '@(*(a|b\\[)|f*)', { windows: true }));
+  });
+
+  it('"foo" should not match "*/*/*"', () => {
+    assert(!isMatch('foo', '*/*/*', { windows: true }));
+  });
+
+  it('"foo" should not match "*f"', () => {
+    assert(!isMatch('foo', '*f', { windows: true }));
+  });
+
+  it('"foo" should match "*foo*"', () => {
+    assert(isMatch('foo', '*foo*', { windows: true }));
+  });
+
+  it('"foo" should match "+(!(f))"', () => {
+    assert(isMatch('foo', '+(!(f))', { windows: true }));
+  });
+
+  it('"foo" should not match "??"', () => {
+    assert(!isMatch('foo', '??', { windows: true }));
+  });
+
+  it('"foo" should match "???"', () => {
+    assert(isMatch('foo', '???', { windows: true }));
+  });
+
+  it('"foo" should not match "bar"', () => {
+    assert(!isMatch('foo', 'bar', { windows: true }));
+  });
+
+  it('"foo" should match "f*"', () => {
+    assert(isMatch('foo', 'f*', { windows: true }));
+  });
+
+  it('"foo" should not match "fo"', () => {
+    assert(!isMatch('foo', 'fo', { windows: true }));
+  });
+
+  it('"foo" should match "foo"', () => {
+    assert(isMatch('foo', 'foo', { windows: true }));
+  });
+
+  it('"foo" should match "{*(a|b\\[),f*}"', () => {
+    assert(isMatch('foo', '{*(a|b\\[),f*}', { windows: true }));
+  });
+
+  it('"foo*" should match "foo\\*"', () => {
+    assert(isMatch('foo*', 'foo\\*', { windows: false }));
+  });
+
+  it('"foo*bar" should match "foo\\*bar"', () => {
+    assert(isMatch('foo*bar', 'foo\\*bar', { windows: true }));
+  });
+
+  it('"foo.js" should not match "!(foo).js"', () => {
+    assert(!isMatch('foo.js', '!(foo).js', { windows: true }));
+  });
+
+  it('"foo.js.js" should match "*.!(js)"', () => {
+    assert(isMatch('foo.js.js', '*.!(js)', { windows: true }));
+  });
+
+  it('"foo.js.js" should not match "*.!(js)*"', () => {
+    assert(!isMatch('foo.js.js', '*.!(js)*', { windows: true }));
+  });
+
+  it('"foo.js.js" should not match "*.!(js)*.!(js)"', () => {
+    assert(!isMatch('foo.js.js', '*.!(js)*.!(js)', { windows: true }));
+  });
+
+  it('"foo.js.js" should not match "*.!(js)+"', () => {
+    assert(!isMatch('foo.js.js', '*.!(js)+', { windows: true }));
+  });
+
+  it('"foo.txt" should match "**/!(bar).txt"', () => {
+    assert(isMatch('foo.txt', '**/!(bar).txt', { windows: true }));
+  });
+
+  it('"foo/bar" should not match "*/*/*"', () => {
+    assert(!isMatch('foo/bar', '*/*/*', { windows: true }));
+  });
+
+  it('"foo/bar" should match "foo/!(foo)"', () => {
+    assert(isMatch('foo/bar', 'foo/!(foo)', { windows: true }));
+  });
+
+  it('"foo/bar" should match "foo/*"', () => {
+    assert(isMatch('foo/bar', 'foo/*', { windows: true }));
+  });
+
+  it('"foo/bar" should match "foo/bar"', () => {
+    assert(isMatch('foo/bar', 'foo/bar', { windows: true }));
+  });
+
+  it('"foo/bar" should not match "foo?bar"', () => {
+    assert(!isMatch('foo/bar', 'foo?bar', { windows: true }));
+  });
+
+  it('"foo/bar" should match "foo[/]bar"', () => {
+    assert(isMatch('foo/bar', 'foo[/]bar', { windows: true }));
+  });
+
+  it('"foo/bar/baz.jsx" should match "foo/bar/**/*.+(js|jsx)"', () => {
+    assert(isMatch('foo/bar/baz.jsx', 'foo/bar/**/*.+(js|jsx)', { windows: true }));
+  });
+
+  it('"foo/bar/baz.jsx" should match "foo/bar/*.+(js|jsx)"', () => {
+    assert(isMatch('foo/bar/baz.jsx', 'foo/bar/*.+(js|jsx)', { windows: true }));
+  });
+
+  it('"foo/bb/aa/rr" should match "**/**/**"', () => {
+    assert(isMatch('foo/bb/aa/rr', '**/**/**', { windows: true }));
+  });
+
+  it('"foo/bb/aa/rr" should not match "*/*/*"', () => {
+    assert(!isMatch('foo/bb/aa/rr', '*/*/*', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "*/*/*"', () => {
+    assert(isMatch('foo/bba/arr', '*/*/*', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo*"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo*', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo**"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo**', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/*"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/*', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should match "foo/**"', () => {
+    assert(isMatch('foo/bba/arr', 'foo/**', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/**arr"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/**arr', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/**z"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/**z', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/*arr"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/*arr', { windows: true }));
+  });
+
+  it('"foo/bba/arr" should not match "foo/*z"', () => {
+    assert(!isMatch('foo/bba/arr', 'foo/*z', { windows: true }));
+  });
+
+  it('"foob" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foob', '!(foo)b*', { windows: true }));
+  });
+
+  it('"foob" should not match "(foo)bb"', () => {
+    assert(!isMatch('foob', '(foo)bb', { windows: true }));
+  });
+
+  it('"foobar" should match "!(foo)"', () => {
+    assert(isMatch('foobar', '!(foo)', { windows: true }));
+  });
+
+  it('"foobar" should not match "!(foo)*"', () => {
+    assert(!isMatch('foobar', '!(foo)*', { windows: true }));
+  });
+
+  it('"foobar" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foobar', '!(foo)b*', { windows: true }));
+  });
+
+  it('"foobar" should match "*(!(foo))"', () => {
+    assert(isMatch('foobar', '*(!(foo))', { windows: true }));
+  });
+
+  it('"foobar" should match "*ob*a*r*"', () => {
+    assert(isMatch('foobar', '*ob*a*r*', { windows: true }));
+  });
+
+  it('"foobar" should not match "foo\\*bar"', () => {
+    assert(!isMatch('foobar', 'foo\\*bar', { windows: true }));
+  });
+
+  it('"foobb" should not match "!(foo)b*"', () => {
+    assert(!isMatch('foobb', '!(foo)b*', { windows: true }));
+  });
+
+  it('"foobb" should match "(foo)bb"', () => {
+    assert(isMatch('foobb', '(foo)bb', { windows: true }));
+  });
+
+  it('"(foo)bb" should match "\\(foo\\)bb"', () => {
+    assert(isMatch('(foo)bb', '\\(foo\\)bb', { windows: true }));
+  });
+
+  it('"foofoofo" should match "@(foo|f|fo)*(f|of+(o))"', () => {
+    assert(isMatch('foofoofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+  });
+
+  it('"foofoofo" should match "@(foo|f|fo)*(f|of+(o))"', () => {
+    assert(isMatch('foofoofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+  });
+
+  it('"fooofoofofooo" should match "*(f*(o))"', () => {
+    assert(isMatch('fooofoofofooo', '*(f*(o))', { windows: true }));
+  });
+
+  it('"foooofo" should match "*(f*(o))"', () => {
+    assert(isMatch('foooofo', '*(f*(o))', { windows: true }));
+  });
+
+  it('"foooofof" should match "*(f*(o))"', () => {
+    assert(isMatch('foooofof', '*(f*(o))', { windows: true }));
+  });
+
+  it('"foooofof" should not match "*(f+(o))"', () => {
+    assert(!isMatch('foooofof', '*(f+(o))', { windows: true }));
+  });
+
+  it('"foooofofx" should not match "*(f*(o))"', () => {
+    assert(!isMatch('foooofofx', '*(f*(o))', { windows: true }));
+  });
+
+  it('"foooxfooxfoxfooox" should match "*(f*(o)x)"', () => {
+    assert(isMatch('foooxfooxfoxfooox', '*(f*(o)x)', { windows: true }));
+  });
+
+  it('"foooxfooxfxfooox" should match "*(f*(o)x)"', () => {
+    assert(isMatch('foooxfooxfxfooox', '*(f*(o)x)', { windows: true }));
+  });
+
+  it('"foooxfooxofoxfooox" should not match "*(f*(o)x)"', () => {
+    assert(!isMatch('foooxfooxofoxfooox', '*(f*(o)x)', { windows: true }));
+  });
+
+  it('"foot" should match "@(!(z*)|*x)"', () => {
+    assert(isMatch('foot', '@(!(z*)|*x)', { windows: true }));
+  });
+
+  it('"foox" should match "@(!(z*)|*x)"', () => {
+    assert(isMatch('foox', '@(!(z*)|*x)', { windows: true }));
+  });
+
+  it('"fz" should not match "*(z)"', () => {
+    assert(!isMatch('fz', '*(z)', { windows: true }));
+  });
+
+  it('"fz" should not match "+(z)"', () => {
+    assert(!isMatch('fz', '+(z)', { windows: true }));
+  });
+
+  it('"fz" should not match "?(z)"', () => {
+    assert(!isMatch('fz', '?(z)', { windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(moo).!(cow)"', () => {
+    assert(!isMatch('moo.cow', '!(moo).!(cow)', { windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*).!(*)"', () => {
+    assert(!isMatch('moo.cow', '!(*).!(*)', { windows: true }));
+  });
+
+  it('"mad.moo.cow" should not match "!(*.*).!(*.*)"', () => {
+    assert(!isMatch('mad.moo.cow', '!(*.*).!(*.*)', { windows: true }));
+  });
+
+  it('"mad.moo.cow" should not match ".!(*.*)"', () => {
+    assert(!isMatch('mad.moo.cow', '.!(*.*)', { windows: true }));
+  });
+
+  it('"Makefile" should match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(isMatch('Makefile', '!(*.c|*.h|Makefile.in|config*|README)', { windows: true }));
+  });
+
+  it('"Makefile.in" should not match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(!isMatch('Makefile.in', '!(*.c|*.h|Makefile.in|config*|README)', { windows: true }));
+  });
+
+  it('"moo" should match "!(*.*)"', () => {
+    assert(isMatch('moo', '!(*.*)', { windows: true }));
+  });
+
+  it('"moo" should not match "!(*.*)."', () => {
+    assert(!isMatch('moo', '!(*.*).', { windows: true }));
+  });
+
+  it('"moo" should not match ".!(*.*)"', () => {
+    assert(!isMatch('moo', '.!(*.*)', { windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*.*)"', () => {
+    assert(!isMatch('moo.cow', '!(*.*)', { windows: true }));
+  });
+
+  it('"moo.cow" should not match "!(*.*)."', () => {
+    assert(!isMatch('moo.cow', '!(*.*).', { windows: true }));
+  });
+
+  it('"moo.cow" should not match ".!(*.*)"', () => {
+    assert(!isMatch('moo.cow', '.!(*.*)', { windows: true }));
+  });
+
+  it('"mucca.pazza" should not match "mu!(*(c))?.pa!(*(z))?"', () => {
+    assert(!isMatch('mucca.pazza', 'mu!(*(c))?.pa!(*(z))?', { windows: true }));
+  });
+
+  it('"ofoofo" should match "*(of+(o))"', () => {
+    assert(isMatch('ofoofo', '*(of+(o))', { windows: true }));
+  });
+
+  it('"ofoofo" should match "*(of+(o)|f)"', () => {
+    assert(isMatch('ofoofo', '*(of+(o)|f)', { windows: true }));
+  });
+
+  it('"ofooofoofofooo" should not match "*(f*(o))"', () => {
+    assert(!isMatch('ofooofoofofooo', '*(f*(o))', { windows: true }));
+  });
+
+  it('"ofoooxoofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxoofoooxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxofo" should not match "*(*(of*(o)x)o)"', () => {
+    assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(*(of*(o)x)o)', { windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxoo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxoofoooxoofxoo', '*(*(of*(o)x)o)', { windows: true }));
+  });
+
+  it('"ofoooxoofxoofoooxoofxooofxofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(*(of*(o)x)o)', { windows: true }));
+  });
+
+  it('"ofxoofxo" should match "*(*(of*(o)x)o)"', () => {
+    assert(isMatch('ofxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+  });
+
+  it('"oofooofo" should match "*(of|oof+(o))"', () => {
+    assert(isMatch('oofooofo', '*(of|oof+(o))', { windows: true }));
+  });
+
+  it('"ooo" should match "!(f)"', () => {
+    assert(isMatch('ooo', '!(f)', { windows: true }));
+  });
+
+  it('"ooo" should match "*(!(f))"', () => {
+    assert(isMatch('ooo', '*(!(f))', { windows: true }));
+  });
+
+  it('"ooo" should match "+(!(f))"', () => {
+    assert(isMatch('ooo', '+(!(f))', { windows: true }));
+  });
+
+  it('"oxfoxfox" should not match "*(oxf+(ox))"', () => {
+    assert(!isMatch('oxfoxfox', '*(oxf+(ox))', { windows: true }));
+  });
+
+  it('"oxfoxoxfox" should match "*(oxf+(ox))"', () => {
+    assert(isMatch('oxfoxoxfox', '*(oxf+(ox))', { windows: true }));
+  });
+
+  it('"para" should match "para*([0-9])"', () => {
+    assert(isMatch('para', 'para*([0-9])', { windows: true }));
+  });
+
+  it('"para" should not match "para+([0-9])"', () => {
+    assert(!isMatch('para', 'para+([0-9])', { windows: true }));
+  });
+
+  it('"para.38" should match "para!(*.[00-09])"', () => {
+    assert(isMatch('para.38', 'para!(*.[00-09])', { windows: true }));
+  });
+
+  it('"para.graph" should match "para!(*.[0-9])"', () => {
+    assert(isMatch('para.graph', 'para!(*.[0-9])', { windows: true }));
+  });
+
+  it('"para13829383746592" should match "para*([0-9])"', () => {
+    assert(isMatch('para13829383746592', 'para*([0-9])', { windows: true }));
+  });
+
+  it('"para381" should not match "para?([345]|99)1"', () => {
+    assert(!isMatch('para381', 'para?([345]|99)1', { windows: true }));
+  });
+
+  it('"para39" should match "para!(*.[0-9])"', () => {
+    assert(isMatch('para39', 'para!(*.[0-9])', { windows: true }));
+  });
+
+  it('"para987346523" should match "para+([0-9])"', () => {
+    assert(isMatch('para987346523', 'para+([0-9])', { windows: true }));
+  });
+
+  it('"para991" should match "para?([345]|99)1"', () => {
+    assert(isMatch('para991', 'para?([345]|99)1', { windows: true }));
+  });
+
+  it('"paragraph" should match "para!(*.[0-9])"', () => {
+    assert(isMatch('paragraph', 'para!(*.[0-9])', { windows: true }));
+  });
+
+  it('"paragraph" should not match "para*([0-9])"', () => {
+    assert(!isMatch('paragraph', 'para*([0-9])', { windows: true }));
+  });
+
+  it('"paragraph" should match "para@(chute|graph)"', () => {
+    assert(isMatch('paragraph', 'para@(chute|graph)', { windows: true }));
+  });
+
+  it('"paramour" should not match "para@(chute|graph)"', () => {
+    assert(!isMatch('paramour', 'para@(chute|graph)', { windows: true }));
+  });
+
+  it('"parse.y" should match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(isMatch('parse.y', '!(*.c|*.h|Makefile.in|config*|README)', { windows: true }));
+  });
+
+  it('"shell.c" should not match "!(*.c|*.h|Makefile.in|config*|README)"', () => {
+    assert(!isMatch('shell.c', '!(*.c|*.h|Makefile.in|config*|README)', { windows: true }));
+  });
+
+  it('"VMS.FILE;" should not match "*\\;[1-9]*([0-9])"', () => {
+    assert(!isMatch('VMS.FILE;', '*\\;[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"VMS.FILE;0" should not match "*\\;[1-9]*([0-9])"', () => {
+    assert(!isMatch('VMS.FILE;0', '*\\;[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"VMS.FILE;1" should match "*\\;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;1', '*\\;[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"VMS.FILE;1" should match "*;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;1', '*;[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"VMS.FILE;139" should match "*\\;[1-9]*([0-9])"', () => {
+    assert(isMatch('VMS.FILE;139', '*\\;[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"VMS.FILE;1N" should not match "*\\;[1-9]*([0-9])"', () => {
+    assert(!isMatch('VMS.FILE;1N', '*\\;[1-9]*([0-9])', { windows: true }));
+  });
+
+  it('"xfoooofof" should not match "*(f*(o))"', () => {
+    assert(!isMatch('xfoooofof', '*(f*(o))', { windows: true }));
+  });
+
+  it('"XXX/adobe/courier/bold/o/normal//12/120/75/75/m/70/iso8859/1" should match "XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*"', () => {
+    assert(isMatch('XXX/adobe/courier/bold/o/normal//12/120/75/75/m/70/iso8859/1', 'XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*', { windows: false }));
+  });
+
+  it('"XXX/adobe/courier/bold/o/normal//12/120/75/75/X/70/iso8859/1" should not match "XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*"', () => {
+    assert(!isMatch('XXX/adobe/courier/bold/o/normal//12/120/75/75/X/70/iso8859/1', 'XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*', { windows: true }));
+  });
+
+  it('"z" should match "*(z)"', () => {
+    assert(isMatch('z', '*(z)', { windows: true }));
+  });
+
+  it('"z" should match "+(z)"', () => {
+    assert(isMatch('z', '+(z)', { windows: true }));
+  });
+
+  it('"z" should match "?(z)"', () => {
+    assert(isMatch('z', '?(z)', { windows: true }));
+  });
+
+  it('"zf" should not match "*(z)"', () => {
+    assert(!isMatch('zf', '*(z)', { windows: true }));
+  });
+
+  it('"zf" should not match "+(z)"', () => {
+    assert(!isMatch('zf', '+(z)', { windows: true }));
+  });
+
+  it('"zf" should not match "?(z)"', () => {
+    assert(!isMatch('zf', '?(z)', { windows: true }));
+  });
+
+  it('"zoot" should not match "@(!(z*)|*x)"', () => {
+    assert(!isMatch('zoot', '@(!(z*)|*x)', { windows: true }));
+  });
+
+  it('"zoox" should match "@(!(z*)|*x)"', () => {
+    assert(isMatch('zoox', '@(!(z*)|*x)', { windows: true }));
+  });
+
+  it('"zz" should not match "(a+|b)*"', () => {
+    assert(!isMatch('zz', '(a+|b)*', { windows: true }));
+  });
+});
+```
+
+## File: `test/extglobs-temp.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+/**
+ * Some of tests were converted from bash 4.3, 4.4, and minimatch unit tests.
+ * This is called "temp" as a reminder to reorganize these test and remove duplicates.
+ */
+
+describe('extglobs', () => {
+  describe('bash', () => {
+    it('should match extended globs from the bash spec:', () => {
+      assert(isMatch('bar', '!(foo)', { windows: true }));
+      assert(isMatch('f', '!(foo)', { windows: true }));
+      assert(isMatch('fa', '!(foo)', { windows: true }));
+      assert(isMatch('fb', '!(foo)', { windows: true }));
+      assert(isMatch('ff', '!(foo)', { windows: true }));
+      assert(isMatch('fff', '!(foo)', { windows: true }));
+      assert(isMatch('fo', '!(foo)', { windows: true }));
+      assert(!isMatch('foo', '!(foo)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(foo)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(foo)/*', { windows: true }));
+      assert(isMatch('foobar', '!(foo)', { windows: true }));
+      assert(isMatch('foot', '!(foo)', { windows: true }));
+      assert(isMatch('foox', '!(foo)', { windows: true }));
+      assert(isMatch('o', '!(foo)', { windows: true }));
+      assert(isMatch('of', '!(foo)', { windows: true }));
+      assert(isMatch('ooo', '!(foo)', { windows: true }));
+      assert(isMatch('ox', '!(foo)', { windows: true }));
+      assert(isMatch('x', '!(foo)', { windows: true }));
+      assert(isMatch('xx', '!(foo)', { windows: true }));
+
+      assert(!isMatch('bar', '!(!(foo))', { windows: true }));
+      assert(!isMatch('f', '!(!(foo))', { windows: true }));
+      assert(!isMatch('fa', '!(!(foo))', { windows: true }));
+      assert(!isMatch('fb', '!(!(foo))', { windows: true }));
+      assert(!isMatch('ff', '!(!(foo))', { windows: true }));
+      assert(!isMatch('fff', '!(!(foo))', { windows: true }));
+      assert(!isMatch('fo', '!(!(foo))', { windows: true }));
+      assert(isMatch('foo', '!(!(foo))', { windows: true }));
+      assert(isMatch('foo/bar', '!(!(bar)/baz)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(!(foo))', { windows: true }));
+      assert(!isMatch('foobar', '!(!(foo))', { windows: true }));
+      assert(!isMatch('foot', '!(!(foo))', { windows: true }));
+      assert(!isMatch('foox', '!(!(foo))', { windows: true }));
+      assert(!isMatch('o', '!(!(foo))', { windows: true }));
+      assert(!isMatch('of', '!(!(foo))', { windows: true }));
+      assert(!isMatch('ooo', '!(!(foo))', { windows: true }));
+      assert(!isMatch('ox', '!(!(foo))', { windows: true }));
+      assert(!isMatch('x', '!(!(foo))', { windows: true }));
+      assert(!isMatch('xx', '!(!(foo))', { windows: true }));
+
+      assert(isMatch('bar', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('f', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('fa', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('fb', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('ff', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('fff', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('fo', '!(!(!(foo)))', { windows: true }));
+      assert(!isMatch('foo', '!(!(!(foo)))', { windows: true }));
+      assert(!isMatch('foo/bar', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('foobar', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('foot', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('foox', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('o', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('of', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('ooo', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('ox', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('x', '!(!(!(foo)))', { windows: true }));
+      assert(isMatch('xx', '!(!(!(foo)))', { windows: true }));
+
+      assert(!isMatch('bar', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('f', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('fa', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('fb', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('ff', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('fff', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('fo', '!(!(!(!(foo))))', { windows: true }));
+      assert(isMatch('foo', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('foo/bar', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('foot', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('o', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('of', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('ooo', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('ox', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('x', '!(!(!(!(foo))))', { windows: true }));
+      assert(!isMatch('xx', '!(!(!(!(foo))))', { windows: true }));
+
+      assert(!isMatch('bar', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('f', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('fa', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('fb', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('ff', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('fff', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('fo', '!(!(foo))*', { windows: true }));
+      assert(isMatch('foo', '!(!(foo))*', { windows: true }));
+      assert(isMatch('foobar', '!(!(foo))*', { windows: true }));
+      assert(isMatch('foot', '!(!(foo))*', { windows: true }));
+      assert(isMatch('foox', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('o', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('of', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('ooo', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('ox', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('x', '!(!(foo))*', { windows: true }));
+      assert(!isMatch('xx', '!(!(foo))*', { windows: true }));
+
+      assert(isMatch('bar', '!(f!(o))', { windows: true }));
+      assert(!isMatch('f', '!(f!(o))', { windows: true }));
+      assert(!isMatch('fa', '!(f!(o))', { windows: true }));
+      assert(!isMatch('fb', '!(f!(o))', { windows: true }));
+      assert(!isMatch('ff', '!(f!(o))', { windows: true }));
+      assert(!isMatch('fff', '!(f!(o))', { windows: true }));
+      assert(isMatch('fo', '!(f!(o))', { windows: true }));
+      assert(isMatch('foo', '!(!(foo))', { windows: true }));
+      assert(!isMatch('foo', '!(f)!(o)!(o)', { windows: true }));
+      assert(isMatch('foo', '!(fo)', { windows: true }));
+      assert(isMatch('foo', '!(f!(o)*)', { windows: true }));
+      assert(!isMatch('foo', '!(f!(o))', { windows: true }));
+      assert(!isMatch('foo/bar', '!(f!(o))', { windows: true }));
+      assert(!isMatch('foobar', '!(f!(o))', { windows: true }));
+      assert(isMatch('o', '!(f!(o))', { windows: true }));
+      assert(isMatch('of', '!(f!(o))', { windows: true }));
+      assert(isMatch('ooo', '!(f!(o))', { windows: true }));
+      assert(isMatch('ox', '!(f!(o))', { windows: true }));
+      assert(isMatch('x', '!(f!(o))', { windows: true }));
+      assert(isMatch('xx', '!(f!(o))', { windows: true }));
+
+      assert(isMatch('bar', '!(f(o))', { windows: true }));
+      assert(isMatch('f', '!(f(o))', { windows: true }));
+      assert(isMatch('fa', '!(f(o))', { windows: true }));
+      assert(isMatch('fb', '!(f(o))', { windows: true }));
+      assert(isMatch('ff', '!(f(o))', { windows: true }));
+      assert(isMatch('fff', '!(f(o))', { windows: true }));
+      assert(!isMatch('fo', '!(f(o))', { windows: true }));
+      assert(isMatch('foo', '!(f(o))', { windows: true }));
+      assert(!isMatch('foo/bar', '!(f(o))', { windows: true }));
+      assert(isMatch('foobar', '!(f(o))', { windows: true }));
+      assert(isMatch('foot', '!(f(o))', { windows: true }));
+      assert(isMatch('foox', '!(f(o))', { windows: true }));
+      assert(isMatch('o', '!(f(o))', { windows: true }));
+      assert(isMatch('of', '!(f(o))', { windows: true }));
+      assert(isMatch('ooo', '!(f(o))', { windows: true }));
+      assert(isMatch('ox', '!(f(o))', { windows: true }));
+      assert(isMatch('x', '!(f(o))', { windows: true }));
+      assert(isMatch('xx', '!(f(o))', { windows: true }));
+
+      assert(isMatch('bar', '!(f)', { windows: true }));
+      assert(!isMatch('f', '!(f)', { windows: true }));
+      assert(isMatch('fa', '!(f)', { windows: true }));
+      assert(isMatch('fb', '!(f)', { windows: true }));
+      assert(isMatch('ff', '!(f)', { windows: true }));
+      assert(isMatch('fff', '!(f)', { windows: true }));
+      assert(isMatch('fo', '!(f)', { windows: true }));
+      assert(isMatch('foo', '!(f)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(f)', { windows: true }));
+      assert(isMatch('foobar', '!(f)', { windows: true }));
+      assert(isMatch('foot', '!(f)', { windows: true }));
+      assert(isMatch('foox', '!(f)', { windows: true }));
+      assert(isMatch('o', '!(f)', { windows: true }));
+      assert(isMatch('of', '!(f)', { windows: true }));
+      assert(isMatch('ooo', '!(f)', { windows: true }));
+      assert(isMatch('ox', '!(f)', { windows: true }));
+      assert(isMatch('x', '!(f)', { windows: true }));
+      assert(isMatch('xx', '!(f)', { windows: true }));
+
+      assert(isMatch('bar', '!(f)', { windows: true }));
+      assert(!isMatch('f', '!(f)', { windows: true }));
+      assert(isMatch('fa', '!(f)', { windows: true }));
+      assert(isMatch('fb', '!(f)', { windows: true }));
+      assert(isMatch('ff', '!(f)', { windows: true }));
+      assert(isMatch('fff', '!(f)', { windows: true }));
+      assert(isMatch('fo', '!(f)', { windows: true }));
+      assert(isMatch('foo', '!(f)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(f)', { windows: true }));
+      assert(isMatch('foobar', '!(f)', { windows: true }));
+      assert(isMatch('foot', '!(f)', { windows: true }));
+      assert(isMatch('foox', '!(f)', { windows: true }));
+      assert(isMatch('o', '!(f)', { windows: true }));
+      assert(isMatch('of', '!(f)', { windows: true }));
+      assert(isMatch('ooo', '!(f)', { windows: true }));
+      assert(isMatch('ox', '!(f)', { windows: true }));
+      assert(isMatch('x', '!(f)', { windows: true }));
+      assert(isMatch('xx', '!(f)', { windows: true }));
+
+      assert(isMatch('bar', '!(foo)', { windows: true }));
+      assert(isMatch('f', '!(foo)', { windows: true }));
+      assert(isMatch('fa', '!(foo)', { windows: true }));
+      assert(isMatch('fb', '!(foo)', { windows: true }));
+      assert(isMatch('ff', '!(foo)', { windows: true }));
+      assert(isMatch('fff', '!(foo)', { windows: true }));
+      assert(isMatch('fo', '!(foo)', { windows: true }));
+      assert(!isMatch('foo', '!(foo)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(foo)', { windows: true }));
+      assert(isMatch('foobar', '!(foo)', { windows: true }));
+      assert(isMatch('foot', '!(foo)', { windows: true }));
+      assert(isMatch('foox', '!(foo)', { windows: true }));
+      assert(isMatch('o', '!(foo)', { windows: true }));
+      assert(isMatch('of', '!(foo)', { windows: true }));
+      assert(isMatch('ooo', '!(foo)', { windows: true }));
+      assert(isMatch('ox', '!(foo)', { windows: true }));
+      assert(isMatch('x', '!(foo)', { windows: true }));
+      assert(isMatch('xx', '!(foo)', { windows: true }));
+
+      assert(isMatch('bar', '!(foo)*', { windows: true }));
+      assert(isMatch('f', '!(foo)*', { windows: true }));
+      assert(isMatch('fa', '!(foo)*', { windows: true }));
+      assert(isMatch('fb', '!(foo)*', { windows: true }));
+      assert(isMatch('ff', '!(foo)*', { windows: true }));
+      assert(isMatch('fff', '!(foo)*', { windows: true }));
+      assert(isMatch('fo', '!(foo)*', { windows: true }));
+      assert(!isMatch('foo', '!(foo)*', { windows: true }));
+      assert(!isMatch('foo/bar', '!(foo)*', { windows: true }));
+      assert(!isMatch('foobar', '!(foo)*', { windows: true }));
+      assert(!isMatch('foot', '!(foo)*', { windows: true }));
+      assert(!isMatch('foox', '!(foo)*', { windows: true }));
+      assert(isMatch('o', '!(foo)*', { windows: true }));
+      assert(isMatch('of', '!(foo)*', { windows: true }));
+      assert(isMatch('ooo', '!(foo)*', { windows: true }));
+      assert(isMatch('ox', '!(foo)*', { windows: true }));
+      assert(isMatch('x', '!(foo)*', { windows: true }));
+      assert(isMatch('xx', '!(foo)*', { windows: true }));
+
+      assert(isMatch('bar', '!(x)', { windows: true }));
+      assert(isMatch('f', '!(x)', { windows: true }));
+      assert(isMatch('fa', '!(x)', { windows: true }));
+      assert(isMatch('fb', '!(x)', { windows: true }));
+      assert(isMatch('ff', '!(x)', { windows: true }));
+      assert(isMatch('fff', '!(x)', { windows: true }));
+      assert(isMatch('fo', '!(x)', { windows: true }));
+      assert(isMatch('foo', '!(x)', { windows: true }));
+      assert(!isMatch('foo/bar', '!(x)', { windows: true }));
+      assert(isMatch('foobar', '!(x)', { windows: true }));
+      assert(isMatch('foot', '!(x)', { windows: true }));
+      assert(isMatch('foox', '!(x)', { windows: true }));
+      assert(isMatch('o', '!(x)', { windows: true }));
+      assert(isMatch('of', '!(x)', { windows: true }));
+      assert(isMatch('ooo', '!(x)', { windows: true }));
+      assert(isMatch('ox', '!(x)', { windows: true }));
+      assert(!isMatch('x', '!(x)', { windows: true }));
+      assert(isMatch('xx', '!(x)', { windows: true }));
+
+      assert(isMatch('bar', '!(x)*', { windows: true }));
+      assert(isMatch('f', '!(x)*', { windows: true }));
+      assert(isMatch('fa', '!(x)*', { windows: true }));
+      assert(isMatch('fb', '!(x)*', { windows: true }));
+      assert(isMatch('ff', '!(x)*', { windows: true }));
+      assert(isMatch('fff', '!(x)*', { windows: true }));
+      assert(isMatch('fo', '!(x)*', { windows: true }));
+      assert(isMatch('foo', '!(x)*', { windows: true }));
+      assert(!isMatch('foo/bar', '!(x)*', { windows: true }));
+      assert(isMatch('foobar', '!(x)*', { windows: true }));
+      assert(isMatch('foot', '!(x)*', { windows: true }));
+      assert(isMatch('foox', '!(x)*', { windows: true }));
+      assert(isMatch('o', '!(x)*', { windows: true }));
+      assert(isMatch('of', '!(x)*', { windows: true }));
+      assert(isMatch('ooo', '!(x)*', { windows: true }));
+      assert(isMatch('ox', '!(x)*', { windows: true }));
+      assert(!isMatch('x', '!(x)*', { windows: true }));
+      assert(!isMatch('xx', '!(x)*', { windows: true }));
+
+      assert(isMatch('bar', '*(!(f))', { windows: true }));
+      assert(!isMatch('f', '*(!(f))', { windows: true }));
+      assert(isMatch('fa', '*(!(f))', { windows: true }));
+      assert(isMatch('fb', '*(!(f))', { windows: true }));
+      assert(isMatch('ff', '*(!(f))', { windows: true }));
+      assert(isMatch('fff', '*(!(f))', { windows: true }));
+      assert(isMatch('fo', '*(!(f))', { windows: true }));
+      assert(isMatch('foo', '*(!(f))', { windows: true }));
+      assert(!isMatch('foo/bar', '*(!(f))', { windows: true }));
+      assert(isMatch('foobar', '*(!(f))', { windows: true }));
+      assert(isMatch('foot', '*(!(f))', { windows: true }));
+      assert(isMatch('foox', '*(!(f))', { windows: true }));
+      assert(isMatch('o', '*(!(f))', { windows: true }));
+      assert(isMatch('of', '*(!(f))', { windows: true }));
+      assert(isMatch('ooo', '*(!(f))', { windows: true }));
+      assert(isMatch('ox', '*(!(f))', { windows: true }));
+      assert(isMatch('x', '*(!(f))', { windows: true }));
+      assert(isMatch('xx', '*(!(f))', { windows: true }));
+
+      assert(!isMatch('bar', '*((foo))', { windows: true }));
+      assert(!isMatch('f', '*((foo))', { windows: true }));
+      assert(!isMatch('fa', '*((foo))', { windows: true }));
+      assert(!isMatch('fb', '*((foo))', { windows: true }));
+      assert(!isMatch('ff', '*((foo))', { windows: true }));
+      assert(!isMatch('fff', '*((foo))', { windows: true }));
+      assert(!isMatch('fo', '*((foo))', { windows: true }));
+      assert(isMatch('foo', '*((foo))', { windows: true }));
+      assert(!isMatch('foo/bar', '*((foo))', { windows: true }));
+      assert(!isMatch('foobar', '*((foo))', { windows: true }));
+      assert(!isMatch('foot', '*((foo))', { windows: true }));
+      assert(!isMatch('foox', '*((foo))', { windows: true }));
+      assert(!isMatch('o', '*((foo))', { windows: true }));
+      assert(!isMatch('of', '*((foo))', { windows: true }));
+      assert(!isMatch('ooo', '*((foo))', { windows: true }));
+      assert(!isMatch('ox', '*((foo))', { windows: true }));
+      assert(!isMatch('x', '*((foo))', { windows: true }));
+      assert(!isMatch('xx', '*((foo))', { windows: true }));
+
+      assert(isMatch('bar', '+(!(f))', { windows: true }));
+      assert(!isMatch('f', '+(!(f))', { windows: true }));
+      assert(isMatch('fa', '+(!(f))', { windows: true }));
+      assert(isMatch('fb', '+(!(f))', { windows: true }));
+      assert(isMatch('ff', '+(!(f))', { windows: true }));
+      assert(isMatch('fff', '+(!(f))', { windows: true }));
+      assert(isMatch('fo', '+(!(f))', { windows: true }));
+      assert(isMatch('foo', '+(!(f))', { windows: true }));
+      assert(!isMatch('foo/bar', '+(!(f))', { windows: true }));
+      assert(isMatch('foobar', '+(!(f))', { windows: true }));
+      assert(isMatch('foot', '+(!(f))', { windows: true }));
+      assert(isMatch('foox', '+(!(f))', { windows: true }));
+      assert(isMatch('o', '+(!(f))', { windows: true }));
+      assert(isMatch('of', '+(!(f))', { windows: true }));
+      assert(isMatch('ooo', '+(!(f))', { windows: true }));
+      assert(isMatch('ox', '+(!(f))', { windows: true }));
+      assert(isMatch('x', '+(!(f))', { windows: true }));
+      assert(isMatch('xx', '+(!(f))', { windows: true }));
+
+      assert(isMatch('bar', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('f', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fa', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fb', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ff', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fff', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foo/bar', '@(!(z*/*)|*x)', { windows: true }));
+      assert(!isMatch('foo/bar', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foobar', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foot', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('o', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('of', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ooo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('x', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('xx', '@(!(z*)|*x)', { windows: true }));
+
+      assert(!isMatch('bar', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('f', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('fa', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('fb', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('ff', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('fff', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('fo', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('foo', 'foo/!(foo)', { windows: true }));
+      assert(isMatch('foo/bar', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('foobar', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('foot', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('foox', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('o', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('of', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('ooo', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('ox', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('x', 'foo/!(foo)', { windows: true }));
+      assert(!isMatch('xx', 'foo/!(foo)', { windows: true }));
+
+      assert(!isMatch('ffffffo', '(foo)bb', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '(foo)bb', { windows: true }));
+      assert(!isMatch('ffo', '(foo)bb', { windows: true }));
+      assert(!isMatch('fofo', '(foo)bb', { windows: true }));
+      assert(!isMatch('fofoofoofofoo', '(foo)bb', { windows: true }));
+      assert(!isMatch('foo', '(foo)bb', { windows: true }));
+      assert(!isMatch('foob', '(foo)bb', { windows: true }));
+      assert(isMatch('foobb', '(foo)bb', { windows: true }));
+      assert(!isMatch('foofoofo', '(foo)bb', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '(foo)bb', { windows: true }));
+      assert(!isMatch('foooofo', '(foo)bb', { windows: true }));
+      assert(!isMatch('foooofof', '(foo)bb', { windows: true }));
+      assert(!isMatch('foooofofx', '(foo)bb', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '(foo)bb', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '(foo)bb', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '(foo)bb', { windows: true }));
+      assert(!isMatch('foot', '(foo)bb', { windows: true }));
+      assert(!isMatch('foox', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofoofo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ofxoofxo', '(foo)bb', { windows: true }));
+      assert(!isMatch('oofooofo', '(foo)bb', { windows: true }));
+      assert(!isMatch('ooo', '(foo)bb', { windows: true }));
+      assert(!isMatch('oxfoxfox', '(foo)bb', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '(foo)bb', { windows: true }));
+      assert(!isMatch('xfoooofof', '(foo)bb', { windows: true }));
+
+      assert(isMatch('ffffffo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('fffooofoooooffoofffooofff', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('ffo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('fofo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('foo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foob', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foobb', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('foofoofo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('fooofoofofooo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('foooofo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('foooofof', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foot', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('foox', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('ofoofo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('ofooofoofofooo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('oofooofo', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('ooo', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(*(f)*(o))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(*(f)*(o))', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('ffo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('fofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('fofoofoofofoo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foob', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foobb', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foofoofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foooofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foooofof', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foooofofx', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foot', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('foox', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('ofoofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxoo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('oofooofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ooo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(*(of*(o)x)o)', { windows: true }));
+
+      assert(isMatch('ffffffo', '*(f*(o))', { windows: true }));
+      assert(isMatch('fffooofoooooffoofffooofff', '*(f*(o))', { windows: true }));
+      assert(isMatch('ffo', '*(f*(o))', { windows: true }));
+      assert(isMatch('fofo', '*(f*(o))', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '*(f*(o))', { windows: true }));
+      assert(isMatch('foo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foob', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foobb', '*(f*(o))', { windows: true }));
+      assert(isMatch('foofoofo', '*(f*(o))', { windows: true }));
+      assert(isMatch('fooofoofofooo', '*(f*(o))', { windows: true }));
+      assert(isMatch('foooofo', '*(f*(o))', { windows: true }));
+      assert(isMatch('foooofof', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foot', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foox', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoofo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('oofooofo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ooo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(f*(o))', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(f*(o))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(f*(o))', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ffo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('fofo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('fofoofoofofoo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foob', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foobb', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foofoofo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foooofo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foooofof', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foooofofx', '*(f*(o)x)', { windows: true }));
+      assert(isMatch('foooxfooxfoxfooox', '*(f*(o)x)', { windows: true }));
+      assert(isMatch('foooxfooxfxfooox', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('foot', '*(f*(o)x)', { windows: true }));
+      assert(isMatch('foox', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofoofo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('oofooofo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ooo', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(f*(o)x)', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ffo', '*(f+(o))', { windows: true }));
+      assert(isMatch('fofo', '*(f+(o))', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '*(f+(o))', { windows: true }));
+      assert(isMatch('foo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foob', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foobb', '*(f+(o))', { windows: true }));
+      assert(isMatch('foofoofo', '*(f+(o))', { windows: true }));
+      assert(isMatch('fooofoofofooo', '*(f+(o))', { windows: true }));
+      assert(isMatch('foooofo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foooofof', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foot', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foox', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofoofo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('oofooofo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('ooo', '*(f+(o))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(f+(o))', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(f+(o))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(f+(o))', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ffo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('fofo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('fofoofoofofoo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foob', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foobb', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foofoofo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foooofo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foooofof', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foot', '*(of+(o))', { windows: true }));
+      assert(!isMatch('foox', '*(of+(o))', { windows: true }));
+      assert(isMatch('ofoofo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('oofooofo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('ooo', '*(of+(o))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(of+(o))', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(of+(o))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(of+(o))', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ffo', '*(of+(o)|f)', { windows: true }));
+      assert(isMatch('fofo', '*(of+(o)|f)', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foob', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foobb', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foofoofo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foooofo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foooofof', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foooofofx', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foot', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('foox', '*(of+(o)|f)', { windows: true }));
+      assert(isMatch('ofoofo', '*(of+(o)|f)', { windows: true }));
+      assert(isMatch('ofooofoofofooo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('oofooofo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('ooo', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(of+(o)|f)', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(of+(o)|f)', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ffo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('fofo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('fofoofoofofoo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foob', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foobb', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foofoofo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foooofo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foooofof', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foot', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('foox', '*(of|oof+(o))', { windows: true }));
+      assert(isMatch('ofoofo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(of|oof+(o))', { windows: true }));
+      assert(isMatch('oofooofo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('ooo', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(of|oof+(o))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(of|oof+(o))', { windows: true }));
+
+      assert(!isMatch('ffffffo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ffo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('fofo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('fofoofoofofoo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foob', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foobb', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foofoofo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foooofo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foooofof', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foot', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('foox', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofoofo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('oofooofo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('ooo', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(oxf+(ox))', { windows: true }));
+      assert(isMatch('oxfoxoxfox', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(oxf+(ox))', { windows: true }));
+
+      assert(isMatch('ffffffo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fffooofoooooffoofffooofff', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ffo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fofo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foob', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foobb', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foofoofo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fooofoofofooo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foooofo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foooofof', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foooofofx', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foooxfooxfoxfooox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foooxfooxfxfooox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foooxfooxofoxfooox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foot', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofoofo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofooofoofofooo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofoooxoofxo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxofo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxoo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxooofxofxo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ofxoofxo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('oofooofo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ooo', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('oxfoxfox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('oxfoxoxfox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('xfoooofof', '@(!(z*)|*x)', { windows: true }));
+
+      assert(!isMatch('ffffffo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ffo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(isMatch('fofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(isMatch('foo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foob', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foobb', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(isMatch('foofoofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(isMatch('fooofoofofooo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foooofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foooofof', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foot', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('foox', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofoofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ofxoofxo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('oofooofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('ooo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('oxfoxfox', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(!isMatch('xfoooofof', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+
+      assert(isMatch('aaac', '*(@(a))a@(c)', { windows: true }));
+      assert(isMatch('aac', '*(@(a))a@(c)', { windows: true }));
+      assert(isMatch('ac', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('abbcd', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('abcd', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('acd', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('baaac', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('c', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('foo', '*(@(a))a@(c)', { windows: true }));
+
+      assert(!isMatch('aaac', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(!isMatch('aac', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(!isMatch('ac', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(isMatch('abbcd', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(isMatch('abcd', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(isMatch('acd', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(!isMatch('baaac', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(!isMatch('c', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(!isMatch('foo', '@(ab|a*(b))*(c)d', { windows: true }));
+
+      assert(!isMatch('aaac', '?@(a|b)*@(c)d', { windows: true }));
+      assert(!isMatch('aac', '?@(a|b)*@(c)d', { windows: true }));
+      assert(!isMatch('ac', '?@(a|b)*@(c)d', { windows: true }));
+      assert(isMatch('abbcd', '?@(a|b)*@(c)d', { windows: true }));
+      assert(isMatch('abcd', '?@(a|b)*@(c)d', { windows: true }));
+      assert(!isMatch('acd', '?@(a|b)*@(c)d', { windows: true }));
+      assert(!isMatch('baaac', '?@(a|b)*@(c)d', { windows: true }));
+      assert(!isMatch('c', '?@(a|b)*@(c)d', { windows: true }));
+      assert(!isMatch('foo', '?@(a|b)*@(c)d', { windows: true }));
+
+      assert(!isMatch('aaac', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(!isMatch('aac', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(!isMatch('ac', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(isMatch('abbcd', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(isMatch('abcd', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(!isMatch('acd', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(!isMatch('baaac', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(!isMatch('c', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(!isMatch('foo', '@(ab|a*@(b))*(c)d', { windows: true }));
+
+      assert(!isMatch('aac', '*(@(a))b@(c)', { windows: true }));
+    });
+
+  });
+
+  describe('other', () => {
+    it('should support backtracking in alternation matches', () => {
+      assert(isMatch('fofoofoofofoo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ffffffo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('fffooofoooooffoofffooofff', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ffo', '*(fo|foo)', { windows: true }));
+      assert(isMatch('fofo', '*(fo|foo)', { windows: true }));
+      assert(isMatch('fofoofoofofoo', '*(fo|foo)', { windows: true }));
+      assert(isMatch('foo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foob', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foobb', '*(fo|foo)', { windows: true }));
+      assert(isMatch('foofoofo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('fooofoofofooo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foooofo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foooofof', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foooofofx', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foooxfooxfoxfooox', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foooxfooxfxfooox', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foot', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('foox', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofoofo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofoooxoofxo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxoo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ofxoofxo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('oofooofo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('ooo', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('oxfoxoxfox', '*(fo|foo)', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(fo|foo)', { windows: true }));
+    });
+
+    it('should support exclusions', () => {
+      assert(!isMatch('foob', '!(foo)b*', { windows: true }));
+      assert(!isMatch('foobb', '!(foo)b*', { windows: true }));
+      assert(!isMatch('foo', '!(foo)b*', { windows: true }));
+      assert(isMatch('bar', '!(foo)b*', { windows: true }));
+      assert(isMatch('baz', '!(foo)b*', { windows: true }));
+      assert(!isMatch('foobar', '!(foo)b*', { windows: true }));
+
+      assert(!isMatch('foo', '*(!(foo))', { windows: true }));
+      assert(isMatch('bar', '*(!(foo))', { windows: true }));
+      assert(isMatch('baz', '*(!(foo))', { windows: true }));
+      assert(isMatch('foobar', '*(!(foo))', { windows: true }));
+
+      // Bash 4.3 says this should match `foo` and `foobar`, which makes no sense
+      assert(!isMatch('foo', '!(foo)*', { windows: true }));
+      assert(!isMatch('foobar', '!(foo)*', { windows: true }));
+      assert(isMatch('bar', '!(foo)*', { windows: true }));
+      assert(isMatch('baz', '!(foo)*', { windows: true }));
+
+      assert(!isMatch('moo.cow', '!(*.*)', { windows: true }));
+      assert(isMatch('moo', '!(*.*)', { windows: true }));
+      assert(isMatch('cow', '!(*.*)', { windows: true }));
+
+      assert(isMatch('moo.cow', '!(a*).!(b*)', { windows: true }));
+      assert(!isMatch('moo.cow', '!(*).!(*)', { windows: true }));
+      assert(!isMatch('moo.cow.moo.cow', '!(*.*).!(*.*)', { windows: true }));
+      assert(!isMatch('mad.moo.cow', '!(*.*).!(*.*)', { windows: true }));
+
+      assert(!isMatch('moo.cow', '!(*.*).', { windows: true }));
+      assert(!isMatch('moo', '!(*.*).', { windows: true }));
+      assert(!isMatch('cow', '!(*.*).', { windows: true }));
+
+      assert(!isMatch('moo.cow', '.!(*.*)', { windows: true }));
+      assert(!isMatch('moo', '.!(*.*)', { windows: true }));
+      assert(!isMatch('cow', '.!(*.*)', { windows: true }));
+
+      assert(!isMatch('mucca.pazza', 'mu!(*(c))?.pa!(*(z))?', { windows: true }));
+
+      assert(isMatch('effgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('efgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('egz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(!isMatch('egz', '@(b+(c)d|e+(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('egzefffgzbcdij', '*(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+    });
+
+    it('valid numbers', () => {
+      assert(isMatch('/dev/udp/129.22.8.102/45', '/dev/@(tcp|udp)/*/*', { windows: true }));
+
+      assert(!isMatch('0', '[1-6]([0-9])', { windows: true }));
+      assert(isMatch('12', '[1-6]([0-9])', { windows: true }));
+      assert(!isMatch('1', '[1-6]([0-9])', { windows: true }));
+      assert(!isMatch('12abc', '[1-6]([0-9])', { windows: true }));
+      assert(!isMatch('555', '[1-6]([0-9])', { windows: true }));
+
+      assert(!isMatch('0', '[1-6]*([0-9])', { windows: true }));
+      assert(isMatch('12', '[1-6]*([0-9])', { windows: true }));
+      assert(isMatch('1', '[1-6]*([0-9])', { windows: true }));
+      assert(!isMatch('12abc', '[1-6]*([0-9])', { windows: true }));
+      assert(isMatch('555', '[1-6]*([0-9])', { windows: true }));
+
+      assert(!isMatch('0', '[1-5]*([6-9])', { windows: true }));
+      assert(!isMatch('12', '[1-5]*([6-9])', { windows: true }));
+      assert(isMatch('1', '[1-5]*([6-9])', { windows: true }));
+      assert(!isMatch('12abc', '[1-5]*([6-9])', { windows: true }));
+      assert(!isMatch('555', '[1-5]*([6-9])', { windows: true }));
+
+      assert(isMatch('0', '0|[1-6]*([0-9])', { windows: true }));
+      assert(isMatch('12', '0|[1-6]*([0-9])', { windows: true }));
+      assert(isMatch('1', '0|[1-6]*([0-9])', { windows: true }));
+      assert(!isMatch('12abc', '0|[1-6]*([0-9])', { windows: true }));
+      assert(isMatch('555', '0|[1-6]*([0-9])', { windows: true }));
+
+      assert(isMatch('07', '+([0-7])', { windows: true }));
+      assert(isMatch('0377', '+([0-7])', { windows: true }));
+      assert(!isMatch('09', '+([0-7])', { windows: true }));
+    });
+
+    it('check extended globbing in pattern removal', () => {
+      assert(isMatch('a', '+(a|abc)', { windows: true }));
+      assert(isMatch('abc', '+(a|abc)', { windows: true }));
+
+      assert(!isMatch('abcd', '+(a|abc)', { windows: true }));
+      assert(!isMatch('abcde', '+(a|abc)', { windows: true }));
+      assert(!isMatch('abcedf', '+(a|abc)', { windows: true }));
+
+      assert(isMatch('f', '+(def|f)', { windows: true }));
+      assert(isMatch('def', '+(f|def)', { windows: true }));
+
+      assert(!isMatch('cdef', '+(f|def)', { windows: true }));
+      assert(!isMatch('bcdef', '+(f|def)', { windows: true }));
+      assert(!isMatch('abcedf', '+(f|def)', { windows: true }));
+
+      assert(isMatch('abcd', '*(a|b)cd', { windows: true }));
+
+      assert(!isMatch('a', '*(a|b)cd', { windows: true }));
+      assert(!isMatch('ab', '*(a|b)cd', { windows: true }));
+      assert(!isMatch('abc', '*(a|b)cd', { windows: true }));
+
+      assert(!isMatch('a', '"*(a|b)cd"', { windows: true }));
+      assert(!isMatch('ab', '"*(a|b)cd"', { windows: true }));
+      assert(!isMatch('abc', '"*(a|b)cd"', { windows: true }));
+      assert(!isMatch('abcde', '"*(a|b)cd"', { windows: true }));
+      assert(!isMatch('abcdef', '"*(a|b)cd"', { windows: true }));
+    });
+
+    it('More tests derived from a bug report (in bash) concerning extended glob patterns following a *', () => {
+      assert(isMatch('/dev/udp/129.22.8.102/45', '/dev\\/@(tcp|udp)\\/*\\/*', { windows: true }));
+      assert(!isMatch('123abc', '(a+|b)*', { windows: true }));
+      assert(isMatch('ab', '(a+|b)*', { windows: true }));
+      assert(isMatch('abab', '(a+|b)*', { windows: true }));
+      assert(isMatch('abcdef', '(a+|b)*', { windows: true }));
+      assert(isMatch('accdef', '(a+|b)*', { windows: true }));
+      assert(isMatch('abcfefg', '(a+|b)*', { windows: true }));
+      assert(isMatch('abef', '(a+|b)*', { windows: true }));
+      assert(isMatch('abcfef', '(a+|b)*', { windows: true }));
+      assert(isMatch('abd', '(a+|b)*', { windows: true }));
+      assert(isMatch('acd', '(a+|b)*', { windows: true }));
+
+      assert(!isMatch('123abc', '(a+|b)+', { windows: true }));
+      assert(isMatch('ab', '(a+|b)+', { windows: true }));
+      assert(isMatch('abab', '(a+|b)+', { windows: true }));
+      assert(!isMatch('abcdef', '(a+|b)+', { windows: true }));
+      assert(!isMatch('accdef', '(a+|b)+', { windows: true }));
+      assert(!isMatch('abcfefg', '(a+|b)+', { windows: true }));
+      assert(!isMatch('abef', '(a+|b)+', { windows: true }));
+      assert(!isMatch('abcfef', '(a+|b)+', { windows: true }));
+      assert(!isMatch('abd', '(a+|b)+', { windows: true }));
+      assert(!isMatch('acd', '(a+|b)+', { windows: true }));
+
+      assert(!isMatch('123abc', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('ab', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('abab', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('abcdef', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('accdef', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('abcfefg', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('abef', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('abcfef', 'a(b*(foo|bar))d', { windows: true }));
+      assert(isMatch('abd', 'a(b*(foo|bar))d', { windows: true }));
+      assert(!isMatch('acd', 'a(b*(foo|bar))d', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab*(e|f)', { windows: true }));
+      assert(isMatch('ab', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('abab', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('abcdef', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('accdef', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('abcfefg', 'ab*(e|f)', { windows: true }));
+      assert(isMatch('abef', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('abcfef', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('abd', 'ab*(e|f)', { windows: true }));
+      assert(!isMatch('acd', 'ab*(e|f)', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('ab', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('abab', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('abcdef', 'ab**(e|f)', { windows: true }));
+      assert(!isMatch('accdef', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('abcfefg', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('abef', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('abcfef', 'ab**(e|f)', { windows: true }));
+      assert(isMatch('abd', 'ab**(e|f)', { windows: true }));
+      assert(!isMatch('acd', 'ab**(e|f)', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('ab', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('abab', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('abcdef', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('accdef', 'ab**(e|f)g', { windows: true }));
+      assert(isMatch('abcfefg', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('abef', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('abcfef', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('abd', 'ab**(e|f)g', { windows: true }));
+      assert(!isMatch('acd', 'ab**(e|f)g', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab***ef', { windows: true }));
+      assert(!isMatch('ab', 'ab***ef', { windows: true }));
+      assert(!isMatch('abab', 'ab***ef', { windows: true }));
+      assert(isMatch('abcdef', 'ab***ef', { windows: true }));
+      assert(!isMatch('accdef', 'ab***ef', { windows: true }));
+      assert(!isMatch('abcfefg', 'ab***ef', { windows: true }));
+      assert(isMatch('abef', 'ab***ef', { windows: true }));
+      assert(isMatch('abcfef', 'ab***ef', { windows: true }));
+      assert(!isMatch('abd', 'ab***ef', { windows: true }));
+      assert(!isMatch('acd', 'ab***ef', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab*+(e|f)', { windows: true }));
+      assert(!isMatch('ab', 'ab*+(e|f)', { windows: true }));
+      assert(!isMatch('abab', 'ab*+(e|f)', { windows: true }));
+      assert(isMatch('abcdef', 'ab*+(e|f)', { windows: true }));
+      assert(!isMatch('accdef', 'ab*+(e|f)', { windows: true }));
+      assert(!isMatch('abcfefg', 'ab*+(e|f)', { windows: true }));
+      assert(isMatch('abef', 'ab*+(e|f)', { windows: true }));
+      assert(isMatch('abcfef', 'ab*+(e|f)', { windows: true }));
+      assert(!isMatch('abd', 'ab*+(e|f)', { windows: true }));
+      assert(!isMatch('acd', 'ab*+(e|f)', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('ab', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('abab', 'ab*d*(e|f)', { windows: true }));
+      assert(isMatch('abcdef', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('accdef', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('abcfefg', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('abef', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('abcfef', 'ab*d*(e|f)', { windows: true }));
+      assert(isMatch('abd', 'ab*d*(e|f)', { windows: true }));
+      assert(!isMatch('acd', 'ab*d*(e|f)', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('ab', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('abab', 'ab*d+(e|f)', { windows: true }));
+      assert(isMatch('abcdef', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('accdef', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('abcfefg', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('abef', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('abcfef', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('abd', 'ab*d+(e|f)', { windows: true }));
+      assert(!isMatch('acd', 'ab*d+(e|f)', { windows: true }));
+
+      assert(!isMatch('123abc', 'ab?*(e|f)', { windows: true }));
+      assert(!isMatch('ab', 'ab?*(e|f)', { windows: true }));
+      assert(!isMatch('abab', 'ab?*(e|f)', { windows: true }));
+      assert(!isMatch('abcdef', 'ab?*(e|f)', { windows: true }));
+      assert(!isMatch('accdef', 'ab?*(e|f)', { windows: true }));
+      assert(!isMatch('abcfefg', 'ab?*(e|f)', { windows: true }));
+      assert(isMatch('abef', 'ab?*(e|f)', { windows: true }));
+      assert(isMatch('abcfef', 'ab?*(e|f)', { windows: true }));
+      assert(isMatch('abd', 'ab?*(e|f)', { windows: true }));
+      assert(!isMatch('acd', 'ab?*(e|f)', { windows: true }));
+    });
+
+    it('bug in all versions up to and including bash-2.05b', () => {
+      assert(isMatch('123abc', '*?(a)bc', { windows: true }));
+    });
+
+    it('should work with character classes', () => {
+      const opts = { posix: true };
+      assert(isMatch('a.b', 'a[^[:alnum:]]b', opts));
+      assert(isMatch('a,b', 'a[^[:alnum:]]b', opts));
+      assert(isMatch('a:b', 'a[^[:alnum:]]b', opts));
+      assert(isMatch('a-b', 'a[^[:alnum:]]b', opts));
+      assert(isMatch('a;b', 'a[^[:alnum:]]b', opts));
+      assert(isMatch('a b', 'a[^[:alnum:]]b', opts));
+      assert(isMatch('a_b', 'a[^[:alnum:]]b', opts));
+
+      assert(isMatch('a.b', 'a[-.,:\\;\\ _]b', { windows: true }));
+      assert(isMatch('a,b', 'a[-.,:\\;\\ _]b', { windows: true }));
+      assert(isMatch('a:b', 'a[-.,:\\;\\ _]b', { windows: true }));
+      assert(isMatch('a-b', 'a[-.,:\\;\\ _]b', { windows: true }));
+      assert(isMatch('a;b', 'a[-.,:\\;\\ _]b', { windows: true }));
+      assert(isMatch('a b', 'a[-.,:\\;\\ _]b', { windows: true }));
+      assert(isMatch('a_b', 'a[-.,:\\;\\ _]b', { windows: true }));
+
+      assert(isMatch('a.b', 'a@([^[:alnum:]])b', opts));
+      assert(isMatch('a,b', 'a@([^[:alnum:]])b', opts));
+      assert(isMatch('a:b', 'a@([^[:alnum:]])b', opts));
+      assert(isMatch('a-b', 'a@([^[:alnum:]])b', opts));
+      assert(isMatch('a;b', 'a@([^[:alnum:]])b', opts));
+      assert(isMatch('a b', 'a@([^[:alnum:]])b', opts));
+      assert(isMatch('a_b', 'a@([^[:alnum:]])b', opts));
+
+      assert(isMatch('a.b', 'a@([-.,:; _])b', { windows: true }));
+      assert(isMatch('a,b', 'a@([-.,:; _])b', { windows: true }));
+      assert(isMatch('a:b', 'a@([-.,:; _])b', { windows: true }));
+      assert(isMatch('a-b', 'a@([-.,:; _])b', { windows: true }));
+      assert(isMatch('a;b', 'a@([-.,:; _])b', { windows: true }));
+      assert(isMatch('a b', 'a@([-.,:; _])b', { windows: true }));
+      assert(isMatch('a_b', 'a@([-.,:; _])b', { windows: true }));
+
+      assert(isMatch('a.b', 'a@([.])b', { windows: true }));
+      assert(!isMatch('a,b', 'a@([.])b', { windows: true }));
+      assert(!isMatch('a:b', 'a@([.])b', { windows: true }));
+      assert(!isMatch('a-b', 'a@([.])b', { windows: true }));
+      assert(!isMatch('a;b', 'a@([.])b', { windows: true }));
+      assert(!isMatch('a b', 'a@([.])b', { windows: true }));
+      assert(!isMatch('a_b', 'a@([.])b', { windows: true }));
+
+      assert(!isMatch('a.b', 'a@([^.])b', { windows: true }));
+      assert(isMatch('a,b', 'a@([^.])b', { windows: true }));
+      assert(isMatch('a:b', 'a@([^.])b', { windows: true }));
+      assert(isMatch('a-b', 'a@([^.])b', { windows: true }));
+      assert(isMatch('a;b', 'a@([^.])b', { windows: true }));
+      assert(isMatch('a b', 'a@([^.])b', { windows: true }));
+      assert(isMatch('a_b', 'a@([^.])b', { windows: true }));
+
+      assert(isMatch('a.b', 'a@([^x])b', { windows: true }));
+      assert(isMatch('a,b', 'a@([^x])b', { windows: true }));
+      assert(isMatch('a:b', 'a@([^x])b', { windows: true }));
+      assert(isMatch('a-b', 'a@([^x])b', { windows: true }));
+      assert(isMatch('a;b', 'a@([^x])b', { windows: true }));
+      assert(isMatch('a b', 'a@([^x])b', { windows: true }));
+      assert(isMatch('a_b', 'a@([^x])b', { windows: true }));
+
+      assert(isMatch('a.b', 'a+([^[:alnum:]])b', opts));
+      assert(isMatch('a,b', 'a+([^[:alnum:]])b', opts));
+      assert(isMatch('a:b', 'a+([^[:alnum:]])b', opts));
+      assert(isMatch('a-b', 'a+([^[:alnum:]])b', opts));
+      assert(isMatch('a;b', 'a+([^[:alnum:]])b', opts));
+      assert(isMatch('a b', 'a+([^[:alnum:]])b', opts));
+      assert(isMatch('a_b', 'a+([^[:alnum:]])b', opts));
+
+      assert(isMatch('a.b', 'a@(.|[^[:alnum:]])b', opts));
+      assert(isMatch('a,b', 'a@(.|[^[:alnum:]])b', opts));
+      assert(isMatch('a:b', 'a@(.|[^[:alnum:]])b', opts));
+      assert(isMatch('a-b', 'a@(.|[^[:alnum:]])b', opts));
+      assert(isMatch('a;b', 'a@(.|[^[:alnum:]])b', opts));
+      assert(isMatch('a b', 'a@(.|[^[:alnum:]])b', opts));
+      assert(isMatch('a_b', 'a@(.|[^[:alnum:]])b', opts));
+    });
+
+    it('should support POSIX character classes in extglobs', () => {
+      const opts = { posix: true };
+      assert(isMatch('a.c', '+([[:alpha:].])', opts));
+      assert(isMatch('a.c', '+([[:alpha:].])+([[:alpha:].])', opts));
+      assert(isMatch('a.c', '*([[:alpha:].])', opts));
+      assert(isMatch('a.c', '*([[:alpha:].])*([[:alpha:].])', opts));
+      assert(isMatch('a.c', '?([[:alpha:].])?([[:alpha:].])?([[:alpha:].])', opts));
+      assert(isMatch('a.c', '@([[:alpha:].])@([[:alpha:].])@([[:alpha:].])', opts));
+      assert(!isMatch('.', '!(\\.)', opts));
+      assert(!isMatch('.', '!([[:alpha:].])', opts));
+      assert(isMatch('.', '?([[:alpha:].])', opts));
+      assert(isMatch('.', '@([[:alpha:].])', opts));
+    });
+
+    // ported from http://www.bashcookbook.com/bashinfo/source/bash-4.3/tests/extglob2.tests
+    it('should pass extglob2 tests', () => {
+      assert(!isMatch('baaac', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('c', '*(@(a))a@(c)', { windows: true }));
+      assert(!isMatch('egz', '@(b+(c)d|e+(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(!isMatch('foooofof', '*(f+(o))', { windows: true }));
+      assert(!isMatch('foooofofx', '*(f*(o))', { windows: true }));
+      assert(!isMatch('foooxfooxofoxfooox', '*(f*(o)x)', { windows: true }));
+      assert(!isMatch('ofooofoofofooo', '*(f*(o))', { windows: true }));
+      assert(!isMatch('ofoooxoofxoofoooxoofxofo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(!isMatch('oxfoxfox', '*(oxf+(ox))', { windows: true }));
+      assert(!isMatch('xfoooofof', '*(f*(o))', { windows: true }));
+      assert(isMatch('aaac', '*(@(a))a@(c)', { windows: true }));
+      assert(isMatch('aac', '*(@(a))a@(c)', { windows: true }));
+      assert(isMatch('abbcd', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(isMatch('abcd', '?@(a|b)*@(c)d', { windows: true }));
+      assert(isMatch('abcd', '@(ab|a*@(b))*(c)d', { windows: true }));
+      assert(isMatch('ac', '*(@(a))a@(c)', { windows: true }));
+      assert(isMatch('acd', '@(ab|a*(b))*(c)d', { windows: true }));
+      assert(isMatch('effgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('efgz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('egz', '@(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('egzefffgzbcdij', '*(b+(c)d|e*(f)g?|?(h)i@(j|k))', { windows: true }));
+      assert(isMatch('fffooofoooooffoofffooofff', '*(*(f)*(o))', { windows: true }));
+      assert(isMatch('ffo', '*(f*(o))', { windows: true }));
+      assert(isMatch('fofo', '*(f*(o))', { windows: true }));
+      assert(isMatch('foofoofo', '@(foo|f|fo)*(f|of+(o))', { windows: true }));
+      assert(isMatch('fooofoofofooo', '*(f*(o))', { windows: true }));
+      assert(isMatch('foooofo', '*(f*(o))', { windows: true }));
+      assert(isMatch('foooofof', '*(f*(o))', { windows: true }));
+      assert(isMatch('foooxfooxfoxfooox', '*(f*(o)x)', { windows: true }));
+      assert(isMatch('foooxfooxfxfooox', '*(f*(o)x)', { windows: true }));
+      assert(isMatch('ofoofo', '*(of+(o))', { windows: true }));
+      assert(isMatch('ofoofo', '*(of+(o)|f)', { windows: true }));
+      assert(isMatch('ofoooxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxoo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofoooxoofxoofoooxoofxooofxofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('ofxoofxo', '*(*(of*(o)x)o)', { windows: true }));
+      assert(isMatch('oofooofo', '*(of|oof+(o))', { windows: true }));
+      assert(isMatch('oxfoxoxfox', '*(oxf+(ox))', { windows: true }));
+    });
+
+    it('should support exclusions', () => {
+      assert(!isMatch('f', '!(f)', { windows: true }));
+      assert(!isMatch('f', '*(!(f))', { windows: true }));
+      assert(!isMatch('f', '+(!(f))', { windows: true }));
+      assert(!isMatch('foo', '!(foo)', { windows: true }));
+      assert(!isMatch('foob', '!(foo)b*', { windows: true }));
+      assert(!isMatch('mad.moo.cow', '!(*.*).!(*.*)', { windows: true }));
+      assert(!isMatch('mucca.pazza', 'mu!(*(c))?.pa!(*(z))?', { windows: true }));
+      assert(!isMatch('zoot', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('fff', '!(f)', { windows: true }));
+      assert(isMatch('fff', '*(!(f))', { windows: true }));
+      assert(isMatch('fff', '+(!(f))', { windows: true }));
+      assert(isMatch('foo', '!(f)', { windows: true }));
+      assert(isMatch('foo', '!(x)', { windows: true }));
+      assert(isMatch('foo', '!(x)*', { windows: true }));
+      assert(isMatch('foo', '*(!(f))', { windows: true }));
+      assert(isMatch('foo', '+(!(f))', { windows: true }));
+      assert(isMatch('foobar', '!(foo)', { windows: true }));
+      assert(isMatch('foot', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('foox', '@(!(z*)|*x)', { windows: true }));
+      assert(isMatch('ooo', '!(f)', { windows: true }));
+      assert(isMatch('ooo', '*(!(f))', { windows: true }));
+      assert(isMatch('ooo', '+(!(f))', { windows: true }));
+      assert(isMatch('zoox', '@(!(z*)|*x)', { windows: true }));
+    });
+  });
+});
+
+```
+
+## File: `test/extglobs.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch, makeRe } = require('..');
+
+/**
+ * Ported from Bash 4.3 and 4.4 unit tests
+ */
+
+describe('extglobs', () => {
+  it('should throw on imbalanced sets when `optionsBrackets` is true', () => {
+    const opts = { strictBrackets: true };
+    assert.throws(() => makeRe('a(b', opts), /Missing closing: "\)"/i);
+    assert.throws(() => makeRe('a)b', opts), /Missing opening: "\("/i);
+  });
+
+  it('should escape special characters immediately following opening parens', () => {
+    assert(isMatch('cbz', 'c!(.)z'));
+    assert(!isMatch('cbz', 'c!(*)z'));
+    assert(isMatch('cccz', 'c!(b*)z'));
+    assert(isMatch('cbz', 'c!(+)z'));
+    assert(isMatch('cbz', 'c!(?)z'));
+    assert(isMatch('cbz', 'c!(@)z'));
+  });
+
+  it('should not convert capture groups to extglobs', () => {
+    assert.strictEqual(makeRe('c!(?:foo)?z').source, '^(?:c!(?:foo)?z)$');
+    assert(!isMatch('c/z', 'c!(?:foo)?z'));
+    assert(isMatch('c!fooz', 'c!(?:foo)?z'));
+    assert(isMatch('c!z', 'c!(?:foo)?z'));
+  });
+
+  describe('negation', () => {
+    it('should support negation extglobs as the entire pattern', () => {
+      assert(!isMatch('abc', '!(abc)'));
+      assert(!isMatch('a', '!(a)'));
+      assert(isMatch('aa', '!(a)'));
+      assert(isMatch('b', '!(a)'));
+    });
+
+    it('should support negation extglobs as part of a pattern', () => {
+      assert(isMatch('aac', 'a!(b)c'));
+      assert(!isMatch('abc', 'a!(b)c'));
+      assert(isMatch('acc', 'a!(b)c'));
+      assert(isMatch('abz', 'a!(z)'));
+      assert(!isMatch('az', 'a!(z)'));
+    });
+
+    it('should support excluding dots with negation extglobs', () => {
+      assert(!isMatch('a.', 'a!(.)'));
+      assert(!isMatch('.a', '!(.)a'));
+      assert(!isMatch('a.c', 'a!(.)c'));
+      assert(isMatch('abc', 'a!(.)c'));
+    });
+
+    // See https://github.com/micromatch/picomatch/issues/83
+    it('should support stars in negation extglobs', () => {
+      assert(!isMatch('/file.d.ts', '/!(*.d).ts'));
+      assert(isMatch('/file.ts', '/!(*.d).ts'));
+      assert(isMatch('/file.something.ts', '/!(*.d).ts'));
+      assert(isMatch('/file.d.something.ts', '/!(*.d).ts'));
+      assert(isMatch('/file.dhello.ts', '/!(*.d).ts'));
+
+      assert(!isMatch('/file.d.ts', '**/!(*.d).ts'));
+      assert(isMatch('/file.ts', '**/!(*.d).ts'));
+      assert(isMatch('/file.something.ts', '**/!(*.d).ts'));
+      assert(isMatch('/file.d.something.ts', '**/!(*.d).ts'));
+      assert(isMatch('/file.dhello.ts', '**/!(*.d).ts'));
+    });
+
+    // See https://github.com/micromatch/picomatch/issues/93
+    it('should support stars in negation extglobs with expression after closing parenthesis', () => {
+      // Nested expression after closing parenthesis
+      assert(!isMatch('/file.d.ts', '/!(*.d).{ts,tsx}'));
+      assert(isMatch('/file.ts', '/!(*.d).{ts,tsx}'));
+      assert(isMatch('/file.something.ts', '/!(*.d).{ts,tsx}'));
+      assert(isMatch('/file.d.something.ts', '/!(*.d).{ts,tsx}'));
+      assert(isMatch('/file.dhello.ts', '/!(*.d).{ts,tsx}'));
+
+      // Extglob after closing parenthesis
+      assert(!isMatch('/file.d.ts', '/!(*.d).@(ts)'));
+      assert(isMatch('/file.ts', '/!(*.d).@(ts)'));
+      assert(isMatch('/file.something.ts', '/!(*.d).@(ts)'));
+      assert(isMatch('/file.d.something.ts', '/!(*.d).@(ts)'));
+      assert(isMatch('/file.dhello.ts', '/!(*.d).@(ts)'));
+    });
+
+    it('should support negation extglobs in patterns with slashes', () => {
+      assert(!isMatch('foo/abc', 'foo/!(abc)'));
+      assert(isMatch('foo/bar', 'foo/!(abc)'));
+
+      assert(!isMatch('a/z', 'a/!(z)'));
+      assert(isMatch('a/b', 'a/!(z)'));
+
+      assert(!isMatch('c/z/v', 'c/!(z)/v'));
+      assert(isMatch('c/a/v', 'c/!(z)/v'));
+
+      assert(isMatch('a/a', '!(b/a)'));
+      assert(!isMatch('b/a', '!(b/a)'));
+
+      assert(!isMatch('foo/bar', '!(!(foo))*'));
+      assert(isMatch('a/a', '!(b/a)'));
+      assert(!isMatch('b/a', '!(b/a)'));
+
+      assert(isMatch('a/a', '(!(b/a))'));
+      assert(isMatch('a/a', '!((b/a))'));
+      assert(!isMatch('b/a', '!((b/a))'));
+
+      assert(!isMatch('a/a', '(!(?:b/a))'));
+      assert(!isMatch('b/a', '!((?:b/a))'));
+
+      assert(isMatch('a/a', '!(b/(a))'));
+      assert(!isMatch('b/a', '!(b/(a))'));
+
+      assert(isMatch('a/a', '!(b/a)'));
+      assert(!isMatch('b/a', '!(b/a)'));
+    });
+
+    it('should not match slashes with extglobs that do not have slashes', () => {
+      assert(!isMatch('c/z', 'c!(z)'));
+      assert(!isMatch('c/z', 'c!(z)z'));
+      assert(!isMatch('c/z', 'c!(.)z'));
+      assert(!isMatch('c/z', 'c!(*)z'));
+      assert(!isMatch('c/z', 'c!(+)z'));
+      assert(!isMatch('c/z', 'c!(?)z'));
+      assert(!isMatch('c/z', 'c!(@)z'));
+    });
+
+    it('should support matching slashes with extglobs that have slashes', () => {
+      assert(!isMatch('c/z', 'a!(z)'));
+      assert(!isMatch('c/z', 'c!(.)z'));
+      assert(!isMatch('c/z', 'c!(/)z'));
+      assert(!isMatch('c/z', 'c!(/z)z'));
+      assert(!isMatch('c/b', 'c!(/z)z'));
+      assert(isMatch('c/b/z', 'c!(/z)z'));
+    });
+
+    it('should support negation extglobs following !', () => {
+      assert(isMatch('abc',  '!!(abc)'));
+      assert(!isMatch('abc', '!!!(abc)'));
+      assert(isMatch('abc',  '!!!!(abc)'));
+      assert(!isMatch('abc', '!!!!!(abc)'));
+      assert(isMatch('abc',  '!!!!!!(abc)'));
+      assert(!isMatch('abc', '!!!!!!!(abc)'));
+      assert(isMatch('abc',  '!!!!!!!!(abc)'));
+    });
+
+    it('should support nested negation extglobs', () => {
+      assert(isMatch('abc',  '!(!(abc))'));
+      assert(!isMatch('abc', '!(!(!(abc)))'));
+      assert(isMatch('abc',  '!(!(!(!(abc))))'));
+      assert(!isMatch('abc', '!(!(!(!(!(abc)))))'));
+      assert(isMatch('abc',  '!(!(!(!(!(!(abc))))))'));
+      assert(!isMatch('abc', '!(!(!(!(!(!(!(abc)))))))'));
+      assert(isMatch('abc',  '!(!(!(!(!(!(!(!(abc))))))))'));
+
+      assert(isMatch('foo/abc',  'foo/!(!(abc))'));
+      assert(!isMatch('foo/abc', 'foo/!(!(!(abc)))'));
+      assert(isMatch('foo/abc',  'foo/!(!(!(!(abc))))'));
+      assert(!isMatch('foo/abc', 'foo/!(!(!(!(!(abc)))))'));
+      assert(isMatch('foo/abc',  'foo/!(!(!(!(!(!(abc))))))'));
+      assert(!isMatch('foo/abc', 'foo/!(!(!(!(!(!(!(abc)))))))'));
+      assert(isMatch('foo/abc',  'foo/!(!(!(!(!(!(!(!(abc))))))))'));
+    });
+
+    it('should support multiple !(...) extglobs in a pattern', () => {
+      assert(!isMatch('moo.cow', '!(moo).!(cow)'));
+      assert(!isMatch('foo.cow', '!(moo).!(cow)'));
+      assert(!isMatch('moo.bar', '!(moo).!(cow)'));
+      assert(isMatch('foo.bar', '!(moo).!(cow)'));
+
+      assert(!isMatch('a   ', '@(!(a) )*'));
+      assert(!isMatch('a   b', '@(!(a) )*'));
+      assert(!isMatch('a  b', '@(!(a) )*'));
+      assert(!isMatch('a  ', '@(!(a) )*'));
+      assert(!isMatch('a ', '@(!(a) )*'));
+      assert(!isMatch('a', '@(!(a) )*'));
+      assert(!isMatch('aa', '@(!(a) )*'));
+      assert(!isMatch('b', '@(!(a) )*'));
+      assert(!isMatch('bb', '@(!(a) )*'));
+      assert(isMatch(' a ', '@(!(a) )*'));
+      assert(isMatch('b  ', '@(!(a) )*'));
+      assert(isMatch('b ', '@(!(a) )*'));
+
+      assert(!isMatch('c/z', 'a*!(z)'));
+      assert(isMatch('abz', 'a*!(z)'));
+      assert(isMatch('az', 'a*!(z)'));
+
+      assert(!isMatch('a', '!(a*)'));
+      assert(!isMatch('aa', '!(a*)'));
+      assert(!isMatch('ab', '!(a*)'));
+      assert(isMatch('b', '!(a*)'));
+
+      assert(!isMatch('a', '!(*a*)'));
+      assert(!isMatch('aa', '!(*a*)'));
+      assert(!isMatch('ab', '!(*a*)'));
+      assert(!isMatch('ac', '!(*a*)'));
+      assert(isMatch('b', '!(*a*)'));
+
+      assert(!isMatch('a', '!(*a)'));
+      assert(!isMatch('aa', '!(*a)'));
+      assert(!isMatch('bba', '!(*a)'));
+      assert(isMatch('ab', '!(*a)'));
+      assert(isMatch('ac', '!(*a)'));
+      assert(isMatch('b', '!(*a)'));
+
+      assert(!isMatch('a', '!(*a)*'));
+      assert(!isMatch('aa', '!(*a)*'));
+      assert(!isMatch('bba', '!(*a)*'));
+      assert(!isMatch('ab', '!(*a)*'));
+      assert(!isMatch('ac', '!(*a)*'));
+      assert(isMatch('b', '!(*a)*'));
+
+      assert(!isMatch('a', '!(a)*'));
+      assert(!isMatch('abb', '!(a)*'));
+      assert(isMatch('ba', '!(a)*'));
+
+      assert(isMatch('aa', 'a!(b)*'));
+      assert(!isMatch('ab', 'a!(b)*'));
+      assert(!isMatch('aba', 'a!(b)*'));
+      assert(isMatch('ac', 'a!(b)*'));
+    });
+
+    it('should multiple nested negation extglobs', () => {
+      assert(isMatch('moo.cow', '!(!(moo)).!(!(cow))'));
+    });
+
+    it('should support logical-or inside negation !(...) extglobs', () => {
+      assert(!isMatch('ac', '!(a|b)c'));
+      assert(!isMatch('bc', '!(a|b)c'));
+      assert(isMatch('cc', '!(a|b)c'));
+    });
+
+    it('should support multiple logical-ors negation extglobs', () => {
+      assert(!isMatch('ac.d', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('bc.d', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('cc.d', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('ac.e', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('bc.e', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('cc.e', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('ac.f', '!(a|b)c.!(d|e)'));
+      assert(!isMatch('bc.f', '!(a|b)c.!(d|e)'));
+      assert(isMatch('cc.f', '!(a|b)c.!(d|e)'));
+      assert(isMatch('dc.g', '!(a|b)c.!(d|e)'));
+    });
+
+    it('should support nested logical-ors inside negation extglobs', () => {
+      assert(isMatch('ac.d', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('bc.d', '!(!(a|b)c.!(d|e))'));
+      assert(!isMatch('cc.d', '!(a|b)c.!(d|e)'));
+      assert(isMatch('cc.d', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('cc.d', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('ac.e', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('bc.e', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('cc.e', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('ac.f', '!(!(a|b)c.!(d|e))'));
+      assert(isMatch('bc.f', '!(!(a|b)c.!(d|e))'));
+      assert(!isMatch('cc.f', '!(!(a|b)c.!(d|e))'));
+      assert(!isMatch('dc.g', '!(!(a|b)c.!(d|e))'));
+    });
+  });
+
+  describe('file extensions', () => {
+    it('should support matching file extensions with @(...)', () => {
+      assert(!isMatch('.md', '@(a|b).md'));
+      assert(!isMatch('a.js', '@(a|b).md'));
+      assert(!isMatch('c.md', '@(a|b).md'));
+      assert(isMatch('a.md', '@(a|b).md'));
+      assert(isMatch('b.md', '@(a|b).md'));
+    });
+
+    it('should support matching file extensions with +(...)', () => {
+      assert(!isMatch('.md', '+(a|b).md'));
+      assert(!isMatch('a.js', '+(a|b).md'));
+      assert(!isMatch('c.md', '+(a|b).md'));
+      assert(isMatch('a.md', '+(a|b).md'));
+      assert(isMatch('aa.md', '+(a|b).md'));
+      assert(isMatch('ab.md', '+(a|b).md'));
+      assert(isMatch('b.md', '+(a|b).md'));
+      assert(isMatch('bb.md', '+(a|b).md'));
+    });
+
+    it('should support matching file extensions with *(...)', () => {
+      assert(!isMatch('a.js', '*(a|b).md'));
+      assert(!isMatch('c.md', '*(a|b).md'));
+      assert(isMatch('.md', '*(a|b).md'));
+      assert(isMatch('a.md', '*(a|b).md'));
+      assert(isMatch('aa.md', '*(a|b).md'));
+      assert(isMatch('ab.md', '*(a|b).md'));
+      assert(isMatch('b.md', '*(a|b).md'));
+      assert(isMatch('bb.md', '*(a|b).md'));
+    });
+
+    it('should support matching file extensions with ?(...)', () => {
+      assert(!isMatch('a.js', '?(a|b).md'));
+      assert(!isMatch('bb.md', '?(a|b).md'));
+      assert(!isMatch('c.md', '?(a|b).md'));
+      assert(isMatch('.md', '?(a|b).md'));
+      assert(isMatch('a.md', '?(a|ab|b).md'));
+      assert(isMatch('a.md', '?(a|b).md'));
+      assert(isMatch('aa.md', '?(a|aa|b).md'));
+      assert(isMatch('ab.md', '?(a|ab|b).md'));
+      assert(isMatch('b.md', '?(a|ab|b).md'));
+
+      // See https://github.com/micromatch/micromatch/issues/186
+      assert(isMatch('ab', '+(a)?(b)'));
+      assert(isMatch('aab', '+(a)?(b)'));
+      assert(isMatch('aa', '+(a)?(b)'));
+      assert(isMatch('a', '+(a)?(b)'));
+    });
+  });
+
+  describe('statechar', () => {
+    it('should support ?(...) extglobs ending with statechar', () => {
+      assert(!isMatch('ax', 'a?(b*)'));
+      assert(isMatch('ax', '?(a*|b)'));
+    });
+
+    it('should support *(...) extglobs ending with statechar', () => {
+      assert(!isMatch('ax', 'a*(b*)'));
+      assert(isMatch('ax', '*(a*|b)'));
+    });
+
+    it('should support @(...) extglobs ending with statechar', () => {
+      assert(!isMatch('ax', 'a@(b*)'));
+      assert(isMatch('ax', '@(a*|b)'));
+    });
+
+    it('should support ?(...) extglobs ending with statechar', () => {
+      assert(!isMatch('ax', 'a?(b*)'));
+      assert(isMatch('ax', '?(a*|b)'));
+    });
+
+    it('should support !(...) extglobs ending with statechar', () => {
+      assert(isMatch('ax', 'a!(b*)'));
+      assert(!isMatch('ax', '!(a*|b)'));
+    });
+  });
+
+  it('should match nested directories with negation extglobs', () => {
+    assert(isMatch('a', '!(a/**)'));
+    assert(!isMatch('a/', '!(a/**)'));
+    assert(!isMatch('a/b', '!(a/**)'));
+    assert(!isMatch('a/b/c', '!(a/**)'));
+    assert(isMatch('b', '!(a/**)'));
+    assert(isMatch('b/c', '!(a/**)'));
+
+    assert(isMatch('a/a', 'a/!(b*)'));
+    assert(!isMatch('a/b', 'a/!(b*)'));
+    assert(!isMatch('a/b/c', 'a/!(b/*)'));
+    assert(!isMatch('a/b/c', 'a/!(b*)'));
+    assert(isMatch('a/c', 'a/!(b*)'));
+
+    assert(isMatch('a/a/', 'a/!(b*)/**'));
+    assert(isMatch('a/a', 'a/!(b*)'));
+    assert(isMatch('a/a', 'a/!(b*)/**'));
+    assert(!isMatch('a/b', 'a/!(b*)/**'));
+    assert(!isMatch('a/b/c', 'a/!(b*)/**'));
+    assert(isMatch('a/c', 'a/!(b*)/**'));
+    assert(isMatch('a/c', 'a/!(b*)'));
+    assert(isMatch('a/c/', 'a/!(b*)/**'));
+  });
+
+  it('should support *(...)', () => {
+    assert(isMatch('a', 'a*(z)'));
+    assert(isMatch('az', 'a*(z)'));
+    assert(isMatch('azz', 'a*(z)'));
+    assert(isMatch('azzz', 'a*(z)'));
+    assert(!isMatch('abz', 'a*(z)'));
+    assert(!isMatch('cz', 'a*(z)'));
+
+    assert(!isMatch('a/a', '*(b/a)'));
+    assert(!isMatch('a/b', '*(b/a)'));
+    assert(!isMatch('a/c', '*(b/a)'));
+    assert(isMatch('b/a', '*(b/a)'));
+    assert(!isMatch('b/b', '*(b/a)'));
+    assert(!isMatch('b/c', '*(b/a)'));
+
+    assert(!isMatch('cz', 'a**(z)'));
+    assert(isMatch('abz', 'a**(z)'));
+    assert(isMatch('az', 'a**(z)'));
+
+    assert(!isMatch('c/z/v', '*(z)'));
+    assert(isMatch('z', '*(z)'));
+    assert(!isMatch('zf', '*(z)'));
+    assert(!isMatch('fz', '*(z)'));
+
+    assert(!isMatch('c/a/v', 'c/*(z)/v'));
+    assert(isMatch('c/z/v', 'c/*(z)/v'));
+
+    assert(!isMatch('a.md.js', '*.*(js).js'));
+    assert(isMatch('a.js.js', '*.*(js).js'));
+  });
+
+  it('should support +(...) extglobs', () => {
+    assert(!isMatch('a', 'a+(z)'));
+    assert(isMatch('az', 'a+(z)'));
+    assert(!isMatch('cz', 'a+(z)'));
+    assert(!isMatch('abz', 'a+(z)'));
+    assert(!isMatch('a+z', 'a+(z)'));
+    assert(isMatch('a+z', 'a++(z)'));
+    assert(!isMatch('c+z', 'a+(z)'));
+    assert(!isMatch('a+bz', 'a+(z)'));
+    assert(!isMatch('az', '+(z)'));
+    assert(!isMatch('cz', '+(z)'));
+    assert(!isMatch('abz', '+(z)'));
+    assert(!isMatch('fz', '+(z)'));
+    assert(isMatch('z', '+(z)'));
+    assert(isMatch('zz', '+(z)'));
+    assert(isMatch('c/z/v', 'c/+(z)/v'));
+    assert(isMatch('c/zz/v', 'c/+(z)/v'));
+    assert(!isMatch('c/a/v', 'c/+(z)/v'));
+  });
+
+  it('should support ?(...) extglobs', () => {
+    assert(isMatch('a?z', 'a??(z)'));
+    assert(isMatch('a.z', 'a??(z)'));
+    assert(!isMatch('a/z', 'a??(z)'));
+    assert(isMatch('a?', 'a??(z)'));
+    assert(isMatch('ab', 'a??(z)'));
+    assert(!isMatch('a/', 'a??(z)'));
+
+    assert(!isMatch('a?z', 'a?(z)'));
+    assert(!isMatch('abz', 'a?(z)'));
+    assert(!isMatch('z', 'a?(z)'));
+    assert(isMatch('a', 'a?(z)'));
+    assert(isMatch('az', 'a?(z)'));
+
+    assert(!isMatch('abz', '?(z)'));
+    assert(!isMatch('az', '?(z)'));
+    assert(!isMatch('cz', '?(z)'));
+    assert(!isMatch('fz', '?(z)'));
+    assert(!isMatch('zz', '?(z)'));
+    assert(isMatch('z', '?(z)'));
+
+    assert(!isMatch('c/a/v', 'c/?(z)/v'));
+    assert(!isMatch('c/zz/v', 'c/?(z)/v'));
+    assert(isMatch('c/z/v', 'c/?(z)/v'));
+  });
+
+  it('should support @(...) extglobs', () => {
+    assert(isMatch('c/z/v', 'c/@(z)/v'));
+    assert(!isMatch('c/a/v', 'c/@(z)/v'));
+    assert(isMatch('moo.cow', '@(*.*)'));
+
+    assert(!isMatch('cz', 'a*@(z)'));
+    assert(isMatch('abz', 'a*@(z)'));
+    assert(isMatch('az', 'a*@(z)'));
+
+    assert(!isMatch('cz', 'a@(z)'));
+    assert(!isMatch('abz', 'a@(z)'));
+    assert(isMatch('az', 'a@(z)'));
+  });
+
+  it('should match exactly one of the given pattern:', () => {
+    assert(!isMatch('aa.aa', '(b|a).(a)'));
+    assert(!isMatch('a.bb', '(b|a).(a)'));
+    assert(!isMatch('a.aa.a', '(b|a).(a)'));
+    assert(!isMatch('cc.a', '(b|a).(a)'));
+    assert(isMatch('a.a', '(b|a).(a)'));
+    assert(!isMatch('c.a', '(b|a).(a)'));
+    assert(!isMatch('dd.aa.d', '(b|a).(a)'));
+    assert(isMatch('b.a', '(b|a).(a)'));
+
+    assert(!isMatch('aa.aa', '@(b|a).@(a)'));
+    assert(!isMatch('a.bb', '@(b|a).@(a)'));
+    assert(!isMatch('a.aa.a', '@(b|a).@(a)'));
+    assert(!isMatch('cc.a', '@(b|a).@(a)'));
+    assert(isMatch('a.a', '@(b|a).@(a)'));
+    assert(!isMatch('c.a', '@(b|a).@(a)'));
+    assert(!isMatch('dd.aa.d', '@(b|a).@(a)'));
+    assert(isMatch('b.a', '@(b|a).@(a)'));
+  });
+
+  it('should pass tests from rosenblatt\'s korn shell book', () => {
+    // This one is the only difference, since picomatch does not match empty strings.
+    assert(!isMatch('', '*(0|1|3|5|7|9)'));
+
+    assert(isMatch('137577991', '*(0|1|3|5|7|9)'));
+    assert(!isMatch('2468', '*(0|1|3|5|7|9)'));
+
+    assert(isMatch('file.c', '*.c?(c)'));
+    assert(!isMatch('file.C', '*.c?(c)'));
+    assert(isMatch('file.cc', '*.c?(c)'));
+    assert(!isMatch('file.ccc', '*.c?(c)'));
+
+    assert(isMatch('parse.y', '!(*.c|*.h|Makefile.in|config*|README)'));
+    assert(!isMatch('shell.c', '!(*.c|*.h|Makefile.in|config*|README)'));
+    assert(isMatch('Makefile', '!(*.c|*.h|Makefile.in|config*|README)'));
+    assert(!isMatch('Makefile.in', '!(*.c|*.h|Makefile.in|config*|README)'));
+
+    assert(!isMatch('VMS.FILE;', '*\\;[1-9]*([0-9])'));
+    assert(!isMatch('VMS.FILE;0', '*\\;[1-9]*([0-9])'));
+    assert(isMatch('VMS.FILE;1', '*\\;[1-9]*([0-9])'));
+    assert(isMatch('VMS.FILE;139', '*\\;[1-9]*([0-9])'));
+    assert(!isMatch('VMS.FILE;1N', '*\\;[1-9]*([0-9])'));
+  });
+
+  it('tests derived from the pd-ksh test suite', () => {
+    assert(isMatch('abcx', '!([*)*'));
+    assert(isMatch('abcz', '!([*)*'));
+    assert(isMatch('bbc', '!([*)*'));
+
+    assert(isMatch('abcx', '!([[*])*'));
+    assert(isMatch('abcz', '!([[*])*'));
+    assert(isMatch('bbc', '!([[*])*'));
+
+    assert(isMatch('abcx', '+(a|b\\[)*'));
+    assert(isMatch('abcz', '+(a|b\\[)*'));
+    assert(!isMatch('bbc', '+(a|b\\[)*'));
+
+    assert(isMatch('abcx', '+(a|b[)*'));
+    assert(isMatch('abcz', '+(a|b[)*'));
+    assert(!isMatch('bbc', '+(a|b[)*'));
+
+    assert(!isMatch('abcx', '[a*(]*z'));
+    assert(isMatch('abcz', '[a*(]*z'));
+    assert(!isMatch('bbc', '[a*(]*z'));
+    assert(isMatch('aaz', '[a*(]*z'));
+    assert(isMatch('aaaz', '[a*(]*z'));
+
+    assert(!isMatch('abcx', '[a*(]*)z'));
+    assert(!isMatch('abcz', '[a*(]*)z'));
+    assert(!isMatch('bbc', '[a*(]*)z'));
+
+    assert(!isMatch('abc', '+()c'));
+    assert(!isMatch('abc', '+()x'));
+    assert(isMatch('abc', '+(*)c'));
+    assert(!isMatch('abc', '+(*)x'));
+    assert(!isMatch('abc', 'no-file+(a|b)stuff'));
+    assert(!isMatch('abc', 'no-file+(a*(c)|b)stuff'));
+
+    assert(isMatch('abd', 'a+(b|c)d'));
+    assert(isMatch('acd', 'a+(b|c)d'));
+
+    assert(!isMatch('abc', 'a+(b|c)d'));
+
+    assert(isMatch('abd', 'a!(b|B)'));
+    assert(isMatch('acd', 'a!(@(b|B))'));
+    assert(isMatch('ac', 'a!(@(b|B))'));
+    assert(!isMatch('ab', 'a!(@(b|B))'));
+
+    assert(!isMatch('abc', 'a!(@(b|B))d'));
+    assert(!isMatch('abd', 'a!(@(b|B))d'));
+    assert(isMatch('acd', 'a!(@(b|B))d'));
+
+    assert(isMatch('abd', 'a[b*(foo|bar)]d'));
+    assert(!isMatch('abc', 'a[b*(foo|bar)]d'));
+    assert(!isMatch('acd', 'a[b*(foo|bar)]d'));
+  });
+
+  it('stuff from korn\'s book', () => {
+    assert(!isMatch('para', 'para+([0-9])'));
+    assert(!isMatch('para381', 'para?([345]|99)1'));
+    assert(!isMatch('paragraph', 'para*([0-9])'));
+    assert(!isMatch('paramour', 'para@(chute|graph)'));
+    assert(isMatch('para', 'para*([0-9])'));
+    assert(isMatch('para.38', 'para!(*.[0-9])'));
+    assert(isMatch('para.38', 'para!(*.[00-09])'));
+    assert(isMatch('para.graph', 'para!(*.[0-9])'));
+    assert(isMatch('para13829383746592', 'para*([0-9])'));
+    assert(isMatch('para39', 'para!(*.[0-9])'));
+    assert(isMatch('para987346523', 'para+([0-9])'));
+    assert(isMatch('para991', 'para?([345]|99)1'));
+    assert(isMatch('paragraph', 'para!(*.[0-9])'));
+    assert(isMatch('paragraph', 'para@(chute|graph)'));
+  });
+
+  it('simple kleene star tests', () => {
+    assert(!isMatch('foo', '*(a|b[)'));
+    assert(!isMatch('(', '*(a|b[)'));
+    assert(!isMatch(')', '*(a|b[)'));
+    assert(!isMatch('|', '*(a|b[)'));
+    assert(isMatch('a', '*(a|b)'));
+    assert(isMatch('b', '*(a|b)'));
+    assert(isMatch('b[', '*(a|b\\[)'));
+    assert(isMatch('ab[', '+(a|b\\[)'));
+    assert(!isMatch('ab[cde', '+(a|b\\[)'));
+    assert(isMatch('ab[cde', '+(a|b\\[)*'));
+
+    assert(isMatch('foo', '*(a|b|f)*'));
+    assert(isMatch('foo', '*(a|b|o)*'));
+    assert(isMatch('foo', '*(a|b|f|o)'));
+    assert(isMatch('*(a|b[)', '\\*\\(a\\|b\\[\\)'));
+    assert(!isMatch('foo', '*(a|b)'));
+    assert(!isMatch('foo', '*(a|b\\[)'));
+    assert(isMatch('foo', '*(a|b\\[)|f*'));
+  });
+
+  it('should support multiple extglobs:', () => {
+    assert(isMatch('moo.cow', '@(*).@(*)'));
+    assert(isMatch('a.a', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(isMatch('a.b', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('a.c', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('a.c.d', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('c.c', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('a.', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('d.d', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('e.e', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(!isMatch('f.f', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+    assert(isMatch('a.abcd', '*.@(a|b|@(ab|a*@(b))*@(c)d)'));
+
+    assert(!isMatch('a.a', '!(*.a|*.b|*.c)'));
+    assert(!isMatch('a.b', '!(*.a|*.b|*.c)'));
+    assert(!isMatch('a.c', '!(*.a|*.b|*.c)'));
+    assert(isMatch('a.c.d', '!(*.a|*.b|*.c)'));
+    assert(!isMatch('c.c', '!(*.a|*.b|*.c)'));
+    assert(isMatch('a.', '!(*.a|*.b|*.c)'));
+    assert(isMatch('d.d', '!(*.a|*.b|*.c)'));
+    assert(isMatch('e.e', '!(*.a|*.b|*.c)'));
+    assert(isMatch('f.f', '!(*.a|*.b|*.c)'));
+    assert(isMatch('a.abcd', '!(*.a|*.b|*.c)'));
+
+    assert(isMatch('a.a', '!(*.[^a-c])'));
+    assert(isMatch('a.b', '!(*.[^a-c])'));
+    assert(isMatch('a.c', '!(*.[^a-c])'));
+    assert(!isMatch('a.c.d', '!(*.[^a-c])'));
+    assert(isMatch('c.c', '!(*.[^a-c])'));
+    assert(isMatch('a.', '!(*.[^a-c])'));
+    assert(!isMatch('d.d', '!(*.[^a-c])'));
+    assert(!isMatch('e.e', '!(*.[^a-c])'));
+    assert(!isMatch('f.f', '!(*.[^a-c])'));
+    assert(isMatch('a.abcd', '!(*.[^a-c])'));
+
+    assert(!isMatch('a.a', '!(*.[a-c])'));
+    assert(!isMatch('a.b', '!(*.[a-c])'));
+    assert(!isMatch('a.c', '!(*.[a-c])'));
+    assert(isMatch('a.c.d', '!(*.[a-c])'));
+    assert(!isMatch('c.c', '!(*.[a-c])'));
+    assert(isMatch('a.', '!(*.[a-c])'));
+    assert(isMatch('d.d', '!(*.[a-c])'));
+    assert(isMatch('e.e', '!(*.[a-c])'));
+    assert(isMatch('f.f', '!(*.[a-c])'));
+    assert(isMatch('a.abcd', '!(*.[a-c])'));
+
+    assert(!isMatch('a.a', '!(*.[a-c]*)'));
+    assert(!isMatch('a.b', '!(*.[a-c]*)'));
+    assert(!isMatch('a.c', '!(*.[a-c]*)'));
+    assert(!isMatch('a.c.d', '!(*.[a-c]*)'));
+    assert(!isMatch('c.c', '!(*.[a-c]*)'));
+    assert(isMatch('a.', '!(*.[a-c]*)'));
+    assert(isMatch('d.d', '!(*.[a-c]*)'));
+    assert(isMatch('e.e', '!(*.[a-c]*)'));
+    assert(isMatch('f.f', '!(*.[a-c]*)'));
+    assert(!isMatch('a.abcd', '!(*.[a-c]*)'));
+
+    assert(!isMatch('a.a', '*.!(a|b|c)'));
+    assert(!isMatch('a.b', '*.!(a|b|c)'));
+    assert(!isMatch('a.c', '*.!(a|b|c)'));
+    assert(isMatch('a.c.d', '*.!(a|b|c)'));
+    assert(!isMatch('c.c', '*.!(a|b|c)'));
+    assert(isMatch('a.', '*.!(a|b|c)'));
+    assert(isMatch('d.d', '*.!(a|b|c)'));
+    assert(isMatch('e.e', '*.!(a|b|c)'));
+    assert(isMatch('f.f', '*.!(a|b|c)'));
+    assert(isMatch('a.abcd', '*.!(a|b|c)'));
+
+    assert(isMatch('a.a', '*!(.a|.b|.c)'));
+    assert(isMatch('a.b', '*!(.a|.b|.c)'));
+    assert(isMatch('a.c', '*!(.a|.b|.c)'));
+    assert(isMatch('a.c.d', '*!(.a|.b|.c)'));
+    assert(isMatch('c.c', '*!(.a|.b|.c)'));
+    assert(isMatch('a.', '*!(.a|.b|.c)'));
+    assert(isMatch('d.d', '*!(.a|.b|.c)'));
+    assert(isMatch('e.e', '*!(.a|.b|.c)'));
+    assert(isMatch('f.f', '*!(.a|.b|.c)'));
+    assert(isMatch('a.abcd', '*!(.a|.b|.c)'));
+
+    assert(!isMatch('a.a', '!(*.[a-c])*'));
+    assert(!isMatch('a.b', '!(*.[a-c])*'));
+    assert(!isMatch('a.c', '!(*.[a-c])*'));
+    assert(!isMatch('a.c.d', '!(*.[a-c])*'));
+    assert(!isMatch('c.c', '!(*.[a-c])*'));
+    assert(isMatch('a.', '!(*.[a-c])*'));
+    assert(isMatch('d.d', '!(*.[a-c])*'));
+    assert(isMatch('e.e', '!(*.[a-c])*'));
+    assert(isMatch('f.f', '!(*.[a-c])*'));
+    assert(!isMatch('a.abcd', '!(*.[a-c])*'));
+
+    assert(isMatch('a.a', '*!(.a|.b|.c)*'));
+    assert(isMatch('a.b', '*!(.a|.b|.c)*'));
+    assert(isMatch('a.c', '*!(.a|.b|.c)*'));
+    assert(isMatch('a.c.d', '*!(.a|.b|.c)*'));
+    assert(isMatch('c.c', '*!(.a|.b|.c)*'));
+    assert(isMatch('a.', '*!(.a|.b|.c)*'));
+    assert(isMatch('d.d', '*!(.a|.b|.c)*'));
+    assert(isMatch('e.e', '*!(.a|.b|.c)*'));
+    assert(isMatch('f.f', '*!(.a|.b|.c)*'));
+    assert(isMatch('a.abcd', '*!(.a|.b|.c)*'));
+
+    assert(!isMatch('a.a', '*.!(a|b|c)*'));
+    assert(!isMatch('a.b', '*.!(a|b|c)*'));
+    assert(!isMatch('a.c', '*.!(a|b|c)*'));
+    assert(isMatch('a.c.d', '*.!(a|b|c)*'));
+    assert(!isMatch('c.c', '*.!(a|b|c)*'));
+    assert(isMatch('a.', '*.!(a|b|c)*'));
+    assert(isMatch('d.d', '*.!(a|b|c)*'));
+    assert(isMatch('e.e', '*.!(a|b|c)*'));
+    assert(isMatch('f.f', '*.!(a|b|c)*'));
+    assert(!isMatch('a.abcd', '*.!(a|b|c)*'));
+  });
+
+  it('should correctly match empty parens', () => {
+    assert(!isMatch('def', '@()ef'));
+    assert(isMatch('ef', '@()ef'));
+
+    assert(!isMatch('def', '()ef'));
+    assert(isMatch('ef', '()ef'));
+  });
+
+  it('should match escaped parens', () => {
+    if (process.platform !== 'win32') {
+      assert(isMatch('a\\(b', 'a\\\\\\(b'));
+    }
+    assert(isMatch('a(b', 'a(b'));
+    assert(isMatch('a(b', 'a\\(b'));
+    assert(!isMatch('a((b', 'a(b'));
+    assert(!isMatch('a((((b', 'a(b'));
+    assert(!isMatch('ab', 'a(b'));
+
+    assert(isMatch('a(b', 'a\\(b'));
+    assert(!isMatch('a((b', 'a\\(b'));
+    assert(!isMatch('a((((b', 'a\\(b'));
+    assert(!isMatch('ab', 'a\\(b'));
+
+    assert(isMatch('a(b', 'a(*b'));
+    assert(isMatch('a(ab', 'a\\(*b'));
+    assert(isMatch('a((b', 'a(*b'));
+    assert(isMatch('a((((b', 'a(*b'));
+    assert(!isMatch('ab', 'a(*b'));
+  });
+
+  it('should match escaped backslashes', () => {
+    assert(isMatch('a(b', 'a\\(b'));
+    assert(isMatch('a((b', 'a\\(\\(b'));
+    assert(isMatch('a((((b', 'a\\(\\(\\(\\(b'));
+
+    assert(!isMatch('a(b', 'a\\\\(b'));
+    assert(!isMatch('a((b', 'a\\\\(b'));
+    assert(!isMatch('a((((b', 'a\\\\(b'));
+    assert(!isMatch('ab', 'a\\\\(b'));
+
+    assert(!isMatch('a/b', 'a\\\\b'));
+    assert(!isMatch('ab', 'a\\\\b'));
+  });
+
+  // these are not extglobs, and do not need to pass, but they are included
+  // to test integration with other features
+  it('should support regex characters', () => {
+    const fixtures = ['a c', 'a.c', 'a.xy.zc', 'a.zc', 'a123c', 'a1c', 'abbbbc', 'abbbc', 'abbc', 'abc', 'abq', 'axy zc', 'axy', 'axy.zc', 'axyzc'];
+
+    if (process.platform !== 'win32') {
+      assert.deepStrictEqual(match(['a\\b', 'a/b', 'ab'], 'a/b'), ['a/b']);
+    }
+
+    assert.deepStrictEqual(match(['a/b', 'ab'], 'a/b'), ['a/b']);
+    assert.deepStrictEqual(match(fixtures, 'ab?bc'), ['abbbc']);
+    assert.deepStrictEqual(match(fixtures, 'ab*c'), ['abbbbc', 'abbbc', 'abbc', 'abc']);
+    assert.deepStrictEqual(match(fixtures, 'a+(b)bc'), ['abbbbc', 'abbbc', 'abbc']);
+    assert.deepStrictEqual(match(fixtures, '^abc$'), []);
+    assert.deepStrictEqual(match(fixtures, 'a.c'), ['a.c']);
+    assert.deepStrictEqual(match(fixtures, 'a.*c'), ['a.c', 'a.xy.zc', 'a.zc']);
+    assert.deepStrictEqual(match(fixtures, 'a*c'), ['a c', 'a.c', 'a.xy.zc', 'a.zc', 'a123c', 'a1c', 'abbbbc', 'abbbc', 'abbc', 'abc', 'axy zc', 'axy.zc', 'axyzc']);
+    assert.deepStrictEqual(match(fixtures, 'a[\\w]+c'), ['a123c', 'a1c', 'abbbbc', 'abbbc', 'abbc', 'abc', 'axyzc'], 'Should match word characters');
+    assert.deepStrictEqual(match(fixtures, 'a[\\W]+c'), ['a c', 'a.c'], 'Should match non-word characters');
+    assert.deepStrictEqual(match(fixtures, 'a[\\d]+c'), ['a123c', 'a1c'], 'Should match numbers');
+    assert.deepStrictEqual(match(['foo@#$%123ASD #$$%^&', 'foo!@#$asdfl;', '123'], '[\\d]+'), ['123']);
+    assert.deepStrictEqual(match(['a123c', 'abbbc'], 'a[\\D]+c'), ['abbbc'], 'Should match non-numbers');
+    assert.deepStrictEqual(match(['foo', ' foo '], '(f|o)+\\b'), ['foo'], 'Should match word boundaries');
+  });
+});
+
+```
+
+## File: `test/globstars.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+describe('stars', () => {
+  describe('issue related', () => {
+    it('should match paths with no slashes (micromatch/#15)', () => {
+      assert(isMatch('a.js', '**/*.js'));
+      assert(isMatch('a.js', '**/a*'));
+      assert(isMatch('a.js', '**/a*.js'));
+      assert(isMatch('abc', '**/abc'));
+    });
+
+    it('should regard non-exclusive double-stars as single stars', () => {
+      const fixtures = ['a', 'a/', 'a/a', 'a/a/', 'a/a/a', 'a/a/a/', 'a/a/a/a', 'a/a/a/a/', 'a/a/a/a/a', 'a/a/a/a/a/', 'a/a/b', 'a/a/b/', 'a/b', 'a/b/', 'a/b/c/.d/e/', 'a/c', 'a/c/', 'a/b', 'a/x/', 'b', 'b/', 'x/y', 'x/y/', 'z/z', 'z/z/'];
+
+      assert.deepStrictEqual(match(fixtures, '**a/a/*/'), ['a/a/a/', 'a/a/b/']);
+      assert(!isMatch('aaa/bba/ccc', 'aaa/**ccc'));
+      assert(!isMatch('aaa/bba/ccc', 'aaa/**z'));
+      assert(isMatch('aaa/bba/ccc', 'aaa/**b**/ccc'));
+      assert(!isMatch('a/b/c', '**c'));
+      assert(!isMatch('a/b/c', 'a/**c'));
+      assert(!isMatch('a/b/c', 'a/**z'));
+      assert(!isMatch('a/b/c/b/c', 'a/**b**/c'));
+      assert(!isMatch('a/b/c/d/e.js', 'a/b/c**/*.js'));
+      assert(isMatch('a/b/c/b/c', 'a/**/b/**/c'));
+      assert(isMatch('a/aba/c', 'a/**b**/c'));
+      assert(isMatch('a/b/c', 'a/**b**/c'));
+      assert(isMatch('a/b/c/d.js', 'a/b/c**/*.js'));
+    });
+
+    it('should support globstars followed by braces', () => {
+      assert(isMatch('a/b/c/d/e/z/foo.md', 'a/**/c/**{,(/z|/x)}/*.md'));
+      assert(isMatch('a/b/c/d/e/z/foo.md', 'a/**{,(/x|/z)}/*.md'));
+    });
+
+    it('should support globstars followed by braces with nested extglobs', () => {
+      assert(isMatch('/x/foo.md', '@(/x|/z)/*.md'));
+      assert(isMatch('/z/foo.md', '@(/x|/z)/*.md'));
+      assert(isMatch('a/b/c/d/e/z/foo.md', 'a/**/c/**@(/z|/x)/*.md'));
+      assert(isMatch('a/b/c/d/e/z/foo.md', 'a/**@(/x|/z)/*.md'));
+    });
+
+    it('should support multiple globstars in one pattern', () => {
+      assert(!isMatch('a/b/c/d/e/z/foo.md', 'a/**/j/**/z/*.md'));
+      assert(!isMatch('a/b/c/j/e/z/foo.txt', 'a/**/j/**/z/*.md'));
+      assert(isMatch('a/b/c/d/e/j/n/p/o/z/foo.md', 'a/**/j/**/z/*.md'));
+      assert(isMatch('a/b/c/d/e/z/foo.md', 'a/**/z/*.md'));
+      assert(isMatch('a/b/c/j/e/z/foo.md', 'a/**/j/**/z/*.md'));
+    });
+
+    it('should match file extensions:', () => {
+      assert.deepStrictEqual(match(['.md', 'a.md', 'a/b/c.md', '.txt'], '**/*.md'), ['a.md', 'a/b/c.md']);
+      assert.deepStrictEqual(match(['.md/.md', '.md', 'a/.md', 'a/b/.md'], '**/.md'), ['.md', 'a/.md', 'a/b/.md']);
+      assert.deepStrictEqual(match(['.md/.md', '.md/foo/.md', '.md', 'a/.md', 'a/b/.md'], '.md/**/.md'), ['.md/.md', '.md/foo/.md']);
+    });
+
+    it('should respect trailing slashes on patterns', () => {
+      const fixtures = ['a', 'a/', 'a/a', 'a/a/', 'a/a/a', 'a/a/a/', 'a/a/a/a', 'a/a/a/a/', 'a/a/a/a/a', 'a/a/a/a/a/', 'a/a/b', 'a/a/b/', 'a/b', 'a/b/', 'a/b/c/.d/e/', 'a/c', 'a/c/', 'a/b', 'a/x/', 'b', 'b/', 'x/y', 'x/y/', 'z/z', 'z/z/'];
+
+      assert.deepStrictEqual(match(fixtures, '**/*/a/'), ['a/a/', 'a/a/a/', 'a/a/a/a/', 'a/a/a/a/a/']);
+      assert.deepStrictEqual(match(fixtures, '**/*/a/*/'), ['a/a/a/', 'a/a/a/a/', 'a/a/a/a/a/', 'a/a/b/']);
+      assert.deepStrictEqual(match(fixtures, '**/*/x/'), ['a/x/']);
+      assert.deepStrictEqual(match(fixtures, '**/*/*/*/*/'), ['a/a/a/a/', 'a/a/a/a/a/']);
+      assert.deepStrictEqual(match(fixtures, '**/*/*/*/*/*/'), ['a/a/a/a/a/']);
+      assert.deepStrictEqual(match(fixtures, '*a/a/*/'), ['a/a/a/', 'a/a/b/']);
+      assert.deepStrictEqual(match(fixtures, '**a/a/*/'), ['a/a/a/', 'a/a/b/']);
+      assert.deepStrictEqual(match(fixtures, '**/a/*/*/'), ['a/a/a/', 'a/a/a/a/', 'a/a/a/a/a/', 'a/a/b/']);
+      assert.deepStrictEqual(match(fixtures, '**/a/*/*/*/'), ['a/a/a/a/', 'a/a/a/a/a/']);
+      assert.deepStrictEqual(match(fixtures, '**/a/*/*/*/*/'), ['a/a/a/a/a/']);
+      assert.deepStrictEqual(match(fixtures, '**/a/*/a/'), ['a/a/a/', 'a/a/a/a/', 'a/a/a/a/a/']);
+      assert.deepStrictEqual(match(fixtures, '**/a/*/b/'), ['a/a/b/']);
+    });
+
+    it('should match literal globstars when stars are escaped', () => {
+      const fixtures = ['.md', '**a.md', '**.md', '.md', '**'];
+      assert.deepStrictEqual(match(fixtures, '\\*\\**.md'), ['**a.md', '**.md']);
+      assert.deepStrictEqual(match(fixtures, '\\*\\*.md'), ['**.md']);
+    });
+
+    it('single dots', () => {
+      assert(!isMatch('.a/a', '**'));
+      assert(!isMatch('a/.a', '**'));
+      assert(!isMatch('.a/a', '**/'));
+      assert(!isMatch('a/.a', '**/'));
+      assert(!isMatch('.a/a', '**/**'));
+      assert(!isMatch('a/.a', '**/**'));
+      assert(!isMatch('.a/a', '**/**/*'));
+      assert(!isMatch('a/.a', '**/**/*'));
+      assert(!isMatch('.a/a', '**/**/x'));
+      assert(!isMatch('a/.a', '**/**/x'));
+      assert(!isMatch('.a/a', '**/x'));
+      assert(!isMatch('a/.a', '**/x'));
+      assert(!isMatch('.a/a', '**/x/*'));
+      assert(!isMatch('a/.a', '**/x/*'));
+      assert(!isMatch('.a/a', '**/x/**'));
+      assert(!isMatch('a/.a', '**/x/**'));
+      assert(!isMatch('.a/a', '**/x/*/*'));
+      assert(!isMatch('a/.a', '**/x/*/*'));
+      assert(!isMatch('.a/a', '*/x/**'));
+      assert(!isMatch('a/.a', '*/x/**'));
+      assert(!isMatch('.a/a', 'a/**'));
+      assert(!isMatch('a/.a', 'a/**'));
+      assert(!isMatch('.a/a', 'a/**/*'));
+      assert(!isMatch('a/.a', 'a/**/*'));
+      assert(!isMatch('.a/a', 'a/**/**/*'));
+      assert(!isMatch('a/.a', 'a/**/**/*'));
+      assert(!isMatch('.a/a', 'b/**'));
+      assert(!isMatch('a/.a', 'b/**'));
+    });
+
+    it('double dots', () => {
+      assert(!isMatch('a/../a', '**'));
+      assert(!isMatch('ab/../ac', '**'));
+      assert(!isMatch('../a', '**'));
+      assert(!isMatch('../../b', '**'));
+      assert(!isMatch('../c', '**'));
+      assert(!isMatch('../c/d', '**'));
+      assert(!isMatch('a/../a', '**/'));
+      assert(!isMatch('ab/../ac', '**/'));
+      assert(!isMatch('../a', '**/'));
+      assert(!isMatch('../../b', '**/'));
+      assert(!isMatch('../c', '**/'));
+      assert(!isMatch('../c/d', '**/'));
+      assert(!isMatch('a/../a', '**/**'));
+      assert(!isMatch('ab/../ac', '**/**'));
+      assert(!isMatch('../a', '**/**'));
+      assert(!isMatch('../../b', '**/**'));
+      assert(!isMatch('../c', '**/**'));
+      assert(!isMatch('../c/d', '**/**'));
+      assert(!isMatch('a/../a', '**/**/*'));
+      assert(!isMatch('ab/../ac', '**/**/*'));
+      assert(!isMatch('../a', '**/**/*'));
+      assert(!isMatch('../../b', '**/**/*'));
+      assert(!isMatch('../c', '**/**/*'));
+      assert(!isMatch('../c/d', '**/**/*'));
+      assert(!isMatch('a/../a', '**/**/x'));
+      assert(!isMatch('ab/../ac', '**/**/x'));
+      assert(!isMatch('../a', '**/**/x'));
+      assert(!isMatch('../../b', '**/**/x'));
+      assert(!isMatch('../c', '**/**/x'));
+      assert(!isMatch('../c/d', '**/**/x'));
+      assert(!isMatch('a/../a', '**/x'));
+      assert(!isMatch('ab/../ac', '**/x'));
+      assert(!isMatch('../a', '**/x'));
+      assert(!isMatch('../../b', '**/x'));
+      assert(!isMatch('../c', '**/x'));
+      assert(!isMatch('../c/d', '**/x'));
+      assert(!isMatch('a/../a', '**/x/*'));
+      assert(!isMatch('ab/../ac', '**/x/*'));
+      assert(!isMatch('../a', '**/x/*'));
+      assert(!isMatch('../../b', '**/x/*'));
+      assert(!isMatch('../c', '**/x/*'));
+      assert(!isMatch('../c/d', '**/x/*'));
+      assert(!isMatch('a/../a', '**/x/**'));
+      assert(!isMatch('ab/../ac', '**/x/**'));
+      assert(!isMatch('../a', '**/x/**'));
+      assert(!isMatch('../../b', '**/x/**'));
+      assert(!isMatch('../c', '**/x/**'));
+      assert(!isMatch('../c/d', '**/x/**'));
+      assert(!isMatch('a/../a', '**/x/*/*'));
+      assert(!isMatch('ab/../ac', '**/x/*/*'));
+      assert(!isMatch('../a', '**/x/*/*'));
+      assert(!isMatch('../../b', '**/x/*/*'));
+      assert(!isMatch('../c', '**/x/*/*'));
+      assert(!isMatch('../c/d', '**/x/*/*'));
+      assert(!isMatch('a/../a', '*/x/**'));
+      assert(!isMatch('ab/../ac', '*/x/**'));
+      assert(!isMatch('../a', '*/x/**'));
+      assert(!isMatch('../../b', '*/x/**'));
+      assert(!isMatch('../c', '*/x/**'));
+      assert(!isMatch('../c/d', '*/x/**'));
+      assert(!isMatch('a/../a', 'a/**'));
+      assert(!isMatch('ab/../ac', 'a/**'));
+      assert(!isMatch('../a', 'a/**'));
+      assert(!isMatch('../../b', 'a/**'));
+      assert(!isMatch('../c', 'a/**'));
+      assert(!isMatch('../c/d', 'a/**'));
+      assert(!isMatch('a/../a', 'a/**/*'));
+      assert(!isMatch('ab/../ac', 'a/**/*'));
+      assert(!isMatch('../a', 'a/**/*'));
+      assert(!isMatch('../../b', 'a/**/*'));
+      assert(!isMatch('../c', 'a/**/*'));
+      assert(!isMatch('../c/d', 'a/**/*'));
+      assert(!isMatch('a/../a', 'a/**/**/*'));
+      assert(!isMatch('ab/../ac', 'a/**/**/*'));
+      assert(!isMatch('../a', 'a/**/**/*'));
+      assert(!isMatch('../../b', 'a/**/**/*'));
+      assert(!isMatch('../c', 'a/**/**/*'));
+      assert(!isMatch('../c/d', 'a/**/**/*'));
+      assert(!isMatch('a/../a', 'b/**'));
+      assert(!isMatch('ab/../ac', 'b/**'));
+      assert(!isMatch('../a', 'b/**'));
+      assert(!isMatch('../../b', 'b/**'));
+      assert(!isMatch('../c', 'b/**'));
+      assert(!isMatch('../c/d', 'b/**'));
+    });
+
+    it('should match', () => {
+      assert(!isMatch('a', '**/'));
+      assert(!isMatch('a', '**/a/*'));
+      assert(!isMatch('a', '**/a/*/*'));
+      assert(!isMatch('a', '*/a/**'));
+      assert(!isMatch('a', 'a/**/*'));
+      assert(!isMatch('a', 'a/**/**/*'));
+      assert(!isMatch('a/b', '**/'));
+      assert(!isMatch('a/b', '**/b/*'));
+      assert(!isMatch('a/b', '**/b/*/*'));
+      assert(!isMatch('a/b', 'b/**'));
+      assert(!isMatch('a/b/c', '**/'));
+      assert(!isMatch('a/b/c', '**/**/b'));
+      assert(!isMatch('a/b/c', '**/b'));
+      assert(!isMatch('a/b/c', '**/b/*/*'));
+      assert(!isMatch('a/b/c', 'b/**'));
+      assert(!isMatch('a/b/c/d', '**/'));
+      assert(!isMatch('a/b/c/d', '**/d/*'));
+      assert(!isMatch('a/b/c/d', 'b/**'));
+      assert(isMatch('a', '**'));
+      assert(isMatch('a', '**/**'));
+      assert(isMatch('a', '**/**/*'));
+      assert(isMatch('a', '**/**/a'));
+      assert(isMatch('a', '**/a'));
+      assert(isMatch('a', '**/a/**'));
+      assert(isMatch('a', 'a/**'));
+      assert(isMatch('a/b', '**'));
+      assert(isMatch('a/b', '**/**'));
+      assert(isMatch('a/b', '**/**/*'));
+      assert(isMatch('a/b', '**/**/b'));
+      assert(isMatch('a/b', '**/b'));
+      assert(isMatch('a/b', '**/b/**'));
+      assert(isMatch('a/b', '*/b/**'));
+      assert(isMatch('a/b', 'a/**'));
+      assert(isMatch('a/b', 'a/**/*'));
+      assert(isMatch('a/b', 'a/**/**/*'));
+      assert(isMatch('a/b/c', '**'));
+      assert(isMatch('a/b/c', '**/**'));
+      assert(isMatch('a/b/c', '**/**/*'));
+      assert(isMatch('a/b/c', '**/b/*'));
+      assert(isMatch('a/b/c', '**/b/**'));
+      assert(isMatch('a/b/c', '*/b/**'));
+      assert(isMatch('a/b/c', 'a/**'));
+      assert(isMatch('a/b/c', 'a/**/*'));
+      assert(isMatch('a/b/c', 'a/**/**/*'));
+      assert(isMatch('a/b/c/d', '**'));
+      assert(isMatch('a/b/c/d', '**/**'));
+      assert(isMatch('a/b/c/d', '**/**/*'));
+      assert(isMatch('a/b/c/d', '**/**/d'));
+      assert(isMatch('a/b/c/d', '**/b/**'));
+      assert(isMatch('a/b/c/d', '**/b/*/*'));
+      assert(isMatch('a/b/c/d', '**/d'));
+      assert(isMatch('a/b/c/d', '*/b/**'));
+      assert(isMatch('a/b/c/d', 'a/**'));
+      assert(isMatch('a/b/c/d', 'a/**/*'));
+      assert(isMatch('a/b/c/d', 'a/**/**/*'));
+    });
+
+    it('should match nested directories', () => {
+      assert(isMatch('a/b', '*/*'));
+      assert(isMatch('a/b/c/xyz.md', 'a/b/c/*.md'));
+      assert(isMatch('a/bb.bb/c/xyz.md', 'a/*/c/*.md'));
+      assert(isMatch('a/bb/c/xyz.md', 'a/*/c/*.md'));
+      assert(isMatch('a/bbbb/c/xyz.md', 'a/*/c/*.md'));
+
+      assert(isMatch('a/b/c', '**/*'));
+      assert(isMatch('a/b/c', '**/**'));
+      assert(isMatch('a/b/c', '*/**'));
+      assert(isMatch('a/b/c/d/e/j/n/p/o/z/c.md', 'a/**/j/**/z/*.md'));
+      assert(isMatch('a/b/c/d/e/z/c.md', 'a/**/z/*.md'));
+      assert(isMatch('a/bb.bb/aa/b.b/aa/c/xyz.md', 'a/**/c/*.md'));
+      assert(isMatch('a/bb.bb/aa/bb/aa/c/xyz.md', 'a/**/c/*.md'));
+      assert(!isMatch('a/b/c/j/e/z/c.txt', 'a/**/j/**/z/*.md'));
+      assert(!isMatch('a/b/c/xyz.md', 'a/b/**/c{d,e}/**/xyz.md'));
+      assert(!isMatch('a/b/d/xyz.md', 'a/b/**/c{d,e}/**/xyz.md'));
+      assert(!isMatch('a/b', 'a/**/'));
+      assert(!isMatch('a/b/.js/c.txt', '**/*'));
+      assert(!isMatch('a/b/c/d', 'a/**/'));
+      assert(!isMatch('a/bb', 'a/**/'));
+      assert(!isMatch('a/cb', 'a/**/'));
+      assert(isMatch('/a/b', '/**'));
+      assert(isMatch('a.b', '**/*'));
+      assert(isMatch('a.js', '**/*'));
+      assert(isMatch('a.js', '**/*.js'));
+      assert(isMatch('a/', 'a/**/'));
+      assert(isMatch('a/a.js', '**/*.js'));
+      assert(isMatch('a/a/b.js', '**/*.js'));
+      assert(isMatch('a/b', 'a/**/b'));
+      assert(isMatch('a/b', 'a/**b'));
+      assert(isMatch('a/b.md', '**/*.md'));
+      assert(isMatch('a/b/c.js', '**/*'));
+      assert(isMatch('a/b/c.txt', '**/*'));
+      assert(isMatch('a/b/c/d/', 'a/**/'));
+      assert(isMatch('a/b/c/d/a.js', '**/*'));
+      assert(isMatch('a/b/c/z.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/z.js', 'a/b/**/*.js'));
+      assert(isMatch('ab', '**/*'));
+      assert(isMatch('ab/c', '**/*'));
+      assert(isMatch('ab/c/d', '**/*'));
+      assert(isMatch('abc.js', '**/*'));
+    });
+
+    it('should not match dotfiles by default', () => {
+      assert(!isMatch('a/.b', 'a/**/z/*.md'));
+      assert(!isMatch('a/b/z/.a', 'a/**/z/*.a'));
+      assert(!isMatch('a/b/z/.a', 'a/*/z/*.a'));
+      assert(!isMatch('a/b/z/.a', 'b/a'));
+      assert(!isMatch('a/foo/z/.b', 'a/**/z/*.md'));
+    });
+
+    it('should match leading dots when defined in pattern', () => {
+      const fixtures = ['.gitignore', 'a/b/z/.dotfile', 'a/b/z/.dotfile.md', 'a/b/z/.dotfile.md', 'a/b/z/.dotfile.md'];
+      assert(!isMatch('.gitignore', 'a/**/z/*.md'));
+      assert(!isMatch('a/b/z/.dotfile', 'a/**/z/*.md'));
+      assert(!isMatch('a/b/z/.dotfile.md', '**/c/.*.md'));
+      assert(isMatch('a/.b', 'a/.*'));
+      assert(isMatch('a/b/z/.a', 'a/*/z/.a'));
+      assert(isMatch('a/b/z/.dotfile.md', '**/.*.md'));
+      assert(isMatch('a/b/z/.dotfile.md', 'a/**/z/.*.md'));
+      assert.deepStrictEqual(match(['.md', 'a.md', 'a/b/c.md', '.txt'], '**/*.md'), ['a.md', 'a/b/c.md']);
+      assert.deepStrictEqual(match(['.md/.md', '.md', 'a/.md', 'a/b/.md'], '**/.md'), ['.md', 'a/.md', 'a/b/.md']);
+      assert.deepStrictEqual(match(['.md/.md', '.md/foo/.md', '.md', 'a/.md', 'a/b/.md'], '.md/**/.md'), ['.md/.md', '.md/foo/.md']);
+      assert.deepStrictEqual(match(fixtures, 'a/**/z/.*.md'), ['a/b/z/.dotfile.md']);
+    });
+
+    it('todo... (micromatch/#24)', () => {
+      assert(isMatch('foo/bar/baz/one/image.png', 'foo/bar/**/one/**/*.*'));
+      assert(isMatch('foo/bar/baz/one/two/image.png', 'foo/bar/**/one/**/*.*'));
+      assert(isMatch('foo/bar/baz/one/two/three/image.png', 'foo/bar/**/one/**/*.*'));
+      assert(!isMatch('a/b/c/d/', 'a/b/**/f'));
+      assert(isMatch('a', 'a/**'));
+      assert(isMatch('a', '**'));
+      assert(isMatch('a', 'a{,/**}'));
+      assert(isMatch('a/', '**'));
+      assert(isMatch('a/', 'a/**'));
+      assert(isMatch('a/b/c/d', '**'));
+      assert(isMatch('a/b/c/d/', '**'));
+      assert(isMatch('a/b/c/d/', '**/**'));
+      assert(isMatch('a/b/c/d/', '**/b/**'));
+      assert(isMatch('a/b/c/d/', 'a/b/**'));
+      assert(isMatch('a/b/c/d/', 'a/b/**/'));
+      assert(isMatch('a/b/c/d/', 'a/b/**/c/**/'));
+      assert(isMatch('a/b/c/d/', 'a/b/**/c/**/d/'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/**/*.*'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/*.*'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/c/**/d/*.*'));
+      assert(isMatch('a/b/c/d/e.f', 'a/b/**/d/**/*.*'));
+      assert(isMatch('a/b/c/d/g/e.f', 'a/b/**/d/**/*.*'));
+      assert(isMatch('a/b/c/d/g/g/e.f', 'a/b/**/d/**/*.*'));
+
+      assert(isMatch('a/b-c/z.js', 'a/b-*/**/z.js'));
+      assert(isMatch('a/b-c/d/e/z.js', 'a/b-*/**/z.js'));
+    });
+  });
+
+  describe('globstars', () => {
+    it('should match globstars', () => {
+      assert(isMatch('a/b/c/d.js', '**/*.js'));
+      assert(isMatch('a/b/c.js', '**/*.js'));
+      assert(isMatch('a/b.js', '**/*.js'));
+      assert(isMatch('a/b/c/d/e/f.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/c/d/e.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/c/d.js', 'a/b/c/**/*.js'));
+      assert(isMatch('a/b/c/d.js', 'a/b/**/*.js'));
+      assert(isMatch('a/b/d.js', 'a/b/**/*.js'));
+
+      assert(!isMatch('a/d.js', 'a/b/**/*.js'));
+      assert(!isMatch('d.js', 'a/b/**/*.js'));
+    });
+
+    it('should regard non-exclusive double-stars as single stars', () => {
+      assert(!isMatch('a/b/c', '**c'));
+      assert(!isMatch('a/b/c', 'a/**c'));
+      assert(!isMatch('a/b/c', 'a/**z'));
+      assert(!isMatch('a/b/c/b/c', 'a/**b**/c'));
+      assert(!isMatch('a/b/c/d/e.js', 'a/b/c**/*.js'));
+      assert(isMatch('a/b/c/b/c', 'a/**/b/**/c'));
+      assert(isMatch('a/aba/c', 'a/**b**/c'));
+      assert(isMatch('a/b/c', 'a/**b**/c'));
+      assert(isMatch('a/b/c/d.js', 'a/b/c**/*.js'));
+    });
+
+    it('should support globstars (**)', () => {
+      assert(!isMatch('a', 'a/**/*'));
+      assert(!isMatch('a', 'a/**/**/*'));
+      assert(!isMatch('a', 'a/**/**/**/*'));
+      assert(!isMatch('a/', '**/a'));
+      assert(!isMatch('a/', 'a/**/*'));
+      assert(!isMatch('a/', 'a/**/**/*'));
+      assert(!isMatch('a/', 'a/**/**/**/*'));
+      assert(!isMatch('a/b', '**/a'));
+      assert(!isMatch('a/b/c/j/e/z/c.txt', 'a/**/j/**/z/*.md'));
+      assert(!isMatch('a/bb', 'a/**/b'));
+      assert(!isMatch('a/c', '**/a'));
+      assert(!isMatch('a/b', '**/a'));
+      assert(!isMatch('a/x/y', '**/a'));
+      assert(!isMatch('a/b/c/d', '**/a'));
+      assert(isMatch('a', '**'));
+      assert(isMatch('a', '**/a'));
+      assert(isMatch('a', 'a/**'));
+      assert(isMatch('a/', '**'));
+      assert(isMatch('a/', '**/a/**'));
+      assert(isMatch('a/', 'a/**'));
+      assert(isMatch('a/', 'a/**/**'));
+      assert(isMatch('a/a', '**/a'));
+      assert(isMatch('a/b', '**'));
+      assert(isMatch('a/b', '*/*'));
+      assert(isMatch('a/b', 'a/**'));
+      assert(isMatch('a/b', 'a/**/*'));
+      assert(isMatch('a/b', 'a/**/**/*'));
+      assert(isMatch('a/b', 'a/**/**/**/*'));
+      assert(isMatch('a/b', 'a/**/b'));
+      assert(isMatch('a/b/c', '**'));
+      assert(isMatch('a/b/c', '**/*'));
+      assert(isMatch('a/b/c', '**/**'));
+      assert(isMatch('a/b/c', '*/**'));
+      assert(isMatch('a/b/c', 'a/**'));
+      assert(isMatch('a/b/c', 'a/**/*'));
+      assert(isMatch('a/b/c', 'a/**/**/*'));
+      assert(isMatch('a/b/c', 'a/**/**/**/*'));
+      assert(isMatch('a/b/c/d', '**'));
+      assert(isMatch('a/b/c/d', 'a/**'));
+      assert(isMatch('a/b/c/d', 'a/**/*'));
+      assert(isMatch('a/b/c/d', 'a/**/**/*'));
+      assert(isMatch('a/b/c/d', 'a/**/**/**/*'));
+      assert(isMatch('a/b/c/d.e', 'a/b/**/c/**/*.*'));
+      assert(isMatch('a/b/c/d/e/f/g.md', 'a/**/f/*.md'));
+      assert(isMatch('a/b/c/d/e/f/g/h/i/j/k/l.md', 'a/**/f/**/k/*.md'));
+      assert(isMatch('a/b/c/def.md', 'a/b/c/*.md'));
+      assert(isMatch('a/bb.bb/c/ddd.md', 'a/*/c/*.md'));
+      assert(isMatch('a/bb.bb/cc/d.d/ee/f/ggg.md', 'a/**/f/*.md'));
+      assert(isMatch('a/bb.bb/cc/dd/ee/f/ggg.md', 'a/**/f/*.md'));
+      assert(isMatch('a/bb/c/ddd.md', 'a/*/c/*.md'));
+      assert(isMatch('a/bbbb/c/ddd.md', 'a/*/c/*.md'));
+    });
+  });
+});
+```
+
+## File: `test/issue-related.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('issue-related tests', () => {
+  it('should match with braces (see picomatch/issues#8)', () => {
+    assert(isMatch('directory/.test.txt', '{file.txt,directory/**/*}', { dot: true }));
+    assert(isMatch('directory/test.txt', '{file.txt,directory/**/*}', { dot: true }));
+    assert(!isMatch('directory/.test.txt', '{file.txt,directory/**/*}'));
+    assert(isMatch('directory/test.txt', '{file.txt,directory/**/*}'));
+  });
+
+  it('should match Japanese characters (see micromatch/issues#127)', () => {
+    assert(isMatch('フォルダ/aaa.js', 'フ*/**/*'));
+    assert(isMatch('フォルダ/aaa.js', 'フォ*/**/*'));
+    assert(isMatch('フォルダ/aaa.js', 'フォル*/**/*'));
+    assert(isMatch('フォルダ/aaa.js', 'フ*ル*/**/*'));
+    assert(isMatch('フォルダ/aaa.js', 'フォルダ/**/*'));
+  });
+
+  it('micromatch issue#15', () => {
+    assert(isMatch('a/b-c/d/e/z.js', 'a/b-*/**/z.js'));
+    assert(isMatch('z.js', 'z*'));
+    assert(isMatch('z.js', '**/z*'));
+    assert(isMatch('z.js', '**/z*.js'));
+    assert(isMatch('z.js', '**/*.js'));
+    assert(isMatch('foo', '**/foo'));
+  });
+
+  it('micromatch issue#23', () => {
+    assert(!isMatch('zzjs', 'z*.js'));
+    assert(!isMatch('zzjs', '*z.js'));
+  });
+
+  it('micromatch issue#24', () => {
+    assert(!isMatch('a/b/c/d/', 'a/b/**/f'));
+    assert(isMatch('a', 'a/**'));
+    assert(isMatch('a', '**'));
+    assert(isMatch('a/', '**'));
+    assert(isMatch('a/b/c/d', '**'));
+    assert(isMatch('a/b/c/d/', '**'));
+    assert(isMatch('a/b/c/d/', '**/**'));
+    assert(isMatch('a/b/c/d/', '**/b/**'));
+    assert(isMatch('a/b/c/d/', 'a/b/**'));
+    assert(isMatch('a/b/c/d/', 'a/b/**/'));
+    assert(isMatch('a/b/c/d/e.f', 'a/b/**/**/*.*'));
+    assert(isMatch('a/b/c/d/e.f', 'a/b/**/*.*'));
+    assert(isMatch('a/b/c/d/g/e.f', 'a/b/**/d/**/*.*'));
+    assert(isMatch('a/b/c/d/g/g/e.f', 'a/b/**/d/**/*.*'));
+  });
+
+  it('micromatch issue#58 - only match nested dirs when `**` is the only thing in a segment', () => {
+    assert(!isMatch('a/b/c', 'a/b**'));
+    assert(!isMatch('a/c/b', 'a/**b'));
+  });
+
+  it('micromatch issue#79', () => {
+    assert(isMatch('a/foo.js', '**/foo.js'));
+    assert(isMatch('foo.js', '**/foo.js'));
+    assert(isMatch('a/foo.js', '**/foo.js', { dot: true }));
+    assert(isMatch('foo.js', '**/foo.js', { dot: true }));
+  });
+});
+```
+
+## File: `test/malicious.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch, makeRe } = require('..');
+const repeat = n => '\\'.repeat(n);
+
+/**
+ * These tests are based on minimatch unit tests
+ */
+
+describe('handling of potential regex exploits', () => {
+  it('should support long escape sequences', () => {
+    if (process.platform !== 'win32') {
+      assert(isMatch('\\A', `${repeat(65500)}A`), 'within the limits, and valid match');
+    }
+    assert(isMatch('A', `!${repeat(65500)}A`), 'within the limits, and valid match');
+    assert(isMatch('A', `!(${repeat(65500)}A)`), 'within the limits, and valid match');
+    assert(!isMatch('A', `[!(${repeat(65500)}A`), 'within the limits, but invalid regex');
+  });
+
+  it('should throw an error when the pattern is too long', () => {
+    assert.throws(() => isMatch('foo', '*'.repeat(65537)), /exceeds maximum allowed/);
+    assert.throws(() => {
+      assert(!isMatch('A', `!(${repeat(65536)}A)`));
+    }, /Input length: 65540, exceeds maximum allowed length: 65536/);
+  });
+
+  it('should allow max bytes to be customized', () => {
+    assert.throws(() => {
+      assert(!isMatch('A', `!(${repeat(500)}A)`, { maxLength: 499 }));
+    }, /Input length: 504, exceeds maximum allowed length: 499/);
+  });
+
+  it('should be able to accept Object instance properties', () => {
+    assert(isMatch('constructor', 'constructor'), 'valid match');
+    assert(isMatch('__proto__', '__proto__'), 'valid match');
+    assert(isMatch('toString', 'toString'), 'valid match');
+  });
+
+  it('should not expose internal prototype properties', () => {
+    assert.equal(makeRe('[[:constructor:]]').toString(), '/^(?:[[:constructor:]\\])$/');
+    assert(!isMatch('f }]', '[[:constructor:]]'), 'not valid match');
+    assert(!isMatch('a }]', '[[:constructor:]]'),  'not valid match');
+  });
+});
+```
+
+## File: `test/minimatch.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const format = str => str.replace(/^\.\//, '');
+const { isMatch, makeRe } = require('..');
+
+describe('minimatch parity:', () => {
+  describe('minimatch issues (as of 12/7/2016)', () => {
+    it('https://github.com/isaacs/minimatch/issues/29', () => {
+      assert(isMatch('foo/bar.txt', 'foo/**/*.txt'));
+      assert(makeRe('foo/**/*.txt').test('foo/bar.txt'));
+      assert(!isMatch('n/!(axios)/**', 'n/axios/a.js'));
+      assert(!makeRe('n/!(axios)/**').test('n/axios/a.js'));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/30', () => {
+      assert(isMatch('foo/bar.js', '**/foo/**', { format }));
+      assert(isMatch('./foo/bar.js', './**/foo/**', { format }));
+      assert(isMatch('./foo/bar.js', '**/foo/**', { format }));
+      assert(isMatch('./foo/bar.txt', 'foo/**/*.txt', { format }));
+      assert(makeRe('./foo/**/*.txt').test('foo/bar.txt'));
+      assert(!isMatch('./foo/!(bar)/**', 'foo/bar/a.js', { format }));
+      assert(!makeRe('./foo/!(bar)/**').test('foo/bar/a.js'));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/50', () => {
+      assert(isMatch('foo/bar-[ABC].txt', 'foo/**/*-\\[ABC\\].txt'));
+      assert(!isMatch('foo/bar-[ABC].txt', 'foo/**/*-\\[abc\\].txt'));
+      assert(isMatch('foo/bar-[ABC].txt', 'foo/**/*-\\[abc\\].txt', { nocase: true }));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/67 (should work consistently with `makeRe` and matcher functions)', () => {
+      const re = makeRe('node_modules/foobar/**/*.bar');
+      assert(re.test('node_modules/foobar/foo.bar'));
+      assert(isMatch('node_modules/foobar/foo.bar', 'node_modules/foobar/**/*.bar'));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/75', () => {
+      assert(isMatch('foo/baz.qux.js', 'foo/@(baz.qux).js'));
+      assert(isMatch('foo/baz.qux.js', 'foo/+(baz.qux).js'));
+      assert(isMatch('foo/baz.qux.js', 'foo/*(baz.qux).js'));
+      assert(!isMatch('foo/baz.qux.js', 'foo/!(baz.qux).js'));
+      assert(!isMatch('foo/bar/baz.qux.js', 'foo/*/!(baz.qux).js'));
+      assert(!isMatch('foo/bar/bazqux.js', '**/!(bazqux).js'));
+      assert(!isMatch('foo/bar/bazqux.js', '**/bar/!(bazqux).js'));
+      assert(!isMatch('foo/bar/bazqux.js', 'foo/**/!(bazqux).js'));
+      assert(!isMatch('foo/bar/bazqux.js', 'foo/**/!(bazqux)*.js'));
+      assert(!isMatch('foo/bar/baz.qux.js', 'foo/**/!(baz.qux)*.js'));
+      assert(!isMatch('foo/bar/baz.qux.js', 'foo/**/!(baz.qux).js'));
+      assert(!isMatch('foobar.js', '!(foo)*.js'));
+      assert(!isMatch('foo.js', '!(foo).js'));
+      assert(!isMatch('foo.js', '!(foo)*.js'));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/78', () => {
+      assert(isMatch('a\\b\\c.txt', 'a/**/*.txt', { windows: true }));
+      assert(isMatch('a/b/c.txt', 'a/**/*.txt', { windows: true }));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/82', () => {
+      assert(isMatch('./src/test/a.js', '**/test/**', { format }));
+      assert(isMatch('src/test/a.js', '**/test/**'));
+    });
+
+    it('https://github.com/isaacs/minimatch/issues/83', () => {
+      assert(!makeRe('foo/!(bar)/**').test('foo/bar/a.js'));
+      assert(!isMatch('foo/!(bar)/**', 'foo/bar/a.js'));
+    });
+  });
+});
+```
+
+## File: `test/negation.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('negation patterns - "!"', () => {
+  it('should patterns with a leading "!" as negated/inverted globs', () => {
+    assert(!isMatch('abc', '!*'));
+    assert(!isMatch('abc', '!abc'));
+    assert(!isMatch('bar.md', '*!.md'));
+    assert(!isMatch('bar.md', 'foo!.md'));
+    assert(!isMatch('foo!.md', '\\!*!*.md'));
+    assert(!isMatch('foo!bar.md', '\\!*!*.md'));
+    assert(isMatch('!foo!.md', '*!*.md'));
+    assert(isMatch('!foo!.md', '\\!*!*.md'));
+    assert(isMatch('abc', '!*foo'));
+    assert(isMatch('abc', '!foo*'));
+    assert(isMatch('abc', '!xyz'));
+    assert(isMatch('ba!r.js', '*!*.*'));
+    assert(isMatch('bar.md', '*.md'));
+    assert(isMatch('foo!.md', '*!*.*'));
+    assert(isMatch('foo!.md', '*!*.md'));
+    assert(isMatch('foo!.md', '*!.md'));
+    assert(isMatch('foo!.md', '*.md'));
+    assert(isMatch('foo!.md', 'foo!.md'));
+    assert(isMatch('foo!bar.md', '*!*.md'));
+    assert(isMatch('foobar.md', '*b*.md'));
+  });
+
+  it('should treat non-leading "!" as literal characters', () => {
+    assert(!isMatch('a', 'a!!b'));
+    assert(!isMatch('aa', 'a!!b'));
+    assert(!isMatch('a/b', 'a!!b'));
+    assert(!isMatch('a!b', 'a!!b'));
+    assert(isMatch('a!!b', 'a!!b'));
+    assert(!isMatch('a/!!/b', 'a!!b'));
+  });
+
+  it('should support negation in globs that have no other special characters', () => {
+    assert(!isMatch('a/b', '!a/b'));
+    assert(isMatch('a', '!a/b'));
+    assert(isMatch('a.b', '!a/b'));
+    assert(isMatch('a/a', '!a/b'));
+    assert(isMatch('a/c', '!a/b'));
+    assert(isMatch('b/a', '!a/b'));
+    assert(isMatch('b/b', '!a/b'));
+    assert(isMatch('b/c', '!a/b'));
+  });
+
+  it('should support multiple leading ! to toggle negation', () => {
+    assert(!isMatch('abc', '!abc'));
+    assert(isMatch('abc',  '!!abc'));
+    assert(!isMatch('abc', '!!!abc'));
+    assert(isMatch('abc',  '!!!!abc'));
+    assert(!isMatch('abc', '!!!!!abc'));
+    assert(isMatch('abc',  '!!!!!!abc'));
+    assert(!isMatch('abc', '!!!!!!!abc'));
+    assert(isMatch('abc',  '!!!!!!!!abc'));
+  });
+
+  it('should support negation extglobs after leading !', () => {
+    assert(!isMatch('abc', '!(abc)'));
+    assert(isMatch('abc',  '!!(abc)'));
+    assert(!isMatch('abc', '!!!(abc)'));
+    assert(isMatch('abc',  '!!!!(abc)'));
+    assert(!isMatch('abc', '!!!!!(abc)'));
+    assert(isMatch('abc',  '!!!!!!(abc)'));
+    assert(!isMatch('abc', '!!!!!!!(abc)'));
+    assert(isMatch('abc',  '!!!!!!!!(abc)'));
+  });
+
+  it('should support negation with globs', () => {
+    assert(!isMatch('a/a', '!(*/*)'));
+    assert(!isMatch('a/b', '!(*/*)'));
+    assert(!isMatch('a/c', '!(*/*)'));
+    assert(!isMatch('b/a', '!(*/*)'));
+    assert(!isMatch('b/b', '!(*/*)'));
+    assert(!isMatch('b/c', '!(*/*)'));
+    assert(!isMatch('a/b', '!(*/b)'));
+    assert(!isMatch('b/b', '!(*/b)'));
+    assert(!isMatch('a/b', '!(a/b)'));
+    assert(!isMatch('a', '!*'));
+    assert(!isMatch('a.b', '!*'));
+    assert(!isMatch('a/a', '!*/*'));
+    assert(!isMatch('a/b', '!*/*'));
+    assert(!isMatch('a/c', '!*/*'));
+    assert(!isMatch('b/a', '!*/*'));
+    assert(!isMatch('b/b', '!*/*'));
+    assert(!isMatch('b/c', '!*/*'));
+    assert(!isMatch('a/b', '!*/b'));
+    assert(!isMatch('b/b', '!*/b'));
+    assert(!isMatch('a/c', '!*/c'));
+    assert(!isMatch('a/c', '!*/c'));
+    assert(!isMatch('b/c', '!*/c'));
+    assert(!isMatch('b/c', '!*/c'));
+    assert(!isMatch('bar', '!*a*'));
+    assert(!isMatch('fab', '!*a*'));
+    assert(!isMatch('a/a', '!a/(*)'));
+    assert(!isMatch('a/b', '!a/(*)'));
+    assert(!isMatch('a/c', '!a/(*)'));
+    assert(!isMatch('a/b', '!a/(b)'));
+    assert(!isMatch('a/a', '!a/*'));
+    assert(!isMatch('a/b', '!a/*'));
+    assert(!isMatch('a/c', '!a/*'));
+    assert(!isMatch('fab', '!f*b'));
+    assert(isMatch('a', '!(*/*)'));
+    assert(isMatch('a.b', '!(*/*)'));
+    assert(isMatch('a', '!(*/b)'));
+    assert(isMatch('a.b', '!(*/b)'));
+    assert(isMatch('a/a', '!(*/b)'));
+    assert(isMatch('a/c', '!(*/b)'));
+    assert(isMatch('b/a', '!(*/b)'));
+    assert(isMatch('b/c', '!(*/b)'));
+    assert(isMatch('a', '!(a/b)'));
+    assert(isMatch('a.b', '!(a/b)'));
+    assert(isMatch('a/a', '!(a/b)'));
+    assert(isMatch('a/c', '!(a/b)'));
+    assert(isMatch('b/a', '!(a/b)'));
+    assert(isMatch('b/b', '!(a/b)'));
+    assert(isMatch('b/c', '!(a/b)'));
+    assert(isMatch('a/a', '!*'));
+    assert(isMatch('a/b', '!*'));
+    assert(isMatch('a/c', '!*'));
+    assert(isMatch('b/a', '!*'));
+    assert(isMatch('b/b', '!*'));
+    assert(isMatch('b/c', '!*'));
+    assert(isMatch('a', '!*/*'));
+    assert(isMatch('a.b', '!*/*'));
+    assert(isMatch('a', '!*/b'));
+    assert(isMatch('a.b', '!*/b'));
+    assert(isMatch('a/a', '!*/b'));
+    assert(isMatch('a/c', '!*/b'));
+    assert(isMatch('b/a', '!*/b'));
+    assert(isMatch('b/c', '!*/b'));
+    assert(isMatch('a', '!*/c'));
+    assert(isMatch('a.b', '!*/c'));
+    assert(isMatch('a/a', '!*/c'));
+    assert(isMatch('a/b', '!*/c'));
+    assert(isMatch('b/a', '!*/c'));
+    assert(isMatch('b/b', '!*/c'));
+    assert(isMatch('foo', '!*a*'));
+    assert(isMatch('a', '!a/(*)'));
+    assert(isMatch('a.b', '!a/(*)'));
+    assert(isMatch('b/a', '!a/(*)'));
+    assert(isMatch('b/b', '!a/(*)'));
+    assert(isMatch('b/c', '!a/(*)'));
+    assert(isMatch('a', '!a/(b)'));
+    assert(isMatch('a.b', '!a/(b)'));
+    assert(isMatch('a/a', '!a/(b)'));
+    assert(isMatch('a/c', '!a/(b)'));
+    assert(isMatch('b/a', '!a/(b)'));
+    assert(isMatch('b/b', '!a/(b)'));
+    assert(isMatch('b/c', '!a/(b)'));
+    assert(isMatch('a', '!a/*'));
+    assert(isMatch('a.b', '!a/*'));
+    assert(isMatch('b/a', '!a/*'));
+    assert(isMatch('b/b', '!a/*'));
+    assert(isMatch('b/c', '!a/*'));
+    assert(isMatch('bar', '!f*b'));
+    assert(isMatch('foo', '!f*b'));
+  });
+
+  it('should negate files with extensions', () => {
+    assert(!isMatch('.md', '!.md'));
+    assert(isMatch('a.js', '!**/*.md'));
+    assert(!isMatch('b.md', '!**/*.md'));
+    assert(isMatch('c.txt', '!**/*.md'));
+    assert(isMatch('a.js', '!*.md'));
+    assert(!isMatch('b.md', '!*.md'));
+    assert(isMatch('c.txt', '!*.md'));
+    assert(!isMatch('abc.md', '!*.md'));
+    assert(isMatch('abc.txt', '!*.md'));
+    assert(!isMatch('foo.md', '!*.md'));
+    assert(isMatch('foo.md', '!.md'));
+  });
+
+  it('should support negated single stars', () => {
+    assert(isMatch('a.js', '!*.md'));
+    assert(isMatch('b.txt', '!*.md'));
+    assert(!isMatch('c.md', '!*.md'));
+    assert(!isMatch('a/a/a.js', '!a/*/a.js'));
+    assert(!isMatch('a/b/a.js', '!a/*/a.js'));
+    assert(!isMatch('a/c/a.js', '!a/*/a.js'));
+    assert(!isMatch('a/a/a/a.js', '!a/*/*/a.js'));
+    assert(isMatch('b/a/b/a.js', '!a/*/*/a.js'));
+    assert(isMatch('c/a/c/a.js', '!a/*/*/a.js'));
+    assert(!isMatch('a/a.txt', '!a/a*.txt'));
+    assert(isMatch('a/b.txt', '!a/a*.txt'));
+    assert(isMatch('a/c.txt', '!a/a*.txt'));
+    assert(!isMatch('a.a.txt', '!a.a*.txt'));
+    assert(isMatch('a.b.txt', '!a.a*.txt'));
+    assert(isMatch('a.c.txt', '!a.a*.txt'));
+    assert(!isMatch('a/a.txt', '!a/*.txt'));
+    assert(!isMatch('a/b.txt', '!a/*.txt'));
+    assert(!isMatch('a/c.txt', '!a/*.txt'));
+  });
+
+  it('should support negated globstars (multiple stars)', () => {
+    assert(isMatch('a.js', '!*.md'));
+    assert(isMatch('b.txt', '!*.md'));
+    assert(!isMatch('c.md', '!*.md'));
+    assert(!isMatch('a/a/a.js', '!**/a.js'));
+    assert(!isMatch('a/b/a.js', '!**/a.js'));
+    assert(!isMatch('a/c/a.js', '!**/a.js'));
+    assert(isMatch('a/a/b.js', '!**/a.js'));
+    assert(!isMatch('a/a/a/a.js', '!a/**/a.js'));
+    assert(isMatch('b/a/b/a.js', '!a/**/a.js'));
+    assert(isMatch('c/a/c/a.js', '!a/**/a.js'));
+    assert(isMatch('a/b.js', '!**/*.md'));
+    assert(isMatch('a.js', '!**/*.md'));
+    assert(!isMatch('a/b.md', '!**/*.md'));
+    assert(!isMatch('a.md', '!**/*.md'));
+    assert(!isMatch('a/b.js', '**/*.md'));
+    assert(!isMatch('a.js', '**/*.md'));
+    assert(isMatch('a/b.md', '**/*.md'));
+    assert(isMatch('a.md', '**/*.md'));
+    assert(isMatch('a/b.js', '!**/*.md'));
+    assert(isMatch('a.js', '!**/*.md'));
+    assert(!isMatch('a/b.md', '!**/*.md'));
+    assert(!isMatch('a.md', '!**/*.md'));
+    assert(isMatch('a/b.js', '!*.md'));
+    assert(isMatch('a.js', '!*.md'));
+    assert(isMatch('a/b.md', '!*.md'));
+    assert(!isMatch('a.md', '!*.md'));
+    assert(isMatch('a.js', '!**/*.md'));
+    assert(!isMatch('b.md', '!**/*.md'));
+    assert(isMatch('c.txt', '!**/*.md'));
+  });
+
+  it('should not negate when inside quoted strings', () => {
+    assert(!isMatch('foo.md', '"!*".md'));
+    assert(isMatch('"!*".md', '"!*".md'));
+    assert(isMatch('!*.md', '"!*".md'));
+
+    assert(!isMatch('foo.md', '"!*".md', { keepQuotes: true }));
+    assert(isMatch('"!*".md', '"!*".md', { keepQuotes: true }));
+    assert(!isMatch('!*.md', '"!*".md', { keepQuotes: true }));
+
+    assert(!isMatch('foo.md', '"**".md'));
+    assert(isMatch('"**".md', '"**".md'));
+    assert(isMatch('**.md', '"**".md'));
+
+    assert(!isMatch('foo.md', '"**".md', { keepQuotes: true }));
+    assert(isMatch('"**".md', '"**".md', { keepQuotes: true }));
+    assert(!isMatch('**.md', '"**".md', { keepQuotes: true }));
+  });
+
+  it('should negate dotfiles', () => {
+    assert(!isMatch('.dotfile.md', '!.*.md'));
+    assert(isMatch('.dotfile.md', '!*.md'));
+    assert(isMatch('.dotfile.txt', '!*.md'));
+    assert(isMatch('.dotfile.txt', '!*.md'));
+    assert(isMatch('a/b/.dotfile', '!*.md'));
+    assert(!isMatch('.gitignore', '!.gitignore'));
+    assert(isMatch('a', '!.gitignore'));
+    assert(isMatch('b', '!.gitignore'));
+  });
+
+  it('should not match slashes with a single star', () => {
+    assert(isMatch('foo/bar.md', '!*.md'));
+    assert(!isMatch('foo.md', '!*.md'));
+  });
+
+  it('should match nested directories with globstars', () => {
+    assert(!isMatch('a', '!a/**'));
+    assert(!isMatch('a/', '!a/**'));
+    assert(!isMatch('a/b', '!a/**'));
+    assert(!isMatch('a/b/c', '!a/**'));
+    assert(isMatch('b', '!a/**'));
+    assert(isMatch('b/c', '!a/**'));
+
+    assert(isMatch('foo', '!f*b'));
+    assert(isMatch('bar', '!f*b'));
+    assert(!isMatch('fab', '!f*b'));
+  });
+});
+```
+
+## File: `test/non-globs.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('non-globs', () => {
+  it('should match non-globs', () => {
+    assert(!isMatch('/ab', '/a'));
+    assert(!isMatch('a/a', 'a/b'));
+    assert(!isMatch('a/a', 'a/c'));
+    assert(!isMatch('a/b', 'a/c'));
+    assert(!isMatch('a/c', 'a/b'));
+    assert(!isMatch('aaa', 'aa'));
+    assert(!isMatch('ab', '/a'));
+    assert(!isMatch('ab', 'a'));
+
+    assert(isMatch('/a', '/a'));
+    assert(isMatch('/a/', '/a/'));
+    assert(isMatch('/a/a', '/a/a'));
+    assert(isMatch('/a/a/', '/a/a/'));
+    assert(isMatch('/a/a/a', '/a/a/a'));
+    assert(isMatch('/a/a/a/', '/a/a/a/'));
+    assert(isMatch('/a/a/a/a', '/a/a/a/a'));
+    assert(isMatch('/a/a/a/a/a', '/a/a/a/a/a'));
+
+    assert(isMatch('a', 'a'));
+    assert(isMatch('a/', 'a/'));
+    assert(isMatch('a/a', 'a/a'));
+    assert(isMatch('a/a/', 'a/a/'));
+    assert(isMatch('a/a/a', 'a/a/a'));
+    assert(isMatch('a/a/a/', 'a/a/a/'));
+    assert(isMatch('a/a/a/a', 'a/a/a/a'));
+    assert(isMatch('a/a/a/a/a', 'a/a/a/a/a'));
+  });
+
+  it('should match literal dots', () => {
+    assert(isMatch('.', '.'));
+    assert(isMatch('..', '..'));
+    assert(!isMatch('...', '..'));
+    assert(isMatch('...', '...'));
+    assert(isMatch('....', '....'));
+    assert(!isMatch('....', '...'));
+  });
+
+  it('should handle escaped characters as literals', () => {
+    assert(!isMatch('abc', 'abc\\*'));
+    assert(isMatch('abc*', 'abc\\*'));
+  });
+
+  it('should match windows paths', () => {
+    assert(isMatch('aaa\\bbb', 'aaa/bbb', { windows: true }));
+    assert(isMatch('aaa/bbb', 'aaa/bbb', { windows: true }));
+  });
+});
+```
+
+## File: `test/options.expandRange.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const fill = require('fill-range');
+const { isMatch } = require('..');
+
+describe('options.expandRange', () => {
+  it('should support a custom function for expanding ranges in brace patterns', () => {
+    assert(isMatch('a/c', 'a/{a..c}', { expandRange: (a, b) => `([${a}-${b}])` }));
+    assert(!isMatch('a/z', 'a/{a..c}', { expandRange: (a, b) => `([${a}-${b}])` }));
+    assert(isMatch('a/99', 'a/{1..100}', {
+      expandRange(a, b) {
+        return `(${fill(a, b, { toRegex: true })})`;
+      }
+    }));
+  });
+});
+```
+
+## File: `test/options.format.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+const equal = (actual, expected, msg) => {
+  assert.deepStrictEqual([].concat(actual).sort(), [].concat(expected).sort(), msg);
+};
+
+describe('options.format', () => {
+
+  // see https://github.com/isaacs/minimatch/issues/30
+  it('should match the string returned by options.format', () => {
+    const opts = { format: str => str.replace(/\\/g, '/').replace(/^\.\//, ''), strictSlashes: true };
+    const fixtures = ['a', './a', 'b', 'a/a', './a/b', 'a/c', './a/x', './a/a/a', 'a/a/b', './a/a/a/a', './a/a/a/a/a', 'x/y', './z/z'];
+
+    assert(!isMatch('./.a', '*.a', opts));
+    assert(!isMatch('./.a', './*.a', opts));
+    assert(!isMatch('./.a', 'a/**/z/*.md', opts));
+    assert(!isMatch('./a/b/c/d/e/z/c.md', './a/**/j/**/z/*.md', opts));
+    assert(!isMatch('./a/b/c/j/e/z/c.txt', './a/**/j/**/z/*.md', opts));
+    assert(!isMatch('a/b/c/d/e/z/c.md', './a/**/j/**/z/*.md', opts));
+    assert(isMatch('./.a', './.a', opts));
+    assert(isMatch('./a/b/c.md', 'a/**/*.md', opts));
+    assert(isMatch('./a/b/c/d/e/j/n/p/o/z/c.md', './a/**/j/**/z/*.md', opts));
+    assert(isMatch('./a/b/c/d/e/z/c.md', '**/*.md', opts));
+    assert(isMatch('./a/b/c/d/e/z/c.md', './a/**/z/*.md', opts));
+    assert(isMatch('./a/b/c/d/e/z/c.md', 'a/**/z/*.md', opts));
+    assert(isMatch('./a/b/c/j/e/z/c.md', './a/**/j/**/z/*.md', opts));
+    assert(isMatch('./a/b/c/j/e/z/c.md', 'a/**/j/**/z/*.md', opts));
+    assert(isMatch('./a/b/z/.a', './a/**/z/.a', opts));
+    assert(isMatch('./a/b/z/.a', 'a/**/z/.a', opts));
+    assert(isMatch('.a', './.a', opts));
+    assert(isMatch('a/b/c.md', './a/**/*.md', opts));
+    assert(isMatch('a/b/c.md', 'a/**/*.md', opts));
+    assert(isMatch('a/b/c/d/e/z/c.md', 'a/**/z/*.md', opts));
+    assert(isMatch('a/b/c/j/e/z/c.md', 'a/**/j/**/z/*.md', opts));
+    assert(isMatch('./a', '*', opts));
+
+    assert(isMatch('./foo/bar.js', '**/foo/**', opts));
+    assert(isMatch('./foo/bar.js', './**/foo/**', opts));
+    assert(isMatch('.\\foo\\bar.js', '**/foo/**', { ...opts, windows: false }));
+    assert(isMatch('.\\foo\\bar.js', './**/foo/**', opts));
+    equal(match(fixtures, '*', opts), ['a', 'b']);
+    equal(match(fixtures, '**/a/**', opts), ['a/a', 'a/c', 'a/b', 'a/x', 'a/a/a', 'a/a/b', 'a/a/a/a', 'a/a/a/a/a']);
+    equal(match(fixtures, '*/*', opts), ['a/a', 'a/b', 'a/c', 'a/x', 'x/y', 'z/z']);
+    equal(match(fixtures, '*/*/*', opts), ['a/a/a', 'a/a/b']);
+    equal(match(fixtures, '*/*/*/*', opts), ['a/a/a/a']);
+    equal(match(fixtures, '*/*/*/*/*', opts), ['a/a/a/a/a']);
+    equal(match(fixtures, '*', opts), ['a', 'b']);
+    equal(match(fixtures, '**/a/**', opts), ['a/a', 'a/c', 'a/b', 'a/x', 'a/a/a', 'a/a/b', 'a/a/a/a', 'a/a/a/a/a']);
+    equal(match(fixtures, 'a/*/a', opts), ['a/a/a']);
+    equal(match(fixtures, 'a/*', opts), ['a/a', 'a/b', 'a/c', 'a/x']);
+    equal(match(fixtures, 'a/*/*', opts), ['a/a/a', 'a/a/b']);
+    equal(match(fixtures, 'a/*/*/*', opts), ['a/a/a/a']);
+    equal(match(fixtures, 'a/*/*/*/*', opts), ['a/a/a/a/a']);
+    equal(match(fixtures, 'a/*/a', opts), ['a/a/a']);
+  });
+});
+```
+
+## File: `test/options.ignore.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+describe('options.ignore', () => {
+  it('should not match ignored patterns', () => {
+    assert(isMatch('a+b/src/glimini.js', 'a+b/src/*.js', { ignore: ['**/f*'] }));
+    assert(!isMatch('a+b/src/glimini.js', 'a+b/src/*.js', { ignore: ['**/g*'] }));
+    assert(isMatch('+b/src/glimini.md', '+b/src/*', { ignore: ['**/*.js'] }));
+    assert(!isMatch('+b/src/glimini.js', '+b/src/*', { ignore: ['**/*.js'] }));
+  });
+
+  const negations = ['a/a', 'a/b', 'a/c', 'a/d', 'a/e', 'b/a', 'b/b', 'b/c'];
+  const globs = ['.a', '.a/a', '.a/a/a', '.a/a/a/a', 'a', 'a/.a', 'a/a', 'a/a/.a', 'a/a/a', 'a/a/a/a', 'a/a/a/a/a', 'a/a/b', 'a/b', 'a/b/c', 'a/c', 'a/x', 'b', 'b/b/b', 'b/b/c', 'c/c/c', 'e/f/g', 'h/i/a', 'x/x/x', 'x/y', 'z/z', 'z/z/z'].sort();
+
+  it('should filter out ignored patterns', () => {
+    const opts = { ignore: ['a/**'], strictSlashes: true };
+    const dotOpts = { ...opts, dot: true };
+
+    assert.deepStrictEqual(match(globs, '*', opts), ['a', 'b']);
+    assert.deepStrictEqual(match(globs, '*', { ...opts, strictSlashes: false }), ['b']);
+    assert.deepStrictEqual(match(globs, '*', { ignore: '**/a' }), ['b']);
+    assert.deepStrictEqual(match(globs, '*/*', opts), ['x/y', 'z/z']);
+    assert.deepStrictEqual(match(globs, '*/*/*', opts), ['b/b/b', 'b/b/c', 'c/c/c', 'e/f/g', 'h/i/a', 'x/x/x', 'z/z/z']);
+    assert.deepStrictEqual(match(globs, '*/*/*/*', opts), []);
+    assert.deepStrictEqual(match(globs, '*/*/*/*/*', opts), []);
+    assert.deepStrictEqual(match(globs, 'a/*', opts), []);
+    assert.deepStrictEqual(match(globs, '**/*/x', opts), ['x/x/x']);
+    assert.deepStrictEqual(match(globs, '**/*/[b-z]', opts), ['b/b/b', 'b/b/c', 'c/c/c', 'e/f/g', 'x/x/x', 'x/y', 'z/z', 'z/z/z']);
+
+    assert.deepStrictEqual(match(globs, '*', { ignore: '**/a', dot: true }), ['.a', 'b']);
+    assert.deepStrictEqual(match(globs, '*', dotOpts), ['.a', 'a', 'b']);
+    assert.deepStrictEqual(match(globs, '*/*', dotOpts), ['.a/a', 'x/y', 'z/z'].sort());
+    assert.deepStrictEqual(match(globs, '*/*/*', dotOpts), ['.a/a/a', 'b/b/b', 'b/b/c', 'c/c/c', 'e/f/g', 'h/i/a', 'x/x/x', 'z/z/z'].sort());
+    assert.deepStrictEqual(match(globs, '*/*/*/*', dotOpts), ['.a/a/a/a']);
+    assert.deepStrictEqual(match(globs, '*/*/*/*/*', dotOpts), []);
+    assert.deepStrictEqual(match(globs, 'a/*', dotOpts), []);
+    assert.deepStrictEqual(match(globs, '**/*/x', dotOpts), ['x/x/x']);
+
+    // see https://github.com/jonschlinkert/micromatch/issues/79
+    assert.deepStrictEqual(match(['foo.js', 'a/foo.js'], '**/foo.js'), ['foo.js', 'a/foo.js']);
+    assert.deepStrictEqual(match(['foo.js', 'a/foo.js'], '**/foo.js', { dot: true }), ['foo.js', 'a/foo.js']);
+
+    assert.deepStrictEqual(match(negations, '!b/a', opts), ['b/b', 'b/c']);
+    assert.deepStrictEqual(match(negations, '!b/(a)', opts), ['b/b', 'b/c']);
+    assert.deepStrictEqual(match(negations, '!(b/(a))', opts), ['b/b', 'b/c']);
+    assert.deepStrictEqual(match(negations, '!(b/a)', opts), ['b/b', 'b/c']);
+
+    assert.deepStrictEqual(match(negations, '**'), negations, 'nothing is ignored');
+    assert.deepStrictEqual(match(negations, '**', { ignore: ['*/b', '*/a'] }), ['a/c', 'a/d', 'a/e', 'b/c']);
+    assert.deepStrictEqual(match(negations, '**', { ignore: ['**'] }), []);
+  });
+});
+```
+
+## File: `test/options.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+describe('options', () => {
+  describe('options.matchBase', () => {
+    it('should match the basename of file paths when `options.matchBase` is true', () => {
+      assert.deepStrictEqual(match(['a/b/c/d.md'], '*.md', { windows: true }), [], 'should not match multiple levels');
+      assert.deepStrictEqual(match(['a/b/c/foo.md'], '*.md', { windows: true }), [], 'should not match multiple levels');
+      assert.deepStrictEqual(match(['ab', 'acb', 'acb/', 'acb/d/e', 'x/y/acb', 'x/y/acb/d'], 'a?b', { windows: true }), ['acb'], 'should not match multiple levels');
+      assert.deepStrictEqual(match(['a/b/c/d.md'], '*.md', { matchBase: true, windows: true }), ['a/b/c/d.md']);
+      assert.deepStrictEqual(match(['a/b/c/foo.md'], '*.md', { matchBase: true, windows: true }), ['a/b/c/foo.md']);
+      assert.deepStrictEqual(match(['x/y/acb', 'acb/', 'acb/d/e', 'x/y/acb/d'], 'a?b', { matchBase: true, windows: true }), ['x/y/acb', 'acb/']);
+    });
+
+    it('should work with negation patterns', () => {
+      assert(isMatch('./x/y.js', '*.js', { matchBase: true, windows: true }));
+      assert(!isMatch('./x/y.js', '!*.js', { matchBase: true, windows: true }));
+      assert(isMatch('./x/y.js', '**/*.js', { matchBase: true, windows: true }));
+      assert(!isMatch('./x/y.js', '!**/*.js', { matchBase: true, windows: true }));
+    });
+  });
+
+  describe('options.flags', () => {
+    it('should be case-sensitive by default', () => {
+      assert.deepStrictEqual(match(['a/b/d/e.md'], 'a/b/D/*.md', { windows: true }), [], 'should not match a dirname');
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/*/E.md', { windows: true }), [], 'should not match a basename');
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/C/*.MD', { windows: true }), [], 'should not match a file extension');
+    });
+
+    it('should not be case-sensitive when `i` is set on `options.flags`', () => {
+      assert.deepStrictEqual(match(['a/b/d/e.md'], 'a/b/D/*.md', { flags: 'i', windows: true }), ['a/b/d/e.md']);
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/*/E.md', { flags: 'i', windows: true }), ['a/b/c/e.md']);
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/C/*.MD', { flags: 'i', windows: true }), ['a/b/c/e.md']);
+    });
+  });
+
+  describe('options.nocase', () => {
+    it('should not be case-sensitive when `options.nocase` is true', () => {
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/*/E.md', { nocase: true, windows: true }), ['a/b/c/e.md']);
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/C/*.MD', { nocase: true, windows: true }), ['a/b/c/e.md']);
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/C/*.md', { nocase: true, windows: true }), ['a/b/c/e.md']);
+      assert.deepStrictEqual(match(['a/b/d/e.md'], 'a/b/D/*.md', { nocase: true, windows: true }), ['a/b/d/e.md']);
+    });
+
+    it('should not double-set `i` when both `nocase` and the `i` flag are set', () => {
+      const opts = { nocase: true, flags: 'i', windows: true };
+      assert.deepStrictEqual(match(['a/b/d/e.md'], 'a/b/D/*.md', opts), ['a/b/d/e.md']);
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/*/E.md', opts), ['a/b/c/e.md']);
+      assert.deepStrictEqual(match(['a/b/c/e.md'], 'A/b/C/*.MD', opts), ['a/b/c/e.md']);
+    });
+  });
+
+  describe('options.noextglob', () => {
+    it('should match literal parens when noextglob is true (issue #116)', () => {
+      assert(isMatch('a/(dir)', 'a/(dir)', { noextglob: true, windows: true }));
+    });
+
+    it('should not match extglobs when noextglob is true', () => {
+      assert(!isMatch('ax', '?(a*|b)', { noextglob: true, windows: true }));
+      assert.deepStrictEqual(match(['a.j.js', 'a.md.js'], '*.*(j).js', { noextglob: true, windows: true }), ['a.j.js']);
+      assert.deepStrictEqual(match(['a/z', 'a/b', 'a/!(z)'], 'a/!(z)', { noextglob: true, windows: true }), ['a/!(z)']);
+      assert.deepStrictEqual(match(['a/z', 'a/b'], 'a/!(z)', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['c/a/v'], 'c/!(z)/v', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['c/z/v', 'c/a/v'], 'c/!(z)/v', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['c/z/v', 'c/a/v'], 'c/@(z)/v', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['c/z/v', 'c/a/v'], 'c/+(z)/v', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['c/z/v', 'c/a/v'], 'c/*(z)/v', { noextglob: true, windows: true }), ['c/z/v']);
+      assert.deepStrictEqual(match(['c/z/v', 'z', 'zf', 'fz'], '?(z)', { noextglob: true, windows: true }), ['fz']);
+      assert.deepStrictEqual(match(['c/z/v', 'z', 'zf', 'fz'], '+(z)', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['c/z/v', 'z', 'zf', 'fz'], '*(z)', { noextglob: true, windows: true }), ['z', 'fz']);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az'], 'a@(z)', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az'], 'a*@(z)', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az'], 'a!(z)', { noextglob: true, windows: true }), []);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az', 'azz'], 'a?(z)', { noextglob: true, windows: true }), ['abz', 'azz']);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az', 'azz', 'a+z'], 'a+(z)', { noextglob: true, windows: true }), ['a+z']);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az'], 'a*(z)', { noextglob: true, windows: true }), ['abz', 'az']);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az'], 'a**(z)', { noextglob: true, windows: true }), ['abz', 'az']);
+      assert.deepStrictEqual(match(['cz', 'abz', 'az'], 'a*!(z)', { noextglob: true, windows: true }), []);
+    });
+  });
+
+  describe('options.unescape', () => {
+    it('should remove backslashes in glob patterns:', () => {
+      const fixtures = ['abc', '/a/b/c', '\\a\\b\\c'];
+      assert.deepStrictEqual(match(fixtures, '\\a\\b\\c', { windows: true }), ['/a/b/c']);
+      assert.deepStrictEqual(match(fixtures, '\\a\\b\\c', { unescape: true, windows: true }), ['abc', '/a/b/c']);
+      assert.deepStrictEqual(match(fixtures, '\\a\\b\\c', { unescape: false, windows: true }), ['/a/b/c']);
+    });
+  });
+
+  describe('options.nonegate', () => {
+    it('should support the `nonegate` option:', () => {
+      assert.deepStrictEqual(match(['a/a/a', 'a/b/a', 'b/b/a', 'c/c/a', 'c/c/b'], '!**/a', { windows: true }), ['c/c/b']);
+      assert.deepStrictEqual(match(['a.md', '!a.md', 'a.txt'], '!*.md', { nonegate: true, windows: true }), ['!a.md']);
+      assert.deepStrictEqual(match(['!a/a/a', '!a/a', 'a/b/a', 'b/b/a', '!c/c/a', '!c/a'], '!**/a', { nonegate: true, windows: true }), ['!a/a', '!c/a']);
+      assert.deepStrictEqual(match(['!*.md', '.dotfile.txt', 'a/b/.dotfile'], '!*.md', { nonegate: true, windows: true }), ['!*.md']);
+    });
+  });
+
+  describe('options.windows', () => {
+    it('should windows file paths by default', () => {
+      assert.deepStrictEqual(match(['a\\b\\c.md'], '**/*.md', { windows: true }), ['a/b/c.md']);
+      assert.deepStrictEqual(match(['a\\b\\c.md'], '**/*.md', { windows: false }), ['a\\b\\c.md']);
+    });
+
+    it('should windows absolute paths', () => {
+      assert.deepStrictEqual(match(['E:\\a\\b\\c.md'], 'E:/**/*.md', { windows: true }), ['E:/a/b/c.md']);
+      assert.deepStrictEqual(match(['E:\\a\\b\\c.md'], 'E:/**/*.md', { windows: false }), []);
+    });
+
+    it('should strip leading `./`', () => {
+      const fixtures = ['./a', './a/a/a', './a/a/a/a', './a/a/a/a/a', './a/b', './a/x', './z/z', 'a', 'a/a', 'a/a/b', 'a/c', 'b', 'x/y'].sort();
+      const format = str => str.replace(/^\.\//, '');
+      const opts = { format, windows: true };
+      assert.deepStrictEqual(match(fixtures, '*', opts), ['a', 'b']);
+      assert.deepStrictEqual(match(fixtures, '**/a/**', opts), ['a', 'a/a/a', 'a/a/a/a', 'a/a/a/a/a', 'a/b', 'a/x', 'a/a', 'a/a/b', 'a/c']);
+      assert.deepStrictEqual(match(fixtures, '*/*', opts), ['a/b', 'a/x', 'z/z', 'a/a', 'a/c', 'x/y']);
+      assert.deepStrictEqual(match(fixtures, '*/*/*', opts), ['a/a/a', 'a/a/b']);
+      assert.deepStrictEqual(match(fixtures, '*/*/*/*', opts), ['a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, '*/*/*/*/*', opts), ['a/a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, './*', opts), ['a', 'b']);
+      assert.deepStrictEqual(match(fixtures, './**/a/**', opts), ['a', 'a/a/a', 'a/a/a/a', 'a/a/a/a/a', 'a/b', 'a/x', 'a/a', 'a/a/b', 'a/c']);
+      assert.deepStrictEqual(match(fixtures, './a/*/a', opts), ['a/a/a']);
+      assert.deepStrictEqual(match(fixtures, 'a/*', opts), ['a/b', 'a/x', 'a/a', 'a/c']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/*', opts), ['a/a/a', 'a/a/b']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/*/*', opts), ['a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/*/*/*', opts), ['a/a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/a', opts), ['a/a/a']);
+
+      assert.deepStrictEqual(match(fixtures, '*', { ...opts, windows: false }), ['a', 'b']);
+      assert.deepStrictEqual(match(fixtures, '**/a/**', { ...opts, windows: false }), ['a', 'a/a/a', 'a/a/a/a', 'a/a/a/a/a', 'a/b', 'a/x', 'a/a', 'a/a/b', 'a/c']);
+      assert.deepStrictEqual(match(fixtures, '*/*', { ...opts, windows: false }), ['a/b', 'a/x', 'z/z', 'a/a', 'a/c', 'x/y']);
+      assert.deepStrictEqual(match(fixtures, '*/*/*', { ...opts, windows: false }), ['a/a/a', 'a/a/b']);
+      assert.deepStrictEqual(match(fixtures, '*/*/*/*', { ...opts, windows: false }), ['a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, '*/*/*/*/*', { ...opts, windows: false }), ['a/a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, './*', { ...opts, windows: false }), ['a', 'b']);
+      assert.deepStrictEqual(match(fixtures, './**/a/**', { ...opts, windows: false }), ['a', 'a/a/a', 'a/a/a/a', 'a/a/a/a/a', 'a/b', 'a/x', 'a/a', 'a/a/b', 'a/c']);
+      assert.deepStrictEqual(match(fixtures, './a/*/a', { ...opts, windows: false }), ['a/a/a']);
+      assert.deepStrictEqual(match(fixtures, 'a/*', { ...opts, windows: false }), ['a/b', 'a/x', 'a/a', 'a/c']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/*', { ...opts, windows: false }), ['a/a/a', 'a/a/b']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/*/*', { ...opts, windows: false }), ['a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/*/*/*', { ...opts, windows: false }), ['a/a/a/a/a']);
+      assert.deepStrictEqual(match(fixtures, 'a/*/a', { ...opts, windows: false }), ['a/a/a']);
+    });
+  });
+
+  describe('windows', () => {
+    it('should convert file paths to posix slashes', () => {
+      assert.deepStrictEqual(match(['a\\b\\c.md'], '**/*.md', { windows: true }), ['a/b/c.md']);
+      assert.deepStrictEqual(match(['a\\b\\c.md'], '**/*.md', { windows: false }), ['a\\b\\c.md']);
+    });
+
+    it('should convert absolute paths to posix slashes', () => {
+      assert.deepStrictEqual(match(['E:\\a\\b\\c.md'], 'E:/**/*.md', { windows: true }), ['E:/a/b/c.md']);
+      assert.deepStrictEqual(match(['E:\\a\\b\\c.md'], 'E:/**/*.md', { windows: false }), []);
+    });
+  });
+});
+```
+
+## File: `test/options.maxExtglobRecursion.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch, makeRe } = require('..');
+
+describe('options.maxExtglobRecursion', () => {
+  it('should literalize risky repeated extglobs by default', () => {
+    assert.strictEqual(
+      makeRe('+(a|aa)').source,
+      '^(?:\\+\\(a\\|aa\\))$'
+    );
+    assert.strictEqual(
+      makeRe('+(*|?)').source,
+      '^(?:\\+\\(\\*\\|\\?\\))$'
+    );
+    assert.strictEqual(
+      makeRe('+(+(a))').source,
+      '^(?:\\+\\(\\+\\(a\\)\\))$'
+    );
+    assert.strictEqual(
+      makeRe('*(+(a))').source,
+      '^(?:\\*\\(\\+\\(a\\)\\))$'
+    );
+
+    assert(!isMatch('a'.repeat(20) + 'b', '+(a|aa)'));
+    assert(!isMatch('a'.repeat(12) + '!', '+(+(a))'));
+  });
+
+  it('should preserve non-risky extglobs by default', () => {
+    assert(isMatch('abcabc', '+(abc)'));
+    assert(isMatch('foobar', '*(foo|bar)'));
+    assert(isMatch('a', '(a|@(b|c)|d)'));
+    assert(isMatch('fffooo', '*(*(f)*(o))'));
+    assert(isMatch('abc', '+(*)c'));
+  });
+
+  it('should allow limited nested repeated extglobs when configured', () => {
+    assert.strictEqual(
+      makeRe('+(+(a))', { maxExtglobRecursion: 1 }).source,
+      '^(?:(?=.)(?:(?:a)+)+)$'
+    );
+    assert.strictEqual(
+      makeRe('*(+(a))', { maxExtglobRecursion: 1 }).source,
+      '^(?:(?=.)(?:(?:a)+)*)$'
+    );
+
+    assert(isMatch('aaa', '+(+(a))', { maxExtglobRecursion: 1 }));
+    assert(isMatch('aaa', '*(+(a))', { maxExtglobRecursion: 1 }));
+  });
+
+  it('should still block ambiguous repeated alternation when recursion is allowed', () => {
+    assert.strictEqual(
+      makeRe('+(a|aa)', { maxExtglobRecursion: 1 }).source,
+      '^(?:\\+\\(a\\|aa\\))$'
+    );
+    assert.strictEqual(
+      makeRe('+(*|?)', { maxExtglobRecursion: 1 }).source,
+      '^(?:\\+\\(\\*\\|\\?\\))$'
+    );
+  });
+
+  it('should rewrite risky repeated extglobs embedded in larger patterns', () => {
+    assert.strictEqual(
+      makeRe('foo/+(a|aa)/bar').source,
+      '^(?:foo\\/\\+\\(a\\|aa\\)\\/bar)$'
+    );
+    assert.strictEqual(
+      makeRe('x+(a|aa)y').source,
+      '^(?:x\\+\\(a\\|aa\\)y)$'
+    );
+
+    assert(isMatch('foo/+(a|aa)/bar', 'foo/+(a|aa)/bar'));
+    assert(!isMatch('foo/aa/bar', 'foo/+(a|aa)/bar'));
+    assert(isMatch('x+(a|aa)y', 'x+(a|aa)y'));
+    assert(!isMatch('xaay', 'x+(a|aa)y'));
+  });
+
+  it('should rewrite star-only repeated extglobs embedded in larger patterns', () => {
+    assert.strictEqual(
+      makeRe('pre*(*(f)*(o))post').source,
+      '^(?:pre[fo]*post)$'
+    );
+
+    assert(isMatch('prefoopost', 'pre*(*(f)*(o))post'));
+  });
+
+  it('should rewrite star-only repeated extglobs', () => {
+    assert.strictEqual(
+      makeRe('*(*(f))').source,
+      '^(?:(?=.)f*)$'
+    );
+
+    assert(isMatch('fff', '*(*(f))'));
+  });
+
+  it('should preserve capture behavior for rewritten repeated extglobs', () => {
+    const embedded = makeRe('foo/+(a|aa)/bar', { capture: true });
+    assert.strictEqual(embedded.source, '^(?:foo\\/\\+\\(a\\|aa\\)\\/bar)$');
+    assert.deepStrictEqual(
+      Array.from(embedded.exec('foo/+(a|aa)/bar')),
+      ['foo/+(a|aa)/bar']
+    );
+
+    const simplified = makeRe('*(*(f)*(o))', { capture: true });
+    assert.strictEqual(simplified.source, '^(?:(?=.)([fo]*))$');
+    assert.deepStrictEqual(
+      Array.from(simplified.exec('fffooo')),
+      ['fffooo', 'fffooo']
+    );
+  });
+
+  it('should only rewrite the risky repeated extglob when adjacent extglobs are present', () => {
+    assert.strictEqual(
+      makeRe('+(a|aa)@(x)').source,
+      '^(?:\\+\\(a\\|aa\\)(x))$'
+    );
+
+    assert(isMatch('+(a|aa)x', '+(a|aa)@(x)'));
+    assert(!isMatch('aaax', '+(a|aa)@(x)'));
+  });
+  it('should disable the safeguard when maxExtglobRecursion is false', () => {
+    assert(
+      /\(\?:a\|aa\)\+/.test(
+        makeRe('+(a|aa)', { maxExtglobRecursion: false }).source
+      )
+    );
+    assert(
+      /\(\?:\(\?:a\)\+\)\+/.test(
+        makeRe('+(+(a))', { maxExtglobRecursion: false }).source
+      )
+    );
+  });
+});
+```
+
+## File: `test/options.noextglob.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('options.noextglob', () => {
+  it('should disable extglob support when options.noextglob is true', () => {
+    assert(isMatch('a+z', 'a+(z)', { noextglob: true }));
+    assert(!isMatch('az', 'a+(z)', { noextglob: true }));
+    assert(!isMatch('azz', 'a+(z)', { noextglob: true }));
+    assert(!isMatch('azzz', 'a+(z)', { noextglob: true }));
+  });
+
+  it('should work with noext alias to support minimatch', () => {
+    assert(isMatch('a+z', 'a+(z)', { noext: true }));
+    assert(!isMatch('az', 'a+(z)', { noext: true }));
+    assert(!isMatch('azz', 'a+(z)', { noext: true }));
+    assert(!isMatch('azzz', 'a+(z)', { noext: true }));
+  });
+});
+```
+
+## File: `test/options.noglobstar.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('options.noglobstar', () => {
+  it('should disable extglob support when options.noglobstar is true', () => {
+    assert(isMatch('a/b/c', '**', { noglobstar: false }));
+    assert(!isMatch('a/b/c', '**', { noglobstar: true }));
+    assert(isMatch('a/b/c', 'a/**', { noglobstar: false }));
+    assert(!isMatch('a/b/c', 'a/**', { noglobstar: true }));
+  });
+});
+```
+
+## File: `test/options.onMatch.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const picomatch = require('..');
+const { isMatch } = picomatch;
+
+const equal = (actual, expected, msg) => {
+  assert.deepStrictEqual([].concat(actual).sort(), [].concat(expected).sort(), msg);
+};
+
+const format = str => str.replace(/^\.\//, '');
+const options = () => {
+  return {
+    format,
+    onMatch({ pattern, regex, input, output }, matches) {
+      if (output.length > 2 && (output.startsWith('./') || output.startsWith('.\\'))) {
+        output = output.slice(2);
+      }
+      if (matches) {
+        matches.add(output);
+      }
+    }
+  };
+};
+
+describe('options.onMatch', () => {
+  it('should call options.onMatch on each matching string', () => {
+    const fixtures = ['a', './a', 'b', 'a/a', './a/b', 'a/c', './a/x', './a/a/a', 'a/a/b', './a/a/a/a', './a/a/a/a/a', 'x/y', './z/z'];
+
+    assert(!isMatch('./.a', '*.a', { format }));
+    assert(!isMatch('./.a', './*.a', { format }));
+    assert(!isMatch('./.a', 'a/**/z/*.md', { format }));
+    assert(!isMatch('./a/b/c/d/e/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(!isMatch('./a/b/c/j/e/z/c.txt', './a/**/j/**/z/*.md', { format }));
+    assert(!isMatch('a/b/c/d/e/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./.a', './.a', { format }));
+    assert(isMatch('./a/b/c.md', 'a/**/*.md', { format }));
+    assert(isMatch('./a/b/c/d/e/j/n/p/o/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/d/e/z/c.md', '**/*.md', { format }));
+    assert(isMatch('./a/b/c/d/e/z/c.md', './a/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/d/e/z/c.md', 'a/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/j/e/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/j/e/z/c.md', 'a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./a/b/z/.a', './a/**/z/.a', { format }));
+    assert(isMatch('./a/b/z/.a', 'a/**/z/.a', { format }));
+    assert(isMatch('.a', './.a', { format }));
+    assert(isMatch('a/b/c.md', './a/**/*.md', { format }));
+    assert(isMatch('a/b/c.md', 'a/**/*.md', { format }));
+    assert(isMatch('a/b/c/d/e/z/c.md', 'a/**/z/*.md', { format }));
+    assert(isMatch('a/b/c/j/e/z/c.md', 'a/**/j/**/z/*.md', { format }));
+
+    equal(match(fixtures, '*', options()), ['a', 'b']);
+    equal(match(fixtures, '**/a/**', options()), ['a', 'a/a', 'a/c', 'a/b', 'a/x', 'a/a/a', 'a/a/b', 'a/a/a/a', 'a/a/a/a/a']);
+    equal(match(fixtures, '*/*', options()), ['a/a', 'a/b', 'a/c', 'a/x', 'x/y', 'z/z']);
+    equal(match(fixtures, '*/*/*', options()), ['a/a/a', 'a/a/b']);
+    equal(match(fixtures, '*/*/*/*', options()), ['a/a/a/a']);
+    equal(match(fixtures, '*/*/*/*/*', options()), ['a/a/a/a/a']);
+    equal(match(fixtures, './*', options()), ['a', 'b']);
+    equal(match(fixtures, './**/a/**', options()), ['a', 'a/a', 'a/b', 'a/c', 'a/x', 'a/a/a', 'a/a/b', 'a/a/a/a', 'a/a/a/a/a']);
+    equal(match(fixtures, './a/*/a', options()), ['a/a/a']);
+    equal(match(fixtures, 'a/*', options()), ['a/a', 'a/b', 'a/c', 'a/x']);
+    equal(match(fixtures, 'a/*/*', options()), ['a/a/a', 'a/a/b']);
+    equal(match(fixtures, 'a/*/*/*', options()), ['a/a/a/a']);
+    equal(match(fixtures, 'a/*/*/*/*', options()), ['a/a/a/a/a']);
+    equal(match(fixtures, 'a/*/a', options()), ['a/a/a']);
+  });
+});
+```
+
+## File: `test/parens.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('parens (non-extglobs)', () => {
+  it('should support stars following parens', () => {
+    assert(isMatch('a', '(a)*'));
+    assert(isMatch('az', '(a)*'));
+    assert(!isMatch('zz', '(a)*'));
+    assert(isMatch('ab', '(a|b)*'));
+    assert(isMatch('abc', '(a|b)*'));
+    assert(isMatch('aa', '(a)*'));
+    assert(isMatch('aaab', '(a|b)*'));
+    assert(isMatch('aaabbb', '(a|b)*'));
+  });
+
+  it('should not match slashes with single stars', () => {
+    assert(!isMatch('a/b', '(a)*'));
+    assert(!isMatch('a/b', '(a|b)*'));
+  });
+});
+```
+
+## File: `test/posix-classes.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const pm = require('..');
+const { makeRe, parse } = pm;
+
+const opts = { strictSlashes: true, posix: true, regex: true };
+const isMatch = (...args) => pm.isMatch(...args, opts);
+const convert = (...args) => {
+  const state = parse(...args, opts);
+  return state.output;
+};
+
+describe('posix classes', () => {
+  describe('posix bracket type conversion', () => {
+    it('should create regex character classes from POSIX bracket expressions:', () => {
+      assert.strictEqual(convert('foo[[:lower:]]bar'), 'foo[a-z]bar');
+      assert.strictEqual(convert('foo[[:lower:][:upper:]]bar'), 'foo[a-zA-Z]bar');
+      assert.strictEqual(convert('[[:alpha:]123]'), '(?=.)[a-zA-Z123]');
+      assert.strictEqual(convert('[[:lower:]]'), '(?=.)[a-z]');
+      assert.strictEqual(convert('[![:lower:]]'), '(?=.)[^a-z]');
+      assert.strictEqual(convert('[[:digit:][:upper:][:space:]]'), '(?=.)[0-9A-Z \\t\\r\\n\\v\\f]');
+      assert.strictEqual(convert('[[:xdigit:]]'), '(?=.)[A-Fa-f0-9]');
+      assert.strictEqual(convert('[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'), '(?=.)[a-zA-Z0-9a-zA-Z \\t\\x00-\\x1F\\x7F0-9\\x21-\\x7Ea-z\\x20-\\x7E \\-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~ \\t\\r\\n\\v\\fA-ZA-Fa-f0-9]');
+      assert.strictEqual(convert('[^[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:lower:][:space:][:upper:][:xdigit:]]'), '(?=.)[^a-zA-Z0-9a-zA-Z \\t\\x00-\\x1F\\x7F0-9a-z \\t\\r\\n\\v\\fA-ZA-Fa-f0-9]');
+      assert.strictEqual(convert('[a-c[:digit:]x-z]'), '(?=.)[a-c0-9x-z]');
+      assert.strictEqual(convert('[_[:alpha:]][_[:alnum:]][_[:alnum:]]*'), '(?=.)[_a-zA-Z][_a-zA-Z0-9][_a-zA-Z0-9]*', []);
+    });
+  });
+
+  describe('.isMatch', () => {
+    it('should support POSIX.2 character classes', () => {
+      assert(isMatch('e', '[[:xdigit:]]'));
+
+      assert(isMatch('a', '[[:alpha:]123]'));
+      assert(isMatch('1', '[[:alpha:]123]'));
+      assert(!isMatch('5', '[[:alpha:]123]'));
+      assert(isMatch('A', '[[:alpha:]123]'));
+
+      assert(isMatch('A', '[[:alpha:]]'));
+      assert(!isMatch('9', '[[:alpha:]]'));
+      assert(isMatch('b', '[[:alpha:]]'));
+
+      assert(!isMatch('A', '[![:alpha:]]'));
+      assert(isMatch('9', '[![:alpha:]]'));
+      assert(!isMatch('b', '[![:alpha:]]'));
+
+      assert(!isMatch('A', '[^[:alpha:]]'));
+      assert(isMatch('9', '[^[:alpha:]]'));
+      assert(!isMatch('b', '[^[:alpha:]]'));
+
+      assert(!isMatch('A', '[[:digit:]]'));
+      assert(isMatch('9', '[[:digit:]]'));
+      assert(!isMatch('b', '[[:digit:]]'));
+
+      assert(isMatch('A', '[^[:digit:]]'));
+      assert(!isMatch('9', '[^[:digit:]]'));
+      assert(isMatch('b', '[^[:digit:]]'));
+
+      assert(isMatch('A', '[![:digit:]]'));
+      assert(!isMatch('9', '[![:digit:]]'));
+      assert(isMatch('b', '[![:digit:]]'));
+
+      assert(isMatch('a', '[[:lower:]]'));
+      assert(!isMatch('A', '[[:lower:]]'));
+      assert(!isMatch('9', '[[:lower:]]'));
+
+      assert(isMatch('a', '[:alpha:]'), 'invalid posix bracket, but valid char class');
+      assert(isMatch('l', '[:alpha:]'), 'invalid posix bracket, but valid char class');
+      assert(isMatch('p', '[:alpha:]'), 'invalid posix bracket, but valid char class');
+      assert(isMatch('h', '[:alpha:]'), 'invalid posix bracket, but valid char class');
+      assert(isMatch(':', '[:alpha:]'), 'invalid posix bracket, but valid char class');
+      assert(!isMatch('b', '[:alpha:]'), 'invalid posix bracket, but valid char class');
+    });
+
+    it('should support multiple posix brackets in one character class', () => {
+      assert(isMatch('9', '[[:lower:][:digit:]]'));
+      assert(isMatch('a', '[[:lower:][:digit:]]'));
+      assert(!isMatch('A', '[[:lower:][:digit:]]'));
+      assert(!isMatch('aa', '[[:lower:][:digit:]]'));
+      assert(!isMatch('99', '[[:lower:][:digit:]]'));
+      assert(!isMatch('a9', '[[:lower:][:digit:]]'));
+      assert(!isMatch('9a', '[[:lower:][:digit:]]'));
+      assert(!isMatch('aA', '[[:lower:][:digit:]]'));
+      assert(!isMatch('9A', '[[:lower:][:digit:]]'));
+      assert(isMatch('aa', '[[:lower:][:digit:]]+'));
+      assert(isMatch('99', '[[:lower:][:digit:]]+'));
+      assert(isMatch('a9', '[[:lower:][:digit:]]+'));
+      assert(isMatch('9a', '[[:lower:][:digit:]]+'));
+      assert(!isMatch('aA', '[[:lower:][:digit:]]+'));
+      assert(!isMatch('9A', '[[:lower:][:digit:]]+'));
+      assert(isMatch('a', '[[:lower:][:digit:]]*'));
+      assert(!isMatch('A', '[[:lower:][:digit:]]*'));
+      assert(!isMatch('AA', '[[:lower:][:digit:]]*'));
+      assert(isMatch('aa', '[[:lower:][:digit:]]*'));
+      assert(isMatch('aaa', '[[:lower:][:digit:]]*'));
+      assert(isMatch('999', '[[:lower:][:digit:]]*'));
+    });
+
+    it('should match word characters', () => {
+      assert(!isMatch('a c', 'a[[:word:]]+c'));
+      assert(!isMatch('a.c', 'a[[:word:]]+c'));
+      assert(!isMatch('a.xy.zc', 'a[[:word:]]+c'));
+      assert(!isMatch('a.zc', 'a[[:word:]]+c'));
+      assert(!isMatch('abq', 'a[[:word:]]+c'));
+      assert(!isMatch('axy zc', 'a[[:word:]]+c'));
+      assert(!isMatch('axy', 'a[[:word:]]+c'));
+      assert(!isMatch('axy.zc', 'a[[:word:]]+c'));
+      assert(isMatch('a123c', 'a[[:word:]]+c'));
+      assert(isMatch('a1c', 'a[[:word:]]+c'));
+      assert(isMatch('abbbbc', 'a[[:word:]]+c'));
+      assert(isMatch('abbbc', 'a[[:word:]]+c'));
+      assert(isMatch('abbc', 'a[[:word:]]+c'));
+      assert(isMatch('abc', 'a[[:word:]]+c'));
+
+      assert(!isMatch('a c', 'a[[:word:]]+'));
+      assert(!isMatch('a.c', 'a[[:word:]]+'));
+      assert(!isMatch('a.xy.zc', 'a[[:word:]]+'));
+      assert(!isMatch('a.zc', 'a[[:word:]]+'));
+      assert(!isMatch('axy zc', 'a[[:word:]]+'));
+      assert(!isMatch('axy.zc', 'a[[:word:]]+'));
+      assert(isMatch('a123c', 'a[[:word:]]+'));
+      assert(isMatch('a1c', 'a[[:word:]]+'));
+      assert(isMatch('abbbbc', 'a[[:word:]]+'));
+      assert(isMatch('abbbc', 'a[[:word:]]+'));
+      assert(isMatch('abbc', 'a[[:word:]]+'));
+      assert(isMatch('abc', 'a[[:word:]]+'));
+      assert(isMatch('abq', 'a[[:word:]]+'));
+      assert(isMatch('axy', 'a[[:word:]]+'));
+      assert(isMatch('axyzc', 'a[[:word:]]+'));
+      assert(isMatch('axyzc', 'a[[:word:]]+'));
+    });
+
+    it('should not create an invalid posix character class:', () => {
+      assert.strictEqual(convert('[:al:]'), '(?:\\[:al:\\]|[:al:])');
+      assert.strictEqual(convert('[abc[:punct:][0-9]'), '(?=.)[abc\\-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~\\[0-9]');
+    });
+
+    it('should return `true` when the pattern matches:', () => {
+      assert(isMatch('a', '[[:lower:]]'));
+      assert(isMatch('A', '[[:upper:]]'));
+      assert(isMatch('A', '[[:digit:][:upper:][:space:]]'));
+      assert(isMatch('1', '[[:digit:][:upper:][:space:]]'));
+      assert(isMatch(' ', '[[:digit:][:upper:][:space:]]'));
+      assert(isMatch('5', '[[:xdigit:]]'));
+      assert(isMatch('f', '[[:xdigit:]]'));
+      assert(isMatch('D', '[[:xdigit:]]'));
+      assert(isMatch('_', '[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'));
+      assert(isMatch('_', '[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:graph:][:lower:][:print:][:punct:][:space:][:upper:][:xdigit:]]'));
+      assert(isMatch('.', '[^[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:lower:][:space:][:upper:][:xdigit:]]'));
+      assert(isMatch('5', '[a-c[:digit:]x-z]'));
+      assert(isMatch('b', '[a-c[:digit:]x-z]'));
+      assert(isMatch('y', '[a-c[:digit:]x-z]'));
+    });
+
+    it('should return `false` when the pattern does not match:', () => {
+      assert(!isMatch('A', '[[:lower:]]'));
+      assert(isMatch('A', '[![:lower:]]'));
+      assert(!isMatch('a', '[[:upper:]]'));
+      assert(!isMatch('a', '[[:digit:][:upper:][:space:]]'));
+      assert(!isMatch('.', '[[:digit:][:upper:][:space:]]'));
+      assert(!isMatch('.', '[[:alnum:][:alpha:][:blank:][:cntrl:][:digit:][:lower:][:space:][:upper:][:xdigit:]]'));
+      assert(!isMatch('q', '[a-c[:digit:]x-z]'));
+    });
+  });
+
+  describe('literals', () => {
+    it('should match literal brackets when escaped', () => {
+      assert(isMatch('a [b]', 'a [b]'));
+      assert(isMatch('a b', 'a [b]'));
+
+      assert(isMatch('a [b] c', 'a [b] c'));
+      assert(isMatch('a b c', 'a [b] c'));
+
+      assert(isMatch('a [b]', 'a \\[b\\]'));
+      assert(!isMatch('a b', 'a \\[b\\]'));
+
+      assert(isMatch('a [b]', 'a ([b])'));
+      assert(isMatch('a b', 'a ([b])'));
+
+      assert(isMatch('a b', 'a (\\[b\\]|[b])'));
+      assert(isMatch('a [b]', 'a (\\[b\\]|[b])'));
+    });
+  });
+
+  describe('.makeRe()', () => {
+    it('should make a regular expression for the given pattern:', () => {
+      assert.deepStrictEqual(makeRe('[[:alpha:]123]', opts), /^(?:(?=.)[a-zA-Z123])$/);
+      assert.deepStrictEqual(makeRe('[![:lower:]]', opts), /^(?:(?=.)[^a-z])$/);
+    });
+  });
+
+  describe('POSIX: From the test suite for the POSIX.2 (BRE) pattern matching code:', () => {
+    it('First, test POSIX.2 character classes', () => {
+      assert(isMatch('e', '[[:xdigit:]]'));
+      assert(isMatch('1', '[[:xdigit:]]'));
+      assert(isMatch('a', '[[:alpha:]123]'));
+      assert(isMatch('1', '[[:alpha:]123]'));
+    });
+
+    it('should match using POSIX.2 negation patterns', () => {
+      assert(isMatch('9', '[![:alpha:]]'));
+      assert(isMatch('9', '[^[:alpha:]]'));
+    });
+
+    it('should match word characters', () => {
+      assert(isMatch('A', '[[:word:]]'));
+      assert(isMatch('B', '[[:word:]]'));
+      assert(isMatch('a', '[[:word:]]'));
+      assert(isMatch('b', '[[:word:]]'));
+    });
+
+    it('should match digits with word class', () => {
+      assert(isMatch('1', '[[:word:]]'));
+      assert(isMatch('2', '[[:word:]]'));
+    });
+
+    it('should not digits', () => {
+      assert(isMatch('1', '[[:digit:]]'));
+      assert(isMatch('2', '[[:digit:]]'));
+    });
+
+    it('should not match word characters with digit class', () => {
+      assert(!isMatch('a', '[[:digit:]]'));
+      assert(!isMatch('A', '[[:digit:]]'));
+    });
+
+    it('should match uppercase alpha characters', () => {
+      assert(isMatch('A', '[[:upper:]]'));
+      assert(isMatch('B', '[[:upper:]]'));
+    });
+
+    it('should not match lowercase alpha characters', () => {
+      assert(!isMatch('a', '[[:upper:]]'));
+      assert(!isMatch('b', '[[:upper:]]'));
+    });
+
+    it('should not match digits with upper class', () => {
+      assert(!isMatch('1', '[[:upper:]]'));
+      assert(!isMatch('2', '[[:upper:]]'));
+    });
+
+    it('should match lowercase alpha characters', () => {
+      assert(isMatch('a', '[[:lower:]]'));
+      assert(isMatch('b', '[[:lower:]]'));
+    });
+
+    it('should not match uppercase alpha characters', () => {
+      assert(!isMatch('A', '[[:lower:]]'));
+      assert(!isMatch('B', '[[:lower:]]'));
+    });
+
+    it('should match one lower and one upper character', () => {
+      assert(isMatch('aA', '[[:lower:]][[:upper:]]'));
+      assert(!isMatch('AA', '[[:lower:]][[:upper:]]'));
+      assert(!isMatch('Aa', '[[:lower:]][[:upper:]]'));
+    });
+
+    it('should match hexadecimal digits', () => {
+      assert(isMatch('ababab', '[[:xdigit:]]*'));
+      assert(isMatch('020202', '[[:xdigit:]]*'));
+      assert(isMatch('900', '[[:xdigit:]]*'));
+    });
+
+    it('should match punctuation characters (\\-!"#$%&\'()\\*+,./:;<=>?@[\\]^_`{|}~)', () => {
+      assert(isMatch('!', '[[:punct:]]'));
+      assert(isMatch('?', '[[:punct:]]'));
+      assert(isMatch('#', '[[:punct:]]'));
+      assert(isMatch('&', '[[:punct:]]'));
+      assert(isMatch('@', '[[:punct:]]'));
+      assert(isMatch('+', '[[:punct:]]'));
+      assert(isMatch('*', '[[:punct:]]'));
+      assert(isMatch(':', '[[:punct:]]'));
+      assert(isMatch('=', '[[:punct:]]'));
+      assert(isMatch('|', '[[:punct:]]'));
+      assert(isMatch('|++', '[[:punct:]]*'));
+    });
+
+    it('should only match one character', () => {
+      assert(!isMatch('?*+', '[[:punct:]]'));
+    });
+
+    it('should only match zero or more punctuation characters', () => {
+      assert(isMatch('?*+', '[[:punct:]]*'));
+      assert(isMatch('foo', 'foo[[:punct:]]*'));
+      assert(isMatch('foo?*+', 'foo[[:punct:]]*'));
+    });
+
+    it('invalid character class expressions are just characters to be matched', () => {
+      assert(isMatch('a', '[:al:]'));
+      assert(isMatch('a', '[[:al:]'));
+      assert(isMatch('!', '[abc[:punct:][0-9]'));
+    });
+
+    it('should match the start of a valid sh identifier', () => {
+      assert(isMatch('PATH', '[_[:alpha:]]*'));
+    });
+
+    it('should match the first two characters of a valid sh identifier', () => {
+      assert(isMatch('PATH', '[_[:alpha:]][_[:alnum:]]*'));
+    });
+
+    it('should match multiple posix classses', () => {
+      assert(isMatch('a1B', '[[:alpha:]][[:digit:]][[:upper:]]'));
+      assert(!isMatch('a1b', '[[:alpha:]][[:digit:]][[:upper:]]'));
+      assert(isMatch('.', '[[:digit:][:punct:][:space:]]'));
+      assert(!isMatch('a', '[[:digit:][:punct:][:space:]]'));
+      assert(isMatch('!', '[[:digit:][:punct:][:space:]]'));
+      assert(!isMatch('!', '[[:digit:]][[:punct:]][[:space:]]'));
+      assert(isMatch('1! ', '[[:digit:]][[:punct:]][[:space:]]'));
+      assert(!isMatch('1!  ', '[[:digit:]][[:punct:]][[:space:]]'));
+    });
+
+    /**
+     * Some of these tests (and their descriptions) were ported directly
+     * from the Bash 4.3 unit tests.
+     */
+
+    it('how about A?', () => {
+      assert(isMatch('9', '[[:digit:]]'));
+      assert(!isMatch('X', '[[:digit:]]'));
+      assert(isMatch('aB', '[[:lower:]][[:upper:]]'));
+      assert(isMatch('a', '[[:alpha:][:digit:]]'));
+      assert(isMatch('3', '[[:alpha:][:digit:]]'));
+      assert(!isMatch('aa', '[[:alpha:][:digit:]]'));
+      assert(!isMatch('a3', '[[:alpha:][:digit:]]'));
+      assert(!isMatch('a', '[[:alpha:]\\]'));
+      assert(!isMatch('b', '[[:alpha:]\\]'));
+    });
+
+    it('OK, what\'s a tab?  is it a blank? a space?', () => {
+      assert(isMatch('\t', '[[:blank:]]'));
+      assert(isMatch('\t', '[[:space:]]'));
+      assert(isMatch(' ', '[[:space:]]'));
+    });
+
+    it('let\'s check out characters in the ASCII range', () => {
+      assert(!isMatch('\\377', '[[:ascii:]]'));
+      assert(!isMatch('9', '[1[:alpha:]123]'));
+    });
+
+    it('punctuation', () => {
+      assert(!isMatch(' ', '[[:punct:]]'));
+    });
+
+    it('graph', () => {
+      assert(isMatch('A', '[[:graph:]]'));
+      assert(!isMatch('\\b', '[[:graph:]]'));
+      assert(!isMatch('\\n', '[[:graph:]]'));
+      assert(!isMatch('\\s', '[[:graph:]]'));
+    });
+  });
+});
+```
+
+## File: `test/qmarks.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const match = require('./support/match');
+const { isMatch } = require('..');
+
+describe('qmarks and stars', () => {
+  it('should match question marks with question marks', () => {
+    assert.deepStrictEqual(match(['?', '??', '???'], '?'), ['?']);
+    assert.deepStrictEqual(match(['?', '??', '???'], '??'), ['??']);
+    assert.deepStrictEqual(match(['?', '??', '???'], '???'), ['???']);
+  });
+
+  it('should match question marks and stars with question marks and stars', () => {
+    assert.deepStrictEqual(match(['?', '??', '???'], '?*'), ['?', '??', '???']);
+    assert.deepStrictEqual(match(['?', '??', '???'], '*?'), ['?', '??', '???']);
+    assert.deepStrictEqual(match(['?', '??', '???'], '?*?'), ['??', '???']);
+    assert.deepStrictEqual(match(['?*', '?*?', '?*?*?'], '?*'), ['?*', '?*?', '?*?*?']);
+    assert.deepStrictEqual(match(['?*', '?*?', '?*?*?'], '*?'), ['?*', '?*?', '?*?*?']);
+    assert.deepStrictEqual(match(['?*', '?*?', '?*?*?'], '?*?'), ['?*', '?*?', '?*?*?']);
+  });
+
+  it('should support consecutive stars and question marks', () => {
+    assert.deepStrictEqual(match(['aaa', 'aac', 'abc'], 'a*?c'), ['aac', 'abc']);
+    assert.deepStrictEqual(match(['abc', 'abb', 'acc'], 'a**?c'), ['abc', 'acc']);
+    assert.deepStrictEqual(match(['abc', 'aaaabbbbbbccccc'], 'a*****?c'), ['abc', 'aaaabbbbbbccccc']);
+    assert.deepStrictEqual(match(['a', 'ab', 'abc', 'abcd'], '*****?'), ['a', 'ab', 'abc', 'abcd']);
+    assert.deepStrictEqual(match(['a', 'ab', 'abc', 'abcd'], '*****??'), ['ab', 'abc', 'abcd']);
+    assert.deepStrictEqual(match(['a', 'ab', 'abc', 'abcd'], '?*****??'), ['abc', 'abcd']);
+    assert.deepStrictEqual(match(['abc', 'abb', 'zzz'], '?*****?c'), ['abc']);
+    assert.deepStrictEqual(match(['abc', 'bbb', 'zzz'], '?***?****?'), ['abc', 'bbb', 'zzz']);
+    assert.deepStrictEqual(match(['abc', 'bbb', 'zzz'], '?***?****c'), ['abc']);
+    assert.deepStrictEqual(match(['abc'], '*******?'), ['abc']);
+    assert.deepStrictEqual(match(['abc'], '*******c'), ['abc']);
+    assert.deepStrictEqual(match(['abc'], '?***?****'), ['abc']);
+    assert.deepStrictEqual(match(['abcdecdhjk'], 'a****c**?**??*****'), ['abcdecdhjk']);
+    assert.deepStrictEqual(match(['abcdecdhjk'], 'a**?**cd**?**??***k'), ['abcdecdhjk']);
+    assert.deepStrictEqual(match(['abcdecdhjk'], 'a**?**cd**?**??***k**'), ['abcdecdhjk']);
+    assert.deepStrictEqual(match(['abcdecdhjk'], 'a**?**cd**?**??k'), ['abcdecdhjk']);
+    assert.deepStrictEqual(match(['abcdecdhjk'], 'a**?**cd**?**??k***'), ['abcdecdhjk']);
+    assert.deepStrictEqual(match(['abcdecdhjk'], 'a*cd**?**??k'), ['abcdecdhjk']);
+  });
+
+  it('should match backslashes with question marks when not on windows', () => {
+    if (process.platform !== 'win32') {
+      assert(!isMatch('aaa\\\\bbb', 'aaa?bbb'));
+      assert(isMatch('aaa\\\\bbb', 'aaa??bbb'));
+      assert(isMatch('aaa\\bbb', 'aaa?bbb'));
+    }
+  });
+
+  it('should match one character per question mark', () => {
+    const fixtures = ['a', 'aa', 'ab', 'aaa', 'abcdefg'];
+    assert.deepStrictEqual(match(fixtures, '?'), ['a']);
+    assert.deepStrictEqual(match(fixtures, '??'), ['aa', 'ab']);
+    assert.deepStrictEqual(match(fixtures, '???'), ['aaa']);
+    assert.deepStrictEqual(match(['a/', '/a/', '/a/b/', '/a/b/c/', '/a/b/c/d/'], '??'), []);
+    assert.deepStrictEqual(match(['a/b/c.md'], 'a/?/c.md'), ['a/b/c.md']);
+    assert.deepStrictEqual(match(['a/bb/c.md'], 'a/?/c.md'), []);
+    assert.deepStrictEqual(match(['a/bb/c.md'], 'a/??/c.md'), ['a/bb/c.md']);
+    assert.deepStrictEqual(match(['a/bbb/c.md'], 'a/??/c.md'), []);
+    assert.deepStrictEqual(match(['a/bbb/c.md'], 'a/???/c.md'), ['a/bbb/c.md']);
+    assert.deepStrictEqual(match(['a/bbbb/c.md'], 'a/????/c.md'), ['a/bbbb/c.md']);
+  });
+
+  it('should not match slashes question marks', () => {
+    const fixtures = ['//', 'a/', '/a', '/a/', 'aa', '/aa', 'a/a', 'aaa', '/aaa'];
+    assert.deepStrictEqual(match(fixtures, '/?'), ['/a']);
+    assert.deepStrictEqual(match(fixtures, '/??'), ['/aa']);
+    assert.deepStrictEqual(match(fixtures, '/???'), ['/aaa']);
+    assert.deepStrictEqual(match(fixtures, '/?/'), ['/a/']);
+    assert.deepStrictEqual(match(fixtures, '??'), ['aa']);
+    assert.deepStrictEqual(match(fixtures, '?/?'), ['a/a']);
+    assert.deepStrictEqual(match(fixtures, '???'), ['aaa']);
+    assert.deepStrictEqual(match(fixtures, 'a?a'), ['aaa']);
+    assert.deepStrictEqual(match(fixtures, 'aa?'), ['aaa']);
+    assert.deepStrictEqual(match(fixtures, '?aa'), ['aaa']);
+  });
+
+  it('should support question marks and stars between slashes', () => {
+    assert.deepStrictEqual(match(['a/b.bb/c/d/efgh.ijk/e'], 'a/*/?/**/e'), ['a/b.bb/c/d/efgh.ijk/e']);
+    assert.deepStrictEqual(match(['a/b/c/d/e'], 'a/?/c/?/*/e'), []);
+    assert.deepStrictEqual(match(['a/b/c/d/e/e'], 'a/?/c/?/*/e'), ['a/b/c/d/e/e']);
+    assert.deepStrictEqual(match(['a/b/c/d/efgh.ijk/e'], 'a/*/?/**/e'), ['a/b/c/d/efgh.ijk/e']);
+    assert.deepStrictEqual(match(['a/b/c/d/efghijk/e'], 'a/*/?/**/e'), ['a/b/c/d/efghijk/e']);
+    assert.deepStrictEqual(match(['a/b/c/d/efghijk/e'], 'a/?/**/e'), ['a/b/c/d/efghijk/e']);
+    assert.deepStrictEqual(match(['a/b/c/d/efghijk/e'], 'a/?/c/?/*/e'), ['a/b/c/d/efghijk/e']);
+    assert.deepStrictEqual(match(['a/bb/e'], 'a/?/**/e'), []);
+    assert.deepStrictEqual(match(['a/bb/e'], 'a/?/e'), []);
+    assert.deepStrictEqual(match(['a/bbb/c/d/efgh.ijk/e'], 'a/*/?/**/e'), ['a/bbb/c/d/efgh.ijk/e']);
+  });
+
+  it('should match no more than one character between slashes', () => {
+    const fixtures = ['a/a', 'a/a/a', 'a/aa/a', 'a/aaa/a', 'a/aaaa/a', 'a/aaaaa/a'];
+    assert.deepStrictEqual(match(fixtures, '?/?'), ['a/a']);
+    assert.deepStrictEqual(match(fixtures, '?/???/?'), ['a/aaa/a']);
+    assert.deepStrictEqual(match(fixtures, '?/????/?'), ['a/aaaa/a']);
+    assert.deepStrictEqual(match(fixtures, '?/?????/?'), ['a/aaaaa/a']);
+    assert.deepStrictEqual(match(fixtures, 'a/?'), ['a/a']);
+    assert.deepStrictEqual(match(fixtures, 'a/?/a'), ['a/a/a']);
+    assert.deepStrictEqual(match(fixtures, 'a/??/a'), ['a/aa/a']);
+    assert.deepStrictEqual(match(fixtures, 'a/???/a'), ['a/aaa/a']);
+    assert.deepStrictEqual(match(fixtures, 'a/????/a'), ['a/aaaa/a']);
+    assert.deepStrictEqual(match(fixtures, 'a/????a/a'), ['a/aaaaa/a']);
+  });
+
+  it('should not match non-leading dots with question marks', () => {
+    const fixtures = ['.', '.a', 'a', 'aa', 'a.a', 'aa.a', 'aaa', 'aaa.a', 'aaaa.a', 'aaaaa'];
+    assert.deepStrictEqual(match(fixtures, '?'), ['a']);
+    assert.deepStrictEqual(match(fixtures, '.?'), ['.a']);
+    assert.deepStrictEqual(match(fixtures, '?a'), ['aa']);
+    assert.deepStrictEqual(match(fixtures, '??'), ['aa']);
+    assert.deepStrictEqual(match(fixtures, '?a?'), ['aaa']);
+    assert.deepStrictEqual(match(fixtures, 'aaa?a'), ['aaa.a', 'aaaaa']);
+    assert.deepStrictEqual(match(fixtures, 'a?a?a'), ['aaa.a', 'aaaaa']);
+    assert.deepStrictEqual(match(fixtures, 'a???a'), ['aaa.a', 'aaaaa']);
+    assert.deepStrictEqual(match(fixtures, 'a?????'), ['aaaa.a']);
+  });
+
+  it('should match non-leading dots with question marks when options.dot is true', () => {
+    const fixtures = ['.', '.a', 'a', 'aa', 'a.a', 'aa.a', '.aa', 'aaa.a', 'aaaa.a', 'aaaaa'];
+    const opts = { dot: true };
+    assert.deepStrictEqual(match(fixtures, '?', opts), ['.', 'a']);
+    assert.deepStrictEqual(match(fixtures, '.?', opts), ['.a']);
+    assert.deepStrictEqual(match(fixtures, '?a', opts), ['.a', 'aa']);
+    assert.deepStrictEqual(match(fixtures, '??', opts), ['.a', 'aa']);
+    assert.deepStrictEqual(match(fixtures, '?a?', opts), ['.aa']);
+  });
+});
+```
+
+## File: `test/regex-features.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const utils = require('../lib/utils');
+const { isMatch } = require('..');
+
+describe('regex features', () => {
+  describe('word boundaries', () => {
+    it('should support word boundaries', () => {
+      assert(isMatch('a', 'a\\b'));
+    });
+
+    it('should support word boundaries in parens', () => {
+      assert(isMatch('a', '(a\\b)'));
+    });
+  });
+
+  describe('regex lookarounds', () => {
+    it('should support regex lookbehinds', () => {
+      assert(isMatch('foo/cbaz', 'foo/*(?<!d)baz'));
+      assert(!isMatch('foo/cbaz', 'foo/*(?<!c)baz'));
+      assert(!isMatch('foo/cbaz', 'foo/*(?<=d)baz'));
+      assert(isMatch('foo/cbaz', 'foo/*(?<=c)baz'));
+    });
+  });
+
+  describe('regex back-references', () => {
+    it('should support regex backreferences', () => {
+      assert(!isMatch('1/2', '(*)/\\1'));
+      assert(isMatch('1/1', '(*)/\\1'));
+      assert(isMatch('1/1/1/1', '(*)/\\1/\\1/\\1'));
+      assert(!isMatch('1/11/111/1111', '(*)/\\1/\\1/\\1'));
+      assert(isMatch('1/11/111/1111', '(*)/(\\1)+/(\\1)+/(\\1)+'));
+      assert(!isMatch('1/2/1/1', '(*)/\\1/\\1/\\1'));
+      assert(!isMatch('1/1/2/1', '(*)/\\1/\\1/\\1'));
+      assert(!isMatch('1/1/1/2', '(*)/\\1/\\1/\\1'));
+      assert(isMatch('1/1/1/1', '(*)/\\1/(*)/\\2'));
+      assert(!isMatch('1/1/2/1', '(*)/\\1/(*)/\\2'));
+      assert(!isMatch('1/1/2/1', '(*)/\\1/(*)/\\2'));
+      assert(isMatch('1/1/2/2', '(*)/\\1/(*)/\\2'));
+    });
+  });
+
+  describe('regex character classes', () => {
+    it('should not match with character classes when disabled', () => {
+      assert(!isMatch('a/a', 'a/[a-z]', { nobracket: true }));
+      assert(!isMatch('a/b', 'a/[a-z]', { nobracket: true }));
+      assert(!isMatch('a/c', 'a/[a-z]', { nobracket: true }));
+    });
+
+    it('should match with character classes by default', () => {
+      assert(isMatch('a/a', 'a/[a-z]'));
+      assert(isMatch('a/b', 'a/[a-z]'));
+      assert(isMatch('a/c', 'a/[a-z]'));
+
+      assert(!isMatch('foo/bar', '**/[jkl]*'));
+      assert(isMatch('foo/jar', '**/[jkl]*'));
+
+      assert(isMatch('foo/bar', '**/[^jkl]*'));
+      assert(!isMatch('foo/jar', '**/[^jkl]*'));
+
+      assert(isMatch('foo/bar', '**/[abc]*'));
+      assert(!isMatch('foo/jar', '**/[abc]*'));
+
+      assert(!isMatch('foo/bar', '**/[^abc]*'));
+      assert(isMatch('foo/jar', '**/[^abc]*'));
+
+      assert(isMatch('foo/bar', '**/[abc]ar'));
+      assert(!isMatch('foo/jar', '**/[abc]ar'));
+    });
+
+    it('should match character classes', () => {
+      assert(!isMatch('abc', 'a[bc]d'));
+      assert(isMatch('abd', 'a[bc]d'));
+    });
+
+    it('should match character class alphabetical ranges', () => {
+      assert(!isMatch('abc', 'a[b-d]e'));
+      assert(!isMatch('abd', 'a[b-d]e'));
+      assert(isMatch('abe', 'a[b-d]e'));
+      assert(!isMatch('ac', 'a[b-d]e'));
+      assert(!isMatch('a-', 'a[b-d]e'));
+
+      assert(!isMatch('abc', 'a[b-d]'));
+      assert(!isMatch('abd', 'a[b-d]'));
+      assert(isMatch('abd', 'a[b-d]+'));
+      assert(!isMatch('abe', 'a[b-d]'));
+      assert(isMatch('ac', 'a[b-d]'));
+      assert(!isMatch('a-', 'a[b-d]'));
+    });
+
+    it('should match character classes with leading dashes', () => {
+      assert(!isMatch('abc', 'a[-c]'));
+      assert(isMatch('ac', 'a[-c]'));
+      assert(isMatch('a-', 'a[-c]'));
+    });
+
+    it('should match character classes with trailing dashes', () => {
+      assert(!isMatch('abc', 'a[c-]'));
+      assert(isMatch('ac', 'a[c-]'));
+      assert(isMatch('a-', 'a[c-]'));
+    });
+
+    it('should match bracket literals', () => {
+      assert(isMatch('a]c', 'a[]]c'));
+      assert(isMatch('a]c', 'a]c'));
+      assert(isMatch('a]', 'a]'));
+
+      assert(isMatch('a[c', 'a[\\[]c'));
+      assert(isMatch('a[c', 'a[c'));
+      assert(isMatch('a[', 'a['));
+    });
+
+    it('should support negated character classes', () => {
+      assert(!isMatch('a]', 'a[^bc]d'));
+      assert(!isMatch('acd', 'a[^bc]d'));
+      assert(isMatch('aed', 'a[^bc]d'));
+      assert(isMatch('azd', 'a[^bc]d'));
+      assert(!isMatch('ac', 'a[^bc]d'));
+      assert(!isMatch('a-', 'a[^bc]d'));
+    });
+
+    it('should match negated dashes', () => {
+      assert(!isMatch('abc', 'a[^-b]c'));
+      assert(isMatch('adc', 'a[^-b]c'));
+      assert(!isMatch('a-c', 'a[^-b]c'));
+    });
+
+    it('should match negated pm', () => {
+      assert(isMatch('a-c', 'a[^\\]b]c'));
+      assert(!isMatch('abc', 'a[^\\]b]c'));
+      assert(!isMatch('a]c', 'a[^\\]b]c'));
+      assert(isMatch('adc', 'a[^\\]b]c'));
+    });
+
+    it('should match alpha-numeric characters', () => {
+      assert(!isMatch('0123e45g78', '[\\de]+'));
+      assert(isMatch('0123e456', '[\\de]+'));
+      assert(isMatch('01234', '[\\de]+'));
+    });
+
+    it('should support valid regex ranges', () => {
+      assert(!isMatch('a/a', 'a/[b-c]'));
+      assert(!isMatch('a/z', 'a/[b-c]'));
+      assert(isMatch('a/b', 'a/[b-c]'));
+      assert(isMatch('a/c', 'a/[b-c]'));
+      assert(isMatch('a/b', '[a-z]/[a-z]'));
+      assert(isMatch('a/z', '[a-z]/[a-z]'));
+      assert(isMatch('z/z', '[a-z]/[a-z]'));
+      assert(!isMatch('a/x/y', 'a/[a-z]'));
+
+      assert(isMatch('a.a', '[a-b].[a-b]'));
+      assert(isMatch('a.b', '[a-b].[a-b]'));
+      assert(!isMatch('a.a.a', '[a-b].[a-b]'));
+      assert(!isMatch('c.a', '[a-b].[a-b]'));
+      assert(!isMatch('d.a.d', '[a-b].[a-b]'));
+      assert(!isMatch('a.bb', '[a-b].[a-b]'));
+      assert(!isMatch('a.ccc', '[a-b].[a-b]'));
+
+      assert(isMatch('a.a', '[a-d].[a-b]'));
+      assert(isMatch('a.b', '[a-d].[a-b]'));
+      assert(!isMatch('a.a.a', '[a-d].[a-b]'));
+      assert(isMatch('c.a', '[a-d].[a-b]'));
+      assert(!isMatch('d.a.d', '[a-d].[a-b]'));
+      assert(!isMatch('a.bb', '[a-d].[a-b]'));
+      assert(!isMatch('a.ccc', '[a-d].[a-b]'));
+
+      assert(isMatch('a.a', '[a-d]*.[a-b]'));
+      assert(isMatch('a.b', '[a-d]*.[a-b]'));
+      assert(isMatch('a.a.a', '[a-d]*.[a-b]'));
+      assert(isMatch('c.a', '[a-d]*.[a-b]'));
+      assert(!isMatch('d.a.d', '[a-d]*.[a-b]'));
+      assert(!isMatch('a.bb', '[a-d]*.[a-b]'));
+      assert(!isMatch('a.ccc', '[a-d]*.[a-b]'));
+    });
+
+    it('should support valid regex ranges with glob negation patterns', () => {
+      assert(!isMatch('a.a', '!*.[a-b]'));
+      assert(!isMatch('a.b', '!*.[a-b]'));
+      assert(!isMatch('a.a.a', '!*.[a-b]'));
+      assert(!isMatch('c.a', '!*.[a-b]'));
+      assert(isMatch('d.a.d', '!*.[a-b]'));
+      assert(isMatch('a.bb', '!*.[a-b]'));
+      assert(isMatch('a.ccc', '!*.[a-b]'));
+
+      assert(!isMatch('a.a', '!*.[a-b]*'));
+      assert(!isMatch('a.b', '!*.[a-b]*'));
+      assert(!isMatch('a.a.a', '!*.[a-b]*'));
+      assert(!isMatch('c.a', '!*.[a-b]*'));
+      assert(!isMatch('d.a.d', '!*.[a-b]*'));
+      assert(!isMatch('a.bb', '!*.[a-b]*'));
+      assert(isMatch('a.ccc', '!*.[a-b]*'));
+
+      assert(!isMatch('a.a', '![a-b].[a-b]'));
+      assert(!isMatch('a.b', '![a-b].[a-b]'));
+      assert(isMatch('a.a.a', '![a-b].[a-b]'));
+      assert(isMatch('c.a', '![a-b].[a-b]'));
+      assert(isMatch('d.a.d', '![a-b].[a-b]'));
+      assert(isMatch('a.bb', '![a-b].[a-b]'));
+      assert(isMatch('a.ccc', '![a-b].[a-b]'));
+
+      assert(!isMatch('a.a', '![a-b]+.[a-b]+'));
+      assert(!isMatch('a.b', '![a-b]+.[a-b]+'));
+      assert(isMatch('a.a.a', '![a-b]+.[a-b]+'));
+      assert(isMatch('c.a', '![a-b]+.[a-b]+'));
+      assert(isMatch('d.a.d', '![a-b]+.[a-b]+'));
+      assert(!isMatch('a.bb', '![a-b]+.[a-b]+'));
+      assert(isMatch('a.ccc', '![a-b]+.[a-b]+'));
+    });
+
+    it('should support valid regex ranges in negated character classes', () => {
+      assert(!isMatch('a.a', '*.[^a-b]'));
+      assert(!isMatch('a.b', '*.[^a-b]'));
+      assert(!isMatch('a.a.a', '*.[^a-b]'));
+      assert(!isMatch('c.a', '*.[^a-b]'));
+      assert(isMatch('d.a.d', '*.[^a-b]'));
+      assert(!isMatch('a.bb', '*.[^a-b]'));
+      assert(!isMatch('a.ccc', '*.[^a-b]'));
+
+      assert(!isMatch('a.a', 'a.[^a-b]*'));
+      assert(!isMatch('a.b', 'a.[^a-b]*'));
+      assert(!isMatch('a.a.a', 'a.[^a-b]*'));
+      assert(!isMatch('c.a', 'a.[^a-b]*'));
+      assert(!isMatch('d.a.d', 'a.[^a-b]*'));
+      assert(!isMatch('a.bb', 'a.[^a-b]*'));
+      assert(isMatch('a.ccc', 'a.[^a-b]*'));
+    });
+  });
+
+  describe('regex capture groups', () => {
+    it('should support regex logical "or"', () => {
+      assert(isMatch('a/a', 'a/(a|c)'));
+      assert(!isMatch('a/b', 'a/(a|c)'));
+      assert(isMatch('a/c', 'a/(a|c)'));
+
+      assert(isMatch('a/a', 'a/(a|b|c)'));
+      assert(isMatch('a/b', 'a/(a|b|c)'));
+      assert(isMatch('a/c', 'a/(a|b|c)'));
+    });
+
+    it('should support regex character classes inside extglobs', () => {
+      assert(!isMatch('foo/bar', '**/!([a-k])*'));
+      assert(!isMatch('foo/jar', '**/!([a-k])*'));
+
+      assert(!isMatch('foo/bar', '**/!([a-i])*'));
+      assert(isMatch('foo/bar', '**/!([c-i])*'));
+      assert(isMatch('foo/jar', '**/!([a-i])*'));
+    });
+
+    it('should support regex capture groups', () => {
+      assert(isMatch('a/bb/c/dd/e.md', 'a/??/?/(dd)/e.md'));
+      assert(isMatch('a/b/c/d/e.md', 'a/?/c/?/(e|f).md'));
+      assert(isMatch('a/b/c/d/f.md', 'a/?/c/?/(e|f).md'));
+    });
+
+    it('should support regex capture groups with slashes', () => {
+      assert(!isMatch('a/a', '(a/b)'));
+      assert(isMatch('a/b', '(a/b)'));
+      assert(!isMatch('a/c', '(a/b)'));
+      assert(!isMatch('b/a', '(a/b)'));
+      assert(!isMatch('b/b', '(a/b)'));
+      assert(!isMatch('b/c', '(a/b)'));
+    });
+
+    it('should support regex non-capture groups', () => {
+      assert(isMatch('a/bb/c/dd/e.md', 'a/**/(?:dd)/e.md'));
+      assert(isMatch('a/b/c/d/e.md', 'a/?/c/?/(?:e|f).md'));
+      assert(isMatch('a/b/c/d/f.md', 'a/?/c/?/(?:e|f).md'));
+    });
+  });
+
+  describe('quantifiers', () => {
+    it('should support regex quantifiers by escaping braces', () => {
+      assert(isMatch('a   ', 'a \\{1,5\\}', { unescape: true }));
+      assert(!isMatch('a   ', 'a \\{1,2\\}', { unescape: true }));
+      assert(!isMatch('a   ', 'a \\{1,2\\}'));
+    });
+
+    it('should support extglobs with regex quantifiers', () => {
+      assert(!isMatch('a  ', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('a ', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('a', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('aa', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('aaa', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('b', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('bb', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(!isMatch('bbb', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(isMatch(' a ', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(isMatch('b  ', '@(!(a) \\{1,2\\})*', { unescape: true }));
+      assert(isMatch('b ', '@(!(a) \\{1,2\\})*', { unescape: true }));
+
+      assert(isMatch('a   ', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('a   b', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('a  b', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('a  ', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('a ', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('a', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('aa', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('b', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('bb', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch(' a ', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('b  ', '@(!(a \\{1,2\\}))*'));
+      assert(isMatch('b ', '@(!(a \\{1,2\\}))*'));
+    });
+
+    it('should basename paths', () => {
+      assert.equal(utils.basename('/a/b/c'), 'c');
+      assert.equal(utils.basename('/a/b/c/'), 'c');
+      assert.equal(utils.basename('/a\\b/c', { windows: true }), 'c');
+      assert.equal(utils.basename('/a\\b/c\\', { windows: true }), 'c');
+      assert.equal(utils.basename('\\a/b\\c', { windows: true }), 'c');
+      assert.equal(utils.basename('\\a/b\\c/', { windows: true }), 'c');
+    });
+  });
+});
+```
+
+## File: `test/slashes-posix.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('slash handling - posix', () => {
+  it('should match a literal string', () => {
+    assert(!isMatch('a/a', '(a/b)'));
+    assert(isMatch('a/b', '(a/b)'));
+    assert(!isMatch('a/c', '(a/b)'));
+    assert(!isMatch('b/a', '(a/b)'));
+    assert(!isMatch('b/b', '(a/b)'));
+    assert(!isMatch('b/c', '(a/b)'));
+
+    assert(!isMatch('a/a', 'a/b'));
+    assert(isMatch('a/b', 'a/b'));
+    assert(!isMatch('a/c', 'a/b'));
+    assert(!isMatch('b/a', 'a/b'));
+    assert(!isMatch('b/b', 'a/b'));
+    assert(!isMatch('b/c', 'a/b'));
+  });
+
+  it('should match an array of literal strings', () => {
+    assert(!isMatch('a/a', 'a/b'));
+    assert(isMatch('a/b', 'a/b'));
+    assert(!isMatch('a/c', 'a/b'));
+    assert(!isMatch('b/a', 'a/b'));
+    assert(!isMatch('b/b', 'a/b'));
+    assert(isMatch('b/b', 'b/b'));
+    assert(!isMatch('b/c', 'a/b'));
+  });
+
+  it('should support regex logical or', () => {
+    assert(isMatch('a/a', 'a/(a|c)'));
+    assert(!isMatch('a/b', 'a/(a|c)'));
+    assert(isMatch('a/c', 'a/(a|c)'));
+
+    assert(isMatch('a/a', 'a/(a|b|c)'));
+    assert(isMatch('a/b', 'a/(a|b|c)'));
+    assert(isMatch('a/c', 'a/(a|b|c)'));
+  });
+
+  it('should support regex ranges', () => {
+    assert(!isMatch('a/a', 'a/[b-c]'));
+    assert(isMatch('a/b', 'a/[b-c]'));
+    assert(isMatch('a/c', 'a/[b-c]'));
+
+    assert(isMatch('a/a', 'a/[a-z]'));
+    assert(isMatch('a/b', 'a/[a-z]'));
+    assert(isMatch('a/c', 'a/[a-z]'));
+    assert(!isMatch('a/x/y', 'a/[a-z]'));
+    assert(isMatch('a/x', 'a/[a-z]'));
+  });
+
+  it('should support single globs (*)', () => {
+    assert(isMatch('a', '*'));
+    assert(isMatch('b', '*'));
+    assert(!isMatch('a/a', '*'));
+    assert(!isMatch('a/b', '*'));
+    assert(!isMatch('a/c', '*'));
+    assert(!isMatch('a/x', '*'));
+    assert(!isMatch('a/a/a', '*'));
+    assert(!isMatch('a/a/b', '*'));
+    assert(!isMatch('a/a/a/a', '*'));
+    assert(!isMatch('a/a/a/a/a', '*'));
+    assert(!isMatch('x/y', '*'));
+    assert(!isMatch('z/z', '*'));
+
+    assert(!isMatch('a', '*/*'));
+    assert(!isMatch('b', '*/*'));
+    assert(isMatch('a/a', '*/*'));
+    assert(isMatch('a/b', '*/*'));
+    assert(isMatch('a/c', '*/*'));
+    assert(isMatch('a/x', '*/*'));
+    assert(!isMatch('a/a/a', '*/*'));
+    assert(!isMatch('a/a/b', '*/*'));
+    assert(!isMatch('a/a/a/a', '*/*'));
+    assert(!isMatch('a/a/a/a/a', '*/*'));
+    assert(isMatch('x/y', '*/*'));
+    assert(isMatch('z/z', '*/*'));
+
+    assert(!isMatch('a', '*/*/*'));
+    assert(!isMatch('b', '*/*/*'));
+    assert(!isMatch('a/a', '*/*/*'));
+    assert(!isMatch('a/b', '*/*/*'));
+    assert(!isMatch('a/c', '*/*/*'));
+    assert(!isMatch('a/x', '*/*/*'));
+    assert(isMatch('a/a/a', '*/*/*'));
+    assert(isMatch('a/a/b', '*/*/*'));
+    assert(!isMatch('a/a/a/a', '*/*/*'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*'));
+    assert(!isMatch('x/y', '*/*/*'));
+    assert(!isMatch('z/z', '*/*/*'));
+
+    assert(!isMatch('a', '*/*/*/*'));
+    assert(!isMatch('b', '*/*/*/*'));
+    assert(!isMatch('a/a', '*/*/*/*'));
+    assert(!isMatch('a/b', '*/*/*/*'));
+    assert(!isMatch('a/c', '*/*/*/*'));
+    assert(!isMatch('a/x', '*/*/*/*'));
+    assert(!isMatch('a/a/a', '*/*/*/*'));
+    assert(!isMatch('a/a/b', '*/*/*/*'));
+    assert(isMatch('a/a/a/a', '*/*/*/*'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*/*'));
+    assert(!isMatch('x/y', '*/*/*/*'));
+    assert(!isMatch('z/z', '*/*/*/*'));
+
+    assert(!isMatch('a', '*/*/*/*/*'));
+    assert(!isMatch('b', '*/*/*/*/*'));
+    assert(!isMatch('a/a', '*/*/*/*/*'));
+    assert(!isMatch('a/b', '*/*/*/*/*'));
+    assert(!isMatch('a/c', '*/*/*/*/*'));
+    assert(!isMatch('a/x', '*/*/*/*/*'));
+    assert(!isMatch('a/a/a', '*/*/*/*/*'));
+    assert(!isMatch('a/a/b', '*/*/*/*/*'));
+    assert(!isMatch('a/a/a/a', '*/*/*/*/*'));
+    assert(isMatch('a/a/a/a/a', '*/*/*/*/*'));
+    assert(!isMatch('x/y', '*/*/*/*/*'));
+    assert(!isMatch('z/z', '*/*/*/*/*'));
+
+    assert(!isMatch('a', 'a/*'));
+    assert(!isMatch('b', 'a/*'));
+    assert(isMatch('a/a', 'a/*'));
+    assert(isMatch('a/b', 'a/*'));
+    assert(isMatch('a/c', 'a/*'));
+    assert(isMatch('a/x', 'a/*'));
+    assert(!isMatch('a/a/a', 'a/*'));
+    assert(!isMatch('a/a/b', 'a/*'));
+    assert(!isMatch('a/a/a/a', 'a/*'));
+    assert(!isMatch('a/a/a/a/a', 'a/*'));
+    assert(!isMatch('x/y', 'a/*'));
+    assert(!isMatch('z/z', 'a/*'));
+
+    assert(!isMatch('a', 'a/*/*'));
+    assert(!isMatch('b', 'a/*/*'));
+    assert(!isMatch('a/a', 'a/*/*'));
+    assert(!isMatch('a/b', 'a/*/*'));
+    assert(!isMatch('a/c', 'a/*/*'));
+    assert(!isMatch('a/x', 'a/*/*'));
+    assert(isMatch('a/a/a', 'a/*/*'));
+    assert(isMatch('a/a/b', 'a/*/*'));
+    assert(!isMatch('a/a/a/a', 'a/*/*'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*'));
+    assert(!isMatch('x/y', 'a/*/*'));
+    assert(!isMatch('z/z', 'a/*/*'));
+
+    assert(!isMatch('a', 'a/*/*/*'));
+    assert(!isMatch('b', 'a/*/*/*'));
+    assert(!isMatch('a/a', 'a/*/*/*'));
+    assert(!isMatch('a/b', 'a/*/*/*'));
+    assert(!isMatch('a/c', 'a/*/*/*'));
+    assert(!isMatch('a/x', 'a/*/*/*'));
+    assert(!isMatch('a/a/a', 'a/*/*/*'));
+    assert(!isMatch('a/a/b', 'a/*/*/*'));
+    assert(isMatch('a/a/a/a', 'a/*/*/*'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*/*'));
+    assert(!isMatch('x/y', 'a/*/*/*'));
+    assert(!isMatch('z/z', 'a/*/*/*'));
+
+    assert(!isMatch('a', 'a/*/*/*/*'));
+    assert(!isMatch('b', 'a/*/*/*/*'));
+    assert(!isMatch('a/a', 'a/*/*/*/*'));
+    assert(!isMatch('a/b', 'a/*/*/*/*'));
+    assert(!isMatch('a/c', 'a/*/*/*/*'));
+    assert(!isMatch('a/x', 'a/*/*/*/*'));
+    assert(!isMatch('a/a/a', 'a/*/*/*/*'));
+    assert(!isMatch('a/a/b', 'a/*/*/*/*'));
+    assert(!isMatch('a/a/a/a', 'a/*/*/*/*'));
+    assert(isMatch('a/a/a/a/a', 'a/*/*/*/*'));
+    assert(!isMatch('x/y', 'a/*/*/*/*'));
+    assert(!isMatch('z/z', 'a/*/*/*/*'));
+
+    assert(!isMatch('a', 'a/*/a'));
+    assert(!isMatch('b', 'a/*/a'));
+    assert(!isMatch('a/a', 'a/*/a'));
+    assert(!isMatch('a/b', 'a/*/a'));
+    assert(!isMatch('a/c', 'a/*/a'));
+    assert(!isMatch('a/x', 'a/*/a'));
+    assert(isMatch('a/a/a', 'a/*/a'));
+    assert(!isMatch('a/a/b', 'a/*/a'));
+    assert(!isMatch('a/a/a/a', 'a/*/a'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/a'));
+    assert(!isMatch('x/y', 'a/*/a'));
+    assert(!isMatch('z/z', 'a/*/a'));
+
+    assert(!isMatch('a', 'a/*/b'));
+    assert(!isMatch('b', 'a/*/b'));
+    assert(!isMatch('a/a', 'a/*/b'));
+    assert(!isMatch('a/b', 'a/*/b'));
+    assert(!isMatch('a/c', 'a/*/b'));
+    assert(!isMatch('a/x', 'a/*/b'));
+    assert(!isMatch('a/a/a', 'a/*/b'));
+    assert(isMatch('a/a/b', 'a/*/b'));
+    assert(!isMatch('a/a/a/a', 'a/*/b'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/b'));
+    assert(!isMatch('x/y', 'a/*/b'));
+    assert(!isMatch('z/z', 'a/*/b'));
+  });
+
+  it('should support globstars (**)', () => {
+    assert(isMatch('a', 'a'));
+    assert(!isMatch('a/', 'a'));
+    assert(!isMatch('a/a', 'a'));
+    assert(!isMatch('a/b', 'a'));
+    assert(!isMatch('a/c', 'a'));
+    assert(!isMatch('a/x', 'a'));
+    assert(!isMatch('a/x/y', 'a'));
+    assert(!isMatch('a/x/y/z', 'a'));
+
+    assert(isMatch('a', '*'));
+    assert(isMatch('a/', '*', { relaxSlashes: true }));
+    assert(isMatch('a/', '*{,/}'));
+    assert(!isMatch('a/a', '*'));
+    assert(!isMatch('a/b', '*'));
+    assert(!isMatch('a/c', '*'));
+    assert(!isMatch('a/x', '*'));
+    assert(!isMatch('a/x/y', '*'));
+    assert(!isMatch('a/x/y/z', '*'));
+
+    assert(!isMatch('a', '*/'));
+    assert(isMatch('a/', '*/'));
+    assert(!isMatch('a/a', '*/'));
+    assert(!isMatch('a/b', '*/'));
+    assert(!isMatch('a/c', '*/'));
+    assert(!isMatch('a/x', '*/'));
+    assert(!isMatch('a/x/y', '*/'));
+    assert(!isMatch('a/x/y/z', '*/'));
+
+    assert(!isMatch('a', '*/*'));
+    assert(!isMatch('a/', '*/*'));
+    assert(isMatch('a/a', '*/*'));
+    assert(isMatch('a/b', '*/*'));
+    assert(isMatch('a/c', '*/*'));
+    assert(isMatch('a/x', '*/*'));
+    assert(!isMatch('a/x/y', '*/*'));
+    assert(!isMatch('a/x/y/z', '*/*'));
+
+    assert(isMatch('a', '**'));
+    assert(isMatch('a/', '**'));
+    assert(isMatch('a/a', '**'));
+    assert(isMatch('a/b', '**'));
+    assert(isMatch('a/c', '**'));
+    assert(isMatch('a/x', '**'));
+    assert(isMatch('a/x/y', '**'));
+    assert(isMatch('a/x/y/z', '**'));
+
+    assert(!isMatch('a/', '**/a'));
+    assert(!isMatch('a/b', '**/a'));
+    assert(!isMatch('a/c', '**/a'));
+    assert(!isMatch('a/x', '**/a'));
+    assert(!isMatch('a/x/y/z', '**/a'));
+    assert(isMatch('a/x/y/z/a', '**/a'));
+    assert(isMatch('a', '**/a'));
+    assert(isMatch('a/a', '**/a'));
+
+    assert(!isMatch('a', 'a/*'));
+    assert(!isMatch('a/', 'a/*'));
+    assert(isMatch('a/a', 'a/*'));
+    assert(isMatch('a/b', 'a/*'));
+    assert(isMatch('a/c', 'a/*'));
+    assert(isMatch('a/x', 'a/*'));
+    assert(!isMatch('a/x/y', 'a/*'));
+    assert(!isMatch('a/x/y/z', 'a/*'));
+
+    assert(isMatch('a', 'a/**'));
+    assert(isMatch('a/', 'a/**'));
+    assert(isMatch('a/a', 'a/**'));
+    assert(isMatch('a/b', 'a/**'));
+    assert(isMatch('a/c', 'a/**'));
+    assert(isMatch('a/x', 'a/**'));
+    assert(isMatch('a/x/y', 'a/**'));
+    assert(isMatch('a/x/y/z', 'a/**'));
+
+    assert(!isMatch('a', 'a/**/*'));
+    assert(!isMatch('a/', 'a/**/*'));
+    assert(isMatch('a/a', 'a/**/*'));
+    assert(isMatch('a/b', 'a/**/*'));
+    assert(isMatch('a/c', 'a/**/*'));
+    assert(isMatch('a/x', 'a/**/*'));
+    assert(isMatch('a/x/y', 'a/**/*'));
+    assert(isMatch('a/x/y/z', 'a/**/*'));
+
+    assert(!isMatch('a', 'a/**/**/*'));
+    assert(!isMatch('a/', 'a/**/**/*'));
+    assert(isMatch('a/a', 'a/**/**/*'));
+    assert(isMatch('a/b', 'a/**/**/*'));
+    assert(isMatch('a/c', 'a/**/**/*'));
+    assert(isMatch('a/x', 'a/**/**/*'));
+    assert(isMatch('a/x/y', 'a/**/**/*'));
+    assert(isMatch('a/x/y/z', 'a/**/**/*'));
+
+    assert(isMatch('a/b/foo/bar/baz.qux', 'a/b/**/bar/**/*.*'));
+    assert(isMatch('a/b/bar/baz.qux', 'a/b/**/bar/**/*.*'));
+  });
+
+  it('should support negation patterns', () => {
+    assert(isMatch('a/a', '!a/b'));
+    assert(!isMatch('a/b', '!a/b'));
+    assert(isMatch('a/c', '!a/b'));
+    assert(isMatch('b/a', '!a/b'));
+    assert(isMatch('b/b', '!a/b'));
+    assert(isMatch('b/c', '!a/b'));
+
+    assert(isMatch('a/a', ['*/*', '!a/b', '!*/c']));
+    assert(isMatch('a/b', ['*/*', '!a/b', '!*/c']));
+    assert(isMatch('a/c', ['*/*', '!a/b', '!*/c']));
+    assert(isMatch('b/a', ['*/*', '!a/b', '!*/c']));
+    assert(isMatch('b/b', ['*/*', '!a/b', '!*/c']));
+    assert(isMatch('b/c', ['*/*', '!a/b', '!*/c']));
+
+    assert(isMatch('a/a', ['!a/b', '!*/c']));
+    assert(isMatch('a/b', ['!a/b', '!*/c']));
+    assert(isMatch('a/c', ['!a/b', '!*/c']));
+    assert(isMatch('b/a', ['!a/b', '!*/c']));
+    assert(isMatch('b/b', ['!a/b', '!*/c']));
+    assert(isMatch('b/c', ['!a/b', '!*/c']));
+
+    assert(isMatch('a/a', ['!a/b', '!a/c']));
+    assert(isMatch('a/b', ['!a/b', '!a/c']));
+    assert(isMatch('a/c', ['!a/b', '!a/c']));
+    assert(isMatch('b/a', ['!a/b', '!a/c']));
+    assert(isMatch('b/b', ['!a/b', '!a/c']));
+    assert(isMatch('b/c', ['!a/b', '!a/c']));
+
+    assert(isMatch('a/a', '!a/(b)'));
+    assert(!isMatch('a/b', '!a/(b)'));
+    assert(isMatch('a/c', '!a/(b)'));
+    assert(isMatch('b/a', '!a/(b)'));
+    assert(isMatch('b/b', '!a/(b)'));
+    assert(isMatch('b/c', '!a/(b)'));
+
+    assert(isMatch('a/a', '!(a/b)'));
+    assert(!isMatch('a/b', '!(a/b)'));
+    assert(isMatch('a/c', '!(a/b)'));
+    assert(isMatch('b/a', '!(a/b)'));
+    assert(isMatch('b/b', '!(a/b)'));
+    assert(isMatch('b/c', '!(a/b)'));
+  });
+
+  it('should work with file extensions', () => {
+    assert(!isMatch('a.txt', 'a/**/*.txt'));
+    assert(isMatch('a/b.txt', 'a/**/*.txt'));
+    assert(isMatch('a/x/y.txt', 'a/**/*.txt'));
+    assert(!isMatch('a/x/y/z', ['a/**/*.txt']));
+
+    assert(!isMatch('a.txt', 'a/*.txt'));
+    assert(isMatch('a/b.txt', 'a/*.txt'));
+    assert(!isMatch('a/x/y.txt', 'a/*.txt'));
+    assert(!isMatch('a/x/y/z', 'a/*.txt'));
+
+    assert(isMatch('a.txt', 'a*.txt'));
+    assert(!isMatch('a/b.txt', 'a*.txt'));
+    assert(!isMatch('a/x/y.txt', 'a*.txt'));
+    assert(!isMatch('a/x/y/z', 'a*.txt'));
+
+    assert(isMatch('a.txt', '*.txt'));
+    assert(!isMatch('a/b.txt', '*.txt'));
+    assert(!isMatch('a/x/y.txt', '*.txt'));
+    assert(!isMatch('a/x/y/z', '*.txt'));
+  });
+
+  it('should match one directory level with a single star (*)', () => {
+    assert(!isMatch('/a', '*/'));
+    assert(!isMatch('/a', '*/*/*'));
+    assert(!isMatch('/a', '*/*/*/*'));
+    assert(!isMatch('/a', '*/*/*/*/*'));
+    assert(!isMatch('/a', '/*/'));
+    assert(!isMatch('/a', 'a/*'));
+    assert(!isMatch('/a', 'a/*/*'));
+    assert(!isMatch('/a', 'a/*/*/*'));
+    assert(!isMatch('/a', 'a/*/*/*/*'));
+    assert(!isMatch('/a', 'a/*/a'));
+    assert(!isMatch('/a', 'a/*/b'));
+    assert(!isMatch('/a/', '*'));
+    assert(!isMatch('/a/', '**/*', { strictSlashes: true }));
+    assert(!isMatch('/a/', '*/'));
+    assert(!isMatch('/a/', '*/*', { strictSlashes: true }));
+    assert(!isMatch('/a/', '*/*/*'));
+    assert(!isMatch('/a/', '*/*/*/*'));
+    assert(!isMatch('/a/', '*/*/*/*/*'));
+    assert(!isMatch('/a/', '/*', { strictSlashes: true }));
+    assert(!isMatch('/a/', 'a/*'));
+    assert(!isMatch('/a/', 'a/*/*'));
+    assert(!isMatch('/a/', 'a/*/*/*'));
+    assert(!isMatch('/a/', 'a/*/*/*/*'));
+    assert(!isMatch('/a/', 'a/*/a'));
+    assert(!isMatch('/a/', 'a/*/b'));
+    assert(!isMatch('/ab', '*'));
+    assert(!isMatch('/abc', '*'));
+    assert(!isMatch('/b', '*'));
+    assert(!isMatch('/b', '*/'));
+    assert(!isMatch('/b', '*/*/*'));
+    assert(!isMatch('/b', '*/*/*/*'));
+    assert(!isMatch('/b', '*/*/*/*/*'));
+    assert(!isMatch('/b', '/*/'));
+    assert(!isMatch('/b', 'a/*'));
+    assert(!isMatch('/b', 'a/*/*'));
+    assert(!isMatch('/b', 'a/*/*/*'));
+    assert(!isMatch('/b', 'a/*/*/*/*'));
+    assert(!isMatch('/b', 'a/*/a'));
+    assert(!isMatch('/b', 'a/*/b'));
+    assert(!isMatch('a', '*/'));
+    assert(!isMatch('a', '*/*'));
+    assert(!isMatch('a', '*/*/*'));
+    assert(!isMatch('a', '*/*/*/*'));
+    assert(!isMatch('a', '*/*/*/*/*'));
+    assert(!isMatch('a', '/*'));
+    assert(!isMatch('a', '/*/'));
+    assert(!isMatch('a', 'a/*'));
+    assert(!isMatch('a', 'a/*/*'));
+    assert(!isMatch('a', 'a/*/*/*'));
+    assert(!isMatch('a', 'a/*/*/*/*'));
+    assert(!isMatch('a', 'a/*/a'));
+    assert(!isMatch('a', 'a/*/b'));
+    assert(!isMatch('a/', '*', { strictSlashes: true }));
+    assert(!isMatch('a/', '**/*', { strictSlashes: true }));
+    assert(!isMatch('a/', '*/*', { strictSlashes: true }));
+    assert(!isMatch('a/', '*/*/*/*', { strictSlashes: true }));
+    assert(!isMatch('a/', '*/*/*/*/*', { strictSlashes: true }));
+    assert(!isMatch('a/', '/*', { strictSlashes: true }));
+    assert(!isMatch('a/', '/*/', { strictSlashes: true }));
+    assert(!isMatch('a/', 'a/*', { strictSlashes: true }));
+    assert(!isMatch('a/', 'a/*/*', { strictSlashes: true }));
+    assert(!isMatch('a/', 'a/*/*/*', { strictSlashes: true }));
+    assert(!isMatch('a/', 'a/*/*/*/*', { strictSlashes: true }));
+    assert(!isMatch('a/', 'a/*/a', { strictSlashes: true }));
+    assert(!isMatch('a/', 'a/*/b', { strictSlashes: true }));
+    assert(!isMatch('a/a', '*'));
+    assert(!isMatch('a/a', '*/'));
+    assert(!isMatch('a/a', '*/*/*'));
+    assert(!isMatch('a/a', '*/*/*/*'));
+    assert(!isMatch('a/a', '*/*/*/*/*'));
+    assert(!isMatch('a/a', '/*'));
+    assert(!isMatch('a/a', '/*/'));
+    assert(!isMatch('a/a', 'a/*/*'));
+    assert(!isMatch('a/a', 'a/*/*/*'));
+    assert(!isMatch('a/a', 'a/*/*/*/*'));
+    assert(!isMatch('a/a', 'a/*/a'));
+    assert(!isMatch('a/a', 'a/*/b'));
+    assert(!isMatch('a/a/a', '*'));
+    assert(!isMatch('a/a/a', '*/'));
+    assert(!isMatch('a/a/a', '*/*'));
+    assert(!isMatch('a/a/a', '*/*/*/*'));
+    assert(!isMatch('a/a/a', '*/*/*/*/*'));
+    assert(!isMatch('a/a/a', '/*'));
+    assert(!isMatch('a/a/a', '/*/'));
+    assert(!isMatch('a/a/a', 'a/*'));
+    assert(!isMatch('a/a/a', 'a/*/*/*'));
+    assert(!isMatch('a/a/a', 'a/*/*/*/*'));
+    assert(!isMatch('a/a/a', 'a/*/b'));
+    assert(!isMatch('a/a/a/a', '*'));
+    assert(!isMatch('a/a/a/a', '*/'));
+    assert(!isMatch('a/a/a/a', '*/*'));
+    assert(!isMatch('a/a/a/a', '*/*/*'));
+    assert(!isMatch('a/a/a/a', '*/*/*/*/*'));
+    assert(!isMatch('a/a/a/a', '/*'));
+    assert(!isMatch('a/a/a/a', '/*/'));
+    assert(!isMatch('a/a/a/a', 'a/*'));
+    assert(!isMatch('a/a/a/a', 'a/*/*'));
+    assert(!isMatch('a/a/a/a', 'a/*/*/*/*'));
+    assert(!isMatch('a/a/a/a', 'a/*/a'));
+    assert(!isMatch('a/a/a/a', 'a/*/b'));
+    assert(!isMatch('a/a/a/a/a', '*'));
+    assert(!isMatch('a/a/a/a/a', '*/'));
+    assert(!isMatch('a/a/a/a/a', '*/*'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*/*'));
+    assert(!isMatch('a/a/a/a/a', '/*'));
+    assert(!isMatch('a/a/a/a/a', '/*/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*/*'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/a'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/b'));
+    assert(!isMatch('a/a/b', '*'));
+    assert(!isMatch('a/a/b', '*/'));
+    assert(!isMatch('a/a/b', '*/*'));
+    assert(!isMatch('a/a/b', '*/*/*/*'));
+    assert(!isMatch('a/a/b', '*/*/*/*/*'));
+    assert(!isMatch('a/a/b', '/*'));
+    assert(!isMatch('a/a/b', '/*/'));
+    assert(!isMatch('a/a/b', 'a/*'));
+    assert(!isMatch('a/a/b', 'a/*/*/*'));
+    assert(!isMatch('a/a/b', 'a/*/*/*/*'));
+    assert(!isMatch('a/a/b', 'a/*/a'));
+    assert(!isMatch('a/b', '*'));
+    assert(!isMatch('a/b', '*/'));
+    assert(!isMatch('a/b', '*/*/*/*'));
+    assert(!isMatch('a/b', '*/*/*/*/*'));
+    assert(!isMatch('a/b', '/*'));
+    assert(!isMatch('a/b', '/*/'));
+    assert(!isMatch('a/b', 'a/*/*'));
+    assert(!isMatch('a/b', 'a/*/*/*'));
+    assert(!isMatch('a/b', 'a/*/*/*/*'));
+    assert(!isMatch('a/b', 'a/*/a'));
+    assert(!isMatch('a/b', 'a/*/b'));
+    assert(!isMatch('a/c', '*'));
+    assert(!isMatch('a/c', '*/'));
+    assert(!isMatch('a/c', '*/*/*/*'));
+    assert(!isMatch('a/c', '*/*/*/*/*'));
+    assert(!isMatch('a/c', '/*'));
+    assert(!isMatch('a/c', '/*/'));
+    assert(!isMatch('a/c', 'a/*/*'));
+    assert(!isMatch('a/c', 'a/*/*/*'));
+    assert(!isMatch('a/c', 'a/*/*/*/*'));
+    assert(!isMatch('a/c', 'a/*/a'));
+    assert(!isMatch('a/c', 'a/*/b'));
+    assert(!isMatch('a/x', '*'));
+    assert(!isMatch('a/x', '*/'));
+    assert(!isMatch('a/x', '*/*/*/*'));
+    assert(!isMatch('a/x', '*/*/*/*/*'));
+    assert(!isMatch('a/x', '/*'));
+    assert(!isMatch('a/x', '/*/'));
+    assert(!isMatch('a/x', 'a/*/*'));
+    assert(!isMatch('a/x', 'a/*/*/*'));
+    assert(!isMatch('a/x', 'a/*/*/*/*'));
+    assert(!isMatch('a/x', 'a/*/a'));
+    assert(!isMatch('a/x', 'a/*/b'));
+    assert(!isMatch('b', '*/'));
+    assert(!isMatch('b', '*/*'));
+    assert(!isMatch('b', '*/*/*/*'));
+    assert(!isMatch('b', '*/*/*/*/*'));
+    assert(!isMatch('b', '/*'));
+    assert(!isMatch('b', '/*/'));
+    assert(!isMatch('b', 'a/*'));
+    assert(!isMatch('b', 'a/*/*'));
+    assert(!isMatch('b', 'a/*/*/*'));
+    assert(!isMatch('b', 'a/*/*/*/*'));
+    assert(!isMatch('b', 'a/*/a'));
+    assert(!isMatch('b', 'a/*/b'));
+    assert(!isMatch('x/y', '*'));
+    assert(!isMatch('x/y', '*/'));
+    assert(!isMatch('x/y', '*/*/*'));
+    assert(!isMatch('x/y', '*/*/*/*'));
+    assert(!isMatch('x/y', '*/*/*/*/*'));
+    assert(!isMatch('x/y', '/*'));
+    assert(!isMatch('x/y', '/*/'));
+    assert(!isMatch('x/y', 'a/*'));
+    assert(!isMatch('x/y', 'a/*/*'));
+    assert(!isMatch('x/y', 'a/*/*/*'));
+    assert(!isMatch('x/y', 'a/*/*/*/*'));
+    assert(!isMatch('x/y', 'a/*/a'));
+    assert(!isMatch('x/y', 'a/*/b'));
+    assert(!isMatch('z/z', '*'));
+    assert(!isMatch('z/z', '*/'));
+    assert(!isMatch('z/z', '*/*/*/*'));
+    assert(!isMatch('z/z', '*/*/*/*/*'));
+    assert(!isMatch('z/z', '/*'));
+    assert(!isMatch('z/z', '/*/'));
+    assert(!isMatch('z/z', 'a/*'));
+    assert(!isMatch('z/z', 'a/*/*'));
+    assert(!isMatch('z/z', 'a/*/*/*'));
+    assert(!isMatch('z/z', 'a/*/*/*/*'));
+    assert(!isMatch('z/z', 'a/*/a'));
+    assert(!isMatch('z/z', 'a/*/b'));
+    assert(isMatch('/a', '**/*'));
+    assert(isMatch('/a', '*/*'));
+    assert(isMatch('/a', '/*'));
+    assert(isMatch('/a/', '**/*{,/}'));
+    assert(isMatch('/a/', '*/*'));
+    assert(isMatch('/a/', '*/*{,/}'));
+    assert(isMatch('/a/', '/*'));
+    assert(isMatch('/a/', '/*/'));
+    assert(isMatch('/a/', '/*{,/}'));
+    assert(isMatch('/b', '**/*'));
+    assert(isMatch('/b', '*/*'));
+    assert(isMatch('/b', '/*'));
+    assert(isMatch('a', '*'));
+    assert(isMatch('a', '**/*'));
+    assert(isMatch('a/', '**/*{,/}'));
+    assert(isMatch('a/', '*/'));
+    assert(isMatch('a/', '*{,/}'));
+    assert(isMatch('a/a', '**/*'));
+    assert(isMatch('a/a', '*/*'));
+    assert(isMatch('a/a', 'a/*'));
+    assert(isMatch('a/a/a', '**/*'));
+    assert(isMatch('a/a/a', '*/*/*'));
+    assert(isMatch('a/a/a', 'a/*/*'));
+    assert(isMatch('a/a/a', 'a/*/a'));
+    assert(isMatch('a/a/a/a', '**/*'));
+    assert(isMatch('a/a/a/a', '*/*/*/*'));
+    assert(isMatch('a/a/a/a', 'a/*/*/*'));
+    assert(isMatch('a/a/a/a/a', '**/*'));
+    assert(isMatch('a/a/a/a/a', '*/*/*/*/*'));
+    assert(isMatch('a/a/a/a/a', 'a/*/*/*/*'));
+    assert(isMatch('a/a/b', '**/*'));
+    assert(isMatch('a/a/b', 'a/*/*'));
+    assert(isMatch('a/a/b', 'a/*/b'));
+    assert(isMatch('a/b', '**/*'));
+    assert(isMatch('a/b', '*/*'));
+    assert(isMatch('a/b', 'a/*'));
+    assert(isMatch('a/c', '**/*'));
+    assert(isMatch('a/c', '*/*'));
+    assert(isMatch('a/c', 'a/*'));
+    assert(isMatch('a/x', '**/*'));
+    assert(isMatch('a/x', '*/*'));
+    assert(isMatch('a/x', 'a/*'));
+    assert(isMatch('b', '*'));
+    assert(isMatch('b', '**/*'));
+    assert(isMatch('x/y', '**/*'));
+    assert(isMatch('x/y', '*/*'));
+    assert(isMatch('z/z', '**/*'));
+    assert(isMatch('z/z', '*/*'));
+  });
+
+  it('should match one or more directories with a globstar', () => {
+    assert(!isMatch('a/', '**/a'));
+    assert(!isMatch('/a/', '**/a'));
+    assert(!isMatch('a/a/', '**/a'));
+    assert(!isMatch('/a/a/', '**/a'));
+    assert(!isMatch('a/a/a/', '**/a'));
+
+    assert(isMatch('a', '**/a'));
+    assert(isMatch('a/a', '**/a'));
+    assert(isMatch('a/a/a', '**/a'));
+    assert(isMatch('/a', '**/a'));
+    assert(isMatch('a/a/', '**/a/*{,/}'));
+    assert(!isMatch('a/a/', '**/a/*', { strictSlashes: true }));
+    assert(isMatch('/a/a', '**/a'));
+
+    assert(isMatch('a', 'a/**'));
+    assert(!isMatch('/a', 'a/**'));
+    assert(!isMatch('/a/', 'a/**'));
+    assert(!isMatch('/a/a', 'a/**'));
+    assert(!isMatch('/a/a/', 'a/**'));
+    assert(isMatch('/a', '/a/**'));
+    assert(isMatch('/a/', '/a/**'));
+    assert(isMatch('/a/a', '/a/**'));
+    assert(isMatch('/a/a/', '/a/**'));
+    assert(isMatch('a/', 'a/**'));
+    assert(isMatch('a/a', 'a/**'));
+    assert(isMatch('a/a/', 'a/**'));
+    assert(isMatch('a/a/a', 'a/**'));
+    assert(isMatch('a/a/a/', 'a/**'));
+
+    assert(isMatch('a', '**/a/**'));
+    assert(isMatch('/a', '**/a/**'));
+    assert(isMatch('/a/', '**/a/**'));
+    assert(isMatch('/a/a', '**/a/**'));
+    assert(isMatch('/a/a/', '**/a/**'));
+    assert(isMatch('a/', '**/a/**'));
+    assert(isMatch('a/a', '**/a/**'));
+    assert(isMatch('a/a/', '**/a/**'));
+    assert(isMatch('a/a/a', '**/a/**'));
+    assert(isMatch('a/a/a/', '**/a/**'));
+  });
+
+  it('should match one or more characters', () => {
+    assert(isMatch('a', '*'));
+    assert(isMatch('aa', '*'));
+    assert(isMatch('aaa', '*'));
+    assert(isMatch('aaaa', '*'));
+    assert(isMatch('ab', '*'));
+    assert(isMatch('b', '*'));
+    assert(isMatch('bb', '*'));
+    assert(isMatch('c', '*'));
+    assert(isMatch('cc', '*'));
+    assert(isMatch('cac', '*'));
+    assert(!isMatch('a/a', '*'));
+    assert(!isMatch('a/b', '*'));
+    assert(!isMatch('a/c', '*'));
+    assert(!isMatch('a/x', '*'));
+    assert(!isMatch('a/a/a', '*'));
+    assert(!isMatch('a/a/b', '*'));
+    assert(!isMatch('a/a/a/a', '*'));
+    assert(!isMatch('a/a/a/a/a', '*'));
+    assert(!isMatch('x/y', '*'));
+    assert(!isMatch('z/z', '*'));
+
+    assert(isMatch('a', 'a*'));
+    assert(isMatch('aa', 'a*'));
+    assert(isMatch('aaa', 'a*'));
+    assert(isMatch('aaaa', 'a*'));
+    assert(isMatch('ab', 'a*'));
+    assert(!isMatch('b', 'a*'));
+    assert(!isMatch('bb', 'a*'));
+    assert(!isMatch('c', 'a*'));
+    assert(!isMatch('cc', 'a*'));
+    assert(!isMatch('cac', 'a*'));
+    assert(!isMatch('a/a', 'a*'));
+    assert(!isMatch('a/b', 'a*'));
+    assert(!isMatch('a/c', 'a*'));
+    assert(!isMatch('a/x', 'a*'));
+    assert(!isMatch('a/a/a', 'a*'));
+    assert(!isMatch('a/a/b', 'a*'));
+    assert(!isMatch('a/a/a/a', 'a*'));
+    assert(!isMatch('a/a/a/a/a', 'a*'));
+    assert(!isMatch('x/y', 'a*'));
+    assert(!isMatch('z/z', 'a*'));
+
+    assert(!isMatch('a', '*b'));
+    assert(!isMatch('aa', '*b'));
+    assert(!isMatch('aaa', '*b'));
+    assert(!isMatch('aaaa', '*b'));
+    assert(isMatch('ab', '*b'));
+    assert(isMatch('b', '*b'));
+    assert(isMatch('bb', '*b'));
+    assert(!isMatch('c', '*b'));
+    assert(!isMatch('cc', '*b'));
+    assert(!isMatch('cac', '*b'));
+    assert(!isMatch('a/a', '*b'));
+    assert(!isMatch('a/b', '*b'));
+    assert(!isMatch('a/c', '*b'));
+    assert(!isMatch('a/x', '*b'));
+    assert(!isMatch('a/a/a', '*b'));
+    assert(!isMatch('a/a/b', '*b'));
+    assert(!isMatch('a/a/a/a', '*b'));
+    assert(!isMatch('a/a/a/a/a', '*b'));
+    assert(!isMatch('x/y', '*b'));
+    assert(!isMatch('z/z', '*b'));
+  });
+
+  it('should match one or zero characters', () => {
+    assert(isMatch('a', '*'));
+    assert(isMatch('aa', '*'));
+    assert(isMatch('aaa', '*'));
+    assert(isMatch('aaaa', '*'));
+    assert(isMatch('ab', '*'));
+    assert(isMatch('b', '*'));
+    assert(isMatch('bb', '*'));
+    assert(isMatch('c', '*'));
+    assert(isMatch('cc', '*'));
+    assert(isMatch('cac', '*'));
+    assert(!isMatch('a/a', '*'));
+    assert(!isMatch('a/b', '*'));
+    assert(!isMatch('a/c', '*'));
+    assert(!isMatch('a/x', '*'));
+    assert(!isMatch('a/a/a', '*'));
+    assert(!isMatch('a/a/b', '*'));
+    assert(!isMatch('a/a/a/a', '*'));
+    assert(!isMatch('a/a/a/a/a', '*'));
+    assert(!isMatch('x/y', '*'));
+    assert(!isMatch('z/z', '*'));
+
+    assert(isMatch('a', '*a*'));
+    assert(isMatch('aa', '*a*'));
+    assert(isMatch('aaa', '*a*'));
+    assert(isMatch('aaaa', '*a*'));
+    assert(isMatch('ab', '*a*'));
+    assert(!isMatch('b', '*a*'));
+    assert(!isMatch('bb', '*a*'));
+    assert(!isMatch('c', '*a*'));
+    assert(!isMatch('cc', '*a*'));
+    assert(isMatch('cac', '*a*'));
+    assert(!isMatch('a/a', '*a*'));
+    assert(!isMatch('a/b', '*a*'));
+    assert(!isMatch('a/c', '*a*'));
+    assert(!isMatch('a/x', '*a*'));
+    assert(!isMatch('a/a/a', '*a*'));
+    assert(!isMatch('a/a/b', '*a*'));
+    assert(!isMatch('a/a/a/a', '*a*'));
+    assert(!isMatch('a/a/a/a/a', '*a*'));
+    assert(!isMatch('x/y', '*a*'));
+    assert(!isMatch('z/z', '*a*'));
+
+    assert(!isMatch('a', '*b*'));
+    assert(!isMatch('aa', '*b*'));
+    assert(!isMatch('aaa', '*b*'));
+    assert(!isMatch('aaaa', '*b*'));
+    assert(isMatch('ab', '*b*'));
+    assert(isMatch('b', '*b*'));
+    assert(isMatch('bb', '*b*'));
+    assert(!isMatch('c', '*b*'));
+    assert(!isMatch('cc', '*b*'));
+    assert(!isMatch('cac', '*b*'));
+    assert(!isMatch('a/a', '*b*'));
+    assert(!isMatch('a/b', '*b*'));
+    assert(!isMatch('a/c', '*b*'));
+    assert(!isMatch('a/x', '*b*'));
+    assert(!isMatch('a/a/a', '*b*'));
+    assert(!isMatch('a/a/b', '*b*'));
+    assert(!isMatch('a/a/a/a', '*b*'));
+    assert(!isMatch('a/a/a/a/a', '*b*'));
+    assert(!isMatch('x/y', '*b*'));
+    assert(!isMatch('z/z', '*b*'));
+
+    assert(!isMatch('a', '*c*'));
+    assert(!isMatch('aa', '*c*'));
+    assert(!isMatch('aaa', '*c*'));
+    assert(!isMatch('aaaa', '*c*'));
+    assert(!isMatch('ab', '*c*'));
+    assert(!isMatch('b', '*c*'));
+    assert(!isMatch('bb', '*c*'));
+    assert(isMatch('c', '*c*'));
+    assert(isMatch('cc', '*c*'));
+    assert(isMatch('cac', '*c*'));
+    assert(!isMatch('a/a', '*c*'));
+    assert(!isMatch('a/b', '*c*'));
+    assert(!isMatch('a/c', '*c*'));
+    assert(!isMatch('a/x', '*c*'));
+    assert(!isMatch('a/a/a', '*c*'));
+    assert(!isMatch('a/a/b', '*c*'));
+    assert(!isMatch('a/a/a/a', '*c*'));
+    assert(!isMatch('a/a/a/a/a', '*c*'));
+    assert(!isMatch('x/y', '*c*'));
+    assert(!isMatch('z/z', '*c*'));
+  });
+
+  it('should respect trailing slashes on paterns', () => {
+    assert(!isMatch('a', '*/'));
+    assert(isMatch('a/', '*/'));
+    assert(!isMatch('b', '*/'));
+    assert(isMatch('b/', '*/'));
+    assert(!isMatch('a/a', '*/'));
+    assert(!isMatch('a/a/', '*/'));
+    assert(!isMatch('a/b', '*/'));
+    assert(!isMatch('a/b/', '*/'));
+    assert(!isMatch('a/c', '*/'));
+    assert(!isMatch('a/c/', '*/'));
+    assert(!isMatch('a/x', '*/'));
+    assert(!isMatch('a/x/', '*/'));
+    assert(!isMatch('a/a/a', '*/'));
+    assert(!isMatch('a/a/b', '*/'));
+    assert(!isMatch('a/a/b/', '*/'));
+    assert(!isMatch('a/a/a/', '*/'));
+    assert(!isMatch('a/a/a/a', '*/'));
+    assert(!isMatch('a/a/a/a/', '*/'));
+    assert(!isMatch('a/a/a/a/a', '*/'));
+    assert(!isMatch('a/a/a/a/a/', '*/'));
+    assert(!isMatch('x/y', '*/'));
+    assert(!isMatch('z/z', '*/'));
+    assert(!isMatch('x/y/', '*/'));
+    assert(!isMatch('z/z/', '*/'));
+    assert(!isMatch('a/b/c/.d/e/', '*/'));
+
+    assert(!isMatch('a', '*/*/'));
+    assert(!isMatch('a/', '*/*/'));
+    assert(!isMatch('b', '*/*/'));
+    assert(!isMatch('b/', '*/*/'));
+    assert(!isMatch('a/a', '*/*/'));
+    assert(isMatch('a/a/', '*/*/'));
+    assert(!isMatch('a/b', '*/*/'));
+    assert(isMatch('a/b/', '*/*/'));
+    assert(!isMatch('a/c', '*/*/'));
+    assert(isMatch('a/c/', '*/*/'));
+    assert(!isMatch('a/x', '*/*/'));
+    assert(isMatch('a/x/', '*/*/'));
+    assert(!isMatch('a/a/a', '*/*/'));
+    assert(!isMatch('a/a/b', '*/*/'));
+    assert(!isMatch('a/a/b/', '*/*/'));
+    assert(!isMatch('a/a/a/', '*/*/'));
+    assert(!isMatch('a/a/a/a', '*/*/'));
+    assert(!isMatch('a/a/a/a/', '*/*/'));
+    assert(!isMatch('a/a/a/a/a', '*/*/'));
+    assert(!isMatch('a/a/a/a/a/', '*/*/'));
+    assert(!isMatch('x/y', '*/*/'));
+    assert(!isMatch('z/z', '*/*/'));
+    assert(isMatch('x/y/', '*/*/'));
+    assert(isMatch('z/z/', '*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', '*/*/'));
+
+    assert(!isMatch('a', '*/*/*/'));
+    assert(!isMatch('a/', '*/*/*/'));
+    assert(!isMatch('b', '*/*/*/'));
+    assert(!isMatch('b/', '*/*/*/'));
+    assert(!isMatch('a/a', '*/*/*/'));
+    assert(!isMatch('a/a/', '*/*/*/'));
+    assert(!isMatch('a/b', '*/*/*/'));
+    assert(!isMatch('a/b/', '*/*/*/'));
+    assert(!isMatch('a/c', '*/*/*/'));
+    assert(!isMatch('a/c/', '*/*/*/'));
+    assert(!isMatch('a/x', '*/*/*/'));
+    assert(!isMatch('a/x/', '*/*/*/'));
+    assert(!isMatch('a/a/a', '*/*/*/'));
+    assert(!isMatch('a/a/b', '*/*/*/'));
+    assert(isMatch('a/a/b/', '*/*/*/'));
+    assert(isMatch('a/a/a/', '*/*/*/'));
+    assert(!isMatch('a/a/a/a', '*/*/*/'));
+    assert(!isMatch('a/a/a/a/', '*/*/*/'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*/'));
+    assert(!isMatch('a/a/a/a/a/', '*/*/*/'));
+    assert(!isMatch('x/y', '*/*/*/'));
+    assert(!isMatch('z/z', '*/*/*/'));
+    assert(!isMatch('x/y/', '*/*/*/'));
+    assert(!isMatch('z/z/', '*/*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', '*/*/*/'));
+
+    assert(!isMatch('a', '*/*/*/*/'));
+    assert(!isMatch('a/', '*/*/*/*/'));
+    assert(!isMatch('b', '*/*/*/*/'));
+    assert(!isMatch('b/', '*/*/*/*/'));
+    assert(!isMatch('a/a', '*/*/*/*/'));
+    assert(!isMatch('a/a/', '*/*/*/*/'));
+    assert(!isMatch('a/b', '*/*/*/*/'));
+    assert(!isMatch('a/b/', '*/*/*/*/'));
+    assert(!isMatch('a/c', '*/*/*/*/'));
+    assert(!isMatch('a/c/', '*/*/*/*/'));
+    assert(!isMatch('a/x', '*/*/*/*/'));
+    assert(!isMatch('a/x/', '*/*/*/*/'));
+    assert(!isMatch('a/a/a', '*/*/*/*/'));
+    assert(!isMatch('a/a/b', '*/*/*/*/'));
+    assert(!isMatch('a/a/b/', '*/*/*/*/'));
+    assert(!isMatch('a/a/a/', '*/*/*/*/'));
+    assert(!isMatch('a/a/a/a', '*/*/*/*/'));
+    assert(isMatch('a/a/a/a/', '*/*/*/*/'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*/*/'));
+    assert(!isMatch('a/a/a/a/a/', '*/*/*/*/'));
+    assert(!isMatch('x/y', '*/*/*/*/'));
+    assert(!isMatch('z/z', '*/*/*/*/'));
+    assert(!isMatch('x/y/', '*/*/*/*/'));
+    assert(!isMatch('z/z/', '*/*/*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', '*/*/*/*/'));
+
+    assert(!isMatch('a', '*/*/*/*/*/'));
+    assert(!isMatch('a/', '*/*/*/*/*/'));
+    assert(!isMatch('b', '*/*/*/*/*/'));
+    assert(!isMatch('b/', '*/*/*/*/*/'));
+    assert(!isMatch('a/a', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/', '*/*/*/*/*/'));
+    assert(!isMatch('a/b', '*/*/*/*/*/'));
+    assert(!isMatch('a/b/', '*/*/*/*/*/'));
+    assert(!isMatch('a/c', '*/*/*/*/*/'));
+    assert(!isMatch('a/c/', '*/*/*/*/*/'));
+    assert(!isMatch('a/x', '*/*/*/*/*/'));
+    assert(!isMatch('a/x/', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/a', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/b', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/b/', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/a/', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/a/a', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/a/a/', '*/*/*/*/*/'));
+    assert(!isMatch('a/a/a/a/a', '*/*/*/*/*/'));
+    assert(isMatch('a/a/a/a/a/', '*/*/*/*/*/'));
+    assert(!isMatch('x/y', '*/*/*/*/*/'));
+    assert(!isMatch('z/z', '*/*/*/*/*/'));
+    assert(!isMatch('x/y/', '*/*/*/*/*/'));
+    assert(!isMatch('z/z/', '*/*/*/*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', '*/*/*/*/*/'));
+
+    assert(!isMatch('a', 'a/*/'));
+    assert(!isMatch('a/', 'a/*/'));
+    assert(!isMatch('b', 'a/*/'));
+    assert(!isMatch('b/', 'a/*/'));
+    assert(!isMatch('a/a', 'a/*/'));
+    assert(isMatch('a/a/', 'a/*/'));
+    assert(!isMatch('a/b', 'a/*/'));
+    assert(isMatch('a/b/', 'a/*/'));
+    assert(!isMatch('a/c', 'a/*/'));
+    assert(isMatch('a/c/', 'a/*/'));
+    assert(!isMatch('a/x', 'a/*/'));
+    assert(isMatch('a/x/', 'a/*/'));
+    assert(!isMatch('a/a/a', 'a/*/'));
+    assert(!isMatch('a/a/b', 'a/*/'));
+    assert(!isMatch('a/a/b/', 'a/*/'));
+    assert(!isMatch('a/a/a/', 'a/*/'));
+    assert(!isMatch('a/a/a/a', 'a/*/'));
+    assert(!isMatch('a/a/a/a/', 'a/*/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/'));
+    assert(!isMatch('a/a/a/a/a/', 'a/*/'));
+    assert(!isMatch('x/y', 'a/*/'));
+    assert(!isMatch('z/z', 'a/*/'));
+    assert(!isMatch('x/y/', 'a/*/'));
+    assert(!isMatch('z/z/', 'a/*/'));
+    assert(!isMatch('a/b/c/.d/e/', 'a/*/'));
+
+    assert(!isMatch('a', 'a/*/*/'));
+    assert(!isMatch('a/', 'a/*/*/'));
+    assert(!isMatch('b', 'a/*/*/'));
+    assert(!isMatch('b/', 'a/*/*/'));
+    assert(!isMatch('a/a', 'a/*/*/'));
+    assert(!isMatch('a/a/', 'a/*/*/'));
+    assert(!isMatch('a/b', 'a/*/*/'));
+    assert(!isMatch('a/b/', 'a/*/*/'));
+    assert(!isMatch('a/c', 'a/*/*/'));
+    assert(!isMatch('a/c/', 'a/*/*/'));
+    assert(!isMatch('a/x', 'a/*/*/'));
+    assert(!isMatch('a/x/', 'a/*/*/'));
+    assert(!isMatch('a/a/a', 'a/*/*/'));
+    assert(!isMatch('a/a/b', 'a/*/*/'));
+    assert(isMatch('a/a/b/', 'a/*/*/'));
+    assert(isMatch('a/a/a/', 'a/*/*/'));
+    assert(!isMatch('a/a/a/a', 'a/*/*/'));
+    assert(!isMatch('a/a/a/a/', 'a/*/*/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*/'));
+    assert(!isMatch('a/a/a/a/a/', 'a/*/*/'));
+    assert(!isMatch('x/y', 'a/*/*/'));
+    assert(!isMatch('z/z', 'a/*/*/'));
+    assert(!isMatch('x/y/', 'a/*/*/'));
+    assert(!isMatch('z/z/', 'a/*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', 'a/*/*/'));
+
+    assert(!isMatch('a', 'a/*/*/*/'));
+    assert(!isMatch('a/', 'a/*/*/*/'));
+    assert(!isMatch('b', 'a/*/*/*/'));
+    assert(!isMatch('b/', 'a/*/*/*/'));
+    assert(!isMatch('a/a', 'a/*/*/*/'));
+    assert(!isMatch('a/a/', 'a/*/*/*/'));
+    assert(!isMatch('a/b', 'a/*/*/*/'));
+    assert(!isMatch('a/b/', 'a/*/*/*/'));
+    assert(!isMatch('a/c', 'a/*/*/*/'));
+    assert(!isMatch('a/c/', 'a/*/*/*/'));
+    assert(!isMatch('a/x', 'a/*/*/*/'));
+    assert(!isMatch('a/x/', 'a/*/*/*/'));
+    assert(!isMatch('a/a/a', 'a/*/*/*/'));
+    assert(!isMatch('a/a/b', 'a/*/*/*/'));
+    assert(!isMatch('a/a/b/', 'a/*/*/*/'));
+    assert(!isMatch('a/a/a/', 'a/*/*/*/'));
+    assert(!isMatch('a/a/a/a', 'a/*/*/*/'));
+    assert(isMatch('a/a/a/a/', 'a/*/*/*/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*/*/'));
+    assert(!isMatch('a/a/a/a/a/', 'a/*/*/*/'));
+    assert(!isMatch('x/y', 'a/*/*/*/'));
+    assert(!isMatch('z/z', 'a/*/*/*/'));
+    assert(!isMatch('x/y/', 'a/*/*/*/'));
+    assert(!isMatch('z/z/', 'a/*/*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', 'a/*/*/*/'));
+
+    assert(!isMatch('a', 'a/*/*/*/*/'));
+    assert(!isMatch('a/', 'a/*/*/*/*/'));
+    assert(!isMatch('b', 'a/*/*/*/*/'));
+    assert(!isMatch('b/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/b', 'a/*/*/*/*/'));
+    assert(!isMatch('a/b/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/c', 'a/*/*/*/*/'));
+    assert(!isMatch('a/c/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/x', 'a/*/*/*/*/'));
+    assert(!isMatch('a/x/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/a', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/b', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/b/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/a/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/a/a', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/a/a/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/*/*/*/'));
+    assert(isMatch('a/a/a/a/a/', 'a/*/*/*/*/'));
+    assert(!isMatch('x/y', 'a/*/*/*/*/'));
+    assert(!isMatch('z/z', 'a/*/*/*/*/'));
+    assert(!isMatch('x/y/', 'a/*/*/*/*/'));
+    assert(!isMatch('z/z/', 'a/*/*/*/*/'));
+    assert(!isMatch('a/b/c/.d/e/', 'a/*/*/*/*/'));
+
+    assert(!isMatch('a', 'a/*/a/'));
+    assert(!isMatch('a/', 'a/*/a/'));
+    assert(!isMatch('b', 'a/*/a/'));
+    assert(!isMatch('b/', 'a/*/a/'));
+    assert(!isMatch('a/a', 'a/*/a/'));
+    assert(!isMatch('a/a/', 'a/*/a/'));
+    assert(!isMatch('a/b', 'a/*/a/'));
+    assert(!isMatch('a/b/', 'a/*/a/'));
+    assert(!isMatch('a/c', 'a/*/a/'));
+    assert(!isMatch('a/c/', 'a/*/a/'));
+    assert(!isMatch('a/x', 'a/*/a/'));
+    assert(!isMatch('a/x/', 'a/*/a/'));
+    assert(!isMatch('a/a/a', 'a/*/a/'));
+    assert(!isMatch('a/a/b', 'a/*/a/'));
+    assert(!isMatch('a/a/b/', 'a/*/a/'));
+    assert(isMatch('a/a/a/', 'a/*/a/'));
+    assert(!isMatch('a/a/a/a', 'a/*/a/'));
+    assert(!isMatch('a/a/a/a/', 'a/*/a/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/a/'));
+    assert(!isMatch('a/a/a/a/a/', 'a/*/a/'));
+    assert(!isMatch('x/y', 'a/*/a/'));
+    assert(!isMatch('z/z', 'a/*/a/'));
+    assert(!isMatch('x/y/', 'a/*/a/'));
+    assert(!isMatch('z/z/', 'a/*/a/'));
+    assert(!isMatch('a/b/c/.d/e/', 'a/*/a/'));
+
+    assert(!isMatch('a', 'a/*/b/'));
+    assert(!isMatch('a/', 'a/*/b/'));
+    assert(!isMatch('b', 'a/*/b/'));
+    assert(!isMatch('b/', 'a/*/b/'));
+    assert(!isMatch('a/a', 'a/*/b/'));
+    assert(!isMatch('a/a/', 'a/*/b/'));
+    assert(!isMatch('a/b', 'a/*/b/'));
+    assert(!isMatch('a/b/', 'a/*/b/'));
+    assert(!isMatch('a/c', 'a/*/b/'));
+    assert(!isMatch('a/c/', 'a/*/b/'));
+    assert(!isMatch('a/x', 'a/*/b/'));
+    assert(!isMatch('a/x/', 'a/*/b/'));
+    assert(!isMatch('a/a/a', 'a/*/b/'));
+    assert(!isMatch('a/a/b', 'a/*/b/'));
+    assert(isMatch('a/a/b/', 'a/*/b/'));
+    assert(!isMatch('a/a/a/', 'a/*/b/'));
+    assert(!isMatch('a/a/a/a', 'a/*/b/'));
+    assert(!isMatch('a/a/a/a/', 'a/*/b/'));
+    assert(!isMatch('a/a/a/a/a', 'a/*/b/'));
+    assert(!isMatch('a/a/a/a/a/', 'a/*/b/'));
+    assert(!isMatch('x/y', 'a/*/b/'));
+    assert(!isMatch('z/z', 'a/*/b/'));
+    assert(!isMatch('x/y/', 'a/*/b/'));
+    assert(!isMatch('z/z/', 'a/*/b/'));
+    assert(!isMatch('a/b/c/.d/e/', 'a/*/b/'));
+  });
+
+  it('should match a literal star when escaped', () => {
+    assert(!isMatch('.md', '\\*'));
+    assert(!isMatch('a**a.md', '\\*'));
+    assert(!isMatch('**a.md', '\\*'));
+    assert(!isMatch('**/a.md', '\\*'));
+    assert(!isMatch('**.md', '\\*'));
+    assert(!isMatch('.md', '\\*'));
+    assert(isMatch('*', '\\*'));
+    assert(!isMatch('**', '\\*'));
+    assert(!isMatch('*.md', '\\*'));
+
+    assert(!isMatch('.md', '\\*.md'));
+    assert(!isMatch('a**a.md', '\\*.md'));
+    assert(!isMatch('**a.md', '\\*.md'));
+    assert(!isMatch('**/a.md', '\\*.md'));
+    assert(!isMatch('**.md', '\\*.md'));
+    assert(!isMatch('.md', '\\*.md'));
+    assert(!isMatch('*', '\\*.md'));
+    assert(!isMatch('**', '\\*.md'));
+    assert(isMatch('*.md', '\\*.md'));
+
+    assert(!isMatch('.md', '\\**.md'));
+    assert(!isMatch('a**a.md', '\\**.md'));
+    assert(isMatch('**a.md', '\\**.md'));
+    assert(!isMatch('**/a.md', '\\**.md'));
+    assert(isMatch('**.md', '\\**.md'));
+    assert(!isMatch('.md', '\\**.md'));
+    assert(!isMatch('*', '\\**.md'));
+    assert(!isMatch('**', '\\**.md'));
+    assert(isMatch('*.md', '\\**.md'));
+
+    assert(!isMatch('.md', 'a\\**.md'));
+    assert(isMatch('a**a.md', 'a\\**.md'));
+    assert(!isMatch('**a.md', 'a\\**.md'));
+    assert(!isMatch('**/a.md', 'a\\**.md'));
+    assert(!isMatch('**.md', 'a\\**.md'));
+    assert(!isMatch('.md', 'a\\**.md'));
+    assert(!isMatch('*', 'a\\**.md'));
+    assert(!isMatch('**', 'a\\**.md'));
+    assert(!isMatch('*.md', 'a\\**.md'));
+  });
+
+  it('should match file paths', () => {
+    assert(!isMatch('a/.b', 'a/**/z/*.md'));
+    assert(!isMatch('a/b/c/j/e/z/c.txt', 'a/**/j/**/z/*.md'));
+    assert(!isMatch('a/b/z/.a', 'a/**/z/*.a'));
+    assert(!isMatch('a/b/z/.a', 'a/*/z/*.a'));
+    assert(!isMatch('foo.txt', '*/*.txt'));
+    assert(isMatch('a/.b', 'a/.*'));
+    assert(isMatch('a/b/c/d/e/j/n/p/o/z/c.md', 'a/**/j/**/z/*.md'));
+    assert(isMatch('a/b/c/d/e/z/c.md', 'a/**/z/*.md'));
+    assert(isMatch('a/b/c/xyz.md', 'a/b/c/*.md'));
+    assert(isMatch('a/b/z/.a', 'a/*/z/.a'));
+    assert(isMatch('a/bb.bb/aa/b.b/aa/c/xyz.md', 'a/**/c/*.md'));
+    assert(isMatch('a/bb.bb/aa/bb/aa/c/xyz.md', 'a/**/c/*.md'));
+    assert(isMatch('a/bb.bb/c/xyz.md', 'a/*/c/*.md'));
+    assert(isMatch('a/bb/c/xyz.md', 'a/*/c/*.md'));
+    assert(isMatch('a/bbbb/c/xyz.md', 'a/*/c/*.md'));
+    assert(isMatch('foo.txt', '**/foo.txt'));
+    assert(isMatch('foo/bar.txt', '**/*.txt'));
+    assert(isMatch('foo/bar/baz.txt', '**/*.txt'));
+  });
+
+  it('should match paths with leading `./` when pattern has `./`', () => {
+    const format = str => str.replace(/^\.\//, '');
+    assert(!isMatch('./a/b/c/d/e/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(!isMatch('./a/b/c/j/e/z/c.txt', './a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/d/e/j/n/p/o/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/d/e/z/c.md', './a/**/z/*.md', { format }));
+    assert(isMatch('./a/b/c/j/e/z/c.md', './a/**/j/**/z/*.md', { format }));
+    assert(isMatch('./a/b/z/.a', './a/**/z/.a', { format }));
+  });
+
+  it('should match leading slashes', () => {
+    assert(!isMatch('ef', '/*'));
+    assert(isMatch('/ef', '/*'));
+    assert(isMatch('/foo/bar.txt', '/foo/*'));
+    assert(isMatch('/foo/bar.txt', '/foo/**'));
+    assert(isMatch('/foo/bar.txt', '/foo/**/**/*.txt'));
+    assert(isMatch('/foo/bar.txt', '/foo/**/**/bar.txt'));
+    assert(isMatch('/foo/bar.txt', '/foo/**/*.txt'));
+    assert(isMatch('/foo/bar.txt', '/foo/**/bar.txt'));
+    assert(!isMatch('/foo/bar.txt', '/foo/*/bar.txt'));
+    assert(!isMatch('/foo/bar/baz.txt', '/foo/*'));
+    assert(isMatch('/foo/bar/baz.txt', '/foo/**'));
+    assert(isMatch('/foo/bar/baz.txt', '/foo/**'));
+    assert(isMatch('/foo/bar/baz.txt', '/foo/**/*.txt'));
+    assert(isMatch('/foo/bar/baz.txt', '/foo/**/*/*.txt'));
+    assert(isMatch('/foo/bar/baz.txt', '/foo/**/*/baz.txt'));
+    assert(!isMatch('/foo/bar/baz.txt', '/foo/*.txt'));
+    assert(isMatch('/foo/bar/baz.txt', '/foo/*/*.txt'));
+    assert(!isMatch('/foo/bar/baz.txt', '/foo/*/*/baz.txt'));
+    assert(!isMatch('/foo/bar/baz.txt', '/foo/bar**'));
+    assert(isMatch('/foo/bar/baz/qux.txt', '**/*.txt'));
+    assert(!isMatch('/foo/bar/baz/qux.txt', '**/.txt'));
+    assert(!isMatch('/foo/bar/baz/qux.txt', '*/*.txt'));
+    assert(!isMatch('/foo/bar/baz/qux.txt', '/foo/**.txt'));
+    assert(isMatch('/foo/bar/baz/qux.txt', '/foo/**/*.txt'));
+    assert(!isMatch('/foo/bar/baz/qux.txt', '/foo/*/*.txt'));
+    assert(!isMatch('/foo/bar/baz/qux.txt', '/foo/bar**/*.txt'));
+    assert(!isMatch('/.txt', '*.txt'));
+    assert(!isMatch('/.txt', '/*.txt'));
+    assert(!isMatch('/.txt', '*/*.txt'));
+    assert(!isMatch('/.txt', '**/*.txt'));
+    assert(!isMatch('/.txt', '*.txt', { dot: true }));
+    assert(isMatch('/.txt', '/*.txt', { dot: true }));
+    assert(isMatch('/.txt', '*/*.txt', { dot: true }));
+    assert(isMatch('/.txt', '**/*.txt', { dot: true }));
+  });
+
+  it('should match double slashes', () => {
+    assert(!isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/*'));
+    assert(!isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/*'));
+    assert(isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/**'));
+    assert(!isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/**', { noglobstar: true }));
+    assert(isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/**'));
+    assert(isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/**/app.min.js'));
+    assert(isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/*/*/app.min.js'));
+    assert(isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/*/*/app.min.js', { noglobstar: true }));
+    assert(!isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/*/app.min.js'));
+    assert(!isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/*/app.min.js'));
+    assert(isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/**/app.min.js'));
+    assert(!isMatch('https://foo.com/bar/baz/app.min.js', 'https://foo.com/**/app.min.js', { noglobstar: true }));
+  });
+});
+```
+
+## File: `test/slashes-windows.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch, makeRe } = require('..');
+
+describe('slash handling - windows', () => {
+  it('should match absolute windows paths with regex from makeRe', () => {
+    const regex = makeRe('**/path/**', { windows: true });
+    assert(regex.test('C:\\Users\\user\\Projects\\project\\path\\image.jpg', { windows: true }));
+  });
+
+  it('should match windows path separators with a string literal', () => {
+    assert(!isMatch('a\\a', '(a/b)', { windows: true }));
+    assert(isMatch('a\\b', '(a/b)', { windows: true }));
+    assert(!isMatch('a\\c', '(a/b)', { windows: true }));
+    assert(!isMatch('b\\a', '(a/b)', { windows: true }));
+    assert(!isMatch('b\\b', '(a/b)', { windows: true }));
+    assert(!isMatch('b\\c', '(a/b)', { windows: true }));
+
+    assert(!isMatch('a\\a', 'a/b', { windows: true }));
+    assert(isMatch('a\\b', 'a/b', { windows: true }));
+    assert(!isMatch('a\\c', 'a/b', { windows: true }));
+    assert(!isMatch('b\\a', 'a/b', { windows: true }));
+    assert(!isMatch('b\\b', 'a/b', { windows: true }));
+    assert(!isMatch('b\\c', 'a/b', { windows: true }));
+  });
+
+  it('should not match literal backslashes with literal forward slashes when windows is disabled', () => {
+    assert(!isMatch('a\\a', 'a\\b', { windows: false }));
+    assert(isMatch('a\\b', 'a\\b', { windows: false }));
+    assert(!isMatch('a\\c', 'a\\b', { windows: false }));
+    assert(!isMatch('b\\a', 'a\\b', { windows: false }));
+    assert(!isMatch('b\\b', 'a\\b', { windows: false }));
+    assert(!isMatch('b\\c', 'a\\b', { windows: false }));
+
+    assert(!isMatch('a\\a', 'a/b', { windows: false }));
+    assert(!isMatch('a\\b', 'a/b', { windows: false }));
+    assert(!isMatch('a\\c', 'a/b', { windows: false }));
+    assert(!isMatch('b\\a', 'a/b', { windows: false }));
+    assert(!isMatch('b\\b', 'a/b', { windows: false }));
+    assert(!isMatch('b\\c', 'a/b', { windows: false }));
+  });
+
+  it('should match an array of literal strings', () => {
+    assert(!isMatch('a\\a', '(a/b)', { windows: true }));
+    assert(isMatch('a\\b', '(a/b)', { windows: true }));
+    assert(!isMatch('a\\c', '(a/b)', { windows: true }));
+    assert(!isMatch('b\\a', '(a/b)', { windows: true }));
+    assert(!isMatch('b\\b', '(a/b)', { windows: true }));
+    assert(!isMatch('b\\c', '(a/b)', { windows: true }));
+  });
+
+  it('should not match backslashes with forward slashes when windows is disabled', () => {
+    assert(!isMatch('a\\a', 'a/(a|c)', { windows: false }));
+    assert(!isMatch('a\\b', 'a/(a|c)', { windows: false }));
+    assert(!isMatch('a\\c', 'a/(a|c)', { windows: false }));
+    assert(!isMatch('a\\a', 'a/(a|b|c)', { windows: false }));
+    assert(!isMatch('a\\b', 'a/(a|b|c)', { windows: false }));
+    assert(!isMatch('a\\c', 'a/(a|b|c)', { windows: false }));
+    assert(!isMatch('a\\a', '(a\\b)', { windows: false }));
+    assert(isMatch('a\\b', '(a\\\\b)', { windows: false }));
+    assert(!isMatch('a\\c', '(a\\b)', { windows: false }));
+    assert(!isMatch('b\\a', '(a\\b)', { windows: false }));
+    assert(!isMatch('b\\b', '(a\\b)', { windows: false }));
+    assert(!isMatch('b\\c', '(a\\b)', { windows: false }));
+    assert(!isMatch('a\\a', '(a/b)', { windows: false }));
+    assert(!isMatch('a\\b', '(a/b)', { windows: false }));
+    assert(!isMatch('a\\c', '(a/b)', { windows: false }));
+    assert(!isMatch('b\\a', '(a/b)', { windows: false }));
+    assert(!isMatch('b\\b', '(a/b)', { windows: false }));
+    assert(!isMatch('b\\c', '(a/b)', { windows: false }));
+
+    assert(!isMatch('a\\a', 'a/c', { windows: false }));
+    assert(!isMatch('a\\b', 'a/c', { windows: false }));
+    assert(!isMatch('a\\c', 'a/c', { windows: false }));
+    assert(!isMatch('b\\a', 'a/c', { windows: false }));
+    assert(!isMatch('b\\b', 'a/c', { windows: false }));
+    assert(!isMatch('b\\c', 'a/c', { windows: false }));
+  });
+
+  it('should match backslashes when followed by regex logical "or"', () => {
+    assert(isMatch('a\\a', 'a/(a|c)', { windows: true }));
+    assert(!isMatch('a\\b', 'a/(a|c)', { windows: true }));
+    assert(isMatch('a\\c', 'a/(a|c)', { windows: true }));
+
+    assert(isMatch('a\\a', 'a/(a|b|c)', { windows: true }));
+    assert(isMatch('a\\b', 'a/(a|b|c)', { windows: true }));
+    assert(isMatch('a\\c', 'a/(a|b|c)', { windows: true }));
+  });
+
+  it('should support matching backslashes with regex ranges', () => {
+    assert(!isMatch('a\\a', 'a/[b-c]', { windows: true }));
+    assert(isMatch('a\\b', 'a/[b-c]', { windows: true }));
+    assert(isMatch('a\\c', 'a/[b-c]', { windows: true }));
+    assert(!isMatch('a\\x\\y', 'a/[b-c]', { windows: true }));
+    assert(!isMatch('a\\x', 'a/[b-c]', { windows: true }));
+
+    assert(isMatch('a\\a', 'a/[a-z]', { windows: true }));
+    assert(isMatch('a\\b', 'a/[a-z]', { windows: true }));
+    assert(isMatch('a\\c', 'a/[a-z]', { windows: true }));
+    assert(!isMatch('a\\x\\y', 'a/[a-z]', { windows: true }));
+    assert(isMatch('a\\x\\y', 'a/[a-z]/y', { windows: true }));
+    assert(isMatch('a\\x', 'a/[a-z]', { windows: true }));
+
+    assert(!isMatch('a\\a', 'a/[b-c]', { windows: false }));
+    assert(!isMatch('a\\b', 'a/[b-c]', { windows: false }));
+    assert(!isMatch('a\\c', 'a/[b-c]', { windows: false }));
+    assert(!isMatch('a\\x\\y', 'a/[b-c]', { windows: false }));
+    assert(!isMatch('a\\x', 'a/[b-c]', { windows: false }));
+
+    assert(!isMatch('a\\a', 'a/[a-z]', { windows: false }));
+    assert(!isMatch('a\\b', 'a/[a-z]', { windows: false }));
+    assert(!isMatch('a\\c', 'a/[a-z]', { windows: false }));
+    assert(!isMatch('a\\x\\y', 'a/[a-z]', { windows: false }));
+    assert(!isMatch('a\\x', 'a/[a-z]', { windows: false }));
+  });
+
+  it('should not match slashes with single stars', () => {
+    assert(isMatch('a', '*', { windows: true }));
+    assert(isMatch('b', '*', { windows: true }));
+    assert(!isMatch('a\\a', '*', { windows: true }));
+    assert(!isMatch('a\\b', '*', { windows: true }));
+    assert(!isMatch('a\\c', '*', { windows: true }));
+    assert(!isMatch('a\\x', '*', { windows: true }));
+    assert(!isMatch('a\\a\\a', '*', { windows: true }));
+    assert(!isMatch('a\\a\\b', '*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', '*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*', { windows: true }));
+    assert(!isMatch('x\\y', '*', { windows: true }));
+    assert(!isMatch('z\\z', '*', { windows: true }));
+
+    assert(!isMatch('a', '*/*', { windows: true }));
+    assert(!isMatch('b', '*/*', { windows: true }));
+    assert(isMatch('a\\a', '*/*', { windows: true }));
+    assert(isMatch('a\\b', '*/*', { windows: true }));
+    assert(isMatch('a\\c', '*/*', { windows: true }));
+    assert(isMatch('a\\x', '*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a', '*/*', { windows: true }));
+    assert(!isMatch('a\\a\\b', '*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', '*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*', { windows: true }));
+    assert(isMatch('x\\y', '*/*', { windows: true }));
+    assert(isMatch('z\\z', '*/*', { windows: true }));
+
+    assert(!isMatch('a', '*/*/*', { windows: true }));
+    assert(!isMatch('b', '*/*/*', { windows: true }));
+    assert(!isMatch('a\\a', '*/*/*', { windows: true }));
+    assert(!isMatch('a\\b', '*/*/*', { windows: true }));
+    assert(!isMatch('a\\c', '*/*/*', { windows: true }));
+    assert(!isMatch('a\\x', '*/*/*', { windows: true }));
+    assert(isMatch('a\\a\\a', '*/*/*', { windows: true }));
+    assert(isMatch('a\\a\\b', '*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', '*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*/*', { windows: true }));
+    assert(!isMatch('x\\y', '*/*/*', { windows: true }));
+    assert(!isMatch('z\\z', '*/*/*', { windows: true }));
+
+    assert(!isMatch('a', '*/*/*/*', { windows: true }));
+    assert(!isMatch('b', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\b', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\c', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\x', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\b', '*/*/*/*', { windows: true }));
+    assert(isMatch('a\\a\\a\\a', '*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*/*/*', { windows: true }));
+    assert(!isMatch('x\\y', '*/*/*/*', { windows: true }));
+    assert(!isMatch('z\\z', '*/*/*/*', { windows: true }));
+
+    assert(!isMatch('a', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('b', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\b', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\c', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\x', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\b', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', '*/*/*/*/*', { windows: true }));
+    assert(isMatch('a\\a\\a\\a\\a', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('x\\y', '*/*/*/*/*', { windows: true }));
+    assert(!isMatch('z\\z', '*/*/*/*/*', { windows: true }));
+
+    assert(!isMatch('a', 'a/*', { windows: true }));
+    assert(!isMatch('b', 'a/*', { windows: true }));
+    assert(isMatch('a\\a', 'a/*', { windows: true }));
+    assert(isMatch('a\\b', 'a/*', { windows: true }));
+    assert(isMatch('a\\c', 'a/*', { windows: true }));
+    assert(isMatch('a\\x', 'a/*', { windows: true }));
+    assert(!isMatch('a\\a\\a', 'a/*', { windows: true }));
+    assert(!isMatch('a\\a\\b', 'a/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*', { windows: true }));
+    assert(!isMatch('x\\y', 'a/*', { windows: true }));
+    assert(!isMatch('z\\z', 'a/*', { windows: true }));
+
+    assert(!isMatch('a', 'a/*/*', { windows: true }));
+    assert(!isMatch('b', 'a/*/*', { windows: true }));
+    assert(!isMatch('a\\a', 'a/*/*', { windows: true }));
+    assert(!isMatch('a\\b', 'a/*/*', { windows: true }));
+    assert(!isMatch('a\\c', 'a/*/*', { windows: true }));
+    assert(!isMatch('a\\x', 'a/*/*', { windows: true }));
+    assert(isMatch('a\\a\\a', 'a/*/*', { windows: true }));
+    assert(isMatch('a\\a\\b', 'a/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/*', { windows: true }));
+    assert(!isMatch('x\\y', 'a/*/*', { windows: true }));
+    assert(!isMatch('z\\z', 'a/*/*', { windows: true }));
+
+    assert(!isMatch('a', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('b', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\b', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\c', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\x', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\b', 'a/*/*/*', { windows: true }));
+    assert(isMatch('a\\a\\a\\a', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('x\\y', 'a/*/*/*', { windows: true }));
+    assert(!isMatch('z\\z', 'a/*/*/*', { windows: true }));
+
+    assert(!isMatch('a', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('b', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\b', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\c', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\x', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\b', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/*/*/*', { windows: true }));
+    assert(isMatch('a\\a\\a\\a\\a', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('x\\y', 'a/*/*/*/*', { windows: true }));
+    assert(!isMatch('z\\z', 'a/*/*/*/*', { windows: true }));
+
+    assert(!isMatch('a', 'a/*/a', { windows: true }));
+    assert(!isMatch('b', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\a', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\b', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\c', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\x', 'a/*/a', { windows: true }));
+    assert(isMatch('a\\a\\a', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\a\\b', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/a', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/a', { windows: true }));
+    assert(!isMatch('x\\y', 'a/*/a', { windows: true }));
+    assert(!isMatch('z\\z', 'a/*/a', { windows: true }));
+
+    assert(!isMatch('a', 'a/*/b', { windows: true }));
+    assert(!isMatch('b', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\a', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\b', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\c', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\x', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\a\\a', 'a/*/b', { windows: true }));
+    assert(isMatch('a\\a\\b', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/b', { windows: true }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/b', { windows: true }));
+    assert(!isMatch('x\\y', 'a/*/b', { windows: true }));
+    assert(!isMatch('z\\z', 'a/*/b', { windows: true }));
+
+    assert(!isMatch('a', '*/*', { windows: false }));
+    assert(!isMatch('b', '*/*', { windows: false }));
+    assert(!isMatch('a\\a', '*/*', { windows: false }));
+    assert(!isMatch('a\\b', '*/*', { windows: false }));
+    assert(!isMatch('a\\c', '*/*', { windows: false }));
+    assert(!isMatch('a\\x', '*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', '*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', '*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', '*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*', { windows: false }));
+    assert(!isMatch('x\\y', '*/*', { windows: false }));
+    assert(!isMatch('z\\z', '*/*', { windows: false }));
+
+    assert(!isMatch('a', '*/*/*', { windows: false }));
+    assert(!isMatch('b', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\a', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\b', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\c', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\x', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', '*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*/*', { windows: false }));
+    assert(!isMatch('x\\y', '*/*/*', { windows: false }));
+    assert(!isMatch('z\\z', '*/*/*', { windows: false }));
+
+    assert(!isMatch('a', '*/*/*/*', { windows: false }));
+    assert(!isMatch('b', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\b', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\c', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\x', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', '*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*/*/*', { windows: false }));
+    assert(!isMatch('x\\y', '*/*/*/*', { windows: false }));
+    assert(!isMatch('z\\z', '*/*/*/*', { windows: false }));
+
+    assert(!isMatch('a', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('b', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\b', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\c', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\x', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('x\\y', '*/*/*/*/*', { windows: false }));
+    assert(!isMatch('z\\z', '*/*/*/*/*', { windows: false }));
+
+    assert(!isMatch('a', 'a/*', { windows: false }));
+    assert(!isMatch('b', 'a/*', { windows: false }));
+    assert(!isMatch('a\\a', 'a/*', { windows: false }));
+    assert(!isMatch('a\\b', 'a/*', { windows: false }));
+    assert(!isMatch('a\\c', 'a/*', { windows: false }));
+    assert(!isMatch('a\\x', 'a/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', 'a/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', 'a/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*', { windows: false }));
+    assert(!isMatch('x\\y', 'a/*', { windows: false }));
+    assert(!isMatch('z\\z', 'a/*', { windows: false }));
+
+    assert(!isMatch('a', 'a/*/*', { windows: false }));
+    assert(!isMatch('b', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\a', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\b', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\c', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\x', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/*', { windows: false }));
+    assert(!isMatch('x\\y', 'a/*/*', { windows: false }));
+    assert(!isMatch('z\\z', 'a/*/*', { windows: false }));
+
+    assert(!isMatch('a', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('b', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\b', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\c', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\x', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('x\\y', 'a/*/*/*', { windows: false }));
+    assert(!isMatch('z\\z', 'a/*/*/*', { windows: false }));
+
+    assert(!isMatch('a', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('b', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\b', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\c', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\x', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\b', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('x\\y', 'a/*/*/*/*', { windows: false }));
+    assert(!isMatch('z\\z', 'a/*/*/*/*', { windows: false }));
+
+    assert(!isMatch('a', 'a/*/a', { windows: false }));
+    assert(!isMatch('b', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\a', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\b', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\c', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\x', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\a\\a', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\a\\b', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/a', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/a', { windows: false }));
+    assert(!isMatch('x\\y', 'a/*/a', { windows: false }));
+    assert(!isMatch('z\\z', 'a/*/a', { windows: false }));
+
+    assert(!isMatch('a', 'a/*/b', { windows: false }));
+    assert(!isMatch('b', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\a', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\b', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\c', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\x', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\a\\a', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\a\\b', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a', 'a/*/b', { windows: false }));
+    assert(!isMatch('a\\a\\a\\a\\a', 'a/*/b', { windows: false }));
+    assert(!isMatch('x\\y', 'a/*/b', { windows: false }));
+    assert(!isMatch('z\\z', 'a/*/b', { windows: false }));
+  });
+
+  it('should support globstars (**)', () => {
+    assert(isMatch('a\\a', 'a/**', { windows: true }));
+    assert(isMatch('a\\b', 'a/**', { windows: true }));
+    assert(isMatch('a\\c', 'a/**', { windows: true }));
+    assert(isMatch('a\\x', 'a/**', { windows: true }));
+    assert(isMatch('a\\x\\y', 'a/**', { windows: true }));
+    assert(isMatch('a\\x\\y\\z', 'a/**', { windows: true }));
+
+    assert(isMatch('a\\a', 'a/**/*', { windows: true }));
+    assert(isMatch('a\\b', 'a/**/*', { windows: true }));
+    assert(isMatch('a\\c', 'a/**/*', { windows: true }));
+    assert(isMatch('a\\x', 'a/**/*', { windows: true }));
+    assert(isMatch('a\\x\\y', 'a/**/*', { windows: true }));
+    assert(isMatch('a\\x\\y\\z', 'a/**/*', { windows: true }));
+
+    assert(isMatch('a\\a', 'a/**/**/*', { windows: true }));
+    assert(isMatch('a\\b', 'a/**/**/*', { windows: true }));
+    assert(isMatch('a\\c', 'a/**/**/*', { windows: true }));
+    assert(isMatch('a\\x', 'a/**/**/*', { windows: true }));
+    assert(isMatch('a\\x\\y', 'a/**/**/*', { windows: true }));
+    assert(isMatch('a\\x\\y\\z', 'a/**/**/*', { windows: true }));
+  });
+
+  it('should not match backslashes with globstars when disabled', () => {
+    assert(!isMatch('a\\a', 'a/**', { windows: false }));
+    assert(!isMatch('a\\b', 'a/**', { windows: false }));
+    assert(!isMatch('a\\c', 'a/**', { windows: false }));
+    assert(!isMatch('a\\x', 'a/**', { windows: false }));
+    assert(!isMatch('a\\x\\y', 'a/**', { windows: false }));
+    assert(!isMatch('a\\x\\y\\z', 'a/**', { windows: false }));
+
+    assert(!isMatch('a\\a', 'a/**/*', { windows: false }));
+    assert(!isMatch('a\\b', 'a/**/*', { windows: false }));
+    assert(!isMatch('a\\c', 'a/**/*', { windows: false }));
+    assert(!isMatch('a\\x', 'a/**/*', { windows: false }));
+    assert(!isMatch('a\\x\\y', 'a/**/*', { windows: false }));
+    assert(!isMatch('a\\x\\y\\z', 'a/**/*', { windows: false }));
+
+    assert(!isMatch('a\\a', 'a/**/**/*', { windows: false }));
+    assert(!isMatch('a\\b', 'a/**/**/*', { windows: false }));
+    assert(!isMatch('a\\c', 'a/**/**/*', { windows: false }));
+    assert(!isMatch('a\\x', 'a/**/**/*', { windows: false }));
+    assert(!isMatch('a\\x\\y', 'a/**/**/*', { windows: false }));
+    assert(!isMatch('a\\x\\y\\z', 'a/**/**/*', { windows: false }));
+  });
+
+  it('should work with file extensions', () => {
+    assert(isMatch('a.txt', 'a*.txt', { windows: true }));
+    assert(!isMatch('a\\b.txt', 'a*.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y.txt', 'a*.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y\\z', 'a*.txt', { windows: true }));
+
+    assert(isMatch('a.txt', 'a.txt', { windows: true }));
+    assert(!isMatch('a\\b.txt', 'a.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y.txt', 'a.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y\\z', 'a.txt', { windows: true }));
+
+    assert(!isMatch('a.txt', 'a/**/*.txt', { windows: true }));
+    assert(isMatch('a\\b.txt', 'a/**/*.txt', { windows: true }));
+    assert(isMatch('a\\x\\y.txt', 'a/**/*.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y\\z', 'a/**/*.txt', { windows: true }));
+
+    assert(!isMatch('a.txt', 'a/**/*.txt', { windows: false }));
+    assert(!isMatch('a\\b.txt', 'a/**/*.txt', { windows: false }));
+    assert(!isMatch('a\\x\\y.txt', 'a/**/*.txt', { windows: false }));
+    assert(!isMatch('a\\x\\y\\z', 'a/**/*.txt', { windows: false }));
+
+    assert(!isMatch('a.txt', 'a/*.txt', { windows: true }));
+    assert(isMatch('a\\b.txt', 'a/*.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y.txt', 'a/*.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y\\z', 'a/*.txt', { windows: true }));
+
+    assert(!isMatch('a.txt', 'a/*.txt', { windows: false }));
+    assert(!isMatch('a\\b.txt', 'a/*.txt', { windows: false }));
+    assert(!isMatch('a\\x\\y.txt', 'a/*.txt', { windows: false }));
+    assert(!isMatch('a\\x\\y\\z', 'a/*.txt', { windows: false }));
+
+    assert(!isMatch('a.txt', 'a/*/*.txt', { windows: true }));
+    assert(!isMatch('a\\b.txt', 'a/*/*.txt', { windows: true }));
+    assert(isMatch('a\\x\\y.txt', 'a/*/*.txt', { windows: true }));
+    assert(!isMatch('a\\x\\y\\z', 'a/*/*.txt', { windows: true }));
+
+    assert(!isMatch('a.txt', 'a/*/*.txt', { windows: false }));
+    assert(!isMatch('a\\b.txt', 'a/*/*.txt', { windows: false }));
+    assert(!isMatch('a\\x\\y.txt', 'a/*/*.txt', { windows: false }));
+    assert(!isMatch('a\\x\\y\\z', 'a/*/*.txt', { windows: false }));
+  });
+
+  it('should support negation patterns', () => {
+    assert(isMatch('a', '!a/b', { windows: true }));
+    assert(isMatch('a\\a', '!a/b', { windows: true }));
+    assert(!isMatch('a\\b', '!a/b', { windows: true }));
+    assert(isMatch('a\\c', '!a/b', { windows: true }));
+    assert(isMatch('b\\a', '!a/b', { windows: true }));
+    assert(isMatch('b\\b', '!a/b', { windows: true }));
+    assert(isMatch('b\\c', '!a/b', { windows: true }));
+
+    assert(isMatch('a', '!*/c', { windows: true }));
+    assert(isMatch('a\\a', '!*/c', { windows: true }));
+    assert(isMatch('a\\b', '!*/c', { windows: true }));
+    assert(!isMatch('a\\c', '!*/c', { windows: true }));
+    assert(isMatch('b\\a', '!*/c', { windows: true }));
+    assert(isMatch('b\\b', '!*/c', { windows: true }));
+    assert(!isMatch('b\\c', '!*/c', { windows: true }));
+
+    assert(isMatch('a', '!a/b', { windows: true }));
+    assert(isMatch('a\\a', '!a/b', { windows: true }));
+    assert(!isMatch('a\\b', '!a/b', { windows: true }));
+    assert(isMatch('a\\c', '!a/b', { windows: true }));
+    assert(isMatch('b\\a', '!a/b', { windows: true }));
+    assert(isMatch('b\\b', '!a/b', { windows: true }));
+    assert(isMatch('b\\c', '!a/b', { windows: true }));
+
+    assert(isMatch('a', '!*/c', { windows: true }));
+    assert(isMatch('a\\a', '!*/c', { windows: true }));
+    assert(isMatch('a\\b', '!*/c', { windows: true }));
+    assert(!isMatch('a\\c', '!*/c', { windows: true }));
+    assert(isMatch('b\\a', '!*/c', { windows: true }));
+    assert(isMatch('b\\b', '!*/c', { windows: true }));
+    assert(!isMatch('b\\c', '!*/c', { windows: true }));
+
+    assert(isMatch('a', '!a/(b)', { windows: true }));
+    assert(isMatch('a\\a', '!a/(b)', { windows: true }));
+    assert(!isMatch('a\\b', '!a/(b)', { windows: true }));
+    assert(isMatch('a\\c', '!a/(b)', { windows: true }));
+    assert(isMatch('b\\a', '!a/(b)', { windows: true }));
+    assert(isMatch('b\\b', '!a/(b)', { windows: true }));
+    assert(isMatch('b\\c', '!a/(b)', { windows: true }));
+
+    assert(isMatch('a', '!(a/b)', { windows: true }));
+    assert(isMatch('a\\a', '!(a/b)', { windows: true }));
+    assert(!isMatch('a\\b', '!(a/b)', { windows: true }));
+    assert(isMatch('a\\c', '!(a/b)', { windows: true }));
+    assert(isMatch('b\\a', '!(a/b)', { windows: true }));
+    assert(isMatch('b\\b', '!(a/b)', { windows: true }));
+    assert(isMatch('b\\c', '!(a/b)', { windows: true }));
+  });
+});
+```
+
+## File: `test/special-characters.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch, makeRe } = require('..');
+
+describe('special characters', () => {
+  describe('numbers', () => {
+    it('should match numbers in the input string', () => {
+      assert(!isMatch('1', '*/*'));
+      assert(isMatch('1/1', '*/*'));
+      assert(isMatch('1/2', '*/*'));
+      assert(!isMatch('1/1/1', '*/*'));
+      assert(!isMatch('1/1/2', '*/*'));
+
+      assert(!isMatch('1', '*/*/1'));
+      assert(!isMatch('1/1', '*/*/1'));
+      assert(!isMatch('1/2', '*/*/1'));
+      assert(isMatch('1/1/1', '*/*/1'));
+      assert(!isMatch('1/1/2', '*/*/1'));
+
+      assert(!isMatch('1', '*/*/2'));
+      assert(!isMatch('1/1', '*/*/2'));
+      assert(!isMatch('1/2', '*/*/2'));
+      assert(!isMatch('1/1/1', '*/*/2'));
+      assert(isMatch('1/1/2', '*/*/2'));
+    });
+  });
+
+  describe('qmarks', () => {
+    it('should match literal ? in the input string', () => {
+      assert(isMatch('?', '*'));
+      assert(isMatch('/?', '/*'));
+      assert(isMatch('?/?', '*/*'));
+      assert(isMatch('?/?/', '*/*/'));
+      assert(isMatch('/?', '/?'));
+      assert(isMatch('?/?', '?/?'));
+      assert(isMatch('foo?/bar?', '*/*'));
+    });
+
+    it('should not match slashes with qmarks', () => {
+      assert(!isMatch('aaa/bbb', 'aaa?bbb'));
+    });
+
+    it('should match literal ? with qmarks', () => {
+      assert(!isMatch('?', '??'));
+      assert(!isMatch('?', '???'));
+      assert(!isMatch('??', '?'));
+      assert(!isMatch('??', '???'));
+      assert(!isMatch('???', '?'));
+      assert(!isMatch('???', '??'));
+      assert(!isMatch('ac?', 'ab?'));
+      assert(isMatch('?', '?*'));
+      assert(isMatch('??', '?*'));
+      assert(isMatch('???', '?*'));
+      assert(isMatch('????', '?*'));
+      assert(isMatch('?', '?'));
+      assert(isMatch('??', '??'));
+      assert(isMatch('???', '???'));
+      assert(isMatch('ab?', 'ab?'));
+    });
+
+    it('should match other non-slash characters with qmarks', () => {
+      assert(!isMatch('/a/', '?'));
+      assert(!isMatch('/a/', '??'));
+      assert(!isMatch('/a/', '???'));
+      assert(!isMatch('/a/b/', '??'));
+      assert(!isMatch('aaa/bbb', 'aaa?bbb'));
+      assert(!isMatch('aaa//bbb', 'aaa?bbb'));
+      assert(!isMatch('aaa\\\\bbb', 'aaa?bbb'));
+      assert(isMatch('acb/', 'a?b/'));
+      assert(isMatch('acdb/', 'a??b/'));
+      assert(isMatch('/acb', '/a?b'));
+    });
+
+    it('should match non-slash characters when ? is escaped', () => {
+      assert(!isMatch('acb/', 'a\\?b/'));
+      assert(!isMatch('acdb/', 'a\\?\\?b/'));
+      assert(!isMatch('/acb', '/a\\?b'));
+    });
+
+    it('should match one character per question mark', () => {
+      assert(isMatch('a', '?'));
+      assert(!isMatch('aa', '?'));
+      assert(!isMatch('ab', '?'));
+      assert(!isMatch('aaa', '?'));
+      assert(!isMatch('abcdefg', '?'));
+
+      assert(!isMatch('a', '??'));
+      assert(isMatch('aa', '??'));
+      assert(isMatch('ab', '??'));
+      assert(!isMatch('aaa', '??'));
+      assert(!isMatch('abcdefg', '??'));
+
+      assert(!isMatch('a', '???'));
+      assert(!isMatch('aa', '???'));
+      assert(!isMatch('ab', '???'));
+      assert(isMatch('aaa', '???'));
+      assert(!isMatch('abcdefg', '???'));
+
+      assert(!isMatch('aaa', 'a?c'));
+      assert(isMatch('aac', 'a?c'));
+      assert(isMatch('abc', 'a?c'));
+      assert(!isMatch('a', 'ab?'));
+      assert(!isMatch('aa', 'ab?'));
+      assert(!isMatch('ab', 'ab?'));
+      assert(!isMatch('ac', 'ab?'));
+      assert(!isMatch('abcd', 'ab?'));
+      assert(!isMatch('abbb', 'ab?'));
+      assert(isMatch('acb', 'a?b'));
+
+      assert(!isMatch('a/bb/c/dd/e.md', 'a/?/c/?/e.md'));
+      assert(isMatch('a/bb/c/dd/e.md', 'a/??/c/??/e.md'));
+      assert(!isMatch('a/bbb/c.md', 'a/??/c.md'));
+      assert(isMatch('a/b/c.md', 'a/?/c.md'));
+      assert(isMatch('a/b/c/d/e.md', 'a/?/c/?/e.md'));
+      assert(!isMatch('a/b/c/d/e.md', 'a/?/c/???/e.md'));
+      assert(isMatch('a/b/c/zzz/e.md', 'a/?/c/???/e.md'));
+      assert(!isMatch('a/bb/c.md', 'a/?/c.md'));
+      assert(isMatch('a/bb/c.md', 'a/??/c.md'));
+      assert(isMatch('a/bbb/c.md', 'a/???/c.md'));
+      assert(isMatch('a/bbbb/c.md', 'a/????/c.md'));
+    });
+
+    it('should enforce one character per qmark even when preceded by stars', () => {
+      assert(!isMatch('a', '*??'));
+      assert(!isMatch('aa', '*???'));
+      assert(isMatch('aaa', '*???'));
+      assert(!isMatch('a', '*****??'));
+      assert(!isMatch('aa', '*****???'));
+      assert(isMatch('aaa', '*****???'));
+    });
+
+    it('should support qmarks and stars', () => {
+      assert(!isMatch('aaa', 'a*?c'));
+      assert(isMatch('aac', 'a*?c'));
+      assert(isMatch('abc', 'a*?c'));
+
+      assert(isMatch('abc', 'a**?c'));
+      assert(!isMatch('abb', 'a**?c'));
+      assert(isMatch('acc', 'a**?c'));
+      assert(isMatch('abc', 'a*****?c'));
+
+      assert(isMatch('a', '*****?'));
+      assert(isMatch('aa', '*****?'));
+      assert(isMatch('abc', '*****?'));
+      assert(isMatch('zzz', '*****?'));
+      assert(isMatch('bbb', '*****?'));
+      assert(isMatch('aaaa', '*****?'));
+
+      assert(!isMatch('a', '*****??'));
+      assert(isMatch('aa', '*****??'));
+      assert(isMatch('abc', '*****??'));
+      assert(isMatch('zzz', '*****??'));
+      assert(isMatch('bbb', '*****??'));
+      assert(isMatch('aaaa', '*****??'));
+
+      assert(!isMatch('a', '?*****??'));
+      assert(!isMatch('aa', '?*****??'));
+      assert(isMatch('abc', '?*****??'));
+      assert(isMatch('zzz', '?*****??'));
+      assert(isMatch('bbb', '?*****??'));
+      assert(isMatch('aaaa', '?*****??'));
+
+      assert(isMatch('abc', '?*****?c'));
+      assert(!isMatch('abb', '?*****?c'));
+      assert(!isMatch('zzz', '?*****?c'));
+
+      assert(isMatch('abc', '?***?****c'));
+      assert(!isMatch('bbb', '?***?****c'));
+      assert(!isMatch('zzz', '?***?****c'));
+
+      assert(isMatch('abc', '?***?****?'));
+      assert(isMatch('bbb', '?***?****?'));
+      assert(isMatch('zzz', '?***?****?'));
+
+      assert(isMatch('abc', '?***?****'));
+      assert(isMatch('abc', '*******c'));
+      assert(isMatch('abc', '*******?'));
+      assert(isMatch('abcdecdhjk', 'a*cd**?**??k'));
+      assert(isMatch('abcdecdhjk', 'a**?**cd**?**??k'));
+      assert(isMatch('abcdecdhjk', 'a**?**cd**?**??k***'));
+      assert(isMatch('abcdecdhjk', 'a**?**cd**?**??***k'));
+      assert(isMatch('abcdecdhjk', 'a**?**cd**?**??***k**'));
+      assert(isMatch('abcdecdhjk', 'a****c**?**??*****'));
+    });
+
+    it('should support qmarks, stars and slashes', () => {
+      assert(!isMatch('a/b/c/d/e.md', 'a/?/c/?/*/e.md'));
+      assert(isMatch('a/b/c/d/e/e.md', 'a/?/c/?/*/e.md'));
+      assert(isMatch('a/b/c/d/efghijk/e.md', 'a/?/c/?/*/e.md'));
+      assert(isMatch('a/b/c/d/efghijk/e.md', 'a/?/**/e.md'));
+      assert(!isMatch('a/bb/e.md', 'a/?/e.md'));
+      assert(isMatch('a/bb/e.md', 'a/??/e.md'));
+      assert(!isMatch('a/bb/e.md', 'a/?/**/e.md'));
+      assert(isMatch('a/b/ccc/e.md', 'a/?/**/e.md'));
+      assert(isMatch('a/b/c/d/efghijk/e.md', 'a/*/?/**/e.md'));
+      assert(isMatch('a/b/c/d/efgh.ijk/e.md', 'a/*/?/**/e.md'));
+      assert(isMatch('a/b.bb/c/d/efgh.ijk/e.md', 'a/*/?/**/e.md'));
+      assert(isMatch('a/bbb/c/d/efgh.ijk/e.md', 'a/*/?/**/e.md'));
+    });
+
+    it('should match non-leading dots', () => {
+      assert(isMatch('aaa.bbb', 'aaa?bbb'));
+    });
+
+    it('should not match leading dots', () => {
+      assert(!isMatch('.aaa/bbb', '?aaa/bbb'));
+      assert(!isMatch('aaa/.bbb', 'aaa/?bbb'));
+    });
+
+    it('should match characters preceding a dot', () => {
+      assert(isMatch('a/bbb/abcd.md', 'a/*/ab??.md'));
+      assert(isMatch('a/bbb/abcd.md', 'a/bbb/ab??.md'));
+      assert(isMatch('a/bbb/abcd.md', 'a/bbb/ab???md'));
+    });
+  });
+
+  describe('parentheses ()', () => {
+    it('should match literal parentheses in the input string', () => {
+      assert(!isMatch('my/folder (Work, Accts)', '/*'));
+      assert(isMatch('my/folder (Work, Accts)', '*/*'));
+      assert(isMatch('my/folder (Work, Accts)', '*/*,*'));
+      assert(isMatch('my/folder (Work, Accts)', '*/*(W*, *)*'));
+      assert(isMatch('my/folder/(Work, Accts)', '**/*(W*, *)*'));
+      assert(!isMatch('my/folder/(Work, Accts)', '*/*(W*, *)*'));
+      assert(isMatch('foo(bar)baz', 'foo*baz'));
+    });
+
+    it('should match literal parens with brackets', async () => {
+      assert(isMatch('foo(bar)baz', 'foo[bar()]+baz'));
+    });
+
+    it('should throw an error on imbalanced, unescaped parens', () => {
+      const opts = { strictBrackets: true };
+      assert.throws(() => makeRe('*)', opts), /Missing opening: "\("/);
+      assert.throws(() => makeRe('*(', opts), /Missing closing: "\)"/);
+    });
+
+    it('should throw an error on imbalanced, unescaped brackets', () => {
+      const opts = { strictBrackets: true };
+      assert.throws(() => makeRe('*]', opts), /Missing opening: "\["/);
+      assert.throws(() => makeRe('*[', opts), /Missing closing: "\]"/);
+    });
+  });
+
+  describe('path characters', () => {
+    it('should match windows drives with globstars', () => {
+      assert(isMatch('bar/', '**'));
+      assert(isMatch('A://', '**'));
+      assert(isMatch('B:foo/a/b/c/d', '**'));
+      assert(isMatch('C:/Users/', '**'));
+      assert(isMatch('c:\\', '**'));
+      assert(isMatch('C:\\Users\\', '**'));
+      assert(isMatch('C:cwd/another', '**'));
+      assert(isMatch('C:cwd\\another', '**'));
+    });
+
+    it('should not match multiple windows directories with a single star', () => {
+      assert(isMatch('c:\\', '*{,/}', { windows: true }));
+      assert(!isMatch('C:\\Users\\', '*', { windows: true }));
+      assert(!isMatch('C:cwd\\another', '*', { windows: true }));
+    });
+
+    it('should match mixed slashes on windows', () => {
+      assert(isMatch('//C://user\\docs\\Letter.txt', '**', { windows: true }));
+      assert(isMatch('//C:\\\\user/docs/Letter.txt', '**', { windows: true }));
+      assert(isMatch(':\\', '*{,/}', { windows: true }));
+      assert(isMatch(':\\', ':*{,/}', { windows: true }));
+      assert(isMatch('\\\\foo/bar', '**', { windows: true }));
+      assert(isMatch('\\\\foo/bar', '//*/*', { windows: true }));
+      assert(isMatch('\\\\unc\\admin$', '**', { windows: true }));
+      assert(isMatch('\\\\unc\\admin$', '//*/*$', { windows: true }));
+      assert(isMatch('\\\\unc\\admin$\\system32', '//*/*$/*32', { windows: true }));
+      assert(isMatch('\\\\unc\\share\\foo', '//u*/s*/f*', { windows: true }));
+      assert(isMatch('foo\\bar\\baz', 'f*/*/*', { windows: true }));
+    });
+
+    it('should match mixed slashes when options.windows is true', () => {
+      assert(isMatch('//C://user\\docs\\Letter.txt', '**', { windows: true }));
+      assert(isMatch('//C:\\\\user/docs/Letter.txt', '**', { windows: true }));
+      assert(isMatch(':\\', '*{,/}', { windows: true }));
+      assert(isMatch(':\\', ':*{,/}', { windows: true }));
+      assert(isMatch('\\\\foo/bar', '**', { windows: true }));
+      assert(isMatch('\\\\foo/bar', '//*/*', { windows: true }));
+      assert(isMatch('\\\\unc\\admin$', '//**', { windows: true }));
+      assert(isMatch('\\\\unc\\admin$', '//*/*$', { windows: true }));
+      assert(isMatch('\\\\unc\\admin$\\system32', '//*/*$/*32', { windows: true }));
+      assert(isMatch('\\\\unc\\share\\foo', '//u*/s*/f*', { windows: true }));
+      assert(isMatch('\\\\\\\\\\\\unc\\share\\foo', '/\\{1,\\}u*/s*/f*', { windows: true, unescape: true }));
+      assert(isMatch('foo\\bar\\baz', 'f*/*/*', { windows: true }));
+      assert(isMatch('//*:/**', '**'));
+      assert(!isMatch('//server/file', '//*'));
+      assert(isMatch('//server/file', '/**'));
+      assert(isMatch('//server/file', '//**'));
+      assert(isMatch('//server/file', '**'));
+      assert(isMatch('//UNC//Server01//user//docs//Letter.txt', '**'));
+      assert(isMatch('/foo', '**'));
+      assert(isMatch('/foo/a/b/c/d', '**'));
+      assert(isMatch('/foo/bar', '**'));
+      assert(isMatch('/home/foo', '**'));
+      assert(isMatch('/home/foo/..', '**/..'));
+      assert(isMatch('/user/docs/Letter.txt', '**'));
+      assert(isMatch('directory\\directory', '**'));
+      assert(isMatch('a/b/c.js', '**'));
+      assert(isMatch('directory/directory', '**'));
+      assert(isMatch('foo/bar', '**'));
+    });
+
+    it('should match any character zero or more times, except for /', () => {
+      assert(!isMatch('foo', '*a*'));
+      assert(!isMatch('foo', '*r'));
+      assert(!isMatch('foo', 'b*'));
+      assert(!isMatch('foo/bar', '*'));
+      assert(isMatch('foo/bar', '*/*'));
+      assert(!isMatch('foo/bar/baz', '*/*'));
+      assert(isMatch('bar', '*a*'));
+      assert(isMatch('bar', '*r'));
+      assert(isMatch('bar', 'b*'));
+      assert(isMatch('foo/bar/baz', '*/*/*'));
+    });
+
+    it('should match dashes surrounded by spaces', () => {
+      assert(isMatch('my/folder - 1', '*/*'));
+      assert(isMatch('my/folder - copy (1)', '*/*'));
+      assert(isMatch('my/folder - copy [1]', '*/*'));
+      assert(isMatch('my/folder - foo + bar - copy [1]', '*/*'));
+      assert(!isMatch('my/folder - foo + bar - copy [1]', '*'));
+
+      assert(isMatch('my/folder - 1', '*/*-*'));
+      assert(isMatch('my/folder - copy (1)', '*/*-*'));
+      assert(isMatch('my/folder - copy [1]', '*/*-*'));
+      assert(isMatch('my/folder - foo + bar - copy [1]', '*/*-*'));
+
+      assert(isMatch('my/folder - 1', '*/*1'));
+      assert(!isMatch('my/folder - copy (1)', '*/*1'));
+    });
+  });
+
+  describe('brackets', () => {
+    it('should support square brackets in globs', () => {
+      assert(isMatch('foo/bar - 1', '**/*[1]'));
+      assert(!isMatch('foo/bar - copy (1)', '**/*[1]'));
+      assert(!isMatch('foo/bar (1)', '**/*[1]'));
+      assert(!isMatch('foo/bar (4)', '**/*[1]'));
+      assert(!isMatch('foo/bar (7)', '**/*[1]'));
+      assert(!isMatch('foo/bar (42)', '**/*[1]'));
+      assert(isMatch('foo/bar - copy [1]', '**/*[1]'));
+      assert(isMatch('foo/bar - foo + bar - copy [1]', '**/*[1]'));
+    });
+
+    it('should match (escaped) bracket literals', () => {
+      assert(isMatch('a [b]', 'a \\[b\\]'));
+      assert(isMatch('a [b] c', 'a [b] c'));
+      assert(isMatch('a [b]', 'a \\[b\\]*'));
+      assert(isMatch('a [bc]', 'a \\[bc\\]*'));
+      assert(!isMatch('a [b]', 'a \\[b\\].*'));
+      assert(isMatch('a [b].js', 'a \\[b\\].*'));
+      assert(!isMatch('foo/bar - 1', '**/*\\[*\\]'));
+      assert(!isMatch('foo/bar - copy (1)', '**/*\\[*\\]'));
+      assert(!isMatch('foo/bar (1)', '**/*\\[*\\]'));
+      assert(!isMatch('foo/bar (4)', '**/*\\[*\\]'));
+      assert(!isMatch('foo/bar (7)', '**/*\\[*\\]'));
+      assert(!isMatch('foo/bar (42)', '**/*\\[*\\]'));
+      assert(isMatch('foo/bar - copy [1]', '**/*\\[*\\]'));
+      assert(isMatch('foo/bar - foo + bar - copy [1]', '**/*\\[*\\]'));
+
+      assert(!isMatch('foo/bar - 1', '**/*\\[1\\]'));
+      assert(!isMatch('foo/bar - copy (1)', '**/*\\[1\\]'));
+      assert(!isMatch('foo/bar (1)', '**/*\\[1\\]'));
+      assert(!isMatch('foo/bar (4)', '**/*\\[1\\]'));
+      assert(!isMatch('foo/bar (7)', '**/*\\[1\\]'));
+      assert(!isMatch('foo/bar (42)', '**/*\\[1\\]'));
+      assert(isMatch('foo/bar - copy [1]', '**/*\\[1\\]'));
+      assert(isMatch('foo/bar - foo + bar - copy [1]', '**/*\\[1\\]'));
+
+      assert(!isMatch('foo/bar - 1', '*/*\\[*\\]'));
+      assert(!isMatch('foo/bar - copy (1)', '*/*\\[*\\]'));
+      assert(!isMatch('foo/bar (1)', '*/*\\[*\\]'));
+      assert(!isMatch('foo/bar (4)', '*/*\\[*\\]'));
+      assert(!isMatch('foo/bar (7)', '*/*\\[*\\]'));
+      assert(!isMatch('foo/bar (42)', '*/*\\[*\\]'));
+      assert(isMatch('foo/bar - copy [1]', '*/*\\[*\\]'));
+      assert(isMatch('foo/bar - foo + bar - copy [1]', '*/*\\[*\\]'));
+
+      assert(isMatch('a [b]', 'a \\[b\\]'));
+      assert(isMatch('a [b] c', 'a [b] c'));
+      assert(isMatch('a [b]', 'a \\[b\\]*'));
+      assert(isMatch('a [bc]', 'a \\[bc\\]*'));
+      assert(!isMatch('a [b]', 'a \\[b\\].*'));
+      assert(isMatch('a [b].js', 'a \\[b\\].*'));
+    });
+  });
+
+  describe('star - "*"', () => {
+    it('should match literal *', () => {
+      assert(isMatch('*', '*'));
+      assert(isMatch('*/*', '*/*'));
+      assert(isMatch('*/*', '?/?'));
+      assert(isMatch('*/*/', '*/*/'));
+      assert(isMatch('/*', '/*'));
+      assert(isMatch('/*', '/?'));
+      assert(isMatch('foo*/bar*', '*/*'));
+    });
+
+    it('should support stars following brackets', () => {
+      assert(isMatch('a', '[a]*'));
+      assert(isMatch('aa', '[a]*'));
+      assert(isMatch('aaa', '[a]*'));
+      assert(isMatch('az', '[a-z]*'));
+      assert(isMatch('zzz', '[a-z]*'));
+    });
+
+    it('should support stars following parens', () => {
+      assert(isMatch('a', '(a)*'));
+      assert(isMatch('ab', '(a|b)*'));
+      assert(isMatch('aa', '(a)*'));
+      assert(isMatch('aaab', '(a|b)*'));
+      assert(isMatch('aaabbb', '(a|b)*'));
+    });
+
+    it('should not match slashes with single stars', () => {
+      assert(!isMatch('a/b', '(a)*'));
+      assert(!isMatch('a/b', '[a]*'));
+      assert(!isMatch('a/b', 'a*'));
+      assert(!isMatch('a/b', '(a|b)*'));
+    });
+
+    it('should not match dots with stars by default', () => {
+      assert(!isMatch('.a', '(a)*'));
+      assert(!isMatch('.a', '*[a]*'));
+      assert(!isMatch('.a', '*[a]'));
+      assert(!isMatch('.a', '*a*'));
+      assert(!isMatch('.a', '*a'));
+      assert(!isMatch('.a', '*(a|b)'));
+    });
+  });
+
+  describe('plus - "+"', () => {
+    it('should match literal +', () => {
+      assert(isMatch('+', '*'));
+      assert(isMatch('/+', '/*'));
+      assert(isMatch('+/+', '*/*'));
+      assert(isMatch('+/+/', '*/*/'));
+      assert(isMatch('/+', '/+'));
+      assert(isMatch('/+', '/?'));
+      assert(isMatch('+/+', '?/?'));
+      assert(isMatch('+/+', '+/+'));
+      assert(isMatch('foo+/bar+', '*/*'));
+    });
+
+    it('should support plus signs that follow brackets (and not escape them)', () => {
+      assert(isMatch('a', '[a]+'));
+      assert(isMatch('aa', '[a]+'));
+      assert(isMatch('aaa', '[a]+'));
+      assert(isMatch('az', '[a-z]+'));
+      assert(isMatch('zzz', '[a-z]+'));
+    });
+
+    it('should not escape plus signs that follow parens', () => {
+      assert(isMatch('a', '(a)+'));
+      assert(isMatch('ab', '(a|b)+'));
+      assert(isMatch('aa', '(a)+'));
+      assert(isMatch('aaab', '(a|b)+'));
+      assert(isMatch('aaabbb', '(a|b)+'));
+    });
+
+    it('should escape plus signs to match string literals', () => {
+      assert(isMatch('a+b/src/glimini.js', 'a+b/src/*.js'));
+      assert(isMatch('+b/src/glimini.js', '+b/src/*.js'));
+      assert(isMatch('coffee+/src/glimini.js', 'coffee+/src/*.js'));
+      assert(isMatch('coffee+/src/glimini.js', 'coffee+/src/*.js'));
+      assert(isMatch('coffee+/src/glimini.js', 'coffee+/src/*'));
+    });
+
+    it('should not escape + following brackets', () => {
+      assert(isMatch('a', '[a]+'));
+      assert(isMatch('aa', '[a]+'));
+      assert(isMatch('aaa', '[a]+'));
+      assert(isMatch('az', '[a-z]+'));
+      assert(isMatch('zzz', '[a-z]+'));
+    });
+
+    it('should not escape + following parens', () => {
+      assert(isMatch('a', '(a)+'));
+      assert(isMatch('ab', '(a|b)+'));
+      assert(isMatch('aa', '(a)+'));
+      assert(isMatch('aaab', '(a|b)+'));
+      assert(isMatch('aaabbb', '(a|b)+'));
+    });
+  });
+
+  describe('dollar $', () => {
+    it('should match dollar signs', () => {
+      assert(!isMatch('$', '!($)'));
+      assert(!isMatch('$', '!$'));
+      assert(isMatch('$$', '!$'));
+      assert(isMatch('$$', '!($)'));
+      assert(isMatch('$$$', '!($)'));
+      assert(isMatch('^', '!($)'));
+
+      assert(isMatch('$', '!($$)'));
+      assert(!isMatch('$$', '!($$)'));
+      assert(isMatch('$$$', '!($$)'));
+      assert(isMatch('^', '!($$)'));
+
+      assert(!isMatch('$', '!($*)'));
+      assert(!isMatch('$$', '!($*)'));
+      assert(!isMatch('$$$', '!($*)'));
+      assert(isMatch('^', '!($*)'));
+
+      assert(isMatch('$', '*'));
+      assert(isMatch('$$', '*'));
+      assert(isMatch('$$$', '*'));
+      assert(isMatch('^', '*'));
+
+      assert(isMatch('$', '$*'));
+      assert(isMatch('$$', '$*'));
+      assert(isMatch('$$$', '$*'));
+      assert(!isMatch('^', '$*'));
+
+      assert(isMatch('$', '*$*'));
+      assert(isMatch('$$', '*$*'));
+      assert(isMatch('$$$', '*$*'));
+      assert(!isMatch('^', '*$*'));
+
+      assert(isMatch('$', '*$'));
+      assert(isMatch('$$', '*$'));
+      assert(isMatch('$$$', '*$'));
+      assert(!isMatch('^', '*$'));
+
+      assert(!isMatch('$', '?$'));
+      assert(isMatch('$$', '?$'));
+      assert(!isMatch('$$$', '?$'));
+      assert(!isMatch('^', '?$'));
+    });
+  });
+
+  describe('caret ^', () => {
+    it('should match carets', () => {
+      assert(isMatch('^', '^'));
+      assert(isMatch('^/foo', '^/*'));
+      assert(isMatch('^/foo', '^/*'));
+      assert(isMatch('foo^', '*^'));
+      assert(isMatch('^foo/foo', '^foo/*'));
+      assert(isMatch('foo^/foo', 'foo^/*'));
+
+      assert(!isMatch('^', '!(^)'));
+      assert(isMatch('^^', '!(^)'));
+      assert(isMatch('^^^', '!(^)'));
+      assert(isMatch('&', '!(^)'));
+
+      assert(isMatch('^', '!(^^)'));
+      assert(!isMatch('^^', '!(^^)'));
+      assert(isMatch('^^^', '!(^^)'));
+      assert(isMatch('&', '!(^^)'));
+
+      assert(!isMatch('^', '!(^*)'));
+      assert(!isMatch('^^', '!(^*)'));
+      assert(!isMatch('^^^', '!(^*)'));
+      assert(isMatch('&', '!(^*)'));
+
+      assert(isMatch('^', '*'));
+      assert(isMatch('^^', '*'));
+      assert(isMatch('^^^', '*'));
+      assert(isMatch('&', '*'));
+
+      assert(isMatch('^', '^*'));
+      assert(isMatch('^^', '^*'));
+      assert(isMatch('^^^', '^*'));
+      assert(!isMatch('&', '^*'));
+
+      assert(isMatch('^', '*^*'));
+      assert(isMatch('^^', '*^*'));
+      assert(isMatch('^^^', '*^*'));
+      assert(!isMatch('&', '*^*'));
+
+      assert(isMatch('^', '*^'));
+      assert(isMatch('^^', '*^'));
+      assert(isMatch('^^^', '*^'));
+      assert(!isMatch('&', '*^'));
+
+      assert(!isMatch('^', '?^'));
+      assert(isMatch('^^', '?^'));
+      assert(!isMatch('^^^', '?^'));
+      assert(!isMatch('&', '?^'));
+    });
+  });
+
+  describe('mixed special characters', () => {
+    it('should match special characters in paths', () => {
+      assert(isMatch('my/folder +1', '*/*'));
+      assert(isMatch('my/folder -1', '*/*'));
+      assert(isMatch('my/folder *1', '*/*'));
+      assert(isMatch('my/folder', '*/*'));
+      assert(isMatch('my/folder+foo+bar&baz', '*/*'));
+      assert(isMatch('my/folder - $1.00', '*/*'));
+      assert(isMatch('my/folder - ^1.00', '*/*'));
+      assert(isMatch('my/folder - %1.00', '*/*'));
+
+      assert(isMatch('my/folder +1', '*/!(*%)*'));
+      assert(isMatch('my/folder -1', '*/!(*%)*'));
+      assert(isMatch('my/folder *1', '*/!(*%)*'));
+      assert(isMatch('my/folder', '*/!(*%)*'));
+      assert(isMatch('my/folder+foo+bar&baz', '*/!(*%)*'));
+      assert(isMatch('my/folder - $1.00', '*/!(*%)*'));
+      assert(isMatch('my/folder - ^1.00', '*/!(*%)*'));
+      assert(!isMatch('my/folder - %1.00', '*/!(*%)*'));
+
+      assert(!isMatch('my/folder +1', '*/*$*'));
+      assert(!isMatch('my/folder -1', '*/*$*'));
+      assert(!isMatch('my/folder *1', '*/*$*'));
+      assert(!isMatch('my/folder', '*/*$*'));
+      assert(!isMatch('my/folder+foo+bar&baz', '*/*$*'));
+      assert(isMatch('my/folder - $1.00', '*/*$*'));
+      assert(!isMatch('my/folder - ^1.00', '*/*$*'));
+      assert(!isMatch('my/folder - %1.00', '*/*$*'));
+
+      assert(!isMatch('my/folder +1', '*/*^*'));
+      assert(!isMatch('my/folder -1', '*/*^*'));
+      assert(!isMatch('my/folder *1', '*/*^*'));
+      assert(!isMatch('my/folder', '*/*^*'));
+      assert(!isMatch('my/folder+foo+bar&baz', '*/*^*'));
+      assert(!isMatch('my/folder - $1.00', '*/*^*'));
+      assert(isMatch('my/folder - ^1.00', '*/*^*'));
+      assert(!isMatch('my/folder - %1.00', '*/*^*'));
+
+      assert(!isMatch('my/folder +1', '*/*&*'));
+      assert(!isMatch('my/folder -1', '*/*&*'));
+      assert(!isMatch('my/folder *1', '*/*&*'));
+      assert(!isMatch('my/folder', '*/*&*'));
+      assert(isMatch('my/folder+foo+bar&baz', '*/*&*'));
+      assert(!isMatch('my/folder - $1.00', '*/*&*'));
+      assert(!isMatch('my/folder - ^1.00', '*/*&*'));
+      assert(!isMatch('my/folder - %1.00', '*/*&*'));
+
+      assert(isMatch('my/folder +1', '*/*+*'));
+      assert(!isMatch('my/folder -1', '*/*+*'));
+      assert(!isMatch('my/folder *1', '*/*+*'));
+      assert(!isMatch('my/folder', '*/*+*'));
+      assert(isMatch('my/folder+foo+bar&baz', '*/*+*'));
+      assert(!isMatch('my/folder - $1.00', '*/*+*'));
+      assert(!isMatch('my/folder - ^1.00', '*/*+*'));
+      assert(!isMatch('my/folder - %1.00', '*/*+*'));
+
+      assert(!isMatch('my/folder +1', '*/*-*'));
+      assert(isMatch('my/folder -1', '*/*-*'));
+      assert(!isMatch('my/folder *1', '*/*-*'));
+      assert(!isMatch('my/folder', '*/*-*'));
+      assert(!isMatch('my/folder+foo+bar&baz', '*/*-*'));
+      assert(isMatch('my/folder - $1.00', '*/*-*'));
+      assert(isMatch('my/folder - ^1.00', '*/*-*'));
+      assert(isMatch('my/folder - %1.00', '*/*-*'));
+
+      assert(!isMatch('my/folder +1', '*/*\\**'));
+      assert(!isMatch('my/folder -1', '*/*\\**'));
+      assert(isMatch('my/folder *1', '*/*\\**'));
+      assert(!isMatch('my/folder', '*/*\\**'));
+      assert(!isMatch('my/folder+foo+bar&baz', '*/*\\**'));
+      assert(!isMatch('my/folder - $1.00', '*/*\\**'));
+      assert(!isMatch('my/folder - ^1.00', '*/*\\**'));
+      assert(!isMatch('my/folder - %1.00', '*/*\\**'));
+    });
+  });
+});
+```
+
+## File: `test/stars.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('stars', () => {
+  describe('issue related', () => {
+    it('should respect dots defined in glob pattern (micromatch/#23)', () => {
+      assert(isMatch('z.js', 'z*'));
+      assert(!isMatch('zzjs', 'z*.js'));
+      assert(!isMatch('zzjs', '*z.js'));
+    });
+  });
+
+  describe('single stars', () => {
+    it('should match anything except slashes and leading dots', () => {
+      assert(!isMatch('a/b/c/z.js', '*.js'));
+      assert(!isMatch('a/b/z.js', '*.js'));
+      assert(!isMatch('a/z.js', '*.js'));
+      assert(isMatch('z.js', '*.js'));
+
+      assert(!isMatch('a/.ab', '*/*'));
+      assert(!isMatch('.ab', '*'));
+
+      assert(isMatch('z.js', 'z*.js'));
+      assert(isMatch('a/z', '*/*'));
+      assert(isMatch('a/z.js', '*/z*.js'));
+      assert(isMatch('a/z.js', 'a/z*.js'));
+
+      assert(isMatch('ab', '*'));
+      assert(isMatch('abc', '*'));
+
+      assert(!isMatch('bar', 'f*'));
+      assert(!isMatch('foo', '*r'));
+      assert(!isMatch('foo', 'b*'));
+      assert(!isMatch('foo/bar', '*'));
+      assert(isMatch('abc', '*c'));
+      assert(isMatch('abc', 'a*'));
+      assert(isMatch('abc', 'a*c'));
+      assert(isMatch('bar', '*r'));
+      assert(isMatch('bar', 'b*'));
+      assert(isMatch('foo', 'f*'));
+    });
+
+    it('should match spaces', () => {
+      assert(isMatch('one abc two', '*abc*'));
+      assert(isMatch('a         b', 'a*b'));
+    });
+
+    it('should support multiple non-consecutive stars in a path segment', () => {
+      assert(!isMatch('foo', '*a*'));
+      assert(isMatch('bar', '*a*'));
+      assert(isMatch('oneabctwo', '*abc*'));
+      assert(!isMatch('a-b.c-d', '*-bc-*'));
+      assert(isMatch('a-b.c-d', '*-*.*-*'));
+      assert(isMatch('a-b.c-d', '*-b*c-*'));
+      assert(isMatch('a-b.c-d', '*-b.c-*'));
+      assert(isMatch('a-b.c-d', '*.*'));
+      assert(isMatch('a-b.c-d', '*.*-*'));
+      assert(isMatch('a-b.c-d', '*.*-d'));
+      assert(isMatch('a-b.c-d', '*.c-*'));
+      assert(isMatch('a-b.c-d', '*b.*d'));
+      assert(isMatch('a-b.c-d', 'a*.c*'));
+      assert(isMatch('a-b.c-d', 'a-*.*-d'));
+      assert(isMatch('a.b', '*.*'));
+      assert(isMatch('a.b', '*.b'));
+      assert(isMatch('a.b', 'a.*'));
+      assert(isMatch('a.b', 'a.b'));
+    });
+
+    it('should support multiple stars in a segment', () => {
+      assert(!isMatch('a-b.c-d', '**-bc-**'));
+      assert(isMatch('a-b.c-d', '**-**.**-**'));
+      assert(isMatch('a-b.c-d', '**-b**c-**'));
+      assert(isMatch('a-b.c-d', '**-b.c-**'));
+      assert(isMatch('a-b.c-d', '**.**'));
+      assert(isMatch('a-b.c-d', '**.**-**'));
+      assert(isMatch('a-b.c-d', '**.**-d'));
+      assert(isMatch('a-b.c-d', '**.c-**'));
+      assert(isMatch('a-b.c-d', '**b.**d'));
+      assert(isMatch('a-b.c-d', 'a**.c**'));
+      assert(isMatch('a-b.c-d', 'a-**.**-d'));
+      assert(isMatch('a.b', '**.**'));
+      assert(isMatch('a.b', '**.b'));
+      assert(isMatch('a.b', 'a.**'));
+      assert(isMatch('a.b', 'a.b'));
+    });
+
+    it('should return true when one of the given patterns matches the string', () => {
+      assert(isMatch('/ab', '*/*'));
+      assert(isMatch('.', '.'));
+      assert(!isMatch('a/.b', 'a/'));
+      assert(isMatch('/ab', '/*'));
+      assert(isMatch('/ab', '/??'));
+      assert(isMatch('/ab', '/?b'));
+      assert(isMatch('/cd', '/*'));
+      assert(isMatch('a', 'a'));
+      assert(isMatch('a/.b', 'a/.*'));
+      assert(isMatch('a/b', '?/?'));
+      assert(isMatch('a/b/c/d/e/j/n/p/o/z/c.md', 'a/**/j/**/z/*.md'));
+      assert(isMatch('a/b/c/d/e/z/c.md', 'a/**/z/*.md'));
+      assert(isMatch('a/b/c/xyz.md', 'a/b/c/*.md'));
+      assert(isMatch('a/b/c/xyz.md', 'a/b/c/*.md'));
+      assert(isMatch('a/b/z/.a', 'a/*/z/.a'));
+      assert(!isMatch('a/b/z/.a', 'bz'));
+      assert(isMatch('a/bb.bb/aa/b.b/aa/c/xyz.md', 'a/**/c/*.md'));
+      assert(isMatch('a/bb.bb/aa/bb/aa/c/xyz.md', 'a/**/c/*.md'));
+      assert(isMatch('a/bb.bb/c/xyz.md', 'a/*/c/*.md'));
+      assert(isMatch('a/bb/c/xyz.md', 'a/*/c/*.md'));
+      assert(isMatch('a/bbbb/c/xyz.md', 'a/*/c/*.md'));
+      assert(isMatch('aaa', '*'));
+      assert(isMatch('ab', '*'));
+      assert(isMatch('ab', 'ab'));
+    });
+
+    it('should return false when the path does not match the pattern', () => {
+      assert(!isMatch('/ab', ['*/']));
+      assert(!isMatch('/ab', ['*/a']));
+      assert(!isMatch('/ab', ['/']));
+      assert(!isMatch('/ab', ['/?']));
+      assert(!isMatch('/ab', ['/a']));
+      assert(!isMatch('/ab', ['?/?']));
+      assert(!isMatch('/ab', ['a/*']));
+      assert(!isMatch('a/.b', ['a/']));
+      assert(!isMatch('a/b/c', ['a/*']));
+      assert(!isMatch('a/b/c', ['a/b']));
+      assert(!isMatch('a/b/c/d/e/z/c.md', ['b/c/d/e']));
+      assert(!isMatch('a/b/z/.a', ['b/z']));
+      assert(!isMatch('ab', ['*/*']));
+      assert(!isMatch('ab', ['/a']));
+      assert(!isMatch('ab', ['a']));
+      assert(!isMatch('ab', ['b']));
+      assert(!isMatch('ab', ['c']));
+      assert(!isMatch('abcd', ['ab']));
+      assert(!isMatch('abcd', ['bc']));
+      assert(!isMatch('abcd', ['c']));
+      assert(!isMatch('abcd', ['cd']));
+      assert(!isMatch('abcd', ['d']));
+      assert(!isMatch('abcd', ['f']));
+      assert(!isMatch('ef', ['/*']));
+    });
+
+    it('should match a path segment for each single star', () => {
+      assert(!isMatch('aaa', '*/*/*'));
+      assert(!isMatch('aaa/bb/aa/rr', '*/*/*'));
+      assert(!isMatch('aaa/bba/ccc', 'aaa*'));
+      assert(!isMatch('aaa/bba/ccc', 'aaa**'));
+      assert(!isMatch('aaa/bba/ccc', 'aaa/*'));
+      assert(!isMatch('aaa/bba/ccc', 'aaa/*ccc'));
+      assert(!isMatch('aaa/bba/ccc', 'aaa/*z'));
+      assert(!isMatch('aaa/bbb', '*/*/*'));
+      assert(!isMatch('ab/zzz/ejkl/hi', '*/*jk*/*i'));
+      assert(isMatch('aaa/bba/ccc', '*/*/*'));
+      assert(isMatch('aaa/bba/ccc', 'aaa/**'));
+      assert(isMatch('aaa/bbb', 'aaa/*'));
+      assert(isMatch('ab/zzz/ejkl/hi', '*/*z*/*/*i'));
+      assert(isMatch('abzzzejklhi', '*j*i'));
+    });
+
+    it('should support single globs (*)', () => {
+      assert(isMatch('a', '*'));
+      assert(isMatch('b', '*'));
+      assert(!isMatch('a/a', '*'));
+      assert(!isMatch('a/a/a', '*'));
+      assert(!isMatch('a/a/b', '*'));
+      assert(!isMatch('a/a/a/a', '*'));
+      assert(!isMatch('a/a/a/a/a', '*'));
+
+      assert(!isMatch('a', '*/*'));
+      assert(isMatch('a/a', '*/*'));
+      assert(!isMatch('a/a/a', '*/*'));
+
+      assert(!isMatch('a', '*/*/*'));
+      assert(!isMatch('a/a', '*/*/*'));
+      assert(isMatch('a/a/a', '*/*/*'));
+      assert(!isMatch('a/a/a/a', '*/*/*'));
+
+      assert(!isMatch('a', '*/*/*/*'));
+      assert(!isMatch('a/a', '*/*/*/*'));
+      assert(!isMatch('a/a/a', '*/*/*/*'));
+      assert(isMatch('a/a/a/a', '*/*/*/*'));
+      assert(!isMatch('a/a/a/a/a', '*/*/*/*'));
+
+      assert(!isMatch('a', '*/*/*/*/*'));
+      assert(!isMatch('a/a', '*/*/*/*/*'));
+      assert(!isMatch('a/a/a', '*/*/*/*/*'));
+      assert(!isMatch('a/a/b', '*/*/*/*/*'));
+      assert(!isMatch('a/a/a/a', '*/*/*/*/*'));
+      assert(isMatch('a/a/a/a/a', '*/*/*/*/*'));
+      assert(!isMatch('a/a/a/a/a/a', '*/*/*/*/*'));
+
+      assert(!isMatch('a', 'a/*'));
+      assert(isMatch('a/a', 'a/*'));
+      assert(!isMatch('a/a/a', 'a/*'));
+      assert(!isMatch('a/a/a/a', 'a/*'));
+      assert(!isMatch('a/a/a/a/a', 'a/*'));
+
+      assert(!isMatch('a', 'a/*/*'));
+      assert(!isMatch('a/a', 'a/*/*'));
+      assert(isMatch('a/a/a', 'a/*/*'));
+      assert(!isMatch('b/a/a', 'a/*/*'));
+      assert(!isMatch('a/a/a/a', 'a/*/*'));
+      assert(!isMatch('a/a/a/a/a', 'a/*/*'));
+
+      assert(!isMatch('a', 'a/*/*/*'));
+      assert(!isMatch('a/a', 'a/*/*/*'));
+      assert(!isMatch('a/a/a', 'a/*/*/*'));
+      assert(isMatch('a/a/a/a', 'a/*/*/*'));
+      assert(!isMatch('a/a/a/a/a', 'a/*/*/*'));
+
+      assert(!isMatch('a', 'a/*/*/*/*'));
+      assert(!isMatch('a/a', 'a/*/*/*/*'));
+      assert(!isMatch('a/a/a', 'a/*/*/*/*'));
+      assert(!isMatch('a/a/b', 'a/*/*/*/*'));
+      assert(!isMatch('a/a/a/a', 'a/*/*/*/*'));
+      assert(isMatch('a/a/a/a/a', 'a/*/*/*/*'));
+
+      assert(!isMatch('a', 'a/*/a'));
+      assert(!isMatch('a/a', 'a/*/a'));
+      assert(isMatch('a/a/a', 'a/*/a'));
+      assert(!isMatch('a/a/b', 'a/*/a'));
+      assert(!isMatch('a/a/a/a', 'a/*/a'));
+      assert(!isMatch('a/a/a/a/a', 'a/*/a'));
+
+      assert(!isMatch('a', 'a/*/b'));
+      assert(!isMatch('a/a', 'a/*/b'));
+      assert(!isMatch('a/a/a', 'a/*/b'));
+      assert(isMatch('a/a/b', 'a/*/b'));
+      assert(!isMatch('a/a/a/a', 'a/*/b'));
+      assert(!isMatch('a/a/a/a/a', 'a/*/b'));
+    });
+
+    it('should only match a single folder per star when globstars are used', () => {
+      assert(!isMatch('a', '*/**/a'));
+      assert(!isMatch('a/a/b', '*/**/a'));
+      assert(isMatch('a/a', '*/**/a'));
+      assert(isMatch('a/a/a', '*/**/a'));
+      assert(isMatch('a/a/a/a', '*/**/a'));
+      assert(isMatch('a/a/a/a/a', '*/**/a'));
+    });
+
+    it('should not match a trailing slash when a star is last char', () => {
+      assert(!isMatch('a', '*/'));
+      assert(!isMatch('a', '*/*'));
+      assert(!isMatch('a', 'a/*'));
+      assert(!isMatch('a/', '*/*'));
+      assert(!isMatch('a/', 'a/*'));
+      assert(!isMatch('a/a', '*'));
+      assert(!isMatch('a/a', '*/'));
+      assert(!isMatch('a/x/y', '*/'));
+      assert(!isMatch('a/x/y', '*/*'));
+      assert(!isMatch('a/x/y', 'a/*'));
+      assert(!isMatch('a/', '*', { strictSlashes: true }));
+      assert(isMatch('a/', '*'));
+      assert(isMatch('a', '*'));
+      assert(isMatch('a/', '*/'));
+      assert(isMatch('a/', '*{,/}'));
+      assert(isMatch('a/a', '*/*'));
+      assert(isMatch('a/a', 'a/*'));
+    });
+
+    it('should work with file extensions', () => {
+      assert(!isMatch('a.txt', 'a/**/*.txt'));
+      assert(isMatch('a/x/y.txt', 'a/**/*.txt'));
+      assert(!isMatch('a/x/y/z', 'a/**/*.txt'));
+
+      assert(!isMatch('a.txt', 'a/*.txt'));
+      assert(isMatch('a/b.txt', 'a/*.txt'));
+      assert(!isMatch('a/x/y.txt', 'a/*.txt'));
+      assert(!isMatch('a/x/y/z', 'a/*.txt'));
+
+      assert(isMatch('a.txt', 'a*.txt'));
+      assert(!isMatch('a/b.txt', 'a*.txt'));
+      assert(!isMatch('a/x/y.txt', 'a*.txt'));
+      assert(!isMatch('a/x/y/z', 'a*.txt'));
+
+      assert(isMatch('a.txt', '*.txt'));
+      assert(!isMatch('a/b.txt', '*.txt'));
+      assert(!isMatch('a/x/y.txt', '*.txt'));
+      assert(!isMatch('a/x/y/z', '*.txt'));
+    });
+
+    it('should not match slashes when globstars are not exclusive in a path segment', () => {
+      assert(!isMatch('foo/baz/bar', 'foo**bar'));
+      assert(isMatch('foobazbar', 'foo**bar'));
+    });
+
+    it('should match slashes when defined in braces', () => {
+      assert(isMatch('foo', 'foo{,/**}'));
+    });
+
+    it('should correctly match slashes', () => {
+      assert(!isMatch('a/b', 'a*'));
+      assert(!isMatch('a/a/bb', 'a/**/b'));
+      assert(!isMatch('a/bb', 'a/**/b'));
+
+      assert(!isMatch('foo', '*/**'));
+      assert(!isMatch('foo/bar', '**/'));
+      assert(!isMatch('foo/bar', '**/*/'));
+      assert(!isMatch('foo/bar', '*/*/'));
+      assert(!isMatch('foo/bar/', '**/*', { strictSlashes: true }));
+
+      assert(isMatch('/home/foo/..', '**/..'));
+      assert(isMatch('a', '**/a'));
+      assert(isMatch('a/a', '**'));
+      assert(isMatch('a/a', 'a/**'));
+      assert(isMatch('a/', 'a/**'));
+      assert(isMatch('a', 'a/**'));
+      assert(!isMatch('a/a', '**/'));
+      assert(isMatch('a', '**/a/**'));
+      assert(isMatch('a', 'a/**'));
+      assert(!isMatch('a/a', '**/'));
+      assert(isMatch('a/a', '*/**/a'));
+      assert(isMatch('a', 'a/**'));
+      assert(isMatch('foo/', '*/**'));
+      assert(isMatch('foo/bar', '**/*'));
+      assert(isMatch('foo/bar', '*/*'));
+      assert(isMatch('foo/bar', '*/**'));
+      assert(isMatch('foo/bar/', '**/'));
+      assert(isMatch('foo/bar/', '**/*'));
+      assert(isMatch('foo/bar/', '**/*/'));
+      assert(isMatch('foo/bar/', '*/**'));
+      assert(isMatch('foo/bar/', '*/*/'));
+
+      assert(!isMatch('bar/baz/foo', '*/foo'));
+      assert(!isMatch('deep/foo/bar', '**/bar/*'));
+      assert(!isMatch('deep/foo/bar/baz/x', '*/bar/**'));
+      assert(!isMatch('ef', '/*'));
+      assert(!isMatch('foo/bar', 'foo?bar'));
+      assert(!isMatch('foo/bar/baz', '**/bar*'));
+      assert(!isMatch('foo/bar/baz', '**/bar**'));
+      assert(!isMatch('foo/baz/bar', 'foo**bar'));
+      assert(!isMatch('foo/baz/bar', 'foo*bar'));
+      assert(isMatch('foo', 'foo/**'));
+      assert(isMatch('/ab', '/*'));
+      assert(isMatch('/cd', '/*'));
+      assert(isMatch('/ef', '/*'));
+      assert(isMatch('a/b/j/c/z/x.md', 'a/**/j/**/z/*.md'));
+      assert(isMatch('a/j/z/x.md', 'a/**/j/**/z/*.md'));
+
+      assert(isMatch('bar/baz/foo', '**/foo'));
+      assert(isMatch('deep/foo/bar/baz', '**/bar/*'));
+      assert(isMatch('deep/foo/bar/baz/', '**/bar/**'));
+      assert(isMatch('deep/foo/bar/baz/x', '**/bar/*/*'));
+      assert(isMatch('foo/b/a/z/bar', 'foo/**/**/bar'));
+      assert(isMatch('foo/b/a/z/bar', 'foo/**/bar'));
+      assert(isMatch('foo/bar', 'foo/**/**/bar'));
+      assert(isMatch('foo/bar', 'foo/**/bar'));
+      assert(isMatch('foo/bar/baz/x', '*/bar/**'));
+      assert(isMatch('foo/baz/bar', 'foo/**/**/bar'));
+      assert(isMatch('foo/baz/bar', 'foo/**/bar'));
+      assert(isMatch('XXX/foo', '**/foo'));
+    });
+
+    it('should ignore leading "./" when defined on pattern', () => {
+      assert(isMatch('ab', './*'));
+      assert(!isMatch('ab', './*/'));
+      assert(isMatch('ab/', './*/'));
+    });
+
+    it('should optionally match trailing slashes with braces', () => {
+      assert(isMatch('foo', '**/*'));
+      assert(isMatch('foo', '**/*{,/}'));
+      assert(isMatch('foo/', '**/*{,/}'));
+      assert(isMatch('foo/bar', '**/*{,/}'));
+      assert(isMatch('foo/bar/', '**/*{,/}'));
+    });
+  });
+});
+```
+
+## File: `test/wildmat.js`
+```javascript
+'use strict';
+
+const assert = require('assert');
+const { isMatch } = require('..');
+
+describe('Wildmat (git) tests', () => {
+  it('Basic wildmat features', () => {
+    assert(!isMatch('foo', '*f'));
+    assert(!isMatch('foo', '??'));
+    assert(!isMatch('foo', 'bar'));
+    assert(!isMatch('foobar', 'foo\\*bar'));
+    assert(isMatch('?a?b', '\\??\\?b'));
+    assert(isMatch('aaaaaaabababab', '*ab'));
+    assert(isMatch('foo', '*'));
+    assert(isMatch('foo', '*foo*'));
+    assert(isMatch('foo', '???'));
+    assert(isMatch('foo', 'f*'));
+    assert(isMatch('foo', 'foo'));
+    assert(isMatch('foobar', '*ob*a*r*'));
+  });
+
+  it('should support recursion', () => {
+    assert(!isMatch('-adobe-courier-bold-o-normal--12-120-75-75-/-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*'));
+    assert(!isMatch('-adobe-courier-bold-o-normal--12-120-75-75-X-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*'));
+    assert(!isMatch('ab/cXd/efXg/hi', '*X*i'));
+    assert(!isMatch('ab/cXd/efXg/hi', '*Xg*i'));
+    assert(!isMatch('abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txtz', '**/*a*b*g*n*t'));
+    assert(!isMatch('foo', '*/*/*'));
+    assert(!isMatch('foo', 'fo'));
+    assert(!isMatch('foo/bar', '*/*/*'));
+    assert(!isMatch('foo/bar', 'foo?bar'));
+    assert(!isMatch('foo/bb/aa/rr', '*/*/*'));
+    assert(!isMatch('foo/bba/arr', 'foo*'));
+    assert(!isMatch('foo/bba/arr', 'foo**'));
+    assert(!isMatch('foo/bba/arr', 'foo/*'));
+    assert(!isMatch('foo/bba/arr', 'foo/**arr'));
+    assert(!isMatch('foo/bba/arr', 'foo/**z'));
+    assert(!isMatch('foo/bba/arr', 'foo/*arr'));
+    assert(!isMatch('foo/bba/arr', 'foo/*z'));
+    assert(!isMatch('XXX/adobe/courier/bold/o/normal//12/120/75/75/X/70/iso8859/1', 'XXX/*/*/*/*/*/*/12/*/*/*/m/*/*/*'));
+    assert(isMatch('-adobe-courier-bold-o-normal--12-120-75-75-m-70-iso8859-1', '-*-*-*-*-*-*-12-*-*-*-m-*-*-*'));
+    assert(isMatch('ab/cXd/efXg/hi', '**/*X*/**/*i'));
+    assert(isMatch('ab/cXd/efXg/hi', '*/*X*/*/*i'));
+    assert(isMatch('abcd/abcdefg/abcdefghijk/abcdefghijklmnop.txt', '**/*a*b*g*n*t'));
+    assert(isMatch('abcXdefXghi', '*X*i'));
+    assert(isMatch('foo', 'foo'));
+    assert(isMatch('foo/bar', 'foo/*'));
+    assert(isMatch('foo/bar', 'foo/bar'));
+    assert(isMatch('foo/bar', 'foo[/]bar'));
+    assert(isMatch('foo/bb/aa/rr', '**/**/**'));
+    assert(isMatch('foo/bba/arr', '*/*/*'));
+    assert(isMatch('foo/bba/arr', 'foo/**'));
+  });
+});
+```
+
+## File: `test/support/match.js`
+```javascript
+'use strict';
+
+const picomatch = require('../..');
+
+module.exports = (list, pattern, options = {}) => {
+  const isMatch = picomatch(pattern, options, true);
+  const matches = options.matches || new Set();
+
+  for (const item of [].concat(list)) {
+    const match = isMatch(item, true);
+    if (match && match.output && match.isMatch === true) {
+      matches.add(match.output);
+    }
+  }
+
+  return [...matches];
+};
+```
+

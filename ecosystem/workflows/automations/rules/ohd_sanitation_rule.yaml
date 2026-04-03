@@ -1,0 +1,34 @@
+id: ohd_sanitation_rule
+name: OmniClaw Health Daemon (OHD) Governance
+description: Strict governance rules for OHD regarding system sanitation.
+version: "1.1"
+enforcement_level: CRITICAL
+owner: system-daemon
+
+rules:
+  - id: RULE-OHD-01
+    name: Zero Deletion Policy
+    category: sanitation
+    condition: "When sweeping logs, error files, caches, or tmp files (Trash)."
+    action: "MOVE to storage/vault/FAILED_QUARANTINE. NEVER execute a DELETE command. OHD is forbidden from deleting data."
+    
+  - id: RULE-OHD-02
+    name: Mandatory Dispatch to OA
+    category: inter-departmental
+    condition: "When structurally broken JSON or logs are quarantined by OHD."
+    action: "OHD MUST trigger OA (OmniClaw Academy) via OA_DISPATCH_QUEUE. OHD does NOT fix complex logic errors itself."
+
+  - id: RULE-OHD-03
+    name: CEO Approval for Trash Disposal
+    category: security
+    condition: "Before permanently deleting items from FAILED_QUARANTINE."
+    action: "Await explicit 'Empty Trash' command from CEO. OA only tags POST_MORTEM_DONE: TRUE when finished learning; it cannot delete."
+
+pipelines:
+  # Internal Pipeline reference mapped for OHD triggers
+  - name: ohd_sanitation_pipeline
+    steps:
+      1: "12h Cron Trigger / Manual Prompt"
+      2: "omniclaw_cleanup_crew.py moves trash to Vault"
+      3: "OHD audits System Entities (Naming/UTF-8 Auto-heal)"
+      4: "OHD drops JSON Ticket into storage/vault/OA_DISPATCH_QUEUE to call OA"

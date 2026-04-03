@@ -6,10 +6,10 @@
 
 ## 1. Code Review Graph — 6.8× Token Reduction
 
-### Vấn đề
+### Problem:
 Code review thông thường: dump toàn bộ file vào context → tốn nhiều tokens.
 
-### Giải pháp: Local Knowledge Graph
+### Solution: Local Knowledge Graph
 ```python
 # Thay vì: load full codebase vào context
 # → Build dependency graph trước, chỉ load relevant nodes

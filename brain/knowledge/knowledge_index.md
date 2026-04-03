@@ -3,24 +3,24 @@
 
 ## 🗺️ System Map (READ FIRST)
 - [AI_OS_SYSTEM_MAP.md](AI_OS_SYSTEM_MAP.md) — **MASTER REFERENCE** — Toàn bộ hệ thống OmniClaw: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
-- [MASTER_SYSTEM_MAP.md](../../MASTER_SYSTEM_MAP.md) — **SYSTEM MAP v2 (2026-03-23)** — Boot → Corp Cycle 8-phase → 21 Depts → 3-Tier Plugin → Agent Memory → Knowledge Flow → Escalation → CLI Commands
+- [MASTER_SYSTEM_MAP.md](corp/MASTER_SYSTEM_MAP.md) — **SYSTEM MAP v2 (2026-03-23)** — Boot → Corp Cycle 8-phase → 21 Depts → 3-Tier Plugin → Agent Memory → Knowledge Flow → Escalation → CLI Commands
 
 ## 🏛️ Governance & Identity (Tier 0-1)
-- [CLAUDE.md](../CLAUDE.md) — Master entry point, boot sequence, directory map
-- [SOUL.md](../shared-context/SOUL.md) — Platform identity & core values
-- [AGENTS.md](../shared-context/AGENTS.md) — Agent roster, hierarchy, decision authority
-- [GOVERNANCE.md](../shared-context/GOVERNANCE.md) — Safety anchors
-- [THESIS.md](../shared-context/THESIS.md) — 40 Pillars (The WHY)
+- [CLAUDE.md](../../.claude/skills/supabase-postgres-best-practices/CLAUDE.md) — Master entry point, boot sequence, directory map
+- [SOUL.md](general/SOUL.md) — Platform identity & core values
+- [AGENTS.md](bmad_repo/agents.md) — Agent roster, hierarchy, decision authority
+- [GOVERNANCE.md](general/GOVERNANCE.md) — Safety anchors
+- [THESIS.md](general/THESIS.md) — 40 Pillars (The WHY)
 
 ## ⚙️ Operations & Governance (Tier 2)
-- [ORCHESTRATION_SOP.md](../rules/ORCHESTRATION_SOP.md) — 6-phase multi-agent loop
-- [WORKFLOW.md](../rules/WORKFLOW.md) — Event-driven operational workflow (v2)
-- [APPROVAL_GATES.md](../rules/APPROVAL_GATES.md) — 4 universal approval gates
-- [LEARNING_CYCLE_PROTOCOL.md](../rules/LEARNING_CYCLE_PROTOCOL.md) — Self-improvement loop
-- [CLAUDE_CODE_MANAGER.md](../rules/CLAUDE_CODE_MANAGER.md) — 3 roles, fix-retry, receipts
+- [ORCHESTRATION_SOP.md](../rules/security/rules/ORCHESTRATION_SOP.md) — 6-phase multi-agent loop
+- [WORKFLOW.md](bmad_repo/workflow.md) — Event-driven operational workflow (v2)
+- [APPROVAL_GATES.md](general/APPROVAL_GATES.md) — 4 universal approval gates
+- [LEARNING_CYCLE_PROTOCOL.md](../rules/security/rules/LEARNING_CYCLE_PROTOCOL.md) — Self-improvement loop
+- [CLAUDE_CODE_MANAGER.md](general/CLAUDE_CODE_MANAGER.md) — 3 roles, fix-retry, receipts
 
 ## 🔧 Skill System
-- [SKILL_SPEC.md](../skills/SKILL_SPEC.md) — Skill schema standard
+- [SKILL_SPEC.md](general/SKILL_SPEC.md) — Skill schema standard
 - [SKILL_REGISTRY.json](../shared-context/SKILL_REGISTRY.json) — 103+ registered entries
 - [EXTERNAL_SKILL_SOURCES.yaml](../shared-context/EXTERNAL_SKILL_SOURCES.yaml) — 15+ external sources
 - **Domain Packs** (`skills/domains/`):
@@ -31,56 +31,56 @@
   - `pos/` — pos-event-sourcing-auditor
 
 ## 📋 Prompt Templates (runes/)
-- [brainstorm_prompt.md](../runes/brainstorm_prompt.md) — Visual-First brainstorm template
-- [report_prompt.md](../runes/report_prompt.md) — Vietnamese Mermaid report template
-- [task_prompt.md](../runes/task_prompt.md) — execution_template fill guide
+- [brainstorm_prompt.md](general/brainstorm_prompt.md) — Visual-First brainstorm template
+- [report_prompt.md](general/report_prompt.md) — Vietnamese Mermaid report template
+- [task_prompt.md](general/task_prompt.md) — execution_template fill guide
 
 
 ## 🔒 Security & Ingestion Protocol
 
-- [Clone Security Protocol](../rules/clone_security_protocol.md) — MANDATORY pre-clone rules, quarantine zone, absolute rules
-- [Repo Vetting Knowledge](./repo_vetting_knowledge.md) — Supply chain attacks, detection patterns, repo trust ratings
-- [Security Shield Skill](../skills/security_shield/SKILL.md) — /vet-repo, /scan, /secure-patch
+- [Clone Security Protocol](../rules/security/rules/clone_security_protocol.md) — MANDATORY pre-clone rules, quarantine zone, absolute rules
+- [Repo Vetting Knowledge](general/repo_vetting_knowledge.md) — Supply chain attacks, detection patterns, repo trust ratings
+- [Security Shield Skill](../../.claude/skills/supabase-postgres-best-practices/SKILL.md) — /vet-repo, /scan, /secure-patch
 - [Vet Script](../skills/security_shield/vet_repo.ps1) — 7-scan PowerShell automation (git hooks, npm, network, secrets...)
-- [Knowledge Ingest Workflow](../../ops/workflows/knowledge-ingest.md) — 7-phase pipeline: intake → scan → classify → enrich → route → archive → notify
-- [Agent Auto-Create Protocol](../../ops/workflows/agent-auto-create.md) — Auto-create new agents when knowledge has no existing agent
-- [Secure External Ingestion](../workflows/ingest-external.md) — Legacy ingest (see knowledge-ingest.md for v2)
+- [Knowledge Ingest Workflow](general/knowledge-ingest.md) — 7-phase pipeline: intake → scan → classify → enrich → route → archive → notify
+- [Agent Auto-Create Protocol](general/agent-auto-create.md) — Auto-create new agents when knowledge has no existing agent
+- [Secure External Ingestion](general/ingest-external.md) — Legacy ingest (see knowledge-ingest.md for v2)
 
 ## 🤖 AI Agent Systems
-- [Agentic Patterns](./agentic_patterns.md) — 10 core patterns: ReAct, Reflection, Planning, Multi-Agent, Meta-Controller...
-- [BMAD Method](./bmad_method.md) — Agile AI development framework: 4-phase cycle, agent personas, Party Mode
-- [AI Integration](./ai-integration.md) — AI integration patterns
-- [Multi-Agent Orchestration](./multi-agent-orchestration.md)
-- [MCP Server Architecture](./mcp_server_architecture.md)
-- [Star Office UI](./star_office_ui.md) — Pixel-art AI Agent dashboard: 6 states, multi-agent office, memory → visual card, desktop pet mode (4.7K ★, MIT)
+- [Agentic Patterns](agent_architecture/agentic_patterns.md) — 10 core patterns: ReAct, Reflection, Planning, Multi-Agent, Meta-Controller...
+- [BMAD Method](bmad_repo/bmad_method.md) — Agile AI development framework: 4-phase cycle, agent personas, Party Mode
+- [AI Integration](ai-ml/ai-integration.md) — AI integration patterns
+- [Multi-Agent Orchestration](agent_architecture/multi-agent-orchestration.md)
+- [MCP Server Architecture](architecture/mcp_server_architecture.md)
+- [Star Office UI](ui/star_office_ui.md) — Pixel-art AI Agent dashboard: 6 states, multi-agent office, memory → visual card, desktop pet mode (4.7K ★, MIT)
 
 ## 🛠️ Claude Code Ecosystem  
-- [Claude Code Ecosystem](./claude_code_ecosystem.md) — everything-claude-code, claude-mem plugin, best practices
-- [Local AI Explanation](./local_ai_explanation.md)
-- [Safe AI Strategy](./safe_ai_strategy.md)
+- [Claude Code Ecosystem](claude_bp_repo/claude_code_ecosystem.md) — everything-claude-code, claude-mem plugin, best practices
+- [Local AI Explanation](ai-ml/local_ai_explanation.md)
+- [Safe AI Strategy](ai-ml/safe_ai_strategy.md)
 
 ## 🔬 AI/ML Deep Dives
-- [AI Capability Deep Dive](./ai_capability_deep_dive.md)
-- [Intelligence Upgrade Analysis](./intelligence_upgrade_analysis.md)
+- [AI Capability Deep Dive](ai-ml/ai_capability_deep_dive.md)
+- [Intelligence Upgrade Analysis](general/intelligence_upgrade_analysis.md)
 - [LightRAG](./lightrag_deep_dive.md) *(pending Phase 11)*
 
 ## 🏗️ Architecture & Design
-- [Architect Handbook](./architect_handbook.md) — DDD, Hexagonal, SOLID patterns
-- [Phase 8 Tech Spec](./phase8_tech_spec.md)
-- [DSA Patterns](./dsa_patterns.md)
+- [Architect Handbook](architecture/architect_handbook.md) — DDD, Hexagonal, SOLID patterns
+- [Phase 8 Tech Spec](general/phase8_tech_spec.md)
+- [DSA Patterns](general/dsa_patterns.md)
 
 ## 🌐 Web & Extensions
-- [Chrome Extension API](./chrome-extension-api.md)
-- [Bookmark UX Patterns](./bookmark-ux-patterns.md)
+- [Chrome Extension API](general/chrome-extension-api.md)
+- [Bookmark UX Patterns](general/bookmark-ux-patterns.md)
 
-- [References](./references.md) — All external repos
-- [Repo Analysis Report](./repo_analysis_report.md) — ✅ CLONE / 📚 LEARN-ONLY / ⏭️ SKIP decisions
-- [GitHub Repos Index](./github_repos_index.md) — 177 repos categorized (DATA/Github.txt ingested 2026-03-15)
+- [References](general/references.md) — All external repos
+- [Repo Analysis Report](general/repo_analysis_report.md) — ✅ CLONE / 📚 LEARN-ONLY / ⏭️ SKIP decisions
+- [GitHub Repos Index](catalog/github_repos_index.md) — 177 repos categorized (DATA/Github.txt ingested 2026-03-15)
 
 ## 📥 DATA Library — Ingested Knowledge
-- [AI Workflow Best Practices](./ai_workflow_best_practices.md) — 10 major topics: React boilerplate, Skill creation, Multi-agent, 8-layer prompting, Claude Code tips, AI-first design, Security, Gen AI structure, Antigravity tips, Agent Skills (DATA/POST.txt)
-- [GitHub Repos Index](./github_repos_index.md) — 177 repos from DATA/Github.txt, categorized by function, showing which are already installed as plugins
-- [Non-Cloneable Repos Analysis](./non_cloneable_repos_analysis.md) — 23 repos analyzed via GitHub README: Auto-Claude (12-agent GUI), ProxyPal (multi-AI proxy), SkillSentry (9-layer security), marketingskills (35 skills), trainingAI (8-level Vietnamese AI guide), ChatDev, llmfit, autoclip, SmartTube, social downloader, aPix/SDVN, SpringBoot skill, Clean Arch Next.js + more
+- [AI Workflow Best Practices](ai-ml/ai_workflow_best_practices.md) — 10 major topics: React boilerplate, Skill creation, Multi-agent, 8-layer prompting, Claude Code tips, AI-first design, Security, Gen AI structure, Antigravity tips, Agent Skills (DATA/POST.txt)
+- [GitHub Repos Index](catalog/github_repos_index.md) — 177 repos from DATA/Github.txt, categorized by function, showing which are already installed as plugins
+- [Non-Cloneable Repos Analysis](general/non_cloneable_repos_analysis.md) — 23 repos analyzed via GitHub README: Auto-Claude (12-agent GUI), ProxyPal (multi-AI proxy), SkillSentry (9-layer security), marketingskills (35 skills), trainingAI (8-level Vietnamese AI guide), ChatDev, llmfit, autoclip, SmartTube, social downloader, aPix/SDVN, SpringBoot skill, Clean Arch Next.js + more
 - **LobsterBoard** (plugins/LobsterBoard/) — Self-hosted drag-and-drop dashboard (60+ widgets). OpenClaw-compatible. **Antigravity, Claude Code, Gemini, Cursor** usage monitoring widgets built-in. Node.js server.
 
 - [ACTIVATION_BOARD](./ACTIVATION_BOARD.md) � ?? T?t c? plugin/service c?n k�ch ho?t/m? localhost: LobsterBoard (port 3000), Remote Bridge (port 5001), LightRAG (port 9621), Firecrawl (port 3002), AI OS Dashboard (port 19000)
@@ -88,11 +88,11 @@
 
 ### Session 6 — Ingested 2026-03-19
 
-- **[temm1e](./repos/temm1e/knowledge.md)** — Rust autonomous AI agent runtime. 15MB idle, 31ms cold start. λ-Memory + Blueprints. `T1`
-- **[awesome-openclaw-skills](./repos/awesome-openclaw-skills/knowledge.md)** — Curated catalog 5400+ OpenClaw skills, 30+ categories. By VoltAgent. `T1`
-- **[GitNexus](./repos/GitNexus/knowledge.md)** — Zero-server code intelligence. Knowledge graph + Graph RAG. Browser-native + MCP server. `T1`
-- **[OSINT-CTFs](./repos/OSINT-CTFs/knowledge.md)** — Directory OSINT CTF platforms. Security training reference. `T2`
-- **[forgewright](./repos/forgewright/knowledge.md)** — Antigravity plugin. SaaS/game lifecycle pipeline. 48 skills, 19 modes, 15 protocols. By buiphucminhtam. `T1`
+- **[temm1e](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Rust autonomous AI agent runtime. 15MB idle, 31ms cold start. λ-Memory + Blueprints. `T1`
+- **[awesome-openclaw-skills](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Curated catalog 5400+ OpenClaw skills, 30+ categories. By VoltAgent. `T1`
+- **[GitNexus](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Zero-server code intelligence. Knowledge graph + Graph RAG. Browser-native + MCP server. `T1`
+- **[OSINT-CTFs](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Directory OSINT CTF platforms. Security training reference. `T2`
+- **[forgewright](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Antigravity plugin. SaaS/game lifecycle pipeline. 48 skills, 19 modes, 15 protocols. By buiphucminhtam. `T1`
 
 
 ## Session 7 — Ingested 2026-03-19

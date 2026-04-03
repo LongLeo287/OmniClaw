@@ -8,7 +8,7 @@ These are the Repositories currently serving as the active Library for the OmniC
 - [datapusher-plus_knowledge.md](library/datapusher-plus_knowledge.md)
 - [Diabetes-Prediction-using-Machine-Learning_knowledge.md](library/Diabetes-Prediction-using-Machine-Learning_knowledge.md)
 - [Diamond-Price-Prediction_knowledge.md](library/Diamond-Price-Prediction_knowledge.md)
-- [docling_knowledge.md](library/docling_knowledge.md)
+- [docling_knowledge.md](../../vault/archives/archive_legacy/knowledge_files/docling_knowledge.md)
 - [domain-story-modeler_knowledge.md](library/domain-story-modeler_knowledge.md)
 - [dvc_knowledge.md](library/dvc_knowledge.md)
 - [End-to-End-Airbnb-Price-Prediction_knowledge.md](library/End-to-End-Airbnb-Price-Prediction_knowledge.md)

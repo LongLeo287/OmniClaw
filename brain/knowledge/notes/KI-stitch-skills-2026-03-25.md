@@ -14,7 +14,7 @@
 
 ## Available Skills
 
-| Skill | Mô tả | Relevance |
+| Skill | Description: | Relevance |
 |-------|-------|-----------|
 | `stitch-design` | Unified entry point — prompt enhancement + design system + Stitch MCP | ⭐⭐⭐ CRITICAL |
 | `stitch-loop` | Multi-page website từ 1 prompt | ⭐⭐⭐ CRITICAL |

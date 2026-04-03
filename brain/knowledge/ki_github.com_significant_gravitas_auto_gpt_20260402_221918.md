@@ -1,0 +1,22 @@
+---
+id: ki-github.com-significant-gravitas-auto-gpt
+type: knowledge
+owner: OA
+source: github.com_Significant-Gravitas_Auto-GPT_cb8e99e5_knowledge.md
+created_at: 2026-04-02T22:19:18.359688
+tags: [knowledge-item, auto-extracted]
+---
+
+# Knowledge Item: github.com_Significant-Gravitas_Auto-GPT
+
+> [!NOTE]
+> Auto-extracted by OA Academy. TODO: Human review recommended.
+
+## Summary
+(OA: LLM extraction pending — source file: `github.com_Significant-Gravitas_Auto-GPT_cb8e99e5_knowledge.md`)
+
+## Key Concepts
+- TODO
+
+## References
+- Source: `vault/tmp/raw_knowledge_dumps/github.com_Significant-Gravitas_Auto-GPT_cb8e99e5_knowledge.md`

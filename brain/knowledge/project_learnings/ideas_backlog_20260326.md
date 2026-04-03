@@ -15,4 +15,4 @@
 - **Vũ Khí Code:** Cần dùng Google Developer Knowledge MCP tra cứu Android Docs cho Jetpack Compose UI và OkHttp / Retrofit Networking.
 
 ---
-> _Lưu ý: Bất cứ lúc nào Sếp mở miệng gọi tên 1 trong 2 mã ID này, binh đoàn Agent sẽ lôi chúng ra dệt thành Code ngay._
+> _Note: Bất cứ lúc nào Sếp mở miệng gọi tên 1 trong 2 mã ID này, binh đoàn Agent sẽ lôi chúng ra dệt thành Code ngay._

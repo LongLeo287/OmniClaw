@@ -33,7 +33,7 @@ npx @sickn33/antigravity-awesome-skills install --bundle developer
 ## Liên Quan OmniClaw
 - **Install path trùng** với `<USER_PROFILE>\.gemini\antigravity\skills\` — đây chính là thư mục skill của OmniClaw
 - Là nguồn bổ sung skill cho **Antigravity (Tier 1 Orchestrator)**
-- Pending Action từ Batch 2: Đã được chỉ định cài đặt nhưng chưa hoàn thành
+- Pending Action từ Batch 2: Đã được chỉ định Installation: nhưng chưa hoàn thành
 - **ƯU TIÊN CÀI NGAY** — Chạy: `npx @sickn33/antigravity-awesome-skills install`
 
 ## OmniClaw Action

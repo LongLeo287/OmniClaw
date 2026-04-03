@@ -1,18 +1,18 @@
-# Department: monitoring_inspection
+﻿# Department: monitoring_inspection
 ---
-description: OmniClaw Bot Reporting Protocol — how to report status, tasks, and alerts via Telegram bot
+description: OmniClaw Bot Reporting Protocol â€” how to report status, tasks, and alerts via Telegram bot
 ---
 
 # OmniClaw Bot Reporting Protocol
 
-## Quy tắc chung
+## Quy táº¯c general
 // turbo-all
 
-Mọi kết quả audit, task completion, alert đều PHẢI push lên bot trước khi báo cáo với user.
+Má»i káº¿t quáº£ audit, task completion, alert Ä‘á»u PHáº¢I push lÃªn bot trÆ°á»›c khi bÃ¡o cÃ¡o vá»›i user.
 
 ---
 
-## 1. Gửi report lên bot
+## 1. Gá»­i report lÃªn bot
 
 ```python
 # turbo
@@ -31,11 +31,11 @@ print('Sent:', r.get('ok'), 'msg_id:', r.get('result',{}).get('message_id'))
 
 ---
 
-## 2. Các loại message chuẩn
+## 2. CÃ¡c loáº¡i message chuáº©n
 
 ### Task Completion Report
 ```
-✅ [TASK_ID] COMPLETE — [date]
+âœ… [TASK_ID] COMPLETE â€” [date]
 
 Done:
 - item 1
@@ -62,7 +62,7 @@ OmniClaw Status [time]
 
 ### Alert / Issue Found
 ```
-⚠️ ISSUE FOUND — [severity]
+âš ï¸ ISSUE FOUND â€” [severity]
 Area: [file/service]
 Issue: [description]
 Impact: [impact]
@@ -71,7 +71,7 @@ Fix: [proposed fix]
 
 ### Brainstorm / Idea
 ```
-💡 BRAINSTORM — [topic]
+ðŸ’¡ BRAINSTORM â€” [topic]
 Context: [why now]
 Ideas:
 1. [idea 1]
@@ -81,22 +81,22 @@ Recommended: [best option]
 
 ---
 
-## 3. Khi nào push lên bot
+## 3. Khi nÃ o push lÃªn bot
 
 | Trigger | Action |
 |---------|--------|
-| Hoàn thành 1 Sprint/Phase | Push full completion report |
-| Phát hiện critical bug/issue | Push alert ngay |
-| Bắt đầu session mới | Push context summary |
-| Kết thúc session | Push pending tasks summary |
+| HoÃ n thÃ nh 1 Sprint/Phase | Push full completion report |
+| PhÃ¡t hiá»‡n critical bug/issue | Push alert ngay |
+| Báº¯t Ä‘áº§u session má»›i | Push context summary |
+| Káº¿t thÃºc session | Push pending tasks summary |
 | Brainstorm xong | Push ideas list |
-| Task list thay đổi | Push updated task status |
+| Task list thay Ä‘á»•i | Push updated task status |
 
 ---
 
-## 4. Blackboard Protocol (Antigravity → Bot)
+## 4. Blackboard Protocol (Antigravity â†’ Bot)
 
-Khi Antigravity muốn trả lời message từ user qua bot:
+Khi Antigravity muá»‘n tráº£ lá»i message tá»« user qua bot:
 
 ```python
 # Write to telegram_outbox trong blackboard.json
@@ -107,17 +107,18 @@ bb["telegram_outbox"] = {
 }
 ```
 
-Bot sẽ tự động pick up trong vòng <3 giây và gửi cho user.
+Bot sáº½ tá»± Ä‘á»™ng pick up trong vÃ²ng <3 giÃ¢y vÃ  gá»­i cho user.
 
 ---
 
 ## 5. MQ Task Queue (Long-running tasks)
 
 ```bash
-# Bot nhận message → viết vào subagents/mq/tg_<id>.json
-# Antigravity đọc → xử lý → viết reply vào task["reply"]
-# Bot poll → gửi reply về user (timeout 2.5s)
+# Bot nháº­n message â†’ viáº¿t vÃ o subagents/mq/tg_<id>.json
+# Antigravity Ä‘á»c â†’ xá»­ lÃ½ â†’ viáº¿t reply vÃ o task["reply"]
+# Bot poll â†’ gá»­i reply vá» user (timeout 2.5s)
 ```
 
-Với task phức tạp: Antigravity đọc _BB_PATH.telegram_inbox và reply qua telegram_outbox.
+Vá»›i task phá»©c táº¡p: Antigravity Ä‘á»c _BB_PATH.telegram_inbox vÃ  reply qua telegram_outbox.
+
 

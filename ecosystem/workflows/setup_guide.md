@@ -1,52 +1,52 @@
-# Department: operations
-# OmniClaw Corp â€” Setup Guide
-# Sau khi clone, chá»‰ cáº§n 2 bÆ°á»›c lÃ  cháº¡y Ä‘Æ°á»£c
+﻿# Department: operations
+# OmniClaw Corp Ã¢â‚¬â€ Setup Guide
+# Sau khi clone, chÃ¡Â»â€° cÃ¡ÂºÂ§n 2 bÃ†Â°Ã¡Â»â€ºc lÃƒÂ  chÃ¡ÂºÂ¡y Ã„â€˜Ã†Â°Ã¡Â»Â£c
 
-## âš¡ Quick Start
+## Ã¢Å¡Â¡ Quick Start
 
 ```powershell
-# 1. Clone repo (Code Lõi)
+# 1. Clone repo (Code LÃµi)
 git clone <repo-url> "d:\OmniClaw Corp"
 
-# 2. Auto-Setup: Kéo Data Vault (HuggingFace) & Cài Dependencies
+# 2. Auto-Setup: KÃ©o Data Vault (HuggingFace) & CÃ i Dependencies
 cd "d:\OmniClaw Corp\OmniClaw REMOTE\scripts"
 powershell -ExecutionPolicy Bypass -File setup.ps1
 
-# 3. Khởi động Master Dashboard
+# 3. Khá»Ÿi Ä‘á»™ng Master Dashboard
 "$OMNICLAW_ROOT\launcher\OmniClaw Corp.cmd"
 ```
 
 ---
 
-## System Requirements (cÃ i 1 láº§n náº¿u chÆ°a cÃ³)
+## System Requirements (cÃƒÂ i 1 lÃ¡ÂºÂ§n nÃ¡ÂºÂ¿u chÃ†Â°a cÃƒÂ³)
 
 | Tool | Version | Install |
 |------|---------|---------|
-| Python | 3.10+ | [python.org](https://python.org/downloads) hoáº·c `winget install Python.Python.3.12` |
-| Node.js | 18+ | [nodejs.org](https://nodejs.org) hoáº·c `winget install OpenJS.NodeJS` |
+| Python | 3.10+ | [python.org](https://python.org/downloads) hoÃ¡ÂºÂ·c `winget install Python.Python.3.12` |
+| Node.js | 18+ | [nodejs.org](https://nodejs.org) hoÃ¡ÂºÂ·c `winget install OpenJS.NodeJS` |
 | Git | any | `winget install Git.Git` |
 | Docker | any | [docker.com](https://docker.com/products/docker-desktop) |
 | Ollama | any | [ollama.ai](https://ollama.ai/download) |
 
-> **Bun, uv** â€” optional, cáº§n khi dÃ¹ng claude-mem hoáº·c cognee
+> **Bun, uv** Ã¢â‚¬â€ optional, cÃ¡ÂºÂ§n khi dÃƒÂ¹ng claude-mem hoÃ¡ÂºÂ·c cognee
 
 ---
 
 ## Python Dependencies
 
-Táº¥t cáº£ trong `requirements.txt` â€” cháº¡y 1 láº§n:
+TÃ¡ÂºÂ¥t cÃ¡ÂºÂ£ trong `requirements.txt` Ã¢â‚¬â€ chÃ¡ÂºÂ¡y 1 lÃ¡ÂºÂ§n:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-| Package | DÃ¹ng cho |
+| Package | DÃƒÂ¹ng cho |
 |---------|---------|
 | python-dotenv | ClawTask, AgAuto |
-| pypdf | ClawTask (Ä‘á»c PDF) |
+| pypdf | ClawTask (Ã„â€˜Ã¡Â»Âc PDF) |
 | fastapi + uvicorn | ACP, AgAuto API |
 | supabase | ClawTask backend |
-| requests + httpx | HTTP chung |
+| requests + httpx | HTTP general |
 | mem0ai | Agent memory plugin |
 | firecrawl-py | Web intelligence (Phase 2) |
 | crewai | Multi-agent (Phase 4) |
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 
 ---
 
-## Special Installs (cáº§n thÃªm bÆ°á»›c)
+## Special Installs (cÃ¡ÂºÂ§n thÃƒÂªm bÃ†Â°Ã¡Â»â€ºc)
 
 ### MaxKB
 ```powershell
@@ -68,9 +68,9 @@ docker compose up -d
 /plugin install claude-mem
 ```
 
-### nullclaw (binary Ä‘Ã£ cÃ³ sáºµn)
+### nullclaw (binary Ã„â€˜ÃƒÂ£ cÃƒÂ³ sÃ¡ÂºÂµn)
 ```
-# KhÃ´ng cáº§n cÃ i thÃªm â€” binary cÃ³ táº¡i:
+# KhÃƒÂ´ng cÃ¡ÂºÂ§n cÃƒÂ i thÃƒÂªm Ã¢â‚¬â€ binary cÃƒÂ³ tÃ¡ÂºÂ¡i:
 REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe
 ```
 
@@ -78,7 +78,7 @@ REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe
 
 ## External API Keys
 
-ThÃªm vÃ o `ops/secrets/MASTER.env`:
+ThÃƒÂªm vÃƒÂ o `ops/secrets/MASTER.env`:
 
 ```env
 OPENROUTER_API_KEY=sk-or-...
@@ -87,5 +87,6 @@ FIRECRAWL_API_KEY=fc-...
 
 ---
 
-*Dashboard: `launcher\OmniClaw Corp.cmd` â†’ [I] Install Manager Ä‘á»ƒ kiá»ƒm tra tráº¡ng thÃ¡i*
+*Dashboard: `launcher\OmniClaw Corp.cmd` Ã¢â€ â€™ [I] Install Manager Ã„â€˜Ã¡Â»Æ’ kiÃ¡Â»Æ’m tra trÃ¡ÂºÂ¡ng thÃƒÂ¡i*
+
 

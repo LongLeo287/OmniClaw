@@ -1,6 +1,6 @@
 # 📚 AI OS Reference Repositories Catalog
 > Generated on: 2026-03-30 from intake backlog evaluation.
-> Total: 1,444 repos. Trạng thái: Chỉ lưu trữ để tham khảo (chưa clone).
+> Total: 1,444 repos. Status: Chỉ lưu trữ để tham khảo (chưa clone).
 
 - https://github.com/1401
 - https://github.com/-update-workflows-list-page-to-show-fake-door-templates/issues

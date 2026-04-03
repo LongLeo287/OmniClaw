@@ -1,0 +1,42 @@
+department:
+  id: system_daemons
+  name: OSD (OmniClaw System Daemons)
+  active: true
+leadership:
+  manager: oma-master-architect
+  reports_to: ceo-agent
+workforce:
+- agent_id: oma-master-architect
+  role: System Map & Architectural Enforcement
+  access_level: absolute
+  status: active
+- agent_id: oa-academy-auditor
+  role: Knowledge Audit & Supreme Justice
+  access_level: supreme
+  status: active
+- agent_id: ohd-health-daemon
+  role: Quarantine Healing & Health Diagnostics
+  access_level: high
+  status: active
+- agent_id: oiw-intake-daemon
+  role: Data Crawling & External Fetch
+  access_level: high
+  status: active
+- agent_id: oer-registry-daemon
+  role: Metadata Validation & System Registry
+  access_level: high
+  status: active
+kpi_targets: brain/corp/kpi_targets.yaml#system_daemons
+tools_and_capabilities:
+  skills:
+  - deep_scan
+  - fast_trace
+  plugins: []
+  subagents: []
+outputs:
+- artifact: system_map
+  consumer: orchestration
+- artifact: fast_index
+  consumer: all
+- artifact: clean_data
+  consumer: brain

@@ -8,13 +8,13 @@
 
 ## Summary
 
-**stitchSkill** là Antigravity skill do CEO (arinnem/LongLeo) tự build — tự động tạo wireframe qua Stitch MCP từ tài liệu mô tả phần mềm. **16 screens tự động, không cần click.**
+**stitchSkill** là Antigravity skill do CEO (arinnem/LongLeo) tự build — tự động tạo wireframe qua Stitch MCP từ tài liệu Description: phần mềm. **16 screens tự động, không cần click.**
 
 ---
 
 ## Core Features
 
-| Feature | Mô tả |
+| Feature | Description: |
 |---------|-------|
 | 📖 Context extraction | Đọc markdown/docx/txt → trích xuất system context |
 | 🎨 Style collection | Screenshots, brand guide, URL reference, hoặc text style |

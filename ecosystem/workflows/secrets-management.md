@@ -1,126 +1,126 @@
-# Department: operations
+# department: operations
 ---
-description: Hướng dẫn quản lý tập trung API keys, tokens, và secrets trong OmniClaw Corp
+description: hướng dẫn quản lý tập trung api keys, tokens, và secrets trong omniclaw corp
 ---
 
-# Secrets Management SOP
+# secrets management sop
 
-## Nguyên tắc cốt lõi
+## nguyên tắc cốt lõi
 
-| Rule | Detail |
+| rule | detail |
 |------|--------|
-| **1 nguồn** | Tất cả secrets trong `$OMNICLAW_ROOT\.env` (root master) |
-| **Không commit** | `.env` luôn bị gitignore, không bao giờ push lên git |
-| **Không hardcode** | Không paste key vào code, markdown, hay comment |
-| **Rotate** | Xoay vòng keys theo lịch (xem SECRETS_REGISTRY.md) |
-| **Least privilege** | Chỉ cấp quyền tối thiểu cần thiết cho mỗi key |
+| **1 nguồn** | tất cả secrets trong `$omniclaw_root\.env` (root master) |
+| **không commit** | `.env` luôn bị gitignore, không bao giờ push lên git |
+| **không hardcode** | không paste key vào code, markdown, hay comment |
+| **rotate** | xoay vòng keys theo lịch (xem secrets_registry.md) |
+| **least privilege** | chỉ cấp quyền tối thiểu cần thiết cho mỗi key |
 
 ---
 
-## Cấu trúc Files
+## cấu trúc files
 
 ```
-$OMNICLAW_ROOT\
-├── .env                    ← MASTER secrets (gitignored ✅)
-├── .env.example            ← Template an toàn (có thể commit)
+$omniclaw_root\
+├── .env                    ← master secrets (gitignored ✅)
+├── .env.example            ← template an toàn (có thể commit)
 ├── secrets\
-│   ├── .gitignore          ← Chặn toàn folder
-│   ├── SECRETS_REGISTRY.md ← Inventory keys (không có values)
-│   └── .env.master.example ← Template master đầy đủ
+│   ├── .gitignore          ← chặn toàn folder
+│   ├── secrets_registry.md ← inventory keys (không có values)
+│   └── .env.master.example ← template master đầy đủ
 └── tools\clawtask\
-    └── .env                ← Sub-env (chỉ vars cần cho clawtask, gitignored ✅)
+    └── .env                ← sub-env (chỉ vars cần cho clawtask, gitignored ✅)
 ```
 
 ---
 
-## Quy trình Onboarding (setup lần đầu)
+## quy trình onboarding (setup lần đầu)
 
-### Bước 1: Copy template
+### Step 1: copy template
 ```powershell
-copy "$OMNICLAW_ROOT\secrets\.env.master.example" "$OMNICLAW_ROOT\.env"
+copy "$omniclaw_root\secrets\.env.master.example" "$omniclaw_root\.env"
 ```
 
-### Bước 2: Điền values
-Mở `$OMNICLAW_ROOT\.env` và điền giá trị thực cho từng key.
+### Step 2: điền values
+mở `$omniclaw_root\.env` và điền giá trị thực cho từng key.
 
-### Bước 3: Setup sub-tool .env
+### Step 3: setup sub-tool .env
 ```powershell
-# ClawTask cần subset nhỏ
+# clawtask cần subset nhỏ
 copy template vào tools\clawtask\.env
-# Chỉ điền: SUPABASE_URL, SUPABASE_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+# chỉ điền: supabase_url, supabase_key, telegram_bot_token, telegram_chat_id
 ```
 
-### Bước 4: Verify gitignore
+### Step 4: verify gitignore
 ```powershell
-git status   # .env KHÔNG được xuất hiện trong danh sách
-git check-ignore -v .env  # Phải trả về ".gitignore:.env"
+git status   # .env không được xuất hiện trong danh sách
+git check-ignore -v .env  # phải trả về ".gitignore:.env"
 ```
 
 ---
 
-## Thêm Secret Mới
+## thêm secret mới
 
-1. **Thêm vào `$OMNICLAW_ROOT\.env`** (giá trị thực)
-2. **Thêm vào `secrets\.env.master.example`** (placeholder)
-3. **Đăng ký vào `secrets\SECRETS_REGISTRY.md`** (key name + metadata)
-4. Load trong code qua `os.environ.get("KEY_NAME")`
-
----
-
-## Rotate Secret
-
-1. **Revoke key cũ** trên portal của provider
-2. **Generate key mới**
-3. **Update** `$OMNICLAW_ROOT\.env`
-4. **Restart** services dùng key đó (Docker: `docker compose restart`)
-5. **Ghi nhật ký** vào SECRETS_REGISTRY.md (update date)
+1. **thêm vào `$omniclaw_root\.env`** (giá trị thực)
+2. **thêm vào `secrets\.env.master.example`** (placeholder)
+3. **đăng ký vào `secrets\secrets_registry.md`** (key name + metadata)
+4. load trong code qua `os.environ.get("key_name")`
 
 ---
 
-## Nếu Key bị Lộ (Emergency)
+## rotate secret
+
+1. **revoke key cũ** trên portal của provider
+2. **generate key mới**
+3. **update** `$omniclaw_root\.env`
+4. **restart** services dùng key đó (docker: `docker compose restart`)
+5. **ghi nhật ký** vào secrets_registry.md (update date)
+
+---
+
+## nếu key bị lộ (emergency)
 
 ```
-KHẨN CẤP: Revoke ngay trên provider portal!
+khẩn cấp: revoke ngay trên provider portal!
 ```
 
-1. 🔴 **Revoke ngay** — không chờ
-2. Generate key replacement
-3. Update `.env` + restart services
-4. Verify không còn reference trong code: `grep -r "old_key_prefix" d:\Project`
-5. Audit log xem ai/cái gì đã access
+1. 🔴 **revoke ngay** — không chờ
+2. generate key replacement
+3. update `.env` + restart services
+4. verify không còn reference trong code: `grep -r "old_key_prefix" d:\project`
+5. audit log xem ai/cái gì đã access
 
 ---
 
-## Tools & Commands hữu ích
+## tools & commands hữu ích
 
 ```powershell
-# Kiểm tra file có bị commit không
+# kiểm tra file có bị commit không
 git ls-files .env
 
-# Xem secrets đang được load không
-python -c "import os; print(os.environ.get('ANTHROPIC_API_KEY','NOT SET')[:10])"
+# xem secrets đang được load không
+python -c "import os; print(os.environ.get('anthropic_api_key','not set')[:10])"
 
-# Check gitnore
+# check gitnore
 git check-ignore -v tools\clawtask\.env
 
-# Test Telegram bot sau khi config
+# test telegram bot sau khi config
 curl http://localhost:7474/api/telegram/test
 ```
 
 ---
 
-## Provider Dashboards
+## provider dashboards
 
-| Provider | Revoke Location |
+| provider | revoke location |
 |----------|----------------|
-| Anthropic | console.anthropic.com → API Keys |
-| OpenAI | platform.openai.com → API Keys |
-| GitHub | github.com/settings/tokens |
-| Supabase | Project → Settings → API |
-| Telegram | Telegram → @BotFather → /revoke |
-| Google | console.cloud.google.com → Credentials |
+| anthropic | console.anthropic.com → api keys |
+| openai | platform.openai.com → api keys |
+| github | github.com/settings/tokens |
+| supabase | project → settings → api |
+| telegram | telegram → @botfather → /revoke |
+| google | console.cloud.google.com → credentials |
 
 ---
 
-*Security GRC Dept | SOP-SEC-001 | Created Cycle 5 (2026-03-20)*
+*security grc dept | sop-sec-001 | created cycle 5 (2026-03-20)*
 

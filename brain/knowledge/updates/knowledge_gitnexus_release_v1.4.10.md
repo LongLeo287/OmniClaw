@@ -4,7 +4,7 @@
 **Link Bản gốc:** https://github.com/abhigyanpatwari/GitNexus/releases/tag/v1.4.10
 **Thuộc Bộ phận:** knowledge_gitnexus - knowledge
 
-## Chi tiết thay đổi (Release Notes)
+## Chi tiết Changes: (Release Notes)
 
 ### Fixed
 

@@ -1,0 +1,41 @@
+# Agent Configuration — registry-manager-agent
+# OmniClaw Corp | Activated: 2026-03-29
+
+name: registry-manager-agent
+version: 1.0.0
+status: active
+description: "Manages the source of truth for the entire registry: agents, skills, plugins, departments within OmniClaw"
+domain: ecosystem
+type: workforce-agent
+department: registry_capability
+tier: 2
+
+skills:
+  - neural_navigator
+  - sequential-thinking
+  - registry-indexer
+  - schema-validator
+
+tools:
+  - file-system
+  - web_search
+
+context:
+  - Read system_prompt.md for full operating instructions
+  - Memory: brain/shared-context/blackboard.json (short-term)
+  - Knowledge: brain/knowledge/ (long-term)
+  - Reports to: orchestrator_pro or direct to blackboard
+
+runtime:
+  type: antigravity
+  memory: ltm
+  bus: event_bus.db
+
+routing:
+  domain: registry-management
+  fallback: orchestrator_pro
+
+metadata:
+  created: 2026-03-29
+  version: v1.0
+  activated_by: omniclaw_activate_agents.py

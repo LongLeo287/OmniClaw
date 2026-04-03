@@ -1,7 +1,7 @@
 # OmniClaw Corp — AstrBot Setup Guide
 # Dept 03 (IT Infrastructure) | Updated: 2026-03-18
 
-## Bước 1: Lấy thông tin cần thiết
+## Step 1: Lấy thông tin cần thiết
 
 ### 1.1 Telegram Bot Token
 1. Mở Telegram → tìm **@BotFather**
@@ -21,7 +21,7 @@
 
 ---
 
-## Bước 2: Khởi động AstrBot
+## Step 2: Khởi động AstrBot
 
 ```powershell
 # Mở PowerShell, chạy startup script
@@ -35,7 +35,7 @@ AstrBot WebUI sẽ mở tại: **http://localhost:6185/**
 
 ---
 
-## Bước 3: Cấu hình qua WebUI (http://localhost:6185/)
+## Step 3: Configuration: qua WebUI (http://localhost:6185/)
 
 ### 3.1 Thêm LLM Provider
 - Menu: **Settings → LLM Providers**
@@ -44,11 +44,11 @@ AstrBot WebUI sẽ mở tại: **http://localhost:6185/**
 ### 3.2 Kết nối Telegram
 - Menu: **Settings → Message Platforms**
 - Add: **Telegram Bot**
-- Paste: **Bot Token** từ Bước 1
+- Paste: **Bot Token** từ Step 1:
 
 ### 3.3 Set Admin
 - Menu: **Settings → Admin**
-- Add Telegram ID từ Bước 1
+- Add Telegram ID từ Step 1:
 - Role: Admin
 
 ### 3.4 Cài OmniClaw Corp Plugin
@@ -73,7 +73,7 @@ Nhắn vào bot Telegram của bạn:
 
 ## Commands OmniClaw Corp Plugin
 
-| Command | Mô tả |
+| Command | Description: |
 |---------|-------|
 | `/clawtask` | Xem toàn bộ Kanban board |
 | `/clawtask todo` | Chỉ xem TODO tasks |
