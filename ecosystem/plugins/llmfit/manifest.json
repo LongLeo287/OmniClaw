@@ -1,7 +1,13 @@
 {
   "id": "llmfit",
   "name": "llmfit",
-  "status": "registered",
-  "upstream": "https://github.com/AlexsJones/llmfit",
-  "department": "Dept 20 \u2014 CIV"
+  "version": "1.0.0",
+  "type": "data",
+  "status": "active",
+  "description": "Hundreds of models & providers. One command to find what runs on your hardware.",
+  "auto_load": false,
+  "can_crash_os": false,
+  "github_url": "https://github.com/AlexsJones/llmfit",
+  "tracking": true,
+  "last_synced_release": "initial_intake"
 }

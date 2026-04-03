@@ -7,11 +7,13 @@ while _curr != _curr.parent and not (_curr / "system" / "ops").is_dir():
     _curr = _curr.parent
 BASE_DIR = str(_curr) if (_curr / "system" / "ops").is_dir() else os.environ.get("AOS_ROOT", str(Path(__file__).resolve().parents[6]))
 PLUGINS_DIR = os.path.join(BASE_DIR, 'ecosystem', 'plugins')
-VAULT_DATA = os.path.join(BASE_DIR, 'storage', 'vault', 'DATA')
+VAULT_DATA = os.path.join(BASE_DIR, 'vault', 'assets', 'data')
 REGISTRY_FILE = os.path.join(PLUGINS_DIR, 'registry.json')
-ENV_FILE = os.path.join(BASE_DIR, 'system', 'ops', 'secrets', 'MASTER.env')
-PENDING_FILE = os.path.join(VAULT_DATA, 'PENDING_REPOS.md')
-ACTIVE_FILE = os.path.join(VAULT_DATA, 'ACTIVE_REPOS.md')
+ENV_FILE = os.path.join(BASE_DIR, '.env')
+SPOOL_FILE = os.path.join(VAULT_DATA, 'github.txt')
+SELECTED_CSV = os.path.join(VAULT_DATA, 'selected_repos.csv')
+ERROR_CSV = os.path.join(VAULT_DATA, 'error_repos.csv')
+OIW_INBOX = os.path.join(BASE_DIR, 'vault', 'tmp', 'sandbox_env', 'OIW_INBOX')
 
 def get_github_token():
     env_token = os.environ.get('GITHUB_TOKEN')
@@ -60,7 +62,7 @@ def integrate_repo(full_name):
     
     parts = full_name.split('/')
     if not parts[0].strip() or not parts[1].strip():
-        print("[OmniClaw System Event]")!  ")
+        print("[OmniClaw System Event] Invalid repo format")
         return False
 
     token = get_github_token()
@@ -70,76 +72,76 @@ def integrate_repo(full_name):
     owner, repo_name = full_name.split('/')
     readme = fetch_repo_readme(full_name, token)
 
-    # [System log: Legacy non-English comment removed]
-    plugin_dir = os.path.join(PLUGINS_DIR, repo_name)
-    os.makedirs(plugin_dir, exist_ok=True)
-    os.makedirs(os.path.join(plugin_dir, 'tests'), exist_ok=True)
+    os.makedirs(OIW_INBOX, exist_ok=True)
+    
+    # Pack raw metadata for Daemons
+    clean_desc = meta.get('description', '')
+    if clean_desc: clean_desc = clean_desc.replace('\n', ' ')
+    
+    payload_path = os.path.join(OIW_INBOX, f"OIW_RAW_{repo_name}.md")
+    content = f"""---
+id: {repo_name}
+name: "{meta.get('name', repo_name)}"
+type: raw_intake
+owner: OIW
+status: pending_health_check
+github_url: https://github.com/{full_name}
+stars: {meta.get('stargazers_count')}
+description: "{clean_desc}"
+---
 
-    manifest = {
-        "id": repo_name,
-        "name": meta.get('name', repo_name),
-        "version": "1.0.0",
-        "type": "data",
-        "status": "active",
-        "description": meta.get('description', ''),
-        "auto_load": False,
-        "can_crash_os": False,
-        "github_url": f"https://github.com/{full_name}",
-        "tracking": True,
-        "last_synced_release": "initial_intake"
-    }
-    with open(os.path.join(plugin_dir, 'manifest.json'), 'w', encoding='utf-8') as f:
-        json.dump(manifest, f, indent=2, ensure_ascii=False)
+# Repo Metadata: {full_name}
 
-    with open(os.path.join(plugin_dir, 'README.md'), 'w', encoding='utf-8') as f:
-        f.write(readme[:1000] + "\n\n...(truncated for OmniClaw Ecosystem)...")
+## README Payload
+{readme[:2000]}
+... (truncated by OIW logic) ...
+"""
+    with open(payload_path, 'w', encoding='utf-8') as f:
+        f.write(content)
 
-    with open(os.path.join(plugin_dir, 'PLUGIN.md'), 'w', encoding='utf-8') as f:
-        f.write(f"# Plugin: {repo_name}\n\nAuto-generated integration stub.")
 
-    # 2. Update Registry
-    if os.path.exists(REGISTRY_FILE):
-        with open(REGISTRY_FILE, 'r', encoding='utf-8') as f:
-            registry = json.load(f)
-    else:
-        registry = {"total_registered": 0, "active_count": 0, "plugins": []}
-
-    if not any(p['id'] == repo_name for p in registry['plugins']):
-        registry['plugins'].append({
-            "id": repo_name,
-            "type": "data",
-            "status": "active",
-            "auto_load": False,
-            "path": f"plugins/{repo_name}/",
-            "manifest": f"plugins/{repo_name}/manifest.json",
-            "github_url": f"https://github.com/{full_name}",
-            "notes": meta.get('description', ''),
-            "registered_at": datetime.datetime.now().strftime("%Y-%m-%d")
-        })
-        registry['total_registered'] = len(registry['plugins'])
-        registry['active_count'] = len([p for p in registry['plugins'] if p['status'] == 'active'])
-        with open(REGISTRY_FILE, 'w', encoding='utf-8') as f:
-            json.dump(registry, f, indent=2, ensure_ascii=False)
-
-    # [System log: Legacy non-English comment removed]
-    if os.path.exists(PENDING_FILE):
-        with open(PENDING_FILE, 'r', encoding='utf-8') as f:
-            pending_lines = f.readlines()
-        with open(PENDING_FILE, 'w', encoding='utf-8') as f:
-            for line in pending_lines:
-                if full_name not in line:
-                    f.write(line)
-
-    with open(ACTIVE_FILE, 'a', encoding='utf-8') as f:
-        desc = meta.get('description', '').replace('|', '')
-        f.write(f"| {registry['active_count']} | [{full_name}]({meta.get('html_url')}) | ⭐{meta.get('stargazers_count')} | Dept 00 — General | {desc} |\n")
+    # Skip legacy PENDING_FILE removal block 
+    
+    with open(SELECTED_CSV, 'a', encoding='utf-8') as f:
+        desc = meta.get('description', '')
+        if desc: desc = desc.replace(',', ';').replace('\n', ' ')
+        else: desc = "No description"
+        ts = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        f.write(f"{ts},{repo_name},{repo_name},{meta.get('html_url')},{meta.get('stargazers_count')},{desc}\n")
 
     print(f"✅ Complete Integrate: {repo_name}")
     return True
 
 if __name__ == '__main__':
+    from datetime import datetime as dt
     if len(sys.argv) > 1:
         for repo in sys.argv[1:]:
             integrate_repo(repo)
     else:
-        print("[OmniClaw System Event]")
+        if os.path.exists(SPOOL_FILE):
+            with open(SPOOL_FILE, 'r', encoding='utf-8') as f:
+                urls = [line.strip() for line in f if line.strip()]
+            
+            if not urls:
+                print("[OIW] No links in github.txt to process.")
+                sys.exit(0)
+
+            for url in urls:
+                full_name = url
+                if 'github.com/' in url:
+                    full_name = url.split('github.com/')[-1].split('.git')[0].strip('/')
+                
+                try:
+                    success = integrate_repo(full_name)
+                    if not success:
+                        with open(ERROR_CSV, 'a', encoding='utf-8') as ef:
+                            ts = dt.now().strftime("%Y-%m-%dT%H:%M:%S")
+                            ef.write(f"{ts},{full_name},{url},Fetch Failed\n")
+                except Exception as e:
+                    with open(ERROR_CSV, 'a', encoding='utf-8') as ef:
+                        ts = dt.now().strftime("%Y-%m-%dT%H:%M:%S")
+                        ef.write(f"{ts},{full_name},{url},Exception: {e}\n")
+
+            with open(SPOOL_FILE, 'w', encoding='utf-8') as f:
+                f.write('')
+            print("[OIW] Completed intake spool. Emptied github.txt.")

@@ -440,14 +440,13 @@ ever before making a large change → always run:
 
 **[rule-arch-01] macro-cognition & air-gapped architecture:**
 ```
-khi sếp yêu cầu Changes kiến trúc (architecture), phân tách nhánh (branching), hoặc di dời thư mục:
-  1. nhận thức mô hình 2 bán cầu:
-     - local core (`<ai_os_root>`): nhân lõi, chạy venv (`runtime\venv`), xử lý logic, rag, automation. không chứa ui/openclaw.
-     - remote ecosystem (`<ai_os_remote_root>`): nhánh ngoại vi, chứa giao diện (ui), dashboard, openclaw, telegram bot, các repo thư viện ui.
-  2. bắt buộc quét radar toàn cục trước khi hành động:
-     - phải tự động cross-check kho quarantine/incoming/repos/ và quarantine/vetted/repos/.
-     - không làm việc cục bộ "bảo gì chuyển nấy". nếu tạo/di dời mảng remote/ui, tự động dọn dẹp tất cả repo/file liên quan đến ui/dashboard mới nạp vào sang nhánh remote tương ứng.
-     - luôn xâu chuỗi dữ kiện từ task intake trước đó với task hệ thống hiện tại.
+khi sếp yêu cầu Changes kiến trúc (architecture), phân tách nhánh (branching), hoặc ráp nối system:
+  1. nhận thức ranh giới 2 bán cầu (the boundary law):
+     - local core (`<ai_os_root>`): nhân lõi, chạy venv, xử lý logic, automation. Chỉ chứa các thành phần **Sử dụng ngay và luôn (In-Process/Native Execute)** không đòi hỏi kết nối server hay mở ports. (NGOẠI TRỪ: Data Model AI không được nằm ở đây).
+     - remote ecosystem (`<ai_os_remote_root>`): nhánh ngoại vi (data plane/server rack). **Chứa tất cả các modules cần kết nối mạng (Ports, Servers, Docker, REST APIs)** như OpenClaw, FireCrawl, LightRAG, Mem0, UI Dashboard.
+  2. luật cách ly model (model air-gap): tuyệt đối không tàng trữ các file model AI khổng lồ (như .gguf, .safetensors, .bin, .pt) trong `AI OS` cốt lõi để tránh sập Git và kẹt IDE.
+  3. luồng chạy song song (dual-stream parallel execution): các đại diện Daemons (OA, OMA, OBD) phải ý thức được kiến trúc 2 luồng này đi song song. các dịch vụ ngoại vi ở nhánh Remote phải hỗ trợ tính năng Fallback 2 Luồng (Check Local -> Chuyển hướng Cloud API) do OBD định tuyến.
+  4. luật báo cáo kiểm định (approval gate): khi OA, OIW hay bất cứ Daemon nào phát hiện một module/plugin thuộc diện "phải nằm ở Remote" (cần Server/Port/Docker), TUYỆT ĐỐI KHÔNG ĐƯỢC tự ý nạp thẳng vào hệ thống AI OS. Phải DỪNG LẠI, báo cáo với Sếp để xin phê duyệt Implementation Plan đẩy sang Remote!
 ```
 
 **[rule-arch-02] neural link & knowledge graph protocol:**

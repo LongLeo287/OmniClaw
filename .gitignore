@@ -274,6 +274,10 @@ Cargo.lock
 *.mlpackage
 models/*
 !models/.gitkeep
+vault/models/ollama/
+vault/models/*.gguf
+vault/models/*.safetensors
+vault/models/*.bin
 
 # ─── OmniClaw Specific ────────────────────────────────────────
 # Token vault (Bridge auth — contains live tokens)

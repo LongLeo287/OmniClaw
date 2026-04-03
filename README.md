@@ -110,7 +110,7 @@ Directives from the CEO (You) are routed through specialized departments. The OS
 | **Dept 23** | **Reception**            | Automated client intake, brief collection, and proposal generation.                          | `project-intake`    |
 
 > [!TIP]
-> **Deep Dive**: For the full breakdown of all 21 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/corp/MASTER_INDEX.md).
+> **Deep Dive**: For the full breakdown of all 21 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/knowledge/corp/MASTER_INDEX.md).
 
 > [!NOTE]
 > For the full list of 21 departments and agent rosters, please refer to the `brain/corp/org_chart.yaml` master registry.
@@ -139,8 +139,8 @@ _Windows Tip: We have provided native Windows GUI accessibility. Simply double-c
 
 OmniClaw is an entire Operating System, not just a codebase. For daily usage and automatic data processing, please refer to our internal operation guides:
 
-- [**Secure GitHub Intake Protocol (CIV)**](docs/workflows/data_intake.md)
-- [**OS Deep Sanitation & Vault Protection**](docs/workflows/deep_cleaner.md)
+- [**Secure GitHub Intake Protocol (CIV)**](brain/knowledge/corp/docs/workflows/data_intake.md)
+- [**OS Deep Sanitation & Vault Protection**](brain/knowledge/corp/docs/workflows/deep_cleaner.md)
 
 ---
 
@@ -148,12 +148,12 @@ OmniClaw is an entire Operating System, not just a codebase. For daily usage and
 
 For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult our master maps:
 
-- 🏛️ [**Core Architectural Principles**](docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
-- 🧭 [**Master System Map**](docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 21 departments, Boot Sequence, Memory architecture, and Gate workflows.
-- 🚦 [**Activation Guide**](docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
-- 🧩 [**Skills & Plugins Capability Map**](docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
-- 📊 [**Data Science Repositories**](docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
-- 🏛️ [**Core Daemons & OER Governance**](docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
+- 🏛️ [**Core Architectural Principles**](brain/knowledge/corp/docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
+- 🧭 [**Master System Map**](brain/knowledge/corp/MASTER_SYSTEM_MAP.md) — The complete blueprint: 21 departments, Boot Sequence, Memory architecture, and Gate workflows.
+- 🚦 [**Activation Guide**](brain/knowledge/corp/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
+- 🧩 [**Skills & Plugins Capability Map**](brain/knowledge/corp/docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
+- 📊 [**Data Science Repositories**](brain/knowledge/corp/docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
+- 🏛️ [**Core Daemons & OER Governance**](brain/knowledge/corp/docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
 
 ---
 

@@ -1,5 +1,0 @@
-
-# ─── Caches & Models from Portable Setup ──────────────────────
-APP_CACHE/
-OLLAMA_MODELS/
-.aios_config

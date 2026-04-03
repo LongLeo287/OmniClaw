@@ -184,11 +184,13 @@ before any large change: always git status + git diff first
 
 **[rule-arch-01] macro-cognition & air-gapped architecture:**
 ```
-khi sếp yêu cầu Changes kiến trúc (architecture), phân tách nhánh (branching):
-  1. nhận thức mô hình 2 bán cầu:
-     - local core (`<ai_os_root>`): nhân lõi, xử lý logic.
-     - remote ecosystem (`<ai_os_remote_root>`): nhánh ngoại vi, chứa ui.
-  2. bắt buộc quét radar toàn cục trước khi hành động.
+khi sếp yêu cầu Changes kiến trúc (architecture), phân tách nhánh (branching), hoặc ráp nối system:
+  1. nhận thức ranh giới 2 bán cầu (the boundary law):
+     - local core (`<ai_os_root>`): nhân lõi, chạy venv, xử lý logic, automation. Chỉ chứa các thành phần **Sử dụng ngay và luôn (In-Process/Native Execute)** không đòi hỏi kết nối server hay mở ports. (NGOẠI TRỪ: Data Model AI không được nằm ở đây).
+     - remote ecosystem (`<ai_os_remote_root>`): nhánh ngoại vi (data plane/server rack). **Chứa tất cả các modules cần kết nối mạng (Ports, Servers, Docker, REST APIs)** như OpenClaw, FireCrawl, LightRAG, Mem0, UI Dashboard.
+  2. luật cách ly model (model air-gap): tuyệt đối không tàng trữ các file model AI khổng lồ (như .gguf, .safetensors, .bin, .pt) trong `AI OS` cốt lõi để tránh sập Git và kẹt IDE.
+  3. luồng chạy song song (dual-stream parallel execution): các đại diện Daemons phải ý thức được kiến trúc 2 luồng này đi song song. các dịch vụ ngoại vi ở nhánh Remote phải hỗ trợ tính năng Fallback 2 Luồng (Check Local -> Chuyển hướng Cloud API) do OBD định tuyến.
+  4. luật báo cáo kiểm định (approval gate): khi Daemon / Agent phát hiện 1 module cần đẩy sang Remote (do dính Port/Server), TUYỆT ĐỐI KHÔNG ĐƯỢC tự ý cài đặt vào Lõi AI OS. Phải DỪNG LẠI và báo cáo Sếp để lập Plan đẩy sang Remote!
 ```
 
 **[rule-arch-02] neural link & knowledge graph protocol:**

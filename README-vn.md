@@ -101,7 +101,7 @@ Các lệnh từ CEO (Bạn) được điều phối thông qua các phòng ban 
 | **Dept 23** | **Lễ Tân** | Tiếp nhận dự án tự động, thu thập brief và soạn thảo đề xuất. | `project-intake` |
 
 > [!TIP]
-> **Tìm hiểu sâu**: Để xem chi tiết 21 phòng ban, sơ đồ báo cáo và cách các agent tương tác, hãy xem bản [**Sơ đồ Tổng thể Hệ thống**](brain/corp/MASTER_INDEX-vn.md).
+> **Tìm hiểu sâu**: Để xem chi tiết 21 phòng ban, sơ đồ báo cáo và cách các agent tương tác, hãy xem bản [**Sơ đồ Tổng thể Hệ thống**](brain/knowledge/corp/MASTER_INDEX-vn.md).
 
 > [!NOTE]
 > Để xem danh sách đầy đủ 21 phòng ban và danh sách agent, vui lòng tham khảo file đăng ký `brain/corp/org_chart.yaml`.
@@ -132,8 +132,8 @@ omniclaw
 
 Khác với một kho lưu trữ code thông thường, OmniClaw là một hệ điều hành thực thụ. Hãy xem các tài liệu dưới đây để biết cách vận hành các quy trình tự động.
 
-*   [**Quy trình nạp nguồn dữ liệu Github an toàn (CIV Intake)**](docs/workflows/data_intake-vn.md)
-*   [**Dọn rác hệ thống & Bảo vệ thư mục Vault**](docs/workflows/deep_cleaner-vn.md)
+*   [**Quy trình nạp nguồn dữ liệu Github an toàn (CIV Intake)**](brain/knowledge/corp/docs/workflows/data_intake-vn.md)
+*   [**Dọn rác hệ thống & Bảo vệ thư mục Vault**](brain/knowledge/corp/docs/workflows/deep_cleaner-vn.md)
 
 ---
 
@@ -141,12 +141,12 @@ Khác với một kho lưu trữ code thông thường, OmniClaw là một hệ 
 
 Để hiểu sâu hơn về kiến trúc hệ thống, các luồng dịch vụ và kỹ năng của Agent, vui lòng tham khảo các bản đồ tổng quan:
 
-* 🏛️ [**Các Nguyên Tắc Lõi Kiến Trúc**](docs/architecture/CORE_PRINCIPLES-vn.md) — Phân tích chi tiết tại sao Lõi Hệ thống phải là Tiếng Anh và Cơ chế Bộ nhớ rỗng (Zero-Config Memory).
-* 🧭 [**Sơ Đồ Hệ Thống Tổng Thể**](docs/architecture/MASTER_SYSTEM_MAP-vn.md) — Sơ đồ toàn diện: Tổ chức 21 phòng ban, Boot Sequence, Bộ nhớ, và quy trình Gate.
-* 🚦 [**Bảng Điều Khiển Khởi Động**](docs/usage_guides/ACTIVATION_GUIDE-vn.md) — Danh sách Port và lệnh khởi động cho toàn bộ dịch vụ Local (LobsterBoard, LightRAG, v.v.).
-* 🧩 [**Bản Đồ Plugins & Kỹ Năng**](docs/architecture/SKILLS_AND_PLUGINS_MAP-vn.md) — Mục lục tham chiếu 100+ kỹ năng và Plugins dành cho AI Agent.
-* 📊 [**Kho Dữ Liệu Khoa Học**](docs/usage_guides/DATA_SCIENCE_LIBRARY-vn.md) — Danh sách các Repositories mẫu về Machine Learning & RAG hiện hành.
-* 🏛️ [**Tứ Trụ Daemon & OER — Quản Trị Hệ Sinh Thái**](docs/architecture/CORE_DAEMONS_AND_OER-vn.md) — 4 Core Daemon (OIW/OHD/OA/OER), Ma Trận Phân Quyền và Pipeline 5-Gate tự động toàn diện.
+* 🏛️ [**Các Nguyên Tắc Lõi Kiến Trúc**](brain/knowledge/corp/docs/architecture/CORE_PRINCIPLES-vn.md) — Phân tích chi tiết tại sao Lõi Hệ thống phải là Tiếng Anh và Cơ chế Bộ nhớ rỗng (Zero-Config Memory).
+* 🧭 [**Sơ Đồ Hệ Thống Tổng Thể**](brain/knowledge/corp/docs/architecture/MASTER_SYSTEM_MAP-vn.md) — Sơ đồ toàn diện: Tổ chức 21 phòng ban, Boot Sequence, Bộ nhớ, và quy trình Gate.
+* 🚦 [**Bảng Điều Khiển Khởi Động**](brain/knowledge/corp/docs/usage_guides/ACTIVATION_GUIDE-vn.md) — Danh sách Port và lệnh khởi động cho toàn bộ dịch vụ Local (LobsterBoard, LightRAG, v.v.).
+* 🧩 [**Bản Đồ Plugins & Kỹ Năng**](brain/knowledge/corp/docs/architecture/SKILLS_AND_PLUGINS_MAP-vn.md) — Mục lục tham chiếu 100+ kỹ năng và Plugins dành cho AI Agent.
+* 📊 [**Kho Dữ Liệu Khoa Học**](brain/knowledge/corp/docs/usage_guides/DATA_SCIENCE_LIBRARY-vn.md) — Danh sách các Repositories mẫu về Machine Learning & RAG hiện hành.
+* 🏛️ [**Tứ Trụ Daemon & OER — Quản Trị Hệ Sinh Thái**](brain/knowledge/corp/docs/architecture/CORE_DAEMONS_AND_OER-vn.md) — 4 Core Daemon (OIW/OHD/OA/OER), Ma Trận Phân Quyền và Pipeline 5-Gate tự động toàn diện.
 
 ---
 
