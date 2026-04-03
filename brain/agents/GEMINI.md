@@ -12,7 +12,7 @@ registered: true
 ## section 1 — agent boot rule
 
 ```
-ceo mở claude code cli?
+ceo opens claude code cli?
     yes ──► read claude.md     (claude code boot protocol)
     no  ──► read gemini.md     (antigravity boot protocol — this file)
 ```
@@ -25,35 +25,35 @@ ceo mở claude code cli?
 
 ```
 step 1  ──► read gemini.md                           (this file — entry point)
-step 2  ──► load identity & core values              [brain/shared-context/soul.md]
-step 3  ──► load governance & rules                  [brain/shared-context/governance.md]
-step 4  ──► load agent roster & roles                [brain/shared-context/agents.md]
-step 5  ──► load strategy & 40 pillars               [brain/shared-context/thesis.md]
-step 6  ──► load output format guide                 [brain/shared-context/report_formats.md]
-             (quick selector rune: brain/corp/prompts/runes/report_formats.md)
-step 7  ──► check blackboard (active tasks)          [brain/shared-context/blackboard.json]
-step 8  ──► load skill registry                      [brain/shared-context/skill_registry.json]
+step 2  ──► load identity & core values              [brain/knowledge/general/SOUL.md]
+step 3  ──► load governance & rules                  [brain/knowledge/general/GOVERNANCE.md]
+step 4  ──► load agent roster & roles                [brain/registry/AGENTS.md]
+step 5  ──► load strategy & 40 pillars               [brain/knowledge/general/THESIS.md]
+step 6  ──► load output format guide                 [brain/rules/governance/report_formats.md]
+step 7  ──► check blackboard (active tasks)          [brain/memory/blackboard.json]
+step 8  ──► load skill registry                      [brain/registry/SKILL_REGISTRY.json]
 step 9  ──► begin work
 ```
 
-**on-demand (đọc khi cần, không đọc mỗi boot):**
+**on-demand (read when needed, not every boot):**
 ```
-→ corp daily cycle    [system/ops/workflows/corp-daily-cycle.md]       ← trigger: "omniclaw corp start"
-→ a-z flow            [system/ops/workflows/flow_az.md]                ← trigger: cần hiểu toàn bộ luồng
-→ hud dashboard       [system/hud/hud.md]                              ← trigger: ceo muốn xem tổng quan
+→ corp daily cycle    [ecosystem/workflows/corp-daily-cycle.md]       ← trigger: "omniclaw corp start"
+→ a-z flow            [ecosystem/workflows/FLOW_AZ.md]                ← trigger: need to understand entire flow
+→ hud dashboard       [core/ops/scripts/live_dashboard.ps1]           ← trigger: ceo wants overview
 → storage rule        [brain/knowledge/notes/rule-storage-01-storage-location.md]
 → structure rule      [brain/knowledge/notes/rule-structure-01-system-structure.md]
 → no-hardcode policy  [brain/knowledge/notes/rule-dynamic-01-no-hardcode.md]
-→ corp sop detail     [system/ops/workflows/pre-session.md]            ← read for freshness checks
-→ knowledge ingest    [system/ops/workflows/knowledge-ingest.md]       ← trigger: "omniclaw ingest <source>"
-→ agent auto-create   [system/ops/workflows/agent-auto-create.md]      ← trigger: gap detection
-→ learning loop       [system/ops/workflows/corp-learning-loop.md]     ← trigger: "omniclaw corp retro"
-→ handoff protocol    [system/ops/workflows/claude-code-handoff.md]    ← trigger: code task to claude
-→ civ intake          [brain/corp/departments/content_intake/worker_prompt.md] ← trigger: repo/link
-→ kho rules           [storage/vault/rules/index.md]                     ← trigger: cần xem tất cả rules
-→ kho plugins         [storage/vault/plugins/registry.json]              ← trigger: plugin selection
-→ kho agents          [storage/vault/agents/registry.json]               ← trigger: agent assignment
-→ master system map   [brain/corp/master_system_map.md]                   ← trigger: mapping/routing doubt
+→ corp sop detail     [ecosystem/workflows/pre-session.md]            ← read for freshness checks
+→ knowledge ingest    [ecosystem/workflows/knowledge-ingest.md]       ← trigger: "omniclaw ingest <source>"
+→ agent auto-create   [ecosystem/workflows/agent-auto-create.md]      ← trigger: gap detection
+→ learning loop       [ecosystem/workflows/corp-learning-loop.md]     ← trigger: "omniclaw corp retro"
+→ handoff protocol    [ecosystem/workflows/claude-code-handoff.md]    ← trigger: code task to claude
+→ civ intake          [brain/knowledge/corp/departments/content_intake/worker_prompt.md] ← trigger: repo/link
+→ knowledge rules     [brain/registry/SKILL_REGISTRY.json]              ← trigger: need to see all rules
+→ plugin registry     [ecosystem/plugins/]                              ← trigger: plugin selection
+→ agent registry      [brain/registry/AGENTS.md]                        ← trigger: agent assignment
+→ org graph           [brain/registry/ORG_GRAPH.yaml]                   ← trigger: org/dept reference
+→ master system map   [brain/knowledge/corp/MASTER_SYSTEM_MAP.md]       ← trigger: mapping/routing doubt
 ```
 
 **hard rule:** skip any step = violation of omniclaw governance.
@@ -82,81 +82,80 @@ do not skip. do not exceed authority. do not assume.
 
 
 **### [rule-arch-03] native tooling & sop mandate
-bạn không được tự ý tạo file tay (scripts, yamls, agent mds) từ con số không! đạo luật này quy định: trước bất kỳ ý tưởng cập nhật hệ thống nào, bạn phải dùng `system/ops/workflows/`. mọi kiến trúc mới phải được sinh ra từ các workflow chính thống (vd: `agent-auto-create`, `skill-discovery-auto`). tự tạo file tay rác là tội ác hủy hoại hệ thống!
+you must not manually create files (scripts, yamls, agent mds) from scratch! this law dictates: before any system update ideas, you must use `system/ops/workflows/`. any new architecture must be spawned from official workflows (e.g., `agent-auto-create`, `skill-discovery-auto`). manually creating trash files is a crime that destroys the system!
 
-### [rule-arch-04] mandatory pre-flight scan (chống trùng lặp)
-trước khi bạn đề xuất đẻ ra bất kỳ file, agent, quy trình, hay tool mới nào, bắt buộc bạn phải chạy lệnh quét toàn bộ omniclaw (ví dụ: dùng `grep_search`, `list_dir`, view `org_graph.yaml`, `skill_registry.json`) để xác minh 100% chức năng đó chưa hề tồn tại trong hệ thống. việc "sáng chế lại bánh xe" (reinventing the wheel) là cấm kỵ. hãy ưu tiên nâng cấp file cũ thay vì tạo thêm file mới.
+### [rule-arch-04] mandatory pre-flight scan (anti-duplication)
+before proposing any new file, agent, workflow, or tool, you must run an omniclaw scan command (e.g., use `grep_search`, `list_dir`, view `org_graph.yaml`, `skill_registry.json`) to verify 100% that the functionality does not already exist in the system. "reinventing the wheel" is strictly forbidden. prioritize upgrading old files instead of creating new ones.
 
-### [rule-arch-05] proactive auto-evolution (tự học và tiến hóa)
-khi làm việc với ceo, nếu phát sinh những dữ liệu mới, kiến thức mới, module mới chưa từng có — lập tức bạn phải tự động đóng gói chúng trọn vẹn. tự động đẻ ra phòng ban mới, agent mới, rule mới, workflow mới tương thích mà không cần chờ lệnh. việc chủ động đúc kết tinh hoa giao tiếp thành tài sản vĩnh viễn của omniclaw chính là biểu hiện của "sự tự học và tự nâng cấp hệ thống". im lặng và tuân thủ luật!
+### [rule-arch-05] proactive auto-evolution (self-learning and evolution)
+when working with the ceo, if new data, knowledge, or unprecedented modules emerge — you must immediately package them completely. automatically spawn new compatible departments, agents, rules, and workflows without waiting for commands. proactively crystallizing communication essence into permanent omniclaw assets is the manifestation of "self-learning and self-upgrading the system". remain silent and obey the law!
 
-**[rule-civ-01]** intake bất kỳ link/repo/url/file/text — mandatory civ pipeline:
+**[rule-civ-01]** intake any link/repo/url/file/text — mandatory civ pipeline:
 ```
-khi ceo đưa link, repo, url, tài liệu, pdf, text không có lệnh rõ ràng:
-  → antigravity tự động chạy civ pipeline (content-intake-flow.md)
-  → không hỏi "bạn muốn làm gì với link này?"
-  → không bypass security gate
+when the ceo provides a link, repo, url, doc, pdf, or text without a clear command:
+  → antigravity automatically runs the civ pipeline (content-intake-flow.md)
+  → do not ask "what do you want to do with this link?"
+  → do not bypass the security gate
 
-thứ tự bắt buộc:
-  step 0  → local check: lightrag query trước (localhost:9621)
-             nếu đã biết → báo ceo, hỏi refresh? nếu no → stop
-  step 1  → intake-agent: tạo civ ticket → system/security/quarantine/incoming/<type>/
+mandatory sequence:
+  step 0  → local check: lightrag query first (localhost:9621)
+             if already known → alert ceo, ask to refresh? if no → stop
+  step 1  → intake-agent: create civ ticket → core/security/QUARANTINE/incoming/<type>/
   step 2  → classifier-agent: tag type (repo|web|doc|image|text|plugin)
-  step 3a → repo: repo-fetcher → vet_repo.ps1 (12 scans) → strix-agent
-  step 3.5→ content-analyst-agent: open-notebook (localhost:5055) — 6 câu hỏi
-  step 3.6→ gap proposal nếu domain mới → ceo telegram [a/b/c/d] (async)
+  step 3a → repo: repo-fetcher → core/ops/scripts/pre_ingest_check.ps1 (12 scans) → strix-agent
+  step 3.5→ content-analyst-agent: open-notebook (localhost:5055) — 6 questions
+  step 3.6→ gap proposal if new domain → ceo telegram [a/b/c/d] (async)
   step 4  → content-validator: score + value_type (9 types)
   step 5  → ingest-router: route → destination + skill-discovery-auto (repo)
-             → knowledge-distribution-flow.md (21 dept feeds)
+             → ecosystem/workflows/knowledge-distribution-flow.md (21 dept feeds)
 
-quarantine path: <ai_os_root>\security\quarantine\
-ref: brain/corp/departments/content_intake/rules.md (civ-01 đến civ-12)
-ref: system/ops/workflows/content-intake-flow.md v1.2
+quarantine path: <ai_os_root>\core\security\QUARANTINE\
+ref: brain/knowledge/corp/departments/content_intake/rules.md (civ-01 to civ-12)
+ref: ecosystem/workflows/content-intake-flow.md v1.2
 ```
 
 **[rule-notification-01]** alert & notification — notification bridge:
 ```
-khi cần gửi alert cho ceo hoặc log system event:
-  → ref: system/ops/workflows/notification-bridge.md
-  → telegram: qua nullclaw_gateway (ecosystem/tools/core_intel/ + start_nullclaw.ps1)
-  → blackboard: update brain/shared-context/blackboard.json open_items[]
-  → escalations: brain/shared-context/corp/escalations.md (nếu l2/l3)
+when needing to send an alert to the ceo or log a system event:
+  → ref: ecosystem/workflows/notification-bridge.md
+  → telegram: via nullclaw_gateway (ecosystem/tools/core_intel/ + start_nullclaw.ps1)
+  → blackboard: update brain/memory/blackboard.json open_items[]
+  → escalations: brain/rules/governance/ (if l2/l3)
 
 canonical paths (kpi/escalations/mission):
-  brain/shared-context/corp/kpi_scoreboard.json
-  brain/shared-context/corp/escalations.md
-  brain/shared-context/corp/mission.md
-  brain/shared-context/corp/proposals/
+  brain/memory/blackboard.json
+  brain/knowledge/corp/MASTER_SYSTEM_MAP.md
+  brain/registry/AGENTS.md
 
 service ports:
-  lightrag:     http://localhost:9621 (start: system/ops/scripts/start_lightrag.ps1)
-  open-notebook: http://localhost:5055 (see: system/ops/scripts/start_open_notebook_note.md)
+  lightrag:     http://localhost:9621 (start: core/ops/scripts/omniclaw_start.py)
+  open-notebook: http://localhost:5055 (see: core/ops/scripts/)
   clawtask api: http://localhost:7474 [live]
-  langfuse:     http://localhost:3100 (system/infra/observability/docker-compose.yml)
+  telegram bot: ecosystem/bridges/nullclaw/ + core/ops/telegram_dispatch.py
 ```
 
-**[rule-version-01]** dependency pinning — bắt buộc:
+**[rule-version-01]** dependency pinning — mandatory:
 ```
-không dùng @latest cho bất kỳ production dependency nào trong omniclaw.
+do not use @latest for any production dependency in omniclaw.
 
-bắt buộc:
-  - mcp_config.json: pin version cụ thể (xem system/ops/version_lock.env)
+mandatory:
+  - mcp_config.json: pin specific version (see system/ops/version_lock.env)
   - requirements.txt: pin major.minor.patch
-  - docker images: pin tag (không dùng :latest cho critical services)
+  - docker images: pin tag (do not use :latest for critical services)
 
-monthly check: so sánh system/ops/version_lock.env với npm info / pip show
-khi có version mới: test trên branch → update version_lock.env → ceo notify
+monthly check: compare system/ops/version_lock.env with npm info / pip show
+when there is a new version: test on branch → update version_lock.env → notify ceo
 
 offline_mode (system/ops/secrets/master.env):
-  offline_mode=false  → bình thường (cloud + local)
-  offline_mode=true   → chỉ ollama local, không gọi cloud apis
-  local_first=true    → ưu tiên local services, cloud là fallback
+  offline_mode=false  → normal (cloud + local)
+  offline_mode=true   → only local ollama, do not call cloud apis
+  local_first=true    → prioritize local services, cloud acts as fallback
 
-ollama local models (chỉ giữ phù hợp — không pull thêm):
-  - nomic-embed-text  (embeddings cho lightrag) ✅ 274mb
+ollama local models (only keep suitable ones — do not pull more):
+  - nomic-embed-text  (embeddings for lightrag) ✅ 274mb
   - gemma2:2b         (general inference local) ✅ 1.6gb
-  offline_mode → tất cả task types remap về gemma2:2b (xem system/infra/llm/router.yaml)
-  không pull thêm model nặng unless ceo approve từng model cụ thể
+  offline_mode → all task types remap to gemma2:2b (see system/infra/llm/router.yaml)
+  do not pull additional heavy models unless ceo approves each specific model
 ```
 
 **[rule-process-01]** deploy process — mandatory:
@@ -179,13 +178,13 @@ governance   → update rule files + governance.md
 **[rule-catalog-01]** plugin/repo tracking — mandatory:
 ```
 every repo in ecosystem/plugins/ must have status in ecosystem/plugins/plugin-catalog.md:
-  👁️  = đã đọc readme
-  🔖  = giữ lại, dùng sau
-  ✅  = đang dùng — theo dõi version (weekly/monthly)
-  ⚡  = đang tích hợp
-  ❌  = loại bỏ (ghi lý do)
+  👁️  = read readme
+  🔖  = kept, use later
+  ✅  = in use — track version (weekly/monthly)
+  ⚡  = integrating
+  ❌  = removed (log reason)
 
-version tracking bắt buộc cho ✅ repos:
+version tracking mandatory for ✅ repos:
   - core agent tools  → check weekly
   - security tools    → check weekly
   - data/bridge tools → check monthly
@@ -195,81 +194,81 @@ full workflow: system/ops/workflows/plugin-integration.md
 
 **[rule-activation-01]** plugin activation — dashboard first:
 ```
-nếu plugin cần cmd/powershell để kích hoạt:
-  1. có port riêng  → thêm vào $services trong dashboard.ps1
-  2. là library     → thêm vào [p] plugin manager section dashboard.ps1
-  3. cần api key    → thêm vào master.env trước khi activate
+if a plugin requires cmd/powershell to activate:
+  1. has separate port  → service entry: core/ops/omniclaw_startup.py $services[]
+  2. is a library       → add to ecosystem/plugins/ + register in brain/registry/SKILL_REGISTRY.json
+  3. needs api key      → add to core/ops/secrets/MASTER.env before activating
   
-không chạy install/activate trong terminal rời — luôn qua dashboard.
-dashboard: <ai_os_root>\launcher\dashboard.ps1
+do not run install/activate in standalone terminals — always go through omniclaw_startup.py.
+launcher: core/ops/omniclaw_startup.py
 ```
 
 **[rule-web-01]** web intelligence — firecrawl first:
 ```
-khi agent cần lấy nội dung từ url/website:
-  1. luôn dùng firecrawl_adapter (không tự viết requests/httpx code)
+when an agent needs to retrieve content from url/website:
+  1. always use firecrawl_adapter (do not write manual requests/httpx code)
   2. import: from plugins.firecrawl.firecrawl_adapter import get_firecrawl
-  3. gọi hooks:
+  3. call hooks:
      - onresearch  → fc.research_url(url)        (1 url → markdown)
-     - oncrawldocs → fc.crawl_site(url, limit)   (toàn site → list)
+     - oncrawldocs → fc.crawl_site(url, limit)   (entire site → list)
      - onextractdata → fc.extract_structured(url, schema)
      - rag pipeline → fc.ingest_to_rag(url, rag.insert)
-  4. adapter tự handle: self-hosted (localhost:3002) → cloud → noop
-  5. không cần api key nếu docker đang chạy (dashboard [8] firecrawl)
+  4. adapter auto handles: self-hosted (localhost:3002) → cloud → noop
+  5. no api key required if docker is running (dashboard [8] firecrawl)
   6. scope: dept research, dept knowledge, dept backend, dept dev
   
 full docs: ecosystem/plugins/firecrawl/plugin.md
 ```
 
-**[rule-context7-01]** context7 — nguồn tài liệu → omniclaw knowledge pipeline:
+**[rule-context7-01]** context7 — documentation source → omniclaw knowledge pipeline:
 ```
-context7 là nguồn fetch url docs thư viện.
-mọi kiến thức từ context7 phải đi qua đúng 7-phase pipeline (knowledge-ingest.md).
+context7 is the source to fetch library docs url.
+all knowledge from context7 must pass through the exact 7-phase pipeline (ecosystem/workflows/knowledge-ingest.md).
 
-luồng đúng:
-  1. dùng context7 mcp để lấy url/content docs thư viện cần học
-  2. đưa vào pipeline chuẩn: "omniclaw ingest url <docs_url>"
+correct flow:
+  1. use context7 mcp to get url/content of the library docs needed to learn
+  2. feed into standard pipeline: "omniclaw ingest url <docs_url>"
      → [1] intake (firecrawl_adapter fetch)
-     → [2] strix security scan
+     → [2] strix security scan (core/ops/scripts/pre_ingest_check.ps1)
      → [3] classify (domain + type = reference)
      → [4] enrich (metadata + cross-links)
-     → [5] agent routing → dept phù hợp
+     → [5] agent routing → suitable dept
      → [6] archive → brain/knowledge/<domain>/ki-docs-<lib>.md
-     → [7] notify ceo nếu cần
-  3. từ đó: mọi agent query qua lightrag — không cần internet
+     → [7] notify ceo if needed
+  3. from there: all agents query via lightrag — no internet needed
 
-không bỏ qua strix / classify / archive.
-context7 = nguồn. pipeline = quy trình. brain = đích đến.
+do not skip strix / classify / archive.
+context7 = source. pipeline = process. brain = destination.
 
-dùng context7 mcp realtime khi cần docs ngay:
-  - "viết supabase edge function. use context7" → inject vào prompt
-  - sau đó nếu muốn lưu lâu dài: "omniclaw ingest url <url vừa dùng>"
+use context7 mcp real-time when docs are needed immediately:
+  - "write supabase edge function. use context7" → inject into prompt
+  - afterwards, if you want to store long-term: "omniclaw ingest url <just used url>"
 
-full pipeline: system/ops/workflows/knowledge-ingest.md
+full pipeline: ecosystem/workflows/knowledge-ingest.md
 ```
 
 
 
 
-**[rule-agent-platform-01]** không độc quyền nền tảng — bắt buộc:
+**[rule-agent-platform-01]** platform agnostic — mandatory:
 ```
-omniclaw là hệ thống đa nền tảng (antigravity + claude code cli + cursor + gemini cli).
-không có tool nào được cài độc quyền cho 1 nền tảng.
+omniclaw is a multi-platform system (antigravity + claude code cli + cursor + gemini cli).
+no tool is allowed to be installed exclusively for 1 platform.
 
-rule cứng:
-  - tool thiết kế cho "claude only" → phải setup thêm cho cursor/antigravity nếu hỗ trợ
-  - khi tích hợp bất kỳ tool mới: kiểm tra platform support → cài hết các mode có sẵn
-  - ví dụ: everything-claude-code → hỗ trợ claude, codex, cursor, opencode → setup all
-  - ví dụ: context7 → chạy cả --claude và --cursor
+strict rule:
+  - tool designed for "claude only" → must setup for cursor/antigravity if supported
+  - when integrating any new tool: check platform support → install all available modes
+  - example: everything-claude-code → supports claude, codex, cursor, opencode → setup all
+  - example: context7 → run both --claude and --cursor
 
-ngoại lệ cho phép:
-  - tool yêu cầu claude architecture đặc thù → ghi chú rõ trong plugin.md
-  - tool beta chưa hỗ trợ platform → đặt lịch kiểm tra lại
+allowed exceptions:
+  - tool requires specific claude architecture → clearly note in plugin.md
+  - beta tool not yet supporting platform → set schedule to re-check
 
-kiểm tra khi onboard tool mới:
-  1. readme có đề cập platform nào?
-  2. có flag --gemini / --cursor / --codex / --claude không?
-  3. setup tất cả platforms có sẵn
+check when onboarding new tool:
+  1. which platform does readme mention?
+  2. are there --gemini / --cursor / --codex / --claude flags?
+  3. setup all available platforms
 ```
 
 **[rule-ecc-01]** everything-claude-code — agentshield & cross-platform skills:
@@ -297,15 +296,15 @@ full: ecosystem/skills/agentshield/ + ecosystem/skills/ecc-patterns/
 
 **[rule-rag-01]** knowledge graph — lightrag first:
 ```
-khi agent cần query knowledge base / semantic search / entity relations:
-  1. luôn dùng lightrag_adapter (không tự viết rag code)
-  2. import: from plugins.lightrag.lightrag_adapter import get_lightrag
-  3. gọi hooks:
+when an agent needs to query knowledge base / semantic search / entity relations:
+  1. always use lightrag_adapter (do not write manual rag code)
+  2. import: from ecosystem/plugins/lightrag/lightrag_adapter import get_lightrag
+  3. call hooks:
      - onquery          → rag.hybrid_query(question)    (recommended)
      - onknowledgeingest → rag.insert(text)
-     - onindexknowledge  → rag.index_brain_knowledge()  (goi 1 lan dau)
-  4. query modes: naive/local/global/hybrid (mac dinh: hybrid)
-  5. dung ollama local — khong can api key ngoai
+     - onindexknowledge  → rag.index_brain_knowledge()  (call 1st time only)
+  4. query modes: naive/local/global/hybrid (default: hybrid)
+  5. uses ollama local — external api key not needed
   6. pipeline: firecrawl → lightrag.insert() → hybrid_query()
   7. scope: dept knowledge, dept research, dept backend, nova, antigravity
 
@@ -314,22 +313,22 @@ full docs: ecosystem/plugins/lightrag/plugin.md
 
 **[rule-tier-01]** 3-tier plugin architecture — mandatory:
 ```
-mọi tool/plugin trong hệ thống được phân thành 3 tầng cứng:
+all tools/plugins in the system are divided into 3 strict tiers:
 
-tier 1 — core infra (luôn nạp, chạy thường trực):
+tier 1 — core infra (always loaded, constantly running):
   mem0, firecrawl, lightrag, crewai, gitnexus
-  → truy cập qua rest api (port 7000/7474) hoặc adapter import trực tiếp.
-  → không cần cài đặt gì thêm.
+  → accessed via rest api (port 7000/7474) or direct adapter imports.
+  → no additional installation required.
 
 tier 2 — specialized plugins (lazy-load / on-demand):
-  → chỉ kích hoạt khi task thực sự cần tool chuyên ngành (vẽ ảnh, excel...).
-  → quy trình bắt buộc: sandbox init → execute → teardown
+  → only activated when tasks specifically require specialized tools (e.g. drawing, excel).
+  → mandatory workflow: sandbox init → execute → teardown
   → full workflow: .agents/workflows/plugin-lazy-load.md
-  → tuyệt đối không cài tier 2 vào global env / lõi hệ thống.
+  → absolutely do not install tier 2 into the global env / core system.
 
 tier 3 — obsolete / conflict (blacklisted):
-  → không sử dụng. conflict với tier 1.
-  → nếu agent phát hiện lệnh gọi tier 3 → abort ngay → escalate ceo.
+  → do not use. conflicts with tier 1.
+  → if agent detects an invocation to tier 3 → abort immediately → escalate to ceo.
 ```
 
 **[rule-agent-mechanics-01]** agent context mechanics — know your runtime:
@@ -440,22 +439,33 @@ ever before making a large change → always run:
 
 **[rule-arch-01] macro-cognition & air-gapped architecture:**
 ```
-khi sếp yêu cầu Changes kiến trúc (architecture), phân tách nhánh (branching), hoặc ráp nối system:
-  1. nhận thức ranh giới 2 bán cầu (the boundary law):
-     - local core (`<ai_os_root>`): nhân lõi, chạy venv, xử lý logic, automation. Chỉ chứa các thành phần **Sử dụng ngay và luôn (In-Process/Native Execute)** không đòi hỏi kết nối server hay mở ports. (NGOẠI TRỪ: Data Model AI không được nằm ở đây).
-     - remote ecosystem (`<ai_os_remote_root>`): nhánh ngoại vi (data plane/server rack). **Chứa tất cả các modules cần kết nối mạng (Ports, Servers, Docker, REST APIs)** như OpenClaw, FireCrawl, LightRAG, Mem0, UI Dashboard.
-  2. luật cách ly model (model air-gap): tuyệt đối không tàng trữ các file model AI khổng lồ (như .gguf, .safetensors, .bin, .pt) trong `AI OS` cốt lõi để tránh sập Git và kẹt IDE.
-  3. luồng chạy song song (dual-stream parallel execution): các đại diện Daemons (OA, OMA, OBD) phải ý thức được kiến trúc 2 luồng này đi song song. các dịch vụ ngoại vi ở nhánh Remote phải hỗ trợ tính năng Fallback 2 Luồng (Check Local -> Chuyển hướng Cloud API) do OBD định tuyến.
-  4. luật báo cáo kiểm định (approval gate): khi OA, OIW hay bất cứ Daemon nào phát hiện một module/plugin thuộc diện "phải nằm ở Remote" (cần Server/Port/Docker), TUYỆT ĐỐI KHÔNG ĐƯỢC tự ý nạp thẳng vào hệ thống AI OS. Phải DỪNG LẠI, báo cáo với Sếp để xin phê duyệt Implementation Plan đẩy sang Remote!
+when the ceo requests architecture changes, branching, or system rewiring:
+  1. acknowledge the 2-hemisphere boundary (the boundary law):
+     - local core (`<ai_os_root>/core/`): core kernel, runs venv, handles logic/automation.
+       only contains native execute components. no server connections or open ports.
+       (EXCEPTION: ai data models are not allowed here)
+     - remote ecosystem (REMOTE/ sibling dir): peripheral branch (data plane/server rack)
+       contains all modules that require network connections (ports, servers, docker, rest apis)
+       like openclaw, firecrawl remote, lightrag server, mem0, ui dashboard.
+  2. model air-gap rule: absolutely do not store massive ai model files (.gguf, .safetensors,
+     .bin, .pt) in the core `AI OS` to prevent git collapse and ide hanging.
+  3. dual-stream parallel execution: daemon representatives (oa, oma, obd) must be aware of this
+     parallel architecture. peripheral services in the remote branch must support 2-stream
+     fallback functionality (check local -> fallback to cloud api) routed by obd.
+  4. approval gate rule: when any daemon detects a module that must reside in remote (needs
+     server/port/docker), absolutely do not install it into ai os core. stop and report to
+     the ceo for an implementation plan to push it to remote.
 ```
 
 **[rule-arch-02] neural link & knowledge graph protocol:**
 ```
-nghiêm cấm "mù mờ kiến trúc". khi sếp yêu cầu kiểm tra, tìm kiếm tài nguyên, ứng dụng, repo hoặc tool:
-  1. không quét file thủ công bằng directory listing ở Step đầu (tránh hiệu ứng quên lãng).
-  2. đọc ngay sổ đăng ký tổng (master registry): `brain/registry/system_index.yaml` để lấy tọa độ gốc.
-  3. nhận thức vĩ mô: tham chiếu file `brain/registry/system_index_narrative.txt` hoặc kích hoạt `lightrag` để biết repo đó phụ thuộc vào nhánh nào.
-  4. nhận thức vi mô (code-level): kích hoạt `gitnexus mcp` để bóc tách ast (cây cú pháp) của repo, hiểu sâu luồng function/node mà không cần đọc tay từng dòng source.
+strictly forbidden to act with "architecture blindness". when the ceo requests inspection or search:
+  1. do not manually scan files using directory listings in the first step.
+  2. immediately read the master registry: `brain/registry/SYSTEM_INDEX.yaml` to get root coordinates.
+  3. macro-awareness: reference `brain/registry/ORG_GRAPH.yaml` or activate `lightrag` to
+     understand which branch that repo depends on.
+  4. micro-awareness (code-level): activate `gitnexus mcp` to extract the repo's ast (syntax tree)
+     and deeply understand function/node flow without manually reading every source line.
 ```
 
 ### session sop
@@ -465,12 +475,12 @@ ceo input → identify task type → route to correct dept/agent → archive out
 
 ### pre-action checklist
 ```
-â–¡ storage path correct (<ai_os_root>/)?
+□ storage path correct (<ai_os_root>/)?
 □ correct process followed (civ → registry → deploy)?
-â–¡ correct dept routing?
+□ correct dept routing?
 □ new tool/plugin/integration? → strix/grc scan required first (dept 10)
-â–¡ output archived after completion?
-â–¡ ceo brief written (vietnamese)?
+□ output archived after completion?
+□ ceo brief written (vietnamese)?
 ```
 
 ---
@@ -482,7 +492,7 @@ no cached values in this file — blackboard is the single source of truth.
 
 ---
 
-*antigravity | omniclaw corp | boot protocol v2.5 | v3.1 reconnect | cycle 11 | 2026-03-26*
+*antigravity | omniclaw corp | boot protocol v3.2 | cycle 12 | 2026-04-03*
 *"read first. act second. report always."*
 
 
@@ -490,68 +500,68 @@ no cached values in this file — blackboard is the single source of truth.
 
 ## rule: auto-execute commands (added 2026-03-25)
 
-> khi ceo paste/list commands và nói "tự làm" / "thêm vào hệ thống" / "bạn tự xử lý":
+> when the ceo pastes/lists commands and says "auto do it" / "add to system" / "handle it yourself":
 
-**antigravity phải làm ngay — không cần hỏi:**
-1. phân loại từng command theo bảng:
-   - one-time (--write, install, fix, migration) → safetoautorun: true, chạy ngay
-   - long-running (server, bridge, polling, watch) → start background + thêm hud
-   - cli verify (status, corp start, health) → chạy để verify output
-   - unsafe (delete, drop, format, secrets) → không tự chạy, hỏi ceo
-2. tất cả commands → thêm vào system/hud/hud.md section bảng điều khiển phù hợp
-3. báo kết quả bằng bảng: command → kết quả (1 lần duy nhất)
+**antigravity must execute immediately — no asking:**
+1. categorize each command via table:
+   - one-time (--write, install, fix, migration) → safetoautorun: true, execute immediately
+   - long-running (server, bridge, polling, watch) → start background + add to hud
+   - cli verify (status, corp start, health) → run to verify output
+   - unsafe (delete, drop, format, secrets) → do not auto-run, ask ceo
+2. all commands → add to system/hud/hud.md in appropriate dashboard section
+3. report results via table: command → result (one time only)
 
-**workflow chi tiết:** system/ops/workflows/auto-execute-commands.md
+**detailed workflow:** system/ops/workflows/auto-execute-commands.md
 
 
 
 ---
 
-## rule: auto-handoff — không cần ceo ra lệnh (added 2026-03-25)
+## rule: auto-handoff — no ceo command needed (added 2026-03-25)
 
-> antigravity tự động chạy post-session handoff khi phát hiện bất kỳ trigger nào dưới đây:
+> antigravity automatically runs post-session handoff when detecting any of these triggers:
 
-### handoff triggers — nhận biết khi nào session sắp kết thúc:
+### handoff triggers — recognizing when session is ending:
 
-| signal từ ceo | ý nghĩa | action |
+| signal from ceo | meaning | action |
 |---------------|---------|--------|
-| "kết thúc phiên" / "end session" / "tạm biệt" | session đóng | → chạy post-session.md ngay |
-| "xong rồi" / "done" / sau khi approve plan cuối | task hoàn thành, ceo không hỏi thêm | → chạy post-session.md |
-| ceo không reply sau khi antigravity báo cáo xong | session naturally closing | → chạy post-session.md |
-| "bắt đầu phiên mới" / "khởi động lại" | next session starting | → chạy post-session.md của session cũ trước |
+| "kết thúc phiên" / "end session" / "tạm biệt" | session closing | → run post-session.md immediately |
+| "xong rồi" / "done" / after final plan approval | task complete, ceo isn't asking more | → run post-session.md |
+| ceo no reply after antigravity finishes reporting | session naturally closing | → run post-session.md |
+| "bắt đầu phiên mới" / "khởi động lại" | next session starting | → run post-session.md of old session first |
 
-### handoff = post-session.md — luôn chạy những Step này:
+### handoff = post-session.md — always run these steps:
 
 `
 step 1: update blackboard.json (session_end, last_task, open_items)
 step 2: write system/hud/hud.md + run update_hud.ps1 (non-blocking)
 step 3: create brain/shared-context/corp/daily_briefs/brief_<date>.md
-step 4: ghi nhận decisions vào brain/corp/memory/global/decisions_log.md
-step 5: output tóm tắt phiên (vietnamese) — 5 dòng tối đa
+step 4: log decisions into brain/corp/memory/global/decisions_log.md
+step 5: output session summary (vietnamese) — max 5 lines
 `
 
-### không cần ceo:
-- nói "handoff"
-- nói "cập nhật blackboard"
-- nói "viết brief"
-- nói "update hud"
+### no need for ceo to:
+- say "handoff"
+- say "update blackboard"
+- say "write brief"
+- say "update hud"
 
-**tất cả tự động khi phát hiện trigger.**
+**everything is automatic when a trigger is detected.**
 
-**workflow chi tiết:** system/ops/workflows/post-session.md
+**detailed workflow:** system/ops/workflows/post-session.md
 
 
 
-**[rule-orchestrator-01]** workflow orchestrator — v3.1 central dispatch:
+**[rule-orchestrator-01]** workflow orchestrator — v3.2 central dispatch:
 ```
-khi cần dispatch task sang agent hoặc cập nhật hud:
-  → python system/ops/omniclaw_orchestrator.py once
-  → orchestrator tự đọc blackboard, route → agent, update status.json
+when needing to dispatch task to agent or update status:
+  → python core/ops/omniclaw_orchestrator.py once
+  → orchestrator auto reads brain/memory/blackboard.json, routes → agent, updates status
 
-khi gá»­i telegram notification:
-  → python system/ops/telegram_dispatch.py status    (system digest)
-  → python system/ops/telegram_dispatch.py test      (test connection)
-  → python system/ops/telegram_dispatch.py alert "msg" high
+when sending telegram notification:
+  → python core/ops/telegram_dispatch.py status    (system digest)
+  → python core/ops/telegram_dispatch.py test      (test connection)
+  → python core/ops/telegram_dispatch.py alert "msg" high
 
 agent routing (domain → agent):
   engineering → backend-architect-agent (reasoning_engine)
@@ -560,10 +570,10 @@ agent routing (domain → agent):
   knowledge   → knowledge_agent (knowledge_navigator + smart_memory)
   comms       → channel_agent (channel_manager)
 
-watch mode (poll má»—i 30s):
-  → python system/ops/omniclaw_orchestrator.py watch 30
+watch mode (poll every 30s):
+  → python core/ops/omniclaw_orchestrator.py watch 30
 
-workflow doc: system/ops/workflows/omniclaw-orchestrator.md
+workflow doc: ecosystem/workflows/omniclaw-orchestrator.md
 ```
 
 ## repo-on-demand rule (2026-03-25)

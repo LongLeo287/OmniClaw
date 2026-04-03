@@ -12,9 +12,9 @@ registered: true
 ## section 1 — agent boot rule
 
 ```
-ceo mở terminal ai assistant?
-    yes ——► đang dùng claude code cli ——► read claude.md (this file)
-    no  ——► đang dùng antigravity   ——► read gemini.md
+ceo opens terminal ai assistant?
+    yes ——► using claude code cli ——► read claude.md (this file)
+    no  ——► using antigravity     ——► read gemini.md
 ```
 
 **rule:** no agent reads the wrong boot file.
@@ -24,51 +24,52 @@ ceo mở terminal ai assistant?
 ## section 2 — boot sequence (mandatory)
 
 ```
-step 1  ——► load identity & core values              [brain/shared-context/soul.md]
-step 2  ——► load governance & rules                  [brain/shared-context/governance.md]
-step 3  ——► load agent roster & roles                [brain/shared-context/agents.md]
-step 4  ——► load strategy & 40 pillars               [brain/shared-context/thesis.md]
-step 5  ——► load output format guide                 [brain/shared-context/report_formats.md]
-step 6  ——► check blackboard (active tasks)          [brain/shared-context/blackboard.json]
-step 7  ——► load skill registry                      [brain/shared-context/skill_registry.json]
-step 8  ——► ⚡ read & auto-execute task queue        [claude_code_tasks.md]
-             → tìm mọi task có status: ready
-             → tự động chạy ngay theo cờ auto-mode của cli
-step 9  ——► begin work (nếu không có task ready)
+step 1  ——► load identity & core values              [brain/knowledge/general/SOUL.md]
+step 2  ——► load governance & rules                  [brain/knowledge/general/GOVERNANCE.md]
+step 3  ——► load agent roster & roles                [brain/registry/AGENTS.md]
+step 4  ——► load strategy & 40 pillars               [brain/knowledge/general/THESIS.md]
+step 5  ——► load output format guide                 [brain/rules/governance/report_formats.md]
+step 6  ——► check blackboard (active tasks)          [brain/memory/blackboard.json]
+step 7  ——► load skill registry                      [brain/registry/SKILL_REGISTRY.json]
+step 8  ——► ⚡ read & auto-execute task queue        [brain/agents/CLAUDE_CODE_TASKS.md]
+             → find all tasks with status: ready
+             → auto-execute immediately according to cli auto-mode flag
+step 9  ——► begin work (if no task is ready)
 ```
 
 **on-demand (read when needed, not every boot):**
 ```
-→ corp daily cycle    [system/ops/workflows/corp-daily-cycle.md]          ← trigger: "omniclaw corp start"
+→ corp daily cycle    [ecosystem/workflows/corp-daily-cycle.md]          ← trigger: "omniclaw corp start"
+→ a-z flow            [ecosystem/workflows/FLOW_AZ.md]                   ← trigger: understand full pipeline
 → storage rule        [brain/knowledge/notes/rule-storage-01-storage-location.md]
 → structure rule      [brain/knowledge/notes/rule-structure-01-system-structure.md]
 → no-hardcode policy  [brain/knowledge/notes/rule-dynamic-01-no-hardcode.md]
-→ corp sop detail     [system/ops/workflows/pre-session.md]               ← read for freshness checks
-→ knowledge ingest    [system/ops/workflows/knowledge-ingest.md]          ← trigger: "omniclaw ingest <source>"
-→ agent auto-create   [system/ops/workflows/agent-auto-create.md]         ← trigger: called by knowledge-ingest
-→ learning loop       [system/ops/workflows/corp-learning-loop.md]        ← trigger: "omniclaw corp retro"
-→ **handoff protocol  [system/ops/workflows/claude-code-handoff.md]       ← trigger: nhận task từ antigravity**
-→ **civ intake        [brain/corp/departments/content_intake/worker_prompt.md] ← trigger: repo/link task**
-→ **master system map [brain/corp/master_system_map.md]                       ← trigger: khi cần mapping**
+→ corp sop detail     [ecosystem/workflows/pre-session.md]               ← read for freshness checks
+→ knowledge ingest    [ecosystem/workflows/knowledge-ingest.md]          ← trigger: "omniclaw ingest <source>"
+→ agent auto-create   [ecosystem/workflows/agent-auto-create.md]         ← trigger: called by knowledge-ingest
+→ learning loop       [ecosystem/workflows/corp-learning-loop.md]        ← trigger: "omniclaw corp retro"
+→ **handoff protocol  [ecosystem/workflows/claude-code-handoff.md]       ← trigger: receive task from antigravity**
+→ **civ intake        [brain/knowledge/corp/departments/content_intake/worker_prompt.md] ← trigger: repo/link task**
+→ **master system map [brain/knowledge/corp/MASTER_SYSTEM_MAP.md]          ← trigger: when mapping needed**
 ```
 
-**[rule-civ-01 for claude code]** intake link/repo qua claude code:
+**[rule-civ-01 for claude code]** intake link/repo via claude code:
 ```
-nếu ceo đưa link/repo khi đang dùng claude code cli:
-  → không tự clone/read luôn
-  → ghi task vào blackboard + workforce/subagents/mq/claude_code_tasks.md
+if ceo provides a link/repo while using claude code cli:
+  → do not auto clone/read immediately
+  → log the task into brain/memory/blackboard.json + brain/agents/CLAUDE_CODE_TASKS.md
 ```
 
 ### [rule-arch-03] native tooling & sop mandate
-bạn không được tự tạo file tay (scripts, yamls, agent mds, workflow) từ con số không! trước bất kỳ đợt nâng cấp/cập nhật hệ thống nào, bạn phải dùng các file chuẩn trong `system/ops/workflows/`. mọi kiến trúc hoặc tool mới phải được sinh ra từ các workflow chính thống. tự build bằng script ngoài là xâm phạm hệ thống trầm trọng!
+you must not manually create files (scripts, yamls, agent mds, workflow) from scratch! before any system upgrade/update, you must use standard files in `system/ops/workflows/`. any new architecture or tool must be generated from official workflows. building manually via external scripts is a severe system violation!
 
-### [rule-arch-04] mandatory pre-flight scan (chống trùng lặp)
-trước khi tạo ra bất kỳ file, agent, quy trình, hay tool mới nào, claude bắt buộc phải chạy lệnh quét omniclaw để xác minh 100% chức năng chưa hề tồn tại. phải nâng cấp hệ thống cũ thay vì "sáng chế lại bánh xe".
+### [rule-arch-04] mandatory pre-flight scan (anti-duplication)
+before creating any file, agent, workflow, or new tool, claude must run an omniclaw scan command to verify 100% that the functionality does not already exist. you must upgrade the old system instead of "reinventing the wheel".
 
-### [rule-arch-05] proactive auto-evolution (tự học và tiến hóa)
-sứ mệnh của claude là tự tích lũy. khi ceo đưa cho bạn 1 concept mới, 1 kiến thức mới, 1 phương pháp giải quyết khác lạ bạn không được chỉ làm lệnh. phải tự động hóa thạch tri thức đó:
-  1. tạo rule mới lưu độc lập tại `brain/knowledge/notes/`.
-  2. không bao giờ chỉnh sửa trực tiếp file `.clauderules` vì file đó bị khóa bới prohibition #8. sự tự học phải nằm ở các file vệ tinh.
+### [rule-arch-05] proactive auto-evolution (self-learning and evolution)
+claude's mission is to accumulate knowledge. when the ceo gives you a new concept, new knowledge, or an unusual methodology, you must not just execute the command. you must fossilize that knowledge:
+  1. create a new independent rule file at `brain/knowledge/notes/`.
+  2. never edit the `.clauderules` file directly as it is locked by prohibition #8. self-learning must reside in satellite files.
 
 **hard rule:** skip any step = violation of omniclaw governance.
 do not skip. do not exceed authority. do not assume.
@@ -98,21 +99,21 @@ do not skip. do not exceed authority. do not assume.
 
 **[rule-tier-01]** 3-tier plugin architecture — mandatory:
 ```
-mọi tool/plugin trong hệ thống được phân thành 3 tầng cứng:
+all tools/plugins in the system are divided into 3 strict tiers:
 
-tier 1 — core infra (luôn nạp, chạy thường trực):
+tier 1 — core infra (always loaded, constantly running):
   mem0, firecrawl, lightrag, crewai, gitnexus
-  → truy cập qua rest api (port 7000/7474) hoặc adapter import trực tiếp.
-  → không cần cài đặt gì thêm.
+  → accessed via rest api (port 7000/7474) or direct adapter imports.
+  → no additional installation required.
 
 tier 2 — specialized plugins (lazy-load / on-demand):
-  → chỉ kích hoạt khi task thực sự cần tool chuyên ngành (vẽ ảnh, excel...).
-  → quy trình bắt buộc: sandbox init → execute → teardown
-  → tuyệt đối không cài tier 2 vào global env / lõi hệ thống.
+  → only activated when tasks specifically require specialized tools (e.g. drawing, excel).
+  → mandatory workflow: sandbox init → execute → teardown
+  → absolutely do not install tier 2 into the global env / core system.
 
 tier 3 — obsolete / conflict (blacklisted):
-  → không sử dụng. conflict với tier 1.
-  → nếu claude phát hiện lệnh gọi tier 3 → abort ngay → escalate ceo.
+  → do not use. conflicts with tier 1.
+  → if claude detects an invocation to tier 3 → abort immediately → escalate to ceo.
 ```
 
 **[rule-agent-mechanics-01]** agent context mechanics — know your runtime:
@@ -184,20 +185,20 @@ before any large change: always git status + git diff first
 
 **[rule-arch-01] macro-cognition & air-gapped architecture:**
 ```
-khi sếp yêu cầu Changes kiến trúc (architecture), phân tách nhánh (branching), hoặc ráp nối system:
-  1. nhận thức ranh giới 2 bán cầu (the boundary law):
-     - local core (`<ai_os_root>`): nhân lõi, chạy venv, xử lý logic, automation. Chỉ chứa các thành phần **Sử dụng ngay và luôn (In-Process/Native Execute)** không đòi hỏi kết nối server hay mở ports. (NGOẠI TRỪ: Data Model AI không được nằm ở đây).
-     - remote ecosystem (`<ai_os_remote_root>`): nhánh ngoại vi (data plane/server rack). **Chứa tất cả các modules cần kết nối mạng (Ports, Servers, Docker, REST APIs)** như OpenClaw, FireCrawl, LightRAG, Mem0, UI Dashboard.
-  2. luật cách ly model (model air-gap): tuyệt đối không tàng trữ các file model AI khổng lồ (như .gguf, .safetensors, .bin, .pt) trong `AI OS` cốt lõi để tránh sập Git và kẹt IDE.
-  3. luồng chạy song song (dual-stream parallel execution): các đại diện Daemons phải ý thức được kiến trúc 2 luồng này đi song song. các dịch vụ ngoại vi ở nhánh Remote phải hỗ trợ tính năng Fallback 2 Luồng (Check Local -> Chuyển hướng Cloud API) do OBD định tuyến.
-  4. luật báo cáo kiểm định (approval gate): khi Daemon / Agent phát hiện 1 module cần đẩy sang Remote (do dính Port/Server), TUYỆT ĐỐI KHÔNG ĐƯỢC tự ý cài đặt vào Lõi AI OS. Phải DỪNG LẠI và báo cáo Sếp để lập Plan đẩy sang Remote!
+when the ceo requests documentation updates, branching, or system rewiring:
+  1. acknowledge the 2-hemisphere boundary (the boundary law):
+     - local core (`<ai_os_root>`): core kernel, runs venv, handles logic/automation. only contains **native execute** components. requires no server connections or open ports. (EXCEPTION: ai data models are not allowed here).
+     - remote ecosystem (`<ai_os_remote_root>`): peripheral branch (data plane/server rack). **contains all modules that require network connections (ports, servers, docker, rest apis)** like openclaw, firecrawl, lightrag, mem0, ui dashboard.
+  2. model air-gap rule: absolutely do not store massive ai model files (like .gguf, .safetensors, .bin, .pt) in the core `ai os` to prevent git collapse and ide hanging.
+  3. dual-stream parallel execution: daemon representatives must be aware of this parallel architecture. peripheral services in the remote branch must support 2-stream fallback functionality (check local -> fallback to cloud api) routed by obd.
+  4. approval gate rule: when a daemon/agent detects a module needs to be deployed to remote (due to port/server needs), absolutely do not install it into the ai os core. you must stop and report to the ceo to plan the remote deployment!
 ```
 
 **[rule-arch-02] neural link & knowledge graph protocol:**
 ```
-nghiêm cấm "mù mờ kiến trúc":
-  1. không quét file thủ công bằng directory listing ở Step đầu.
-  2. đọc ngay sổ đăng ký tổng (master system map).
+strictly forbidden to act with "architecture blindness":
+  1. do not manually scan files using directory listings in the first step.
+  2. always immediately read the master registry (master system map).
 ```
 
 ---
