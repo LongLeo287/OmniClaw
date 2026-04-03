@@ -1,0 +1,6 @@
+Source: https://github.com/griptape-ai/griptape
+Type: REPO_GOLDEN
+Score: 71
+Features: Golden Match [AGENT, RAG, GRAPH, LLM, WORKFLOW, SCRAPER]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

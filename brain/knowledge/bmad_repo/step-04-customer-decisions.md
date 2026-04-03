@@ -1,3 +1,11 @@
+---
+id: step-04-customer-decisions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.541492
+---
+
 # Market Research Step 4: Customer Decisions and Journey
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

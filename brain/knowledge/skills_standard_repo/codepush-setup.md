@@ -1,3 +1,11 @@
+---
+id: codepush-setup
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.771549
+---
+
 # Deployment Reference
 
 Release automation and versioning strategies.

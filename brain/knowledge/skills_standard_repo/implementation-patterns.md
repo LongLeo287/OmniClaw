@@ -1,3 +1,11 @@
+---
+id: implementation-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.217338
+---
+
 # Data Isolation Implementation Patterns
 
 ## Nested Controller Pattern

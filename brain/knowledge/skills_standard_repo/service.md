@@ -1,3 +1,11 @@
+---
+id: service
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.904913
+---
+
 # Notification Service Pattern (Dual-Write)
 
 ## 1. Service Implementation

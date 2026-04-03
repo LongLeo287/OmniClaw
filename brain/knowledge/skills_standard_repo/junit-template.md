@@ -1,3 +1,11 @@
+---
+id: junit-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.301570
+---
+
 # JUnit 5 Test Template
 
 ## Standard Test Class

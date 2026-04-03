@@ -7,8 +7,8 @@ healed_at: 2026-04-02T20:29:00.738074
 ---
 
 # KI-REFERENCE-MISC-01 — Miscellaneous Reference Notes
-**Nguồn:** gitagent, wtfjs, gitignore, agentql, tinyfish-cookbook, archon, ag-live-code, seeaifirst, pattern-craft, plotly.js, zixfelw/ag-live-code
-**Ngày:** 2026-03-23 | **Verdict:** REFERENCE — quick notes per repo
+**Source:** gitagent, wtfjs, gitignore, agentql, tinyfish-cookbook, archon, ag-live-code, seeaifirst, pattern-craft, plotly.js, zixfelw/ag-live-code
+**Date:** 2026-03-23 | **Verdict:** REFERENCE — quick notes per repo
 
 ---
 
@@ -16,10 +16,10 @@ healed_at: 2026-04-02T20:29:00.738074
 
 ### Pattern: Structured Web Extraction
 ```python
-# Thay vì parse HTML manually:
+# Instead of parsing HTML manually:
 from agentql import query
 
-# Define structure với GraphQL-like syntax
+# Define structure with GraphQL-like syntax
 result = query("""
 {
     products {
@@ -31,13 +31,13 @@ result = query("""
 }
 """, url="https://shop.example.com")
 ```
-**OmniClaw:** Firecrawl đã cover. Biết pattern này nếu cần structured extraction ngoài Firecrawl.
+**OmniClaw:** Firecrawl already covers this. Know this pattern if need structured extraction beyond Firecrawl.
 
 ---
 
 ## Archon (coleam00) — OmniClaw Reference Architecture
 
-### Archon OS Structure (học từ)
+### Archon OS Structure (learn from)
 ```
 Archon/
 ├── knowledge/      # Persistent knowledge base (OmniClaw: brain/)
@@ -46,15 +46,15 @@ Archon/
 ├── tools/          # Tool wrappers (OmniClaw: tools/)
 └── memory/         # Memory layer (OmniClaw: Mem0 + LightRAG)
 ```
-**Takeaway:** OmniClaw Corp cấu trúc tương đồng Archon. Validated approach. No changes needed.
+**Takeaway:** OmniClaw Corp structure similar to Archon. Validated approach. No changes needed.
 
 ---
 
 ## TinyFish Cookbook (tinyfish-io) — n8n + AgentQL Patterns
 
-### n8n Workflow Patterns cho OmniClaw
+### n8n Workflow Patterns for OmniClaw
 ```
-Trigger: Webhook hoặc Schedule
+Trigger: Webhook or Schedule
    ↓
 HTTP Request Node → Firecrawl API
    ↓
@@ -64,13 +64,13 @@ OpenAI/Claude Node → Analyze
    ↓
 Slack/Email Node → Notify
 ```
-**OmniClaw ứng dụng:** DEFER Phase 6 — n8n as automation layer cho recurring Corp tasks.
+**OmniClaw application:** DEFER Phase 6 — n8n as automation layer for recurring Corp tasks.
 
 ---
 
 ## wtfjs (denysdovhan) — JavaScript Edge Cases
 
-### Top OmniClaw–relevant JS quirks to remember:
+### Top OmniClaw-relevant JS quirks to remember:
 ```javascript
 // KNOW THESE TO AVOID BUGS:
 
@@ -91,13 +91,13 @@ NaN === NaN  // false — use Number.isNaN()
 // 5. 0.1 + 0.2 !== 0.3
 0.1 + 0.2 === 0.3  // false → use toFixed() or decimal libraries
 ```
-**OmniClaw:** Apply khi agent writes JavaScript. framework-standards skill should reference these.
+**OmniClaw:** Apply when agent writes JavaScript. framework-standards skill should reference these.
 
 ---
 
 ## gitignore (github/gitignore) — Templates
 
-### Dùng khi tạo project mới:
+### Use when creating new projects:
 ```bash
 # Node.js project
 curl -o .gitignore https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
@@ -116,10 +116,10 @@ echo "ops/secrets/\n*.env\nbrain/private/\ntelemetry/logs/*.log" >> .gitignore
 
 ## pattern-craft (megh-bari) — CSS Patterns
 
-Sử dụng trực tiếp tool web (không clone repo):
+Use web tool directly (don't clone repo):
 ```
 URL: https://patterncraft.fun
-→ Chọn pattern → Copy CSS → Paste vào stylesheet
+→ Choose pattern → Copy CSS → Paste into stylesheet
 ```
 Patterns: Dots, Lines, Crosshatch, Waves, Hexagons, Triangles...
 
@@ -127,7 +127,7 @@ Patterns: Dots, Lines, Crosshatch, Waves, Hexagons, Triangles...
 
 ## plotly.js — Data Visualization
 
-### Khi OmniClaw cần chart (dùng CDN, không clone):
+### When OmniClaw needs charts (use CDN, don't clone):
 ```html
 <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
 <script>
@@ -143,13 +143,13 @@ Plotly.newPlot('myDiv', [{
 });
 </script>
 ```
-**OmniClaw:** Dùng cho KPI visualization dashboard (Dept 9 Analytics).
+**OmniClaw:** Use for KPI visualization dashboard (Dept 9 Analytics).
 
 ---
 
 ## ag-live-code (zixfelw — VN dev)
 
-Live code viewer tích hợp với Antigravity — agent có thể stream code Changes: real-time.
-**Status:** Track repo — evaluate khi cần real-time code collaboration feature.
+Live code viewer integrated with Antigravity — agent can stream code changes real-time.
+**Status:** Track repo — evaluate when need real-time code collaboration feature.
 
 *KI Note v1.0 | 2026-03-23 | Consolidated misc references*

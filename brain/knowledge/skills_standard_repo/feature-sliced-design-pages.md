@@ -1,3 +1,11 @@
+---
+id: feature-sliced-design-pages
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.063917
+---
+
 # Feature-Sliced Design (FSD) for Pages Router
 
 In a large Next.js Pages Router monolith, the worst anti-pattern is giant page files or "God Components" handling heavy UI mapping and Business Logic simultaneously.

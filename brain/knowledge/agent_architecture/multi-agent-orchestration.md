@@ -1,3 +1,11 @@
+---
+id: multi-agent-orchestration
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.445664
+---
+
 # Multi-Agent Orchestration — Knowledge Base
 
 ## Description

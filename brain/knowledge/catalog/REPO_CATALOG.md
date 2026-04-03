@@ -1,3 +1,11 @@
+---
+id: repo-catalog
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.585533
+---
+
 # OmniClaw Corp — Master Repo Catalog
 **Cập nhật:** 2026-03-19 v6 | **Tổng:** 112 plugins + 97 knowledge repos | **CIV Batch 4:** 2026-03-19
 

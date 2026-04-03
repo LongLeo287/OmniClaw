@@ -1,3 +1,11 @@
+---
+id: bundling
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.666862
+---
+
 # Next.js Bundling & Package Compatibility
 
 Fix common bundling issues with third-party packages in Server Components.

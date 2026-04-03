@@ -1,3 +1,11 @@
+---
+id: source-tree-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.511662
+---
+
 # {{project_name}} - Source Tree Analysis
 
 **Date:** {{date}}

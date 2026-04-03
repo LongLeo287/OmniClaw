@@ -1,3 +1,11 @@
+---
+id: claude-subagents-implementation
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.609068
+---
+
 # Sub-agents Implementation
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_02%2C_2026_07%3A59_PM_PKT-white?style=flat&labelColor=555)

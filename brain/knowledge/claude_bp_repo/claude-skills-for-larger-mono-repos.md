@@ -1,3 +1,11 @@
+---
+id: claude-skills-for-larger-mono-repos
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.606889
+---
+
 # Understanding Claude Skills Discovery in Large Monorepos
 
 When working with Claude Code in a monorepo, understanding how skills are discovered and loaded into context is crucial for organizing your project-specific capabilities effectively.

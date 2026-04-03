@@ -1,0 +1,6 @@
+Source: https://github.com/circlemind-ai/fast-graphrag
+Type: REPO_GOLDEN
+Score: 58
+Features: Golden Match [AGENT, RAG, GRAPH, LLM]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

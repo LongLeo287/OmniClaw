@@ -1,3 +1,11 @@
+---
+id: synthesis-2026-03-26
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.654806
+---
+
 # Auto-Dream Synthesis — Cycle ? — 2026-03-26
 ---
 ## 1. Orientation Context

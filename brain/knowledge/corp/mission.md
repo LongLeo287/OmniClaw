@@ -1,3 +1,11 @@
+---
+id: mission
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.634089
+---
+
 <!-- OmniClaw Corp — Company Mission Statement -->
 <!-- Written by: CEO (Human Operator) -->
 <!-- Updated: 2026-03-20 — Cycle 1 Kickoff -->

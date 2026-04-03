@@ -1,3 +1,11 @@
+---
+id: prop-2026-03-22-deepagents-autostart
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.686192
+---
+
 # Auto-start deepagents :8765 via ClawTask service control
 **ID:** PROP_2026-03-22_DEEPAGENTS_AUTOSTART
 **Type:** ROLE_CHANGE | **Priority:** MEDIUM

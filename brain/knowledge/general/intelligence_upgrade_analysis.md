@@ -6,11 +6,11 @@ tags: [auto-healed]
 healed_at: 2026-04-02T20:28:53.453301
 ---
 
-# 🧠 Intelligence Upgrade Analysis: Claude Patterns Integration
+# Intelligence Upgrade Analysis: Claude Patterns Integration
 
 Based on research into `Piebald-AI/claude-code-system-prompts` and the `Claude Agent SDK`, we are upgrading the OmniClaw with senior-level orchestration patterns.
 
-## 🚀 Key Insights & System Mappings
+## Key Insights & System Mappings
 
 ### 1. Dynamic Prompt Assembly (Mode-Based)
 *   **Insight:** Claude Code uses different "fragment stacks" for Planning, Exploration, and Delegation.
@@ -30,7 +30,7 @@ Based on research into `Piebald-AI/claude-code-system-prompts` and the `Claude A
 
 ---
 
-## 🛠️ Action Plan: Intelligence Injection
+## Action Plan: Intelligence Injection
 
 ### [ ] Phase A: Rule Restructuring
 Update `agent_behavior.md` and `AGENTS.md` with XML-schema grounding.
@@ -43,4 +43,4 @@ Use these patterns to build the `AIEngine.js` - specifically how it prompts Gemi
 
 ---
 
-**Bạn có đồng ý với bản phân tích và kế hoạch nâng cấp này không?** Sau khi bạn chốt, tôi sẽ tiến hành cập nhật kho lưu trữ quy tắc của hệ thống.
+**Do you agree with this analysis and upgrade plan?** Once you confirm, I will proceed with updating the system's rule repository.

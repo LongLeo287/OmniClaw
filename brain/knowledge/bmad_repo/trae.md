@@ -1,3 +1,11 @@
+---
+id: trae
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.578282
+---
+
 # {{name}}
 
 {{description}}

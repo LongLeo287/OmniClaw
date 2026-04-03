@@ -1,3 +1,11 @@
+---
+id: large-repos-catalog
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.806677
+---
+
 # 📚 Large Repos Catalog — Clone On Demand
 # Version: 1.0 | 2026-03-25
 # Purpose: Các repo lớn không clone ngay — agent/dept lấy lệnh clone khi cần

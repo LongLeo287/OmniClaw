@@ -1,3 +1,11 @@
+---
+id: rd
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.650303
+---
+
 # Daily Brief — R&D — 2026-03-20
 # Agent: research-scout (R&D Dept)
 # Task: C3-RD-001 | Cycle: 3

@@ -1,0 +1,6 @@
+Source: https://github.com/Skyvern-AI/skyvern
+Type: REPO_GOLDEN
+Score: 66
+Features: Golden Match [MCP, AGENT, LLM, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

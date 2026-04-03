@@ -1,3 +1,11 @@
+---
+id: knowledge-markdownlint-cli-release-v0.48.0
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.582007
+---
+
 # 🚀 BẢN CẬP NHẬT MỚI: markdownlint-cli (v0.48.0)
 
 **Ngày phát hành:** 2026-03-03T05:17:45Z

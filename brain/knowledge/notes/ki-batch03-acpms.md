@@ -1,3 +1,11 @@
+---
+id: ki-batch03-acpms
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.520953
+---
+
 # KI: ACPMS — Agentic Coding Project Management System
 
 ## Metadata

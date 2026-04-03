@@ -1,3 +1,11 @@
+---
+id: claude-advanced-tool-use
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.591029
+---
+
 # Claude Advanced Tool Use Patterns
 
 API-level features (now GA) that reduce token consumption, latency, and improve tool accuracy. Released with Opus/Sonnet 4.6.

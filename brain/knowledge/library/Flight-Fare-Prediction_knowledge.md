@@ -1,3 +1,11 @@
+---
+id: flight-fare-prediction-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.015333
+---
+
 # KNOWLEDGE EXTRACT: Flight-Fare-Prediction
 > **Extracted on:** 2026-03-29 20:42:29
 > **Source:** Flight-Fare-Prediction

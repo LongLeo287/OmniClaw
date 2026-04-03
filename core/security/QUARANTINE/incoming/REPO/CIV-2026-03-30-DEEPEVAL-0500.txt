@@ -1,0 +1,6 @@
+Source: https://github.com/vercel-labs/agent-skills
+Type: REPO_GOLDEN
+Score: 20
+Features: Golden Match [AGENT]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

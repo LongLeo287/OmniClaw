@@ -1,3 +1,11 @@
+---
+id: resilience-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.742347
+---
+
 # Resilience Patterns: Circuit Breaker, Retry, Bulkhead
 
 ## Circuit Breaker

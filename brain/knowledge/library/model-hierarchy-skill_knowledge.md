@@ -1,3 +1,11 @@
+---
+id: model-hierarchy-skill-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.046005
+---
+
 # KNOWLEDGE EXTRACT: model-hierarchy-skill
 > **Extracted on:** 2026-03-29 22:08:37
 > **Source:** model-hierarchy-skill

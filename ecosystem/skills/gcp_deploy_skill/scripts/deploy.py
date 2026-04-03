@@ -7,12 +7,12 @@ def check_gcloud_installed():
     try:
         subprocess.run(["gcloud", "--version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except FileNotFoundError:
-        print("LỖI: gcloud CLI chưa được cài đặt hoặc không nằm trong PATH.")
-        print("Vui lòng cài đặt tại: https://cloud.google.com/sdk/docs/install")
+        print("ERROR: gcloud CLI is not installed or not in PATH.")
+        print("Please install at: https://cloud.google.com/sdk/docs/install")
         sys.exit(1)
 
 def deploy_to_cloud_run(service_name, region):
-    print(f"=== Đang triển khai (Deploy) mã nguồn hiện tại lên Cloud Run ===")
+    print(f"=== Deploying current source code to Cloud Run ===")
     print(f"Service: {service_name}")
     print(f"Region : {region}")
     print(f"Source : {os.getcwd()}")
@@ -36,19 +36,19 @@ def deploy_to_cloud_run(service_name, region):
 
         process.wait()
         if process.returncode == 0:
-            print("\n=== TRIỂN KHAI THÀNH CÔNG! ===")
+            print("\n=== DEPLOYMENT SUCCESSFUL! ===")
         else:
-            print(f"\n[LỖI] Lệnh deploy thất bại với mã lỗi {process.returncode}")
+            print(f"\n[ERROR] Deploy command failed with exit code {process.returncode}")
             sys.exit(process.returncode)
 
     except Exception as e:
-        print(f"\n[EXCEPTION] Có lỗi xảy ra trong Python Script: {e}")
+        print(f"\n[EXCEPTION] Error occurred in Python Script: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Triển khai source code local lên Google Cloud Run.")
-    parser.add_argument("--service", required=True, help="Tên dịch vụ Cloud Run")
-    parser.add_argument("--region", required=True, help="Khu vực GCP (ví dụ: us-central1, asia-southeast1)")
+    parser = argparse.ArgumentParser(description="Deploy local source code to Google Cloud Run.")
+    parser.add_argument("--service", required=True, help="Cloud Run service name")
+    parser.add_argument("--region", required=True, help="GCP Region (e.g., us-central1, asia-southeast1)")
 
     args = parser.parse_args()
 

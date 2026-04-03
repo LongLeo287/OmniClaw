@@ -1,3 +1,11 @@
+---
+id: step-13-responsive-accessibility
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.569305
+---
+
 # Step 13: Responsive Design & Accessibility
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

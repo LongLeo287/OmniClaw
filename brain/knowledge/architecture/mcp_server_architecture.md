@@ -1,3 +1,11 @@
+---
+id: mcp-server-architecture
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.476626
+---
+
 # Architecture: MCP Server Bridge (Phase 9)
 
 **BM-025** - Cho phép các AI Agent (Claude Desktop, IDEs) đọc và tìm kiếm trong kho bookmark của bạn một cách an toàn.

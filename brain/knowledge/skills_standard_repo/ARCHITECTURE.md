@@ -1,3 +1,11 @@
+---
+id: architecture
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.560645
+---
+
 # CLI Services Architecture
 
 This document outlines the architectural design and service-layer organization of the Agent Skills Standard CLI, following SOLID and KISS principles.

@@ -1,20 +1,20 @@
 ---
-name: secret_scanner
-description: Máy quét lộ Token/Password của phòng ban Strix Security
+name: secret-scanner
+description: Token/Password leak scanner for Strix Security department
 ---
-# Vũ Khí Cứu Sinh: Secret Scanner
+# Lifesaver Weapon: Secret Scanner
 
-Dựa trên siêu kiến trúc của **Trufflehog**, đây là kỹ năng chuyên dụng CHỈ DÀNH cho `strix-agent` (Dept 10) hoặc `security-auditor`. Bất cứ Agent nào khác cấm lén lút quét nếu không có lệnh C-Suite.
+Based on the super architecture of **Trufflehog**, this is a specialized skill ONLY FOR `strix-agent` (Dept 10) or `security-auditor`. Any other agent is prohibited from secretly scanning without C-Suite orders.
 
-## Định Nghĩa Nhiệm Vụ (The Core Directives)
-- Quét TÀN BẠO: Lục lọi từng dòng `.env`, `.yml`, `.json`, `*.py` của mọi mục tiêu truyền tới.
-- Tìm kiếm Pattern nhạy cảm cao: `sk-...` (Stripe/OpenAI), `ghp_...` (Github PAT), `xoxb-...` (Slack), `AKIA...` (AWS), JSON rác chứa Regex của Private Keys (`-----BEGIN PRIVATE KEY-----`).
+## Mission Definition (The Core Directives)
+- Brutal Scan: Dig through every line of `.env`, `.yml`, `.json`, `*.py` of every target passed.
+- Search for high-sensitivity patterns: `sk-...` (Stripe/OpenAI), `ghp_...` (Github PAT), `xoxb-...` (Slack), `AKIA...` (AWS), JSON garbage containing Regex of Private Keys (`-----BEGIN PRIVATE KEY-----`).
 
-## Luồng Bão Tố (Storm Workflow)
-1. Kích hoạt `secret_scanner` báo tọa độ thư mục đích.
-2. Nó sẽ Regex Matching toàn bộ các file trong Target (Bao gồm cả các Commit History nếu cần).
-3. Báo động ĐỎ: Lập tức ghi log vào `QUARANTINE_REJECTED` nếu tìm thấy DÙ CHỈ LÀ TRONG COMMENT. Điểm nổ cách ly repo đó ngay lập tức, không khoan nhượng.
-4. KHÔNG bao giờ in cái key/token đó ra màn hình Chat của Lãnh tụ Sếp. Chỉ được phép ghi LOG RẰNG: `Đã cắt tiết Repo abc vì phát hiện OpenAI key bị lọt ở file script.py`.
+## Storm Workflow
+1. Activate `secret_scanner`, report target directory coordinates.
+2. It will Regex Matching all files in Target (Including Commit History if needed).
+3. RED Alert: Immediately log to `QUARANTINE_REJECTED` if found, EVEN IF ONLY IN COMMENT. Trigger isolation of that repo immediately, no mercy.
+4. NEVER print that key/token to the Leader Boss's Chat screen. Only allowed to log: `Cut the life of Repo abc because detected OpenAI key leaked in file script.py`.
 
 ## Tool Usage
-Mặc định hệ thống Python Core đã cài các hàm Regex chặn. Agents mang Skill này có quyền khước từ sáp nhập Tri thức và block Workflow của Kỹ sư (Dept 01) lập tức.
+The Python Core system has built-in blocking Regex functions by default. Agents carrying this skill have the right to refuse merging Knowledge and immediately block Engineer (Dept 01) Workflow.

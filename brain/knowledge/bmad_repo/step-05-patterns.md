@@ -1,3 +1,11 @@
+---
+id: step-05-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.551399
+---
+
 # Step 5: Implementation Patterns & Consistency Rules
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

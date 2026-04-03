@@ -1,0 +1,5 @@
+Source: https://github.com/nousresearch/hermes-agent
+Type: REPO
+Agent: batch-intake-agent
+Route: brain/knowledge/repos/
+Date: 2026-03-30

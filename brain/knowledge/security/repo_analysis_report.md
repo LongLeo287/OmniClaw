@@ -1,3 +1,11 @@
+---
+id: repo-analysis-report
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.363342
+---
+
 # Repository Analysis Report
 **Date:** 2026-03-14  
 **Purpose:** Analyze all reference repos in `references.md` — decide: CLONE, LEARN-ONLY, or SKIP.

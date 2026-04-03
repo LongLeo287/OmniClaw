@@ -1,3 +1,11 @@
+---
+id: cowork-sessions-expanded
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.716448
+---
+
 # Expanded Cowork Session Templates
 # Extends: cowork/COWORK_PROTOCOL.md
 # Updated: 2026-03-17

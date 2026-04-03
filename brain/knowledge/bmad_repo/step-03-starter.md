@@ -1,3 +1,11 @@
+---
+id: step-03-starter
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.538068
+---
+
 # Step 3: Starter Template Evaluation
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -1,3 +1,11 @@
+---
+id: claude-settings
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.605962
+---
+
 # Claude Code Settings Reference
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2014%2C%202026%201%3A36%20AM%20PKT-white?style=flat&labelColor=555) ![Version](https://img.shields.io/badge/Claude_Code-v2.1.75-blue?style=flat&labelColor=555)

@@ -1,3 +1,11 @@
+---
+id: zustand
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.414850
+---
+
 # Zustand in Next.js
 
 Best practices for using Zustand, a lightweight and flexible state management library, following community standards (e.g., [TKDodo's Recommendations](https://tkdodo.eu/blog/working-with-zustand)).

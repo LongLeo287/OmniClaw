@@ -1,3 +1,11 @@
+---
+id: robot-pattern
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.769380
+---
+
 # Robot Pattern
 
 Decouple UI interactions from test assertions. One robot shared by widget + Patrol tests.

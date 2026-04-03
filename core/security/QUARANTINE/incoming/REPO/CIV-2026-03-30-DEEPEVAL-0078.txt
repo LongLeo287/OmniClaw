@@ -1,0 +1,6 @@
+Source: https://github.com/NVIDIA/garak
+Type: REPO_GOLDEN
+Score: 28
+Features: Golden Match [LLM]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

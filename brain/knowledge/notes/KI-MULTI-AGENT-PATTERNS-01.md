@@ -1,3 +1,11 @@
+---
+id: ki-multi-agent-patterns-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.709210
+---
+
 # KI-MULTI-AGENT-PATTERNS-01 — Multi-Agent Patterns từ AgentScope & AgentTrafficControl
 **Nguồn:** agentscope-ai/agentscope (Alibaba) + gkamradt/agenttrafficcontrol
 **Ngày:** 2026-03-23 | **Verdict:** REFERENCE — học patterns, không integrate

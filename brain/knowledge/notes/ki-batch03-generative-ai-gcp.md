@@ -1,3 +1,11 @@
+---
+id: ki-batch03-generative-ai-gcp
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.583603
+---
+
 # KI: Generative AI on Google Cloud (Vertex AI)
 
 ## Metadata

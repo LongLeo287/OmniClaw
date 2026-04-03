@@ -1,3 +1,11 @@
+---
+id: step-11-component-strategy
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.566883
+---
+
 # Step 11: Component Strategy
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

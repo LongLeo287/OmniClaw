@@ -1,3 +1,11 @@
+---
+id: ideas-backlog-20260326
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.982582
+---
+
 # Quỹ Đầu Tư Ý Tưởng (Ideas Backlog)
 
 Đây là kho chứa các siêu Dự Án / Tính Năng tiềm năng đã qua vòng Brainstorm nhưng được Sếp cân nhắc hoãn triển khai để ưu tiên cho các mạch tác chiến quan trọng hơn hiện tại.

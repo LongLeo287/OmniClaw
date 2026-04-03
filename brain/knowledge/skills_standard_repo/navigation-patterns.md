@@ -1,3 +1,11 @@
+---
+id: navigation-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.487596
+---
+
 # Android Navigation Patterns (Jetpack Compose)
 
 ## 1. Setup

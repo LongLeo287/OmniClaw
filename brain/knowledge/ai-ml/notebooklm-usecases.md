@@ -1,3 +1,11 @@
+---
+id: notebooklm-usecases
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.459375
+---
+
 # NotebookLLM — Full Use Case Map trong OmniClaw Corp
 # Version: 1.0 | Created: 2026-03-18
 # Scope: Cross-department applications

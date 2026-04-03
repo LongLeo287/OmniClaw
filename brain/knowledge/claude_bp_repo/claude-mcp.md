@@ -1,3 +1,11 @@
+---
+id: claude-mcp
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.603400
+---
+
 # MCP Servers Best Practice
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2002%2C%202026%2012%3A30%20PM%20PKT-white?style=flat&labelColor=555)<br>

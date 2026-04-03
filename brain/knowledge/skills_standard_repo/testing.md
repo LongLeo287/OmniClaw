@@ -1,3 +1,11 @@
+---
+id: testing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.150351
+---
+
 # TypeScript Testing Patterns
 
 ## Testing Patterns

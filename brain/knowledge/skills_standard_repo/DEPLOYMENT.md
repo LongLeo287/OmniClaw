@@ -1,3 +1,11 @@
+---
+id: deployment
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.925430
+---
+
 # 🐳 Cloud Deployment Guide: Feedback Server
 
 This guide provides instructions on how to deploy the Agent Skills Feedback Backend to **Render.com** (or similar PaaS providers like Railway/Fly.io).

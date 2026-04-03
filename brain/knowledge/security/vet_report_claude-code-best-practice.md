@@ -1,3 +1,11 @@
+---
+id: vet-report-claude-code-best-practice
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.388419
+---
+
 # Strix Vet Report: claude-code-best-practice
 **Date:** 2026-03-14 10:49:57
 **Status:** PASS

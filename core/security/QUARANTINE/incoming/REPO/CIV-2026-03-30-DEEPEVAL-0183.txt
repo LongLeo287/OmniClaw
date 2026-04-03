@@ -1,0 +1,6 @@
+Source: https://github.com/buiphucminhtam/forgewright
+Type: REPO_GOLDEN
+Score: 93
+Features: Golden Match [MCP, ORCHESTRATOR, AGENT, RAG, GRAPH, LLM, WORKFLOW, SCRAPER]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

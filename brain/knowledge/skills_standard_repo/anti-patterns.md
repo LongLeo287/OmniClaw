@@ -1,3 +1,11 @@
+---
+id: anti-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.543564
+---
+
 # PostgreSQL Anti-Patterns ("Don't Do This")
 
 Synthesized from the official Postgres Wiki.

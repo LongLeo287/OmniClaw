@@ -1,3 +1,11 @@
+---
+id: ki-agency-agents-cherry-pick-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.491053
+---
+
 # Knowledge Note: Agency Agents — Cherry-Picked Skills for OmniClaw
 # Source: plugins/agency-agents (MIT License) — 144 agents, 12 divisions
 # Extracted: 2026-03-23 | By: Antigravity (Knowledge Extraction Pass)

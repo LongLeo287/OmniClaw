@@ -1,3 +1,11 @@
+---
+id: marketing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.645759
+---
+
 # Daily Brief — Marketing — 2026-03-20
 # Agent: growth-hacker (Marketing Dept)
 # Task: C2-MKT-001 | Cycle: 2

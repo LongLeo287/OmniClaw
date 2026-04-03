@@ -1,3 +1,11 @@
+---
+id: step-04-architectural-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.540581
+---
+
 # Technical Research Step 4: Architectural Patterns
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

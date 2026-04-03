@@ -22,12 +22,12 @@ healed_at: 2026-04-02T20:29:11.153383
 - **Stars:** ⭐ 79 | **Forks:** 🍴 54
 - **Language:** Shell | **License:** MIT
 - **Last updated:** 2026-03-26
-- **Status trong AI OS:** 🔖 PENDING/APPROVE
+- **Status in AI OS:** 🔖 PENDING/APPROVE
 
 ## Description:
 (No description)
 
-## README (trích đầu)
+## README (excerpt)
 ```
 # 🚀 N8N Management Script - Production-Ready Automation Platform
 
@@ -43,146 +43,136 @@ healed_at: 2026-04-02T20:29:11.153383
 
 [![Test Status](https://img.shields.io/badge/Tests-11%2F11%20Passed-brightgreen.svg)](N8N_SCRIPT_TEST_RESULTS.md)
 
-[![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success.svg)](#-tính-năng)
+[![Production Ready](https://img.shields.io/badge/Status-Production%20Ready-success.svg)](#features)
 
 
-
-> **🎯 Script tự động Installation:, backup và quản lý N8N với Cloudflare Tunnel - Đã test kỹ lưỡng, sẵn sàng production!**
-
+> **🎯 Automated script for Installation, backup and management of N8N with Cloudflare Tunnel - Thoroughly tested, production-ready!**
 
 
 
 
 
-
-## 📋 Mục lục
-
+## 📋 Table of Contents
 
 
-- [🎯 Dành cho ai?](#-dành-cho-ai)
+- [🎯 Who is this for?](#who-is-this-for)
 
-- [✨ Tính năng](#-tính-năng)
+- [✨ Features](#features)
 
-- [🔧 Yêu cầu hệ thống](#-yêu-cầu-hệ-thống)
+- [🔧 System Requirements](#system-requirements)
 
-- [💻 Hướng dẫn Installation:](#-hướng-dẫn-cài-đặt)
+- [💻 Installation Guide](#installation-guide)
 
-- [🚀 Cách sử dụng](#-cách-sử-dụng)
+- [🚀 How to Use](#how-to-use)
 
-- [📖 Hướng dẫn chi tiết](#-hướng-dẫn-chi-tiết)
+- [📖 Detailed Guide](#detailed-guide)
 
-- [🔒 Bảo mật](#-bảo-mật)
+- [🔒 Security](#security)
 
-- [❓ FAQ](#-faq)
+- [❓ FAQ](#faq)
 
-- [🤝 Đóng góp](#-đóng-góp)
+- [🤝 Contributing](#contributing)
 
-- [🙏 Credits](#-credits)
+- [🙏 Credits](#credits)
 
 
 
-## 🎯 Dành cho ai?
+## 🎯 Who is this for?
 
 
 
-### ✅ **Bạn NÊN sử dụng script này nếu:**
+### ✅ **You SHOULD use this script if:**
 
 
 
-- 🏠 **Có máy tính/server** (Windows, Linux, macOS) muốn chạy 24/7
+- 🏠 **Have a computer/server** (Windows, Linux, macOS) to run 24/7
 
-- 🔄 **Muốn tự động hóa công việc** với N8N (workflow automation)
+- 🔄 **Want to automate tasks** with N8N (workflow automation)
 
-- 🌐 **Cần truy cập N8N từ bất kỳ đâu** qua internet
+- 🌐 **Need to access N8N from anywhere** via internet
 
-- 💼 **Làm việc với API, webhook, tích hợp dịch vụ**
+- 💼 **Work with APIs, webhooks, service integrations**
 
-- 🏢 **Doanh nghiệp nhỏ** cần tự động hóa quy trình
+- 🏢 **Small business** needing process automation
 
-- 👨‍💻 **Developer** muốn tự host N8N thay vì dùng cloud
+- 👨‍💻 **Developer** wanting to self-host N8N instead of using cloud
 
-- 🎓 **Học tập và thử nghiệm** automation
-
-
-
-### 🎯 **Các trường hợp sử dụng phổ biến:**
+- 🎓 **Learning and experimenting** with automation
 
 
 
-| Lĩnh vực | Ứng dụng |
+### 🎯 **Common use cases:**
+
+
+| Domain | Application |
 
 |----------|----------|
 
-| **E-commerce** | Tự động xử lý đơn hàng, đồng bộ inventory, gửi email |
+| **E-commerce** | Auto process orders, sync inventory, send emails |
 
-| **Marketing** | Tự động social media, email marketing, lead nurturing |
+| **Marketing** | Auto social media, email marketing, lead nurturing |
 
-| **Doanh nghiệp** | Tự động báo cáo, quản lý CRM, tích hợp hệ thống |
+| **Business** | Auto reporting, CRM management, system integration |
 
-| **Cá nhân** | Backup tự động, thông báo, quản lý tài chính |
+| **Personal** | Auto backup, notifications, financial management |
 
 | **Developer** | CI/CD, monitoring, API integration |
 
 
 
-### ❌ **KHÔNG phù hợp nếu:**
+### ❌ **NOT suitable if:**
 
 
 
-- 📱 Chỉ có điện thoại/tablet
+- 📱 Only have phone/tablet
 
-- ☁️ Muốn dùng cloud service (hãy dùng n8n.cloud)
+- ☁️ Want to use cloud service (use n8n.cloud instead)
 
-- 🔌 Không có internet ổn định
+- 🔌 No stable internet
 
-- 💻 Không có máy tính để chạy 24/7
-
-
-
-## ✨ Tính năng
+- 💻 No computer to run 24/7
 
 
 
-### 🎛️ **Quản lý toàn diện N8N:**
+## ✨ Features
 
 
 
-- ⚡ **Installation: tự động** N8N + Docker + Cloudflare Tunnel
+### 🎛️ **Comprehensive N8N Management:**
 
-- 💾 **Backup thông minh** với thông tin chi tiết
 
-- 🔄 **Update tự động** lên phiên bản mới nhất
 
-- 🔄💾 **Backup + Update** workflow an toàn
+- ⚡ **Automatic Installation** N8N + Docker + Cloudflare Tunnel
 
-- 🔙 **Rollback an toàn** từ backup
+- 💾 **Smart Backup** with detailed information
+
+- 🔄 **Automatic Update** to latest version
+
+- 🔄💾 **Backup + Update** safe workflow
+
+- 🔙 **Safe Rollback** from backup
 
 - 📊 **System Monitoring** CPU, RAM, Disk, Container status
 
-- 🧹 **Cleanup tự động** backup cũ
+- 🧹 **Auto Cleanup** old backups
 
 - ⚙️ **Config Management** Cloudflare tunnel
 
-- 🔍 **VPS Scanner** phát hiện components
+- 🔍 **VPS Scanner** detect components
 
-- 🗑️ **Uninstall** gỡ Installation: hoàn toàn
-
-
-
-### 🌟 **Điểm nổi bật:**
+- 🗑️ **Uninstall** complete removal
 
 
 
-- 🎨 **Giao diện thân thiện** - Menu tương tác đẹp mắt
+### 🌟 **Highlights:**
 
-- 🔒 **Bảo mật cao** - Mã hóa config, validation đầu vào
 
-- 🚀 **Production-ready** - Đã test kỹ lưỡng
 
-- 📚 **Hướn
+- 🎨 **Friendly Interface** - Beautiful interactive menu
+
+- 🔒 **High Security** - Encrypted config, input validation
+
+- 🚀 **Production-ready** - Thoroughly tested
+
+- 📚 **Doc
 ```
-
----
-*Ingested: 2026-03-27 | Source: GitHub API | Owner: Dept 07 Knowledge*
-```
-

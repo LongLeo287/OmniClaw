@@ -1,3 +1,11 @@
+---
+id: observables-vs-signals
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.525425
+---
+
 # Signals vs Observables
 
 ## When to use what?

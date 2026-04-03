@@ -1,3 +1,11 @@
+---
+id: step-03-customer-pain-points
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.534328
+---
+
 # Market Research Step 3: Customer Pain Points and Needs
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

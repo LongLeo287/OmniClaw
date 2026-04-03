@@ -1,3 +1,11 @@
+---
+id: prop-2026-03-22-skill-tier-batch
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.688989
+---
+
 # Batch-add tier metadata to 2618 SKILL.md files
 **ID:** PROP_2026-03-22_SKILL_TIER_BATCH
 **Type:** NEW_SKILL | **Priority:** HIGH

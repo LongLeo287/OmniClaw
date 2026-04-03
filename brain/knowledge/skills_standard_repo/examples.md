@@ -1,3 +1,11 @@
+---
+id: examples
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.045740
+---
+
 # TypeScript Best Practice Examples
 
 ## Named Export + Immutable Interface

@@ -1,3 +1,11 @@
+---
+id: local-ai-explanation
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.458481
+---
+
 # 🤖 AI "Không Tài khoản, Không API": Cách chúng ta vận hành
 
 Chào bạn, đây là phần giải thích về "phép màu" kỹ thuật giúp chúng ta sử dụng AI mà không cần đến tài khoản hay mất phí Token.

@@ -1,3 +1,11 @@
+---
+id: claude-cli-startup-flags
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.599120
+---
+
 # CLI Startup Flags Best Practice
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2002%2C%202026-white?style=flat&labelColor=555)

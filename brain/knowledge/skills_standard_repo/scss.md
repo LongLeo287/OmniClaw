@@ -1,3 +1,11 @@
+---
+id: scss
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.857228
+---
+
 # SCSS & SASS in Next.js
 
 Best practices for using SCSS for styling in Next.js projects.

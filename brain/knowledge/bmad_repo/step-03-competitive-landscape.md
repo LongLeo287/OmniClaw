@@ -1,3 +1,11 @@
+---
+id: step-03-competitive-landscape
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.531555
+---
+
 # Domain Research Step 3: Competitive Landscape
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -12,7 +12,7 @@ sys.path.append(_OMNICLAW_ROOT)
 
 class GitingestTool(BaseTool):
     name: str = "Gitingest Code Repo Analyzer"
-    description: str = "Trích xuất mã nguồn và tóm tắt cấu trúc thư mục từ một đường dẫn Github URL. Nhận input là repo url hợp lệ."
+    description: str = "Extracts source code and summarizes directory structure from a Github URL. Input is a valid repo URL."
 
     def _run(self, repo_url: str) -> str:
         try:
@@ -31,7 +31,7 @@ class GitingestTool(BaseTool):
 
 class LightRAGTool(BaseTool):
     name: str = "LightRAG Knowledge Indexing Tool"
-    description: str = "Đọc đoạn văn bản báo cáo hoặc tài liệu và Chèn (Insert) thẳng vào Core Knowledge Graph RAG của công ty. Input là content markdown."
+    description: str = "Reads report text or documents and inserts them directly into the core Knowledge Graph RAG. Input is markdown content."
 
     def _run(self, document_content: str) -> str:
         try:

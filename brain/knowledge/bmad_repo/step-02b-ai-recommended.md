@@ -1,3 +1,11 @@
+---
+id: step-02b-ai-recommended
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.527999
+---
+
 # Step 2b: AI-Recommended Techniques
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

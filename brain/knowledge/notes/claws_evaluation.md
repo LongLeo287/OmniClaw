@@ -1,3 +1,11 @@
+---
+id: claws-evaluation
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.482297
+---
+
 # Claws Evaluation — OmniClaw Plugin Assessment
 # Updated: 2026-03-16
 # Purpose: Choose the best claw variant(s) to use for OmniClaw channel management

@@ -32,7 +32,7 @@ description: Full presentation protocol — all 5 formats for brainstorms, repor
 | New product feature / capability discovery | **3 — BMAD Method** | `runes/bmad_prompt.md` |
 | Recording a finalized decision | **4 — Decision Log** | `runes/decision_log_prompt.md` |
 | Reporting completed task execution | **5 — Execution Receipt** | `runes/execution_receipt_prompt.md` |
-| Báo cáo nghiệm thu Data/Repo/URL (CIV) | **6 — Dashboard Analytics Report** | Tự kích hoạt khi chạy luồng CIV Intake |
+| CIV Intake acceptance report (Data/Repo/URL) | **6 — Dashboard Analytics Report** | Auto-triggered when running CIV Intake flow |
 
 Full selector logic: `runes/report_formats.md`
 
@@ -62,9 +62,7 @@ Full selector logic: `runes/report_formats.md`
 
 **Language:** Vietnamese for all user-facing content.
 
-Close with: *"Chờ Sếp phản hồi chốt phương án trước khi thực thi."*
-
-
+Close with: *"Chờ Sếp phản hồi chốt phương án trước khi thực thi."* (Awaiting Boss feedback to finalize plan before execution.)
 
 ---
 
@@ -136,20 +134,20 @@ Close with: *"Chờ Sếp phản hồi chốt phương án trước khi thực t
 
 ## FORMAT 6 — Dashboard Analytics Report (CIV / Intake)
 
-**When:** Reporting batch content intake (CIV) of Repos, URLs, Data, PDFs, Images. Tự kích hoạt 100% tự động bởi `content-analyst-agent` hoặc `ANTIGRAVITY` khi Intake Cycle kết thúc. Không cần đợi lệnh từ CEO.
+**When:** Reporting batch content intake (CIV) of Repos, URLs, Data, PDFs, Images. Auto-triggered 100% automatically by `content-analyst-agent` or `ANTIGRAVITY` when Intake Cycle ends. No need to wait for CEO command.
 **Structure:**
 
-1. **Header Block:** (GitHub Alert `> [!NOTE]`) — Tổng hợp Ticket, Tổng số lượng, Thành công/Thất bại.
-2. **Mermaid Pie Chart:** Thống kê phân loại dữ liệu nạp vào theo tỷ lệ % (APPROVE, REFERENCE, DEFER, REJECT).
-3. **Priority Alert:** (GitHub Alert `> [!IMPORTANT]`) — Kê biên danh sách ưu tiên cao nhất (Priority 1) kèm hành động.
-4. **Carousel Bảng Dữ liệu:** 4 dấu backticks (` ` ` `carousel), chia các hạng mục logic bằng `<!-- slide -->`. Bên trong là Bảng (Table) kèm Status: Emoji.
-5. **Reject Warning:** (GitHub Alert `> [!WARNING]`) — Kê biên hạng mục bị trục xuất khỏi hệ thống.
-6. **Mermaid Flowchart:** Sơ đồ mạng lưới mũi tên chứng minh toàn bộ dữ liệu đã được OmniClaw xử lý khép kín.
+1. **Header Block:** (GitHub Alert `> [!NOTE]`) — Summary of Tickets, Total count, Success/Failure.
+2. **Mermaid Pie Chart:** Statistics of data intake classification by % (APPROVE, REFERENCE, DEFER, REJECT).
+3. **Priority Alert:** (GitHub Alert `> [!IMPORTANT]`) — List of highest priority items (Priority 1) with actions.
+4. **Carousel Data Table:** 4 backticks (` ` ` `carousel), separate logical categories with `<!-- slide -->`. Inside is Table with Status: Emoji.
+5. **Reject Warning:** (GitHub Alert `> [!WARNING]`) — List of items expelled from system.
+6. **Mermaid Flowchart:** Network arrow diagram proving all data has been processed end-to-end by OmniClaw.
 
-**Rule Tối Thượng Format 6:**
-- Cấm tuyệt đối dùng Heading Markdown (`#`).
-- Mọi tiêu đề phải in hoa toàn bộ (ALL CAPS) + Emoji đứng trước.
-- Giọng văn: "Đốc Tướng" (Tiếng Việt) ngắn gọn, đi thẳng vào Problem:.
+**Ultimate Rule for Format 6:**
+- Absolutely NO Markdown headings (`#`).
+- All titles must be ALL CAPS + Emoji prefix.
+- Tone: "Drill Sergeant" (Vietnamese) concise, straight to Problem:.
 
 ---
 

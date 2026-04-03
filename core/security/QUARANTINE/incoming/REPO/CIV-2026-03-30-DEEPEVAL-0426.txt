@@ -1,0 +1,6 @@
+Source: https://github.com/qwibitai/nanoclaw
+Type: REPO_GOLDEN
+Score: 37
+Features: Golden Match [ORCHESTRATOR, AGENT]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

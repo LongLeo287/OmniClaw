@@ -1,3 +1,11 @@
+---
+id: best-practices
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.615986
+---
+
 # Redis Detailed Best Practices
 
 ## 1. Caching & Memory Strategies

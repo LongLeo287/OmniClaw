@@ -1,0 +1,6 @@
+Source: https://github.com/nullclaw/nullclaw
+Type: REPO_GOLDEN
+Score: 70
+Features: Golden Match [MCP, ORCHESTRATOR, AGENT, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

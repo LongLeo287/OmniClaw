@@ -1,0 +1,6 @@
+Source: https://github.com/Giskard-AI/giskard
+Type: REPO_GOLDEN
+Score: 48
+Features: Golden Match [AGENT, RAG, LLM]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

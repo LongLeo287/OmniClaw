@@ -20,7 +20,7 @@ if not ((AOS_ROOT / "system").is_dir() and (AOS_ROOT / "brain").is_dir()):
 
 sys.path.insert(0, str(AOS_ROOT))
 try:
-    from system.infra.notifications.telegram_dispatch import send_telegram_alert
+    from core.infra.notifications.telegram_dispatch import send_telegram_alert
 except ImportError:
     def send_telegram_alert(msg, **kwargs):
         print(f"[FALLBACK TELEGRAM] {msg}")

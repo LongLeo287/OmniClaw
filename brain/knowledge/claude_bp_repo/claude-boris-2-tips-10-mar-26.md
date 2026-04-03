@@ -1,3 +1,11 @@
+---
+id: claude-boris-2-tips-10-mar-26
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.598298
+---
+
 # Code Review & Test Time Compute — Tips from Boris Cherny
 
 A summary of insights shared by Boris Cherny ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on March 10, 2026.

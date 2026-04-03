@@ -1,3 +1,11 @@
+---
+id: llm-research-2026-03-17
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.457534
+---
+
 # LLM Research Brief — March 2026
 # Links: GLM-5 (z.ai), Kimi K2.5 (MoonshotAI), MiniMax-AI org, WorldVQA benchmark
 

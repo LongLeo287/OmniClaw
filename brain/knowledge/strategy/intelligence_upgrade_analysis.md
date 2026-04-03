@@ -1,3 +1,11 @@
+---
+id: intelligence-upgrade-analysis
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.452570
+---
+
 # 🧠 Intelligence Upgrade Analysis: Claude Patterns Integration
 
 Based on research into `Piebald-AI/claude-code-system-prompts` and the `Claude Agent SDK`, we are upgrading the OmniClaw with senior-level orchestration patterns.

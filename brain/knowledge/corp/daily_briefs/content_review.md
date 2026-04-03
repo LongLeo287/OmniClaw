@@ -1,3 +1,11 @@
+---
+id: content-review
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.640829
+---
+
 # Daily Brief — Content Review — 2026-03-20
 # Agent: editor-agent (Content Review Dept)
 # Task: C3-CONTENT_REVIEW-001 | Cycle: 3

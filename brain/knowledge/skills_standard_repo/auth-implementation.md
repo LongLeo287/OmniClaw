@@ -1,3 +1,11 @@
+---
+id: auth-implementation
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.562323
+---
+
 # Authentication Implementation
 
 ## 1. Setting Tokens (Server Action)

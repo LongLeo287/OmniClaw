@@ -1,0 +1,6 @@
+Source: https://github.com/pixlcore/xyops
+Type: REPO_GOLDEN
+Score: 23
+Features: Golden Match [WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

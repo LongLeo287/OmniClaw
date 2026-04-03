@@ -1,3 +1,11 @@
+---
+id: step-07-defining-experience
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.559675
+---
+
 # Step 7: Defining Core Experience
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

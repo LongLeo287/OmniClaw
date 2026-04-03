@@ -1,3 +1,11 @@
+---
+id: legal
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.644899
+---
+
 # Daily Brief — Legal & Compliance — 2026-03-20
 # Agent: contract-agent (Legal Dept)
 # Task: C3-LEGAL-001 | Cycle: 3

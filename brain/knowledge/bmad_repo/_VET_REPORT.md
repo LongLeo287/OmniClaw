@@ -1,3 +1,11 @@
+---
+id: -vet-report
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.582759
+---
+
 # Strix Vet Report: BMAD-METHOD
 **Date:** 2026-03-14 10:49:48
 **Status:** WARN

@@ -1,3 +1,11 @@
+---
+id: omniclaw-golden-repos
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.634754
+---
+
 # 🌟 OmniClaw Golden Repositories (Top Priority)
 
 > List of NEW Repos (reconciled to remove existing repos in `plugin-catalog.md`). Scored based on Tech Stack and Agent/MCP/RAG structure.

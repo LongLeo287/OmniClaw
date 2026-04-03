@@ -1,3 +1,11 @@
+---
+id: tdd-feedback
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.080326
+---
+
 # TDD & Feedback Reference
 
 Example of the Red-Green-Refactor cycle and code review feedback.

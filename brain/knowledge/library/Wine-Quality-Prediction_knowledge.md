@@ -1,3 +1,11 @@
+---
+id: wine-quality-prediction-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.338669
+---
+
 # KNOWLEDGE EXTRACT: Wine-Quality-Prediction
 > **Extracted on:** 2026-03-29 20:56:38
 > **Source:** Wine-Quality-Prediction

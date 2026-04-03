@@ -1,3 +1,11 @@
+---
+id: vet-report-everything-claude-code
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.400618
+---
+
 # Strix Vet Report: everything-claude-code
 **Date:** 2026-03-14 10:49:53
 **Status:** FAIL

@@ -1,3 +1,11 @@
+---
+id: ki-system-repair-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.782017
+---
+
 # KI-SYSTEM-REPAIR-01 — OmniClaw System Repair Knowledge Item
 # Type: Operational Knowledge | Dept: System Integrity (32)
 # Created: 2026-03-29 | Owner: system-repair-agent

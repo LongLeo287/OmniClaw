@@ -1,3 +1,11 @@
+---
+id: step-02-context
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.519459
+---
+
 # Step 2: Project Context Analysis
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -1,3 +1,11 @@
+---
+id: implementation-details
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.201810
+---
+
 # Next.js Rendering Implementation Details
 
 ## Static Rendering (SSG)

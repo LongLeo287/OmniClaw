@@ -1,3 +1,11 @@
+---
+id: naming-convention
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.453830
+---
+
 # Naming Conventions
 
 ## Types

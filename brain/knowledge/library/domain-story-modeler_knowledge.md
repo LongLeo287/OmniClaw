@@ -1,3 +1,11 @@
+---
+id: domain-story-modeler-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:21.707626
+---
+
 # KNOWLEDGE EXTRACT: domain-story-modeler
 > **Extracted on:** 2026-03-29 20:48:24
 > **Source:** domain-story-modeler

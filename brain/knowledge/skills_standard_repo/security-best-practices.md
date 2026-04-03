@@ -1,3 +1,11 @@
+---
+id: security-best-practices
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.872935
+---
+
 # Security Best Practices
 
 ## Sanitization

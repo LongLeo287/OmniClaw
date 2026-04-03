@@ -1,3 +1,11 @@
+---
+id: github-repos-index
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.583702
+---
+
 # GitHub Repository Index — OmniClaw Knowledge Library
 # Source: <DATA_ROOT>\Github.txt + Google Sheets
 # Ingested: 2026-03-15 | 177 repos from Github.txt

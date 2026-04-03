@@ -1,3 +1,11 @@
+---
+id: chrome-extension-api
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.594584
+---
+
 # Chrome Extension API — Knowledge Base
 
 ## Description

@@ -1,3 +1,11 @@
+---
+id: rule-encoding-01-utf8-no-bom
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.894762
+---
+
 # RULE-ENCODING-01 — UTF-8 Without BOM Standard
 **Issued:** 2026-03-31
 **Status:** MANDATORY

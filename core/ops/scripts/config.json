@@ -1,0 +1,106 @@
+{
+  "ai_os_corp": {
+    "version": "1.0",
+    "description": "OmniClaw — Unified Services Config"
+  },
+  "services": {
+    "clawtask": {
+      "port": 7474,
+      "url": "http://localhost:7474/",
+      "api": "http://localhost:7474/api",
+      "launch_cmd": ["python", "ecosystem/tools/clawtask/clawtask_api.py"],
+      "autostart": false,
+      "note": "path is relative to AI OS root"
+    },
+    "9router": {
+      "port": 20128,
+      "url": "http://localhost:20128/",
+      "api": "http://localhost:20128/v1",
+      "api_key": "[REDACTED_API_KEY]"
+    },
+    "nullclaw_bot": {
+      "port": 3000,
+      "url": "http://localhost:3000/",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_nullclaw.py"],
+      "autostart": false,
+      "note": "paths are relative to AI OS root. Token loaded from ops/secrets/MASTER.env",
+      "telegram_token": "${TELEGRAM_BOT_TOKEN}",
+      "admin_id": "${TELEGRAM_CHAT_ID}"
+    },
+    "ollama": {
+      "port": 11434,
+      "url": "http://localhost:11434/",
+      "api": "http://localhost:11434/v1",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_ollama.py"],
+      "autostart": false,
+      "note": "Local inference engine. Models deported to OmniClaw MODELS.",
+      "api_key": "ollama",
+      "default_model": "deepseek-coder-v2",
+      "fleet": {
+        "tier1_architect_reasoning": "deepseek-coder-v2",
+        "tier2_intake_parsing": "qwen2.5-coder:7b",
+        "tier3_background_health": "qwen2.5:0.5b",
+        "tier3_vault_sweeper": "qwen2.5:0.5b",
+        "vector_embeddings": "mxbai-embed-large",
+        "tier4_vision": "llava:13b"
+      }
+    },
+    "openrouter": {
+      "type": "cloud",
+      "url": "https://openrouter.ai/api/v1",
+      "api_key": "YOUR_OPENROUTER_KEY_HERE",
+      "docs": "https://openrouter.ai/docs",
+      "fallback_for": "tier1_architect_reasoning",
+      "default_model": "google/gemma-2-9b-it:free"
+    },
+    "open_notebook": {
+      "port_api": 5055,
+      "port_ui": 8502,
+      "url_api": "http://localhost:5055",
+      "url_ui": "http://localhost:8502",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_open_notebook.py"],
+      "fallback_cloud": "https://api.exa.ai/",
+      "stream_mode": "local_first",
+      "autostart": false,
+      "note": "Data lives in OmniClaw REMOTE."
+    },
+    "lightrag": {
+      "port": 9621,
+      "url": "http://localhost:9621/",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_lightrag.py"],
+      "fallback_cloud": "https://api.pinecone.io/v1/",
+      "stream_mode": "local_first",
+      "autostart": false,
+      "note": "Vector Embeddings storage deported to REMOTE"
+    },
+    "openclaw": {
+      "port": 18789,
+      "url": "http://localhost:18789/",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_openclaw.py"],
+      "autostart": false,
+      "note": "OpenClaw Node Gateway deported to REMOTE"
+    },
+    "firecrawl": {
+      "port": 3002,
+      "url": "http://localhost:3002/",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_firecrawl.py"],
+      "autostart": false,
+      "note": "Docker scraper deported to REMOTE"
+    },
+    "mem0": {
+      "port": 7000,
+      "url": "http://localhost:7000/",
+      "launch_cmd": ["python", "ecosystem/bridges/launch_mem0.py"],
+      "autostart": false,
+      "note": "Vector memory deported to REMOTE"
+    }
+  },
+  "watchdog": {
+    "script": "%USERPROFILE%/.nullclaw/watchdog.py",
+    "note": "Uses %USERPROFILE% env var — resolves to current user's home directory",
+    "check_interval_seconds": 30,
+    "log": "%USERPROFILE%/.nullclaw/watchdog.log"
+  }
+}
+
+

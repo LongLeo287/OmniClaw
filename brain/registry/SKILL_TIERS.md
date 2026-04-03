@@ -1,3 +1,11 @@
+---
+id: skill-tiers
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.884543
+---
+
 # OmniClaw — Skill & Plugin Tier Registry
 # Path: $OMNICLAW_ROOT\registry\SKILL_TIERS.md
 # Updated: 2026-03-17

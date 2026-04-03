@@ -1,3 +1,11 @@
+---
+id: ai-integration
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.446816
+---
+
 # AI Integration — Knowledge Base
 
 ## Description

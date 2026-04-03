@@ -1,3 +1,11 @@
+---
+id: qa-testing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.649702
+---
+
 # Daily Brief — QA & Testing — 2026-03-20
 # Agent: qa-engineer-agent (QA Dept)  
 # Task: C3-QA-001 | Cycle: 3

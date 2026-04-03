@@ -1,3 +1,11 @@
+---
+id: rls-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.755444
+---
+
 # RLS Migration Patterns
 
 All migrations creating child-centric tables should follow this pattern.

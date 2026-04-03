@@ -1,3 +1,11 @@
+---
+id: strategy-matrix
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.984726
+---
+
 # Strategy Selection Matrix
 
 Choose the right rendering strategy based on your requirements for data freshness, performance, and scaling characteristics.

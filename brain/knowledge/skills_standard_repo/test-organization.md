@@ -1,3 +1,11 @@
+---
+id: test-organization
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.098526
+---
+
 # Test Organization
 
 File naming, placement, and structure rules.

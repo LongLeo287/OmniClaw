@@ -14,87 +14,87 @@ healed_at: 2026-04-02T20:28:56.985422
 
 ## File: `ccpoke.md`
 ```markdown
-# 📦 kaida-palooza/ccpoke [🔖 PENDING/APPROVE]
-🔗 https://github.com/kaida-palooza/ccpoke
-🌐 https://kaida-palooza.github.io/ccpoke/
+# kaida-palooza/ccpoke [PENDING/APPROVE]
+https://github.com/kaida-palooza/ccpoke
+https://kaida-palooza.github.io/ccpoke/
 
 ## Meta
-- **Stars:** ⭐ 95 | **Forks:** 🍴 40
+- **Stars:** 95 | **Forks:** 40
 - **Language:** TypeScript | **License:** MIT
 - **Last updated:** 2026-03-23
-- **Status trong AI OS:** 🔖 PENDING/APPROVE
+- **Status in AI OS:** PENDING/APPROVE
 
 ## Description:
 Bridge between AI coding agents and your phone — notifications, 2-way chat, permissions
 
-## README (trích đầu)
+## README (excerpt)
 ```
-# 🐾 ccpoke — Cầu nối thông báo AI Agent
+# ccpoke — AI Agent Notification Bridge
 
-[English](../../../core/security/QUARANTINE/vetted/repos/tookie_osint/docs/readmelang/README.en.md) · [中文](./README.zh.md)
+[English](../../../core/security/QUARANTINE/vetted/repos/tookie_osint/docs/readmelang/README.en.md) · [Chinese](./README.zh.md)
 
-> Tương tác 2 chiều với Claude Code, Codex CLI, Cursor CLI và nhiều AI agent khác qua Telegram — lập trình mọi lúc mọi nơi.
+> 2-way interaction with Claude Code, Codex CLI, Cursor CLI and many other AI agents via Telegram — program anytime, anywhere.
 
 ---
 
-## Problem: giải quyết
+## Problem: Solved
 
-Bạn đang dùng Claude Code, Codex CLI hoặc Cursor CLI trên máy tính. Ra ngoài cầm điện thoại nhưng không biết AI agent đã xong chưa, muốn gửi thêm yêu cầu mà không cần mở laptop.
+You're using Claude Code, Codex CLI or Cursor CLI on your computer. You go outside with your phone but don't know if the AI agent is done, want to send more requests without opening your laptop.
 
-**ccpoke** là cầu nối 2 chiều giữa AI agent và Telegram — nhận thông báo, gửi yêu cầu, trả lời câu hỏi, quản lý nhiều phiên làm việc — tất cả từ điện thoại.
+**ccpoke** is a 2-way bridge between AI agent and Telegram — receive notifications, send requests, answer questions, manage multiple sessions — all from your phone.
 
 ```
-AI agent hoàn thành phản hồi
+AI agent completes response
         ↓
-  Stop Hook kích hoạt
+  Stop Hook triggers
         ↓
-  ccpoke nhận sự kiện
+  ccpoke receives event
         ↓
-  Thông báo Telegram 📱
+  Telegram notification
 ```
 
-## Agent hỗ trợ
+## Supported Agents
 
 | | Claude Code | Codex CLI | Cursor CLI |
 |---|---|---|---|
-| Thông báo Telegram | ✅ macOS · Linux · Windows | ✅ macOS · Linux · Windows | ✅ macOS · Linux · Windows |
-| Trò chuyện 2 chiều (Telegram ↔ Agent) | ✅ macOS · Linux | ✅ macOS · Linux | ✅ macOS · Linux |
+| Telegram notification | macOS · Linux · Windows | macOS · Linux · Windows | macOS · Linux · Windows |
+| 2-way chat (Telegram ↔ Agent) | macOS · Linux | macOS · Linux | macOS · Linux |
 
-Thêm agent mới qua Architecture plugin — hoan nghênh đóng góp!
+Add new agents via Architecture plugin — contributions welcome!
 
-## Tính năng
+## Features
 
-- 🔔 **Thông báo đẩy** — AI agent xong → Telegram nhận tin ngay, không cần kiểm tra liên tục, không trễ
-- 💬 **Tương tác 2 chiều** — trò chuyện với AI agent từ Telegram, xem phiên làm việc, gửi yêu cầu, trả lời câu hỏi, phê duyệt quyền
-- 🔀 **Đa phiên** — quản lý nhiều phiên AI agent cùng lúc, chuyển đổi nhanh, giám sát song song
+- **Push notifications** — AI agent done → Telegram receives instantly, no need to check continuously, no delay
+- **2-way interaction** — chat with AI agent from Telegram, view sessions, send requests, answer questions, approve permissions
+- **Multi-session** — manage multiple AI agent sessions simultaneously, switch quickly, monitor in parallel
 
-## Yêu cầu
+## Requirements
 
 - **Node.js** ≥ 20
-- **tmux** — cần cho tương tác 2 chiều (tự cài khi chạy lần đầu)
-- **Telegram Bot Token** — tạo từ [@BotFather](https://t.me/BotFather)
+- **tmux** — needed for 2-way interaction (auto-installed on first run)
+- **Telegram Bot Token** — create from [@BotFather](https://t.me/BotFather)
 
-## Bắt đầu
+## Getting Started
 
-### Cách 1: npx (không cần Installation:)
+### Method 1: npx (no installation needed)
 
 ```bash
 npx -y ccpoke
 ```
 
-Lần đầu chạy → tự động thiết lập → khởi động bot. Một lệnh duy nhất.
+First run → auto setup → start bot. Single command.
 
-### Cách 2: Installation: toàn cục (khuyến nghị — khởi động nhanh hơn)
+### Method 2: Global installation (recommended — faster startup)
 
 ```bash
 npm i -g ccpoke
 ccpoke
 ```
 
-Trình hướng dẫn Installation: sẽ dẫn bạn từng bước:
+Installation wizard will guide you step by step:
 
 ```
-┌  🤖 ccpoke setup
+┌  ccpoke setup
 │
 ◇  Language
 │  English
@@ -102,7 +102,7 @@ Trình hướng dẫn Installation: sẽ dẫn bạn từng bước:
 ◇  Telegram Bot Token
 │  your-bot-token
 │
-◇  ✓ Bot: @your_bot
+◇  Bot: @your_bot
 │
 ◇  Scan QR or open link to connect:
 │  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -116,9 +116,9 @@ Trình hướng dẫn Installation: sẽ dẫn bạn từng bước:
 │
 ◇  Waiting for you to send /start to the bot...
 │
-◆  ✓ Connected! User ID: 123456789
+◆  Connected! User ID: 123456789
 │
-◇  Chọn AI agents (ấn cách để chọn)
+◇  Select AI agents (press space to select)
 │  Claude Code, Codex CLI, Cursor CLI
 │
 ◆  Config saved
@@ -127,38 +127,37 @@ Trình hướng dẫn Installation: sẽ dẫn bạn từng bước:
 ◆  Hook installed for Cursor CLI
 ◆  Chat ID registered
 │
-└  🎉 Setup complete!
+└  Setup complete!
 ```
 
 
-## Sử dụng
+## Usage
 
-### Khởi động bot
+### Start bot
 
 ```bash
-# npx (không cần Installation:)
+# npx (no installation)
 npx -y ccpoke
 
-# Hoặc Installation: toàn cục
+# Or global installation
 ccpoke
 
 ```
 
-Bot chạy xong → dùng Claude Code / Codex CLI / Cursor CLI bình thường → thông báo tự đến Telegram.
+Bot running → use Claude Code / Codex CLI / Cursor CLI normally → notifications arrive at Telegram automatically.
 
-### Xem phiên làm việc đa agent
+### View multi-agent sessions
 
-Khi chạy nhiều agent song song, ccpoke tạo phiên tmux để quản lý. Để xem:
+When running multiple agents in parallel, ccpoke creates tmux sessions to manage. To view:
 
 ```bash
-# Cửa sổ dòng lệnh thường
+# Regular terminal window
 tmux attach
 
-# iTerm2 (tích hợp gốc)
+# iTerm2 (native integration)
 tmux 
 ```
 
 ---
 *Ingested: 2026-03-27 | Source: GitHub API | Owner: Dept 07 Knowledge*
 ```
-

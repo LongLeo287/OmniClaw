@@ -1,3 +1,11 @@
+---
+id: ki-batch03-production-grade-plugin
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.616545
+---
+
 # KI: Production Grade Plugin for Claude Code
 
 ## Metadata

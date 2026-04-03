@@ -1,3 +1,11 @@
+---
+id: security-audit-report-march2026
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.659546
+---
+
 # GitHub Issues — OmniClaw Code Review
 > Copy a section below to create an issue at: https://github.com/OmniClaw-Corp/omniclaw-local/issues/new
 

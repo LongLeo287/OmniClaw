@@ -462,7 +462,4 @@ While shadcn/ui is accessible by default, custom modifications can break this. T
 ## Next Steps
 
 After migration:
-1. Review the [Customization Guide](./customization-guide.md)
-2. Explore the [Component Catalog](./component-catalog.md)
-3. Check out [Examples](../examples/)
 4. Consider building a component library on top of shadcn/ui

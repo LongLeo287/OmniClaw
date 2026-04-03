@@ -1,3 +1,11 @@
+---
+id: test-scenarios
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.107608
+---
+
 # Skill Activation Test Scenarios
 
 This document provides test scenarios to validate that the feedback-reporter skill activates and executes correctly.

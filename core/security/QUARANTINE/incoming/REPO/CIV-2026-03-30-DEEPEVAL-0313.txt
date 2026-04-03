@@ -1,0 +1,6 @@
+Source: https://github.com/kubernetes-sigs/agent-sandbox
+Type: REPO_GOLDEN
+Score: 46
+Features: Golden Match [AGENT, LLM, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

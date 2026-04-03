@@ -1,0 +1,19 @@
+# Antigravity boot config — v3.2
+# DO NOT hardcode secrets here. Use .env for tokens.
+agent:
+  id: antigravity
+  role: tier_1_orchestrator
+  model_override: null          # null = use system default
+  max_context_turns: 30         # suggest /clear after this
+  reporting_language: vietnamese
+
+handoff:
+  router_url_env: OMNICLAW_ROUTER_URL   # read from .env
+  model_env: OMNICLAW_MODEL             # read from .env
+  timeout_sec: 1800                     # Up to 30 mins before OBD kills it
+  result_archive: vault/tmp/receipts/   # Write to vault per OMA rule
+
+boot:
+  lean_mode: true               # skip on-demand reads unless triggered
+  fallback_on_missing: true     # skip missing files, don't halt
+  report_missing_files: true    # always report to CEO

@@ -1,3 +1,11 @@
+---
+id: ki-mcp-server-index-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.699461
+---
+
 # KI-MCP-SERVER-INDEX-01 — MCP Server Index (awesome-mcp-servers)
 **Nguồn:** punkpeye/awesome-mcp-servers (140+ chunks, 40+ categories)
 **Ngày:** 2026-03-23 | **Verdict:** REFERENCE INDEX — tham khảo khi cần MCP server mới

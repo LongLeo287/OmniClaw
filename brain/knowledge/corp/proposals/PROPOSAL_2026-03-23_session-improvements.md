@@ -1,3 +1,11 @@
+---
+id: proposal-2026-03-23-session-improvements
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.683301
+---
+
 # CEO Proposals — 2026-03-23
 # Source: RETRO_2026-03-23.md
 # Written by: strategy/product-manager-agent (Antigravity)

@@ -1,3 +1,11 @@
+---
+id: escalations
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.632422
+---
+
 # OmniClaw Corp — Escalations Queue
 # Written by: Dept Heads or C-Suite agents
 # Read by: CEO (Human Operator) via Antigravity session

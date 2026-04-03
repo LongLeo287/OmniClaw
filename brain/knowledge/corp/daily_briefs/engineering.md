@@ -1,3 +1,11 @@
+---
+id: engineering
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.641417
+---
+
 # Daily Brief Template — Engineering
 # File: shared-context/corp/daily_briefs/engineering.md
 # Agent fills this at end of daily cycle (Phase 5)

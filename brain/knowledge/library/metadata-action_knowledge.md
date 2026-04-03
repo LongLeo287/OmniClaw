@@ -1,3 +1,11 @@
+---
+id: metadata-action-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.033390
+---
+
 # KNOWLEDGE EXTRACT: metadata-action
 > **Extracted on:** 2026-03-29 20:54:33
 > **Source:** metadata-action

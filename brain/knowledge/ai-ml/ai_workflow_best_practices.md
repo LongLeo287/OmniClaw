@@ -1,3 +1,11 @@
+---
+id: ai-workflow-best-practices
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.447970
+---
+
 # AI Workflow Best Practices — Knowledge Base
 # Source: <DATA_ROOT>\POST.txt (Ingested 2026-03-15)
 # Category: Tier 4 — Knowledge Library

@@ -1,3 +1,11 @@
+---
+id: oiw-daemon
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.673338
+---
+
 # OmniClaw Ingestion Daemon (OID) V2.5
 
 > **Status:** ACTIVE

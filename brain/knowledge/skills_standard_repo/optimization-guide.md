@@ -1,3 +1,11 @@
+---
+id: optimization-guide
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.544909
+---
+
 # React Native Performance Reference
 
 Advanced optimization techniques and detailed examples.

@@ -1,3 +1,11 @@
+---
+id: health-kb
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.491871
+---
+
 # System Health — Knowledge Base
 # Owner: system_health dept | Head: health-chief-agent
 # Updated: 2026-03-22 | Schema: v1.0

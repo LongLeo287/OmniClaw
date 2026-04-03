@@ -1,3 +1,11 @@
+---
+id: readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.658858
+---
+
 # 📚 OmniClaw - Official Documentation
 
 Welcome to the **OmniClaw Official Documentation**. This directory contains human-readable guides, architectural overviews, and tutorials for understanding and interacting with the 21-department AI operating system.

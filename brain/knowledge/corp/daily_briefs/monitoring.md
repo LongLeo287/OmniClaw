@@ -1,3 +1,11 @@
+---
+id: monitoring
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.646385
+---
+
 # Daily Brief — Monitoring & Inspection — 2026-03-20
 # Agent: monitor-agent (Monitoring Dept)
 # Task: C3-MONITOR-001 | Cycle: 3

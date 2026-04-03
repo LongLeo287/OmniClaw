@@ -1,3 +1,11 @@
+---
+id: ki-ai-stack-landscape-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.511816
+---
+
 # KI-AI-STACK-LANDSCAPE-01 — AI Stack Overview (seeaifirst + awesome-copilot + ossinsight)
 **Nguồn:** BARONFANTHE/seeaifirst + github/awesome-copilot + pingcap/ossinsight
 **Ngày:** 2026-03-23 | **Verdict:** REFERENCE — landscape awareness

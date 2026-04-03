@@ -1,3 +1,11 @@
+---
+id: step-04-emotional-response
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.542996
+---
+
 # Step 4: Desired Emotional Response
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

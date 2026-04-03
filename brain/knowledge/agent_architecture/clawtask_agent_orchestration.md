@@ -1,3 +1,11 @@
+---
+id: clawtask-agent-orchestration
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.444206
+---
+
 # Knowledge File: ClawTask — AI Agent Task Orchestration Platform
 # Source: https://vnrom.net/2026/03/clawta[REDACTED_API_KEY]ts-khong-chi-la-mot-kanban-board/
 # Ingested: 2026-03-19 | Tier: T1 (Internal — OmniClaw uses ClawTask)

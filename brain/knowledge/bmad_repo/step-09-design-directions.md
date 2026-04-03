@@ -1,3 +1,11 @@
+---
+id: step-09-design-directions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.564372
+---
+
 # Step 9: Design Direction Mockups
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

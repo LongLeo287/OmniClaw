@@ -1,3 +1,11 @@
+---
+id: reference
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.679166
+---
+
 # TypeScript Tooling Reference
 
 Testing configuration and CI/CD patterns.

@@ -1,3 +1,11 @@
+---
+id: reference-repos-catalog
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.870728
+---
+
 # 📚 AI OS Reference Repositories Catalog
 > Generated on: 2026-03-30 from intake backlog evaluation.
 > Total: 1,444 repos. Status: Chỉ lưu trữ để tham khảo (chưa clone).

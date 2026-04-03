@@ -1,3 +1,11 @@
+---
+id: vetting-report-batch-03
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.587404
+---
+
 # CIV Vetting Report — Batch 3
 # Analyst: Content-Analyst-Agent | Dept 06 (Content Review)
 # Date: 2026-03-18 | Gate: GATE_CONTENT

@@ -1,0 +1,6 @@
+Source: https://github.com/HenryNdubuaku/maths-cs-ai-compendium
+Type: REPO_GOLDEN
+Score: 28
+Features: Golden Match [GRAPH, LLM]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

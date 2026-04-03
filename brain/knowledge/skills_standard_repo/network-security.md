@@ -1,3 +1,11 @@
+---
+id: network-security
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.497393
+---
+
 # Network Security & Certificate Pinning
 
 ## **SSL Pinning with Dio**

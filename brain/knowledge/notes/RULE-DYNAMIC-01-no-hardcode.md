@@ -1,3 +1,11 @@
+---
+id: rule-dynamic-01-no-hardcode
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.880765
+---
+
 # [RULE-DYNAMIC-01] No Hardcoding Policy
 # Issued by: CEO LongLeo | Date: 2026-03-22 | Status: MANDATORY
 # Scope: All agents, all rule files, all boot files, all scripts

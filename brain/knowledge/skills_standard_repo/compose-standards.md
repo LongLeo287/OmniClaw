@@ -1,3 +1,11 @@
+---
+id: compose-standards
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.805348
+---
+
 # Jetpack Compose Best Practices
 
 ## State Management

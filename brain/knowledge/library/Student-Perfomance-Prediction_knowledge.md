@@ -1,3 +1,11 @@
+---
+id: student-perfomance-prediction-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.198719
+---
+
 # KNOWLEDGE EXTRACT: Student-Perfomance-Prediction
 > **Extracted on:** 2026-03-29 21:32:15
 > **Source:** Student-Perfomance-Prediction

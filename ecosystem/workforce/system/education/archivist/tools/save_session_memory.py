@@ -15,7 +15,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 BB_PATH = os.path.join(ROOT, "brain", "shared-context", "blackboard.json")
 
 sys.path.insert(0, ROOT)
-from system.ops.scripts.memory_daemon import MemoryCore
+from core.ops.scripts.memory_daemon import MemoryCore
 
 def save_text(text, user_id="CEO", agent_id="antigravity"):
     core = MemoryCore()

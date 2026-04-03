@@ -1,3 +1,11 @@
+---
+id: support
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.654168
+---
+
 # Daily Brief — Support — 2026-03-20
 # Agent: support-analyst (Support Dept)
 # Task: C3-SUPPORT-001 | Cycle: 3

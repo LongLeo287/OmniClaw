@@ -1,3 +1,11 @@
+---
+id: asset-library
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.638789
+---
+
 # Daily Brief — Asset Library — 2026-03-20
 # Agent: curator-agent (Asset Library Dept)
 # Task: C3-ASSET-001 | Cycle: 3

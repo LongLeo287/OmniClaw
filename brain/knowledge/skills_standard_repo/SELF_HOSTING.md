@@ -1,3 +1,11 @@
+---
+id: self-hosting
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.888241
+---
+
 # Next.js Self-Hosting Standard
 
 Optimization and configuration for hosting Next.js outside of Vercel (Docker/Nodes).

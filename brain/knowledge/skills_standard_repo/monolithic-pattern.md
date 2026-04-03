@@ -1,3 +1,11 @@
+---
+id: monolithic-pattern
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.444750
+---
+
 # Monolithic Pattern (Growing DLS)
 
 A pragmatic, monolithic approach suitable for growing projects.

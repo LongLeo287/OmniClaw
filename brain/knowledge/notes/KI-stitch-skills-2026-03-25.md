@@ -1,3 +1,11 @@
+---
+id: ki-stitch-skills-2026-03-25
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.762924
+---
+
 # KI Note — google-labs-code/stitch-skills
 # Type: REPO | Source: https://github.com/google-labs-code/stitch-skills
 # CIV Ticket: CIV-2026-03-25-002

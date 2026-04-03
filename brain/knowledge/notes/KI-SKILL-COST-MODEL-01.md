@@ -1,3 +1,11 @@
+---
+id: ki-skill-cost-model-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.753280
+---
+
 # KI-SKILL-COST-MODEL-01 — 5-Layer Skill Cost Intelligence (rune)
 **Nguồn:** rune-kit/rune
 **Ngày:** 2026-03-23 | **Verdict:** REFERENCE — học skill architecture

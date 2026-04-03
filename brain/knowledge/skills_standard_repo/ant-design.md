@@ -1,3 +1,11 @@
+---
+id: ant-design
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.536357
+---
+
 # Ant Design in Next.js
 
 Guidelines for using Ant Design effectively in Next.js, especially with the App Router and Server Components.

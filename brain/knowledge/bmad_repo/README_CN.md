@@ -1,3 +1,11 @@
+---
+id: readme-cn
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.507695
+---
+
 ![BMad Method](banner-bmad-method.png)
 
 [![Version](https://img.shields.io/npm/v/bmad-method?color=blue&label=version)](https://www.npmjs.com/package/bmad-method)

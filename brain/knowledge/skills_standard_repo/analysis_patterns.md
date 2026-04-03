@@ -1,3 +1,11 @@
+---
+id: analysis-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.514084
+---
+
 # Deep Analysis Patterns & Examples
 
 ## 1. Actor Permissions Mapping

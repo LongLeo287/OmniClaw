@@ -1,3 +1,11 @@
+---
+id: step-02-generate
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.523902
+---
+
 # Step 2: Context Rules Generation
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

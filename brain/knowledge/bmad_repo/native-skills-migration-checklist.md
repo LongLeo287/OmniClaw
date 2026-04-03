@@ -1,3 +1,11 @@
+---
+id: native-skills-migration-checklist
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.500158
+---
+
 # Native Skills Migration Checklist
 
 Branch: `refactor/all-is-skills`

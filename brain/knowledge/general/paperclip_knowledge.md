@@ -26,41 +26,41 @@ healed_at: 2026-04-02T20:29:18.576946
 
 **"If OpenClaw is an employee, Paperclip is the company."**
 
-Paperclip là Node.js server + React UI để **orchestrate một team AI agents chạy một business thực sự**. Bring your own agents, assign goals, track work và costs từ một dashboard duy nhất. Về bản chất, đây là implementation open-source của chính xác những gì AI OS Corp đang xây dựng.
+Paperclip is a Node.js server + React UI to **orchestrate a team of AI agents running a real business**. Bring your own agents, assign goals, track work and costs from a single dashboard. Essentially, this is an open-source implementation of exactly what AI OS Corp is building.
 
-**Key insight:** Paperclip = bản open-source của AI OS Corp vision — **công ty không người**.
+**Key insight:** Paperclip = open-source version of AI OS Corp vision — **zero-human company**.
 
 ---
 
-## TÍNH NĂNG CORE
+## CORE FEATURES
 
 ### Architecture
 ```
 Paperclip (Node.js + React)
 ├── API Server — port 3100
-├── Embedded PostgreSQL (tự tạo, no setup)
-├── Org Charts — cấu trúc tổ chức AI agents
-├── Budget System — theo dõi và giới hạn chi phí per agent
-├── Goal Management — giao mục tiêu, track progress
+├── Embedded PostgreSQL (auto-creates, no setup)
+├── Org Charts — AI agent organizational structure
+├── Budget System — track and limit costs per agent
+├── Goal Management — assign objectives, track progress
 ├── Governance Layer — rules, accountability
-└── Dashboard — monitor từ desktop + mobile
+└── Dashboard — monitor from desktop + mobile
 ```
 
 ### Quickstart
 ```bash
 npx paperclipai onboard --yes
-# hoặc
+# or
 git clone https://github.com/paperclipai/paperclip.git
 cd paperclip && pnpm install && pnpm dev
 ```
-Yêu cầu: Node.js 20+, pnpm 9.15+
+Requirements: Node.js 20+, pnpm 9.15+
 
 ---
 
-## SO SÁNH VỚI AI OS CORP
+## COMPARISON WITH AI OS CORP
 
-| Tính năng | Paperclip | AI OS Corp |
-|-----------|-----------|-----------|
+| Feature | Paperclip | AI OS Corp |
+|---------|-----------|-----------|
 | Org chart | ✅ Built-in | ✅ org_chart.yaml |
 | Budgets | ✅ Per-agent cost tracking | ⬜ KPI targets (finance_agent) |
 | Agent coordination | ✅ Heartbeat + events | ✅ ClawTask + nullclaw |
@@ -74,32 +74,32 @@ Yêu cầu: Node.js 20+, pnpm 9.15+
 
 ---
 
-## PHÙ HỢP VỚI AI OS CORP NẾU:
+## GOOD FIT FOR AI OS CORP IF:
 
-- ✅ Muốn build autonomous AI companies (đúng với AI OS Corp mission)
-- ✅ Coordinate nhiều agents khác nhau (OpenClaw, Codex, Claude, Cursor)
-- ✅ Có nhiều Claude terminals mở không theo dõi được
-- ✅ Muốn agents chạy 24/7 autonomous nhưng vẫn audit được
-- ✅ Muốn monitor costs và enforce budgets
-- ✅ Muốn manage business từ điện thoại
+- ✅ Want to build autonomous AI companies (aligns with AI OS Corp mission)
+- ✅ Coordinate multiple different agents (OpenClaw, Codex, Claude, Cursor)
+- ✅ Have many Claude terminals open and can't track them
+- ✅ Want agents running 24/7 autonomously but still auditable
+- ✅ Want to monitor costs and enforce budgets
+- ✅ Want to manage business from phone
 
 ---
 
-## ĐIỂM ĐẶC BIỆT
+## SPECIAL FEATURES
 
 ### ClipMart (Coming Soon)
 > "Download and run entire companies with one click."
 
-Marketplace để browse, mua/bán **company templates** — full org structures, agent configs, và skills — import vào Paperclip trong vài giây.
+Marketplace to browse, buy/sell **company templates** — full org structures, agent configs, and skills — import into Paperclip in seconds.
 
-**Cơ hội cho AI OS Corp:** Export AI OS Corp structure thành ClipMart template → distribute như một product.
+**Opportunity for AI OS Corp:** Export AI OS Corp structure as ClipMart template → distribute as a product.
 
 ### "If it can receive a heartbeat, it's hired"
-Bất kỳ agent nào nhận được heartbeat đều có thể join Paperclip company. Không lock-in vào một framework hay provider nào.
+Any agent that can receive a heartbeat can join a Paperclip company. No lock-in to any framework or provider.
 
 ---
 
-## ROADMAP PAPERCLIP
+## PAPERCLIP ROADMAP
 
 | Item | Status |
 |------|--------|
@@ -113,20 +113,20 @@ Bất kỳ agent nào nhận được heartbeat đều có thể join Paperclip 
 
 ---
 
-## GỢI Ý TÍCH HỢP VỚI AI OS
+## INTEGRATION SUGGESTIONS WITH AI OS
 
 ### Option 1: Run Paperclip alongside ClawTask
 - Paperclip: high-level company orchestration (org, goals, budgets)
 - ClawTask (7474): task-level coordination + clarification flow
-- Chúng complement nhau thay vì thay thế
+- They complement each other rather than replace
 
 ### Option 2: Study Paperclip architecture → upgrade AI OS Corp
 - Clone repo → extract governance + budget modules
-- Apply patterns vào AI OS Corp implementation
-- Đặc biệt: cost tracking per agent (gaps hiện tại)
+- Apply patterns to AI OS Corp implementation
+- Especially: cost tracking per agent (current gap)
 
 ### Option 3: Export AI OS Corp → ClipMart template
-- Khi ClipMart launch → submit AI OS Corp template
+- When ClipMart launches → submit AI OS Corp template
 - 21 departments + 80 agents + full rules/prompts → sellable company template
 
 ---
@@ -155,4 +155,3 @@ Mobile:   Tailscale access (PWA-style)
 ## TAGS
 `orchestration` `zero-human-company` `AI-agents` `org-chart` `budgets` `governance` `open-source` `Node.js` `ClipMart` `T1-highly-relevant`
 ```
-

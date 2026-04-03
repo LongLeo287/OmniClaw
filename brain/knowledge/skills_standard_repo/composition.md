@@ -1,3 +1,11 @@
+---
+id: composition
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.818067
+---
+
 # Composition w/ HostDirectives
 
 ## Host Directives

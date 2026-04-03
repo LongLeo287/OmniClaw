@@ -9,36 +9,35 @@ healed_at: 2026-04-02T20:29:11.436760
 # neural-link-sync.md — Knowledge Graph & Registry Synchronization
 # Version: 1.1 | Updated: 2026-03-26
 # Department: [DEPT-07] KNOWLEDGE & REGISTRY CAPABILITY (Archivist Agent)
-# Mode: EVENT-DRIVEN (Chỉ quét khi có dữ liệu mới, tối ưu Quota/Context)
-# Trigger: Cuối STEP 5 của `content-intake-flow.md` hoặc lệnh thủ công `omniclaw neural sync`
+# Mode: EVENT-DRIVEN (Only scans when new data arrives, optimizes Quota/Context)
+# Trigger: End of STEP 5 of `content-intake-flow.md` or manual command `omniclaw neural sync`
 
 ---
 
-## 1. Mục Đích (Purpose)
-Bản đồ Architecture Toàn cầu của OmniClaw (Neural Link) không thể là một tệp chết. Bất cứ khi nào có Repo mới được nạp vào qua quá trình Intake, hoặc bị xóa đi, hệ thống phải cập nhật sơ đồ ngay lập tức để các Trợ lý AI (Antigravity, Claude Code) không bị mất phương hướng.
+## 1. Purpose
+OmniClaw's Global Architecture Map (Neural Link) cannot be a dead file. Whenever a new Repo is ingested through the Intake process, or deleted, the system must update the diagram immediately so that AI Assistants (Antigravity, Claude Code) don't lose their orientation.
 
-Quy trình này hướng dẫn `Archivist Agent` cập nhật Mạng Lưới Nhận Thức 3D thông qua Sổ Đăng Ký Tổng (Master Registry) và Não bộ Cốt lõi (LightRAG).
+This process guides the `Archivist Agent` to update the 3D Awareness Network through the Master Registry and Core Brain (LightRAG).
 
-## 2. Quy Trình Cập Nhật (Sync Routine)
+## 2. Sync Routine
 
-**Step 1: Xây Dựng Sổ Đăng Ký (Index Build)**
-- Lệnh thực thi: `python "$OMNICLAW_ROOT\system\ops\scripts\registry_indexer.py"`
-- Hành động: Quét toàn cục tất cả Repo, Plugin, Tool ở cả 2 Bán Cầu (Local Core & Remote Ecosystem). Cập nhật danh sách 300+ Entities vào `$OMNICLAW_ROOT\system\registry\SYSTEM_INDEX.yaml`.
+**Step 1: Build Registry (Index Build)**
+- Execution command: `python "$OMNICLAW_ROOT\system\ops\scripts\registry_indexer.py"`
+- Action: Full scan of all Repos, Plugins, Tools in both Hemispheres (Local Core & Remote Ecosystem). Update list of 300+ Entities into `$OMNICLAW_ROOT\system\registry\SYSTEM_INDEX.yaml`.
 
-**Step 2: Cấp Dữ Liệu Ngữ Nghĩa (Narrative Feed)**
-- Lệnh thực thi: `python "$OMNICLAW_ROOT\system\ops\scripts\graph_feeder.py"`
-- Hành động: Dịch tệp Configuration: tĩnh (YAML) thành văn bản ngữ nghĩa học (Narrative Text) để máy học RAG có thể lập bản đồ. Xuất ra tệp `SYSTEM_INDEX_NARRATIVE.txt`.
+**Step 2: Semantic Data Feed (Narrative Feed)**
+- Execution command: `python "$OMNICLAW_ROOT\system\ops\scripts\graph_feeder.py"`
+- Action: Translate static Configuration files (YAML) into semantic text (Narrative Text) so RAG machine learning can map it. Output file `SYSTEM_INDEX_NARRATIVE.txt`.
 
-**Step 3: Dệt Mạng Lưới (Graph Injection)**
-- Lệnh thực thi: Kích hoạt `LightRAG.insert` thông qua Script hoặc Adapter với đầu vào là tệp Narrative vừa sinh ra.
-- Result: Không gian 3D của hệ thống được dệt lại thành công. AI có thể truy vấn `Ai thuộc nhánh nào, Ai kết nối với Repo nào`.
+**Step 3: Weave Network (Graph Injection)**
+- Execution command: Trigger `LightRAG.insert` through Script or Adapter with input being the Narrative file just generated.
+- Result: The system's 3D space is successfully woven. AI can query `Which branch does Ai belong to, which Repo is Ai connected to`.
 
-## 3. Quy Tắc Truy Xuất Của Agent (Retrieval Rules)
-Tất cả các Agent khi nhận Task từ CEO (Example: "Hãy mở tool X", "Kiểm tra repo Y"):
-1. ĐỌC `SYSTEM_INDEX.yaml`: Để lấy tọa độ tuyệt đối mà không cần scan đĩa.
-2. DÙNG `GitNexus MCP`: Nếu cần đào sâu xuống cây cấu trúc AST của repo đó.
-3. CẤM: Lệnh `find` hoặc `ls -R` mù mờ gây rác bộ nhớ.
+## 3. Agent Retrieval Rules
+All Agents when receiving a Task from CEO (Example: "Open tool X", "Check repo Y"):
+1. READ `SYSTEM_INDEX.yaml`: To get absolute coordinates without scanning disk.
+2. USE `GitNexus MCP`: If need to deep dive into that repo's AST structure.
+3. AVOID: Blind `find` or `ls -R` commands cause memory pollution.
 
 ---
-> "Biết mình biết ta, trăm trận trăm thắng. AI không biết mình đang ở đâu trong hệ thống thì chỉ là cỗ máy vô dụng." - Architecture sư OmniClaw.
-
+> "Know yourself and know your enemy, you will win a hundred battles. An AI that doesn't know where it is in the system is just a useless machine." - OmniClaw Architect.

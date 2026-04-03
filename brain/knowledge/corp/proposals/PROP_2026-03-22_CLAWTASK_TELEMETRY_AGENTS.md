@@ -1,3 +1,11 @@
+---
+id: prop-2026-03-22-clawtask-telemetry-agents
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.685566
+---
+
 # Add /api/telemetry/agents live heartbeat endpoint
 **ID:** PROP_2026-03-22_CLAWTASK_TELEMETRY_AGENTS
 **Type:** NEW_SKILL | **Priority:** MEDIUM

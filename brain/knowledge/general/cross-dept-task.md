@@ -8,24 +8,22 @@ healed_at: 2026-04-02T20:19:15.613916
 
 # Department: operations
 ---
-description: Cross-dept task protocol — khi 1 task cần 2+ departments phối hợp
+description: Cross-department task protocol — when a task requires cooperation between two or more departments
 ---
 # ops/workflows/cross-dept-task.md
 # Version: 1.0 | 2026-03-25 | Owner: planning_pmo
-# Trigger: Task yêu cầu 2+ depts | Coordinator: pmo-agent
-
+# Trigger: Task requiring 2+ departments | Coordinator: pmo-agent
 ---
 
-## Khi nào dùng workflow này?
+## When should this workflow be used?
 
-- Task cần engineering + security (Example: deploy tính năng mới)
-- Task cần rd + registry (Example: new skill từ research)
-- Task cần content_intake + engineering (Example: tích hợp tool mới)
-- Bất kỳ task nào có `cross_dept: true` trong task_backlog.json
-
+- Task requires engineering + security (Example: deploy a new feature)
+- Task requires research & development + registry (Example: new skill from research)
+- Task requires content_intake + engineering (Example: integrate a new tool)
+- Any task that has `cross_dept: true` in `task_backlog.json`
 ---
 
-## Step 1: — CEO / Coordinator Tạo Cross-Dept Task
+## Step 1: — CEO / Coordinator Creates Cross-Dept Task
 
 ```json
 {
@@ -35,56 +33,51 @@ description: Cross-dept task protocol — khi 1 task cần 2+ departments phối
   "coordinator": "pmo-agent",
   "priority": "HIGH",
   "due": "YYYY-MM-DD",
-  "deliverable": "Result: cuối cùng cần có"
+  "deliverable": "Result: final output required"
 }
 ```
 
-Lưu vào: `brain/shared-context/corp/cross_dept_tasks.json`
-
+Save to: `brain/shared-context/corp/cross_dept_tasks.json`
 ---
 
 ## Step 2: — pmo-agent Dispatch
 
-1. Đọc cross_dept_tasks.json, lọc tasks OPEN
-2. Với mỗi task → tạo sub-task cho từng dept:
-   - `subagents/mq/<dept>_tasks.md` ← append cross-dept task
-3. Notify mỗi dept qua blackboard: `cross_dept_signal`
+1. Read `cross_dept_tasks.json`, filter OPEN tasks
+2. For each task → create sub‑task for each department:
+   - `subagents/mq/<dept>_tasks.md` ← append cross‑dept task
+3. Notify each department via blackboard: `cross_dept_signal`
 
 ```
-Example: CROSS-001 → engineering nhận "Implement feature X"
-                  → security_grc nhận "Security review feature X"
+Example: CROSS-001 → engineering receives "Implement feature X"
+                → security_grc receives "Security review for feature X"
 ```
-
 ---
 
-## Step 3: — Depts Thực Thi Độc Lập
+## Step 3: — Departments Execute Independently
 
-- Mỗi dept viết brief riêng: `BRIEF_<date>_cross_<task_id>.md`
-- Không cần chờ dept khác (async)
-- Nếu blocked → escalate qua `corp/escalations.md`
-
+- Each department writes its own brief: `BRIEF_<date>_cross_<task_id>.md`
+- No need to wait for other departments (async)
+- If blocked → escalate via `corp/escalations.md`
 ---
 
-## BƯỚC 4 — pmo-agent Tổng Hợp Result:
+## STEP 4 — pmo-agent Consolidates Results:
 
-1. Collect all cross-dept briefs cho task_id
-2. Verify deliverable đủ chưa
-3. Nếu đủ → mark `DONE`, notify CEO qua Telegram
-4. Nếu thiếu → ping dept bị lag
+1. Collect all cross‑dept briefs for `task_id`
+2. Verify deliverable completeness
+3. If complete → mark `DONE`, notify CEO via Telegram
+4. If missing → ping lagging department
 
 ```
-Slack/Telegram: "✅ CROSS-001 hoàn thành — Engineering + Security đã submit"
-hoặc: "⚠️ CROSS-001 lag — security_grc chưa submit (SLA: 2h)"
+Slack/Telegram: "✅ CROSS-001 completed — Engineering + Security submitted"
+or: "⚠️ CROSS-001 lagging — security_grc has not submitted (SLA: 2h)"
 ```
-
 ---
 
-## BƯỚC 5 — CEO Approve (nếu cần)
+## STEP 5 — CEO Approves (if needed)
 
-- Task có `ceo_approval: true` → CEO review synthesis brief
-- CEO approve → pmo-agent archive → close task
-- CEO reject → pmo-agent re-dispatch với feedback
-
+- Task with `ceo_approval: true` → CEO reviews synthesis brief
+- CEO approves → pmo-agent archives → close task
+- CEO rejects → pmo-agent re‑dispatch with feedback
 ---
 
 ## Template: cross_dept_tasks.json
@@ -107,7 +100,6 @@ hoặc: "⚠️ CROSS-001 lag — security_grc chưa submit (SLA: 2h)"
   ]
 }
 ```
-
 ---
 
-*Workflow v1.0 | Owner: planning_pmo | Trigger: cross_dept: true in task_backlog*
+*Workflow v1.0 | Owner: planning_pmo | Trigger: `cross_dept: true` in `task_backlog*`

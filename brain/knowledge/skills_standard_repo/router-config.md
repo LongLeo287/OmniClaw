@@ -1,3 +1,11 @@
+---
+id: router-config
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.782169
+---
+
 # AppRouter Configuration
 
 Standard setup for `auto_route` to ensure code generation and type-safety.

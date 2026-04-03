@@ -1,3 +1,11 @@
+---
+id: strix-vetting-batch3-installs
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.934260
+---
+
 # Strix Security Vetting Report — Batch 3 Installs
 **Auditor:** Antigravity (Tier 1 — Security Clearance)  
 **Date:** 2026-03-21T15:21  

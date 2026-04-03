@@ -1,3 +1,11 @@
+---
+id: testing-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.129105
+---
+
 # Modern Integration Testing Template
 
 This reference demonstrates the "Base Class" pattern for Integration Tests using Spring Boot 3.1+ and Testcontainers.

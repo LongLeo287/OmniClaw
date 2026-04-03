@@ -1,3 +1,11 @@
+---
+id: ki-browser-use-2026-03-25
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.640976
+---
+
 # KI Note — browser-use/browser-use
 # Type: REPO | Source: https://github.com/browser-use/browser-use
 # CIV Ticket: CIV-2026-03-25-001

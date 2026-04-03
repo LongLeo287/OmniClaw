@@ -1,3 +1,11 @@
+---
+id: project-overview-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.504354
+---
+
 # {{project_name}} - Project Overview
 
 **Date:** {{date}}

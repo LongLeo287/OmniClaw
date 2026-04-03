@@ -1,3 +1,11 @@
+---
+id: readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.690855
+---
+
 # OmniClaw Corp — Proposals Directory
 # Written by: Strategy dept (product-manager-agent, cognitive_reflector)
 # Read by: CEO via corp_orchestrator.approve_proposal

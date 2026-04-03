@@ -1,3 +1,11 @@
+---
+id: data-intake
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.671125
+---
+
 # OmniClaw Data Intake Workflow
 
 ## Content Intake and Vetting (CIV) Pipeline

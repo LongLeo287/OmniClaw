@@ -1,3 +1,11 @@
+---
+id: oer-charter
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.664270
+---
+
 # OER_CHARTER.md - OmniClaw Ecosystem Registry
 
 **Authority:** CEO (LongLeo) | **Daemon Class:** Core Daemon #4

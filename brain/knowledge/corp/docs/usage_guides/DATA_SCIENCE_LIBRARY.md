@@ -1,3 +1,11 @@
+---
+id: data-science-library
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.669167
+---
+
 # 📚 ACTIVE LIBRARY
 
 These are the Repositories currently serving as the active Library for the OmniClaw System.

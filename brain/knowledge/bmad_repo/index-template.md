@@ -1,3 +1,11 @@
+---
+id: index-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.496960
+---
+
 # {{project_name}} Documentation Index
 
 **Type:** {{repository_type}}{{#if is_multi_part}} with {{parts_count}} parts{{/if}}

@@ -1,3 +1,11 @@
+---
+id: step-03-technique-execution
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.539460
+---
+
 # Step 3: Interactive Technique Execution and Facilitation
 
 ---

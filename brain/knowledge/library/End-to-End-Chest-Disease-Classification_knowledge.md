@@ -1,3 +1,11 @@
+---
+id: end-to-end-chest-disease-classification-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:21.908240
+---
+
 # KNOWLEDGE EXTRACT: End-to-End-Chest-Disease-Classification
 > **Extracted on:** 2026-03-29 21:40:31
 > **Source:** End-to-End-Chest-Disease-Classification

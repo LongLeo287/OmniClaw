@@ -1,3 +1,11 @@
+---
+id: template-en
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.586649
+---
+
 # Standard Template (EN)
 
 ## 📌 Purpose

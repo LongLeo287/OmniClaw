@@ -1,3 +1,11 @@
+---
+id: ki-agent-architectures-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.500174
+---
+
 # Knowledge Note: Agentic Architectures Patterns
 # Source: plugins/all-agentic-architectures (MIT License)
 # Extracted: 2026-03-23 | By: Antigravity (Knowledge Extraction Pass)

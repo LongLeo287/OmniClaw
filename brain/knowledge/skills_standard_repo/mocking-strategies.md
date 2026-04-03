@@ -1,3 +1,11 @@
+---
+id: mocking-strategies
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.408190
+---
+
 # Mocking Strategies
 
 ## Hand-Written Mocks

@@ -1,3 +1,11 @@
+---
+id: antigravity-auth-optimization
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.465305
+---
+
 # Antigravity Auth Optimization — Knowledge Base
 
 ## Description

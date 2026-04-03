@@ -1,3 +1,11 @@
+---
+id: auth-logic
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.573918
+---
+
 # Child Access Authorization Logic
 
 All child-specific services must call `childrenService.validateChildAccess()` to prevent ID-guessing attacks (Insecure Direct Object Reference). This method is centralized in `ChildrenService`.

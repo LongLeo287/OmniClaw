@@ -1,3 +1,11 @@
+---
+id: us-census-bureau-data-api-mcp-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.213552
+---
+
 # KNOWLEDGE EXTRACT: us-census-bureau-data-api-mcp
 > **Extracted on:** 2026-03-29 20:53:43
 > **Source:** us-census-bureau-data-api-mcp

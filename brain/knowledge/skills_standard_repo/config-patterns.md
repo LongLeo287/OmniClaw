@@ -1,3 +1,11 @@
+---
+id: config-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.846295
+---
+
 # Config Pattern
 
 Using `viper` or simple env loading.

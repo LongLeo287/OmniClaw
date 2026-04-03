@@ -1,3 +1,11 @@
+---
+id: vocabulary
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.637332
+---
+
 # OmniClaw Corp — Vocabulary & Glossary
 # Maintained by: OD & Learning Dept
 # Last updated: 2026-03-20 (Cycle 3)

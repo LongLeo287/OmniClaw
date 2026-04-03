@@ -1,3 +1,11 @@
+---
+id: prop-2026-03-22-plugin-candidates
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.688196
+---
+
 # Plugin Clone Candidates — 2026-03-22
 
 Repos classified as TOOL + Compatible OmniClaw from knowledge-ingest Phase 3.

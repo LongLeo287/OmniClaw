@@ -37,9 +37,9 @@ session: Session 6
 
 ## Core Concept
 
-> "Zero-server code intelligence engine chạy hoàn toàn trong browser, dùng knowledge graph và Graph RAG để understand multi-repo codebases."
+> "Zero-server code intelligence engine running entirely in browser, using knowledge graph and Graph RAG to understand multi-repo codebases."
 
-GitNexus là công cụ không cần backend server — toàn bộ logic chạy trong trình duyệt. Nó phân tích GitHub repositories, xây dựng knowledge graph về code relationships, và cho phép intelligent queries thông qua Graph RAG.
+GitNexus is a tool that needs no backend server — all logic runs in the browser. It analyzes GitHub repositories, builds knowledge graph about code relationships, and enables intelligent queries through Graph RAG.
 
 ---
 
@@ -50,7 +50,7 @@ GitNexus (Browser-Native)
 ├── Repo Fetcher        → GitHub API → raw file access
 ├── AST Parser          → Parse code into nodes/relationships
 ├── Knowledge Graph     → Entity-relationship graph of codebase
-├── Graph RAG Engine    → Query graph với context
+├── Graph RAG Engine    → Query graph with context
 ├── MCP Server          → Expose as AI tool interface
 └── Multi-Repo Support  → Federated graph across repos
 ```
@@ -60,9 +60,9 @@ GitNexus (Browser-Native)
 ## Key Features
 
 ### Zero-Server Architecture
-- Chạy 100% trong browser
-- Không cần backend setup
-- Privacy-first: code không rời thiết bị
+- Runs 100% in browser
+- No backend setup needed
+- Privacy-first: code never leaves device
 - Instant deployment (visit URL → use)
 
 ### Knowledge Graph Construction
@@ -80,7 +80,7 @@ Query: "How does authentication work?"
 1. Embed query
 2. Find relevant graph nodes
 3. Traverse relationships
-4. Synthesize answer với full context
+4. Synthesize answer with full context
 → Results with code citations and path
 ```
 
@@ -95,9 +95,9 @@ GitNexus MCP Server → expose as tool
 ```
 
 ### Multi-Repository Support
-- Federate multiple repos trong một graph
+- Federate multiple repos in one graph
 - Cross-repo dependency analysis
-- Understanding mono-repos và micro-services
+- Understanding mono-repos and micro-services
 
 ---
 
@@ -106,7 +106,7 @@ GitNexus MCP Server → expose as tool
 ### Code Intelligence Layer
 ```
 AI OS → GitNexus MCP → analyze codebase
-     → Knowledge graph của project
+     → Knowledge graph of project
      → Smart code Q&A
      → Dependency mapping
 ```
@@ -121,11 +121,11 @@ AI OS → GitNexus MCP → analyze codebase
 | Documentation | Auto-generate from graph |
 | Code review | Context-aware review |
 
-### Integration với AI OS Code Intel Panel
-Theo context của conversation [d915ff6c], AI OS đã có Code Intel panel. GitNexus có thể:
+### Integration with AI OS Code Intel Panel
+Per conversation context [d915ff6c], AI OS has Code Intel panel. GitNexus can:
 - Power the code intelligence backend
-- Provide Graph RAG queries cho Code Intel panel
-- MCP server → connect từ AI OS agent layer
+- Provide Graph RAG queries for Code Intel panel
+- MCP server → connect from AI OS agent layer
 
 ---
 
@@ -133,7 +133,7 @@ Theo context của conversation [d915ff6c], AI OS đã có Code Intel panel. Git
 
 | Reason | Detail |
 |--------|--------|
-| Novel approach | Zero-server browser-native là unique |
+| Novel approach | Zero-server browser-native is unique |
 | MCP integration | Native AI tool compatibility |
 | Graph RAG | Superior to keyword search for code |
 | Multi-repo | Essential for large codebases |
@@ -166,4 +166,3 @@ MCP: Built-in MCP server protocol
 - Ingested: Session 6 (2026-03-19)
 - Related conversation: [Replicating GitNexus UI](d915ff6c)
 ```
-

@@ -1,3 +1,11 @@
+---
+id: step-01-agent-loading
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.512605
+---
+
 # Step 1: Agent Loading and Party Mode Initialization
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

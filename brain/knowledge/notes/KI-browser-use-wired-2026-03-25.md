@@ -1,3 +1,11 @@
+---
+id: ki-browser-use-wired-2026-03-25
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.649000
+---
+
 # browser-use — Wired as Web-Crawler Backend
 Date: 2026-03-25
 Status: INSTALLED (pip install browser-use)

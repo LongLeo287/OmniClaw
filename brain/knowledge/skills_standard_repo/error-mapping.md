@@ -1,3 +1,11 @@
+---
+id: error-mapping
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.019515
+---
+
 # Functional Failure Patterns
 
 ## **Global Failures (@freezed)**

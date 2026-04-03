@@ -1,3 +1,11 @@
+---
+id: claude-agent-command-skill
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.591926
+---
+
 # Agents vs Commands vs Skills — When to Use What
 
 A comparison of the three extension mechanisms in Claude Code: subagents, commands, and skills.

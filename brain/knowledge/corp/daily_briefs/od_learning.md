@@ -1,3 +1,11 @@
+---
+id: od-learning
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.647470
+---
+
 # Daily Brief — OD & Learning — 2026-03-20
 # Agent: corp-trainer-agent (OD Dept)
 # Task: C2-OD-001 | Cycle: 2

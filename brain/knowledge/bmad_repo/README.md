@@ -1,3 +1,11 @@
+---
+id: readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.506833
+---
+
 # BMAD Method Documentation Site
 
 This directory contains the Astro + Starlight configuration for the BMAD Method documentation site.

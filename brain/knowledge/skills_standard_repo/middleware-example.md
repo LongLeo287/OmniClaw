@@ -1,3 +1,11 @@
+---
+id: middleware-example
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.381336
+---
+
 # Route Middleware (Guards)
 
 Use middleware to protect routes from unauthorized access or handle redirections.

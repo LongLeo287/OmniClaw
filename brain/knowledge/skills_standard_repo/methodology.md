@@ -1,3 +1,11 @@
+---
+id: methodology
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.368157
+---
+
 # Session Retrospective Methodology
 
 Detailed reference for the Session Retrospective skill.

@@ -1,3 +1,11 @@
+---
+id: violation-examples
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.360678
+---
+
 # Violation Detection Examples
 
 Comprehensive examples of how to recognize and report skill violations.

@@ -1,3 +1,11 @@
+---
+id: phase8-tech-spec
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.480132
+---
+
 # Technical Specification: Phase 8 (Hardening & Scalability)
 
 Tài liệu này cung cấp hướng dẫn kỹ thuật chi tiết để triển khai các tính năng trong Phase 8.

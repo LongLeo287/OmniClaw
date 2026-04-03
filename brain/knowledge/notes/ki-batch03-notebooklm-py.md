@@ -1,3 +1,11 @@
+---
+id: ki-batch03-notebooklm-py
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.606587
+---
+
 # KI: notebooklm-py — Unofficial Python API cho Google NotebookLM
 
 ## Metadata

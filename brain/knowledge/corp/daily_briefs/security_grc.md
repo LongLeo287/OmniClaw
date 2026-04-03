@@ -1,3 +1,11 @@
+---
+id: security-grc
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.652459
+---
+
 # Daily Brief — Security & GRC — 2026-03-20
 # Agent: strix-agent (Security Dept)
 # Task: C2-SEC-001 | Cycle: 2

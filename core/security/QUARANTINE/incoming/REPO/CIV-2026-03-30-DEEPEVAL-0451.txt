@@ -1,0 +1,6 @@
+Source: https://github.com/sickn33/antigravity-awesome-skills
+Type: REPO_GOLDEN
+Score: 81
+Features: Golden Match [MCP, AGENT, RAG, LLM, WORKFLOW, SCRAPER]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

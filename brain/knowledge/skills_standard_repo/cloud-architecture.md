@@ -1,3 +1,11 @@
+---
+id: cloud-architecture
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.744230
+---
+
 # Cloud Architecture Diagram Reference
 
 ## Purpose

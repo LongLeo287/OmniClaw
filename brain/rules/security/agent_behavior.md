@@ -55,15 +55,11 @@ Agents must move from "Static Prompting" to "Context Engineering" using the **SF
 
 1. **🔍 SEARCH**: At the start of any task, perform a **HYBRID SEARCH** (Keyword + Semantic) across `.agents/knowledge/`, `.agents/docs/`, and `.agents/memory/`. Do NOT rely on training data for internal project details.
 2. **📥 FETCH**: Retrieve the full content of relevant skill manifests (`SKILL.md`), plans, or rules. Ensure you have the "Ground Truth" before planning execution.
-3. **⚡ USE**: Execute the task as per the [Strategy](../plans/implementation_plan.md).
-4. **📝 ANNOTATE**: Use the [Smart Memory Skill](../skills/smart_memory/SKILL.md) to extract **Facts** (not logs). Update the `walkthrough_active.md` and annotate high-density lessons in `.agents/memory/daily/`.
 5. **🔗 CROSS-SESSION CONTINUITY**: When starting a new session or encountering an unknown context, you **MUST** review the `archive/` and previous `tasks/reports/` to ensure long-term continuity. Never start from zero.
 6. **⚓ RE-ANCHOR**: At every phase transition, you **MUST** re-read `THESIS.md`, `.agents/tasks/task.md`, and **[ORCHESTRATION_SOP.md](ORCHESTRATION_SOP.md)**.
-    - **RE-ANCHOR:** Every 30 minutes, re-read `CLAUDE.md`, `THESIS.md`, and the new **[SOUL.md](SOUL.md)**, **[AGENTS.md](AGENTS.md)**, **[WORKFLOW.md](WORKFLOW.md)**, **[ORCHESTRATION_SOP.md](ORCHESTRATION_SOP.md)**, and **[blackboard.json](../shared-context/blackboard.json)** to ensure behavioral alignment.
 - **FRESHNESS:** Prioritize reading the latest files over cached knowledge.
 - **REACT-GRAB ANCHOR:** For UI fixes, fetch the exact DOM fragment and source file first.
 6. **❄️ FRESHNESS**: Data about Live Build status, Git state, or current errors is "Volatile". You **MUST** run fresh search/status tools before acting on volatile data.
-7. **🧠 REFLECT**: After any major task completion, review the **Task Receipt** and trigger the [Cognitive Reflector](/reflect). Document the lesson learned in `.agents/docs/lessons_learned.md`.
 
 - Agent **MUST** read `project_map.md` first when starting a session.
 - If a task requires security, Agent **MUST** automatically apply `link_safety_rules.md`.

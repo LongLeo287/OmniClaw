@@ -1,3 +1,11 @@
+---
+id: changelog
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.590058
+---
+
 # Changelog — README CONCEPTS Section
 
 Tracks drift between the README CONCEPTS table and official Claude Code documentation.

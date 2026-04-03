@@ -1,3 +1,11 @@
+---
+id: bug-report-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.653428
+---
+
 # Bug Report Template
 
 ## Context

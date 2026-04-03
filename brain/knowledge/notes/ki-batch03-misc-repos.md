@@ -1,3 +1,11 @@
+---
+id: ki-batch03-misc-repos
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.596352
+---
+
 # KI: pm-skills, ai-hands-on, xtool — Các Repos Phụ
 
 ## Metadata

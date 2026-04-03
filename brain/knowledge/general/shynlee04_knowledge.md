@@ -22,70 +22,70 @@ healed_at: 2026-04-02T20:31:13.639119
 - **Stars:** ⭐ 53 | **Forks:** 🍴 18
 - **Language:** TypeScript | **License:** MIT
 - **Last updated:** 2026-03-01
-- **Status trong AI OS:** 🔖 PENDING/APPROVE
+- **Status in AI OS:** 🔖 PENDING/APPROVE
 
 ## Description:
 (No description)
 
-## README (trích đầu)
+## README (excerpt)
 ```
 # HiveMind Context Governance
 
 > **The operating system for AI coding sessions.**
 
-## 🇻🇳 Bản phát hành v2.8 ưu tiên thị trường Việt Nam
+## 🇻🇳 v2.8 Release prioritizing Vietnamese market
 
-HiveMind là plugin [OpenCode](https://opencode.ai) giúp AI agent không bị trôi ngữ cảnh, không quên quyết định Architecture, và không mất Status: khi session kéo dài. Trọng tâm v2.8: onboarding rõ ràng, governance chặt, và triển khai thực chiến cho team Việt Nam trước.
+HiveMind is an [OpenCode](https://opencode.ai) plugin that helps AI agents avoid context drift, forgetting Architecture decisions, and losing Status: when sessions run long. v2.8 focus: clear onboarding, tight governance, and practical deployment for Vietnamese teams first.
 
-### 10 kịch bản demo ấn tượng để ra mắt
-1. `SaaS 0→1 cho người không biết code`: menu hỏi đáp + auto-lane để ra PRD có thể triển khai.
-2. `Giải cứu prompt hỗn loạn của team enterprise`: bóc tách yêu cầu, ambiguity map, risk register.
-3. `War-room production incident`: ép agent đi theo checklist bằng chứng trước khi kết luận fix.
-4. `TDD autopilot`: agent chuyển tự động từ `spec -> build -> validate` với gate kiểm thử.
-5. `MCP-first research sprint`: phối hợp Context7/DeepWiki/Tavily/Exa/Repomix và chấm điểm confidence.
-6. `Brownfield modernization`: quét codebase cũ, lập workflow refactor theo từng lane và checkpoint.
-7. `Cross-domain planning`: cùng một khung cho dev + marketing + finance + office-ops.
-8. `Subagent swarm governance`: giao việc song song nhưng vẫn giữ được trace, export, và hồi cứu.
-9. `Bilingual coaching mode`: đầu ra EN/VI cùng cấu trúc, hỗ trợ onboarding team đa vai trò.
-10. `No-command recovery`: người dùng nói tự nhiên, hệ thống tự realign sang lệnh phù hợp và xin quyền bước tiếp theo.
+### 10 impressive demo scenarios for launch
+1. `SaaS 0→1 for non-coders`: Q&A menu + auto-lane to produce deployable PRD.
+2. `Rescue enterprise team's chaotic prompts`: extract requirements, ambiguity map, risk register.
+3. `War-room production incident`: force agent through evidence checklist before concluding fix.
+4. `TDD autopilot`: agent automatically transitions from `spec -> build -> validate` with test gate.
+5. `MCP-first research sprint`: coordinate Context7/DeepWiki/Tavily/Exa/Repomix and score confidence.
+6. `Brownfield modernization`: scan old codebase, plan refactor workflow by lane and checkpoint.
+7. `Cross-domain planning`: same framework for dev + marketing + finance + office-ops.
+8. `Subagent swarm governance`: parallel tasking while maintaining trace, export, and review.
+9. `Bilingual coaching mode`: EN/VI output with same structure, supporting multi-role team onboarding.
+10. `No-command recovery`: user speaks naturally, system auto-realigns to appropriate command and requests next-step permission.
 
-# 🇻🇳 Hướng Dẫn Tiếng Việt (Chi Tiết)
+# 🇻🇳 Vietnamese Guide (Detailed)
 
-> *Phần này không phải bản dịch — mà được viết riêng cho người dùng Việt Nam, với giải thích kỹ hơn về cách hoạt động và lý do tại sao.*
+> *This section is not a translation — written specifically for Vietnamese users, with deeper explanation of how it works and why.*
 
-**Cảm thấy hữu ích?** [![Mời cà phê](https://img.shields.io/badge/Mời%20cà%20phê-ủng%20hộ-orange?logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/shynlee04l)
+**Find this useful?** [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-support-orange?logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/shynlee04l)
 
-## HiveMind Là Gì?
+## What is HiveMind?
 
-Hãy tưởng tượng bạn thuê một lập trình viên AI rất giỏi, nhưng anh ta có một Problem: **mỗi 30 phút anh ta quên hết mọi thứ đang làm**.
+Imagine you hire a very skilled AI programmer, but he has one Problem: **every 30 minutes he forgets everything he's doing**.
 
-Đó chính xác là điều xảy ra với các AI coding agent hiện tại:
-- Đang làm feature A, tự nhiên nhảy sang feature B mà không checkpoint
-- Sau context compaction (khi hết bộ nhớ), quên hết lý do tại sao đã quyết định Architecture X
-- Giao việc cho subagent, nhận Result: nhưng không tổng hợp lại
-- Session mới bắt đầu từ con số 0 — không biết gì về session trước
+That's exactly what happens with current AI coding agents:
+- Working on feature A, suddenly jumps to feature B without checkpoint
+- After context compaction (when memory runs out), forgets why Architecture X was decided
+- Delegates to subagent, receives Result: but doesn't synthesize back
+- New session starts from zero — knows nothing about previous session
 
-**HiveMind giải quyết tất cả** bằng một hệ thống quản trị context đơn giản nhưng hiệu quả.
+**HiveMind solves all** with a simple but effective context governance system.
 
-## Cách Hoạt Động (Giải Thích Dễ Hiểu)
+## How It Works (Easy Explanation)
 
-Mỗi session làm việc với AI đều tuân theo một quy trình:
+Every AI working session follows a process:
 
 ```
-declare_intent → map_context → [làm việc] → compact_session
-   (khai báo)     (cập nhật)     (code)      (lưu trữ)
+declare_intent → map_context → [work] → compact_session
+   (declare)       (update)     (code)      (archive)
 ```
 
-### Step 1: Khai Báo Ý Định — `declare_intent`
+### Step 1: Declare Intent — `declare_intent`
 
-Trước khi bắt đầu bất kỳ công việc nào, agent phải nói rõ:
-- **Đang làm gì**: "Xây dựng hệ thống xác thực"
-- **Làm theo cách nào**: `plan_driven` (có kế hoạch), `quick_fix` (sửa nhanh), hoặc `exploration` (tìm hiểu)
+Before starting any work, agent must state clearly:
+- **What's being done**: "Building authentication system"
+- **How**: `plan_driven` (planned), `quick_fix` (quick fix), or `exploration` (exploration)
 
-Nếu không khai báo, ở chế độ `strict` agent sẽ bị khóa — không thể ghi file cho đến khi khai báo. Điều này đảm bảo mọi công vi
+If not declared, in `strict` mode agent will be locked — cannot write files until declaration. This ensures every task has clear intent.
 ```
 
 ---
+
 *Ingested: 2026-03-27 | Source: GitHub API | Owner: Dept 07 Knowledge*
 ```
-

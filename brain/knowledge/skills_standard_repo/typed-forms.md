@@ -1,3 +1,11 @@
+---
+id: typed-forms
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.211853
+---
+
 # Typed Forms
 
 ## Definition

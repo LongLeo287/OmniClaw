@@ -1,3 +1,11 @@
+---
+id: registry-capability
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.650963
+---
+
 # Registry & Capability — Daily Brief
 # Channel: shared-context/corp/daily_briefs/registry_capability.md
 # Updated by: registry-manager-agent at end of each active cycle

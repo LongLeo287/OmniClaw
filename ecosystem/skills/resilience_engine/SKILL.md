@@ -1,6 +1,6 @@
 ---
 name: resilience-engine
-description: "Load skill này khi gặp lỗi, cần recovery protocol, circuit breaker, hoặc xử lý failure gracefully."
+description: "Load this skill when encountering errors, needing recovery protocol, circuit breaker, or graceful failure handling."
 version: 1.0.0
 tier: 0
 domain: core
@@ -11,25 +11,25 @@ source: OmniClaw V3.1 Skill Creator Ultra
 
 # RESILIENCE ENGINE
 
-## Mục Đích
-Error handling và fault tolerance: recover từ lỗi, circuit breaker, fallback strategies.
+## Purpose
+Error handling and fault tolerance: recover from errors, circuit breaker, fallback strategies.
 
-## Khi Nào Activate
-- Tool gọi trả về lỗi
-- API timeout hoặc connection refused
-- Handoff giữa agents thất bại
+## When to Activate
+- Tool call returns error
+- API timeout or connection refused
+- Handoff between agents fails
 
 ## Protocol
 ```
 ERROR DETECTED
     ↓
-Retry (max 2x với exponential backoff)
+Retry (max 2x with exponential backoff)
     ↓
 Fallback strategy (alternative approach)
     ↓
-Escalate (set BLOCKED trong blackboard.json)
+Escalate (set BLOCKED in blackboard.json)
     ↓
-Notify (Telegram Bot nếu Critical)
+Notify (Telegram Bot if Critical)
 ```
 
 ## Config

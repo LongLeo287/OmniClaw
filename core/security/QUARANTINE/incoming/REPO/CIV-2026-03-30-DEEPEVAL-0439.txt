@@ -1,0 +1,6 @@
+Source: https://github.com/shanraisshan/claude-code-best-practice
+Type: REPO_GOLDEN
+Score: 73
+Features: Golden Match [MCP, ORCHESTRATOR, AGENT, RAG, LLM, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

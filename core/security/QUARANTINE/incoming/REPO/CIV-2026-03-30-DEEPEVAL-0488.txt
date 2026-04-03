@@ -1,0 +1,6 @@
+Source: https://github.com/tysonnbt/Antigravity-Deck
+Type: REPO_GOLDEN
+Score: 45
+Features: Golden Match [ORCHESTRATOR, AGENT, GRAPH, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

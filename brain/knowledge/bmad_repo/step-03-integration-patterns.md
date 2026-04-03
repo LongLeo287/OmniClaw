@@ -1,3 +1,11 @@
+---
+id: step-03-integration-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.537273
+---
+
 # Technical Research Step 3: Integration Patterns
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -1,3 +1,11 @@
+---
+id: ki-batch03-autoresearch
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.542639
+---
+
 # KI: karpathy/autoresearch — AI Agents chạy Research tự động
 
 ## Metadata

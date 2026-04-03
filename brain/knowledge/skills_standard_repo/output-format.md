@@ -1,3 +1,11 @@
+---
+id: output-format
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.553115
+---
+
 # Code Review Output Templates
 
 ## Standard Issue Block

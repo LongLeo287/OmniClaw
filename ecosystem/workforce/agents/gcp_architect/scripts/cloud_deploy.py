@@ -9,25 +9,25 @@ def log(msg: str):
 
 def deploy_to_cloud_run(plugin_path: str, service_name: str, region: str = "asia-southeast1"):
     if not os.path.exists(plugin_path):
-        log(f"⚠️ ERROR: Không tìm thấy thư mục {plugin_path}")
+        log(f"⚠️ ERROR: Directory not found: {plugin_path}")
         return
 
-    log(f"Mệnh lệnh nhận được: Deploy '{plugin_path}' lên Cloud Run tại '{region}'.")
+    log(f"Received command: Deploy '{plugin_path}' to Cloud Run at '{region}'.")
 
-    # Giả định: Agent sẽ tự động tiêm mã sinh Dockerfile vào đây trước khi chạy
+    # Assumption: Agent will auto-inject Dockerfile generated code here before running
     dockerfile_path = os.path.join(plugin_path, "Dockerfile")
     if not os.path.exists(dockerfile_path):
-        log("⚠️ Chưa có Dockerfile. Đang uỷ quyền cho MCP truy vấn 'google-developer-knowledge' để tự động generate cấu hình tối ưu nhất...")
-        # TODO: Chỗ này Agent móc nối lấy Context từ Web Google Cloud và tạo Dockerfile
+        log("⚠️ Dockerfile missing. Delegating to MCP 'google-developer-knowledge' to auto-generate optimal config...")
+        # TODO: Agent hooks up to Web Google Cloud context and creates Dockerfile here
         # create_dockerfile_via_mcp(plugin_path)
 
-    log(f"1. Xác thực gcloud credentials...")
+    log(f"1. Authenticating gcloud credentials...")
     # subprocess.run(["gcloud", "auth", "print-access-token"], check=True)
 
-    log(f"2. Gửi mã nguồn lên Google Cloud Build...")
+    log(f"2. Submitting source code to Google Cloud Build...")
     # subprocess.run(["gcloud", "builds", "submit", "--tag", f"gcr.io/ai-os-project/{service_name}", plugin_path])
 
-    log(f"3. Khởi tạo Service trên Cloud Run ({region})...")
+    log(f"3. Initializing Service on Cloud Run ({region})...")
     # subprocess.run([
     #     "gcloud", "run", "deploy", service_name,
     #     "--image", f"gcr.io/ai-os-project/{service_name}",
@@ -36,13 +36,13 @@ def deploy_to_cloud_run(plugin_path: str, service_name: str, region: str = "asia
     #     "--allow-unauthenticated"
     # ])
 
-    log("✅ Khởi tạo thành công! Service đã trực tuyến. Trả URL về blackboard.json.")
+    log("✅ Initialization successful! Service is now online. Returning URL to blackboard.json.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="GCP Architect Deployer")
-    parser.add_argument("--path", required=True, help="Đường dẫn đến thư mục Plugin cần deploy")
-    parser.add_argument("--name", required=True, help="Tên Service trên Cloud Run")
-    parser.add_argument("--region", default="asia-southeast1", help="Vùng Google Cloud (Ví dụ: asia-southeast1)")
+    parser.add_argument("--path", required=True, help="Path to Plugin directory to deploy")
+    parser.add_argument("--name", required=True, help="Service Name on Cloud Run")
+    parser.add_argument("--region", default="asia-southeast1", help="Google Cloud Region (e.g., asia-southeast1)")
 
     args = parser.parse_args()
     deploy_to_cloud_run(args.path, args.name, args.region)

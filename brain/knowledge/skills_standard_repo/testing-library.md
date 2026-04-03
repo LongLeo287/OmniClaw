@@ -1,3 +1,11 @@
+---
+id: testing-library
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.120365
+---
+
 # React Native Testing Reference
 
 Setup and patterns for high-quality mobile testing.

@@ -1,3 +1,11 @@
+---
+id: system-overview
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.666487
+---
+
 # 🏛️ System Overview (21-Department Architecture)
 
 OmniClaw functions exactly like a digital mega-corporation, boasting **21 distinct structural "Departments"** managed by AI Agents working in concert via multi-agent pipelines.

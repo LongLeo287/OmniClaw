@@ -1,3 +1,11 @@
+---
+id: retro-cycle5-2026-03-20
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.696838
+---
+
 # OmniClaw Corp — Cycle 5 Retrospective
 # Date: 2026-03-20
 # Facilitator: Antigravity (Tier 1 Orchestrator)

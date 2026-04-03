@@ -1,3 +1,11 @@
+---
+id: examples
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.615047
+---
+
 # Time SVG Creator — Examples
 
 ## Example 1: Afternoon

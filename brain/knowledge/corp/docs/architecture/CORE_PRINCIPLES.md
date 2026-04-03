@@ -1,3 +1,11 @@
+---
+id: core-principles
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.661694
+---
+
 # 🏛️ Core Architectural Principles of OmniClaw
 
 OmniClaw is not just a collection of scripts; it is a meticulously engineered, monolithic Operational System designed to self-regulate, ingest data, and execute tasks via a multi-agent framework. To maintain this immense complexity at scale, the system strictly enforces several fundamental architectural principles.

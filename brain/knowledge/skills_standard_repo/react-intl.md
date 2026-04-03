@@ -1,3 +1,11 @@
+---
+id: react-intl
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.627568
+---
+
 # react-intl Patterns for Next.js
 
 Standardized setup for `react-intl` to ensure no hardcoded user-facing strings and proper SSR support.

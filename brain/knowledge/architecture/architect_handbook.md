@@ -1,3 +1,11 @@
+---
+id: architect-handbook
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.471492
+---
+
 # Architect's Handbook: Smart Bookmark Manager
 
 Chào mừng bạn đến với tài liệu hướng dẫn kỹ thuật dành cho lập trình viên. Tài liệu này giải thích các nguyên tắc thiết kế cốt lõi đứng sau Extension này.

@@ -1,0 +1,6 @@
+Source: https://github.com/casey/just
+Type: REPO_GOLDEN
+Score: 48
+Features: Golden Match [MCP, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

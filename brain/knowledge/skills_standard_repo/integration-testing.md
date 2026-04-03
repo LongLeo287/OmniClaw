@@ -1,3 +1,11 @@
+---
+id: integration-testing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.276481
+---
+
 # Advanced Integration Testing
 
 Expert strategies for running Patrol integration tests with Robot Pattern enforcement.

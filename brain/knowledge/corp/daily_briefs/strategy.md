@@ -1,3 +1,11 @@
+---
+id: strategy
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.653367
+---
+
 # Daily Brief Template — Strategy
 # File: shared-context/corp/daily_briefs/strategy.md
 ---

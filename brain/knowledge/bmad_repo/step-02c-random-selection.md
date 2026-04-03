@@ -1,3 +1,11 @@
+---
+id: step-02c-random-selection
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.529482
+---
+
 # Step 2c: Random Technique Selection
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

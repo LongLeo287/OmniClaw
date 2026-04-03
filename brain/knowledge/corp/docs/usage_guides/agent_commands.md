@@ -1,3 +1,11 @@
+---
+id: agent-commands
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.668140
+---
+
 # 💻 Agent Commands (CLI Usage)
 
 This protocol governs how a human operator (CEO) or Orchestrator invokes specific agents and tools within the OmniClaw framework.

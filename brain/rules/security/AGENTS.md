@@ -59,7 +59,6 @@ This document is the "Constitution" of the centralized AI OS located at `D:\APP\
 - **[CRITICAL]:** Can thiệp ngay lập tức (Immediate Intervention).
 
 ## 🔱 Governance Persistence
-All rules are anchored in [GOVERNANCE.md](../shared-context/GOVERNANCE.md). 
 **STRICT RULE:** Allowed to operate in the 3 Ecosystem Tiers: `D:\APP\AI OS`, `D:\APP\Workspaces`, and `D:\APP\DATA`. Creating files or folders outside this ecosystem is **STRICTLY PROHIBITED**.
 **ABSOLUTE DIRECTIVE:** DO NOT USE OR SAVE FILES TO `C:\Users\%USERNAME%\.gemini\antigravity`. All output, including brainstorms and reports, MUST be saved within the `D:\APP\` ecosystem. NO EXCEPTIONS ALLOWED.
 

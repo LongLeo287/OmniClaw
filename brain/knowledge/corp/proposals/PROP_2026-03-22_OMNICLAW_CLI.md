@@ -1,3 +1,11 @@
+---
+id: prop-2026-03-22-omniclaw-cli
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.687137
+---
+
 # Create omniclaw CLI (ops/omniclaw.py) for corp cycle control
 **ID:** PROP_2026-03-22_AOS_CLI
 **Type:** STRATEGIC | **Priority:** HIGH

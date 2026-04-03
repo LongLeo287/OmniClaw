@@ -1,3 +1,11 @@
+---
+id: trademark
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.577583
+---
+
 # Trademark Notice & Guidelines
 
 ## Trademark Ownership

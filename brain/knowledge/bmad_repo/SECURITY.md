@@ -1,3 +1,11 @@
+---
+id: security
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.510324
+---
+
 # Security Policy
 
 ## Supported Versions

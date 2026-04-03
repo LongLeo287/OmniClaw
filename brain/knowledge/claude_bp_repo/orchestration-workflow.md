@@ -1,3 +1,11 @@
+---
+id: orchestration-workflow
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.619667
+---
+
 # Orchestration Workflow
 
 This document describes the **Command → Agent (with skill) → Skill** orchestration workflow, demonstrated through a weather data fetching and SVG rendering system.

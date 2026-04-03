@@ -1,3 +1,11 @@
+---
+id: structured-concurrency
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.012655
+---
+
 # Structured Concurrency Reference
 
 ## Virtual Threads (Loom)

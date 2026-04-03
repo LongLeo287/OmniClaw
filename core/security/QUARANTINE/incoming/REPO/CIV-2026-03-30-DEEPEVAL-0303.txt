@@ -1,0 +1,6 @@
+Source: https://github.com/jvm-profiling-tools/async-profiler
+Type: REPO_GOLDEN
+Score: 20
+Features: Golden Match [GRAPH]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

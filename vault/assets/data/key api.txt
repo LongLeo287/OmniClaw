@@ -1,0 +1,118 @@
+═══════════════════════════════════════════════════════════
+  OMNICLAW HQ — KEY API MASTER NOTE
+  Owner: LongLeo | Last updated: 2026-03-31
+  ⚠️  PRIVATE — Không share, không commit lên git
+═══════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────
+  📡  WIFI 7 / LLM CLOUD PROVIDERS (OmniClaw Remote & Core)
+──────────────────────────────────────────────────────────
+  [ANTEN 1] 9Router (Local AI Router & Proxy)
+  URL     : https://rhwbfcp.9router.com/v1
+  API Key : sk-5f8fa6bbb1d1cd89-z8efsf-8added85
+
+  [ANTEN 3] OpenRouter (Unified Gateway — Tất cả models)
+  Main Key : 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
+  Backup   : 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
+
+  [ANTEN 4] Google AI (Gemini Free)
+  API Key : AIzaSyDqiJGSJoa6VrCzJ3_9WZ9pCP9pMzL1UBE
+
+  [ANTEN 5] Groq (Free Tier — Llama, Mixtral)
+  API Key : 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
+
+  Claude (Anthropic)
+  API Key : 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
+
+  Open AI
+  API Key : sk-proj-xZ1v2zH098LxOVgsON1M-xeIoPI0LTrQBPvrsNRzdyTdT3BlbkFJxUNTKKld6ZQ-SPJAV1Hg4jcgiZRqZM6DU1DrnVvgvLzVoWbN0SOXsfvA3dWJ2Qp73-_uu7U6cA
+
+  MiniMax (Bulk / Economy — 1M context)
+  API Key : sk-dVlOhG61NWvK_kEOw70k9PbAkZRpSIndFcHw6m4wPm_ROJ5r1XTDEL8W6PvYXDT8C-NVokGS4UqE85JB2Ws
+
+  Nvidia NIM (Hạn 09/25/2026)
+  Base URL: https://integrate.api.nvidia.com/v1
+  Key 1   : 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
+  Key 2   : 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
+  Key 3   : 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
+
+──────────────────────────────────────────────────────────
+  🔌  LOCAL AI INFRASTRUCTURE (Cục Bộ)
+──────────────────────────────────────────────────────────
+  [ANTEN 2] Ollama (Local models — http://localhost:11434)
+  API Key : 9dc8f57f59f0476fb9ea7e1e7abee5b9.POpBgS4Ark3fjw6BG3IjvQm9
+Cloud Key: 8f0b283461014f6087ee2b132a9b7890.TRdIMO5Ya_JEVrzVVE_srGAU
+──────────────────────────────────────────────────────────
+  🗄️  DATABASE — SUPABASE (OmniClaw Core)
+──────────────────────────────────────────────────────────
+  Project : OmniClaw HQ (AI OS Corp)
+  URL     : https://fannspikficxouwpaitf.supabase.co
+  Ref ID  : fannspikficxouwpaitf
+
+  Anon Key (public, client-side)
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZhbm5zcGlrZmljeG91d3BhaXRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NjM5ODYsImV4cCI6MjA4OTUzOTk4Nn0.9zd-_QOhJ1FcB8OxSm3VQwn4Dt1eHQ63U1Lduk8vcKw
+
+  Service Role Key ⚠️ (admin — server-side only)
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3Mzk2Mzk4NiwiZXhwIjoyMDg5NTM5OTg2fQ.68dakDIZqRO0VTcisUXEwSgRsnp9oG7O2d-eOKNyZmw
+
+  Personal Access Token — OmniClaw HQ project
+  sbp_7021dd1749a6f0f1b84996e51cdeb6b938b7afb1
+
+  Personal Access Token — Tiem_Nuoc_Nho project
+  sbp_04818054d674332b91c65b93cbe1061df2cec5bd
+
+  Secret Key
+  sb_secret__LMUG_6dIpEeRFbZwHvIYQ_PfXIIRU4
+
+──────────────────────────────────────────────────────────
+  🔧  DEVELOPER TOOLS
+──────────────────────────────────────────────────────────
+  Kilo Code (AI IDE assistant)
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnYiOiJwcm9kdWN0aW9uIiwia2lsb1VzZXJJZCI6ImYwMWZkZTI4LTI5YmEtNGM5OC1iMzEzLTc2NTQyZmM3MDVhZCIsImFwaVRva2VuUGVwcGVyIjpudWxsLCJ2ZXJzaW9uIjozLCJpYXQiOjE3NzM5ODY2MzksImV4cCI6MTkzMTY2NjYzOX0.FjsVZT66xHhVLO-C3OE7S2Plu0F0dzAcd4ozpGuGgyA
+
+  Firecrawl
+  fc-0e69b75b40f242518159a0f824684d32
+
+  Stitch API
+  AQ.Ab8RN6L3S8kTXL7EYpikk3BQP9dWtf_-_qtRKC2W5djez6RG2A
+
+  Huggingface
+  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
+
+──────────────────────────────────────────────────────────
+  🏢  GITHUB
+──────────────────────────────────────────────────────────
+  GitHub PAT (Đang dùng chính)
+  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
+
+  GitHub PAT (Backup / Rotation)
+  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
+
+──────────────────────────────────────────────────────────
+  📱  TELEGRAM BOT — OMNICLAW REMOTE
+──────────────────────────────────────────────────────────
+  Bot Username : @aios_corp_bot
+  Bot Token    : 8799318244:AAERU9fXTLZBooCdjGGG5vK80aib9Nhz4wU
+  Admin ChatID : 646106732  (@LongLeo)
+
+  App api_id   : 25340302
+  App api_hash : 9696e052619735e6744d3a6bcdbc2cee
+
+──────────────────────────────────────────────────────────
+  🤖  ASTRBOT — Runtime AI Agent
+──────────────────────────────────────────────────────────
+  Dashboard : http://localhost:6185
+  Username  : astrbot
+  Password  : 77b90590a8945a7d36c963981a307dc9  (MD5 hash)
+
+──────────────────────────────────────────────────────────
+  📊  PRODUCTIVITY / SAAS
+──────────────────────────────────────────────────────────
+  Notion
+  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
+
+═══════════════════════════════════════════════════════════
+  Last synced : 2026-03-31
+  Master .env : <OMNICLAW_ROOT>\.env  (gitignored ✅)
+  Registry    : <OMNICLAW_ROOT>\secrets\SECRETS_REGISTRY.md
+═══════════════════════════════════════════════════════════

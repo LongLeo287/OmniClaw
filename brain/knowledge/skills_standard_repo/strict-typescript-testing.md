@@ -1,3 +1,11 @@
+---
+id: strict-typescript-testing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.000352
+---
+
 # Strict TypeScript Testing Patterns
 
 Patterns for writing Jest tests that pass `recommendedTypeChecked` ESLint rules.

@@ -1,3 +1,11 @@
+---
+id: github-actions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.100594
+---
+
 # GitHub Actions Workflow
 
 This workflow builds the application, runs tests, and analyzes code.

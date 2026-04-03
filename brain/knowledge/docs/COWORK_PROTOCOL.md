@@ -1,3 +1,11 @@
+---
+id: cowork-protocol
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.715855
+---
+
 # COWORK_PROTOCOL.md — OmniClaw Multi-Agent Collaboration Standard
 # Version: 1.0 | Date: 2026-03-17
 # Authority: Tier 2

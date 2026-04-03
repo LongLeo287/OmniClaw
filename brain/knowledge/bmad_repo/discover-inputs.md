@@ -1,3 +1,11 @@
+---
+id: discover-inputs
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.492140
+---
+
 # Discover Inputs Protocol
 
 **Objective:** Intelligently load project files (whole or sharded) based on the workflow's Input Files configuration.

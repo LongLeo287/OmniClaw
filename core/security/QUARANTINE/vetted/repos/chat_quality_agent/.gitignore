@@ -1,0 +1,40 @@
+# Environment & secrets
+.env
+.env.local
+.env.production
+
+# Dependencies
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+
+# Go
+backend/cqa-server
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+mysql_data/
+
+# Docs build
+docs/node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Internal / private files
+PRD.md
+code-review-*
+
+# Claude Code
+.claude/
+THAM-KHAO-MCP/

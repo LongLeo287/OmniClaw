@@ -1,3 +1,11 @@
+---
+id: step-10-user-journeys
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.566066
+---
+
 # Step 10: User Journey Flows
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

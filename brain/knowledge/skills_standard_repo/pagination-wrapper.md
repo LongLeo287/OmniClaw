@@ -1,3 +1,11 @@
+---
+id: pagination-wrapper
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.570518
+---
+
 # NestJS API Standards Patterns
 
 ## Generic Response & Pagination

@@ -1,3 +1,11 @@
+---
+id: qa
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.649112
+---
+
 # Daily Brief Template — QA
 # File: shared-context/corp/daily_briefs/qa.md
 ---

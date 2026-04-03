@@ -1,3 +1,11 @@
+---
+id: oa-charter
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.663079
+---
+
 # 🎓 OmniClaw Academy (OA) Charter
 
 OmniClaw Academy (OA) is the **Supreme Audit Authority** and the Judicial Branch of the OmniClaw AI OS ecosystem. While the CEO commands the vision and the Orchestrator distributes tasks, OA acts as the ultimate gatekeeper of System Integrity, Agent Behavior, and Code Purity.

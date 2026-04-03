@@ -1,3 +1,11 @@
+---
+id: sheet-loader
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.913590
+---
+
 # Google Sheets Localization Loader
 
 Automating translation updates from Google Sheets using `sheet_loader_localization`.

@@ -1,3 +1,11 @@
+---
+id: full-scan-instructions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.494795
+---
+
 # Full Project Scan Instructions
 
 <workflow>

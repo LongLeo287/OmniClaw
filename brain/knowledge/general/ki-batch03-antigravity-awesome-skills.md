@@ -11,42 +11,42 @@ healed_at: 2026-04-02T20:29:00.415989
 ## Metadata
 - **Source:** https://github.com/sickn33/antigravity-awesome-skills
 - **Category:** Skills / Tools / Claw Variant
-- **Priority:** 🔴 CRITICAL — Trực tiếp cho Antigravity
+- **Priority:** CRITICAL — Direct for Antigravity
 - **Ingested:** 2026-03-21
 - **Batch:** 03
 
-## Tóm Tắt
-Thư viện skill lớn nhất dành riêng cho Antigravity (Gemini CLI). Release 8.3.0 với **1,273+ skills** có thể cài ngay qua `npx`. Bao gồm: installer CLI, bundles theo vai trò, workflows, và catalog tự động sinh.
+## Summary
+Largest skill library dedicated to Antigravity (Gemini CLI). Release 8.3.0 with **1,273+ skills** installable via `npx`. Includes: CLI installer, role-based bundles, workflows, and auto-generated catalog.
 
-## Tính Năng核心
-- **Install path default:** `~/.gemini/antigravity/skills` (Antigravity global)
+## Core Features
+- **Default install path:** `~/.gemini/antigravity/skills` (Antigravity global)
 - **CLI:** `npx @sickn33/antigravity-awesome-skills` 
-- **86 Releases** — đang được maintain tích cực
-- **Bundles** theo role: Developer, PM, DevOps, Security, v.v.
-- Hỗ trợ: Claude Code, Cursor, Gemini CLI, Copilot, Codex CLI
-- Windows-compatible (có troubleshooting guide riêng)
+- **86 Releases** — actively maintained
+- **Bundles** by role: Developer, PM, DevOps, Security, etc.
+- Supports: Claude Code, Cursor, Gemini CLI, Copilot, Codex CLI
+- Windows-compatible (has separate troubleshooting guide)
 
 ## Quick Start
 ```bash
-# Cài toàn bộ
+# Install all
 npx @sickn33/antigravity-awesome-skills install
 
-# Cài 1 skill
+# Install 1 skill
 npx @sickn33/antigravity-awesome-skills install <skill-name>
 
-# Cài bundle
+# Install bundle
 npx @sickn33/antigravity-awesome-skills install --bundle developer
 ```
 
-## Liên Quan OmniClaw
-- **Install path trùng** với `<USER_PROFILE>\.gemini\antigravity\skills\` — đây chính là thư mục skill của OmniClaw
-- Là nguồn bổ sung skill cho **Antigravity (Tier 1 Orchestrator)**
-- Pending Action từ Batch 2: Đã được chỉ định Installation: nhưng chưa hoàn thành
-- **ƯU TIÊN CÀI NGAY** — Chạy: `npx @sickn33/antigravity-awesome-skills install`
+## Related to OmniClaw
+- **Install path matches** `<USER_PROFILE>\.gemini\antigravity\skills\` — this is OmniClaw's skill folder
+- Source for adding skills to **Antigravity (Tier 1 Orchestrator)**
+- Pending Action from Batch 2: Designated for installation but not completed
+- **PRIORITY INSTALL NOW** — Run: `npx @sickn33/antigravity-awesome-skills install`
 
 ## OmniClaw Action
 ```
-STATUS: 🔴 CRITICAL — Cần cài ngay
+STATUS: CRITICAL — Need to install now
 COMMAND: npx @sickn33/antigravity-awesome-skills install
 PATH: <USER_PROFILE>\.gemini\antigravity\skills\
 ```

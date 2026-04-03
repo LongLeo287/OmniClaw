@@ -1,3 +1,11 @@
+---
+id: core-daemons-and-oer
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.660828
+---
+
 # 🏛️ OER & Core Daemons — OmniClaw Ecosystem Governance
 
 > **Authority:** CEO (LongLeo) | **Version:** 1.0 | **Date:** 2026-04-02

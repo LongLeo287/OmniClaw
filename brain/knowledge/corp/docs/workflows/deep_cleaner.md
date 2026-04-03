@@ -1,3 +1,11 @@
+---
+id: deep-cleaner
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.672575
+---
+
 # OmniClaw Deep Sanitation Workflow
 
 ## OS-Level Daemon (Dept 22 - Operations)

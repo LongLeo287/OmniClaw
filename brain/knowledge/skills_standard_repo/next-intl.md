@@ -1,3 +1,11 @@
+---
+id: next-intl
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.509943
+---
+
 # next-intl in Next.js
 
 Best practices for using `next-intl` for type-safe internationalization in the App Router.

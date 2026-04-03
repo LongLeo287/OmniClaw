@@ -1,3 +1,11 @@
+---
+id: cache-components
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.690398
+---
+
 # Cache Components (Next.js 16+)
 
 Cache Components enable Partial Prerendering (PPR) - mix static, cached, and dynamic content in a single route.

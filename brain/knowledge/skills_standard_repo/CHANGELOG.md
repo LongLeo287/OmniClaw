@@ -1,3 +1,11 @@
+---
+id: changelog
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.703543
+---
+
 # Changelog
 
 All notable changes to the Programming Languages and Frameworks Agent Skills will be documented in this file.

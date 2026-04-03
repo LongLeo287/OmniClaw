@@ -1,3 +1,11 @@
+---
+id: repository-mapping
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.704733
+---
+
 # Repositories & DTO Mapping Reference
 
 ## **Data Transfer Object (DTO)**

@@ -1,3 +1,11 @@
+---
+id: step-01-init
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.515108
+---
+
 # Step 1: Architecture Workflow Initialization
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

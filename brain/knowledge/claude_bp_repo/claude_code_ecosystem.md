@@ -1,3 +1,11 @@
+---
+id: claude-code-ecosystem
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.612352
+---
+
 # Claude Code Ecosystem Knowledge
 **Sources:**  
 - `affaan-m/everything-claude-code` — Battle-tested configuration suite  

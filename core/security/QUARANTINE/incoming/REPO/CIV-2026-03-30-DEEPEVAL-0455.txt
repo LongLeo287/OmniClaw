@@ -1,0 +1,6 @@
+Source: https://github.com/sindresorhus/awesome
+Type: REPO_GOLDEN
+Score: 43
+Features: Golden Match [GRAPH, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

@@ -1,3 +1,11 @@
+---
+id: knowledge-gitnexus-release-v1.4.10
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.573949
+---
+
 # 🚀 BẢN CẬP NHẬT MỚI: GitNexus (v1.4.10)
 
 **Ngày phát hành:** 2026-03-27T13:53:20Z

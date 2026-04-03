@@ -1,3 +1,11 @@
+---
+id: testing-tooling
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.140913
+---
+
 # Kotlin Testing & MockK Reference
 
 ## MockK Advanced Usage

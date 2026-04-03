@@ -1,3 +1,11 @@
+---
+id: llm-day-to-day-degradation
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.617299
+---
+
 # LLM Day-to-Day Degradation: Myth vs Reality
 
 Can a deployed LLM's performance change day-to-day even though the model weights are frozen? A deep-dive into proven causes, infrastructure bugs, and psychological factors.

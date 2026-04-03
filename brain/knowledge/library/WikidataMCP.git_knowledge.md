@@ -1,3 +1,11 @@
+---
+id: wikidatamcp.git-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.241397
+---
+
 # KNOWLEDGE EXTRACT: WikidataMCP.git
 > **Extracted on:** 2026-03-29 21:42:42
 > **Source:** WikidataMCP.git

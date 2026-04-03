@@ -1,3 +1,11 @@
+---
+id: activation-board
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.412889
+---
+
 # 🚦 ACTIVATION BOARD — OmniClaw Services & Dashboards
 # Updated: 2026-03-16
 # Everything that needs activation / localhost opening must be in this board

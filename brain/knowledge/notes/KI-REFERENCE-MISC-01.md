@@ -1,3 +1,11 @@
+---
+id: ki-reference-misc-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.742991
+---
+
 # KI-REFERENCE-MISC-01 — Miscellaneous Reference Notes
 **Nguồn:** gitagent, wtfjs, gitignore, agentql, tinyfish-cookbook, archon, ag-live-code, seeaifirst, pattern-craft, plotly.js, zixfelw/ag-live-code
 **Ngày:** 2026-03-23 | **Verdict:** REFERENCE — quick notes per repo

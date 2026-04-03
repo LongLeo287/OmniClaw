@@ -1,3 +1,11 @@
+---
+id: animation-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.523082
+---
+
 # Mobile Animation Patterns
 
 ## 1. Easing Curves

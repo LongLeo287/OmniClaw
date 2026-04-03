@@ -1,3 +1,11 @@
+---
+id: operations
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.648015
+---
+
 # Daily Brief Template — Operations
 # File: shared-context/corp/daily_briefs/operations.md
 ---

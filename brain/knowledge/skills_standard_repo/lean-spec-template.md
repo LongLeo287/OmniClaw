@@ -1,3 +1,11 @@
+---
+id: lean-spec-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.332023
+---
+
 # Technical Spec: [Feature Name]
 
 **Type**: Lean Spec | **Engineer**: [User]

@@ -1,3 +1,11 @@
+---
+id: files
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.072955
+---
+
 # Hilt Dependency Injection Implementation
 
 ## Setup (Application)

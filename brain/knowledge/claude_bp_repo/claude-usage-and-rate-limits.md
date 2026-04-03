@@ -1,3 +1,11 @@
+---
+id: claude-usage-and-rate-limits
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.610936
+---
+
 # Claude Code: Usage, Rate Limits & Extra Usage
 
 Understanding how usage limits work in Claude Code and how to keep working when you hit them.

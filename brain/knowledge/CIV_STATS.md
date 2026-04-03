@@ -1,3 +1,11 @@
+---
+id: civ-stats
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.415072
+---
+
 # 📊 CIV Stats Dashboard
 *Generated: 2026-03-25T11:04:41 | Source: telemetry/receipts/*
 

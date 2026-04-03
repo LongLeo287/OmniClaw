@@ -1,3 +1,11 @@
+---
+id: documentation-standards
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.492876
+---
+
 # Technical Documentation Standards for BMAD
 
 CommonMark standards, technical writing best practices, and style guide compliance.

@@ -1,3 +1,11 @@
+---
+id: ai-os-corp-analysis
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.713900
+---
+
 # Phân Tích và Đánh Giá Hệ Thống OmniClaw Corp
 
 **Tổng Quan Hệ Thống OmniClaw Corp**

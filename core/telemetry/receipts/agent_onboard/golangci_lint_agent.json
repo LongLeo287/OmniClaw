@@ -1,0 +1,15 @@
+{
+  "agent_id": "golangci-lint-agent",
+  "created_by": "create_agent.py",
+  "trigger": "manual-scaffold",
+  "ceo_approved": true,
+  "approved_at": "2026-03-30T22:36:20.023198+07:00",
+  "strix_approved": false,
+  "dept": "engineering",
+  "tier": 2,
+  "llm_tier": "economy",
+  "autonomy": "supervised",
+  "activation_date": "2026-03-30T22:36:20.023210+07:00",
+  "version": "1.0",
+  "note": "Scaffolded manually. Strix review pending."
+}

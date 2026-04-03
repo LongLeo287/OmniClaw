@@ -1,3 +1,11 @@
+---
+id: context-usage
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.861947
+---
+
 # Context Usage
 
 **Golden Rule**: `func Foo(ctx context.Context, args ...)` - First parameter.

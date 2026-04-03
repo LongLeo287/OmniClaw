@@ -1,3 +1,11 @@
+---
+id: template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.088793
+---
+
 # Skill Template (Token-Optimized)
 
 Copy the structure below to start a new skill. Follow the three-level loading system for maximum token efficiency.

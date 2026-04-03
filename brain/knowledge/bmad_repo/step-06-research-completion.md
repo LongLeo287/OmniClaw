@@ -1,3 +1,11 @@
+---
+id: step-06-research-completion
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.556377
+---
+
 # Market Research Step 6: Research Completion
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

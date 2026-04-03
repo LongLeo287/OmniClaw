@@ -1,3 +1,11 @@
+---
+id: agents
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.506439
+---
+
 <!-- SKILLS_INDEX_START -->
 
 # Agent Skills Index

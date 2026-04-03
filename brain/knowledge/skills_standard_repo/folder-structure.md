@@ -1,3 +1,11 @@
+---
+id: folder-structure
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.080539
+---
+
 # React Native Architecture Reference
 
 Complete folder structure examples and advanced patterns.

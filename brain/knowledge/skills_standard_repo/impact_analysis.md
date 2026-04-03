@@ -1,3 +1,11 @@
+---
+id: impact-analysis
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.187462
+---
+
 # Test Case Impact Analysis (Regression Management)
 
 ## Goal

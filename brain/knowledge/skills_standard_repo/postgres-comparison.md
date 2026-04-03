@@ -1,3 +1,11 @@
+---
+id: postgres-comparison
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.601519
+---
+
 # PostgreSQL vs MongoDB: A Best Practices Comparison
 
 ## Core Philosophy

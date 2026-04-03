@@ -1,3 +1,11 @@
+---
+id: non-cloneable-repos-analysis
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.820108
+---
+
 # Non-Cloneable Repos — AI Knowledge Extracts
 # Source: GitHub README analysis for repos that could not be cloned (private/deleted/404)
 # Date: 2026-03-16 | OmniClaw Knowledge Ingestion

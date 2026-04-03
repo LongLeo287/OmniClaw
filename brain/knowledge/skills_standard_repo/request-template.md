@@ -1,3 +1,11 @@
+---
+id: request-template
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.728306
+---
+
 # Code Review Request Template
 
 Use this template to provide context when requesting a review.

@@ -1,3 +1,11 @@
+---
+id: lifecycle
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.342207
+---
+
 # Skill Creation Lifecycle (Token-Optimized)
 
 Complete process for creating high-density skills with maximum token efficiency.

@@ -13,20 +13,20 @@ healed_at: 2026-04-02T20:31:00.683757
 
 ## PURPOSE
 
-Workflow này định nghĩa cách kích hoạt (lazy-load) các plugin Tier 2 trong OmniClaw theo đúng Architecture 3-Tier:
+This workflow defines how to activate (lazy-load) Tier 2 plugins in OmniClaw according to the 3-Tier Architecture:
 
-- **Tier 1** (LightRAG, Firecrawl, Mem0, CrewAI): Luôn load — không cần workflow này
-- **Tier 2** (specialized plugins): **CHỈ** kích hoạt khi task thực sự cần — đây là workflow đó
-- **Tier 3** (blacklisted): Không bao giờ dùng
+- **Tier 1** (LightRAG, Firecrawl, Mem0, CrewAI): Always loaded — this workflow not needed
+- **Tier 2** (specialized plugins): **ONLY** activate when task actually requires — this is that workflow
+- **Tier 3** (blacklisted): Never use
 
 ---
 
 ## TRIGGER CONDITIONS
 
-Kích hoạt workflow này khi:
-- Agent cần tool không thuộc Tier 1
+Activate this workflow when:
+- Agent needs a tool not in Tier 1
 - Task type = IMAGE | EXCEL | PDF-RENDER | OCR | AUDIO | VIDEO-EDIT
-- CEO request plugin cụ thể không đang chạy
+- CEO requests a specific plugin not currently running
 
 ---
 
@@ -34,8 +34,8 @@ Kích hoạt workflow này khi:
 
 ### Step 1: Identify Required Plugin
 ```
-- Đọc task type từ blackboard.json hoặc event_bus task payload
-- Map task type → plugin ID từ SKILL_REGISTRY.json (filter tier=2)
+- Read task type from blackboard.json or event_bus task payload
+- Map task type → plugin ID from SKILL_REGISTRY.json (filter tier=2)
 - Confirm plugin is NOT in Tier 3 blacklist
 ```
 

@@ -1,3 +1,11 @@
+---
+id: deep-linking
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.912073
+---
+
 # React Native Navigation Reference
 
 Deep linking configuration and advanced navigation patterns.

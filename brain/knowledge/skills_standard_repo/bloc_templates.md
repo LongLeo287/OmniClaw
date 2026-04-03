@@ -1,3 +1,11 @@
+---
+id: bloc-templates
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.644349
+---
+
 # BLoC Templates
 
 ## Freezed Implementation (Recommended)

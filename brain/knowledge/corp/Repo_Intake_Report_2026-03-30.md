@@ -1,3 +1,11 @@
+---
+id: repo-intake-report-2026-03-30
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.636042
+---
+
 # 📋 Repo Intake Report — 2026-03-30
 **CIV Tickets:** BATCH-02 | **Total URLs received:** 1079 | **Unique repos:** 1408 | **Unreadable:** 0
 

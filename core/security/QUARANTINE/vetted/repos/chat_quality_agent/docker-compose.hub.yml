@@ -1,0 +1,91 @@
+# Dùng file này nếu bạn muốn dùng image có sẵn từ Docker Hub
+# thay vì build từ source code.
+#
+# Cách dùng:
+#   1. Tải file này và .env.example về cùng thư mục
+#   2. Sao chép .env.example thành .env và điền thông tin
+#   3. docker compose -f docker-compose.hub.yml up -d
+
+services:
+  nginx:
+    image: buitanviet/chat-quality-agent-nginx:latest
+    container_name: cqa-nginx
+    restart: unless-stopped
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - LEGO_DOMAIN=${LEGO_DOMAIN:-}
+      - LEGO_EMAIL=${LEGO_EMAIL:-}
+    volumes:
+      - lego_certs:/etc/lego
+      - lego_webroot:/var/www/acme
+    depends_on:
+      - app
+
+  app:
+    image: buitanviet/chat-quality-agent:latest
+    container_name: cqa-app
+    restart: unless-stopped
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+    expose:
+      - "8080"
+    env_file:
+      - .env
+    environment:
+      - APP_ENV=production
+      - DB_HOST=db
+      - DB_PORT=3306
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - file_storage:/var/lib/cqa/files
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+  db:
+    image: mysql:8.0
+    container_name: cqa-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME:-cqa}
+      MYSQL_USER: ${DB_USER:-cqa}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "127.0.0.1:3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+
+  watchtower:
+    image: containrrr/watchtower:1.7.1
+    container_name: cqa-watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=300
+      - WATCHTOWER_LABEL_ENABLE=true
+      - DOCKER_API_VERSION=1.40
+
+volumes:
+  mysql_data:
+  file_storage:
+  lego_certs:
+  lego_webroot:

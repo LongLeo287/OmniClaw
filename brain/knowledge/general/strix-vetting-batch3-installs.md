@@ -15,8 +15,8 @@ healed_at: 2026-04-02T20:31:18.820489
 
 ## ⚠️ Security Context Statement
 
-Trước khi install bất kỳ tool nào, Antigravity thực hiện Strix vetting theo GOVERNANCE.md.  
-CEO đã được thông báo về quy trình này.
+Before installing any tool, Antigravity performs Strix vetting per GOVERNANCE.md.  
+CEO has been notified of this process.
 
 ---
 
@@ -58,7 +58,7 @@ CEO đã được thông báo về quy trình này.
 
 ### Stage 5: Storage Policy Compliance (RULE-STORAGE-01)
 - antigravity-awesome-skills → `<USER_PROFILE>\.gemini\antigravity\skills\`
-  - **EXCEPTION NOTED** in GOVERNANCE.md: "Mirror từ D: OK, source of truth = D:"
+  - **EXCEPTION NOTED** in GOVERNANCE.md: "Mirror from D: OK, source of truth = D:"
   - ✅ COMPLIANT
 - notebooklm-py → Python site-packages
   - ✅ COMPLIANT (system package)
@@ -100,4 +100,3 @@ CEO đã được thông báo về quy trình này.
 | claude-mem | ✅ CLEARED (with flag noted) | YES |
 
 **Signed:** Antigravity (Tier 1) | 2026-03-21T15:21
-

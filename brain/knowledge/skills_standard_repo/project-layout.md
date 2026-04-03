@@ -1,3 +1,11 @@
+---
+id: project-layout
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.619145
+---
+
 # Standard Go Project Layout
 
 Based on `golang-standards/project-layout`.

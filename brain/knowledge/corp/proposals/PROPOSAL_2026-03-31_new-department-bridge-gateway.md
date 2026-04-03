@@ -1,3 +1,11 @@
+---
+id: proposal-2026-03-31-new-department-bridge-gateway
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.684172
+---
+
 # B5 PERSONNEL PROPOSAL (B5 PERSONNEL PROPOSAL)
 
 **Recommended code:** PROPOSAL_2026-03-31_new-department-bridge-gateway

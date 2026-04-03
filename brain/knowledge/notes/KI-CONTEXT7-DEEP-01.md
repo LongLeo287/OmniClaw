@@ -1,3 +1,11 @@
+---
+id: ki-context7-deep-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.660478
+---
+
 # KI-CONTEXT7-DEEP-01 — Context7: Real-Time Doc Injection cho LLM
 **Loại:** Deep Analysis — MCP Integration
 **Nguồn:** github.com/upstash/context7 + context7.com/docs + context7.com/docs/api-guide

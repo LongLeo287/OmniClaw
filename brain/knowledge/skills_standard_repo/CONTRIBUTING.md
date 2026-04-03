@@ -1,3 +1,11 @@
+---
+id: contributing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.874184
+---
+
 # Contributing to Agent Skills Standard
 
 Thank you for your interest in contributing! This document provides guidelines for setting up your environment and following our standards.

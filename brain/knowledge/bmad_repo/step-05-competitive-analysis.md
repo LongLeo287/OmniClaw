@@ -1,3 +1,11 @@
+---
+id: step-05-competitive-analysis
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.547940
+---
+
 # Market Research Step 5: Competitive Analysis
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -1,3 +1,11 @@
+---
+id: usage
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.277238
+---
+
 # React Native Design System Usage
 
 ## 1. Token Structure

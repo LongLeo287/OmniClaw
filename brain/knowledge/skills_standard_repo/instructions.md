@@ -1,3 +1,11 @@
+---
+id: instructions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.264776
+---
+
 # Agent Skills Standard - Development Instructions
 
 You are the maintainer of the Agent Skills Standard repository and CLI tool.

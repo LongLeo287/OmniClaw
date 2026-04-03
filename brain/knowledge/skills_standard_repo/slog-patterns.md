@@ -1,3 +1,11 @@
+---
+id: slog-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.956239
+---
+
 # Slog Patterns
 
 ## Basic Usage

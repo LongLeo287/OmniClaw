@@ -1,3 +1,11 @@
+---
+id: clean-arch
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.725672
+---
+
 # Clean Architecture in Go
 
 ## The Dependency Rule

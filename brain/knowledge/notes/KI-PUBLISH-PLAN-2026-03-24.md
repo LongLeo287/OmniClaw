@@ -1,3 +1,11 @@
+---
+id: ki-publish-plan-2026-03-24
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.718450
+---
+
 # OmniClaw — Distribution & Publishing Plan
 # Status: DRAFT | Saved: 2026-03-24 | For: CEO Brainstorm
 # Retrieve khi cần: "tìm plan publish OmniClaw"

@@ -1,3 +1,11 @@
+---
+id: fastlane
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.054262
+---
+
 # Advanced Fastlane Standards
 
 Automates signing, build versioning, flavors, and multi-channel distribution (Firebase vs. Stores).

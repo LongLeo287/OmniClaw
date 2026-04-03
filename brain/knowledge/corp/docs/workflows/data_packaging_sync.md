@@ -1,3 +1,11 @@
+---
+id: data-packaging-sync
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.671754
+---
+
 # Packaging & Sync Workflow (Cloud Push Process)
 
 [**🇻🇳 Xem Bản Tiếng Việt**](data_packaging_sync-vn.md) | [**Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)

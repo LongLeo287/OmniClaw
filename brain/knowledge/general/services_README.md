@@ -8,27 +8,27 @@ healed_at: 2026-04-02T20:31:12.495356
 
 # OmniClaw Corp — Services
 
-Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, Configuration: từ đây.
+Folder centralizing all services. Everything starts, stops, configuration: from here.
 
 ---
 
-## Cấu trúc
+## Structure
 
 ```
 services/
-├── boot.ps1        ← Khởi động tất cả (gọi từ máy hoặc bot /boot)
-├── stop.ps1        ← Dừng tất cả
-├── config.json     ← Configuration: tập trung (ports, keys, paths)
-├── screenshot.py   ← Chụp màn hình → gửi Telegram (/snap)
-└── README.md       ← File này
+├── boot.ps1        ← Start all (called from machine or bot /boot)
+├── stop.ps1        ← Stop all
+├── config.json     ← Centralized configuration (ports, keys, paths)
+├── screenshot.py   ← Screenshot → send Telegram (/snap)
+└── README.md       ← This file
 ```
 
 ---
 
-## Các dịch vụ
+## Services
 
-| # | Tên | Port | URL | Loại |
-|---|-----|------|-----|------|
+| # | Name | Port | URL | Type |
+|---|------|------|-----|------|
 | 1 | **ClawTask Dashboard** | 7474 | http://localhost:7474/ | Local |
 | 2 | **9router (LLM Gateway)** | 20128 | http://localhost:20128/ | Local |
 | 3 | **OmniClaw Bot (nullclaw)** | 3000 | http://localhost:3000/ | Local |
@@ -37,30 +37,30 @@ services/
 
 ---
 
-## Cách khởi động
+## How to Start
 
-### Cách 1 — Từ máy tính (Desktop Shortcut)
-Double-click **"OmniClaw Boot"** trên Desktop.
+### Method 1 — From Computer (Desktop Shortcut)
+Double-click **"OmniClaw Boot"** on Desktop.
 
-### Cách 2 — Từ Telegram Bot
-Nhắn `/boot` vào **OmniClaw Bot** — bot tự gọi `boot.ps1`.
+### Method 2 — From Telegram Bot
+Send `/boot` to **OmniClaw Bot** — bot automatically calls `boot.ps1`.
 
-### Cách 3 — Tự động khi bật máy
-Task Scheduler `AI_OS_Watchdog` tự start nullclaw bot khi đăng nhập.
-Sau đó nhắn `/boot` nếu muốn bật nốt ClawTask + 9router + Ollama.
+### Method 3 — Auto on Boot
+Task Scheduler `AI_OS_Watchdog` auto-starts nullclaw bot on login.
+Then send `/boot` if you want to also start ClawTask + 9router + Ollama.
 
 ---
 
-## Lệnh thủ công
+## Manual Commands
 
 ```powershell
-# Khởi động tất cả
+# Start all
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1"
 
-# Xem Status: (không start)
+# Check status (no start)
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\boot.ps1" -Status
 
-# Dừng tất cả
+# Stop all
 powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\stop.ps1"
 ```
 
@@ -68,16 +68,15 @@ powershell -ExecutionPolicy Bypass -File "$OMNICLAW_ROOT\services\stop.ps1"
 
 ## Telegram Commands (OmniClaw Bot)
 
-| Lệnh | Description: |
+| Command | Description: |
 |------|-------|
 | `/sys` | Check CPU, RAM, Ports |
-| `/task` | Xem/Thêm task ClawTask |
+| `/task` | View/Add ClawTask |
 | `/clawtask` | Link + status Dashboard |
-| `/snap` | Chụp màn hình → gửi đây |
-| `/log` | Xem watchdog log |
-| `/run <cmd>` | Chạy PowerShell |
-| `/web <q>` | Tìm Google/đọc link |
-| `/boot` | Khởi động tất cả dịch vụ |
-| `/stop` | Tắt tất cả dịch vụ |
-| `/new` | Xóa lịch sử, bắt đầu lại |
-
+| `/snap` | Screenshot → send here |
+| `/log` | View watchdog log |
+| `/run <cmd>` | Run PowerShell |
+| `/web <q>` | Google search/read link |
+| `/boot` | Start all services |
+| `/stop` | Stop all services |
+| `/new` | Clear history, start over |

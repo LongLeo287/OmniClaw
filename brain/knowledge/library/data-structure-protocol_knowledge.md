@@ -1,3 +1,11 @@
+---
+id: data-structure-protocol-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:21.123912
+---
+
 # KNOWLEDGE EXTRACT: data-structure-protocol
 > **Extracted on:** 2026-03-29 22:10:13
 > **Source:** data-structure-protocol

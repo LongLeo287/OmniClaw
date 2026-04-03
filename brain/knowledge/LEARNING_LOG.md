@@ -1,3 +1,11 @@
+---
+id: learning-log
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.437667
+---
+
 # OmniClaw Learning Log
 # Version: 1.0 | Created: 2026-03-16
 # Updated by: Knowledge Agent, Archivist

@@ -1,3 +1,11 @@
+---
+id: clean-history
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.734539
+---
+
 # Git Rebase Reference
 
 Examples of maintaining a clean, linear git history.

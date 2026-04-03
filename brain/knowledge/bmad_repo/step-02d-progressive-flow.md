@@ -1,3 +1,11 @@
+---
+id: step-02d-progressive-flow
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.530502
+---
+
 # Step 2d: Progressive Technique Flow
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

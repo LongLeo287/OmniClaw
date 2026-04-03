@@ -1,3 +1,11 @@
+---
+id: agentic-workflows
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.443186
+---
+
 # Agentic AI Patterns — OmniClaw Knowledge Library
 # Extracted from: agency-agents, deepagents, bmad_repo, cognee
 # Updated: 2026-03-17

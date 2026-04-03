@@ -1,3 +1,11 @@
+---
+id: contributors
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.488648
+---
+
 # Contributors
 
 BMad Core, BMad Method and BMad and Community BMad Modules are made possible by contributions from our community. We gratefully acknowledge everyone who has helped improve this project.

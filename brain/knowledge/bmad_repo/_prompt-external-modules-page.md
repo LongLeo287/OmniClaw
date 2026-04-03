@@ -1,3 +1,11 @@
+---
+id: -prompt-external-modules-page
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.581655
+---
+
 # Prompt: Generate External Modules Reference Page
 
 ## Goal

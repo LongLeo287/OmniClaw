@@ -1,3 +1,11 @@
+---
+id: cross-model-workflow
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.613858
+---
+
 # Cross-Model (Claude Code + Codex) Workflow
 
 based on [claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) and [codex-cli-best-practice](https://github.com/shanraisshan/codex-cli-best-practice)

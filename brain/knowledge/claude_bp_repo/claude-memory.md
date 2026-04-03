@@ -1,3 +1,11 @@
+---
+id: claude-memory
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.604228
+---
+
 # Claude Memory
 
 Persistent context via CLAUDE.md files — how to write them and how they load in monorepos.

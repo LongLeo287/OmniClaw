@@ -1,3 +1,11 @@
+---
+id: step-03-complete
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.532366
+---
+
 # Step 3: Context Completion & Finalization
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

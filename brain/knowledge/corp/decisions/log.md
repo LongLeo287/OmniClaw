@@ -1,3 +1,11 @@
+---
+id: log
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.656651
+---
+
 # OmniClaw Corp — CEO Decisions Log
 # Written by: CEO (Human Operator)
 # Read by: All C-Suite agents

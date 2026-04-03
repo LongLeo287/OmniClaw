@@ -1,3 +1,11 @@
+---
+id: diabetes-prediction-using-machine-learning-knowled
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:21.208935
+---
+
 # KNOWLEDGE EXTRACT: Diabetes-Prediction-using-Machine-Learning
 > **Extracted on:** 2026-03-29 20:30:41
 > **Source:** Diabetes-Prediction-using-Machine-Learning

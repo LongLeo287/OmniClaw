@@ -1,3 +1,11 @@
+---
+id: step-06-design-system
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.554558
+---
+
 # Step 6: Design System Choice
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

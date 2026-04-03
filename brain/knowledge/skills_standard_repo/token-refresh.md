@@ -1,3 +1,11 @@
+---
+id: token-refresh
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.200602
+---
+
 # Token Refresh Pattern
 
 When a `401 Unauthorized` error occurs, the networking layer should handle the refresh cycle transparently.

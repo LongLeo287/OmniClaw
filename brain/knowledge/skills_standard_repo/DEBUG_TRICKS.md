@@ -1,3 +1,11 @@
+---
+id: debug-tricks
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.909900
+---
+
 # Next.js Debugging & MCP Protocol
 
 ## **1. MCP AI-Assisted Debugging**

@@ -1,0 +1,15 @@
+{
+  "agent_id": "test-integration-agent",
+  "created_by": "create_agent.py",
+  "trigger": "manual-scaffold",
+  "ceo_approved": true,
+  "approved_at": "2026-03-29T22:58:50.797850+07:00",
+  "strix_approved": false,
+  "dept": "testing",
+  "tier": 3,
+  "llm_tier": "economy",
+  "autonomy": "supervised",
+  "activation_date": "2026-03-29T22:58:50.797863+07:00",
+  "version": "1.0",
+  "note": "Scaffolded manually. Strix review pending."
+}

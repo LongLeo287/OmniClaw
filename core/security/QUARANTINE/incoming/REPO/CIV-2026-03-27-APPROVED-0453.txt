@@ -1,0 +1,5 @@
+Source: https://github.com/vercel-labs/next-skills
+Type: REPO
+Agent: batch-intake-agent
+Route: brain/knowledge/repos/
+Date: 2026-03-27

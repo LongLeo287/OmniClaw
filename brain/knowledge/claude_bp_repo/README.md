@@ -1,3 +1,11 @@
+---
+id: readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.622785
+---
+
 # claude-code-best-practice
 practice makes claude perfect
 

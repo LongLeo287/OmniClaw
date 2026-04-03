@@ -1,3 +1,11 @@
+---
+id: claude-boris-13-tips-03-jan-26
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.597617
+---
+
 # How I Use Claude Code — 13 Tips from Boris Cherny
 
 A summary of setup tips shared by Boris Cherny ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on January 3, 2026.

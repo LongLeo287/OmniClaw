@@ -1,3 +1,11 @@
+---
+id: quarantine-readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.354699
+---
+
 laude# QUARANTINE ZONE — OmniClaw External Repo Isolation
 
 > ⚠️ **WARNING:** This folder is an **ISOLATION ZONE**.

@@ -1,3 +1,11 @@
+---
+id: agents
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.812614
+---
+
 # AGENTS.md — OmniClaw Agent Roster & Role Definitions
 # Version: 4.0 | Updated: 2026-03-24
 # Authority: Tier 0 (Constitution)

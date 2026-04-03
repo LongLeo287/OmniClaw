@@ -1,3 +1,11 @@
+---
+id: ki-token-reduction-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.791998
+---
+
 # KI-TOKEN-REDUCTION-01 — Token Reduction Strategies (code-review-graph + agents-course)
 **Nguồn:** tirth8205/code-review-graph + huggingface/agents-course
 **Ngày:** 2026-03-23 | **Verdict:** REFERENCE — áp dụng ngay vào OmniClaw

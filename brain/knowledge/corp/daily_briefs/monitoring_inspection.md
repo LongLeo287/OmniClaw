@@ -1,3 +1,11 @@
+---
+id: monitoring-inspection
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.646892
+---
+
 # Monitoring & Inspection — Daily Brief
 # Channel: shared-context/corp/daily_briefs/monitoring_inspection.md
 # Updated by: monitor-chief-agent at end of each active cycle

@@ -1,3 +1,11 @@
+---
+id: deep-dive-instructions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.489807
+---
+
 # Deep-Dive Documentation Instructions
 
 <workflow>

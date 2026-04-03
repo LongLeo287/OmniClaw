@@ -1,3 +1,11 @@
+---
+id: benchmark-report
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.602192
+---
+
 # 📊 Agent Skill Benchmark Report
 
 > Generated: 2026-03-07T17:47:03.158Z

@@ -22,12 +22,12 @@ healed_at: 2026-04-02T20:29:07.329407
 - **Stars:** ⭐ 36 | **Forks:** 🍴 11
 - **Language:** N/A | **License:** Unknown
 - **Last updated:** 2026-03-07
-- **Status trong AI OS:** 🔖 PENDING/APPROVE
+- **Status in AI OS:** 🔖 PENDING/APPROVE
 
 ## Description:
 springboot-best-practices
 
-## README (trích đầu)
+## README (excerpt)
 ```
 # Spring Boot Best Practices Skill
 
@@ -37,11 +37,11 @@ springboot-best-practices
 
 
 
-Bộ công cụ tự động quét mã nguồn Spring Boot, đánh giá mức tuân thủ **174 best practices** trong **19 lĩnh vực**, chấm điểm 0-100 mỗi domain với trọng số. Hỗ trợ cả **Claude Code** và **Google Antigravity**.
+An automated tool that scans Spring Boot source code, evaluates compliance with **174 best practices** across **19 domains**, scores 0-100 per domain with weights. Supports both **Claude Code** and **Google Antigravity**.
 
 
 
-> Bổ sung cho [Engineering Failures Audit Skill](https://github.com/mduongvandinh/engineering-failures/) — skill này **đề xuất chuẩn mực** (proactive), còn Engineering Failures **phát hiện lỗi** (reactive).
+> Complements the [Engineering Failures Audit Skill](https://github.com/mduongvandinh/engineering-failures/) — this skill **proposes standards** (proactive), while Engineering Failures **detects errors** (reactive).
 
 
 
@@ -49,31 +49,31 @@ Bộ công cụ tự động quét mã nguồn Spring Boot, đánh giá mức tu
 
 
 
-## Mục lục
+## Table of Contents
 
 
 
-- [Installation:](#cài-đặt)
+- [Installation:](#installation)
 
   - [Claude Code](#claude-code)
 
   - [Google Antigravity](#google-antigravity)
 
-- [Sử dụng](#sử-dụng)
+- [Usage](#usage)
 
-  - [Claude Code](#sử-dụng-trong-claude-code)
+  - [Claude Code](#usage-in-claude-code)
 
-  - [Google Antigravity](#sử-dụng-trong-google-antigravity)
+  - [Google Antigravity](#usage-in-google-antigravity)
 
-- [19 Lĩnh vực](#19-lĩnh-vực)
+- [19 Domains](#19-domains)
 
-- [Mức độ & Chấm điểm](#mức-độ--chấm-điểm)
+- [Levels & Scoring](#levels--scoring)
 
-- [Cấu trúc dự án](#cấu-trúc-dự-án)
+- [Project Structure](#project-structure)
 
-- [Format mỗi best practice](#format-mỗi-best-practice)
+- [Format of Each Best Practice](#format-of-each-best-practice)
 
-- [Giấy phép](#giấy-phép)
+- [License](#license)
 
 
 
@@ -89,7 +89,7 @@ Bộ công cụ tự động quét mã nguồn Spring Boot, đánh giá mức tu
 
 
 
-**Cách 1: Clone trực tiếp**
+**Method 1: Direct Clone**
 
 
 
@@ -103,7 +103,7 @@ git clone https://github.com/mduongvandinh/springboot-best-practices.git \
 
 
 
-**Cách 2: Copy thủ công**
+**Method 2: Manual Copy**
 
 
 
@@ -115,7 +115,7 @@ cp -r springboot-best-practices/ ~/.claude/skills/springboot-best-practices/
 
 
 
-**Xác nhận Installation:**
+**Verify Installation:**
 
 
 
@@ -147,7 +147,7 @@ git clone https://github.com/mduongvandinh/springboot-best-practices.git \
 
 
 
-**Step 2: Chuyển đổi cấu trúc**
+**Step 2: Convert Structure**
 
 
 
@@ -157,13 +157,13 @@ cd ~/.gemini/antigravity/skills/springboot-best-practices
 
 
 
-# Đổi skill file → SKILL.md
+# Rename skill file → SKILL.md
 
 mv springboot-best-practices.skill SKILL.md
 
 
 
-# Đổi knowledge/ → references/
+# Rename knowledge/ → references/
 
 mv knowledge references
 
@@ -171,11 +171,11 @@ mv knowledge references
 
 
 
-**Step 3: Thêm metadata vào đầu SKILL.md**
+**Step 3: Add Metadata to Top of SKILL.md**
 
 
 
-Mở `SKILL.md` và thêm header:
+Open `SKILL.md` and add header:
 
 
 
@@ -185,23 +185,23 @@ Mở `SKILL.md` và thêm header:
 
 name: Spring Boot Best Practices
 
-description: Quét và chấm điểm dự án Spring Boot theo 174 best practices, 19 domains. Tự động phát hiện vi phạm và đề xuất cải thiện.
+description: Scan and score Spring Boot projects against 174 best practices, 19 domains. Automatically detect violations and propose improvements.
 
 ---
 
 
 
-(... giữ nguyên nội dung phía dưới ...)
+(... keep rest of content below ...)
 
 ```
 
 
 
-**Bước 4 (tuỳ chọn): Tạo workflow trigger `/sbp`**
+**Step 4 (optional): Create Workflow Trigger `/sbp`**
 
 
 
-Tạo file `~/.gemini/antigravity/global_workflows/sbp.md`:
+Create file `~/.gemini/antigravity/global_workflows/sbp.md`:
 
 
 
@@ -211,23 +211,23 @@ Tạo file `~/.gemini/antigravity/global_workflows/sbp.md`:
 
 name: Spring Boot Best Practices Audit
 
-description: Quét và chấm điểm Spring Boot project
+description: Scan and score Spring Boot project
 
 ---
 
 
 
-Đọc tất cả references trong skill springboot-best-practices,
+Read all references in springboot-best-practices skill,
 
-sau đó quét source code trong workspace hiện tại và chấm điểm
+then scan source code in current workspace and score
 
-theo 174 practices, 19 domains. Xuất báo cáo chi tiết.
+against 174 practices, 19 domains. Output detailed report.
 
 ```
 
 
 
-**Xác nhận Installation:**
+**Verify Installation:**
 
 
 
@@ -241,7 +241,7 @@ ls ~/.gemini/antigravity/skills/springboot-best-practices/
 
 
 
-> **Note:** Antigravity hỗ trợ Claude Sonnet 4.5 — bạn có thể chọn model Claude thay vì Gemini khi chạy audit.
+> **Note:** Antigravity supports Claude Sonnet 4.5 — you can choose Claude model instead of Gemini when running audits.
 
 
 
@@ -249,22 +249,17 @@ ls ~/.gemini/antigravity/skills/springboot-best-practices/
 
 
 
-## Sử dụng
+## Usage
 
 
 
-### Sử dụng trong Claude Code
+### Usage in Claude Code
 
 
 
 ```bash
 
-# Quét toàn bộ dự án
+# Scan entire project
 
 /springboot-best-prac
 ```
-
----
-*Ingested: 2026-03-27 | Source: GitHub API | Owner: Dept 07 Knowledge*
-```
-

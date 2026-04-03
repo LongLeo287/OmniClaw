@@ -1,0 +1,5 @@
+Source: https://github.com/wrsmith108/linear-claude-skill
+Type: REPO
+Agent: batch-intake-agent
+Route: brain/knowledge/repos/
+Date: 2026-03-27

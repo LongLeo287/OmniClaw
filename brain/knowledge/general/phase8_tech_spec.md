@@ -8,57 +8,57 @@ healed_at: 2026-04-02T20:29:20.602271
 
 # Technical Specification: Phase 8 (Hardening & Scalability)
 
-Tài liệu này cung cấp hướng dẫn kỹ thuật chi tiết để triển khai các tính năng trong Phase 8.
+This document provides detailed technical guidance for implementing the features in Phase 8.
 
 ---
 
 ## 1. End-to-End Encryption (BM-021)
-Mục tiêu: Mã hóa dữ liệu bookmark trước khi đưa lên `chrome.storage.sync`.
+Goal: Encrypt bookmark data before saving to `chrome.storage.sync`.
 
-### Luồng xử lý (Logic Flow)
-1. **Khởi tạo**: Người dùng nhập mật khẩu (Passphrase) qua Settings.
-2. **Key Derivation**: Sử dụng `PBKDF2` (với `SHA-256` và `Salt`) để tạo ra một đối tượng `CryptoKey` mạnh từ mật khẩu.
-3. **Mã hóa (Encryption)**:
-   - Thuật toán đề xuất: `AES-GCM` (256-bit).
-   - Trước khi gọi `SyncService.syncChange`, dữ liệu JSON sẽ được mã hóa thành một mảng bytes (Base64).
-4. **Lưu trữ**: Chỉ bản mã (Ciphertext) và IV (Initialization Vector) được lưu lên cloud.
-5. **Giải mã (Decryption)**: Khi kéo dữ liệu từ thiết bị khác, yêu cầu user nhập Passphrase để giải mã cục bộ.
+### Logic Flow
+1. **Initialization**: User enters passphrase through Settings.
+2. **Key Derivation**: Use `PBKDF2` (with `SHA-256` and `Salt`) to generate a strong `CryptoKey` object from the passphrase.
+3. **Encryption**:
+   - Recommended algorithm: `AES-GCM` (256-bit).
+   - Before calling `SyncService.syncChange`, JSON data will be encrypted to a byte array (Base64).
+4. **Storage**: Only ciphertext and IV (Initialization Vector) are stored in the cloud.
+5. **Decryption**: When pulling data from another device, prompt user to enter passphrase for local decryption.
 
-### Công nghệ sử dụng
+### Technologies Used
 - Web Crypto API (`window.crypto.subtle`).
 
 ---
 
 ## 2. Virtual Scrolling Implementation (BM-022)
-Mục tiêu: Đảm bảo UI mượt mà với 10,000+ bookmark.
+Goal: Ensure smooth UI with 10,000+ bookmarks.
 
-### Nguyên lý kỹ thuật
-Thay vì render toàn bộ 10,000 `div` vào DOM, chúng ta chỉ duy trì khoảng 20-30 `div` tương ứng với vùng nhìn thấy (Viewport).
+### Technical Principle
+Instead of rendering all 10,000 `div`s in the DOM, only maintain about 20-30 `div`s corresponding to the visible viewport.
 
-### Các bước triển khai
-1. **Cố định Item Height**: Mỗi dòng bookmark/folder phải có chiều cao cố định (Example: `40px`).
-2. **Container Wrapper**: Một div mẹ có `overflow-y: auto` và tổng chiều cao là `count * 40px`.
+### Implementation Steps
+1. **Fixed Item Height**: Each bookmark/folder row must have a fixed height (Example: `40px`).
+2. **Container Wrapper**: A parent div with `overflow-y: auto` and total height = `count * 40px`.
 3. **Dynamic Rendering**:
-   - Khi user cuộn: Tính toán `scrollTop`.
-   - Xác định `startIndex = Math.floor(scrollTop / 40)`.
-   - Xác định `endIndex = startIndex + (viewportHeight / 40)`.
-4. **Render Slice**: Chỉ render các Entity trong khoảng `[startIndex, endIndex]`.
-5. **Transform/Offset**: Sử dụng `transform: translateY(...)` để đặt các item vào đúng vị trí trong vùng cuộn.
+   - When user scrolls: Calculate `scrollTop`.
+   - Determine `startIndex = Math.floor(scrollTop / 40)`.
+   - Determine `endIndex = startIndex + (viewportHeight / 40)`.
+4. **Render Slice**: Render only entities in the `[startIndex, endIndex]` range.
+5. **Transform/Offset**: Use `transform: translateY(...)` to position items within the scroll area.
 
 ---
 
 ## 3. Automated Local Backup (BM-023)
-Mục tiêu: Chống mất dữ liệu hoàn toàn.
+Goal: Prevent total data loss.
 
 ### Logic
-- Sử dụng `chrome.alarms` để lên lịch chạy ngầm hàng tuần.
-- Task sẽ tự động gọi `repo.getTree()`, chuyển đổi thành JSON và lưu vào `File System Access API` hoặc tải xuống tự động dưới dạng `.json`.
+- Use `chrome.alarms` to schedule background jobs weekly.
+- Task will automatically call `repo.getTree()`, convert to JSON, and save into `File System Access API` or auto-download as `.json`.
 
 ---
 
 ## 4. Technical Debt Audit (BM-024)
-- **Refactoring**: Tách các callback lồng nhau (callback hell) sang `async/await`.
-- **Typing**: Chuyển dần sang mô hình chặt chẽ hơn để tránh lỗi `undefined` khi truy cập bookmark properties.
+- **Refactoring**: Split nested callbacks (callback hell) to use `async/await`.
+- **Typing**: Gradually enforce stricter typing to avoid `undefined` property access errors in bookmarks.
 
 ---
-*Tài liệu này được soạn thảo để cung cấp Blueprint cho lập trình viên thực thi.*
+*This document is drafted to provide a Blueprint for implementing developers.*

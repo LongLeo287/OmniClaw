@@ -1,3 +1,11 @@
+---
+id: aaa-example
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.472848
+---
+
 # AAA Structure Example
 
 Every test must follow Arrange-Act-Assert:

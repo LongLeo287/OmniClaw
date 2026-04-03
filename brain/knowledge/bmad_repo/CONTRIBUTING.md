@@ -1,3 +1,11 @@
+---
+id: contributing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.487579
+---
+
 # Contributing to BMad
 
 Thank you for considering contributing! We believe in **Human Amplification, Not Replacement** — bringing out the best thinking in both humans and AI through guided collaboration.

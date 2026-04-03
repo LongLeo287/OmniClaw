@@ -1,3 +1,11 @@
+---
+id: knowledge-index
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.436460
+---
+
 # 🗂️ Knowledge Index
 **Last Updated:** 2026-03-23
 

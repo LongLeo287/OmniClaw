@@ -1,3 +1,11 @@
+---
+id: agentic-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.442469
+---
+
 # Agentic Architecture Patterns
 **Source:** `FareedKhan-dev/all-agentic-architectures` (17+ patterns, LangChain/LangGraph)  
 **Extracted:** 2026-03-14 for OmniClaw knowledge base

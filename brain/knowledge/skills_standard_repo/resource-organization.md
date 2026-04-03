@@ -1,3 +1,11 @@
+---
+id: resource-organization
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.744569
+---
+
 # Resource Organization (Token-Saving Strategy)
 
 Strategic use of directories to maximize token efficiency and context management.

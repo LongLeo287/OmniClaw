@@ -1,3 +1,11 @@
+---
+id: ki-mcp-official-servers-01
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.689783
+---
+
 # KI-MCP-OFFICIAL-SERVERS-01 — Official MCP Server Registry
 **Nguồn:** modelcontextprotocol/servers (Anthropic official)
 **Stats:** 907 contributors | 24 releases | MIT | 50k+ stars

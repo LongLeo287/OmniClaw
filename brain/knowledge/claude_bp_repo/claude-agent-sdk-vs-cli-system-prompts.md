@@ -1,3 +1,11 @@
+---
+id: claude-agent-sdk-vs-cli-system-prompts
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.593761
+---
+
 # Claude Agent SDK vs Claude CLI: System Prompts and Output Consistency
 
 <table width="100%">

@@ -1,3 +1,11 @@
+---
+id: mocking-standards
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.419318
+---
+
 # Mocking Standards
 
 Strict guidelines for mock classes. Use shared mocks for all cross-feature components — no duplication.

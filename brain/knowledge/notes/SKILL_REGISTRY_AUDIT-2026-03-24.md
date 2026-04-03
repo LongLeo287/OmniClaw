@@ -1,3 +1,11 @@
+---
+id: skill-registry-audit-2026-03-24
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.924981
+---
+
 # SKILL_REGISTRY.json Audit Report - 2026-03-24
 
 ## Summary

@@ -1,3 +1,11 @@
+---
+id: verification-checklist
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.627214
+---
+
 # Verification Checklist — README CONCEPTS Section
 
 Rules for verifying CONCEPTS table accuracy. Each rule is checked during every workflow run.

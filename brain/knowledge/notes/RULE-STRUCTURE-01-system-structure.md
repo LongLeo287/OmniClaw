@@ -1,3 +1,11 @@
+---
+id: rule-structure-01-system-structure
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.916876
+---
+
 # [RULE-STRUCTURE-01] OmniClaw System & Data Structure
 # Issued by: CEO LongLeo | Date: 2026-03-22 | Status: MANDATORY
 # Scope: All agents — Antigravity, Claude Code, Orchestrator Pro, all Corp workers

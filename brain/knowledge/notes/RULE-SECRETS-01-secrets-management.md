@@ -1,3 +1,11 @@
+---
+id: rule-secrets-01-secrets-management
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.906179
+---
+
 # RULE-SECRETS-01 — Secrets Management Policy
 **Issued:** 2026-03-31
 **Status:** MANDATORY

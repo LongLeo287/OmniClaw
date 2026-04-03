@@ -1,3 +1,11 @@
+---
+id: claude-agent-memory
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.592879
+---
+
 # Claude Code: Agent Memory Frontmatter
 
 Persistent memory for subagents — enabling agents to learn, remember, and build knowledge across sessions.

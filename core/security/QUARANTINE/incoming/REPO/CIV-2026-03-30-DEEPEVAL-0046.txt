@@ -1,0 +1,6 @@
+Source: https://github.com/HoangNguyen0403/agent-skills-standard
+Type: REPO_GOLDEN
+Score: 33
+Features: Golden Match [AGENT, GRAPH, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

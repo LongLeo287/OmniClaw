@@ -1,3 +1,11 @@
+---
+id: content-intake
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.640217
+---
+
 # Daily Brief — Content Intake — 2026-03-20
 # Agent: intake-agent (Content Intake / Ingestion Dept)
 # Task: C3-CONTENT_INTAKE-001 | Cycle: 3

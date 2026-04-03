@@ -1,3 +1,11 @@
+---
+id: tools-registry
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.894090
+---
+
 # OmniClaw — Master Tools Registry
 # Path: $OMNICLAW_ROOT\registry\TOOLS_REGISTRY.md
 # Updated: 2026-03-17

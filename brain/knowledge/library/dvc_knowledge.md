@@ -1,3 +1,11 @@
+---
+id: dvc-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:21.785807
+---
+
 # KNOWLEDGE EXTRACT: dvc
 > **Extracted on:** 2026-03-29 20:36:52
 > **Source:** dvc

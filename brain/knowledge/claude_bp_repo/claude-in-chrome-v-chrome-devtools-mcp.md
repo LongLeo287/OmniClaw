@@ -1,3 +1,11 @@
+---
+id: claude-in-chrome-v-chrome-devtools-mcp
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.602222
+---
+
 # Comprehensive Browser Automation MCP Comparison Report
 
 <table width="100%">

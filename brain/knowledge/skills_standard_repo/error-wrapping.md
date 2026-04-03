@@ -1,3 +1,11 @@
+---
+id: error-wrapping
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.031565
+---
+
 # Error Wrapping Patterns
 
 ## Adding Context

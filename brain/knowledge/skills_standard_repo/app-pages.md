@@ -1,3 +1,11 @@
+---
+id: app-pages
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.553098
+---
+
 # Centralized Route Management
 
 Organizing routes in a single location for scalability.

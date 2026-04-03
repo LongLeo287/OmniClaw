@@ -1,3 +1,11 @@
+---
+id: project-connection-spec
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.675948
+---
+
 # Project Connection Protocol — OmniClaw v3.0
 # Authority: Tier 0 (Constitution)
 # Updated: 2026-03-16

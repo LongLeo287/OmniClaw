@@ -1,3 +1,11 @@
+---
+id: dls-modular-pattern
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.972604
+---
+
 # V DLS Modular Pattern (IDEAL Architecture)
 
 **Based on:** `/Users/nguyenhuyhoang/FlutterProject/C3/flutter-temp/packages/v_dls`

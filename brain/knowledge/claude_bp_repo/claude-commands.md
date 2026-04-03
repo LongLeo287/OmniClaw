@@ -1,3 +1,11 @@
+---
+id: claude-commands
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.600716
+---
+
 # Commands Best Practice
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2013%2C%202026%204%3A47%20PM%20PKT-white?style=flat&labelColor=555)<br>

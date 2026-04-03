@@ -1,3 +1,11 @@
+---
+id: redux
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.660846
+---
+
 # Redux Toolkit (RTK) in Next.js
 
 Best practices for integrating Redux Toolkit in Next.js projects, following the [Official Redux Style Guide](https://redux.js.org/style-guide/).

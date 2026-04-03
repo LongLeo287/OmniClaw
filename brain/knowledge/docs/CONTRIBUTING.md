@@ -1,3 +1,11 @@
+---
+id: contributing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.715252
+---
+
 # CONTRIBUTING.md — How to Add Repos, Skills & Agents to OmniClaw
 # Version: 1.0 | Created: 2026-03-16
 

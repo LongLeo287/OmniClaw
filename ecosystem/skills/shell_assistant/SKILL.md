@@ -1,6 +1,6 @@
 ---
 name: shell-assistant
-description: "Load skill này khi cần chạy terminal commands, automation scripts, hoặc system operations trên Windows/Linux."
+description: "Load this skill when needing to run terminal commands, automation scripts, or system operations on Windows/Linux."
 version: 1.0.0
 tier: 1
 domain: devops
@@ -11,18 +11,18 @@ source: OmniClaw V3.1 Skill Creator Ultra
 
 # SHELL ASSISTANT
 
-## Mục Đích
-Terminal automation và system scripting — chạy lệnh shell an toàn, build pipelines, và system management.
+## Purpose
+Terminal automation and system scripting — safely run shell commands, build pipelines, and system management.
 
 ## Platform Support
 - **Windows**: PowerShell (primary), CMD (fallback)
 - **Cross-platform**: Python scripts
 
 ## Safety Rules (STRICT)
-- KHÔNG chạy `rm -rf`, `format`, `del /f /s`
-- KHÔNG modify files trong `.claudeignore`
-- LUÔN dùng `-WhatIf` khi test destructive operations
-- LUÔN backup trước mass changes
+- DO NOT run `rm -rf`, `format`, `del /f /s`
+- DO NOT modify files in `.claudeignore`
+- ALWAYS use `-WhatIf` when testing destructive operations
+- ALWAYS backup before mass changes
 
 ## Scripts Hub
 `system/ops/scripts/` — 71+ pre-built scripts:

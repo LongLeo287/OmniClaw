@@ -1,3 +1,11 @@
+---
+id: agent-teams-prompt
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.589171
+---
+
 Create an agent team to build a time orchestration workflow that displays
 the current Dubai time as a visual SVG card. The workflow follows the
 Command → Agent → Skill architecture pattern:

@@ -1,0 +1,5 @@
+Source: https://github.com/smixs/creative-director-skill
+Type: REPO
+Agent: batch-intake-agent
+Route: brain/knowledge/repos/
+Date: 2026-03-27

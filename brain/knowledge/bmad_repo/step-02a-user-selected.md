@@ -1,3 +1,11 @@
+---
+id: step-02a-user-selected
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.527182
+---
+
 # Step 2a: User-Selected Techniques
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

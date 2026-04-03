@@ -2,20 +2,28 @@
     "git.ignoreLimitWarning": true,
     "githubPullRequests.queries": [
         {
+            "label": "Local Pull Request Branches",
+            "query": "default"
+        },
+        {
             "label": "Waiting For My Review",
-            "query": "is:open review-requested:${user}"
+            "query": "repo:${owner}/${repository} is:open review-requested:${user}"
         },
         {
             "label": "Assigned To Me",
-            "query": "is:open assignee:${user}"
+            "query": "repo:${owner}/${repository} is:open assignee:${user}"
         },
         {
             "label": "Created By Me",
-            "query": "is:open author:${user}"
+            "query": "repo:${owner}/${repository} is:open author:${user}"
         },
         {
             "label": "Mentioned Me",
-            "query": "is:open mentions:${user}"
+            "query": "repo:${owner}/${repository} is:open mentions:${user}"
+        },
+        {
+            "label": "All Open",
+            "query": "default"
         }
     ]
 }

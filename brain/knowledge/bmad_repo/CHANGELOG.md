@@ -1,3 +1,11 @@
+---
+id: changelog
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.484489
+---
+
 # Changelog
 
 ## [6.1.0] - 2026-03-12

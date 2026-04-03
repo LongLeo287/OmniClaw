@@ -1,3 +1,11 @@
+---
+id: 2026-03-26-brain-insights
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.712394
+---
+
 # Distilled Insights from Brain Sessions (03/2026)
 # Source: .gemini/antigravity/brain/ — March 2026 Sessions
 # Generated: 2026-03-26 | By: facility-agent (Dept 22) + learning-agent (Dept 14)

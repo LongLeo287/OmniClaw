@@ -1,3 +1,11 @@
+---
+id: advanced-workflow
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.490004
+---
+
 # Advanced Large-Scale CI/CD
 
 For large projects, a linear workflow is too slow. Use parallel jobs and aggressive caching.

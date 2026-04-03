@@ -1,3 +1,11 @@
+---
+id: step-04-idea-organization
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.544097
+---
+
 # Step 4: Idea Organization and Action Planning
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

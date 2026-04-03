@@ -1,3 +1,11 @@
+---
+id: client-reception
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.639541
+---
+
 # Daily Brief — Client Reception — 2026-03-20
 # Agent: front-desk-agent (Client Reception Dept)
 # Task: C3-CLIENT-001 | Cycle: 3

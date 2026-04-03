@@ -1,3 +1,11 @@
+---
+id: claude
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.677096
+---
+
 # 🚀 CLAUDE.md — Tiem Nuoc Nho v5 (PRJ-004)
 # Version: 1.1 | Updated: 2026-03-16
 # Authority: Tier 0 (Project Constitution)

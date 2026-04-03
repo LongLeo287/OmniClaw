@@ -1,3 +1,11 @@
+---
+id: effectiveness
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.005507
+---
+
 # Skill Effectiveness & Token Economy Verification
 
 This document outlines the rationale and verified impact of the "High-Density" standard applied to these skills.

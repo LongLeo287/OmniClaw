@@ -1,3 +1,11 @@
+---
+id: openclaw-tools
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.448867
+---
+
 # SKILL: OpenClaw Core Tools
 # Competence: Worker & Manager
 # Description: A powerful CLI toolkit that allows Agents to surf the web, run code, or manage memory.

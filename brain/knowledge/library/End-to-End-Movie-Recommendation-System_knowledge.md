@@ -1,3 +1,11 @@
+---
+id: end-to-end-movie-recommendation-system-knowledge
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:21.983359
+---
+
 # KNOWLEDGE EXTRACT: End-to-End-Movie-Recommendation-System
 > **Extracted on:** 2026-03-29 22:04:25
 > **Source:** End-to-End-Movie-Recommendation-System

@@ -1,3 +1,11 @@
+---
+id: suspense-bailout
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.027016
+---
+
 # Next.js Suspense Bailout Rules
 
 Certain hooks cause an "Opt-out" of Static Generation, forcing a CSR (Client-Side Rendering) bailout for the entire page if not wrapped in a `<Suspense>` boundary.

@@ -1,3 +1,11 @@
+---
+id: 1-video-workflow
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.588334
+---
+
 # Video 1: From Vibe Coding to Agentic Engineering — Workflows with Claude Code
 
 **Total duration: ~5 minutes**

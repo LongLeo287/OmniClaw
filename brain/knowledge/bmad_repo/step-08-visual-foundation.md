@@ -1,3 +1,11 @@
+---
+id: step-08-visual-foundation
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.563398
+---
+
 # Step 8: Visual Foundation
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -1,3 +1,11 @@
+---
+id: ki-batch03-claude-mem
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.574339
+---
+
 # KI: claude-mem — Auto Memory cho Claude Code Sessions
 
 ## Metadata

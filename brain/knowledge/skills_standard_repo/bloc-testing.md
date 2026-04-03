@@ -1,3 +1,11 @@
+---
+id: bloc-testing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.632608
+---
+
 # BLoC Testing with `bloc_test`
 
 `blocTest` ensures your events trigger the correct sequence of states.

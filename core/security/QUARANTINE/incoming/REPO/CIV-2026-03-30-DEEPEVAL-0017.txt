@@ -1,0 +1,6 @@
+Source: https://github.com/fdhhhdjd/Class-AI-Agent
+Type: REPO_GOLDEN
+Score: 23
+Features: Golden Match [AGENT, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

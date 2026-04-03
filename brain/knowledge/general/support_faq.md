@@ -1,3 +1,11 @@
+---
+id: support-faq
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:09.955976
+---
+
 # Support FAQ
 # Owner: support dept | Maintained by: faq-agent
 # Updated: 2026-03-22 | Format: auto-updated after each novel query

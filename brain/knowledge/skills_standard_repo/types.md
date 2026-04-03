@@ -1,3 +1,11 @@
+---
+id: types
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.226020
+---
+
 # Notification Type Standards
 
 ## 1. Business Logic Types

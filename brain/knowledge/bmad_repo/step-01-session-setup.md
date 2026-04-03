@@ -1,3 +1,11 @@
+---
+id: step-01-session-setup
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.516360
+---
+
 # Step 1: Session Setup and Continuation Detection
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

@@ -1,3 +1,11 @@
+---
+id: unit-testing
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.237813
+---
+
 # Unit Testing Strategies
 
 Unit tests verify the smallest parts of your application (functions, methods, classes) in isolation.

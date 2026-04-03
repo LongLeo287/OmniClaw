@@ -1,3 +1,11 @@
+---
+id: patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.572605
+---
+
 # React Native Components Reference
 
 Advanced patterns for high-density, reusable mobile components.

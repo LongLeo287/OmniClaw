@@ -1,3 +1,11 @@
+---
+id: step-02-discussion-orchestration
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.521922
+---
+
 # Step 2: Discussion Orchestration and Multi-Agent Conversation
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

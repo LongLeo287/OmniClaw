@@ -1,3 +1,11 @@
+---
+id: instructions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.498405
+---
+
 # Document Project Workflow Router
 
 <critical>Communicate all responses in {communication_language}</critical>

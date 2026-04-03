@@ -1,3 +1,11 @@
+---
+id: scaling-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.841809
+---
+
 # Scaling Patterns for Next.js Rendering
 
 ## 1. The "Static Shell" Pattern (Recommended)

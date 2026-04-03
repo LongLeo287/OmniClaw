@@ -1,3 +1,11 @@
+---
+id: finance
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.642077
+---
+
 # Daily Brief — Finance — 2026-03-20
 # Agent: cfo-agent (Finance Dept)
 # Task: C2-FIN-001 | Cycle: 2

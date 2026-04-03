@@ -1,3 +1,11 @@
+---
+id: diagram-selection
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.951454
+---
+
 # Diagram Selection Guide
 
 | Diagram Type              | Best For...                                      | Audience         | Tool/Syntax               |

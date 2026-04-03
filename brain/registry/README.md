@@ -1,3 +1,11 @@
+---
+id: readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.820368
+---
+
 # Registry — How It Works
 # $OMNICLAW_ROOT\registry\
 

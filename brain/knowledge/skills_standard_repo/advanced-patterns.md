@@ -1,3 +1,11 @@
+---
+id: advanced-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.480789
+---
+
 # NestJS Advanced Architecture Patterns
 
 ## Dynamic Modules

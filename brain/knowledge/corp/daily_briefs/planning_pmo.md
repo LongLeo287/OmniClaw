@@ -1,3 +1,11 @@
+---
+id: planning-pmo
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.648612
+---
+
 # Daily Brief — Planning & PMO — 2026-03-20
 # Agent: project-shepherd (PMO Dept)
 # Task: C2-PMO-001 | Cycle: 2

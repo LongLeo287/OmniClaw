@@ -1,3 +1,11 @@
+---
+id: theming
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.190019
+---
+
 # React Native Styling Reference
 
 Advanced theming, responsive design, and layout patterns.

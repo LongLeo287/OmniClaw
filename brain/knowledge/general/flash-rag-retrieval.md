@@ -14,23 +14,23 @@ healed_at: 2026-04-02T20:19:25.210054
 ---
 description: How retrieval-master executes High-Speed RAG queries
 ---
-# Workflow Bão Táp: FlashRAG Retrieval (Dept 18)
+# Storm Workflow: FlashRAG Retrieval (Dept 18)
 
-## Khởi đầu (The Prompt)
-- Bất kỳ Agent nào cần tra cứu dữ liệu từ `PROCESSED_LIBRARY.md` hoặc các docs dài đều phải gửi Input vào `retrieval-master`.
-- Example: `[Context_Request]: Configuration: Redis trong file KI gốc ở đâu?`
+## The Prompt
+- Any Agent needing to look up data from `PROCESSED_LIBRARY.md` or other long documents must send the Input to `retrieval-master`.
+- Example: `[Context_Request]: Configuration: Where is Redis in the original KI file?`
 
-## Giai đoạn 1: Lập Chỉ Mục Kép
-- `retrieval-master` phân giải Prompt thành 2 mảnh: Semantics (Ngữ nghĩa) và Keywords (Từ vựng).
-- Kích hoạt thuật toán Vectorizing. Nếu Database chưa nhúng (Embed), kích hoạt Semantic Search bằng `grep_search` kết hợp Pattern Recognition.
+## Stage 1: Dual Indexing
+- `retrieval-master` breaks down the Prompt into 2 pieces: Semantics and Keywords.
+- Activates the Vectorizing algorithm. If the Database is not yet embedded, it activates Semantic Search using `grep_search` combined with Pattern Recognition.
 
-## Giai đoạn 2: Quét Song Song (Parallel Sweep)
-- **Path A (Dành cho Logic / Tư duy):** Chạy lệnh Regex để túm lấy các file có `##` hoặc `---` liên quan đến "Redis".
-- **Path B (Dành cho Trực diện):** Đọc nắp các dòng Context liền kề. Không load file trên 500 lines.
+## Stage 2: Parallel Sweep
+- **Path A (For Logic / Reasoning):** Runs a Regex command to grab files with `##` or `---` related to "Redis".
+- **Path B (For Direct Hits):** Reads the adjacent Context lines. Does not load files over 500 lines.
 
-## Giai đoạn 3: Phản hồi Nén (Truncated Answer)
-- Trích xuất ra duy nhất 1 đoạn Text (khoảng 300 từ) chứa trực tiếp Lệnh hoặc Logic gốc.
-- Gửi ngược lại cho Node gọi: "Tôi không gửi file. Tôi gửi viên nén thông tin!".
+## Stage 3: Truncated Answer
+- Extracts only a single piece of Text (about 300 words) that directly contains the original Command or Logic.
+- Sends back to the calling Node: "I'm not sending a file. I'm sending an information pellet!".
 
 > [!NOTE] FlashRAG Concept
-> Tối ưu hóa API Call bằng cách giảm độ dày của Prompt. Mọi cục Text thừa thãi bị chặt xén hết trước khi gửi sang Reasoner.
+> Optimize API Calls by reducing the thickness of the Prompt. All redundant Text chunks are trimmed before being sent to the Reasoner.

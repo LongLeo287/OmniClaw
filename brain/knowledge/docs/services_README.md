@@ -1,3 +1,11 @@
+---
+id: services-readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.717819
+---
+
 # OmniClaw Corp — Services
 
 Folder tập trung toàn bộ dịch vụ. Mọi thứ khởi động, dừng, Configuration: từ đây.

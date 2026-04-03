@@ -1,0 +1,6 @@
+Source: https://github.com/kgrzybek/modular-monolith-with-ddd
+Type: REPO_GOLDEN
+Score: 28
+Features: Golden Match [GRAPH, WORKFLOW]
+Agent: dept-01-golden-evaluator
+Date: 2026-03-30

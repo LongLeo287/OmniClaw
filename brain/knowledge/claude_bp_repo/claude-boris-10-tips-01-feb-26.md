@@ -1,3 +1,11 @@
+---
+id: claude-boris-10-tips-01-feb-26
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.595531
+---
+
 # 10 Tips for Using Claude Code — From the Claude Code Team
 
 A summary of team tips shared by Boris Cherny ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on February 1, 2026.

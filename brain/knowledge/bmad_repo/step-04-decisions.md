@@ -1,3 +1,11 @@
+---
+id: step-04-decisions
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.542254
+---
+
 # Step 4: Core Architectural Decisions
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

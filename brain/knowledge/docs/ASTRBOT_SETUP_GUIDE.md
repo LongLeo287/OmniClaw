@@ -1,3 +1,11 @@
+---
+id: astrbot-setup-guide
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.714528
+---
+
 # OmniClaw Corp — AstrBot Setup Guide
 # Dept 03 (IT Infrastructure) | Updated: 2026-03-18
 

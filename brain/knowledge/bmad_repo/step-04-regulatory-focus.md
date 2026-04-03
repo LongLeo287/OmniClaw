@@ -1,3 +1,11 @@
+---
+id: step-04-regulatory-focus
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.545837
+---
+
 # Domain Research Step 4: Regulatory Focus
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

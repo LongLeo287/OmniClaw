@@ -6,71 +6,71 @@ tags: [auto-healed]
 healed_at: 2026-04-02T20:29:00.596953
 ---
 
-# KI-CONTEXT7-DEEP-01 — Context7: Real-Time Doc Injection cho LLM
-**Loại:** Deep Analysis — MCP Integration
-**Nguồn:** github.com/upstash/context7 + context7.com/docs + context7.com/brain/knowledge/docs_legacy/api-guide
-**Ngày:** 2026-03-23 | **Verdict:** ✅ APPROVE — Tier 1 candidate
-**Priority:** P1 — Implement ngay
+# KI-CONTEXT7-DEEP-01 — Context7: Real-Time Doc Injection for LLM
+**Type:** Deep Analysis — MCP Integration
+**Source:** github.com/upstash/context7 + context7.com/docs + context7.com/brain/knowledge/docs_legacy/api-guide
+**Date:** 2026-03-23 | **Verdict:** APPROVE — Tier 1 candidate
+**Priority:** P1 — Implement immediately
 
 ---
 
-## 1. Problem: context7 giải quyết (WHY — Quan trọng nhất)
+## 1. Problem: Context7 Solves (WHY — Most Important)
 
-| Problem: | Description: | Tác động trong OmniClaw |
+| Problem | Description | Impact in OmniClaw |
 |--------|-------|---------------------|
-| ❌ Outdated training data | LLM biết API của Next.js 12, nhưng đang code với Next.js 15 | Agent viết code sai, debug mất giờ |
-| ❌ Hallucinated APIs | Agent "bịa" function không tồn tại | Code crash, mất trust |
-| ❌ Generic answers | Không biết version-specific behavior | Sai config, deprecated patterns |
+| Outdated training data | LLM knows Next.js 12 API, but coding with Next.js 15 | Agent writes wrong code, wastes time debugging |
+| Hallucinated APIs | Agent "invents" non-existent functions | Code crashes, loses trust |
+| Generic answers | Doesn't know version-specific behavior | Wrong config, deprecated patterns |
 
-**Context7 giải quyết:** Pull docs real-time từ source → inject vào prompt → Agent có thông tin chính xác, hiện tại.
+**Context7 solves:** Pull docs real-time from source → inject into prompt → Agent has accurate, current information.
 
 ---
 
-## 2. Cách hoạt động (HOW)
+## 2. How It Works (HOW)
 
 ```
 User prompt: "Create Next.js middleware with JWT check. use context7"
                                     ↓
-              context7 nhận thấy từ khóa "use context7"
+              context7 detects keyword "use context7"
                                     ↓
               → resolve-library-id("next.js")     → /vercel/next.js
                                     ↓
               → query-docs("/vercel/next.js", "middleware JWT")
                                     ↓
-              → Fetch real-time docs từ nextjs.org/docs
+              → Fetch real-time docs from nextjs.org/docs
                                     ↓
-              → Inject docs vào prompt context
+              → Inject docs into prompt context
                                     ↓
-              Agent viết code đúng cú pháp Next.js 15 ✅
+              Agent writes correct Next.js 15 syntax ✅
 ```
 
 ---
 
-## 3. Hai mode hoạt động
+## 3. Two Operating Modes
 
-### Mode A: CLI + Skill (Không cần MCP server)
+### Mode A: CLI + Skill (No MCP server needed)
 ```bash
 npx ctx7 setup --claude   # Claude Code
 npx ctx7 setup --cursor   # Cursor / Antigravity
 npx ctx7 setup             # Auto-detect
 ```
-- Cài Skill vào agent
-- Dùng CLI commands: `ctx7 library <name>` và `ctx7 docs <libraryId>`
-- **Phù hợp nhất cho OmniClaw Corp hiện tại** (không cần MCP server riêng)
+- Installs Skill into agent
+- Uses CLI commands: `ctx7 library <name>` and `ctx7 docs <libraryId>`
+- **Best fit for OmniClaw Corp currently** (no separate MCP server needed)
 
 ### Mode B: MCP Server (Full integration)
-- Đăng ký Context7 MCP server trong config
-- Agent gọi MCP tools trực tiếp
-- **Phù hợp cho Phase 2** khi MCP infrastructure đã ổn định
+- Register Context7 MCP server in config
+- Agent calls MCP tools directly
+- **Suitable for Phase 2** when MCP infrastructure is stable
 
 ---
 
 ## 4. MCP Tools (API)
 
-| Tool | Tham số | Features: |
+| Tool | Parameters | Features |
 |------|---------|-----------|
-| `resolve-library-id` | `libraryName` (required), `query` (required) | Tìm library ID từ tên |
-| `query-docs` | `libraryId` (required), `query` (required) | Lấy documentation snippet |
+| `resolve-library-id` | `libraryName` (required), `query` (required) | Find library ID from name |
+| `query-docs` | `libraryId` (required), `query` (required) | Get documentation snippet |
 
 **Library ID format:** `/owner/repo` — Example:
 - `/vercel/next.js` → Next.js docs
@@ -80,7 +80,7 @@ npx ctx7 setup             # Auto-detect
 
 ---
 
-## 5. REST API v2 (Cho custom integration)
+## 5. REST API v2 (For custom integration)
 
 ### Endpoint 1: Search Library
 ```
@@ -111,18 +111,18 @@ Response:
 }]
 ```
 
-### Python workflow mẫu:
+### Python workflow sample:
 ```python
 import requests
 headers = {"Authorization": "Bearer CONTEXT7_API_KEY"}
 
-# 1. Tìm library ID
+# 1. Find library ID
 libs = requests.get("https://context7.com/api/v2/libs/search",
     headers=headers,
     params={"libraryName": "supabase", "query": "auth email"}).json()
 lib_id = libs[0]["id"]  # "/supabase/supabase"
 
-# 2. Lấy docs
+# 2. Get docs
 docs = requests.get("https://context7.com/api/v2/context",
     headers=headers,
     params={"libraryId": lib_id, "query": "email password sign-up"}).json()
@@ -132,60 +132,60 @@ docs = requests.get("https://context7.com/api/v2/context",
 
 ## 6. Rate Limits & Plans
 
-| Tier | Rate limit | Usage: |
+| Tier | Rate limit | Usage |
 |------|-----------|-----------|
-| Không có API key | Thấp (anonymous) | Demo/test |
-| Free API key | Cao hơn | OmniClaw daily use |
-| Enterprise | Không giới hạn | Production scale |
+| No API key | Low (anonymous) | Demo/test |
+| Free API key | Higher | OmniClaw daily use |
+| Enterprise | Unlimited | Production scale |
 
-**Action:** Đăng ký free API key tại **context7.com/dashboard**
-→ Set `CONTEXT7_API_KEY` vào `MASTER.env`
+**Action:** Register free API key at **context7.com/dashboard**
+→ Set `CONTEXT7_API_KEY` in `MASTER.env`
 
 ---
 
-## 7. Tích hợp vào OmniClaw — Action Plan
+## 7. Integration into OmniClaw — Action Plan
 
-### Step 1: Cài CLI + Skill (Ngay hôm nay)
+### Step 1: Install CLI + Skill (Today)
 ```bash
-# Cho Antigravity (Cursor-compatible)
+# For Antigravity (Cursor-compatible)
 npx ctx7 setup --cursor
 
-# Cho Claude Code
+# For Claude Code
 npx ctx7 setup --claude
 ```
 
-### Step 2: Thêm Rule vào GEMINI.md + CLAUDE.md
+### Step 2: Add Rule to GEMINI.md + CLAUDE.md
 ```
 Always use Context7 when needing library/API documentation, code generation,
 or setup steps — without requiring explicit user request.
 ```
-*(Rule tự động kích hoạt, không cần user gõ "use context7" mỗi lần)*
+*(Rule auto-activates, no need for user to type "use context7" every time)*
 
-### Step 3: Đăng ký API key
-- Truy cập: context7.com/dashboard
-- Copy key vào: `$OMNICLAW_ROOT\MASTER.env`
-- Biến môi trường: `CONTEXT7_API_KEY=xxx`
+### Step 3: Register API key
+- Visit: context7.com/dashboard
+- Copy key to: `$OMNICLAW_ROOT\MASTER.env`
+- Environment variable: `CONTEXT7_API_KEY=xxx`
 
-### Bước 4: Test validation
+### Step 4: Test validation
 ```bash
 ctx7 library next.js "middleware JWT"
 ctx7 docs /vercel/next.js "middleware auth"
 ```
 
-### Bước 5 (Phase 2): Nâng lên MCP mode
-- Thêm Context7 MCP server vào MCP config
-- Agents sẽ gọi `resolve-library-id` + `query-docs` natively
-- Theo dõi: Dept 4 (Registry) quản lý
+### Step 5 (Phase 2): Upgrade to MCP mode
+- Add Context7 MCP server to MCP config
+- Agents will call `resolve-library-id` + `query-docs` natively
+- Track: Dept 4 (Registry) manages
 
 ---
 
-## 8. Libraries OmniClaw thường dùng — Nên configure
+## 8. Libraries OmniClaw Commonly Uses — Should Configure
 
-| Library cần | Context7 ID (ước tính) |
+| Library needed | Context7 ID (estimated) |
 |------------|------------------------|
 | Next.js | `/vercel/next.js` |
 | Supabase | `/supabase/supabase` |
-| Firecrawl | Kiểm tra tại context7.com |
+| Firecrawl | Check at context7.com |
 | LangChain | `/langchain-ai/langchain` |
 | FastAPI | `/tiangolo/fastapi` |
 | React | `/facebook/react` |
@@ -196,46 +196,45 @@ ctx7 docs /vercel/next.js "middleware auth"
 
 ---
 
-## 9. Đánh giá Media (Trust Signals)
+## 9. Media Evaluation (Trust Signals)
 
-| Nguồn | Nhận xét |
+| Source | Comment |
 |-------|---------|
 | Better Stack | *"Free Tool Makes Cursor 10x Smarter"* |
 | Cole Medin | *"This is Hands Down the BEST MCP Server for AI Coding Assistants"* |
 | AICodeKing | *"Makes CLINE 100X MORE EFFECTIVE!"* |
 | Income Stream Surfers | *"Context7 + SequentialThinking MCPs: Is This AGI?"* |
 
-**GitHub stats:** ⭐ 50.2k stars · 🍴 2.4k forks · 55 releases · MIT License
+**GitHub stats:** 50.2k stars · 2.4k forks · 55 releases · MIT License
 **Backed by:** Upstash (production-grade serverless Redis/Kafka company)
 
 ---
 
-## 10. So sánh với OmniClaw hiện tại
+## 10. Comparison with Current OmniClaw
 
-| Capability | OmniClaw hiện tại | OmniClaw + Context7 |
+| Capability | Current OmniClaw | OmniClaw + Context7 |
 |-----------|---------------|-----------------|
-| Code generation với Next.js 15 | Dùng training data 2024 | Real-time docs 2026 |
-| Supabase auth API | Có thể outdated | Luôn version-specific |
+| Code generation with Next.js 15 | Uses 2024 training data | Real-time 2026 docs |
+| Supabase auth API | May be outdated | Always version-specific |
 | Firecrawl SDK methods | May hallucinate | Exact API |
-| Agent viết migration scripts | Generic | Version-aware |
+| Agent writes migration scripts | Generic | Version-aware |
 
-**Kết luận:** Context7 là layer **chống hallucination API** thiết yếu — đặc biệt quan trọng khi OmniClaw Corp build products với các library Changes: nhanh (Next.js, Supabase, Tailwind v4...).
+**Conclusion:** Context7 is an essential **anti-hallucination API layer** — especially important when OmniClaw Corp builds products with fast-changing libraries (Next.js, Supabase, Tailwind v4...).
 
 ---
 
 ## 11. Conflicts & Risks
 
-| Risk | Mức độ | Mitigation |
+| Risk | Level | Mitigation |
 |------|--------|------------|
-| API key rate limit | Thấp | Free plan đủ dùng hàng ngày |
-| Community-contributed docs có thể sai | Trung bình | Context7 có trustScore và report system |
-| Backend/API/crawler là private | Thấp | Không cần self-host — SaaS |
-| Phụ thuộc internet | Thấp | Fallback: agent dùng training knowledge nếu ctx7 down |
+| API key rate limit | Low | Free plan sufficient for daily use |
+| Community-contributed docs may be wrong | Medium | Context7 has trustScore and report system |
+| Backend/API/crawler is private | Low | No need to self-host — SaaS |
+| Internet dependency | Low | Fallback: agent uses training knowledge if ctx7 down |
 
-**Không có conflict với stack hiện tại** (LightRAG, Firecrawl, Mem0).
+**No conflict with current stack** (LightRAG, Firecrawl, Mem0).
 
 ---
 
-*KI Note version 1.0 | Phân tích: Antigravity | 2026-03-23*
+*KI Note version 1.0 | Analysis: Antigravity | 2026-03-23*
 *Ticket: CIV-2026-03-23-BATCH03 | Approved: Pending CEO*
-

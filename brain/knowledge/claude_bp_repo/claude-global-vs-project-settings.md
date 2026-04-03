@@ -1,3 +1,11 @@
+---
+id: claude-global-vs-project-settings
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.601411
+---
+
 # Claude Code: Global vs Project-Level Features
 
 A comprehensive comparison of which Claude Code features are global-only (`~/.claude/`) versus which have both global and project-level (`.claude/`) equivalents.

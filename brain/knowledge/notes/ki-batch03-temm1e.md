@@ -1,3 +1,11 @@
+---
+id: ki-batch03-temm1e
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.627803
+---
+
 # KI: TEMM1E — Autonomous AI Agent Runtime (Rust)
 
 ## Metadata

@@ -1,3 +1,11 @@
+---
+id: c4-model
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.674466
+---
+
 # C4 Model Reference
 
 ## 1. System Context Diagram

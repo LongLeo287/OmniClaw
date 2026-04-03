@@ -1,0 +1,5 @@
+Source: https://github.com/NotMyself/claude-win11-speckit-update-skill
+Type: REPO
+Agent: batch-intake-agent
+Route: brain/knowledge/repos/
+Date: 2026-03-27

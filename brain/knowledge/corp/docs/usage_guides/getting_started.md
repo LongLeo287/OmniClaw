@@ -1,3 +1,11 @@
+---
+id: getting-started
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.670194
+---
+
 # 🚀 Getting Started with OmniClaw
 
 Welcome aboard! This guide will walk you through setting up OmniClaw, booting your first AI orchestrator, and linking your local workspace.

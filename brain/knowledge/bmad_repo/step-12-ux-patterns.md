@@ -1,3 +1,11 @@
+---
+id: step-12-ux-patterns
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.568471
+---
+
 # Step 12: UX Consistency Patterns
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

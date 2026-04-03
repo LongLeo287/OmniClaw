@@ -1,3 +1,11 @@
+---
+id: readme-memory-sync
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.717109
+---
+
 # 1-Click Memory Sync — User Manual
 
 > Phase 15.1 | Smart Bookmark Manager OmniClaw Ecosystem

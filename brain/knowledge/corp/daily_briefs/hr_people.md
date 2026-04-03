@@ -1,3 +1,11 @@
+---
+id: hr-people
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.643097
+---
+
 # Daily Brief — HR & People — 2026-03-20
 # Agent: talent-acquisition-agent (HR Dept)
 # Task: C2-HR-001 | Cycle: 2

@@ -1,3 +1,11 @@
+---
+id: fsd-structure
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.091765
+---
+
 # Feature-Sliced Design (FSD) Structure
 
 Adapted for Next.js App Router.

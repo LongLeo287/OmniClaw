@@ -1,3 +1,11 @@
+---
+id: step-06-structure
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.558665
+---
+
 # Step 6: Project Structure & Boundaries
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

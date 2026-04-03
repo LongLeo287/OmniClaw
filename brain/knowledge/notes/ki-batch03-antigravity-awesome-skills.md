@@ -1,3 +1,11 @@
+---
+id: ki-batch03-antigravity-awesome-skills
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.532948
+---
+
 # KI: antigravity-awesome-skills — 1,273+ Agentic Skills Library
 
 ## Metadata

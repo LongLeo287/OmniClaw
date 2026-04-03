@@ -1,3 +1,11 @@
+---
+id: bmad-method
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.482604
+---
+
 # BMAD Method: AI-Driven Development Framework
 **Source:** `bmad-code-org/BMAD-METHOD` (Breakthrough Method for Agile AI-Driven Development)  
 **Extracted:** 2026-03-14 for OmniClaw governance

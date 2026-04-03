@@ -1,3 +1,11 @@
+---
+id: vet-report-agent-skills-standard
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.372129
+---
+
 # Strix Vet Report: agent-skills-standard
 **Date:** 2026-03-14 10:50:00
 **Status:** WARN

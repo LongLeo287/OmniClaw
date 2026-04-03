@@ -1,3 +1,11 @@
+---
+id: ki-batch03-awesome-openclaw-skills
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:22.553657
+---
+
 # KI: awesome-openclaw-skills — 5,400+ OpenClaw Skills Registry
 
 ## Metadata

@@ -1,3 +1,11 @@
+---
+id: claude
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.680533
+---
+
 # Project: [PROJECT_NAME] — OmniClaw Connected
 # PRJ-ID: PRJ-XXX
 # Status: active

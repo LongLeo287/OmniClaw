@@ -1,3 +1,11 @@
+---
+id: step-03-core-experience
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.533124
+---
+
 # Step 3: Core Experience Definition
 
 ## MANDATORY EXECUTION RULES (READ FIRST):

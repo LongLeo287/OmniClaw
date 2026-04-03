@@ -1,3 +1,11 @@
+---
+id: code-structure
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:23.785138
+---
+
 # Naming & Structure Reference
 
 Example of expressive, modular code following the high-density standards.

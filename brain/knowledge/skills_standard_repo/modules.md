@@ -1,3 +1,11 @@
+---
+id: modules
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:24.431876
+---
+
 # Third-party Dependency Modules
 
 Since you cannot annotate third-party classes (like `Dio` or `SharedPreferences`) directly, use a `@module`.

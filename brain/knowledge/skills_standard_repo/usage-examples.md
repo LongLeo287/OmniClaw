@@ -1,3 +1,11 @@
+---
+id: usage-examples
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:46:25.263068
+---
+
 # Next.js Data Fetching Usage Examples
 
 ## Server Side: Direct Database/Service Access

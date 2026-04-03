@@ -1,3 +1,11 @@
+---
+id: hooks-readme
+type: document
+owner: SYSTEM
+tags: [auto-healed]
+healed_at: 2026-04-03T22:44:27.615890
+---
+
 # HOOKS-README
 contains all the details, scripts, and instructions for the hooks
 
