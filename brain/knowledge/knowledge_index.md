@@ -225,6 +225,8 @@ healed_at: 2026-04-03T22:44:27.436460
 | `vault/archives/` | `RULE-ARCH-01` | [GLACIER] Trạm lưu trữ dữ liệu nén/bã rác |
 | `core/bridge/*.py` | N/A | Fix rò rỉ cấu trúc: Xóa sạch hardcode `system/` thành `core/` |
 | `core/config/config.json` | `RULE-ARCH-01` | Quy hoạch cấu trúc: Di dời tập trung cấu hình ra khỏi khu logic `core/ops/scripts/` |
+| `core/daemons/daemon_utils.py` | N/A | Fix rò rỉ cấu trúc hệ thống: Thay đổi hardcode `system/ops/secrets/MASTER.env` thành `core/` |
+| `core/daemons/_DIR_IDENTITY.md` | N/A | Định danh đầy đủ 7 Daemons (Bao hàm cả OSF Firewall) bằng song ngữ |
 
 ### Architecture Decisions (session)
 | Decision | Detail |

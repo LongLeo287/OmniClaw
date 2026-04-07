@@ -267,7 +267,7 @@ def queue_mark_failed(msg_id: int) -> int:
 # -------------------------------------------------------------
 def get_env_var(key: str, default: str) -> str:
     """Reads environment variables from MASTER.env or defaults."""
-    env_path = abs_path("system/ops/secrets/MASTER.env")
+    env_path = abs_path("core/ops/secrets/MASTER.env")
     if os.path.exists(env_path):
         with open(env_path, "r", encoding="utf-8") as f:
             for line in f:
