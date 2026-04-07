@@ -6,7 +6,12 @@ created_at: 2026-04-03
 tags: [core, config, parameters]
 ---
 
-# Parameters & Environments
+# Parameters & Environments 
+# Tham số & Biến Không Gian
 
 > [!NOTE]
-> DEPLOYMENT PARAMETERS. Stores core-level configuration overrides and shared system variables explicitly bound to the lightweight core.
+> DEPLOYMENT PARAMETERS. Stores core-level configuration (`config.json`), system overrides, and shared parameters explicitly bound to the lightweight core.
+> THAM SỐ TRIỂN KHAI. Chứa cấu hình cốt lõi (`config.json`), biến môi trường và các tham số dùng chung cho não trạng của hệ thống.
+
+### Key Manifest:
+- `config.json`: The absolute central configuration for Daemons, Harbors, and system routing. (MUST NOT BE PLACED IN OPS)
