@@ -2,10 +2,10 @@
 import shutil
 import time
 
-AIOS_ROOT = r"D:\LongLeo\AI OS CORP\AI OS"
-REPORT_FILE = os.path.join(AIOS_ROOT, "vault", "tmp", "sandbox_env", "OA_workshop", "CONTENT_UPGRADE_AUDIT.md")
-OER_INBOX = os.path.join(AIOS_ROOT, "vault", "tmp", "state_queues", "OER_INBOX")
-ECOSYSTEM_SKILLS = os.path.join(AIOS_ROOT, "ecosystem", "skills")
+OMNICLAW_ROOT = ros.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+REPORT_FILE = os.path.join(OMNICLAW_ROOT, "vault", "tmp", "sandbox_env", "OA_workshop", "CONTENT_UPGRADE_AUDIT.md")
+OER_INBOX = os.path.join(OMNICLAW_ROOT, "vault", "tmp", "state_queues", "OER_INBOX")
+ECOSYSTEM_SKILLS = os.path.join(OMNICLAW_ROOT, "ecosystem", "skills")
 
 def get_healthy_skills():
     healthy = []

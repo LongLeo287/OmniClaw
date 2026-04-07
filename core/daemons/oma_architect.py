@@ -13,12 +13,12 @@ import json
 import shutil
 import re
 from datetime import datetime
-from daemon_trust import authenticate_daemon, assert_write_access
+from daemon_trust import authenticate_daemon, assert_write_access, abs_path
 
 DAEMON_NAME = "OMA"
 config = authenticate_daemon(DAEMON_NAME)
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 APPROVED_ROOT_DIRS = ["brain", "core", "ecosystem", "vault"]
 IGNORED_ROOT_ITEMS = [
@@ -28,9 +28,9 @@ IGNORED_ROOT_ITEMS = [
     "README.md", "README-vn.md", "LICENSE", "v5_migrator.py"
 ]
 
-QUARANTINE_PATH = os.path.join(AIOS_ROOT, "vault", "tmp", "quarantine")
-MAP_OUTPUT_PATH = os.path.join(AIOS_ROOT, "brain", "registry", "OMA_SYSTEM_MAP.json")
-HANDOFF_LOG_PATH = os.path.join(AIOS_ROOT, "brain", "registry", "handoff_tasks.log")
+QUARANTINE_PATH = os.path.join(OMNICLAW_ROOT, "vault", "tmp", "quarantine")
+MAP_OUTPUT_PATH = os.path.join(OMNICLAW_ROOT, "brain", "registry", "OMA_SYSTEM_MAP.json")
+HANDOFF_LOG_PATH = os.path.join(OMNICLAW_ROOT, "brain", "registry", "handoff_tasks.log")
 
 def parse_frontmatter(content):
     """Simple regex parser to extract YAML frontmatter."""
@@ -88,8 +88,8 @@ def apply_git_tracking(system_map: dict):
     import sys
     print("[OmniClaw System Event]")
     try:
-        script_path = os.path.join(AIOS_ROOT, "core", "ops", "scripts", "omniclaw_git_push.ps1")
-        res = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-File", script_path], cwd=AIOS_ROOT, capture_output=True, text=True)
+        script_path = os.path.join(OMNICLAW_ROOT, "core", "ops", "scripts", "omniclaw_git_push.ps1")
+        res = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-File", script_path], cwd=OMNICLAW_ROOT, capture_output=True, text=True)
         if res.returncode == 0:
             print("[OmniClaw System Event]")
         else:
@@ -101,8 +101,8 @@ def apply_git_tracking(system_map: dict):
 def sweep_stubs():
     """Sweeps stub agent directories missing both agent.yaml and SKILL.md into the archive."""
     print("[OmniClaw System Event]")
-    agents_dir = os.path.join(AIOS_ROOT, "ecosystem", "workforce", "agents")
-    stub_archives = os.path.join(AIOS_ROOT, "vault", "archives", "stub_agents")
+    agents_dir = os.path.join(OMNICLAW_ROOT, "ecosystem", "workforce", "agents")
+    stub_archives = os.path.join(OMNICLAW_ROOT, "vault", "archives", "stub_agents")
     if not os.path.exists(agents_dir): return
     
     os.makedirs(stub_archives, exist_ok=True)
@@ -126,7 +126,7 @@ def wipe_old_queues():
     """Wipes old JSON file queues now replaced by Neural Bus."""
     obsolete_queues = ["OIW_INBOX", "OHD_TRIGGER", "OA_DISPATCH_QUEUE"]
     for q in obsolete_queues:
-        q_path = os.path.join(AIOS_ROOT, "vault", "tmp", "state_queues", q)
+        q_path = os.path.join(OMNICLAW_ROOT, "vault", "tmp", "state_queues", q)
         if os.path.exists(q_path):
             try:
                 shutil.rmtree(q_path)
@@ -155,19 +155,26 @@ def execute_quarantine_and_map():
     quarantine_count = 0
     scanned_count = 0
 
-    print("[OmniClaw System Event]")
+    # Write the system map
+    with open(MAP_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(system_map, f, indent=4, ensure_ascii=False)
+        
+    print(f"\n\033[94m[INFO]\033[0m [{DAEMON_NAME}] Booting - {config['role']}")
+    print(f"\033[95m[RULE]\033[0m: {config['action_rule']}\n")
+
+    # CORE HOOK: Structural sweep
     apply_desktop_automation()
     print(f"[{DAEMON_NAME} RULE]: {config['action_rule']} | Allowed to write: {config.get('can_write', [])}")
 
     # 1. Structural Root Sprawl Check
-    for item in os.listdir(AIOS_ROOT):
+    for item in os.listdir(OMNICLAW_ROOT):
         # Allow hidden files/dotfiles
-        if item.startswith('.') and item not in IGNORED_ROOT_ITEMS and os.path.isfile(os.path.join(AIOS_ROOT, item)):
+        if item.startswith('.') and item not in IGNORED_ROOT_ITEMS and os.path.isfile(os.path.join(OMNICLAW_ROOT, item)):
             continue
             
         if item not in APPROVED_ROOT_DIRS and item not in IGNORED_ROOT_ITEMS and not item.startswith('.'):
             # Stray found!
-            stray_path = os.path.join(AIOS_ROOT, item)
+            stray_path = os.path.join(OMNICLAW_ROOT, item)
             dest_path = os.path.join(QUARANTINE_PATH, item)
             try:
                 if os.path.isdir(stray_path):
@@ -182,14 +189,14 @@ def execute_quarantine_and_map():
 
     # 2. Map Generation & Deep Identity Tag check
     for target_dir in APPROVED_ROOT_DIRS:
-        tgt_path = os.path.join(AIOS_ROOT, target_dir)
+        tgt_path = os.path.join(OMNICLAW_ROOT, target_dir)
         if not os.path.exists(tgt_path): continue
         
         for root, dirs, files in os.walk(tgt_path):
             # Prune ignored directories
             dirs[:] = [d for d in dirs if not d.startswith('.') and d not in IGNORED_ROOT_ITEMS and d != "__pycache__"]
             
-            rel_root = os.path.relpath(root, AIOS_ROOT).replace('\\', '/')
+            rel_root = os.path.relpath(root, OMNICLAW_ROOT).replace('\\', '/')
             has_identity = False
             
             # Check Directory Identity
@@ -210,14 +217,28 @@ def execute_quarantine_and_map():
                     except Exception:
                         pass
             
-            # Record missing identity for subfolders (excluding the 4 Root Pillars themselves)
+            # Orphan Sweep & Missing Identity Check
             if not has_identity and root != tgt_path:
+                # Sealed Zone Check: If inside brain or ecosystem and lacking identity, it's a rogue spawn
+                if target_dir in ["brain", "ecosystem"]:
+                    # Quarantine the rogue directory immediately
+                    orphan_name = os.path.basename(root)
+                    dest_path = os.path.join(QUARANTINE_PATH, f"ORPHAN_SWEEP_{orphan_name}")
+                    try:
+                        shutil.move(root, dest_path)
+                        log_handoff(f"quarantine/ORPHAN_SWEEP_{orphan_name}", "Sealed zone violation. Rogue folder removed.")
+                        quarantine_count += 1
+                        # If we moved it, we must clear its directories list so os.walk doesn't crash traversing it
+                        dirs[:] = []
+                        continue
+                    except Exception as e:
+                        pass
                 system_map["missing_identity_boards"].append(rel_root)
 
             for file in files:
                 if file.endswith((".md", ".json", ".yaml")) and file != "OMA_SYSTEM_MAP.json" and not file.startswith("_DIR_IDENTITY"):
                     filepath = os.path.join(root, file)
-                    rel_path = os.path.relpath(filepath, AIOS_ROOT).replace('\\', '/')
+                    rel_path = os.path.relpath(filepath, OMNICLAW_ROOT).replace('\\', '/')
                     scanned_count += 1
                     
                     try:
@@ -263,6 +284,38 @@ def execute_quarantine_and_map():
         
     # Execute Local Git Enforcement
     apply_git_tracking(system_map)
+    
+    # AUTONOMOUS GRAPH UPGRADE
+    import subprocess
+    print(f"\033[96m[INFO]\033[0m [{DAEMON_NAME}] Triggering Core Graph Engine Upgrade...")
+    graph_engine_path = os.path.join(OMNICLAW_ROOT, "core", "ops", "scripts", "graph_upgrade.py")
+    try:
+        subprocess.run(["python", graph_engine_path], cwd=OMNICLAW_ROOT, capture_output=True)
+    except: pass
+
+def run():
+    import time
+    print(f"\n\033[94m[INFO]\033[0m [{DAEMON_NAME}] Booting - {config['role']}")
+    print(f"\033[95m[RULE]\033[0m: {config['action_rule']}\n")
+    
+    print(f"\033[92m[STAT]\033[0m [{DAEMON_NAME}] Architect entering Perpetual Loop...")
+    while True:
+        try:
+            execute_quarantine_and_map()
+            # Map generation is heavy cache checking; sleep extensively
+            time.sleep(120)
+        except KeyboardInterrupt:
+            print(f"\033[93m[WARN]\033[0m [{DAEMON_NAME}] Keyboard Interrupt received. Exiting loop.")
+            break
+        except Exception as e:
+            print(f"\033[91m[ERR]\033[0m [{DAEMON_NAME}] Critical Error in Daemon Loop: {e}. Sleeping before retry.")
+            time.sleep(120)
 
 if __name__ == "__main__":
-    execute_quarantine_and_map()
+    import sys
+    if "--single-pass" in sys.argv:
+        print(f"\n\033[94m[INFO]\033[0m [{DAEMON_NAME}] Booting in SINGLE-PASS mode...")
+        execute_quarantine_and_map()
+        print(f"\033[92m[OK]\033[0m [{DAEMON_NAME}] Single pass complete.")
+    else:
+        run()

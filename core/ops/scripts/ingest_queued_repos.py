@@ -6,8 +6,8 @@ Run: python brain/shared-context/ingest_queued_repos.py
 import os, json
 from datetime import datetime
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
-PLUGINS   = os.path.join(AIOS_ROOT, "plugins")
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+PLUGINS   = os.path.join(OMNICLAW_ROOT, "ecosystem", "plugins")
 TODAY     = datetime.now().strftime("%Y-%m-%d")
 
 REPOS = [

@@ -15,7 +15,7 @@ class DualStreamRouter:
     Luồng 2 (Cloud Fallback): Resolves to Cloud API if local is dead or offline_mode=False.
     """
     def __init__(self):
-        self.config_path = os.path.join(AI_OS_ROOT, "core", "ops", "scripts", "config.json")
+        self.config_path = os.path.join(AI_OS_ROOT, "core", "config", "config.json")
         self.config = self._load_config()
 
     def _load_config(self) -> dict:

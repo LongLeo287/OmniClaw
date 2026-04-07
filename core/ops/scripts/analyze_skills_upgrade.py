@@ -2,8 +2,8 @@
 import json
 from pathlib import Path
 
-SKILLS_DIR = r"D:\LongLeo\AI OS CORP\AI OS\ecosystem\skills"
-output_file = r"D:\LongLeo\AI OS CORP\AI OS\vault\tmp\sandbox_env\OA_workshop\CONTENT_UPGRADE_AUDIT.md"
+SKILLS_DIR = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")), "ecosystem\skills")
+output_file = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..")), "vault\tmp\sandbox_env\OA_workshop\CONTENT_UPGRADE_AUDIT.md")
 
 def analyze():
     print("🩺 OHD & 🧠 OA đang quét phân tích 82 skills...")

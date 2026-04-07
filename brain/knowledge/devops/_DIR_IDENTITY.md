@@ -1,11 +1,24 @@
 ---
-id: devops_domain
-name: Devops
+id: knowledge_devops
+name: DevOps Knowledge
 path: brain/knowledge/devops
 type: directory_identity
+asset_type: DOMAIN_KNOWLEDGE
+owner: OER
+policy: MANAGED
+last_updated: 2026-04-06
 ---
 
-# Devops
+# DevOps Knowledge
 
-Knowledge base domain: devops.
-(Auto-generated identity tag by OMA v2.1)
+**Asset Type:** `DOMAIN_KNOWLEDGE`
+**Owner:** OER Daemon
+**Access Policy:** MANAGED
+
+## Description
+
+DevOps, CI/CD, and infrastructure-as-code knowledge. Covers deployment automation, container orchestration, and infrastructure management patterns.
+
+## Key Files / Content
+
+KI items for DevOps tooling

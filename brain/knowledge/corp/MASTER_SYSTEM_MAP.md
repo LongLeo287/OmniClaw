@@ -161,6 +161,7 @@ vault/QUARANTINE/
 vault/archives/                                       [GLACIER] Legacy systems, heavy ZIP backups, dead letters
 vault/assets/databases/_DIR_IDENTITY.md               [RULE-ARCH-02] Constraint lock for database zone
 core/bridge/                                          [GATEWAY] Remote Bridge API, Customs, Passport Issuer
+core/config/                                          [REGISTRY] Centralized deployment parameters and env configs
 core/docs/                                            [PUBLIC] User-facing documentation (Front Door)
 core/docs/_DIR_IDENTITY.md                            Identity card and bilingual policy
 core/docs/README.md                                   Entry point — doc index (English)

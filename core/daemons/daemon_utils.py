@@ -261,3 +261,97 @@ def queue_mark_failed(msg_id: int) -> int:
     conn.commit()
     conn.close()
     return count
+
+# -------------------------------------------------------------
+# 6. OMNICLAW AI CORE (LLM)
+# -------------------------------------------------------------
+def get_env_var(key: str, default: str) -> str:
+    """Reads environment variables from MASTER.env or defaults."""
+    env_path = abs_path("system/ops/secrets/MASTER.env")
+    if os.path.exists(env_path):
+        with open(env_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if "=" in line and not line.startswith("#"):
+                    k, v = line.strip().split("=", 1)
+                    if k.strip() == key:
+                        return v.strip()
+    return default
+
+def call_omniclaw_model(prompt: str, json_format: bool = False, timeout=1800) -> Optional[str]:
+    """
+    Core AI call directly from Daemon. 
+    Smart Routing: Automatically falls back to secondary ports/models if the primary fails.
+    """
+    import urllib.request
+    import urllib.error
+    import time
+    
+    # Routing Table: Strictly OBD Controlled (Port and Fleet bound to config.json)
+    routes = []
+    config_path = abs_path("core/config/config.json")
+    if os.path.exists(config_path):
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+                ollama = cfg.get("services", {}).get("ollama", {})
+                if ollama:
+                    port = ollama.get("port")
+                    base = f"http://localhost:{port}/v1"
+                    default_mod = ollama.get("default_model")
+                    if default_mod:
+                        routes.append({"url": base, "model": default_mod, "key": "ollama"})
+                    # Append all fleet models
+                    for _, mod_name in ollama.get("fleet", {}).items():
+                        if mod_name not in [r["model"] for r in routes]:
+                            routes.append({"url": base, "model": mod_name, "key": "ollama"})
+                            
+                # CLOUD FALLBACK: Multi-cloud injection
+                clouds = ["nvidia", "groq", "openrouter"]
+                for cloud in clouds:
+                    c_cfg = cfg.get("services", {}).get(cloud, {})
+                    if c_cfg and c_cfg.get("url") and c_cfg.get("api_key") and "YOUR_" not in c_cfg.get("api_key"):
+                        routes.append({
+                            "url": c_cfg.get("url"), 
+                            "model": c_cfg.get("default_model", ""), 
+                            "key": c_cfg.get("api_key")
+                        })
+                    
+        except Exception: pass
+        
+    if not routes:
+        raise ValueError("[AI_CORE] FATAL: OBD Configuration missing or invalid. Cannot find routing ports or models.")
+    
+    for route in routes:
+        endpoint = f"{route['url'].rstrip('/')}/chat/completions"
+        payload = {
+            "model": route["model"],
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.3
+        }
+        if json_format:
+            payload["response_format"] = {"type": "json_object"}
+            
+        data = json.dumps(payload).encode('utf-8')
+        headers = {'Content-Type': 'application/json'}
+        if route["key"] != "ollama":
+            headers["Authorization"] = f"Bearer {route['key']}"
+            
+        req = urllib.request.Request(endpoint, data=data, headers=headers)
+        
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                res_body = response.read().decode('utf-8')
+                res_json = json.loads(res_body)
+                return res_json["choices"][0]["message"]["content"]
+        except urllib.error.HTTPError as e:
+            report_error("AI_CORE", f"Router {route['url']} (Model: {route['model']})", f"HTTP {e.code}")
+            continue # Fallback next route
+        except urllib.error.URLError as e:
+            report_error("AI_CORE", f"Router {route['url']} Connection Failed", str(e.reason))
+            continue # Fallback next route
+        except Exception as e:
+            report_error("AI_CORE", f"Router Execution Error", str(e))
+            continue
+            
+    report_error("AI_CORE", "ALL ROUTING FALLBACKS FAILED", "System has no active AI connection.")
+    return None

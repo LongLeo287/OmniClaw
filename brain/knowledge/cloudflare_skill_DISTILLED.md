@@ -1,0 +1,1082 @@
+---
+id: cloudflare-skill
+type: knowledge
+owner: OA_Triage
+---
+# cloudflare-skill
+Raw knowledge dump assimilated by OA.
+
+## SWALLOW ENGINE DISTILLATION
+
+### File: README.md
+```md
+# Cloudflare Skill for OpenCode
+
+Comprehensive Cloudflare platform reference docs for AI/LLM consumption. Covers Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), networking, security, and infrastructure-as-code.
+
+## Install
+
+Local installation (current project only):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/dmmulroy/cloudflare-skill/main/install.sh | bash
+```
+
+Global installation (available in all projects):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/dmmulroy/cloudflare-skill/main/install.sh | bash -s -- --global
+```
+
+## Usage
+
+Once installed, the skill appears in OpenCode's `<available_skills>` list. The agent loads it automatically when working on Cloudflare tasks.
+
+Use the `/cloudflare` command to load the skill and get contextual guidance:
+
+```
+/cloudflare set up a D1 database with migrations
+```
+
+### Updating
+
+To update to the latest version:
+
+```
+/cloudflare --update-skill
+```
+
+## Structure
+
+The installer adds both a skill and a command:
+
+```
+# Skill (reference docs)
+skills/cloudflare/
+├── SKILL.md              # Main manifest + decision trees
+└── references/           # Product subdirectories
+    └── <product>/
+        ├── README.md         # Overview, when to use
+        ├── api.md            # Runtime API reference
+        ├── configuration.md  # wrangler.toml + bindings
+        ├── patterns.md       # Usage patterns
+        └── gotchas.md        # Pitfalls, limitations
+
+# Command (slash command)
+command/cloudflare.md     # /cloudflare entrypoint
+```
+
+### Decision Trees
+
+The main `SKILL.md` contains decision trees for:
+- Running code (Workers, Pages, Durable Objects, Workflows, Containers)
+- Storage (KV, D1, R2, Queues, Vectorize)
+- AI/ML (Workers AI, Vectorize, Agents SDK, AI Gateway)
+- Networking (Tunnel, Spectrum, WebRTC)
+- Security (WAF, DDoS, Bot Management, Turnstile)
+- Media (Images, Stream, Browser Rendering)
+- Infrastructure-as-code (Terraform, Pulumi)
+
+## Products Covered
+
+Workers, Pages, D1, Durable Objects, KV, R2, Queues, Hyperdrive, Workers AI, Vectorize, Agents SDK, AI Gateway, Tunnel, Spectrum, WAF, DDoS, Bot Management, Turnstile, Images, Stream, Browser Rendering, Terraform, Pulumi, and 40+ more.
+
+## License
+
+MIT - see [LICENSE](LICENSE)
+
+```
+
+### File: AGENTS.md
+```md
+# PROJECT KNOWLEDGE BASE
+
+**Generated:** 2026-01-28
+
+## OVERVIEW
+
+Documentation/skill repository for Cloudflare platform—structured reference docs for AI/LLM consumption. No executable code.
+
+## STRUCTURE
+
+```
+./
+├── README.md             # Project overview + install instructions
+├── LICENSE               # MIT license
+├── install.sh            # Installation script
+├── command/
+│   └── cloudflare.md     # /cloudflare slash command
+└── skills/
+    └── cloudflare/
+        ├── SKILL.md              # Main skill manifest + decision trees
+        └── references/           # Product subdirs
+            └── <product>/
+                ├── README.md
+                ├── api.md
+                ├── configuration.md
+                ├── patterns.md
+                └── gotchas.md
+```
+
+## WHERE TO LOOK
+
+| Task | Location | Notes |
+|------|----------|-------|
+| Find a product | `skills/cloudflare/SKILL.md` | Decision trees + full index |
+| Product reference | `skills/cloudflare/references/<product>/` | 5-file structure |
+
+## CONVENTIONS
+
+### VCS: jujutsu (NOT git)
+
+```bash
+# CORRECT
+jj status
+jj log
+jj new
+jj commit -m "msg"
+
+# WRONG - do not use
+git status  # .jj/ present = use jj
+```
+
+### Reference File Structure
+
+Every product follows 5-file pattern:
+- `README.md` — Overview, when to use
+- `api.md` — Runtime API reference
+- `configuration.md` — `wrangler.toml` + binding setup
+- `patterns.md` — Usage patterns
+- `gotchas.md` — Pitfalls, limitations
+
+### YAML Frontmatter
+
+`SKILL.md` files use frontmatter for machine parsing:
+```yaml
+---
+name: product-name
+description: Brief description
+references:
+  - related-product
+---
+```
+
+## ANTI-PATTERNS
+
+### SQL Injection (D1)
+
+```typescript
+// NEVER - string interpolation
+const result = await db.prepare(`SELECT * FROM users WHERE id = ${id}`).all();
+
+// ALWAYS - prepared statements with bind()
+const result = await db.prepare("SELECT * FROM users WHERE id = ?").bind(id).all();
+```
+
+### Secrets Management
+
+```bash
+# NEVER commit .dev.vars (contains secrets)
+# NEVER hardcode secrets in code
+```
+
+### Resource Management
+
+```typescript
+// ALWAYS close browser in finally block (browser-rendering)
+const browser = await puppeteer.launch();
+try {
+  // ...
+} finally {
+  await browser.close();
+}
+```
+
+### Configuration
+
+```toml
+# ALWAYS set compatibility_date for new projects (workers)
+compatibility_date = "2026-01-01"
+```
+
+## NOTES
+
+- No CI/CD configured (docs-only repo)
+- No linting/formatting (no code to lint)
+- `.opencode/` contains plugin config, not project code
+
+```
+
+### File: install.sh
+```sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_URL="https://github.com/dmmulroy/cloudflare-skill.git"
+SKILL_NAME="cloudflare"
+
+usage() {
+  cat <<EOF
+Usage: $0 [OPTIONS]
+
+Install the Cloudflare skill for OpenCode.
+
+Options:
+  -g, --global    Install globally (~/.config/opencode/skills/)
+  -l, --local     Install locally (.opencode/skills/) [default]
+  -h, --help      Show this help message
+
+Examples:
+  curl -fsSL https://raw.githubusercontent.com/dmmulroy/cloudflare-skill/main/install.sh | bash
+  curl -fsSL https://raw.githubusercontent.com/dmmulroy/cloudflare-skill/main/install.sh | bash -s -- --global
+EOF
+}
+
+main() {
+  local install_type="local"
+
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      -g|--global) install_type="global"; shift ;;
+      -l|--local) install_type="local"; shift ;;
+      -h|--help) usage; exit 0 ;;
+      *) echo "Unknown option: $1"; usage; exit 1 ;;
+    esac
+  done
+
+  local target_dir
+  if [[ "$install_type" == "global" ]]; then
+    target_dir="${HOME}/.config/opencode/skills"
+  else
+    target_dir=".opencode/skills"
+  fi
+
+  local skill_path="${target_dir}/${SKILL_NAME}"
+
+  local command_dir
+  if [[ "$install_type" == "global" ]]; then
+    command_dir="${HOME}/.config/opencode/command"
+  else
+    command_dir=".opencode/command"
+  fi
+
+  echo "Installing ${SKILL_NAME} skill (${install_type})..."
+
+  # Create temp directory
+  local tmp_dir
+  tmp_dir=$(mktemp -d)
+  trap 'rm -rf "$tmp_dir"' EXIT
+
+  # Clone repo
+  echo "Fetching skill..."
+  git clone --depth 1 --quiet "$REPO_URL" "$tmp_dir"
+
+  # Create target directory
+  mkdir -p "$target_dir"
+
+  # Remove existing installation if present
+  if [[ -d "$skill_path" ]]; then
+    echo "Updating existing installation..."
+    rm -rf "$skill_path"
+  fi
+
+  # Copy skill
+  cp -r "${tmp_dir}/skills/${SKILL_NAME}" "$skill_path"
+
+  # Install command
+  mkdir -p "$command_dir"
+  local command_path="${command_dir}/${SKILL_NAME}.md"
+  if [[ -d "$command_path" ]] || [[ -f "$command_path" ]]; then
+    rm -rf "$command_path"
+  fi
+  cp "${tmp_dir}/command/${SKILL_NAME}.md" "$command_path"
+
+  echo "Installed skill to: ${skill_path}"
+  echo "Installed command to: ${command_path}"
+  echo "Done."
+}
+
+main "$@"
+
+```
+
+### File: .opencode\state\cloudflare-skill-restructure\prd.json
+```json
+{
+  "prdName": "cloudflare-skill-restructure",
+  "tasks": [
+    {
+      "id": "split-1",
+      "category": "split",
+      "description": "Split wrangler/ reference (1470 lines) into <200 line files",
+      "steps": [
+        "README.md exists with overview (<100 lines)",
+        "configuration.md exists with wrangler.jsonc setup (<150 lines)",
+        "api.md exists with runtime APIs (<150 lines)",
+        "patterns.md exists with common patterns (<150 lines)",
+        "gotchas.md exists with pitfalls/limits (<100 lines)",
+        "Original SKILL.md deleted",
+        "All files have cross-reference sections"
+      ],
+      "passes": true
+    },
+    {
+      "id": "split-2",
+      "category": "split",
+      "description": "Split cache-reserve/ reference (1439 lines) into <200 line files",
+      "steps": [
+        "README.md exists with overview (<100 lines)",
+        "configuration.md exists (<150 lines)",
+        "api.md exists (<150 lines)",
+        "patterns.md exists (<150 lines)",
+        "gotchas.md exists (<100 lines)",
+        "Original SKILL.md deleted"
+      ],
+      "passes": true
+    },
+    {
+      "id": "split-3",
+      "category": "split",
+      "description": "Split stream/ reference (1340 lines) into <200 line files",
+      "steps": [
+        "README.md exists with overview (<100 lines)",
+        "configuration.md exists (<150 lines)",
+        "api.md exists (<150 lines)",
+        "patterns.md exists (<150 lines)",
+        "gotchas.md exists (<100 lines)",
+        "Original SKILL.md deleted"
+      ],
+      "passes": true
+    },
+    {
+      "id": "split-4",
+      "category": "split",
+      "description": "Split workers/ reference (1334 lines) into <200 line files",
+      "steps": [
+        "README.md exists with overview (<100 lines)",
+        "configuration.md exists (<150 lines)",
+        "api.md exists (<150 lines)",
+        "patterns.md exists (<150 lines)",
+        "gotchas.md exists (<100 lines)",
+        "Original SKILL.md deleted",
+        "Cross-references to kv, d1, r2, durable-objects, queues"
+      ],
+      "passes": true
+    },
+    {
+      "id": "split-5",
+      "category": "split",
+      "description": "Split realtimekit/ reference (1244 lines) into <200 line files",
+      "steps": [
+        "README.md exists with overview (<100 lines)",
+        "configuration.md exists (<150 lines)",
+        "api.md exists (<150 lines)",
+        "patterns.md exists (<150 lines)",
+        "gotchas.md exists (<100 lines)",
+        "Original SKILL.md deleted"
+      ],
+      "passes": true
+    },
+    {
+      "id": "split-6",
+      "category": "split",
+      "description": "Split Tier 2 references (1100-1250 lines each)",
+      "steps": [
+        "terraform/ split into <200 line files",
+        "pulumi/ split into <200 line files",
+        "sandbox/ split into <200 line files",
+        "hyperdrive/ split into <200 line files",
+        "pages/ split into <200 line files",
+        "ddos/ split into <200 line files",
+        "workers-for-platforms/ split into <200 line files",
+        "workflows/ split into <200 line files",
+        "miniflare/ split into <200 line files",
+        "workerd/ split into <200 line files",
+        "cron-triggers/ split into <200 line files",
+        "secrets-store/ split into <200 line files",
+        "pages-functions/ split into <200 line files",
+        "network-interconnect/ split into <200 line files"
+      ],
+      "passes": true
+    },
+    {
+      "id": "split-7",
+      "category": "split",
+      "description": "Split Tier 3 references (700-1100 lines each)",
+      "steps": [
+        "All remaining reference files split to <200 lines",
+        "Each has README.md with overview",
+        "Each has appropriate sub-files (config, api, patterns, gotchas)"
+      ],
+      "passes": true
+    },
+    {
+      "id": "trim-1",
+      "category": "trim",
+      "description": "Trim main SKILL.md from 232 to <200 lines",
+      "steps": [
+        "Frontmatter updated with improved description",
+        "Frontmatter includes references: field with top 5 products",
+        "Common patterns section moved to separate file",
+        "Loading references section removed",
+        "Product index Summary column removed",
+        "Total lines <200"
+      ],
+      "passes": true
+    },
+    {
+      "id": "crossref-1",
+      "category": "crossref",
+      "description": "Add cross-references to workers/ README.md",
+      "steps": [
+        "In This Reference section with links to config, api, patterns, gotchas",
+        "See Also section with links to kv, d1, r2, durable-objects, queues"
+      ],
+      "passes": true
+    },
+    {
+      "id": "crossref-2",
+      "category": "crossref",
+      "description": "Add cross-references to pages/ README.md",
+      "steps": [
+        "In This Reference section with internal links",
+        "See Also section with links to pages-functions, d1, kv"
+      ],
+      "passes": true
+    },
+    {
+      "id": "crossref-3",
+      "category": "crossref",
+      "description": "Add cross-references to agents-sdk/ README.md",
+      "steps": [
+        "In This Reference section with internal links",
+        "See Also section with links to durable-objects, d1, workers-ai, vectorize"
+      ],
+      "passes": true
+    },
+    {
+      "id": "crossref-4",
+      "category": "crossref",
+      "description": "Add cross-references to d1/ README.md",
+      "steps": [
+        "In This Reference section with internal links",
+        "See Also section with links to workers, hyperdrive"
+      ],
+      "passes": true
+    },
+    {
+      "id": "crossref-5",
+      "category": "crossref",
+      "description": "Add cross-references to durable-objects/ README.md",
+      "steps": [
+        "In This Reference section with internal links",
+        "See Also section with links to workers, do-storage"
+      ],
+      "passes": true
+    },
+    {
+      "id": "crossref-6",
+      "category": "crossref",
+      "description": "Add cross-references to all remaining split references",
+      "steps": [
+        "Each README.md has In This Reference section",
+        "Each README.md has See Also section where applicable"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-1",
+      "category": "fix",
+      "description": "Fix type safety violation in d1 reference",
+      "steps": [
+        "Replace any[] with (string | number | boolean | null)[]",
+        "No any types in TypeScript examples"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-2",
+      "category": "fix",
+      "description": "Update compatibility dates in all config examples",
+      "steps": [
+        "All wrangler.jsonc examples use 2025-01-01 or later",
+        "Comment added: Use current date for new projects"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-3",
+      "category": "fix",
+      "description": "Convert all wrangler.toml to wrangler.jsonc format",
+      "steps": [
+        "No wrangler.toml examples remain",
+        "All config uses wrangler.jsonc"
+      ],
+      "passes": true
+    },
+    {
+      "id": "fix-4",
+      "category": "fix",
+      "description": "Add missing imports to code examples",
+      "steps": [
+        "agents-sdk examples include import { tool } from 'ai'",
+        "All code examples have necessary imports"
+      ],
+      "passes": true
+    },
+    {
+      "id": "polish-1",
+      "category": "polish",
+      "description": "Complete decision trees in main SKILL.md",
+      "steps": [
+        "Run code tree includes snippets/ and tail-workers/",
+        "Networking tree includes smart-placement/",
+        "Store data tree includes cache-reserve/"
+      ],
+      "passes": true
+    },
+    {
+      "id": "polish-2",
+      "category": "polish",
+      "description": "Standardize error handling in gotchas.md files",
+      "steps": [
+        "Each gotchas.md has Common Errors section",
+        "Errors have Cause and Solution subsections",
+        "Each gotchas.md has Limits table"
+      ],
+      "passes": true
+    }
+  ],
+  "context": {
+    "patterns": [
+      "Reference structure: references/<product>/README.md, configuration.md, api.md, patterns.md, gotchas.md",
+      "Line limits: README <100, others <150, none >200",
+      "Cross-ref template: In This Reference + See Also sections"
+    ],
+    "keyFiles": [
+      "SKILL.md",
+      "references/workers/SKILL.md",
+      "references/d1/SKILL.md",
+      "references/pages/SKILL.md"
+    ],
+    "nonGoals": [
+      "Rewriting content (quality is 4.7/5)",
+      "Adding new products",
+      "Changing technical recommendations"
+    ]
+  }
+}
+
+```
+
+### File: .opencode\state\cloudflare-skill-restructure\prd.md
+```md
+# Cloudflare Skill Restructuring Plan
+
+Plan to bring skill into compliance with skill-creator best practices while preserving content quality.
+
+## Review Summary
+
+**Content quality: 4.7/5** — Excellent, needs no rewriting
+**Structural compliance: Poor** — Violates line limits, missing frontmatter fields
+
+### Issues by Severity
+
+| Severity | Issue | Impact |
+|----------|-------|--------|
+| Critical | Reference files 700-1400+ lines (limit: 200) | Defeats progressive disclosure |
+| High | Main SKILL.md 232 lines (limit: 200) | Loads unnecessary content |
+| High | No `references:` in frontmatter | Poor discoverability |
+| High | Activation description too broad | False activations |
+| High | No cross-reference guidance | Agents miss related files |
+| Medium | Reference files lack frontmatter | No metadata for discovery |
+| Medium | Outdated compatibility dates | Agents use old dates |
+| Medium | Type safety violation (d1 `any[]`) | Violates standards |
+| Medium | Inconsistent error handling | Agents can't debug |
+| Low | Inconsistent config format | Minor confusion |
+| Low | Decision trees incomplete | Miss some products |
+
+---
+
+## Phase 1: Split Reference Files (Critical)
+
+**Goal:** Split 60 files from 700-1400 lines to <200 lines each
+
+### Standard Structure
+
+```
+references/<product>/
+├── README.md           # Overview, when to use (<100 lines)
+├── configuration.md    # wrangler.jsonc setup (<150 lines)
+├── api.md              # Runtime API, types (<150 lines)
+├── patterns.md         # Common patterns (<150 lines)
+├── gotchas.md          # Pitfalls, limits (<100 lines)
+└── advanced.md         # Optional (<150 lines)
+```
+
+### Splitting Priority
+
+**Tier 1 (largest, split first):**
+- wrangler/ (1470 lines)
+- cache-reserve/ (1439 lines)
+- stream/ (1340 lines)
+- workers/ (1334 lines)
+- realtimekit/ (1244 lines)
+
+**Tier 2 (1100-1250 lines):**
+terraform, pulumi, sandbox, hyperdrive, pages, ddos, workers-for-platforms, workflows, miniflare, workerd, cron-triggers, secrets-store, pages-functions, network-interconnect
+
+**Tier 3 (700-1100 lines):**
+Remaining 40+ files
+
+### Process
+
+For each SKILL.md:
+1. Extract overview → `README.md`
+2. Extract config sections → `configuration.md`
+3. Extract API/types → `api.md`
+4. Extract patterns/examples → `patterns.md`
+5. Extract gotchas/limits → `gotchas.md`
+6. Delete original SKILL.md
+7. Add "Related References" section to README.md
+
+**Approach:** Manual with template
+**Commit:** `refactor: split reference files into <200 line chunks`
+
+---
+
+## Phase 2: Trim Main SKILL.md (High)
+
+**Goal:** Reduce from 232 to <200 lines
+
+### Changes
+
+| Section | Current | Action | Target |
+|---------|---------|--------|--------|
+| Frontmatter | 5 | Improve description, add `references:` | 10 |
+| Intro | 3 | Keep | 3 |
+| Decision trees | 82 | Keep | 82 |
+| Product index | 101 | Remove Summary column | 70 |
+| Common patterns | 26 | Move to `patterns.md` | 0 |
+| Loading references | 12 | Remove | 0 |
+| **Total** | **232** | | **~165** |
+
+### New Frontmatter
+
+```yaml
+---
+name: cloudflare
+description: Build and deploy on Cloudflare. Use when creating Workers/Pages apps, configuring KV/D1/R2 storage, implementing AI with Workers AI/Agents SDK, setting up Tunnels, or managing infrastructure via Terraform/Pulumi. NOT for DNS-only config or general web hosting.
+references:
+  - references/workers/README.md
+  - references/d1/README.md
+  - references/pages/README.md
+  - references/agents-sdk/README.md
+  - references/wrangler/README.md
+---
+```
+
+**Commit:** `refactor: trim main SKILL.md to <200 lines`
+
+---
+
+## Phase 3: Add Cross-References (High)
+
+**Goal:** Guide agents to related files
+
+### Template for README.md
+
+```markdown
+## In This Reference
+- [Configuration](configuration.md) — wrangler.jsonc setup
+- [API Reference](api.md) — runtime APIs, types
+- [Patterns](patterns.md) — common examples
+- [Gotchas](gotchas.md) — pitfalls, limits
+
+## See Also
+- [Related Product](../related-product/) — when to use instead
+```
+
+### Cross-Reference Map
+
+| Product | Related Products |
+|---------|-----------------|
+| workers | kv, d1, r2, durable-objects, queues |
+| pages | pages-functions, d1, kv |
+| agents-sdk | durable-objects, d1, workers-ai, vectorize |
+| d1 | workers, hyperdrive |
+| durable-objects | workers, do-storage |
+
+**Commit:** `docs: add cross-references between split files`
+
+---
+
+## Phase 4: Fix Content Issues (Medium)
+
+### 4.1 Type Safety
+
+**File:** d1 api.md or patterns.md (after split)
+
+```typescript
+// Before
+const params: any[] = [];
+
+// After
+const params: (string | number | boolean | null)[] = [];
+```
+
+### 4.2 Compatibility Dates
+
+Add note to all config examples:
+```jsonc
+{
+  "compatibility_date": "2025-01-01", // Use current date for new projects
+}
+```
+
+### 4.3 Config Format
+
+Convert all wrangler.toml to wrangler.jsonc
+
+### 4.4 Missing Imports
+
+Add imports to code examples, particularly:
+- agents-sdk: `import { tool } from "ai"`
+
+**Commit:** `fix: type safety, config format, imports`
+
+---
+
+## Phase 5: Low Priority Fixes
+
+### 5.1 Complete Decision Trees
+
+Add to "I need to run code":
+```
+├─ Lightweight request mods → snippets/
+├─ Observability/logging → tail-workers/
+```
+
+Add to "I need networking":
+```
+├─ Optimize Worker placement → smart-placement/
+```
+
+Add to "I need to store data":
+```
+├─ Extended edge cache → cache-reserve/
+```
+
+### 5.2 Error Handling Template
+
+Standardize `gotchas.md` structure:
+```markdown
+## Common Errors
+
+### `<error message>`
+**Cause:** ...
+**Solution:** ...
+
+## Limits
+| Limit | Value |
+|-------|-------|
+```
+
+**Commit:** `docs: complete decision trees, standardize error handling`
+
+---
+
+## Verification Checklist
+
+After all phases:
+- [ ] Main SKILL.md <200 lines
+- [ ] All reference files <200 lines
+- [ ] Frontmatter has `references:` field
+- [ ] Each README.md has cross-references
+- [ ] No `any` types in TypeScript
+- [ ] All config uses wrangler.jsonc
+- [ ] Decision trees complete
+- [ ] Cross-reference paths correct
+
+---
+
+## Estimates
+
+| Phase | Effort | Files Changed |
+|-------|--------|---------------|
+| 1 | 6-8 hours | ~300 new, 60 deleted |
+| 2 | 30 min | 2 files |
+| 3 | 2 hours | ~60 files |
+| 4 | 1-2 hours | ~30 files |
+| 5 | 1 hour | ~10 files |
+| **Total** | **~12 hours** | |
+
+---
+
+## Open Questions
+
+1. Should smaller reference files (<400 lines) be split, or only trimmed?
+2. Should `docs/products.md` be integrated into SKILL.md or kept separate?
+3. Priority for Phase 1: all files, or just Tier 1 first?
+
+```
+
+### File: .opencode\state\cloudflare-skill-restructure\progress.txt
+```txt
+# Progress Log
+PRD: cloudflare-skill-restructure
+Started: 2026-01-12
+
+## Codebase Patterns
+
+### Reference Split Pattern
+- README.md: Overview, key commands, navigation (<100 lines)
+- configuration.md: Config reference, compact examples (<150 lines)
+- api.md: Programmatic APIs, testing patterns (<150 lines)
+- patterns.md: Common workflows, best practices (<150 lines)
+- gotchas.md: Issues, troubleshooting, limits (<100 lines)
+- All files: "See Also" section with cross-links to other files
+
+---
+<!-- Task logs below - APPEND ONLY -->
+
+## Task - split-1
+- Split 1470-line wrangler/SKILL.md into 5 focused files
+- Files created:
+  - README.md (90 lines) - Overview, essential commands
+  - configuration.md (128 lines) - Config reference, bindings
+  - api.md (140 lines) - Programmatic API (unstable_startWorker, getPlatformProxy)
+  - patterns.md (150 lines) - Workflows, testing, optimization
+  - gotchas.md (93 lines) - Common issues, troubleshooting
+- Deleted: SKILL.md (1470 lines)
+- All files have cross-reference sections
+- **Learnings:**
+  - Consolidate related subsections into single code blocks with comments
+  - Aggressive line reduction: combine similar examples, remove redundancy
+  - Cross-references at bottom keep navigation consistent
+
+## Task - split-2
+- Split 1439-line cache-reserve/SKILL.md into 5 focused files
+- Files created:
+  - README.md (93 lines) - Overview, eligibility, quick start
+  - configuration.md (164 lines) - Dashboard, API, Cache Rules, wrangler
+  - api.md (176 lines) - Workers integration, purging, monitoring, pricing
+  - patterns.md (180 lines) - Best practices, architecture, cost optimization
+  - gotchas.md (203 lines) - Issues, solutions, troubleshooting, limits
+- Deleted: SKILL.md (1439 lines)
+- All files have cross-reference sections
+- **Learnings:**
+  - Inline compression: combine similar patterns, use compact comments
+  - Remove verbose examples when simpler versions convey same info
+  - Consolidate header pattern examples into single line
+
+## Task - split-3
+- Split 1341-line stream/SKILL.md into 5 focused files
+- Files created:
+  - README.md (103 lines) - Overview, upload methods, playback, quick start
+  - configuration.md (127 lines) - Env vars, wrangler, signing keys, webhooks, access rules
+  - api.md (204 lines) - Upload, playback, signed URLs, live streaming, video management
+  - patterns.md (152 lines) - Full-stack upload flow, webhooks, state management, best practices
+  - gotchas.md (131 lines) - Common errors, troubleshooting, limits, security
+- Deleted: SKILL.md (1341 lines)
+- All files have cross-reference sections
+- **Learnings:**
+  - Consolidate config interfaces into single examples with inline comments
+  - Reference full implementations in other files to avoid duplication
+  - Compress similar API patterns (list/update/delete) into combined examples
+
+## Task - split-4
+- Split 1334-line workers/SKILL.md into 5 focused files
+- Files created:
+  - README.md (96 lines) - Overview, module pattern, essential commands, handler signatures
+  - configuration.md (147 lines) - wrangler.jsonc setup, bindings (KV, R2, D1, DO, queues, services), TypeScript
+  - api.md (137 lines) - Fetch handler, execution context, bindings access, Cache API, HTMLRewriter, WebSockets, Durable Objects, other handlers
+  - patterns.md (149 lines) - Error handling, CORS, routing, performance, streaming, testing, deployment, monitoring, security, gradual rollouts
+  - gotchas.md (99 lines) - CPU limits, statelessness, response streams, Node.js compat, global scope, limits table, common errors
+- Deleted: SKILL.md (1334 lines)
+- All files have cross-reference sections linking to kv, d1, r2, durable-objects, queues
+- **Learnings:**
+  - Aggressive inline compression: combine related concepts in single code blocks
+  - Reference other files to avoid duplication (e.g., rate limiting -> durable-objects)
+  - Use compact table format for limits/bindings reference
+  - Single-line patterns for simple examples when appropriate
+
+## Task - split-5
+- Split 1244-line realtimekit/SKILL.md into 5 focused files (existing files trimmed)
+- Files updated/verified:
+  - README.md (81 lines) - Overview, core concepts, quick start, pricing
+  - configuration.md (147 lines) - SDK install, client config, presets, wrangler multi-env, TURN
+  - api.md (164 lines) - Meeting object API, REST endpoints, session lifecycle
+  - patterns.md (155 lines) - UI kit, core SDK, video grid, device selection, chat, hooks, backend integration, best practices
+  - gotchas.md (172 lines) - Common issues, limits, network requirements, debugging, security, performance
+- Deleted: SKILL.md (1244 lines)
+- All files have cross-reference sections
+- **Learnings:**
+  - Inline code compression: combine similar examples, remove line breaks in simple patterns
+  - Merge related patterns into single code blocks with comments
+  - Consolidate security/performance sections into compact lists
+
+## Task - split-6
+- Split 14 Tier 2 references (1085-1241 lines each) into 5 focused files per ref
+- Terraform (1241 lines):
+  - README.md (76), configuration.md (156), api.md (159), patterns.md (135), gotchas.md (213→200)
+- Pulumi (1234 lines): README(107), config(216→200), api(194→200), patterns(268→139), gotchas(223→200)
+- Sandbox (1208 lines): README(90), config(131), api(178), patterns(203→200), gotchas(156)
+- Hyperdrive (1209 lines): README(62), config(133), api(137), patterns(176), gotchas(184)
+- Pages (1207 lines): README(70), config(228→200), api(200), patterns(268→145), gotchas(161)
+- DDoS (1197 lines): README(34), config(67), api(136), patterns(158), gotchas(114)
+- Workers-for-Platforms (1181 lines): README(48), config(136), api(169), patterns(170), gotchas(130)
+- Workflows (1177 lines): README(62), config(177), api(253→125), patterns(235→132), gotchas(247→136)
+- Miniflare (1143 lines): README(64), config(203→200), api(144), patterns(211→200), gotchas(187)
+- Workerd (1109 lines): README(47), config(185), api(199), patterns(216→200), gotchas(203→200)
+- Cron-triggers (1103 lines): README(85), config(151), api(198), patterns(289→122), gotchas(277→129)
+- Secrets-store (1100 lines): README(58), config(140), api(182), patterns(218→200), gotchas(129)
+- Pages-functions (1100 lines): README(57), config(159), api(201→200), patterns(190), gotchas(151)
+- Network-interconnect (1085 lines): README(60), config(127), api(240→200), patterns(171), gotchas(171)
+- All 14 refs: 70 files total (5 per ref), all <200 lines, READMEs <110
+- **Learnings:**
+  - Parallel task execution for bulk operations (14 refs split concurrently)
+  - Aggressive compression needed: semicolon-separated properties, inline examples
+  - Post-split trimming pass required to meet hard <200 limit
+  - Pattern applies across diverse products (IaC, dev tools, security, networking)
+
+## Task - split-7
+- Split 30 Tier 3 references (700-1100 lines each) into 5 focused files per ref
+- Files split: d1, smart-placement, tunnel, r2, kv, queues, do-storage, bot-management, realtime-sfu, api-shield, waf, browser-rendering, web-analytics, observability, durable-objects, workers-playground, containers, analytics-engine, agents-sdk, r2-data-catalog, api, turnstile, static-assets, ai-search, snippets, email-routing, spectrum, bindings, argo-smart-routing, images
+- Created: 150 files (30 refs × 5 files: README, configuration, api, patterns, gotchas)
+- Deleted: 30 SKILL.md files
+- All files under limits: README <100, gotchas <100, config/api/patterns <150
+- **Learnings:**
+  - Batch processing with task agents for bulk operations
+  - Post-split trimming pass required for dense content (7 files trimmed)
+  - Compression: inline examples, compact tables, semicolon lists, reference other files
+  - Critical refs (storage, AI, workers) prioritized for cross-references
+
+## Task - trim-1
+- Trimmed main SKILL.md from 233→199 lines
+- Files changed:
+  - skill/cloudflare/SKILL.md: Added references field to frontmatter (top 5 products), removed Summary column from all Product Index tables, removed Common Patterns and Loading References sections
+  - skill/cloudflare/patterns.md: NEW - extracted Common Patterns section (28 lines)
+  - .opencode/state/cloudflare-skill-restructure/prd.json: marked trim-1 as passes: true
+- **Learnings:**
+  - Table compression: remove verbose columns when product names suffice
+  - Extract reusable content to separate files rather than delete
+  - Frontmatter references field helps agents prioritize key products
+## Task - crossref-1
+- Verified workers/README.md has complete cross-references
+- In This Reference section: links to configuration, api, patterns, gotchas
+- See Also section: links to kv, d1, r2, durable-objects, queues, wrangler
+- Files checked: skill/cloudflare/references/workers/README.md
+- **Learnings:**
+  - Cross-references already implemented in split-4 task
+  - Verification pass confirms existing structure meets requirements
+
+## Task - crossref-2
+- Added cross-references to pages/README.md
+- In This Reference section: links to configuration, api, patterns, gotchas (already present)
+- See Also section: added links to pages-functions, d1, kv
+- File modified: skill/cloudflare/references/pages/README.md (71→77 lines, well under <100 limit)
+- **Learnings:**
+  - Cross-product references help users discover complementary services
+  - Pattern: Pages + D1/KV for data, Pages Functions for routing logic
+
+## Task - crossref-3
+- Added cross-references to agents-sdk/README.md
+- In This Reference section: added links to configuration, api, patterns, gotchas
+- See Also section: links already present for durable-objects, d1, workers-ai, vectorize
+- File modified: skill/cloudflare/references/agents-sdk/README.md (35→40 lines, well under <100 limit)
+- **Learnings:**
+  - See Also section already present from split-7 task
+  - Only needed to add In This Reference section for internal navigation
+  - Pattern: AI agents integrate with DO (infrastructure), D1 (SQL), Workers AI (models), Vectorize (embeddings)
+
+## Task - crossref-4
+- Updated d1/README.md cross-references to match task requirements
+- In This Reference section: already present with links to configuration, api, patterns, gotchas
+- See Also section: replaced 5 links (kv, r2, queues, durable-objects) with 2 focused links (workers, hyperdrive) per task spec
+- File modified: skill/cloudflare/references/d1/README.md (93→90 lines, well under <100 limit)
+- **Learnings:**
+  - Task spec takes precedence over existing cross-references
+  - D1 + Hyperdrive pattern: D1 for serverless SQLite, Hyperdrive for pooled external DB connections
+  - Simplified See Also section improves focus on core integrations
+
+## Task - crossref-5
+- Verified durable-objects/README.md has complete cross-references
+- In This Reference section: links to configuration, api, patterns, gotchas ✓
+- See Also section: links to workers, do-storage ✓
+- File verified: skill/cloudflare/references/durable-objects/README.md (90 lines, under <100 limit)
+- **Learnings:**
+  - Cross-references already implemented in split-7 task
+  - DO + workers integration: Workers access DOs via bindings/stubs
+  - DO + do-storage pattern: do-storage deep-dives into SQLite, KV, and sync APIs
+
+## Task - crossref-6
+- Added cross-references to 15 remaining README.md files: pulumi, sandbox, secrets-store, workers-for-platforms, workflows, cache-reserve, cron-triggers, ddos, hyperdrive, miniflare, network-interconnect, pages-functions, terraform, workerd, wrangler
+- All 49 reference README.md files now have:
+  - "## In This Reference" section with links to configuration, api, patterns, gotchas
+  - "## See Also" section with links to related products
+- Trimmed pulumi/README.md from 116→91 lines (consolidated auth examples, removed duplicate imports)
+- Files modified: 15 README.md files across references/
+- **Learnings:**
+  - Systematic verification critical: found 9 files missing "In This Reference" on first pass
+  - Cross-product links should reflect actual integration patterns (e.g., sandbox→durable-objects, workflows→queues)
+  - Inline compression for auth examples: single code block with comments > separate sections
+  - Standard structure: In This Reference (internal nav) → See Also (external integrations)
+
+## Task - fix-1
+- Fixed type safety violations in d1/patterns.md
+- Files changed:
+  - skill/cloudflare/references/d1/patterns.md (2 violations fixed)
+- Changes:
+  - Line 20: `params: any[]` → `params: (string | number | boolean | null)[]`
+  - Line 118: `metadata: any` → `metadata: Record<string, unknown>`
+- **Learnings:**
+  - SQL params accept string | number | boolean | null for bind operations
+  - JSON metadata should use Record<string, unknown> not any
+  - Verified no remaining any types in d1 reference using rg
+
+## Task - fix-2
+- Updated compatibility_date in all config examples to 2025-01-01 or later
+- Files changed:
+  - 22 files updated across references/ (split files + unsplit SKILL.md files)
+  - All JSONC examples: added "// Use current date for new projects" comment
+  - All TOML examples: added "# Use current date for new projects" comment
+  - Special cases preserved:
+    - durable-objects: 2024-04-03 minimum for RPC, comment directs to use 2025-01-01+
+    - hyperdrive: 2024-09-23 minimum for features, comment directs to use 2025-01-01+
+    - static-assets: 2025-04-01 for SPA support (already compliant)
+    - containers: 2026-01-10 (already compliant)
+- **Learnings:**
+  - Feature-specific minimum dates documented in gotchas.md remain unchanged
+  - Standard config examples now consistently use 2025-01-01
+  - Comments guide users to use current dates for new projects
+  - Pattern: Update examples, preserve feature requirements
+
+## Task - fix-3
+- Converted all wrangler.toml examples to wrangler.jsonc format
+- Files changed: 33 files across references/
+- Changes:
+  - Removed all ```toml code blocks, replaced with ```jsonc
+  - Converted TOML syntax to JSONC (name = "value" → "name": "value")
+  - Converted TOML arrays ([[workflows]]) to JSONC arrays ("workflows": [])
+  - Converted TOML numbers (cpu_ms = 300_000 → "cpu_ms": 300000, no underscores)
+  - Converted comments (# → //)
+  - Updated all text references "wrangler.toml" → "wrangler.jsonc"
+  - Where both TOML and JSONC existed, removed TOML and kept only JSONC
+- Key conversions:
+  - workflows/configuration.md: removed duplicate TOML examples
+  - static-assets/configuration.md: removed TOML, kept JSONC
+  - zaraz/SKILL.md: converted zaraz.toml to zaraz.jsonc
+  - secrets-store/configuration.md: converted env-specific config
+  - smart-placement/patterns.md: converted inline config examples
+  - observability/gotchas.md: updated grep command to use jq with JSONC
+- Net change: +300 lines added, -272 lines removed
+- **Learnings:**
+  - Systematic conversion: TOML → JSONC across all reference files
+  - JSONC enables schema validation (v3.91.0+)
+  - Parallel task agent execution for bulk conversions
+  - Text references in prose also need updating (README links, error messages, CLI examples)
+  - One acceptable d
+... [TRUNCATED]
+```
+

@@ -1,11 +1,24 @@
 ---
-id: it_infra_domain
-name: It Infra
+id: knowledge_it_infra
+name: IT Infrastructure Knowledge
 path: brain/knowledge/it_infra
 type: directory_identity
+asset_type: DOMAIN_KNOWLEDGE
+owner: OER
+policy: MANAGED
+last_updated: 2026-04-06
 ---
 
-# It Infra
+# IT Infrastructure Knowledge
 
-Knowledge base domain: it_infra.
-(Auto-generated identity tag by OMA v2.1)
+**Asset Type:** `DOMAIN_KNOWLEDGE`
+**Owner:** OER Daemon
+**Access Policy:** MANAGED
+
+## Description
+
+IT infrastructure management knowledge. Covers system administration, infrastructure configuration, and IT operations management patterns.
+
+## Key Files / Content
+
+3 files — IT infra reference docs

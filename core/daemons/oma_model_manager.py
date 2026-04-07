@@ -11,7 +11,7 @@ CORP_ROOT = OMNICLAW_ROOT.parent
 # Extrapolated Location for the Model Vault
 MODELS_VAULT = CORP_ROOT / "OmniClaw MODELS"
 
-CONFIG_FILE = OMNICLAW_ROOT / "core" / "ops" / "scripts" / "config.json"
+CONFIG_FILE = OMNICLAW_ROOT / "core" / "config" / "config.json"
 
 def initialize_vault():
     """Auto-detect or create the OmniClaw MODELS sister-directory."""

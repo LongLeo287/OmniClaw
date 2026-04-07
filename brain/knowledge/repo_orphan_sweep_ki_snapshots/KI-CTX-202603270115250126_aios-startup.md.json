@@ -1,0 +1,9 @@
+{
+  "id": "KI-CTX-202603270115250126",
+  "type": "WORKFLOW",
+  "source": "file://<AI_OS_ROOT>\\system\\ops\\workflows\\aios-startup.md",
+  "priority": "P2",
+  "status": "PENDING_EVALUATION",
+  "submitted_by": "antigravity-context-extractor",
+  "timestamp": "2026-03-27T01:15:25.895834"
+}

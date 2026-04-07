@@ -2,7 +2,7 @@ import os
 import re
 import shutil
 
-AIOS_ROOT = r"D:\LongLeo\AI OS CORP\AI OS"
+AIOS_ROOT = ros.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 
 # 1. Physical Directory Moves
 def create_dir(path):

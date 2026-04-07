@@ -6,8 +6,8 @@ sys.path.append(os.path.dirname(__file__))
 
 import ohd_health
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
-VAULT_DIR = os.path.join(AIOS_ROOT, "vault")
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+VAULT_DIR = os.path.join(OMNICLAW_ROOT, "vault")
 
 healed_count = 0
 scanned_count = 0

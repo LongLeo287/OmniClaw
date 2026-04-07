@@ -217,13 +217,14 @@ healed_at: 2026-04-03T22:44:27.436460
 |------|---------|-------------|
 | `core/docs/README-vn.md` | N/A | Bản dịch tiếng Việt của README, tuân thủ quy tắc song ngữ |
 
-### Utilities & Watchdogs (4 files)
+### Utilities & Watchdogs (5 files)
 | File | Rule ID | Description |
 |------|---------|-------------|
 | `core/ops/scripts/utils/safe_fs.py` | `RULE-FS-01` | Safe rename/merge trên Windows NTFS — ngăn data loss do case-insensitive path collision |
 | `core/ops/scripts/utils/db_hygiene_sweep.py` | `RULE-ARCH-03` | OMA Watchdog làm sạch Data Zone |
 | `vault/archives/` | `RULE-ARCH-01` | [GLACIER] Trạm lưu trữ dữ liệu nén/bã rác |
 | `core/bridge/*.py` | N/A | Fix rò rỉ cấu trúc: Xóa sạch hardcode `system/` thành `core/` |
+| `core/config/config.json` | `RULE-ARCH-01` | Quy hoạch cấu trúc: Di dời tập trung cấu hình ra khỏi khu logic `core/ops/scripts/` |
 
 ### Architecture Decisions (session)
 | Decision | Detail |

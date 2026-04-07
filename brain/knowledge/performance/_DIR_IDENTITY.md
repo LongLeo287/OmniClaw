@@ -1,11 +1,24 @@
 ---
-id: performance_domain
-name: Performance
+id: knowledge_performance
+name: Performance Knowledge
 path: brain/knowledge/performance
 type: directory_identity
+asset_type: DOMAIN_KNOWLEDGE
+owner: OER
+policy: MANAGED
+last_updated: 2026-04-06
 ---
 
-# Performance
+# Performance Knowledge
 
-Knowledge base domain: performance.
-(Auto-generated identity tag by OMA v2.1)
+**Asset Type:** `DOMAIN_KNOWLEDGE`
+**Owner:** OER Daemon
+**Access Policy:** MANAGED
+
+## Description
+
+System and application performance knowledge. Covers profiling, benchmarking, performance optimization patterns, and monitoring tools.
+
+## Key Files / Content
+
+KI-performance-foundation

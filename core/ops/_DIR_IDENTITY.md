@@ -9,4 +9,4 @@ tags: [core, ops, scripts]
 # Operations & Scripts
 
 > [!NOTE]
-> OPERATIONAL SCRIPTS. Contains the service configuration (`config.json`), main pipeline runners, and legacy scripts maintained for historical referencing. Avoid adding unstructured one-off Python scripts here.
+> OPERATIONAL SCRIPTS. Contains the main pipeline runners and legacy scripts maintained for historical referencing. Avoid adding unstructured one-off Python scripts here.

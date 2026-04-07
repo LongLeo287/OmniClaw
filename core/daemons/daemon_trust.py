@@ -9,7 +9,7 @@ Constitution: RULE-ARCH-01-DAEMONS.md + RULE-ARCH-02-FILESYSTEM.md
 """
 import os
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 # [System log: Legacy non-English comment removed]
 # STANDARD LOCATION MAP (CORRECTED BY OMA)
@@ -175,7 +175,7 @@ def assert_write_access(daemon_name: str, target_path: str) -> bool:
         print(f"\033[91m[ERR]\033[0m [TRUST-MATRIX] Unknown daemon: {daemon_name}")
         return False
 
-    rel = os.path.relpath(target_path, AIOS_ROOT).replace("\\", "/")
+    rel = os.path.relpath(target_path, OMNICLAW_ROOT).replace("\\", "/")
 
     # Check the banned list first
     for denied in cfg.get("strictly_denied", []):
@@ -198,5 +198,5 @@ def get_handoff_targets(daemon_name: str) -> list:
 
 
 def abs_path(*relative_parts) -> str:
-    """Create absolute path from AIOS_ROOT."""
-    return os.path.join(AIOS_ROOT, *relative_parts)
+    """Create absolute path from OMNICLAW_ROOT."""
+    return os.path.join(OMNICLAW_ROOT, *relative_parts)

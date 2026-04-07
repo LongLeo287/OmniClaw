@@ -3,7 +3,7 @@ import json
 import subprocess
 from datetime import datetime
 
-ROOT_DIR = r"D:\LongLeo\AI OS CORP\AI OS"
+ROOT_DIR = ros.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 OER_SCRIPT = os.path.join(ROOT_DIR, "core", "ops", "scripts", "oer_register.py")
 OIW_INBOX = os.path.join(ROOT_DIR, "vault", "tmp", "state_queues", "OIW_INBOX")
 OIW_SCRIPT = os.path.join(ROOT_DIR, "core", "daemons", "daemon_run_oiw.ps1")

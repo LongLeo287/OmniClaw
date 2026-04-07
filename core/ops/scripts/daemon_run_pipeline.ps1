@@ -22,7 +22,7 @@ $Results = @{}
 Write-Host "  [STEP 1] OMA - Map Master Deepscan" -ForegroundColor Blue
 if (-not $DryRun) {
     $Results["OMA"] = Invoke-DaemonWithRetry -Label "OMA" `
-        -Command "python" -Arguments @("core\daemons\oma_architect.py") `
+        -Command "python" -Arguments @("core\daemons\oma_architect.py", "--single-pass") `
         -WorkingDir $Root
 } else { Write-Log "OMA [DRY-RUN] skipped" "INFO"; $Results["OMA"] = $true }
 
@@ -31,7 +31,7 @@ if (-not $SkipOIW) {
     Write-Host "  [STEP 2] OIW - Intake Workflow" -ForegroundColor Cyan
     if (-not $DryRun) {
         $Results["OIW"] = Invoke-DaemonWithRetry -Label "OIW" `
-            -Command "python" -Arguments @("core\daemons\oiw_intake.py") `
+            -Command "python" -Arguments @("core\daemons\oiw_intake.py", "--single-pass") `
             -WorkingDir $Root
     } else { Write-Log "OIW [DRY-RUN] skipped" "INFO"; $Results["OIW"] = $true }
 } else {
@@ -43,7 +43,7 @@ if (-not $SkipOIW) {
 Write-Host "  [STEP 3] OHD - Health and Heal" -ForegroundColor Red
 if (-not $DryRun) {
     $Results["OHD"] = Invoke-DaemonWithRetry -Label "OHD" `
-        -Command "python" -Arguments @("core\daemons\ohd_health.py") `
+        -Command "python" -Arguments @("core\daemons\ohd_health.py", "--single-pass") `
         -WorkingDir $Root
 } else { Write-Log "OHD [DRY-RUN] skipped" "INFO"; $Results["OHD"] = $true }
 
@@ -51,7 +51,7 @@ if (-not $DryRun) {
 Write-Host "  [STEP 4] OA - Academy Final Check" -ForegroundColor Magenta
 if (-not $DryRun) {
     $Results["OA"] = Invoke-DaemonWithRetry -Label "OA" `
-        -Command "python" -Arguments @("core\daemons\oa_academy.py") `
+        -Command "python" -Arguments @("core\daemons\oa_academy.py", "--single-pass") `
         -WorkingDir $Root
 } else { Write-Log "OA [DRY-RUN] skipped" "INFO"; $Results["OA"] = $true }
 
@@ -59,7 +59,7 @@ if (-not $DryRun) {
 Write-Host "  [STEP 5] OER - Register" -ForegroundColor Green
 if (-not $DryRun) {
     $Results["OER"] = Invoke-DaemonWithRetry -Label "OER" `
-        -Command "python" -Arguments @("core\daemons\oer_registry.py") `
+        -Command "python" -Arguments @("core\daemons\oer_registry.py", "--single-pass") `
         -WorkingDir $Root
 } else { Write-Log "OER [DRY-RUN] skipped" "INFO"; $Results["OER"] = $true }
 

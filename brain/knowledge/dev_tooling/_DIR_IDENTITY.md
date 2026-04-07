@@ -1,11 +1,24 @@
 ---
-id: dev_tooling_domain
-name: Dev Tooling
+id: knowledge_dev_tooling
+name: Developer Tooling Knowledge
 path: brain/knowledge/dev_tooling
 type: directory_identity
+asset_type: DOMAIN_KNOWLEDGE
+owner: OER
+policy: MANAGED
+last_updated: 2026-04-06
 ---
 
-# Dev Tooling
+# Developer Tooling Knowledge
 
-Knowledge base domain: dev_tooling.
-(Auto-generated identity tag by OMA v2.1)
+**Asset Type:** `DOMAIN_KNOWLEDGE`
+**Owner:** OER Daemon
+**Access Policy:** MANAGED
+
+## Description
+
+Developer productivity tooling knowledge. Covers picoclaw, fastcode, gitingest, grex, lobster, and other developer tooling KI items.
+
+## Key Files / Content
+
+KI-picoclaw, KI-fastcode, KI-gitingest, KI-grex, KI-lobster

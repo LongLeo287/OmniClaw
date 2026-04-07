@@ -13,8 +13,8 @@ import sys
 import shutil
 from datetime import datetime
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
-OUTPUT    = os.path.join(AIOS_ROOT, "brain", "shared-context", "FAST_INDEX.json")
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+OUTPUT    = os.path.join(OMNICLAW_ROOT, "brain", "shared-context", "FAST_INDEX.json")
 DRY_RUN   = "--dry-run" in sys.argv
 
 # Top-level dirs to crawl (depth-limited per dir)
@@ -68,7 +68,7 @@ def crawl_dir(base_dir: str, max_depth: int) -> list[dict]:
 
         if "SKILL.md" in entries:
             fpath = os.path.join(dirpath, "SKILL.md")
-            rel   = os.path.relpath(fpath, AIOS_ROOT).replace("\\", "/")
+            rel   = os.path.relpath(fpath, OMNICLAW_ROOT).replace("\\", "/")
             try:
                 with open(fpath, "r", encoding="utf-8", errors="replace") as f:
                     content = f.read()
@@ -162,11 +162,11 @@ def build_index(skills: list[dict]) -> dict:
 
 
 def main():
-    print(f"omniclaw root: {AIOS_ROOT}")
+    print(f"omniclaw root: {OMNICLAW_ROOT}")
     all_skills = []
 
     for rel_dir, max_depth in SCAN_DIRS:
-        base = os.path.join(AIOS_ROOT, rel_dir.replace("/", os.sep))
+        base = os.path.join(OMNICLAW_ROOT, rel_dir.replace("/", os.sep))
         found = crawl_dir(base, max_depth)
         print(f"  {rel_dir:30s} → {len(found)} SKILL.md")
         all_skills.extend(found)

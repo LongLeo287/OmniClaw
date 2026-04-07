@@ -7,7 +7,7 @@ No clone needed — knowledge extracted into structured KI entries.
 import os, json
 from datetime import datetime
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
 TODAY     = datetime.now().strftime("%Y-%m-%d")
 NOW       = datetime.now().isoformat()
 
@@ -199,7 +199,7 @@ LEARN_REPOS = [
 ]
 
 # Create knowledge domain dirs
-KNOWLEDGE_BASE = os.path.join(AIOS_ROOT, "brain", "knowledge")
+KNOWLEDGE_BASE = os.path.join(OMNICLAW_ROOT, "brain", "knowledge")
 domain_dirs = {
     "ai-ml": "ai-ml", "security": "security", "automation": "automation",
     "media": "media", "strategy": "strategy", "catalog": "catalog",

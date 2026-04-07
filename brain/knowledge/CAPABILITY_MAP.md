@@ -61,6 +61,7 @@ FUTURE (Phase 3): GitNexus impact analysis → exact blast radius when modifying
 | UI PRO generation | `ui-ux-pro-max` | plugin | plugins/ui-ux-pro-max/ |
 | Accessibility | `accessibility_grounding` | skill | ecosystem/skills/accessibility_grounding/ |
 | SEO/AEO | `seo-aeo-optimization` | skill | ecosystem/skills/seo-aeo-optimization/ |
+| Offline-First POS / UI Virtualization | `fsd_architectural_linter` | skill | brain/knowledge/pos_offline_first_react_DISTILLED.md |
 
 ### devops (Docker, CI/CD, k8s, infra)
 | Need | Use | Type | Path |
@@ -137,6 +138,12 @@ FUTURE (Phase 3): GitNexus impact analysis → exact blast radius when modifying
 |------|-----|------|------|
 | Google Apps Script | `gas_skill` | skill | ecosystem/skills/domains/google-workspace/ |
 | Sheets performance | `sheets_performance_optimization` | skill | ecosystem/skills/domains/google-workspace/ |
+| Serverless No-DB GAS & Clasp | `gas_skill` | skill | brain/knowledge/gas_clasp_backend_DISTILLED.md |
+
+### iot_hardware (IoT, POS, Printers, Hardware Proxies)
+| Need | Use | Type | Path |
+|------|-----|------|------|
+| Cloud-to-Local Hardware Proxy | `hardware_proxy_skill` | skill | brain/knowledge/cloud_to_lan_hardware_proxy_DISTILLED.md |
 
 ### databases (Supabase, PostgreSQL, SQL)
 | Need | Use | Type | Path |

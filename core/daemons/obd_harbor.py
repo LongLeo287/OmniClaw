@@ -42,7 +42,7 @@ def log(msg: str, level="INFO"):
 
 def get_harbors() -> dict:
     """Dynamically load and parse harbors from the OmniClaw config.json."""
-    config_path = abs_path("core/ops/scripts/config.json")
+    config_path = abs_path("core/config/config.json")
     try:
         with open(config_path, "r", encoding="utf-8") as f:
             cfg = json.load(f)
@@ -73,7 +73,7 @@ HARBORS = get_harbors()
 active_vessels = {}
 
 # =======================
-# Lõi Y Tế (Heartbeat Ping)
+# Heartbeat Ping Core
 # =======================
 def heartbeat_ping(port: int, url: str) -> bool:
     """Check if the service is actually responsive, not just a running ghost PID."""
@@ -94,7 +94,7 @@ def heartbeat_ping(port: int, url: str) -> bool:
         return False
 
 # =======================
-# Lõi Thẩm Phán (Fingerprint)
+# Fingerprint Core
 # =======================
 def execute_zombie_purge(port: int):
     """Scan and kill processes safely by interrogating their names."""
@@ -122,7 +122,7 @@ def escalate_to_ohd(harbor_name: str, reason: str):
     log(f"SOS Escalated to OHD: {harbor_name} is down - {reason}", "ERR")
 
 # =======================
-# Lõi Vô Tuyến (Live Broadcasting)
+# Live Broadcasting Core
 # =======================
 def broadcast_status():
     """Write active registry so other Daemons know what's alive."""

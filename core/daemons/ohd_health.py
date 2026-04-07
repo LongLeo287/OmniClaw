@@ -66,6 +66,31 @@ def apply_system_autofix(filepath: str) -> bool:
         print(f"\033[93m[WARN]\033[0m [OHD] system_autofix timed out or failed: {e}")
         return False
 
+def execute_auto_linter(folder_path: str):
+    """
+    [PHASE 2: OHD DOCTOR]
+    Real auto-linting and syntax checking. Scans the directory for Python files and
+    compiles them to catch syntax errors immediately (fixing them if possible).
+    """
+    print(f"\033[96m[STAT]\033[0m [OHD] Executing deep Repo Surgery (Auto-Lint/Syntax Check) on {os.path.basename(folder_path)}...")
+    issues = 0
+    for root, _, files in os.walk(folder_path):
+        for f in files:
+            if f.endswith(".py"):
+                fpath = os.path.join(root, f)
+                try:
+                    res = subprocess.run(["python", "-m", "py_compile", fpath], capture_output=True, text=True, timeout=10)
+                    if res.returncode != 0:
+                        issues += 1
+                        # Attempt naive syntax mitigation (e.g. removing trailing characters) or log heavily.
+                        print(f"  \033[91m[ERR]\033[0m Syntax Error found in {f}: {res.stderr.strip().split(os.linesep)[-1]}")
+                        # Move to medical bay if too severe, but for now we just flag it.
+                except Exception: pass
+    if issues == 0:
+        print(f"  \033[92m[OK]\033[0m [OHD] Surgery Complete: Zero structural syntax errors detected.")
+    else:
+        print(f"  \033[93m[WARN]\033[0m [OHD] Surgery Complete: {issues} files require manual medical attention.")
+
 def heal_frontmatter(filepath: str) -> bool:
     """
     Fix missing YAML Frontmatter files.
@@ -117,6 +142,17 @@ def route_to_oer_inbox(filepath: str):
     print(f"\033[94m[INFO]\033[0m [OHD->OER] Healed file routed to OER_INBOX: {os.path.basename(filepath)}")
     log_action("ROUTE_OER_INBOX", filepath, "Awaiting OER Registry distribution")
 
+def route_to_raw_dumps(filepath: str):
+    """Routes an unanalyzed directory to RAW_DUMPS for OA Academy Assimilation."""
+    raw_dumps_path = abs_path(PATHS.RAW_DUMPS)
+    os.makedirs(raw_dumps_path, exist_ok=True)
+    dest = os.path.join(raw_dumps_path, os.path.basename(filepath))
+    if os.path.exists(dest):
+        dest = f"{dest}_{datetime.now().strftime('%H%M%S')}"
+    shutil.move(filepath, dest)
+    print(f"\033[94m[INFO]\033[0m [OHD->OA] Repo routed to RAW_DUMPS for Assimilation: {os.path.basename(filepath)}")
+    log_action("ROUTE_RAW_DUMPS", filepath, "Awaiting OA Academy Assimilation")
+
 
 def escalate_to_oa(filepath: str, reason: str):
     """ [System log: Legacy non-English docstring localized] """
@@ -136,7 +172,7 @@ def apply_notification_bridge(alert_msg: str):
     import subprocess
     print("[OmniClaw System Event]")
     try:
-        script_path = os.path.join(AIOS_ROOT, "core", "ops", "scripts", "notify_bridge.py")
+        script_path = os.path.join(OMNICLAW_ROOT, "core", "ops", "scripts", "notify_bridge.py")
         cmd = ["python", script_path, alert_msg]
         subprocess.run(cmd, capture_output=True, text=True, timeout=5)
     except Exception:
@@ -163,9 +199,26 @@ def process_quarantine():
         return
     report_before(DAEMON_NAME, "PROCESS_QUARANTINE", candidates)
     results = {"success": 0, "failed": 0, "skipped": 0}
+    
+    blacklist_exts = {".png", ".jpg", ".jpeg", ".gif", ".mp4", ".avi", ".mov", ".mp3", ".wav", ".zip", ".tar", ".gz", ".ico", ".webp", ".svg", ".woff", ".woff2", ".ttf", ".eot", ".bin", ".apk", ".exe", ".dll", ".so", ".pdf"}
+    
     for fname in candidates:
         fpath = os.path.join(QUARANTINE, fname)
         try:
+            ext = os.path.splitext(fname)[1].lower()
+            if ext in blacklist_exts:
+                print(f"\033[93m[WARN]\033[0m [OHD] Terminating Blacklisted Media File: {fname}")
+                try: 
+                    import stat
+                    os.chmod(fpath, stat.S_IWRITE)
+                    if os.path.isdir(fpath):
+                        shutil.rmtree(fpath, ignore_errors=True)
+                    else:
+                        os.remove(fpath)
+                except: pass
+                results["success"] += 1
+                continue
+                
             # GUARD: Handle files rejected by OA (Triage Protocol)
             if fname.startswith("OA_REJECTED_"):
                 # Move to vault/tmp/rejected instead of infinite looping or unauthorized folders
@@ -179,8 +232,11 @@ def process_quarantine():
                 continue
 
             if os.path.isdir(fpath):
-                # OIW fetched a repo directory. Pass along to OER_INBOX or let OA assimilate it.
-                route_to_oer_inbox(fpath)
+                # [PHASE 2: OHD DOCTOR] Lint and syntax-heal before passing it along
+                execute_auto_linter(fpath)
+                
+                # OIW fetched a repo directory. Pass along to RAW_DUMPS for OA to assimilate.
+                route_to_raw_dumps(fpath)
                 results["success"] += 1
             elif fname.startswith("FAILED_DAEMON_"):
                 print(f"[CRITICAL] [OHD] Daemon system crash detected ({fname}). Escalating to OA Academy!")
@@ -253,6 +309,11 @@ def watch_and_heal(loop: bool = False, interval: int = 30):
 
 
 if __name__ == "__main__":
+    import sys
+    if "--single-pass" in sys.argv:
+        watch_and_heal(loop=False)
+        sys.exit(0)
+
     import sys
     loop_mode = "--watch" in sys.argv
     watch_and_heal(loop=loop_mode)

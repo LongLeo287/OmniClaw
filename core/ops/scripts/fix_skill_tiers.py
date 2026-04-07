@@ -11,7 +11,7 @@ import os
 import re
 import sys
 
-AIOS_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
+OMNICLAW_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", ".."))
 WRITE     = "--write" in sys.argv
 
 # ── Tier assignment rules ──────────────────────────────────────────────
@@ -143,7 +143,7 @@ def main():
     errors = []
 
     for rel, max_depth in SCAN_DIRS:
-        base = os.path.join(AIOS_ROOT, rel.replace("/", os.sep))
+        base = os.path.join(OMNICLAW_ROOT, rel.replace("/", os.sep))
         if not os.path.isdir(base):
             continue
 
@@ -158,7 +158,7 @@ def main():
 
             if "SKILL.md" in entries:
                 fpath = os.path.join(dirpath, "SKILL.md")
-                relpath = os.path.relpath(fpath, AIOS_ROOT).replace("\\", "/")
+                relpath = os.path.relpath(fpath, OMNICLAW_ROOT).replace("\\", "/")
                 try:
                     with open(fpath, "r", encoding="utf-8", errors="replace") as f:
                         content = f.read()
