@@ -17,7 +17,7 @@ _VALID_LEVELS = {"VIP", "GUEST", "BOT", "SYSTEM_BOT", "OMNICLAW_HQ"}
 def _load_master_env():
     """Load MASTER.env to get OMNICLAW_HQ_MASTER_KEY if available."""
     root = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2])))
-    env_path = root / "system" / "ops" / "secrets" / "MASTER.env"
+    env_path = root / "core" / "ops" / "secrets" / "MASTER.env"
     if env_path.exists():
         with open(env_path, 'r', encoding='utf-8', errors='replace') as f:
             for line in f:

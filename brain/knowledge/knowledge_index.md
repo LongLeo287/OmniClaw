@@ -7,7 +7,7 @@ healed_at: 2026-04-03T22:44:27.436460
 ---
 
 # 🗂️ Knowledge Index
-**Last Updated:** 2026-03-23
+**Last Updated:** 2026-04-07
 
 ## 🗺️ System Map (READ FIRST)
 - [AI_OS_SYSTEM_MAP.md](AI_OS_SYSTEM_MAP.md) — **MASTER REFERENCE** — Toàn bộ hệ thống OmniClaw: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
@@ -86,6 +86,14 @@ healed_at: 2026-04-03T22:44:27.436460
 - [GitHub Repos Index](catalog/github_repos_index.md) — 177 repos categorized (DATA/Github.txt ingested 2026-03-15)
 
 ## 📥 DATA Library — Ingested Knowledge
+
+- [Github Archives Library](library/github_archives/master_github.txt) — 2000+ extracted GitHub repositories categorized by skills and architecture (Assimilated from legacy v1 system into OmniClaw 21 Department structure).
+  - Contains 14 sanitized segments (e.g. `ecommerce_growth_affiliate_coupons.txt`, `tools_for_working.txt`) in `library/github_archives/`.
+- [Legacy Ops Python](library/legacy_python_ops/) — Core Python scripts (`aios_orchestrator.py`, etc.) extracted from the v1 system for research purposes (Read-only).
+- [Legacy Agents Memory](library/legacy_agent_memories/) — Preserved prompts and mnemonic blocks from 85+ legacy subagents, acting as reference material for the modern 21 Head Agents (Read-only).
+- [Legacy Orphan Archives](library/legacy_orphan_archives/) — Preserved loose fragments, prompts, and unassigned text knowledge swept from the v1 system during final vaporization.
+- [CIV Pipeline State](../core/telemetry/civ_pipeline_state/_DIR_IDENTITY.md) — Assimilated Content Intake & Vetting legacy pipeline telemetry and state logs.
+- [KI Snapshots](ki_snapshots/_DIR_IDENTITY.md) — 140+ native JSON snapshot files for OA daemon episodic memory.
 - [AI Workflow Best Practices](ai-ml/ai_workflow_best_practices.md) — 10 major topics: React boilerplate, Skill creation, Multi-agent, 8-layer prompting, Claude Code tips, AI-first design, Security, Gen AI structure, Antigravity tips, Agent Skills (DATA/POST.txt)
 - [GitHub Repos Index](catalog/github_repos_index.md) — 177 repos from DATA/Github.txt, categorized by function, showing which are already installed as plugins
 - [Non-Cloneable Repos Analysis](general/non_cloneable_repos_analysis.md) — 23 repos analyzed via GitHub README: Auto-Claude (12-agent GUI), ProxyPal (multi-AI proxy), SkillSentry (9-layer security), marketingskills (35 skills), trainingAI (8-level Vietnamese AI guide), ChatDev, llmfit, autoclip, SmartTube, social downloader, aPix/SDVN, SpringBoot skill, Clean Arch Next.js + more
@@ -181,3 +189,45 @@ healed_at: 2026-04-03T22:44:27.436460
 | notes/KI-TOKEN-REDUCTION-01.md | 6.8x token reduction via knowledge graph, ReAct pattern, 3-type memory | code-review-graph + agents-course |
 | notes/KI-AI-STACK-LANDSCAPE-01.md | AI OS vs market gap analysis, Copilot patterns, NL-to-analytics | seeaifirst + awesome-copilot + ossinsight |
 | notes/KI-REFERENCE-MISC-01.md | agentql, Archon, n8n patterns, JS quirks, gitignore templates, plotly, pattern-craft | 9 misc repos |
+
+---
+
+## Session 9 — OmniClaw TNN POS Extraction (2026-04-06)
+
+### Knowledge Items — Tiem Nuoc Nho Architecture Patterns
+| File | Topic | Source Repos |
+|------|-------|--------------|
+| gas_clasp_backend_DISTILLED.md | Kiến trúc Serverless No-DB, dùng GAS & Clasp CLI | Tiem_Nuoc_Nho_v5 |
+| cloud_to_lan_hardware_proxy_DISTILLED.md | Local Proxy Server, in LAN từ Cloud Vercel | Tiem_Nuoc_Nho_v5 |
+| pos_offline_first_react_DISTILLED.md | Offline-first POS, Stale-while-revalidate, Virtuoso | Tiem_Nuoc_Nho_v5 |
+
+---
+
+## Session 10 — Infrastructure Hardening (2026-04-07)
+
+### System Rules & Architecture Constraints (3 files)
+| File | Rule ID | Description |
+|------|---------|-------------|
+| `brain/corp/gaps/GAP-2026-04-07-vault-recursion.md` | `GAP-002` | Post-mortem: Vault-in-databases recursion từ ZIP extract V1. Defines RULE-ARCH-01/02/03 |
+| `vault/assets/databases/_DIR_IDENTITY.md` | `RULE-ARCH-02` | Constraint lock cho database zone — chỉ cho phép engine namespace và file `.db/.sqlite/.json` |
+| `core/docs/_DIR_IDENTITY.md` | N/A | Khai báo định danh khu vực Docs, quy định 100% song ngữ (EN/VN) cho mọi file tài liệu |
+
+### Documentation (1 file)
+| File | Rule ID | Description |
+|------|---------|-------------|
+| `core/docs/README-vn.md` | N/A | Bản dịch tiếng Việt của README, tuân thủ quy tắc song ngữ |
+
+### Utilities & Watchdogs (4 files)
+| File | Rule ID | Description |
+|------|---------|-------------|
+| `core/ops/scripts/utils/safe_fs.py` | `RULE-FS-01` | Safe rename/merge trên Windows NTFS — ngăn data loss do case-insensitive path collision |
+| `core/ops/scripts/utils/db_hygiene_sweep.py` | `RULE-ARCH-03` | OMA Watchdog làm sạch Data Zone |
+| `vault/archives/` | `RULE-ARCH-01` | [GLACIER] Trạm lưu trữ dữ liệu nén/bã rác |
+| `core/bridge/*.py` | N/A | Fix rò rỉ cấu trúc: Xóa sạch hardcode `system/` thành `core/` |
+
+### Architecture Decisions (session)
+| Decision | Detail |
+|----------|--------|
+| `QUARANTINE` → `vault/QUARANTINE` | Tách bạch Logic (`core/`) khỏi Data Dropzone (`vault/`). Anti-pattern ghi tại GAP-002 |
+| `databases/vault/` → Vaporized | Lỗi đệ quy từ ZIP V1 extract. Watchdog deployed để auto-enforce |
+| `brain/knowledge/corp/docs/` → `core/docs/` | **Discoverability Fix:** 27 docs files chuyển về Front Door `core/docs/` để User tìm thấy ngay. Sub-folders: `architecture/`, `usage_guides/`, `workflows/` |

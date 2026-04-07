@@ -36,17 +36,22 @@ from .customs_checkpoint import inspect_cargo, validate_platform
 # ── Config ─────────────────────────────────────────────────────────────────────
 _ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2])))
 _BLACKBOARD = _ROOT / "brain" / "shared-context" / "blackboard.json"
-_BRIDGE_LOG = _ROOT / "system" / "ops" / "telemetry" / "logs" / "bridge_gateway.log"
+_BRIDGE_LOG = _ROOT / "core" / "ops" / "telemetry" / "logs" / "bridge_gateway.log"
 _BRIDGE_LOG.parent.mkdir(parents=True, exist_ok=True)
 
-# CORS: read from env var, fallback wildcard for dev
-_ALLOWED_ORIGINS = os.environ.get("BRIDGE_ALLOWED_ORIGINS", "*").split(",")
+from logging.handlers import RotatingFileHandler
+
+# CORS: read from env var, strict fallback (OSF Protocol)
+_ALLOWED_ORIGINS = os.environ.get(
+    "BRIDGE_ALLOWED_ORIGINS", 
+    "http://localhost,http://127.0.0.1,https://app.omniclaw.com"
+).split(",")
 
 # ── Logging ────────────────────────────────────────────────────────────────────
 gw_logger = logging.getLogger("BridgeGateway")
 gw_logger.setLevel(logging.INFO)
 if not gw_logger.handlers:
-    fh = logging.FileHandler(_BRIDGE_LOG, encoding='utf-8')
+    fh = RotatingFileHandler(_BRIDGE_LOG, maxBytes=10*1024*1024, backupCount=5, encoding='utf-8')
     fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
     gw_logger.addHandler(fh)
 
