@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+[OMA] OmniClaw Model Manager Daemon
+======================================================
+Mission:
+  1. Auto-detect or construct the OmniClaw MODELS vault.
+  2. Dynamically register new AI Models to the OBD Harbor framework.
+  3. Ensure OBD config.json states are consistently updated for inference endpoints.
+"""
 import os
 import sys
 import json

@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""
+[OA] OmniClaw Vault Sweeper
+======================================================
+Mission:
+  1. Auto-discover and traverse the vault.
+  2. Invoke OHD health checks to heal corrupted frontmatter.
+  3. Emit detailed system telemetry logs.
+"""
 import os
 import sys
 
