@@ -15,3 +15,4 @@ tags: [core, config, parameters]
 
 ### Key Manifest:
 - `config.json`: The absolute central configuration for Daemons, Harbors, and system routing. (MUST NOT BE PLACED IN OPS)
+- `config.json`: Cấu hình trung tâm tối thượng cho Daemons, Harbors và định tuyến hệ thống. (TUYỆT ĐỐI KHÔNG ĐẶT TẠI KHU OPS)

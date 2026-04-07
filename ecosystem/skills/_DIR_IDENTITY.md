@@ -1,85 +1,11 @@
-# Directory Identity: ecosystem/skills
+---
+id: skills_domain
+name: Skills
+path: brain/knowledge/skills
+type: directory_identity
+---
 
-List of identified active skills.
+# Skills
 
-- accessibility_grounding — id: accessibility_grounding | type: skill | registered: 2026-04-02T20:47:14.664984
-- agentshield — id: agentshield | type: skill | registered: 2026-04-02T20:47:14.665610
-- agentskills-spec — id: agentskills-spec | type: skill | registered: 2026-04-02T20:47:14.666392
-- agentune — id: agentune | type: skill | registered: 2026-04-02T20:47:14.666843
-- apk-modification — id: apk-modification | type: skill | registered: 2026-04-02T20:47:14.667760
-- archivist — id: archivist | type: skill | registered: 2026-04-02T20:47:14.668567
-- awesome_tech_radar_skill — id: awesome_tech_radar_skill | type: skill | registered: 2026-04-02T20:47:14.668959
-- channel_manager — id: channel_manager | type: skill | registered: 2026-04-02T20:47:14.669331
-- code_interpreter — id: code_interpreter | type: skill | registered: 2026-04-02T20:47:14.669730
-- cognitive_evolver — id: cognitive_evolver | type: skill | registered: 2026-04-02T20:47:14.670319
-- cognitive_reflector — id: cognitive_reflector | type: skill | registered: 2026-04-02T20:47:14.670736
-- content_analyst — id: content-analyst-agent | type: skill | registered: 2026-04-02T20:47:14.671197
-- context7 — id: context7 | type: skill | registered: 2026-04-02T20:47:14.671596
-- context_manager — id: context_manager | type: skill | registered: 2026-04-02T20:47:14.672062
-- continuous-learning-v2 — id: continuous-learning-v2 | type: skill | registered: 2026-04-02T20:47:14.672428
-- corp_learning_loop — id: corp_learning_loop | type: skill | registered: 2026-04-02T20:47:14.672810
-- corp_orchestrator — id: corp_orchestrator | type: skill | registered: 2026-04-02T20:47:14.673225
-- cosmic_memory — id: cosmic_memory | type: skill | registered: 2026-04-02T20:47:14.673691
-- cybersecurity — id: cybersecurity | type: skill | registered: 2026-04-02T20:47:14.674284
-- dependabot-secretary — id: dependabot-secretary | type: skill | registered: 2026-04-02T20:47:14.675047
-- design-md — id: design-md | type: skill | registered: 2026-04-02T20:47:14.675494
-- desktop_automation — id: desktop_automation | type: skill | registered: 2026-04-02T20:47:14.675898
-- diagnostics_engine — id: diagnostics_engine | type: skill | registered: 2026-04-02T20:47:14.676274
-- domains — id: domains | type: skill | registered: 2026-04-02T20:47:14.676691
-- ecc-patterns — id: ecc-patterns | type: skill | registered: 2026-04-02T20:47:14.676971
-- ecosystem_librarian — id: ecosystem_librarian | type: skill | registered: 2026-04-02T20:47:14.677370
-- enhance-prompt — id: enhance-prompt | type: skill | registered: 2026-04-02T20:47:14.677799
-- experimental — id: experimental | type: skill | registered: 2026-04-02T20:47:14.678182
-- framework-standards — id: framework-standards | type: skill | registered: 2026-04-02T20:47:14.678546
-- gcp_deploy_skill — id: gcp_deploy_skill | type: skill | registered: 2026-04-02T20:47:14.678965
-- git-mcp — id: git-mcp | type: skill | registered: 2026-04-02T20:47:14.679544
-- gitnexus_analyzer — id: gitnexus_analyzer | type: skill | registered: 2026-04-02T20:47:14.679950
-- hyperspace_vector_architect — id: hyperspace_vector_architect | type: skill | registered: 2026-04-02T20:47:14.680381
-- insight_engine — id: insight_engine | type: skill | registered: 2026-04-02T20:47:14.681006
-- knowledge_enricher — id: knowledge_enricher | type: skill | registered: 2026-04-02T20:47:14.681412
-- knowledge_navigator — id: knowledge_navigator | type: skill | registered: 2026-04-02T20:47:14.681798
-- llm_router — id: llm_router | type: skill | registered: 2026-04-02T20:47:14.682213
-- multi-source-aggregation — id: multi-source-aggregation | type: skill | registered: 2026-04-02T20:47:14.682703
-- neural_memory — id: neural_memory | type: skill | registered: 2026-04-02T20:47:14.683070
-- neural_navigator — id: neural_navigator | type: skill | registered: 2026-04-02T20:47:14.683481
-- notification_bridge — id: notification_bridge | type: skill | registered: 2026-04-02T20:47:14.684573
-- observability — id: observability | type: skill | registered: 2026-04-02T20:47:14.684964
-- ontology_auditor — id: ontology_auditor | type: skill | registered: 2026-04-02T20:47:14.685336
-- orchestrator_pro — id: orchestrator_pro | type: skill | registered: 2026-04-02T20:47:14.685714
-- performance_profiler — id: performance_profiler | type: skill | registered: 2026-04-02T20:47:14.686101
-- production_qa — id: production_qa | type: skill | registered: 2026-04-02T20:47:14.686630
-- project_intake_agent — id: project_intake_agent | type: skill | registered: 2026-04-02T20:47:14.687071
-- proposal_engine — id: proposal_engine | type: skill | registered: 2026-04-02T20:47:14.687477
-- public_api_search_skill — id: public_api_search_skill | type: skill | registered: 2026-04-02T20:47:14.687855
-- react-components — id: react-components | type: skill | registered: 2026-04-02T20:47:14.688236
-- reasoning_engine — id: reasoning_engine | type: skill | registered: 2026-04-02T20:47:14.688645
-- repo_analyst — id: repo_analyst | type: skill | registered: 2026-04-02T20:47:14.689059
-- resilience_engine — id: resilience_engine | type: skill | registered: 2026-04-02T20:47:14.689450
-- sandbox_operator — id: sandbox_operator | type: skill | registered: 2026-04-02T20:47:14.689925
-- secret-scanner — id: secret-scanner | type: skill | registered: 2026-04-02T20:47:14.690453
-- secret_scanner — id: secret_scanner | type: skill | registered: 2026-04-02T20:47:14.690855
-- security_shield — id: security_shield | type: skill | registered: 2026-04-02T20:47:14.691644
-- seo-aeo-optimization — id: seo-aeo-optimization | type: skill | registered: 2026-04-02T20:47:14.692177
-- sequential-thinking — id: sequential-thinking | type: skill | registered: 2026-04-02T20:47:14.692571
-- shadcn-ui — id: shadcn-ui | type: skill | registered: 2026-04-02T20:47:14.693075
-- shell_assistant — id: shell_assistant | type: skill | registered: 2026-04-02T20:47:14.693551
-- skills — id: skills | type: skill | registered: 2026-04-02T20:47:14.693895
-- skill_generator — id: skill_generator | type: skill | registered: 2026-04-02T20:47:14.694302
-- skill_sentry — id: skill_sentry | type: skill | registered: 2026-04-02T20:47:14.694782
-- smart_memory — id: smart_memory | type: skill | registered: 2026-04-02T20:47:14.695211
-- stitch-design — id: stitch-design | type: skill | registered: 2026-04-02T20:47:14.695603
-- stitch-loop — id: stitch-loop | type: skill | registered: 2026-04-02T20:47:14.696087
-- supabase-postgres-best-practices — id: supabase-postgres-best-practices | type: skill | registered: 2026-04-02T20:47:14.696462
-- system_autofix — id: system_autofix | type: skill | registered: 2026-04-02T20:47:14.696916
-- tai-video — id: tai-video | type: skill | registered: 2026-04-02T20:47:14.697294
-- threat-detector — id: threat-detector | type: skill | registered: 2026-04-02T20:47:14.697656
-- tools_hub — id: tools_hub | type: skill | registered: 2026-04-02T20:47:14.698014
-- trivy — id: trivy | type: skill | registered: 2026-04-02T20:47:14.698373
-- ui-ux — id: ui-ux | type: skill | registered: 2026-04-02T20:47:14.698783
-- ui-ux-pro-max — id: ui-ux-pro-max | type: skill | registered: 2026-04-02T20:47:14.699375
-- understand-anything — id: understand-anything | type: skill | registered: 2026-04-02T20:47:14.699863
-- vibe-kanban — id: vibe-kanban | type: skill | registered: 2026-04-02T20:47:14.700310
-- video-extraction — id: video-extraction | type: skill | registered: 2026-04-02T20:47:14.700756
-- visual_excellence — id: visual_excellence | type: skill | registered: 2026-04-02T20:47:14.701195
-- web_intelligence — id: web_intelligence | type: skill | registered: 2026-04-02T20:47:14.701616
-- web_surfer — id: web_surfer | type: skill | registered: 2026-04-02T20:47:14.702040
+Knowledge base domain: skills.
+(Auto-generated identity tag by OMA v2.1)

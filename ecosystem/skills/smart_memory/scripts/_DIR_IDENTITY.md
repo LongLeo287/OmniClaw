@@ -1,14 +1,14 @@
 ---
 id: scripts_domain
 name: Scripts
-path: ecosystem/skills/smart_memory/scripts
+path: brain/knowledge/general/smart_memory/scripts
 type: directory_identity
 status: empty_shell
 ---
 
 # Scripts
 
-Skill collection for scripts.
+Knowledge base domain: scripts.
 (Auto-generated identity tag by OMA v2.1)
 
 

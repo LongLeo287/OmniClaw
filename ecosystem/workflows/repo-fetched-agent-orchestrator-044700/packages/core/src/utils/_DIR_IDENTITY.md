@@ -1,0 +1,12 @@
+---
+id: ecosystem-workflows-repo-fetched-agent-orchestrator-044700-packages-core-src-utils
+name: Utils
+path: ecosystem/workflows/repo-fetched-agent-orchestrator-044700/packages/core/src/utils
+type: directory_identity
+owner: OER
+created_by: OMA-v2.1
+---
+
+# Utils
+Storage area for 'utils' domain.
+> Auto-generated identity tag by OMA v2.1.

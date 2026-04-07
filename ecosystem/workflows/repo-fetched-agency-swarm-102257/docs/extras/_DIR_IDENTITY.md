@@ -1,0 +1,12 @@
+---
+id: ecosystem-workflows-repo-fetched-agency-swarm-102257-docs-extras
+name: Extras
+path: ecosystem/workflows/repo-fetched-agency-swarm-102257/docs/extras
+type: directory_identity
+owner: OER
+created_by: OMA-v2.1
+---
+
+# Extras
+Storage area for 'extras' domain.
+> Auto-generated identity tag by OMA v2.1.

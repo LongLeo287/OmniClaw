@@ -1,0 +1,12 @@
+---
+id: ecosystem-workforce-repo-fetched-aperant-034226-034314-apps-desktop-src-renderer-components-gitlab-merge-requests-components
+name: Components
+path: ecosystem/workforce/repo-fetched-aperant-034226-034314/apps/desktop/src/renderer/components/gitlab-merge-requests/components
+type: directory_identity
+owner: OER
+created_by: OMA-v2.1
+---
+
+# Components
+Storage area for 'components' domain.
+> Auto-generated identity tag by OMA v2.1.
