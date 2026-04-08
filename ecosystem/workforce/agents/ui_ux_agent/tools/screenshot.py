@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OmniClaw Corp "” Screenshot & Send to Telegram
+OmniClaw Corp - Screenshot & Send to Telegram
 Usage: python screenshot.py <chat_id>
 """
 import sys
@@ -31,7 +31,7 @@ ts = datetime.now().strftime("%H:%M:%S")
 with open(OUT, "rb") as f:
     resp = requests.post(
         f"https://api.telegram.org/bot{TOKEN}/sendPhoto",
-        data={"chat_id": CHAT_ID, "caption": f"ðŸ“¸ Screenshot lÃºc {ts}"},
+        data={"chat_id": CHAT_ID, "caption": f"Screenshot at {ts}"},
         files={"photo": f},
         timeout=30
     )
