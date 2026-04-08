@@ -11,7 +11,7 @@
 | **Loyalty** | OSF (OmniClaw Sandbox Firewall) |
 
 ## Role & Scope
-Cảnh vệ canh gác vùng QUARANTINE thắt chặt quyền sinh sát các File Độc hại.
+Security guard of the QUARANTINE zone. Enforces absolute control over isolated malicious files.
 
 ## Tools 
 `os_quarantine_manager.py`, `virus_total_scan.py`

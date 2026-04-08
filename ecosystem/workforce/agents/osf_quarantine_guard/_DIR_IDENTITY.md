@@ -7,7 +7,7 @@ status: "active"
 ---
 
 # OSF Quarantine Guard
-Cảnh vệ canh gác vùng QUARANTINE thắt chặt quyền sinh sát các File Độc hại.
+Security guard of the QUARANTINE zone. Enforces absolute control over isolated malicious files.
 
 ---
 *Created by OmniClaw OS Martial Law workflow. OSF Supreme Security Override.*

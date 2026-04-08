@@ -7,7 +7,7 @@ status: "active"
 ---
 
 # OSF Supply Chain Auditor
-Thanh tra nội bộ cục OSF. Càn quét mảng Supply Chain Dependencies.
+Internal inspector of the OSF sector. Performs deep scans on Supply Chain Dependencies and malicious payloads.
 
 ---
 *Created by OmniClaw OS Martial Law workflow. OSF Supreme Security Override.*

@@ -4,7 +4,7 @@
 - **Manager**: osf-firewall-daemon
 
 ## Workforce Roster
-- **osf_warden** (active): *Warden of OSF (Hải Quan Trưởng)*
+- **osf_warden** (active): *Warden of OSF*
 - **osf_auditor** (active): *OSF Supply Chain Auditor*
 - **osf_quarantine_guard** (active): *OSF Quarantine Guard*
 
