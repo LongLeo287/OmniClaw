@@ -1,14 +1,14 @@
-﻿<div align="center">
+<div align="center">
 
-  <img src="asset/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
+  <img src="core/docs/images/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
   <br><br>
   
   <p align="center">
-    <img src="asset/omniclaw_logo_1800px.png" alt="OmniClaw Logo" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+    <img src="core/docs/images/omniclaw_logo_1800px.png" alt="OmniClaw Logo" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
   </p>
   
   <p align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=­ƒÜÇ+EVOLVING+EVERY+DAY;+­ƒîî+OMNICLAW+IS+THINKING...;+­ƒøá´©Å+ADDING+NEW+AGENTS" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+EVOLVING+EVERY+DAY;+🌟+OMNICLAW+IS+THINKING...;+🏠+ADDING+NEW+AGENTS" alt="Typing SVG" />
   </p>
 
   <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br><br>
@@ -24,23 +24,23 @@
   [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
   <br>
   
-  [**­ƒç╗­ƒç│ Vietnamese**](README-vn.md)
+  [**🇻🇳 Vietnamese**](README-vn.md)
   
   <br>
 
-[About](#-about-ai-os) ÔÇó
-[Strengths](#-core-strengths--why-ai-os) ÔÇó
-[Architecture](#-architecture--3-tier-plugins) ÔÇó
-[Departments](#-the-workforce-departments) ÔÇó
-[Installation](#-installation) ÔÇó
-[Discussions](https://github.com/LongLeo287/omniclaw-local/discussions) ÔÇó
+[About](#-about-ai-os) •
+[Strengths](#-core-strengths--why-ai-os) •
+[Architecture](#-architecture--3-tier-plugins) •
+[Departments](#-the-workforce-departments) •
+[Installation](#-installation) •
+[Discussions](https://github.com/LongLeo287/omniclaw-local/discussions) •
 [Credits](#-acknowledgements)
 
 </div>
 
 ---
 
-## ­ƒîƒ About OmniClaw
+## 🌟 About OmniClaw
 
 **OmniClaw** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital corporation.
 
@@ -48,7 +48,7 @@ Rather than acting as a simple chatbot, OmniClaw actively routes your complex di
 
 ---
 
-## ÔÜí Core Strengths & Why OmniClaw?
+## ⚡ Core Strengths & Why OmniClaw?
 
 What makes OmniClaw profoundly different from standard AI coding assistants?
 
@@ -67,7 +67,7 @@ What makes OmniClaw profoundly different from standard AI coding assistants?
 
 ---
 
-## ­ƒù║´©Å Architecture & 3-Tier Plugins
+## 🏛️ Architecture & 3-Tier Plugins
 
 To maintain a lightweight footprint while offering infinite vertical scaling, all tools in OmniClaw follow a strict **3-Tier Plugin Protocol**:
 
@@ -118,13 +118,13 @@ sequenceDiagram
 | **...**     | **And 19 others**        | 28 Zero-Trust departments actively governing 116 agents!                                     | `various`           |
 
 > [!TIP]
-> **Deep Dive**: For the full breakdown of all 28 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/knowledge/corp/MASTER_INDEX.md).
+> **Deep Dive**: For the full breakdown of all 28 departments, reporting lines, and agent interactions, see the [**Master System Index**](core/docs/README.md).
 
 > [!NOTE]
 > The Workforce is strictly divided into 4 physical Pillars: `agents/` (116 autonomous workers), `subagents/` (ephemeral task runners), `departments/` (reporting structures), and `system/` (The Declarative Configuration Zone for global prompts and OS daemon mappings).
 
 > [!NOTE]
-> For the full list of 21 departments and agent rosters, please refer to the `brain/corp/org_chart.yaml` master registry.
+> For the full list of 21 departments and agent rosters, please refer to the `ecosystem/workforce/_DIR_IDENTITY.md` master registry.
 
 ---
 
@@ -196,7 +196,7 @@ To guarantee absolute synchronization across the internal filesystem, OmniClaw s
 
 - **The Fast Index (`FAST_INDEX.json`)**: The authoritative ledger of the operating system. Every legitimate Agent, Department, and Skill across the network is stamped here. If a file is not in the Fast Index, Orchestrator treats it as invisible.
 - **The Library Graph (`LIBRARY_GRAPH.json`)**: Maps the complex relational edges between sub-agents and their required Knowledge files, rendering a 2D network diagram of the internal Brain matrix. 
-- **Cognitive Tracking (`brain/knowledge`)**: All organizational memory, KPI Scoreboards, and long-term storage architectures are isolated within the `brain/` directory. System Agents strictly interface with this vault via their verified pointers, avoiding data contamination across the ecosystem.
+- **The Core Documentation (`core/docs`)**: All organizational memory, KPI Scoreboards, and long-term storage architectures are documented within the `core/docs/` directory.
 
 ---
 
@@ -231,8 +231,8 @@ _Windows Tip: We have provided native Windows GUI accessibility. Simply double-c
 
 OmniClaw is an entire Operating System, not just a codebase. For daily usage and automatic data processing, please refer to our internal operation guides:
 
-- [**Secure GitHub Intake Protocol (CIV)**](brain/knowledge/corp/docs/workflows/data_intake.md)
-- [**OS Deep Sanitation & Vault Protection**](brain/knowledge/corp/docs/workflows/deep_cleaner.md)
+- [**Secure GitHub Intake Protocol (CIV)**](core/docs/workflows/data_intake.md)
+- [**OS Deep Sanitation & Vault Protection**](core/docs/workflows/deep_cleaner.md)
 
 ---
 
@@ -240,12 +240,12 @@ OmniClaw is an entire Operating System, not just a codebase. For daily usage and
 
 For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult our master maps:
 
-- 🏛️ [**Core Architectural Principles**](brain/knowledge/corp/docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
-- 🧭 [**Master System Map**](brain/knowledge/corp/MASTER_SYSTEM_MAP.md) — The complete blueprint: 21 departments, Boot Sequence, Memory architecture, and Gate workflows.
-- 🚦 [**Activation Guide**](brain/knowledge/corp/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
-- 🧩 [**Skills & Plugins Capability Map**](brain/knowledge/corp/docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
-- 📊 [**Data Science Repositories**](brain/knowledge/corp/docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
-- 🏛️ [**Core Daemons & OER Governance**](brain/knowledge/corp/docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
+- 🏛️ [**Core Architectural Principles**](core/docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
+- 🧭 [**Master System Map**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 28 departments, Boot Sequence, Memory architecture, and Gate workflows.
+- 🚦 [**Activation Guide**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
+- 🧩 [**Skills & Plugins Capability Map**](core/docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
+- 📊 [**Data Science Repositories**](core/docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
+- 🏛️ [**Core Daemons & OER Governance**](core/docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
 
 ---
 
