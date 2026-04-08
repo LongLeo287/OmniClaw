@@ -1,12 +1,14 @@
----
-name: rootly-mcp-server-agent
-description: Engineering specialist agent
-agents: [rootly-mcp-server-agent]
-tier: tier2
-status: active
-added: 2026-03-31
+# SKILL PROFILE: rootly_mcp_server_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Rootly Mcp Server Agent
+## 1. Domain Capability
+Engineering specialist agent
 
-See: ecosystem/workforce/agents/rootly-mcp-server-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

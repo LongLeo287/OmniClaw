@@ -1,12 +1,14 @@
----
-name: vue-skills-agent
-description: Engineering specialist agent
-agents: [vue-skills-agent]
-tier: tier2
-status: active
-added: 2026-03-31
+# SKILL PROFILE: vue_skills_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Vue Skills Agent
+## 1. Domain Capability
+Engineering specialist agent
 
-See: ecosystem/workforce/agents/vue-skills-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

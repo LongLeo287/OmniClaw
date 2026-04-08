@@ -1,80 +1,14 @@
----
-name: scrum-master-agent
-display_name: "Scrum Master Agent (BMAD)"
-description: >
-  Tier 3 BMAD-aligned scrum master agent. Facilitates sprint planning, story
-  creation, epic retrospectives, and course correction. Removes blockers,
-  tracks velocity, and ensures team delivery cadence. Uses BMAD templates.
-tier: "3"
-category: agents
-version: "1.0"
-source: knowledge/bmad_repo (BMAD Bob — Scrum Master)
-emoji: "🏃"
-tags: [scrum, agile, sprint, velocity, retrospective, bmad, ceremonies, planning]
-accessible_by:
-  - orchestrator_pro
-  - antigravity
-exposed_functions:
-  - run_sprint_planning
-  - create_sprint_stories
-  - run_retrospective
-  - track_velocity
-  - remove_blockers
-load_on_boot: false
+# SKILL PROFILE: scrum_master_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Scrum Master Agent (BMAD)
+## 1. Domain Capability
+Tier 3 BMAD-aligned scrum master agent. Facilitates sprint planning, story
 
-**Tier 3 BMAD specialist.** Sprint facilitation, blocker removal, and delivery rhythm.
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
 
-## BMAD Menu Triggers
-
-| Trigger | Action |
-|---|---|
-| `SP` | Sprint Planning ceremony |
-| `CS` | Create Stories from Epics |
-| `ER` | Epic Retrospective |
-| `CC` | Course Correction during sprint |
-
-## Sprint Ceremonies
-
-**Sprint Planning:**
-```
-1. Review epic backlog → select top stories by value
-2. Estimate with team (Fibonacci: 1,2,3,5,8,13)
-3. Capacity planning: (team size × sprint days × 6h effective)
-4. Define Sprint Goal: one sentence of value delivered
-5. Accept stories into sprint only if:
-   - Acceptance criteria defined
-   - Technical design agreed
-   - Dependencies resolved
-```
-
-**Daily Standup format:**
-```
-- Done since last standup
-- Plan until next standup
-- Blockers (escalate immediately, don't carry over)
-```
-
-**Retrospective (4Ls):**
-```
-Liked: [what worked well]
-Learned: [new insights]
-Lacked: [what was missing]
-Longed For: [improvements wanted]
-```
-
-## Blocker Management
-
-```
-Priority 1 BLOCKED: Escalate to orchestrator_pro immediately
-Priority 2 AT RISK: 24h resolution window
-Priority 3 WATCH: Track, document, resolve next sprint
-```
-
-## Integration
-
-- Works with: `product-manager-agent` on PRD → Stories pipeline
-- Works with: `code-reviewer` subagent for PR closure
-- Source: `knowledge/bmad_repo` (BMAD Bob Scrum Master)
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

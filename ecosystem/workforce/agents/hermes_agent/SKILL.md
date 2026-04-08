@@ -1,12 +1,14 @@
----
-name: hermes-agent
-description: Function Calling and Reasoning specialist agent
-agents: [hermes-agent]
-tier: tier2
-status: active
-added: 2026-03-31
+# SKILL PROFILE: hermes_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Hermes Agent
+## 1. Domain Capability
+Function Calling and Reasoning specialist agent
 
-See: ecosystem/workforce/agents/hermes-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

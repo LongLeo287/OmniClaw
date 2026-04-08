@@ -1,12 +1,14 @@
----
-name: swift-composable-architecture-agent
-description: Engineering specialist agent
-agents: [swift-composable-architecture-agent]
-tier: tier2
-status: active
-added: 2026-03-31
+# SKILL PROFILE: swift_composable_architecture_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Swift Composable Architecture Agent
+## 1. Domain Capability
+Engineering specialist agent
 
-See: ecosystem/workforce/agents/swift-composable-architecture-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

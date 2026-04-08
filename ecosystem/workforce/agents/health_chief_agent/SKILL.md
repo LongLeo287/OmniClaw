@@ -1,12 +1,14 @@
----
-name: health-chief-agent
-description: General specialist agent
-agents: [health-chief-agent]
-tier: tier3
-status: active
-added: 2026-03-26
+# SKILL PROFILE: health_chief_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Health Chief Agent
+## 1. Domain Capability
+General specialist agent
 
-See: ecosystem/workforce/agents/health-chief-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

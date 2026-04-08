@@ -1,12 +1,14 @@
----
-name: opik-agent
-description: Engineering specialist agent
-agents: [opik-agent]
-tier: tier2
-status: active
-added: 2026-03-30
+# SKILL PROFILE: opik_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Opik Agent
+## 1. Domain Capability
+Engineering specialist agent
 
-See: ecosystem/workforce/agents/opik-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

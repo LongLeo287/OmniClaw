@@ -1,13 +1,14 @@
----
-owner: Dept 1
-forged_at: 2026-04-08T13:55:39.666747
-status: active_forge
+# SKILL PROFILE: repo_civ_fetched_langchain
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# OmniClaw Dept 1 Backend Skill
-## Overview
-This backend skill is designed to integrate with the LangChain API for fetching and processing data. It also leverages Hugging Face's transformers library for text generation.
-## Files
-- config.json: Configuration settings for database and version.
-- requirements.txt: List of dependencies required for the project.
-- main.py: Main script containing the logic to fetch, process, and generate text.
+## 1. Domain Capability
+Capability profile pending dynamic extraction.
+
+## 2. Linked Toolkit
+> [!NOTE]
+> No static YAML skills mapped. Awaiting dynamic plugin hooks from OAP Orchestrator.
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

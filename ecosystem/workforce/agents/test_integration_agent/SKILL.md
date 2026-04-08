@@ -1,12 +1,14 @@
----
-name: test-integration-agent
-description: Testing specialist agent
-agents: [test-integration-agent]
-tier: tier3
-status: active
-added: 2026-03-29
+# SKILL PROFILE: test_integration_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Test Integration Agent
+## 1. Domain Capability
+Testing specialist agent
 
-See: ecosystem/workforce/agents/test-integration-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

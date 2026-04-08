@@ -1,12 +1,14 @@
----
-name: bridge-commander-agent
-description: Gateway_Border_Security specialist agent
-agents: [bridge-commander-agent]
-tier: tier3
-status: active
-added: 2026-03-31
+# SKILL PROFILE: bridge_commander_agent
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
-# Bridge Commander Agent
+## 1. Domain Capability
+Gateway_Border_Security specialist agent
 
-See: ecosystem/workforce/agents/bridge-commander-agent/AGENT.md
+## 2. Linked Toolkit
+- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
+- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*

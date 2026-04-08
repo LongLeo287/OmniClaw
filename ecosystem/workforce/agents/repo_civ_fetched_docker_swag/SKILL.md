@@ -1,6 +1,14 @@
----
-owner: Dept 1
-forged_at: 2026-04-08T13:42:27.554616
-status: active_forge
+# SKILL PROFILE: repo_civ_fetched_docker_swag
+# Department Registry: OAP Toolchain
+# Scope: Pure OS-sanctioned Tools
 ---
 
+## 1. Domain Capability
+Capability profile pending dynamic extraction.
+
+## 2. Linked Toolkit
+> [!NOTE]
+> No static YAML skills mapped. Awaiting dynamic plugin hooks from OAP Orchestrator.
+
+---
+*Capability Register hardened by OmniClaw OA Skill Auditor.*
