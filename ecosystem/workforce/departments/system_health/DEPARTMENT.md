@@ -4,7 +4,7 @@
 - **Manager**: system_health-lead-agent
 
 ## Workforce Roster
-- No designated workforce.
+- **ohd_healer** (active): *OHD Medical Healer Daemon*
 
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking
