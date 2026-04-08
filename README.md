@@ -1,3 +1,98 @@
+﻿<div align="center">
+
+  <img src="asset/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
+  <br><br>
+  
+  <p align="center">
+    <img src="asset/omniclaw_logo_1800px.png" alt="OmniClaw Logo" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+  </p>
+  
+  <p align="center">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=­ƒÜÇ+EVOLVING+EVERY+DAY;+­ƒîî+OMNICLAW+IS+THINKING...;+­ƒøá´©Å+ADDING+NEW+AGENTS" alt="Typing SVG" />
+  </p>
+
+  <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br><br>
+
+  [![Daily Update](https://img.shields.io/badge/STATUS-UPDATING_DAILY-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
+  [![Last Update](https://img.shields.io/github/last-commit/LongLeo287/OmniClaw?label=LAST%20UPDATE&style=for-the-badge&color=brightgreen)](https://github.com/LongLeo287/OmniClaw/commits/main)
+  
+  <br>
+
+  [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
+  [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
+  [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
+  [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
+  <br>
+  
+  [**­ƒç╗­ƒç│ Vietnamese**](README-vn.md)
+  
+  <br>
+
+[About](#-about-ai-os) ÔÇó
+[Strengths](#-core-strengths--why-ai-os) ÔÇó
+[Architecture](#-architecture--3-tier-plugins) ÔÇó
+[Departments](#-the-workforce-departments) ÔÇó
+[Installation](#-installation) ÔÇó
+[Discussions](https://github.com/LongLeo287/omniclaw-local/discussions) ÔÇó
+[Credits](#-acknowledgements)
+
+</div>
+
+---
+
+## ­ƒîƒ About OmniClaw
+
+**OmniClaw** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital corporation.
+
+Rather than acting as a simple chatbot, OmniClaw actively routes your complex directives through specialized **Functional Departments**, manages its own memory utilizing Graph RAG, and dynamically evolves its codebase based on your instructions. It is designed with **Zero-Trust Privacy**, ensuring all your local data remains strictly on your machine.
+
+---
+
+## ÔÜí Core Strengths & Why OmniClaw?
+
+What makes OmniClaw profoundly different from standard AI coding assistants?
+
+1. **Absolute Portability & Platform Agnosticism**
+   We do not lock you into a single IDE. OmniClaw is designed from the ground up to be compatible with **Cursor**, **Claude Code CLI**, **Google Gemini**, and **OpenCode**. The systemic rules are globally inherited no matter which frontend you prefer.
+2. **Zero-Trust Git Protection**
+   Equipped with aggressive post-session `omniclaw_deep_cleaner.py` background daemons. Every time you close a session, the OS sweeps your cache, purges ephemeral databases (`.sqlite`, `.db`), and sanitizes GitHub commits to prevent API keys or secrets from ever leaving your local drive.
+3. **Hyper-Automated Universal Bootstrapper**
+   Forget managing 10 different shell scripts. Simply run `omniclaw` in your terminal (or double-click the Windows `omniclaw.bat`) to instantly invoke the central Dashboard. It handles NPM dependencies, VSCode Extension injections, and Model routing automatically.
+4. **Autonomous Execution (Worker Threads)**
+   Master agents (like Claude or Gemini) delegate massive, multi-step tasks to sub-agents (CrewAI, Node scripts). It acts like a Project Manager, not just a programmer.
+5. **Pre-Built Cognitive Skeleton (Zero-Config Memory)**
+   When you clone OmniClaw, you inherit a 300+ directory structure pre-initialized via rigorous `.gitkeep` structural tracking. Your local RAG memory and Multi-Agent Knowledge Bases are ready to digest and classify data from Day 1 without requiring initialization scripts.
+6. **OS-Agnostic Global Language Policy**
+   The architecture strictly adheres to an English-Only Core (Technical English) for all system files, Knowledge Items, and Agents. This structural rule eliminates LLM tokenization bottlenecks and ensures flawless API multi-tenant compatibility across global models (US, EU, CN), while still supporting localized UI/Docs for humans via `-vn.md` templates.
+
+---
+
+## ­ƒù║´©Å Architecture & 3-Tier Plugins
+
+To maintain a lightweight footprint while offering infinite vertical scaling, all tools in OmniClaw follow a strict **3-Tier Plugin Protocol**:
+
+- **Tier 1 (Core Infrastructure)**: Native, always-on engines (e.g., `LightRAG` for memory, `Firecrawl` for deep web scraping).
+- **Tier 2 (Lazy-Load Plugins)**: Specialized tools (like PDF parsers or heavy Python image generators) that are sandboxed and **spun up only when requested**, then autonomously destroyed/detached to free up RAM.
+- **Tier 3 (Blacklisted)**: Outdated or conflicting legacy modules that the system is strictly forbidden from executing.
+
+```mermaid
+sequenceDiagram
+    participant Agent
+    participant MCP Registry
+    participant Tier2 as Tier-2 Sandboxed Plugin
+
+    Agent->>MCP Registry: Request Deep Skill/Tool
+    alt Is Tier 1 (Core)
+        MCP Registry-->>Agent: Immediate REST/Graph Access
+    else Is Tier 2 (Lazy Load)
+        MCP Registry->>Tier2: Spin up isolated local execution
+        Tier2-->>Agent: Return ephemeral output
+        Tier2->>Tier2: Autonomous Teardown & Purge
+    end
+```
+
+---
+
 | :--- | :--- | :--- |
 | **OIW** | OmniClaw Intake Watchdog | Scrutinizes external internet bounds, scraping raw context inputs and routing them inward to the OS. |
 | **OSF** | OmniClaw Sandbox Firewall | Performs heuristic deep scans for leaked API keys, credentials, and malicious patterns. Rejects dangerous code before it enters the Core. |
