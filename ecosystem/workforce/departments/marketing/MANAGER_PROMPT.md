@@ -1,4 +1,4 @@
-﻿# Marketing — Dept Manager Prompt
+# Marketing — Dept Manager Prompt
 # Head: growth-agent | Reports to: CMO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

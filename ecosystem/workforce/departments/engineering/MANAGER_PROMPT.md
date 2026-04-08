@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# Engineering — Dept Manager Prompt
+﻿﻿﻿﻿# Engineering — Dept Manager Prompt
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 # Head: backend-architect-agent | Reports to: CTO
 

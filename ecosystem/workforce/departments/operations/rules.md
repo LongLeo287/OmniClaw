@@ -1,4 +1,4 @@
-﻿# OPERATIONS — Department Rules
+# OPERATIONS — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: scrum-master-agent | Reports to: COO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md

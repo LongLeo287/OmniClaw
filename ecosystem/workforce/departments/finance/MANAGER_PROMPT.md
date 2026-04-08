@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# Finance — Dept Manager Prompt
+﻿﻿﻿﻿# Finance — Dept Manager Prompt
 # NEW DEPARTMENT | Head: cost-manager-agent | Reports to: CFO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

@@ -1,4 +1,4 @@
-﻿# AGENT: Opik Agent - Auto-Scaffolded Agent for opik
+# AGENT: Opik Agent - Auto-Scaffolded Agent for opik
 # Version: 1.0 | Created: 2026-03-30 | OmniClaw OS
 # Department: Engineering (Dept 2) - <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)

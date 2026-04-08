@@ -1,4 +1,4 @@
-﻿# QA & Testing — Worker Prompt
+# QA & Testing — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: superpowers-agent | security-engineer-agent | security-auditor-agent
 

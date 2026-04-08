@@ -1,4 +1,4 @@
-﻿# SYSTEM HEALTH (Nurses) — Department Rules
+# SYSTEM HEALTH (Nurses) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: health-chief-agent | Reports to: CTO
 # Mission: Discover, discover, and discover what's different about OmniClaw

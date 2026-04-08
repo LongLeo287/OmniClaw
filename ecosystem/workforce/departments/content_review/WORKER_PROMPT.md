@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# Content Review — Worker Prompt
+﻿﻿﻿﻿# Content Review — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: senior-editor-agent | fact-checker | content-moderator | brand-guardian
 

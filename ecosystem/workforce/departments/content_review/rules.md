@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# CONTENT REVIEW (KIá»‚M DUYá»†T) — Department Rules
+﻿﻿﻿﻿# CONTENT REVIEW (KIá»‚M DUYá»†T) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: editor-agent | Reports to: CMO
 # This dept IS a gate (GATE_CONTENT) — blocks all public content

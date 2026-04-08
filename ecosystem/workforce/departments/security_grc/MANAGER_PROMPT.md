@@ -1,4 +1,4 @@
-﻿# Security & GRC — Dept Manager Prompt
+# Security & GRC — Dept Manager Prompt
 # NEW DEPARTMENT | Head: strix-agent | Reports to: COO
 # GRC = Governance, Risk & Compliance
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md

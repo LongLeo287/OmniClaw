@@ -1,4 +1,4 @@
-﻿# SECURITY & GRC — Department Rules
+# SECURITY & GRC — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: strix-agent | Reports to: COO
 # AUTONOMOUS DEPT — can act without manager trigger for CRITICAL threats

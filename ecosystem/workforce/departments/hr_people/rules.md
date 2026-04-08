@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# HR & PEOPLE (NHÃ‚N Sá»°) — Department Rules
+﻿﻿﻿# HR & PEOPLE (NHÃ‚N Sá»°) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: hr-manager-agent | Reports to: COO
 # Manages all AI agent workforce (recruiting, onboarding, performance, budget)

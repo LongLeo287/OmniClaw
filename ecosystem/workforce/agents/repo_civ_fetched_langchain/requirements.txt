@@ -1,3 +1,0 @@
-langchain==0.2.1
-transformers==4.16.2
-torch==1.10.0

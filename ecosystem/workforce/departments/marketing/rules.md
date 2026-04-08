@@ -1,4 +1,4 @@
-﻿# MARKETING — Department Rules
+# MARKETING — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: growth-agent | Reports to: CMO
 # ALL content outputs must pass GATE_CONTENT before publishing

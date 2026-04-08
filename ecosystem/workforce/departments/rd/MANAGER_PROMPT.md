@@ -1,4 +1,4 @@
-﻿# R&D — Dept Manager Prompt
+# R&D — Dept Manager Prompt
 # NEW DEPARTMENT | Head: rd-lead-agent | Reports to: CSO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

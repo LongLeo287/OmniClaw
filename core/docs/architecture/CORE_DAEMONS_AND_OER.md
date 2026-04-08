@@ -3,7 +3,7 @@
 > **Authority:** CEO (LongLeo) | **Version:** 3.0 | **Date:** 2026-04-08
 > **Status:** ACTIVE — This document supersedes all previous ecosystem authority definitions.
 
-[**🇻🇳 Bản Tiếng Việt**](CORE_DAEMONS_AND_OER-vn.md) | [**Back to Docs**](../../../README.md)
+[**Back to Docs**](../../../README.md)
 
 This document defines the **7 Core Daemons** of OmniClaw OS and the **Zero-Trust Automated Pipeline** that governs how every Skill, Plugin, Agent, and Workflow enters the ecosystem.
 

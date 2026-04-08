@@ -1,7 +1,0 @@
-# CIV_FETCHED_docker-swag_112834
-This repository contains the infrastructure for a simple API gateway that forwards requests to an external service.
-
-## Usage
-1. Build the Docker image with `docker build -t civ-fetcher .`
-2. Run the container with `docker run --name civ-fetcher -p 5000:5000 civ-fetcher`
-3. Send a POST request to http://localhost:5000/api with JSON data

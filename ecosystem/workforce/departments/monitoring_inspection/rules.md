@@ -1,4 +1,4 @@
-﻿# MONITORING & INSPECTION — Department Rules
+# MONITORING & INSPECTION — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: monitor-chief-agent | Reports to: COO
 # Mission: Improve the integrity of 20 departments, processes, compliance, and ensure compliance

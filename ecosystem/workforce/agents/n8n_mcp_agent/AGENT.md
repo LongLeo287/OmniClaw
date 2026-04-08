@@ -1,4 +1,4 @@
-﻿# AGENT: N8N Mcp Agent - Auto-Scaffolded Agent for n8n-mcp
+# AGENT: N8N Mcp Agent - Auto-Scaffolded Agent for n8n-mcp
 # Version: 1.0 | Created: 2026-03-31 | OmniClaw OS
 # Department: Engineering (Dept 2) - <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)

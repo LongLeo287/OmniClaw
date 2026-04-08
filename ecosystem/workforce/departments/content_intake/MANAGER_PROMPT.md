@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿# CONTENT INTAKE & VETTING — Manager Prompt
+﻿﻿﻿﻿﻿# CONTENT INTAKE & VETTING — Manager Prompt
 # Version: 1.2 | Updated: 2026-03-24
 # Dept Head: intake-chief-agent | Reports to: COO
 # v1.2: Fixed QUARANTINE path, added content-analyst-agent

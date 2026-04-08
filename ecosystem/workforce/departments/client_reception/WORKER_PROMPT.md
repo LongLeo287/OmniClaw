@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿# Client Reception — Worker Prompt
+﻿﻿﻿﻿﻿﻿# Client Reception — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Status: DORMANT (activates when CEO offline / bot tokens active)
 # Workers: project-intake-agent | proposal-writer-agent | client-comms-agent

@@ -1,4 +1,4 @@
-﻿﻿# IT INFRASTRUCTURE — Department Rules
+﻿# IT INFRASTRUCTURE — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: it-manager-agent | Reports to: CTO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md

@@ -1,4 +1,4 @@
-﻿# Support — Worker Prompt
+# Support — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: faq-agent | knowledge-agent | crm-agent
 

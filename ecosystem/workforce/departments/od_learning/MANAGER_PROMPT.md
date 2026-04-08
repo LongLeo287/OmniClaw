@@ -1,4 +1,4 @@
-﻿# ORGANIZATIONAL DEVELOPMENT & LEARNING — Manager Prompt
+# ORGANIZATIONAL DEVELOPMENT & LEARNING — Manager Prompt
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: org-architect-agent | Reports to: CSO
 

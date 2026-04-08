@@ -1,4 +1,4 @@
-﻿# Security & GRC — Worker Prompt
+# Security & GRC — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: security-scanner | compliance-agent | incident-agent | access-control-agent | pentest-agent
 

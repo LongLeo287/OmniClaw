@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# HR & People — Worker Prompt
+﻿﻿﻿# HR & People — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: recruiter-agent | payroll-agent | onboard-agent | performance-agent
 

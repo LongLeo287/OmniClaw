@@ -1,4 +1,4 @@
-﻿﻿# LEGAL — Department Rules
+﻿# LEGAL — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: legal-agent | Reports to: CSO
 # GATE_LEGAL is operated by this dept — blocking for all external agreements

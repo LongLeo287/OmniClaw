@@ -1,4 +1,4 @@
-﻿# AGENT: Cloudflared Agent - Auto-Scaffolded Agent for cloudflared
+# AGENT: Cloudflared Agent - Auto-Scaffolded Agent for cloudflared
 # Version: 1.0 | Created: 2026-03-31 | OmniClaw OS
 # Department: Engineering (Dept 2) - <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)

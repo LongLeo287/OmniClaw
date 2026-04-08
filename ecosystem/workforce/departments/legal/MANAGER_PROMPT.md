@@ -1,4 +1,4 @@
-﻿﻿# Legal — Dept Manager Prompt
+﻿# Legal — Dept Manager Prompt
 # NEW DEPARTMENT | Head: legal-agent | Reports to: CSO
 # BLOCKING GATE for all agreements and external engagements
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md

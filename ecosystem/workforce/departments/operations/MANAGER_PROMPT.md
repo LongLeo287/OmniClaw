@@ -1,4 +1,4 @@
-﻿# Operations — Dept Manager Prompt
+# Operations — Dept Manager Prompt
 # Head: scrum-master-agent | Reports to: COO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 

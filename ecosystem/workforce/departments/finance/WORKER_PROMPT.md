@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# Finance — Worker Prompt
+﻿﻿﻿﻿# Finance — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: budget-agent | invoice-agent | report-agent
 

@@ -1,4 +1,4 @@
-﻿# ORGANIZATIONAL DEVELOPMENT & LEARNING (OD&L) — Department Rules
+# ORGANIZATIONAL DEVELOPMENT & LEARNING (OD&L) — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: org-architect-agent | Reports to: CSO
 # Mission: Build wood, grow fish, and develop technology OmniClaw OS.
