@@ -1,13 +1,14 @@
-# SUBAGENT_PROTOCOL.md -- OmniClaw Sub-Agent Operating Standard
-# Version: 1.1 | Updated: 2026-03-17
+# SUBAGENT_OPERATING_GUIDE.md -- OmniClaw Sub-Agent Operating Standard
+# Version: 1.2 | Updated: 2026-04-08
 # Authority: Tier 2 (Operations) | Allocation Map: corp/sops/RESOURCE_ALLOCATION_MAP.md
 # Read by: Any agent operating as Developer, QA, or Researcher under Claude Code
+# See also: subagents/SUBAGENT_PROTOCOL.md (Zero-Trust OAP spawning rules)
 
 ---
 
-## Department Assignment Map (v1.1)
+## Department Assignment Map (v1.2)
 
-> All 38 subagents assigned to owning departments. Call via on-demand activation.
+> All 37 subagents assigned to owning departments. Call via on-demand activation.
 > Full details: `corp/sops/RESOURCE_ALLOCATION_MAP.md` Section 2.
 
 | Dept | Assigned Subagents |
