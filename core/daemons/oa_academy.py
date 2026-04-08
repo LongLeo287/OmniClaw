@@ -929,7 +929,7 @@ def ensure_local_ai_model_running():
 def process_workforce_agents():
     """In-Place assimilation of any unprocessed structurally intact agent in ecosystem/workforce.
     Bypasses vault decapitation to preserve architecture."""
-    for sub_dir in ["agents", "subagents"]:
+    for sub_dir in ["agents", "subagents", "departments", "system"]:
         workforce_agents = abs_path(os.path.join(PATHS.WORKFORCE, sub_dir))
         if not os.path.exists(workforce_agents):
             continue
