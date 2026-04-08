@@ -35,13 +35,13 @@
       "autostart": false,
       "note": "Local inference engine. Models deported to OmniClaw MODELS.",
       "api_key": "ollama",
-      "default_model": "gemma4:latest",
+      "default_model": "qwen2.5:7b",
       "fleet": {
-        "tier1_architect_reasoning": "gemma4:latest",
+        "tier1_architect_reasoning": "qwen2.5:7b",
         "tier2_intake_parsing": "qwen2.5:7b",
         "tier3_background_health": "qwen2.5:0.5b",
         "tier3_vault_sweeper": "qwen2.5:0.5b",
-        "vector_embeddings": "mxbai-embed-large",
+        "vector_embeddings": "nomic-embed-text",
         "tier4_vision": "llava:13b"
       }
     },
