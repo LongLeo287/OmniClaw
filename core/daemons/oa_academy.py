@@ -929,28 +929,29 @@ def ensure_local_ai_model_running():
 def process_workforce_agents():
     """In-Place assimilation of any unprocessed structurally intact agent in ecosystem/workforce.
     Bypasses vault decapitation to preserve architecture."""
-    workforce_agents = abs_path(os.path.join(PATHS.WORKFORCE, "agents"))
-    if not os.path.exists(workforce_agents):
-        return
-        
-    agents = os.listdir(workforce_agents)
-    for agent_name in agents:
-        agent_dir = os.path.join(workforce_agents, agent_name)
-        if not os.path.isdir(agent_dir):
+    for sub_dir in ["agents", "subagents"]:
+        workforce_agents = abs_path(os.path.join(PATHS.WORKFORCE, sub_dir))
+        if not os.path.exists(workforce_agents):
             continue
-            
-        # Check if already assimilated (has DEEP_KNOWLEDGE.md)
-        dk_path = os.path.join(agent_dir, "DEEP_KNOWLEDGE.md")
-        id_path = os.path.join(agent_dir, "_DIR_IDENTITY.md")
-        
-        # If it doesn't have an identity, or if we need to deep plow, we assimilate in-place
-        if not os.path.exists(dk_path) or not os.path.exists(id_path):
-            print(f"[\033[94mOA-IN-PLACE\033[0m] Found un-assimilated Agent Workspace: {agent_name}. Initiating In-Place Assimilation...")
-            try:
-                _assimilate_repo(agent_dir, agent_name, in_place=True)
-                print(f"    \033[92m[OK]\033[0m Successfully assimilated {agent_name} in-place.")
-            except Exception as e:
-                print(f"    \033[91m[ERR]\033[0m In-place assimilation failed for {agent_name}: {e}")
+
+        agents = os.listdir(workforce_agents)
+        for agent_name in agents:
+            agent_dir = os.path.join(workforce_agents, agent_name)
+            if not os.path.isdir(agent_dir):
+                continue
+
+            # Check if already assimilated (has DEEP_KNOWLEDGE.md)
+            dk_path = os.path.join(agent_dir, "DEEP_KNOWLEDGE.md")
+            id_path = os.path.join(agent_dir, "_DIR_IDENTITY.md")
+
+            # If it doesn't have an identity, we assimilate in-place to give it one
+            if not os.path.exists(id_path):
+                print(f"[\033[94mOA-IN-PLACE\033[0m] Found un-assimilated Agent Workspace: {sub_dir}/{agent_name}. Initiating In-Place Assimilation...")
+                try:
+                    _assimilate_repo(agent_dir, agent_name, in_place=True)
+                    print(f"    \033[92m[OK]\033[0m Successfully assimilated {sub_dir}/{agent_name} in-place.")
+                except Exception as e:
+                    print(f"    \033[91m[ERR]\033[0m In-place assimilation failed for {sub_dir}/{agent_name}: {e}")
 
 def salvage_massive_repos():
     """Look in QUARANTINE_FAILURES (FAILED_ASSIMILATE) and process them using Abstract Scanner."""
