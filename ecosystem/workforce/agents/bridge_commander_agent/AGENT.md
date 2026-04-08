@@ -182,7 +182,7 @@ requires_ceo_approval_for:
   "ceo_approved": true,
   "approved_at": "2026-03-31T02:26:01.049044+07:00",
   "strix_approved": true,
-  "dept": "gateway_border_security",
+  "dept": "system_security",
   "dept_number": "3",
   "llm_tier": "economy",
   "autonomy": "supervised",

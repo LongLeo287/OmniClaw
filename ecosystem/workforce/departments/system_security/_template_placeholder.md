@@ -1,5 +1,5 @@
 ---
-id: gateway_border_security_space
+id: system_security_space
 name: Gateway_Border_Security Space
 ---
 

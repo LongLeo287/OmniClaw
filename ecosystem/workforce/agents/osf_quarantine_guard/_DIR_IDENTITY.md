@@ -2,7 +2,7 @@
 node_type: "agent"
 node_id: "osf_quarantine_guard"
 node_name: "OSF Quarantine Guard"
-department: "gateway_border_security"
+department: "system_security"
 status: "active"
 ---
 

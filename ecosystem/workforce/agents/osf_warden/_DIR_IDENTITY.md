@@ -2,7 +2,7 @@
 node_type: "agent"
 node_id: "osf_warden"
 node_name: "Warden of OSF"
-department: "gateway_border_security"
+department: "system_security"
 status: "active"
 ---
 

@@ -1,5 +1,5 @@
 # AGENT: OSF Quarantine Guard
-# Department: gateway_border_security
+# Department: system_security
 # Status: ACTIVE 
 
 ## Identity
@@ -7,7 +7,7 @@
 |-------|-------|
 | **ID** | `osf_quarantine_guard` |
 | **Name** | OSF Quarantine Guard |
-| **Department** | gateway_border_security |
+| **Department** | system_security |
 | **Loyalty** | OSF (OmniClaw Sandbox Firewall) |
 
 ## Role & Scope

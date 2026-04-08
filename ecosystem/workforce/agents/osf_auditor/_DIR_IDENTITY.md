@@ -2,7 +2,7 @@
 node_type: "agent"
 node_id: "osf_auditor"
 node_name: "OSF Supply Chain Auditor"
-department: "gateway_border_security"
+department: "system_security"
 status: "active"
 ---
 

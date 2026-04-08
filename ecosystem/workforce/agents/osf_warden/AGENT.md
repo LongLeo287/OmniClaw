@@ -1,5 +1,5 @@
 # AGENT: Warden of OSF
-# Department: gateway_border_security
+# Department: system_security
 # Status: ACTIVE 
 
 ## Identity
@@ -7,7 +7,7 @@
 |-------|-------|
 | **ID** | `osf_warden` |
 | **Name** | Warden of OSF |
-| **Department** | gateway_border_security |
+| **Department** | system_security |
 | **Loyalty** | OSF (OmniClaw Sandbox Firewall) |
 
 ## Role & Scope
