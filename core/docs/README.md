@@ -8,7 +8,7 @@ healed_at: 2026-04-03T22:44:27.658858
 
 # 📚 OmniClaw - Official Documentation
 
-Welcome to the **OmniClaw Official Documentation**. This directory contains human-readable guides, architectural overviews, and tutorials for understanding and interacting with the 28-department AI operating system.
+Welcome to the **OmniClaw Official Documentation**. This directory contains human-readable guides, architectural overviews, and tutorials for understanding and interacting with the 21-department AI operating system.
 
 [**🇻🇳 Xem Bản Tiếng Việt (Vietnamese)**](README-vn.md)
 
@@ -19,7 +19,7 @@ Welcome to the **OmniClaw Official Documentation**. This directory contains huma
 ## 🏛️ System Architecture
 Learn about how the multi-agent system operates, scales, and protects itself.
 
-- [**System Overview**](architecture/system_overview.md) — The 28-department structure and execution hierarchy.
+- [**System Overview**](architecture/system_overview.md) — The 21-department structure and execution hierarchy.
 - [**Plugin Architecture**](architecture/plugin_architecture.md) — How the 3-Tier Zero-Trust Plugin ecosystem is integrated.
 
 ## 🚀 Usage Guides

@@ -14,9 +14,9 @@ OmniClaw Academy (OA) is the **Supreme Audit Authority** and the Judicial Branch
 
 ---
 
-## 1. The 8 Pillars of OmniClaw Integrity
+## 1. The 7 Pillars of OmniClaw Integrity
 
-OA evaluates all departments, agents, plugins, and architectures strictly against the **8 Pillars of the AI OS**:
+OA evaluates all departments, agents, plugins, and architectures strictly against the **7 Pillars of the AI OS**:
 1. **OS-Agnostic Core:** The system and knowledge layers must remain universally readable (English-Only core) and cross-platform compatible.
 2. **Zero-Trust Sandbox:** All incoming code, third-party plugins, and raw data pipelines must undergo multi-layer quarantine.
 3. **Zero-Config Structure:** The 300+ folder skeleton must organically sustain itself without breaking via mandatory `.gitkeep` injections.
