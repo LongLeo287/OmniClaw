@@ -131,7 +131,7 @@ def cmd_corp_retro():
     # [System log: Legacy non-English comment removed]
     reflector = os.path.join(ROOT, "system", "ops", "scripts", "cognitive_reflector.py")
     if os.path.exists(reflector):
-        print("[OmniClaw System Event]")...{RESET}")
+        print(f"{CYAN}[OmniClaw System Event] Calling Reflector...{RESET}")
         subprocess.run([sys.executable, reflector], check=False)
 
     cmd_hud_update()
