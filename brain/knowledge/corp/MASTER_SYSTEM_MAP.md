@@ -453,3 +453,4 @@ Danh sách các Module/Thư viện có chứa tài liệu hướng dẫn (README
 
 ### ecosystem/workforce
 - ecosystem/workforce/subagents/chief-of-staff
+- ecosystem/workforce/system
