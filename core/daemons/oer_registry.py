@@ -87,13 +87,17 @@ def is_ghost_repo(folder_path: str) -> bool:
     for root, _, files in os.walk(folder_path):
         for file in files:
             file_count += 1
-            if file in ("manifest.json", "_DIR_IDENTITY.md", "SKILL.md", "PLUGIN.md"):
+            if file in ("manifest.json", "_DIR_IDENTITY.md", "SKILL.md", "PLUGIN.md", "DEEP_KNOWLEDGE.md", "KNOWLEDGE_TUNNEL.aaak"):
                 has_manifest_or_identity = True
             
-            # Exclude structural/identity files from the "source code" weight
-            if file.endswith(valid_extensions) and file not in ("manifest.json", "_DIR_IDENTITY.md", "SKILL.md", "PLUGIN.md", "README.md"):
+            # Exclude structural/identity/knowledge files from the "source code" weight
+            if file.endswith(valid_extensions) and file not in ("manifest.json", "_DIR_IDENTITY.md", "SKILL.md", "PLUGIN.md", "README.md", "DEEP_KNOWLEDGE.md", "KNOWLEDGE_TUNNEL.aaak"):
                 code_size += os.path.getsize(os.path.join(root, file))
     
+    # If it has DEEP_KNOWLEDGE.md, it is an OA decapitated knowledge crystal, NEVER a ghost repo.
+    if os.path.exists(os.path.join(folder_path, "DEEP_KNOWLEDGE.md")):
+        return False
+
     # STRICT RULE: Only sweep if it has a tracker (manifest/identity) AND has virtually zero code.
     # This prevents sweeping the user's deliberately created structural Wait-Rooms.
     if has_manifest_or_identity and code_size < 1024 and file_count <= 5:

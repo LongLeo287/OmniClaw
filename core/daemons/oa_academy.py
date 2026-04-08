@@ -275,6 +275,32 @@ def _deep_plow_repo(repo_path: str, repo_name: str, base_summary: str):
             with open(dest_md, "w", encoding="utf-8") as fw:
                 fw.write(f"# Deep Matrix Profile: {repo_name}\n\n" + deep_report)
             print(f"\033[92m[OK]\033[0m [OA] Premium Report generated: DEEP_KNOWLEDGE.md")
+            
+            # [KNOWLEDGE GRAFT] Build MemPalace AAAK Dialect Tunnel
+            try:
+                import sys
+                utils_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "utils"))
+                if utils_dir not in sys.path:
+                    sys.path.append(utils_dir)
+                from mempalace import Dialect
+                dial = Dialect()
+                meta = {"source_file": "DEEP_KNOWLEDGE.md", "wing": "OA_Academy", "room": "Assimilated_Memory"}
+                compressed = dial.compress(deep_report, metadata=meta)
+                dest_aaak = os.path.join(repo_path, "KNOWLEDGE_TUNNEL.aaak")
+                with open(dest_aaak, "w", encoding="utf-8") as fa:
+                    fa.write(compressed)
+                print(f"    \033[92m[+]\033[0m Dialect Zettel Network created: KNOWLEDGE_TUNNEL.aaak")
+                
+                # [SYNAPSE INJECTION] Insert into Vector DB
+                try:
+                    import oma_synapse
+                    oma_synapse.digest_aaak(repo_name, compressed)
+                except Exception as sync_err:
+                    print(f"\033[93m[WARN]\033[0m [OA] Synapse Vector Injection failed: {sync_err}")
+                    
+            except Exception as d_err:
+                print(f"\033[93m[WARN]\033[0m [OA] Backup Dialect Compression failed: {d_err}")
+                
         except Exception as e:
             print(f"\033[91m[ERR]\033[0m [OA] Failed to write DEEP_KNOWLEDGE.md: {e}")
 
@@ -459,7 +485,34 @@ def _assimilate_repo(repo_path: str, repo_name: str) -> bool:
     except Exception as e:
         print(f"\033[93m[WARN]\033[0m [OA] Failed to write identity to {repo_path}: {e}")
         return False
+
+    # [DATA DECAPITATION] Move all raw source files down to the vault to keep Brain 100% pure.
+    try:
+        import shutil
+        raw_repos_dir = abs_path(PATHS.RAW_REPOS)
+        os.makedirs(raw_repos_dir, exist_ok=True)
+        ghost_vault_dir = os.path.join(raw_repos_dir, repo_name)
         
+        # If the repository has already been previously decapitated, we generate a unique folder name
+        if os.path.exists(ghost_vault_dir):
+            ghost_vault_dir = ghost_vault_dir + f"_{datetime.now().strftime('%H%M%S')}"
+            
+        os.makedirs(ghost_vault_dir, exist_ok=True)
+        kept_files = ["_DIR_IDENTITY.md", "DEEP_KNOWLEDGE.md", "KNOWLEDGE_TUNNEL.aaak", "UPGRADE_PROPOSAL.md", "manifest.json"]
+        moved_count = 0
+        for item in os.listdir(repo_path):
+            if item in kept_files:
+                continue
+            src_item = os.path.join(repo_path, item)
+            dst_item = os.path.join(ghost_vault_dir, item)
+            try:
+                shutil.move(src_item, dst_item)
+                moved_count += 1
+            except Exception: pass
+        print(f"\033[92m[DECAPITATION]\033[0m Stripped {moved_count} raw items from {repo_name} to {PATHS.RAW_REPOS}")
+    except Exception as e:
+        print(f"\033[93m[WARN]\033[0m [OA] Data Decapitation failed: {e}")
+
     return handoff_to_oer(repo_path, reason=f"Repository Assimilated as {rtype}")
 
 # [System log: Legacy non-English comment removed]

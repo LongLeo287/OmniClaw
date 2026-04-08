@@ -34,6 +34,7 @@ class PATHS:
     ASSETS_DATA     = "vault/assets/data"
     ASSETS_DB       = "vault/assets/databases"
     ARCHIVES        = "vault/archives"
+    RAW_REPOS       = "vault/archives/raw_repos"
     DEAD_LETTERS    = "vault/archives/dead_letters"
     STUB_AGENTS     = "vault/archives/stub_agents"
     MODELS          = "vault/models"
@@ -104,7 +105,7 @@ TRUST_MATRIX = {
         "description": "Heal files/folders system-wide. Route stray files to correct locations based on OMA map. NO deletion authority. Auto-triggers on errors.",
         "action_rule": "DO NOT DELETE. Heal or route to correct location. Automatically intercept all unhealthy flows.",
         "can_read":    ["*"],
-        "can_write":   [PATHS.QUARANTINE, PATHS.OA_FINAL_CHECK, PATHS.OA_DISPATCH, PATHS.OER_INBOX, PATHS.OHD_CLINIC],
+        "can_write":   [PATHS.QUARANTINE, PATHS.OA_FINAL_CHECK, PATHS.OA_DISPATCH, PATHS.OER_INBOX, PATHS.OHD_CLINIC, PATHS.RAW_REPOS],
         "can_move":    ["*"],  # Allow moving files to correct destinations based on OMA map
         "strictly_denied": ["core", PATHS.RULES],
         "handoff_to": ["OER", "OA"],
@@ -133,7 +134,7 @@ TRUST_MATRIX = {
         "action_rule": "Supreme authority bound by strict pipeline compliance. Output -> OER_INBOX first. Bypassing the registry is forbidden.",
         "can_read":    ["*"],
         "can_write":   [PATHS.OA_WORKSHOP, PATHS.OER_INBOX, PATHS.RULES,
-                        PATHS.OA_DISPATCH, PATHS.HANDOFF_LOG, PATHS.QUARANTINE, PATHS.DEAD_LETTERS],
+                        PATHS.OA_DISPATCH, PATHS.HANDOFF_LOG, PATHS.QUARANTINE, PATHS.DEAD_LETTERS, PATHS.RAW_REPOS],
         "strictly_denied": ["core/daemons"],  # Cannot self-modify Daemon source code
         "handoff_to": ["OER"],
         "triggers": [PATHS.OA_DISPATCH, PATHS.RAW_DUMPS, "manual_call"],

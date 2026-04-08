@@ -269,7 +269,42 @@ def process_quarantine():
             report_error(DAEMON_NAME, f"process {fname}", str(e))
             results["failed"] += 1
     report_after(DAEMON_NAME, "PROCESS_QUARANTINE", results)
-
+    
+def gc_dead_repos(max_days_old: int = 7):
+    """
+    [GARBAGE COLLECTION] Automatically cleans up raw source code repositories in the vault
+    that are older than the specified days to free up storage space.
+    """
+    raw_repos_path = abs_path(PATHS.RAW_REPOS)
+    if not os.path.exists(raw_repos_path):
+        return
+        
+    now = time.time()
+    cutoff = now - (max_days_old * 86400)
+    purged_count = 0
+    
+    for repo_name in os.listdir(raw_repos_path):
+        repo_dir = os.path.join(raw_repos_path, repo_name)
+        if os.path.isdir(repo_dir):
+            try:
+                # Check modification time of the directory
+                mtime = os.path.getmtime(repo_dir)
+                if mtime < cutoff:
+                    import stat
+                    def remove_readonly(func, path, _):
+                        try:
+                            os.chmod(path, stat.S_IWRITE)
+                            func(path)
+                        except Exception: pass
+                    
+                    shutil.rmtree(repo_dir, onerror=remove_readonly)
+                    purged_count += 1
+                    print(f"\033[93m[VAULT-GC]\033[0m [OHD] Purged expired raw repository: {repo_name} (older than {max_days_old} days)")
+            except Exception as e:
+                print(f"\033[91m[ERR]\033[0m [OHD-GC] Failed to purge {repo_name}: {e}")
+                
+    if purged_count > 0:
+        log_action("VAULT_GC", PATHS.RAW_REPOS, f"Purged {purged_count} expired repositories")
 
 def process_trigger_signals():
     """Reads and processes signals from Neural Bus OHD_TRIGGER queue."""
@@ -299,6 +334,7 @@ def watch_and_heal(loop: bool = False, interval: int = 30):
             if signals:
                 print(f"\033[94m[INFO]\033[0m [OHD] Received {len(signals)} trigger signals.")
             process_quarantine()
+            gc_dead_repos(max_days_old=7)
         except Exception as e:
             print(f"\033[91m[ERR]\033[0m [OHD] Exception: {e}")
 
