@@ -5,7 +5,11 @@
 | **OHD** | OmniClaw Health Daemon | Monitors background health, system telemetry, and ensures active processes aren't leaking memory. |
 | **OMA** | OmniClaw Master Architect | The Map-Keeper. Emits OMA_SYSTEM_MAP, enforces the 4-Pillar structural hierarchy, and quarantines logically misplaced files. |
 | **OA** | OmniClaw Academy | The self-improvement engine. Analyzes system logs, recruits personnel, builds missing pipelines, and generates missing structures. |
-| **OER** | OmniClaw Ecosystem Registrar | The Gatekeeper. Validates OAP identities (\_DIR_IDENTITY.md\), indexes nodes into \FAST_INDEX.json\, and grants official execution privileges. | ID          | Department               | Function                                                                                     | Head Agent          |
+| **OER**     | OmniClaw Ecosystem Registrar | The Gatekeeper. Validates identities, indexes nodes, and grants official execution privileges. |
+
+## 🏢 The 28 Architectural Departments
+
+| ID          | Department               | Function                                                                                     | Head Agent          |
 | :---------- | :----------------------- | :------------------------------------------------------------------------------------------- | :------------------ |
 | **Dept 01** | **Engineering**          | Scalable Backend, Frontend UI/UX, and AI model integration.                                  | `backend-architect` |
 | **Dept 05** | **Strategic Planning**   | Roadmap orchestration, KPI analytics, and org evolution.                                     | `product-manager`   |
@@ -16,6 +20,7 @@
 | **Dept 20** | **CIV (Content Intake)** | Systematically consumes, scrapes, and parses massive GitHub URLs or PDFs into pure Markdown. | `intake-chief`      |
 | **Dept 22** | **Operations**           | Hardware sanitation, root directory cleanup, and Git Force-Push protection.                  | `scrum-master`      |
 | **Dept 23** | **Reception**            | Automated client intake, brief collection, and proposal generation.                          | `project-intake`    |
+| **...**     | **And 19 others**        | 28 Zero-Trust departments actively governing 104 agents!                                     | `various`           |
 
 > [!TIP]
 > **Deep Dive**: For the full breakdown of all 21 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/knowledge/corp/MASTER_INDEX.md).
@@ -37,16 +42,51 @@ OmniClaw OS enforces a strict **OmniClaw Autonomous Pipeline (OAP)** to govern h
 
 ---
 
-## ⚙️ Core System Daemons
+## ⚙️ Core System Daemons (The 7 Pillars of Governance)
 
-OmniClaw orchestrates its autonomic functions through seven immortal, continuously running background daemons:
+OmniClaw orchestrates its autonomic functions through seven immortal, continuously running background daemons formatted as Zero-Trust Agents. They reside strictly in 3 Core Departments (`system_daemons`, `system_health`, `system_security`):
 
-| Daemon | Designation | Core Responsibility |
-| :--- | :--- | :--- |
-| **OIW** | OmniClaw Intake Watchdog | Scrutinizes external internet bounds, scraping raw context inputs and routing them inward to the OS. |
-| **OHD** | OmniClaw Health Daemon | Monitors background health, system telemetry, and ensures active processes aren't leaking memory. |
-| **OA** | OmniClaw Academy | The self-improvement engine. Analyzes system logs, recruits personnel, builds missing pipelines, and generates missing structures. |
-| **OER** | OmniClaw Ecosystem Registrar | The Gatekeeper. Validates OAP identities (`_DIR_IDENTITY.md`), indexes nodes into `FAST_INDEX.json`, and grants official execution privileges. |
+```mermaid
+graph TD
+    classDef sys fill:#1e1e2f,stroke:#4a4a6a,stroke-width:2px,color:#fff;
+    classDef hlth fill:#1a2e26,stroke:#34a853,stroke-width:2px,color:#fff;
+    classDef sec fill:#2b1919,stroke:#ea4335,stroke-width:2px,color:#fff;
+    
+    subgraph system_security[🏢 system_security / Boundary Defense]
+        OSF["🛡️ OSF Firewall (osf_warden)"]:::sec
+        OSF_SUB["osf_auditor & osf_quarantine_guard"]:::sec
+        OBD["🌉 OBD Bridge (bridge_commander)"]:::sec
+    end
+    
+    subgraph system_health[🏥 system_health / Clinical Operations]
+        OHD["⚕️ OHD Healer (ohd_healer)"]:::hlth
+    end
+
+    subgraph system_daemons[⚙️ system_daemons / Core Infrastructure]
+        OMA["🗺️ OMA Architect (oma_architect)"]:::sys
+        OA["👑 OA Academy (oa_academy)"]:::sys
+        OIW["📥 OIW Intake (oiw_intake)"]:::sys
+        OER["📜 OER Registry (oer_registry)"]:::sys
+    end
+
+    OMA -->|"Maps & Routes"| OA
+    OA -->|"Heuristics & Personnel"| OHD
+    OIW -->|"Pulls external code"| OSF
+    OSF -->|"Quarantines Bad Files"| OHD
+    OHD -->|"Healed Files"| OER
+    OER -->|"Stamps Identity"| OMA
+    OBD -->|"Executes Sub-proc"| OSF
+```
+
+| Daemon | Designation | Core Responsibility | Department |
+| :--- | :--- | :--- | :--- |
+| **OMA Architect** | `oma_architect` | The Chief Map-Keeper. Enforces the node structures and validates the global city grid. | `system_daemons` |
+| **OA Academy** | `oa_academy` | The Self-Improvement Engine. Bootstraps sub-agents, governs hr, dictating 104 agents. | `system_daemons` |
+| **OIW Intake** | `oiw_intake` | Scrutinizes internet bounds (GitHub/Web), scraping raw context inputs into the OS. | `system_daemons` |
+| **OER Registry** | `oer_registry` | The Gatekeeper. Validates OAP identities, indexing legit nodes and stamping execution. | `system_daemons` |
+| **OBD Bridge** | `obd_harbor` | Harbor Master. Handles sub-process Docker launches and Python process bridging. | `system_daemons` |
+| **OHD Healer** | `ohd_healer` | Repairs syntax trees, auto-lints broken source files, and resets missing YAML tags. | `system_health` |
+| **OSF Warden** | `osf_warden` | Performs heuristic deep scans. Rejects dangerous code via strict Border Checkpoints. | `system_security` |
 
 ---
 
@@ -60,11 +100,12 @@ To guarantee absolute synchronization across the internal filesystem, OmniClaw s
 
 ---
 
-## 🔒 Strict Daemon Segregation (OSF vs OA)
+## 🔒 Strict Daemon Segregation (Zero-Trust Boundaries)
 
-A fundamental principle of OmniClaw's Zero-Trust architecture is the absolute segregation of execution capabilities from learning capabilities:
-- **OSF (Sandbox Firewall)** holds exclusive supremacy over the `QUARANTINE` sectors. Only its dedicated Border Agents (`osf_warden`, `osf_auditor`, `osf_quarantine_guard`) possess the clearance to neutralize threats via Martial Law intercepts.
-- **OA (Academy)**, despite being the ultimate architectural Auditor, is strictly barred from accessing the `QUARANTINE`. If OA requires analyzing a malfunctioning repository to build a pipeline, the payload must first be neutralized and certified by OSF.
+A fundamental principle of OmniClaw's Zero-Trust architecture is the absolute segregation of Execution vs Healing vs Architecture:
+- **`system_security`**: Holds exclusive supremacy over checkpoints (`QUARANTINE`). Only its dedicated Border Agents (`osf_warden`, `osf_auditor`, `osf_quarantine_guard`) possess the clearance to neutralize threats via Martial Law intercepts.
+- **`system_health`**: The `ohd_healer` only touches files that OSF labels as sick, but cannot reject or delete legitimate architecture.
+- **`system_daemons`**: Daemons like **OA Academy** are strictly barred from accessing the explicit quarantine zones to prevent cognitive contamination! If OA needs to analyze a bad repo, it must ask OSF to process it first.
 
 ---
 
