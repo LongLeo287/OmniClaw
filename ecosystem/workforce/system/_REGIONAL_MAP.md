@@ -6,4 +6,3 @@
 |---|---|---|
 | **corp_prompts** | corp_prompts | knowledge |
 | **daemons** | Daemons | directory_identity |
-| **intake** | intake | knowledge |
