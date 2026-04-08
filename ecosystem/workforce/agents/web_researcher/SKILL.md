@@ -1,14 +1,19 @@
 # SKILL PROFILE: web_researcher
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-Tier 3 specialist agent for internet research, deep crawling, and information extraction.
+## 1. Zero-Trust Identity
+**Agent Name**: Web Researcher
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-> [!NOTE]
-> No static YAML skills mapped. Awaiting dynamic plugin hooks from OAP Orchestrator.
+- **Primary Core Skill**: [code-search.md](../../../skills/code-search.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [code-search.md](../../../skills/code-search.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

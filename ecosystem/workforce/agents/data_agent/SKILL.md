@@ -1,15 +1,19 @@
 # SKILL PROFILE: data_agent
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-Tier 3 specialist agent for data pipelines, analytics, dashboards, and
+## 1. Zero-Trust Identity
+**Agent Name**: Data Agent
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
-- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
-- **Mapped Skill**: `database-architect.md` (Path: `ecosystem/skills/database-architect.md`)
+- **Primary Core Skill**: [database-architect.md](../../../skills/database-architect.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [database-architect.md](../../../skills/database-architect.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

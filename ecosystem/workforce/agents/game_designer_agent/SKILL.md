@@ -1,15 +1,19 @@
 # SKILL PROFILE: game_designer_agent
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-Game design specialist: game mechanics, progression systems, economy design,
+## 1. Zero-Trust Identity
+**Agent Name**: Game Designer Agent
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
-- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
-- **Mapped Skill**: `game-developer.md` (Path: `ecosystem/skills/game-developer.md`)
+- **Primary Core Skill**: [edit_design.md](../../../skills/edit_design.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [edit_design.md](../../../skills/edit_design.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

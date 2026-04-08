@@ -1,14 +1,19 @@
 # SKILL PROFILE: antigravity
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-The strategic orchestrator of OmniClaw. Manages the full 6-phase operation
+## 1. Zero-Trust Identity
+**Agent Name**: Antigravity
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-> [!NOTE]
-> No static YAML skills mapped. Awaiting dynamic plugin hooks from OAP Orchestrator.
+- **Primary Core Skill**: [antigravity/SKILL.md](../../../skills/antigravity/SKILL.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [antigravity/SKILL.md](../../../skills/antigravity/SKILL.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

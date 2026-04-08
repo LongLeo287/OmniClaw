@@ -1,15 +1,19 @@
 # SKILL PROFILE: devops_agent
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-Tier 3 specialist agent for infrastructure planning, deployment automation,
+## 1. Zero-Trust Identity
+**Agent Name**: Devops Agent
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
-- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
-- **Mapped Skill**: `devops-engineer.md` (Path: `ecosystem/skills/devops-engineer.md`)
+- **Primary Core Skill**: [devops-engineer.md](../../../skills/devops-engineer.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [devops-engineer.md](../../../skills/devops-engineer.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

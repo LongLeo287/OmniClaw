@@ -1,14 +1,19 @@
 # SKILL PROFILE: mobile_agent
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-iOS/Android/Flutter mobile development specialist. Builds native and cross-platform
+## 1. Zero-Trust Identity
+**Agent Name**: Mobile Agent
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
-- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+- **Primary Core Skill**: [continue.md](../../../skills/continue.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [continue.md](../../../skills/continue.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

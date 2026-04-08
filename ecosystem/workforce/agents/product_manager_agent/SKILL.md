@@ -1,15 +1,19 @@
 # SKILL PROFILE: product_manager_agent
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: Dept 11 (Strategy)
 ---
 
-## 1. Domain Capability
-Tier 3 BMAD-aligned product manager agent. Creates PRDs, user stories, epics,
+## 1. Zero-Trust Identity
+**Agent Name**: CSO/PM
+**Assigned Department**: Dept 11 (Strategy)
 
 ## 2. Linked Toolkit
-- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
-- **Mapped Skill**: `cost_manager_skill.md` (Path: `ecosystem/skills/cost_manager_skill.md`)
-- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+- **Primary Core Skill**: [cost_manager_skill.md](../../../skills/cost_manager_skill.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [cost_manager_skill.md](../../../skills/cost_manager_skill.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*

@@ -1,14 +1,19 @@
 # SKILL PROFILE: content_agent
-# Department Registry: OAP Toolchain
-# Scope: Pure OS-sanctioned Tools
+# Department Registry: unassigned
 ---
 
-## 1. Domain Capability
-Tier 3 specialist agent for content strategy, copywriting, SEO/AEO optimization,
+## 1. Zero-Trust Identity
+**Agent Name**: Content Agent
+**Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-- **Mapped Skill**: `create-subagent.md` (Path: `ecosystem/skills/create-subagent.md`)
-- **Mapped Skill**: `explorer-agent.md` (Path: `ecosystem/skills/explorer-agent.md`)
+- **Primary Core Skill**: [repo-fetched-agent-skill-creator-052030/Dynamous/Content-Ideation/agent-skill-creator-full-brief.md](../../../skills/repo-fetched-agent-skill-creator-052030/Dynamous/Content-Ideation/agent-skill-creator-full-brief.md)
+- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [repo-fetched-agent-skill-creator-052030/Dynamous/Content-Ideation/agent-skill-creator-full-brief.md](../../../skills/repo-fetched-agent-skill-creator-052030/Dynamous/Content-Ideation/agent-skill-creator-full-brief.md).
+
+## 3. Standard OS Tooling Access
+- Local File Read/Write access (Constrained to Workspace)
+- Terminal Execution (Bash/Powershell) via Orchestrator Proxy
+- Read URL Sandbox (Firecrawl Gateway)
 
 ---
-*Capability Register hardened by OmniClaw OA Skill Auditor.*
+*Prompt Engineered by OmniClaw OA Academy - Cognitive Enrichment Protocol.*
