@@ -1,6 +1,0 @@
-Source: https://github.com/mudler/LocalAI
-Type: REPO_GOLDEN
-Score: 53
-Features: Golden Match [MCP, AGENT, RAG, LLM]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

@@ -1,6 +1,0 @@
-services:
-  antigravity-manager:
-    build:
-      dockerfile: docker/Dockerfile.backend
-      args:
-        FRONTEND_IMAGE: antigravity-manager:latest

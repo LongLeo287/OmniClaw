@@ -1,5 +1,0 @@
-Source: https://github.com/Giskard-AI/giskard-oss
-Type: REPO
-Agent: batch-intake-agent
-Route: brain/knowledge/repos/
-Date: 2026-03-30

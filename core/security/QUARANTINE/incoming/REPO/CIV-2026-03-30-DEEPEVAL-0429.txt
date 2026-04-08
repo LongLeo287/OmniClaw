@@ -1,6 +1,0 @@
-Source: https://github.com/rudrankriyam/app-store-connect-cli-skills
-Type: REPO_GOLDEN
-Score: 41
-Features: Golden Match [MCP, AGENT, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

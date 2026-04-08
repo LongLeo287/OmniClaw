@@ -1,6 +1,0 @@
-Source: https://github.com/rmusser01/tldw_server
-Type: REPO_GOLDEN
-Score: 78
-Features: Golden Match [MCP, ORCHESTRATOR, RAG, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

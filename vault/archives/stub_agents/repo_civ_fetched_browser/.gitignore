@@ -1,6 +1,0 @@
-/.zig-cache/
-/.lp-cache/
-zig-out
-lightpanda.id
-/src/html5ever/target/
-src/snapshot.bin

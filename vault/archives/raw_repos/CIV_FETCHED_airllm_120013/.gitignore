@@ -1,7 +1,0 @@
-.idea
-.ipynb_checkpoints
-.DS_Store
-airllm.egg-info
-build
-dist
-__pycache__

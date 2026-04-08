@@ -1,8 +1,0 @@
-# CIV_FETCHED_gah_121554
-This project is designed to fetch data from an external API and serve it through a Flask web application. It includes basic error handling and uses environment variables for sensitive information.
-
-## Requirements
-- Python 3.x
-- Flask
-- Requests
-- Cryptography

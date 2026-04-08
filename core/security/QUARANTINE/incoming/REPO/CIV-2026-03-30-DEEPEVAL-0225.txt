@@ -1,6 +1,0 @@
-Source: https://github.com/dsclca12/agent-teams
-Type: REPO_GOLDEN
-Score: 30
-Features: Golden Match [ORCHESTRATOR, AGENT, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

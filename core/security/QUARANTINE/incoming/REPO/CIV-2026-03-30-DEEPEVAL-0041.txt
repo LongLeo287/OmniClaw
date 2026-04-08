@@ -1,6 +1,0 @@
-Source: https://github.com/HKUDS/ClawWork
-Type: REPO_GOLDEN
-Score: 68
-Features: Golden Match [ORCHESTRATOR, AGENT, GRAPH, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

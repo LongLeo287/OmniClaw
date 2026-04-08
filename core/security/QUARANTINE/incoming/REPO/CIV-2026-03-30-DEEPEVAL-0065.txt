@@ -1,6 +1,0 @@
-Source: https://github.com/MiniMax-AI/Mini-Agent
-Type: REPO_GOLDEN
-Score: 63
-Features: Golden Match [MCP, AGENT, GRAPH, LLM]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

@@ -1,6 +1,0 @@
-Source: https://github.com/phuryn/awesome-agent-skills
-Type: REPO_GOLDEN
-Score: 73
-Features: Golden Match [MCP, ORCHESTRATOR, AGENT, RAG, GRAPH, LLM, WORKFLOW, SCRAPER]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

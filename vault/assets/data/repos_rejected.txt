@@ -1,8 +1,0 @@
-https://github.com/01mf02/jaq
-https://github.com/0x0a0d/fix-vietnamese-claude-code
-https://github.com/0xAstroAlpha/Claude-Usage-Checker
-https://github.com/0xBlackash/CVE-2026-21643
-https://github.com/0xBugatti/PentestOPS
-https://github.com/0xCiel/Alya-Endfield
-https://github.com/1Panel-dev/MaxKB
-https://github.com/666ghj/MiroFish

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -ex
-
-pip install -e ./bash_kernel
-python -m bash_kernel.install

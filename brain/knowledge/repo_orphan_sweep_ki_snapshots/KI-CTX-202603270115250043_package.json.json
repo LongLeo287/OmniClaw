@@ -1,9 +1,0 @@
-{
-  "id": "KI-CTX-202603270115250043",
-  "type": "STRUCTURE",
-  "source": "file://<AI_OS_ROOT>\\system\\security\\QUARANTINE\\vetted\\repos\\code-review-graph\\code-review-graph-vscode\\package.json",
-  "priority": "P2",
-  "status": "PENDING_EVALUATION",
-  "submitted_by": "antigravity-context-extractor",
-  "timestamp": "2026-03-27T01:15:25.878803"
-}

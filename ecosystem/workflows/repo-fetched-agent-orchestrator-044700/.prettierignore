@@ -1,6 +1,0 @@
-dist/
-node_modules/
-.next/
-coverage/
-*.tsbuildinfo
-pnpm-lock.yaml

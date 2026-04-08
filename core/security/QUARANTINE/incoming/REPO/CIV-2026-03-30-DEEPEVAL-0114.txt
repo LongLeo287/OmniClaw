@@ -1,6 +1,0 @@
-Source: https://github.com/Sairyss/system-design-patterns
-Type: REPO_GOLDEN
-Score: 55
-Features: Golden Match [ORCHESTRATOR, GRAPH, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

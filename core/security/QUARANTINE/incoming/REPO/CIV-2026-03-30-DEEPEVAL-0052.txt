@@ -1,6 +1,0 @@
-Source: https://github.com/KalyanM45/MarketInsight
-Type: REPO_GOLDEN
-Score: 25
-Features: Golden Match [AGENT]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

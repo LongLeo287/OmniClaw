@@ -1,5 +1,0 @@
-Source: https://github.com/nagisanzenin/claude-code-software-engineer-plugin
-Type: REPO
-Agent: batch-intake-agent
-Route: brain/knowledge/repos/
-Date: 2026-03-27

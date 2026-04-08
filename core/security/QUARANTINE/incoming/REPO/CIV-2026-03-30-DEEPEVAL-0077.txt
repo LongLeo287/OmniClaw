@@ -1,6 +1,0 @@
-Source: https://github.com/NVIDIA/TensorRT-LLM
-Type: REPO_GOLDEN
-Score: 38
-Features: Golden Match [RAG, LLM]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

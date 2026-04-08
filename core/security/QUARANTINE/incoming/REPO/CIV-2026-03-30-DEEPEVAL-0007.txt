@@ -1,6 +1,0 @@
-Source: https://github.com/trustgraph-ai/trustgraph
-Type: REPO_GOLDEN
-Score: 86
-Features: Golden Match [MCP, AGENT, RAG, GRAPH, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

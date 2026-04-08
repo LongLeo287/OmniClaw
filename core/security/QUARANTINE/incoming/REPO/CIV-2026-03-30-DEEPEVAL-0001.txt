@@ -1,6 +1,0 @@
-Source: https://github.com/sentrux/sentrux
-Type: REPO_GOLDEN
-Score: 58
-Features: Golden Match [MCP, AGENT, GRAPH, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

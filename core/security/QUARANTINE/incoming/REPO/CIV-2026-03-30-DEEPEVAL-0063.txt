@@ -1,6 +1,0 @@
-Source: https://github.com/Lum1104/Understand-Anything
-Type: REPO_GOLDEN
-Score: 43
-Features: Golden Match [AGENT, GRAPH, LLM]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

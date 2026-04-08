@@ -1,6 +1,0 @@
-Source: https://github.com/Gentleman-Programming/agent-teams-lite
-Type: REPO_GOLDEN
-Score: 55
-Features: Golden Match [MCP, ORCHESTRATOR, AGENT, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

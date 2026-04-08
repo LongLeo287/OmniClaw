@@ -1,6 +1,0 @@
-Source: https://github.com/unclecode/crawl4ai
-Type: REPO_GOLDEN
-Score: 76
-Features: Golden Match [MCP, RAG, GRAPH, LLM, WORKFLOW, SCRAPER]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

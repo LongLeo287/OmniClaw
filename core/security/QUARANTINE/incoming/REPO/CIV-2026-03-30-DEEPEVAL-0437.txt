@@ -1,6 +1,0 @@
-Source: https://github.com/serenakeyitan/awesome-notebookLM-prompts
-Type: REPO_GOLDEN
-Score: 38
-Features: Golden Match [AGENT, GRAPH, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

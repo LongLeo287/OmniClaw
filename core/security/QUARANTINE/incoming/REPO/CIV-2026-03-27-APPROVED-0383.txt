@@ -1,5 +1,0 @@
-Source: https://github.com/posthog/posthog
-Type: REPO
-Agent: batch-intake-agent
-Route: brain/knowledge/repos/
-Date: 2026-03-27

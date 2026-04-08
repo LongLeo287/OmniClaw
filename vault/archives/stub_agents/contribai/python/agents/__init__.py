@@ -1,1 +1,0 @@
-"""ContribAI sub-agent system."""

@@ -1,9 +1,0 @@
-version: '3'
-services:
-  atropos:
-    image: omniclaw/atropos
-    environment:
-      - REPOSITORY=ORPHAN_SWEEP_environments
-      - AGENT_TYPE=LLM
-      - TOOL_CALLING=True
-      - MULTITURN_LOOP=True

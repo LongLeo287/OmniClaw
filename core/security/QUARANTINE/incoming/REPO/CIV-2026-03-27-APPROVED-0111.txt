@@ -1,5 +1,0 @@
-Source: https://github.com/RUC-NLPIR/FlashRAG
-Type: REPO
-Agent: batch-intake-agent
-Route: brain/knowledge/repos/
-Date: 2026-03-27

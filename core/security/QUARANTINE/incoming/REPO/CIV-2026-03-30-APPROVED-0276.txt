@@ -1,5 +1,0 @@
-Source: https://github.com/jnMetaCode/agency-agents-zh
-Type: REPO
-Agent: batch-intake-agent
-Route: brain/knowledge/repos/
-Date: 2026-03-30

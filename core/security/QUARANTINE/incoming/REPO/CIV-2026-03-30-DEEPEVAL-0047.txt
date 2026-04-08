@@ -1,6 +1,0 @@
-Source: https://github.com/Jamie-BitFlight/claude_skills
-Type: REPO_GOLDEN
-Score: 68
-Features: Golden Match [MCP, ORCHESTRATOR, AGENT, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

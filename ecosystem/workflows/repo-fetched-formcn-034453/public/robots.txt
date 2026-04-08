@@ -1,6 +1,0 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Allow: /
-Disallow:
-
-Sitemap: https://formcn.dev/sitemap.xml

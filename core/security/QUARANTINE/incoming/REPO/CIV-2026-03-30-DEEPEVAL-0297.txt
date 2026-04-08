@@ -1,6 +1,0 @@
-Source: https://github.com/jmanhype/awesome-claude-code
-Type: REPO_GOLDEN
-Score: 25
-Features: Golden Match [MCP, AGENT]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

@@ -1,6 +1,0 @@
-import os
-from setup_wizard import configure_agent
-if __name__ == '__main__':
-    agent_name = input('Enter the name of the new agent: ')
-    template = 'ORPHAN_SWEEP_hermes_cli'
-    configure_agent(agent_name, template)

@@ -1,6 +1,0 @@
-Source: https://github.com/kreuzberg-dev/kreuzberg
-Type: REPO_GOLDEN
-Score: 60
-Features: Golden Match [MCP, AGENT, GRAPH]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

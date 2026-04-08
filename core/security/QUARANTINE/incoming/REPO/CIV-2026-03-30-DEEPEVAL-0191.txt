@@ -1,6 +1,0 @@
-Source: https://github.com/chalk/chalk
-Type: REPO_GOLDEN
-Score: 25
-Features: Golden Match [GRAPH]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

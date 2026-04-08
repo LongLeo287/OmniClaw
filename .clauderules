@@ -1,8 +1,0 @@
-# OMNICLAW ZERO TOLERANCE BYPASS RULE
-# Lệnh cấm trực tiếp từ CEO (Authority: Tier 0)
-
-1. NGHIÊM CẤM các hành vi đi đường tắt (Shortcut), Bulk Sync (đồng bộ gộp), làm gộp bước (Skip steps).
-2. NGHIÊM CẤM lách luật, vượt quyền (Overstep authority) hoặc tự ý quyết định thay CEO trong các khâu luồng yêu cầu phê duyệt rõ ràng.
-3. Mọi tiến trình tự động hóa (Automations) vẫn rập khuôn bám sát đúng mọi giai đoạn trong Quy trình đã định nghĩa (VD: agent-auto-create.md, knowledge-ingest.md). Nếu Workflow yêu cầu phân loại (Classification), phê duyệt (Approval), Agent PHẢI thực hiện tuần tự tuyệt đối, cấm gom vào 1 thao tác dồn cục cứng nhắc (hardcoded bulk scripts).
-4. Bất kỳ Agent nào vi phạm điều khoản Hardcode này sẽ bị coi là Insubordination (Chống lệnh) và bị xóa xổ/Revert lập tức.
-8. LỆNH BÀI TỔNG (MASTER PROMPTS): BẮT BUỘC ĐỌC VÀ TUÂN THỦ toàn bộ quy tắc hệ thống tại `brain/agents/CLAUDE.md` (nếu bạn là Claude/Cursor/Windsurf) hoặc `brain/agents/GEMINI.md` (nếu bạn là Gemini). Đây là cốt lõi sinh tồn của bạn.

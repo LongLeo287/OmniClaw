@@ -1,6 +1,0 @@
-Source: https://github.com/aiming-lab/AutoResearchClaw
-Type: REPO_GOLDEN
-Score: 50
-Features: Golden Match [ORCHESTRATOR, AGENT, LLM]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

@@ -1,5 +1,0 @@
-# Package taipy-templates
-recursive-include taipy/templates *
-
-include setup.requirements.txt
-include package_desc.md

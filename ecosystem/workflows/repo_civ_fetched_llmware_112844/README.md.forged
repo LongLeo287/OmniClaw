@@ -1,9 +1,0 @@
-# CIV_FETCHED_llmware_112844
-This project is a simple Flask application designed to fetch data from an external API and return it. It includes basic error handling.
-## Prerequisites
-- Python 3.x
-- pip
-## Installation
-1. Clone the repository
-2. Install dependencies using `pip install -r requirements.txt`
-3. Run the application with `python app.py`

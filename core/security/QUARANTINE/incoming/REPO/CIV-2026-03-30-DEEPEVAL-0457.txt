@@ -1,6 +1,0 @@
-Source: https://github.com/sipeed/picoclaw
-Type: REPO_GOLDEN
-Score: 58
-Features: Golden Match [MCP, AGENT, LLM]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

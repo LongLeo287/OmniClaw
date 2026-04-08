@@ -1,7 +1,0 @@
-#!/bin/bash
-
-python -m bash_kernel.install
-mkdir ~/path_files && cd ~/path_files && curl -LO "https://mk-sb.dathere.com/storage/v1/object/public/public-qsv-binaries/100/qsv" && chmod +x qsv && cd ~
-export PATH=$HOME/path_files:$PATH
-
-exec "$@"

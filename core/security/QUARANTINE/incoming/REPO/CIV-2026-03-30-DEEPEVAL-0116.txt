@@ -1,6 +1,0 @@
-Source: https://github.com/ScrapeGraphAI/Scrapegraph-ai
-Type: REPO_GOLDEN
-Score: 71
-Features: Golden Match [MCP, GRAPH, LLM, WORKFLOW, SCRAPER]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

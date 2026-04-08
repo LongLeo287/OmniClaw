@@ -1,1 +1,0 @@
-"""Contribution templates system."""

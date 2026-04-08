@@ -1,6 +1,0 @@
-Source: https://github.com/kyegomez/swarms
-Type: REPO_GOLDEN
-Score: 83
-Features: Golden Match [MCP, ORCHESTRATOR, AGENT, GRAPH, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

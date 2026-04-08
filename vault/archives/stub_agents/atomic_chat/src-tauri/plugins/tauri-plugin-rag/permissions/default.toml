@@ -1,6 +1,0 @@
-[default]
-description = "Default permissions for the rag plugin"
-permissions = [
-  "allow-parse-document",
-]
-

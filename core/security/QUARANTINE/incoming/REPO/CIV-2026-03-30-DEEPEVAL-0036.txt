@@ -1,6 +1,0 @@
-Source: https://github.com/Gentleman-Programming/gentle-ai
-Type: REPO_GOLDEN
-Score: 43
-Features: Golden Match [MCP, AGENT, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30

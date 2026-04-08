@@ -1,1 +1,0 @@
-{"version": "1.0", "mode": "upgrade", "system": {"name": "OmniClaw Dept 1 Backend", "description": "Enhanced backend for OmniClaw department 1", "components": [{"name": "wormhole", "type": "network", "status": "active", "version": "120017"}]}}

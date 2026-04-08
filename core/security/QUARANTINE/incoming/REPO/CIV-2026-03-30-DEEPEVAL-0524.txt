@@ -1,6 +1,0 @@
-Source: https://github.com/wshobson/agents
-Type: REPO_GOLDEN
-Score: 61
-Features: Golden Match [AGENT, RAG, LLM, WORKFLOW]
-Agent: dept-01-golden-evaluator
-Date: 2026-03-30
