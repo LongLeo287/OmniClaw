@@ -16,7 +16,7 @@ Welcome aboard! This guide will walk you through setting up OmniClaw, booting yo
 
 ## 1. Prerequisites
 
-Before unleashing the 21-department AI framework, ensure you have the following installed:
+Before unleashing the 28-department AI framework, ensure you have the following installed:
 - **Node.js (v18+)** for the MCP ecosystem and JavaScript-based tools.
 - **Python (3.11+)** for the deep reasoning backends and pipeline workflows.
 - **Docker** (Optional but recommended) for spinning up isolated local DBs and APIs.

@@ -6,9 +6,9 @@ tags: [auto-healed]
 healed_at: 2026-04-03T22:44:27.666487
 ---
 
-# 🏛️ System Overview (21-Department Architecture)
+# 🏛️ System Overview (28-Department Architecture)
 
-OmniClaw functions exactly like a digital mega-corporation, boasting **21 distinct structural "Departments"** managed by AI Agents working in concert via multi-agent pipelines.
+OmniClaw functions exactly like a digital mega-corporation, boasting **28 distinct structural "Departments"** managed by AI Agents working in concert via multi-agent pipelines.
 
 [**🇻🇳 Xem Bản Tiếng Việt**](system_overview-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 
@@ -26,7 +26,7 @@ Our architecture relies on a strict Top-Down cascade, ensuring decisions and saf
 ## 2. The 4 Workforce Pillars
 
 The underlying file structure in `ecosystem/workforce/` segregates the AI corporate structure into four absolute boundaries:
-- **`agents/`**: Houses independent autonomous workers (115 nodes).
+- **`agents/`**: Houses independent autonomous workers (116 nodes).
 - **`subagents/`**: Houses specialized, ephemeral task workers (37 nodes).
 - **`departments/`**: Maps agents together under logical reporting chains (28 nodes).
 - **`system/`**: The Declarative Configuration Zone. This strictly dynamic-free zone houses global AI rules (`corp_prompts/`), structural identity bindings (`daemons/`), and enforces the absolute ban on autonomous execution within its borders via `SYSTEM_PROTOCOL.md`.
@@ -40,7 +40,7 @@ All these autonomous components are linked using the Local Memory (`brain/`). Th
 
 ## 3. Top Core Departments
 
-Of the 21 Departments, a few critical nodes stand out for developers:
+Of the 28 Departments, a few critical nodes stand out for developers:
 - **Dept 01 (Engineering)**: Builds features, fixes code, writes tests.
 - **Dept 10 (Strix Security)**: Vets plugins, reviews payloads, blocks unauthorized edits (Zero Trust).
 - **Dept 20 (CIV - Content Intake)**: Ingests GitHub repos, PDFs, web docs and summarizes them for the Graph Local Memory.
