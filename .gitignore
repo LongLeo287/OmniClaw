@@ -399,3 +399,10 @@ system/security/rules/prompts/
 
 # AI OS Vector Database
 brain/memory/qdrant_db/
+
+# --- Vault Boundaries --------------------------------------
+vault/*
+!vault/_DIR_IDENTITY.md
+!vault/assets/
+vault/assets/*
+!vault/assets/media/
