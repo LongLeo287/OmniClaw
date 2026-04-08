@@ -87,6 +87,8 @@ graph TD
 | **OBD Bridge** | `obd_harbor` | Harbor Master. Handles sub-process Docker launches and Python process bridging. | `system_daemons` |
 | **OHD Healer** | `ohd_healer` | Repairs syntax trees, auto-lints broken source files, and resets missing YAML tags. | `system_health` |
 | **OSF Warden** | `osf_warden` | Performs heuristic deep scans. Rejects dangerous code via strict Border Checkpoints. | `system_security` |
+| **OSF Auditor** | `osf_auditor` | (Sub-daemon) Continuously tracks file checksums and intercepts anomalous API executions. | `system_security` |
+| **OSF Quarantine Guard** | `osf_quarantine_guard` | (Sub-daemon) Manages the physical isolation limits and encrypts bad nodes in `vault/tmp/`. | `system_security` |
 
 ---
 

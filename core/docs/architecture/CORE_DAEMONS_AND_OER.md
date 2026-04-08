@@ -17,6 +17,8 @@ To prevent scope overreach and Zero-Trust violations, ecosystem authority is str
 | :--- | :--- | :--- | :--- |
 | **`oiw_intake`** | OmniClaw Intake Worker | Harvester | `system_daemons` |
 | **`osf_warden`** | OmniClaw Sandbox Firewall | Border Firewall | `system_security` |
+| **`osf_auditor`** | OmniClaw Security Auditor | (Sub) File Auditing | `system_security` |
+| **`osf_quarantine_guard`** | OmniClaw Quarantine Guard | (Sub) Jailer | `system_security` |
 | **`ohd_healer`** | OmniClaw Health Daemon | System Doctor | `system_health` |
 | **`oa_academy`** | OmniClaw Academy | Execution Auditor | `system_daemons` |
 | **`oer_registry`**| OmniClaw Ecosystem Registry | Registrar | `system_daemons` |
