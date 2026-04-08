@@ -401,8 +401,10 @@ system/security/rules/prompts/
 brain/memory/qdrant_db/
 
 # --- Vault Boundaries --------------------------------------
-vault/*
-!vault/_DIR_IDENTITY.md
-!vault/assets/
-vault/assets/*
-!vault/assets/media/
+vault/**
+!vault/**/
+!vault/**/_DIR_IDENTITY.md
+!vault/assets/media/*.jpg
+!vault/assets/media/*.png
+!vault/assets/media/*.gif
+!vault/assets/media/*.svg
