@@ -47,26 +47,34 @@ def harvest_github_txt():
     if not os.path.exists(github_txt):
         return
 
+    def normalize_link(link):
+        l = link.strip().lower()
+        if l.endswith(".git"): l = l[:-4]
+        if l.endswith("/"): l = l[:-1]
+        return l
+
     # Load existing links to avoid duplication
     existing = set()
     for file_path in [pending_txt, selected_txt, rejected_txt]:
         if os.path.exists(file_path):
             with open(file_path, "r", encoding="utf-8") as f:
                 for line in f:
-                    clean = line.strip().removesuffix(".git")
+                    clean = normalize_link(line)
                     if clean: existing.add(clean)
                     
     new_links = set()
     with open(github_txt, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
-            link = line.strip().removesuffix(".git")
-            if link and link.startswith("http"):
-                new_links.add(link)
+            if not line.strip(): continue
+            norm = normalize_link(line)
+            if norm and norm.startswith("http") and norm not in existing:
+                new_links.add(line.strip()) # keep original case
+                existing.add(norm)
                 
     # Filter only truly new links
-    to_add = new_links - existing
+    to_add = new_links
     if to_add:
-        print(f"\033[94m[INFO]\033[0m [OIW] Harvested {len(to_add)} NEW unique repositories from github.txt (deduplicated {len(new_links)} pasted lines).")
+        print(f"\033[94m[INFO]\033[0m [OIW] Harvested {len(to_add)} NEW unique repositories from github.txt.")
         with open(pending_txt, "a", encoding="utf-8") as f:
             for l in sorted(to_add):
                 f.write(l + "\n")
@@ -237,7 +245,7 @@ def process_task(task: dict):
                 print(f"  \033[92m[OK]\033[0m [OIW] Clone successful to {target_dir}")
                 
                 # OSF HANDOFF: No security scan here anymore!
-                apply_dependabot_secretary(target_dir) # Auto upgrade deps
+                # apply_dependabot_secretary(target_dir) # Removed: OSF Daemon handles this natively in SANDBOX
                 
                 # [PHASE 1: OIW Repo Plow] Crush it immediately
                 apply_gitingest_plow(target_dir)
