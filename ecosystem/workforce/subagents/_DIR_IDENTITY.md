@@ -1,15 +1,14 @@
 ---
-id: subagents_domain
-name: Subagents
-path: ecosystem/workforce/subagents
-type: directory_identity
-status: empty_shell
+id: workforce_subagents_root
+type: registry_node
+name: OmniClaw Autonomous Subagents
+total_nodes: 37
 ---
 
-# Subagents
+# Autonomous Subagents Root
 
-Storage area for subagents.
-(Auto-generated identity tag by OMA v2.1)
+This is the architectural registry node for the OmniClaw workforce subagents directory. It holds exactly 37 ephemeral/specialized subagent nodes.
+Every subagent inside this registry must strictly abide by the zero-trust identity pattern.
 
-
-> Note: This directory is currently empty (contains no data files) and awaits OIW intake.
+Any sub-agent spawned dynamically must output receipts matching the pathing rule in SUBAGENT_PROTOCOL.md.
+*Secured by OmniClaw Martial Law override. Managed via OER Registry and OBD Harbor.*
