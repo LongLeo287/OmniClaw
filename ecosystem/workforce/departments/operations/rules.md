@@ -1,4 +1,4 @@
-﻿# OPERATIONS â€” Department Rules
+﻿# OPERATIONS — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: scrum-master-agent | Reports to: COO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -19,8 +19,8 @@ RULE OPS-02: SPRINT SCOPE IS FIXED
 
 RULE OPS-03: CHANNEL BRIDGES MUST BE UP
   All active channel bridges (Telegram/Zalo/Discord/FB) monitored every cycle.
-  Downtime > 10 min â†’ channel-agent attempts restart.
-  Persistent downtime â†’ L2 to COO.
+  Downtime > 10 min → channel-agent attempts restart.
+  Persistent downtime → L2 to COO.
 
 RULE OPS-04: ARCHIVIST SCHEDULE
   archivist runs full rotation weekly (on-demand trigger).
@@ -29,7 +29,7 @@ RULE OPS-04: ARCHIVIST SCHEDULE
 
 RULE OPS-05: NO BLACKBOARD MODIFICATION BY WORKERS
   Only scrum-master-agent and dept heads may write to blackboard.json.
-  Workers READ task cards from their dept queue â€” they do NOT edit blackboard.
+  Workers READ task cards from their dept queue — they do NOT edit blackboard.
 
 RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
   After every sprint, scrum-master-agent triggers learning loop.
@@ -48,12 +48,12 @@ RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
 - Coordinate sprint cadence
 - Write operations daily brief
 **Must load at boot:**
-- `corp/memory/departments/operations.md`
-- `shared-context/blackboard.json` â€” current state
-- `corp/departments/operations/MANAGER_PROMPT.md`
+- `brain/knowledge/org/operations.md`
+- `shared-context/blackboard.json` — current state
+- `ecosystem/workforce/departments/operations/MANAGER_PROMPT.md`
 **Skills:**
-- `context_manager` â€” multi-dept context management
-- `reasoning_engine` â€” dependency resolution
+- `context_manager` — multi-dept context management
+- `reasoning_engine` — dependency resolution
 **Tools:** blackboard.json (read + write authority), all dept task queues
 
 ---
@@ -61,19 +61,19 @@ RULE OPS-06: SPRINT RETROSPECTIVE MANDATORY
 ### archivist
 **Role:** Memory rotation, telemetry archiving, knowledge maintenance
 **Responsibilities:**
-- Rotate brain/corp/memory/departments/ (30-day rolling)
+- Rotate brain/brain/knowledge/org/ (30-day rolling)
 - Purge brain/corp/memory/agents/ (7-day entries)
-- Archive telemetry/receipts/ (move old â†’ archive/)
+- Archive telemetry/receipts/ (move old → archive/)
 - Update shared-context/knowledge_index.md monthly
 - Run memory rotation receipt to telemetry/archivist_log.md
 **Trigger:** `omniclaw corp retro --full` OR weekly on-demand
 **At the start of each run, load:**
-- SKILL: `context_manager` â€” reading memory files
-- SKILL: `knowledge_enricher` â€” summarizing knowledge into global memory
-- `corp/memory/MEMORY_SPEC.md` â€” retention rules
+- SKILL: `context_manager` — reading memory files
+- SKILL: `knowledge_enricher` — summarizing knowledge into global memory
+- `corp/memory/MEMORY_SPEC.md` — retention rules
 **Skills:**
-- `context_manager` â€” memory file organization
-- `knowledge_enricher` â€” distill old memory into knowledge summaries
+- `context_manager` — memory file organization
+- `knowledge_enricher` — distill old memory into knowledge summaries
 **Output:**
 - Rotated memory files in brain/corp/memory/
 - Archive logs in archive/ directory
@@ -91,10 +91,10 @@ This instance manages the TECHNICAL bridge infrastructure.
 - Route incoming platform messages to correct dept
 - Log all channel events to telemetry/channels/
 **At start of maintenance task, load:**
-- SKILL: `resilience_engine` â€” bridge restart and retry logic
-- SKILL: `shell_assistant` â€” bridge service commands
+- SKILL: `resilience_engine` — bridge restart and retry logic
+- SKILL: `shell_assistant` — bridge service commands
 **Skills:**
-- `resilience_engine` â€” fault recovery for bridges
-- `shell_assistant` â€” start/stop/monitor bridge processes
-- `diagnostics_engine` â€” bridge failure diagnosis
+- `resilience_engine` — fault recovery for bridges
+- `shell_assistant` — start/stop/monitor bridge processes
+- `diagnostics_engine` — bridge failure diagnosis
 **Tools:** Channel bridge services, system process manager

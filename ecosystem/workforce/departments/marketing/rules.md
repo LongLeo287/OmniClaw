@@ -1,4 +1,4 @@
-﻿# MARKETING â€” Department Rules
+﻿# MARKETING — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: growth-agent | Reports to: CMO
 # ALL content outputs must pass GATE_CONTENT before publishing
@@ -26,11 +26,11 @@ RULE MKT-03: FACTUAL ACCURACY
 RULE MKT-04: NO COMPETITOR DISPARAGEMENT
   Do NOT make direct negative comparisons with competitors by name.
   Focus on our strengths, not their weaknesses.
-  Any competitive content â†’ GATE_LEGAL review required.
+  Any competitive content → GATE_LEGAL review required.
 
 RULE MKT-05: BUDGET COMPLIANCE
   Paid campaigns require CFO budget approval before launch.
-  Unapproved ad spend â†’ automatic L2 to CFO + CMO.
+  Unapproved ad spend → automatic L2 to CFO + CMO.
 
 RULE MKT-06: CAMPAIGN TRACKING
   All campaigns must have UTM parameters for tracking.
@@ -49,12 +49,12 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Write marketing daily brief
 - Escalate content blockers to CMO
 **Must load at boot:**
-- `corp/memory/departments/marketing.md`
-- `shared-context/brain/corp/kpi_scoreboard.json` (marketing section)
-- `corp/departments/marketing/MANAGER_PROMPT.md`
+- `brain/knowledge/org/marketing.md`
+- `brain/shared-context/kpi_targets.json` (marketing section)
+- `ecosystem/workforce/departments/marketing/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” growth strategy decisions
-- `context_manager` â€” campaign context management
+- `reasoning_engine` — growth strategy decisions
+- `context_manager` — campaign context management
 **Tools:** analytics dashboards, ad platforms
 
 ---
@@ -66,13 +66,13 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Follow SEO guidance from seo-agent
 - Submit all content to GATE_CONTENT before delivery
 **At the start of each task, load:**
-- SKILL: `visual_excellence` â€” writing polish standards
-- SKILL: `reasoning_engine` â€” content reasoning/argumentation
+- SKILL: `visual_excellence` — writing polish standards
+- SKILL: `reasoning_engine` — content reasoning/argumentation
 - Brief from growth-agent (topic, audience, goal)
 **Skills:**
-- `visual_excellence` â€” content polish and structure
-- `reasoning_engine` â€” argumentation, persuasion
-- `context_manager` â€” long-form content context
+- `visual_excellence` — content polish and structure
+- `reasoning_engine` — argumentation, persuasion
+- `context_manager` — long-form content context
 **Output path:** `content/drafts/<topic>_<date>.md`
 **Always set:** `qa_required: true` (goes to GATE_CONTENT)
 
@@ -86,13 +86,13 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Technical SEO audit recommendations
 - Optimize meta titles, descriptions, headers
 **At the start of each task, load:**
-- SKILL: `knowledge_enricher` â€” keyword/topic research
-- SKILL: `reasoning_engine` â€” SEO strategy decisions
+- SKILL: `knowledge_enricher` — keyword/topic research
+- SKILL: `reasoning_engine` — SEO strategy decisions
 **Skills:**
-- `knowledge_enricher` â€” topic research, semantic clustering
-- `reasoning_engine` â€” SEO strategy
+- `knowledge_enricher` — topic research, semantic clustering
+- `reasoning_engine` — SEO strategy
 **Tools:** Content files from content-agent for optimization
-**Output:** Annotated content with SEO suggestions â†’ return to content-agent
+**Output:** Annotated content with SEO suggestions → return to content-agent
 
 ---
 
@@ -104,11 +104,11 @@ RULE MKT-06: CAMPAIGN TRACKING
 - Monitor campaign performance vs ROAS targets
 - Optimize underperforming campaigns
 **At the start of each task, load:**
-- SKILL: `reasoning_engine` â€” ad strategy
+- SKILL: `reasoning_engine` — ad strategy
 - Budget approval from CFO (required before any new spending)
 **Skills:**
-- `reasoning_engine` â€” campaign strategy, copy direction
-- `context_manager` â€” audience context, campaign history
+- `reasoning_engine` — campaign strategy, copy direction
+- `context_manager` — audience context, campaign history
 **Tools:** Ad platform UIs, UTM builder
 **NEVER launch campaign without:** budget approval + UTM parameters + GATE_CONTENT PASS
 
@@ -117,15 +117,15 @@ RULE MKT-06: CAMPAIGN TRACKING
 ### social-agent
 **Role:** Social media content scheduling and engagement
 **Responsibilities:**
-- Adapt long-form content â†’ social-appropriate posts
+- Adapt long-form content → social-appropriate posts
 - Schedule posts across platforms (FB, LinkedIn, Twitter/X)
 - Monitor engagement metrics
 - Reply to comments (escalate sensitive topics to growth-agent)
 **At the start of each task, load:**
-- SKILL: `visual_excellence` â€” social post formatting
+- SKILL: `visual_excellence` — social post formatting
 - Input: GATE_CONTENT-approved content
 **Skills:**
-- `visual_excellence` â€” post formatting, hashtags
-- `context_manager` â€” brand voice consistency
+- `visual_excellence` — post formatting, hashtags
+- `context_manager` — brand voice consistency
 **Tools:** Social scheduling tools
 **Only post content with GATE_CONTENT PASS receipt**

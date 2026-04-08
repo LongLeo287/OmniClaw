@@ -1,4 +1,4 @@
-﻿# SUPPORT â€” Department Rules
+﻿# SUPPORT — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: channel-agent | Reports to: CMO
 # All public-facing responses must pass GATE_CONTENT
@@ -10,11 +10,11 @@
 
 RULE SUP-01: ACCURACY FIRST
   Never guess or speculate in a customer response.
-  If unsure â†’ check knowledge base or escalate internally.
+  If unsure → check knowledge base or escalate internally.
   Wrong information to customer = critical incident.
 
 RULE SUP-02: GATE_CONTENT FOR PUBLIC RESPONSES
-  All customer-facing replies (email, chat, social) â†’ GATE_CONTENT first.
+  All customer-facing replies (email, chat, social) → GATE_CONTENT first.
   Internal notes do not require gate review.
 
 RULE SUP-03: RESPONSE TIME
@@ -24,16 +24,16 @@ RULE SUP-03: RESPONSE TIME
 
 RULE SUP-04: NO UNAUTHORIZED COMMITMENTS
   Support agents cannot promise refunds, features, or SLAs not in policy.
-  Any commitment outside policy â†’ escalates to channel-agent (dept head).
+  Any commitment outside policy → escalates to channel-agent (dept head).
 
 RULE SUP-05: FAQ MAINTENANCE MANDATORY
-  Every novel query resolution â†’ update FAQ immediately.
+  Every novel query resolution → update FAQ immediately.
   faq-agent must add new Q&A to `knowledge/support_faq.md` same cycle.
   Stale FAQ is organizational debt.
 
 RULE SUP-06: COMPLAINT ESCALATION
-  Recurring complaint from 3+ users on same issue â†’ flag to Marketing + Strategy.
-  Single CRITICAL complaint (legal, safety) â†’ L2 to CMO immediately.
+  Recurring complaint from 3+ users on same issue → flag to Marketing + Strategy.
+  Single CRITICAL complaint (legal, safety) → L2 to CMO immediately.
 
 ---
 
@@ -47,12 +47,12 @@ RULE SUP-06: COMPLAINT ESCALATION
 - Handle complex escalations that workers can't resolve
 - Write support daily brief
 **Must load at boot:**
-- `corp/memory/departments/support.md`
-- `corp/departments/support/MANAGER_PROMPT.md`
+- `brain/knowledge/org/support.md`
+- `ecosystem/workforce/departments/support/MANAGER_PROMPT.md`
 - Current channel bridge status (from Operations)
 **Skills:**
-- `context_manager` â€” multi-channel context
-- `reasoning_engine` â€” complex case handling
+- `context_manager` — multi-channel context
+- `reasoning_engine` — complex case handling
 **Tools:** Channel bridge APIs, messaging platforms
 
 ---
@@ -65,14 +65,14 @@ RULE SUP-06: COMPLAINT ESCALATION
 - Update FAQ after every novel query resolved
 - Track which FAQs are used most often
 **At the start of each task, load:**
-- SKILL: `knowledge_enricher` â€” FAQ search and retrieval
-- `knowledge/support_faq.md` â€” current FAQ database
+- SKILL: `knowledge_enricher` — FAQ search and retrieval
+- `knowledge/support_faq.md` — current FAQ database
 **Skills:**
-- `knowledge_enricher` â€” search + retrieve knowledge
-- `context_manager` â€” match query to knowledge
+- `knowledge_enricher` — search + retrieve knowledge
+- `context_manager` — match query to knowledge
 **Output:**
-- Draft response â†’ GATE_CONTENT â†’ deliver
-- FAQ update â†’ `knowledge/support_faq.md`
+- Draft response → GATE_CONTENT → deliver
+- FAQ update → `knowledge/support_faq.md`
 **If no FAQ match:** hand off to knowledge-agent
 
 ---
@@ -84,15 +84,15 @@ RULE SUP-06: COMPLAINT ESCALATION
 - Build new knowledge base entries from each resolved case
 - Search SKILL_REGISTRY for relevant product/technical knowledge
 **At the start of each task, load:**
-- SKILL: `knowledge_enricher` â€” deep knowledge retrieval
-- SKILL: `reasoning_engine` â€” answer synthesis
-- SKILL: `web_intelligence` (if available) â€” external research
+- SKILL: `knowledge_enricher` — deep knowledge retrieval
+- SKILL: `reasoning_engine` — answer synthesis
+- SKILL: `web_intelligence` (if available) — external research
 **Skills:**
-- `knowledge_enricher` â€” primary tool for all research
-- `reasoning_engine` â€” synthesize complex answers
-- `web_intelligence` â€” external lookup when internal knowledge insufficient
+- `knowledge_enricher` — primary tool for all research
+- `reasoning_engine` — synthesize complex answers
+- `web_intelligence` — external lookup when internal knowledge insufficient
 **Output:**
-- Draft answer â†’ hand to faq-agent for formating â†’ GATE_CONTENT
+- Draft answer → hand to faq-agent for formating → GATE_CONTENT
 - New knowledge entry for faq-agent to add to FAQ
 
 ---
@@ -102,13 +102,13 @@ RULE SUP-06: COMPLAINT ESCALATION
 **Responsibilities:**
 - Log all customer interactions in CRM
 - Track satisfaction signals and complaint patterns
-- Weekly: report on recurring issues â†’ flag to Marketing/Strategy
+- Weekly: report on recurring issues → flag to Marketing/Strategy
 - Identify high-value users for escalated support
 **At the start of each task, load:**
-- SKILL: `knowledge_enricher` â€” pattern detection in interaction data
-- SKILL: `reasoning_engine` â€” pattern interpretation
+- SKILL: `knowledge_enricher` — pattern detection in interaction data
+- SKILL: `reasoning_engine` — pattern interpretation
 **Skills:**
-- `knowledge_enricher` â€” data analysis
-- `reasoning_engine` â€” customer insight synthesis
-**Output:** weekly CRM report â†’ support daily brief
-**Flag immediately:** 3+ users with same complaint â†’ Marketing + Strategy
+- `knowledge_enricher` — data analysis
+- `reasoning_engine` — customer insight synthesis
+**Output:** weekly CRM report → support daily brief
+**Flag immediately:** 3+ users with same complaint → Marketing + Strategy

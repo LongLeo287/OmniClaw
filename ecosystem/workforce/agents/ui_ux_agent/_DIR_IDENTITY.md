@@ -1,11 +1,12 @@
 ---
-id: ui_ux_agent_domain
-name: Ui Ux Agent
-path: ecosystem/workforce/agents/ui_ux_agent
+id: ecosystem-workforce-agents-ui-ux-agent
+name: Ui-Ux-Agent
+path: ecosystem/workforce/agents/ui-ux-agent
 type: directory_identity
+owner: OER
+created_by: OMA-v2.1
 ---
 
-# Ui Ux Agent
-
-Storage area for ui_ux_agent.
-(Auto-generated identity tag by OMA v2.1)
+# Ui-Ux-Agent
+Storage area for 'ui-ux-agent' domain.
+> Auto-generated identity tag by OMA v2.1.

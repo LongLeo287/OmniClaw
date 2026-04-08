@@ -1,0 +1,12 @@
+department_id: dept03_ux_design
+name: "Design & UX Department"
+status: "active"
+mandate: "Ensuring visual fidelity, translating Figma designs into code components, maintaining Design Tokens, and standardizing UI across OmniClaw ecosystems."
+hierarchy:
+  - agent_id: ui-ux-architect
+    role: "Chief Designer"
+    responsibilities: 
+      - "Translating Figma URLs into standard CSS/Tailwind definitions"
+      - "Auditing UI layouts for visual defects and clipping errors"
+    tools:
+      - "figma-mcp-server"

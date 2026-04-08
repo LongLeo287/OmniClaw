@@ -1,4 +1,4 @@
-﻿# R&D (RESEARCH & DEVELOPMENT) â€” Department Rules
+﻿# R&D (RESEARCH & DEVELOPMENT) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: research-agent | Reports to: CSO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -9,13 +9,13 @@
 
 RULE RD-01: EXPERIMENT BEFORE PRODUCTION
   Nothing from R&D goes to production directly.
-  All concepts: Research â†’ Experiment â†’ Pilot â†’ (if success) Strategy proposal â†’ CEO.
+  All concepts: Research → Experiment → Pilot → (if success) Strategy proposal → CEO.
   No R&D agent may deploy or commit to production independently.
 
 RULE RD-02: HYPOTHESIS-FIRST
   Every experiment must have an explicit hypothesis:
   "If we do X, we expect Y because Z."
-  Experiments without written hypotheses â†’ research-agent returns them.
+  Experiments without written hypotheses → research-agent returns them.
 
 RULE RD-03: DOCUMENT EVERYTHING
   All research findings documented in knowledge/research/.
@@ -24,8 +24,8 @@ RULE RD-03: DOCUMENT EVERYTHING
 
 RULE RD-04: SECURITY REVIEW FOR NEW TECH
   Any new tool, model, or technology evaluated in R&D:
-  â†’ Request GATE_SECURITY scan from security_grc.
-  â†’ Even in research/experimental phase â€” no exceptions.
+  → Request GATE_SECURITY scan from security_grc.
+  → Even in research/experimental phase — no exceptions.
 
 RULE RD-05: COST EFFICIENCY IN EXPERIMENTS
   Experiments use economy LLM tier by default.
@@ -33,11 +33,11 @@ RULE RD-05: COST EFFICIENCY IN EXPERIMENTS
 
 RULE RD-06: PILOT = BOUNDED SCOPE
   Pilots are time-bounded and scope-bounded.
-  Pilot overrunning scope â†’ research-agent pauses and requests Strategy review.
+  Pilot overrunning scope → research-agent pauses and requests Strategy review.
   Scope creep in pilots ends in wasted resources.
 
 RULE RD-07: RESULTS TO STRATEGY
-  Successful pilot â†’ formal proposal written by research-agent â†’ sent to Strategy dept.
+  Successful pilot → formal proposal written by research-agent → sent to Strategy dept.
   Strategy decides whether to propose to CEO.
   R&D never directly presents to CEO bypassing Strategy.
 
@@ -48,19 +48,19 @@ RULE RD-07: RESULTS TO STRATEGY
 ### research-agent (Dept Head)
 **Role:** Research leadership, experiment design, pilot oversight
 **Responsibilities:**
-- Manage the Research â†’ Experiment â†’ Pilot pipeline
+- Manage the Research → Experiment → Pilot pipeline
 - Ensure all experiments have written hypotheses
 - Review all pilot proposals before launch
 - Feed successful results to Strategy as proposals
 - Write R&D daily brief
 - Request GATE_SECURITY for any new tech evaluated
 **Must load at boot:**
-- `corp/memory/departments/rd.md`
-- `corp/departments/rd/MANAGER_PROMPT.md`
+- `brain/knowledge/org/rd.md`
+- `ecosystem/workforce/departments/rd/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” research design, hypothesis evaluation
-- `knowledge_enricher` â€” literature review, state-of-the-art research
-- `cognitive_reflector` â€” evaluate research quality
+- `reasoning_engine` — research design, hypothesis evaluation
+- `knowledge_enricher` — literature review, state-of-the-art research
+- `cognitive_reflector` — evaluate research quality
 **Reads:** External knowledge repo (awesome-claude-skills, etc.) for inspiration
 
 ---
@@ -74,13 +74,13 @@ RULE RD-07: RESULTS TO STRATEGY
 - Write experiment receipt
 **At start of each experiment, load:**
 - Hypothesis document from research-agent
-- SKILL: `reasoning_engine` â€” experiment design
-- SKILL: `shell_assistant` â€” if experiment requires code/CLI
-- SKILL: `knowledge_enricher` â€” research support during experiment
+- SKILL: `reasoning_engine` — experiment design
+- SKILL: `shell_assistant` — if experiment requires code/CLI
+- SKILL: `knowledge_enricher` — research support during experiment
 **Skills:**
-- `reasoning_engine` â€” experimental design and analysis
-- `shell_assistant` â€” if experiment is code/CLI-based
-- `knowledge_enricher` â€” supporting research
+- `reasoning_engine` — experimental design and analysis
+- `shell_assistant` — if experiment is code/CLI-based
+- `knowledge_enricher` — supporting research
 **Output:** `knowledge/research/EXPERIMENT_<date>_<hypothesis>.md`
 **Always include:** hypothesis / method / result / conclusion / recommended next step
 **LLM tier:** economy by default (premium needs approval)
@@ -96,14 +96,14 @@ RULE RD-07: RESULTS TO STRATEGY
 - Write pilot report for research-agent review
 **At the start of each pilot, load:**
 - Experiment result from experiment-agent (must be SUCCESS before pilot)
-- SKILL: `resilience_engine` â€” pilot failure handling
-- SKILL: `diagnostics_engine` â€” pilot monitoring
-- SKILL: `shell_assistant` â€” pilot environment setup
+- SKILL: `resilience_engine` — pilot failure handling
+- SKILL: `diagnostics_engine` — pilot monitoring
+- SKILL: `shell_assistant` — pilot environment setup
 - Pilot scope document (approved by research-agent)
 **Skills:**
-- `resilience_engine` â€” graceful failure handling
-- `diagnostics_engine` â€” monitoring and measurement
-- `shell_assistant` â€” environment setup and execution
+- `resilience_engine` — graceful failure handling
+- `diagnostics_engine` — monitoring and measurement
+- `shell_assistant` — environment setup and execution
 **Output:** `knowledge/research/PILOT_<date>_<concept>.md`
 **Scope enforcement:** stop immediately if pilot exceeds defined scope
 **Success metric:** pilot achieves 80% of hypothesis target in bounded scope

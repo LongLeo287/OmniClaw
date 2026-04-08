@@ -1,0 +1,57 @@
+name: PyPI Release
+
+# https://help.github.com/en/actions/reference/events-that-trigger-workflows
+on: # Trigger the workflow on push or pull request, but only for the main branch
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/release-pypi.yml"
+
+# based on https://github.com/pypa/gh-action-pypi-publish
+
+jobs:
+  build-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+      - name: Pull reusable 🤖 actions️
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          path: .cicd
+          repository: Lightning-AI/utilities
+
+      - name: Prepare build env.
+        run: pip install -r ./.cicd/requirements/gha-package.txt
+      - name: Create 📦 package
+        uses: ./.cicd/.github/actions/pkg-create
+      - uses: actions/upload-artifact@v7
+        with:
+          name: pypi-packages-${{ github.sha }}
+          path: dist
+
+  publish-package:
+    needs: build-package
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: pypi-packages-${{ github.sha }}
+          path: dist
+      - run: ls -lh dist/
+
+      - name: Publish distribution 📦 to PyPI
+        if: startsWith(github.event.ref, 'refs/tags') || github.event_name == 'release'
+        uses: pypa/gh-action-pypi-publish@v1.13.0
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}

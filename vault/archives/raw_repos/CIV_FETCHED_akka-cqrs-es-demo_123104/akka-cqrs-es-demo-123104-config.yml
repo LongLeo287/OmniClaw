@@ -1,0 +1,17 @@
+akka {
+  actor {
+    provider = cluster
+  }
+  remote {
+    enabled-transports = "akka.remote.netty.tcp"
+    netty.tcp {
+      hostname = "localhost"
+      port = 2551
+    }
+  }
+}
+cassandra {
+  keyspace-name = "cqrs_es"
+  contact-points = ["127.0.0.1"]
+  port = 9042
+}

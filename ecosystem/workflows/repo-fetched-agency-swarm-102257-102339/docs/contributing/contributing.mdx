@@ -1,0 +1,127 @@
+---
+title: "Contributing to Agency Swarm"
+description: "Learn how to contribute to Agency Swarm"
+icon: "code-fork"
+---
+
+We welcome contributions to Agency Swarm! By contributing, you help improve the framework for everyone. Here's how you can get involved:
+
+## Setting Up Your Development Environment
+
+### Prerequisites
+
+- Python 3.12 or higher
+- Pip
+- Git
+
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/VRSEN/agency-swarm.git
+   cd agency-swarm
+   ```
+2. Create and activate a virtual environment (recommended):
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+   ```
+3. Install dependencies including development tools:
+   ```bash
+   pip install -e ".[dev]"
+   ```
+
+4. Install Pre-Commit Hooks:
+   ```bash
+   pip install pre-commit
+   pre-commit install
+   ```
+
+## Running Tests
+
+<Tip>
+  Testing ensures that your contributions work as intended and do not break existing functionality.
+</Tip>
+
+<Steps titleSize="h3">
+
+<Step title="Install Test Dependencies" icon="download" iconType="solid">
+Ensure all test dependencies are installed.
+
+```bash
+pip install -e ".[dev]"
+```
+
+</Step>
+
+<Step title="Run Tests" icon="play" iconType="solid">
+Run the test suite using Pytest.
+
+```bash
+pytest
+```
+
+</Step>
+
+<Step title="Check Test Coverage" icon="chart-bar" iconType="solid">
+Check the test coverage to ensure comprehensive testing.
+
+```bash
+pytest --cov=agency_swarm tests/
+```
+
+</Step>
+
+</Steps>
+
+## Submitting Changes
+
+<AccordionGroup>
+
+  <Accordion title="Create Branch" icon="code-branch" iconType="solid">
+    Create a branch for your work:
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+  </Accordion>
+
+  <Accordion title="Commit Changes" icon="git" iconType="solid">
+    Commit your updates:
+    ```bash
+    git add .
+    git commit -m "Add [feature]: Description"
+    ```
+  </Accordion>
+
+  <Accordion title="Push Branch" icon="code-fork" iconType="solid">
+    Push your branch:
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+  </Accordion>
+
+  <Accordion title="Open PR" icon="paper-plane" iconType="solid">
+    Open a pull request on GitHub:
+    ```markdown
+    - Provide a concise title and description.
+    - Reference related issues.
+    ```
+  </Accordion>
+
+</AccordionGroup>
+
+### Code Style and Linting
+
+This project uses `ruff` for linting and code formatting. Configuration for this tool can be found in `pyproject.toml`.
+
+Before committing your changes, please check and fix linting errors:
+
+```bash
+ruff check . --fix
+```
+
+It's recommended to install these tools in your development environment. If you followed the setup instructions, they should already be installed via:
+
+```bash
+pip install -e ".[dev]"
+```

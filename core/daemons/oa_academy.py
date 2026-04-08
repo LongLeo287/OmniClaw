@@ -367,14 +367,29 @@ def _forge_capabilities(repo_path: str, repo_name: str, blueprint: str, rtype: s
             
     if not forge_success:
         print(f"\033[93m[WARN]\033[0m [OA] API Forge failed! Triggering NATIVE FALLBACK FORGE...")
+        try:
+            import sys
+            sys.path.append(os.path.dirname(__file__))
+            from oa_heuristics import analyze_and_forge_natively
+            
+            result = analyze_and_forge_natively(repo_path, repo_name)
+            rtype = result.get('type', rtype)
+            
+            if "AGENT.md" in result:
+                with open(os.path.join(repo_path, "AGENT.md"), "w", encoding="utf-8") as f:
+                    f.write(result["AGENT.md"])
+                print(f"    \033[92m[+]\033[0m Created NATIVE AGENT.md")
+        except Exception as he_err:
+            print(f"\033[91m[ERR]\033[0m [OA] Heuristics failed: {he_err}")
+            
         identity_file = os.path.join(repo_path, "_DIR_IDENTITY.md")
         ts = datetime.now().isoformat()
-        fallback_content = f"---\nid: {repo_name}\ntype: {rtype}\nowner: OA\nstatus: fallback_forced\ncreated_at: {ts}\n---\n\n# {repo_name}\n\nEmergency identity explicitly forced by OA because LLM Forge failed. Sent to OER for safe preservation."
+        fallback_content = f"---\nid: {repo_name}\ntype: {rtype}\nowner: OA_HEURISTIC_FALLBACK\nstatus: native_forced\ncreated_at: {ts}\n---\n\n# {repo_name}\n\nEmergency identity AND capability explicitly forced natively because LLM Forge failed."
         with open(identity_file, "w", encoding="utf-8") as f:
             f.write(fallback_content)
         print(f"    \033[92m[+]\033[0m Created Emergency _DIR_IDENTITY.md")
 
-def _assimilate_repo(repo_path: str, repo_name: str) -> bool:
+def _assimilate_repo(repo_path: str, repo_name: str, in_place: bool = False) -> bool:
     """Uses LLM to categorize and generate structured identity for a cloned repository."""
     _sanitize_repo(repo_path)
     
@@ -437,18 +452,20 @@ def _assimilate_repo(repo_path: str, repo_name: str) -> bool:
 
     print(f"\033[94m[INFO]\033[0m [OA] Deep Scanning Source Code for {repo_name}...")
     ai_data = call_omniclaw_model(prompt, json_format=True, timeout=7200)
-    if ai_data:
-        try:
-            obj = json.loads(ai_data)
-            summary = obj.get("summary", summary).replace("\n", " ")
-            # Ensure it's a list for tags
-            t_list = obj.get("tags", [])
-            if isinstance(t_list, list):
-                tags.extend(t_list)
-            rtype = obj.get("type", rtype)
-            value_score = obj.get("value_score", 5)
-            blueprint = obj.get("integration_blueprint", blueprint).replace("\n", " ")
-        except: pass
+    if not ai_data:
+        print(f"\033[93m[WARN]\033[0m [OA] AI_SERVER_OFFLINE - Bypassing API analysis, proceeding to Native Fallback Forge mode...")
+        
+    try:
+        obj = json.loads(ai_data)
+        summary = obj.get("summary", summary).replace("\n", " ")
+        # Ensure it's a list for tags
+        t_list = obj.get("tags", [])
+        if isinstance(t_list, list):
+            tags.extend(t_list)
+        rtype = obj.get("type", rtype)
+        value_score = obj.get("value_score", 5)
+        blueprint = obj.get("integration_blueprint", blueprint).replace("\n", " ")
+    except: pass
 
     # Apply manual CIV override if existing map is found
     if manual_type:
@@ -474,9 +491,16 @@ def _assimilate_repo(repo_path: str, repo_name: str) -> bool:
         except Exception: pass
         
     ts = datetime.now().isoformat()
-    stem = repo_name.lower().replace(" ", "-").replace("_", "-")[:50]
+    import re
+    stem = repo_name.lower()
+    for prefix in ['repo-fetched-', 'repo_fetched_', 'repo_civ_fetched_', 'civ_fetched_', 'fetched_', 'repo_']:
+        if stem.startswith(prefix):
+            stem = stem[len(prefix):]
+    stem = re.sub(r'[-_]\d{6}([-_]\d{6})?$', '', stem)
+    stem = re.sub(r'_\d+$', '', stem)
+    stem = stem.replace("-", "_").replace(".", "_")[:50]
     
-    identity_content = f"---\nid: repo-{stem}\ntype: {rtype}\nowner: OA\nregistered_at: {ts}\ntags: {json.dumps(tags)}\n---\n\n# {repo_name}\n\n## Assimilation Report\n{summary}\n\n## Application for OmniClaw\n{blueprint}\n"
+    identity_content = f"---\nid: {stem}\ntype: {rtype}\nowner: OA\nregistered_at: {ts}\ntags: {json.dumps(tags)}\n---\n\n# {repo_name}\n\n## Assimilation Report\n{summary}\n\n## Application for OmniClaw\n{blueprint}\n"
     
     id_path = os.path.join(repo_path, "_DIR_IDENTITY.md")
     try:
@@ -486,32 +510,36 @@ def _assimilate_repo(repo_path: str, repo_name: str) -> bool:
         print(f"\033[93m[WARN]\033[0m [OA] Failed to write identity to {repo_path}: {e}")
         return False
 
-    # [DATA DECAPITATION] Move all raw source files down to the vault to keep Brain 100% pure.
-    try:
-        import shutil
-        raw_repos_dir = abs_path(PATHS.RAW_REPOS)
-        os.makedirs(raw_repos_dir, exist_ok=True)
-        ghost_vault_dir = os.path.join(raw_repos_dir, repo_name)
-        
-        # If the repository has already been previously decapitated, we generate a unique folder name
-        if os.path.exists(ghost_vault_dir):
-            ghost_vault_dir = ghost_vault_dir + f"_{datetime.now().strftime('%H%M%S')}"
+    if not in_place:
+        # [DATA DECAPITATION] Move all raw source files down to the vault to keep Brain 100% pure.
+        try:
+            import shutil
+            raw_repos_dir = abs_path(PATHS.RAW_REPOS)
+            os.makedirs(raw_repos_dir, exist_ok=True)
+            ghost_vault_dir = os.path.join(raw_repos_dir, repo_name)
             
-        os.makedirs(ghost_vault_dir, exist_ok=True)
-        kept_files = ["_DIR_IDENTITY.md", "DEEP_KNOWLEDGE.md", "KNOWLEDGE_TUNNEL.aaak", "UPGRADE_PROPOSAL.md", "manifest.json"]
-        moved_count = 0
-        for item in os.listdir(repo_path):
-            if item in kept_files:
-                continue
-            src_item = os.path.join(repo_path, item)
-            dst_item = os.path.join(ghost_vault_dir, item)
-            try:
-                shutil.move(src_item, dst_item)
-                moved_count += 1
-            except Exception: pass
-        print(f"\033[92m[DECAPITATION]\033[0m Stripped {moved_count} raw items from {repo_name} to {PATHS.RAW_REPOS}")
-    except Exception as e:
-        print(f"\033[93m[WARN]\033[0m [OA] Data Decapitation failed: {e}")
+            # If the repository has already been previously decapitated, we generate a unique folder name
+            if os.path.exists(ghost_vault_dir):
+                ghost_vault_dir = ghost_vault_dir + f"_{datetime.now().strftime('%H%M%S')}"
+                
+            os.makedirs(ghost_vault_dir, exist_ok=True)
+            kept_files = ["_DIR_IDENTITY.md", "DEEP_KNOWLEDGE.md", "KNOWLEDGE_TUNNEL.aaak", "UPGRADE_PROPOSAL.md", "manifest.json"]
+            moved_count = 0
+            for item in os.listdir(repo_path):
+                if item in kept_files:
+                    continue
+                src_item = os.path.join(repo_path, item)
+                dst_item = os.path.join(ghost_vault_dir, item)
+                try:
+                    shutil.move(src_item, dst_item)
+                    moved_count += 1
+                except Exception: pass
+            print(f"\033[92m[DECAPITATION]\033[0m Stripped {moved_count} raw items from {repo_name} to {PATHS.RAW_REPOS}")
+        except Exception as e:
+            print(f"\033[93m[WARN]\033[0m [OA] Data Decapitation failed: {e}")
+
+    if in_place:
+        return True
 
     return handoff_to_oer(repo_path, reason=f"Repository Assimilated as {rtype}")
 
@@ -540,9 +568,23 @@ def learn_from_dumps():
                 fail_count = 0
 
             print(f"[OA] Assimilating Repository: {fname} (Attempt {fail_count+1})...")
-            if _assimilate_repo(fpath, fname):
-                results["success"] += 1
-            else:
+            ai_offline = False
+            try:
+                assimilated = _assimilate_repo(fpath, fname)
+                if assimilated:
+                    results["success"] += 1
+                else:
+                    results["failed"] += 1
+            except RuntimeError as e:
+                if str(e) == "AI_SERVER_OFFLINE":
+                    print(f"\033[91m[CRITICAL]\033[0m AI Server Offline. Aborting LEARN_DUMPS to prevent queue pollution.")
+                    ai_offline = True
+                    break
+                else:
+                    results["failed"] += 1
+                    assimilated = False
+            
+            if not assimilated and not ai_offline:
                 results["failed"] += 1
                 new_fail_count = fail_count + 1
                 if new_fail_count >= 2:
@@ -581,13 +623,15 @@ def learn_from_dumps():
             print(f"[OA] Parsing {fname} with LLM Router...")
             prompt = f"Analyze the following repository dump excerpt and provide a brief summary and 3 key concepts.\n\nExcerpt:\n{sample_text}\n\nReply ONLY in JSON: {{\"summary\": \"...\", \"key_concepts\": [\"...\", \"...\"]}}"
             ai_data = call_omniclaw_model(prompt, json_format=True)
-            if ai_data:
-                try:
-                    obj = json.loads(ai_data)
-                    summary = obj.get("summary", summary)
-                    concepts = "\n".join([f"- {c}" for c in obj.get("key_concepts", [])])
-                except:
-                    pass
+            if not ai_data:
+                raise RuntimeError("AI_SERVER_OFFLINE")
+                
+            try:
+                obj = json.loads(ai_data)
+                summary = obj.get("summary", summary)
+                concepts = "\n".join([f"- {c}" for c in obj.get("key_concepts", [])])
+            except:
+                pass
             
             ki_draft = _create_ki_draft(fname, summary, concepts)
             if ki_draft:
@@ -601,6 +645,11 @@ def learn_from_dumps():
                     except: pass
             else:
                 results["skipped"] += 1
+        except RuntimeError as e:
+            if str(e) == "AI_SERVER_OFFLINE":
+                print(f"\033[91m[CRITICAL]\033[0m AI Server Offline. Aborting single file parse.")
+                break
+            results["failed"] += 1
         except Exception as e:
             report_error(DAEMON_NAME, f"learn {fname}", str(e))
             results["failed"] += 1
@@ -877,6 +926,32 @@ def ensure_local_ai_model_running():
     except Exception as e:
         print(f"\033[91m[ERR]\033[0m [OA-LOCAL-AI] Failed to verify local model thread: {e}")
 
+def process_workforce_agents():
+    """In-Place assimilation of any unprocessed structurally intact agent in ecosystem/workforce.
+    Bypasses vault decapitation to preserve architecture."""
+    workforce_agents = abs_path(os.path.join(PATHS.WORKFORCE, "agents"))
+    if not os.path.exists(workforce_agents):
+        return
+        
+    agents = os.listdir(workforce_agents)
+    for agent_name in agents:
+        agent_dir = os.path.join(workforce_agents, agent_name)
+        if not os.path.isdir(agent_dir):
+            continue
+            
+        # Check if already assimilated (has DEEP_KNOWLEDGE.md)
+        dk_path = os.path.join(agent_dir, "DEEP_KNOWLEDGE.md")
+        id_path = os.path.join(agent_dir, "_DIR_IDENTITY.md")
+        
+        # If it doesn't have an identity, or if we need to deep plow, we assimilate in-place
+        if not os.path.exists(dk_path) or not os.path.exists(id_path):
+            print(f"[\033[94mOA-IN-PLACE\033[0m] Found un-assimilated Agent Workspace: {agent_name}. Initiating In-Place Assimilation...")
+            try:
+                _assimilate_repo(agent_dir, agent_name, in_place=True)
+                print(f"    \033[92m[OK]\033[0m Successfully assimilated {agent_name} in-place.")
+            except Exception as e:
+                print(f"    \033[91m[ERR]\033[0m In-place assimilation failed for {agent_name}: {e}")
+
 def salvage_massive_repos():
     """Look in QUARANTINE_FAILURES (FAILED_ASSIMILATE) and process them using Abstract Scanner."""
     q_dir = os.path.join(abs_path(PATHS.QUARANTINE), "FAILED_ASSIMILATE")
@@ -926,6 +1001,7 @@ def run():
             final_check()
             process_dispatch_queue()
             learn_from_dumps()
+            process_workforce_agents()
             collect_knowledge()
             salvage_massive_repos()
             
@@ -948,6 +1024,7 @@ if __name__ == "__main__":
         final_check()
         process_dispatch_queue()
         learn_from_dumps()
+        process_workforce_agents()
         collect_knowledge()
         salvage_massive_repos()
         print(f"\033[92m[OK]\033[0m [{DAEMON_NAME}] Single pass complete.")

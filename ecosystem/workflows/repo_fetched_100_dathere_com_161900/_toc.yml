@@ -1,0 +1,19 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+title: Introduction
+chapters:
+  - file: exercises-setup
+  - file: lessons/0/index
+    title: "Lesson 0: Exploring qsv help messages and syntax"
+  - file: lessons/1/index
+    title: "Lesson 1: Displaying file content with qsv table"
+  - file: lessons/2/index
+    title: "Lesson 2: Piping commands"
+  - file: lessons/3/index
+    title: "Lesson 3: qsv and JSON"
+  - file: lessons/4/index
+    title: "Lesson 4: Running Polars SQL queries with qsv"
+  - file: appendix

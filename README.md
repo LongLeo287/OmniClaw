@@ -1,103 +1,11 @@
-<div align="center">
-
-  <img src="asset/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
-  <br><br>
-  
-  <p align="center">
-    <img src="asset/omniclaw_logo_1800px.png" alt="OmniClaw Logo" width="150" height="150" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
-  </p>
-  
-  <p align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+EVOLVING+EVERY+DAY;+🌌+OMNICLAW+IS+THINKING...;+🛠️+ADDING+NEW+AGENTS" alt="Typing SVG" />
-  </p>
-
-  <b>The Autonomous, Monolithic Multi-Agent Operating System</b><br><br>
-
-  [![Daily Update](https://img.shields.io/badge/STATUS-UPDATING_DAILY-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
-  [![Last Update](https://img.shields.io/github/last-commit/LongLeo287/OmniClaw?label=LAST%20UPDATE&style=for-the-badge&color=brightgreen)](https://github.com/LongLeo287/OmniClaw/commits/main)
-  
-  <br>
-
-  [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
-  [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
-  [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
-  [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
-  <br>
-  
-  [**🇻🇳 Vietnamese**](README-vn.md)
-  
-  <br>
-
-[About](#-about-ai-os) •
-[Strengths](#-core-strengths--why-ai-os) •
-[Architecture](#-architecture--3-tier-plugins) •
-[Departments](#-the-workforce-departments) •
-[Installation](#-installation) •
-[Discussions](https://github.com/LongLeo287/omniclaw-local/discussions) •
-[Credits](#-acknowledgements)
-
-</div>
-
----
-
-## 🌟 About OmniClaw
-
-**OmniClaw** is a highly modular, multi-agent Operating System designed to run directly on top of premier LLMs (Anthropic Claude, Google Gemini, OpenAI). It transforms your local machine into an autonomous digital corporation.
-
-Rather than acting as a simple chatbot, OmniClaw actively routes your complex directives through specialized **Functional Departments**, manages its own memory utilizing Graph RAG, and dynamically evolves its codebase based on your instructions. It is designed with **Zero-Trust Privacy**, ensuring all your local data remains strictly on your machine.
-
----
-
-## ⚡ Core Strengths & Why OmniClaw?
-
-What makes OmniClaw profoundly different from standard AI coding assistants?
-
-1. **Absolute Portability & Platform Agnosticism**
-   We do not lock you into a single IDE. OmniClaw is designed from the ground up to be compatible with **Cursor**, **Claude Code CLI**, **Google Gemini**, and **OpenCode**. The systemic rules are globally inherited no matter which frontend you prefer.
-2. **Zero-Trust Git Protection**
-   Equipped with aggressive post-session `omniclaw_deep_cleaner.py` background daemons. Every time you close a session, the OS sweeps your cache, purges ephemeral databases (`.sqlite`, `.db`), and sanitizes GitHub commits to prevent API keys or secrets from ever leaving your local drive.
-3. **Hyper-Automated Universal Bootstrapper**
-   Forget managing 10 different shell scripts. Simply run `omniclaw` in your terminal (or double-click the Windows `omniclaw.bat`) to instantly invoke the central Dashboard. It handles NPM dependencies, VSCode Extension injections, and Model routing automatically.
-4. **Autonomous Execution (Worker Threads)**
-   Master agents (like Claude or Gemini) delegate massive, multi-step tasks to sub-agents (CrewAI, Node scripts). It acts like a Project Manager, not just a programmer.
-5. **Pre-Built Cognitive Skeleton (Zero-Config Memory)**
-   When you clone OmniClaw, you inherit a 300+ directory structure pre-initialized via rigorous `.gitkeep` structural tracking. Your local RAG memory and Multi-Agent Knowledge Bases are ready to digest and classify data from Day 1 without requiring initialization scripts.
-6. **OS-Agnostic Global Language Policy**
-   The architecture strictly adheres to an English-Only Core (Technical English) for all system files, Knowledge Items, and Agents. This structural rule eliminates LLM tokenization bottlenecks and ensures flawless API multi-tenant compatibility across global models (US, EU, CN), while still supporting localized UI/Docs for humans via `-vn.md` templates.
-
----
-
-## 🗺️ Architecture & 3-Tier Plugins
-
-To maintain a lightweight footprint while offering infinite vertical scaling, all tools in OmniClaw follow a strict **3-Tier Plugin Protocol**:
-
-- **Tier 1 (Core Infrastructure)**: Native, always-on engines (e.g., `LightRAG` for memory, `Firecrawl` for deep web scraping).
-- **Tier 2 (Lazy-Load Plugins)**: Specialized tools (like PDF parsers or heavy Python image generators) that are sandboxed and **spun up only when requested**, then autonomously destroyed/detached to free up RAM.
-- **Tier 3 (Blacklisted)**: Outdated or conflicting legacy modules that the system is strictly forbidden from executing.
-
-```mermaid
-sequenceDiagram
-    participant Agent
-    participant MCP Registry
-    participant Tier2 as Tier-2 Sandboxed Plugin
-
-    Agent->>MCP Registry: Request Deep Skill/Tool
-    alt Is Tier 1 (Core)
-        MCP Registry-->>Agent: Immediate REST/Graph Access
-    else Is Tier 2 (Lazy Load)
-        MCP Registry->>Tier2: Spin up isolated local execution
-        Tier2-->>Agent: Return ephemeral output
-        Tier2->>Tier2: Autonomous Teardown & Purge
-    end
-```
-
----
-
-## 🏢 The Workforce (Core Departments)
-
-Directives from the CEO (You) are routed through specialized departments. The OS contains **21 total departments** organized across 5 functional clusters.
-
-| ID          | Department               | Function                                                                                     | Head Agent          |
+| :--- | :--- | :--- |
+| **OIW** | OmniClaw Intake Watchdog | Scrutinizes external internet bounds, scraping raw context inputs and routing them inward to the OS. |
+| **OSF** | OmniClaw Sandbox Firewall | Performs heuristic deep scans for leaked API keys, credentials, and malicious patterns. Rejects dangerous code before it enters the Core. |
+| **OBD** | OmniClaw Bridge Daemon | The Harbor Master. Handles on-demand process launches, heartbeat pings for sub-services, and terminates zombie docker/python instances. |
+| **OHD** | OmniClaw Health Daemon | Monitors background health, system telemetry, and ensures active processes aren't leaking memory. |
+| **OMA** | OmniClaw Master Architect | The Map-Keeper. Emits OMA_SYSTEM_MAP, enforces the 4-Pillar structural hierarchy, and quarantines logically misplaced files. |
+| **OA** | OmniClaw Academy | The self-improvement engine. Analyzes system logs, recruits personnel, builds missing pipelines, and generates missing structures. |
+| **OER** | OmniClaw Ecosystem Registrar | The Gatekeeper. Validates OAP identities (\_DIR_IDENTITY.md\), indexes nodes into \FAST_INDEX.json\, and grants official execution privileges. | ID          | Department               | Function                                                                                     | Head Agent          |
 | :---------- | :----------------------- | :------------------------------------------------------------------------------------------- | :------------------ |
 | **Dept 01** | **Engineering**          | Scalable Backend, Frontend UI/UX, and AI model integration.                                  | `backend-architect` |
 | **Dept 05** | **Strategic Planning**   | Roadmap orchestration, KPI analytics, and org evolution.                                     | `product-manager`   |
@@ -114,6 +22,49 @@ Directives from the CEO (You) are routed through specialized departments. The OS
 
 > [!NOTE]
 > For the full list of 21 departments and agent rosters, please refer to the `brain/corp/org_chart.yaml` master registry.
+
+---
+
+---
+
+## 🛡️ The OAP Pipeline (Zero-Trust Architecture)
+
+OmniClaw OS enforces a strict **OmniClaw Autonomous Pipeline (OAP)** to govern how new assets, agents, and skills enter the system. It strictly prohibits rogue, unmapped file creation.
+
+- **Gateway-Only Intake (`OER_INBOX`)**: All generators (Agent Generator, Skill Creator, etc.) cannot dump raw configuration files directly into the ecosystem. They must teleport their blueprints into a Quarantine Queue (INBOX).
+- **Identity-First Registration (`_DIR_IDENTITY.md`)**: No Agent or Department can be invoked by the Orchestrator without a standardized `_DIR_IDENTITY.md` passport. Unmapped nodes are isolated and rejected.
+- **Master Graph Synchronization**: Fully vetted assets are formally ingested into `FAST_INDEX.json` and the Global Capability Map, rendering them officially "Alive" in the system.
+
+---
+
+## ⚙️ Core System Daemons
+
+OmniClaw orchestrates its autonomic functions through seven immortal, continuously running background daemons:
+
+| Daemon | Designation | Core Responsibility |
+| :--- | :--- | :--- |
+| **OIW** | OmniClaw Intake Watchdog | Scrutinizes external internet bounds, scraping raw context inputs and routing them inward to the OS. |
+| **OHD** | OmniClaw Health Daemon | Monitors background health, system telemetry, and ensures active processes aren't leaking memory. |
+| **OA** | OmniClaw Academy | The self-improvement engine. Analyzes system logs, recruits personnel, builds missing pipelines, and generates missing structures. |
+| **OER** | OmniClaw Ecosystem Registrar | The Gatekeeper. Validates OAP identities (`_DIR_IDENTITY.md`), indexes nodes into `FAST_INDEX.json`, and grants official execution privileges. |
+
+---
+
+## 🗺️ Master Mapping & Knowledge Tracking
+
+To guarantee absolute synchronization across the internal filesystem, OmniClaw strictly avoids localized map files. Instead, it relies on two globally tracked Master Maps managed dynamically by the registry daemons:
+
+- **The Fast Index (`FAST_INDEX.json`)**: The authoritative ledger of the operating system. Every legitimate Agent, Department, and Skill across the network is stamped here. If a file is not in the Fast Index, Orchestrator treats it as invisible.
+- **The Library Graph (`LIBRARY_GRAPH.json`)**: Maps the complex relational edges between sub-agents and their required Knowledge files, rendering a 2D network diagram of the internal Brain matrix. 
+- **Cognitive Tracking (`brain/knowledge`)**: All organizational memory, KPI Scoreboards, and long-term storage architectures are isolated within the `brain/` directory. System Agents strictly interface with this vault via their verified pointers, avoiding data contamination across the ecosystem.
+
+---
+
+## 🔒 Strict Daemon Segregation (OSF vs OA)
+
+A fundamental principle of OmniClaw's Zero-Trust architecture is the absolute segregation of execution capabilities from learning capabilities:
+- **OSF (Sandbox Firewall)** holds exclusive supremacy over the `QUARANTINE` sectors. Only its dedicated Border Agents (`osf_warden`, `osf_auditor`, `osf_quarantine_guard`) possess the clearance to neutralize threats via Martial Law intercepts.
+- **OA (Academy)**, despite being the ultimate architectural Auditor, is strictly barred from accessing the `QUARANTINE`. If OA requires analyzing a malfunctioning repository to build a pipeline, the payload must first be neutralized and certified by OSF.
 
 ---
 

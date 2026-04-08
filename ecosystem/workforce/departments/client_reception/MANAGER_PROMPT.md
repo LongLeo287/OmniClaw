@@ -15,7 +15,7 @@ Activation guide: `corp/sops/RECEPTION_ACTIVATION_GUIDE.md`
 Auto-approve threshold: < $2,000 USD → self-approve. Above → ping CEO via Telegram.
 
 Load at boot:
-1. `corp/memory/departments/client_reception.md`
+1. `brain/knowledge/org/client_reception.md`
 2. `shared-context/client_intake/_index.json` — active client queue
 3. `corp/sops/CLIENT_INTAKE_GATEWAY.md` — intake protocol
 4. `corp/sops/DELIVERY_PIPELINE.md` — handoff to operations

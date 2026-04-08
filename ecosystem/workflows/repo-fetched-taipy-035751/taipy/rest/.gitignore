@@ -1,0 +1,54 @@
+# Django stuff:
+*.log
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mkdocs build dir
+site/
+
+# Demo Testing File
+demo*.py
+*.csv
+demo*.css
+object_selection.py
+gui_assets
+dataset
+
+# Demos folder
+demo*/
+!demos/
+
+# Docker local dev
+docker-compose-dev*.yml
+Dockerfile.dev
+
+# Filesystem default local storage
+.data/
+.databkp/
+
+*.db
+taipy/rest/setup/*

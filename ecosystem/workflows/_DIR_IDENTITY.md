@@ -32,3 +32,11 @@ Storage area for workflows.
 - `repo_litgpt`  id: `repo_litgpt` | type: `workflow` | registered: 2026-04-06T02:53:24.167158
 - `repo_litserve`  id: `repo_litserve` | type: `workflow` | registered: 2026-04-06T02:53:24.202480
 - `repo_fetched_9router_165252`  id: `repo_fetched_9router_165252` | type: `workflow` | registered: 2026-04-06T03:07:27.220615
+- `repo_orphan_sweep_tblite`  id: `repo_orphan_sweep_tblite` | type: `workflow` | registered: 2026-04-08T11:34:01.600713
+- `repo_orphan_sweep_manim_video`  id: `repo_orphan_sweep_manim_video` | type: `workflow` | registered: 2026-04-08T11:34:31.650846
+- `repo_orphan_sweep_templates_115638`  id: `repo_orphan_sweep_templates_115638` | type: `workflow` | registered: 2026-04-08T12:17:05.226157
+- `repo_civ_fetched_awesome_eventstorming_121545`  id: `repo_civ_fetched_awesome_eventstorming_121545` | type: `workflow` | registered: 2026-04-08T13:33:06.039809
+- `repo_civ_fetched_claudy_releases_121553`  id: `repo_civ_fetched_claudy_releases_121553` | type: `workflow` | registered: 2026-04-08T13:40:36.239986
+- `repo_civ_fetched_kubernetes_104131`  id: `repo_civ_fetched_kubernetes_104131` | type: `workflow` | registered: 2026-04-08T13:54:37.147780
+- `repo_civ_fetched_langgraph_105719`  id: `repo_civ_fetched_langgraph_105719` | type: `workflow` | registered: 2026-04-08T13:57:07.310151
+- `repo_civ_fetched_llmware_112844`  id: `repo_civ_fetched_llmware_112844` | type: `workflow` | registered: 2026-04-08T13:59:07.367620

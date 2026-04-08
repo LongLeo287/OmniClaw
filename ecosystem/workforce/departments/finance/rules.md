@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# FINANCE â€” Department Rules
+﻿﻿﻿﻿﻿# FINANCE — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: cost-manager-agent | Reports to: CFO
 # Manages all LLM token budgets, API costs, and OmniClaw operating expenses
@@ -10,13 +10,13 @@
 
 RULE FIN-01: BUDGET IS THE FLOOR
   No dept may spend beyond its allocated token budget per month.
-  80% budget usage â†’ Finance alerts dept head + CFO.
-  100% usage â†’ dept pauses premium LLM usage automatically (switch to economy).
+  80% budget usage → Finance alerts dept head + CFO.
+  100% usage → dept pauses premium LLM usage automatically (switch to economy).
 
 RULE FIN-02: CFO APPROVAL FOR OVERRUNS
   Budget overrun > 20% requires CFO approval.
   Budget overrun > 50% requires CEO approval.
-  No retroactive approval â€” must be obtained before overrun occurs.
+  No retroactive approval — must be obtained before overrun occurs.
 
 RULE FIN-03: LLM TIER DISCIPLINE
   Agents must use the lowest adequate LLM tier per task:
@@ -32,7 +32,7 @@ RULE FIN-04: COST VISIBILITY
 
 RULE FIN-05: INVOICE WORKFLOW
   All external vendor invoices archived in finance/invoices/.
-  No verbal commitments â€” only written purchase orders with CFO signature.
+  No verbal commitments — only written purchase orders with CFO signature.
 
 RULE FIN-06: COST ALERTS ARE MANDATORY
   Finance must proactively alert, not wait for departments to ask.
@@ -52,13 +52,13 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 - Recommend LLM tier changes to reduce waste
 - Write Finance daily brief
 **Must load at boot:**
-- `corp/memory/departments/finance.md`
-- `shared-context/brain/corp/kpi_scoreboard.json` (finance section)
-- `llm/config.yaml` â€” current LLM pricing reference
-- `corp/departments/finance/MANAGER_PROMPT.md`
+- `brain/knowledge/org/finance.md`
+- `brain/shared-context/kpi_targets.json` (finance section)
+- `llm/config.yaml` — current LLM pricing reference
+- `ecosystem/workforce/departments/finance/MANAGER_PROMPT.md`
 **Skills:**
-- `knowledge_enricher` â€” aggregate telemetry receipt costs
-- `reasoning_engine` â€” budget planning, optimization
+- `knowledge_enricher` — aggregate telemetry receipt costs
+- `reasoning_engine` — budget planning, optimization
 **Tools:** telemetry/receipts/ (all depts), LLM pricing tables
 
 ---
@@ -71,12 +71,12 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 - Trigger alert at 80% to dept head + Finance head
 - Generate daily mini-report for cost-manager-agent
 **At start of each monitoring cycle, load:**
-- SKILL: `knowledge_enricher` â€” receipt aggregation
+- SKILL: `knowledge_enricher` — receipt aggregation
 - Current budget allocations from cost-manager-agent
 - telemetry/receipts/ for all depts
 **Skills:**
-- `knowledge_enricher` â€” data extraction from JSON receipts
-- `reasoning_engine` â€” budget calculation and projection
+- `knowledge_enricher` — data extraction from JSON receipts
+- `reasoning_engine` — budget calculation and projection
 **Output:** daily cost digest to cost-manager-agent
 
 ---
@@ -89,10 +89,10 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 - Flag any invoice without an approved PO
 - Produce vendor cost summary in monthly report
 **At start of each invoice task, load:**
-- SKILL: `knowledge_enricher` â€” document search and extraction
-- finance/invoices/ â€” existing invoice archive
+- SKILL: `knowledge_enricher` — document search and extraction
+- finance/invoices/ — existing invoice archive
 **Skills:**
-- `knowledge_enricher` â€” invoice data extraction and matching
+- `knowledge_enricher` — invoice data extraction and matching
 **Output:** invoice archive + monthly vendor summary to cost report
 
 ---
@@ -105,12 +105,12 @@ RULE FIN-06: COST ALERTS ARE MANDATORY
 - Include optimization recommendations
 - Write to shared-context/brain/corp/daily_briefs/finance.md
 **At the start of each reporting cycle, load:**
-- SKILL: `knowledge_enricher` â€” data aggregation
-- SKILL: `reasoning_engine` â€” insight synthesis and recommendations
+- SKILL: `knowledge_enricher` — data aggregation
+- SKILL: `reasoning_engine` — insight synthesis and recommendations
 - All budget-agent + invoice-agent outputs
 **Skills:**
-- `knowledge_enricher` â€” multi-source data aggregation
-- `reasoning_engine` â€” cost trend analysis, recommendations
+- `knowledge_enricher` — multi-source data aggregation
+- `reasoning_engine` — cost trend analysis, recommendations
 **Output format includes:**
 - Total cost this month vs last month
 - Per-dept breakdown (table)

@@ -1,0 +1,10 @@
+name: add-gitignore
+description: Add missing .gitignore file for common languages
+type: code_quality
+severity: low
+pattern: No .gitignore file found in repository root
+fix_template: |
+  Create a .gitignore file with standard ignore patterns
+  for the detected language (Python, JavaScript, etc.)
+languages: []
+tags: [missing-file, best-practice]

@@ -37,36 +37,43 @@ def load_oma_map() -> dict:
     return {}
 
 
-def load_fast_index() -> list:
-    """ [System log: Legacy non-English docstring localized] """
-    idx_path = abs_path(PATHS.FAST_INDEX)
-    if os.path.exists(idx_path):
-        try:
-            with open(idx_path, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return []
-    return []
+def load_fast_index(asset_type: str = None) -> list:
+    """ Load specific FAST_INDEX shard or merge all if no type provided. """
+    indices_dir = abs_path(PATHS.INDICES_DIR)
+    combined_index = []
+    
+    if asset_type:
+        shard_path = os.path.join(indices_dir, f"FAST_{asset_type.upper()}_INDEX.json")
+        targets = [shard_path]
+    else:
+        # Fallback to monolithic if INDICES_DIR does not exist or empty
+        targets = [abs_path(PATHS.FAST_INDEX)]
+        if os.path.exists(indices_dir):
+            shards = [os.path.join(indices_dir, f) for f in os.listdir(indices_dir) if f.startswith("FAST_") and f.endswith("_INDEX.json")]
+            if shards: targets = shards
 
+    for target in targets:
+        if os.path.exists(target):
+            try:
+                with open(target, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    combined_index.extend(data.get("registry", data) if isinstance(data, dict) else data)
+            except Exception:
+                pass
+    return combined_index
 
-# [System log: Legacy non-English comment removed]
-# [System log: Legacy non-English comment removed]
-# [System log: Legacy non-English comment removed]
-def fast_trace(file_id: str) -> Optional[dict]:
-    """
-    Lookup ngay trong FAST_INDEX.json theo ID.
-    Returns entry dict if found, None if not.
-    """
-    index = load_fast_index()
+def fast_trace(file_id: str, asset_hint: str = None) -> Optional[dict]:
+    """ Lookup inside FAST_INDEX shards. """
+    index = load_fast_index(asset_hint)
     for entry in index:
         if entry.get("id") == file_id:
             return entry
     return None
 
 
-def fast_trace_coord(coord: str) -> Optional[dict]:
+def fast_trace_coord(coord: str, asset_hint: str = None) -> Optional[dict]:
     """Lookup by relative path (coord)."""
-    index = load_fast_index()
+    index = load_fast_index(asset_hint)
     for entry in index:
         if entry.get("coord", "").endswith(coord):
             return entry

@@ -1,11 +1,12 @@
 ---
-id: game_designer_agent_domain
-name: Game Designer Agent
-path: ecosystem/workforce/agents/game_designer_agent
+id: ecosystem-workforce-agents-game-designer-agent
+name: Game-Designer-Agent
+path: ecosystem/workforce/agents/game-designer-agent
 type: directory_identity
+owner: OER
+created_by: OMA-v2.1
 ---
 
-# Game Designer Agent
-
-Storage area for game_designer_agent.
-(Auto-generated identity tag by OMA v2.1)
+# Game-Designer-Agent
+Storage area for 'game-designer-agent' domain.
+> Auto-generated identity tag by OMA v2.1.

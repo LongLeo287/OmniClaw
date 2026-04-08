@@ -1,0 +1,11 @@
+{
+  "registry": [
+    {
+      "id": "heuristic_survival",
+      "type": "tool",
+      "coord": "ecosystem/tools/heuristic_survival",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T14:09:31.049711"
+    }
+  ]
+}

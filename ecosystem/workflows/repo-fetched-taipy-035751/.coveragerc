@@ -1,0 +1,10 @@
+[run]
+omit =
+    tests/*
+    doc/gui/*.py
+    **/setup.py
+
+[report]
+exclude_lines =
+    # Ignore pragma: no cover comments
+    pragma: no cover

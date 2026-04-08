@@ -1,0 +1,7 @@
+# Package taipy-common
+include taipy/common/*.json
+include taipy/common/config/*.pyi
+include taipy/common/config/*.json
+
+include setup.requirements.txt
+include package_desc.md

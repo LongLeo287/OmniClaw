@@ -1,0 +1,1 @@
+{"name": "CIV_FETCHED_claudy-registry_121551", "version": "1.0.1", "type": "data-fetcher", "description": "Fetches real-time data from an external API and updates the Claudy registry.", "dependencies": ["firebase-admin", "axios"], "permissions": ["read:firestore", "write:firestore"]}

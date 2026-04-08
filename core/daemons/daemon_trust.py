@@ -45,7 +45,8 @@ class PATHS:
     REGISTRY        = "brain/registry"
     MEMORY          = "brain/memory"
     SYSTEM_MAP      = "brain/registry/OMA_SYSTEM_MAP.json"
-    FAST_INDEX      = "brain/registry/FAST_INDEX.json"
+    INDICES_DIR     = "brain/indices"
+    FAST_INDEX      = "brain/indices/FAST_INDEX.json" # Legacy monolithic path
     SKILL_REGISTRY  = "brain/registry/SKILL_REGISTRY.json"   # Maintained by oer_register.py
     HANDOFF_LOG     = "brain/registry/handoff_tasks.log"
     CLI_LOG         = "brain/registry/cli_run.log"
@@ -134,11 +135,23 @@ TRUST_MATRIX = {
         "action_rule": "Supreme authority bound by strict pipeline compliance. Output -> OER_INBOX first. Bypassing the registry is forbidden.",
         "can_read":    ["*"],
         "can_write":   [PATHS.OA_WORKSHOP, PATHS.OER_INBOX, PATHS.RULES,
-                        PATHS.OA_DISPATCH, PATHS.HANDOFF_LOG, PATHS.QUARANTINE, PATHS.DEAD_LETTERS, PATHS.RAW_REPOS],
+                        PATHS.OA_DISPATCH, PATHS.HANDOFF_LOG, PATHS.DEAD_LETTERS, PATHS.RAW_REPOS],
         "strictly_denied": ["core/daemons"],  # Cannot self-modify Daemon source code
         "handoff_to": ["OER"],
         "triggers": [PATHS.OA_DISPATCH, PATHS.RAW_DUMPS, "manual_call"],
         "authority_level": "SUPREME",  # Supreme verdict authority on conflicts
+    },
+
+    "OSF": {
+        "role": "OmniClaw Sandbox Firewall",
+        "description": "Performs heuristic security scans on incoming files and repos. Blocks leaked keys and unsafe dependencies.",
+        "action_rule": "Enforce strict security blocks on dirty assets before they enter OHD or the Brain.",
+        "can_read": [PATHS.SANDBOX],
+        "can_write": [PATHS.SANDBOX, PATHS.QUARANTINE, "vault/tmp/rejected"],
+        "strictly_denied": [PATHS.KNOWLEDGE, PATHS.SYSTEM_MAP, PATHS.RULES, PATHS.MODELS],
+        "handoff_to": ["OHD"],
+        "triggers": [PATHS.SANDBOX],
+        "autonomous": True,
     },
 
     "OBD": {

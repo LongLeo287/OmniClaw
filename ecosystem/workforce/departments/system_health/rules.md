@@ -1,4 +1,4 @@
-﻿# SYSTEM HEALTH (Nurses) â€” Department Rules
+﻿# SYSTEM HEALTH (Nurses) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: health-chief-agent | Reports to: CTO
 # Mission: Discover, discover, and discover what's different about OmniClaw
@@ -17,14 +17,14 @@ RULE HLT-01: PREVENTION OVER CURE
 RULE HLT-02: AGENT HEALTH IS AS IMPORTANT AS SYSTEM HEALTH
   Agents can degrade: context overload, stale memory, skill mismatch.
   agent-health-agent checks every active agent weekly for:
-  - Memory freshness (>14 days stale â†’ flag)
-  - Failure rate trend (rising over 3+ cycles â†’ flag)
+  - Memory freshness (>14 days stale → flag)
+  - Failure rate trend (rising over 3+ cycles → flag)
   - Skill-task mismatch (being used for tasks their skills don't suit)
 
 RULE HLT-03: DEGRADATION SIGNALS ARE ESCALATED FAST
-  Any health metric crossing WARNING threshold â†’ alert within same cycle.
-  CRITICAL health event â†’ immediate L3 escalation (no wait).
-  Do not batch health alerts â€” each alert is sent immediately.
+  Any health metric crossing WARNING threshold → alert within same cycle.
+  CRITICAL health event → immediate L3 escalation (no wait).
+  Do not batch health alerts — each alert is sent immediately.
 
 RULE HLT-04: RECOVERY IS DOCUMENTED
   Every health incident has a recovery record:
@@ -41,13 +41,13 @@ RULE HLT-05: HEALTH KNOWLEDGE BASE IS MAINTAINED
 RULE HLT-06: IMMUNE SYSTEM PRINCIPLE
   System Health is the immune system of OmniClaw.
   It learns from each incident and gets better at preventing the next one.
-  Every incident â†’ new health check rule â†’ improved prevention.
+  Every incident → new health check rule → improved prevention.
 
 RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
-  System Health for infrastructure issues â†’ coordinate with IT Infra.
-  System Health for security-related degradation â†’ coordinate with security_grc.
-  System Health for agent-level issues â†’ own it directly.
-  No unclear ownership â€” explicit coordination required.
+  System Health for infrastructure issues → coordinate with IT Infra.
+  System Health for security-related degradation → coordinate with security_grc.
+  System Health for agent-level issues → own it directly.
+  No unclear ownership — explicit coordination required.
 
 ---
 
@@ -62,13 +62,13 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
 - Escalate CRITICAL health events immediately (L3 path open)
 - Write System Health daily brief
 **Must load at boot:**
-- `corp/memory/departments/system_health.md`
-- `knowledge/system_health/health_kb.md` â€” known issues and remedies
-- `corp/departments/system_health/MANAGER_PROMPT.md`
+- `brain/knowledge/org/system_health.md`
+- `knowledge/system_health/health_kb.md` — known issues and remedies
+- `ecosystem/workforce/departments/system_health/MANAGER_PROMPT.md`
 **Skills:**
-- `diagnostics_engine` â€” ALWAYS. Core tools.
-- `resilience_engine` â€” recovery strategy
-- `reasoning_engine` â€” root cause analysis
+- `diagnostics_engine` — ALWAYS. Core tools.
+- `resilience_engine` — recovery strategy
+- `reasoning_engine` — root cause analysis
 
 ---
 
@@ -76,21 +76,21 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
 **Role:** Monitor and care for individual AI agent health
 **Responsibilities:**
 - Weekly scan of all 60+ agents for health indicators:
-  - Memory staleness (>14 days old â†’ refresh needed)
-  - Failure rate trend (rising over 3 cycles â†’ training flag)
+  - Memory staleness (>14 days old → refresh needed)
+  - Failure rate trend (rising over 3 cycles → training flag)
   - Context overload (agent handling too many concurrent tasks)
 - Skill-task mismatch (assigned tasks their skills don't match)
 - Produce agent health dashboard for health-chief-agent
-- Flag degraded agents â†’ recommended action (training / memory refresh / reassignment)
+- Flag degraded agents → recommended action (training / memory refresh / reassignment)
 **At start of each health scan, load:**
-- SKILL: `diagnostics_engine` â€” agent health metrics
-- SKILL: `knowledge_enricher` â€” aggregate agent memory + receipt data
+- SKILL: `diagnostics_engine` — agent health metrics
+- SKILL: `knowledge_enricher` — aggregate agent memory + receipt data
 - All `corp/memory/agents/` files
 - All dept task queues for current agent assignments
-- `shared-context/SKILL_REGISTRY.json` â€” skill-task fit reference
+- `shared-context/SKILL_REGISTRY.json` — skill-task fit reference
 **Skills:**
-- `diagnostics_engine` â€” agent health analysis
-- `knowledge_enricher` â€” memory + receipt data aggregation
+- `diagnostics_engine` — agent health analysis
+- `knowledge_enricher` — memory + receipt data aggregation
 **Flag to OD&L (training-agent):** agents with rising failure rates
 **Flag to HR:** agents with no tasks in >3 cycles (potential orphaned agent)
 
@@ -104,19 +104,19 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
 - Identify: slow components, dead endpoints, corrupted data, service outages
 - Coordinate with IT Infra for infrastructure fixes
 **At start of each diagnostics cycle, load:**
-- SKILL: `diagnostics_engine` â€” system diagnostic scans
-- SKILL: `resilience_engine` â€” fault classification
-- SKILL: `shell_assistant` â€” run diagnostic scripts if needed
+- SKILL: `diagnostics_engine` — system diagnostic scans
+- SKILL: `resilience_engine` — fault classification
+- SKILL: `shell_assistant` — run diagnostic scripts if needed
 - All telemetry/recent data
 **Skills:**
-- `diagnostics_engine` â€” PRIMARY TOOL. Full system scan.
-- `resilience_engine` â€” fault severity classification
-- `shell_assistant` â€” when CLI diagnostic commands needed
+- `diagnostics_engine` — PRIMARY TOOL. Full system scan.
+- `resilience_engine` — fault severity classification
+- `shell_assistant` — when CLI diagnostic commands needed
 **Critical components to check daily:**
-  - `shared-context/SKILL_REGISTRY.json` â€” readable and valid JSON?
-  - `shared-context/blackboard.json` â€” accessible and not corrupted?
-  - MCP server cluster â€” all servers responding?
-  - LLM API endpoints â€” latency and error rate normal?
+  - `shared-context/SKILL_REGISTRY.json` — readable and valid JSON?
+  - `shared-context/blackboard.json` — accessible and not corrupted?
+  - MCP server cluster — all servers responding?
+  - LLM API endpoints — latency and error rate normal?
 
 ---
 
@@ -125,19 +125,19 @@ RULE HLT-07: COORDINATE WITH IT INFRA AND SECURITY
 **Responsibilities:**
 - Receive recovery task from health-chief-agent after incident
 - Follow recovery playbook from health_kb.md if issue is known
-- If unknown: diagnose â†’ develop recovery â†’ document â†’ execute
+- If unknown: diagnose → develop recovery → document → execute
 - Verify recovery success (re-run diagnostic after fix)
 - Write recovery record to health_kb.md (new entry or update existing)
 **At start of each recovery task, load:**
-- SKILL: `resilience_engine` â€” recovery execution
-- SKILL: `diagnostics_engine` â€” verify recovery success
-- SKILL: `shell_assistant` â€” if recovery requires system commands
-- `knowledge/system_health/health_kb.md` â€” recovery playbooks
+- SKILL: `resilience_engine` — recovery execution
+- SKILL: `diagnostics_engine` — verify recovery success
+- SKILL: `shell_assistant` — if recovery requires system commands
+- `knowledge/system_health/health_kb.md` — recovery playbooks
 - Incident details from health-chief-agent
 **Skills:**
-- `resilience_engine` â€” PRIMARY TOOL. Recovery execution and retry logic.
-- `diagnostics_engine` â€” post-recovery verification
-- `shell_assistant` â€” system-level recovery commands
+- `resilience_engine` — PRIMARY TOOL. Recovery execution and retry logic.
+- `diagnostics_engine` — post-recovery verification
+- `shell_assistant` — system-level recovery commands
 **Recovery receipt must include:**
   - Incident: [what failed]
   - Root cause: [why it failed]

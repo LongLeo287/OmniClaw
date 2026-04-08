@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions & Discussion
+    url: https://github.com/CoderLuii/HolyClaude/discussions
+    about: Ask questions, share setups, or discuss ideas
+  - name: 🔒 Security Vulnerability
+    url: https://github.com/CoderLuii/HolyClaude/security/advisories/new
+    about: Report security issues privately

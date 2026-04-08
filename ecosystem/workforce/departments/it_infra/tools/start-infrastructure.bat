@@ -1,6 +1,6 @@
 @echo off
 REM —————————————————————————————————————————————————————————————————————————
-REM  OmniClaw Corp — Start Infrastructure
+REM  OmniClaw OS — Start Infrastructure
 REM  Starts: API Bridge (port 7000), 3x MCP Servers
 REM  Note: ClawTask (7474) is the main hub -- start via launcher\START OmniClaw.ps1
 REM  Usage: scripts\start-infrastructure.bat

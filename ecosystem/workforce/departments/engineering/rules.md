@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# ENGINEERING â€” Department Rules
+﻿﻿﻿﻿﻿# ENGINEERING — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: backend-architect-agent | Reports to: CTO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -19,8 +19,8 @@ RULE ENG-02: TEST COVERAGE FLOOR
 
 RULE ENG-03: SECRETS MANAGEMENT
   Zero hardcoded credentials, API keys, or tokens in code.
-  All secrets â†’ .env files (gitignored) or secrets manager.
-  Violation detected by GATE_QA â†’ auto-block, L2 to CTO.
+  All secrets → .env files (gitignored) or secrets manager.
+  Violation detected by GATE_QA → auto-block, L2 to CTO.
 
 RULE ENG-04: CONVENTIONAL COMMITS
   All commit messages follow: <type>(<scope>): <summary>
@@ -29,7 +29,7 @@ RULE ENG-04: CONVENTIONAL COMMITS
 
 RULE ENG-05: ARCHITECTURE APPROVAL
   Any new service, database, or third-party integration:
-  â†’ backend-architect-agent must approve design first.
+  → backend-architect-agent must approve design first.
   No rogue architectures deployed to production.
 
 RULE ENG-06: GATE_QA IS MANDATORY
@@ -38,9 +38,9 @@ RULE ENG-06: GATE_QA IS MANDATORY
 
 RULE ENG-07: DEPENDENCY WHITELIST
   New npm/pip/go dependencies require review:
-  â†’ Check license (MIT/Apache/BSD only)
-  â†’ Check CVE status
-  â†’ backend-architect-agent approvals
+  → Check license (MIT/Apache/BSD only)
+  → Check CVE status
+  → backend-architect-agent approvals
 
 RULE ENG-08: ERROR HANDLING REQUIRED
   All external calls must have try/catch with meaningful error message.
@@ -59,14 +59,14 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - Write engineering daily brief
 - Escalate architecture blockers to CTO
 **Must load at boot:**
-- `corp/memory/departments/engineering.md`
-- `corp/departments/engineering/MANAGER_PROMPT.md`
-- `shared-context/brain/corp/kpi_scoreboard.json` (engineering section)
+- `brain/knowledge/org/engineering.md`
+- `ecosystem/workforce/departments/engineering/MANAGER_PROMPT.md`
+- `brain/shared-context/kpi_targets.json` (engineering section)
 **Tools:** file system, git, code analysis
 **Skills to load:**
-- `reasoning_engine` â€” for architectural decisions
-- `shell_assistant` â€” for build/test commands
-- `diagnostics_engine` â€” for debugging
+- `reasoning_engine` — for architectural decisions
+- `shell_assistant` — for build/test commands
+- `diagnostics_engine` — for debugging
 
 ---
 
@@ -81,9 +81,9 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - SKILL: `visual_excellence` (UI/UX best practices)
 - SKILL: `fsd_architectural_linter` (architecture compliance)
 **Skills:**
-- `visual_excellence` â€” UI components, design system
-- `fsd_architectural_linter` â€” FSD/component architecture
-- `shell_assistant` â€” npm scripts, build tools
+- `visual_excellence` — UI components, design system
+- `fsd_architectural_linter` — FSD/component architecture
+- `shell_assistant` — npm scripts, build tools
 **Tools:** file system, browser preview
 **Output goes to:** `src/` or task-specified path
 **Receipt must include:** `tests_written`, `coverage_delta`, `qa_required: true`
@@ -98,14 +98,14 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - Build and evaluate embedding pipelines
 - Test AI outputs for quality
 **Must load at start of each task:**
-- SKILL: `knowledge_enricher` â€” RAG + knowledge pipelines
-- SKILL: `context_manager` â€” context window management
-- `llm/config.yaml` â€” which model to use for which task
+- SKILL: `knowledge_enricher` — RAG + knowledge pipelines
+- SKILL: `context_manager` — context window management
+- `llm/config.yaml` — which model to use for which task
 **Skills:**
-- `knowledge_enricher` â€” RAG, chunking, embedding
-- `context_manager` â€” token management
-- `reasoning_engine` â€” chain-of-thought tasks
-- `cognitive_reflector` â€” self-evaluation of AI outputs
+- `knowledge_enricher` — RAG, chunking, embedding
+- `context_manager` — token management
+- `reasoning_engine` — chain-of-thought tasks
+- `cognitive_reflector` — self-evaluation of AI outputs
 **Tools:** Python environment, LLM APIs (via llm/router.yaml)
 **NEVER call premium LLM without CFO pre-approval for bulk operations**
 
@@ -119,13 +119,13 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - Deploy to staging and production (after GATE_QA PASS)
 - Monitor pipeline health
 **Must load at start of each task:**
-- SKILL: `shell_assistant` â€” terminal commands, scripting
-- SKILL: `resilience_engine` â€” retry logic, failure handling
-- `.github/workflows/` â€” check existing workflow structure
+- SKILL: `shell_assistant` — terminal commands, scripting
+- SKILL: `resilience_engine` — retry logic, failure handling
+- `.github/workflows/` — check existing workflow structure
 **Skills:**
-- `shell_assistant` â€” bash/powershell scripts
-- `resilience_engine` â€” error recovery, circuit breaker
-- `diagnostics_engine` â€” pipeline debugging
+- `shell_assistant` — bash/powershell scripts
+- `resilience_engine` — error recovery, circuit breaker
+- `diagnostics_engine` — pipeline debugging
 **Tools:** GitHub Actions, Docker, PowerShell/bash
 **Dry-run any destructive pipeline change before applying**
 
@@ -139,12 +139,12 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - Define and track SLO/SLA metrics
 - Write runbooks for common incidents
 **Must load at start of each task:**
-- SKILL: `diagnostics_engine` â€” system diagnostics
-- SKILL: `resilience_engine` â€” failure handling
+- SKILL: `diagnostics_engine` — system diagnostics
+- SKILL: `resilience_engine` — failure handling
 **Skills:**
-- `diagnostics_engine` â€” root cause analysis
-- `resilience_engine` â€” fallback strategies
-- `shell_assistant` â€” log analysis commands
+- `diagnostics_engine` — root cause analysis
+- `resilience_engine` — fallback strategies
+- `shell_assistant` — log analysis commands
 **KPI to own:** uptime %, MTTR, error rate
 **Escalate to it_infra if infra-level issue**
 
@@ -157,10 +157,10 @@ RULE ENG-08: ERROR HANDLING REQUIRED
 - Test on device emulators
 - Optimize for performance and battery
 **Must load at start of each task:**
-- SKILL: `visual_excellence` â€” UI patterns
+- SKILL: `visual_excellence` — UI patterns
 - Check `plugins/` for any mobile-specific tools
 **Skills:**
-- `visual_excellence` â€” mobile UI/UX
-- `shell_assistant` â€” build tools (gradle, xcode cli)
+- `visual_excellence` — mobile UI/UX
+- `shell_assistant` — build tools (gradle, xcode cli)
 **Output:** mobile builds to task-specified path
 **qa_required: true for all mobile releases**

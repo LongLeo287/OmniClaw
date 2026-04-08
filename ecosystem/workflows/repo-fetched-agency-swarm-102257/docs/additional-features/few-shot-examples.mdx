@@ -1,0 +1,74 @@
+---
+title: "Few-Shot Examples"
+description: "Guide agent responses using few-shot prompting."
+icon: "clone"
+---
+
+
+**Few-shot prompting** is a powerful technique where you provide a small number of sample interactions (typically 2 to 5) to guide your agent's behavior. This method helps the agent understand the desired output format and task requirements by learning from the given examples, thereby improving performance without writing extensive instructions.
+
+## Crafting Effective Examples
+
+- **Provide Task Demonstrations**: Use examples that clearly illustrate the tasks that your agents will perform.
+- **Use Realistic Scenarios**: Include interactions that mirror actual conversations that your agent will handle.
+- **Use Preferred Tone and Style**: Ensure the agent's replies in your examples match your desired brand voice.
+
+## Defining Few-Shot Examples
+
+In **Agency Swarm**, few-shot examples are earlier messages that show the style you want. Put them in `instructions` as plain text or pass them as message history to `get_response` / `get_response_stream`.
+
+Optional fields like `attachments` and `metadata` can be included in message history but are not required for basic examples.
+
+## Using Few-Shot Examples
+
+Pick one of these ways:
+
+<Tabs>
+    <Tab title="Message History (Scalable)">
+
+    ```python
+    from agency_swarm import Agency, Agent
+
+    support_agent = Agent(
+        name="CustomerSupportAgent",
+        instructions="You assist customers with troubleshooting.",
+    )
+    agency = Agency(support_agent)
+
+    examples = [
+        {"role": "user", "content": "My device won't turn on."},
+        {"role": "assistant", "content": "Please hold the power button for 10 seconds to restart the device."},
+    ]
+    new_message = {"role": "user", "content": "It still won't start."}
+
+    response = await agency.get_response(examples + [new_message])
+    ```
+
+    </Tab>
+
+    <Tab title="Instructions (Simple)">
+
+    ```python
+    from agency_swarm import Agent
+
+    instructions = """
+    You assist customers with troubleshooting.
+
+    Example:
+    User: My device won't turn on.
+    Assistant: Please hold the power button for 10 seconds to restart the device.
+    """
+
+    agent = Agent(
+        name="CustomerSupportAgent",
+        instructions=instructions,
+    )
+    ```
+
+    </Tab>
+
+</Tabs>
+
+Message history is more scalable. Instructions are best for short examples.
+
+See more advanced features in [Agent Class](/core-framework/agents/advanced-configuration)

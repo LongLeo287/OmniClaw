@@ -1,0 +1,13 @@
+{
+    "Application root folder": "taipy_application",
+    "Application main Python file": "main.py",
+    "Application title": "Taipy Application",
+    "With TOML Config?": "No",
+    "With a new Git repository?": "No",
+
+    "__root_folder": "{{ cookiecutter['Application root folder'] | replace(' ','-') }}",
+    "__main_file": "{{ cookiecutter['Application main Python file'][:-3] if cookiecutter['Application main Python file'].endswith('.py') else cookiecutter['Application main Python file'] }}",
+    "__application_title": "{{ cookiecutter['Application title'] }}",
+    "__use_toml_config": "{{ cookiecutter['With TOML Config?'] }}",
+    "__git": "{{ cookiecutter['With a new Git repository?']}}"
+}

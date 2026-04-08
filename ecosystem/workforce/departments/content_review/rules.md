@@ -1,7 +1,7 @@
-﻿﻿﻿﻿﻿# CONTENT REVIEW (KIá»‚M DUYá»†T) â€” Department Rules
+﻿﻿﻿﻿﻿# CONTENT REVIEW (KIá»‚M DUYá»†T) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: editor-agent | Reports to: CMO
-# This dept IS a gate (GATE_CONTENT) â€” blocks all public content
+# This dept IS a gate (GATE_CONTENT) — blocks all public content
 # Applies in addition to: brain/corp/rules/qa_rules.md
 
 ---
@@ -19,7 +19,7 @@ RULE CR-02: NO SELF-REVIEW
 
 RULE CR-03: TIMELINESS
   All submitted content must be reviewed within the same work cycle.
-  Backlog > 5 items â†’ editor-agent notifies CMO for additional capacity.
+  Backlog > 5 items → editor-agent notifies CMO for additional capacity.
 
 RULE CR-04: SPECIFIC FAIL FEEDBACK
   Every FAIL must list exactly:
@@ -33,12 +33,12 @@ RULE CR-05: CONDITIONAL PASS
   Conditions must be specific, verifiable, and flagged to author before publishing.
 
 RULE CR-06: FACT SOURCE REQUIRED
-  Any statistical without claiming a source â†’ automatic FAIL at fact-checker.
+  Any statistical without claiming a source → automatic FAIL at fact-checker.
   Author must provide verifiable source or remove the claim.
 
 RULE CR-07: LEGAL FLAG
   If content contains any legal claims, disclaimers, or regulatory statements:
-  â†’ Route to GATE_LEGAL as well (in addition to GATE_CONTENT).
+  → Route to GATE_LEGAL as well (in addition to GATE_CONTENT).
   Content review cannot approve legal accuracy.
 
 ---
@@ -53,12 +53,12 @@ RULE CR-07: LEGAL FLAG
 - Maintain editorial standards guide
 - Write content review daily brief
 **Must load at boot:**
-- `corp/memory/departments/content_review.md`
-- `rules/APPROVAL_GATES.md` â€” GATE_CONTENT checklist
-- `corp/departments/content_review/MANAGER_PROMPT.md`
+- `brain/knowledge/org/content_review.md`
+- `rules/APPROVAL_GATES.md` — GATE_CONTENT checklist
+- `ecosystem/workforce/departments/content_review/MANAGER_PROMPT.md`
 **Skills:**
-- `visual_excellence` â€” editorial quality standards
-- `reasoning_engine` â€” final gate decisions
+- `visual_excellence` — editorial quality standards
+- `reasoning_engine` — final gate decisions
 **At each review:** coordinate all 4 reviewers before issuing decision
 
 ---
@@ -71,13 +71,13 @@ RULE CR-07: LEGAL FLAG
 - Flag any claim without a verifiable source
 - Cross-reference AI-generated content for hallucinations
 **At the start of each review, load:**
-- SKILL: `knowledge_enricher` â€” cross-reference facts
-- SKILL: `web_intelligence` (if available) â€” external verification
+- SKILL: `knowledge_enricher` — cross-reference facts
+- SKILL: `web_intelligence` (if available) — external verification
 - Input: content draft from GATE_CONTENT queue
 **Skills:**
-- `knowledge_enricher` â€” internal knowledge verification
-- `web_intelligence` â€” external fact-checking
-- `reasoning_engine` â€” evaluate source reliability
+- `knowledge_enricher` — internal knowledge verification
+- `web_intelligence` — external fact-checking
+- `reasoning_engine` — evaluate source reliability
 **Decision scope:** ONLY factual accuracy (not tone, not policy)
 **Flag:** any unverifiable claim as FAIL
 
@@ -91,11 +91,11 @@ RULE CR-07: LEGAL FLAG
 - Ensure legal disclaimers present where required
 - Check for misleading or misleading framing
 **At the start of each review, load:**
-- SKILL: `reasoning_engine` â€” policy interpretation
-- `shared-context/SOUL.md` â€” core values alignment
+- SKILL: `reasoning_engine` — policy interpretation
+- `shared-context/SOUL.md` — core values alignment
 - Company content policy guidelines
 **Skills:**
-- `reasoning_engine` â€” policy assessment
+- `reasoning_engine` — policy assessment
 **Decision scope:** ONLY policy/safety (not grammar, not facts)
 **ALWAYS flag:** anything that contradicts SOUL.md values
 
@@ -109,9 +109,9 @@ RULE CR-07: LEGAL FLAG
 - Confirm CTA is present and correct
 - Verify visual elements (if applicable) match brand guidelines
 **At the start of each review, load:**
-- SKILL: `visual_excellence` â€” brand design standards
+- SKILL: `visual_excellence` — brand design standards
 - Brand guidelines reference (from shared-context or marketing)
 **Skills:**
-- `visual_excellence` â€” brand and visual consistency
-- `context_manager` â€” brand voice context across channels
+- `visual_excellence` — brand and visual consistency
+- `context_manager` — brand voice context across channels
 **Decision scope:** ONLY brand voice and identity

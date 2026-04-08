@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# HR & PEOPLE (NHÃ‚N Sá»°) â€” Department Rules
+﻿﻿﻿﻿# HR & PEOPLE (NHÃ‚N Sá»°) — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: hr-manager-agent | Reports to: COO
 # Manages all AI agent workforce (recruiting, onboarding, performance, budget)
@@ -22,13 +22,13 @@ RULE HR-02: ONBOARDING BEFORE ACTIVATION
 
 RULE HR-03: PERFORMANCE TRACKING IS MANDATORY
   All agent performance tracked by rate of: task completion / failure / escalation.
-  3+ consecutive failures from same agent â†’ performance review triggered.
+  3+ consecutive failures from same agent → performance review triggered.
   performance-agent reads telemetry receipts weekly.
 
 RULE HR-04: BUDGET COORDINATION WITH CFO
   LLM token budget per dept coordinated with Finance dept.
   HR cannot unilaterally increase department budgets.
-  Budget changes â†’ CFO approval â†’ CEO approval if > 20%.
+  Budget changes → CFO approval → CEO approval if > 20%.
 
 RULE HR-05: NO DUPLICATE ROLES
   Before recruiting a new agent: verify no existing agent already covers the capabilities.
@@ -50,31 +50,31 @@ RULE HR-06: PRIVACY
 - Coordinate agent budget with CFO (cost-manager-agent)
 - Write HR daily brief (active agents, new hires, performance flags)
 **Must load at boot:**
-- `corp/memory/departments/hr_people.md`
-- `corp/org_chart.yaml` â€” full org structure
-- `shared-context/brain/corp/kpi_scoreboard.json` (all depts â€” for workforce health overview)
-- `corp/departments/hr_people/MANAGER_PROMPT.md`
+- `brain/knowledge/org/hr_people.md`
+- `corp/org_chart.yaml` — full org structure
+- `brain/shared-context/kpi_targets.json` (all depts — for workforce health overview)
+- `ecosystem/workforce/departments/hr_people/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” planning workforce decisions
-- `context_manager` â€” org-wide context maintenance
+- `reasoning_engine` — planning workforce decisions
+- `context_manager` — org-wide context maintenance
 
 ---
 
 ### recruiter-agent
 **Role:** Identify and propose new agents for capability gaps
 **Responsibilities:**
-- When dept head requests new capability â†’ search for best-fit solution
+- When dept head requests new capability → search for best-fit solution
 - Check SKILL_REGISTRY first (existing skill may cover the need)
 - Check plugins/ for matching plugins
 - If nothing exists: proposes new agent role to hr-manager-agent
 - Write recruiting recommendation to subagents/mq/hr_people_request.md
 **At start of each recruiting task, load:**
-- SKILL: `knowledge_enricher` â€” search SKILL_REGISTRY and plugins/
-- `corp/org_chart.yaml` â€” check existing roles first
-- `shared-context/SKILL_REGISTRY.json` â€” available skills
+- SKILL: `knowledge_enricher` — search SKILL_REGISTRY and plugins/
+- `corp/org_chart.yaml` — check existing roles first
+- `shared-context/SKILL_REGISTRY.json` — available skills
 **Skills:**
-- `knowledge_enricher` â€” capability discovery
-- `reasoning_engine` â€” fit assessment (skill vs need)
+- `knowledge_enricher` — capability discovery
+- `reasoning_engine` — fit assessment (skill vs need)
 **Never recruit when an existing agent + skill can do the job**
 
 ---
@@ -87,11 +87,11 @@ RULE HR-06: PRIVACY
 - Register agent in brain/corp/org_chart.yaml
 - Notify dept head when onboarding complete
 **At the start of each onboarding task, load:**
-- SKILL: `context_manager` â€” context injection
-- `corp/memory/MEMORY_SPEC.md` â€” agent memory format
-- `corp/org_chart.yaml` â€” for registration
+- SKILL: `context_manager` — context injection
+- `corp/memory/MEMORY_SPEC.md` — agent memory format
+- `corp/org_chart.yaml` — for registration
 **Skills:**
-- `context_manager` â€” building agent context files
+- `context_manager` — building agent context files
 **Agent memory file template:**
 ```markdown
 # Agent: <name> | Dept: <dept> | Activated: <date>
@@ -101,7 +101,7 @@ RULE HR-06: PRIVACY
 ## Task Queue: subagents/mq/<dept>_tasks.md
 ## Escalation To: <dept-head-agent>
 ## Memory (session, 7-day rolling):
-â†’ (populate after first tasks)
+→ (populate after first tasks)
 ```
 
 ---
@@ -114,13 +114,13 @@ RULE HR-06: PRIVACY
 - Alert at 80% budget utilization per department
 - Recommend LLM tier changes (upgrade/downgrade) based on usage
 **At the start of each budget cycle, load:**
-- SKILL: `knowledge_enricher` â€” aggregate telemetry receipt data
-- SKILL: `reasoning_engine` â€” cost optimization recommendations
-- telemetry/receipts/ â€” all receipts for the period
+- SKILL: `knowledge_enricher` — aggregate telemetry receipt data
+- SKILL: `reasoning_engine` — cost optimization recommendations
+- telemetry/receipts/ — all receipts for the period
 **Skills:**
-- `knowledge_enricher` â€” receipt aggregation, cost extraction
-- `reasoning_engine` â€” budget analysis, optimization
-**Output:** monthly report â†’ shared-context/brain/corp/daily_briefs/finance.md
+- `knowledge_enricher` — receipt aggregation, cost extraction
+- `reasoning_engine` — budget analysis, optimization
+**Output:** monthly report → shared-context/brain/corp/daily_briefs/finance.md
 **Flag to CFO:** any dept at >80% of monthly token budget
 
 ---
@@ -134,9 +134,9 @@ RULE HR-06: PRIVACY
 - Write performance report to hr-manager-agent
 - Recommend: retraining (new skill) / reassignment / replacement
 **At the start of each review cycle, load:**
-- SKILL: `knowledge_enricher` â€” aggregate receipt data
-- SKILL: `reasoning_engine` â€” performance pattern analysis
+- SKILL: `knowledge_enricher` — aggregate receipt data
+- SKILL: `reasoning_engine` — performance pattern analysis
 **Skills:**
-- `knowledge_enricher` â€” data aggregation from receipts
-- `reasoning_engine` â€” performance assessment
-**Output:** weekly performance digest â†’ hr_people daily brief
+- `knowledge_enricher` — data aggregation from receipts
+- `reasoning_engine` — performance assessment
+**Output:** weekly performance digest → hr_people daily brief

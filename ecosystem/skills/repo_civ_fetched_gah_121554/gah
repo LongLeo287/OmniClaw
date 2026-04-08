@@ -1,0 +1,753 @@
+#!/usr/bin/env bash
+
+# gah - GitHub Releases App Installer
+#
+# @author Marek `marverix` Sierociński
+# @license Apache-2.0
+
+# Pipeline mode
+set -e
+
+#--------------------------------------------------
+#region Constants
+
+VERSION="v1.13.0"
+HELP_STRING="Type 'gah help' to show help."
+
+if [ ! -t 0 ]; then
+	GAH_UNATTENDED="true"
+fi
+
+if [[ -z "$GAH_CACHE_DIR" ]]; then
+	GAH_CACHE_DIR="$HOME/.cache/gah"
+fi
+
+if [[ -z "$GAH_INSTALL_DIR" ]]; then
+	if [[ "$EUID" -ne 0 ]]; then
+		GAH_INSTALL_DIR="$HOME/.local/bin"
+	else
+		GAH_INSTALL_DIR="/usr/local/bin"
+	fi
+fi
+
+GAH_DB_FILE="$GAH_CACHE_DIR/db.json"
+
+#endregion
+#--------------------------------------------------
+#region Variables
+
+tmp_dir=""
+
+#endregion
+#--------------------------------------------------
+#region Utils
+
+function print_blue() {
+	echo -e "\033[0;34m$1\033[0m"
+}
+
+function print_green() {
+	echo -e "\033[0;32m$1\033[0m"
+}
+
+function print_yellow() {
+	echo -e "\033[0;33m$1\033[0m"
+}
+
+function throw_error() {
+	echo -e "\033[0;31mError: $2\033[0m" >&2
+	exit $1
+}
+
+function print_debug() {
+	if [[ "$GAH_DEBUG" == "true" ]]; then
+		echo -e "[DEBUG] $1" >&2
+	fi
+}
+
+function cleanup() {
+	if [[ -n "$tmp_dir" && -d "$tmp_dir" ]]; then
+		rm -fr "$tmp_dir"
+	fi
+}
+
+# Check if Bash supports non-greedy quantifiers (Bash 4.0+)
+function supports_bash_regex() {
+	local bash_major_version="${BASH_VERSINFO[0]}"
+	[[ "$bash_major_version" -ge 4 ]]
+}
+
+#endregion
+#--------------------------------------------------
+#region HTTP functions
+
+function http_get() {
+	local url="$1"
+	# if curl is available, use it, otherwise use wget.
+	if command -v curl >/dev/null 2>&1; then
+		curl -s "${GITHUB_AUTH_ARGS[@]}" "$url"
+	else
+		wget -q -O- "${GITHUB_AUTH_ARGS[@]}" "$url"
+	fi
+}
+
+# parameters:
+# - url: the URL to download
+# - destination: the destination file path
+# - silent: if true, the download will be completely silent
+# - progress: if true, the download will show a progress bar
+function http_download() {
+	local url="$1"
+	local destination="$2"
+	local silent="$3"
+	local progress="$4"
+
+	local silent_option
+	# if curl is available, use it, otherwise use wget.
+	if command -v curl >/dev/null 2>&1; then
+		local curl_progress_option
+		[[ $silent == "true" ]] && silent_option="-s" || silent_option=""
+		[[ $progress == "true" ]] && curl_progress_option="--progress-bar" || curl_progress_option=""
+		curl ${silent_option} -L ${curl_progress_option} "${GITHUB_AUTH_ARGS[@]}" -o "$destination" "$url"
+	else
+	    # detect if wget is from alpine/busybox or a GNU wget
+		if wget --version >/dev/null 2>&1; then
+			local is_gnu_wget="true"
+		else
+			local is_gnu_wget="false"
+		fi
+		local wget_progress_option
+		[[ $silent == "true" ]] && silent_option="-q" || silent_option=""
+		[[ $progress == "true" && $is_gnu_wget == "true" ]] && progress_option="--show-progress" || progress_option=""
+		wget ${silent_option} ${wget_progress_option} "${GITHUB_AUTH_ARGS[@]}" -O "$destination" "$url"
+	fi
+}
+
+#endregion
+#--------------------------------------------------
+#region GitHub Authentication
+
+# Setup GitHub authentication if GITHUB_PAT is provided
+if [[ -n "${GITHUB_PAT:-}" ]]; then
+	GITHUB_AUTH_ARGS=(--header "Authorization: token ${GITHUB_PAT}")
+	print_green "Using GitHub Personal Access Token for API requests"
+else
+	GITHUB_AUTH_ARGS=()
+	print_debug "No GITHUB_PAT found - using unauthenticated GitHub API (rate limited to 60 requests/hour)"
+fi
+
+#endregion
+#--------------------------------------------------
+#region RegExp functions
+
+EXT_ZIP="\.zip"
+EXT_TAR="\.tar\.gz|\.tgz|\.tar\.xz|\.txz|\.tar\.bz2|\.tbz"
+EXT_ALL_ARCHIVES="$EXT_ZIP|$EXT_TAR"
+
+REGEXP_EXT_ZIP=".+(${EXT_ZIP})$"
+REGEXP_EXT_TAR=".+(${EXT_TAR})$"
+
+REGEXP_IGNORE_PATTERN="(linux-android)"
+REGEXP_SKIP_FILES="^(license|readme|changelog).*|.*\.(md|txt)$"
+
+function get_os() {
+	print_debug "Checking OS type"
+	case $(uname -s) in
+	Linux*) echo "linux" ;;
+	Darwin*) echo "macos" ;;
+	*) echo "NOT_SUPPORTED" ;;
+	esac
+}
+
+function get_os_regexp_part() {
+	case $(get_os) in
+	linux) echo '[._-](unknown[._-])?(linux|linux-gnu|linux-musl)' ;;
+	macos) echo '[._-](apple[._-])?(darwin|macos|osx)' ;;
+	*) throw_error 10 "Your OS type is not supported" ;;
+	esac
+}
+
+function get_arch() {
+	print_debug "Checking CPU architecture"
+	case $(uname -m) in
+		x86_64|amd64) echo "amd64" ;;
+		arm64|aarch64|armv8) echo "arm64" ;;
+	*) echo "NOT_SUPPORTED" ;;
+	esac
+}
+
+function get_arch_regexp_part() {
+	case $(get_arch) in
+	amd64) echo '[._-](amd64|x86_64|x64|64bit|universal)' ;;
+	arm64) echo '[._-](arm64|aarch64|universal)' ;;
+	*) throw_error 11 "Your CPU/OS architecture is not supported" ;;
+	esac
+}
+
+function get_filename_regexp() {
+	local name_regexp_part='([a-z][a-z0-9_-]+?)'
+	local version_regexp_part='([_-]v?[0-9.]+)?'
+	local os_regexp_part=$(get_os_regexp_part)
+	local arch_regexp_part=$(get_arch_regexp_part)
+	local suffix_regexp_part='([_-][a-z0-9_-]+)?'
+
+	local regexp="${name_regexp_part}${version_regexp_part}"
+	regexp+="(${os_regexp_part}${arch_regexp_part}|${arch_regexp_part}${os_regexp_part})"
+	regexp+="${suffix_regexp_part}"
+	regexp+="(${EXT_ALL_ARCHIVES})?"
+	echo "$regexp"
+}
+
+function get_name_regexp() {
+	echo "^$(get_filename_regexp)\$"
+}
+
+function get_md_url_regexp() {
+	echo "\(https:\/\/[a-z0-9.\/]+\/$(get_filename_regexp)\)"
+}
+
+# Generic regex matching function
+# Usage: regex_match "string" "pattern"
+# Returns: 0 if matches, 1 if doesn't match
+function regex_match() {
+	local string="$1"
+	local pattern="$2"
+	
+	if supports_bash_regex; then
+		[[ "$string" =~ $pattern ]]
+	else
+		echo "$string" | perl -ne "exit(0) if /$pattern/; exit(1)" 2>/dev/null
+	fi
+}
+
+# Extract capture group from regex match
+# Usage: regex_capture "string" "pattern" capture_group_number
+# Returns: captured text or empty string
+function regex_capture() {
+	local string="$1"
+	local pattern="$2"
+	local capture_group="${3:-1}"
+	
+	if supports_bash_regex; then
+		if [[ "$string" =~ $pattern ]]; then
+			echo "${BASH_REMATCH[$capture_group]}"
+		fi
+	else
+		echo "$string" | perl -ne "print \$$capture_group if /$pattern/"
+	fi
+}
+
+# Extract full match from regex
+# Usage: regex_match_text "string" "pattern"
+# Returns: matched text or empty string
+function regex_match_text() {
+	local string="$1"
+	local pattern="$2"
+	
+	if supports_bash_regex; then
+		if [[ "$string" =~ $pattern ]]; then
+			echo "${BASH_REMATCH[0]}"
+		fi
+	else
+		echo "$string" | perl -ne "print \$& if /$pattern/"
+	fi
+}
+
+#endregion
+#--------------------------------------------------
+#region GitHub API functions
+
+REGEXP_NAME_FROM_HTML_URL='^https:\/\/[^/]+\/[^/]+\/([^/]+)'
+
+function get_fetch_release_info_url() {
+	local suffix="latest"
+	if [[ -n "$2" && "$2" != "latest" ]]; then
+		suffix="tags/$2"
+	fi
+
+	echo "https://api.github.com/repos/$1/releases/$suffix"
+}
+
+function fetch_release_info() {
+	local url=$(get_fetch_release_info_url "$1" "$2")
+	print_debug "Fetching release information from: $url"
+
+	http_get "$url" > release.json
+
+	# Validate that we got a valid JSON response
+	if [[ ! -s release.json ]]; then
+		throw_error 19 "Failed to fetch release information from GitHub API.\nNo response received. Check your network connection."
+	fi
+
+	if ! jq empty release.json 2>/dev/null; then
+		print_debug "Invalid JSON received:\n$(cat release.json)"
+		throw_error 20 "Failed to parse GitHub API response.\nReceived invalid JSON. The API might be unavailable."
+	fi
+
+	# Check if response is an error (has .message but no .tag_name)
+	local err_message=$(jq -r '.message // "null"' release.json)
+	local err_status=$(jq -r '.status // "null"' release.json)
+	local tag_name=$(jq -r '.tag_name // "null"' release.json)
+
+	if [[ "$err_message" != "null" && "$tag_name" == "null" ]]; then
+		print_debug "API Error detected: $err_message"
+
+		# Check if this is a rate limit error
+		if [[ "$err_message" =~ [Rr]ate.limit ]]; then
+			throw_error 21 "GitHub API rate limit exceeded.\n\nUnauthenticated requests are limited to 60 per hour.\nAuthenticated requests get 5,000 per hour.\n\nTo authenticate, set the GITHUB_PAT environment variable:\n  export GITHUB_PAT=\"your_token_here\"\n\nCreate a token at: https://github.com/settings/tokens"
+		fi
+
+		throw_error 13 "Couldn't fetch release information.\nResponse from GitHub API [$err_status]: $err_message"
+	fi
+
+	local release_name=$(jq -r '.name // "Unknown"' release.json)
+	print_green "Found release: $release_name"
+}
+
+function get_repo_name() {
+	local release_json="$1"
+	local html_url=$(jq -r '.html_url' "$release_json")
+	local match=$(regex_capture "$html_url" "$REGEXP_NAME_FROM_HTML_URL" 1)
+	if [[ -n "$match" ]]; then
+		echo "$match"
+	fi
+}
+
+function find_download_url() {
+	local release_json="$1"
+
+	# First try to find the matching file in the assets
+	local regexp=$(get_name_regexp)
+	local found="false"
+
+	print_debug "Regexp: $regexp"
+
+	for name in $(jq -r '.assets[].name' "$release_json"); do
+		local lower_name=$(echo "$name" | tr '[A-Z]' '[a-z]')
+		if regex_match "$lower_name" "$regexp"; then
+			if regex_match "$lower_name" "$REGEXP_IGNORE_PATTERN"; then
+				print_debug "  $name ... Ignored"
+			else
+				print_debug "  $name ... MATCH!"
+				found="true"
+				jq -r --arg name "$name" '.assets[] | select(.name == $name) | .browser_download_url' "$release_json"
+			fi
+		else
+			print_debug "  $name ... Doesn't match"
+		fi
+	done
+
+	# If asset matched, return
+	if [[ "$found" == "true" ]]; then
+		return
+	fi
+
+	# If no asset matched, try to find the download URL in the release body
+	print_debug "No asset matched, trying to find download URL in the release body"
+
+	regexp=$(get_md_url_regexp)
+	print_debug "URL Regexp: $regexp"
+
+	jq -r '.body' "$release_json" | while read -r line; do
+		lower_line=$(echo "$line" | tr '[A-Z]' '[a-z]')
+		local match=$(regex_match_text "$lower_line" "$regexp")
+		if [[ -n "$match" ]]; then
+			print_debug "  $line ... MATCH!"
+			found="true"
+			match=${match:1}
+			match=${match%?}
+			echo "$match"
+		else
+			print_debug "  $line ... Doesn't match"
+		fi
+	done
+
+	# If asset matched, return
+	if [[ "$found" == "true" ]]; then
+		return
+	fi
+
+	print_debug "No download URLs found!"
+}
+
+function find_digest_for_url() {
+	local release_json="$1"
+	local download_url="$2"
+
+	print_debug "Finding digest for URL: $url"
+
+	# Check if the URL is in the assets
+	local digest=$(jq -r --arg url "$download_url" '.assets[] | select(.browser_download_url == $url) | .digest' "$release_json")
+
+	if [[ "$digest" == "null" ]]; then
+		print_debug "No digest found for URL: $download_url"
+		echo ""
+	else
+		print_debug "Found digest in body: $digest"
+		echo "$digest"
+	fi
+}
+
+function verify_digest() {
+	local file="$1"
+	local digest="$2"
+
+	print_debug "Verifying digest for file: $file"
+
+	# Check if the file exists
+	if [[ ! -f "$file" ]]; then
+		throw_error 16 "File '$file' does not exist. Cannot verify digest."
+	fi
+
+	# Split the digest into algorithm and value
+	local algorithm=$(echo "$digest" | cut -d ':' -f 1)
+	local expected_value=$(echo "$digest" | cut -d ':' -f 2)
+
+	print_blue "Verifying digest $algorithm $expected_value ..."
+
+	# Calculate the actual digest of the file
+	local actual_value=$(openssl "$algorithm" -r "$file" | cut -d ' ' -f 1)
+
+	# Compare the actual and expected values
+	if [[ "$actual_value" != "$expected_value" ]]; then
+		throw_error 17 "Digest $algorithm verification failed for file '$file'!\nExpected: $expected_value\nActual:   $actual_value"
+	fi
+
+	print_green "Digest verification succeeded!"
+}
+
+#endregion
+#--------------------------------------------------
+#region DB functions
+
+function fetch_db() {
+	print_debug "Fetching DB"
+	http_get "https://raw.githubusercontent.com/get-gah/gah-db/refs/heads/master/db.json" > "$GAH_DB_FILE"
+}
+
+function get_db_path() {
+	if [[ ! -f "$GAH_DB_FILE" ]] || test "$(find "$GAH_DB_FILE" -mmin +1440)"; then
+		fetch_db
+	fi
+
+	echo "$GAH_DB_FILE"
+}
+
+function get_known_alias() {
+	jq -r --arg x "$1" '.aliases[$x]' "$(get_db_path)"
+}
+
+#endregion
+#--------------------------------------------------
+#region Other functions
+
+function semver_to_number() {
+	if [[ "$1" =~ ^v ]]; then
+		local version=${1:1}
+	else
+		local version="$1"
+	fi
+	local major=$(echo "$version" | cut -d '.' -f 1)
+	local minor=$(echo "$version" | cut -d '.' -f 2)
+	local patch=$(echo "$version" | cut -d '.' -f 3)
+	echo $((major * 1000000 + minor * 1000 + patch))
+}
+
+#endregion
+#--------------------------------------------------
+#region Command functions
+
+function command_help() {
+	echo "gah"
+	echo "  install <github_owner/github_repo_name> | known_alias> [--tag=<git_tag>] [--unattended]"
+	echo "  aliases <show | refresh>"
+	echo "  update"
+	echo "  help"
+	echo "  version"
+	exit 0
+}
+
+function command_version() {
+	echo "gah $VERSION"
+	exit 0
+}
+
+function command_install() {
+	print_debug "Starting installation process"
+
+	# Create temporary directory
+	print_debug "Creating temporary directory"
+	tmp_dir=$(mktemp -d -p "$GAH_CACHE_DIR")
+	print_debug "OK, temporary directory: $tmp_dir"
+
+	# Change to temporary directory
+	print_debug "Changing to temporary directory"
+	cd "$tmp_dir"
+	print_debug "OK"
+
+	local repo="$1"
+	local tag="$2"
+
+	# Fetch the release information
+	print_blue "Fetching release info for: $repo [$tag]"
+	fetch_release_info "$repo" "$tag"
+	print_debug "OK"
+
+	# Find the download URL
+	print_debug "Finding download URL"
+	local download_url=$(find_download_url "$tmp_dir/release.json")
+	print_debug "OK, Download URL:\n$download_url"
+
+	if [[ -z "$download_url" ]]; then
+		local os=$(get_os)
+		local arch=$(get_arch)
+		throw_error 18 "Could not find any assets matching your OS ($os) and Arch ($arch)."
+	fi
+
+	# Check if several download URLs were found
+	if [[ $(echo "$download_url" | wc -l) -gt 1 ]]; then
+		print_yellow "Several download URLs were found which match your OS and arch."
+
+		if [[ "$GAH_UNATTENDED" == "true" ]]; then
+			# Select based on unattended_select_index
+			download_url=$(echo "$download_url" | sed -n "${unattended_select_index}p" 2>/dev/null || true)
+			if [[ -z "$download_url" ]]; then
+				throw_error 22 "Invalid selection index ($unattended_select_index) for unattended mode. No URL at that index."
+			fi
+
+			print_yellow "Unattended mode, using download URL at index $unattended_select_index: $download_url"
+
+		else
+			print_yellow "Please select one:"
+			select url in $download_url; do
+				download_url=$url
+				break
+			done
+
+			if [[ -z "$download_url" ]]; then
+				throw_error 14 "No download URL was selected"
+			fi
+
+		fi
+	fi
+
+	# Get a filename
+	print_debug "Getting filename from URL"
+	local filename=$(basename "$download_url")
+	print_debug "OK, filename: $filename"
+
+	# Find digest
+	print_debug "Finding digest for download URL"
+	local digest=$(find_digest_for_url "$tmp_dir/release.json" "$download_url")
+	print_debug "OK, digest: $digest"
+
+	# Download the file
+	print_blue "Downloading: $filename"
+	http_download "$download_url" "$filename" false true
+
+	# Verify the download if digest is available
+	print_debug "Verifying download digest if available"
+	if [[ -n "$digest" ]]; then
+		print_debug "OK, verifying digest for $filename"
+		verify_digest "$filename" "$digest"
+	else
+		print_yellow "GitHub Release did not provide digest for $filename. Skipping verification."
+	fi
+
+	# Extract if needed
+	print_debug "Checking if extraction is needed for: $filename"
+	if [[ "$filename" =~ $REGEXP_EXT_TAR ]]; then
+		print_blue "Extracting: $filename"
+		tar -xf "$filename"
+		print_debug "OK, extracted using tar"
+
+	elif [[ "$filename" =~ $REGEXP_EXT_ZIP ]]; then
+		print_blue "Extracting: $filename"
+		unzip -q "$filename"
+		print_debug "OK, extracted using unzip"
+
+	else
+		print_debug "Does not look like supported archive - no need to extract"
+		chmod +x "$filename"
+	fi
+
+	print_debug "Finding executable files to install"
+	for bin_file in $(find . -type f -executable); do
+		print_debug "Found executable: $bin_file"
+
+		print_debug "Getting base file name"
+		local file_name=$(basename "$bin_file")
+		print_debug "OK, base file name: $file_name"
+
+		print_debug "Calculating lower case file name for skip check"
+		local lower_file_name=$(echo "$file_name" | tr '[A-Z]' '[a-z]')
+		print_debug "OK, lower case file name: $lower_file_name"
+
+		print_debug "Checking if file should be skipped"
+		if regex_match "$lower_file_name" "$REGEXP_SKIP_FILES"; then
+			print_debug "File name matches skip pattern - Skipping: $file_name"
+			continue
+		fi
+		print_debug "No skip pattern matched - File will be installed"
+
+		print_debug "Removing version/os/arch parts from file name if present"
+		local regexp=$(get_name_regexp)
+		local match=$(regex_capture "$file_name" "$regexp" 1)
+		if [[ -n "$match" ]]; then
+			file_name="$match"
+			print_debug "OK, cleaned file name"
+		fi
+
+		print_blue "Installing: $file_name"
+
+		if [[ "$GAH_UNATTENDED" == "true" ]]; then
+			print_yellow "Using default name: $file_name"
+		else
+			print_yellow "Give a new name or keep '$file_name'? (Leave empty to keep the same)"
+			read -p "New name: " new_name
+			if [[ -n "$new_name" ]]; then
+				file_name="$new_name"
+			fi
+		fi
+
+		mv "$bin_file" "$GAH_INSTALL_DIR/$file_name"
+		print_green "Installed: $file_name"
+	done
+
+	print_green "Done!"
+}
+
+function command_aliases_show() {
+	echo "Known aliases:"
+	jq -r '.aliases' "$(get_db_path)"
+}
+
+function command_aliases_refresh() {
+	print_blue "Refreshing aliases"
+	fetch_db
+	print_green "Done!"
+}
+
+function command_update() {
+	local gah_repo="get-gah/gah"
+	local script_realpath=$(realpath "$0")
+
+	# Check if user has write permissions script_realpath
+	if [[ ! -w "$script_realpath" ]]; then
+		throw_error 15 "You don't have write permissions to $script_realpath.\nPlease run the script with sudo or change the permissions."
+	fi
+	
+	# Check gah latest tag
+	print_blue "Checking latest gah release..."
+	local tag=$(curl -s "${GITHUB_AUTH_ARGS[@]}" "$(get_fetch_release_info_url $gah_repo)" | jq -r '.tag_name')
+
+	# Compare versions
+	local new_number=$(semver_to_number "$tag")
+	local current_number=$(semver_to_number "$VERSION")
+	if [[ "$new_number" -le "$current_number" ]]; then
+		print_yellow "You are already using the latest version ($VERSION)."
+		print_green "Done!"
+		exit 0
+	else
+		print_yellow "Updating from $VERSION to $tag"
+	fi
+
+	# Download gah! script
+	http_download "https://raw.githubusercontent.com/$gah_repo/refs/tags/$tag/gah" "$script_realpath" true false
+	chmod +x "$script_realpath"
+	print_green "OK"
+
+	print_green "Done!"
+}
+
+#endregion
+#--------------------------------------------------
+
+function main() {
+	# Initialize
+	mkdir -p "$GAH_CACHE_DIR"
+
+	# Handle commands
+	if [[ -z "$1" || "$1" == "help" ]]; then
+		command_help
+
+	elif [[ "$1" == "version" ]]; then
+		command_version
+
+	elif [[ "$1" == "install" ]]; then
+		if [[ -z "$2" ]]; then
+			throw_error 1 "Please provide either repo in format 'owner/repo_name' or known alias.\n$HELP_STRING"
+
+		elif [[ "$2" == *"/"* ]]; then
+			if regex_match "$2" "^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_-]+$"; then
+				repo="$2"
+			else
+				throw_error 2 "Given string '$2' is not in format 'owner/repo_name'.\n$HELP_STRING"
+			fi
+
+		elif [[ "$(get_known_alias $2)" != "null" ]]; then
+			repo="$(get_known_alias $2)"
+
+		else
+			throw_error 3 "Given string '$2' is not a known alias.\nTo see known aliases type 'gah aliases show'."
+		fi
+
+		# Default values for optional parameters
+		local tag="latest"
+
+		# Parse optional parameters
+		while [[ $# -gt 0 ]]; do
+			case "$3" in
+			--tag=*)
+				tag="${3#--tag=}"
+				shift 1
+				;;
+			--unattended)
+				GAH_UNATTENDED="true"
+				shift 1
+				;;
+			--unattended-select-index=*)
+				unattended_select_index="${3#--unattended-select-index=}"
+				shift 1
+				;;
+			*)
+				break
+				;;
+			esac
+		done
+
+		if [[ "$UNATTENDED" == "true" ]]; then
+			GAH_UNATTENDED="true"
+		fi
+
+		if [[ -z "$unattended_select_index" ]]; then
+			unattended_select_index="1"
+		fi
+
+		# Use the parsed tag and default_names
+		command_install "$repo" "$tag"
+
+	elif [[ "$1" == "aliases" ]]; then
+		if [[ "$2" == "show" ]]; then
+			command_aliases_show
+
+		elif [[ "$2" == "refresh" ]]; then
+			command_aliases_refresh
+
+		else
+			throw_error 4 "Unknown subcommand.\n$HELP_STRING"
+		fi
+
+	elif [[ "$1" == "update" ]]; then
+		command_update
+
+	else
+		throw_error 5 "Unknown command '$1'.\n$HELP_STRING"
+	fi
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	# The script is being executed directly
+	trap cleanup EXIT ERR SIGINT SIGTERM
+	main "$@"
+fi

@@ -1,0 +1,802 @@
+{
+  "registry": [
+    {
+      "id": "agents",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.979077"
+    },
+    {
+      "id": "agentscope_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/agentscope_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980003"
+    },
+    {
+      "id": "agent_skills_integrator",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/agent_skills_integrator",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980069"
+    },
+    {
+      "id": "ai_ml_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/ai_ml_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980131"
+    },
+    {
+      "id": "antigravity",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/antigravity",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980190"
+    },
+    {
+      "id": "antigravity_kit_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/antigravity_kit_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980260"
+    },
+    {
+      "id": "aperant_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/aperant_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980319"
+    },
+    {
+      "id": "ava_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/ava_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980372"
+    },
+    {
+      "id": "bridge_commander_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/bridge_commander_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980425"
+    },
+    {
+      "id": "channel_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/channel_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980478"
+    },
+    {
+      "id": "chart_testing_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/chart_testing_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980531"
+    },
+    {
+      "id": "chatdev_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/chatdev_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980583"
+    },
+    {
+      "id": "claude_plugins_official_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/claude_plugins_official_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980639"
+    },
+    {
+      "id": "cloudflared_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/cloudflared_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980692"
+    },
+    {
+      "id": "content_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/content_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980750"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/content_agent/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980819"
+    },
+    {
+      "id": "cost_manager_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/cost_manager_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980877"
+    },
+    {
+      "id": "crawlee_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/crawlee_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980929"
+    },
+    {
+      "id": "crush_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/crush_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.980981"
+    },
+    {
+      "id": "data_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/data_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981039"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/data_agent/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981101"
+    },
+    {
+      "id": "devops_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/devops_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981157"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/devops_agent/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981219"
+    },
+    {
+      "id": "docs_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/docs_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981271"
+    },
+    {
+      "id": "domain_driven_hexagon_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/domain_driven_hexagon_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981325"
+    },
+    {
+      "id": "dvc_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/dvc_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981378"
+    },
+    {
+      "id": "dxt_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/dxt_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981431"
+    },
+    {
+      "id": "editor_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/editor_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981485"
+    },
+    {
+      "id": "eventsourcing_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/eventsourcing_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981539"
+    },
+    {
+      "id": "excelize_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/excelize_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981591"
+    },
+    {
+      "id": "finrl_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/finrl_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981643"
+    },
+    {
+      "id": "frontend_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/frontend_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981700"
+    },
+    {
+      "id": "game_designer_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/game_designer_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981757"
+    },
+    {
+      "id": "gcp_architect",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/gcp_architect",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981813"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/gcp_architect/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.981953"
+    },
+    {
+      "id": "scripts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/gcp_architect/scripts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982110"
+    },
+    {
+      "id": "generative_ai_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/generative_ai_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982326"
+    },
+    {
+      "id": "gitagent_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/gitagent_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982417"
+    },
+    {
+      "id": "gitingest_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/gitingest_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982500"
+    },
+    {
+      "id": "golangci_lint_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/golangci_lint_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982568"
+    },
+    {
+      "id": "growth_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/growth_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982632"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/growth_agent/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982709"
+    },
+    {
+      "id": "health_chief_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/health_chief_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982773"
+    },
+    {
+      "id": "hermes_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/hermes_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982829"
+    },
+    {
+      "id": "homebrew_core_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/homebrew_core_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982885"
+    },
+    {
+      "id": "hr_manager_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/hr_manager_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982942"
+    },
+    {
+      "id": "httpbin_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/httpbin_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.982997"
+    },
+    {
+      "id": "intake_chief_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/intake_chief_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983052"
+    },
+    {
+      "id": "it_manager_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/it_manager_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983107"
+    },
+    {
+      "id": "kilocode_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/kilocode_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983160"
+    },
+    {
+      "id": "kittentts_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/kittentts_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983214"
+    },
+    {
+      "id": "lazy_nvim_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/lazy_nvim_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983268"
+    },
+    {
+      "id": "legal_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/legal_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983321"
+    },
+    {
+      "id": "library_manager_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/library_manager_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983378"
+    },
+    {
+      "id": "llama_trainer_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/llama_trainer_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983431"
+    },
+    {
+      "id": "llmware_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/llmware_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983485"
+    },
+    {
+      "id": "magicui_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/magicui_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983537"
+    },
+    {
+      "id": "maxkb_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/maxkb_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983607"
+    },
+    {
+      "id": "mcp_server_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/mcp_server_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983659"
+    },
+    {
+      "id": "migrate_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/migrate_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983712"
+    },
+    {
+      "id": "mobile_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/mobile_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983779"
+    },
+    {
+      "id": "monitor_chief_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/monitor_chief_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983838"
+    },
+    {
+      "id": "mypy_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/mypy_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983892"
+    },
+    {
+      "id": "n8n_mcp_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/n8n_mcp_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.983946"
+    },
+    {
+      "id": "nemoclaw_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/nemoclaw_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984029"
+    },
+    {
+      "id": "newspaper_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/newspaper_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984085"
+    },
+    {
+      "id": "notebooklm_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/notebooklm_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984146"
+    },
+    {
+      "id": "omniclaw_bot",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/omniclaw_bot",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984215"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/omniclaw_bot/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984286"
+    },
+    {
+      "id": "opik_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/opik_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984339"
+    },
+    {
+      "id": "orchestrator_pro",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/orchestrator_pro",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984398"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/orchestrator_pro/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984464"
+    },
+    {
+      "id": "org_architect_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/org_architect_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984518"
+    },
+    {
+      "id": "plotly_js_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/plotly_js_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984571"
+    },
+    {
+      "id": "pmo_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/pmo_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984623"
+    },
+    {
+      "id": "product_manager_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/product_manager_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984683"
+    },
+    {
+      "id": "project_intake_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/project_intake_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984738"
+    },
+    {
+      "id": "prompt_engineer_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/prompt_engineer_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984793"
+    },
+    {
+      "id": "pyright_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/pyright_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984844"
+    },
+    {
+      "id": "qwen_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/qwen_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984902"
+    },
+    {
+      "id": "qwen_code_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/qwen_code_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.984957"
+    },
+    {
+      "id": "react_email_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/react_email_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985013"
+    },
+    {
+      "id": "repo_ingest_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/repo_ingest_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985074"
+    },
+    {
+      "id": "rootly_mcp_server_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/rootly_mcp_server_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985131"
+    },
+    {
+      "id": "scrum_master_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/scrum_master_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985198"
+    },
+    {
+      "id": "security_engineer_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/security_engineer_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985260"
+    },
+    {
+      "id": "prompts",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/security_engineer_agent/prompts",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985336"
+    },
+    {
+      "id": "showdown_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/showdown_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985396"
+    },
+    {
+      "id": "sre_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/sre_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985452"
+    },
+    {
+      "id": "strix_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/strix_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985506"
+    },
+    {
+      "id": "superagi_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/superagi_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985562"
+    },
+    {
+      "id": "superpowers_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/superpowers_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985621"
+    },
+    {
+      "id": "swift_composable_architecture_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/swift_composable_architecture_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985675"
+    },
+    {
+      "id": "taipy_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/taipy_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985729"
+    },
+    {
+      "id": "tantivy_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/tantivy_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985782"
+    },
+    {
+      "id": "telescope_nvim_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/telescope_nvim_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985834"
+    },
+    {
+      "id": "termux_packages_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/termux_packages_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985888"
+    },
+    {
+      "id": "test_integration_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/test_integration_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.985942"
+    },
+    {
+      "id": "test_manager_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/test_manager_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986010"
+    },
+    {
+      "id": "tiktokdownloader_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/tiktokdownloader_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986066"
+    },
+    {
+      "id": "tiktoken_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/tiktoken_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986120"
+    },
+    {
+      "id": "tinyclaw_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/tinyclaw_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986177"
+    },
+    {
+      "id": "triton_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/triton_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986238"
+    },
+    {
+      "id": "trl_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/trl_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986293"
+    },
+    {
+      "id": "ui_ux_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/ui_ux_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986352"
+    },
+    {
+      "id": "tools",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/ui_ux_agent/tools",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986418"
+    },
+    {
+      "id": "videocaptioner_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/videocaptioner_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986473"
+    },
+    {
+      "id": "vue_skills_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/vue_skills_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986527"
+    },
+    {
+      "id": "web_researcher",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/web_researcher",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986584"
+    },
+    {
+      "id": "xsv_agent",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/xsv_agent",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986641"
+    },
+    {
+      "id": "repo_civ_fetched_awesome_openclaw_agents",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/repo_civ_fetched_awesome_openclaw_agents",
+      "owner": "OA",
+      "registered_at": "2026-04-08T14:24:56.594687"
+    },
+    {
+      "id": "repo_civ_fetched_browser",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/repo_civ_fetched_browser",
+      "owner": "OA",
+      "registered_at": "2026-04-08T14:24:56.606933"
+    },
+    {
+      "id": "repo_civ_fetched_docker_swag",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/repo_civ_fetched_docker_swag",
+      "owner": "OA",
+      "registered_at": "2026-04-08T14:24:56.638386"
+    },
+    {
+      "id": "repo_civ_fetched_langchain",
+      "type": "agent",
+      "coord": "ecosystem/workforce/agents/repo_civ_fetched_langchain",
+      "owner": "OA",
+      "registered_at": "2026-04-08T14:24:56.671938"
+    }
+  ]
+}

@@ -1,12 +1,5 @@
 ---
-id: ecosystem-workforce-departments-planning_pmo
-name: Planning Pmo
-path: ecosystem/workforce/departments/planning_pmo
-type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+id: planning_pmo
+type: department
+version: 2.0.0
 ---
-
-# Planning Pmo
-Storage area for 'planning_pmo' domain.
-> Auto-generated identity tag by OMA v2.1.

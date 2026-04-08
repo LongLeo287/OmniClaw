@@ -1,4 +1,4 @@
-﻿# REGISTRY & CAPABILITY MANAGEMENT â€” Department Rules
+﻿# REGISTRY & CAPABILITY MANAGEMENT — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: registry-manager-agent | Reports to: CTO
 # Mission: Too much to sell (Skill/Plugin/Feature) of OmniClaw
@@ -37,35 +37,35 @@ RULE REG-05: DEPRECATION IS GRACEFUL
 
 RULE REG-06: PLUGIN VETTING MANDATORY
   All new plugins in plugins/ directory:
-  â†’ GATE_SECURITY scan (security_grc) FIRST
-  â†’ skill-curator-agent reviews functionality + docs quality
-  â†’ registry-manager-agent approves + logs in plugin-catalog.md
+  → GATE_SECURITY scan (security_grc) FIRST
+  → skill-curator-agent reviews functionality + docs quality
+  → registry-manager-agent approves + logs in plugin-catalog.md
 
 RULE REG-07: TIER DISCIPLINE
   T0/T1 (Core) skills: CTO approval required to add or modify.
   T2 (Enhanced) skills: registry-manager-agent approvals.
   T3 (Domain/Experimental): skill-curator-agent approvals.
-  No promotion from T3â†’T1 without CTO sign-off.
+  No promotion from T3→T1 without CTO sign-off.
 
 RULE REG-08: LLM RULE CREATION REQUIRES REVIEW
   Any new rule file for agents/levels:
-  â†’ rule-builder-agent drafts using standard rule template
-  â†’ Relevant C-Suite reviews (CTO for ENG rules, COO for ops rules, etc.)
-  â†’ No rule file deployed without C-Suite + CEO awareness
+  → rule-builder-agent drafts using standard rule template
+  → Relevant C-Suite reviews (CTO for ENG rules, COO for ops rules, etc.)
+  → No rule file deployed without C-Suite + CEO awareness
 
-RULE REG-09: CIV INTEGRATION â€” REGISTRY OWNS REPO INGESTION
+RULE REG-09: CIV INTEGRATION — REGISTRY OWNS REPO INGESTION
   When Content Intake & Vetting (Dept 20) clears a REPO or PLUGIN:
-  â†’ repo-fetcher-agent (CIV) hands off to registry-manager-agent
-  â†’ Registry receives: repo path from QUARANTINE/vetted/repos/ + CIV receipt
-  â†’ skill-curator-agent reviews for skill/plugin value
-  â†’ CHECK BEFORE ROUTE: Does a matching skill/plugin already exist?
-     YES â†’ file ENRICHMENT REQUEST to training-agent (OD&L) â€” NEVER overwrite directly
+  → repo-fetcher-agent (CIV) hands off to registry-manager-agent
+  → Registry receives: repo path from QUARANTINE/vetted/repos/ + CIV receipt
+  → skill-curator-agent reviews for skill/plugin value
+  → CHECK BEFORE ROUTE: Does a matching skill/plugin already exist?
+     YES → file ENRICHMENT REQUEST to training-agent (OD&L) — NEVER overwrite directly
            training-agent compares, selects delta, applies enrichment (per ENRICHMENT_SOP.md)
-     NO â†’ If convertible to SKILL â†’ skill-creator-agent builds skill package
-         â†’ If plugin â†’ plugin-librarian-agent catalogs in plugin-catalog.md
-  â†’ registry-manager-agent runs skill_loader.ps1 â†’ updates SKILL_REGISTRY.json
+     NO → If convertible to SKILL → skill-creator-agent builds skill package
+         → If plugin → plugin-librarian-agent catalogs in plugin-catalog.md
+  → registry-manager-agent runs skill_loader.ps1 → updates SKILL_REGISTRY.json
 Registry is the FINAL destination for all vetted code from CIV.
-No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CONFLICT RESOLUTION section
+No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md → CONFLICT RESOLUTION section
 
 ---
 
@@ -74,21 +74,21 @@ No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CO
 ### registry-manager-agent (Dept Head)
 **Role:** Skill ecosystem leadership, capability catalog owner
 **Responsibilities:**
-- Own SKILL_REGISTRY.json â€” run skill_loader.ps1 after any change
+- Own SKILL_REGISTRY.json — run skill_loader.ps1 after any change
 - Approve all new skills (Mon/Tues) and plugins entering production
 - Maintain plugin-catalog.md (all active plugins with status)
 - Write Registry daily brief (new skills, deprecated skills, pending reviews)
 - Coordinate with security_grc for GATE_SECURITY on all external sources
 - Report capability inventory to CTO each cycle
 **Must load at boot:**
-- `corp/memory/departments/registry_capability.md` (create on first use)
-- `shared-context/SKILL_REGISTRY.json` â€” current registry
-- `skills/SKILL_SPEC.md` â€” the schema law
-- `corp/departments/registry_capability/MANAGER_PROMPT.md`
+- `brain/knowledge/org/registry_capability.md` (create on first use)
+- `shared-context/SKILL_REGISTRY.json` — current registry
+- `skills/SKILL_SPEC.md` — the schema law
+- `ecosystem/workforce/departments/registry_capability/MANAGER_PROMPT.md`
 **Skills at boot:**
-- `skill_generator` â€” T0, always available
-- `reasoning_engine` â€” approval decisions
-- `context_manager` â€” catalog management
+- `skill_generator` — T0, always available
+- `reasoning_engine` — approval decisions
+- `context_manager` — catalog management
 **Scripts authority:** `scripts/skill_loader.ps1` | `scripts/validate_skills.ps1`
 
 ---
@@ -102,13 +102,13 @@ No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CO
 - Ensure SKILL.md + README.md + schema.json all present
 - Submit to skill-validator-agent before registry entry
 **At start of each skill creation task, load:**
-- SKILL: `skill_generator` â€” MANDATORY. This is the core tool.
-- `skills/SKILL_SPEC.md` â€” schema compliance reference
+- SKILL: `skill_generator` — MANDATORY. This is the core tool.
+- `skills/SKILL_SPEC.md` — schema compliance reference
 - Brief from registry-manager-agent (what capability is needed, tier target)
 **Skills:**
-- `skill_generator` â€” Phase 1-8 pipeline (interview â†’ generate â†’ test â†’ deploy)
-- `reasoning_engine` â€” skill architecture decisions
-- `context_manager` â€” multi-phase creation context
+- `skill_generator` — Phase 1-8 pipeline (interview → generate → test → deploy)
+- `reasoning_engine` — skill architecture decisions
+- `context_manager` — multi-phase creation context
 **Output package must include:**
 - `skills/<skill_id>/SKILL.md` (YAML frontmatter + instructions)
 - `skills/<skill_id>/README.md` (usage guide)
@@ -127,14 +127,14 @@ No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CO
 - Run: `scripts/validate_skills.ps1` on all new internal skills
 - Rate skills: Grade A/B/C and feed back to skill-creator-agent
 **At the start of each review, load:**
-- SKILL: `production_qa` â€” quality assessment
-- SKILL: `diagnostics_engine` â€” logical analysis skill
-- `skills/SKILL_SPEC.md` â€” compliance reference
+- SKILL: `production_qa` — quality assessment
+- SKILL: `diagnostics_engine` — logical analysis skill
+- `skills/SKILL_SPEC.md` — compliance reference
 - Skill package from skill-creator-agent
 **Skills:**
-- `production_qa` â€” quality gate for skill docs
-- `diagnostics_engine` â€” detect logic gaps, missing edge cases
-- `reasoning_engine` â€” evaluate skill design quality
+- `production_qa` — quality gate for skill docs
+- `diagnostics_engine` — detect logic gaps, missing edge cases
+- `reasoning_engine` — evaluate skill design quality
 **Review checklist:**
   - [ ] YAML frontmatter complete and valid
   - [ ] All required files present (SKILL.md + README + schema.json)
@@ -143,7 +143,7 @@ No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CO
 - [ ] Dependencies resolve to existing skills
 - [ ] accessible_by lists valid agent roles
   - [ ] Exposed functions clearly documented
-**Output:** Grade (A/B/C) + specific feedback â†’ skill-creator-agent
+**Output:** Grade (A/B/C) + specific feedback → skill-creator-agent
 
 ---
 
@@ -156,13 +156,13 @@ No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CO
 - Deactivate plugins that fail GATE_SECURITY or have no maintainer
 - Report plugin inventory to registry-manager-agent
 **At the start of each catalog task, load:**
-- SKILL: `knowledge_enricher` â€” catalog search and aggregation
-- SKILL: `context_manager` â€” catalog maintenance
+- SKILL: `knowledge_enricher` — catalog search and aggregation
+- SKILL: `context_manager` — catalog maintenance
 - `shared-context/plugin-catalog.md`
 - `plugins/` directory listing
 **Skills:**
-- `knowledge_enricher` â€” research plugin, catalog query
-- `context_manager` â€” multi-plugin context
+- `knowledge_enricher` — research plugin, catalog query
+- `context_manager` — multi-plugin context
 **Plugin catalog entry format:**
 ```
 | Plugins | Version | Status | Owner | Last Security Scan | Score |
@@ -175,19 +175,19 @@ No-Overwrite Policy: see brain/corp/sops/VALUE_ASSESSMENT_ROUTING.md â†’ CO
 **Responsibilities:**
 - Draft new rule files when departments need them (using template from brain/corp/rules/)
 - Update existing rules when policies change (C-Suite instruction)
-- Ensure rules don't conflict with each other (check ceo_rules â†’ worker_rules chain)
+- Ensure rules don't conflict with each other (check ceo_rules → worker_rules chain)
 - Maintain rules index: RULES_INDEX.md (what rule files exist and where)
 **At the start of each rule building task, load:**
-- SKILL: `reasoning_engine` â€” rule logic design
-- `corp/rules/ceo_rules.md` â€” top-level constraints (nothing lower can contradict)
-- `corp/rules/worker_rules.md` â€” baseline worker constraints
+- SKILL: `reasoning_engine` — rule logic design
+- `corp/rules/ceo_rules.md` — top-level constraints (nothing lower can contradict)
+- `corp/rules/worker_rules.md` — baseline worker constraints
 - Brief from requesting department or C-Suite (what behavior to encode)
 **Skills:**
-- `reasoning_engine` â€” rule logic, conflict detection
-- `context_manager` â€” multi-rule consistency checking
+- `reasoning_engine` — rule logic, conflict detection
+- `context_manager` — multi-rule consistency checking
 **Rule template (every new rule file follows this):**
 ```markdown
-# <DEPT/LEVEL> â€” Rules
+# <DEPT/LEVEL> — Rules
 # Version: 1.0 | Updated: <date>
 # Authority: <who owns this rule set>
 # Applies in addition to: <parent rules>

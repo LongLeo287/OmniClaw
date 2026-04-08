@@ -37,7 +37,7 @@ DEFAULT_DEST_MAP = {
     "skill":        abs_path(PATHS.SKILLS),
     "plugin":       abs_path(PATHS.PLUGINS),
     "workflow":     abs_path(PATHS.WORKFLOWS),
-    "agent":        abs_path(PATHS.WORKFORCE),
+    "agent":        abs_path(PATHS.WORKFORCE, "agents"),
     "knowledge":    abs_path(PATHS.KNOWLEDGE),
     "report":       abs_path(PATHS.KNOWLEDGE, "architecture"),
     "api":          abs_path(PATHS.KNOWLEDGE, "api"),
@@ -63,7 +63,13 @@ def parse_frontmatter(content: str) -> dict:
 def normalize_id(name: str) -> str:
     """Normalize a repository name to a standard ID format to prevent duplication."""
     if not name: return ""
+    import re
     n = str(name).lower()
+    for prefix in ['repo-fetched-', 'repo_fetched_', 'repo_civ_fetched_', 'civ_fetched_', 'fetched_', 'repo_']:
+        if n.startswith(prefix):
+            n = n[len(prefix):]
+    n = re.sub(r'[-_]\d{6}([-_]\d{6})?$', '', n)
+    n = re.sub(r'_\d+$', '', n)
     for suffix in [".git", "-main", "-master", ".main", ".master"]:
         if n.endswith(suffix):
             n = n[:-len(suffix)]
@@ -92,7 +98,10 @@ def is_ghost_repo(folder_path: str) -> bool:
             
             # Exclude structural/identity/knowledge files from the "source code" weight
             if file.endswith(valid_extensions) and file not in ("manifest.json", "_DIR_IDENTITY.md", "SKILL.md", "PLUGIN.md", "README.md", "DEEP_KNOWLEDGE.md", "KNOWLEDGE_TUNNEL.aaak"):
-                code_size += os.path.getsize(os.path.join(root, file))
+                try:
+                    code_size += os.path.getsize(os.path.join(root, file))
+                except FileNotFoundError:
+                    pass
     
     # If it has DEEP_KNOWLEDGE.md, it is an OA decapitated knowledge crystal, NEVER a ghost repo.
     if os.path.exists(os.path.join(folder_path, "DEEP_KNOWLEDGE.md")):
@@ -123,27 +132,32 @@ def update_dir_identity(folder: str, file_entry: dict):
 
 
 def update_fast_index(entry: dict):
-    """Write additional information to FAST_INDEX.json."""
-    if os.path.exists(FAST_INDEX_PATH):
+    """Write additional information to FAST_INDEX.json shards."""
+    indices_dir = abs_path(PATHS.INDICES_DIR)
+    os.makedirs(indices_dir, exist_ok=True)
+    asset_type = entry.get("type", "unknown").upper()
+    shard_path = os.path.join(indices_dir, f"FAST_{asset_type}_INDEX.json")
+    
+    index_data = {"registry": []}
+    if os.path.exists(shard_path):
         try:
-            with open(FAST_INDEX_PATH, "r", encoding="utf-8") as f:
-                index = json.load(f)
-                # If FAST_INDEX is the new dict structure from rebuild scripts, skip manual append
-                if isinstance(index, dict):
-                    return
+            with open(shard_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    index_data["registry"] = data
+                else:
+                    index_data = data
         except Exception:
-            index = []
-    else:
-        index = []
+            pass
 
-    # Avoid duplication
-    if isinstance(index, list):
-            if entry.get("id") not in existing_ids:
-                index.append(entry)
-                try:
-                    with open(FAST_INDEX_PATH, "w", encoding="utf-8") as f:
-                        json.dump(index, f, indent=2, ensure_ascii=False)
-                except Exception: pass
+    existing_ids = [e.get("id") for e in index_data.get("registry", [])]
+    if entry.get("id") not in existing_ids:
+        index_data["registry"].append(entry)
+        try:
+            with open(shard_path, "w", encoding="utf-8") as f:
+                json.dump(index_data, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            print(f"\033[93m[WARN]\033[0m [OER] Cannot write to Shard {shard_path}: {e}")
 
 def update_skill_registry(meta: dict, dest_path: str):
     """

@@ -1,0 +1,108 @@
+# This workflow is used to manage the dependencies of the Taipy packages.
+# - Runs every 2 weeks on Sundays.
+# - For each Python version supported:
+#   - Call a custom script to align dependencies between Taipy packages.
+#   - Call a custom script to update dependencies (Pipfile and requirements.txt).
+#   - If a new package version is available for the Python version:
+#     - The Python version's Pull Request (PR) is created.
+#       - If the Python version is the latest supported, the PR contains an updated Pipfile and requirements.txt.
+#       - Otherwise, the PR contains the updated Pipfile.
+#     - The action triggers tests workflow to test compatibility and link the workflow to the PR in the description.
+name: Dependencies management
+
+on:
+  schedule:
+    # Run every 2 weeks on Sunday at midday UTC
+    - cron: 00 12 */14 * 0
+
+  workflow_dispatch:
+
+jobs:
+  latest-versions:
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+        os: [ubuntu-latest]
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{matrix.python-version}}
+
+      - name: Check if the latest version supported is up to date.
+        id: ensure-dependencies-are-up-to-date
+        working-directory: tools/packages
+        run: |
+          # Ensure dependencies are aligned between Taipy packages
+          pip install -r requirements.txt
+          python check-dependencies.py ensure-same-version
+
+          # Try to update the Pipfile.
+          # Any new packages available are printed to stdout.
+          # If nothing is printed, the Pipfile is up to date and workflow can stop.
+          echo 'diff<<EOF' >> "$GITHUB_OUTPUT"
+          bash check-dependencies.sh pipfiles/Pipfile${{matrix.python-version}}.max >> "$GITHUB_OUTPUT"
+          echo EOF >> "$GITHUB_OUTPUT"
+          cat pipfiles/Pipfile${{matrix.python-version}}.max
+
+      - name: Create the pull request updating the dependencies (3.12 only)
+        if: steps.ensure-dependencies-are-up-to-date.outputs.diff != '' && matrix.python-version == '3.12'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update Python${{matrix.python-version}} dependencies
+          branch: dependencies/update-python${{matrix.python-version}}
+          base: develop
+          title: 'New dependencies available for Python${{matrix.python-version}}'
+          body: |
+            ${{ steps.ensure-dependencies-are-up-to-date.outputs.diff }}
+          draft: false
+          add-paths: |
+            tools/packages/pipfiles/Pipfile${{matrix.python-version}}.max
+            tools/packages/taipy*/*requirements.txt
+
+      - name: Create the pull request updating the Pipfile max
+        if: steps.ensure-dependencies-are-up-to-date.outputs.diff != '' && matrix.python-version != '3.12'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update Python${{matrix.python-version}} Pipfile
+          branch: dependencies/update-python${{matrix.python-version}}
+          base: develop
+          title: 'New Pipfile available for Python${{matrix.python-version}}'
+          body: |
+            ${{ steps.ensure-dependencies-are-up-to-date.outputs.diff }}
+          draft: false
+          add-paths: |
+            tools/packages/pipfiles/Pipfile${{matrix.python-version}}.max
+
+      # PRs created with the GITHUB_TOKEN don't trigger workflows.
+      # This action triggers the overall-tests.yml workflow on the PR
+      # to allow the tests to run on the new dependencies.
+      - name: Run tests on PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.TRIGGER_GITHUB_PR }}
+          script: |
+            const runTests = require('.github/scripts/run-workflow.js')
+            const linkTests = require('.github/scripts/link-workflow-to-pr.js')
+
+            // Branch to target with the workflow run.
+            const branchTargeted = "dependencies/update-python${{matrix.python-version}}";
+            // The current pull request number to link the workflow run.
+            const pullRequestNumber = process.env.PULL_REQUEST_NUMBER;
+            // The workflow file to trigger.
+            const workflowToTrigger = 'overall-tests.yml';
+            const waitForWorkflowCreation = 120000; // 2 minutes
+
+            // Run the tests.
+            await runTests({github, context, branchTargeted, workflowToTrigger});
+            // Wait for the workflow to be created.
+            await new Promise(r => setTimeout(r, waitForWorkflowCreation));
+            // Link the workflow to the PR.
+            await linkTests({github, context, branchTargeted, pullRequestNumber});

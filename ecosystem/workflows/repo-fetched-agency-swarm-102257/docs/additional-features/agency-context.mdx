@@ -1,0 +1,281 @@
+---
+title: "Agency Context"
+description: "Sharing data and state across tools and agents using agency context."
+icon: "database"
+---
+
+`Agency Context` is a centralized data store accessible by all tools and agents within an agency. It allows you to share data between agents, control execution flow, and maintain state across tool calls without passing large data structures in messages.
+
+<Note>
+Agency context is available when tools are deployed together with agents. If tools are deployed as separate APIs, they won't share the same context, and you'll need to implement your own state management solution.
+</Note>
+
+## Understanding Agency Context
+
+Agency context is particularly useful when your agents interact with multiple tools that need to exchange information. Here's why:
+
+- **Without Agency Context**: Suppose `Tool A` collects data that `Tool B` needs. The agent must explicitly pass this data as a parameter to `Tool B`, consuming tokens and potentially hitting message limits.
+
+![Without Agency Context](/images/shared-state-without.png)
+
+- **With Agency Context**: `Tool A` can store the required data in the agency context, and `Tool B` can retrieve it without needing direct parameter passing. This approach reduces complexity, saves tokens, and enables additional workflows.
+
+![With Agency Context](/images/shared-state-with.png)
+
+## Using Agency Context
+
+The agency context is accessible in both FunctionTools and BaseTools using `.get` and `.set`, which let you access and modify the MasterContext passed during execution.
+
+Below is an example of how it can be used across tools.
+In this example, calling the Query Database tool stores database context, which is later retrieved by the Answer Question tool.
+
+<Tabs>
+
+<Tab title="BaseTool">
+
+  For BaseTools, access the agency context using `self.context`.
+
+    ```python
+    from agency_swarm.tools import BaseTool
+    from pydantic import Field
+
+    class QueryDatabase(BaseTool):
+        """
+        Retrieves data from the database and stores it in the agency context.
+        """
+        question: str = Field(..., description="The query to execute.")
+
+        async def run(self):
+            # Fetch data based on the question
+            context = query_database_api(self.question)
+
+            # Store the context in the agency context
+            assert self.context is not None
+            self.context.set('database_context', context)
+            self.context.set('last_query', self.question)
+
+            return "Database context has been retrieved and stored successfully."
+
+    class AnswerQuestion(BaseTool):
+        """
+        Provides answers based on the context stored in the agency context.
+        """
+        async def run(self):
+            # Access the stored context
+            assert self.context is not None
+            context = self.context.get('database_context')
+
+            if not context:
+                return "Database context is missing. Please call the query_database tool first."
+
+            # Generate an answer using the context
+            answer = f"Answer derived from context: {context}"
+            return answer
+    ```
+</Tab>
+
+<Tab title="Function Tool">
+    For FunctionTools, access the context using the following methods:
+    - **Setting** a value: `ctx.context.set('key', value)`
+    - **Getting** a value: `ctx.context.get('key', default_value)`
+    ```python
+    from agency_swarm import MasterContext, RunContextWrapper, function_tool
+
+    @function_tool
+    async def query_database(ctx: RunContextWrapper[MasterContext], question: str) -> str:
+        """
+        Retrieves data from the database and stores it in the agency context.
+        """
+        # Fetch data based on the question
+        context = query_database_api(question)
+
+        # Store the context in the agency context
+        ctx.context.set('database_context', context)
+        ctx.context.set('last_query', question)
+
+        return "Database context has been retrieved and stored successfully."
+
+    @function_tool
+    async def answer_question(ctx: RunContextWrapper[MasterContext]) -> str:
+        """
+        Provides answers based on the context stored in the agency context.
+        """
+        # Access the stored context
+        context = ctx.context.get('database_context')
+        if not context:
+            return "Database context is missing. Please call the query_database tool first."
+
+        # Generate an answer using the context
+        answer = f"Answer derived from context: {context}"
+        return answer
+    ```
+</Tab>
+</Tabs>
+
+## Advanced Agency Context Patterns
+
+### Complex Data Structures
+Agency context can store any Python object, making it perfect for complex workflows:
+
+```python
+@function_tool
+async def analyze_market_data(ctx: RunContextWrapper[MasterContext], symbols: str) -> str:
+    """Analyzes multiple stocks and stores data."""
+    symbol_list = symbols.split(',')
+
+    market_analysis = {
+        'timestamp': datetime.now().isoformat(),
+        'symbols': {},
+        'summary': {},
+        'analyst': ctx.context.current_agent_name
+    }
+
+    for symbol in symbol_list:
+        # Simulate market data fetch
+        market_analysis['symbols'][symbol] = {
+            'price': 150.0,
+            'volume': 1000000,
+            'trend': 'bullish'
+        }
+
+    # Store in agency context
+    ctx.context.set('market_analysis', market_analysis)
+    ctx.context.set('analysis_complete', True)
+
+    return f"Market analysis complete for {len(symbol_list)} symbols"
+```
+
+### Workflow Coordination
+Use agency context to coordinate multi-step workflows:
+
+```python
+@function_tool
+async def step_1_data_collection(ctx: RunContextWrapper[MasterContext], params: str) -> str:
+    """First step in a multi-step workflow."""
+    # Perform step 1
+    result = collect_data(params)
+
+    # Store progress in agency context
+    ctx.context.set('workflow_step_1', result)
+    ctx.context.set('workflow_status', 'step_1_complete')
+
+    return "Step 1 complete. Ready for step 2."
+
+@function_tool
+async def step_2_data_processing(ctx: RunContextWrapper[MasterContext]) -> str:
+    """Second step that depends on first step."""
+    # Check if step 1 is complete
+    if ctx.context.get('workflow_status') != 'step_1_complete':
+        return "Error: Step 1 must be completed first"
+
+    # Get data from step 1
+    step_1_data = ctx.context.get('workflow_step_1')
+
+    # Process the data
+    result = process_data(step_1_data)
+
+    # Update progress
+    ctx.context.set('workflow_step_2', result)
+    ctx.context.set('workflow_status', 'step_2_complete')
+
+    return "Step 2 complete. Workflow finished."
+```
+
+### Session Management
+Agency context is perfect for maintaining session state:
+
+```python
+# Initialize agency with session context
+agency = Agency(
+    entry_agent,
+    communication_flows=[(entry_agent, worker_agent)],
+    user_context={
+        'session_id': 'user_123',
+        'user_preferences': {
+            'language': 'en',
+            'timezone': 'UTC',
+            'risk_tolerance': 'moderate'
+        },
+        'session_start': datetime.now().isoformat()
+    }
+)
+```
+
+## Best Practices
+
+### Use Descriptive Keys
+Use clear, descriptive keys to avoid conflicts between different agents and workflows:
+
+```python
+# Good: Descriptive keys
+ctx.context.set('user_portfolio_analysis_2024', data)
+ctx.context.set('market_data_AAPL_realtime', market_data)
+
+# Avoid: Generic keys that might conflict
+ctx.context.set('data', data)
+ctx.context.set('result', result)
+```
+
+### Provide Default Values
+Always provide sensible defaults when retrieving data:
+
+```python
+# Good: Provides default
+user_prefs = ctx.context.get('user_preferences', {})
+risk_level = ctx.context.get('risk_tolerance', 'moderate')
+
+# Risky: No default, might return None
+risk_level = ctx.context.get('risk_tolerance')
+```
+
+### Clean Up Unneeded Data
+For long-running sessions, clean up temporary data to avoid memory issues:
+
+```python
+@function_tool
+async def cleanup_temporary_data(ctx: RunContextWrapper[MasterContext]) -> str:
+    """Cleans up temporary analysis data."""
+    temp_keys = ['temp_calculation_1', 'temp_calculation_2', 'scratch_data']
+
+    for key in temp_keys:
+        if key in ctx.context.user_context:
+            del ctx.context.user_context[key]
+
+    return "Temporary data cleaned up successfully"
+```
+
+## Migrating tools
+
+If you're migrating from Agency Swarm v0.x, and want to use new FunctionTool instead of BaseTool, here's how you can do that:
+
+**BaseTool Pattern:**
+```python
+class MyTool(BaseTool):
+    async def run(self):
+        assert self.context is not None
+        self.context.set("key", "value")
+        data = self.context.get("key", "default")
+        return "Done"
+```
+
+**FunctionTool Pattern:**
+```python
+@function_tool
+async def my_tool(ctx: RunContextWrapper[MasterContext], param: str) -> str:
+    """Updated tool using agency context."""
+    ctx.context.set("key", "value")
+    data = ctx.context.get("key", "default")
+    return "Done"
+```
+
+## Example: Complete Workflow
+
+For a full example showing agency context in action, see the [Agency Context Workflow Example](https://github.com/VRSEN/agency-swarm/blob/main/examples/agency_context.py) which demonstrates:
+
+- Multi-step data collection and analysis
+- Cross-agent data sharing
+- Session management
+- Workflow coordination
+- Context monitoring and debugging
+
+Agency context eliminates the need for complex parameter passing and enables multi-agent workflows while maintaining clean separation of concerns.

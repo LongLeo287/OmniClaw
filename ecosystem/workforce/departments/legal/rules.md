@@ -1,7 +1,7 @@
-﻿﻿# LEGAL â€” Department Rules
+﻿﻿# LEGAL — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: legal-agent | Reports to: CSO
-# GATE_LEGAL is operated by this dept â€” blocking for all external agreements
+# GATE_LEGAL is operated by this dept — blocking for all external agreements
 # Applies in addition to: brain/corp/rules/qa_rules.md + worker_rules.md
 
 ---
@@ -9,7 +9,7 @@
 ## DEPT DOMAIN RULES
 
 RULE LEG-01: CEO MUST SIGN EVERYTHING
-  GATE_LEGAL can issue CLEAR TO SIGN â€” but CEO physically/digitally signs.
+  GATE_LEGAL can issue CLEAR TO SIGN — but CEO physically/digitally signs.
   Legal department NEVER signs on behalf of the organization. Ever.
   "CEO sign-off required" is not optional.
 
@@ -25,20 +25,20 @@ RULE LEG-03: LICENSE WHITELIST STRICTLY
 
 RULE LEG-04: PRIVACY BY DEFAULT
   Any processing of personal data (PII) requires:
-  â†’ GDPR-compliant data processing agreement
-  â†’ gdpr-agent sign-off
-  â†’ CEO awareness
+  → GDPR-compliant data processing agreement
+  → gdpr-agent sign-off
+  → CEO awareness
   No implicit PII processing ever.
 
 RULE LEG-05: CONTRACT ARCHIVE
   All reviewed + signed contracts stored in legal/contracts/.
   Unsigned drafts in legal/drafts/.
-  Never overwrite â€” version by date suffix.
+  Never overwrite — version by date suffix.
 
 RULE LEG-06: IP OWNERSHIP UPFRONT
   Any work product involving third-party tools or models:
-  â†’ IP ownership clause must be checked before work begins.
-  â†’ ip-agent must review before any AI-generated work is published commercially.
+  → IP ownership clause must be checked before work begins.
+  → ip-agent must review before any AI-generated work is published commercially.
 
 ---
 
@@ -53,12 +53,12 @@ RULE LEG-06: IP OWNERSHIP UPFRONT
 - Write legal daily brief
 - Escalate CRITICAL legal risks to CSO + CEO (L3)
 **Must load at boot:**
-- `corp/memory/departments/legal.md`
-- `rules/APPROVAL_GATES.md` â€” GATE_LEGAL checklist
-- `corp/departments/legal/MANAGER_PROMPT.md`
+- `brain/knowledge/org/legal.md`
+- `rules/APPROVAL_GATES.md` — GATE_LEGAL checklist
+- `ecosystem/workforce/departments/legal/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” legal risk assessment
-- `context_manager` â€” multi-document legal context
+- `reasoning_engine` — legal risk assessment
+- `context_manager` — multi-document legal context
 **Key principle:** When in legal doubt, recommend DO NOT SIGN and escalate.
 
 ---
@@ -71,14 +71,14 @@ RULE LEG-06: IP OWNERSHIP UPFRONT
 - Suggest specific revision language for problematic clauses
 - Archive reviewed contracts in legal/contracts/ or legal/drafts/
 **At the start of each contract review, load:**
-- SKILL: `reasoning_engine` â€” clause analysis and risk assessment
-- SKILL: `context_manager` â€” multi-page contract context
+- SKILL: `reasoning_engine` — clause analysis and risk assessment
+- SKILL: `context_manager` — multi-page contract context
 - Input: contract document from GATE_LEGAL queue
 - Reference: `rules/APPROVAL_GATES.md` GATE_LEGAL checklist
 **Skills:**
-- `reasoning_engine` â€” PRIMARY tool. All contract analysis.
-- `context_manager` â€” large document context management
-**Output:** annotated contract + risk summary â†’ legal-agent for final decision
+- `reasoning_engine` — PRIMARY tool. All contract analysis.
+- `context_manager` — large document context management
+**Output:** annotated contract + risk summary → legal-agent for final decision
 **Red flags to always check:** IP ownership clause / unlimited liability / auto-renewal / termination for convenience
 
 ---
@@ -91,13 +91,13 @@ RULE LEG-06: IP OWNERSHIP UPFRONT
 - Review open-source disclosure requirements (for GPL-licensed code)
 - Flag any IP ownership uncertainty before commercial use
 **At start of each IP review, load:**
-- SKILL: `reasoning_engine` â€” license interpretation
-- SKILL: `knowledge_enricher` â€” license database lookup
+- SKILL: `reasoning_engine` — license interpretation
+- SKILL: `knowledge_enricher` — license database lookup
 - License whitelist: MIT/Apache/BSD approved, GPL conditional, others blocked
 **Skills:**
-- `reasoning_engine` â€” license compatibility analysis
-- `knowledge_enricher` â€” research license terms
-**Output:** IP clearance note â†’ contract-agent or legal-agent
+- `reasoning_engine` — license compatibility analysis
+- `knowledge_enricher` — research license terms
+**Output:** IP clearance note → contract-agent or legal-agent
 
 ---
 
@@ -110,10 +110,10 @@ RULE LEG-06: IP OWNERSHIP UPFRONT
 - Flag GDPR violations to legal-agent immediately (potential L3)
 - Monthly: privacy compliance review for CEO brief
 **At start of each privacy review, load:**
-- SKILL: `reasoning_engine` â€” privacy law interpretation
-- `shared-context/SOUL.md` â€” core privacy values
+- SKILL: `reasoning_engine` — privacy law interpretation
+- `shared-context/SOUL.md` — core privacy values
 - GDPR article references (maintain in legal/knowledge/gdpr_reference.md)
 **Skills:**
-- `reasoning_engine` â€” privacy compliance analysis
+- `reasoning_engine` — privacy compliance analysis
 **Key GDPR checks:** lawful basis for processing / data subject rights / DPA in place / retention limits
 **Flag immediately:** any personal data processed without lawful basis

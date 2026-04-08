@@ -1,0 +1,379 @@
+# Copyright 2021-2025 Avaiga Private Limited
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+# the License. You may obtain a copy of the License at
+#
+#        http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+# an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+# specific language governing permissions and limitations under the License.
+
+import inspect
+import typing as t
+from abc import ABCMeta, abstractmethod
+from contextlib import nullcontext
+from operator import attrgetter
+from pathlib import Path
+from types import FrameType, SimpleNamespace
+
+from .utils import _get_module_name_from_frame, _is_in_notebook  # pyright: ignore[reportPrivateUsage]
+from .utils._attributes import _attrsetter
+
+if t.TYPE_CHECKING:
+    from .gui import Gui
+
+
+class State(SimpleNamespace, metaclass=ABCMeta):
+    """Accessor to the bound variables from callbacks.
+
+    `State` is used when you need to access the value of variables
+    bound to visual elements (see [Binding](../../../../../userman/gui/binding.md)).<br/>
+    Because each browser connected to the application server may represent and
+    modify any variable at any moment as the result of user interaction, each
+    connection holds its own set of variables along with their values. We call
+    the set of these the application variables the application _state_, as seen
+    by a given client.
+
+    Each callback (see [Callbacks](../../../../../userman/gui/callbacks.md)) receives a specific
+    instance of the `State` class, where you can find all the variables bound to
+    visual elements in your application.
+
+    Note that `State` also is a Python Context Manager: In situations where you
+    have several variables to update, it is more clear and more efficient to assign
+    the variable values in a `with` construct:
+    ```py
+    def my_callback(state, ...):
+      ...
+      with state as s:
+        s.var1 = value1
+        s.var2 = value2
+      ...
+    ```
+
+    You cannot set a variable in the context of a lambda function because Python
+    prevents any use of the assignment operator.<br/>
+    You can, however, use the `assign()` method on the state that the lambda function
+    receives, so you can work around this limitation:
+
+    Here is how you could define a button that changes the value of a variable
+    directly in a page expressed using Markdown:
+    ```
+       <|Set variable|button|on_action={lambda s: s.assign("var_name", new_value)}|>
+    ```
+    This would be strictly similar to the Markdown line:
+    ```
+       <|Set variable|button|on_action=change_variable|>
+    ```
+    with the Python code:
+    ```py
+    def change_variable(state):
+        state.var_name = new_value
+    ```
+    """
+
+    def __init__(self) -> None:
+        self._gui: "Gui"
+
+    @abstractmethod
+    def get_gui(self) -> "Gui":
+        """Return the Gui instance for this state object.
+
+        Returns:
+            Gui: The Gui instance for this state object.
+        """
+        ...
+
+    def assign(self, name: t.Optional[str] = None, value: t.Optional[t.Any] = ..., **kwargs: t.Any) -> t.Any:
+        """Assign a value to a state variable.
+
+        This could be used to assign a variable when using a lambda function as a callback in a visual element.<br/>
+        For example, the following element is a button that increments the value of the variable called "var_name":
+        ```
+           <|Increment|button|on_action={lambda state: state.assign("var_name", state.var_name + 1)}|>
+        ```
+
+        Arguments:
+            name (str): The variable name to assign to.
+            value (Any): The new variable value.
+            kwargs: The variable names and values to assign to, as keyword arguments.<br/>
+                    For example, `state.assign(a=1, b=None)` would assign 1 to variable "a" and
+                    None to variable "b".
+
+        Returns:
+            Any: The previous value of the variable. If there are several variables,
+                a list of the previous values is returned in the same order as the variables in the arguments.
+        """
+        ret = []
+        if name is not None:
+            if value is ...:
+                raise ValueError("Value must be provided when name is provided.")
+            val = attrgetter(name)(self)
+            _attrsetter(self, name, value)
+            ret.append(val)
+        if kwargs:
+            with self:
+                for k, v in kwargs.items():
+                    val = attrgetter(k)(self)
+                    _attrsetter(self, k, v)
+                    ret.append(val)
+        if not ret:
+            raise ValueError("At least one variable must be provided to assign.")
+        if len(ret) == 1:
+            return ret[0]
+        return ret
+
+    def refresh(self, name: str):
+        """Refresh a state variable.
+
+        This allows to re-sync the user interface with a variable value.
+
+        Arguments:
+            name (str): The variable name to refresh.
+        """
+        val = attrgetter(name)(self)
+        _attrsetter(self, name, val)
+
+    @abstractmethod
+    def broadcast(self, name: str, value: t.Any):
+        """Update a variable on all clients.
+
+        All connected clients will receive an update of the variable called *name* with the
+        provided value, even if it is not shared.
+
+        Arguments:
+            name (str): The variable name to update.
+            value (Any): The new variable value.
+        """
+        ...
+
+    def __enter__(self):
+        self._gui.__enter__()
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        return self._gui.__exit__(exc_type, exc_value, traceback)
+
+    def set_favicon(self, favicon_path: t.Union[str, Path]):
+        """Change the favicon for the client of this state.
+
+        This function dynamically changes the favicon (the icon associated with the application's
+        pages) of Taipy GUI pages for the specific client of this state.
+
+        Note that the *favicon* parameter to `(Gui.)run()^` can also be used to change
+        the favicon when the application starts.
+
+        Arguments:
+            favicon_path: The path to the image file to use.<br/>
+                This can be expressed as a path name or a URL (relative or not).
+        """
+        self._gui.set_favicon(favicon_path, self)
+
+    @abstractmethod
+    def __getitem__(self, key: str) -> "State": ...
+
+    @abstractmethod
+    def _invoke_on_gui(self, method: t.Callable, *args: t.Any) -> t.Any: ...
+
+    @abstractmethod
+    def patch(
+        self,
+        name: str,
+        change: t.Optional[t.Dict[t.Union[str, int], t.Any]] = None,
+        remove: t.Optional[t.Dict[t.Union[str, int], t.Any]] = None,
+    ):
+        """Patch a variable on a client.
+
+        The connected client will receive an update of the variable called *name* with the
+        provided change and/or remove description.
+
+        Arguments:
+            name (str): The variable name to update.
+            change (dict, optional): A dictionary describing the changes to apply to the variable.
+                Defaults to None.
+            remove (dict, optional): A dictionary describing the elements to remove from the variable.
+                Defaults to None.
+
+        TODO: Add examples here.
+        state.patch("data", change={"y": "anything"}) # change the y value of the data dict
+        state.patch("data", change={"a": {"b": "anything"}}) # change the a.b value of the data dict
+        state.patch("data", change={"y": {4: "something"}}) # change the 4th index of the y list
+        state.patch("data", change={"y": {4: ["something", "else"]}}) # change the 4th and 5th indices of the y list
+        state.patch("data", change={"y": {4: [{"b": "patch object in list", "c": "else"}]}})
+            # patch the 4th and 5th indices of the y list which is a list of objects
+        state.patch("data", remove={"y": None}) # remove the y value of the data dict
+        state.patch("data", change={"a": {-1: [1,2]}}) # insert 2 elements at index 0 of list
+        state.patch("data", change={"a": {-10: [1,2]}})
+            # insert 2 elements at index 9 of list or append if len(list) < 9
+        state.patch("data", change={"a": {1000: [1,2]}}) # append 2 elements at the end of list if 1000 > len(list)
+
+        Not supported yet:
+        patch dataframe on the back end (the data is patched on the front end)
+        patch sorted data in a table (the wrong data will be patched if the table is sorted)
+        """
+        ...
+
+
+class _GuiState(State):
+    __gui_attr = "_gui"
+    __attrs = (
+        __gui_attr,
+        "_user_var_list",
+        "_context_list",
+    )
+    __methods = (
+        "assign",
+        "broadcast",
+        "get_gui",
+        "patch",
+        "refresh",
+        "set_favicon",
+        "_set_context",
+        "_notebook_context",
+        "_get_placeholder",
+        "_set_placeholder",
+        "_get_gui_attr",
+        "_get_placeholder_attrs",
+        "_add_attribute",
+        "_invoke_on_gui",
+    )
+    __placeholder_attrs = ("_taipy_p1", "_current_context", "__state_id")
+    __excluded_attrs = __attrs + __methods + __placeholder_attrs
+
+    def __init__(self, gui: "Gui", var_list: t.Iterable[str], context_list: t.Iterable[str]) -> None:
+        super().__setattr__(
+            _GuiState.__attrs[1], list(_GuiState.__filter_var_list(var_list, _GuiState.__excluded_attrs))
+        )
+        super().__setattr__(_GuiState.__attrs[2], list(context_list))
+        super().__setattr__(_GuiState.__attrs[0], gui)
+        super().__init__()
+
+    @staticmethod
+    def __filter_var_list(var_list: t.Iterable[str], excluded_attrs: t.Iterable[str]) -> t.Iterable[str]:
+        return filter(lambda n: n not in excluded_attrs, var_list)
+
+    def get_gui(self) -> "Gui":
+        return super().__getattribute__(_GuiState.__gui_attr)
+
+    def broadcast(self, name: str, value: t.Any):
+        with self._set_context(self._gui):
+            encoded_name = self._gui._bind_var(name)  # type: ignore[attr-defined]
+            self._gui._broadcast_all_clients(encoded_name, value)  # type: ignore[attr-defined]
+
+    def patch(
+        self, name: str, change: t.Optional[dict[t.Any, t.Any]] = None, remove: t.Optional[dict[t.Any, t.Any]] = None
+    ):
+        with self._set_context(self._gui):
+            self._gui._patch_variable(name, change, remove, getattr(self, name, None))  # type: ignore[attr-defined]
+
+    def __getattribute__(self, name: str) -> t.Any:
+        if name == "__class__":
+            return _GuiState
+        if name in _GuiState.__methods:
+            return super().__getattribute__(name)
+        gui: "Gui" = self.get_gui()
+        if name == _GuiState.__gui_attr:
+            return gui
+        if name in _GuiState.__excluded_attrs:
+            raise AttributeError(f"Variable '{name}' is protected and is not accessible.")
+        if gui._is_in_brdcst_callback() and (  # type: ignore[attr-defined]
+            name not in gui._get_shared_variables() and not gui._bindings()._is_single_client()  # type: ignore[attr-defined]
+        ):
+            raise AttributeError(f"Variable '{name}' is not available to be accessed in shared callback.")
+        if not name.startswith("__") and name not in super().__getattribute__(_GuiState.__attrs[1]):
+            raise AttributeError(f"Variable '{name}' is not defined.")
+        with self._notebook_context(gui), self._set_context(gui):
+            encoded_name = gui._bind_var(name)  # type: ignore[attr-defined]
+            return getattr(gui._bindings(), encoded_name)  # type: ignore[attr-defined]
+
+    def __setattr__(self, name: str, value: t.Any) -> None:
+        gui: "Gui" = super().__getattribute__(_GuiState.__gui_attr)
+        if gui._is_in_brdcst_callback() and (  # type: ignore[attr-defined]
+            name not in gui._get_shared_variables() and not gui._bindings()._is_single_client()  # type: ignore[attr-defined]
+        ):
+            raise AttributeError(f"Variable '{name}' is not available to be accessed in shared callback.")
+        if not name.startswith("__") and name not in super().__getattribute__(_GuiState.__attrs[1]):
+            raise AttributeError(f"Variable '{name}' is not accessible.")
+        with self._notebook_context(gui), self._set_context(gui):
+            encoded_name = gui._bind_var(name)  # type: ignore[attr-defined]
+            setattr(gui._bindings(), encoded_name, value)  # type: ignore[attr-defined]
+
+    def __getitem__(self, key: str):
+        context = key if key in super().__getattribute__(_GuiState.__attrs[2]) else None
+        if context is None:
+            gui: "Gui" = super().__getattribute__(_GuiState.__gui_attr)
+            page_ctx = gui._get_page_context(key)  # type: ignore[attr-defined]
+            context = page_ctx if page_ctx is not None else None
+        if context is None:
+            raise RuntimeError(f"Can't resolve context '{key}' from state object")
+        self._set_placeholder(_GuiState.__placeholder_attrs[1], context)
+        return self
+
+    def _set_context(self, gui: "Gui") -> t.ContextManager[None]:
+        if (pl_ctx := self._get_placeholder(_GuiState.__placeholder_attrs[1])) is not None:
+            self._set_placeholder(_GuiState.__placeholder_attrs[1], None)
+            if pl_ctx != gui._get_locals_context():  # type: ignore[attr-defined]
+                return gui._set_locals_context(pl_ctx)  # type: ignore[attr-defined]
+        if len(inspect.stack()) > 1:
+            ctx = _get_module_name_from_frame(t.cast(FrameType, t.cast(FrameType, inspect.stack()[2].frame)))
+            current_context = gui._get_locals_context()  # type: ignore[attr-defined]
+            # ignore context if the current one starts with the new one (to resolve for class modules)
+            if ctx != current_context and not current_context.startswith(str(ctx)):
+                return gui._set_locals_context(ctx)  # type: ignore[attr-defined]
+        return nullcontext()
+
+    def _notebook_context(self, gui: "Gui"):
+        return gui.get_app_context() if not gui._server.has_server_context() and _is_in_notebook() else nullcontext()  # type: ignore[attr-defined]
+
+    def _get_placeholder(self, name: str):
+        if name in _GuiState.__placeholder_attrs:
+            try:
+                return super().__getattribute__(name)
+            except AttributeError:
+                return None
+        return None
+
+    def _set_placeholder(self, name: str, value: t.Any):
+        if name in _GuiState.__placeholder_attrs:
+            super().__setattr__(name, value)
+
+    def _get_placeholder_attrs(self):
+        return _GuiState.__placeholder_attrs
+
+    def _add_attribute(self, name: str, default_value: t.Optional[t.Any] = None) -> bool:
+        attrs: t.List[str] = super().__getattribute__(_GuiState.__attrs[1])
+        if name not in attrs:
+            attrs.append(name)
+            gui = super().__getattribute__(_GuiState.__gui_attr)
+            return gui._bind_var_val(name, default_value)
+        return False
+
+    def _invoke_on_gui(self, method: t.Callable, *args):
+        return method(self.get_gui(), *args)
+
+
+class _AsyncState(_GuiState):
+    def __init__(self, state: State) -> None:
+        super().__init__(state.get_gui(), [], [])
+        self._set_placeholder("__state_id", state.get_gui()._get_client_id())  # type: ignore[attr-defined]
+
+    @staticmethod
+    def __set_var_in_state(state: State, var_name: str, value: t.Any):
+        setattr(state, var_name, value)
+
+    @staticmethod
+    def __get_var_from_state(state: State, var_name: str):
+        return getattr(state, var_name)
+
+    def __setattr__(self, var_name: str, var_value: t.Any) -> None:
+        self.get_gui().invoke_callback(
+            t.cast(str, self._get_placeholder("__state_id")), _AsyncState.__set_var_in_state, [var_name, var_value]
+        )
+
+    def __getattr__(self, var_name: str) -> t.Any:
+        return self.get_gui().invoke_callback(
+            t.cast(str, self._get_placeholder("__state_id")), _AsyncState.__get_var_from_state, [var_name]
+        )
+
+    def _invoke_on_gui(self, method: t.Callable, *args):
+        return self.get_gui()._invoke_method(t.cast(str, self._get_placeholder("__state_id")), method, *args)  # type: ignore[reportAttributeAccessIssue]

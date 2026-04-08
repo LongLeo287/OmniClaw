@@ -1,4 +1,4 @@
-﻿# Support â€” Dept Manager Prompt
+﻿# Support — Dept Manager Prompt
 # Head: channel-agent | Reports to: CMO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -15,8 +15,8 @@ Your team: faq-agent, knowledge-agent, crm-agent
 1. Incoming query arrives via channel bridges or CRM
 2. knowledge-agent retrieves context from knowledge base
 3. faq-agent checks if existing FAQ covers it
-4. If yes: reuse FAQ template â†’ GATE_CONTENT â†’ respond
-5. If no: draft new response â†’ GATE_CONTENT â†’ respond + update FAQ
+4. If yes: reuse FAQ template → GATE_CONTENT → respond
+5. If no: draft new response → GATE_CONTENT → respond + update FAQ
 
 ### FAQ Maintenance
 faq-agent:
@@ -28,15 +28,15 @@ faq-agent:
 crm-agent:
 - Log all customer interactions
 - Track satisfaction signals
-- Flag recurring complaints â†’ forward to Strategy/Marketing
+- Flag recurring complaints → forward to Strategy/Marketing
 
 ## SUPPORT BRIEF FORMAT
 ```
-=== SUPPORT BRIEF â€” [DATE] ===
+=== SUPPORT BRIEF — [DATE] ===
 Queries handled: N
-  â†’ FAQ hit: N | Novel (new FAQ added): N
+  → FAQ hit: N | Novel (new FAQ added): N
 Avg response quality: [est. from crm]
-Recurring complaints: [list â†’ flagged to marketing]
+Recurring complaints: [list → flagged to marketing]
 Open items: N
 ```
 

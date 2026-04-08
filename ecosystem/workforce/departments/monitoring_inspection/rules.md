@@ -1,8 +1,8 @@
-﻿# MONITORING & INSPECTION â€” Department Rules
+﻿# MONITORING & INSPECTION — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: monitor-chief-agent | Reports to: COO
 # Mission: Improve the integrity of 20 departments, processes, compliance, and ensure compliance
-# This dept OBSERVES and REPORTS â€” it does not execute or fix (except emergency response)
+# This dept OBSERVES and REPORTS — it does not execute or fix (except emergency response)
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
 
 ---
@@ -12,7 +12,7 @@
 RULE MON-01: MONITOR EVERYTHING, FIX NOTHING (EXCEPT EMERGENCY)
   Monitoring dept observes and reports.
   Fixes are done by the owning department.
-  Exception: CRITICAL security events â€” strix-agent has autonomous fix authority.
+  Exception: CRITICAL security events — strix-agent has autonomous fix authority.
   All other fixes go through proper department ownership.
 
 RULE MON-02: REAL-TIME ALERTS, NOT BATCH REPORTS
@@ -23,7 +23,7 @@ RULE MON-02: REAL-TIME ALERTS, NOT BATCH REPORTS
 RULE MON-03: COMPLIANCE CHECKS ARE CONTINUOUS
   compliance-inspector-agent runs checks every corp cycle.
   No dept is exempt from compliance inspection.
-  Non-compliance finding â†’ dept head notified immediately + logged.
+  Non-compliance finding → dept head notified immediately + logged.
 
 RULE MON-04: ALL ALERTS ARE DOCUMENTED
   Every alert must be logged in telemetry/monitoring/alerts.md:
@@ -57,13 +57,13 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 - Write Monitoring daily brief
 - Escalate CRITICAL findings immediately (no waiting)
 **Must load at boot:**
-- `corp/memory/departments/monitoring_inspection.md`
-- `telemetry/monitoring/alerts.md` â€” recent alert log
-- `corp/departments/monitoring_inspection/MANAGER_PROMPT.md`
+- `brain/knowledge/org/monitoring_inspection.md`
+- `telemetry/monitoring/alerts.md` — recent alert log
+- `ecosystem/workforce/departments/monitoring_inspection/MANAGER_PROMPT.md`
 **Skills:**
-- `diagnostics_engine` â€” ALWAYS. System-wide diagnostic view.
-- `reasoning_engine` â€” anomaly interpretation
-- `cognitive_reflector` â€” cross-dept pattern detection
+- `diagnostics_engine` — ALWAYS. System-wide diagnostic view.
+- `reasoning_engine` — anomaly interpretation
+- `cognitive_reflector` — cross-dept pattern detection
 
 ---
 
@@ -75,17 +75,17 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 - Verify GATE compliance: every code pushes through GATE_QA, every content through GATE_CONTENT
 - Alert on process drift (dept consistently skipping a step)
 **At start of each monitoring cycle, load:**
-- SKILL: `diagnostics_engine` â€” process health scanning
-- SKILL: `reasoning_engine` â€” SLA calculation, drift detection
+- SKILL: `diagnostics_engine` — process health scanning
+- SKILL: `reasoning_engine` — SLA calculation, drift detection
 - All dept task queues + telemetry/receipts/
-- `rules/APPROVAL_GATES.md` â€” gate requirements
+- `rules/APPROVAL_GATES.md` — gate requirements
 **Skills:**
-- `diagnostics_engine` â€” process anomaly detection
-- `reasoning_engine` â€” SLA breach calculation
+- `diagnostics_engine` — process anomaly detection
+- `reasoning_engine` — SLA breach calculation
 **Key checks:**
-- Tasks stuck >1 cycle â†’ WARN alert
-  - Gate skipped (output without gate receipt) â†’ CRITICAL alert
-  - Missing receipt for completed task â†’ WARN alert
+- Tasks stuck >1 cycle → WARN alert
+  - Gate skipped (output without gate receipt) → CRITICAL alert
+  - Missing receipt for completed task → WARN alert
 
 ---
 
@@ -97,13 +97,13 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 - Verify rule ESCALATION thresholds are being honorable (agent escalates when required?)
 - Flag non-compliance to dept head + monitor-chief-agent
 **At the start of each inspection cycle, load:**
-- SKILL: `reasoning_engine` â€” compliance evaluation
-- SKILL: `knowledge_enricher` â€” read all dept rules.md for comparison
+- SKILL: `reasoning_engine` — compliance evaluation
+- SKILL: `knowledge_enricher` — read all dept rules.md for comparison
 - All 20 dept daily_briefs (this cycle)
 - All dept rules.md files
 **Skills:**
-- `reasoning_engine` â€” compliance gap analysis
-- `knowledge_enricher` â€” cross-reference rules
+- `reasoning_engine` — compliance gap analysis
+- `knowledge_enricher` — cross-reference rules
 **Sample compliance checks:**
   - Does daily brief contain ALL required sections? (per MANAGER_PROMPT format)
   - Does escalation appear when KPI threshold is breached? (per department rules)
@@ -120,14 +120,14 @@ RULE MON-06: WEEKLY INSPECTION REPORT TO CEO
 - Alert finance dept if cost spike detected (>2x normal for any dept)
 - Alert IT Infra if infrastructure metrics degrade
 **At start of each monitoring cycle, load:**
-- SKILL: `diagnostics_engine` â€” technical performance metrics
-- SKILL: `resilience_engine` â€” detect and classify degradation
+- SKILL: `diagnostics_engine` — technical performance metrics
+- SKILL: `resilience_engine` — detect and classify degradation
 - telemetry/ directory for recent performance data
 **Skills:**
-- `diagnostics_engine` â€” performance measurement and anomaly detection
-- `resilience_engine` â€” degradation classification and severity
+- `diagnostics_engine` — performance measurement and anomaly detection
+- `resilience_engine` — degradation classification and severity
 **Escalation triggers:**
-  - LLM error rate >5% â†’ L2 to CTO
-  - API latency >3x normal â†’ L2 to IT Infra
-  - Cost spike >2x â†’ alert Finance immediately
-  - Memory corruption detected â†’ L3 to CEO + security_grc
+  - LLM error rate >5% → L2 to CTO
+  - API latency >3x normal → L2 to IT Infra
+  - Cost spike >2x → alert Finance immediately
+  - Memory corruption detected → L3 to CEO + security_grc

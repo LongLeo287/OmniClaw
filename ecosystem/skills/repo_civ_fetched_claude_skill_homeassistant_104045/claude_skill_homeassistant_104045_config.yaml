@@ -1,0 +1,20 @@
+version: '3'
+services:
+  homeassistant:
+    image: homeassistant/home-assistant:latest
+    container_name: homeassistant
+    ports:
+      - "8123:8123"
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+  llm_integration:
+    image: omniclaw/llm-integration:latest
+    container_name: llm_integration
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./config:/config
+    environment:
+      - HOMEASSISTANT_URL=http://homeassistant:8123
+      - LLM_API_KEY=YOUR_LLM_API_KEY_HERE

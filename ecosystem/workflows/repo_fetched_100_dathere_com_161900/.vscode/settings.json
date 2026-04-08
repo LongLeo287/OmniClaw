@@ -1,0 +1,19 @@
+{
+    "emeraldwalk.runonsave": {
+        "shell": "/bin/bash",
+        "commands": [
+            {
+                "match": ".md$",
+                "cmd": "source .venv/bin/activate && jb clean . && jb build ."
+            },
+            {
+                "match": ".yml$",
+                "cmd": "source .venv/bin/activate && jb clean . && jb build ."
+            },
+            {
+                "match": ".ipynb$",
+                "cmd": "source .venv/bin/activate && jb clean . && jb build ."
+            }
+        ]
+    }
+}

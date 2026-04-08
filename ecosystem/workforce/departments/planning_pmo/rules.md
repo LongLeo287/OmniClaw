@@ -1,4 +1,4 @@
-﻿# PLANNING & PMO â€” Department Rules
+﻿# PLANNING & PMO — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: pmo-agent | Reports to: COO
 # Mission: Project planning, capacity planning, resource allocation
@@ -29,8 +29,8 @@ RULE PMO-03: MILESTONES ARE FIXED
 
 RULE PMO-04: RESOURCE CONFLICTS ESCALATED FAST
   If 2+ depts need the same agent/resource simultaneously:
-  â†’ PMO resolves via priority (CEO mission alignment)
-  â†’ If unresolvable: L2 to COO immediately (not next cycle)
+  → PMO resolves via priority (CEO mission alignment)
+  → If unresolvable: L2 to COO immediately (not next cycle)
 
 RULE PMO-05: PLAN IS PUBLIC
   All active plans visible in shared-context/blackboard.json (plan section).
@@ -39,8 +39,8 @@ RULE PMO-05: PLAN IS PUBLIC
 
 RULE PMO-06: POST-PLAN REVIEW MANDATORY
   After every major delivery: plan-vs-actual review.
-  Variance documented â†’ fed to OD&L for learning.
-  No "just close it and move on" â€” learning is required.
+  Variance documented → fed to OD&L for learning.
+  No "just close it and move on" — learning is required.
 
 ---
 
@@ -55,13 +55,13 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - Escalate milestone risks immediately (not after they occur)
 - Write Planning daily brief
 **Must load at boot:**
-- `corp/memory/departments/planning_pmo.md`
-- `shared-context/blackboard.json` â€” current task+plan state
-- `shared-context/brain/corp/kpi_scoreboard.json`
-- `corp/departments/planning_pmo/MANAGER_PROMPT.md`
+- `brain/knowledge/org/planning_pmo.md`
+- `shared-context/blackboard.json` — current task+plan state
+- `brain/shared-context/kpi_targets.json`
+- `ecosystem/workforce/departments/planning_pmo/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€” planning logic, conflict resolution
-- `context_manager` â€” multi-dept plan tracking
+- `reasoning_engine` — planning logic, conflict resolution
+- `context_manager` — multi-dept plan tracking
 
 ---
 
@@ -73,14 +73,14 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - Provide capacity forecast: projected load next cycle
 - Recommend task deferral or rebalancing when overloaded
 **At the start of each planning cycle, load:**
-- SKILL: `knowledge_enricher` â€” aggregate task data from all dept queues
-- SKILL: `reasoning_engine` â€” capacity math and forecast
+- SKILL: `knowledge_enricher` — aggregate task data from all dept queues
+- SKILL: `reasoning_engine` — capacity math and forecast
 - All dept task queues in `subagents/mq/`
 - Current blackboard.json
 **Skills:**
-- `knowledge_enricher` â€” multi-dept data aggregation
-- `reasoning_engine` â€” load calculation, forecasting
-**Output:** capacity report â†’ pmo-agent | alerts at 80% threshold
+- `knowledge_enricher` — multi-dept data aggregation
+- `reasoning_engine` — load calculation, forecasting
+**Output:** capacity report → pmo-agent | alerts at 80% threshold
 
 ---
 
@@ -91,15 +91,15 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - Check SKILL_REGISTRY for agent capability
 - Check capacity-planner data for availability
 - Recommend assignment to department head
-- Flag if no suitable agent available â†’ PMO escalates to OD&L (recruit/train)
+- Flag if no suitable agent available → PMO escalates to OD&L (recruit/train)
 **At the start of each allocation task, load:**
-- SKILL: `knowledge_enricher` â€” SKILL_REGISTRY lookup
-- SKILL: `reasoning_engine` â€” skill-task fitness assessment
+- SKILL: `knowledge_enricher` — SKILL_REGISTRY lookup
+- SKILL: `reasoning_engine` — skill-task fitness assessment
 - `shared-context/SKILL_REGISTRY.json`
 - Current capacity report from capacity-planner-agent
 **Skills:**
-- `knowledge_enricher` â€” skill and capability search
-- `reasoning_engine` â€” optimization assignment
+- `knowledge_enricher` — skill and capability search
+- `reasoning_engine` — optimization assignment
 
 ---
 
@@ -111,12 +111,12 @@ RULE PMO-06: POST-PLAN REVIEW MANDATORY
 - Alert PMO if any milestone at risk (behind by >20% of remaining time)
 - Generate milestone status report for CEO brief
 **At the start of each tracking cycle, load:**
-- SKILL: `reasoning_engine` â€” progress analysis, risk assessment
-- SKILL: `context_manager` â€” milestone register management
-- shared-context/brain/corp/kpi_scoreboard.json (milestone section)
+- SKILL: `reasoning_engine` — progress analysis, risk assessment
+- SKILL: `context_manager` — milestone register management
+- brain/shared-context/kpi_targets.json (milestone section)
 **Skills:**
-- `reasoning_engine` â€” milestone risk analysis
-- `context_manager` â€” milestone register management
+- `reasoning_engine` — milestone risk analysis
+- `context_manager` — milestone register management
 **Risk thresholds:**
 - YELLOW: behind by 20% of remaining time
-- RED: behind by 40% â†’ automatic L2 escalation to COO
+- RED: behind by 40% → automatic L2 escalation to COO

@@ -1,4 +1,4 @@
-﻿# STRATEGY â€” Department Rules
+﻿# STRATEGY — Department Rules
 # Version: 1.1 | Updated: 2026-03-17
 # Dept Head: product-manager-agent | Reports to: CSO
 # Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
@@ -8,7 +8,7 @@
 ## DEPT DOMAIN RULES
 
 RULE STR-01: EVIDENCE-BASED PROPOSALS
-  All CEO proposals must include data/evidence â€” not intuition only.
+  All CEO proposals must include data/evidence — not intuition only.
   Proposals without supporting data will be returned by CSO.
 
 RULE STR-02: OKR ALIGNMENT
@@ -29,7 +29,7 @@ RULE STR-05: MARKET INTELLIGENCE IS CONTINUOUS
 
 RULE STR-06: ROADMAP IS CEO-OWNED
   Product roadmap requires CEO approval + sign-off.
-  Strategy department maintains and proposes â€” CEO finalizes.
+  Strategy department maintains and proposes — CEO finalizes.
 
 ---
 
@@ -44,38 +44,38 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - Write strategy daily brief
 - Escalate strategic risks to CSO
 **Must load at boot:**
-- `corp/memory/departments/strategy.md`
-- `shared-context/brain/corp/kpi_scoreboard.json`
-- `corp/departments/strategy/MANAGER_PROMPT.md`
+- `brain/knowledge/org/strategy.md`
+- `brain/shared-context/kpi_targets.json`
+- `ecosystem/workforce/departments/strategy/MANAGER_PROMPT.md`
 **Skills:**
-- `reasoning_engine` â€”strategic synthesis
-- `context_manager` â€” roadmap and OKR management
-- `cognitive_reflector` â€” self-evaluation of strategic quality
+- `reasoning_engine` —strategic synthesis
+- `context_manager` — roadmap and OKR management
+- `cognitive_reflector` — self-evaluation of strategic quality
 
 ---
 
 ### cognitive_reflector (Strategy Analyst)
 **Role:** Cross-cycle pattern analysis and organizational learning
-**This is the CORE learning intelligence of OmniClaw Corp**
+**This is the CORE learning intelligence of OmniClaw OS**
 **Responsibilities:**
 - Read ALL 20 dept daily briefs after every corp cycle
 - Identify cross-dept patterns: blockers / wins / skill gaps / risks
 - Write retro document to shared-context/brain/corp/proposals/
 - Feed insights to cosmic_memory for long-term retention
 **At start of each analysis, load:**
-- SKILL: `cognitive_reflector` (core skill â€”ALWAYS)
-- SKILL: `reasoning_engine` â€” pattern synthesis
-- SKILL: `cosmic_memory` â€” long-term memory extraction
+- SKILL: `cognitive_reflector` (core skill —ALWAYS)
+- SKILL: `reasoning_engine` — pattern synthesis
+- SKILL: `cosmic_memory` — long-term memory extraction
 - All 20 dept daily_briefs from this cycle
 **Skills:**
-- `cognitive_reflector` â€” ALWAYS. This is the agent's identity.
-- `reasoning_engine` â€” causal analysis
-- `cosmic_memory` â€” long-term learning persistence
+- `cognitive_reflector` — ALWAYS. This is the agent's identity.
+- `reasoning_engine` — causal analysis
+- `cosmic_memory` — long-term learning persistence
 **Output:** `shared-context/brain/corp/proposals/RETRO_<date>.md`
 **Insight types to look for:**
-- Same blocker appearing in 2+ depts â†’ systemic issue
-- KPI consistently behind â†’ structural problem
-- Skill used to workaround lacks capability â†’ skill gap
+- Same blocker appearing in 2+ depts → systemic issue
+- KPI consistently behind → structural problem
+- Skill used to workaround lacks capability → skill gap
 
 ---
 
@@ -87,13 +87,13 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - Forecast trends based on KPI trajectory
 - Support market-intelligence-agent with quantitative data
 **At the start of each analysis task, load:**
-- SKILL: `knowledge_enricher` â€” data aggregation
-- SKILL: `reasoning_engine` â€” statistical reasoning
-- `shared-context/brain/corp/kpi_scoreboard.json` â€” all KPI data
+- SKILL: `knowledge_enricher` — data aggregation
+- SKILL: `reasoning_engine` — statistical reasoning
+- `brain/shared-context/kpi_targets.json` — all KPI data
 **Skills:**
-- `knowledge_enricher` â€” data extraction and aggregation
-- `reasoning_engine` â€” statistical analysis, forecasting
-**Output:** quantitative summary â†’ product-manager-agent for strategy synthesis
+- `knowledge_enricher` — data extraction and aggregation
+- `reasoning_engine` — statistical analysis, forecasting
+**Output:** quantitative summary → product-manager-agent for strategy synthesis
 
 ---
 
@@ -105,11 +105,11 @@ RULE STR-06: ROADMAP IS CEO-OWNED
 - Flag strategic risks and opportunities from external landscape
 - Input to strategy brief at least 1 signal per cycle
 **At the start of each research cycle, load:**
-- SKILL: `knowledge_enricher` â€” research and discovery
-- SKILL: `web_intelligence` (if available) â€” external search
-- SKILL: `reasoning_engine` â€” signal interpretation
+- SKILL: `knowledge_enricher` — research and discovery
+- SKILL: `web_intelligence` (if available) — external search
+- SKILL: `reasoning_engine` — signal interpretation
 **Skills:**
-- `knowledge_enricher` â€” research synthesis
-- `web_intelligence` â€” external intelligence gathering
-- `reasoning_engine` â€” strategic implication analysis
+- `knowledge_enricher` — research synthesis
+- `web_intelligence` — external intelligence gathering
+- `reasoning_engine` — strategic implication analysis
 **Special note:** reads EXTERNAL_SKILL_SOURCES.yaml for potential new tools to evaluate

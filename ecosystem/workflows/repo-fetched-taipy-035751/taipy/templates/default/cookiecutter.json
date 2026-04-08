@@ -1,0 +1,17 @@
+{
+    "Application root folder": "taipy_application",
+    "Application main Python file": "main.py",
+    "Application title": "Taipy Application",
+    "With multi-pages?\n\tEnter the page names separated by a space": "",
+    "With scenario management?": "No",
+    "With a Rest API?": "No",
+    "With a new Git repository?": "No",
+
+    "__root_folder": "{{ cookiecutter['Application root folder'] | replace(' ','-') }}",
+    "__main_file": "{{ cookiecutter['Application main Python file'][:-3] if cookiecutter['Application main Python file'].endswith('.py') else cookiecutter['Application main Python file'] }}",
+    "__application_title": "{{ cookiecutter['Application title'] }}",
+    "__pages": "{{ cookiecutter['With multi-pages?\n\tEnter the page names separated by a space'] }}",
+    "__orchestrator": "{{ cookiecutter['With scenario management?'] }}",
+    "__rest": "{{ cookiecutter['With a Rest API?'] }}",
+    "__git": "{{ cookiecutter['With a new Git repository?']}}"
+}

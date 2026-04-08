@@ -1,7 +1,7 @@
-﻿# QA & TESTING â€” Department Rules
+﻿# QA & TESTING — Department Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Dept Head: security-engineer-agent | Reports to: CTO
-# This department IS a gate â€” it does not go through QA itself
+# This department IS a gate — it does not go through QA itself
 # Applies in addition to: brain/corp/rules/qa_rules.md
 
 ---
@@ -31,18 +31,18 @@ RULE QA-D-04: NEUTRAL GATE
   QA verdict is final at dept level. Override = CEO only.
 
 RULE QA-D-05: PROACTIVE TEST WRITING
-  QA dept writes tests proactively â€” not just reviews them reactively.
+  QA dept writes tests proactively — not just reviews them reactively.
   Minimum: integration tests for all major API endpoints.
   test-manager-agent maintains the test suite.
 
 RULE QA-D-06: COVERAGE TRACKING
   Track test coverage per module in qa_testing daily brief.
-  Coverage falling below 70% in any module â†’ L2 to CTO.
+  Coverage falling below 70% in any module → L2 to CTO.
 
 RULE QA-D-07: SECURITY OVERLAP
   QA catches security issues in code (no hardcoded secrets, input validation).
   GATE_SECURITY (security_grc) catches plugin/repo level threats.
-  Both must pass â€” they are complementary, not redundant.
+  Both must pass — they are complementary, not redundant.
 
 ---
 
@@ -56,14 +56,14 @@ RULE QA-D-07: SECURITY OVERLAP
 - Write QA daily brief
 - Escalate failed items or patterns to CTO
 **Must load at boot:**
-- `corp/memory/departments/qa_testing.md`
+- `brain/knowledge/org/qa_testing.md`
 - `corp/prompts/QA_PROMPT.md`
 - `rules/APPROVAL_GATES.md` (GATE_QA section)
-- `corp/departments/qa_testing/MANAGER_PROMPT.md`
+- `ecosystem/workforce/departments/qa_testing/MANAGER_PROMPT.md`
 **Skills:**
-- `diagnostics_engine` â€” root cause in failed code
-- `reasoning_engine` â€” QA decision-making
-- `shell_assistant` â€” run test suites locally
+- `diagnostics_engine` — root cause in failed code
+- `reasoning_engine` — QA decision-making
+- `shell_assistant` — run test suites locally
 
 ---
 
@@ -75,13 +75,13 @@ RULE QA-D-07: SECURITY OVERLAP
 - Write QA receipts for every reviewed item
 - Return actionable FAIL feedback to engineering workers
 **At the start of every review, load:**
-- SKILL: `diagnostics_engine` â€” code analysis
+- SKILL: `diagnostics_engine` — code analysis
 - Input: code artifact + test results from engineering worker
 - Reference: `rules/APPROVAL_GATES.md` GATE_QA checklist
 **Skills:**
-- `diagnostics_engine` â€” code pattern detection
-- `shell_assistant` â€” run `npm test`, `pytest`, `go test`
-- `reasoning_engine` â€” evaluate architectural patterns
+- `diagnostics_engine` — code pattern detection
+- `shell_assistant` — run `npm test`, `pytest`, `go test`
+- `reasoning_engine` — evaluate architectural patterns
 **Output:**
 - QA receipt: `telemetry/qa_receipts/gate_qa/<T-ID>.json`
 - Decision: PASS / FAIL / CONDITIONAL
@@ -97,11 +97,11 @@ RULE QA-D-07: SECURITY OVERLAP
 - Write new integration tests proactively
 - Track and report coverage metrics in daily brief
 **At the start of each task, load:**
-- SKILL: `shell_assistant` â€” test framework commands
-- SKILL: `reasoning_engine` â€” test design strategy
+- SKILL: `shell_assistant` — test framework commands
+- SKILL: `reasoning_engine` — test design strategy
 - Current coverage report from last CI run
 **Skills:**
-- `shell_assistant` â€” jest, pytest, go test, coverage tools
-- `reasoning_engine` â€” test case design
+- `shell_assistant` — jest, pytest, go test, coverage tools
+- `reasoning_engine` — test case design
 **Output:** test files to `tests/` directory (or per-project convention)
 **Priority order:** integration tests > unit tests > e2e tests

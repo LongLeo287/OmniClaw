@@ -7,13 +7,13 @@ type: system_rule
 registered: true
 ---
 
-# RULE-ARCH-01: THE 5 CORE DAEMONS MATRIX
+# RULE-ARCH-01: THE 6 CORE DAEMONS MATRIX
 
 > [!IMPORTANT]
 > **Authority:** CEO & OmniClaw Academy (OA)
 > **Severity:** ABSOLUTE (All agents and system logic must route through this matrix).
 
-The OmniClaw system (v5.0) operates upon the functional decentralization platform of the **5 Core Daemons**. Any violation of this data routing principle will result in prosecution by OA.
+The OmniClaw system (v5.0) operates upon the functional decentralization platform of the **6 Core Daemons** (including OSF). Any violation of this data routing principle will result in prosecution by OA.
 
 ---
 
@@ -40,7 +40,7 @@ The OmniClaw system (v5.0) operates upon the functional decentralization platfor
 ### 🛂 4. OER (OmniClaw Ecosystem Registrar) - Chief Registrar & Librarian
 * **Role:** Ecosystem Manager & Registrar. The Royal Guard defending the Core Zone.
 * **Mandate:** Acts as the librarian and mends the "brain" map of the entire OmniClaw system. 
-* After OHD successfully processes a file, OER is the sole entity with exclusive rights to register and load that new file/entity into `FAST_INDEX.json` and `SKILL_REGISTRY.json`.
+* After OHD successfully processes a file, OER is the sole entity with exclusive rights to register and load that new file/entity into federated shards via `brain/indices/FAST_{TYPE}_INDEX.json` and `SKILL_REGISTRY.json`.
 * **The Sanctums (Inviolable Zones):** OER is the Sole Keeper of the 3 Absolute Core Zones:
   1. `core/` (Pump engine & Daemons)
   2. `brain/rules/` (Constitutional laws)
@@ -53,26 +53,11 @@ The OmniClaw system (v5.0) operates upon the functional decentralization platfor
 * **Authority:** Any case showing signs of "overstepping authority" or falling outside the understanding of OIW, OMA, OHD, and OER must be escalated to seek the jurisdiction of OA.
 * **Trash Processing (Alchemy):** OA will occasionally dig through system trash (files in quarantine/trash) to distill the essence, analyzing and summarizing knowledge before complete disposal. OA teaches and passes down standard doctrines to the Agents.
 
+### 🛡️ 6. OSF (OmniClaw Sandbox Firewall) - Border Control
+* **Role:** Security Sentinel.
+* **Mandate:** Acts as the impenetrable layer verifying all raw data from OIW against malicious signatures, hardcoded API keys, and vulnerabilities BEFORE deeper components access them.
+
 ---
 
-## 🔄 The 5-Gate Escalation Pipeline
-
-```mermaid
-graph TD
-    %% Workflow
-    Data_Raw((Raw Code)) -->|OIW pulls| Q_IN(System Gate / Quarantine)
-    Q_IN --> OMA{OMA Patrols}
-    
-    OMA -->|Absolutely correct| OER(OER Assigns ID & Registers)
-    OMA -->|Missing ID / Stray| Q_HOSP(Quarantine)
-    
-    Q_HOSP --> OHD{OHD Examines}
-    OHD -->|Injects Tag, Fixes Format| OER
-    OHD -->|Unsalvageable Trash| TRASH((Incinerator))
-    
-    OMA -.->|Detects strange code/Overstep| OA
-    OHD -.->|Complex case| OA
-    OER -.->|Agent violates rule| OA
-    
-    OA((OA - Supreme Court)) -->|Judges| Discipline[Disciplines Agent]
-```
+> [!NOTE]
+> **To view the exact routing pipeline sequence, refer exclusively to `RULE_OAP_PIPELINE.md` (The 6-Gate Golden Pipeline). Do not recreate conflicting routing sequences here.**

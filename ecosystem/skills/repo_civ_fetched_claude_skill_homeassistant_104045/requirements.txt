@@ -1,0 +1,4 @@
+flask==2.1.2
+certifi==2021.10.8
+requests==2.26.0
+homeassistant-api==0.5.0

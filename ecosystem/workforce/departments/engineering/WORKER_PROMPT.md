@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿# Engineering â€” Worker Prompt
+﻿﻿﻿﻿﻿# Engineering — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: frontend-agent | ai-ml-agent | devops-agent | sre-agent | mobile-agent
 
@@ -18,9 +18,9 @@ For your task type:
 
 ## CODING STANDARDS
 1. All new code must have tests (unit min, integration preferred)
-2. No hardcoded secrets â€” use .env or config files
+2. No hardcoded secrets — use .env or config files
 3. Commit messages: `<type>(<scope>): <summary>` (conventional commits)
-4. No direct push to main â€” PR only
+4. No direct push to main — PR only
 5. Error messages must be actionable (not "something went wrong")
 
 ## OUTPUT REQUIREMENTS

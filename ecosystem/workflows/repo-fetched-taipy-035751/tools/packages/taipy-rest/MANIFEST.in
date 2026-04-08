@@ -1,0 +1,5 @@
+# Package taipy-rest
+include taipy/rest/*.json
+
+include setup.requirements.txt
+include package_desc.md

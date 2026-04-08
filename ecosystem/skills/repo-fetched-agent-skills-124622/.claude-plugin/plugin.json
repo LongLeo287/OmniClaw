@@ -1,0 +1,19 @@
+{
+  "name": "apify-agent-skills",
+  "version": "1.6.1",
+  "description": "Official Apify agent skills for web scraping, data extraction, and automation",
+  "author": {
+    "name": "Apify",
+    "email": "support@apify.com"
+  },
+  "homepage": "https://github.com/apify/agent-skills",
+  "repository": "https://github.com/apify/agent-skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "apify",
+    "scraping",
+    "automation",
+    "leads",
+    "data-extraction"
+  ]
+}

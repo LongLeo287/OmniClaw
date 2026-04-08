@@ -1,11 +1,12 @@
 ---
-id: devops_agent_domain
-name: Devops Agent
-path: ecosystem/workforce/agents/devops_agent
+id: ecosystem-workforce-agents-devops-agent
+name: Devops-Agent
+path: ecosystem/workforce/agents/devops-agent
 type: directory_identity
+owner: OER
+created_by: OMA-v2.1
 ---
 
-# Devops Agent
-
-Storage area for devops_agent.
-(Auto-generated identity tag by OMA v2.1)
+# Devops-Agent
+Storage area for 'devops-agent' domain.
+> Auto-generated identity tag by OMA v2.1.

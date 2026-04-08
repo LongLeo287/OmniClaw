@@ -1,4 +1,4 @@
-﻿﻿﻿﻿# HR & People â€” Worker Prompt
+﻿﻿﻿﻿# HR & People — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: recruiter-agent | payroll-agent | onboard-agent | performance-agent
 
@@ -34,7 +34,7 @@ When a new agent is approved by CEO:
 ```
 
 ## PERFORMANCE REVIEW (performance-agent)
-Weekly scan â€” for each active agent check:
+Weekly scan — for each active agent check:
 - Tasks completed vs assigned (completion rate)
 - 2-strike rule violations
 - Knowledge contributions (new KIs added to brain/)

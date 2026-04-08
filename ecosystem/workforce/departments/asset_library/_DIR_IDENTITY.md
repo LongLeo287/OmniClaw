@@ -1,12 +1,5 @@
 ---
-id: ecosystem-workforce-departments-asset_library
-name: Asset Library
-path: ecosystem/workforce/departments/asset_library
-type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+id: asset_library
+type: department
+version: 2.0.0
 ---
-
-# Asset Library
-Storage area for 'asset_library' domain.
-> Auto-generated identity tag by OMA v2.1.

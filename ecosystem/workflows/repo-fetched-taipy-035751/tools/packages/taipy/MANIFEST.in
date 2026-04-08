@@ -1,0 +1,7 @@
+# Package taipy
+include taipy/*.json
+include taipy/gui_core/*.json
+include taipy/gui_core/lib/*.js
+
+include setup.requirements.txt
+include package_desc.md

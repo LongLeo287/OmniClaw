@@ -1,0 +1,848 @@
+/*
+ * Copyright 2021-2025 Avaiga Private Limited
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
+ */
+
+import React, { MouseEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
+import DataSaverOff from "@mui/icons-material/DataSaverOff";
+import DataSaverOn from "@mui/icons-material/DataSaverOn";
+import Download from "@mui/icons-material/Download";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Skeleton from "@mui/material/Skeleton";
+import MuiTable from "@mui/material/Table";
+import TableCell, { TableCellProps } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import Tooltip from "@mui/material/Tooltip";
+import { visuallyHidden } from "@mui/utils";
+import { List, type RowComponentProps, useListRef } from "react-window";
+import { useInfiniteLoader } from "react-window-infinite-loader";
+
+import {
+    createRequestInfiniteTableUpdateAction,
+    createSendActionNameAction,
+    FormatConfig,
+} from "../../context/taipyReducers";
+import { emptyArray } from "../../utils";
+import {
+    useClassNames,
+    useDispatch,
+    useDispatchRequestUpdateOnFirstRender,
+    useDynamicDictProperty,
+    useDynamicProperty,
+    useFormatConfig,
+    useModule,
+} from "../../utils/hooks";
+import TableFilter from "./TableFilter";
+import {
+    addActionColumn,
+    baseBoxSx,
+    ColumnDesc,
+    DEFAULT_SIZE,
+    defaultColumns,
+    DownloadAction,
+    EDIT_COL,
+    EditableCell,
+    FilterDesc,
+    generateHeaderClassName,
+    getClassName,
+    getColumnHeader,
+    getFormatFn,
+    getPageKey,
+    getRowIndex,
+    getSortByIndex,
+    getTooltip,
+    headBoxSx,
+    iconInRowSx,
+    OnCellValidation,
+    OnRowClick,
+    OnRowDeletion,
+    OnRowSelection,
+    Order,
+    paperSx,
+    ROW_CLASS_NAME,
+    RowType,
+    RowValue,
+    tableSx,
+    TaipyTableProps,
+} from "./tableUtils";
+import { getComponentClassName } from "./TaipyStyle";
+import { getCssSize, getSuffixedClassNames, getUpdateVar } from "./utils";
+import { TableBody } from "@mui/material";
+
+interface RowData {
+    colsOrder: string[];
+    columns: Record<string, ColumnDesc>;
+    rows: RowType[];
+    classes: Record<string, string>;
+    tableClassName: string;
+    cellProps: Partial<TableCellProps>[];
+    isItemLoaded: (index: number) => boolean;
+    selection: number[];
+    formatConfig: FormatConfig;
+    onValidation?: OnCellValidation;
+    onDeletion?: OnRowDeletion;
+    onRowSelection?: OnRowSelection;
+    onRowClick?: OnRowClick;
+    rowClassName?: string;
+    nanValue?: string;
+    compRows?: RowType[];
+    useCheckbox?: boolean;
+}
+
+const Row = ({
+    index,
+    style: rowSx,
+    colsOrder,
+    columns,
+    rows,
+    classes,
+    tableClassName,
+    cellProps,
+    isItemLoaded,
+    selection,
+    formatConfig,
+    onValidation,
+    onDeletion,
+    onRowSelection,
+    onRowClick,
+    rowClassName,
+    nanValue,
+    compRows,
+    useCheckbox,
+}: RowComponentProps<RowData>) =>
+    isItemLoaded(index) ? (
+        <TableRow
+            hover
+            tabIndex={-1}
+            key={`row${index}`}
+            component="div"
+            sx={rowSx}
+            className={[classes?.row, getClassName(rows[index], rowClassName)].filter(Boolean).join(" ")}
+            data-index={index}
+            selected={selection.includes(index)}
+            onClick={onRowClick}
+        >
+            {colsOrder.map((col, cIdx) => (
+                <EditableCell
+                    key={`cell${index}${columns[col].dfid}`}
+                    className={getClassName(rows[index], columns[col].className, col)}
+                    tableClassName={tableClassName}
+                    colDesc={columns[col]}
+                    value={rows[index][col]}
+                    formattedVal={getFormatFn(rows[index], columns[col].formatFn, col)}
+                    formatConfig={formatConfig}
+                    rowIndex={index}
+                    onValidation={!columns[col].notEditable ? onValidation : undefined}
+                    onDeletion={onDeletion}
+                    onSelection={onRowSelection}
+                    nanValue={columns[col].nanValue || nanValue}
+                    tableCellProps={cellProps[cIdx]}
+                    tooltip={getTooltip(rows[index], columns[col].tooltip, col)}
+                    comp={compRows && compRows[index] && compRows[index][col]}
+                    useCheckbox={useCheckbox}
+                    component="div"
+                />
+            ))}
+        </TableRow>
+    ) : (
+        <Skeleton sx={rowSx} key={"Skeleton" + index} />
+    );
+
+interface PromiseProps {
+    resolve: () => void;
+    reject: () => void;
+}
+
+interface key2Rows {
+    key: string;
+    promises: Record<number, PromiseProps>;
+}
+
+const getRowHeight = (size = DEFAULT_SIZE) => (size == DEFAULT_SIZE ? 37 : 54);
+const getCellSx = (width: string | number | undefined, size = DEFAULT_SIZE) => ({
+    width: width,
+    height: 22,
+    padding: size == DEFAULT_SIZE ? "7px" : undefined,
+});
+
+const AutoLoadingTable = (props: TaipyTableProps) => {
+    const {
+        id,
+        updateVarName,
+        height = "80vh",
+        width = "100%",
+        updateVars,
+        selected = emptyArray,
+        pageSize = 100,
+        defaultKey = "",
+        onEdit = "",
+        onDelete = "",
+        onAdd = "",
+        onAction = "",
+        size = DEFAULT_SIZE,
+        userData,
+        downloadable = false,
+        compare = false,
+        onCompare = "",
+        useCheckbox = false,
+        sortable = true,
+    } = props;
+    const [rows, setRows] = useState<RowType[]>([]);
+    const [compRows, setCompRows] = useState<RowType[]>([]);
+    const [rowCount, setRowCount] = useState(1000); // need something > 0 to bootstrap the infinite loader
+    const [filteredCount, setFilteredCount] = useState(0);
+    const dispatch = useDispatch();
+    const page = useRef<key2Rows>({ key: defaultKey, promises: {} });
+    const [orderBy, setOrderBy] = useState("");
+    const [order, setOrder] = useState<Order>("asc");
+    const [appliedFilters, setAppliedFilters] = useState<FilterDesc[]>([]);
+    const [aggregates, setAggregates] = useState<string[]>([]);
+    const listRef = useListRef(null);
+    const headerRow = useRef<HTMLTableRowElement>(null);
+    const formatConfig = useFormatConfig();
+    const module = useModule();
+
+    const className = useClassNames(props.libClassName, props.dynamicClassName, props.className);
+    const active = useDynamicProperty(props.active, props.defaultActive, true);
+    const editable = useDynamicProperty(props.editable, props.defaultEditable, false);
+    const hover = useDynamicProperty(props.hoverText, props.defaultHoverText, undefined);
+    const baseColumns = useDynamicDictProperty(props.columns, props.defaultColumns, defaultColumns);
+
+    const refresh = props.data?.__taipy_refresh !== undefined;
+
+    useEffect(() => {
+        if (!refresh && props.data && page.current.key && props.data[page.current.key] !== undefined) {
+            const newValue = props.data[page.current.key];
+            const promise = page.current.promises[newValue.start];
+            setRowCount(newValue.rowcount);
+            setFilteredCount(
+                newValue.fullrowcount && newValue.rowcount != newValue.fullrowcount
+                    ? newValue.fullrowcount - newValue.rowcount
+                    : 0,
+            );
+            const nr = newValue.data as RowType[];
+            if (Array.isArray(nr) && nr.length > newValue.start) {
+                setRows(nr);
+                newValue.comp && setCompRows(newValue.comp as RowType[]);
+                promise && promise.resolve();
+            } else {
+                promise && promise.reject();
+            }
+            delete page.current.promises[newValue.start];
+        }
+    }, [refresh, props.data]);
+
+    useDispatchRequestUpdateOnFirstRender(dispatch, id, module, updateVars);
+
+    const onSort = useCallback(
+        (e: MouseEvent<HTMLElement>) => {
+            const col = e.currentTarget.getAttribute("data-dfid");
+            if (col) {
+                const isAsc = orderBy === col && order === "asc";
+                setOrder(isAsc ? "desc" : "asc");
+                setOrderBy(col);
+                setRows([]);
+                //                Promise.resolve().then(() => listRef.current?.resetloadMoreItemsCache(true)); // So that the state can be changed
+            }
+        },
+        [orderBy, order],
+    );
+
+    useEffect(() => {
+        if (refresh) {
+            setRows([]);
+            //            Promise.resolve().then(() => listRef.current?.resetloadMoreItemsCache(true)); // So that the state can be changed
+        }
+    }, [refresh]);
+
+    const onAggregate = useCallback((e: MouseEvent<HTMLElement>) => {
+        const groupBy = e.currentTarget.getAttribute("data-dfid");
+        if (groupBy) {
+            setAggregates((ags) => {
+                const nags = ags.filter((ag) => ag !== groupBy);
+                if (ags.length == nags.length) {
+                    nags.push(groupBy);
+                }
+                return nags;
+            });
+        }
+        e.stopPropagation();
+    }, []);
+
+    const [
+        colsOrder,
+        columns,
+        cellClassNames,
+        tooltips,
+        formats,
+        handleNan,
+        filter,
+        partialEditable,
+        calcWidth,
+        nbColHeaders,
+        headersInfo,
+    ] = useMemo(() => {
+        let hNan = !!props.nanValue;
+        let nbColHeaders = 1;
+        if (baseColumns) {
+            try {
+                let filter = false;
+                let partialEditable = editable;
+                const newCols: Record<string, ColumnDesc> = {};
+                Object.entries(baseColumns).forEach(([cId, cDesc]) => {
+                    const nDesc = (newCols[cId] = { ...cDesc });
+                    if (typeof nDesc.filter != "boolean") {
+                        nDesc.filter = !!props.filter;
+                    }
+                    filter = filter || nDesc.filter;
+                    if (typeof nDesc.notEditable == "boolean") {
+                        partialEditable = partialEditable || !nDesc.notEditable;
+                    } else {
+                        nDesc.notEditable = !editable;
+                    }
+                    if (nDesc.tooltip === undefined) {
+                        nDesc.tooltip = props.tooltip;
+                    }
+                    if (nDesc.multi !== undefined) {
+                        nDesc.sortable = false;
+                    } else if (typeof nDesc.sortable != "boolean") {
+                        nDesc.sortable = sortable;
+                    }
+                    nbColHeaders = Math.max(nbColHeaders, nDesc.headers?.length || 0);
+                });
+                addActionColumn(
+                    (active && partialEditable && (onAdd || onDelete) ? 1 : 0) +
+                        (active && filter ? 1 : 0) +
+                        (active && downloadable ? 1 : 0),
+                    newCols,
+                );
+                const colsOrder = Object.keys(newCols).sort(getSortByIndex(newCols));
+                const headersInfo = [];
+                if (nbColHeaders > 1) {
+                    for (let i = 0; i < nbColHeaders; i++) {
+                        const headers = colsOrder.map((col, idx) => {
+                            const header = getColumnHeader(newCols, col, i);
+                            return idx > 0 && header === getColumnHeader(newCols, colsOrder[idx - 1], i)
+                                ? undefined
+                                : header;
+                        });
+                        const colSpans = headers.map((header, idx) => {
+                            if (header === undefined) {
+                                return 0;
+                            }
+                            const nh = headers.slice(idx + 1);
+                            const nb = nh.findIndex((h) => h !== undefined);
+                            return nb == -1 ? nh.length + 1 : nb + 1;
+                        });
+                        headersInfo.push({ headers, colSpans });
+                    }
+                }
+                let nbWidth = 0;
+                const styTt = colsOrder.reduce<Record<string, Record<string, string>>>((pv, col) => {
+                    if (newCols[col].className) {
+                        pv.classNames = pv.classNames || {};
+                        pv.classNames[newCols[col].dfid] = newCols[col].className as string;
+                    }
+                    hNan = hNan || !!newCols[col].nanValue;
+                    if (newCols[col].tooltip) {
+                        pv.tooltips = pv.tooltips || {};
+                        pv.tooltips[newCols[col].dfid] = newCols[col].tooltip as string;
+                    }
+                    if (newCols[col].formatFn) {
+                        pv.formats = pv.formats || {};
+                        pv.formats[newCols[col].dfid] = newCols[col].formatFn;
+                    }
+                    if (newCols[col].width !== undefined) {
+                        const cssWidth = getCssSize(newCols[col].width);
+                        if (cssWidth) {
+                            newCols[col].width = cssWidth;
+                            nbWidth++;
+                        }
+                    }
+                    return pv;
+                }, {});
+                nbWidth = nbWidth ? colsOrder.length - nbWidth : 0;
+                if (props.rowClassName) {
+                    styTt.classNames = styTt.classNames || {};
+                    styTt.classNames[ROW_CLASS_NAME] = props.rowClassName;
+                }
+                return [
+                    colsOrder,
+                    newCols,
+                    styTt.classNames,
+                    styTt.tooltips,
+                    styTt.formats,
+                    hNan,
+                    filter,
+                    partialEditable,
+                    nbWidth > 0 ? `${100 / nbWidth}%` : undefined,
+                    nbColHeaders,
+                    headersInfo,
+                ];
+            } catch (e) {
+                console.info("ATable.columns: ", e);
+            }
+        }
+        return [
+            [],
+            {} as Record<string, ColumnDesc>,
+            {} as Record<string, string>,
+            {} as Record<string, string>,
+            {} as Record<string, string>,
+            hNan,
+            false,
+            false,
+            "",
+            1,
+            [],
+        ];
+    }, [
+        active,
+        editable,
+        onAdd,
+        onDelete,
+        baseColumns,
+        props.rowClassName,
+        props.tooltip,
+        props.nanValue,
+        props.filter,
+        downloadable,
+        sortable,
+    ]);
+
+    const boxBodySx = useMemo(() => ({ height: height, display: "flex" }), [height]);
+
+    useEffect(() => {
+        selected.length && listRef.current?.scrollToRow({ index: selected[0] });
+    }, [selected, listRef]);
+
+    useEffect(() => {
+        if (headerRow.current) {
+            Array.from(headerRow.current.cells).forEach((cell, idx) => {
+                columns[colsOrder[idx]].widthHint = cell.offsetWidth;
+            });
+        }
+    }, [columns, colsOrder]);
+
+    const loadMoreItems = useCallback(
+        (startIndex: number, stopIndex: number) => {
+            if (page.current.promises[startIndex]) {
+                page.current.promises[startIndex].reject();
+            }
+            return new Promise<void>((resolve, reject) => {
+                const cols = colsOrder.map((col) => columns[col].dfid).filter((c) => c != EDIT_COL);
+                const afs = appliedFilters.filter((fd) => Object.values(columns).some((cd) => cd.dfid === fd.col));
+                const key = getPageKey(
+                    columns,
+                    "Infinite",
+                    cols,
+                    orderBy,
+                    order,
+                    afs,
+                    aggregates,
+                    cellClassNames,
+                    tooltips,
+                    formats,
+                );
+                page.current = {
+                    key: key,
+                    promises: { ...page.current.promises, [startIndex]: { resolve: resolve, reject: reject } },
+                };
+                const applies = aggregates.length
+                    ? colsOrder.reduce<Record<string, unknown>>((pv, col) => {
+                          if (columns[col].apply) {
+                              pv[columns[col].dfid] = columns[col].apply;
+                          }
+                          return pv;
+                      }, {})
+                    : undefined;
+                dispatch(
+                    createRequestInfiniteTableUpdateAction(
+                        updateVarName,
+                        id,
+                        module,
+                        cols,
+                        key,
+                        startIndex,
+                        stopIndex,
+                        orderBy,
+                        order,
+                        aggregates,
+                        applies,
+                        cellClassNames,
+                        tooltips,
+                        formats,
+                        handleNan,
+                        afs,
+                        compare ? onCompare : undefined,
+                        updateVars && getUpdateVar(updateVars, "comparedatas"),
+                        typeof userData == "object"
+                            ? (userData as Record<string, Record<string, unknown>>).context
+                            : undefined,
+                    ),
+                );
+            });
+        },
+        [
+            aggregates,
+            cellClassNames,
+            tooltips,
+            formats,
+            updateVarName,
+            updateVars,
+            orderBy,
+            order,
+            id,
+            colsOrder,
+            columns,
+            handleNan,
+            appliedFilters,
+            compare,
+            onCompare,
+            dispatch,
+            module,
+            userData,
+        ],
+    );
+
+    const onAddRowClick = useCallback(
+        () =>
+            dispatch(
+                createSendActionNameAction(updateVarName, module, {
+                    action: onAdd,
+                    index: 0,
+                    user_data: userData,
+                }),
+            ),
+        [dispatch, updateVarName, onAdd, module, userData],
+    );
+
+    const onDownload = useCallback(
+        () =>
+            dispatch(
+                createSendActionNameAction(updateVarName, module, {
+                    action: DownloadAction,
+                    user_data: userData,
+                }),
+            ),
+        [dispatch, updateVarName, module, userData],
+    );
+
+    const isItemLoaded = useCallback((index: number) => index < rows.length && !!rows[index], [rows]);
+
+    const onCellValidation: OnCellValidation = useCallback(
+        (value: RowValue, rowIndex: number, colName: string, userValue: string, tz?: string) =>
+            dispatch(
+                createSendActionNameAction(updateVarName, module, {
+                    action: onEdit,
+                    value: value,
+                    index: getRowIndex(rows[rowIndex], rowIndex),
+                    col: colName,
+                    user_value: userValue,
+                    tz: tz,
+                    user_data: userData,
+                }),
+            ),
+        [dispatch, updateVarName, onEdit, rows, module, userData],
+    );
+
+    const onRowDeletion: OnRowDeletion = useCallback(
+        (rowIndex: number) =>
+            dispatch(
+                createSendActionNameAction(updateVarName, module, {
+                    action: onDelete,
+                    index: getRowIndex(rows[rowIndex], rowIndex),
+                    user_data: userData,
+                }),
+            ),
+        [dispatch, updateVarName, onDelete, rows, module, userData],
+    );
+
+    const onRowSelection: OnRowSelection = useCallback(
+        (rowIndex: number, colName?: string, value?: string) =>
+            dispatch(
+                createSendActionNameAction(updateVarName, module, {
+                    action: onAction,
+                    index: getRowIndex(rows[rowIndex], rowIndex),
+                    col: colName === undefined ? null : colName,
+                    value,
+                    reason: value === undefined ? "click" : "button",
+                    user_data: userData,
+                }),
+            ),
+        [dispatch, updateVarName, onAction, rows, module, userData],
+    );
+
+    const onRowClick = useCallback(
+        (e: MouseEvent<HTMLTableRowElement>) => {
+            const { index } = e.currentTarget.dataset || {};
+            const rowIndex = index === undefined ? NaN : Number(index);
+            if (!isNaN(rowIndex)) {
+                onRowSelection(rowIndex);
+            }
+        },
+        [onRowSelection],
+    );
+
+    const rowData: RowData = useMemo(
+        () =>
+            ({
+                colsOrder: colsOrder,
+                columns: columns,
+                rows: rows,
+                classes: {},
+                tableClassName: className,
+                cellProps: colsOrder.map((col) => ({
+                    sx: getCellSx(columns[col].width || columns[col].widthHint, size),
+                    component: "div",
+                    variant: "body",
+                })),
+
+                isItemLoaded: isItemLoaded,
+                selection: selected,
+                formatConfig: formatConfig,
+                onValidation: active && onEdit ? onCellValidation : undefined,
+                onDeletion: active && (editable || partialEditable) && onDelete ? onRowDeletion : undefined,
+                onRowSelection: active && onAction ? onRowSelection : undefined,
+                onRowClick: active && onAction ? onRowClick : undefined,
+                rowClassName: props.rowClassName,
+                nanValue: props.nanValue,
+                compRows: compRows,
+                useCheckbox: useCheckbox,
+            }) as RowData,
+        [
+            rows,
+            compRows,
+            useCheckbox,
+            isItemLoaded,
+            active,
+            colsOrder,
+            columns,
+            className,
+            selected,
+            formatConfig,
+            editable,
+            partialEditable,
+            onEdit,
+            onCellValidation,
+            onDelete,
+            onRowDeletion,
+            onAction,
+            onRowSelection,
+            onRowClick,
+            props.rowClassName,
+            props.nanValue,
+            size,
+        ],
+    );
+
+    const boxSx = useMemo(() => ({ ...baseBoxSx, width: width }), [width]);
+
+    const onRowsRendered = useInfiniteLoader({
+        isRowLoaded: isItemLoaded,
+        rowCount: rowCount,
+        loadMoreRows: loadMoreItems,
+        minimumBatchSize: pageSize,
+    });
+
+    return (
+        <Box
+            id={id}
+            sx={boxSx}
+            className={`${className} ${getSuffixedClassNames(className, "-autoloading")} ${getComponentClassName(
+                props.children,
+            )}`}
+        >
+            <Paper sx={paperSx}>
+                <Tooltip title={hover || ""}>
+                    <TableContainer>
+                        <MuiTable sx={tableSx} aria-labelledby="tableTitle" size={size} stickyHeader={true}>
+                            <TableHead>
+                                {Array.from(Array(nbColHeaders).keys()).map((idx) => {
+                                    if (idx < nbColHeaders - 1) {
+                                        return (
+                                            <TableRow key={`rowheader${idx}`}>
+                                                {colsOrder.map((col, i) => {
+                                                    const colSpan =
+                                                        headersInfo[idx] && headersInfo[idx].colSpans.length > i
+                                                            ? headersInfo[idx].colSpans[i]
+                                                            : 1;
+                                                    return colSpan == 0 ? null : (
+                                                        <TableCell
+                                                            colSpan={1}
+                                                            key={`head${columns[col].dfid}`}
+                                                            sx={
+                                                                columns[col].width
+                                                                    ? {
+                                                                          minWidth: columns[col].width,
+                                                                          maxWidth: columns[col].width,
+                                                                      }
+                                                                    : calcWidth
+                                                                      ? { width: calcWidth }
+                                                                      : undefined
+                                                            }
+                                                            className={
+                                                                col === "EDIT_COL"
+                                                                    ? getSuffixedClassNames(className, "-action")
+                                                                    : getSuffixedClassNames(
+                                                                          className,
+                                                                          generateHeaderClassName(columns[col].dfid),
+                                                                      )
+                                                            }
+                                                        >
+                                                            {(headersInfo[idx] &&
+                                                                headersInfo[idx].headers.length > i &&
+                                                                headersInfo[idx].headers[i]) ||
+                                                                ""}
+                                                        </TableCell>
+                                                    );
+                                                })}
+                                            </TableRow>
+                                        );
+                                    } else {
+                                        return (
+                                            <TableRow ref={headerRow} key={`rowheader${idx}`}>
+                                                {colsOrder.map((col, i) => (
+                                                    <TableCell
+                                                        key={`head${columns[col].dfid}`}
+                                                        sortDirection={orderBy === columns[col].dfid && order}
+                                                        sx={
+                                                            columns[col].width
+                                                                ? {
+                                                                      minWidth: columns[col].width,
+                                                                      maxWidth: columns[col].width,
+                                                                  }
+                                                                : calcWidth
+                                                                  ? { width: calcWidth }
+                                                                  : undefined
+                                                        }
+                                                        className={
+                                                            col === "EDIT_COL"
+                                                                ? getSuffixedClassNames(className, "-action")
+                                                                : getSuffixedClassNames(
+                                                                      className,
+                                                                      generateHeaderClassName(columns[col].dfid),
+                                                                  )
+                                                        }
+                                                    >
+                                                        {columns[col].dfid === EDIT_COL ? (
+                                                            [
+                                                                active && (editable || partialEditable) && onAdd ? (
+                                                                    <Tooltip title="Add a row" key="addARow">
+                                                                        <IconButton
+                                                                            onClick={onAddRowClick}
+                                                                            size="small"
+                                                                            sx={iconInRowSx}
+                                                                        >
+                                                                            <AddIcon fontSize="inherit" />
+                                                                        </IconButton>
+                                                                    </Tooltip>
+                                                                ) : null,
+                                                                active && filter ? (
+                                                                    <TableFilter
+                                                                        key="filter"
+                                                                        columns={columns}
+                                                                        colsOrder={colsOrder}
+                                                                        onValidate={setAppliedFilters}
+                                                                        appliedFilters={appliedFilters}
+                                                                        className={className}
+                                                                        filteredCount={filteredCount}
+                                                                    />
+                                                                ) : null,
+                                                                active && downloadable ? (
+                                                                    <Tooltip title="Download as CSV" key="downloadCsv">
+                                                                        <IconButton
+                                                                            onClick={onDownload}
+                                                                            size="small"
+                                                                            sx={iconInRowSx}
+                                                                        >
+                                                                            <Download fontSize="inherit" />
+                                                                        </IconButton>
+                                                                    </Tooltip>
+                                                                ) : null,
+                                                            ]
+                                                        ) : (
+                                                            <TableSortLabel
+                                                                active={orderBy === columns[col].dfid}
+                                                                direction={
+                                                                    orderBy === columns[col].dfid ? order : "asc"
+                                                                }
+                                                                data-dfid={columns[col].dfid}
+                                                                onClick={onSort}
+                                                                disabled={!active || !columns[col].sortable}
+                                                                hideSortIcon={!active || !columns[col].sortable}
+                                                            >
+                                                                <Box sx={headBoxSx}>
+                                                                    {columns[col].groupBy ? (
+                                                                        <IconButton
+                                                                            onClick={onAggregate}
+                                                                            size="small"
+                                                                            title="aggregate"
+                                                                            data-dfid={columns[col].dfid}
+                                                                            disabled={!active}
+                                                                            sx={iconInRowSx}
+                                                                        >
+                                                                            {aggregates.includes(columns[col].dfid) ? (
+                                                                                <DataSaverOff fontSize="inherit" />
+                                                                            ) : (
+                                                                                <DataSaverOn fontSize="inherit" />
+                                                                            )}
+                                                                        </IconButton>
+                                                                    ) : null}
+                                                                    {columns[col].title === undefined
+                                                                        ? (headersInfo[idx] &&
+                                                                              headersInfo[idx].headers.length > i &&
+                                                                              headersInfo[idx].headers[i]) ||
+                                                                          columns[col].dfid
+                                                                        : columns[col].title}
+                                                                </Box>
+                                                                {orderBy === columns[col].dfid ? (
+                                                                    <Box component="span" sx={visuallyHidden}>
+                                                                        {order === "desc"
+                                                                            ? "sorted descending"
+                                                                            : "sorted ascending"}
+                                                                    </Box>
+                                                                ) : null}
+                                                            </TableSortLabel>
+                                                        )}
+                                                    </TableCell>
+                                                ))}
+                                            </TableRow>
+                                        );
+                                    }
+                                })}
+                            </TableHead>
+                        </MuiTable>
+                        <TableBody component="div" sx={boxBodySx}>
+                            <List
+                                rowCount={rowCount}
+                                rowHeight={getRowHeight(size)}
+                                onRowsRendered={onRowsRendered}
+                                listRef={listRef}
+                                rowComponent={Row}
+                                rowProps={rowData}
+                            ></List>
+                        </TableBody>
+                    </TableContainer>
+                </Tooltip>
+            </Paper>
+            {props.children}
+        </Box>
+    );
+};
+
+export default AutoLoadingTable;

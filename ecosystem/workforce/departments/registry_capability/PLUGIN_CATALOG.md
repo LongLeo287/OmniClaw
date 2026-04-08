@@ -1,4 +1,4 @@
-# OmniClaw Corp — Plugin Catalog (v1.0)
+# OmniClaw OS — Plugin Catalog (v1.0)
 # Owner: Registry & Capability Management
 # Updated: 2026-03-17
 # Total: 88 plugins in plugins/ directory

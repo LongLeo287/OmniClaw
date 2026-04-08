@@ -1,0 +1,69 @@
+name: "💡 Feature Request"
+description: "Suggest a new feature or improvement for Taipy!"
+title: "[✨ FEATURE] <Brief description of your request>"
+labels: ["✨ New Feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Thank you for contributing to Taipy’s improvement!
+        - Please provide **as much detail as possible** about the feature request.
+        - If a section is **not applicable**, enter `N/A`.
+        - The more context you provide, the easier it is for us to evaluate and implement your idea! 🚀
+
+  - type: textarea
+    id: description_feature
+    attributes:
+      label: "🔍 Feature Description"
+      description: "What functionality is missing or could be improved? Describe the problem this feature will solve."
+      placeholder: "Explain the need for this feature and its benefits."
+    validations:
+      required: true
+
+  - type: textarea
+    id: feature_solution_proposed
+    attributes:
+      label: "💡 Proposed Solution"
+      description: "Describe how you would like this feature to work. If applicable, include sketches, wireframes, or examples."
+      placeholder: "Provide details on how this feature could be implemented."
+
+  - type: textarea
+    id: feature_impact_solution
+    attributes:
+      label: "📈 Impact of the Feature"
+      description: "How will this feature impact Taipy? Are there any dependencies, risks, or considerations?"
+      placeholder: "Explain any technical or UX considerations."
+
+  - type: textarea
+    id: additional_context_feature
+    attributes:
+      label: "📎 Additional Context (Optional)"
+      description: "If relevant, provide additional information such as workarounds, third-party references, or alternative solutions."
+      placeholder: "Share any supporting details."
+
+  - type: checkboxes
+    id: terms_checklist_feature
+    attributes:
+      label: "📜 Code of Conduct"
+      description: By submitting this feature request, you agree to follow our [Code of Conduct](https://github.com/Avaiga/taipy/blob/develop/CODE_OF_CONDUCT.md) and [Contributing Guidelines](https://github.com/Avaiga/taipy/blob/develop/CONTRIBUTING.md).
+      options:
+        - label: "I have checked the [existing issues](https://github.com/Avaiga/taipy/issues?q=is%3Aissue+) to avoid duplicates."
+          required: true
+        - label: "I am willing to work on this issue (optional)"
+          required: false
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: "✅ Acceptance Criteria"
+      description: Do not edit the text area below.
+      value: |
+        - [ ] A working demo or example code (if applicable) is provided.
+        - [ ] Integration tests demonstrate the new functionality.
+        - [ ] Any new code is covered by unit tests.
+        - [ ] Code coverage remains at least 90%.
+        - [ ] Related documentation updates and release notes are created.
+
+  - type: markdown
+    attributes:
+      value: "🚀 Thank you for your feature request! We appreciate your contribution to Taipy!"

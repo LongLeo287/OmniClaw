@@ -1,5 +1,5 @@
 ﻿# ops/scripts/install_vscode_extensions.ps1
-# OmniClaw Corp — VS Code Extension Auto-Installer
+# OmniClaw OS — VS Code Extension Auto-Installer
 # Version: 1.0 | 2026-03-25
 # Trigger: pre-session.md boot check OR manual run
 # Doc: ops/tools/vscode-extensions.md

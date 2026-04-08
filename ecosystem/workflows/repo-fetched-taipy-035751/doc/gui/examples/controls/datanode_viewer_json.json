@@ -1,0 +1,19 @@
+{
+    "name": "Sample Data",
+    "type": "Example JSON",
+    "attributes": {
+        "id": 123,
+        "description": "A simple JSON structure for demonstration",
+        "values": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "nested": {
+            "flag": true,
+            "count": 10
+        }
+    }
+}

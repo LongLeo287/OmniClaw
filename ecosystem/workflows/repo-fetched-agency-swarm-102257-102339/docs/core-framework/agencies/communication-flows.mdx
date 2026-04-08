@@ -1,0 +1,129 @@
+---
+title: "Communication Flows"
+description: "Understanding communication flows in Agency Swarm."
+icon: "comments"
+---
+
+<Note>
+Always start with one agent. Never build two agents simultaneously unless you know exactly what you're doing. The more agents you have, the harder it becomes to train them on specific tasks.
+</Note>
+
+## Orchestration Patterns
+
+Agency Swarm supports flexible orchestration patterns. Unlike all other frameworks, communication flows in Agency Swarm are **uniform**, meaning they can be defined in any way you want.
+
+| Pattern | Description | Reliability | Autonomy | Costs | When to Use |
+|---------|-------------|-------------|----------|-------|-------------|
+| **Handoff** | Control transfers completely to another agent who continues the conversation | Very High | Low | Lower | Sequential workflows where each step requires tight feedback from the user |
+| **Orchestrator-Worker** | One agent assigns tasks to multiple agents and compiles their responses | Lower (mitigated with guardrails) | Very High | Higher | Complex multi-step tasks with independent not-very-high stakes steps |
+
+_Scroll table to the right to see the full description of each pattern._
+
+**Examples**:
+
+- **Handoff**: Creative script writing with planner and script writer agents - requires tight user feedback at each stage to refine the story direction
+- **Orchestrator-Worker**: News aggregation and research from various sources - quality of individual sources isn't critical, main agent filters and compiles them
+
+
+## Handoff Pattern
+
+Control transfers completely to another agent who takes over the interaction. The receiving agent gets full conversation history and continues from there.
+
+```python
+from agency_swarm import Agent
+from agency_swarm import Handoff
+
+# Triage agent routes to specialists
+triage_agent = Agent(
+    name="TriageAgent",
+    instructions="Assess customer inquiries and route to appropriate specialist",
+)
+
+billing_specialist = Agent(
+    name="BillingSpecialist",
+    description="Handles billing inquiries, payment issues, and invoice questions",
+    instructions="Resolve customer billing issues with full context from previous conversation",
+)
+
+technical_specialist = Agent(
+    name="TechnicalSpecialist",
+    description="Handles technical support and troubleshooting",
+    instructions="Provide technical support with full conversation history",
+)
+
+agency = Agency(
+    triage_agent,
+    communication_flows=[
+        (triage_agent, billing_specialist, Handoff),      # Handoff to billing
+        (triage_agent, technical_specialist, Handoff),    # Handoff to technical
+    ]
+)
+```
+
+The TriageAgent transfers control completely to the appropriate specialist, who receives full conversation history and continues the interaction. Control does not return to TriageAgent.
+
+## Orchestrator-Worker Pattern
+
+One agent assigns tasks to multiple other agents and compiles their responses. Agents use other agents as specialized tools through the `SendMessage` mechanism. Control always returns to the orchestrator after each delegation.
+
+```python
+# Portfolio Manager orchestrates investment research
+portfolio_manager = Agent(
+    name="PortfolioManager",
+    instructions="Orchestrate investment research by gathering data, delegating analysis, and compiling recommendations",
+    tools=[fetch_market_data],
+)
+
+risk_analyst = Agent(
+    name="RiskAnalyst",
+    instructions="Specialize in investment risk analysis",
+    tools=[analyze_risk_factors],
+    output_type=RiskAssessment,  # Structured output
+)
+
+report_generator = Agent(
+    name="ReportGenerator",
+    instructions="Generate professional investment reports",
+    tools=[create_report],
+)
+
+agency = Agency(
+    portfolio_manager,  # Entry point and orchestrator
+    communication_flows=[
+        (portfolio_manager, risk_analyst),     # Can request risk analysis
+        (portfolio_manager, report_generator), # Can request report generation
+    ]
+)
+```
+
+The Portfolio Manager delegates to specialists, receives their structured responses, and compiles them into a final investment decision.
+
+## Understanding Communication Flows
+
+Communication flows are defined using tuples in the `communication_flows` parameter:
+
+```python
+from agency_swarm import Agency
+from agency_swarm import Handoff
+
+agency = Agency(
+    ceo, dev,  # Entry points - agents that can communicate with users
+    communication_flows=[
+        (ceo, dev, Handoff),   # CEO can transfer the user to the developer
+        (ceo, dev), # CEO can assign tasks to developer
+        (dev, va) # developer can assign tasks to virtual assistant
+    ]
+)
+```
+
+Each tuple `(sender, receiver)`, `(sender > receiver)`, or `(receiver < sender)` defines a directional communication path. Entry points are agents that can communicate with users.
+
+In the example above, the CEO can transfer the user to the Developer and the developer will proceed to interact with the user directly. 
+
+At the same time, the CEO can assign tasks to both Developer and Virtual Assistant, so they will run in parallel in different threads and come back with their results to the CEO.
+
+## Under the Hood
+
+Agency Swarm uses a `SendMessage` tool for inter-agent communication. Defining communication flows adds recipients to this tool.
+
+For advanced customization, see [Custom Communication Flows](/additional-features/custom-communication-flows/overview).

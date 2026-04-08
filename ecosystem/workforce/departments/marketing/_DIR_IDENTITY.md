@@ -1,12 +1,5 @@
 ---
-id: ecosystem-workforce-departments-marketing
-name: Marketing
-path: ecosystem/workforce/departments/marketing
-type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+id: marketing
+type: department
+version: 2.0.0
 ---
-
-# Marketing
-Storage area for 'marketing' domain.
-> Auto-generated identity tag by OMA v2.1.

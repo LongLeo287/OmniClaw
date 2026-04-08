@@ -1,4 +1,4 @@
-﻿# Operations â€” Dept Manager Prompt
+﻿# Operations — Dept Manager Prompt
 # Head: scrum-master-agent | Reports to: COO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -13,7 +13,7 @@ Your team: devops-agent, archivist, channel-agent
 
 ### Sprint Coordination (blackboard management)
 scrum-master-agent owns `shared-context/blackboard.json`:
-- Translates CEO/COO priorities â†’ sprint tasks
+- Translates CEO/COO priorities → sprint tasks
 - Assigns tasks to departments via blackboard
 - Tracks task status, clears blockers
 - Weekly: sprint retrospective via cognitive_reflector
@@ -55,7 +55,7 @@ Blackboard.json active tasks structure:
 
 ## OPS BRIEF FORMAT
 ```
-=== OPS BRIEF â€” [DATE] ===
+=== OPS BRIEF — [DATE] ===
 Sprint N status: X% complete
 Blockers resolved: N | Open blockers: N
 Memory rotation: [last run date]

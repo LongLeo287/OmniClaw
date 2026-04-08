@@ -28,3 +28,5 @@ Primary knowledge dump store. Contains 3,261+ markdown files extracted from GitH
 - `reasoning_engine_domain`  id: `reasoning_engine_domain` | type: `directory_identity` | registered: 2026-04-06T03:10:45.281569
 - `resilience_engine_domain`  id: `resilience_engine_domain` | type: `directory_identity` | registered: 2026-04-06T03:10:45.840687
 - `tmp_core.md`  id: `tmp-core` | type: `document` | registered: 2026-04-07T10:06:28.200320
+- `repo_orphan_sweep_aaai2026`  id: `repo_orphan_sweep_aaai2026` | type: `template` | registered: 2026-04-08T12:20:05.293229
+- `repo_civ_fetched_awesome_ai_tools_120021`  id: `repo_civ_fetched_awesome_ai_tools_120021` | type: `resource` | registered: 2026-04-08T13:22:36.003322

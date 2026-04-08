@@ -1,0 +1,16 @@
+name: trigger Benchmark
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger taipy-benchmark computation
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{secrets.TAIPY_BENCHMARK_ACCESS_TOKEN}}
+          repository: avaiga/taipy-benchmark
+          event-type: benchmark
+          client-payload: '{"repo": "taipy", "commitSHA": "${{ github.sha }}"}'

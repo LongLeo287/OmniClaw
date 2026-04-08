@@ -63,7 +63,7 @@ def main():
                         "type": "department_node",
                         "name": dept,
                         "title": f"DEPARTMENT: {dept}",
-                        "path": f"ecosystem/workforce/departments/{dept}/rules.md",
+                        "path": f"ecosystem/workforce/departments/{dept}/DEPARTMENT.md",
                         "tags": ["department", "org_chart"]
                     }
                     nodes.append(new_node)

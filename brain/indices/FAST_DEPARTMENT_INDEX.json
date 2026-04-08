@@ -1,0 +1,214 @@
+{
+  "registry": [
+    {
+      "id": "departments",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.986742"
+    },
+    {
+      "id": "archivist",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/archivist",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987082"
+    },
+    {
+      "id": "asset_library",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/asset_library",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987140"
+    },
+    {
+      "id": "client_reception",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/client_reception",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987197"
+    },
+    {
+      "id": "content_intake",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/content_intake",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987263"
+    },
+    {
+      "id": "content_review",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/content_review",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987318"
+    },
+    {
+      "id": "engineering",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/engineering",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987375"
+    },
+    {
+      "id": "finance",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/finance",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987429"
+    },
+    {
+      "id": "gateway_border_security",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/gateway_border_security",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987490"
+    },
+    {
+      "id": "hr",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/hr",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987543"
+    },
+    {
+      "id": "hr_people",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/hr_people",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987598"
+    },
+    {
+      "id": "it_infra",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/it_infra",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987651"
+    },
+    {
+      "id": "tools",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/it_infra/tools",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987722"
+    },
+    {
+      "id": "legacy",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/legacy",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987780"
+    },
+    {
+      "id": "legal",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/legal",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987839"
+    },
+    {
+      "id": "marketing",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/marketing",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987893"
+    },
+    {
+      "id": "monitoring_inspection",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/monitoring_inspection",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.987950"
+    },
+    {
+      "id": "od_learning",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/od_learning",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988040"
+    },
+    {
+      "id": "operations",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/operations",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988106"
+    },
+    {
+      "id": "orchestration",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/orchestration",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988176"
+    },
+    {
+      "id": "planning_pmo",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/planning_pmo",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988245"
+    },
+    {
+      "id": "qa_testing",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/qa_testing",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988303"
+    },
+    {
+      "id": "rd",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/rd",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988371"
+    },
+    {
+      "id": "registry_capability",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/registry_capability",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988446"
+    },
+    {
+      "id": "security_grc",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/security_grc",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988504"
+    },
+    {
+      "id": "strategy",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/strategy",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988559"
+    },
+    {
+      "id": "support",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/support",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988623"
+    },
+    {
+      "id": "system_health",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/system_health",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988687"
+    },
+    {
+      "id": "system_integrity",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/system_integrity",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988744"
+    },
+    {
+      "id": "ux_design",
+      "type": "department",
+      "coord": "ecosystem/workforce/departments/ux_design",
+      "owner": "SYSTEM",
+      "registered_at": "2026-04-08T13:37:09.988798"
+    }
+  ]
+}

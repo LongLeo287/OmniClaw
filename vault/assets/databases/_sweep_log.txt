@@ -1,0 +1,7 @@
+2026-04-07 14:04:09,349 [INFO] === DB Hygiene Sweep Started @ 2026-04-07T14:04:09.349522 ===
+2026-04-07 14:04:09,350 [WARNING] [UNKNOWN] Unregistered subdirectory (manual review needed): D:\OmniClaw\vault\assets\databases\logs
+2026-04-07 14:04:09,350 [WARNING] [WARN] Unexpected file type: D:\OmniClaw\vault\assets\databases\_sweep_log.txt
+2026-04-07 14:04:09,350 [INFO] === Sweep Complete. Violations found: 0 ===
+2026-04-07 14:04:38,220 [INFO] === DB Hygiene Sweep Started @ 2026-04-07T14:04:38.220722 ===
+2026-04-07 14:04:38,221 [INFO] [OK] Registered namespace: logs
+2026-04-07 14:04:38,221 [INFO] === Sweep Complete. Violations found: 0 ===

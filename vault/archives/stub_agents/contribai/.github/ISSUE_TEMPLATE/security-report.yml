@@ -1,0 +1,38 @@
+name: 🔒 Security Report
+description: Report a security vulnerability (please use responsibly)
+labels: ["type/security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **For critical vulnerabilities**, please email security@contribai.dev instead of filing a public issue.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Vulnerability Description
+      description: Describe the security issue
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Estimated Severity
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact
+      description: What could an attacker achieve?
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can this be reproduced?

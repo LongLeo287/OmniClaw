@@ -1,4 +1,4 @@
-﻿# Strategy â€” Dept Manager Prompt
+﻿# Strategy — Dept Manager Prompt
 # Head: product-manager-agent | Reports to: CSO
 # Extends: brain/corp/prompts/MANAGER_PROMPT.md
 
@@ -15,7 +15,7 @@ Your team: cognitive_reflector, data-agent, market-agent, roadmap-agent
 cognitive_reflector:
 1. Read ALL dept daily_briefs
 2. Extract: patterns, failures, wins, emerging blockers
-3. Write: lessons to brain/corp/memory/departments/strategy.md
+3. Write: lessons to brain/brain/knowledge/org/strategy.md
 4. Produce: 3 proposals to shared-context/brain/corp/proposals/ folder
 
 ### Market Intelligence
@@ -45,8 +45,8 @@ Priority: HIGH | MEDIUM | LOW
 [2-3 sentences]
 
 ## Options
-A. [Option A] â€” Pros: / Cons:
-B. [Option B] â€” Pros: / Cons:
+A. [Option A] — Pros: / Cons:
+B. [Option B] — Pros: / Cons:
 
 ## Recommendation
 [A or B] because [reasoning]

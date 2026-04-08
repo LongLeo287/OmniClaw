@@ -1,12 +1,5 @@
 ---
-id: ecosystem-workforce-departments-content_review
-name: Content Review
-path: ecosystem/workforce/departments/content_review
-type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+id: content_review
+type: department
+version: 2.0.0
 ---
-
-# Content Review
-Storage area for 'content_review' domain.
-> Auto-generated identity tag by OMA v2.1.

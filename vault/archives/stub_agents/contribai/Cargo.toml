@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/contribai-rs",
+]
+
+# Run from project root:
+#   cargo build --release
+#   cargo test
+#   cargo install --path crates/contribai-rs

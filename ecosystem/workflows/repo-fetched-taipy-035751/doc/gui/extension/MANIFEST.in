@@ -1,0 +1,2 @@
+# Include all files relevant to the extension library
+include example_library/front-end/dist/*

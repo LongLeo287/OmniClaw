@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 
 # Resolve path mappings
-OMNICLAW_ROOT = Path(__file__).resolve().parent.parent.parent
+OMNICLAW_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 # Ecosystem root (D:\LongLeo\AI OS CORP)
 CORP_ROOT = OMNICLAW_ROOT.parent
 

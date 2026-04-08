@@ -1,11 +1,12 @@
 ---
-id: growth_agent_domain
-name: Growth Agent
-path: ecosystem/workforce/agents/growth_agent
+id: ecosystem-workforce-agents-growth-agent
+name: Growth-Agent
+path: ecosystem/workforce/agents/growth-agent
 type: directory_identity
+owner: OER
+created_by: OMA-v2.1
 ---
 
-# Growth Agent
-
-Storage area for growth_agent.
-(Auto-generated identity tag by OMA v2.1)
+# Growth-Agent
+Storage area for 'growth-agent' domain.
+> Auto-generated identity tag by OMA v2.1.

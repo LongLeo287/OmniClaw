@@ -1,12 +1,5 @@
 ---
-id: ecosystem-workforce-departments-monitoring_inspection
-name: Monitoring Inspection
-path: ecosystem/workforce/departments/monitoring_inspection
-type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+id: monitoring_inspection
+type: department
+version: 2.0.0
 ---
-
-# Monitoring Inspection
-Storage area for 'monitoring_inspection' domain.
-> Auto-generated identity tag by OMA v2.1.

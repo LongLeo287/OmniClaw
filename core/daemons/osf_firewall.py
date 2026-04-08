@@ -30,7 +30,11 @@ def apply_security_shield(target_dir: str) -> bool:
         "Anthropic API Key": r"sk-ant-api03-[A-Za-z0-9\-_]{93}-AA",
         "OpenAI API Key": r"sk-[a-zA-Z0-9]{48}",
         "Generic Password": r"(?i)(password|passwd|pwd)[\s:=]+['\"][^'\"]{6,}['\"]",
-        "Private Key": r"-----BEGIN (RSA|OPENSSH) PRIVATE KEY-----"
+        "Private Key": r"-----BEGIN (RSA|OPENSSH) PRIVATE KEY-----",
+        "LightRAG Weak Secret": r"lightrag-jwt-default-secret",
+        "Supabase Key": r"sbp_[a-zA-Z0-9]{36}",
+        "HuggingFace Token": r"hf_[a-zA-Z0-9]{34}",
+        "Replicate Token": r"r8_[a-zA-Z0-9]{37}"
     }
     found_threats = []
     
@@ -64,39 +68,68 @@ def apply_security_shield(target_dir: str) -> bool:
 
 def apply_vulnerability_scan(target_dir: str) -> bool:
     """
-    Subprocess hook: Simulates running `npm audit` or `pip-audit` to detect known CVEs in dependencies.
+    Subprocess hook: Runs `npm audit --json` to detect known CVEs in node dependencies.
     """
     print(f"  \033[96m[STAT]\033[0m [OSF] Conducting Supply-Chain Vulnerability Scan (CVE Search) on {os.path.basename(target_dir)}...")
     import subprocess
-    has_package = any(os.path.exists(os.path.join(target_dir, x)) for x in ["package.json", "requirements.txt", "Pipfile", "pyproject.toml"])
-    if not has_package:
-        print(f"  \033[92m[OK]\033[0m [OSF] No dependency manifests found. Skipping CVE scan.")
+    import json
+    
+    if not os.path.exists(os.path.join(target_dir, "package.json")):
+        print(f"  \033[92m[OK]\033[0m [OSF] No package.json found. Skipping CVE scan.")
         return True
         
     try:
-        # Mock command representing supply-chain scan
-        cmd = ["powershell", "-Command", "Write-Output '0 vulnerabilities found'"]
-        res = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
-        if "0 vulnerabilities" in res.stdout:
-            print(f"  \033[92m[OK]\033[0m [OSF] CVE Scan CLEAN.")
+        # Run npm audit
+        cmd = ["npm", "audit", "--json"]
+        res = subprocess.run(cmd, cwd=target_dir, capture_output=True, text=True, timeout=30)
+        
+        # npm audit exits with 0 if no vulns, non-zero if vulns found
+        try:
+            audit_data = json.loads(res.stdout)
+            vulnerabilities = audit_data.get("metadata", {}).get("vulnerabilities", {})
+            total_vulns = sum(vulnerabilities.values())
+            
+            if total_vulns == 0:
+                print(f"  \033[92m[OK]\033[0m [OSF] CVE Scan CLEAN (0 vulnerabilities).")
+                return True
+            else:
+                print(f"  \033[93m[WARN]\033[0m [OSF] {total_vulns} Vulnerabilities detected!")
+                return False
+        except json.JSONDecodeError:
+            # Fallback if JSON parsing fails but exit code is non-zero
+            if res.returncode != 0:
+                print(f"  \033[93m[WARN]\033[0m [OSF] Vulnerabilities detected (Raw scan failed).")
+                return False
             return True
-        else:
-            print(f"  \033[93m[WARN]\033[0m [OSF] Vulnerabilities detected!")
-            return False
-    except Exception:
+            
+    except Exception as e:
+        print(f"  \033[91m[ERR]\033[0m [OSF] Audit execution failed: {e}")
+        # Fail open or fail closed? Let's fail open to prevent blocking if npm is missing
         return True
 
-def apply_dependabot_secretary(target_dir: str):
+def apply_dependabot_secretary(target_dir: str) -> bool:
     """
     Subprocess hook: Auto-bumps requirements/JSON dependency versions to fix issues via OSF control.
+    Returns True if fully patched and clean, False if vulnerabilities still remain.
     """
     print(f"  \033[96m[STAT]\033[0m [OSF] Triggering Dependabot Secretary for Auto-Patching...")
     import subprocess
     try:
-        cmd = ["powershell", "-Command", "Write-Output 'Security Dependencies Patched'"]
-        subprocess.run(cmd, capture_output=True, text=True, timeout=5)
-    except Exception:
-        pass
+        cmd = ["npm", "audit", "fix"]
+        res = subprocess.run(cmd, cwd=target_dir, capture_output=True, text=True, timeout=120)
+        
+        if "fixed" in res.stdout.lower() or res.returncode == 0:
+             print(f"  \033[92m[OK]\033[0m [OSF] Dependabot Auto-Patching completed. Re-verifying...")
+             return apply_vulnerability_scan(target_dir) # Check if actually clean now
+        else:
+             print(f"  \033[91m[ERR]\033[0m [OSF] Dependabot Auto-Patching failed or partial. Residual vulnerabilities remain.")
+             return False
+    except subprocess.TimeoutExpired:
+        print(f"  \033[91m[ERR]\033[0m [OSF] Dependabot timeout. Cannot safely patch.")
+        return False
+    except Exception as e:
+        print(f"  \033[91m[ERR]\033[0m [OSF] Dependabot error: {e}")
+        return False
 
 def process_sandbox():
     """Scab Sandbox for dirty files."""
@@ -116,8 +149,8 @@ def process_sandbox():
         if is_clean and os.path.isdir(fpath):
             is_vuln_clean = apply_vulnerability_scan(fpath)
             if not is_vuln_clean:
-                apply_dependabot_secretary(fpath)
-                # Assume patched successfully for now
+                # Attempt to patch, and update is_clean based on patch success
+                is_clean = apply_dependabot_secretary(fpath)
         
         try:
             if is_clean:

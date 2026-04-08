@@ -1,0 +1,425 @@
+{
+  "name": "lawvable",
+  "version": "1.0.0",
+  "description": "Bundled agent skills for legal work",
+  "owner": {
+    "name": "Antoine Louis (Lawvable)",
+    "email": "antoiloui@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "nda-review-jamie-tso",
+      "description": "Guide for reviewing incoming commercial NDAs, producing a clause-by-clause issue log with redlines and rationales",
+      "version": "2025.12.30",
+      "author": {
+        "name": "Jamie Tso"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/nda-review-jamie-tso"
+    },
+    {
+      "name": "legal-simulation-patrick-munro",
+      "description": "Framework for demonstrating AI capabilities in legal contexts with detailed personas and progressive complexity scenarios",
+      "version": "2026.01.12",
+      "author": {
+        "name": "Patrick Munro"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/legal-simulation-patrick-munro"
+    },
+    {
+      "name": "tech-contract-negotiation-patrick-munro",
+      "description": "Guide to negotiating technology services agreements with three-position frameworks and concession roadmaps",
+      "version": "2026.01.12",
+      "author": {
+        "name": "Patrick Munro"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/tech-contract-negotiation-patrick-munro"
+    },
+    {
+      "name": "vendor-due-diligence-patrick-munro",
+      "description": "Framework for assessing IT vendors with structured risk assessments and regulatory checklists (GDPR, DORA, NIS2, SOX)",
+      "version": "2026.01.12",
+      "author": {
+        "name": "Patrick Munro"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/vendor-due-diligence-patrick-munro"
+    },
+    {
+      "name": "contract-review-anthropic",
+      "description": "Review contracts against your organization's negotiation playbook, flagging deviations and generating redline suggestions",
+      "version": "2026.01.30",
+      "author": {
+        "name": "Anthropic"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/contract-review-anthropic"
+    },
+    {
+      "name": "compliance-anthropic",
+      "description": "Navigate privacy regulations (GDPR, CCPA), review DPAs, and handle data subject requests",
+      "version": "2026.01.30",
+      "author": {
+        "name": "Anthropic"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/compliance-anthropic"
+    },
+    {
+      "name": "canned-responses-anthropic",
+      "description": "Generate templated responses for common legal inquiries and identify when situations require individualized attention",
+      "version": "2026.01.30",
+      "author": {
+        "name": "Anthropic"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/canned-responses-anthropic"
+    },
+    {
+      "name": "legal-risk-assessment-anthropic",
+      "description": "Assess and classify legal risks using a severity-by-likelihood framework with escalation criteria",
+      "version": "2026.01.30",
+      "author": {
+        "name": "Anthropic"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/legal-risk-assessment-anthropic"
+    },
+    {
+      "name": "meeting-briefing-anthropic",
+      "description": "Prepare structured briefings for meetings with legal relevance and track resulting action items",
+      "version": "2026.01.30",
+      "author": {
+        "name": "Anthropic"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/meeting-briefing-anthropic"
+    },
+    {
+      "name": "nda-triage-anthropic",
+      "description": "Screen incoming NDAs and classify them as GREEN, YELLOW, or RED based on risk level",
+      "version": "2026.01.30",
+      "author": {
+        "name": "Anthropic"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/nda-triage-anthropic"
+    },
+    {
+      "name": "statute-analysis-rafal-fryc",
+      "description": "Guide for reading, interpreting, and applying US statutes, regulations, and rules with canons of construction",
+      "version": "2026.01.14",
+      "author": {
+        "name": "Rafał Stanisław Fryc"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/statute-analysis-rafal-fryc"
+    },
+    {
+      "name": "gdpr-breach-sentinel-oliver-schmidt-prietz",
+      "description": "Incident response and legal compliance guidance for data breaches under GDPR Articles 33 & 34",
+      "version": "2026.02.09",
+      "author": {
+        "name": "Oliver Schmidt-Prietz"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/gdpr-breach-sentinel-oliver-schmidt-prietz"
+    },
+    {
+      "name": "dpia-sentinel-oliver-schmidt-prietz",
+      "description": "GDPR Data Protection Impact Assessment (DPIA) guidance under Article 35 with multi-jurisdictional blacklist checks",
+      "version": "2026.02.10",
+      "author": {
+        "name": "Oliver Schmidt-Prietz"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/dpia-sentinel-oliver-schmidt-prietz"
+    },
+    {
+      "name": "gdpr-privacy-notice-eu-oliver-schmidt-prietz",
+      "description": "Draft GDPR-compliant privacy notices as .docx for any EU/EEA jurisdiction and audience",
+      "version": "2026.02.09",
+      "author": {
+        "name": "Oliver Schmidt-Prietz"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/gdpr-privacy-notice-eu-oliver-schmidt-prietz"
+    },
+    {
+      "name": "politique-confidentialite-malik-taiar",
+      "description": "Guide pour la rédaction de politiques de confidentialité conformes au RGPD avec recommandations CNIL",
+      "version": "2025.12.24",
+      "author": {
+        "name": "Malik Taiar"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/politique-confidentialite-malik-taiar"
+    },
+    {
+      "name": "politique-cookies-malik-taiar",
+      "description": "Guide pour la rédaction de politiques cookies conformes au RGPD et à la directive ePrivacy",
+      "version": "2025.12.24",
+      "author": {
+        "name": "Malik Taiar"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/politique-cookies-malik-taiar"
+    },
+    {
+      "name": "politique-lanceur-alerte-malik-taiar",
+      "description": "Guide pour l'évaluation ou la rédaction de politiques lanceur d'alerte conformes à la loi Sapin II",
+      "version": "2025.12.31",
+      "author": {
+        "name": "Malik Taiar"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/politique-lanceur-alerte-malik-taiar"
+    },
+    {
+      "name": "notification-licenciement-selim-brihi",
+      "description": "Guide pour la rédaction de notifications de licenciement conformes au droit du travail français",
+      "version": "2026.01.16",
+      "author": {
+        "name": "Sélim Brihi"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/notification-licenciement-selim-brihi"
+    },
+    {
+      "name": "requete-cph-licenciement-faute-grave-selim-brihi",
+      "description": "Guide pour la rédaction de requêtes CPH contestant un licenciement pour faute grave",
+      "version": "2026.01.23",
+      "author": {
+        "name": "Sélim Brihi"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/requete-cph-licenciement-faute-grave-selim-brihi"
+    },
+    {
+      "name": "assignation-refere-recouvrement-creance-selim-brihi",
+      "description": "Guide pour la rédaction d'assignations en référé pour le recouvrement de créances commerciales",
+      "version": "2026.01.23",
+      "author": {
+        "name": "Sélim Brihi"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/assignation-refere-recouvrement-creance-selim-brihi"
+    },
+    {
+      "name": "assignation-refere-communication-associe-selim-brihi",
+      "description": "Guide pour la rédaction d'assignations en référé pour la communication de documents sociaux (art. L. 238-1)",
+      "version": "2026.01.23",
+      "author": {
+        "name": "Sélim Brihi"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/assignation-refere-communication-associe-selim-brihi"
+    },
+    {
+      "name": "docx-processing-anthropic",
+      "description": "Document creation, editing, and analysis with tracked changes and comments support",
+      "version": "2025.12.01",
+      "author": {
+        "name": "Anthropic"
+      },
+      "source": "./skills/docx-processing-anthropic"
+    },
+    {
+      "name": "docx-processing-openai",
+      "description": "Document reading and creation with visual quality control for Word files",
+      "version": "2026.01.30",
+      "author": {
+        "name": "OpenAI"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/docx-processing-openai"
+    },
+    {
+      "name": "docx-processing-superdoc",
+      "description": "Search, replace, and read text in Word documents from the command line",
+      "version": "2026.02.02",
+      "author": {
+        "name": "Superdoc"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/docx-processing-superdoc"
+    },
+    {
+      "name": "docx-processing-lawvable",
+      "description": "Edit Word documents with live preview and track changes via SuperDoc VS Code extension",
+      "version": "2026.02.04",
+      "author": {
+        "name": "Antoine Louis (Lawvable)"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/docx-processing-lawvable"
+    },
+    {
+      "name": "pdf-processing-anthropic",
+      "description": "PDF manipulation toolkit for text extraction, creation, merging, and form handling",
+      "version": "2025.12.01",
+      "author": {
+        "name": "Anthropic"
+      },
+      "source": "./skills/pdf-processing-anthropic"
+    },
+    {
+      "name": "pdf-processing-openai",
+      "description": "PDF reading and creation with visual quality control",
+      "version": "2026.01.30",
+      "author": {
+        "name": "OpenAI"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/pdf-processing-openai"
+    },
+    {
+      "name": "xlsx-processing-anthropic",
+      "description": "Spreadsheet creation, editing, and analysis with formulas and data visualization",
+      "version": "2025.12.01",
+      "author": {
+        "name": "Anthropic"
+      },
+      "source": "./skills/xlsx-processing-anthropic"
+    },
+    {
+      "name": "xlsx-processing-openai",
+      "description": "Spreadsheet reading, creation, editing, and analysis with visual quality control",
+      "version": "2026.01.30",
+      "author": {
+        "name": "OpenAI"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/xlsx-processing-openai"
+    },
+    {
+      "name": "xlsx-processing-manus",
+      "description": "Professional Excel spreadsheet creation with a focus on aesthetics and data analysis",
+      "version": "2025.12.01",
+      "author": {
+        "name": "Manus"
+      },
+      "source": "./skills/xlsx-processing-manus"
+    },
+    {
+      "name": "pptx-processing-anthropic",
+      "description": "Presentation creation, editing, and analysis with layouts and speaker notes",
+      "version": "2025.12.01",
+      "author": {
+        "name": "Anthropic"
+      },
+      "source": "./skills/pptx-processing-anthropic"
+    },
+    {
+      "name": "outlook-emails-lawvable",
+      "description": "Read, search, and download emails and attachments from Microsoft Outlook via OAuth2",
+      "version": "2026.02.02",
+      "author": {
+        "name": "Malik Taiar (Lawvable)"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/outlook-emails-lawvable"
+    },
+    {
+      "name": "tabular-review-lawvable",
+      "description": "Analyze multiple documents against user-defined columns and produce structured Excel output with citations",
+      "version": "2026.01.14",
+      "author": {
+        "name": "Antoine Louis (Lawvable)"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/tabular-review-lawvable"
+    },
+    {
+      "name": "vscode-extension-builder-lawvable",
+      "description": "Build VS Code extensions from scratch or convert existing JS/React/Vue apps",
+      "version": "2026.02.05",
+      "author": {
+        "name": "Antoine Louis (Lawvable)"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/vscode-extension-builder-lawvable"
+    },
+    {
+      "name": "skill-creator-anthropic",
+      "description": "Guide for creating effective Agent Skills with specialized knowledge and workflows",
+      "version": "2025.12.01",
+      "author": {
+        "name": "Anthropic"
+      },
+      "source": "./skills/skill-creator-anthropic"
+    },
+    {
+      "name": "skill-creator-openai",
+      "description": "Guide for creating effective Agent Skills with specialized knowledge and workflows",
+      "version": "2025.12.18",
+      "author": {
+        "name": "OpenAI"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/skill-creator-openai"
+    },
+    {
+      "name": "skill-optimizer-lawvable",
+      "description": "Analyze work sessions and propose improvements to skills based on corrections and edge cases",
+      "version": "2026.01.07",
+      "author": {
+        "name": "Malik Taiar (Lawvable)"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/skill-optimizer-lawvable"
+    },
+    {
+      "name": "security-review-openai",
+      "description": "Perform language and framework specific security best-practice reviews and suggest improvements",
+      "version": "2026.02.02",
+      "author": {
+        "name": "OpenAI"
+      },
+      "license": "Apache-2.0",
+      "source": "./skills/security-review-openai"
+    },
+    {
+      "name": "red-team-verifier-patrick-munro",
+      "description": "Adversarial verification for AI-generated legal content with systematic fact-checking, source validation, and quality control",
+      "version": "2026.02.17",
+      "author": {
+        "name": "Patrick Munro"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/red-team-verifier-patrick-munro"
+    },
+    {
+      "name": "legal-risk-assessment-zacharie-laik",
+      "description": "Legal research and risk evaluation on French and EU law using GoodLegal's tools with adversarial jurisprudence search",
+      "version": "2026.02.25",
+      "author": {
+        "name": "Zacharie Laïk"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/legal-risk-assessment-zacharie-laik"
+    },
+    {
+      "name": "mediation-dispute-analysis-jinzhe-tan",
+      "description": "Analyze case materials for mediation preparation with BATNA/WATNA analysis and settlement pathways",
+      "version": "2026.02.27",
+      "author": {
+        "name": "Jinzhe Tan"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/mediation-dispute-analysis-jinzhe-tan"
+    },
+    {
+      "name": "nil-contract-analysis-samir-patel",
+      "description": "NIL contract analysis for NCAA student-athletes with red flag detection and compliance review",
+      "version": "2026.03.02",
+      "author": {
+        "name": "Samir Patel"
+      },
+      "license": "AGPL-3.0",
+      "source": "./skills/nil-contract-analysis-samir-patel"
+    }
+  ]
+}

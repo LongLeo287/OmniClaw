@@ -1,0 +1,460 @@
+---
+title: "FastAPI Integration"
+description: "Serving your agencies and tools as APIs with FastAPI."
+icon: "server"
+---
+
+Agency Swarm supports serving your agencies and tools as production-ready HTTP APIs using [FastAPI](https://fastapi.tiangolo.com/). This enables you to interact with your agents and tools over HTTP, integrate with other services, or connect it to web frontends.
+
+## Installation
+
+FastAPI integration is an **optional installation**. To install all required dependencies, run:
+
+```bash
+pip install "agency-swarm[fastapi]"
+```
+
+## Setting Up FastAPI Endpoints
+
+You can expose your agencies and tools as API endpoints using the `run_fastapi()` function.
+
+### Example: Create an API endpoint for a single agency
+
+```python
+from agency_swarm import Agency, Agent
+
+agent = Agent(
+    name="Assistant",
+    instructions="You are a helpful assistant."
+)
+
+agency = Agency(agent, name="test_agency")
+
+agency.run_fastapi()
+```
+
+<Accordion title="run_fastapi parameters" defaultOpen={false}>
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| `host` | string | `"0.0.0.0"` | Interface to bind the server. |
+| `port` | integer | `8000` | Port to serve FastAPI on. |
+| `app_token_env` | string | `"APP_TOKEN"` | Env var name for the bearer token; if missing, auth is disabled. |
+| `return_app` | boolean | `false` | Return the FastAPI app instead of running the server. |
+| `cors_origins` | list | `["*"]` | Allowed CORS origins. When set to `["*"]`, `allow_credentials` is automatically set to `False` for security. |
+| `enable_agui` | boolean | `false` | Enable AG-UI streaming (hides the cancel endpoint). |
+| `enable_logging` | boolean | `false` | Track requests and expose `/get_logs` at the server root. |
+| `logs_dir` | string | `"activity-logs"` | Folder for request logs when logging is enabled. |
+| `allowed_local_file_dirs` | list | `None` | Allowlist for local `file_urls`; paths outside the list are rejected. |
+
+</Accordion>
+
+<Accordion title="Endpoint reference" defaultOpen={false}>
+
+- Agencies are served at:
+  - `/your_agency_name/get_response` (POST)
+  - `/your_agency_name/get_response_stream` (POST, streaming responses)
+  - `/your_agency_name/cancel_response_stream` (POST; not registered when `enable_agui=True`)
+  - `/your_agency_name/get_metadata` (GET)
+  - `/get_logs` (GET; when `enable_logging=True`)
+- Tools registered via `tools=[...]` are available at `/tool/ToolClassName` (BaseTools) or `/tool/function_name` (function tools).
+- OpenAPI and interactive docs: `/openapi.json`, `/docs`, `/redoc`.
+
+</Accordion>
+
+<Accordion title="Response format" defaultOpen={false}>
+
+**Non-streaming (`/get_response`):**
+
+```json
+{
+  "response": "Hello! How can I help you today?",
+  "new_messages": [
+    {
+      "type": "message",
+      "role": "user",
+      "content": [{"type": "input_text", "text": "Hello"}],
+      "agent": "Assistant",
+      "callerAgent": null,
+      "timestamp": 1704067200000
+    },
+    {
+      "type": "message",
+      "role": "assistant",
+      "content": [{"type": "output_text", "text": "Hello! How can I help you today?"}],
+      "agent": "Assistant",
+      "callerAgent": null,
+      "timestamp": 1704067201000
+    }
+  ],
+  "usage": {"input_tokens": 50, "output_tokens": 12, "total_cost": 0.0001},
+  "file_ids_map": {"document.pdf": "file-abc123"}
+}
+```
+
+**Streaming (`/get_response_stream`):**
+
+```
+event: meta
+data: {"run_id": "550e8400-e29b-41d4-a716-446655440000"}
+
+data: {"data": {"data": {"type": "response.output_text.delta", "delta": "Hello"}}}
+data: {"data": {"data": {"type": "response.output_text.delta", "delta": "!"}}}
+
+event: messages
+data: {"new_messages": [...], "run_id": "...", "cancelled": false, "usage": {...}, "file_ids_map": {...}}
+
+event: end
+data: [DONE]
+```
+
+**Cancel (`/cancel_response_stream`):**
+
+```json
+{
+  "ok": true,
+  "run_id": "550e8400-e29b-41d4-a716-446655440000",
+  "cancelled": true,
+  "cancel_mode": "immediate",
+  "new_messages": [...]
+}
+```
+
+**Metadata (`/get_metadata`):**
+
+```json
+{
+  "nodes": [
+    {
+      "id": "Assistant",
+      "type": "agent",
+      "data": {
+        "label": "Assistant",
+        "description": "Main assistant agent",
+        "conversationStarters": ["Support: I need help with billing"],
+        "quickReplies": ["hi", "hello"],
+        "isEntryPoint": true,
+        "toolCount": 2,
+        "tools": [
+          {
+            "name": "example_tool",
+            "type": "function",
+            "description": "...",
+            "inputSchema": {"type": "object", "properties": {"text": {"type": "string"}}}
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {"id": "CEO->Developer", "source": "CEO", "target": "Developer", "type": "communication"}
+  ],
+  "metadata": {
+    "agencyName": "my_agency",
+    "totalAgents": 2,
+    "totalTools": 4,
+    "agents": ["CEO", "Developer"],
+    "entryPoints": ["CEO"]
+  },
+  "agency_swarm_version": "1.0.0"
+}
+```
+
+Conversation starters appear under `data.conversationStarters`, and quick-reply phrases appear under `data.quickReplies` when configured. See [Agent Overview](/core-framework/agents/overview).
+
+**Tool (`/tool/<name>`):**
+
+```json
+{
+  "response": "Output returned by the tool"
+}
+```
+
+</Accordion>
+
+<Accordion title="Usage tracking" defaultOpen={false}>
+
+Responses include a `usage` object with token counts and cost by default. For streaming, the final `event: messages` payload includes the same `usage` object.
+
+To understand what's inside `usage`, see [Observability](/additional-features/observability#usage-payload).
+
+Usage tracking is configured on the agent (not on FastAPI):
+
+```python
+from agency_swarm import Agent, ModelSettings
+
+agent = Agent(
+    name="Assistant",
+    instructions="You are a helpful assistant.",
+    model_settings=ModelSettings(include_usage=False),
+)
+```
+
+If you're using LiteLLM models and want usage in streaming responses, keep `include_usage=True`.
+
+</Accordion>
+
+<Note>
+Stream cancellation uses an in-memory registry per process. Use single-worker deployments (e.g., uvicorn `workers=1`) or sticky routing so cancel requests reach the same worker.
+</Note>
+
+### Authentication
+
+Set the environment variable named by `app_token_env` (default `APP_TOKEN`) to require `Authorization: Bearer <token>` on every endpoint. When the variable is absent, authentication is disabled.
+
+### Implementation reference
+
+<Accordion title="Example: Serving Multiple Agencies and Tools" defaultOpen={false}>
+
+```python
+from agency_swarm import Agency, Agent, function_tool, run_fastapi
+
+# Example tools using agents SDK
+@function_tool
+def example_tool(example_field: str) -> str:
+    """Example tool with input field."""
+    return f"Result of ExampleTool operation with {example_field}"
+
+@function_tool
+def test_tool(example_field: str) -> str:
+    """Test tool with input field."""
+    return f"Result of TestTool operation with {example_field}"
+
+# Create agents
+agent1 = Agent(name="Assistant1", instructions="You are assistant 1.")
+agent2 = Agent(name="Assistant2", instructions="You are assistant 2.")
+
+# Create agency factory functions for proper thread management
+def create_agency_1(load_threads_callback=None, save_threads_callback=None):
+    return Agency(
+        agent1, 
+        name="test_agency_1",
+        load_threads_callback=load_threads_callback,
+        save_threads_callback=save_threads_callback,
+    )
+
+def create_agency_2(load_threads_callback=None, save_threads_callback=None):
+    return Agency(
+        agent2, 
+        name="test_agency_2",
+        load_threads_callback=load_threads_callback,
+        save_threads_callback=save_threads_callback,
+    )
+
+run_fastapi(
+    agencies={
+        "test_agency_1": create_agency_1,
+        "test_agency_2": create_agency_2,
+    },
+    tools=[example_tool, test_tool],
+)
+```
+
+Endpoints follow the reference above; tool schemas mirror the definitions of `example_tool` and `test_tool`.
+
+</Accordion>
+
+---
+
+## API Usage Example
+
+You can interact with your agents and tools using HTTP requests:
+
+```python
+import requests
+
+agency_url = "http://127.0.0.1:8000/test_agency_1/get_response"
+payload = {
+    "message": "Hello",
+    "client_config": {
+        "base_url": "https://my-openai-gateway.example.com/v1",
+        "api_key": "sk-...",  # override per request
+    },
+}
+
+headers = {
+    "Authorization": "Bearer 123"  # Replace with your actual token if needed
+}
+
+agency_response = requests.post(agency_url, json=payload, headers=headers)
+print("Status code:", agency_response.status_code)
+print("Response:", agency_response.json())
+```
+
+<Accordion title="Request payload" defaultOpen={false}>
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `message` | string | Yes | User message to start or continue the conversation. |
+| `chat_history` | list | No | Flat list of prior messages with metadata (`agent`, `callerAgent`, `timestamp`) to preserve context. |
+| `recipient_agent` | string | No | Target agent when you want to direct the next turn. |
+| `file_ids` | list | No | IDs of already uploaded files to attach. |
+| `file_urls` | object | No | `{filename: url_or_absolute_path}` map. Local paths require `allowed_local_file_dirs` on `run_fastapi`. |
+| `additional_instructions` | string | No | Extra guidance for the current request. |
+| `user_context` | object | No | Structured data passed to [Agency Context](/additional-features/agency-context) without exposing it to the LLM. |
+| `client_config` | object | No | Override `base_url` / `api_key` for this request (and optional `litellm_keys` for `litellm/` models). |
+
+### How user_context is applied
+- Merges with any `user_context` set on the agency instance.
+- Useful for structured data (ids, preferences, feature flags) you do not want in the prompt.
+- Accessible within tools for the duration of the run. See [Agency Context](/additional-features/agency-context).
+
+### How client_config is applied
+- Applies only to **OpenAI models** (no prefix or `openai/...`) and **LiteLLM models** (`litellm/...`).
+- **Custom Model subclasses** are not modified; the request still runs, but the override is skipped.
+- For LiteLLM, you can provide `litellm_keys` to pass different keys per provider. Requires LiteLLM installed.
+
+### client_config fields
+
+- `base_url` (string, optional): Override the API base URL for this request.
+- `api_key` (string, optional): Override the API key for this request.
+- `litellm_keys` (object, optional): Only for `litellm/...` models.
+  - Map `provider_name` → `api_key`.
+  - Example: `{"anthropic": "...", "gemini": "..."}`
+
+<Accordion title="client_config examples" defaultOpen={false}>
+
+**OpenAI model override (gpt-4o):**
+
+```json
+{
+  "message": "Hello",
+  "client_config": {
+    "base_url": "https://my-openai-gateway.example.com/v1",
+    "api_key": "sk-..."
+  }
+}
+```
+
+**LiteLLM mixed providers (requires `openai-agents[litellm]`):**
+
+```json
+{
+  "message": "Hello",
+  "client_config": {
+    "base_url": "https://my-litellm-proxy.example.com",
+    "litellm_keys": {
+      "anthropic": "sk-ant-...",
+      "gemini": "AIza..."
+    }
+  }
+}
+```
+
+</Accordion>
+
+</Accordion>
+
+
+## Cancelling Active Streams
+
+The streaming endpoint supports cancellation via two methods:
+
+### 1. Automatic Cancellation on Disconnect
+
+When a client disconnects (tab close, refresh, network failure), the stream is automatically cancelled to preserve token costs.
+
+### 2. Cancel Endpoint
+
+Call the cancel endpoint with the `run_id` received from the first event of the streaming response. 
+This will allow you to retrieve intermediate results that were generated before the run cancellation.
+Optionally include `cancel_mode` (defaults to `immediate`):
+- `immediate` — stop right away and return messages that were fully generated; the in-progress message is discarded.
+- `after_turn` — finish the current turn, then stop.
+
+```python
+import requests
+
+# Cancel an active stream
+cancel_url = "http://127.0.0.1:8000/test_agency/cancel_response_stream"
+payload = {"run_id": "your-run-id", "cancel_mode": "after_turn"}  # cancel_mode is optional
+response = requests.post(cancel_url, json=payload)
+# Returns: {"ok": True, "run_id": "...", "cancelled": True, "cancel_mode": "after_turn", "new_messages": [...]}
+```
+
+---
+
+## Serving Standalone Tools
+
+Expose tools as simple HTTP endpoints for external systems, webhooks, or other agents to call directly without agency orchestration.
+
+```python
+from agency_swarm import BaseTool, run_fastapi
+
+class Address(BaseTool):
+    street: str
+    zip_code: int
+
+    def run(self) -> str:
+        return f"{self.street} {self.zip_code}"
+
+run_fastapi(tools=[Address], port=8080)
+```
+
+This creates:
+- `POST /tool/Address` — execute the tool
+- `GET /openapi.json` — full OpenAPI schema
+- `GET /docs` — interactive Swagger UI
+
+<Accordion title="Generate OpenAPI schema programmatically" defaultOpen={false}>
+
+Use `ToolFactory.get_openapi_schema()` to generate the OpenAPI spec programmatically:
+
+```python
+from agency_swarm.tools import ToolFactory
+
+schema = ToolFactory.get_openapi_schema(
+    [Address],
+    url="https://your-server.com",
+    title="My Tools API"
+)
+print(schema)  # Returns a JSON string
+```
+
+</Accordion>
+
+---
+
+## File Attachments
+
+Attach files to agency requests using `file_ids` or `file_urls` in the payload:
+
+```json
+{
+  "message": "Summarize this document",
+  "file_urls": {"report.pdf": "https://example.com/report.pdf"}
+}
+```
+
+The response includes `file_ids_map` with the uploaded file IDs:
+
+```json
+{
+  "response": "...",
+  "file_ids_map": {"report.pdf": "file-abc123"}
+}
+```
+
+**Supported filetypes:** `.pdf`, `.jpeg`, `.jpg`, `.gif`, `.png`, `.c`, `.cs`, `.cpp`, `.csv`, `.html`, `.java`, `.json`, `.php`, `.py`, `.rb`, `.css`, `.js`, `.sh`, `.ts`, `.pkl`, `.tar`, `.xlsx`, `.xml`, `.zip`, `.doc`, `.docx`, `.md`, `.pptx`, `.tex`, `.txt`
+
+<Accordion title="Local file paths" defaultOpen={false}>
+
+To support passing local filepaths in the `file_urls` field, set `allowed_local_file_dirs` on `run_fastapi`:
+
+```python
+run_fastapi(agencies=..., allowed_local_file_dirs=["/data/uploads"])
+```
+
+Then pass absolute file paths in `file_urls`:
+
+```json
+{"file_urls": {"doc.pdf": "/data/uploads/doc.pdf"}}
+```
+
+Invalid paths return an `error` field in the response body.
+
+<Note>
+`allowed_local_file_dirs` uses strict request-time validation for invalid entries: if an entry exists but is not a directory, local `file_urls` requests fail with an error. Missing directories are skipped and can be created later. The `/get_metadata` field `allowed_local_file_dirs` lists only currently usable directory entries.
+</Note>
+
+</Accordion>

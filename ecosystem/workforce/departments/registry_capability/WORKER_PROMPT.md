@@ -1,4 +1,4 @@
-﻿# Registry & Capability â€” Worker Prompt
+﻿# Registry & Capability — Worker Prompt
 # Extends: brain/corp/prompts/WORKER_PROMPT.md
 # Workers: skill-creator-agent | skill-curator-agent | plugin-librarian-agent | rule-builder-agent
 
@@ -27,7 +27,7 @@ Head: registry-manager-agent. Every skill change must be validated before activa
 
 **Location:** `plugins/antigravity-awesome-skills/ecosystem/skills/skill-creator/SKILL.md`
 **Owner:** This dept (registry_capability) | Agent: registry-manager-agent
-**Rule: AUTOMATIC â€” NEVER wait for request**
+**Rule: AUTOMATIC — NEVER wait for request**
 
 ```
 TRIGGER (any of these events):
@@ -49,7 +49,7 @@ ACTION (immediate, no manual trigger):
 
 **Full auto-creation workflow:** `ops/workflows/skill-discovery-auto.md`
 
-## SKILL CREATION PROTOCOL (skill-creator-agent â€” for NEW original skills)
+## SKILL CREATION PROTOCOL (skill-creator-agent — for NEW original skills)
 ```
 1. Receive skill request (from dept or CEO)
 2. Define: id, name, version, tier, dependencies, exposed_functions
@@ -71,7 +71,7 @@ ACTION (immediate, no manual trigger):
 
 ## LIBRARY PLUGIN (plugin-librarian-agent)
 - Catalog in: `brain/knowledge/REPO_CATALOG.md`
-- New lifecycle plugin: QUARANTINE â†’ SCAN â†’ INSTALL â†’ REGISTER â†’ ACTIVE
+- New lifecycle plugin: QUARANTINE → SCAN → INSTALL → REGISTER → ACTIVE
 - Deactivated plugins: move to ecosystem/plugins/archive/, remove from active config
 - Monthly review: flag unused plugins (>30 days no activity)
 

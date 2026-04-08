@@ -36,7 +36,7 @@
 13. Budget < $2,000 → project-intake-agent may approve autonomously.
 14. Budget $2,001–$10,000 → Ping CEO via Telegram. Do NOT proceed until CEO responds.
 15. Budget > $10,000 → STOP immediately. Escalate to CEO directly. No exceptions.
-16. When auto-approving, ALWAYS log approval in `corp/memory/departments/client_reception.md`.
+16. When auto-approving, ALWAYS log approval in `brain/knowledge/org/client_reception.md`.
 
 ---
 
@@ -63,4 +63,4 @@
 - Accepting any project that requires illegal, unethical, or harmful outputs
 - Sharing proposal details with non-involved departments without COO approval
 - Onboarding a client without completing the 5-field intake form
-- Making verbal/informal commitments on behalf of OmniClaw Corp
+- Making verbal/informal commitments on behalf of OmniClaw OS

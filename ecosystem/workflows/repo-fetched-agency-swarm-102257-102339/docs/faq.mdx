@@ -1,0 +1,125 @@
+---
+title: "FAQ"
+description: "Find answers to common questions about Agency Swarm."
+icon: "question"
+---
+
+<AccordionGroup defaultOpen={true}>
+
+
+<Accordion title="How do I set my OpenAI API key in my project?" icon="key">
+Set your API key in your code:
+```python
+from agency_swarm import set_openai_key
+set_openai_key("YOUR_API_KEY")
+```
+Or use a `.env` file:
+```env
+OPENAI_API_KEY=sk-1234...
+```
+Then load it with:
+```python
+from dotenv import load_dotenv
+load_dotenv()
+```
+</Accordion>
+
+<Accordion title="Can I use open source models with Agency Swarm?" icon="code-fork">
+Yes—you can use third-party models for simple, non–mission-critical tasks (usually one or two tools per agent). See [Third-Party Models](/additional-features/third-party-models) for more information. Keep in mind that many third-party models currently struggle with function calling.
+</Accordion>
+
+
+<Accordion title="How do I save and continue conversations?" icon="messages">
+To persist conversations between application restarts, implement callbacks that save and load the full message history from a local file. For example, define your callback functions:
+
+```python
+import os
+import json
+
+def load_threads(chat_id: str) -> list[dict[str, TResponseInputItem]]:
+    """Load all threads data for a specific chat session."""
+    if os.path.exists(f"{chat_id}_threads.json"):
+        with open(f"{chat_id}_threads.json", "r") as file:
+            return json.load(file)
+    return []
+
+def save_threads(thread_dict: list[dict[str, TResponseInputItem]], chat_id: str):
+    """Save all threads data to file."""
+    with open(f"{chat_id}_threads.json", "w") as file:
+        json.dump(thread_dict, file)
+
+# Then, pass these callbacks during your agency initialization to resume conversations:
+from agency_swarm import Agency
+agency = Agency(
+    agent,
+    load_threads_callback=lambda: load_threads(chat_id),
+    save_threads_callback=lambda thread_dict: save_threads(thread_dict, chat_id),
+)
+```
+
+This setup preserves your conversation context between runs.
+</Accordion>
+
+
+<Accordion title="How do I manage multiple users with Agency Swarm?" icon="users">
+To support multiple users/chats, you need to load and save thread IDs in your database accordingly. Each chat/user should have unique thread IDs. Ensure to check out our [Deployment to Production](/additional-features/deployment-to-production) guide for more information.
+</Accordion>
+
+
+<Accordion title="How can I transfer data between tools and agents?" icon="upload">
+There are two ways to transfer data between tools and agents:
+1. Use agency context inside your tools. Read more: [Agency Context](/additional-features/agency-context)
+2. Create a tool (or modify an existing one) that uploads files to storage and outputs the file ID. This file ID can then be used by other tools or agents.
+</Accordion>
+
+
+<Accordion title="Why is the CodeInterpreter tool automatically added?" icon="code">
+When file types like `.json`, `.docx`, or `.pptx` are uploaded, CodeInterpreter is auto-added to process them. To change the agent's behavior, update its instructions or create a custom file-handling tool.
+</Accordion>
+
+
+<Accordion title="How can I serve an Agency as an API using FastAPI?" icon="book">
+Embed your agency within a FastAPI endpoint:
+
+```python
+from fastapi import FastAPI
+from uuid import uuid4
+
+app = FastAPI()
+
+@app.post("/chat")
+async def chat(user_request: UserRequest):
+    chat_id = user_request.chat_id or str(uuid4())
+
+    agency = Agency(
+        agent,
+        load_threads_callback=lambda: load_threads(chat_id),
+        save_threads_callback=lambda thread_dict: save_threads(thread_dict, chat_id)
+    )
+
+    response = await agency.get_response(user_request.message)
+    return {"chat_id": chat_id, "response": response.final_output}
+
+# Or use the built-in FastAPI integration
+agency.run_fastapi(host="0.0.0.0", port=8000)
+```
+</Accordion>
+
+
+<Accordion title="How do I deploy my agency to production?" icon="rocket">
+Build a dedicated API backend (FastAPI is recommended) that manages authentication and persists thread state using callbacks. For more details, refer to our [Deployment to Production](/additional-features/deployment-to-production) guide.
+</Accordion>
+
+</AccordionGroup>
+
+
+## Getting Support
+
+<CardGroup cols={2}>
+  <Card title="Community Support" icon="discord" href="https://discord.gg/cw2xBaWfFM">
+    Join our Discord community for quick help and discussions.
+  </Card>
+  <Card title="Professional Services" icon="briefcase" href="https://agents.vrsen.ai/">
+    Get professional help with our Agents-as-a-Service subscription.
+  </Card>
+</CardGroup>
