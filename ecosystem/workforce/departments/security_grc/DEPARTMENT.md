@@ -6,6 +6,7 @@
 ## Workforce Roster
 - **strix-agent** (active): *Primary Security Analyst and Code Auditor*
 
+- **cloudflared_agent** (active): *Assimilated by OA Pipeline*
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking
 

@@ -10,6 +10,12 @@
 - **scrum-master-agent** (active): *Worker for operations*
 - **dept08-ops** (active): *Worker for operations*
 
+- **bridge_commander_agent** (active): *Assimilated by OA Pipeline*
+- **channel_agent** (active): *Assimilated by OA Pipeline*
+- **health_chief_agent** (active): *Assimilated by OA Pipeline*
+- **intake_chief_agent** (active): *Assimilated by OA Pipeline*
+- **monitor_chief_agent** (active): *Assimilated by OA Pipeline*
+- **project_intake_agent** (active): *Assimilated by OA Pipeline*
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking, channel_manager, context_manager, continuous-learning-v2
 - **Plugins**: AntigravityManager, cloud-sync

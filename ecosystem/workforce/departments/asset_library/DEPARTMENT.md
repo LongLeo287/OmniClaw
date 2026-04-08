@@ -6,6 +6,7 @@
 ## Workforce Roster
 - No designated workforce.
 
+- **docs_agent** (active): *Assimilated by OA Pipeline*
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking
 

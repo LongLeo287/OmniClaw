@@ -10,6 +10,9 @@
 - **ip-agent** (active): *Worker for legal*
 - **legal-agent** (active): *Worker for legal*
 
+- **nemoclaw_agent** (active): *Assimilated by OA Pipeline*
+- **omniclaw_bot** (active): *Assimilated by OA Pipeline*
+- **tinyclaw_agent** (active): *Assimilated by OA Pipeline*
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking
 

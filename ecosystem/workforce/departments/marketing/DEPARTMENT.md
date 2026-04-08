@@ -13,6 +13,10 @@
 - **social-agent** (active): *Worker for marketing*
 - **dept05-marketing** (active): *Worker for marketing*
 
+- **newspaper_agent** (active): *Assimilated by OA Pipeline*
+- **tiktokdownloader_agent** (active): *Assimilated by OA Pipeline*
+- **tiktoken_agent** (active): *Assimilated by OA Pipeline*
+- **videocaptioner_agent** (active): *Assimilated by OA Pipeline*
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking
 

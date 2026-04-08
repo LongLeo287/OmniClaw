@@ -10,6 +10,7 @@
 - **recruiter-agent** (active): *Worker for hr_people*
 - **trainer-agent** (active): *Worker for hr_people*
 
+- **org_architect_agent** (active): *Assimilated by OA Pipeline*
 ## Core Capabilities
 - **Skills**: neural_navigator, sequential-thinking, agentune
 
