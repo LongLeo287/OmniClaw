@@ -165,7 +165,13 @@ core/daemons/                                         [NERVOUS_SYSTEM] The 9 res
 core/config/                                          [REGISTRY] Centralized deployment parameters and env configs
 core/docs/                                            [PUBLIC] User-facing documentation (Front Door)
 core/docs/_DIR_IDENTITY.md                            Identity card and bilingual policy
-ecosystem/workforce/                                  [ECO_CORE] Distributed Nodes. View Regional Maps: [Agents (115 nodes)](../../../ecosystem/workforce/agents/_REGIONAL_MAP.md) | [Subagents (37 nodes)](../../../ecosystem/workforce/subagents/_REGIONAL_MAP.md) | [Departments (28 nodes)](../../../ecosystem/workforce/departments/_REGIONAL_MAP.md) | [System](../../../ecosystem/workforce/system/_REGIONAL_MAP.md)
+ecosystem/workforce/                                  [ECO_CORE] Distributed Nodes (4 Pillars, Zero-Trust Boundaries)
+ecosystem/workforce/_DIR_IDENTITY.md                  Identity card for the Workforce root
+ecosystem/workforce/SUBAGENT_OPERATING_GUIDE.md       [OPERATING GUIDE v1.2] DEVELOPER/QA/RESEARCHER workflow, MQ protocol, Receipt schema. See also: subagents/SUBAGENT_PROTOCOL.md
+ecosystem/workforce/agents/                           [PILLAR-1] Autonomous Workers — [Regional Map: 116 nodes](../../../ecosystem/workforce/agents/_REGIONAL_MAP.md)
+ecosystem/workforce/subagents/                        [PILLAR-2] Ephemeral Task Specialists — [Regional Map: 37 nodes](../../../ecosystem/workforce/subagents/_REGIONAL_MAP.md) | subagents/SUBAGENT_PROTOCOL.md = Zero-Trust OAP spawning rules (v3.0)
+ecosystem/workforce/departments/                      [PILLAR-3] Reporting Structures — [Regional Map: 28 nodes](../../../ecosystem/workforce/departments/_REGIONAL_MAP.md)
+ecosystem/workforce/system/                           [PILLAR-4] Declarative Config Zone (NO code/agents) — [Regional Map](../../../ecosystem/workforce/system/_REGIONAL_MAP.md) | corp_prompts/ + daemons/ | SYSTEM_PROTOCOL.md = Zero-Trust boundary law
 core/docs/README.md                                   Entry point — doc index (English)
 core/docs/README-vn.md                                Entry point — doc index (Vietnamese)
 core/docs/architecture/                               System architecture docs
