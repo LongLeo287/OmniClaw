@@ -20,13 +20,13 @@
 | **Dept 20** | **CIV (Content Intake)** | Systematically consumes, scrapes, and parses massive GitHub URLs or PDFs into pure Markdown. | `intake-chief`      |
 | **Dept 22** | **Operations**           | Hardware sanitation, root directory cleanup, and Git Force-Push protection.                  | `scrum-master`      |
 | **Dept 23** | **Reception**            | Automated client intake, brief collection, and proposal generation.                          | `project-intake`    |
-| **...**     | **And 19 others**        | 28 Zero-Trust departments actively governing 104 agents!                                     | `various`           |
+| **...**     | **And 19 others**        | 28 Zero-Trust departments actively governing 116 agents!                                     | `various`           |
 
 > [!TIP]
-> **Deep Dive**: For the full breakdown of all 21 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/knowledge/corp/MASTER_INDEX.md).
+> **Deep Dive**: For the full breakdown of all 28 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/knowledge/corp/MASTER_INDEX.md).
 
 > [!NOTE]
-> The Workforce is strictly divided into 4 physical Pillars: `agents/` (115 autonomous workers), `subagents/` (ephemeral task runners), `departments/` (reporting structures), and `system/` (The Declarative Configuration Zone for global prompts and OS daemon mappings).
+> The Workforce is strictly divided into 4 physical Pillars: `agents/` (116 autonomous workers), `subagents/` (ephemeral task runners), `departments/` (reporting structures), and `system/` (The Declarative Configuration Zone for global prompts and OS daemon mappings).
 
 > [!NOTE]
 > For the full list of 21 departments and agent rosters, please refer to the `brain/corp/org_chart.yaml` master registry.
@@ -84,7 +84,7 @@ graph TD
 | Daemon | Designation | Core Responsibility | Department |
 | :--- | :--- | :--- | :--- |
 | **OMA Architect** | `oma_architect` | The Chief Map-Keeper. Enforces the node structures and validates the global city grid. | `system_daemons` |
-| **OA Academy** | `oa_academy` | The Self-Improvement Engine. Bootstraps sub-agents, governs hr, dictating 104 agents. | `system_daemons` |
+| **OA Academy** | `oa_academy` | The Self-Improvement Engine. Bootstraps sub-agents, governs hr, dictating 116 agents. | `system_daemons` |
 | **OIW Intake** | `oiw_intake` | Scrutinizes internet bounds (GitHub/Web), scraping raw context inputs into the OS. | `system_daemons` |
 | **OER Registry** | `oer_registry` | The Gatekeeper. Validates OAP identities, indexing legit nodes and stamping execution. | `system_daemons` |
 | **OBD Bridge** | `obd_harbor` | Harbor Master. Handles sub-process Docker launches and Python process bridging. | `system_daemons` |
