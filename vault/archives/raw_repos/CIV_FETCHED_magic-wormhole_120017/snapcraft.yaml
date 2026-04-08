@@ -1,0 +1,39 @@
+name: wormhole
+version: git
+version-script: python3 -c "import versioneer; print(versioneer.get_version())"
+summary: get things from one computer to another, safely
+description: |
+  This package provides a library and a command-line tool named wormhole,
+  which makes it possible to get short pieces of text (and arbitrary-sized
+  files and directories) from one computer to another. The two endpoints are
+  identified by using identical "wormhole codes": in general, the sending
+  machine generates and displays the code, which must then be typed into the
+  receiving machine.
+  The codes are short and human-pronounceable, using a phonetically-distinct
+  wordlist. The receiving side offers tab-completion on the codewords, so
+  usually only a few characters must be typed. Wormhole codes are single-use
+  and do not need to be memorized.
+
+grade: devel
+confinement: strict
+
+apps:
+  wormhole:
+    command: env LC_ALL=C.UTF-8 LANG=C.UTF-8 wormhole
+    plugs: [home, network, network-bind]
+
+parts:
+  magic-wormhole:
+    source: .
+    source-type: git
+    plugin: python
+    build-packages:
+      - gcc
+      - libffi-dev
+      - libsodium-dev
+      - libssl-dev
+      - make
+    prepare: |
+      # FIXME make sure that the build dir has all the files from the repo,
+      # so the version is not tagged as dirty. --elopio - 20170730
+      cp ../src/snapcraft.yaml .

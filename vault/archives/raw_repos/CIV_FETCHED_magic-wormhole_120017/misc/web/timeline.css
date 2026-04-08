@@ -1,0 +1,100 @@
+
+line.client_tx {
+    stroke: red;
+    stroke-dasharray: 5,5;
+}
+line.client_rx {
+    stroke: blue;
+    stroke-dasharray: 5,5;
+}
+line.c2c_column {
+    stroke: black;
+    stroke-dasharray: 1,5;
+}
+
+line.c2c {
+    stroke-width: 2.0;
+}
+line.c2c.active {
+    stroke-width: 4.0;
+}
+
+line.y_axis {
+    stroke: gray;
+}
+
+/* putting these in a .css file doesn't work, for some reason I have to add
+the markers as a style= attribute directly. */
+line.circle-arrow-circle {
+    /*marker-start: url(#markerCircle);*/
+    marker-mid: url(#markerArrow);
+    /*marker-end: url(#markerCircle);*/
+}
+
+rect.wait-crypto {
+    stroke: black;
+    fill: #ccc;
+}
+
+rect.wait-user {
+    stroke: #00f;
+    fill: #bbe;
+}
+text.wait-text-user {
+    fill: #00f;
+}
+
+rect.proc-span-import {
+    fill: #fcc;
+}
+
+rect.proc-span-websocket {
+    fill: #cfc;
+}
+
+rect.api {
+    fill: #cfc;
+}
+
+rect.bar {
+    stroke: black;
+}
+
+.lane-0 {
+    fill: #fcc;
+}
+
+.lane-1 {
+    fill: #cfc;
+}
+
+.lane-2 {
+    fill: #ccf;
+}
+
+.lane-3 {
+    fill: #ccf;
+}
+
+.lane-4 {
+    fill: #ccf;
+}
+
+.lane-5 {
+    fill: #ccf;
+}
+
+.lane-6 {
+    fill: #ccf;
+}
+
+.vis-item .vis-item-overflow {
+    overflow: visible;
+}
+
+.d3-tip {
+    margin: 4px;
+    padding: 2px;
+    background: #111;
+    color: #fff;
+}
