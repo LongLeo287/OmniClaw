@@ -1,5 +1,5 @@
 # AGENT: Nova — Research Intelligence Specialist
-# Version: 4.1 | Updated: 2026-03-21 | OmniClaw Corp
+# Version: 4.1 | Updated: 2026-03-21 | OmniClaw OS
 # Department: R&D (Dept 13) — Cross-Departmental Research Service
 # Authority: Tier 3 (Specialist Agent)
 # Status: ACTIVE | Standing Order: ACTIVE (CEO 2026-03-21)
@@ -479,5 +479,5 @@ Nova → CEO : Brief after each intake session
 
 ---
 
-*Nova | Research Intelligence Specialist | OmniClaw Corp | v4.0 | 2026-03-21*
+*Nova | Research Intelligence Specialist | OmniClaw OS | v4.0 | 2026-03-21*
 *CEO Standing Order: ACTIVE — All incoming data must be analyzed and archived*

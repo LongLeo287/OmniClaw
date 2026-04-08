@@ -12,12 +12,12 @@
 - Read: MANAGER_PROMPT.md / WORKER_PROMPT.md (corp/departments/rd/)
 - Read: rules.md (corp/departments/rd/)
 - Write: task receipts → telemetry/receipts/rd/
-- Write: dept brief → brain/shared-context/brain/corp/daily_briefs/rd.md
+- Write: dept brief → brain/shared-context/brain/knowledge/daily_briefs/rd.md
 - Escalate: L2 → dept head | L3 → blackboard.json open_items[]
 
 ## Memory
 - Short-term: blackboard.json context field
-- Long-term: brain/corp/memory/departments/rd.md
+- Long-term: brain/knowledge/memory/departments/rd.md
 - Knowledge: query LightRAG :9621
 
 ## Tools Available

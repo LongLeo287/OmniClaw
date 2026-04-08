@@ -1,5 +1,5 @@
 # AGENT: CMO — Chief Marketing Officer / Growth Lead
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 4 (Marketing)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Own content calendar, channel strategy, and affiliate program. All output via GA
 
 **Key responsibilities:**
 1. Run Marketing dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/growth.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/growth.md`
 3. Update dept memory: `corp/memory/departments/Marketing.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Own content calendar, channel strategy, and affiliate program. All output via GA
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: brain/corp/memory/departments/marketing.md, shared-context/brain/corp/daily_briefs/marketing.md
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: brain/knowledge/memory/departments/marketing.md, shared-context/brain/knowledge/daily_briefs/marketing.md
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,12 +78,12 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/Marketing.md` — dept memory
 
 **Writes to:**
-- `corp/memory/departments/marketing.md, shared-context/brain/corp/daily_briefs/marketing.md`
+- `corp/memory/departments/marketing.md, shared-context/brain/knowledge/daily_briefs/marketing.md`
 
 ---
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 Content published: 1/day | Messages handled: 10/day | Campaigns: 1/week
 
-_(Full targets in brain/corp/kpi_targets.yaml — Marketing section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — Marketing section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_CMO | Chief Marketing Officer / Growth Lead | OmniClaw Corp | v1.0 | 
+_CMO | Chief Marketing Officer / Growth Lead | OmniClaw OS | v1.0 | 
 _Dept 4 — Marketing_
 

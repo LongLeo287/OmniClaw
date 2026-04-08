@@ -12,12 +12,12 @@
 - Read: MANAGER_PROMPT.md / WORKER_PROMPT.md (corp/departments/qa_testing/)
 - Read: rules.md (corp/departments/qa_testing/)
 - Write: task receipts → telemetry/receipts/qa_testing/
-- Write: dept brief → brain/shared-context/brain/corp/daily_briefs/qa_testing.md
+- Write: dept brief → brain/shared-context/brain/knowledge/daily_briefs/qa_testing.md
 - Escalate: L2 → dept head | L3 → blackboard.json open_items[]
 
 ## Memory
 - Short-term: blackboard.json context field
-- Long-term: brain/corp/memory/departments/qa_testing.md
+- Long-term: brain/knowledge/memory/departments/qa_testing.md
 - Knowledge: query LightRAG :9621
 
 ## Tools Available

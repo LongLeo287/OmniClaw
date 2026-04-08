@@ -1,5 +1,5 @@
 # AGENT: Health Chief — Head of System Health / Health Chief
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 19 (System Health)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Weekly agent health scans. Full system diagnostics. Execute recovery with approv
 
 **Key responsibilities:**
 1. Run System Health dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/health-chief.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/health-chief.md`
 3. Update dept memory: `corp/memory/departments/System_Health.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Weekly agent health scans. Full system diagnostics. Execute recovery with approv
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: brain/knowledge/system_health/health_kb.md, brain/corp/memory/departments/system_health.md
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: brain/knowledge/system_health/health_kb.md, brain/knowledge/memory/departments/system_health.md
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,12 +78,12 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/System Health.md` — dept memory
 
 **Writes to:**
-- `brain/knowledge/system_health/health_kb.md, brain/corp/memory/departments/system_health.md`
+- `brain/knowledge/system_health/health_kb.md, brain/knowledge/memory/departments/system_health.md`
 
 ---
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 Agents scanned: 100%/week | Critical open: 0 | Monthly diagnostics: 1
 
-_(Full targets in brain/corp/kpi_targets.yaml — System Health section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — System Health section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Health Chief | Head of System Health / Health Chief | OmniClaw Corp | v1.0 | 
+_Health Chief | Head of System Health / Health Chief | OmniClaw OS | v1.0 | 
 _Dept 19 — System Health_
 

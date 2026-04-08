@@ -1,5 +1,5 @@
 # AGENT: HR Manager — HR Manager / Workforce Architect
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 8 (HR & People)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Agent onboarding, performance reviews, token budget tracking, recruitment propos
 
 **Key responsibilities:**
 1. Run HR & People dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/hr-manager.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/hr-manager.md`
 3. Update dept memory: `corp/memory/departments/HR__People.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Agent onboarding, performance reviews, token budget tracking, recruitment propos
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: brain/corp/memory/departments/hr_people.md, brain/corp/memory/agents/
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: brain/knowledge/memory/departments/hr_people.md, brain/knowledge/memory/agents/
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,12 +78,12 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/HR & People.md` — dept memory
 
 **Writes to:**
-- `corp/memory/departments/hr_people.md, brain/corp/memory/agents/`
+- `corp/memory/departments/hr_people.md, brain/knowledge/memory/agents/`
 
 ---
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 Agent reviews: 100%/week | Onboards complete: 100% | Budget report: 1/month
 
-_(Full targets in brain/corp/kpi_targets.yaml — HR & People section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — HR & People section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_HR Manager | HR Manager / Workforce Architect | OmniClaw Corp | v1.0 | 
+_HR Manager | HR Manager / Workforce Architect | OmniClaw OS | v1.0 | 
 _Dept 8 — HR & People_
 

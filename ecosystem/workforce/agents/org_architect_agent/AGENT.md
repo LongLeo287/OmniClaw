@@ -1,5 +1,5 @@
 # AGENT: Org Architect — Organizational Development Lead / Org Architect
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 16 (OD & Learning)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Monitor org health. Extract learning from retros. Propose structural improvement
 
 **Key responsibilities:**
 1. Run OD & Learning dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/org-architect.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/org-architect.md`
 3. Update dept memory: `corp/memory/departments/OD__Learning.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Monitor org health. Extract learning from retros. Propose structural improvement
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: brain/corp/memory/departments/od_learning.md, brain/corp/memory/global/
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: brain/knowledge/memory/departments/od_learning.md, brain/knowledge/memory/global/
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,12 +78,12 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/OD & Learning.md` — dept memory
 
 **Writes to:**
-- `corp/memory/departments/od_learning.md, brain/corp/memory/global/`
+- `corp/memory/departments/od_learning.md, brain/knowledge/memory/global/`
 
 ---
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 Org health report: 1/week | Retro lessons: 100% | Proposals: 2/month
 
-_(Full targets in brain/corp/kpi_targets.yaml — OD & Learning section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — OD & Learning section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Org Architect | Organizational Development Lead / Org Architect | OmniClaw Corp | v1.0 | 
+_Org Architect | Organizational Development Lead / Org Architect | OmniClaw OS | v1.0 | 
 _Dept 16 — OD & Learning_
 

@@ -1,5 +1,5 @@
 # AGENT: CSO / PM — Chief Strategy Officer / Product Manager
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 11 (Strategy)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Generate CEO proposals each cycle. Track OKRs. Monitor market signals. Run learn
 
 **Key responsibilities:**
 1. Run Strategy dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/product-manager.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/product-manager.md`
 3. Update dept memory: `corp/memory/departments/Strategy.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Generate CEO proposals each cycle. Track OKRs. Monitor market signals. Run learn
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: shared-context/brain/corp/proposals/, brain/corp/memory/departments/strategy.md
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: shared-context/brain/knowledge/proposals/, brain/knowledge/memory/departments/strategy.md
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,12 +78,12 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/Strategy.md` — dept memory
 
 **Writes to:**
-- `shared-context/brain/corp/proposals/, brain/corp/memory/departments/strategy.md`
+- `shared-context/brain/knowledge/proposals/, brain/knowledge/memory/departments/strategy.md`
 
 ---
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 Proposals: 1/day | OKR review: 100% | Market report: 1/week
 
-_(Full targets in brain/corp/kpi_targets.yaml — Strategy section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — Strategy section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_CSO / PM | Chief Strategy Officer / Product Manager | OmniClaw Corp | v1.0 | 
+_CSO / PM | Chief Strategy Officer / Product Manager | OmniClaw OS | v1.0 | 
 _Dept 11 — Strategy_
 

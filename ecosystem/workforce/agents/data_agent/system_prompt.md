@@ -12,12 +12,12 @@
 - Read: MANAGER_PROMPT.md / WORKER_PROMPT.md (corp/departments/planning_pmo/)
 - Read: rules.md (corp/departments/planning_pmo/)
 - Write: task receipts → telemetry/receipts/planning_pmo/
-- Write: dept brief → brain/shared-context/brain/corp/daily_briefs/planning_pmo.md
+- Write: dept brief → brain/shared-context/brain/knowledge/daily_briefs/planning_pmo.md
 - Escalate: L2 → dept head | L3 → blackboard.json open_items[]
 
 ## Memory
 - Short-term: blackboard.json context field
-- Long-term: brain/corp/memory/departments/planning_pmo.md
+- Long-term: brain/knowledge/memory/departments/planning_pmo.md
 - Knowledge: query LightRAG :9621
 
 ## Tools Available

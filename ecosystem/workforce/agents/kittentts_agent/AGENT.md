@@ -1,5 +1,5 @@
 ﻿# AGENT: Kittents Agent - Auto-Scaffolded Agent for KittenTTS
-# Version: 1.0 | Created: 2026-03-31 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-31 | OmniClaw OS
 # Department: Engineering (Dept 2) - <Sub-scope if any>
 # Authority: Tier 2 (<Specialist|Manager|Executor>)
 # Status: ACTIVE | auto_created: true
@@ -70,7 +70,7 @@ Knowledge source: `brain/knowledge/<domain>/<KI-id>.md`
 ```
 ALLOWED:
   - read_file: brain/knowledge/<domain>/
-  - write_file: brain/corp/memory/departments/<dept>.md
+  - write_file: brain/knowledge/memory/departments/<dept>.md
   - write_file: brain/knowledge/<domain>/
   - read_file: brain/shared-context/
 
@@ -119,13 +119,13 @@ BLOCKED (unless escalated):
 | <agent or department 2> | Provides: <what> | Receives: <what> |
 
 **Reads from:**
-- `shared-context/brain/corp/daily_briefs/<dept>.md`
+- `shared-context/brain/knowledge/daily_briefs/<dept>.md`
 - `<other read paths>`
 
 **Writes to:**
 - `corp/memory/departments/<dept>.md`
 - `brain/knowledge/<domain>/`
-- `shared-context/brain/corp/daily_briefs/<dept>.md` *(own dept only)*
+- `shared-context/brain/knowledge/daily_briefs/<dept>.md` *(own dept only)*
 
 ---
 
@@ -193,4 +193,4 @@ requires_ceo_approval_for:
 
 ---
 
-*Kittetts Agent - Created by OmniClaw Corp agent-auto-create workflow. Supervised until first performance review.*
+*Kittetts Agent - Created by OmniClaw OS agent-auto-create workflow. Supervised until first performance review.*

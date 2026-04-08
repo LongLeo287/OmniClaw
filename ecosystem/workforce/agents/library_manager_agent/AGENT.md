@@ -1,5 +1,5 @@
 # AGENT: Chief Librarian — Chief Librarian / Knowledge Curator
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 15 (Asset & Knowledge Library)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Chief Librarian Hub. Resolves all skill and process API IDs for the ecosystem vi
 
 **Key responsibilities:**
 1. Run Asset & Knowledge Library dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/library-manager.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/library-manager.md`
 3. Update dept memory: `corp/memory/departments/Asset__Knowledge_Library.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Chief Librarian Hub. Resolves all skill and process API IDs for the ecosystem vi
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: brain/corp/memory/departments/asset_library.md, brain/knowledge/knowledge_index.md
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: brain/knowledge/memory/departments/asset_library.md, brain/knowledge/knowledge_index.md
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,7 +78,7 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/Asset & Knowledge Library.md` — dept memory
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 Index current: 1/week | Orphan KIs resolved: 100% | Dept memories updated: 100%
 
-_(Full targets in brain/corp/kpi_targets.yaml — Asset & Knowledge Library section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — Asset & Knowledge Library section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_Chief Librarian | Chief Librarian / Knowledge Curator | OmniClaw Corp | v1.0 | 
+_Chief Librarian | Chief Librarian / Knowledge Curator | OmniClaw OS | v1.0 | 
 _Dept 15 — Asset & Knowledge Library_
 

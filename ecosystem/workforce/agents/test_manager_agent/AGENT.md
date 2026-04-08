@@ -1,5 +1,5 @@
 # AGENT: QA Chief — QA Manager / GATE_QA Authority
-# Version: 1.0 | Created: 2026-03-22 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-22 | OmniClaw OS
 # Department: Dept 2 (QA & Testing)
 # Authority: Tier 2 (Manager / Dept Head)
 # Status: ACTIVE | Initialized: Cycle 7 System Audit
@@ -27,7 +27,7 @@ Run GATE_QA on all engineering outputs. Issue test reports. Block non-compliant 
 
 **Key responsibilities:**
 1. Run QA & Testing dept cycle — read blackboard → assign workers → collect results
-2. Write daily_brief to `shared-context/brain/corp/daily_briefs/test-manager.md`
+2. Write daily_brief to `shared-context/brain/knowledge/daily_briefs/test-manager.md`
 3. Update dept memory: `corp/memory/departments/QA__Testing.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -60,8 +60,8 @@ Run GATE_QA on all engineering outputs. Issue test reports. Block non-compliant 
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/shared-context/, corp/
-  - write_file: brain/corp/memory/departments/qa_testing.md, telemetry/receipts/qa/
-  - read_file: brain/corp/kpi_targets.yaml, brain/shared-context/blackboard.json
+  - write_file: brain/knowledge/memory/departments/qa_testing.md, telemetry/receipts/qa/
+  - read_file: brain/knowledge/kpi_targets.yaml, brain/shared-context/blackboard.json
 
 BLOCKED (unless escalated):
   - deploy_prod: requires CTO + CEO gate
@@ -78,7 +78,7 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/shared-context/blackboard.json` — task queue
-- `shared-context/brain/corp/daily_briefs/` — other dept briefs
+- `shared-context/brain/knowledge/daily_briefs/` — other dept briefs
 - `corp/kpi_targets.yaml` — own KPI targets
 - `corp/memory/departments/QA & Testing.md` — dept memory
 
@@ -91,7 +91,7 @@ BLOCKED (unless escalated):
 
 QA gates: 100% | Unresolved failures: 0 | Security scans: 1/day
 
-_(Full targets in brain/corp/kpi_targets.yaml — QA & Testing section)_
+_(Full targets in brain/knowledge/kpi_targets.yaml — QA & Testing section)_
 
 ---
 
@@ -148,6 +148,6 @@ requires_ceo_approval_for:
 
 ---
 
-_QA Chief | QA Manager / GATE_QA Authority | OmniClaw Corp | v1.0 | 
+_QA Chief | QA Manager / GATE_QA Authority | OmniClaw OS | v1.0 | 
 _Dept 2 — QA & Testing_
 

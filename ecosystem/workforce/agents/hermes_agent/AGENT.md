@@ -1,5 +1,5 @@
 # AGENT: Hermes Agent — Function Calling AI Specialist
-# Version: 1.0 | Created: 2026-03-31 | OmniClaw Corp
+# Version: 1.0 | Created: 2026-03-31 | OmniClaw OS
 # Department: Engineering (Dept 2) — AI & Tooling
 # Authority: Tier 2 (Executor)
 # Status: ACTIVE | auto_created: true
@@ -104,7 +104,7 @@ BLOCKED (unless escalated):
 ## 🔄 Workflow Integration
 
 **Reads from:**
-- `shared-context/brain/corp/daily_briefs/engineering.md`
+- `shared-context/brain/knowledge/daily_briefs/engineering.md`
 
 **Writes to:**
 - `corp/memory/departments/engineering.md`
@@ -151,4 +151,4 @@ requires_ceo_approval_for:
 }
 ```
 
-*Hermes Agent — Maintained by OmniClaw Corp.*
+*Hermes Agent — Maintained by OmniClaw OS.*

@@ -1,17 +1,14 @@
 ---
-id: agents_domain
-name: Agents
-path: ecosystem/workforce/agents
-type: directory_identity
+id: workforce_agents_root
+type: registry_node
+name: OmniClaw Autonomous Workforce Agents
+total_nodes: 104
 ---
 
-# Agents
+# Autonomous Agents Root
 
-Storage area for agents.
-(Auto-generated identity tag by OMA v2.1)
+This is the architectural registry node for the OmniClaw workforce workforce directory. It holds exactly 104 specialized agent nodes.
+Every agent inside this registry must strictly abide by the zero-trust identity pattern (`_DIR_IDENTITY.md` + `AGENT.md`).
 
-- `repo_civ_fetched_claude_subconscious`  id: `repo_civ_fetched_claude_subconscious` | type: `agent` | registered: 2026-04-08T13:38:38.928652
-- `repo_civ_fetched_awesome_openclaw_agents`  id: `repo_civ_fetched_awesome_openclaw_agents` | type: `agent` | registered: 2026-04-08T14:24:56.594687
-- `repo_civ_fetched_browser`  id: `repo_civ_fetched_browser` | type: `agent` | registered: 2026-04-08T14:24:56.606933
-- `repo_civ_fetched_docker_swag`  id: `repo_civ_fetched_docker_swag` | type: `agent` | registered: 2026-04-08T14:24:56.638386
-- `repo_civ_fetched_langchain`  id: `repo_civ_fetched_langchain` | type: `agent` | registered: 2026-04-08T14:24:56.671938
+Any sub-agent spawned dynamically must output receipts matching the pathing rule in `SUBAGENT_PROTOCOL.md`.
+*Secured by OmniClaw Martial Law override. Managed via OER Registry and OSF.*
