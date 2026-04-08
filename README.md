@@ -26,6 +26,9 @@
 > **Deep Dive**: For the full breakdown of all 21 departments, reporting lines, and agent interactions, see the [**Master System Index**](brain/knowledge/corp/MASTER_INDEX.md).
 
 > [!NOTE]
+> The Workforce is strictly divided into 4 physical Pillars: `agents/` (115 autonomous workers), `subagents/` (ephemeral task runners), `departments/` (reporting structures), and `system/` (The Declarative Configuration Zone for global prompts and OS daemon mappings).
+
+> [!NOTE]
 > For the full list of 21 departments and agent rosters, please refer to the `brain/corp/org_chart.yaml` master registry.
 
 ---

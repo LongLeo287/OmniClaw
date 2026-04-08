@@ -23,6 +23,14 @@ Our architecture relies on a strict Top-Down cascade, ensuring decisions and saf
 3. **Department Heads (Tier 2)**: Standardized LLM agents bound by specific `rules/` (e.g., QA Manager, Frontend Engineer, CIV Chief).
 4. **Task Subagents (Tier 3)**: Ephemeral specialized agents that spawn to execute targeted logic (e.g., git-protector, doc-parser) and die when the task is complete.
 
+## 2. The 4 Workforce Pillars
+
+The underlying file structure in `ecosystem/workforce/` segregates the AI corporate structure into four absolute boundaries:
+- **`agents/`**: Houses independent autonomous workers (115 nodes).
+- **`subagents/`**: Houses specialized, ephemeral task workers (37 nodes).
+- **`departments/`**: Maps agents together under logical reporting chains (28 nodes).
+- **`system/`**: The Declarative Configuration Zone. This strictly dynamic-free zone houses global AI rules (`corp_prompts/`), structural identity bindings (`daemons/`), and enforces the absolute ban on autonomous execution within its borders via `SYSTEM_PROTOCOL.md`.
+
 ## 2. Shared AI State
 
 All these autonomous components are linked using the Local Memory (`brain/`). The critical pieces of inter-agent connection are:
