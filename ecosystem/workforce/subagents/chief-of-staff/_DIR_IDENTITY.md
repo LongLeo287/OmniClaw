@@ -1,12 +1,15 @@
 ---
-id: ecosystem-workforce-subagents-chief-of-staff
-name: Chief-Of-Staff
-path: ecosystem/workforce/subagents/chief-of-staff
-type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+id: chief_of_staff
+type: agent
+owner: OA
+registered_at: 2026-04-08T18:33:33.602316
+tags: ["auto-cloned", "MQ Broker", "Neural Linking", "Rune Management", "oa-assimilated"]
 ---
 
-# Chief-Of-Staff
-Storage area for 'chief-of-staff' domain.
-> Auto-generated identity tag by OMA v2.1.
+# chief-of-staff
+
+## Assimilation Report
+The repository describes the role and responsibilities of the Chief of Staff (SubAgent) within the OmniClaw Governor system, focusing on MQ governance, neural linking, and rune management.
+
+## Application for OmniClaw
+OmniClaw can integrate this agent by adding its functionality to the existing Multi-Agent AI OS. Specifically, it could be used to enhance the MQ governance module for better task assignment and management. Additionally, integrating the neural linking protocol would allow OmniClaw to leverage historical data more effectively in decision-making processes. Lastly, incorporating rune management could ensure consistency across various rituals or tasks within the system.

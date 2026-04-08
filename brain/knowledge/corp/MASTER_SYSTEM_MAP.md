@@ -165,6 +165,8 @@ core/daemons/                                         [NERVOUS_SYSTEM] The 9 res
 core/config/                                          [REGISTRY] Centralized deployment parameters and env configs
 core/docs/                                            [PUBLIC] User-facing documentation (Front Door)
 core/docs/_DIR_IDENTITY.md                            Identity card and bilingual policy
+ecosystem/workforce/agents/                           [OER_MAPPED] 107 Autonomous Agent nodes
+ecosystem/workforce/subagents/                        [OER_MAPPED] 37 Ephemeral Single-Task Subagent nodes
 core/docs/README.md                                   Entry point — doc index (English)
 core/docs/README-vn.md                                Entry point — doc index (Vietnamese)
 core/docs/architecture/                               System architecture docs
