@@ -6,5 +6,4 @@
 |---|---|---|
 | **corp_prompts** | corp_prompts | knowledge |
 | **daemons** | Daemons | directory_identity |
-| **education** | education | knowledge |
 | **intake** | intake | knowledge |

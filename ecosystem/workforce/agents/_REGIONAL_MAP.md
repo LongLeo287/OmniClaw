@@ -9,13 +9,16 @@
 | **ai_ml_agent** | Unknown Agent | OA |
 | **antigravity_kit_agent** | Unknown Agent | OA |
 | **aperant_agent** | Unknown Agent | OA |
+| **archivist-agent** | Archivist | N/A |
 | **ava_agent** | Unknown Agent | OA |
+| **backend-architect-agent** | Backend-Architect-Agent | OER |
 | **bridge_commander_agent** | Unknown Agent | OA |
 | **channel_agent** | Unknown Agent | OA |
 | **chart_testing_agent** | Unknown Agent | OA |
 | **chatdev_agent** | Unknown Agent | OA |
 | **claude_plugins_official_agent** | Unknown Agent | OA |
 | **cloudflared_agent** | Unknown Agent | OA |
+| **cognitive-reflector-agent** | Cognitive Reflector | N/A |
 | **content_agent** | Unknown Agent | OA |
 | **cost_manager_agent** | Unknown Agent | OA |
 | **crawlee_agent** | Unknown Agent | OA |
@@ -47,6 +50,7 @@
 | **it_manager_agent** | It-Manager-Agent | OER |
 | **kilocode_agent** | Kilocode-Agent | OER |
 | **kittentts_agent** | Kittentts-Agent | OER |
+| **knowledge-agent** | Knowledge Agent | N/A |
 | **lazy_nvim_agent** | Lazy-Nvim-Agent | OER |
 | **legal_agent** | Legal-Agent | OER |
 | **library_manager_agent** | Library-Manager-Agent | OER |
@@ -63,6 +67,7 @@
 | **nemoclaw_agent** | Nemoclaw-Agent | OER |
 | **newspaper_agent** | Newspaper-Agent | OER |
 | **notebooklm_agent** | Notebooklm-Agent | OER |
+| **oa-chief-agent** | Oa-Chief-Agent | OER |
 | **oa_academy** | Unknown Agent | N/A |
 | **obd_harbor** | Unknown Agent | N/A |
 | **oer_registry** | Unknown Agent | N/A |
@@ -84,12 +89,15 @@
 | **pyright_agent** | Pyright-Agent | OER |
 | **qwen_agent** | Qwen-Agent | OER |
 | **qwen_code_agent** | Qwen-Code-Agent | OER |
+| **rd-lead-agent** | Rd-Lead-Agent | OER |
 | **react_email_agent** | React-Email-Agent | OER |
+| **registry-manager-agent** | Registry-Manager-Agent | OER |
 | **repo_ingest_agent** | Repo Ingest Agent | N/A |
 | **rootly_mcp_server_agent** | Rootly-Mcp-Server-Agent | OER |
 | **scrum_master_agent** | Scrum-Master-Agent | OER |
 | **security_engineer_agent** | Security-Engineer-Agent | OER |
 | **showdown_agent** | Showdown-Agent | OER |
+| **software-architect-agent** | Software-Architect-Agent | OER |
 | **sre_agent** | Sre-Agent | OER |
 | **strix_agent** | Strix-Agent | OER |
 | **superagi_agent** | Superagi-Agent | OER |
