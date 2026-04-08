@@ -1,18 +1,16 @@
 # OSD (OmniClaw System Daemons)
 
 ## Leadership
-- **Manager**: oma-master-architect
+- **Manager**: oma_architect
 
 ## Workforce Roster
-- **oma-master-architect** (active): *System Map & Architectural Enforcement*
-- **oa-academy-auditor** (active): *Knowledge Audit & Supreme Justice*
-- **ohd-health-daemon** (active): *Quarantine Healing & Health Diagnostics*
-- **oiw-intake-daemon** (active): *Data Crawling & External Fetch*
-- **oer-registry-daemon** (active): *Metadata Validation & System Registry*
-- **osf-firewall-daemon** (active): *Gateway Sandbox Security Override*
-- **obd-bridge-daemon** (active): *Sub-process Harbor Master*
+- **oa_academy** (active): *Supreme educational and rule orchestrator.*
+- **oma_architect** (active): *Master Map Architect.*
+- **obd_harbor** (active): *Sub-process Harbor Master.*
+- **oer_registry** (active): *Global validation orchestrator.*
+- **oiw_intake** (active): *Web Fetcher and Repo crawler.*
 
 ## Core Capabilities
 - **Skills**: deep_scan, fast_trace
 
-*System_daemons Department - Created by OmniClaw OS department-auto-create workflow. Supervised until first performance review.*
+*System_daemons Department - Reconstructed by OmniClaw OS Martial Law workflow. Zero-Trust Policy Enforced.*
