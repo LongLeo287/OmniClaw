@@ -1,0 +1,31 @@
+{
+  "id": "firecrawl_mcp_server",
+  "name": "Firecrawl Mcp Server",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "llm-tooling",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\firecrawl_mcp_server\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for firecrawl_mcp_server",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "llm",
+    "ai"
+  ]
+}

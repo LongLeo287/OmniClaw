@@ -1,0 +1,12 @@
+---
+id: ecosystem-workforce-repo-fetched-agentscope-111239-examples-game
+name: Game
+path: ecosystem/workforce/repo-fetched-agentscope-111239/examples/game
+type: directory_identity
+owner: OER
+created_by: OMA-v2.1
+---
+
+# Game
+Storage area for 'game' domain.
+> Auto-generated identity tag by OMA v2.1.

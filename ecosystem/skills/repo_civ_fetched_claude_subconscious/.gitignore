@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# State files (generated at runtime)
+.letta/
+session-*.json
+conversations.json
+
+# Claude Code local state
+.claude/
+
+# Other tool configs
+.agents/
+.codex/
+.cursor/
+.opencode/
+
+# Evals (internal tooling)
+evals/
+
+# Skills (local slash commands)
+skills/
+.skills/
+
+# Logs
+*.log
+/tmp/letta-claude-sync/
+
+# TypeScript build output
+dist/
+*.js
+*.js.map
+*.d.ts
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment files (contain secrets)
+.env
+.env.local
+.env.*.local
+poem_for_claude_code.md

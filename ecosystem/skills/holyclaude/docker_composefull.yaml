@@ -1,0 +1,66 @@
+# ==============================================================================
+# HolyClaude — Full Configuration
+# Usage: docker compose -f docker-compose.full.yaml up -d
+# All options documented: https://github.com/CoderLuii/HolyClaude/blob/main/docs/configuration.md
+# ==============================================================================
+
+services:
+  holyclaude:
+    image: coderluii/holyclaude:latest
+    container_name: holyclaude
+    hostname: holyclaude
+    restart: unless-stopped
+    shm_size: 2g
+    network_mode: bridge
+    cap_add:
+      - SYS_ADMIN
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    ports:
+      - "${HOLYCLAUDE_HOST_PORT:-3001}:3001"   # CloudCLI web UI
+      # --- Uncomment ports as needed ---
+      # - "3000:3000"         # Dev server (Next.js, Express)
+      # - "4321:4321"         # Astro dev
+      # - "5173:5173"         # Vite dev
+      # - "8787:8787"         # Wrangler dev
+      # - "9229:9229"         # Node.js debugger
+    volumes:
+      - ${HOLYCLAUDE_HOST_CLAUDE_DIR:-./data/claude}:/home/claude/.claude
+      - ${HOLYCLAUDE_HOST_WORKSPACE_DIR:-./workspace}:/workspace
+    environment:
+      # --- Required ---
+      - TZ=UTC                                    # Your timezone (e.g., America/New_York)
+
+      # --- Performance ---
+      - NODE_OPTIONS=--max-old-space-size=4096     # Node.js memory limit (MB)
+
+      # --- User mapping (match your host UID/GID) ---
+      - PUID=1000
+      - PGID=1000
+
+      # --- SMB/CIFS mounts (enable if workspace is on a network share) ---
+      # - CHOKIDAR_USEPOLLING=1
+      # - WATCHFILES_FORCE_POLLING=true
+
+      # --- Notifications (uncomment services you want) ---
+      # - NOTIFY_DISCORD=discord://webhook_id/webhook_token
+      # - NOTIFY_TELEGRAM=tg://bot_token/chat_id
+      # - NOTIFY_PUSHOVER=pover://user_key@app_token
+      # - NOTIFY_SLACK=slack://token_a/token_b/token_c
+      # - NOTIFY_EMAIL=mailto://user:pass@gmail.com?to=you@gmail.com
+      # - NOTIFY_GOTIFY=gotify://hostname/token
+      # - NOTIFY_URLS=                                   # catch-all: comma-separated Apprise URLs
+
+      # --- Anthropic / Claude Code (optional, can also authenticate via web UI) ---
+      # - ANTHROPIC_API_KEY=
+      # - ANTHROPIC_AUTH_TOKEN=
+      # - ANTHROPIC_BASE_URL=                    # Custom API endpoint (proxies, private deployments)
+      # - CLAUDE_CODE_USE_BEDROCK=1              # Use Amazon Bedrock as backend
+      # - CLAUDE_CODE_USE_VERTEX=1               # Use Google Vertex AI as backend
+
+      # --- AI provider API keys (optional — can also set via web UI) ---
+      # - GEMINI_API_KEY=
+      # - OPENAI_API_KEY=
+      # - CURSOR_API_KEY=
+      # - OLLAMA_HOST=http://host.docker.internal:11434    # External Ollama endpoint

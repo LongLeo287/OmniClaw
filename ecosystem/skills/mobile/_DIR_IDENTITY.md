@@ -1,0 +1,14 @@
+---
+id: ecosystem_workforce_agents_mobile_agent
+
+name: Mobile_Agent
+
+path: ecosystem/workforce/agents/mobile-agent
+type: directory_identity
+owner: OER
+created_by: OMA-v2.1
+---
+
+# Mobile-Agent
+Storage area for 'mobile-agent' domain.
+> Auto-generated identity tag by OMA v2.1.

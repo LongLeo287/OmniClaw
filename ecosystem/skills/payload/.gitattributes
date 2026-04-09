@@ -1,0 +1,6 @@
+# Force LF line endings for shell scripts (prevents CRLF issues on Windows/WSL)
+*.sh text eol=lf
+*.ps1 text eol=crlf
+
+# Default: auto-detect
+* text=auto

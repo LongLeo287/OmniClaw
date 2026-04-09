@@ -1,0 +1,19 @@
+# Backup fiels
+~*
+
+# Python build / packaging
+build/
+dist/
+__pycache__/
+llmware.egg-info/
+venv/
+
+# Jekyll
+docs/_site/
+
+
+# Mac
+.DS_Store/
+
+# Testing
+.env

@@ -1,0 +1,220 @@
+---
+name: hallucination_guard
+
+description: Verify AI-generated imports, API calls, and packages actually exist. Catches phantom functions, non-existent packages, and slopsquatting attacks.
+metadata:
+  author: runedev
+  version: "0.3.0"
+  layer: L3
+  model: haiku
+  group: validation
+  tools: "Read, Bash, Glob, Grep"
+---
+
+# hallucination-guard
+
+## Purpose
+
+Post-generation validation that verifies AI-generated code references actually exist. Catches the 42% of AI code that contains hallucinated imports, non-existent packages, phantom functions, and incorrect API signatures. Also defends against "slopsquatting" — where attackers register package names that AI commonly hallucinates.
+
+## Triggers
+
+- Called by `cook` after code generation, before commit
+- Called by `fix` after applying fixes
+- Called by `preflight` as import verification sub-check
+- Called by `review` during code review
+- Auto-trigger: when new import statements are added to codebase
+
+## Calls (outbound)
+
+# Exception: L3→L3 coordination
+- `research` (L3): verify package existence on npm/pypi
+
+## Called By (inbound)
+
+- `cook` (L1): after code generation, before commit
+- `fix` (L2): after applying fixes
+- `preflight` (L2): import verification sub-check
+- `review` (L2): during code review
+- `db` (L2): verify SQL syntax and ORM method calls are real
+- `review-intake` (L2): verify imports in code submitted for review
+- `skill-forge` (L2): verify imports in newly generated skill code
+
+## Execution
+
+### Step 1 — Extract imports
+
+Use `Grep` to find all import/require/use statements in changed files:
+
+```
+Grep pattern: ^(import|require|use|from)\s
+Files: changed files passed as input
+Output mode: content
+```
+
+Collect every imported module name and file path. Separate into:
+- Internal imports (start with `./`, `../`, `@/`, `~/`)
+- External packages (bare module names)
+
+### Step 2 — Verify internal imports
+
+For each internal import path, use `Glob` to confirm the file exists in the codebase.
+
+```
+Glob pattern: <resolved import path>.*   (try .ts, .tsx, .js, .jsx, .py, .rs etc.)
+```
+
+If `Glob` returns no results → mark as **BLOCK** (file does not exist).
+
+Also use `Grep` to verify that the specific exported name (function/class/const) exists in the resolved file:
+
+```
+Grep pattern: export (function|class|const|default) <name>
+File: resolved file path
+```
+
+If export not found → mark as **WARN** (symbol may not be exported).
+
+### Step 3 — Verify external packages (Dependency Check Before Import)
+
+> From taste-skill (Leonxlnx/taste-skill, 3.4k★): "Before importing ANY 3rd party lib, check package.json."
+
+Use `Read` on the project's dependency manifest to confirm each external package is listed:
+
+- JavaScript/TypeScript: `package.json` → check `dependencies` and `devDependencies`
+- Python: `requirements.txt` or `pyproject.toml` → `[project.dependencies]` and `[project.optional-dependencies]`
+- Rust: `Cargo.toml` → `[dependencies]` and `[dev-dependencies]`
+
+**Pre-import gate** (BEFORE writing import statements, not just after):
+1. If the agent is ABOUT to import a package → check manifest FIRST
+2. If package is NOT in manifest → output install command before writing the import:
+   ```
+   ⚠ Package '<name>' not in dependencies. Install first:
+     npm install <name>        # JS/TS
+     pip install <name>        # Python
+     cargo add <name>          # Rust
+   ```
+3. If package IS in manifest → proceed with import
+
+**Post-import verification** (after code is written):
+- If package is **not listed** in the manifest → mark as **BLOCK** (phantom dependency)
+- If package is listed but not installed (no lockfile entry) → mark as **WARN** (not yet installed)
+
+Also check for typosquatting: if package name has edit distance ≤ 2 from a known popular package (axios/axois, lodash/lodahs, react/recat), mark as **SUSPICIOUS**.
+
+### Step 3.5 — Slopsquatting Registry Verification
+
+<HARD-GATE>
+Any NEW package added to the manifest (not previously in the lockfile) MUST be verified against the actual registry.
+AI agents hallucinate package names at high rates. A package that doesn't exist on npm/PyPI/crates.io = supply chain risk.
+</HARD-GATE>
+
+For each NEW external package (present in manifest but absent from lockfile):
+
+**3.5a. Registry existence check:**
+```
+JavaScript: Bash: npm view <package-name> version 2>/dev/null
+Python:     Bash: pip index versions <package-name> 2>/dev/null
+Rust:       Bash: cargo search <package-name> --limit 1 2>/dev/null
+```
+
+If command returns empty/error → **BLOCK** (package does not exist on registry — likely hallucinated name).
+
+**3.5b. Popularity check (slopsquatting defense):**
+```
+JavaScript: Bash: npm view <package-name> 'dist-tags.latest' 'time.modified' 2>/dev/null
+→ If last modified > 2 years ago AND weekly downloads < 100: SUSPICIOUS
+Python:     Use rune:research to check PyPI page for download stats
+```
+
+Low-popularity packages with names similar to popular ones = **SUSPICIOUS** (potential slopsquatting attack).
+
+**3.5c. Known slopsquatting patterns:**
+```
+Popular Package → Common AI Hallucination
+axios           → axois, axio, axioss
+lodash          → lodahs, loadash, lo-dash
+express         → expresss, express-js
+react-router    → react-routes, react-routing
+python-dotenv   → dotenv (wrong package in Python context)
+```
+
+Flag any match with edit distance ≤ 2 from these known pairs.
+
+### Step 4 — Verify API calls
+
+For any API endpoint or SDK method call found in the diff, use `rune:docs-seeker` (Context7) to confirm:
+- The method/function exists in the library's documented API
+- The parameter signature matches usage in code
+
+Mark unverifiable API calls as **WARN** (cannot confirm without docs).
+
+### Step 5 — Report
+
+Emit the report in the Output Format below. If any **BLOCK** items exist, return status `BLOCK` to the calling skill to halt commit/deploy.
+
+## Check Types
+
+```
+INTERNAL    — file exists, function/class exists, signature matches
+EXTERNAL    — package exists on registry, version is valid
+API         — endpoint pattern valid, method correct
+TYPE        — assertion matches actual type
+SUSPICIOUS  — package name similar to popular package (slopsquatting)
+```
+
+## Output Format
+
+```
+## Hallucination Guard Report
+- **Status**: PASS | WARN | BLOCK
+- **References Checked**: [count]
+- **Verified**: [count] | **Unverified**: [count] | **Suspicious**: [count]
+
+### BLOCK (hallucination detected)
+- `import { formatDate } from 'date-utils'` — Package 'date-utils' not found on npm. Did you mean 'date-fns'?
+- `import { useAuth } from '@/hooks/useAuth'` — File '@/hooks/useAuth' does not exist
+
+### WARN (verify manually)
+- `import { newFunction } from 'popular-lib'` — Function 'newFunction' not found in popular-lib@3.2.0 exports
+
+### SUSPICIOUS (potential slopsquatting)
+- `import axios from 'axois'` — Typo? Similar to popular package 'axios'
+
+### Verified
+- 12/15 references verified successfully
+```
+
+## Constraints
+
+1. MUST verify every import against actual installed packages — not just check if name looks reasonable
+2. MUST verify API signatures against docs — not assume from function name
+3. MUST report BLOCK verdict with specific evidence — never "looks suspicious"
+4. MUST NOT say "no hallucinations found" without listing what was checked
+
+## Sharp Edges
+
+Known failure modes for this skill. Check these before declaring done.
+
+| Failure Mode | Severity | Mitigation |
+|---|---|---|
+| Declaring "no hallucinations found" without listing what was checked | CRITICAL | Constraint 4 blocks this — always list verified count vs total |
+| Marking phantom package (not in manifest) as WARN instead of BLOCK | HIGH | Unlisted package in manifest = BLOCK — not installed = won't run |
+| Missing typosquatting check on external packages | MEDIUM | Edit distance ≤2 check is mandatory — check every external package name |
+| Only checking package name, not the specific exported symbol | MEDIUM | Step 2: verify the specific function/class is exported, not just the file exists |
+| Skipping registry verification for new packages | CRITICAL | Step 3.5 HARD-GATE: new packages MUST be verified against actual registry |
+| AI-hallucinated package name passes because it "sounds right" | HIGH | Slopsquatting defense: check registry existence, not name plausibility |
+| Low-popularity package with similar name to popular one not flagged | HIGH | Popularity check catches slopsquatting attacks on newly registered packages |
+
+## Done When
+
+- All imports extracted from changed files (internal + external separated)
+- Internal imports: file existence AND symbol export verified
+- External packages: manifest presence checked for every package
+- Suspicious package names flagged (edit distance ≤2 from popular packages)
+- API signatures checked via docs-seeker for new SDK/library calls
+- Hallucination Guard Report emitted with PASS/WARN/BLOCK and verified count
+
+## Cost Profile
+
+~500-1500 tokens input, ~200-500 tokens output. Haiku for speed — this runs frequently as a sub-check.

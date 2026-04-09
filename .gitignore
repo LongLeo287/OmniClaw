@@ -1,0 +1,77 @@
+# =============================================================
+# OmniClaw - Hardened .gitignore
+# Purpose: Restricted git tracking to Documentation & Workforce Registry
+# =============================================================
+
+# 1. Ignore EVERYTHING by default
+/*
+
+# 2. Allow Git to track the root configuration and documentation
+!/.gitignore
+!/README.md
+!/README-vn.md
+!/LICENSE
+!/omniclaw.bat
+
+# 3. Allow authorized "Operating System" Documentation
+!/core/
+/core/*
+!/core/docs/
+!/core/docs/**
+
+# 4. Allow authorized Workforce Registry
+!/ecosystem/
+/ecosystem/*
+!/ecosystem/workforce/
+!/ecosystem/workforce/**
+!/ecosystem/skills/
+!/ecosystem/skills/**
+!/ecosystem/plugins/
+!/ecosystem/plugins/**
+!/ecosystem/tools/
+!/ecosystem/tools/**
+!/ecosystem/ui_components/
+!/ecosystem/ui_components/**
+!/ecosystem/bridges/
+!/ecosystem/bridges/**
+!/docs/
+!/docs/**
+
+# 5. Allow authorized Vault Structure & Media Assets
+!/vault/
+/vault/*
+!/vault/_DIR_IDENTITY.md
+!/vault/archives/
+/vault/archives/*
+!/vault/archives/_DIR_IDENTITY.md
+!/vault/assets/
+/vault/assets/*
+!/vault/assets/_DIR_IDENTITY.md
+!/vault/assets/media/
+!/vault/assets/media/**
+!/vault/quarantine/
+/vault/quarantine/*
+!/vault/quarantine/_DIR_IDENTITY.md
+!/vault/tmp/
+/vault/tmp/*
+!/vault/tmp/_DIR_IDENTITY.md
+
+# 6. Global exclusions for common clutter in whitelisted zones
+**/.DS_Store
+**/Thumbs.db
+**/node_modules/
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+**/dist/
+**/build/
+**/*.tmp
+**/*.bak
+
+# 7. Secrets (Double-Safety)
+.env
+.env.*
+secrets/
+**/*.key
+**/*.pem

@@ -1,0 +1,85 @@
+project_name: pscale
+release:
+  prerelease: auto # don't publish release with -rc1,-pre, etc suffixes
+before:
+  hooks:
+    - go mod tidy
+    - ./script/completions
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    main: ./cmd/pscale/main.go
+    ldflags:
+     - -s -w -X main.version={{.Version}} -X main.commit={{.ShortCommit}} -X main.date={{.Date}}
+    binary: "pscale"   
+dockers:
+  - image_templates:
+    - "planetscale/pscale:latest"
+    - "planetscale/pscale:{{ .Tag }}"
+    build_flag_templates:
+    - "--pull"
+    - "--label=org.opencontainers.image.created={{.Date}}"
+    - "--label=org.opencontainers.image.title={{.ProjectName}}"
+    - "--label=org.opencontainers.image.revision={{.FullCommit}}"
+    - "--label=org.opencontainers.image.version={{.Version}}"
+    - "--label=org.opencontainers.image.source={{.GitURL}}"
+    dockerfile: Dockerfile.goreleaser
+nfpms:
+  - maintainer: PlanetScale
+    description: The PlanetScale CLI
+    homepage: https://github.com/planetscale/cli
+    license: Apache 2.0
+    contents:
+      - src: ./completions/pscale.bash
+        dst: /etc/bash_completion.d/pscale
+      - src: ./completions/pscale.fish
+        dst: /usr/share/fish/completions/pscale.fish
+      - src: ./completions/pscale.zsh
+        dst: /usr/local/share/zsh/site-functions/_pscale
+    formats:
+    - deb
+    - rpm
+    replacements:
+      darwin: macOS
+brews:
+  - homepage: "https://planetscale.com/"
+    description: "The PlanetScale CLI"
+    name: "pscale"
+    license: Apache 2.0
+    tap: 
+      owner: planetscale
+      name: homebrew-tap
+    dependencies:
+      - name: mysql # needed for 'pscale shell'
+        type: optional
+    folder: Formula
+    test: |
+         system "#{bin}/pscale --version"
+    install: |
+      bin.install "pscale"
+      bash_completion.install "completions/pscale.bash" => "pscale"
+      zsh_completion.install "completions/pscale.zsh" => "_pscale"
+      fish_completion.install "completions/pscale.fish"
+archives:
+  - replacements:
+      darwin: macOS
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - README.md
+      - LICENSE
+      - completions/*
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - Merge pull request

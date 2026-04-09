@@ -1,0 +1,20 @@
+﻿department: system_daemons
+id: oiw_daemon
+name: OIW Intake Daemon
+active: true
+leadership:
+  manager: oma_core
+  reports_to: oma_core
+role: The frontline Intake Daemon for OmniClaw AI OS. Clones, fetches, and queues missing skills/repos while enforcing pre-flight security shields (Trivy/AgentShield).
+kpi_targets:
+  intake_speed: "< 5s per repo"
+  security_block_rate: "100% on malicious repos"
+tools_and_capabilities:
+  skills:
+    - skill_fetcher
+    - agentshield
+    - trivy
+    - secret_scanner
+outputs:
+  - artifact: quarantine_object
+    path: vault/tmp/quarantine/

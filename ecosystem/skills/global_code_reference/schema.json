@@ -1,0 +1,25 @@
+{
+  "id": "global_code_reference",
+  "name": "Global Codebases Reference Vault",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "reference",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\global_code_reference\\SKILL.md",
+  "accessible_by": ["Orchestrator", "Engineering Department", "Antigravity"],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "read_codebase",
+      "description": "Explore the 18.4GB knowledge base of 309 major open-source repositories",
+      "input": "{ repo_name: string, query: string }",
+      "output": "Source code snippets from the vault"
+    }
+  ],
+  "consumed_by": ["Orchestrator", "Engineering Department"],
+  "emits_events": ["reference.knowledge.accessed"],
+  "listens_to": [],
+  "tags": ["knowledge-base", "source-code", "reference", "tier-3", "vault"]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "claudy_releases",
+  "name": "Claudy Releases",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "inference-serving",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\claudy_releases\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for claudy_releases",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "serving",
+    "mlops",
+    "inference"
+  ]
+}

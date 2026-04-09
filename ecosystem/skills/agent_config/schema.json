@@ -1,0 +1,30 @@
+{
+  "id": "agent_config",
+  "name": "Agent Config",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "agent-framework",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "\\ecosystem\\skills\\agent_config\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for agent_config",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "agent"
+  ]
+}

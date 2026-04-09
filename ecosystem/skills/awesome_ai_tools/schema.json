@@ -1,0 +1,31 @@
+{
+  "id": "awesome_ai_tools",
+  "name": "Awesome Ai Tools",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "llm-tooling",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\awesome_ai_tools\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for awesome_ai_tools",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "llm",
+    "ai"
+  ]
+}

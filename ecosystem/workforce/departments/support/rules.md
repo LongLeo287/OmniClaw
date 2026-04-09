@@ -1,0 +1,114 @@
+# SUPPORT — Department Rules
+# Version: 1.0 | Updated: 2026-03-17
+# Dept Head: channel-agent | Reports to: CMO
+# All public-facing responses must pass GATE_CONTENT
+# Applies in addition to: brain/corp/rules/manager_rules.md + worker_rules.md
+
+---
+
+## DEPT DOMAIN RULES
+
+RULE SUP-01: ACCURACY FIRST
+  Never guess or speculate in a customer response.
+  If unsure → check knowledge base or escalate internally.
+  Wrong information to customer = critical incident.
+
+RULE SUP-02: GATE_CONTENT FOR PUBLIC RESPONSES
+  All customer-facing replies (email, chat, social) → GATE_CONTENT first.
+  Internal notes do not require gate review.
+
+RULE SUP-03: RESPONSE TIME
+  Target: acknowledge all queries within 1 cycle.
+  If answer requires research: acknowledge + set expectation first.
+  Never leave a query unanswered past 2 cycles.
+
+RULE SUP-04: NO UNAUTHORIZED COMMITMENTS
+  Support agents cannot promise refunds, features, or SLAs not in policy.
+  Any commitment outside policy → escalates to channel-agent (dept head).
+
+RULE SUP-05: FAQ MAINTENANCE MANDATORY
+  Every novel query resolution → update FAQ immediately.
+  faq-agent must add new Q&A to `knowledge/support_faq.md` same cycle.
+  Stale FAQ is organizational debt.
+
+RULE SUP-06: COMPLAINT ESCALATION
+  Recurring complaint from 3+ users on same issue → flag to Marketing + Strategy.
+  Single CRITICAL complaint (legal, safety) → L2 to CMO immediately.
+
+---
+
+## AGENT ROLES & RESPONSIBILITIES
+
+### channel-agent (Dept Head)
+**Role:** Support operations, channel management, escalation handler
+**Responsibilities:**
+- Manage all inbound support channels (Telegram, Zalo, Discord, FB)
+- Route queries to faq-agent or knowledge-agent
+- Handle complex escalations that workers can't resolve
+- Write support daily brief
+**Must load at boot:**
+- `brain/knowledge/org/support.md`
+- `ecosystem/workforce/departments/support/MANAGER_PROMPT.md`
+- Current channel bridge status (from Operations)
+**Skills:**
+- `context_manager` — multi-channel context
+- `reasoning_engine` — complex case handling
+**Tools:** Channel bridge APIs, messaging platforms
+
+---
+
+### faq-agent
+**Role:** FAQ management and first-line response using templates
+**Responsibilities:**
+- Search FAQ database before drafting any response
+- Draft responses from FAQ templates
+- Update FAQ after every novel query resolved
+- Track which FAQs are used most often
+**At the start of each task, load:**
+- SKILL: `knowledge_enricher` — FAQ search and retrieval
+- `knowledge/support_faq.md` — current FAQ database
+**Skills:**
+- `knowledge_enricher` — search + retrieve knowledge
+- `context_manager` — match query to knowledge
+**Output:**
+- Draft response → GATE_CONTENT → deliver
+- FAQ update → `knowledge/support_faq.md`
+**If no FAQ match:** hand off to knowledge-agent
+
+---
+
+### knowledge-agent
+**Role:** Research and build responses for novel (non-FAQ) queries
+**Responsibilities:**
+- Research answers for queries not covered by FAQ
+- Build new knowledge base entries from each resolved case
+- Search SKILL_REGISTRY for relevant product/technical knowledge
+**At the start of each task, load:**
+- SKILL: `knowledge_enricher` — deep knowledge retrieval
+- SKILL: `reasoning_engine` — answer synthesis
+- SKILL: `web_intelligence` (if available) — external research
+**Skills:**
+- `knowledge_enricher` — primary tool for all research
+- `reasoning_engine` — synthesize complex answers
+- `web_intelligence` — external lookup when internal knowledge insufficient
+**Output:**
+- Draft answer → hand to faq-agent for formating → GATE_CONTENT
+- New knowledge entry for faq-agent to add to FAQ
+
+---
+
+### crm-agent
+**Role:** Customer relationship data tracking and analysis
+**Responsibilities:**
+- Log all customer interactions in CRM
+- Track satisfaction signals and complaint patterns
+- Weekly: report on recurring issues → flag to Marketing/Strategy
+- Identify high-value users for escalated support
+**At the start of each task, load:**
+- SKILL: `knowledge_enricher` — pattern detection in interaction data
+- SKILL: `reasoning_engine` — pattern interpretation
+**Skills:**
+- `knowledge_enricher` — data analysis
+- `reasoning_engine` — customer insight synthesis
+**Output:** weekly CRM report → support daily brief
+**Flag immediately:** 3+ users with same complaint → Marketing + Strategy

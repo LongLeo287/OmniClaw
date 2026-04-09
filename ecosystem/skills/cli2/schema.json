@@ -1,0 +1,30 @@
+{
+  "id": "cli2",
+  "name": "Cli2",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "data-tools",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\cli2\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for cli2",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "data"
+  ]
+}

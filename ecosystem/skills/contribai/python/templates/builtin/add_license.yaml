@@ -1,0 +1,10 @@
+name: add-license
+description: Add missing LICENSE file (MIT default)
+type: docs_improve
+severity: medium
+pattern: No LICENSE file found in repository root
+fix_template: |
+  Add an MIT LICENSE file to the repository root.
+  Use the repository owner's name as the copyright holder.
+languages: []
+tags: [missing-file, legal, best-practice]

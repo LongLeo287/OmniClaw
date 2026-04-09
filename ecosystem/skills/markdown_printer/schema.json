@@ -1,0 +1,31 @@
+{
+  "id": "markdown_printer",
+  "name": "Markdown Printer",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "doc-tools",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\markdown_printer\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for markdown_printer",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "markdown",
+    "documents"
+  ]
+}

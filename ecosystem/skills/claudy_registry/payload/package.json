@@ -1,0 +1,1 @@
+{"name": "CIV_FETCHED_claudy-registry_121551", "version": "1.0.1", "main": "index.js", "dependencies": {"firebase-admin": ">=9.8.0", "axios": ">=0.21.1"}, "devDependencies": {}, "scripts": {"start": "node index.js"}}

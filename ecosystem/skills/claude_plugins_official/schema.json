@@ -1,0 +1,30 @@
+{
+  "id": "claude_plugins_official",
+  "name": "Claude Plugins Official",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "forms",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\claude_plugins_official\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for claude_plugins_official",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "forms"
+  ]
+}

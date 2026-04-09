@@ -1,0 +1,20 @@
+from typing import List, Dict
+
+class KnowledgeLayer:
+    def __init__(self):
+        self.knowledge_base = []
+
+    def add_knowledge(self, knowledge: str) -> None:
+        # Add new knowledge to the base
+        normalized_knowledge = preprocess_text(knowledge)
+        self.knowledge_base.append(normalized_knowledge.split())
+
+    def retrieve_knowledge(self, query: str) -> List[str]:
+        # Retrieve relevant knowledge based on the query
+        results = []
+        normalized_query = preprocess_text(query)
+        words = normalized_query.split()
+        for entry in self.knowledge_base:
+            if all(word in entry for word in words):
+                results.append(' '.join(entry))
+        return results

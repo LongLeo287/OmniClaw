@@ -1,0 +1,6 @@
+runtime: python39
+instance_class: F4_1G
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 10

@@ -1,0 +1,32 @@
+{
+  "id": "homebrew_core",
+  "name": "Homebrew Core",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "package-management",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\homebrew_core\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for homebrew_core",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "homebrew",
+    "packages",
+    "macos"
+  ]
+}

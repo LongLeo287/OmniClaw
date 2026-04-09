@@ -1,0 +1,20 @@
+department: system_daemons
+dept: system-education
+id: oa-chief-agent
+metadata:
+  created: 2026-04-01
+  version: v1.0
+name: OA Chief Professor
+routing:
+  domain: system_repair
+  fallback: orchestrator_pro
+runtime:
+  boot_prompt: system_prompt.md
+  bus: oa_dispatch_queue
+  memory: ltm
+  type: standard
+skills:
+- post_mortem_analysis
+- system_healing
+status: ACTIVE
+tier: 1

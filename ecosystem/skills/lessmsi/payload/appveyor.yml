@@ -1,0 +1,37 @@
+# see http://www.appveyor.com/docs/appveyor-yml
+# environment info: https://www.appveyor.com/docs/windows-images-software/#visual-studio-2015
+image: Visual Studio 2022
+
+environment:
+  # from https://github.com/settings/tokens encrypted at https://ci.appveyor.com/tools/encrypt
+  GH_TOKEN:
+    secure: MJhg1HrP+chjNOM6GAdrQzMWMTHNwmzD57kWT7mhWwnOOJiag1EZHHgVtrTUmGJ1syJncgmKTVofdOND+9QmqbpbMji6V0eN9EPXN6t+Os78H+wuCj58GLWjel0x+nM9
+  CHOCO_KEY:
+    secure: /Ie5xuB5GTDwElbSN0V+mCyYtYNhfQJRjdoWFUsNsVJW9bq32LNzSlI1cn4OUxIu
+
+#---------------------------------#
+#      build configuration        #
+#---------------------------------#
+build_script:
+  - cmd: msbuild .\src\.build\lessmsi.msbuild /p:TheVersion=%APPVEYOR_BUILD_VERSION% /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+test:
+  assemblies:
+    - .\src\.deploy\LessMsi.Tests.dll
+
+artifacts:
+  - path: 'src\.deploy\chocolateypackage\*.nupkg'
+  - path: 'src\.deploy\*.zip'
+
+# NOTE: Deployments, before_deploy and after_deploy scripts are disabled by default on Pull Requests.
+#       https://www.appveyor.com/docs/deployment/#pull-requests
+deploy_script:
+  # install (select) node 10 per semantic-release requirements: https://www.appveyor.com/docs/lang/nodejs-iojs/#selecting-nodejs-or-iojs-version
+  - ps: Install-Product node 10
+  # install semantic-release and reequirement plugins:
+  - cmd: npm i semantic-release@17 @semantic-release/exec@5
+  # run semantic-release with config:
+  - cmd: node_modules\.bin\semantic-release

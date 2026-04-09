@@ -1,0 +1,21 @@
+﻿department: system_daemons
+id: ohd_daemon
+name: OHD Health & Quarantine Daemon
+active: true
+leadership:
+  manager: oma_core
+  reports_to: oma_core
+role: Primary isolation and remediation daemon. Catches errors, monitors crash reports, and triggers automatic self-healing routines via System Autofix before delegating to OA.
+kpi_targets:
+  healing_success_rate: "> 85%"
+  isolation_speed: "< 2s"
+tools_and_capabilities:
+  skills:
+    - system_autofix
+    - diagnostics_engine
+    - resilience_engine
+outputs:
+  - artifact: healed_object
+    path: vault/tmp/oa_final_check/
+  - artifact: failed_backup
+    path: vault/tmp/_FAILED_BACKUP/
