@@ -1,0 +1,13 @@
+name: fix-readme-badges
+description: Fix broken or missing README badges (CI, coverage, version)
+type: docs_improve
+severity: low
+pattern: README.md with missing or broken badge URLs
+fix_template: |
+  Add or fix standard badges in README.md:
+  - CI status badge (GitHub Actions)
+  - Coverage badge
+  - Version/release badge
+  - License badge
+languages: []
+tags: [readme, badges, documentation]

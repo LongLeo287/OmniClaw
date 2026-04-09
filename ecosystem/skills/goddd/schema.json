@@ -1,0 +1,8 @@
+{
+    "name": "Goddd",
+    "description": "Assimilated OmniClaw Skill for goddd.",
+    "domain": "core",
+    "tier": 3,
+    "type": "assimilated_repo_skill",
+    "parameters": {}
+}

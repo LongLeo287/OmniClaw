@@ -1,0 +1,31 @@
+{
+  "id": "agent_teams_lite",
+  "name": "Agent Teams Lite",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "agent-framework",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\agent_teams_lite\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for agent_teams_lite",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "agent",
+    "orchestration"
+  ]
+}

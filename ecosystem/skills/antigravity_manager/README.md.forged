@@ -1,0 +1,4 @@
+# Antigravity Manager
+This is a simple backend service for managing antigravity operations.
+## Usage
+Simply run the application and access it via `http://<your-domain-or-ip>/api/antigravity`.

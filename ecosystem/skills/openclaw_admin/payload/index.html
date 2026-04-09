@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f14;--bg2:#141720;--bg3:#1a1f2e;--card:#1e2235;--card2:#252a3d;--border:#2a3050;--accent:#6c63ff;--accent2:#4f46e5;--green:#22c55e;--red:#ef4444;--yellow:#f59e0b;--blue:#3b82f6;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex}
+.sidebar{width:230px;min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:100;overflow-y:auto}
+.logo{padding:20px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
+.logo-text{font-size:17px;font-weight:700;background:linear-gradient(135deg,#6c63ff,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo-sub{font-size:10px;color:var(--text3);margin-top:1px}
+nav{flex:1;padding:4px 8px;overflow-y:auto}
+.nav-section{font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px;padding:10px 8px 4px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:9px;cursor:pointer;transition:all .2s;color:var(--text2);font-size:13px;font-weight:500;border:none;background:none;width:100%;text-align:left}
+.nav-item:hover{background:var(--bg3);color:var(--text)}
+.nav-item.active{background:linear-gradient(135deg,rgba(108,99,255,.2),rgba(79,70,229,.1));color:#a78bfa;border:1px solid rgba(108,99,255,.25)}
+.nav-item .icon{font-size:16px;width:22px;text-align:center}
+.sidebar-footer{padding:14px;border-top:1px solid var(--border)}
+.status-badge{display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:9px;background:var(--bg3)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.main{margin-left:230px;flex:1;padding:24px;min-height:100vh}
+.page{display:none}
+.page.active{display:block;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.page-header{margin-bottom:24px}
+.page-title{font-size:22px;font-weight:700;margin-bottom:4px}
+.page-sub{color:var(--text2);font-size:13px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:18px;transition:all .2s;cursor:default}
+.card:hover{border-color:rgba(108,99,255,.4);transform:translateY(-2px)}
+.card-icon{font-size:24px;margin-bottom:10px}
+.card-label{font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.card-value{font-size:20px;font-weight:700;margin-bottom:3px;line-height:1.3}
+.card-desc{font-size:11px;color:var(--text2)}
+.section{background:var(--card);border:1px solid var(--border);border-radius:13px;margin-bottom:18px}
+.section-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.section-title{font-size:14px;font-weight:600}
+.section-body{padding:20px}
+.table{width:100%;border-collapse:collapse}
+.table th{text-align:left;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;padding:9px 12px;border-bottom:1px solid var(--border)}
+.table td{padding:11px 12px;border-bottom:1px solid rgba(42,48,80,.5);font-size:13px;vertical-align:middle}
+.table tr:last-child td{border-bottom:none}
+.table tr:hover td{background:rgba(255,255,255,.02)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-green{background:rgba(34,197,94,.15);color:var(--green)}
+.badge-red{background:rgba(239,68,68,.15);color:var(--red)}
+.badge-purple{background:rgba(108,99,255,.15);color:#a78bfa}
+.badge-yellow{background:rgba(245,158,11,.15);color:var(--yellow)}
+.badge-blue{background:rgba(59,130,246,.15);color:var(--blue)}
+.badge-gray{background:rgba(100,116,139,.15);color:var(--text3)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;border:none;font-family:'Inter',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn-danger{background:rgba(239,68,68,.12);color:var(--red);border:1px solid rgba(239,68,68,.25)}
+.btn-danger:hover{background:rgba(239,68,68,.22)}
+.btn-ghost{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}
+.btn-ghost:hover{color:var(--text);border-color:rgba(108,99,255,.4)}
+.btn-success{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.25)}
+.btn-success:hover{background:rgba(34,197,94,.22)}
+.btn-sm{padding:4px 10px;font-size:11px}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px}
+.form-input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font-size:13px;font-family:'Inter',sans-serif;transition:border .2s;outline:none}
+.form-input:focus{border-color:var(--accent)}
+.form-input::placeholder{color:var(--text3)}
+textarea.form-input{resize:vertical;min-height:100px;line-height:1.6}
+.toggle{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0}
+.toggle input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;inset:0;background:var(--bg3);border-radius:22px;transition:.2s;border:1px solid var(--border)}
+.slider:before{content:"";position:absolute;height:16px;width:16px;left:2px;bottom:2px;background:var(--text3);border-radius:50%;transition:.2s}
+input:checked+.slider{background:var(--accent)}
+input:checked+.slider:before{transform:translateX(18px);background:#fff}
+.alert{padding:11px 14px;border-radius:9px;font-size:12px;margin-bottom:14px;display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.alert-info{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.25);color:#a78bfa}
+.alert-success{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:var(--green)}
+.alert-warning{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--yellow)}
+.status-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(42,48,80,.5)}
+.status-row:last-child{border-bottom:none}
+.status-label{font-size:13px;font-weight:500}
+.provider-card{background:var(--bg3);border:1px solid var(--border);border-radius:11px;padding:16px;margin-bottom:12px}
+.provider-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.provider-name{font-size:14px;font-weight:700}
+.provider-field{margin-bottom:9px}
+.provider-field-label{font-size:10px;color:var(--text3);font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.memory-file{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(42,48,80,.5);cursor:pointer;transition:all .2s;border-radius:8px}
+.memory-file:last-child{border-bottom:none}
+.memory-file:hover{background:rgba(108,99,255,.06);padding:12px 10px;margin:0 -10px}
+.memory-file-icon{font-size:20px;width:32px;text-align:center;flex-shrink:0}
+.memory-file-info{flex:1;min-width:0}
+.memory-file-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.memory-file-meta{font-size:11px;color:var(--text3)}
+.memory-file-preview{font-size:11px;color:var(--text2);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cron-item{background:var(--bg3);border:1px solid var(--border);border-radius:11px;padding:16px;margin-bottom:10px;transition:border .2s}
+.cron-item:hover{border-color:rgba(108,99,255,.3)}
+.cron-item.disabled{opacity:.55}
+.cron-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.cron-name{font-size:14px;font-weight:600;line-height:1.3}
+.cron-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:var(--text3);margin-top:8px}
+.cron-meta span{display:flex;align-items:center;gap:3px}
+.session-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(42,48,80,.5)}
+.session-row:last-child{border-bottom:none}
+.session-icon{font-size:18px;width:28px;text-align:center}
+.session-info{flex:1;min-width:0}
+.session-name{font-size:13px;font-weight:600}
+.session-meta{font-size:11px;color:var(--text3);margin-top:2px}
+.skill-item{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(42,48,80,.5)}
+.skill-item:last-child{border-bottom:none}
+.skill-info{flex:1}
+.skill-name{font-size:13px;font-weight:600;margin-bottom:2px}
+.skill-desc{font-size:11px;color:var(--text2)}
+.log-content{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px;font-family:monospace;font-size:11px;line-height:1.6;max-height:350px;overflow-y:auto;color:var(--text2);white-space:pre-wrap;word-break:break-all}
+/* DIARY */
+.diary-day-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:all .2s}
+.diary-day-header{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none}
+.diary-day-header:hover{background:rgba(108,99,255,.07)}
+.diary-weekday{font-size:12px;font-weight:700;color:#a78bfa;min-width:60px}
+.diary-date{font-size:13px;font-weight:600;flex:1}
+.diary-meta{font-size:11px;color:var(--text3)}
+.diary-chevron{font-size:14px;color:var(--text3);transition:transform .2s}
+.diary-chevron.open{transform:rotate(90deg)}
+.diary-body{display:none;padding:0 18px 18px;font-size:13px;line-height:1.7;color:var(--text2);white-space:pre-wrap;border-top:1px solid var(--border);padding-top:14px;margin-top:0;max-height:500px;overflow-y:auto}
+.diary-body.open{display:block}
+/* PROXY DETAIL */
+.proxy-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.proxy-stat{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px}
+.proxy-stat-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.proxy-stat-value{font-size:14px;font-weight:700;font-family:monospace}
+/* CRON RUNS */
+.run-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}
+.run-item:last-child{border-bottom:none}
+.run-dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.run-dot.ok{background:#22c55e}
+.run-dot.error{background:#ef4444}
+.run-dot.unknown{background:#6b7280}
+.run-info{flex:1;min-width:0}
+.run-ts{font-size:11px;color:var(--text3);margin-bottom:3px}
+.run-summary{font-size:12px;color:var(--text2);line-height:1.5;word-break:break-word}
+.run-duration{font-size:10px;color:var(--text3);margin-top:3px}
+/* CHAT */
+.chat-session-card{background:var(--bg3);border:1px solid var(--border);border-radius:11px;padding:14px 16px;margin-bottom:10px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:14px}
+.chat-session-card:hover{border-color:rgba(108,99,255,.4);background:rgba(108,99,255,.07)}
+.chat-session-icon{font-size:22px;width:36px;text-align:center;flex-shrink:0}
+.chat-session-info{flex:1;min-width:0}
+.chat-session-name{font-size:14px;font-weight:600;margin-bottom:3px}
+.chat-session-meta{font-size:11px;color:var(--text3)}
+.chat-bubble-wrap{display:flex;margin-bottom:14px;gap:10px;align-items:flex-start}
+.chat-bubble-wrap.user{flex-direction:row-reverse}
+.chat-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px}
+.avatar-user{background:rgba(108,99,255,.25)}
+.avatar-ai{background:rgba(34,197,94,.15)}
+.chat-bubble{max-width:72%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.6;word-break:break-word;white-space:pre-wrap}
+.bubble-user{background:rgba(108,99,255,.18);border:1px solid rgba(108,99,255,.25);border-top-right-radius:3px}
+.bubble-ai{background:var(--card2);border:1px solid var(--border);border-top-left-radius:3px}
+.bubble-tool{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);color:var(--yellow);font-size:11px;font-family:monospace}
+.chat-ts{font-size:10px;color:var(--text3);margin-top:4px;text-align:right}
+.chat-view{max-height:70vh;overflow-y:auto;padding:8px 0;scroll-behavior:smooth}
+/* PROFILE */
+.profile-tab-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.profile-tab{padding:7px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--bg3);color:var(--text2);transition:all .2s}
+.profile-tab.active{background:linear-gradient(135deg,rgba(108,99,255,.25),rgba(79,70,229,.15));color:#a78bfa;border-color:rgba(108,99,255,.4)}
+.profile-hint{font-size:11px;color:var(--text3);margin-top:6px;line-height:1.5}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:999;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex;animation:fadeIn .2s ease}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:15px;width:100%;max-width:680px;max-height:90vh;display:flex;flex-direction:column}
+.modal-header{padding:18px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-size:15px;font-weight:700}
+.modal-body{padding:22px;overflow-y:auto;flex:1}
+.modal-footer{padding:14px 22px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:9px}
+.close-btn{background:none;border:none;color:var(--text2);font-size:20px;cursor:pointer;line-height:1;padding:2px 4px}
+#notification{position:fixed;top:18px;right:18px;z-index:9999;display:flex;flex-direction:column;gap:7px}
+.notif{padding:10px 16px;border-radius:9px;font-size:12px;font-weight:500;animation:slideIn .3s ease;display:flex;align-items:center;gap:7px;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+.notif-success{background:#162316;border:1px solid var(--green);color:var(--green)}
+.notif-error{background:#231616;border:1px solid var(--red);color:var(--red)}
+@keyframes slideIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+.divider{height:1px;background:var(--border);margin:4px 0}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">🦞</div>
+    <div style="flex:1">
+      <div class="logo-text">OpenClaw</div>
+      <div class="logo-sub">Bảng Quản Trị</div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-section">Chính</div>
+    <button class="nav-item active" onclick="showPage('dashboard',this)"><span class="icon">📊</span>Tổng Quan</button>
+
+    <div class="nav-section">Quản Lý</div>
+    <button class="nav-item" onclick="showPage('apikeys',this)"><span class="icon">🔑</span>API Keys</button>
+    <button class="nav-item" onclick="showPage('memory',this)"><span class="icon">🧠</span>Bộ Nhớ</button>
+    <button class="nav-item" onclick="showPage('cron',this)"><span class="icon">⏰</span>Lịch Tự Động</button>
+    <button class="nav-item" onclick="showPage('sessions',this)"><span class="icon">💬</span>Phiên Chat</button>
+    <button class="nav-item" onclick="showPage('chathistory',this)"><span class="icon">📜</span>Lịch Sử Hội Thoại</button>
+    <button class="nav-item" onclick="showPage('diary',this)"><span class="icon">📅</span>Nhật Ký Ngày</button>
+    <button class="nav-item" onclick="showPage('skills',this)"><span class="icon">🛠️</span>Skills</button>
+
+    <div class="nav-section">Hệ Thống</div>
+    <button class="nav-item" onclick="showPage('channels',this)"><span class="icon">📱</span>Kênh Kết Nối</button>
+    <button class="nav-item" onclick="showPage('settings',this)"><span class="icon">⚙️</span>Cài Đặt</button>
+    <button class="nav-item" onclick="showPage('profile',this)"><span class="icon">👤</span>Hồ Sơ OpenClaw</button>
+    <button class="nav-item" onclick="showPage('logs',this)"><span class="icon">📝</span>Nhật Ký</button>
+  </nav>
+  <div class="sidebar-footer">
+    <div style="display:flex; gap: 8px; margin-bottom: 8px;">
+      <a href="https://www.facebook.com/vuduymanh.ken/" target="_blank" class="btn btn-ghost" style="flex:1; justify-content:center; padding:5px; font-size:11px; text-decoration:none;"><span class="icon" style="margin-right:2px">👨‍💻</span> Tác giả</a>
+      <a href="https://www.facebook.com/groups/852586990732832" target="_blank" class="btn btn-ghost" style="flex:1; justify-content:center; padding:5px; font-size:11px; text-decoration:none;"><span class="icon" style="margin-right:2px">👥</span> Group VN</a>
+    </div>
+
+    <!-- Hộp Gộp: Status + Nút Ngắt Khẩn Cấp -->
+    <div style="background:var(--bg3); border-radius:9px; border:1px solid var(--border); overflow:hidden;">
+      <div class="status-badge" style="background:transparent; padding:9px 12px; justify-content:left; border-radius:0; border-bottom:1px solid rgba(255,255,255,0.05); margin:0;">
+        <div class="dot" id="sidebarDot"></div>
+        <span id="sidebarStatus" style="font-size:11px;font-weight:600;color:var(--text2)">Đang kiểm tra...</span>
+      </div>
+      <button class="btn" style="width:100%; border-radius:0; justify-content:center; padding:9px; font-size:12px; background:rgba(239,68,68,0.1); color:#ff4d4f; border:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(239,68,68,0.2)'" onmouseout="this.style.background='rgba(239,68,68,0.1)'" onclick="showKillModal()">
+        <span class="icon">🛑</span> Ngắt Khẩn Cấp
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- Cửa Sổ Modal Ngắt Khẩn Cấp -->
+<div id="killModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;backdrop-filter:blur(4px);animation:fadeIn .2s;">
+  <div style="background:var(--card); width: 440px; max-width:90%; border-radius:16px; padding:24px; border:1px solid rgba(239,68,68,0.3); box-shadow:0 10px 40px rgba(239,68,68,0.2);">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px; border-bottom:1px solid var(--border); padding-bottom:12px;">
+      <span style="font-size:32px">🚨</span>
+      <h3 style="margin:0; font-size:18px; color:#ef4444; font-weight:700;">Ngắt Khẩn Cấp Hệ Thống</h3>
+    </div>
+    
+    <div style="font-size:13px; color:var(--text2); line-height:1.6; margin-bottom:20px;">
+      <b style="color:var(--text);">Lệnh này sẽ NGẮT ĐIỆN và kết thúc dứt điểm ngay lập tức hệ thống OpenClaw đang chạy.</b>
+      <p style="margin:12px 0; padding:12px; background:rgba(255,255,255,0.03); border-radius:8px; border-left:4px solid #f59e0b;">
+        <b style="color:#fbbf24; font-size:14px;">💡 Rất hữu ích khi anh muốn:</b><br/>
+        <span style="display:block;margin-top:6px">• Dừng ngang tiến trình nếu AI đi sai hướng hoặc click nhầm.</span>
+        <span style="display:block;margin-top:4px">• Khởi động lại luồng việc khi bị lỗi, treo máy, lặp task vô hạn.</span>
+        <span style="display:block;margin-top:4px">• Tắt dứt điểm Chrome ẩn mà AI đang điều khiển.</span>
+      </p>
+      <div style="color:#ef4444; font-weight:600; text-align:center; font-size:14px; margin-top:20px;">Anh có chắc chắn muốn ngắt ngay bây giờ không?</div>
+      <div style="text-align:center; color:var(--text3); font-size:11px; margin-top:4px;">(Hệ thống sẽ an toàn tự Reboot lại ngay trong 1-2 giây)</div>
+    </div>
+    
+    <div style="display:flex; justify-content:center; gap:12px; margin-top:10px;">
+      <button class="btn btn-ghost" style="padding:10px 20px; font-size:13px;" onclick="closeKillModal()">Hủy Bỏ</button>
+      <button class="btn" style="background:linear-gradient(135deg,#ef4444,#b91c1c); color:white; border:none; padding:10px 24px; font-size:13px; font-weight:700; box-shadow:0 4px 12px rgba(239,68,68,0.3);" onclick="confirmKillBrowser()">Thực Thi Ngay</button>
+    </div>
+  </div>
+</div>
+
+<div id="notification"></div>
+<main class="main">
+
+<!-- TỔNG QUAN -->
+<div class="page active" id="page-dashboard">
+  <div class="page-header"><div class="page-title">📊 Tổng Quan</div><div class="page-sub">Trạng thái hệ thống OpenClaw theo thời gian thực</div></div>
+  <div class="cards-grid">
+    <div class="card"><div class="card-icon">🤖</div><div class="card-label">Model đang dùng</div><div class="card-value" style="font-size:12px;line-height:1.4" id="dashModel">...</div><div class="card-desc" id="dashModelDesc">–</div></div>
+    <div class="card"><div class="card-icon">🔌</div><div class="card-label">OpenClaw Gateway</div><div class="card-value" id="dashGateway">–</div><div class="card-desc">Cổng kết nối</div></div>
+    <div class="card"><div class="card-icon">⚡</div><div class="card-label">PikaAI Proxy</div><div class="card-value" id="dashProxy">–</div><div class="card-desc" id="dashProxyDesc">–</div></div>
+    <div class="card"><div class="card-icon">🧠</div><div class="card-label">Bộ Nhớ</div><div class="card-value" id="dashMemory">–</div><div class="card-desc">Files ghi nhớ</div></div>
+    <div class="card"><div class="card-icon">⏰</div><div class="card-label">Lịch Tự Động</div><div class="card-value" id="dashCron">–</div><div class="card-desc">Đang hoạt động</div></div>
+    <div class="card"><div class="card-icon">💬</div><div class="card-label">Phiên Chat</div><div class="card-value" id="dashSessions">–</div><div class="card-desc">Tổng phiên</div></div>
+  </div>
+  <div class="section">
+    <div class="section-header"><span class="section-title">🔧 Trạng Thái Chi Tiết</span><button class="btn btn-ghost btn-sm" onclick="loadDashboard()">↻ Làm mới</button></div>
+    <div class="section-body" id="detailStatus"><div style="color:var(--text3);text-align:center;padding:20px">Đang tải...</div></div>
+  </div>
+  <div class="section">
+    <div class="section-header"><span class="section-title">⚡ Chuyển Đổi Mô Hình (Providers)</span></div>
+    <div class="section-body" id="proxyDetailCard"><div style="color:var(--text3);text-align:center;padding:12px">Đang tải...</div></div>
+  </div>
+
+  <!-- BẢN QUYỀN TÁC GIẢ -->
+  <div style="margin-top: 30px; text-align: center; color: var(--text3); font-size: 12px; line-height: 1.6; padding: 20px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.1);">
+    <div style="margin-bottom: 8px;">
+      🚀 <b>OpenClaw Admin Panel</b> được đóng góp phát triển bởi <a href="https://www.facebook.com/vuduymanh.ken/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Vũ Duy Mạnh</a>
+    </div>
+    <div>
+      Tham gia nhóm để chia sẻ kinh nghiệm: <a href="https://www.facebook.com/groups/852586990732832" target="_blank" style="color: #3b82f6; text-decoration: none; font-weight: 600;">Cộng Đồng OpenClaw VN</a>
+    </div>
+  </div>
+</div>
+
+<!-- API KEYS -->
+<div class="page" id="page-apikeys">
+  <div class="page-header"><div class="page-title">🔑 Quản Lý API Keys</div><div class="page-sub">Xem và chỉnh sửa các nhà cung cấp AI và API keys</div></div>
+  <div id="providersContainer"><div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div></div>
+  <button class="btn btn-primary" onclick="showModal('providerModal')">＋ Thêm Provider Mới</button>
+</div>
+
+<!-- BỘ NHỚ -->
+<div class="page" id="page-memory">
+  <div class="page-header"><div class="page-title">🧠 Bộ Nhớ OpenClaw</div><div class="page-sub">Những thông tin OpenClaw đã ghi nhớ về anh và công việc</div></div>
+  <div class="section">
+    <div class="section-header"><span class="section-title">📂 Danh Sách File</span><button class="btn btn-ghost btn-sm" onclick="loadMemory()">↻ Làm mới</button></div>
+    <div class="section-body" id="memoryList"><div style="color:var(--text3);text-align:center;padding:20px">Đang tải...</div></div>
+  </div>
+</div>
+
+<!-- LỊCH TỰ ĐỘNG -->
+<div class="page" id="page-cron">
+  <div class="page-header"><div class="page-title">⏰ Lịch Tự Động</div><div class="page-sub">Các tác vụ OpenClaw tự chạy theo lịch cố định</div></div>
+  <div id="cronContainer"><div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div></div>
+</div>
+
+<!-- PHIÊN CHAT -->
+<div class="page" id="page-sessions">
+  <div class="page-header"><div class="page-title">💬 Phiên Hội Thoại</div><div class="page-sub">Lịch sử các kênh chat với OpenClaw</div></div>
+  <div class="section">
+    <div class="section-header"><span class="section-title">📋 Danh Sách Phiên</span><button class="btn btn-ghost btn-sm" onclick="loadSessions()">↻ Làm mới</button></div>
+    <div class="section-body" id="sessionsContainer"><div style="color:var(--text3);text-align:center;padding:20px">Đang tải...</div></div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="page" id="page-skills">
+  <div class="page-header"><div class="page-title">🛠️ Skills</div><div class="page-sub">Các kỹ năng mở rộng của OpenClaw — bật/tắt từng skill</div></div>
+  <div class="section">
+    <div class="section-header"><span class="section-title">📦 Danh Sách Skills</span><button class="btn btn-ghost btn-sm" onclick="loadSkills()">↻ Làm mới</button></div>
+    <div class="section-body" id="skillsContainer"><div style="color:var(--text3);text-align:center;padding:20px">Đang tải...</div></div>
+  </div>
+</div>
+
+<!-- NHẬT KÝ NGÀY -->
+<div class="page" id="page-diary">
+  <div class="page-header"><div class="page-title">📅 Nhật Ký Ngày</div><div class="page-sub">Lịch sử hoạt động hàng ngày của OpenClaw</div></div>
+  <div id="diaryContainer"><div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div></div>
+</div>
+
+
+<div class="page" id="page-chathistory">
+  <div class="page-header"><div class="page-title">📜 Lịch Sử Hội Thoại</div><div class="page-sub">Xem lại các cuộc trò chuyện với OpenClaw</div></div>
+  <div id="chatHistoryList">
+    <div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div>
+  </div>
+</div>
+
+<!-- HỒ SƠ OPENCLAW -->
+<div class="page" id="page-profile">
+  <div class="page-header"><div class="page-title">👤 Hồ Sơ OpenClaw</div><div class="page-sub">Các file định nghĩa tính cách và hành vi của OpenClaw</div></div>
+  <div id="profileContainer">
+    <div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div>
+  </div>
+</div>
+
+
+<div class="page" id="page-channels">
+  <div class="page-header"><div class="page-title">📱 Kênh Kết Nối</div><div class="page-sub">Cấu hình Telegram, WhatsApp</div></div>
+  <div id="channelsContainer"><div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div></div>
+</div>
+
+<!-- CÀI ĐẶT -->
+<div class="page" id="page-settings">
+  <div class="page-header"><div class="page-title">⚙️ Cài Đặt Chung</div><div class="page-sub">Tuỳ chỉnh cách OpenClaw hoạt động</div></div>
+  <div id="settingsContainer"><div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div></div>
+</div>
+
+<!-- NHẬT KÝ -->
+<div class="page" id="page-logs">
+  <div class="page-header"><div class="page-title">📝 Nhật Ký Hoạt Động</div><div class="page-sub">Log hệ thống OpenClaw</div></div>
+  <div id="logsContainer"><div style="color:var(--text3);text-align:center;padding:40px">Đang tải...</div></div>
+</div>
+
+</main>
+
+<!-- MODAL BỘ NHỚ -->
+<div class="modal-overlay" id="memoryModal">
+  <div class="modal">
+    <div class="modal-header"><span class="modal-title" id="memoryModalTitle">Bộ nhớ</span><button class="close-btn" onclick="closeModal('memoryModal')">×</button></div>
+    <div class="modal-body"><textarea class="form-input" id="memoryEditor" style="min-height:380px;font-family:monospace;font-size:12px;line-height:1.6"></textarea></div>
+    <div class="modal-footer">
+      <button class="btn btn-danger btn-sm" onclick="deleteCurrentMemory()">🗑 Xoá file</button>
+      <button class="btn btn-ghost" onclick="closeModal('memoryModal')">Đóng</button>
+      <button class="btn btn-primary" onclick="saveMemory()">💾 Lưu</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL THÊM PROVIDER -->
+<div class="modal-overlay" id="providerModal">
+  <div class="modal">
+    <div class="modal-header"><span class="modal-title">Thêm Provider Mới</span><button class="close-btn" onclick="closeModal('providerModal')">×</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">Tên Provider (không dấu, không cách)*</label><input type="text" class="form-input" id="newProviderName" placeholder="vd: myprovider2"></div>
+      <div class="form-group"><label class="form-label">Base URL*</label><input type="text" class="form-input" id="newProviderUrl" placeholder="https://api.example.com"></div>
+      <div class="form-group"><label class="form-label">API Key*</label><input type="text" class="form-input" id="newProviderKey" placeholder="sk-..."></div>
+      <div class="form-group"><label class="form-label">Loại API</label>
+        <select class="form-input" id="newProviderApi">
+          <option value="anthropic-messages">Anthropic Messages</option>
+          <option value="openai-completions">OpenAI Completions</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Model ID</label><input type="text" class="form-input" id="newProviderModel" value="claude-sonnet-4.6"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('providerModal')">Huỷ</button>
+      <button class="btn btn-primary" onclick="saveNewProvider()">✓ Thêm</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL XEM CRON -->
+<div class="modal-overlay" id="cronModal">
+  <div class="modal">
+    <div class="modal-header"><span class="modal-title" id="cronModalTitle">Chi tiết lịch</span><button class="close-btn" onclick="closeModal('cronModal')">×</button></div>
+    <div class="modal-body" id="cronModalBody"></div>
+    <div class="modal-footer"><button class="btn btn-ghost" onclick="closeModal('cronModal')">Đóng</button></div>
+  </div>
+</div>
+
+<script>
+let currentConfig = null;
+let currentMemoryFile = null;
+
+// ====== NAV ======
+function showPage(name, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  if (el) el.classList.add('active');
+  const loaders = {
+    dashboard: loadDashboard, apikeys: loadApiKeys, memory: loadMemory,
+    cron: loadCron, sessions: loadSessions, skills: loadSkills,
+    channels: loadChannels, settings: loadSettings, logs: loadLogs,
+    chathistory: loadChatHistory, profile: loadProfile,
+    diary: loadDiary
+  };
+  if (loaders[name]) loaders[name]();
+}
+
+// ====== NOTIFY ======
+function notify(msg, type='success') {
+  const el = document.createElement('div');
+  el.className = `notif notif-${type}`;
+  el.innerHTML = (type==='success'?'✅':'❌') + ' ' + msg;
+  document.getElementById('notification').appendChild(el);
+  setTimeout(() => el.remove(), 3500);
+}
+
+// ====== API ======
+async function api(path, method='GET', body=null) {
+  const opts = {method, headers:{'Content-Type':'application/json'}};
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(path, opts);
+  return res.json();
+}
+
+function showModal(id) { document.getElementById(id).classList.add('show'); }
+function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', e => { if(e.target===m) m.classList.remove('show'); }));
+
+// ====== DASHBOARD ======
+async function loadDashboard() {
+  const [status, mems, crons, sessions] = await Promise.all([
+    api('/api/status'), api('/api/memory'), api('/api/cron'), api('/api/sessions')
+  ]);
+  currentConfig = await api('/api/config');
+
+  document.getElementById('dashModel').textContent = status.model || 'N/A';
+  document.getElementById('dashModelDesc').textContent = 'Cập nhật: ' + (status.config_modified||'–');
+
+  const gw = status.openclaw;
+  document.getElementById('dashGateway').innerHTML = gw?.online
+    ? '<span class="badge badge-green">🟢 Đang chạy</span>'
+    : '<span class="badge badge-red">🔴 Offline</span>';
+
+  const px = status.proxy;
+  document.getElementById('dashProxy').innerHTML = px?.online
+    ? '<span class="badge badge-green">🟢 Đang chạy</span>'
+    : '<span class="badge badge-yellow">⚠️ Offline</span>';
+  if (px?.online && px?.data) {
+    const d = px.data;
+    document.getElementById('dashProxyDesc').textContent = `Keys: ${d.totalKeys||0} | Host: ${d.host||''}`;
+  }
+
+  const dot = document.getElementById('sidebarDot');
+  const txt = document.getElementById('sidebarStatus');
+  if (gw?.online) { dot.style.background='#22c55e'; txt.textContent='OpenClaw đang chạy'; }
+  else { dot.style.background='#ef4444'; txt.textContent='OpenClaw offline'; }
+
+  document.getElementById('dashMemory').textContent = Array.isArray(mems) ? mems.length + ' files' : '–';
+  const activeCrons = Array.isArray(crons) ? crons.filter(j=>j.enabled).length : 0;
+  document.getElementById('dashCron').textContent = Array.isArray(crons) ? `${activeCrons}/${crons.length}` : '–';
+  document.getElementById('dashSessions').textContent = Array.isArray(sessions) ? sessions.length : '–';
+
+  const cfg = currentConfig;
+  const providers = Object.keys(cfg?.models?.providers||{});
+  document.getElementById('detailStatus').innerHTML = `
+    <div class="status-row"><span class="status-label">🔌 Gateway Port</span><span class="badge badge-purple">${cfg?.gateway?.port||18789}</span></div>
+    <div class="status-row"><span class="status-label">🔑 Số Provider</span><span class="badge badge-purple">${providers.length} providers</span></div>
+    <div class="status-row"><span class="status-label">✈️ Telegram</span><span class="badge ${cfg?.channels?.telegram?.enabled?'badge-green':'badge-red'}">${cfg?.channels?.telegram?.enabled?'Bật':'Tắt'}</span></div>
+    <div class="status-row"><span class="status-label">💬 WhatsApp</span><span class="badge ${cfg?.channels?.whatsapp?.enabled?'badge-green':'badge-red'}">${cfg?.channels?.whatsapp?.enabled?'Bật':'Tắt'}</span></div>
+    <div class="status-row"><span class="status-label">🔍 Web Search</span><span class="badge ${cfg?.tools?.web?.search?.enabled?'badge-green':'badge-red'}">${cfg?.tools?.web?.search?.enabled?'Bật ('+cfg?.tools?.web?.search?.provider+')':'Tắt'}</span></div>
+    <div class="status-row"><span class="status-label">📦 Phiên bản</span><span class="badge badge-purple">${cfg?.meta?.lastTouchedVersion||'N/A'}</span></div>
+  `;
+
+  // ⚡ Providers Proxy chi tiết
+  api('/api/proxy/detail').then(p => {
+    const card = document.getElementById('proxyDetailCard');
+    if (!card) return;
+    if (!p || !p.online) { card.innerHTML = '<div style="color:#ef4444;text-align:center;padding:10px">⚠️ Proxy offline</div>'; return; }
+    const currentKey = p.nextKeyIndex === 0 ? 2 : 1;
+    
+    const activeProvider = p.primaryModel.split('/')[0] || '';
+    let buttonsHtml = '';
+    providers.forEach(prov => {
+      let provName = prov === 'myprovider' ? 'PikaAI' : (prov.charAt(0).toUpperCase() + prov.slice(1));
+      let isActive = activeProvider === prov;
+      buttonsHtml += `<button class="btn ${isActive?'btn-primary':'btn-ghost'} btn-sm" onclick="switchProvider('${prov}', '${provName}')" ${isActive?'disabled':''}>Dùng ${provName}</button>`;
+    });
+
+    card.innerHTML = `
+      <div class="proxy-grid">
+        <div class="proxy-stat"><div class="proxy-stat-label">Host</div><div class="proxy-stat-value" style="font-size:11px;color:#a78bfa">${p.host}</div></div>
+        <div class="proxy-stat"><div class="proxy-stat-label">API Key đang dùng</div><div class="proxy-stat-value">Key ${currentKey} / ${p.totalKeys}</div></div>
+        <div class="proxy-stat" style="grid-column:1/2"><div class="proxy-stat-label">Model chính</div><div class="proxy-stat-value" style="font-size:12px;color:#22c55e">${p.primaryModel}</div></div>
+        <div class="proxy-stat" style="grid-column:2/3;display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap">
+          ${buttonsHtml}
+        </div>
+      </div>`;
+  });
+}
+
+async function switchProvider(provider, providerName) {
+  const res = await api('/api/switch', 'POST', {provider});
+  if (res.success) {
+    if (!providerName) providerName = provider === 'myprovider' ? 'PikaAI' : provider.charAt(0).toUpperCase() + provider.slice(1);
+    notify('Đã chuyển sang ' + providerName);
+    loadDashboard();
+  } else {
+    notify('Lỗi: ' + res.error, 'error');
+  }
+}
+
+function showKillModal() {
+  document.getElementById('killModal').style.display = 'flex';
+}
+
+function closeKillModal() {
+  document.getElementById('killModal').style.display = 'none';
+}
+
+async function confirmKillBrowser() {
+  closeKillModal();
+  const res = await api('/api/kill-browser', 'POST');
+  if (res.success) notify('✅ ' + res.message);
+  else notify('Lỗi: ' + res.error, 'error');
+}
+
+// ====== API KEYS ======
+async function loadApiKeys() {
+  const cfg = await api('/api/config'); currentConfig = cfg;
+  const providers = cfg?.models?.providers||{};
+  const primary = cfg?.agents?.defaults?.model?.primary||'';
+  let html = '';
+  for (const [name, p] of Object.entries(providers)) {
+    const isPrimary = primary.startsWith(name+'/');
+    const modelId = p.models?.[0]?.id||'';
+    html += `<div class="provider-card">
+      <div class="provider-header">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="provider-name">🔑 ${name}</span>
+          ${isPrimary?'<span class="badge badge-green">✓ Đang dùng</span>':''}
+        </div>
+        <div style="display:flex;gap:6px">
+          ${!isPrimary?`<button class="btn btn-success btn-sm" onclick="setPrimary('${name}','${modelId}')">Đặt làm chính</button>`:''}
+          <button class="btn btn-danger btn-sm" onclick="deleteProvider('${name}')">🗑</button>
+        </div>
+      </div>
+      <div class="provider-field"><div class="provider-field-label">Base URL</div>
+        <input class="form-input" style="font-size:12px;font-family:monospace" value="${p.baseUrl||''}" id="url-${name}" onchange="updateProvider('${name}')"></div>
+      <div class="provider-field"><div class="provider-field-label">API Key</div>
+        <input class="form-input" style="font-size:12px;font-family:monospace" value="${p.apiKey||''}" id="key-${name}" onchange="updateProvider('${name}')"></div>
+      <div style="display:flex;gap:12px;margin-top:4px">
+        <div class="provider-field" style="flex:1"><div class="provider-field-label">Loại API</div>
+          <select class="form-input" id="api-${name}" onchange="updateProvider('${name}')">
+            <option value="anthropic-messages" ${p.api==='anthropic-messages'?'selected':''}>Anthropic Messages</option>
+            <option value="openai-completions" ${p.api==='openai-completions'?'selected':''}>OpenAI Completions</option>
+          </select></div>
+        <div class="provider-field" style="flex:1"><div class="provider-field-label">Model ID</div>
+          <input class="form-input" style="font-size:12px;font-family:monospace" value="${modelId}" id="model-${name}" onchange="updateProvider('${name}')"></div>
+      </div>
+    </div>`;
+  }
+  document.getElementById('providersContainer').innerHTML = html || '<div class="alert alert-info">Chưa có provider nào.</div>';
+}
+
+async function updateProvider(name) {
+  if (!currentConfig) return;
+  const p = currentConfig.models.providers[name];
+  p.baseUrl = document.getElementById('url-'+name)?.value;
+  p.apiKey = document.getElementById('key-'+name)?.value;
+  p.api = document.getElementById('api-'+name)?.value;
+  if (p.models?.[0]) { p.models[0].id = document.getElementById('model-'+name)?.value; p.models[0].api = p.api; }
+  const res = await api('/api/config','POST',currentConfig);
+  if (res.success) notify('Đã lưu '+name); else notify('Lỗi: '+res.error,'error');
+}
+
+async function setPrimary(name, modelId) {
+  if (!currentConfig) return;
+  currentConfig.agents.defaults.model.primary = name+'/'+modelId;
+  const res = await api('/api/config','POST',currentConfig);
+  if (res.success) { notify('Đã đặt '+name+' làm chính'); loadApiKeys(); }
+  else notify('Lỗi: '+res.error,'error');
+}
+
+async function deleteProvider(name) {
+  if (!confirm('Xoá provider "'+name+'"?')) return;
+  if (!currentConfig) return;
+  delete currentConfig.models.providers[name];
+  const res = await api('/api/config','POST',currentConfig);
+  if (res.success) { notify('Đã xoá '+name); loadApiKeys(); } else notify('Lỗi: '+res.error,'error');
+}
+
+async function saveNewProvider() {
+  const name = document.getElementById('newProviderName').value.trim();
+  const url = document.getElementById('newProviderUrl').value.trim();
+  const key = document.getElementById('newProviderKey').value.trim();
+  const apiType = document.getElementById('newProviderApi').value;
+  const modelId = document.getElementById('newProviderModel').value.trim();
+  if (!name||!url||!key) { notify('Điền đầy đủ thông tin','error'); return; }
+  if (!currentConfig) currentConfig = await api('/api/config');
+  currentConfig.models.providers[name] = {baseUrl:url,apiKey:key,api:apiType,
+    models:[{id:modelId,name:modelId,api:apiType,reasoning:false,input:['text','image'],
+    cost:{input:0,output:0,cacheRead:0,cacheWrite:0},contextWindow:200000,maxTokens:8192}]};
+  const res = await api('/api/config','POST',currentConfig);
+  if (res.success) { notify('Đã thêm '+name); closeModal('providerModal'); loadApiKeys(); }
+  else notify('Lỗi: '+res.error,'error');
+}
+
+// ====== MEMORY ======
+async function loadMemory() {
+  const files = await api('/api/memory');
+  if (!Array.isArray(files)||!files.length) {
+    document.getElementById('memoryList').innerHTML='<div class="alert alert-info">Chưa có file bộ nhớ.</div>'; return;
+  }
+  const icons = {profile:'👤',accounts:'🔐',openclaw:'🦞',shopee:'🛒',tiktok:'📱','app-dev':'💻','game-mod':'🎮',neutron:'⚛️','ai-tools':'🤖'};
+  document.getElementById('memoryList').innerHTML = files.map(f => {
+    const base = f.name.replace('.md','');
+    const icon = icons[base]||(base.match(/\d{4}-\d{2}-\d{2}/)?'📅':'📄');
+    return `<div class="memory-file" onclick="openMemoryFile('${f.name}')">
+      <div class="memory-file-icon">${icon}</div>
+      <div class="memory-file-info">
+        <div class="memory-file-name">${f.name}</div>
+        <div class="memory-file-meta">Sửa: ${f.modified} · ${f.lines} dòng · ${(f.size/1024).toFixed(1)} KB</div>
+        <div class="memory-file-preview">${f.preview.replace(/\n/g,' ').replace(/#+\s/g,'').replace(/\*\*/g,'')}</div>
+      </div>
+      <span style="color:var(--text3);padding-left:8px;font-size:16px">›</span>
+    </div>`;
+  }).join('');
+}
+
+async function openMemoryFile(name) {
+  currentMemoryFile = name;
+  const res = await api('/api/memory/file?name='+encodeURIComponent(name));
+  document.getElementById('memoryModalTitle').textContent = '🧠 '+name;
+  document.getElementById('memoryEditor').value = res.content||'';
+  showModal('memoryModal');
+}
+
+async function saveMemory() {
+  const res = await api('/api/memory/save','POST',{name:currentMemoryFile,content:document.getElementById('memoryEditor').value});
+  if (res.success) { notify('Đã lưu '+currentMemoryFile); closeModal('memoryModal'); loadMemory(); }
+  else notify('Lỗi: '+res.error,'error');
+}
+
+async function deleteCurrentMemory() {
+  if (!confirm('Xoá "'+currentMemoryFile+'"?')) return;
+  const res = await api('/api/memory/delete','POST',{name:currentMemoryFile});
+  if (res.success) { notify('Đã xoá '+currentMemoryFile); closeModal('memoryModal'); loadMemory(); }
+  else notify('Lỗi: '+res.error,'error');
+}
+
+// ====== CRON ======
+async function loadCron() {
+  const jobs = await api('/api/cron');
+  if (!Array.isArray(jobs)||!jobs.length) {
+    document.getElementById('cronContainer').innerHTML='<div class="alert alert-info">Không có lịch nào.</div>'; return;
+  }
+  const statusColor = {ok:'badge-green',error:'badge-red'};
+  document.getElementById('cronContainer').innerHTML = jobs.map(j => {
+    const s = j.state||{};
+    const sc = j.schedule||{};
+    const stBadge = s.lastRunStatus ? `<span class="badge ${statusColor[s.lastRunStatus]||'badge-gray'}">${s.lastRunStatus==='ok'?'✅ Thành công':'❌ '+s.lastRunStatus}</span>` : '<span class="badge badge-gray">Chưa chạy</span>';
+    return `<div class="cron-item ${j.enabled?'':'disabled'}">
+      <div class="cron-header">
+        <div style="flex:1">
+          <div class="cron-name">${j.name}</div>
+          <div class="cron-meta">
+            <span>🕐 Lịch: <code style="background:var(--bg);padding:1px 5px;border-radius:4px;font-size:10px">${sc.expr||'?'}</code></span>
+            <span>🌏 ${sc.tz||'Asia/Saigon'}</span>
+            ${s.lastRunAtMs? `<span>Chạy lần cuối: ${s.lastDurationMs?'('+(s.lastDurationMs/1000).toFixed(1)+'s)':''}</span>` : ''}
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+          <label class="toggle"><input type="checkbox" ${j.enabled?'checked':''} onchange="toggleCron('${j.id}',this.checked)"><span class="slider"></span></label>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          ${stBadge}
+          ${s.lastRunAtMs?`<span class="badge badge-gray">Lần cuối: ${s.lastRunAtMs?new Date(s.lastRunAtMs).toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'–'}</span>`:''}
+          ${s.nextRunAtMs?`<span class="badge badge-blue">Tiếp: ${new Date(s.nextRunAtMs).toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</span>`:''}
+        </div>
+        <div style="display:flex;gap:6px">
+          <button class="btn btn-ghost btn-sm" onclick="viewCronDetail(${JSON.stringify(j).replace(/"/g,'&quot;')})">Chi tiết</button>
+          <button class="btn btn-success btn-sm" onclick="viewCronRuns('${j.id}','${j.name.replace(/'/g,'')}')">📋 Lịch sử</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteCron('${j.id}')">🗑</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function toggleCron(id, enabled) {
+  const res = await api('/api/cron/toggle','POST',{id,enabled});
+  if (res.success) notify(enabled?'Đã bật lịch':'Đã tắt lịch');
+  else { notify('Lỗi: '+res.error,'error'); loadCron(); }
+}
+
+async function deleteCron(id) {
+  if (!confirm('Xoá lịch này? Không thể hoàn tác.')) return;
+  const res = await api('/api/cron/delete','POST',{id});
+  if (res.success) { notify('Đã xoá lịch'); loadCron(); } else notify('Lỗi: '+res.error,'error');
+}
+
+function viewCronDetail(j) {
+  document.getElementById('cronModalTitle').textContent = '⏰ '+j.name;
+  document.getElementById('cronModalBody').innerHTML = `
+    <div class="form-group"><div class="form-label">Nội dung gửi cho AI</div>
+      <div class="log-content">${(j.payload?.text||'(không có)').replace(/</g,'&lt;')}</div></div>
+    <div class="form-group"><div class="form-label">Thông tin kỹ thuật</div>
+      <div class="log-content">ID: ${j.id}\nAgent: ${j.agentId}\nSession: ${j.sessionKey}\nLịch: ${j.schedule?.expr} (${j.schedule?.tz})\nLần cuối: ${j.state?.lastRunAtMs?new Date(j.state.lastRunAtMs).toLocaleString('vi-VN'):'Chưa'}\nLần tiếp: ${j.state?.nextRunAtMs?new Date(j.state.nextRunAtMs).toLocaleString('vi-VN'):'N/A'}</div></div>`;
+  showModal('cronModal');
+}
+
+async function viewCronRuns(jobId, jobName) {
+  document.getElementById('cronModalTitle').textContent = '📋 Lịch sử chạy: ' + jobName;
+  document.getElementById('cronModalBody').innerHTML = '<div style="color:var(--text3);text-align:center;padding:16px">⏳ Đang tải...</div>';
+  showModal('cronModal');
+  const runs = await api('/api/cron/runs?id=' + encodeURIComponent(jobId));
+  if (!Array.isArray(runs) || !runs.length) {
+    document.getElementById('cronModalBody').innerHTML = '<div class="alert alert-info">Chưa có lịch sử chạy.</div>'; return;
+  }
+  document.getElementById('cronModalBody').innerHTML = `
+    <div style="margin-bottom:10px;font-size:11px;color:var(--text3)">${runs.length} lần chạy gần nhất (mới nhất trước)</div>
+    ${runs.slice(0,30).map(r => `
+    <div class="run-item">
+      <div class="run-dot ${r.status==='ok'?'ok':r.status==='error'?'error':'unknown'}"></div>
+      <div class="run-info">
+        <div class="run-ts">${r.ts} ${r.nextRun !== '?' ? '· Tiếp: '+r.nextRun : ''}</div>
+        ${r.summary ? `<div class="run-summary">${r.summary.replace(/</g,'&lt;').replace(/\n/g,' ')}</div>` : ''}
+        <div class="run-duration">${r.durationMs ? (r.durationMs/1000).toFixed(1)+'s' : ''} · ${r.status==='ok'?'✅ Thành công':r.status==='error'?'❌ Lỗi':'❔ '+r.status}</div>
+      </div>
+    </div>`).join('')}
+  `;
+}
+
+// ====== SESSIONS ======
+async function loadSessions() {
+  const sessions = await api('/api/sessions');
+  if (!Array.isArray(sessions)||!sessions.length) {
+    document.getElementById('sessionsContainer').innerHTML='<div class="alert alert-info">Không có phiên nào.</div>'; return;
+  }
+  const chIcons = {telegram:'✈️',webchat:'🌐',whatsapp:'💬',web:'🌐'};
+  document.getElementById('sessionsContainer').innerHTML = sessions.map(s => {
+    const icon = chIcons[s.channel]||'💬';
+    return `<div class="session-row">
+      <div class="session-icon">${icon}</div>
+      <div class="session-info">
+        <div class="session-name">${s.label||s.from||s.key.split(':').pop()}</div>
+        <div class="session-meta">${s.channel} · ${s.chatType} · Cập nhật: ${s.updatedAt}</div>
+      </div>
+      <span class="badge badge-${s.channel==='telegram'?'blue':s.channel==='webchat'?'purple':'green'}">${s.channel}</span>
+    </div>`;
+  }).join('');
+}
+
+// ====== SKILLS ======
+const skillVI = {
+  'agent-browser':       { name:'🌐 Điều Khiển Trình Duyệt',    desc:'Tự động hoá trình duyệt — click, nhập liệu, chụp màn hình, điều hướng trang web' },
+  'apple-notes':         { name:'📓 Apple Notes',                desc:'Quản lý ghi chú Apple Notes — tạo, sửa, xoá, tìm kiếm và xuất ghi chú trên macOS' },
+  'apple-reminders':     { name:'⏰ Apple Reminders',            desc:'Quản lý nhắc nhở Apple Reminders — thêm, sửa, hoàn thành, xoá và lọc theo ngày' },
+  'computer-use':        { name:'🖥️ Điều Khiển Màn Hình',       desc:'Điều khiển toàn bộ màn hình máy tính — click, gõ phím, cuộn, kéo thả, chụp ảnh màn hình' },
+  'gemini-image-simple': { name:'🎨 Tạo Ảnh AI (Gemini)',        desc:'Tạo và chỉnh sửa ảnh bằng Gemini AI — không cần cài thêm thư viện, chạy được mọi môi trường' },
+  'imsg':                { name:'💬 iMessage / SMS',             desc:'Xem và gửi iMessage/SMS — đọc lịch sử chat, gửi tin nhắn qua Apple Messages' },
+  'macos-local-voice':   { name:'🎙️ Giọng Nói (Offline)',       desc:'Nhận diện và tổng hợp giọng nói hoàn toàn offline trên macOS — không cần internet' },
+  'summarize':           { name:'📄 Tóm Tắt Nội Dung',          desc:'Tóm tắt URL, file PDF, ảnh, video YouTube và nhiều định dạng khác' },
+  'telegram-voice-to-voice-macos': { name:'🎤 Voice-to-Voice Telegram', desc:'Nhận tin nhắn thoại Telegram → trả lời bằng giọng nói — chỉ hỗ trợ Apple Silicon macOS' },
+  'voz':                 { name:'💬 Voz Forum',                  desc:'Đọc và tương tác với diễn đàn Voz.vn' },
+  'zalo':                { name:'📱 Zalo Bot',                   desc:'Tự động hoá Zalo Bot — gửi tin nhắn và xử lý workflow qua Zalo Bot API' },
+  'neutron-mcp':         { name:'💸 Neutron Chuyển Khoản',       desc:'Tự động chuyển khoản VND qua ngân hàng Việt Nam bằng Bitcoin Lightning Network' },
+};
+
+async function loadSkills() {
+  const skills = await api('/api/skills');
+  if (!Array.isArray(skills)||!skills.length) {
+    document.getElementById('skillsContainer').innerHTML='<div class="alert alert-info">Không có skill nào.</div>'; return;
+  }
+  document.getElementById('skillsContainer').innerHTML = skills.map(s => {
+    const vi = skillVI[s.name];
+    const displayName = vi ? vi.name : ('📦 ' + s.name);
+    const displayDesc = vi ? vi.desc : (s.description || 'Không có mô tả');
+    return `
+    <div class="skill-item">
+      <div class="skill-info">
+        <div class="skill-name">${displayName}</div>
+        <div class="skill-desc">${displayDesc}</div>
+        ${!vi ? `<div style="font-size:10px;color:var(--text3);margin-top:2px;font-family:monospace">${s.name}</div>` : ''}
+      </div>
+      <label class="toggle" style="margin-left:16px">
+        <input type="checkbox" ${s.enabled?'checked':''} onchange="toggleSkill('${s.name}',this.checked)">
+        <span class="slider"></span>
+      </label>
+    </div>`;
+  }).join('');
+}
+
+async function toggleSkill(name, enabled) {
+  const res = await api('/api/skills/toggle','POST',{name,enabled});
+  if (res.success) notify((enabled?'Đã bật':'Đã tắt')+' skill '+name);
+  else { notify('Lỗi: '+res.error,'error'); loadSkills(); }
+}
+
+// ====== CHANNELS ======
+async function loadChannels() {
+  const cfg = await api('/api/config'); currentConfig = cfg;
+  const tg = cfg?.channels?.telegram||{};
+  const wa = cfg?.channels?.whatsapp||{};
+  document.getElementById('channelsContainer').innerHTML = `
+    <div class="section">
+      <div class="section-header"><span class="section-title">✈️ Telegram</span>
+        <label class="toggle"><input type="checkbox" id="tgEnabled" ${tg.enabled?'checked':''}><span class="slider"></span></label></div>
+      <div class="section-body">
+        <div class="form-group"><label class="form-label">Bot Token</label>
+          <input class="form-input" style="font-size:12px;font-family:monospace" id="tgToken" value="${tg.botToken||''}"></div>
+        <div class="form-group"><label class="form-label">Cho phép User ID (mỗi ID một dòng)</label>
+          <textarea class="form-input" id="tgAllowFrom">${(tg.allowFrom||[]).join('\n')}</textarea></div>
+        <div class="form-group"><label class="form-label">Streaming</label>
+          <select class="form-input" id="tgStreaming">
+            <option value="partial" ${tg.streaming==='partial'?'selected':''}>Partial</option>
+            <option value="full" ${tg.streaming==='full'?'selected':''}>Full</option>
+            <option value="off" ${tg.streaming==='off'?'selected':''}>Tắt</option>
+          </select></div>
+        <button class="btn btn-primary" onclick="saveChannels()">💾 Lưu Telegram</button>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">💬 WhatsApp</span>
+        <label class="toggle"><input type="checkbox" id="waEnabled" ${wa.enabled?'checked':''}><span class="slider"></span></label></div>
+      <div class="section-body">
+        <div class="form-group"><label class="form-label">Số điện thoại cho phép (mỗi số 1 dòng, kèm +84)</label>
+          <textarea class="form-input" id="waAllowFrom">${(wa.allowFrom||[]).join('\n')}</textarea></div>
+        <button class="btn btn-primary" onclick="saveChannels()">💾 Lưu WhatsApp</button>
+      </div>
+    </div>`;
+}
+
+async function saveChannels() {
+  if (!currentConfig) return;
+  currentConfig.channels.telegram = {...currentConfig.channels.telegram,
+    enabled: document.getElementById('tgEnabled')?.checked,
+    botToken: document.getElementById('tgToken')?.value,
+    allowFrom: document.getElementById('tgAllowFrom')?.value.split('\n').map(s=>s.trim()).filter(Boolean).map(s=>isNaN(s)?s:parseInt(s)),
+    streaming: document.getElementById('tgStreaming')?.value};
+  currentConfig.channels.whatsapp = {...currentConfig.channels.whatsapp,
+    enabled: document.getElementById('waEnabled')?.checked,
+    allowFrom: document.getElementById('waAllowFrom')?.value.split('\n').map(s=>s.trim()).filter(Boolean)};
+  const res = await api('/api/config','POST',currentConfig);
+  if (res.success) notify('Đã lưu kênh kết nối'); else notify('Lỗi: '+res.error,'error');
+}
+
+// ====== SETTINGS ======
+async function loadSettings() {
+  const cfg = await api('/api/config'); currentConfig = cfg;
+  const ws = cfg?.tools?.web?.search||{};
+  const agents = cfg?.agents?.defaults||{};
+  document.getElementById('settingsContainer').innerHTML = `
+    <div class="section">
+      <div class="section-header"><span class="section-title">🤖 Cài Đặt Agent</span></div>
+      <div class="section-body">
+        <div class="form-group"><label class="form-label">Tác vụ chạy đồng thời tối đa</label>
+          <input type="number" class="form-input" id="maxConcurrent" value="${agents.maxConcurrent||2}" min="1" max="10"></div>
+        <div class="form-group"><label class="form-label">Sub-agent chạy đồng thời</label>
+          <input type="number" class="form-input" id="maxSubAgents" value="${agents.subagents?.maxConcurrent||2}" min="1" max="10"></div>
+        <button class="btn btn-primary" onclick="saveSettings()">💾 Lưu</button>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">🔍 Web Search</span>
+        <label class="toggle"><input type="checkbox" id="searchEnabled" ${ws.enabled?'checked':''}><span class="slider"></span></label></div>
+      <div class="section-body">
+        <div class="form-group"><label class="form-label">Provider</label>
+          <select class="form-input" id="searchProvider">
+            <option value="brave" ${ws.provider==='brave'?'selected':''}>Brave Search</option>
+            <option value="google" ${ws.provider==='google'?'selected':''}>Google</option>
+          </select></div>
+        <div class="form-group"><label class="form-label">API Key</label>
+          <input class="form-input" style="font-size:12px;font-family:monospace" id="searchKey" value="${ws.apiKey||''}"></div>
+        <button class="btn btn-primary" onclick="saveSettings()">💾 Lưu</button>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-header"><span class="section-title">🖥️ Gateway</span></div>
+      <div class="section-body">
+        <div class="alert alert-warning">⚠️ Đổi port cần khởi động lại OpenClaw</div>
+        <div class="form-group"><label class="form-label">Gateway Port</label>
+          <input type="number" class="form-input" id="gatewayPort" value="${cfg?.gateway?.port||18789}"></div>
+        <div class="form-group"><label class="form-label">Auth Token</label>
+          <input class="form-input" style="font-size:12px;font-family:monospace" id="gatewayToken" value="${cfg?.gateway?.auth?.token||''}"></div>
+        <button class="btn btn-primary" onclick="saveSettings()">💾 Lưu</button>
+      </div>
+    </div>`;
+}
+
+async function saveSettings() {
+  if (!currentConfig) return;
+  currentConfig.agents.defaults.maxConcurrent = parseInt(document.getElementById('maxConcurrent')?.value)||2;
+  if (!currentConfig.agents.defaults.subagents) currentConfig.agents.defaults.subagents={};
+  currentConfig.agents.defaults.subagents.maxConcurrent = parseInt(document.getElementById('maxSubAgents')?.value)||2;
+  currentConfig.tools.web.search = {enabled:document.getElementById('searchEnabled')?.checked,
+    provider:document.getElementById('searchProvider')?.value,apiKey:document.getElementById('searchKey')?.value};
+  currentConfig.gateway.port = parseInt(document.getElementById('gatewayPort')?.value)||18789;
+  currentConfig.gateway.auth.token = document.getElementById('gatewayToken')?.value;
+  const res = await api('/api/config','POST',currentConfig);
+  if (res.success) notify('Đã lưu cài đặt'); else notify('Lỗi: '+res.error,'error');
+}
+
+// ====== LOGS ======
+async function loadLogs() {
+  const logs = await api('/api/logs');
+  if (!Array.isArray(logs)||!logs.length) {
+    document.getElementById('logsContainer').innerHTML='<div class="alert alert-info">Không có log nào.</div>'; return;
+  }
+  document.getElementById('logsContainer').innerHTML = logs.map(l=>`
+    <div class="section">
+      <div class="section-header"><span class="section-title">📝 ${l.name}</span>
+        <span style="font-size:11px;color:var(--text3)">${l.modified} ${l.size}</span></div>
+      <div class="section-body"><div class="log-content">${l.content.replace(/</g,'&lt;')}</div></div>
+    </div>`).join('');
+}
+
+    // Proxy chi tiết — đã chuyển vào loadDashboard
+
+// ====== NHẬT KÝ NGÀY ======
+async function loadDiary() {
+  document.getElementById('diaryContainer').innerHTML = '<div style="color:var(--text3);text-align:center;padding:30px">⏳ Đang tải...</div>';
+  const files = await api('/api/diary');
+  if (!Array.isArray(files) || !files.length) {
+    document.getElementById('diaryContainer').innerHTML = '<div class="alert alert-info">Chưa có nhật ký nào.</div>'; return;
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  document.getElementById('diaryContainer').innerHTML =
+    `<div class="alert alert-info" style="margin-bottom:16px">📅 ${files.length} ngày nhật ký. Click để mở rộng từng ngày.</div>` +
+    files.map((f, i) => {
+      const isToday = f.date === today;
+      return `
+      <div class="diary-day-card">
+        <div class="diary-day-header" onclick="toggleDiary('diary-${i}',this)">
+          <span class="diary-weekday">${f.displayDate.split(',')[0]}</span>
+          <span class="diary-date">${isToday ? '📍 ' : ''}${f.displayDate.split(',')[1]?.trim() || f.date}</span>
+          <span class="diary-meta">${f.lines} dòng · ${f.modified}</span>
+          <span class="diary-chevron ${isToday ? 'open' : ''}">›</span>
+        </div>
+        <div class="diary-body ${isToday ? 'open' : ''}" id="diary-${i}">
+          ${f.content.replace(/</g,'&lt;')}
+        </div>
+      </div>`;
+    }).join('');
+}
+
+function toggleDiary(id, header) {
+  const body = document.getElementById(id);
+  const chev = header.querySelector('.diary-chevron');
+  body.classList.toggle('open');
+  chev.classList.toggle('open');
+}
+
+// ====== LỊCH SỬ HỘI THOẠI ======
+let chatSessions = [];
+async function loadChatHistory() {
+  document.getElementById('chatHistoryList').innerHTML = '<div style="color:var(--text3);text-align:center;padding:30px">⏳ Đang đọc dữ liệu (có thể mất vài giây)...</div>';
+  chatSessions = await api('/api/chats');
+  if (!Array.isArray(chatSessions) || !chatSessions.length) {
+    document.getElementById('chatHistoryList').innerHTML = '<div class="alert alert-info">Không có hội thoại nào.</div>'; return;
+  }
+  const chIcons = {telegram:'✈️', webchat:'🌐', whatsapp:'💬', web:'🌐', unknown:'💬'};
+  document.getElementById('chatHistoryList').innerHTML = `
+    <div class="alert alert-info" style="margin-bottom:16px">💡 Hiển thị ${chatSessions.length} phiên hội thoại. Click vào từng phiên để xem nội dung (200 tin nhắn gần nhất).</div>
+    ${chatSessions.filter(s => s.hasFile && s.msgCount > 0).map(s => `
+    <div class="chat-session-card" onclick="openChatSession('${s.sessionId}','${(s.label||s.from||'').replace(/'/g,'')}',' ${s.channel}')">
+      <div class="chat-session-icon">${chIcons[s.channel]||'💬'}</div>
+      <div class="chat-session-info">
+        <div class="chat-session-name">${s.label || s.from || s.key.split(':').pop()}</div>
+        <div class="chat-session-meta">${s.channel} · ${s.msgCount} tin nhắn · ${s.fileSizeKb} KB · Cập nhật: ${s.updatedAt}</div>
+      </div>
+      <span class="badge badge-${s.channel==='telegram'?'blue':s.channel==='webchat'?'purple':'green'}" style="flex-shrink:0">${s.channel}</span>
+    </div>`).join('')}
+  `;
+}
+
+async function openChatSession(sessionId, label, channel) {
+  // Tạo modal chat inline
+  const existing = document.getElementById('chatViewModal');
+  if (existing) existing.remove();
+  const modal = document.createElement('div');
+  modal.id = 'chatViewModal';
+  modal.className = 'modal-overlay show';
+  modal.innerHTML = `
+    <div class="modal" style="max-width:820px">
+      <div class="modal-header">
+        <span class="modal-title">💬 ${label || sessionId.slice(0,8)+'...'}</span>
+        <button class="close-btn" onclick="document.getElementById('chatViewModal').remove()">×</button>
+      </div>
+      <div class="modal-body" id="chatViewBody" style="padding:16px">
+        <div style="color:var(--text3);text-align:center;padding:20px">⏳ Đang tải tin nhắn...</div>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+  modal.addEventListener('click', e => { if(e.target===modal) modal.remove(); });
+
+  const res = await api('/api/chats/messages?id=' + encodeURIComponent(sessionId));
+  if (res.error) {
+    document.getElementById('chatViewBody').innerHTML = `<div class="alert alert-warning">${res.error}</div>`; return;
+  }
+  const msgs = res.messages || [];
+  const total = res.total || 0;
+  const chIcons = {telegram:'✈️', webchat:'🌐', whatsapp:'💬'};
+  const html = msgs.map(m => {
+    const isUser = m.role === 'user';
+    const isAI = m.role === 'assistant';
+    const isOther = !isUser && !isAI;
+    const ts = m.ts ? new Date(m.ts).toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}) : '';
+    const text = m.text.replace(/</g,'&lt;').replace(/\n/g,'<br>');
+    const isTool = m.text.startsWith('[🔧') || m.text.startsWith('[📤');
+    if (isTool) return `
+      <div class="chat-bubble-wrap">
+        <div class="chat-avatar avatar-ai">🔧</div>
+        <div>
+          <div class="chat-bubble bubble-tool">${text}</div>
+          <div class="chat-ts">${ts}</div>
+        </div>
+      </div>`;
+    return `
+      <div class="chat-bubble-wrap ${isUser?'user':''}">
+        <div class="chat-avatar ${isUser?'avatar-user':'avatar-ai'}">${isUser?'👤':'🤖'}</div>
+        <div style="min-width:0;${isUser?'align-items:flex-end;display:flex;flex-direction:column':''} ">
+          <div class="chat-bubble ${isUser?'bubble-user':'bubble-ai'}">${text}</div>
+          <div class="chat-ts">${ts}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('chatViewBody').innerHTML = `
+    ${total > msgs.length ? `<div class="alert alert-info" style="margin-bottom:12px">📌 Hiển thị ${msgs.length} tin nhắn gần nhất (tổng: ${total})</div>` : ''}
+    <div class="chat-view" id="chatScrollArea">${html}</div>`;
+  // Scroll xuống cuối
+  setTimeout(() => {
+    const el = document.getElementById('chatScrollArea');
+    if (el) el.scrollTop = el.scrollHeight;
+  }, 100);
+}
+
+// ====== HỒ SƠ OPENCLAW ======
+let profileFiles = [];
+let currentProfileFile = null;
+
+async function loadProfile() {
+  profileFiles = await api('/api/profile');
+  if (!Array.isArray(profileFiles) || !profileFiles.length) {
+    document.getElementById('profileContainer').innerHTML = '<div class="alert alert-info">Không có file hồ sơ nào.</div>'; return;
+  }
+  const fileIcons = {'USER.md':'👤','SOUL.md':'💎','AGENTS.md':'🤖','MEMORY.md':'🧠','TOOLS.md':'🔧','HEARTBEAT.md':'💓','IDENTITY.md':'🪪'};
+  const fileDesc = {
+    'USER.md':'Thông tin về anh — tên, nghề nghiệp, sở thích, phong cách',
+    'SOUL.md':'Tính cách của OpenClaw — cách suy nghĩ, giá trị, phong cách trả lời',
+    'AGENTS.md':'Quy trình làm việc — cách OpenClaw khởi động, xử lý lỗi, ghi nhớ',
+    'MEMORY.md':'Bộ nhớ dài hạn — thông tin OpenClaw cần nhớ giữa các phiên',
+    'TOOLS.md':'Hướng dẫn dùng tools — browser, search, file...',
+    'HEARTBEAT.md':'Heartbeat — kiểm tra kết nối',
+    'IDENTITY.md':'Danh tính — tên và cách nhận biết bản thân'
+  };
+  // Tab bar
+  const tabs = profileFiles.map((f,i) => `<button class="profile-tab ${i===0?'active':''}" onclick="switchProfileTab('${f.name}',this)">${fileIcons[f.name]||'📄'} ${f.name.replace('.md','')}</button>`).join('');
+  document.getElementById('profileContainer').innerHTML = `
+    <div class="alert alert-warning">⚠️ Các file này ảnh hưởng trực tiếp đến hành vi của OpenClaw. Chỉnh sửa cẩn thận!</div>
+    <div class="profile-tab-bar">${tabs}</div>
+    <div id="profileEditorArea"></div>`;
+  // Hiển thị file đầu tiên
+  if (profileFiles.length > 0) showProfileFile(profileFiles[0].name);
+}
+
+function switchProfileTab(name, el) {
+  document.querySelectorAll('.profile-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  showProfileFile(name);
+}
+
+function showProfileFile(name) {
+  currentProfileFile = name;
+  const f = profileFiles.find(p => p.name === name);
+  if (!f) return;
+  const fileDesc = {
+    'USER.md':'Thông tin về anh — tên, nghề nghiệp, sở thích, phong cách trả lời',
+    'SOUL.md':'Tính cách của OpenClaw — cách suy nghĩ, giá trị, phong cách',
+    'AGENTS.md':'Quy trình làm việc — khởi động session, xử lý lỗi, ghi nhớ',
+    'MEMORY.md':'Bộ nhớ dài hạn — thông tin quan trọng cần nhớ qua các phiên',
+    'TOOLS.md':'Hướng dẫn sử dụng công cụ','HEARTBEAT.md':'Heartbeat','IDENTITY.md':'Định danh'
+  };
+  document.getElementById('profileEditorArea').innerHTML = `
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">${f.name}</div>
+          <div style="font-size:11px;color:var(--text3);margin-top:2px">${fileDesc[f.name]||''} · ${f.lines} dòng · Sửa: ${f.modified}</div>
+        </div>
+        <button class="btn btn-primary" onclick="saveProfileFile()">💾 Lưu thay đổi</button>
+      </div>
+      <div class="section-body">
+        <div class="profile-hint">💡 Các thay đổi sẽ có hiệu lực từ phiên trò chuyện tiếp theo của OpenClaw.</div>
+        <textarea class="form-input" id="profileEditor" style="min-height:500px;font-family:monospace;font-size:12px;line-height:1.6;margin-top:12px">${f.content.replace(/</g,'&lt;')}</textarea>
+      </div>
+    </div>`;
+}
+
+async function saveProfileFile() {
+  if (!currentProfileFile) return;
+  const content = document.getElementById('profileEditor')?.value;
+  const res = await api('/api/profile/save', 'POST', {name: currentProfileFile, content});
+  if (res.success) {
+    notify('Đã lưu ' + currentProfileFile);
+    // Cập nhật lại local cache
+    const f = profileFiles.find(p => p.name === currentProfileFile);
+    if (f) f.content = content;
+  } else notify('Lỗi: ' + res.error, 'error');
+}
+
+loadDashboard();
+setInterval(() => { if(document.getElementById('page-dashboard').classList.contains('active')) loadDashboard(); }, 30000);
+</script>
+</body>
+</html>

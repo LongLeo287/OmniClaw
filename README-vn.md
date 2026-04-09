@@ -69,11 +69,25 @@ Thay vì chỉ hoạt động như một chatbot đơn giản, OmniClaw chủ đ
 
 ## 🏛️ Kiến Trúc & Plugin 3 Tầng
 
-Để duy trì hiệu năng nhẹ nhàng trong khi cho phép mở rộng vô hạn, tất cả công cụ trong OmniClaw đều tuân theo **Giao Thức Plugin 3 Tầng**:
-
 - **Tầng 1 (Hạ Tầng Cốt Lõi)**: Các engine bản địa, luôn bật (vd: `LightRAG` cho bộ nhớ, `Firecrawl` cho quét web).
 - **Tầng 2 (Plugin Load-Chậm)**: Công cụ chuyên biệt (như trình xử lý PDF hoặc tạo ảnh Python nặng) được đưa vào sandbox và **chỉ khởi động khi được yêu cầu**, sau đó tự động bị hủy để giải phóng RAM.
 - **Tầng 3 (Danh Sách Đen)**: Các mô-đun lỗi thời hoặc xung đột mà hệ thống bị cấm thực thi.
+
+---
+
+## 🌓 Phân Quyền Tuyệt Đối 2 Hệ Thống (The Absolute Boundary)
+
+OmniClaw được chia làm **2 Hệ Thống Tách Biệt** với ranh giới Zero-Trust không thể đảo ngược:
+
+1. **Hệ Thống 1: Tầng Thần Thánh (Core Daemons - System Admins)**
+   - Bao gồm các 7 Trụ cột chạy ngầm (như `osf_warden.py`, `oma_architect.py`).
+   - Quyền hạn: **Root Access (God Mode)**. Chúng quản lý, bảo trì, và nâng cấp toàn bộ nền tảng hệ điều hành OmniClaw. Chúng có quyền sai bảo Orchestrator, dọn dẹp thư mục, và đập bỏ Agent nếu cần.
+2. **Hệ Thống 2: Tầng Làm Thuê (Orchestrator & Agents Workforce)**
+   - Bao gồm khổi lượng lớn LLM Agents nằm ở `brain/agents/`, các phòng ban `corp/` và các kỹ năng `ecosystem/skills/`.
+   - Chức năng: Lực lượng thực thi dự án ngoài + phục vụ yêu cầu logic của Daemons.
+
+**Lằn Ranh Đỏ (The Zero-Trust Rule):** 
+**Tầng 2 bị khóa đè (Sandboxed).** Bất cứ Orchestrator, LLM Agent hay Plugin nào cũng bị CẤM TUYỆT ĐỐI không được can thiệp, sửa đổi mã nguồn hay đụng vào các file của Hệ điều hành (Core Daemons). Daemons có thể dùng Orchestrator, nhưng Orchestrator KHÔNG được phép với tay vào cấu trúc Daemons.
 
 ```mermaid
 sequenceDiagram
@@ -148,11 +162,22 @@ OmniClaw điều phối các chức năng tự trị thông qua 7 daemon chạy 
 
 ## 🗺️ Bản Đồ Tổng & Theo Dõi Kiến Thức
 
-Để đảm bảo đồng bộ tuyệt đối trên toàn hệ thống file, OmniClaw tránh sử dụng các file bản đồ cục bộ. Thay vào đó, nó dựa trên hai Bản Đồ Tổng được theo dõi toàn cầu:
+Để đảm bảo đồng bộ tuyệt đối trên toàn hệ thống file, OmniClaw sử dụng kiến trúc lai tập trung/phân tán được quản lý linh hoạt bởi daemon OMA:
 
 - **Chỉ Mục Nhanh (`FAST_INDEX.json`)**: Sổ cái có thẩm quyền của hệ điều hành. Mọi Agent, Phòng ban và Skill hợp lệ trên mạng lưới đều được đóng dấu tại đây. 
 - **Đồ Thị Thư Viện (`LIBRARY_GRAPH.json`)**: Ánh xạ các ranh giới quan hệ phức tạp giữa các sub-agent và các file Kiến thức cần thiết.
-- **Theo Dõi Tài Liệu (`core/docs`)**: Tất cả bộ nhớ tổ chức, Bảng điểm KPI và kiến trúc lưu trữ dài hạn được lưu tài liệu trong thư mục `core/docs/`.
+- **Bản Đồ Khu Vực (`_REGIONAL_MAP.md`)**: Mạng lưới các điểm neo (node) phân tán tại từng ngóc ngách của hệ sinh thái (vd: `ecosystem/workforce/agents/_REGIONAL_MAP.md`). Chúng đóng vai trò là danh mục nội bộ, liên tục kiểm đếm dữ liệu cục bộ và cấp nguồn thẳng vào Đồ Thị Thư Viện Tổng, nối liền hệ tọa độ khu vực vào lưới mạng toàn cầu.
+- **Theo Dõi Tài Liệu (`core/docs`)**: Tất cả bộ nhớ tổ chức, Bảng điểm KPI và kiến trúc lưu trữ dài hạn được lưu trong thư mục `core/docs/`.
+
+---
+
+## 🧠 Kiến Trúc Trí Nhớ MemPalace (3-Layer Memory)
+
+Kể từ V2, OmniClaw ứng dụng kiến trúc **Drawers & Closets** từ thuật toán MemPalace, được tích hợp thẳng vào Pipeline OAP (Tự Động) thông qua đặc vụ `mempalace_agent`. Hệ thống quản lý tri thức gồm 3 tầng:
+
+1. **Layer 1: RAW Drawers (Ngăn kéo File Thô):** Các file `.md`, `.py` tĩnh nắm giữ sự thật 100% (Ví dụ: `_DISTILLED.md`). Bắt buộc tồn tại. Đựng mã nguồn và tài liệu kỹ thuật dài dòng.
+2. **Layer 2: AAAK Closets (Tủ nén Bối cảnh):** Áp dụng *Lossy Abbreviation Dialect*. Core Daemon (hoặc MemPalace Agent) sinh ra các file `_CLOSET.aaak` cực nhẹ đi kèm các Drawer mang tính chất trò chuyện, lịch sử chat. Các file `.aaak` này dùng để cung cấp *Entity Codes, Topic, Emotion* tốn cực ít Token.
+3. **Layer 3: Graph Navigation (Neo Đồ Thị):** Kiến trúc Wings (Phân tầng dự án) và Rooms (Chủ đề) được quản lý tự động bởi `oma_architect`. Giúp Agent quét bản đồ theo logic con người.
 
 ---
 
@@ -199,7 +224,7 @@ omniclaw
 - 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/CORE_PRINCIPLES.md) — Giải thích về khung xương bộ nhớ Zero-Config và chính sách ngôn ngữ không phụ thuộc OS.
 - 🧭 [**Bản Đồ Hệ Thống Tổng**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — Bản thiết kế đầy đủ: 28 phòng ban, Trình tự khởi động, Kiến trúc bộ nhớ và Quy trình cổng.
 - 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Ánh xạ cổng và các lệnh khởi động thủ công cho các dịch vụ địa phương.
-- 🧩 [**Bản Đồ Năng Lực Skill & Plugin**](core/docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Chỉ mục tổng hợp của hơn 100 kỹ năng và plugin bản địa.
+- 🧩 [**Bản Đồ 1,970+ Năng Lực Skill & Plugin**](docs/SKILLS_DIRECTORY.md) — Bách khoa toàn thư và chỉ mục mô tả chức năng chi tiết của toàn bộ 1,970 kỹ năng và plugin chuyên biệt hiện có trong Hệ sinh thái OmniClaw.
 - 📊 [**Thư Viện Khoa Học Dữ Liệu**](core/docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — Danh sách các repository Machine Learning và RAG đang hoạt động.
 - 🏛️ [**Quản Trị Core Daemons & OER**](core/docs/architecture/CORE_DAEMONS_AND_OER.md) — 4 Core Daemon (OIW/OHD/OA/OER), ma trận thẩm quyền và pipeline hệ sinh thái tự động 5 cổng.
 

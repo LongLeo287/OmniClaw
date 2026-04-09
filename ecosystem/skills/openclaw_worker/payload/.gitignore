@@ -1,0 +1,10 @@
+node_modules/
+.claude/
+.serena/
+*.log
+tasks/processed/*
+!tasks/processed/.gitkeep
+.env
+.env.*
+tom_hum_*.log
+/tmp/

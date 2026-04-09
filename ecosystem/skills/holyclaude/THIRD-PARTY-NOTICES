@@ -1,0 +1,39 @@
+# Third-Party Licenses
+
+HolyClaude includes third-party software distributed within the Docker image.
+Each component retains its original license. HolyClaude's own source code is
+licensed under MIT (see LICENSE).
+
+## CloudCLI (@siteboon/claude-code-ui)
+
+- License: GPL-3.0
+- Copyright: Simos Mikelatos / SiteBoon AI
+- Source: https://github.com/siteboon/claudecodeui
+- npm: https://www.npmjs.com/package/@siteboon/claude-code-ui
+
+CloudCLI is installed as a standalone program via npm and runs as an
+independent process managed by s6-overlay.
+
+### Modification Notice
+
+HolyClaude applies a bugfix patch to CloudCLI's server/index.js during the
+Docker build. The patch preserves WebSocket frame types in the plugin proxy
+(see HolyClaude Issue #11). The exact changes are documented in the
+Dockerfile and consist of four sed replacements that add the isBinary
+parameter to WebSocket message relay handlers. This fix has been submitted
+upstream to the CloudCLI repository. The unmodified source is available at
+the links above, and the modification is fully visible in HolyClaude's
+public Dockerfile.
+
+## s6-overlay
+
+- License: ISC
+- Source: https://github.com/just-containers/s6-overlay
+
+## Node.js
+
+- License: MIT
+- Source: https://github.com/nodejs/node
+
+For a complete list of installed packages and their licenses, inspect the
+Docker image directly or refer to the Dockerfile.

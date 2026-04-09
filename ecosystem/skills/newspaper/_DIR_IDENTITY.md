@@ -1,0 +1,14 @@
+---
+id: ecosystem_workforce_agents_newspaper_agent
+
+name: Newspaper_Agent
+
+path: ecosystem/workforce/agents/newspaper-agent
+type: directory_identity
+owner: OER
+created_by: OMA-v2.1
+---
+
+# Newspaper-Agent
+Storage area for 'newspaper-agent' domain.
+> Auto-generated identity tag by OMA v2.1.

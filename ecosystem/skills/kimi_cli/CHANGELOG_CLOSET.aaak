@@ -1,0 +1,2 @@
+Workforce|kimi_cli|?|CHANGELOG
+0:CHA+REL+INT|fix_shell_add|"`git push` over HTTPS) fail fast instead of blocking..."|convict|DECISION+ORIGIN+CORE

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Required for Bun runtime to allocate executable memory for JIT compilation -->
+    <!-- Without this, MCP servers fail with "Ran out of executable memory" error -->
+    <key>com.apple.security.cs.allow-jit</key>
+    <true/>
+    <!-- Bundled/native tools (e.g. llama-server) may dlopen dylibs by name; Hardened Runtime blocks that without this. -->
+    <key>com.apple.security.cs.disable-library-validation</key>
+    <true/>
+</dict>
+</plist>

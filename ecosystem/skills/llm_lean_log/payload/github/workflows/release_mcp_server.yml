@@ -1,0 +1,57 @@
+name: Release MCP Server
+
+on:
+  # push:
+  #   tags:
+  #     - 'mcp-server-v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun i
+
+      - name: Build dependencies
+        run: |
+          bun run --filter llm-lean-log-core build
+          bun run --filter l-log-mcp build
+
+      - name: Build MCP Server
+        run: bun run --filter l-log-mcp-server build
+
+      # - name: Publish to NPM
+      #   run: |
+      #     echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+      #     cd packages/mcp-server
+      #     bun publish --no-git-checks --access public
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Extract Release Notes
+        id: extract_notes
+        run: |
+          VERSION=$(echo ${{ github.ref_name }} | sed 's/mcp-server-v//')
+          sed -n "/## \[$VERSION\]/,/## \[/p" packages/mcp-server/CHANGELOG.md | sed '$d' > release_notes.md
+          if [ ! -s release_notes.md ]; then
+            echo "No notes found in CHANGELOG.md for version $VERSION" > release_notes.md
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: release_notes.md
+          token: ${{ secrets.GITHUB_TOKEN }}

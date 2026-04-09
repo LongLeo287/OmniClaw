@@ -1,0 +1,22 @@
+{
+  "name": "youtube_clipper",
+  "description": "Downloads and locally clips YouTube videos according to timestamp boundaries.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "youtube_url": {
+        "type": "string",
+        "description": "https link to the target video"
+      },
+      "start_time": {
+        "type": "string",
+        "description": "Timestamp in HH:MM:SS"
+      },
+      "end_time": {
+        "type": "string",
+        "description": "Timestamp in HH:MM:SS"
+      }
+    },
+    "required": ["youtube_url"]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "source_map_resolve",
+  "name": "Source Map Resolve",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "dev-tools",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\source_map_resolve\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for source_map_resolve",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "cli",
+    "golang"
+  ]
+}

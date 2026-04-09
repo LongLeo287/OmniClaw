@@ -1,0 +1,24 @@
+----------------------------------------|---------|---------|-------------------
+File                                    | % Funcs | % Lines | Uncovered Line #s
+----------------------------------------|---------|---------|-------------------
+All files                               |   99.77 |   99.05 |
+ packages/cli/src/utils/cli.ts          |  100.00 |   99.33 | 
+ packages/cli/src/utils/const.ts        |  100.00 |  100.00 | 
+ packages/cli/src/utils/files.ts        |  100.00 |  100.00 | 
+ packages/cli/src/utils/git.ts          |  100.00 |  100.00 | 
+ packages/cli/src/utils/visualizer.ts   |  100.00 |  100.00 | 
+ packages/core/src/csv-utils.ts         |  100.00 |   99.42 | 
+ packages/core/src/graph-utils.ts       |   96.77 |   96.99 | 257,322-328
+ packages/core/src/indexer.ts           |  100.00 |  100.00 | 
+ packages/core/src/logger.ts            |  100.00 |   92.00 | 19,21-24
+ packages/mcp-server/src/index.ts       |  100.00 |   98.94 | 
+ packages/mcp-server/src/utils/const.ts |  100.00 |  100.00 | 
+ packages/mcp/src/data-access.ts        |  100.00 |  100.00 | 
+ packages/mcp/src/index.ts              |  100.00 |  100.00 | 
+ packages/visualizer/src/utils.ts       |  100.00 |  100.00 | 
+----------------------------------------|---------|---------|-------------------
+
+ 273 pass
+ 0 fail
+ 651 expect() calls
+Ran 273 tests across 19 files. [2.33s]

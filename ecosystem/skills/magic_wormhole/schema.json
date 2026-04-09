@@ -1,0 +1,31 @@
+{
+  "id": "magic_wormhole",
+  "name": "Magic Wormhole",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "devops",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\magic_wormhole\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for magic_wormhole",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "devops",
+    "kubernetes"
+  ]
+}

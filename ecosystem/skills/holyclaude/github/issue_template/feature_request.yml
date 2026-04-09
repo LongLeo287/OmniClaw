@@ -1,0 +1,56 @@
+name: ✨ Feature Request
+description: Suggest a new tool, package, or feature
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to make HolyClaude better? We'd love to hear it.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - New tool / package
+        - New AI CLI integration
+        - Docker / container improvement
+        - Web UI enhancement
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: variant
+    attributes:
+      label: Which variant should this target?
+      options:
+        - Full only
+        - Slim only
+        - Both
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What would you like?
+      description: Describe the feature or tool you'd like added
+    validations:
+      required: true
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use case
+      description: How would you use this? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds or alternative tools you've tried?

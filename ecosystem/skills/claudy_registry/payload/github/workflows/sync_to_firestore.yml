@@ -1,0 +1,38 @@
+name: Sync Plugins to Firestore
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "plugins/**"
+
+jobs:
+  sync:
+    name: Sync all plugins to Firestore
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Get changed plugin manifests
+        run: |
+          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD \
+            | grep -E '^plugins/.+/manifest\.json$' \
+            | paste -sd ':' - || true)
+          echo "CHANGED_MANIFESTS=$CHANGED" >> $GITHUB_ENV
+
+      - name: Sync to Firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/sync_to_firestore.py

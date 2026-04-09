@@ -1,0 +1,30 @@
+{
+  "id": "whatsapp_bridge",
+  "name": "Whatsapp Bridge",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "utility",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\whatsapp_bridge\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for whatsapp_bridge",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "utility"
+  ]
+}

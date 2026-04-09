@@ -1,0 +1,79 @@
+name: 📦 Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - gah
+      - test/**
+
+permissions:
+  contents: read
+
+jobs:
+  run-unit-tests:
+    uses: ./.github/workflows/unit-tests.yaml
+
+  run-integration-tests:
+    needs:
+      - run-unit-tests
+    uses: ./.github/workflows/integration-tests.yaml
+    secrets: inherit
+
+  release:
+    needs:
+      - run-unit-tests
+      - run-integration-tests
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Get next version
+        id: semver
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ github.token }}
+          branch: ${{ github.ref_name }}
+          noNewCommitBehavior: current
+          noVersionBumpBehavior: patch
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bump version
+        uses: mingjun97/file-regex-replace@v1
+        with:
+          regex: '^VERSION="v?[0-9\.]+"'
+          replacement: 'VERSION="${{ steps.semver.outputs.next }}"'
+          include: 'gah'
+          flags: 'gm'
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: gah
+          message: "version: Update to ${{ steps.semver.outputs.next }} [skip ci]"
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+
+      - name: Create Changelog
+        id: changelog
+        uses: requarks/changelog-action@v1
+        with:
+          token: ${{ github.token }}
+          fromTag: ${{ github.ref_name }}
+          toTag: ${{ steps.semver.outputs.current }}
+          writeToFile: false
+          excludeTypes: build,docs,style,version
+          includeInvalidCommits: true
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ github.token }}
+          tag: ${{ steps.semver.outputs.next }}
+          body: ${{ steps.changelog.outputs.changes }}

@@ -1,0 +1,7 @@
+import re
+from typing import List, Dict
+
+def preprocess_text(text: str) -> str:
+    # Normalize text by removing special characters and converting to lowercase
+    cleaned_text = re.sub(r'[^a-zA-Z0-9\s]', '', text).lower()
+    return cleaned_text

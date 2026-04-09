@@ -1,0 +1,14 @@
+[test]
+# Always enable coverage
+coverage = true
+coveragePathIgnorePatterns = [
+  "node_modules/**",
+  "**/*.test.ts",
+  "dist/**",
+  "packages/core/dist/**",
+  "packages/cli/dist/**",
+  "packages/visualizer/dist/**",
+  "packages/mcp/dist/**",
+  "packages/mcp-server/dist/**",
+  "packages/vscode-csv-viewer/out/**"
+]

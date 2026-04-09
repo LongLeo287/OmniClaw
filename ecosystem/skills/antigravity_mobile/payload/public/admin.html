@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin – Antigravity Mobile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ---- Dark theme (default) ---- */
+        :root {
+            --surface-0: #0B0E14;
+            --surface-1: #0F1219;
+            --surface-2: #141820;
+            --surface-3: #1A1F2B;
+            --surface-4: #212736;
+            --sidebar-bg: #080A0F;
+            --sidebar-text: #a0a4b8;
+            --sidebar-active-bg: rgba(59, 130, 246, 0.12);
+            --sidebar-active-text: #60A5FA;
+            --border-subtle: rgba(100, 160, 255, 0.04);
+            --border-default: rgba(100, 160, 255, 0.08);
+            --border-strong: rgba(100, 160, 255, 0.14);
+            --text-primary: #f0f1f5;
+            --text-secondary: #a0a4b8;
+            --text-muted: #5c6070;
+            --accent: #3B82F6;
+            --accent-hover: #60A5FA;
+            --accent-muted: rgba(59, 130, 246, 0.12);
+            --success: #34d399;
+            --success-muted: rgba(52, 211, 153, 0.12);
+            --error: #f87171;
+            --error-muted: rgba(248, 113, 113, 0.12);
+            --warning: #fbbf24;
+            --scrollbar-thumb: rgba(255, 255, 255, 0.08);
+        }
+
+        /* ---- Light theme ---- */
+        .theme-light {
+            --surface-0: #f8f9fb;
+            --surface-1: #ffffff;
+            --surface-2: #ffffff;
+            --surface-3: #f3f4f6;
+            --surface-4: #e5e7eb;
+            --sidebar-bg: #0F1219;
+            --sidebar-text: #a0a4b8;
+            --border-subtle: rgba(0, 0, 0, 0.06);
+            --border-default: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.12);
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --text-muted: #9ca3af;
+            --accent: #3B82F6;
+            --accent-hover: #2563eb;
+            --accent-muted: rgba(59, 130, 246, 0.08);
+            --success: #10b981;
+            --success-muted: rgba(16, 185, 129, 0.08);
+            --error: #ef4444;
+            --error-muted: rgba(239, 68, 68, 0.08);
+            --scrollbar-thumb: rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: var(--surface-0);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar-thumb);
+            border-radius: 3px;
+        }
+
+        /* ---- Shell ---- */
+        .app-shell {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* ---- Sidebar ---- */
+        .sidebar {
+            width: 200px;
+            min-width: 200px;
+            background: var(--sidebar-bg);
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-brand {
+            padding: 20px 16px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-brand-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #f0f1f5;
+            letter-spacing: -0.02em;
+        }
+
+        .sidebar-brand-sub {
+            font-size: 10px;
+            color: #5c6070;
+            margin-top: 2px;
+        }
+
+        .sidebar-nav {
+            flex: 1;
+            padding: 12px 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--sidebar-text);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.12s;
+            border: 1px solid transparent;
+        }
+
+        .sidebar-link:hover {
+            background: rgba(255, 255, 255, 0.04);
+            color: #f0f1f5;
+        }
+
+        .sidebar-link.active {
+            background: var(--sidebar-active-bg);
+            color: var(--sidebar-active-text);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .sidebar-link svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.5;
+            flex-shrink: 0;
+        }
+
+        .sidebar-link.active svg {
+            opacity: 1;
+        }
+
+        .sidebar-section-title {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #5c6070;
+            padding: 16px 12px 6px;
+        }
+
+        .sidebar-footer {
+            padding: 12px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 11px;
+            color: #5c6070;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sidebar-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 6px var(--success);
+        }
+
+        /* ---- Main ---- */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 28px 36px 48px;
+        }
+
+        /* ---- Page header ---- */
+        .page-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .page-title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .page[data-page] {
+            display: none;
+        }
+
+        .page[data-page].active {
+            display: block;
+        }
+
+        .page-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .auto-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--accent-muted);
+            color: var(--accent);
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+
+        /* ---- Stat grid (4 columns) ---- */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: var(--surface-1);
+            border: 1px solid var(--border-default);
+            border-radius: 10px;
+            padding: 18px 20px;
+        }
+
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .stat-value.ok {
+            color: var(--success);
+        }
+
+        .stat-value.err {
+            color: var(--error);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* ---- Section grid ---- */
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-grid.full {
+            grid-template-columns: 1fr;
+        }
+
+        /* ---- Card ---- */
+        .card {
+            background: var(--surface-1);
+            border: 1px solid var(--border-default);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .card.flush {
+            margin-bottom: 0;
+        }
+
+        .card-inner {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        /* ---- Status row ---- */
+        .status-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+        }
+
+        .status-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-indicator .dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
+
+        .status-indicator.running .dot {
+            background: var(--success);
+            box-shadow: 0 0 6px var(--success);
+        }
+
+        .status-indicator.running {
+            color: var(--success);
+        }
+
+        .status-indicator.stopped .dot {
+            background: var(--error);
+            box-shadow: 0 0 6px var(--error);
+        }
+
+        .status-indicator.stopped {
+            color: var(--error);
+        }
+
+        /* ---- env grid ---- */
+        .env-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 12px;
+        }
+
+        .env-item .env-label {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .env-item .env-value {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 2px;
+            word-break: break-all;
+        }
+
+        /* ---- Form controls ---- */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-hint {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .input,
+        .select {
+            width: 100%;
+            padding: 9px 12px;
+            background: var(--surface-3);
+            border: 1px solid var(--border-default);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+
+        .input:focus,
+        .select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-muted);
+        }
+
+        .input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        /* ---- Toggle ---- */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .toggle-row:last-child {
+            border-bottom: none;
+        }
+
+        .toggle-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .toggle-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+
+        .toggle {
+            position: relative;
+            width: 36px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+
+        .toggle-track {
+            position: absolute;
+            inset: 0;
+            background: var(--surface-4);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: 1px solid var(--border-default);
+        }
+
+        .toggle-track::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .toggle input:checked+.toggle-track {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .toggle input:checked+.toggle-track::after {
+            transform: translateX(16px);
+            background: white;
+        }
+
+        /* ---- Buttons ---- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: inherit;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: var(--surface-3);
+            color: var(--text-secondary);
+            border-color: var(--border-default);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-4);
+            color: var(--text-primary);
+        }
+
+        .btn-sm {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* ---- Toast ---- */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            z-index: 999;
+            transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast.success {
+            background: var(--success-muted);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .toast.error {
+            background: var(--error-muted);
+            color: var(--error);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="sidebar-brand-name">Antigravity Mobile</div>
+                <div class="sidebar-brand-sub">Admin Panel</div>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="sidebar-link active" onclick="switchPage('dashboard', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <div class="sidebar-section-title">Configure</div>
+                <a class="sidebar-link" onclick="switchPage('server', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+                        <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+                        <circle cx="6" cy="6" r="1"></circle>
+                        <circle cx="6" cy="18" r="1"></circle>
+                    </svg>
+                    <span>Server</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('telegram', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Telegram</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('devices', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <span>Devices</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('commands', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                    <span>Commands</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('mobile', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                        <line x1="12" y1="18" x2="12" y2="18"></line>
+                    </svg>
+                    <span>Mobile</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('customize', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-1 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.97-4.48-9-10-9z"
+                            fill="none"></path>
+                        <circle cx="7.5" cy="11.5" r="1.5" fill="currentColor" stroke="none"></circle>
+                        <circle cx="10.5" cy="7.5" r="1.5" fill="currentColor" stroke="none"></circle>
+                        <circle cx="15.5" cy="7.5" r="1.5" fill="currentColor" stroke="none"></circle>
+                        <circle cx="17.5" cy="11.5" r="1.5" fill="currentColor" stroke="none"></circle>
+                    </svg>
+                    <span>Customize</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('remote', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                    <span>Remote</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('logs', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    <span>Logs</span>
+                </a>
+
+                <a class="sidebar-link" onclick="switchPage('screenshots', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>Screenshots</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('analytics', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span>Analytics</span>
+                </a>
+                <a class="sidebar-link" onclick="switchPage('supervisor', this)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2a9 9 0 0 0-9 9c0 3.88 2.46 7.18 5.9 8.44.13-.95.5-2.06 1.1-2.94a5 5 0 0 1 4-8.5 5 5 0 0 1 4 8.5c.6.88.97 1.99 1.1 2.94A9.01 9.01 0 0 0 21 11a9 9 0 0 0-9-9z">
+                        </path>
+                        <path d="M12 18v4"></path>
+                        <circle cx="12" cy="11" r="2"></circle>
+                    </svg>
+                    <span>Supervisor</span>
+                </a>
+                <div class="sidebar-section-title">Links</div>
+                <a class="sidebar-link" href="/" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    <span>Open Mobile UI</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-dot" id="sidebarDot"></div>
+                <span id="sidebarStatus">Loading…</span>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="main-content">
+
+            <!-- ==================== PAGE: Dashboard ==================== -->
+            <div class="page active" data-page="dashboard">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Dashboard <span class="auto-badge" id="autoRefreshBadge">Auto-refresh:
+                                ON</span></div>
+                        <div class="page-subtitle">Server overview</div>
+                    </div>
+                    <button class="btn btn-secondary" onclick="toggleTheme()" id="themeBtn" title="Toggle theme"
+                        id="themeIcon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg></button>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="statHealth">—</div>
+                        <div class="stat-label">Status</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statUptime">—</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statClients">—</div>
+                        <div class="stat-label">Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="statPort">—</div>
+                        <div class="stat-label">Port</div>
+                    </div>
+                </div>
+
+                <div class="section-grid">
+                    <div class="card flush">
+                        <div class="card-inner">
+                            <div class="section-title">Connections</div>
+                            <div class="status-row">
+                                <div class="status-name">CDP</div>
+                                <div class="status-indicator" id="cdpIndicator"><span class="dot"></span> —</div>
+                            </div>
+                            <div class="status-row" style="margin-top: 4px;">
+                                <div class="status-name">Telegram</div>
+                                <div class="status-indicator" id="tgIndicator"><span class="dot"></span> —</div>
+                            </div>
+                            <div class="status-row"
+                                style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);">
+                                <div class="status-name"><span
+                                        style="display:inline-flex;vertical-align:middle;margin-right:4px"><svg
+                                            width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="11" width="18" height="10" rx="2" />
+                                            <circle cx="12" cy="5" r="2" />
+                                            <path d="M12 7v4" />
+                                            <line x1="8" y1="16" x2="8" y2="16" />
+                                            <line x1="16" y1="16" x2="16" y2="16" />
+                                        </svg></span>Auto-Accept</div>
+                                <label
+                                    style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer;">
+                                    <input type="checkbox" id="autoAcceptToggle" onchange="toggleAutoAccept()"
+                                        style="opacity:0;width:0;height:0;">
+                                    <span
+                                        style="position:absolute;inset:0;background:var(--border);border-radius:12px;transition:.3s;"></span>
+                                    <span id="autoAcceptKnob"
+                                        style="position:absolute;top:2px;left:2px;width:20px;height:20px;background:#fff;border-radius:50%;transition:.3s;"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card flush">
+                        <div class="card-inner">
+                            <div class="section-title">Environment</div>
+                            <div class="env-grid">
+                                <div class="env-item">
+                                    <div class="env-label">Platform</div>
+                                    <div class="env-value">Node.js</div>
+                                </div>
+                                <div class="env-item">
+                                    <div class="env-label">Auth</div>
+                                    <div class="env-value" id="envAuth">—</div>
+                                </div>
+                                <div class="env-item">
+                                    <div class="env-label">Interface</div>
+                                    <div class="env-value">0.0.0.0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Feed -->
+                <div class="card" style="margin-top: 16px;">
+                    <div class="card-inner">
+                        <div class="section-title"
+                            style="display: flex; justify-content: space-between; align-items: center;">
+                            <span><span style="display:inline-flex;vertical-align:middle;margin-right:4px"><svg
+                                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="20" x2="18" y2="10" />
+                                        <line x1="12" y1="20" x2="12" y2="4" />
+                                        <line x1="6" y1="20" x2="6" y2="14" />
+                                    </svg></span>Activity Feed</span>
+                            <button class="btn btn-secondary btn-sm" onclick="loadEvents()">Refresh</button>
+                        </div>
+                        <div id="activityFeed" style="max-height: 300px; overflow-y: auto; font-size: 13px;">Loading...
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- ==================== PAGE: Server ==================== -->
+            <div class="page" data-page="server">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Server</div>
+                        <div class="page-subtitle">HTTP server configuration</div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="loadConfigFromServer()">Reset</button>
+                        <button class="btn btn-primary" onclick="saveAll()" id="saveBtn">Save</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="form-group">
+                            <label class="form-label">Port</label>
+                            <input class="input" type="number" id="serverPort" min="1000" max="65535"
+                                style="width: 120px;">
+                            <span class="form-hint">Requires server restart to take effect</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">PIN (leave empty to disable auth)</label>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <input class="input" type="password" id="serverPin" placeholder="4–6 digit PIN"
+                                    maxlength="6" pattern="[0-9]*" inputmode="numeric" style="width: 200px;"
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6); pinFieldTouched=true;">
+                                <button class="btn btn-secondary btn-sm" id="clearPinBtn" style="display:none;"
+                                    onclick="clearPin()">Clear PIN</button>
+                            </div>
+                            <div id="pinStatus" style="margin-top:6px;font-size:12px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE: Telegram ==================== -->
+            <div class="page" data-page="telegram">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Telegram Bot</div>
+                        <div class="page-subtitle">Notifications &amp; commands via Telegram</div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="loadConfigFromServer()">Reset</button>
+                        <button class="btn btn-primary" onclick="saveAll()">Save</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="toggle-row" style="padding-top: 0;">
+                            <div>
+                                <div class="toggle-label">Enable Bot</div>
+                                <div class="toggle-desc">Send notifications and handle commands via Telegram</div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="telegramEnabled" onchange="toggleTelegram()">
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div id="telegramFields" style="margin-top: 12px;">
+                            <div class="form-group">
+                                <label class="form-label">Bot Token</label>
+                                <input class="input" type="password" id="botToken" placeholder="123456:ABC-DEF…">
+                                <span class="form-hint">Get from @BotFather on Telegram</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Chat ID</label>
+                                <input class="input" type="text" id="chatId" placeholder="Your user or group chat ID">
+                                <span class="form-hint">Send /start to your bot to get your Chat ID</span>
+                            </div>
+                            <div class="btn-row" style="margin-bottom: 16px;">
+                                <button class="btn btn-secondary btn-sm" onclick="testTelegram()"><span
+                                        style="display:inline-flex;vertical-align:middle"><svg width="14" height="14"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 3h6v7l5 8H4l5-8V3z" />
+                                            <line x1="9" y1="3" x2="15" y2="3" />
+                                        </svg></span> Send Test
+                                    Message</button>
+                            </div>
+                            <label class="form-label">Notification Types</label>
+                            <div class="toggle-row">
+                                <div>
+                                    <div class="toggle-label">Process Complete</div>
+                                    <div class="toggle-desc">When a task finishes</div>
+                                </div>
+                                <label class="toggle"><input type="checkbox" id="notifComplete" checked><span
+                                        class="toggle-track"></span></label>
+                            </div>
+                            <div class="toggle-row">
+                                <div>
+                                    <div class="toggle-label">Errors</div>
+                                    <div class="toggle-desc">When errors are detected</div>
+                                </div>
+                                <label class="toggle"><input type="checkbox" id="notifError" checked><span
+                                        class="toggle-track"></span></label>
+                            </div>
+                            <div class="toggle-row">
+                                <div>
+                                    <div class="toggle-label">Input Needed</div>
+                                    <div class="toggle-desc">When buttons or clicks are required</div>
+                                </div>
+                                <label class="toggle"><input type="checkbox" id="notifInput" checked><span
+                                        class="toggle-track"></span></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE: Mobile ==================== -->
+            <div class="page" data-page="mobile">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Mobile Dashboard</div>
+                        <div class="page-subtitle">Mobile UI configuration</div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="loadConfigFromServer()">Reset</button>
+                        <button class="btn btn-primary" onclick="saveAll()">Save</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="form-group">
+                            <label class="form-label">Default Refresh Interval (ms)</label>
+                            <input class="input" type="number" id="refreshInterval" min="500" max="10000" step="100"
+                                style="width: 120px;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Default Theme</label>
+                            <select class="select" id="dashTheme" style="width: 160px;">
+                                <option value="dark">Dark</option>
+                                <option value="light">Light</option>
+                                <option value="pastel">Pastel</option>
+                                <option value="rainbow">Rainbow</option>
+                                <option value="slate">Slate</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- QR Code Pairing -->
+                <div class="card" style="margin-top: 16px;">
+                    <div class="card-inner" style="text-align: center;">
+                        <div class="section-title"><span
+                                style="display:inline-flex;vertical-align:middle;margin-right:4px"><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                    <line x1="12" y1="18" x2="12.01" y2="18" />
+                                </svg></span>QR Code Pairing</div>
+                        <div style="color: var(--text-muted); font-size: 13px; margin-bottom: 12px;">Scan with your
+                            phone to open the mobile dashboard</div>
+                        <div id="qrCodeContainer"
+                            style="display: inline-block; padding: 16px; background: #fff; border-radius: 8px;">
+                            <canvas id="qrCanvas" width="160" height="160"></canvas>
+                        </div>
+                        <div id="qrUrl" style="margin-top: 8px; font-size: 12px; color: var(--text-muted);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE: Devices ==================== -->
+            <div class="page" data-page="devices">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Devices</div>
+                        <div class="page-subtitle">Manage Antigravity instances</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="section-title">Connected Devices</div>
+                        <div id="deviceList" style="margin-bottom: 16px;">Loading...</div>
+                        <div style="border-top: 1px solid var(--border); padding-top: 16px;">
+                            <div class="section-title">Add Device</div>
+                            <div style="display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap;">
+                                <div class="form-group" style="margin: 0;">
+                                    <label class="form-label">Name</label>
+                                    <input class="input" type="text" id="newDeviceName" placeholder="My Antigravity"
+                                        style="width: 160px;">
+                                </div>
+                                <div class="form-group" style="margin: 0;">
+                                    <label class="form-label">CDP Port</label>
+                                    <input class="input" type="number" id="newDevicePort" placeholder="9223" min="1000"
+                                        max="65535" style="width: 100px;">
+                                </div>
+                                <button class="btn btn-primary btn-sm" onclick="addDevice()">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE: Commands ==================== -->
+            <div class="page" data-page="commands">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Quick Commands</div>
+                        <div class="page-subtitle">One-click prompts for the agent</div>
+                    </div>
+                    <button class="btn btn-primary btn-sm" onclick="addCommand()">+ Add Command</button>
+                </div>
+                <div id="commandList">Loading...</div>
+            </div>
+
+            <!-- ==================== PAGE: Logs ==================== -->
+            <div class="page" data-page="logs">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Session Logs</div>
+                        <div class="page-subtitle">View and download interaction logs</div>
+                    </div>
+                    <div style="display:flex;gap:8px;">
+                        <button id="pauseLoggingBtn" class="btn btn-secondary btn-sm" onclick="toggleLogging()"><span
+                                style="display:inline-flex;vertical-align:middle"><svg width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="6" y="4" width="4" height="16" />
+                                    <rect x="14" y="4" width="4" height="16" />
+                                </svg></span> Pause</button>
+                        <button class="btn btn-secondary btn-sm" onclick="clearAllLogs()"
+                            style="background: var(--error); border-color: var(--error);"><span
+                                style="display:inline-flex;vertical-align:middle"><svg width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6" />
+                                    <path
+                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                </svg></span> Clear All</button>
+                    </div>
+                </div>
+                <div id="sessionList">Loading...</div>
+                <div id="sessionViewer" style="display:none; margin-top: 16px;">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="section-title"
+                                style="display:flex;justify-content:space-between;align-items:center;">
+                                <span id="sessionViewerTitle">Session Events</span>
+                                <button class="btn btn-secondary btn-sm"
+                                    onclick="document.getElementById('sessionViewer').style.display='none'">Close</button>
+                            </div>
+                            <div id="sessionEvents" style="max-height: 400px; overflow-y: auto; font-size: 13px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE: Analytics ==================== -->
+            <div class="page" data-page="analytics">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Usage Analytics</div>
+                        <div class="page-subtitle">Metrics and activity trends</div>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="loadAnalytics()">Refresh</button>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px;">
+
+                    <div class="card">
+                        <div class="card-inner" style="text-align:center;">
+                            <div style="font-size:28px;font-weight:700;color:var(--primary);" id="statScreenshots">0
+                            </div>
+                            <div style="font-size:12px;color:var(--text-muted);">Screenshots</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner" style="text-align:center;">
+                            <div style="font-size:28px;font-weight:700;color:#f43f5e;" id="statErrors">0</div>
+                            <div style="font-size:12px;color:var(--text-muted);">Errors</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner" style="text-align:center;">
+                            <div style="font-size:28px;font-weight:700;color:var(--primary);" id="statCommands">0</div>
+                            <div style="font-size:12px;color:var(--text-muted);">Commands</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner" style="text-align:center;">
+                            <div style="font-size:28px;font-weight:700;color:var(--text);" id="analyticsUptime">—</div>
+                            <div style="font-size:12px;color:var(--text-muted);">Active Since</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="section-title"><span
+                                style="display:inline-flex;vertical-align:middle;margin-right:4px"><svg width="16"
+                                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                    <polyline points="17 6 23 6 23 12" />
+                                </svg></span>Daily Activity (last 7 days)</div>
+                        <canvas id="analyticsChart" width="600" height="200" style="width:100%;height:200px;"></canvas>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- ==================== PAGE: Screenshots ==================== -->
+            <div class="page" data-page="screenshots">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Screenshot Gallery</div>
+                        <div class="page-subtitle">Auto-captured screenshots timeline</div>
+                    </div>
+                    <div style="display:flex;gap:8px;">
+                        <button class="btn btn-secondary btn-sm" id="screenshotToggleBtn"
+                            onclick="toggleScreenshots()"><span style="display:inline-flex;vertical-align:middle"><svg
+                                    width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="6" y="4" width="4" height="16" />
+                                    <rect x="14" y="4" width="4" height="16" />
+                                </svg></span> Disable</button>
+                        <button class="btn btn-secondary btn-sm" onclick="clearScreenshots()"
+                            style="color:#f43f5e;"><span style="display:inline-flex;vertical-align:middle"><svg
+                                    width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="3 6 5 6 21 6" />
+                                    <path
+                                        d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                </svg></span> Clear All</button>
+                        <button class="btn btn-secondary btn-sm" onclick="loadScreenshotGallery()">Refresh</button>
+                    </div>
+                </div>
+                <div id="screenshotGallery"
+                    style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">Loading...
+                </div>
+                <div id="screenshotFullview"
+                    style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.85);z-index:1000;cursor:pointer;padding:20px;"
+                    onclick="this.style.display='none'">
+                    <img id="screenshotFullImg"
+                        style="max-width:100%;max-height:100%;display:block;margin:auto;border-radius:8px;">
+                </div>
+            </div>
+
+            <!-- Customize Page -->
+            <div class="page" data-page="customize">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title">Customize</div>
+                        <div class="page-subtitle">Mobile dashboard appearance settings</div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-primary" onclick="saveCustomize()" id="saveCustomizeBtn">Save</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+                            <div>
+                                <label class="form-label" style="margin-bottom:4px;">Show Quick Actions</label>
+                                <span class="form-hint">Continue, Yes, No, Stop, Help buttons above the input
+                                    field</span>
+                            </div>
+                            <div style="position:relative;width:48px;height:26px;cursor:pointer;flex-shrink:0;">
+                                <input type="checkbox" id="showQuickActions" checked style="display:none;">
+                                <div id="quickActionsTrack"
+                                    style="position:absolute;inset:0;border-radius:13px;background:#3b82f6;transition:background .2s;border:1px solid rgba(255,255,255,0.15);"
+                                    onclick="document.getElementById('showQuickActions').checked=!document.getElementById('showQuickActions').checked;updateCustomizeVisuals();scheduleCustomizeSave();">
+                                </div>
+                                <div id="quickActionsKnob"
+                                    style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;transform:translateX(22px);pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,0.3);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:16px;">
+                    <div class="card-inner">
+                        <div class="form-group">
+                            <label class="form-label" style="margin-bottom:4px;">Layout Style</label>
+                            <span class="form-hint">Choose how the mobile dashboard navigation is displayed</span>
+                        </div>
+                        <div style="display:flex;gap:12px;margin-top:12px;">
+                            <div id="navModeSidebar" onclick="selectNavMode('sidebar')"
+                                style="flex:1;padding:16px;border:2px solid var(--accent-primary);border-radius:12px;cursor:pointer;text-align:center;background:rgba(14,165,233,0.08);transition:all .2s;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    style="width:32px;height:32px;margin:0 auto 8px;">
+                                    <rect x="3" y="3" width="5" height="18" rx="1"></rect>
+                                    <rect x="10" y="3" width="11" height="18" rx="1"></rect>
+                                </svg>
+                                <div style="font-weight:600;font-size:14px;">Sidebar</div>
+                                <div style="font-size:11px;opacity:.6;margin-top:4px;">Side navigation panel</div>
+                            </div>
+                            <div id="navModeTopbar" onclick="selectNavMode('topbar')"
+                                style="flex:1;padding:16px;border:2px solid var(--border);border-radius:12px;cursor:pointer;text-align:center;transition:all .2s;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    style="width:32px;height:32px;margin:0 auto 8px;">
+                                    <rect x="3" y="3" width="18" height="5" rx="1"></rect>
+                                    <rect x="3" y="10" width="18" height="11" rx="1"></rect>
+                                </svg>
+                                <div style="font-weight:600;font-size:14px;">Top Bar</div>
+                                <div style="font-size:11px;opacity:.6;margin-top:4px;">Floating top navigation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:16px;">
+                    <div class="card-inner">
+                        <div class="form-group" style="display:flex;align-items:center;justify-content:space-between;">
+                            <div>
+                                <label class="form-label" style="margin-bottom:4px;">Show Assist Tab</label>
+                                <span class="form-hint">Show the Supervisor Assist tab in the mobile dashboard
+                                    sidebar/topbar</span>
+                            </div>
+                            <div style="position:relative;width:48px;height:26px;cursor:pointer;flex-shrink:0;">
+                                <input type="checkbox" id="showAssistTab" style="display:none;">
+                                <div id="assistTabTrack"
+                                    style="position:absolute;inset:0;border-radius:13px;background:#4b5563;transition:background .2s;border:1px solid rgba(255,255,255,0.15);"
+                                    onclick="document.getElementById('showAssistTab').checked=!document.getElementById('showAssistTab').checked;updateCustomizeVisuals();scheduleCustomizeSave();">
+                                </div>
+                                <div id="assistTabKnob"
+                                    style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .2s;transform:translateX(0);pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,0.3);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== PAGE: Supervisor ==================== -->
+            <div class="page" data-page="supervisor">
+                <div class="page-header">
+                    <div>
+                        <div class="page-title" style="display:flex;align-items:center;gap:8px;"><span
+                                id="supervisorTitleIcon"></span> Supervisor</div>
+                        <div class="page-subtitle">Ollama-powered autonomous agent overseer</div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-secondary" onclick="loadSupervisorStatus()">Refresh</button>
+                        <button class="btn btn-primary" onclick="saveSupervisor()">Save</button>
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <div class="stat-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="stat-card">
+                        <div class="stat-value" id="supervisorStatEnabled">—</div>
+                        <div class="stat-label">Status</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="supervisorStatOllama">—</div>
+                        <div class="stat-label">Ollama</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="supervisorStatActions">—</div>
+                        <div class="stat-label">Actions/min</div>
+                    </div>
+                </div>
+
+                <!-- Toggle + Provider -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="toggle-row" style="padding-top: 0;">
+                            <div>
+                                <div class="toggle-label">Enable Supervisor</div>
+                                <div class="toggle-desc">Monitor the agent and take autonomous actions via Ollama</div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="supervisorEnabled" onchange="toggleSupervisor()">
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-row">
+                            <div>
+                                <div class="toggle-label">Disable IDE Injects</div>
+                                <div class="toggle-desc">Keep supervisor monitoring but block it from typing or clicking
+                                    in the IDE</div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="supervisorDisableInjects"
+                                    onchange="toggleSupervisorInjects()">
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <div class="form-group">
+                                <label class="form-label">Provider</label>
+                                <select class="select" id="supervisorProvider" style="width: 200px;">
+                                    <option value="ollama" selected>Ollama (Local)</option>
+                                </select>
+                                <span class="form-hint">More providers coming soon</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Endpoint URL</label>
+                                <div style="display:flex;gap:8px;align-items:center;">
+                                    <input class="input" type="text" id="supervisorEndpoint"
+                                        placeholder="http://localhost:11434" style="flex:1;">
+                                    <button class="btn btn-secondary btn-sm"
+                                        onclick="testOllamaConnection()">Test</button>
+                                </div>
+                                <span class="form-hint" id="ollamaTestResult"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Model</label>
+                                <div style="display:flex;gap:8px;align-items:center;">
+                                    <input class="input" type="text" id="supervisorModel" placeholder="llama3"
+                                        style="flex:1;">
+                                    <span class="form-hint" id="ollamaModelHint"
+                                        style="margin:0;white-space:nowrap;"></span>
+                                </div>
+                                <span class="form-hint">Enter the Ollama model name (e.g. llama3, mistral,
+                                    codellama)</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Max Actions/Minute</label>
+                                <input class="input" type="number" id="supervisorRateLimit" min="1" max="60" value="10"
+                                    style="width: 120px;">
+                                <span class="form-hint">Rate limit to prevent runaway loops</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Context Window (tokens)</label>
+                                <input class="input" type="number" id="supervisorContextWindow" min="2048" max="131072"
+                                    value="8192" step="1024" style="width: 160px;">
+                                <span class="form-hint">num_ctx for Ollama — higher = more context but more VRAM
+                                    (default: 8192)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Context -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="section-title">Project Context (Optional)</div>
+                        <div class="form-group">
+                            <textarea class="input" id="supervisorContext" rows="5"
+                                placeholder="Describe your project, goals, and any special instructions for the supervisor..."
+                                style="resize: vertical; min-height: 100px;"></textarea>
+                            <span class="form-hint">This context is included in every supervisor decision. E.g.
+                                &quot;We're building a React app. Don't accept any destructive commands. Alert me for
+                                any database changes.&quot;</span>
+                        </div>
+                        <button class="btn btn-secondary btn-sm" onclick="saveSupervisorContext()">Save Context</button>
+                    </div>
+                </div>
+
+                <!-- Action Log -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="section-title"
+                            style="display:flex;justify-content:space-between;align-items:center;">
+                            <span>Action Log</span>
+                            <div class="btn-row">
+                                <button class="btn btn-secondary btn-sm" onclick="clearSupervisorHistory()">Clear
+                                    History</button>
+                                <button class="btn btn-secondary btn-sm" onclick="loadSupervisorLogs()">Refresh</button>
+                            </div>
+                        </div>
+                        <div id="supervisorLogContainer" style="max-height: 400px; overflow-y: auto; font-size: 13px;">
+                            No actions yet</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remote Access Page -->
+            <div class="page" data-page="remote">
+                <div class="page-header">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <h1>Remote Access</h1>
+                        <span id="tunnelStatusBadge"
+                            style="padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;background:var(--border-default);color:var(--text-muted);">Offline</span>
+                    </div>
+                </div>
+
+                <!-- PIN Warning -->
+                <div id="tunnelPinWarning"
+                    style="display:none;padding:16px;background:var(--error-muted);border:1px solid var(--error);border-radius:12px;margin-bottom:24px;">
+                    <div
+                        style="display:flex;align-items:center;gap:8px;font-weight:600;color:var(--error);margin-bottom:4px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            style="width:18px;height:18px;">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                            </path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                        PIN Required
+                    </div>
+                    <div style="font-size:13px;color:var(--text-secondary);">You must enable PIN authentication before
+                        starting a remote tunnel. Go to Server settings and set a PIN first.</div>
+                </div>
+
+                <!-- Tunnel Controls -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="section-title">Cloudflare Quick Tunnel</div>
+                        <div class="toggle-row" style="padding-top:0;">
+                            <div>
+                                <div class="toggle-label">Tunnel Status</div>
+                                <div class="toggle-desc" id="tunnelStatusText">Not connected</div>
+                            </div>
+                            <button id="tunnelToggleBtn" class="btn btn-primary" onclick="toggleTunnel()">
+                                Start Tunnel
+                            </button>
+                        </div>
+
+                        <!-- Public URL Display -->
+                        <div id="tunnelUrlBox"
+                            style="display:none;padding:14px;background:var(--surface-0);border:1px solid var(--border-default);border-radius:8px;margin-top:16px;">
+                            <div class="section-title" style="margin-bottom:8px;">Public URL</div>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <code id="tunnelUrlText"
+                                    style="flex:1;font-family:'SF Mono',Monaco,monospace;font-size:13px;word-break:break-all;color:var(--accent);"></code>
+                                <button class="btn btn-secondary btn-sm" onclick="copyTunnelUrl()">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- QR Code -->
+                        <div id="tunnelQrBox"
+                            style="display:none;text-align:center;padding:16px;background:white;border-radius:8px;margin-top:12px;">
+                            <canvas id="tunnelQrCanvas" style="max-width:200px;"></canvas>
+                            <div style="font-size:11px;color:#666;margin-top:8px;">Scan with your phone camera</div>
+                        </div>
+
+                        <!-- Auto-start toggle -->
+                        <div class="toggle-row">
+                            <div>
+                                <div class="toggle-label">Auto-start tunnel</div>
+                                <div class="toggle-desc">Start tunnel automatically when server boots (requires PIN)
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="tunnelAutoStart" onchange="toggleTunnelAutoStart()">
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Info -->
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="section-title">Security</div>
+                        <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">
+                            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width:16px;height:16px;flex-shrink:0;margin-top:1px;">
+                                    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                <div><strong>End-to-end encrypted</strong> — Traffic is encrypted via Cloudflare's HTTPS
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width:16px;height:16px;flex-shrink:0;margin-top:1px;">
+                                    <path
+                                        d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4">
+                                    </path>
+                                </svg>
+                                <div><strong>Random URL</strong> — Tunnel URL changes every restart, making it
+                                    unguessable
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width:16px;height:16px;flex-shrink:0;margin-top:1px;">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                                <div><strong>Rate limited</strong> — Login is blocked after 5 failed PIN attempts for 15
+                                    minutes</div>
+                            </div>
+                            <div style="display:flex;align-items:flex-start;gap:10px;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width:16px;height:16px;flex-shrink:0;margin-top:1px;">
+                                    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    <circle cx="12" cy="16" r="1"></circle>
+                                </svg>
+                                <div><strong>PIN required</strong> — All remote access requires PIN authentication</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Installation Help -->
+                <div id="tunnelInstallHelp" class="card" style="display:none;">
+                    <div class="card-inner">
+                        <div class="section-title">Install cloudflared</div>
+                        <div style="font-size:13px;color:var(--text-secondary);line-height:1.8;">
+                            <div style="margin-bottom:8px;"><strong>Windows:</strong></div>
+                            <code
+                                style="display:block;padding:8px 12px;background:var(--surface-0);border-radius:6px;font-family:monospace;margin-bottom:12px;">winget install --id Cloudflare.cloudflared</code>
+                            <div style="margin-bottom:8px;"><strong>macOS:</strong></div>
+                            <code
+                                style="display:block;padding:8px 12px;background:var(--surface-0);border-radius:6px;font-family:monospace;margin-bottom:12px;">brew install cloudflared</code>
+                            <div style="margin-bottom:8px;"><strong>Linux:</strong></div>
+                            <code
+                                style="display:block;padding:8px 12px;background:var(--surface-0);border-radius:6px;font-family:monospace;">curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o /usr/local/bin/cloudflared && chmod +x /usr/local/bin/cloudflared</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // SVG Icon System
+        const SVG_ICONS = {
+            moon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+            sun: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>',
+            bot: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>',
+            chart: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+            phone: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>',
+            flask: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v7l5 8H4l5-8V3z"/><line x1="9" y1="3" x2="15" y2="3"/></svg>',
+            pause: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>',
+            play: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
+            trash: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>',
+            trending: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+            calendar: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+            download: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+            check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
+            sparkle: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg>',
+            zap: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+            chat: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+            camera: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>',
+            circle_green: '<svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#22c55e"/></svg>',
+            circle_gray: '<svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#6b7280"/></svg>',
+            close: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+            stop: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>',
+            info: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>',
+            error: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+            warning: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            plug: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a6 6 0 0 1-12 0V8z"/></svg>',
+            settings: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',
+            monitor: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+            lock: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+            unlock: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>',
+            brain: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>',
+            syringe: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4-3 3-4-4"/><path d="M14.5 6.5L5 16l-3 3 3 3 3-3 9.5-9.5"/><path d="M9 11l4 4"/></svg>',
+            pointer: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.07 17 2.51-7.39L21 11.07z"/></svg>',
+            megaphone: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>',
+            eye: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',
+            question: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+            checkCircle: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+            xCircle: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>',
+        };
+        function svgIcon(name, size) {
+            const svg = SVG_ICONS[name] || SVG_ICONS.info;
+            if (size) return svg.replace(/width="\d+"/, `width="${size}"`).replace(/height="\d+"/, `height="${size}"`);
+            return svg;
+        }
+        function showToast(msg, type = 'success') {
+            const t = document.getElementById('toast');
+            t.innerHTML = msg;
+            t.className = `toast ${type} show`;
+            setTimeout(() => t.classList.remove('show'), 2500);
+        }
+
+        function switchPage(pageName, linkEl) {
+            // Hide all pages
+            document.querySelectorAll('.page[data-page]').forEach(p => p.classList.remove('active'));
+            // Show target page
+            const target = document.querySelector(`.page[data-page="${pageName}"]`);
+            if (target) target.classList.add('active');
+            // Update sidebar active state
+            document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+            if (linkEl) linkEl.classList.add('active');
+            // Scroll main-content to top
+            document.querySelector('.main-content').scrollTop = 0;
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isLight = html.classList.toggle('theme-light');
+            localStorage.setItem('admin-theme', isLight ? 'light' : 'dark');
+            document.getElementById('themeBtn').innerHTML = isLight ? svgIcon('sun') : svgIcon('moon');
+        }
+
+        // Restore theme on load
+        (function () {
+            const saved = localStorage.getItem('admin-theme');
+            if (saved === 'light') {
+                document.documentElement.classList.add('theme-light');
+                document.getElementById('themeBtn').innerHTML = svgIcon('sun');
+            }
+        })();
+
+        async function loadConfigFromServer() {
+            try {
+                const res = await fetch('/api/admin/config');
+                if (res.status === 403) {
+                    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-size:16px;color:#ef4444;gap:8px">' + svgIcon('stop') + ' Admin panel is only accessible from localhost</div>';
+                    return;
+                }
+                const data = await res.json();
+                const c = data.config || data;
+
+                document.getElementById('serverPort').value = c.server?.port || 3001;
+                document.getElementById('serverPin').value = '';
+                pinFieldTouched = false;
+                const clearPinBtn = document.getElementById('clearPinBtn');
+                // Show PIN active indicator based on runtime auth state
+                const pinStatus = document.getElementById('pinStatus');
+                try {
+                    const statusRes = await fetch('/api/admin/status');
+                    const status = await statusRes.json();
+                    if (status.authEnabled) {
+                        document.getElementById('serverPin').placeholder = '••••••';
+                        pinStatus.innerHTML = svgIcon('lock') + ' <span style="color:#22c55e">PIN is active</span> — enter new PIN to change, or click Clear PIN to remove';
+                        pinStatus.style.color = '#22c55e';
+                        if (clearPinBtn) clearPinBtn.style.display = '';
+                    } else if (c.server?.pin) {
+                        pinStatus.innerHTML = svgIcon('unlock') + ' <span style="color:var(--text-muted)">PIN saved but not active (skipped at startup)</span>';
+                        pinStatus.style.color = 'var(--text-muted)';
+                        if (clearPinBtn) clearPinBtn.style.display = 'none';
+                    } else {
+                        document.getElementById('serverPin').placeholder = '4–6 digit PIN';
+                        pinStatus.innerHTML = svgIcon('unlock') + ' <span style="color:var(--text-muted)">No PIN set</span>';
+                        pinStatus.style.color = 'var(--text-muted)';
+                        if (clearPinBtn) clearPinBtn.style.display = 'none';
+                    }
+                } catch (e) { }
+
+                document.getElementById('telegramEnabled').checked = c.telegram?.enabled || false;
+                document.getElementById('botToken').value = c.telegram?.botToken || '';
+                document.getElementById('chatId').value = c.telegram?.chatId || '';
+                document.getElementById('notifComplete').checked = c.telegram?.notifications?.onComplete !== false;
+                document.getElementById('notifError').checked = c.telegram?.notifications?.onError !== false;
+                document.getElementById('notifInput').checked = c.telegram?.notifications?.onInputNeeded !== false;
+
+                document.getElementById('refreshInterval').value = c.dashboard?.refreshInterval || 2000;
+                document.getElementById('dashTheme').value = c.dashboard?.theme || 'dark';
+
+                // Sync auto-accept toggle
+                const autoAccept = c.autoAcceptCommands || false;
+                document.getElementById('autoAcceptToggle').checked = autoAccept;
+                updateAutoAcceptVisual(autoAccept);
+
+                // Sync customize settings
+                const mobileUI = c.mobileUI || {};
+                document.getElementById('showQuickActions').checked = mobileUI.showQuickActions !== false;
+                const supervisorCfg = c.supervisor || {};
+                document.getElementById('showAssistTab').checked = supervisorCfg.showAssistTab || false;
+                selectedNavMode = mobileUI.navigationMode || 'sidebar';
+                updateCustomizeVisuals();
+
+                toggleTelegram();
+                loadStatus();
+            } catch (e) { showToast('Failed to load config', 'error'); }
+        }
+
+        function updateAutoAcceptVisual(enabled) {
+            const knob = document.getElementById('autoAcceptKnob');
+            const track = knob?.previousElementSibling;
+            if (knob) knob.style.left = enabled ? '22px' : '2px';
+            if (track) track.style.background = enabled ? '#6366f1' : 'var(--border)';
+        }
+
+        // --- Customize page ---
+        let pinFieldTouched = false;
+        function clearPin() {
+            document.getElementById('serverPin').value = '';
+            pinFieldTouched = true;
+            saveConfig();
+        }
+        let selectedNavMode = 'sidebar';
+
+        function selectNavMode(mode) {
+            selectedNavMode = mode;
+            updateCustomizeVisuals();
+            scheduleCustomizeSave();
+        }
+
+        function updateCustomizeVisuals() {
+            // Quick actions toggle
+            const qaChecked = document.getElementById('showQuickActions')?.checked;
+            const qaKnob = document.getElementById('quickActionsKnob');
+            const qaTrack = document.getElementById('quickActionsTrack');
+            if (qaKnob) qaKnob.style.transform = qaChecked ? 'translateX(22px)' : 'translateX(0)';
+            if (qaTrack) qaTrack.style.background = qaChecked ? '#3b82f6' : '#4b5563';
+
+            // Assist tab toggle
+            const atChecked = document.getElementById('showAssistTab')?.checked;
+            const atKnob = document.getElementById('assistTabKnob');
+            const atTrack = document.getElementById('assistTabTrack');
+            if (atKnob) atKnob.style.transform = atChecked ? 'translateX(22px)' : 'translateX(0)';
+            if (atTrack) atTrack.style.background = atChecked ? '#3b82f6' : '#4b5563';
+
+            // Nav mode selector
+            const sidebarCard = document.getElementById('navModeSidebar');
+            const topbarCard = document.getElementById('navModeTopbar');
+            const activeStyle = { border: '2px solid var(--accent-primary)', background: 'rgba(59,130,246,0.15)' };
+            const inactiveStyle = { border: '2px solid var(--border)', background: 'transparent' };
+            if (sidebarCard) { Object.assign(sidebarCard.style, selectedNavMode === 'sidebar' ? activeStyle : inactiveStyle); }
+            if (topbarCard) { Object.assign(topbarCard.style, selectedNavMode === 'topbar' ? activeStyle : inactiveStyle); }
+        }
+
+        let customizeSaveTimer = null;
+        function scheduleCustomizeSave() {
+            clearTimeout(customizeSaveTimer);
+            customizeSaveTimer = setTimeout(() => saveCustomize(true), 800);
+        }
+
+        async function saveCustomize(auto = false) {
+            try {
+                const settings = {
+                    showQuickActions: document.getElementById('showQuickActions').checked,
+                    showAssistTab: document.getElementById('showAssistTab').checked,
+                    navigationMode: selectedNavMode,
+                    refreshInterval: parseInt(document.getElementById('refreshInterval').value) || 2000,
+                    theme: document.getElementById('dashTheme').value
+                };
+                const res = await fetch('/api/admin/mobile-ui', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(settings)
+                });
+                const data = await res.json();
+                if (data.success) showToast(auto ? svgIcon('check') + ' Customization auto-saved' : svgIcon('sparkle') + ' Customization saved');
+                else showToast(data.error || 'Save failed', 'error');
+            } catch (e) { showToast('Save failed', 'error'); }
+        }
+
+        async function toggleAutoAccept() {
+            try {
+                const res = await fetch('/api/admin/auto-accept/toggle', { method: 'POST' });
+                const data = await res.json();
+                document.getElementById('autoAcceptToggle').checked = data.enabled;
+                updateAutoAcceptVisual(data.enabled);
+                showToast(data.enabled ? svgIcon('bot') + ' Auto-accept enabled' : svgIcon('pause') + ' Auto-accept disabled');
+            } catch (e) { showToast('Toggle failed', 'error'); }
+        }
+
+        async function loadStatus() {
+            try {
+                const res = await fetch('/api/admin/status');
+                const s = await res.json();
+
+                // Stats row
+                document.getElementById('statHealth').textContent = s.cdpConnected ? 'Healthy' : 'No CDP';
+                document.getElementById('statHealth').className = 'stat-value ' + (s.cdpConnected ? 'ok' : 'err');
+                document.getElementById('statUptime').textContent = s.uptime || '—';
+                document.getElementById('statClients').textContent = s.activeClients ?? 0;
+                document.getElementById('statPort').textContent = s.port || '—';
+
+                // Connection indicators
+                const cdpInd = document.getElementById('cdpIndicator');
+                cdpInd.className = 'status-indicator ' + (s.cdpConnected ? 'running' : 'stopped');
+                cdpInd.innerHTML = `<span class="dot"></span> ${s.cdpConnected ? 'Running' : 'Stopped'}`;
+
+                const tgInd = document.getElementById('tgIndicator');
+                tgInd.className = 'status-indicator ' + (s.telegramActive ? 'running' : 'stopped');
+                tgInd.innerHTML = `<span class="dot"></span> ${s.telegramActive ? 'Running' : 'Stopped'}`;
+
+                // Env
+                document.getElementById('envAuth').textContent = s.authEnabled ? 'PIN' : 'None';
+
+                // Sidebar footer
+                document.getElementById('sidebarStatus').textContent = s.cdpConnected ? 'Connected' : 'Disconnected';
+                document.getElementById('sidebarDot').style.background = s.cdpConnected ? 'var(--success)' : 'var(--error)';
+                document.getElementById('sidebarDot').style.boxShadow = `0 0 6px ${s.cdpConnected ? 'var(--success)' : 'var(--error)'}`;
+
+            } catch (e) { }
+        }
+
+        function toggleTelegram() {
+            const enabled = document.getElementById('telegramEnabled').checked;
+            const fields = document.getElementById('telegramFields');
+            fields.style.opacity = enabled ? '1' : '0.35';
+            fields.style.pointerEvents = enabled ? 'auto' : 'none';
+        }
+
+        async function saveAll(auto = false) {
+            const btn = document.getElementById('saveBtn');
+            if (!auto) { btn.textContent = 'Saving…'; btn.disabled = true; }
+            const config = {
+                server: { port: parseInt(document.getElementById('serverPort').value) || 3001 },
+                telegram: {
+                    enabled: document.getElementById('telegramEnabled').checked,
+                    botToken: document.getElementById('botToken').value.trim(),
+                    chatId: document.getElementById('chatId').value.trim(),
+                    notifications: {
+                        onComplete: document.getElementById('notifComplete').checked,
+                        onError: document.getElementById('notifError').checked,
+                        onInputNeeded: document.getElementById('notifInput').checked
+                    }
+                },
+                dashboard: {
+                    refreshInterval: parseInt(document.getElementById('refreshInterval').value) || 2000,
+                    theme: document.getElementById('dashTheme').value
+                }
+            };
+            const pin = document.getElementById('serverPin').value.trim();
+            if (pinFieldTouched && pin) {
+                config.server.pin = pin;
+            } else if (pinFieldTouched && !pin) {
+                config.server.pin = '';
+            }
+            try {
+                const res = await fetch('/api/admin/config', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(config) });
+                const result = await res.json();
+                if (result.success) {
+                    // Sync theme into mobileUI so the mobile dashboard picks it up
+                    try {
+                        await fetch('/api/admin/mobile-ui', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                showQuickActions: document.getElementById('showQuickActions')?.checked !== false,
+                                navigationMode: selectedNavMode || 'sidebar',
+                                refreshInterval: parseInt(document.getElementById('refreshInterval').value) || 2000,
+                                theme: document.getElementById('dashTheme').value
+                            })
+                        });
+                    } catch (e) { }
+                    showToast(auto ? svgIcon('check') + ' Auto-saved' : svgIcon('check') + ' Settings saved'); loadStatus(); loadConfigFromServer();
+                }
+                else showToast(result.error || 'Save failed', 'error');
+            } catch (e) { if (!auto) showToast('Network error', 'error'); }
+            finally { if (!auto) { btn.textContent = 'Save'; btn.disabled = false; } }
+        }
+
+        // --- Remote Access / Tunnel ---
+        let tunnelPollingTimer = null;
+
+        async function loadTunnelStatus() {
+            try {
+                const statusRes = await fetch('/api/admin/status');
+                const status = await statusRes.json();
+                const pinWarning = document.getElementById('tunnelPinWarning');
+                if (pinWarning) pinWarning.style.display = status.authEnabled ? 'none' : 'block';
+
+                const res = await fetch('/api/admin/tunnel');
+                const data = await res.json();
+
+                const badge = document.getElementById('tunnelStatusBadge');
+                const statusText = document.getElementById('tunnelStatusText');
+                const btn = document.getElementById('tunnelToggleBtn');
+                const urlBox = document.getElementById('tunnelUrlBox');
+                const qrBox = document.getElementById('tunnelQrBox');
+                const installHelp = document.getElementById('tunnelInstallHelp');
+
+                // Auto-start toggle — just set the checkbox, CSS handles the rest
+                const autoStartCheckbox = document.getElementById('tunnelAutoStart');
+                if (autoStartCheckbox) autoStartCheckbox.checked = data.autoStart;
+
+                if (data.running && data.url) {
+                    badge.textContent = 'Online';
+                    badge.style.background = 'var(--success-muted)';
+                    badge.style.color = 'var(--success)';
+                    statusText.textContent = 'Tunnel is active and accessible remotely';
+                    btn.textContent = 'Stop Tunnel';
+                    btn.style.background = 'var(--error)';
+                    urlBox.style.display = 'block';
+                    document.getElementById('tunnelUrlText').textContent = data.url;
+                    qrBox.style.display = 'block';
+                    generateTunnelQR(data.url);
+                    if (installHelp) installHelp.style.display = 'none';
+                } else if (data.starting) {
+                    badge.textContent = 'Starting...';
+                    badge.style.background = 'rgba(234,179,8,0.15)';
+                    badge.style.color = '#eab308';
+                    statusText.textContent = 'Connecting to Cloudflare...';
+                    btn.textContent = 'Starting...';
+                    btn.disabled = true;
+                    urlBox.style.display = 'none';
+                    qrBox.style.display = 'none';
+                } else {
+                    badge.textContent = 'Offline';
+                    badge.style.background = 'var(--border)';
+                    badge.style.color = 'var(--text-muted)';
+                    statusText.textContent = data.error || 'Not connected';
+                    btn.textContent = 'Start Tunnel';
+                    btn.style.background = 'var(--accent-primary)';
+                    btn.disabled = !status.authEnabled;
+                    urlBox.style.display = 'none';
+                    qrBox.style.display = 'none';
+                    // Show install help if the error mentions cloudflared not found
+                    if (installHelp) installHelp.style.display = (data.error && data.error.includes('not found')) ? 'block' : 'none';
+                }
+            } catch (e) { }
+        }
+
+        async function toggleTunnel() {
+            const btn = document.getElementById('tunnelToggleBtn');
+            const badge = document.getElementById('tunnelStatusBadge');
+
+            if (btn.textContent.includes('Stop')) {
+                btn.textContent = 'Stopping...';
+                btn.disabled = true;
+                try {
+                    await fetch('/api/admin/tunnel/stop', { method: 'POST' });
+                    showToast(svgIcon('check') + ' Tunnel stopped');
+                } catch (e) { showToast('Failed to stop tunnel', 'error'); }
+                await loadTunnelStatus();
+                return;
+            }
+
+            btn.textContent = 'Starting...';
+            btn.disabled = true;
+            badge.textContent = 'Starting...';
+            badge.style.background = 'rgba(234,179,8,0.15)';
+            badge.style.color = '#eab308';
+
+            try {
+                const res = await fetch('/api/admin/tunnel/start', { method: 'POST' });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(svgIcon('check') + ' Tunnel active!');
+                } else {
+                    showToast(data.error || 'Failed to start tunnel', 'error');
+                }
+            } catch (e) { showToast('Failed to start tunnel', 'error'); }
+            await loadTunnelStatus();
+        }
+
+        async function toggleTunnelAutoStart() {
+            try {
+                const res = await fetch('/api/admin/tunnel/auto-start', { method: 'POST' });
+                const data = await res.json();
+                const cb = document.getElementById('tunnelAutoStart');
+                if (cb) cb.checked = data.autoStart;
+                showToast(data.autoStart ? svgIcon('check') + ' Auto-start enabled' : svgIcon('check') + ' Auto-start disabled');
+            } catch (e) { showToast('Failed to toggle auto-start', 'error'); }
+        }
+
+        function copyTunnelUrl() {
+            const url = document.getElementById('tunnelUrlText')?.textContent;
+            if (!url) return;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast(svgIcon('check') + ' URL copied!');
+            }).catch(() => {
+                // Fallback
+                const ta = document.createElement('textarea');
+                ta.value = url;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast(svgIcon('check') + ' URL copied!');
+            });
+        }
+
+        // Simple QR code generator using canvas (no external library)
+        function generateTunnelQR(text) {
+            const canvas = document.getElementById('tunnelQrCanvas');
+            if (!canvas) return;
+            // Use a simple approach: create a QR code image via a public API
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = () => {
+                canvas.width = 200;
+                canvas.height = 200;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, 200, 200);
+            };
+            img.onerror = () => {
+                // If API fails, just show the URL text
+                canvas.width = 200;
+                canvas.height = 40;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#333';
+                ctx.font = '11px monospace';
+                ctx.fillText('QR unavailable', 50, 25);
+            };
+            img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(text)}`;
+        }
+
+        async function testTelegram() {
+            const chatId = document.getElementById('chatId').value.trim();
+            if (!chatId) { showToast('Enter a Chat ID first', 'error'); return; }
+            try {
+                const res = await fetch('/api/admin/telegram/test', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chatId }) });
+                const result = await res.json();
+                showToast(result.success ? svgIcon('check') + ' Test message sent!' : (result.error || 'Failed'), result.success ? 'success' : 'error');
+            } catch (e) { showToast('Network error', 'error'); }
+        }
+
+        // Auto-save: debounce 800ms after any input change
+        let autoSaveTimer = null;
+        function scheduleAutoSave() {
+            clearTimeout(autoSaveTimer);
+            autoSaveTimer = setTimeout(() => saveAll(true), 800);
+        }
+
+        document.querySelectorAll('input, select').forEach(el => {
+            // Exclude customize-page inputs from general auto-save
+            if (el.id === 'showQuickActions' || el.id === 'showAssistTab') return;
+            el.addEventListener('input', scheduleAutoSave);
+            el.addEventListener('change', scheduleAutoSave);
+        });
+
+        // ============================================================================
+        // Device Management
+        // ============================================================================
+        async function loadDevices() {
+            try {
+                const res = await fetch('/api/admin/devices');
+                const data = await res.json();
+                const devices = data.devices || [];
+                const container = document.getElementById('deviceList');
+                if (devices.length === 0) {
+                    container.innerHTML = '<div style="color:var(--text-muted)">No devices configured</div>';
+                    return;
+                }
+                container.innerHTML = devices.map(d => `
+                    <div class="status-row" style="padding: 10px 0; border-bottom: 1px solid var(--border);">
+                        <div>
+                            <div style="font-weight: 600; color: var(--text);">${d.active ? svgIcon('circle_green', 10) : svgIcon('circle_gray', 10)} ${d.name}</div>
+                            <div style="font-size: 12px; color: var(--text-muted);">Port ${d.cdpPort} ${d.active ? '— Active' : ''}</div>
+                        </div>
+                        <div class="btn-row">
+                            ${d.active ? '' : `<button class="btn btn-secondary btn-sm" onclick="switchDevice(${d.cdpPort})">Activate</button>`}
+                            <button class="btn btn-secondary btn-sm" onclick="deleteDevice(${d.cdpPort})" style="color: var(--error);"><span style="display:inline-flex;vertical-align:middle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) { document.getElementById('deviceList').innerHTML = '<div style="color:var(--error)">Failed to load</div>'; }
+        }
+
+        async function addDevice() {
+            const name = document.getElementById('newDeviceName').value.trim();
+            const cdpPort = document.getElementById('newDevicePort').value.trim();
+            if (!name || !cdpPort) { showToast('Enter name and port', 'error'); return; }
+            try {
+                const res = await fetch('/api/admin/devices', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, cdpPort: parseInt(cdpPort), active: false }) });
+                const result = await res.json();
+                if (result.success) { showToast(svgIcon('check') + ' Device added'); document.getElementById('newDeviceName').value = ''; document.getElementById('newDevicePort').value = ''; loadDevices(); }
+                else showToast(result.error || 'Failed', 'error');
+            } catch (e) { showToast('Network error', 'error'); }
+        }
+
+        async function switchDevice(port) {
+            try {
+                const res = await fetch('/api/admin/devices/switch', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ cdpPort: port }) });
+                const result = await res.json();
+                if (result.success) { showToast(svgIcon('check') + ` Switched to ${result.active.name}`); loadDevices(); loadStatus(); }
+                else showToast(result.error || 'Failed', 'error');
+            } catch (e) { showToast('Network error', 'error'); }
+        }
+
+        async function deleteDevice(port) {
+            try {
+                const res = await fetch(`/api/admin/devices/${port}`, { method: 'DELETE' });
+                const result = await res.json();
+                if (result.success) { showToast(svgIcon('check') + ' Device removed'); loadDevices(); }
+                else showToast(result.error || 'Failed', 'error');
+            } catch (e) { showToast('Network error', 'error'); }
+        }
+
+        // ============================================================================
+        // Quick Commands
+        // ============================================================================
+        let commandsCache = [];
+
+        async function loadCommands() {
+            try {
+                const res = await fetch('/api/admin/commands');
+                const data = await res.json();
+                commandsCache = data.commands || [];
+                renderCommands();
+            } catch (e) { document.getElementById('commandList').innerHTML = '<div class="card"><div class="card-inner" style="color:var(--error)">Failed to load</div></div>'; }
+        }
+
+        function renderCommands() {
+            const container = document.getElementById('commandList');
+            if (commandsCache.length === 0) {
+                container.innerHTML = '<div class="card"><div class="card-inner" style="color:var(--text-muted)">No commands configured. Click "+ Add Command" to create one.</div></div>';
+                return;
+            }
+            container.innerHTML = commandsCache.map((cmd, i) => `
+                <div class="card" style="margin-bottom: 8px;">
+                    <div class="card-inner" style="display: flex; align-items: center; gap: 12px;">
+                        <div style="font-size: 24px;">${cmd.icon ? svgIcon(cmd.icon, 24) : svgIcon('zap', 24)}</div>
+                        <div style="flex: 1; min-width: 0;">
+                            <input class="input" value="${cmd.label}" placeholder="Label" onchange="updateCommand(${i}, 'label', this.value)" style="font-weight: 600; margin-bottom: 4px;">
+                            <input class="input" value="${cmd.prompt.replace(/"/g, '&quot;')}" placeholder="Agent prompt..." onchange="updateCommand(${i}, 'prompt', this.value)" style="font-size: 12px;">
+                        </div>
+                        <div class="btn-row" style="flex-shrink: 0;">
+                            <button class="btn btn-primary btn-sm" onclick="runCommand(${i})"><span style="display:inline-flex;vertical-align:middle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></span> Run</button>
+                            <button class="btn btn-secondary btn-sm" onclick="removeCommand(${i})" style="color: var(--error);">${svgIcon('close')}</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addCommand() {
+            commandsCache.push({ label: 'New Command', prompt: 'Describe what the agent should do...', icon: 'zap' });
+            renderCommands();
+            saveCommands();
+        }
+
+        function updateCommand(index, field, value) {
+            commandsCache[index][field] = value;
+            saveCommands();
+        }
+
+        function removeCommand(index) {
+            commandsCache.splice(index, 1);
+            renderCommands();
+            saveCommands();
+        }
+
+        async function saveCommands() {
+            try {
+                await fetch('/api/admin/commands', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ commands: commandsCache }) });
+                showToast(svgIcon('check') + ' Commands saved');
+            } catch (e) { showToast('Save failed', 'error'); }
+        }
+
+        async function runCommand(index) {
+            const cmd = commandsCache[index];
+            if (!cmd) return;
+            showToast(svgIcon('zap') + ` Running: ${cmd.label}...`);
+            try {
+                const res = await fetch('/api/commands/execute', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: cmd.prompt }) });
+                const result = await res.json();
+                showToast(result.success ? svgIcon('check') + ` ${cmd.label} sent!` : (result.error || 'Failed'), result.success ? 'success' : 'error');
+            } catch (e) { showToast('Execution failed', 'error'); }
+        }
+
+        // ============================================================================
+        // Activity Feed
+        // ============================================================================
+        async function loadEvents() {
+            try {
+                const res = await fetch('/api/admin/events');
+                const data = await res.json();
+                const events = data.events || [];
+                const container = document.getElementById('activityFeed');
+                if (events.length === 0) {
+                    container.innerHTML = '<div style="color:var(--text-muted);padding:8px;">No events yet</div>';
+                    return;
+                }
+                container.innerHTML = events.map(e => {
+                    const t = new Date(e.time);
+                    const ts = t.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                    return `<div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;">
+                        <span style="flex-shrink:0;">${e.icon}</span>
+                        <span style="flex:1;color:var(--text);">${e.message}</span>
+                        <span style="flex-shrink:0;font-size:11px;color:var(--text-muted);">${ts}</span>
+                    </div>`;
+                }).join('');
+            } catch (e) { }
+        }
+
+        // ============================================================================
+        // QR Code Pairing
+        // ============================================================================
+        async function generateQR() {
+            const port = document.getElementById('serverPort')?.value || location.port || '3001';
+            let host = location.hostname;
+            try {
+                const res = await fetch('/api/admin/status');
+                const data = await res.json();
+                if (data.lanIP) host = data.lanIP;
+            } catch (e) { }
+            const hostUrl = `http://${host}:${port}`;
+            const qrImg = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(hostUrl)}`;
+            const container = document.getElementById('qrCodeContainer');
+            container.innerHTML = `<img src="${qrImg}" width="160" height="160" alt="QR Code" style="display:block;">`;
+            document.getElementById('qrUrl').textContent = hostUrl;
+        }
+
+        // ============================================================================
+        // Session Logs
+        // ============================================================================
+        async function loadSessions() {
+            try {
+                const res = await fetch('/api/admin/logs');
+                const data = await res.json();
+                const sessions = data.sessions || [];
+                const container = document.getElementById('sessionList');
+                if (sessions.length === 0) {
+                    container.innerHTML = '<div class="card"><div class="card-inner" style="color:var(--text-muted)">No log files yet. Events will be logged after server restart.</div></div>';
+                    return;
+                }
+                container.innerHTML = sessions.map(s => `
+                    <div class="card" style="margin-bottom: 8px; cursor: pointer;" onclick="viewSession('${s.filename}')">
+                        <div class="card-inner" style="display:flex;justify-content:space-between;align-items:center;">
+                            <div>
+                                <div style="font-weight:600;color:var(--text);">${svgIcon('calendar')} ${s.date}</div>
+                                <div style="font-size:12px;color:var(--text-muted);">${s.events} events · ${(s.size / 1024).toFixed(1)} KB</div>
+                            </div>
+                            <a class="btn btn-secondary btn-sm" href="/api/admin/logs/${s.filename}/download" onclick="event.stopPropagation()"><span style="display:inline-flex;vertical-align:middle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Download</a>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) { document.getElementById('sessionList').innerHTML = '<div class="card"><div class="card-inner" style="color:var(--error)">Failed to load</div></div>'; }
+        }
+
+        async function viewSession(filename) {
+            try {
+                const res = await fetch(`/api/admin/logs/${filename}`);
+                const data = await res.json();
+                const events = (data.events || []).slice(-100);
+                document.getElementById('sessionViewerTitle').textContent = `Session: ${filename.replace('session-', '').replace('.jsonl', '')}`;
+                document.getElementById('sessionEvents').innerHTML = events.map(e => {
+                    const t = new Date(e.time);
+                    const ts = t.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                    return `<div style="padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;">
+                        <span style="flex-shrink:0;">${e.icon}</span>
+                        <span style="flex:1;color:var(--text);">${e.message}</span>
+                        <span style="flex-shrink:0;font-size:11px;color:var(--text-muted);">${ts}</span>
+                    </div>`;
+                }).join('') || '<div style="color:var(--text-muted)">No events</div>';
+                document.getElementById('sessionViewer').style.display = 'block';
+            } catch (e) { showToast('Failed to load session', 'error'); }
+        }
+
+        async function clearAllLogs() {
+            if (!confirm('Delete all session logs? This cannot be undone.')) return;
+            try {
+                const res = await fetch('/api/admin/logs', { method: 'DELETE' });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(`Cleared ${data.deleted} log file(s)`, 'success');
+                    document.getElementById('sessionViewer').style.display = 'none';
+                    loadSessions();
+                } else {
+                    showToast(data.error || 'Failed', 'error');
+                }
+            } catch (e) { showToast('Failed to clear logs', 'error'); }
+        }
+        async function toggleLogging() {
+            try {
+                const res = await fetch('/api/admin/logs/pause', { method: 'POST' });
+                const data = await res.json();
+                const btn = document.getElementById('pauseLoggingBtn');
+                btn.innerHTML = data.paused ? svgIcon('play') + ' Resume' : svgIcon('pause') + ' Pause';
+                showToast(data.paused ? 'Logging paused' : 'Logging resumed', 'success');
+            } catch (e) { showToast('Failed', 'error'); }
+        }
+
+        async function syncPauseBtn() {
+            try {
+                const res = await fetch('/api/admin/logs/pause');
+                const data = await res.json();
+                const btn = document.getElementById('pauseLoggingBtn');
+                if (btn) btn.innerHTML = data.paused ? svgIcon('play') + ' Resume' : svgIcon('pause') + ' Pause';
+            } catch (e) { }
+        }
+
+        // ============================================================================
+        // Analytics
+        // ============================================================================
+        async function loadAnalytics() {
+            try {
+                const res = await fetch('/api/admin/analytics');
+                const data = await res.json();
+                document.getElementById('statScreenshots').textContent = data.totals.screenshots;
+                document.getElementById('statErrors').textContent = data.totals.errors;
+                document.getElementById('statCommands').textContent = data.totals.commands;
+                document.getElementById('analyticsUptime').textContent = data.totalUptime;
+                renderChart(data.dailyStats);
+            } catch (e) { }
+        }
+
+        function renderChart(dailyStats) {
+            const canvas = document.getElementById('analyticsChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth * 2;
+            canvas.height = 400;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Get last 7 days
+            const days = [];
+            for (let i = 6; i >= 0; i--) {
+                const d = new Date(); d.setDate(d.getDate() - i);
+                days.push(d.toISOString().slice(0, 10));
+            }
+
+            const barWidth = Math.floor((canvas.width - 80) / days.length / 3);
+            const maxVal = Math.max(1, ...days.flatMap(d => {
+                const s = dailyStats[d] || {};
+                return [s.screenshots || 0, s.errors || 0, s.commands || 0];
+            }));
+
+            const chartH = canvas.height - 60;
+            const colors = ['#10b981', '#f43f5e', '#f59e0b'];
+            const labels = ['Scrn', 'Errs', 'Cmds'];
+
+            days.forEach((day, i) => {
+                const s = dailyStats[day] || {};
+                const vals = [s.screenshots || 0, s.errors || 0, s.commands || 0];
+                const groupX = 60 + i * ((canvas.width - 80) / days.length);
+
+                vals.forEach((v, j) => {
+                    const h = (v / maxVal) * (chartH - 20);
+                    const x = groupX + j * (barWidth + 2);
+                    ctx.fillStyle = colors[j];
+                    ctx.fillRect(x, chartH - h + 10, barWidth, h);
+                    if (v > 0) {
+                        ctx.fillStyle = '#999';
+                        ctx.font = '16px sans-serif';
+                        ctx.textAlign = 'center';
+                        ctx.fillText(v, x + barWidth / 2, chartH - h + 4);
+                    }
+                });
+
+                // Day label
+                ctx.fillStyle = '#999';
+                ctx.font = '16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(day.slice(5), groupX + (barWidth * 2), chartH + 28);
+            });
+
+            // Legend
+            labels.forEach((l, i) => {
+                const lx = 60 + i * 90;
+                ctx.fillStyle = colors[i];
+                ctx.fillRect(lx, canvas.height - 18, 12, 12);
+                ctx.fillStyle = '#999';
+                ctx.font = '14px sans-serif';
+                ctx.textAlign = 'left';
+                ctx.fillText(l, lx + 16, canvas.height - 7);
+            });
+        }
+
+        // ============================================================================
+        // Screenshot Gallery
+        // ============================================================================
+        async function loadScreenshotGallery() {
+            try {
+                const res = await fetch('/api/admin/screenshots');
+                const data = await res.json();
+                const shots = data.screenshots || [];
+                const container = document.getElementById('screenshotGallery');
+                if (shots.length === 0) {
+                    container.innerHTML = '<div class="card" style="grid-column:1/-1;"><div class="card-inner" style="color:var(--text-muted)">No screenshots yet. Auto-capture runs every 30 seconds when CDP is connected.</div></div>';
+                    return;
+                }
+                container.innerHTML = shots.map(s => {
+                    const d = new Date(s.timestamp);
+                    const ts = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    return `<div class="card" style="cursor:pointer;overflow:hidden;" onclick="showFullScreenshot('${s.filename}')">
+                        <img src="/api/admin/screenshots/${s.filename}" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;">
+                        <div style="padding:6px 8px;font-size:11px;color:var(--text-muted);text-align:center;">${ts} · ${(s.size / 1024).toFixed(0)}KB</div>
+                    </div>`;
+                }).join('');
+            } catch (e) { document.getElementById('screenshotGallery').innerHTML = '<div style="color:var(--error)">Failed to load</div>'; }
+        }
+
+        function showFullScreenshot(filename) {
+            document.getElementById('screenshotFullImg').src = `/api/admin/screenshots/${filename}`;
+            document.getElementById('screenshotFullview').style.display = 'flex';
+        }
+
+        async function toggleScreenshots() {
+            try {
+                const res = await fetch('/api/admin/screenshots/toggle', { method: 'POST' });
+                const data = await res.json();
+                const btn = document.getElementById('screenshotToggleBtn');
+                btn.innerHTML = data.enabled ? svgIcon('pause') + ' Disable' : svgIcon('play') + ' Enable';
+                showToast(data.enabled ? svgIcon('camera') + ' Screenshots enabled' : svgIcon('pause') + ' Screenshots disabled');
+            } catch (e) { showToast('Toggle failed', 'error'); }
+        }
+
+        async function clearScreenshots() {
+            if (!confirm('Delete all captured screenshots? This cannot be undone.')) return;
+            try {
+                const res = await fetch('/api/admin/screenshots', { method: 'DELETE' });
+                const data = await res.json();
+                showToast(svgIcon('trash') + ` Deleted ${data.deleted} screenshots`);
+                loadScreenshotGallery();
+            } catch (e) { showToast('Delete failed', 'error'); }
+        }
+
+        // ============================================================================
+        // Page switch + lazy loading
+        // ============================================================================
+        const origSwitchPage = switchPage;
+        switchPage = function (pageName, linkEl) {
+            origSwitchPage(pageName, linkEl);
+            if (pageName === 'dashboard') { loadEvents(); }
+            if (pageName === 'mobile') generateQR();
+            if (pageName === 'devices') loadDevices();
+            if (pageName === 'commands') loadCommands();
+            if (pageName === 'logs') { loadSessions(); syncPauseBtn(); }
+            if (pageName === 'screenshots') loadScreenshotGallery();
+            if (pageName === 'analytics') loadAnalytics();
+            if (pageName === 'remote') loadTunnelStatus();
+            if (pageName === 'supervisor') { loadSupervisorStatus(); loadSupervisorLogs(); }
+        };
+
+        // ============================================================================
+        // Supervisor functions
+        // ============================================================================
+        async function loadSupervisorStatus() {
+            try {
+                const res = await fetch('/api/admin/supervisor');
+                const data = await res.json();
+                document.getElementById('supervisorEnabled').checked = data.enabled;
+                document.getElementById('supervisorDisableInjects').checked = data.config?.disableInjects || false;
+                document.getElementById('supervisorEndpoint').value = data.config?.endpoint || 'http://localhost:11434';
+                document.getElementById('supervisorModel').value = data.config?.model || 'llama3';
+                document.getElementById('supervisorRateLimit').value = data.config?.maxActionsPerMinute || 10;
+                document.getElementById('supervisorContextWindow').value = data.config?.contextWindow || 8192;
+                document.getElementById('supervisorContext').value = data.config?.projectContext || '';
+                document.getElementById('supervisorStatEnabled').textContent = data.enabled ? 'Active' : 'Off';
+                document.getElementById('supervisorStatEnabled').className = 'stat-value ' + (data.enabled ? 'ok' : '');
+                document.getElementById('supervisorStatOllama').textContent = data.ollamaAvailable ? 'Connected' : 'Offline';
+                document.getElementById('supervisorStatOllama').className = 'stat-value ' + (data.ollamaAvailable ? 'ok' : 'err');
+                document.getElementById('supervisorStatActions').textContent = `${data.actionsThisMinute || 0}/${data.maxActionsPerMinute || 10}`;
+                if (data.ollamaModels && data.ollamaModels.length > 0) {
+                    document.getElementById('ollamaModelHint').textContent = `Available: ${data.ollamaModels.slice(0, 5).join(', ')}`;
+                }
+            } catch (e) { showToast('Failed to load supervisor status', 'error'); }
+        }
+
+        async function toggleSupervisor() {
+            try {
+                const res = await fetch('/api/admin/supervisor/toggle', { method: 'POST' });
+                const data = await res.json();
+                document.getElementById('supervisorEnabled').checked = data.enabled;
+                showToast(data.enabled ? svgIcon('bot') + ' Supervisor enabled' : svgIcon('pause') + ' Supervisor disabled');
+                loadSupervisorStatus();
+            } catch (e) { showToast('Toggle failed', 'error'); }
+        }
+
+        async function toggleSupervisorInjects() {
+            const disabled = document.getElementById('supervisorDisableInjects').checked;
+            try {
+                await fetch('/api/admin/supervisor', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ disableInjects: disabled })
+                });
+                showToast(disabled ? svgIcon('pause') + ' IDE injects disabled' : svgIcon('bot') + ' IDE injects enabled');
+            } catch (e) { showToast('Toggle failed', 'error'); }
+        }
+
+        async function saveSupervisor() {
+            try {
+                const res = await fetch('/api/admin/supervisor', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        endpoint: document.getElementById('supervisorEndpoint').value,
+                        model: document.getElementById('supervisorModel').value,
+                        maxActionsPerMinute: document.getElementById('supervisorRateLimit').value,
+                        contextWindow: document.getElementById('supervisorContextWindow').value,
+                        disableInjects: document.getElementById('supervisorDisableInjects').checked,
+                        projectContext: document.getElementById('supervisorContext').value
+                    })
+                });
+                const data = await res.json();
+                if (data.success) showToast(svgIcon('check') + ' Supervisor config saved');
+                else showToast(data.error || 'Save failed', 'error');
+            } catch (e) { showToast('Save failed', 'error'); }
+        }
+
+        async function saveSupervisorContext() {
+            try {
+                const res = await fetch('/api/admin/supervisor/context', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ context: document.getElementById('supervisorContext').value })
+                });
+                const data = await res.json();
+                if (data.success) showToast(svgIcon('check') + ' Project context saved');
+                else showToast('Save failed', 'error');
+            } catch (e) { showToast('Save failed', 'error'); }
+        }
+
+        async function testOllamaConnection() {
+            const endpoint = document.getElementById('supervisorEndpoint').value;
+            const hint = document.getElementById('ollamaTestResult');
+            hint.textContent = 'Testing...';
+            hint.style.color = 'var(--text-muted)';
+            try {
+                const res = await fetch('/api/admin/supervisor/test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ endpoint })
+                });
+                const data = await res.json();
+                if (data.available) {
+                    hint.innerHTML = svgIcon('checkCircle') + ' Connected — ' + (data.models?.length || 0) + ' models available';
+                    hint.style.color = 'var(--success)';
+                    if (data.models?.length > 0) {
+                        document.getElementById('ollamaModelHint').textContent = `Available: ${data.models.slice(0, 5).join(', ')}`;
+                    }
+                } else {
+                    hint.innerHTML = svgIcon('xCircle') + ' Failed: ' + (data.error || 'Unknown error');
+                    hint.style.color = 'var(--error)';
+                }
+            } catch (e) {
+                hint.innerHTML = svgIcon('xCircle') + ' Connection failed';
+                hint.style.color = 'var(--error)';
+            }
+        }
+
+        async function loadSupervisorLogs() {
+            try {
+                const res = await fetch('/api/admin/supervisor/logs');
+                const data = await res.json();
+                const container = document.getElementById('supervisorLogContainer');
+                if (!data.actions || data.actions.length === 0) {
+                    container.innerHTML = '<div style="color:var(--text-muted);padding:12px;">No actions recorded yet. Enable the supervisor and it will start logging decisions here.</div>';
+                    return;
+                }
+                container.innerHTML = data.actions.map(a => {
+                    const time = new Date(a.timestamp).toLocaleTimeString();
+                    const icon = a.action === 'inject' ? svgIcon('syringe') : a.action === 'click' ? svgIcon('pointer') : a.action === 'notify' ? svgIcon('megaphone') : a.action === 'config' ? svgIcon('settings') : a.action === 'none' ? svgIcon('eye') : svgIcon('question');
+                    return `<div style="padding:8px 0;border-bottom:1px solid var(--border-subtle);display:flex;gap:8px;align-items:flex-start;"><span style="opacity:.5;font-size:11px;white-space:nowrap;">${time}</span><span>${icon}</span><span style="flex:1;">${a.action}: ${a.detail.length > 80 ? a.detail.slice(0, 80) + '…' : a.detail}</span><span style="font-size:11px;color:var(--text-muted);">${a.result}</span></div>`;
+                }).join('');
+            } catch (e) { /* silent */ }
+        }
+
+        async function clearSupervisorHistory() {
+            try {
+                await fetch('/api/admin/supervisor/clear', { method: 'POST' });
+                showToast(svgIcon('check') + ' Supervisor history cleared');
+                loadSupervisorLogs();
+            } catch (e) { showToast('Failed', 'error'); }
+        }
+
+        loadConfigFromServer();
+        loadEvents();
+        generateQR();
+        // Set supervisor title icon
+        const supTitleIcon = document.getElementById('supervisorTitleIcon');
+        if (supTitleIcon) supTitleIcon.innerHTML = svgIcon('brain', 20);
+        setInterval(loadStatus, 10000);
+        setInterval(loadEvents, 10000);
+    </script>
+</body>
+
+</html>

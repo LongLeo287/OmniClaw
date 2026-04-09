@@ -1,0 +1,19 @@
+department: od_learning
+dept: planning_pmo
+id: cognitive_reflector
+metadata:
+  created: 2026-03-27
+  version: v3.1
+name: Cognitive Reflector
+routing:
+  domain: cognitive_reflector
+  fallback: orchestrator_pro
+runtime:
+  boot_prompt: system_prompt.md
+  bus: event_bus.db
+  memory: ltm
+  type: antigravity
+skills:
+- reasoning_engine
+status: ACTIVE
+tier: 1

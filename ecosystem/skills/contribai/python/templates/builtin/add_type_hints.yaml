@@ -1,0 +1,11 @@
+name: add-type-hints
+description: Add missing Python type hints to function signatures
+type: code_quality
+severity: low
+pattern: Python functions without type annotations
+fix_template: |
+  Add type hints to function parameters and return types.
+  Use built-in types (list, dict, set) instead of typing module.
+  Add Optional where None is a valid value.
+languages: [python]
+tags: [type-hints, python, code-quality]

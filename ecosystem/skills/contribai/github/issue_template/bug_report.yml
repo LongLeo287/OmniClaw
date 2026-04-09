@@ -1,0 +1,58 @@
+name: 🐛 Bug Report
+description: Report a bug in ContribAI
+labels: ["type/bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug!
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: What happened? What did you expect to happen?
+      placeholder: "When I run `contribai analyze ...`, it crashes with..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this?
+      value: |
+        1. Run `contribai ...`
+        2. ...
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Output / Logs
+      description: Paste the full error output (run with `-v` for verbose)
+      render: shell
+
+  - type: input
+    id: version
+    attributes:
+      label: ContribAI Version
+      placeholder: "0.1.0"
+
+  - type: input
+    id: python
+    attributes:
+      label: Python Version
+      placeholder: "3.12.1"
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other

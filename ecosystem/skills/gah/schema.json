@@ -1,0 +1,8 @@
+{
+    "name": "Gah",
+    "description": "Assimilated OmniClaw Skill for gah.",
+    "domain": "core",
+    "tier": 3,
+    "type": "assimilated_repo_skill",
+    "parameters": {}
+}

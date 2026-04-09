@@ -1,0 +1,36 @@
+{
+    "private": true,
+    "name": "locomotive-scroll",
+    "description": "Monorepo for Locomotive Scroll",
+    "license": "MIT",
+    "homepage": "https://github.com/locomotivemtl/locomotive-scroll",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/locomotivemtl/locomotive-scroll.git"
+    },
+    "author": {
+        "name": "Locomotive",
+        "email": "info@locomotive.ca",
+        "homepage": "https://locomotive.ca"
+    },
+    "devDependencies": {
+        "turbo": "^2.7.4",
+        "typescript": "^4.8.3"
+    },
+    "scripts": {
+        "build": "turbo run build",
+        "build:vercel": "turbo run build --filter=./packages/lib --filter=./packages/demo --filter=./packages/docs",
+        "build:landing": "npm run build --workspace=packages/landing",
+        "dev": "npm run dev --workspace=packages/demo --if-present",
+        "publish": "npm run publish --workspace=packages/lib --if-present",
+        "publish:next": "npm run publish:next --workspace=packages/lib --if-present"
+    },
+    "workspaces": [
+        "packages/lib",
+        "packages/demo",
+        "packages/landing",
+        "packages/docs"
+    ],
+    "version": "5.0.0-rc.1",
+    "packageManager": "npm@10.9.4"
+}

@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  host: 0.0.0.0
+
+database:
+  url: postgresql://user:password@localhost:5432/dbname
+
+logging:
+  level: INFO
+  file: backend.log

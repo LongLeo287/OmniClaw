@@ -1,0 +1,8 @@
+{
+    "name": "Arknights Endfield Website Clone",
+    "description": "Assimilated OmniClaw Skill for arknights_endfield_website_clone.",
+    "domain": "frontend",
+    "tier": 3,
+    "type": "assimilated_repo_skill",
+    "parameters": {}
+}

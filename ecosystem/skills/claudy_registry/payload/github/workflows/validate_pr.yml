@@ -1,0 +1,43 @@
+name: Validate Plugin PR
+
+on:
+  pull_request:
+    paths:
+      - "plugins/**"
+
+jobs:
+  validate:
+    name: Validate changed manifest.json files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Find changed manifest.json files
+        id: changed
+        run: |
+          BASE="${{ github.event.pull_request.base.ref }}"
+          CHANGED=$(git diff --name-only --diff-filter=AM "origin/${BASE}...HEAD" \
+            | grep -E '^plugins/.+/manifest\.json$' || true)
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Validate plugins
+        run: |
+          FILES="${{ steps.changed.outputs.files }}"
+          if [ -z "$FILES" ]; then
+            echo "No manifest.json files changed."
+            exit 0
+          fi
+          echo "$FILES" | xargs python scripts/validate_plugin.py

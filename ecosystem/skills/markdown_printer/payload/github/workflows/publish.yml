@@ -1,0 +1,205 @@
+name: Publish Extensions
+
+on:
+  workflow_dispatch: # Manual trigger
+  push:
+    tags:
+      - 'v*' # Trigger on version tags like v1.0.4
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.x'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build extensions
+        run: pnpm run build
+
+      - name: Prepare distribution directories
+        run: |
+          mkdir -p dist/chrome dist/firefox
+          cp -r extension-chrome/* dist/chrome/
+          cp -r extension-firefox/* dist/firefox/
+
+      - name: Get local versions
+        id: versions
+        run: |
+          CHROME_VERSION=$(jq -r '.version' extension-chrome/manifest.json)
+          FIREFOX_VERSION=$(jq -r '.version' extension-firefox/manifest.json)
+          echo "chrome=$CHROME_VERSION" >> $GITHUB_OUTPUT
+          echo "firefox=$FIREFOX_VERSION" >> $GITHUB_OUTPUT
+
+      # Chrome Web Store
+      - name: Check Chrome Web Store version
+        id: chrome-check
+        env:
+          CHROME_CLIENT_ID: ${{ vars.CHROME_CLIENT_ID }}
+          CHROME_CLIENT_SECRET: ${{ secrets.CHROME_CLIENT_SECRET }}
+          CHROME_REFRESH_TOKEN: ${{ secrets.CHROME_REFRESH_TOKEN }}
+        run: |
+          # Get access token
+          TOKEN_RESPONSE=$(curl -s -X POST "https://oauth2.googleapis.com/token" \
+            -d "client_id=$CHROME_CLIENT_ID" \
+            -d "client_secret=$CHROME_CLIENT_SECRET" \
+            -d "refresh_token=$CHROME_REFRESH_TOKEN" \
+            -d "grant_type=refresh_token")
+          ACCESS_TOKEN=$(echo $TOKEN_RESPONSE | jq -r '.access_token')
+
+          # Get current version from Chrome Web Store API
+          ITEM_INFO=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+            -H "x-goog-api-version: 2" \
+            "https://www.googleapis.com/chromewebstore/v1.1/items/pfplfifdaaaalkefgnknfgoiabegcbmf?projection=DRAFT")
+
+          STORE_VERSION=$(echo $ITEM_INFO | jq -r '.crxVersion // empty')
+
+          echo "Current Chrome version: $STORE_VERSION"
+          echo "Local Chrome version: ${{ steps.versions.outputs.chrome }}"
+
+          if [ -z "$STORE_VERSION" ] || [ "$STORE_VERSION" != "${{ steps.versions.outputs.chrome }}" ]; then
+            echo "needs_publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "needs_publish=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to Chrome Web Store
+        if: steps.chrome-check.outputs.needs_publish == 'true'
+        run: |
+          cd dist/chrome
+          zip -r ../../chrome-extension.zip .
+          cd ../..
+          npx publish-browser-extension \
+            --chrome-zip chrome-extension.zip \
+            --chrome-extension-id pfplfifdaaaalkefgnknfgoiabegcbmf \
+            --chrome-client-id "${{ vars.CHROME_CLIENT_ID }}" \
+            --chrome-client-secret "${{ secrets.CHROME_CLIENT_SECRET }}" \
+            --chrome-refresh-token "${{ secrets.CHROME_REFRESH_TOKEN }}" \
+            --chrome-skip-submit-review
+
+      - name: Skip Chrome publish
+        if: steps.chrome-check.outputs.needs_publish != 'true'
+        run: echo "✓ Chrome Web Store is already up to date"
+
+      # Firefox Add-ons
+      - name: Check Firefox Add-ons version
+        id: firefox-check
+        run: |
+          # Check if version exists in any state (published, pending, etc.)
+          VERSION_EXISTS=$(curl -s "https://addons.mozilla.org/api/v5/addons/addon/markdown-printer/versions/" | jq -r --arg ver "${{ steps.versions.outputs.firefox }}" '.results[] | select(.version == $ver) | .version')
+
+          if [ -n "$VERSION_EXISTS" ]; then
+            echo "Firefox already has version ${{ steps.versions.outputs.firefox }} (published or pending)"
+            echo "needs_publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "Firefox needs version ${{ steps.versions.outputs.firefox }}"
+            echo "needs_publish=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to Firefox Add-ons
+        if: steps.firefox-check.outputs.needs_publish == 'true'
+        run: |
+          cd dist/firefox
+          zip -r ../../firefox-extension.zip .
+          cd ../..
+          zip -r firefox-sources.zip . -x "node_modules/*" -x "dist/*" -x ".git/*"
+          npx publish-browser-extension \
+            --firefox-zip firefox-extension.zip \
+            --firefox-sources-zip firefox-sources.zip \
+            --firefox-extension-id markdown-printer@lev.engineer \
+            --firefox-jwt-issuer "${{ vars.FIREFOX_ISSUER }}" \
+            --firefox-jwt-secret "${{ secrets.FIREFOX_SECRET }}"
+
+      - name: Skip Firefox publish
+        if: steps.firefox-check.outputs.needs_publish != 'true'
+        run: echo "✓ Firefox Add-ons is already up to date"
+
+      # Microsoft Edge Add-ons
+      - name: Check Edge Add-ons version
+        id: edge-check
+        env:
+          EDGE_PRODUCT_ID: ${{ vars.EDGE_PRODUCT_ID }}
+          EDGE_CLIENT_ID: ${{ vars.EDGE_CLIENT_ID }}
+          EDGE_API_KEY: ${{ secrets.EDGE_API_KEY }}
+        run: |
+          # Get access token
+          TOKEN_RESPONSE=$(curl -s -X POST "https://login.microsoftonline.com/5c9eedce-81bc-42f3-8823-48ba6258b391/oauth2/v2.0/token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "client_id=$EDGE_CLIENT_ID&scope=https://api.addons.microsoftedge.microsoft.com/.default&client_secret=$EDGE_API_KEY&grant_type=client_credentials")
+          ACCESS_TOKEN=$(echo $TOKEN_RESPONSE | jq -r '.access_token')
+
+          # Get product info
+          PRODUCT_INFO=$(curl -s "https://api.addons.microsoftedge.microsoft.com/v1/products/$EDGE_PRODUCT_ID" \
+            -H "Authorization: Bearer $ACCESS_TOKEN")
+
+          # Try multiple possible version fields
+          STORE_VERSION=$(echo $PRODUCT_INFO | jq -r '.lastPublishedVersion // .publishedVersion // .currentVersion // empty')
+
+          echo "Current Edge version: $STORE_VERSION"
+          echo "Local Chrome version: ${{ steps.versions.outputs.chrome }}"
+
+          # If version is empty/null or doesn't match, publish
+          if [ -z "$STORE_VERSION" ] || [ "$STORE_VERSION" = "null" ] || [ "$STORE_VERSION" != "${{ steps.versions.outputs.chrome }}" ]; then
+            echo "needs_publish=true" >> $GITHUB_OUTPUT
+          else
+            echo "needs_publish=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish to Edge Add-ons
+        if: steps.edge-check.outputs.needs_publish == 'true'
+        run: |
+          cd dist/chrome
+          zip -r ../../edge-extension.zip .
+          cd ../..
+          npx publish-browser-extension \
+            --edge-zip edge-extension.zip \
+            --edge-product-id "${{ vars.EDGE_PRODUCT_ID }}" \
+            --edge-client-id "${{ vars.EDGE_CLIENT_ID }}" \
+            --edge-api-key "${{ secrets.EDGE_API_KEY }}" \
+            --edge-skip-submit-review
+
+      - name: Skip Edge publish
+        if: steps.edge-check.outputs.needs_publish != 'true'
+        run: echo "✓ Edge Add-ons is already up to date"
+
+      # Summary
+      - name: Publish summary
+        run: |
+          echo "## Publication Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Chrome: ${{ steps.chrome-check.outputs.needs_publish == 'true' && '✓ Published' || '⊘ Skipped (up to date)' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Firefox: ${{ steps.firefox-check.outputs.needs_publish == 'true' && '✓ Published' || '⊘ Skipped (up to date)' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Edge: ${{ steps.edge-check.outputs.needs_publish == 'true' && '✓ Published' || '⊘ Skipped (up to date)' }}" >> $GITHUB_STEP_SUMMARY
+
+      # Create GitHub Release with built packages
+      - name: Get version
+        id: get_version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "v${{ steps.get_version.outputs.version }}" \
+            --title "v${{ steps.get_version.outputs.version }}" \
+            --notes "See [CHANGELOG](https://github.com/${{ github.repository }}/blob/main/description.md#version-history) for details." \
+            chrome-extension.zip#"Chrome Extension" \
+            firefox-extension.zip#"Firefox Extension" \
+            edge-extension.zip#"Edge Extension"

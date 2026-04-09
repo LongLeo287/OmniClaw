@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"jeff-hykin.better-csv-syntax",
+		"YoavBls.pretty-ts-errors",
+		"DavidAnson.vscode-markdownlint",
+		"biomejs.biome",
+		"oven-sh.bun",
+		"ahmadawais.emoji-log-vscode",
+		"ReprEng.csv"
+	]
+}

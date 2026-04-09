@@ -1,0 +1,31 @@
+{
+  "id": "recursive_decomposition_skill",
+  "name": "Recursive Decomposition Skill",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "llm-tooling",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\recursive_decomposition_skill\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for recursive_decomposition_skill",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "llm",
+    "ai"
+  ]
+}

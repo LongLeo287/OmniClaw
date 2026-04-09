@@ -1,0 +1,22 @@
+context:
+- Read system_prompt.md for full operating instructions
+- Memory: brain/shared-context/blackboard.json (short-term)
+- Knowledge: brain/knowledge/ (long-term)
+- Reports to: orchestrator_pro or direct to blackboard
+created: 2026-03-26
+department: asset_library
+description: Knowledge curator and RAG specialist
+domain: ecosystem
+name: knowledge_agent
+skills:
+- knowledge_navigator
+- smart_memory
+- web_intelligence
+- context7
+source: OmniClaw V3.1 Agent Generator
+tools:
+- file-system
+- lightrag
+- web_search
+type: workforce-agent
+version: 1.0.0

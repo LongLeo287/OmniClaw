@@ -1,0 +1,8 @@
+{
+    "name": "Awesome Legal Skills",
+    "description": "Assimilated OmniClaw Skill for awesome_legal_skills.",
+    "domain": "core",
+    "tier": 3,
+    "type": "assimilated_repo_skill",
+    "parameters": {}
+}

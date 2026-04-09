@@ -1,0 +1,30 @@
+{
+  "id": "claudy_registry",
+  "name": "Claudy Registry",
+  "version": "1.0.0",
+  "tier": 3,
+  "status": "active",
+  "domain": "data-tools",
+  "cost_tier": "standard",
+  "load_on_boot": false,
+  "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\claudy_registry\\SKILL.md",
+  "accessible_by": [
+    "Orchestrator",
+    "Claude Code"
+  ],
+  "dependencies": [],
+  "exposed_functions": [
+    {
+      "name": "reference",
+      "description": "Reference for claudy_registry",
+      "input": "string",
+      "output": "string"
+    }
+  ],
+  "consumed_by": [],
+  "emits_events": [],
+  "listens_to": [],
+  "tags": [
+    "data"
+  ]
+}

@@ -1,0 +1,1 @@
+{"server": {"host": "127.0.0.1", "port": 8080}, "database": {"type": "mysql", "host": "localhost", "user": "root", "password": "password", "name": "firecrawl"}}

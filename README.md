@@ -93,6 +93,22 @@ sequenceDiagram
 
 ---
 
+## 🌓 The Absolute Boundary (2-System Architecture)
+
+OmniClaw is strictly divided into **Two Distinct Systems** separated by an irreversible Zero-Trust boundary:
+
+1. **System 1: The God Tier (Core Daemons - System Admins)**
+   - Includes 7 background pillars (e.g. `osf_warden.py`, `oma_architect.py`).
+   - Privilege: **Root Access (God Mode)**. They manage, maintain, and upgrade the entire OmniClaw OS platform. They hold the authority to command the Orchestrator, clean directories, and terminate Agents.
+2. **System 2: The Execution Tier (Orchestrator & Agents Workforce)**
+   - Includes the Orchestrator, 116 LLM Agents in `brain/agents/`, Departments in `corp/`, and tools in `ecosystem/skills/`.
+   - Function: Act as the workforce executing external projects + fulfilling logic requests dispatched by the Daemons.
+
+**The Red Line (Zero-Trust Rule):** 
+**Tier 2 is sandboxed.** Any Orchestrator, LLM Agent, or Plugin is STRICTLY FORBIDDEN from interfering, modifying source code, or touching the Operating System files (Core Daemons). Daemons can command the Orchestrator, but the Orchestrator CANNOT touch the Core.
+
+---
+
 | :--- | :--- | :--- |
 | **OIW** | OmniClaw Intake Watchdog | Scrutinizes external internet bounds, scraping raw context inputs and routing them inward to the OS. |
 | **OSF** | OmniClaw Sandbox Firewall | Performs heuristic deep scans for leaked API keys, credentials, and malicious patterns. Rejects dangerous code before it enters the Core. |
@@ -192,11 +208,22 @@ graph TD
 
 ## 🗺️ Master Mapping & Knowledge Tracking
 
-To guarantee absolute synchronization across the internal filesystem, OmniClaw strictly avoids localized map files. Instead, it relies on two globally tracked Master Maps managed dynamically by the registry daemons:
+To guarantee absolute synchronization across the internal filesystem, OmniClaw utilizes a centralized/decentralized mapping hybrid architecture managed dynamically by the OMA daemon:
 
 - **The Fast Index (`FAST_INDEX.json`)**: The authoritative ledger of the operating system. Every legitimate Agent, Department, and Skill across the network is stamped here. If a file is not in the Fast Index, Orchestrator treats it as invisible.
 - **The Library Graph (`LIBRARY_GRAPH.json`)**: Maps the complex relational edges between sub-agents and their required Knowledge files, rendering a 2D network diagram of the internal Brain matrix. 
+- **Regional Maps (`_REGIONAL_MAP.md`)**: Decentralized local map nodes located within deep directories (e.g., `ecosystem/workforce/agents/_REGIONAL_MAP.md`). These act as local indexers that feed directly into the Master Library Graph, physically linking regional clusters to the global matrix.
 - **The Core Documentation (`core/docs`)**: All organizational memory, KPI Scoreboards, and long-term storage architectures are documented within the `core/docs/` directory.
+
+---
+
+## 🧠 MemPalace 3-Layer Memory Architecture
+
+Starting in V2, OmniClaw utilizes the **Drawers & Closets** paradigm imported from the MemPalace schema, seamlessly integrated into the automated OAP Pipeline via the `mempalace_agent`. The memory layer consists of:
+
+1. **Layer 1: RAW Drawers (Baseline Verbatim Data):** The primitive `.md`, `.py`, or `.json` files that hold 100% truth (e.g. `_DISTILLED.md`). These files are never compressed and are strictly required for syntax-heavy logic, API specs, and source code.
+2. **Layer 2: AAAK Closets (Context Summaries):** Powered by the *Lossy Abbreviation Dialect*. For heavy conversational data, meeting logs, or long timelines, the Core Daemon triggers the MemPalace Agent to output a lightweight `_CLOSET.aaak` file. It drastically cuts down Token length by extracting Entity Codes, Topics, and Emotions.
+3. **Layer 3: Graph Navigation (Cognitive Mapping):** The overarching Wings (projects/domains) and Rooms (sub-topics) architecture managed dynamically by the `oma_architect`. It structures where Agents should be reading to emulate human logic routing.
 
 ---
 
@@ -243,7 +270,7 @@ For a deeper understanding of the system's architecture, running services, and l
 - 🏛️ [**Core Architectural Principles**](core/docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
 - 🧭 [**Master System Map**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 28 departments, Boot Sequence, Memory architecture, and Gate workflows.
 - 🚦 [**Activation Guide**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
-- 🧩 [**Skills & Plugins Capability Map**](core/docs/architecture/SKILLS_AND_PLUGINS_MAP.md) — Master index of all 100+ native skills and plugins available to the agents.
+- 🧩 [**1,970+ Skills & Plugins Capability Map**](docs/SKILLS_DIRECTORY.md) — Master index and detailed function descriptions of all 1,970 native specialized skills and MCP plugins available to the Omniclaw Workforce.
 - 📊 [**Data Science Repositories**](core/docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
 - 🏛️ [**Core Daemons & OER Governance**](core/docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
 

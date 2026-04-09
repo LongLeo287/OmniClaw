@@ -1,0 +1,500 @@
+/* ============================================
+ * Theme-specific component overrides
+ * ============================================ */
+
+/* Rainbow theme - SUPER colorful components */
+.rainbow-theme .sidebar {
+    background: rgba(20, 15, 45, 0.98);
+    border-right: 3px solid #8b5cf6;
+}
+
+.rainbow-theme .sidebar-item.active {
+    background: #8b5cf6 !important;
+}
+
+.rainbow-theme .sidebar-item:nth-child(1) {
+    color: #ef4444;
+}
+
+.rainbow-theme .sidebar-item:nth-child(2) {
+    color: #22c55e;
+}
+
+.rainbow-theme .sidebar-item:nth-child(3) {
+    color: #3b82f6;
+}
+
+.rainbow-theme .sidebar-item.active {
+    color: white !important;
+}
+
+.rainbow-theme .sidebar-item:nth-child(1):hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.rainbow-theme .sidebar-item:nth-child(2):hover {
+    background: rgba(34, 197, 94, 0.2);
+}
+
+.rainbow-theme .sidebar-item:nth-child(3):hover {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.rainbow-theme .sidebar-footer {
+    border-top: 2px solid #f97316;
+}
+
+.rainbow-theme .logo-icon {
+    background: #06b6d4 !important;
+}
+
+.rainbow-theme .logo-text {
+    color: #a855f7 !important;
+}
+
+.rainbow-theme .header {
+    background: rgba(20, 15, 45, 0.98);
+    border-bottom: 3px solid #f43f5e;
+}
+
+.rainbow-theme .status-pill.connected {
+    background: rgba(16, 185, 129, 0.2);
+    border: 2px solid #10b981;
+    color: #10b981;
+}
+
+.rainbow-theme .status-pill.disconnected {
+    background: rgba(239, 68, 68, 0.2);
+    border: 2px solid #ef4444;
+}
+
+.rainbow-theme .chat-container {
+    border: 2px solid #8b5cf6;
+}
+
+.rainbow-theme .chat-send {
+    background: #22c55e !important;
+}
+
+.rainbow-theme .chat-input:focus {
+    border-color: #06b6d4;
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
+}
+
+.rainbow-theme .btn-primary {
+    background: #f43f5e !important;
+}
+
+.rainbow-theme .login-btn {
+    background: #3b82f6 !important;
+}
+
+.rainbow-theme .login-logo svg {
+    stroke: #eab308;
+}
+
+.rainbow-theme .login-title {
+    color: #a855f7;
+}
+
+.rainbow-theme .quick-chip:nth-child(1) {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.rainbow-theme .quick-chip:nth-child(2) {
+    border-color: #22c55e;
+    color: #22c55e;
+}
+
+.rainbow-theme .quick-chip:nth-child(3) {
+    border-color: #f97316;
+    color: #f97316;
+}
+
+.rainbow-theme .quick-chip:nth-child(4) {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.rainbow-theme .quick-chip:nth-child(5) {
+    border-color: #a855f7;
+    color: #a855f7;
+}
+
+.rainbow-theme .quick-chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.rainbow-theme .toggle-switch input:checked+.toggle-slider {
+    background: #f97316 !important;
+    border-color: #f97316 !important;
+}
+
+.rainbow-theme .card {
+    border: 2px solid rgba(139, 92, 246, 0.4);
+}
+
+.rainbow-theme .settings-title {
+    color: #06b6d4;
+}
+
+.rainbow-theme .setting-label h4 {
+    color: #a855f7;
+}
+
+.rainbow-theme .quota-refresh-btn {
+    background: #06b6d4 !important;
+}
+
+.rainbow-theme .setting-value {
+    background: rgba(249, 115, 22, 0.15);
+    color: #f97316;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.rainbow-theme .files-panel {
+    background: #0c0c18;
+    border-right: 3px solid #eab308;
+}
+
+.rainbow-theme .files-header h3 {
+    color: #eab308;
+}
+
+.rainbow-theme .file-item:hover {
+    background: rgba(6, 182, 212, 0.15);
+}
+
+/* Theme-specific overrides */
+.light-theme .sidebar,
+.pastel-theme .sidebar {
+    background: var(--bg-card);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.light-theme .header,
+.pastel-theme .header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+}
+
+.light-theme .setting-value,
+.pastel-theme .setting-value {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .chat-input-area,
+.pastel-theme .chat-input-area {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.light-theme #settingsPanel,
+.pastel-theme #settingsPanel,
+.light-theme #assistPanel,
+.pastel-theme #assistPanel {
+    background: var(--bg-dark);
+}
+
+.light-theme .logo-text,
+.pastel-theme .logo-text {
+    color: var(--text-primary);
+}
+
+/* ========== Slate Theme ========== */
+/* Compact, flat, no emojis, no glow, neutral palette */
+.slate-theme {
+    --bg-dark: #1a1a22;
+    --bg-card: #22222c;
+    --bg-glass: rgba(255, 255, 255, 0.03);
+    --accent-primary: #6b7280;
+    --accent-secondary: #9ca3af;
+    --accent-glow: transparent;
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.12);
+}
+
+/* Flat cards — no glass, no glow, tight radius */
+.slate-theme .card {
+    border-radius: 6px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+
+.slate-theme .screen-frame {
+    border-radius: 6px;
+}
+
+/* Sidebar — compact */
+.slate-theme .sidebar {
+    background: #16161e;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.slate-theme .sidebar-header {
+    padding: 10px 12px;
+    min-height: 48px;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.slate-theme .sidebar-nav {
+    padding: 6px;
+    gap: 2px;
+}
+
+.slate-theme .sidebar-item {
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.slate-theme .sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: #d1d5db;
+}
+
+.slate-theme .sidebar-item.active {
+    background: rgba(99, 130, 191, 0.15);
+    color: #93a8d0;
+}
+
+.slate-theme .sidebar-item svg {
+    width: 16px;
+    height: 16px;
+}
+
+.slate-theme .sidebar-toggle {
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+}
+
+.slate-theme .sidebar-footer {
+    padding: 8px 6px;
+}
+
+/* Status pill — minimal */
+.slate-theme .status-pill {
+    border-radius: 4px;
+    font-size: 10px;
+    padding: 4px 8px;
+    margin-bottom: 6px;
+}
+
+.slate-theme .status-dot {
+    animation: none;
+    box-shadow: none !important;
+}
+
+/* Header — flat */
+.slate-theme .header {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* View switcher — tight */
+.slate-theme .view-switcher {
+    border-radius: 6px;
+    margin: 8px 12px;
+    padding: 3px;
+}
+
+.slate-theme .view-btn {
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.slate-theme .view-btn.active {
+    box-shadow: none;
+    background: rgba(99, 130, 191, 0.15);
+    color: #93a8d0;
+}
+
+/* Topbar — flat, clean */
+.slate-theme #topbar {
+    border-radius: 8px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: #1e1e28;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    height: 40px;
+    padding: 0 4px;
+}
+
+.slate-theme .topbar-btn {
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #6b7280;
+    position: relative;
+}
+
+.slate-theme .topbar-btn:hover {
+    color: #d1d5db;
+    background: none;
+}
+
+.slate-theme .topbar-btn.active {
+    background: none;
+    color: #c5d0e6;
+    box-shadow: none;
+    border-radius: 6px;
+}
+
+.slate-theme .topbar-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 25%;
+    width: 50%;
+    height: 1.5px;
+    background: #7b8fba;
+    border-radius: 1px;
+}
+
+.slate-theme .topbar-btn svg {
+    opacity: 0.7;
+}
+
+.slate-theme .topbar-btn.active svg {
+    opacity: 1;
+}
+
+/* Chat container — flat */
+.slate-theme .chat-container {
+    border-radius: 6px;
+}
+
+.slate-theme .chat-input {
+    border-radius: 4px;
+}
+
+.slate-theme .chat-send {
+    border-radius: 4px;
+}
+
+/* Quick chips — compact, no fancy borders */
+.slate-theme .quick-chip {
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 11px;
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+.slate-theme .quick-chip:hover {
+    border-color: var(--text-muted);
+    color: var(--text-primary);
+}
+
+/* Settings — compact */
+.slate-theme .settings-section {
+    margin-bottom: 12px;
+}
+
+.slate-theme .settings-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+}
+
+.slate-theme .setting-row {
+    padding: 8px 0;
+}
+
+.slate-theme .setting-label h4 {
+    font-size: 13px;
+}
+
+.slate-theme .setting-label p {
+    font-size: 11px;
+}
+
+.slate-theme .setting-value {
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* Logo — smaller */
+.slate-theme .logo-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+}
+
+.slate-theme .logo-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Theme selector — flat */
+.slate-theme .theme-selector {
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+.slate-theme .theme-icon-btn {
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* File viewer — flat */
+.slate-theme .file-viewer {
+    border-radius: 6px;
+}
+
+.slate-theme .files-panel {
+    border-radius: 0;
+}
+
+/* No glow or decorative box-shadows anywhere */
+.slate-theme .view-btn.active,
+.slate-theme .topbar-btn.active,
+.slate-theme .connected .status-dot {
+    box-shadow: none;
+}
+
+/* Animations — reduced */
+.slate-theme .view {
+    animation: none;
+}
+
+.slate-theme .bg-effects {
+    background: var(--bg-dark);
+}
+
+/* Remove emoji characters via CSS */
+.slate-theme .emoji {
+    display: none;
+}
+
+/* Quota card tweaks */
+.slate-theme .quota-refresh-btn {
+    border-radius: 4px;
+}
+
+/* Login — flat */
+.slate-theme .login-card {
+    border-radius: 8px;
+    backdrop-filter: none;
+}
+
+.slate-theme .login-btn {
+    border-radius: 4px;
+}

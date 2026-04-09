@@ -1,0 +1,28 @@
+# HolyClaude persistent data (created at runtime)
+data/
+workspace/*
+!workspace/.gitkeep
+
+# Environment files with secrets
+.env
+credentials
+credentials.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+
+# Docker
+docker-compose.override.yaml
+docker-compose.override.yml
