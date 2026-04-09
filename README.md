@@ -272,6 +272,7 @@ For a deeper understanding of the system's architecture, running services, and l
 - 🚦 [**Activation Guide**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
 - 🏢 [**Corporate Workforce Matrix**](docs/WORKFORCE_DIRECTORY.md) — Architectural map of the 28 departments hosting 94 specialized agents.
 - 🎨 [**UI Components Library**](docs/UI_COMPONENTS_DIRECTORY.md) — 5th Pillar: Central repository for frontend assets, shadcn_ui, and UI/UX generator workflows.
+- 🌁 [**Local Server Bridges**](docs/BRIDGES_DIRECTORY.md) — 6th Pillar: Launchers for local database and LLM inference engines (Mem0, Ollama, LightRAG).
 - 🧩 [**1,970+ Skills Directory**](docs/SKILLS_DIRECTORY.md) — Comprehensive library detailing 1,970 individual specialized functions across OmniClaw.
 - 🔌 [**Tier-2 Plugins Registry**](docs/PLUGINS_DIRECTORY.md) — Central catalog of the 12 heavy sandbox plugins.
 - 🧰 [**Native Fallback Tools**](docs/TOOLS_DIRECTORY.md) — Bare-metal OS survival scripts for Offline/Heuristic LLM operations.

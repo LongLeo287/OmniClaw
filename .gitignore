@@ -32,6 +32,8 @@
 !/ecosystem/tools/**
 !/ecosystem/ui_components/
 !/ecosystem/ui_components/**
+!/ecosystem/bridges/
+!/ecosystem/bridges/**
 !/docs/
 !/docs/**
 
