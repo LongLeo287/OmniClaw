@@ -268,9 +268,9 @@ OmniClaw is an entire Operating System, not just a codebase. For daily usage and
 
 For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult our master maps:
 
-- 🏛️ [**Core Architectural Principles**](core/docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
-- 🧭 [**Master System Map**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 28 departments, Boot Sequence, Memory architecture, and Gate workflows.
-- 🚦 [**Activation Guide**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
+- 🏛️ [**Core Architectural Principles**](core/docs/architecture/core_principles.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
+- 🧭 [**Master System Map**](core/docs/architecture/master_system_map.md) — The complete blueprint: 28 departments, Boot Sequence, Memory architecture, and Gate workflows.
+- 🚦 [**Activation Guide**](core/docs/usage_guides/activation_guide.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
 - 🏢 [**Corporate Workforce Matrix**](ecosystem/workforce/_REGIONAL_MAP.md) — Architectural map of the 28 departments hosting 94 specialized agents.
 - 🎨 [**UI Components Library**](ecosystem/ui_components/_REGIONAL_MAP.md) — 5th Pillar: Central repository for frontend assets, shadcn_ui, and UI/UX generator workflows.
 - 🌁 [**Local Server Bridges**](ecosystem/bridges/) — 6th Pillar: Launchers for local database and LLM inference engines (Mem0, Ollama, LightRAG).
@@ -278,7 +278,7 @@ For a deeper understanding of the system's architecture, running services, and l
 - 🔌 [**Tier-2 Plugins Registry**](ecosystem/plugins/) — Central catalog of the 12 heavy sandbox plugins.
 - 🧰 [**Native Fallback Tools**](ecosystem/tools/_REGIONAL_MAP.md) — Bare-metal OS survival scripts for Offline/Heuristic LLM operations.
 - 📊 [**Data Science Repositories**](core/docs/usage_guides/data_science_library.md) — List of active Machine Learning and RAG repositories in the capability library.
-- 🏛️ [**Core Daemons & OER Governance**](core/docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
+- 🏛️ [**Core Daemons & OER Governance**](core/docs/architecture/core_daemons_and_oer.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.
 
 ---
 

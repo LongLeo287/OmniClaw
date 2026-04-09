@@ -221,9 +221,9 @@ omniclaw
 
 Để hiểu sâu hơn về kiến trúc hệ thống, các dịch vụ đang chạy và các năng lực đã tải, hãy tham khảo các bản đồ tổng của chúng tôi:
 
-- 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/CORE_PRINCIPLES.md) — Giải thích về khung xương bộ nhớ Zero-Config và chính sách ngôn ngữ không phụ thuộc OS.
-- 🧭 [**Bản Đồ Hệ Thống Tổng**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — Bản thiết kế đầy đủ: 28 phòng ban, Trình tự khởi động, Kiến trúc bộ nhớ và Quy trình cổng.
-- 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Ánh xạ cổng và các lệnh khởi động thủ công cho các dịch vụ địa phương.
+- 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/core_principles.md) — Giải thích về khung xương bộ nhớ Zero-Config và chính sách ngôn ngữ không phụ thuộc OS.
+- 🧭 [**Bản Đồ Hệ Thống Tổng**](core/docs/architecture/master_system_map.md) — Bản thiết kế đầy đủ: 28 phòng ban, Trình tự khởi động, Kiến trúc bộ nhớ và Quy trình cổng.
+- 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/activation_guide.md) — Ánh xạ cổng và các lệnh khởi động thủ công cho các dịch vụ địa phương.
 - 🏢 [**Ma Trận Nhân Sự 28 Phòng Ban**](ecosystem/workforce/_REGIONAL_MAP.md) — Bản đồ Kiến trúc phân bổ của 28 bộ phận và 94 Đặc vụ chuyên môn đang hoạt động.
 - 🎨 [**Thư Viện Giao Diện UI**](ecosystem/ui_components/_REGIONAL_MAP.md) — Cột trụ thứ 5: Kho chứa Shadcn_UI và các luồng sinh mã Frontend.
 - 🌁 [**Cầu Nối Máy Chủ Cục Bộ**](ecosystem/bridges/) — Cột trụ thứ 6: Động cơ đánh thức Database và Local Inference (Mem0, Ollama, LightRAG).
@@ -231,7 +231,7 @@ omniclaw
 - 🔌 [**Danh Mục Plugins Nặng (Tier-2)**](ecosystem/plugins/) — Sổ xưng danh của 12 cỗ máy Plugins chạy độc lập (Mem0, Claude, Holographic, v.v.).
 - 🧰 [**Bộ Công Cụ Sinh Tồn Đáy (Native Tools)**](ecosystem/tools/_REGIONAL_MAP.md) — Chứa các Script giải cứu lõi (Heuristic Survival) dùng trong trường hợp LLM mất kết nối mạng.
 - 📊 [**Thư Viện Khoa Học Dữ Liệu**](core/docs/usage_guides/data_science_library.md) — Danh sách các repository Machine Learning và RAG đang hoạt động.
-- 🏛️ [**Quản Trị Core Daemons & OER**](core/docs/architecture/CORE_DAEMONS_AND_OER.md) — 4 Core Daemon (OIW/OHD/OA/OER), ma trận thẩm quyền và pipeline hệ sinh thái tự động 5 cổng.
+- 🏛️ [**Quản Trị Core Daemons & OER**](core/docs/architecture/core_daemons_and_oer.md) — 4 Core Daemon (OIW/OHD/OA/OER), ma trận thẩm quyền và pipeline hệ sinh thái tự động 5 cổng.
 
 ---
 
