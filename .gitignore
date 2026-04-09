@@ -28,6 +28,8 @@
 !/ecosystem/skills/**
 !/ecosystem/plugins/
 !/ecosystem/plugins/**
+!/ecosystem/tools/
+!/ecosystem/tools/**
 !/docs/
 !/docs/**
 
