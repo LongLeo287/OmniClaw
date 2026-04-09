@@ -302,3 +302,4 @@ Local components run standard markdown metadata frontmatter containing execution
 - `repo_orphan_sweep_benchmarks`  id: `repo_orphan_sweep_benchmarks` | type: `skill` | registered: 2026-04-09T22:01:05.803177
 - `repo_qwen2_5_omni`  id: `repo_qwen2_5_omni` | type: `skill` | registered: 2026-04-09T22:01:05.854456
 - `setup`  id: `setup` | type: `skill` | registered: 2026-04-09T22:01:05.894415
+- `orphan_sweep_digital_brain`  id: `orphan_sweep_digital_brain` | type: `skill` | registered: 2026-04-10T02:02:36.747361
