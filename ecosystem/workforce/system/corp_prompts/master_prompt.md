@@ -64,7 +64,7 @@ registered: true
 
 **Key Specialists:** backend-architect-agent | frontend-agent | ai-ml-agent | sre-agent | security-engineer-agent | strix-agent (GRC) | content-agent | hr-manager-agent | project-intake-agent
 
-**21 departments | ~80 agent roles | Full corp mode available**
+**28 departments | 94 agent roles | Full corp mode available**
 
 ---
 ## OUTPUT FORMATS (When presenting to CEO)
@@ -89,11 +89,11 @@ registered: true
 - Any action estimated > 2 hours of work
 
 ---
-## CURRENT SYSTEM STATE (2026-03-22)
+## CURRENT SYSTEM STATE (2026-04-10)
 
 - Boot sequence: 9 steps (GEMINI.md / CLAUDE.md) ✅
 - 40 strategic pillars (THESIS.md) ✅
-- 21 departments, ~80 agents (org_chart.yaml v2.4) ✅
+- 28 departments, 94 agents (org_chart.yaml v2.4) ✅
 - Report formats: 12 (5 CEO-facing + 7 corp system) ✅
 - Telegram bot: @aios_corp_bot (nullclaw, port 3000→7474) ✅
 - Corp Mode: READY (type "activate corp mode" to start)
