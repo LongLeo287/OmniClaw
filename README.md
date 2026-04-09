@@ -270,8 +270,9 @@ For a deeper understanding of the system's architecture, running services, and l
 - 🏛️ [**Core Architectural Principles**](core/docs/architecture/CORE_PRINCIPLES.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
 - 🧭 [**Master System Map**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — The complete blueprint: 28 departments, Boot Sequence, Memory architecture, and Gate workflows.
 - 🚦 [**Activation Guide**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
-- 🧩 [**1,970+ Skills Capability Map**](docs/SKILLS_DIRECTORY.md) — Master index and detailed function descriptions of all 1,970 native specialized skills available to the Omniclaw Workforce.
-- 🔌 [**Tier-2 Heavy Plugins Registry**](docs/PLUGINS_DIRECTORY.md) — Directory of the 12 heavy isolated execution plugins (Mem0, Claude, Holographic, etc.).
+- 🏢 [**Corporate Workforce Matrix**](docs/WORKFORCE_DIRECTORY.md) — Architectural map of the 28 departments hosting 94 specialized agents.
+- 🧩 [**1,970+ Skills Directory**](docs/SKILLS_DIRECTORY.md) — Comprehensive library detailing 1,970 individual specialized functions across OmniClaw.
+- 🔌 [**Tier-2 Plugins Registry**](docs/PLUGINS_DIRECTORY.md) — Central catalog of the 12 heavy sandbox plugins.
 - 🧰 [**Native Fallback Tools**](docs/TOOLS_DIRECTORY.md) — Bare-metal OS survival scripts for Offline/Heuristic LLM operations.
 - 📊 [**Data Science Repositories**](core/docs/usage_guides/DATA_SCIENCE_LIBRARY.md) — List of active Machine Learning and RAG repositories in the capability library.
 - 🏛️ [**Core Daemons & OER Governance**](core/docs/architecture/CORE_DAEMONS_AND_OER.md) — The 4 Core Daemons (OIW/OHD/OA/OER), authority matrix, and the 5-Gate automated ecosystem pipeline.

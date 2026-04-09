@@ -52,7 +52,7 @@ After intake complete:
   2. Auto-generate proposal (price range, timeline, deliverables)
   3. Budget check:
      < $2,000 → auto-approve proposal
-     â‰¥ $2,000 → ping CEO on Telegram for approval
+     >= $2,000 → ping CEO on Telegram for approval
      > $10,000 → MANDATORY CEO review before sending
   4. client-comms-agent sends proposal to client
   5. Wait for client response

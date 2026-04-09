@@ -224,6 +224,7 @@ omniclaw
 - 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/CORE_PRINCIPLES.md) — Giải thích về khung xương bộ nhớ Zero-Config và chính sách ngôn ngữ không phụ thuộc OS.
 - 🧭 [**Bản Đồ Hệ Thống Tổng**](core/docs/architecture/MASTER_SYSTEM_MAP.md) — Bản thiết kế đầy đủ: 28 phòng ban, Trình tự khởi động, Kiến trúc bộ nhớ và Quy trình cổng.
 - 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/ACTIVATION_GUIDE.md) — Ánh xạ cổng và các lệnh khởi động thủ công cho các dịch vụ địa phương.
+- 🏢 [**Ma Trận Nhân Sự 28 Phòng Ban**](docs/WORKFORCE_DIRECTORY.md) — Bản đồ Kiến trúc phân bổ của 28 bộ phận và 94 Đặc vụ chuyên môn đang hoạt động.
 - 🧩 [**Bản Đồ 1,970+ Năng Lực Skill**](docs/SKILLS_DIRECTORY.md) — Bách khoa toàn thư và chỉ mục mô tả chức năng chi tiết của toàn bộ 1,970 kỹ năng chuyên biệt hiện có trong Hệ sinh thái OmniClaw.
 - 🔌 [**Danh Mục Plugins Nặng (Tier-2)**](docs/PLUGINS_DIRECTORY.md) — Sổ xưng danh của 12 cỗ máy Plugins chạy độc lập (Mem0, Claude, Holographic, v.v.).
 - 🧰 [**Bộ Công Cụ Sinh Tồn Đáy (Native Tools)**](docs/TOOLS_DIRECTORY.md) — Chứa các Script giải cứu lõi (Heuristic Survival) dùng trong trường hợp LLM mất kết nối mạng.

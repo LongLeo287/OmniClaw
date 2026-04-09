@@ -95,8 +95,8 @@ Every cycle:
 
 | Metrics | Target |
 |--------|--------|
-| SLA compliance rate | â‰¥ 95% |
-| Dept rules compliance rate | â‰¥ 90% |
+| SLA compliance rate | >= 95% |
+| Dept rules compliance rate | >= 90% |
 | Gate violation rate | 0 per cycle |
 | Alert response time | < 1 cycle |
 | Performance monitoring coverage | 100% depts |

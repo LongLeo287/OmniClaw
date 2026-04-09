@@ -1,6 +1,6 @@
 # OmniClaw Departments Regional Map
 
-> Bảng phân bổ cơ cấu 28 Phòng Ban (Departments)
+> Organizational structure for 28 Departments
 
 | Dept ID | Department Name | Tier / Type |
 |---|---|---|

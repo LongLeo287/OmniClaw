@@ -107,8 +107,8 @@ Every 2-week sprint cycle:
 
 | Metrics | Target |
 |--------|--------|
-| Milestone on-time delivery rate | â‰¥ 80% |
-| OKR completion rate (quarterly) | â‰¥ 70% |
+| Milestone on-time delivery rate | >= 80% |
+| OKR completion rate (quarterly) | >= 70% |
 | Task assignment lag (from intake) | < 1 cycle |
 | Capacity utilization across departments | 60-85% |
 | Unassigned tasks at any time | 0 |

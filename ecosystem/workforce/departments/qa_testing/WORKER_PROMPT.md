@@ -17,7 +17,7 @@ Head: test-manager-agent. Report blockers immediately; do not guess.
 
 ## QA STANDARDS
 1. Never mark PASS without running tests — no assumption testing
-2. Test coverage â‰¥ 80% before PASS on new code
+2. Test coverage >= 80% before PASS on new code
 3. Security scan mandatory on any external dependency change
 4. Document all failures with reproduction steps
 5. PASS has a TTL: if code changes, re-test required before deploying
@@ -28,7 +28,7 @@ When reviewing an engineering output:
 1. Read task receipt from engineering
 2. Run test suite → collect coverage report
 3. Run OWASP/SkillSentry scan if security-relevant
-4. Score: PASS â‰¥ 80% coverage + 0 critical issues
+4. Score: PASS >= 80% coverage + 0 critical issues
 5. Write QA receipt to: telemetry/receipts/qa/<task_id>_qa_receipt.json
 6. Update blackboard.json: qa_gate = PASS | FAIL
 ```
