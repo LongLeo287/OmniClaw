@@ -30,10 +30,10 @@
 
 [Giới Thiệu](#-giới-thiệu-về-omniclaw) •
 [Sức Mạnh](#-thế-mạnh-cốt-lõi--tại-sao-chọn-omniclaw) •
-[Kiến Trúc](#-kiến-trúc--plugin-3-tầng) •
-[Phòng Ban](#-phòng-ban-nhân-sự) •
+[Kiến Trúc](#️-kiến-trúc--plugin-3-tầng) •
+[Phòng Ban](#-28-phòng-ban-kiến-trúc) •
 [Cài Đặt](#-cài-đặt) •
-[Thảo Luận](https://github.com/LongLeo287/omniclaw-local/discussions) •
+[Thảo Luận](https://github.com/LongLeo287/OmniClaw/discussions) •
 [Lời Cảm Ơn](#-lời-cảm-ơn)
 
 </div>
@@ -125,7 +125,7 @@ sequenceDiagram
 ---
 
 > [!TIP]
-> **Tìm hiểu sâu**: Để biết đầy đủ thông tin về tất cả 28 phòng ban, sơ đồ báo cáo và tương tác giữa các agent, hãy xem [**Mục Lục Hệ Thống Chính**](core/docs/architecture/MASTER_SYSTEM_MAP.md).
+> **Tìm hiểu sâu**: Để biết đầy đủ thông tin về tất cả 28 phòng ban, sơ đồ báo cáo và tương tác giữa các agent, hãy xem [**Mục Lục Hệ Thống Chính**](core/docs/README-vn.md).
 
 > [!NOTE]
 > Lực lượng lao động được chia nghiêm ngặt thành 4 Trụ cột vật lý: `agents/` (116 nhân viên tự trị), `subagents/` (nhân viên chạy tác vụ tạm thời), `departments/` (cấu trúc báo cáo), và `system/` (Vùng Cấu hình Khai báo cho các prompt toàn cầu và bản đồ daemon HĐH).

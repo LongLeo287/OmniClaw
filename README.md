@@ -28,12 +28,12 @@
   
   <br>
 
-[About](#-about-ai-os) •
-[Strengths](#-core-strengths--why-ai-os) •
-[Architecture](#-architecture--3-tier-plugins) •
-[Departments](#-the-workforce-departments) •
+[About](#-about-omniclaw) •
+[Strengths](#-core-strengths--why-omniclaw) •
+[Architecture](#️-architecture--3-tier-plugins) •
+[Departments](#-the-28-architectural-departments) •
 [Installation](#-installation) •
-[Discussions](https://github.com/LongLeo287/omniclaw-local/discussions) •
+[Discussions](https://github.com/LongLeo287/OmniClaw/discussions) •
 [Credits](#-acknowledgements)
 
 </div>
