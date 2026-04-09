@@ -30,6 +30,8 @@
 !/ecosystem/plugins/**
 !/ecosystem/tools/
 !/ecosystem/tools/**
+!/ecosystem/ui_components/
+!/ecosystem/ui_components/**
 !/docs/
 !/docs/**
 
