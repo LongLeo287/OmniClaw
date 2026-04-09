@@ -24,6 +24,12 @@
 /ecosystem/*
 !/ecosystem/workforce/
 !/ecosystem/workforce/**
+!/ecosystem/skills/
+!/ecosystem/skills/**
+!/ecosystem/plugins/
+!/ecosystem/plugins/**
+!/docs/
+!/docs/**
 
 # 5. Allow authorized Vault Structure & Media Assets
 !/vault/

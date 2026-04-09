@@ -1,0 +1,1 @@
+# OmniClaw ecosystem package marker
