@@ -109,6 +109,7 @@ OmniClaw is strictly divided into **Two Distinct Systems** separated by an irrev
 
 ---
 
+| Daemon | Full Name | Core Responsibility |
 | :--- | :--- | :--- |
 | **OIW** | OmniClaw Intake Watchdog | Scrutinizes external internet bounds, scraping raw context inputs and routing them inward to the OS. |
 | **OSF** | OmniClaw Sandbox Firewall | Performs heuristic deep scans for leaked API keys, credentials, and malicious patterns. Rejects dangerous code before it enters the Core. |
