@@ -1,0 +1,2 @@
+BrainKnowledge|skills_standard_repo|?|integration-testing
+0:ADV+INT+TES|integrationauthhelper_robot_test|"- `waitUntilVisible()` instead of `pumpAndSettle()` ..."|DECISION+TECHNICAL

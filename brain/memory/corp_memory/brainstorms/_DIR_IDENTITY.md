@@ -1,24 +1,27 @@
 ---
-id: memory_corp_brainstorms
-type: memory_buffer
+id: brainstorms
+type: directory_identity
 namespace: brain.memory.corp_memory.brainstorms
 owner: OSF_Daemon
 status: standard_v5
-description: "Volatile storage for multi-agent brainstorming sessions and raw ideation."
-registered_by: OA_Auditor
+description: "This directory serves as a brainstorming space for corporate memory within OmniClaw, facilitating the generation and storage of innovative ideas."
+registered_by: OMA_AI_FORGER
+tags: ["brainstorming", "corporate memory", "innovation"]
+forged_at: 2026-04-10
 ---
 
-# `corp_memory/brainstorms` Identity (Ideation Buffer)
+# Brainstorms Identity
 
-> [!CAUTION]  
-> **OSF DAEMON SECURITY WATERMARK**  
-> This directory contains volatile brainstorming logs generated dynamically by agents.
-> - Logs must flow according to the `brainstormtemplate.md` structure.
-> - Output files (except templates/identity) are excluded from Git to prevent repository bloat.
+This directory serves as a brainstorming space for corporate memory within OmniClaw, facilitating the generation and storage of innovative ideas.
 
-## 1. Directory Purpose
-Functions as a short-term creative workspace room. When multiple agents (e.g., from the Strategy or R&D departments) are brought together to solve a complex problem or innovate, they dump their raw ideas, discussions, and directions here before finalizing them into a formal Proposal.
+---
 
-## 2. Compliance Rules
-- Files inside this directory are temporary working documents. 
-- The master template `brainstormtemplate.md` must be retained unchanged.
+## Topological View
+
+```mermaid
+graph TD
+  Parent("corp_memory") --> Node("brainstorms")
+```
+
+---
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.memory.corp_memory.brainstorms | 2026-04-10*

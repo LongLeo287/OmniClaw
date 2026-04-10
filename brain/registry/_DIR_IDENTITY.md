@@ -1,34 +1,28 @@
 ---
-id: brain_registry
-type: core_system_prompt
+id: registry
+type: directory_identity
 namespace: brain.registry
 owner: OSF_Daemon
 status: standard_v5
-description: "The brain/registry directory manages the core components of the OmniClaw v5.0 AI operating system, including skill sources, indexations, and routing configurations that ensure seamless integration and execution across all agents."
-registered_by: OA_Auditor
-tags: ["core", "orchestration", "AI OS", "skill management"]
+description: "The registry directory within OmniClaw v5.0 serves as the central repository for skill definitions, routing configurations, and system metadata, ensuring seamless integration and management of external skill sources."
+registered_by: OMA_AI_FORGER
+tags: ["registry", "skill management", "system metadata"]
+forged_at: 2026-04-10
 ---
 
 # Registry Identity
 
-The brain/registry directory manages the core components of the OmniClaw v5.0 AI operating system, including skill sources, indexations, and routing configurations that ensure seamless integration and execution across all agents.
+The registry directory within OmniClaw v5.0 serves as the central repository for skill definitions, routing configurations, and system metadata, ensuring seamless integration and management of external skill sources.
+
+---
+
 
 ## Topological View
 
 ```mermaid
 graph TD
- Root("brain/registry")
- SKILL_REGISTRY(("SKILL_REGISTRY.json"))
- FAST_INDEX(("FAST_INDEX.json"))
- SYSTEM_INDEX(("SYSTEM_INDEX.yaml"))
- EXTERNAL_SKILL_SOURCES(("EXTERNAL_SKILL_SOURCES.yaml"))
- SKILL_ROUTER(("SKILL_ROUTER.yaml"))
- Root --> SKILL_REGISTRY
- Root --> FAST_INDEX
- Root --> SYSTEM_INDEX
- Root --> EXTERNAL_SKILL_SOURCES
- Root --> SKILL_ROUTER
+  Parent("brain") --> Node("registry")
 ```
 
 ---
-*OmniClaw V5.0 | Forged by AI Architect | Evaluated dynamically*
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.registry | 2026-04-10*

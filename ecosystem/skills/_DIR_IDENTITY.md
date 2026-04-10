@@ -18,3 +18,4 @@ This directory serves as the definitive registry and operational warehouse for a
 ## Skill Declaration
 All capabilities are logged structurally in the `SKILL_REGISTRY.json` map file.
 Local components run standard markdown metadata frontmatter containing execution boundaries.
+- `ghost_sweep_angular`  id: `ghost_sweep_angular` | type: `skill` | registered: 2026-04-10T21:37:35.634289

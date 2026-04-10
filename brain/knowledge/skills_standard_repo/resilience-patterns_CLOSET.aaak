@@ -1,0 +1,2 @@
+BrainKnowledge|skills_standard_repo|?|resilience-patterns
+0:RES+PAT+CIR|half-open_open_retry|"If > 10% of requests are retries, underlying system ..."|TECHNICAL

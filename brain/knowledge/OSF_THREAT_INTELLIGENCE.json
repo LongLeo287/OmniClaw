@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "OSF Threat Intelligence Repository",
+    "owner": "OA (Omni Agent)",
+    "consumer": "OSF (OmniClaw Sandbox Firewall)",
+    "version": "1.0",
+    "last_updated": "2026-04-06T17:41:00Z"
+  },
+  "malware_signatures": [
+    {
+      "pattern": "os\\.system\\(['\"]rm -rf",
+      "severity": "CRITICAL",
+      "category": "Destructive",
+      "description": "Attempts to recursively delete file system structures."
+    },
+    {
+      "pattern": "eval\\(base64\\.b64decode",
+      "severity": "HIGH",
+      "category": "Obfuscation",
+      "description": "Dynamic execution of hidden base64 payloads."
+    },
+    {
+      "pattern": "subprocess\\.Popen\\(['\"]/bin/sh(.*?)-i",
+      "severity": "CRITICAL",
+      "category": "Reverse_Shell",
+      "description": "Spawns an interactive shell back to an attacker."
+    },
+    {
+      "pattern": "socket\\.socket\\(socket\\.AF_INET.*?socket\\.SOCK_STREAM\\)",
+      "severity": "MEDIUM",
+      "category": "Network_Anomaly",
+      "description": "Direct low-level TCP socket execution. Needs manual oversight."
+    },
+    {
+      "pattern": "wget\\s+http.*?\\s*\\|\\s*bash",
+      "severity": "CRITICAL",
+      "category": "Remote_Execution",
+      "description": "Wget piped directly to bash. Classic malware bootstrap."
+    },
+    {
+      "pattern": "curl\\s+http.*?\\s*\\|\\s*sh",
+      "severity": "CRITICAL",
+      "category": "Remote_Execution",
+      "description": "Curl piped directly to shell."
+    },
+    {
+      "pattern": "\\[System\\.Convert\\]::FromBase64String",
+      "severity": "HIGH",
+      "category": "Powershell_Obfuscation",
+      "description": "Powershell base64 decoding for hidden instruction execution."
+    },
+    {
+      "pattern": "Invoke-WebRequest.*?iex",
+      "severity": "CRITICAL",
+      "category": "Remote_Execution",
+      "description": "Downloading and executing powershell scripts in memory."
+    }
+  ]
+}

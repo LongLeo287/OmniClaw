@@ -1,16 +1,27 @@
 ---
-id: memory_corp_global
-type: global_ceo_repository
+id: global
+type: directory_identity
 namespace: brain.memory.corp_memory.global
-owner: USER_CEO
+owner: OSF_Daemon
 status: standard_v5
-description: "High-level strategic directives injected universally into all agent logic."
-registered_by: OA_Auditor
+description: "This directory serves as the central repository for global corporate memory, storing information relevant to all departments and teams within OmniClaw."
+registered_by: OMA_AI_FORGER
+tags: ["global", "memory", "corporate"]
+forged_at: 2026-04-10
 ---
 
-# `corp_memory/global` Identity 
+# Global Identity
 
-> [!IMPORTANT]  
-> **GLOBAL STRATEGIC ANCHOR**  
-> This directory hosts the central `global_ceo_ledger.md`. This ledger supersedes all lower-level logic and is automatically injected into the consciousness of every agent before task execution. 
-> To conserve token limits, ONLY the MOST CRITICAL and PERSISTENT rules should exist here.
+This directory serves as the central repository for global corporate memory, storing information relevant to all departments and teams within OmniClaw.
+
+---
+
+## Topological View
+
+```mermaid
+graph TD
+  Parent("corp_memory") --> Node("global")
+```
+
+---
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.memory.corp_memory.global | 2026-04-10*

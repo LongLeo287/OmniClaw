@@ -1,0 +1,2 @@
+BrainKnowledge|skills_standard_repo|?|strict-typescript-testing
+0:STR+TES+PAT|configservice_wrong_correct|"**Solution**: Cast each nested matcher to `unknown`"|convict|DECISION+ORIGIN+CORE

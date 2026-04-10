@@ -1,28 +1,28 @@
 ---
-id: agents_unique_slug
+id: agents
 type: directory_identity
-namespace: brain.example.agents
+namespace: brain.agents
 owner: OSF_Daemon
 status: standard_v5
-description: "Contains the configuration and status files for various agents used in OmniClaw v5.0."
+description: "This directory contains the agents responsible for processing and managing various tasks within OmniClaw. It includes configuration files, documentation, and status reports."
 registered_by: OMA_AI_FORGER
-tags: ["agents", "configuration"]
+tags: ["agents", "configuration", "documentation"]
+forged_at: 2026-04-10
 ---
 
 # Agents Identity
 
-Contains the configuration and status files for various agents used in OmniClaw v5.0.
+This directory contains the agents responsible for processing and managing various tasks within OmniClaw. It includes configuration files, documentation, and status reports.
+
+---
+
 
 ## Topological View
 
 ```mermaid
 graph TD
   Parent("brain") --> Node("agents")
-  Node --> Sub1("activation_status.json")
-  Node --> Sub2("claude.md")
-  Node --> Sub3("gemini.md")
-  Node --> Sub4("system_router.json")
 ```
 
 ---
-*OmniClaw V5.0 | Forged by AI Architect | Evaluated dynamically*
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.agents | 2026-04-10*

@@ -1,25 +1,32 @@
 ---
-id: brain_rules_governance
-type: core_system_prompt
-namespace: brain.rules.governance
+id: rules
+type: directory_identity
+namespace: brain.rules
 owner: OSF_Daemon
 status: standard_v5
-description: "This directory manages the overarching governance policies, procedures, and standards that ensure the ethical, legal, and operational integrity of OmniClaw v5.0's AI agents and their interactions within the system."
-registered_by: OA_Auditor
-tags: ["governance", "policy", "ethics", "operational integrity"]
+description: "The 'rules' directory within OmniClaw v5.0 houses the governance and security policies, as well as architectural guidelines for agents and systems interacting with the brain module."
+registered_by: OMA_AI_FORGER
+tags: ["governance", "security", "architecture"]
+forged_at: 2026-04-10
 ---
 
 # Rules Identity
 
-This directory manages the overarching governance policies, procedures, and standards that ensure the ethical, legal, and operational integrity of OmniClaw v5.0's AI agents and their interactions within the system.
+The 'rules' directory within OmniClaw v5.0 houses the governance and security policies, as well as architectural guidelines for agents and systems interacting with the brain module.
+
+---
 
 ## Topological View
 
 ```mermaid
 graph TD
- Root("brain/rules")
- Governance("governance/")
+ Parent("brain") --> Node("rules")
+ Node --> S1("agents")
+ Node --> S2("architecture")
+ Node --> S3("governance")
+ Node --> S4("security")
+ Node --> S5("sops")
 ```
 
 ---
-*OmniClaw V5.0 | Forged by AI Architect | Evaluated dynamically*
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.rules | 2026-04-10*

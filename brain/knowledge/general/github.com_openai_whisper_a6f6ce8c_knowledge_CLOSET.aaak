@@ -1,0 +1,2 @@
+BrainKnowledge|general|?|github.com_openai_whisper_a6f6ce8c_knowledge
+0:EXT+SOU+FIL|github_whisper_https|"print(f"Detected language: {max(probs, key=probs"|DECISION+ORIGIN+CORE

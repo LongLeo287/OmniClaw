@@ -1,0 +1,525 @@
+[2026-04-10 20:26:29] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_2d_games, GHOST_SWEEP_ORPHAN_SWEEP_3d_games, oma_test.log, OmniClaw Ecosystem Sanitization Hardening.md, omniclaw.bat (count=28)
+[2026-04-10 20:26:30] [OA]  START DISPATCH_VERDICT | targets=Task_ID_123 (count=1)
+[2026-04-10 20:26:30] [OHD]  OK END PROCESS_QUARANTINE | success=26 failed=0 skipped=2
+[2026-04-10 20:26:35] [OA]  PARTIAL END DISPATCH_VERDICT | success=0 failed=1 skipped=0
+[2026-04-10 20:26:35] [OA]  START LEARN_DUMPS | targets=docs, docs_015106, docs_015811, docs_020144, docs_020849 (count=445)
+[2026-04-10 20:27:00] [OHD]  START PROCESS_QUARANTINE | targets=DUPLICATES, GHOST_SWEEP_007, GHOST_SWEEP_00_andruia_consultant, GHOST_SWEEP_10_andruia_skill_smith, GHOST_SWEEP_1password (count=1387)
+[2026-04-10 20:27:02] [OHD]  OK END PROCESS_QUARANTINE | success=1385 failed=0 skipped=2
+[2026-04-10 20:27:32] [OHD]  START PROCESS_QUARANTINE | targets=docs, docs_015106, docs_015811, docs_020144, docs_020849 (count=9)
+[2026-04-10 20:27:32] [OHD]  OK END PROCESS_QUARANTINE | success=7 failed=0 skipped=2
+[2026-04-10 20:28:02] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_2d_games, GHOST_SWEEP_ORPHAN_SWEEP_3d_games, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 20:28:02] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 20:28:33] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:28:33] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:29:03] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:29:03] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:29:33] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:29:33] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:30:04] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:30:04] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:30:34] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:30:34] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:31:04] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:31:04] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:31:35] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:31:35] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:32:05] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:32:05] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:32:35] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:32:35] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:33:05] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:33:05] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:33:36] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:33:36] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:34:06] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_48aea028-e32b-4a00-86e2-32e46d33fcd2, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources (count=6)
+[2026-04-10 20:34:07] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 20:34:37] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:34:37] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:35:07] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:35:07] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:35:37] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:35:37] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:36:08] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:36:08] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:36:38] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:36:39] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:37:09] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:37:09] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:37:39] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:37:39] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:38:10] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:38:10] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:38:40] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:38:40] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:39:10] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:39:11] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:39:41] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:39:41] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:40:11] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:40:11] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:40:42] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:40:42] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:41:12] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:41:12] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:41:43] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:41:43] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:42:13] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:42:13] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:42:43] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:42:43] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:43:13] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:43:13] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:43:44] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:43:46] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:44:17] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:44:17] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:44:47] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:44:47] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:45:17] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:45:17] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:45:47] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:45:47] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:46:18] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:46:18] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:46:48] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:46:48] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:47:19] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:47:19] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:47:49] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:47:49] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:48:19] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:48:19] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:48:50] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:48:50] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:49:20] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:49:20] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:49:50] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:49:50] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:50:20] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:50:20] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:50:51] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:50:51] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:51:21] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:51:21] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:51:51] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:51:51] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:52:22] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:52:22] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:52:52] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:52:52] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:53:22] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:53:23] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:53:53] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:53:53] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:54:23] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:54:23] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:54:53] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:54:53] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:55:24] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:55:24] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:55:54] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:55:54] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:56:24] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:56:24] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:56:55] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:56:55] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:57:25] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:57:25] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:57:55] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 20:57:55] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 20:58:26] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:58:26] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:58:56] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:58:56] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:59:26] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:59:26] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 20:59:56] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 20:59:56] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:00:27] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:00:27] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:00:57] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:00:57] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:01:28] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:01:28] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:01:58] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:01:58] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:02:28] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:02:28] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:02:58] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:02:59] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:03:29] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:03:29] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:03:59] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:03:59] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:04:29] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:04:29] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:05:00] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:05:00] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:05:30] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:05:31] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:06:01] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:06:01] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:06:31] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:06:31] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:07:01] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:07:01] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:07:32] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:07:33] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:08:03] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:08:03] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:08:33] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:08:33] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:09:03] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:09:04] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:09:34] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:09:34] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:10:04] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:10:04] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:10:34] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:10:35] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:11:05] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:11:05] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:11:35] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:11:35] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:12:05] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:12:05] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:12:36] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:12:36] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:13:06] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:13:06] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:13:36] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:13:36] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:14:06] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:14:06] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:14:37] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:14:37] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:15:08] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:15:08] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:15:38] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:15:38] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:16:09] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:16:09] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:16:39] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:16:39] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:17:09] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:17:10] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:17:40] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:17:40] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:18:10] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:18:10] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:18:41] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:18:41] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:19:11] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:19:11] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:19:41] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:19:42] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:20:12] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:20:12] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:20:42] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:20:42] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:21:12] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:21:12] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:21:43] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:21:43] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:22:13] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:22:13] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:22:44] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:22:44] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:23:14] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:23:14] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:23:44] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:23:44] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:24:14] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:24:16] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:24:46] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:24:46] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:25:16] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:25:16] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:25:46] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:25:46] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:26:00] [OA]  OK END LEARN_DUMPS | success=445 failed=0 skipped=0
+[2026-04-10 21:26:00] [OA]  START COLLECT_KNOWLEDGE | targets=brain/, ecosystem/ (count=2)
+[2026-04-10 21:26:17] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, system, _export_remote_clawhip (count=4)
+[2026-04-10 21:26:17] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:26:44] [OA]  OK END COLLECT_KNOWLEDGE | success=7629 failed=0 skipped=0
+[2026-04-10 21:26:47] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references, ORPHAN_SWEEP_resources, ORPHAN_SWEEP_scripts (count=5)
+[2026-04-10 21:26:47] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:27:17] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:27:20] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:27:44] [OA]  START DISPATCH_VERDICT | targets=Task_ID_123 (count=1)
+[2026-04-10 21:27:46] [OA]  PARTIAL END DISPATCH_VERDICT | success=0 failed=1 skipped=0
+[2026-04-10 21:27:46] [OA]  START LEARN_DUMPS | targets=docs, docs_015106, docs_015811, docs_020144, docs_020849 (count=1906)
+[2026-04-10 21:27:50] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:27:50] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:28:20] [OHD]  START PROCESS_QUARANTINE | targets=docs, docs_015106, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:28:20] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:28:51] [OHD]  START PROCESS_QUARANTINE | targets=docs_015811, docs_020144, docs_020849, docs_021926, docs_023337 (count=7)
+[2026-04-10 21:28:51] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:29:21] [OHD]  START PROCESS_QUARANTINE | targets=DUPLICATES, GHOST_SWEEP_007, GHOST_SWEEP_00_andruia_consultant, GHOST_SWEEP_10_andruia_skill_smith, GHOST_SWEEP_1password (count=10)
+[2026-04-10 21:29:22] [OHD]  OK END PROCESS_QUARANTINE | success=8 failed=0 skipped=2
+[2026-04-10 21:29:52] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_20_andruia_niche_intelligence, GHOST_SWEEP_2d_games, GHOST_SWEEP_3d_games, GHOST_SWEEP_3d_web_experience, oma_test.log (count=6)
+[2026-04-10 21:29:52] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:30:22] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ab_test_setup, GHOST_SWEEP_acceptance_orchestrator, GHOST_SWEEP_accessibility_compliance_accessibility_audit, GHOST_SWEEP_activecampaign_automation, GHOST_SWEEP_active_directory_attacks (count=7)
+[2026-04-10 21:30:22] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:30:52] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_address_github_comments, GHOST_SWEEP_add_component, GHOST_SWEEP_add_jit_kernel, GHOST_SWEEP_add_provider_doc, oma_test.log (count=6)
+[2026-04-10 21:30:52] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:31:23] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_add_setting_env, GHOST_SWEEP_add_sgl_kernel, GHOST_SWEEP_adhx, GHOST_SWEEP_advanced_evaluation, GHOST_SWEEP_adversary (count=10)
+[2026-04-10 21:31:24] [OHD]  OK END PROCESS_QUARANTINE | success=8 failed=0 skipped=2
+[2026-04-10 21:31:54] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_advogado_criminal, GHOST_SWEEP_advogado_especialista, GHOST_SWEEP_ad_creative, GHOST_SWEEP_aegisops_ai, oma_test.log (count=6)
+[2026-04-10 21:31:54] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:32:24] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_agentflow, GHOST_SWEEP_agentfolio, GHOST_SWEEP_agentic_actions_auditor, GHOST_SWEEP_agentmail, GHOST_SWEEP_agentphone (count=7)
+[2026-04-10 21:32:24] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:32:55] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_agents_md, GHOST_SWEEP_agents_v2_py, GHOST_SWEEP_agentune, GHOST_SWEEP_agent_browser, oma_test.log (count=6)
+[2026-04-10 21:32:55] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:33:25] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_agent_builder_skills, GHOST_SWEEP_agent_evaluation, GHOST_SWEEP_agent_framework_azure_ai_py, GHOST_SWEEP_agent_manager, GHOST_SWEEP_agent_memory_mcp (count=7)
+[2026-04-10 21:33:25] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:33:55] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_agent_memory_systems, GHOST_SWEEP_agent_orchestration_improve, GHOST_SWEEP_agent_orchestration_multi_agent_optimize, GHOST_SWEEP_agent_orchestrator, oma_test.log (count=9)
+[2026-04-10 21:33:56] [OHD]  OK END PROCESS_QUARANTINE | success=7 failed=0 skipped=2
+[2026-04-10 21:34:26] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_agent_tool_builder, GHOST_SWEEP_agent_tracing, GHOST_SWEEP_airflow_dag_patterns, GHOST_SWEEP_airtable_automation, GHOST_SWEEP_ai_agents_architect (count=7)
+[2026-04-10 21:34:26] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:34:56] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ai_agent_development, GHOST_SWEEP_ai_analyzer, GHOST_SWEEP_ai_engineer, GHOST_SWEEP_ai_engineering_toolkit, oma_test.log (count=6)
+[2026-04-10 21:34:56] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:35:26] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ai_md, GHOST_SWEEP_ai_ml, GHOST_SWEEP_ai_native_cli, GHOST_SWEEP_ai_product, GHOST_SWEEP_ai_seo (count=7)
+[2026-04-10 21:35:26] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:35:57] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ai_studio_image, GHOST_SWEEP_ai_wrapper_product, GHOST_SWEEP_akf_trust_metadata, GHOST_SWEEP_algolia_search, oma_test.log (count=6)
+[2026-04-10 21:35:57] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:36:27] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_algorithmic_art, GHOST_SWEEP_alpha_vantage, GHOST_SWEEP_amazon_alexa, GHOST_SWEEP_amplitude_automation, GHOST_SWEEP_analytics_product (count=10)
+[2026-04-10 21:36:27] [OHD]  OK END PROCESS_QUARANTINE | success=8 failed=0 skipped=2
+[2026-04-10 21:36:58] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_analytics_tracking, GHOST_SWEEP_analyze_project, GHOST_SWEEP_andrej_karpathy, GHOST_SWEEP_android_jetpack_compose_expert, oma_test.log (count=6)
+[2026-04-10 21:36:58] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:37:28] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_android_ui_verification, oma_test.log, omniclaw.bat (count=3)
+[2026-04-10 21:37:28] [OHD]  OK END PROCESS_QUARANTINE | success=1 failed=0 skipped=2
+[2026-04-10 21:37:58] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 21:37:58] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 21:38:28] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_angular_best_practices, GHOST_SWEEP_angular_migration, GHOST_SWEEP_angular_state_management, GHOST_SWEEP_angular_ui_patterns, GHOST_SWEEP_animejs_animation (count=8)
+[2026-04-10 21:38:28] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 21:38:59] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_antigravity_skill_orchestrator, GHOST_SWEEP_antigravity_workflows, GHOST_SWEEP_anti_reversing_techniques, GHOST_SWEEP_apify_audience_analysis, oma_test.log (count=8)
+[2026-04-10 21:38:59] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 21:39:29] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_apify_brand_reputation_monitoring, GHOST_SWEEP_apify_competitor_intelligence, GHOST_SWEEP_apify_content_analytics, GHOST_SWEEP_apify_ecommerce, oma_test.log (count=6)
+[2026-04-10 21:39:29] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:40:00] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_apify_generate_output_schema, GHOST_SWEEP_apify_influencer_discovery, GHOST_SWEEP_apify_lead_generation, GHOST_SWEEP_apify_market_research, GHOST_SWEEP_apify_trend_analysis (count=7)
+[2026-04-10 21:40:00] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:40:30] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_api_design_principles, GHOST_SWEEP_api_documentation, GHOST_SWEEP_api_documentation_generator, GHOST_SWEEP_api_documenter, GHOST_SWEEP_api_endpoint_builder (count=7)
+[2026-04-10 21:40:30] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:41:00] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_api_fuzzing_bug_bounty, GHOST_SWEEP_api_security_best_practices, GHOST_SWEEP_api_security_testing, GHOST_SWEEP_api_testing_observability_api_mock, oma_test.log (count=8)
+[2026-04-10 21:41:01] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 21:41:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_appdeploy, GHOST_SWEEP_appinsights_instrumentation, GHOST_SWEEP_apple_notes, GHOST_SWEEP_apple_reminders, GHOST_SWEEP_application_performance_performance_optimization (count=7)
+[2026-04-10 21:41:31] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:42:01] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_app_store_changelog, GHOST_SWEEP_architecture_decision_records, GHOST_SWEEP_architecture_patterns, GHOST_SWEEP_architect_review, oma_test.log (count=6)
+[2026-04-10 21:42:01] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:42:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_arm_cortex_expert, GHOST_SWEEP_asana_automation, GHOST_SWEEP_asc_app_create_ui, GHOST_SWEEP_asc_aso_audit, GHOST_SWEEP_asc_build_lifecycle (count=7)
+[2026-04-10 21:42:31] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:43:02] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_asc_cli_usage, GHOST_SWEEP_asc_crash_triage, GHOST_SWEEP_asc_id_resolver, GHOST_SWEEP_asc_localize_metadata, oma_test.log (count=6)
+[2026-04-10 21:43:02] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:43:32] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_asc_metadata_sync, GHOST_SWEEP_asc_notarization, GHOST_SWEEP_asc_ppp_pricing, GHOST_SWEEP_asc_release_flow, GHOST_SWEEP_asc_screenshot_resize (count=9)
+[2026-04-10 21:43:32] [OHD]  OK END PROCESS_QUARANTINE | success=7 failed=0 skipped=2
+[2026-04-10 21:44:03] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_asc_shots_pipeline, GHOST_SWEEP_asc_signing_setup, GHOST_SWEEP_asc_submission_health, GHOST_SWEEP_asc_subscription_localization, oma_test.log (count=6)
+[2026-04-10 21:44:03] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:44:33] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_asc_testflight_orchestration, GHOST_SWEEP_asc_wall_submit, GHOST_SWEEP_asc_whats_new_writer, GHOST_SWEEP_asc_workflow, GHOST_SWEEP_asc_xcode_build (count=7)
+[2026-04-10 21:44:33] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:45:03] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ask_questions_if_underspecified, GHOST_SWEEP_asset_creator, GHOST_SWEEP_astro, GHOST_SWEEP_astropy, oma_test.log (count=6)
+[2026-04-10 21:45:03] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:45:33] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_async_python_patterns, GHOST_SWEEP_atlassian, GHOST_SWEEP_attack_tree_construction, GHOST_SWEEP_audit, GHOST_SWEEP_audit_context_building (count=7)
+[2026-04-10 21:45:34] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:46:04] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_audit_skills, GHOST_SWEEP_auri_core, GHOST_SWEEP_auth_implementation_patterns, GHOST_SWEEP_autonomous_agents, oma_test.log (count=7)
+[2026-04-10 21:46:04] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:46:34] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_autonomous_agent_patterns, GHOST_SWEEP_autopsy, GHOST_SWEEP_avoid_ai_writing, GHOST_SWEEP_awareness_stage_mapper, GHOST_SWEEP_awesome_tech_radar (count=7)
+[2026-04-10 21:46:34] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:47:04] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_aws_compliance_checker, GHOST_SWEEP_aws_cost_cleanup, GHOST_SWEEP_aws_cost_optimizer, GHOST_SWEEP_aws_iam_best_practices, oma_test.log (count=6)
+[2026-04-10 21:47:04] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:47:35] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_aws_penetration_testing, GHOST_SWEEP_aws_secrets_rotation, GHOST_SWEEP_aws_security_audit, GHOST_SWEEP_aws_serverless, oma_test.log (count=6)
+[2026-04-10 21:47:35] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:48:05] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_aws_skills, GHOST_SWEEP_awt_e2e_testing, GHOST_SWEEP_axolotl, GHOST_SWEEP_azd_deployment, GHOST_SWEEP_azure_ai (count=7)
+[2026-04-10 21:48:05] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:48:35] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_aigateway, GHOST_SWEEP_azure_ai_agents_persistent_dotnet, GHOST_SWEEP_azure_ai_agents_persistent_java, GHOST_SWEEP_azure_ai_anomalydetector_java, GHOST_SWEEP_azure_ai_contentsafety_java (count=8)
+[2026-04-10 21:48:35] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 21:49:05] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_ai_contentsafety_py, GHOST_SWEEP_azure_ai_contentsafety_ts, GHOST_SWEEP_azure_ai_contentunderstanding_py, GHOST_SWEEP_azure_ai_document_intelligence_dotnet, oma_test.log (count=6)
+[2026-04-10 21:49:06] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:49:36] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_ai_document_intelligence_ts, GHOST_SWEEP_azure_ai_formrecognizer_java, GHOST_SWEEP_azure_ai_language_conversations_py, GHOST_SWEEP_azure_ai_ml_py, GHOST_SWEEP_azure_ai_openai_dotnet (count=7)
+[2026-04-10 21:49:36] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 21:50:06] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_ai_projects_dotnet, GHOST_SWEEP_azure_ai_projects_java, GHOST_SWEEP_azure_ai_projects_py, GHOST_SWEEP_azure_ai_projects_ts, GHOST_SWEEP_azure_ai_textanalytics_py (count=9)
+[2026-04-10 21:50:06] [OHD]  OK END PROCESS_QUARANTINE | success=7 failed=0 skipped=2
+[2026-04-10 21:50:37] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_ai_translation_text_py, GHOST_SWEEP_azure_ai_translation_ts, GHOST_SWEEP_azure_cost, oma_test.log, omniclaw.bat (count=6)
+[2026-04-10 21:50:37] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:51:07] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_devops, GHOST_SWEEP_azure_functions, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:51:07] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:51:38] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_azure_kusto, GHOST_SWEEP_azure_rbac, GHOST_SWEEP_ba, oma_test.log, omniclaw.bat (count=5)
+[2026-04-10 21:51:38] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:52:08] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_backend_architect, GHOST_SWEEP_backend_development_feature_development, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:52:08] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:52:38] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_backend_dev_guidelines, GHOST_SWEEP_backend_security_coder, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:52:38] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:53:09] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_backtesting_frameworks, GHOST_SWEEP_bamboohr_automation, oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references (count=5)
+[2026-04-10 21:53:09] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:53:39] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_base, GHOST_SWEEP_basecamp_automation, GHOST_SWEEP_baseline_ui, oma_test.log, omniclaw.bat (count=5)
+[2026-04-10 21:53:39] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:54:10] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bash_defensive_patterns, GHOST_SWEEP_bash_linux, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:54:10] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:54:40] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bash_pro, GHOST_SWEEP_bash_scripting, GHOST_SWEEP_bats_testing_patterns, oma_test.log, omniclaw.bat (count=5)
+[2026-04-10 21:54:40] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:55:11] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bazel_build_optimization, GHOST_SWEEP_bb_methodology, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:55:11] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:55:41] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bdistill_behavioral_xray, GHOST_SWEEP_bdistill_knowledge_extraction, oma_test.log, omniclaw.bat, ORPHAN_SWEEP_references (count=5)
+[2026-04-10 21:55:41] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:56:12] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bdi_mental_states, GHOST_SWEEP_beautiful_prose, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:56:12] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:56:42] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_behavioral_modes, GHOST_SWEEP_bevy_ecs_expert, GHOST_SWEEP_billing_automation, oma_test.log, omniclaw.bat (count=5)
+[2026-04-10 21:56:42] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 21:57:13] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bill_gates, GHOST_SWEEP_binary_analysis_patterns, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:57:13] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:57:43] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_biopython, GHOST_SWEEP_bitbucket_automation, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:57:43] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:58:14] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_blackbox, GHOST_SWEEP_blockchain_developer, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:58:14] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:58:44] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_blockrun, GHOST_SWEEP_blogwatcher, GHOST_SWEEP_blog_writing_guide, oma_test.log, omniclaw.bat (count=6)
+[2026-04-10 21:58:44] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 21:59:15] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_blueprint, GHOST_SWEEP_box_automation, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:59:15] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 21:59:45] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_brainstorm, GHOST_SWEEP_brainstorming, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 21:59:46] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 22:00:16] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_branch_pr, GHOST_SWEEP_brand_guidelines, oma_test.log, omniclaw.bat (count=4)
+[2026-04-10 22:00:16] [OHD]  OK END PROCESS_QUARANTINE | success=2 failed=0 skipped=2
+[2026-04-10 22:00:46] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_brand_guidelines_anthropic, GHOST_SWEEP_brand_perception_psychologist, GHOST_SWEEP_brave_search, GHOST_SWEEP_brevo_automation, GHOST_SWEEP_broken_authentication (count=7)
+[2026-04-10 22:00:46] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:01:16] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_browser_automation, GHOST_SWEEP_browser_extension_builder, GHOST_SWEEP_browser_pilot, GHOST_SWEEP_bug_bounty, oma_test.log (count=7)
+[2026-04-10 22:01:16] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:01:47] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bug_hunter, GHOST_SWEEP_build, GHOST_SWEEP_building_native_ui, GHOST_SWEEP_build_feature, oma_test.log (count=6)
+[2026-04-10 22:01:47] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:02:17] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_bullmq_specialist, GHOST_SWEEP_bun, GHOST_SWEEP_bun_development, GHOST_SWEEP_burpsuite_project_parser, oma_test.log (count=6)
+[2026-04-10 22:02:17] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:02:47] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_burp_suite_testing, GHOST_SWEEP_business_analyst, GHOST_SWEEP_busybox_on_windows, GHOST_SWEEP_c4_architecture_c4_architecture, GHOST_SWEEP_c4_code (count=7)
+[2026-04-10 22:02:47] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:03:18] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_c4_component, GHOST_SWEEP_c4_container, GHOST_SWEEP_c4_context, GHOST_SWEEP_calc, oma_test.log (count=7)
+[2026-04-10 22:03:18] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:03:48] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_calendly_automation, GHOST_SWEEP_cal_com_automation, GHOST_SWEEP_canvas, GHOST_SWEEP_canvas_design, oma_test.log (count=6)
+[2026-04-10 22:03:48] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:04:18] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_canva_automation, GHOST_SWEEP_cc_skill_backend_patterns, GHOST_SWEEP_cc_skill_clickhouse_io, GHOST_SWEEP_cc_skill_coding_standards, oma_test.log (count=6)
+[2026-04-10 22:04:18] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:04:49] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_cc_skill_continuous_learning, GHOST_SWEEP_cc_skill_frontend_patterns, GHOST_SWEEP_cc_skill_project_guidelines_example, GHOST_SWEEP_cc_skill_security_review, GHOST_SWEEP_cc_skill_strategic_compact (count=7)
+[2026-04-10 22:04:49] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:05:19] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_cdk_patterns, GHOST_SWEEP_changelog_automation, GHOST_SWEEP_channel_manager, oma_test.log, omniclaw.bat (count=5)
+[2026-04-10 22:05:19] [OHD]  OK END PROCESS_QUARANTINE | success=3 failed=0 skipped=2
+[2026-04-10 22:05:49] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_chat_sdk, GHOST_SWEEP_chat_widget, GHOST_SWEEP_chrome_extension_developer, GHOST_SWEEP_chrome_webstore_release_blueprint, oma_test.log (count=7)
+[2026-04-10 22:05:49] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:06:20] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_cicd_automation_workflow_automate, GHOST_SWEEP_circleci_automation, GHOST_SWEEP_cirq, GHOST_SWEEP_citation_management, oma_test.log (count=6)
+[2026-04-10 22:06:20] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:06:50] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ci_workflow_guide, GHOST_SWEEP_claimable_postgres, GHOST_SWEEP_clarity_gate, GHOST_SWEEP_clarvia_aeo_check, GHOST_SWEEP_claude_ally_health (count=7)
+[2026-04-10 22:06:50] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:07:20] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_claude_api, GHOST_SWEEP_claude_code_expert, GHOST_SWEEP_claude_code_guide, GHOST_SWEEP_claude_in_chrome_troubleshooting, oma_test.log (count=6)
+[2026-04-10 22:07:20] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:07:51] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_claude_monitor, GHOST_SWEEP_claude_scientific_skills, GHOST_SWEEP_claude_settings_audit, GHOST_SWEEP_claude_speed_reader, GHOST_SWEEP_claude_win11_speckit_update (count=7)
+[2026-04-10 22:07:51] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:08:21] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_clean_code, GHOST_SWEEP_clerk_auth, GHOST_SWEEP_clickup_automation, GHOST_SWEEP_closed_loop_delivery, oma_test.log (count=7)
+[2026-04-10 22:08:21] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:08:51] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_close_automation, GHOST_SWEEP_cloudflare_workers_expert, GHOST_SWEEP_cloudformation_best_practices, GHOST_SWEEP_cloud_architect, GHOST_SWEEP_cloud_devops (count=7)
+[2026-04-10 22:08:51] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:09:21] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_coda_automation, GHOST_SWEEP_codebase_audit_pre_push, GHOST_SWEEP_codebase_cleanup_deps_audit, GHOST_SWEEP_codebase_cleanup_refactor_clean, oma_test.log (count=6)
+[2026-04-10 22:09:21] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:09:52] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_codex_review, GHOST_SWEEP_code_documentation_code_explain, GHOST_SWEEP_code_documentation_doc_generate, GHOST_SWEEP_code_refactoring_context_restore, GHOST_SWEEP_code_refactoring_refactor_clean (count=7)
+[2026-04-10 22:09:52] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:10:22] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_code_refactoring_tech_debt, GHOST_SWEEP_code_review, GHOST_SWEEP_code_reviewer, GHOST_SWEEP_code_review_ai_ai_review, GHOST_SWEEP_code_review_checklist (count=7)
+[2026-04-10 22:10:22] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:10:52] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_code_review_excellence, GHOST_SWEEP_code_simplifier, GHOST_SWEEP_commit, GHOST_SWEEP_competitive_landscape, oma_test.log (count=7)
+[2026-04-10 22:10:52] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:11:23] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_competitor_alternatives, GHOST_SWEEP_completion_gate, GHOST_SWEEP_comprehensive_review_full_review, GHOST_SWEEP_comprehensive_review_pr_enhance, oma_test.log (count=6)
+[2026-04-10 22:11:23] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:11:53] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_computer_use_agents, GHOST_SWEEP_computer_vision_expert, GHOST_SWEEP_concise_planning, GHOST_SWEEP_conductor_implement, GHOST_SWEEP_conductor_manage (count=7)
+[2026-04-10 22:11:53] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:12:23] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_conductor_new_track, GHOST_SWEEP_conductor_revert, GHOST_SWEEP_conductor_setup, GHOST_SWEEP_conductor_status, oma_test.log (count=6)
+[2026-04-10 22:12:23] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:12:53] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_conductor_validator, GHOST_SWEEP_confluence_automation, GHOST_SWEEP_constant_time_analysis, GHOST_SWEEP_constraint_check, GHOST_SWEEP_content_marketer (count=7)
+[2026-04-10 22:12:53] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:13:24] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_context7, GHOST_SWEEP_context7_auto_research, GHOST_SWEEP_context_compression, GHOST_SWEEP_context_degradation, oma_test.log (count=7)
+[2026-04-10 22:13:24] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:13:54] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_context_driven_development, GHOST_SWEEP_context_engine, GHOST_SWEEP_context_first_gatekeeping, GHOST_SWEEP_context_fundamentals, GHOST_SWEEP_context_integrity (count=7)
+[2026-04-10 22:13:54] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:14:24] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_context_management_context_save, GHOST_SWEEP_context_manager, GHOST_SWEEP_context_optimization, GHOST_SWEEP_context_pack, oma_test.log (count=6)
+[2026-04-10 22:14:24] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:14:55] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_context_window_management, GHOST_SWEEP_continual_learning, GHOST_SWEEP_continuous_learning_v2, GHOST_SWEEP_conversation_memory, oma_test.log (count=6)
+[2026-04-10 22:14:55] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:15:25] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_convertkit_automation, GHOST_SWEEP_convex, GHOST_SWEEP_copywriting, GHOST_SWEEP_copywriting_psychologist, GHOST_SWEEP_copy_editing (count=8)
+[2026-04-10 22:15:25] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:15:55] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_core_components, GHOST_SWEEP_cost_optimization, GHOST_SWEEP_cqrs_implementation, GHOST_SWEEP_create_branch, oma_test.log (count=6)
+[2026-04-10 22:15:55] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:16:25] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_create_issue_gate, GHOST_SWEEP_create_pr, GHOST_SWEEP_credentials, GHOST_SWEEP_cred_omega, GHOST_SWEEP_crewai (count=7)
+[2026-04-10 22:16:25] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:16:56] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_crypto_bd, GHOST_SWEEP_csharp_pro, GHOST_SWEEP_customer_psychographic_profiler, GHOST_SWEEP_customer_support, oma_test.log (count=6)
+[2026-04-10 22:16:56] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:17:26] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_customize, GHOST_SWEEP_c_pro, GHOST_SWEEP_daily, GHOST_SWEEP_database, GHOST_SWEEP_database_admin (count=7)
+[2026-04-10 22:17:26] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:17:56] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_database_architect, GHOST_SWEEP_database_cloud_optimization_cost_optimize, GHOST_SWEEP_database_migration, GHOST_SWEEP_database_migrations_migration_observability, oma_test.log (count=7)
+[2026-04-10 22:17:56] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:18:27] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_database_migrations_sql_migrations, GHOST_SWEEP_database_optimizer, GHOST_SWEEP_datadog_automation, GHOST_SWEEP_data_engineer, oma_test.log (count=6)
+[2026-04-10 22:18:27] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:18:57] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_data_engineering_data_driven_feature, GHOST_SWEEP_data_engineering_data_pipeline, GHOST_SWEEP_data_fetching, GHOST_SWEEP_data_quality_frameworks, GHOST_SWEEP_data_scientist (count=7)
+[2026-04-10 22:18:57] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:19:27] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_data_storytelling, GHOST_SWEEP_data_structure_protocol, GHOST_SWEEP_data_visualization, GHOST_SWEEP_dbt_transformation_patterns, oma_test.log (count=6)
+[2026-04-10 22:19:27] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:19:57] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_db_migrations, GHOST_SWEEP_ddd_context_mapping, GHOST_SWEEP_ddd_strategic_design, GHOST_SWEEP_ddd_tactical_patterns, GHOST_SWEEP_debug (count=7)
+[2026-04-10 22:19:57] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:20:28] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_debugger, GHOST_SWEEP_debugging_strategies, GHOST_SWEEP_debugging_toolkit_smart_debug, GHOST_SWEEP_debug_buttercup, oma_test.log (count=7)
+[2026-04-10 22:20:28] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:20:58] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_debug_cuda_crash, GHOST_SWEEP_debug_orchestration, GHOST_SWEEP_defi_protocol_templates, GHOST_SWEEP_defuddle, oma_test.log (count=6)
+[2026-04-10 22:20:58] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:21:28] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_delegation_intelligence, GHOST_SWEEP_dependency_doctor, GHOST_SWEEP_dependency_management_deps_audit, GHOST_SWEEP_dependency_upgrade, oma_test.log (count=6)
+[2026-04-10 22:21:28] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:21:59] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_deployment_engineer, GHOST_SWEEP_deployment_pipeline_design, GHOST_SWEEP_deployment_procedures, GHOST_SWEEP_deployment_validation_config_validate, oma_test.log (count=6)
+[2026-04-10 22:21:59] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:22:29] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_design_md, GHOST_SWEEP_design_orchestration, GHOST_SWEEP_design_spells, GHOST_SWEEP_deslop, oma_test.log (count=6)
+[2026-04-10 22:22:29] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:22:59] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_devcontainer_setup, GHOST_SWEEP_development, GHOST_SWEEP_develop_web_game, GHOST_SWEEP_devops_deploy, oma_test.log (count=7)
+[2026-04-10 22:22:59] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:23:30] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_devops_troubleshooter, GHOST_SWEEP_differential_review, GHOST_SWEEP_discord_automation, GHOST_SWEEP_discord_bot_architect, oma_test.log (count=6)
+[2026-04-10 22:23:30] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:24:00] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_dispatching_parallel_agents, GHOST_SWEEP_distributed_debugging_debug_trace, GHOST_SWEEP_distributed_tracing, GHOST_SWEEP_django_access_review, oma_test.log (count=6)
+[2026-04-10 22:24:00] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:24:30] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_django_perf_review, GHOST_SWEEP_django_pro, GHOST_SWEEP_docker_expert, GHOST_SWEEP_docs, oma_test.log (count=6)
+[2026-04-10 22:24:30] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:25:01] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_docs_architect, GHOST_SWEEP_docs_seeker, GHOST_SWEEP_documentation, GHOST_SWEEP_documentation_templates, oma_test.log (count=6)
+[2026-04-10 22:25:01] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:25:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_docusign_automation, GHOST_SWEEP_docx, GHOST_SWEEP_doc_coauthoring, GHOST_SWEEP_doc_processor, GHOST_SWEEP_domain_driven_design (count=8)
+[2026-04-10 22:25:31] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:26:01] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_dotnet_architect, GHOST_SWEEP_dotnet_backend, GHOST_SWEEP_draw, GHOST_SWEEP_drizzle, oma_test.log (count=6)
+[2026-04-10 22:26:01] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:26:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_drizzle_orm_expert, GHOST_SWEEP_dropbox_automation, GHOST_SWEEP_dwarf_expert, GHOST_SWEEP_dx_optimizer, GHOST_SWEEP_e2e_testing (count=7)
+[2026-04-10 22:26:31] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:27:02] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_e2e_testing_patterns, GHOST_SWEEP_earllm_build, GHOST_SWEEP_electron_development, GHOST_SWEEP_elevenlabs, oma_test.log (count=6)
+[2026-04-10 22:27:02] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:27:32] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_elixir_pro, GHOST_SWEEP_email_sequence, GHOST_SWEEP_email_systems, GHOST_SWEEP_embedding_strategies, oma_test.log (count=7)
+[2026-04-10 22:27:32] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:28:02] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_emblemai_crypto_wallet, GHOST_SWEEP_emergency_card, GHOST_SWEEP_emotional_arc_designer, GHOST_SWEEP_employment_contract_templates, GHOST_SWEEP_enhance_prompt (count=7)
+[2026-04-10 22:28:02] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:28:33] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_environment_setup_guide, GHOST_SWEEP_error_debugging_error_analysis, GHOST_SWEEP_error_debugging_error_trace, GHOST_SWEEP_error_debugging_multi_agent_review, oma_test.log (count=6)
+[2026-04-10 22:28:33] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:29:03] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_error_detective, GHOST_SWEEP_error_diagnostics_error_trace, GHOST_SWEEP_error_diagnostics_smart_debug, GHOST_SWEEP_ethical_hacking_methodology, oma_test.log (count=6)
+[2026-04-10 22:29:03] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:29:33] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_evaluation, GHOST_SWEEP_event_sourcing_architect, GHOST_SWEEP_event_store_design, GHOST_SWEEP_evidence_discipline, GHOST_SWEEP_evolution (count=7)
+[2026-04-10 22:29:33] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:30:03] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_example_skill_skills, GHOST_SWEEP_exa_search, GHOST_SWEEP_executing_plans, GHOST_SWEEP_explain_like_socrates, oma_test.log (count=7)
+[2026-04-10 22:30:03] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:30:34] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_explore_recipes, GHOST_SWEEP_expo_api_routes, GHOST_SWEEP_expo_cicd_workflows, GHOST_SWEEP_expo_deployment, GHOST_SWEEP_expo_dev_client (count=7)
+[2026-04-10 22:30:34] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:31:04] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_expo_tailwind_setup, GHOST_SWEEP_expo_ui_jetpack_compose, GHOST_SWEEP_expo_ui_swift_ui, GHOST_SWEEP_faf_expert, oma_test.log (count=6)
+[2026-04-10 22:31:04] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:31:34] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_faf_wizard, GHOST_SWEEP_fal_audio, GHOST_SWEEP_fal_generate, GHOST_SWEEP_fal_image_edit, GHOST_SWEEP_fal_platform (count=7)
+[2026-04-10 22:31:34] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:32:05] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fal_upscale, GHOST_SWEEP_fal_workflow, GHOST_SWEEP_family_health_analyzer, GHOST_SWEEP_fastapi_pro, oma_test.log (count=6)
+[2026-04-10 22:32:05] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:32:35] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_favicon, GHOST_SWEEP_fda_food_safety_auditor, GHOST_SWEEP_fda_medtech_compliance_auditor, GHOST_SWEEP_ffuf_claude, GHOST_SWEEP_ffuf_web_fuzzing (count=8)
+[2026-04-10 22:32:35] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:33:05] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_figma_automation, GHOST_SWEEP_filesystem_context, GHOST_SWEEP_file_organizer, GHOST_SWEEP_file_path_traversal, oma_test.log (count=6)
+[2026-04-10 22:33:05] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:33:35] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_file_uploads, GHOST_SWEEP_find_bugs, GHOST_SWEEP_find_skills, GHOST_SWEEP_finishing_a_development_branch, GHOST_SWEEP_firebase (count=7)
+[2026-04-10 22:33:35] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:34:06] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_firecrawl_scraper, GHOST_SWEEP_firmware_analyst, GHOST_SWEEP_fitness_analyzer, GHOST_SWEEP_fix, oma_test.log (count=6)
+[2026-04-10 22:34:06] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:34:36] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fixing_accessibility, GHOST_SWEEP_fixing_metadata, GHOST_SWEEP_fixing_motion_performance, GHOST_SWEEP_fix_review, oma_test.log (count=6)
+[2026-04-10 22:34:36] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:35:06] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fix_sentry_issues, GHOST_SWEEP_flutter_expert, GHOST_SWEEP_food_database_query, GHOST_SWEEP_form_cro, GHOST_SWEEP_fp_async (count=8)
+[2026-04-10 22:35:06] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:35:37] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fp_backend, GHOST_SWEEP_fp_data_transforms, GHOST_SWEEP_fp_either_ref, GHOST_SWEEP_fp_errors, oma_test.log (count=6)
+[2026-04-10 22:35:37] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:36:07] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fp_option_ref, GHOST_SWEEP_fp_pipe_ref, GHOST_SWEEP_fp_pragmatic, GHOST_SWEEP_fp_react, GHOST_SWEEP_fp_refactor (count=7)
+[2026-04-10 22:36:07] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:36:37] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fp_taskeither_ref, GHOST_SWEEP_fp_ts_errors, GHOST_SWEEP_fp_ts_pragmatic, GHOST_SWEEP_fp_ts_react, oma_test.log (count=6)
+[2026-04-10 22:36:37] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2

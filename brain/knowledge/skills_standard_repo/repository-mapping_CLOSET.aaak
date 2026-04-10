@@ -1,0 +1,2 @@
+BrainKnowledge|skills_standard_repo|?|repository-mapping
+0:REP+MAP+REF|bankdto_jsonkey_dto|"@JsonKey(name: 'bank_id') required String id,"|TECHNICAL

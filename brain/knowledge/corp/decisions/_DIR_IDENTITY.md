@@ -1,25 +1,29 @@
 ---
-id: unique_slug
+id: decisions
 type: directory_identity
-namespace: brain.example.path
+namespace: brain.knowledge.corp.decisions
 owner: OSF_Daemon
 status: standard_v5
-description: "Contains log files related to decision-making processes within the corporation."
+description: "This directory holds the log of decision-making processes within OmniClaw, providing a record of all significant decisions and their outcomes."
 registered_by: OMA_AI_FORGER
-tags: ["decisions", "log_files"]
+tags: ["decisions", "log", "process"]
+forged_at: 2026-04-10
 ---
 
 # Decisions Identity
 
-Contains log files related to decision-making processes within the corporation.
+This directory holds the log of decision-making processes within OmniClaw, providing a record of all significant decisions and their outcomes.
+
+---
 
 ## Topological View
 
 ```mermaid
 graph TD
-  Parent("brain/knowledge/corp") --> Node("decisions")
-  Node --> Sub1("log.md")
+  Parent("brain") --> Node("knowledge")
+  Node --> S1("corp")
+  S1 --> "decisions"
 ```
 
 ---
-*OmniClaw V5.0 | Forged by AI Architect | Evaluated dynamically*
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.knowledge.corp.decisions | 2026-04-10*

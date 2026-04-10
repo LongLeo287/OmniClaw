@@ -16869,6 +16869,13 @@
       "coord": "vault/knowledge/global_codebases/whatsapp_bridge/_DIR_IDENTITY.md",
       "name": "whatsapp_bridge",
       "description": ""
+    },
+    {
+      "id": "ghost_sweep_angular",
+      "type": "skill",
+      "coord": "ecosystem/skills/ghost_sweep_angular",
+      "owner": "OA",
+      "registered_at": "2026-04-10T21:37:35.634289"
     }
   ]
 }

@@ -1,0 +1,2 @@
+BrainKnowledge|general|?|pgvector_knowledge
+0:EXT+SOU+FIL|postgres_create_pgvector|"CREATE TABLE items (id bigserial PRIMARY KEY, embedd..."|ORIGIN+TECHNICAL

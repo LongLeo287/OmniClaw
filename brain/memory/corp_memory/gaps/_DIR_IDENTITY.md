@@ -1,20 +1,27 @@
 ---
-id: memory_corp_gaps
-type: gap_repository
+id: gaps
+type: directory_identity
 namespace: brain.memory.corp_memory.gaps
 owner: OSF_Daemon
 status: standard_v5
-description: "Volatile complaint box for agents to document missing skills and tool gaps."
-registered_by: OA_Auditor
+description: "This directory contains the template for generating gap reports, which are crucial for identifying and addressing knowledge gaps within the company's memory system."
+registered_by: OMA_AI_FORGER
+tags: ["gaps", "report", "template"]
+forged_at: 2026-04-10
 ---
 
-# `corp_memory/gaps` Identity (System Anomalies)
+# Gaps Identity
 
-> [!CAUTION]  
-> **OSF DAEMON SECURITY WATERMARK**  
-> This directory acts as the architectural feedback loop for AI Workers. 
-> Files inside (`GAP_<Task>.md`) are generated automatically by agents when they encounter unrecoverable blockers (Circuit Breakers).
+This directory contains the template for generating gap reports, which are crucial for identifying and addressing knowledge gaps within the company's memory system.
 
-## 1. Compliance Rules
-- Because these are granular, short-lived bug reports intended for the Architectural Daemon, they are classified as **Volatile Cache**.
-- By `.gitignore` Rule 13, all gap reports (except the template) are blocked from GitHub sync.
+---
+
+## Topological View
+
+```mermaid
+graph TD
+  Parent("brain.memory.corp_memory") --> Node("gaps")
+```
+
+---
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.memory.corp_memory.gaps | 2026-04-10*

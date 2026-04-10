@@ -1,12 +1,27 @@
 ---
-id: dir_workflows
+id: sops
 type: directory_identity
-namespace: brain.corp.sops.workflows
-description: Auto-generated identity for workflows
-registered_by: OMA
+namespace: brain.rules.sops
+owner: OSF_Daemon
+status: standard_v5
+description: "The 'sops' directory within OmniClaw v5.0 houses standardized operating procedures and guidelines for various aspects of the system, ensuring consistency and efficiency in operations."
+registered_by: OMA_AI_FORGER
+tags: ["operating procedures", "guidelines", "consistency"]
+forged_at: 2026-04-10
 ---
-# workflows Identity
-This defines the semantic boundaries of the directory.
+
+# Sops Identity
+
+The 'sops' directory within OmniClaw v5.0 houses standardized operating procedures and guidelines for various aspects of the system, ensuring consistency and efficiency in operations.
 
 ---
-*OmniClaw V5.0 | Protected by OSF Daemon | 8-Daemon Master Architecture*
+
+## Topological View
+
+```mermaid
+graph TD
+  Parent("rules") --> Node("sops")
+```
+
+---
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.rules.sops | 2026-04-10*

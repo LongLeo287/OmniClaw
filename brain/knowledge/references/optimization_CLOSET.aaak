@@ -1,0 +1,2 @@
+BrainKnowledge|references|?|optimization
+0:PER+OPT+GUI|gpu_cpu_llama-cli|"gguf -c 2048  # 2K context instead of 4K"|DECISION+CORE

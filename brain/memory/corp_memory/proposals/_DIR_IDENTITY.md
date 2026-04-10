@@ -1,16 +1,27 @@
 ---
-id: memory_corp_proposals
-type: proposal_repository
+id: proposals
+type: directory_identity
 namespace: brain.memory.corp_memory.proposals
-owner: USER_CEO
+owner: OSF_Daemon
 status: standard_v5
-description: "CEO Inbox for agent proposals. Orchestrator scans for approvals."
-registered_by: OA_Auditor
+description: "This directory holds various proposal documents and templates, including specific proposals for observability layer enhancements and a general template. It serves as the central repository for strategic planning within OmniClaw."
+registered_by: OMA_AI_FORGER
+tags: ["proposals", "templates", "strategic planning"]
+forged_at: 2026-04-10
 ---
 
-# `corp_memory/proposals` Identity (CEO Inbox)
+# Proposals Identity
 
-> [!CAUTION]  
-> **OSF DAEMON SECURITY WATERMARK**  
-> This directory handles Architectural Proposals submitted by AI to the CEO. 
-> The Orchestrator automatically tracks this folder. When the CEO marks `[x] APPROVE` in any markdown file, it generates an implementation task and moves the document to `brain/archive/proposals/`.
+This directory holds various proposal documents and templates, including specific proposals for observability layer enhancements and a general template. It serves as the central repository for strategic planning within OmniClaw.
+
+---
+
+## Topological View
+
+```mermaid
+graph TD
+ Parent("corp_memory") --> Node("proposals")
+```
+
+---
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.memory.corp_memory.proposals | 2026-04-10*

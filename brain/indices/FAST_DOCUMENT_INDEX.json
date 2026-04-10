@@ -1,0 +1,18 @@
+{
+  "registry": [
+    {
+      "id": "omniclaw-ecosystem-sanitization-hardening",
+      "type": "document",
+      "coord": "brain/knowledge/general/OmniClaw Ecosystem Sanitization Hardening.md",
+      "owner": "OHD",
+      "registered_at": "2026-04-10T20:26:31.639877"
+    },
+    {
+      "id": "sanitizing-omniclaw-rules-architecture",
+      "type": "document",
+      "coord": "brain/knowledge/general/Sanitizing OmniClaw Rules Architecture.md",
+      "owner": "OHD",
+      "registered_at": "2026-04-10T20:26:32.067463"
+    }
+  ]
+}

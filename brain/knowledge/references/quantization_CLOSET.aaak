@@ -1,0 +1,2 @@
+BrainKnowledge|references|?|quantization
+0:QUA+GUI+COM|k_m_gguf_llama-|"- Use lower quantization (Q4_K_S instead of Q5_K_M)"|DECISION+CORE

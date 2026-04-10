@@ -1,24 +1,27 @@
 ---
-id: memory_corp_departments
-type: department_memory_roster
+id: departments
+type: directory_identity
 namespace: brain.memory.corp_memory.departments
 owner: OSF_Daemon
 status: standard_v5
-description: "Aggregated Long-Term Memory (System B) ledgers for 22 Corporate Departments."
-registered_by: OA_Auditor
+description: "This directory contains the organizational structure of departments within OmniClaw, defining their roles and responsibilities."
+registered_by: OMA_AI_FORGER
+tags: ["departments", "organization", "responsibilities"]
+forged_at: 2026-04-10
 ---
 
-# `corp_memory/departments` Identity (Department Ledgers)
+# Departments Identity
 
-> [!CAUTION]  
-> **OSF DAEMON SECURITY WATERMARK**  
-> This directory tracks the highest-level strategic learning constraints for entire simulated Departments (Engineering, QA, Legal, etc.).
-> - Individual agent memory logs go to `corp_memory/agents/`.
-> - Scaled operations lessons go here.
+This directory contains the organizational structure of departments within OmniClaw, defining their roles and responsibilities.
 
-## 1. Directory Purpose
-Each `.md` file represents the "Institutional Memory" of one logical department. Head Agents (C-Suite or Directors) aggregate lessons, count their active workforce, and maintain inter-departmental dependencies within these files.
+---
 
-## 2. Compliance Rules
-- Because these files update dynamically based on daily cycles, they are classified as **Volatile Cache**.
-- By `.gitignore` Rule 12, all department ledgers (except the `<template>.md`) are blocked from GitHub sync to prevent repository congestion.
+## Topological View
+
+```mermaid
+graph TD
+  Parent("corp_memory") --> Node("departments")
+```
+
+---
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.memory.corp_memory.departments | 2026-04-10*

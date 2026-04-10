@@ -1,29 +1,30 @@
 ---
-id: brain_memory
-type: core_system_prompt
+id: memory
+type: directory_identity
 namespace: brain.memory
 owner: OSF_Daemon
 status: standard_v5
-description: "This directory manages the core memory systems of OmniClaw v5.0, including both the central blackboard and corporate memory repositories essential for knowledge sharing and decision-making across the AI OS."
-registered_by: OA_Auditor
-tags: ["memory", "blackboard", "corporate_memory"]
+description: "The 'memory' directory within OmniClaw v5.0 is responsible for managing and storing various types of memory, including core operations and corporate-specific memories."
+registered_by: OMA_AI_FORGER
+tags: ["memory", "storage", "operations"]
+forged_at: 2026-04-10
 ---
 
 # Memory Identity
 
-This directory manages the core memory systems of OmniClaw v5.0, including both the central blackboard and corporate memory repositories essential for knowledge sharing and decision-making across the AI OS.
+The 'memory' directory within OmniClaw v5.0 is responsible for managing and storing various types of memory, including core operations and corporate-specific memories.
+
+---
+
 
 ## Topological View
 
 ```mermaid
 graph TD
- Root("brain/memory")
- Subdir1("core/")
- Subdir2("corp_memory/")
- Root(("Manages core memory systems of OmniClaw v5.0, including blackboard and corporate memory repositories."))
- Root --> Subdir1
- Root --> Subdir2
+  Parent("brain") --> Node("memory")
+  Node --> S1("core")
+  Node --> S2("corp_memory")
 ```
 
 ---
-*OmniClaw V5.0 | Forged by AI Architect | Evaluated dynamically*
+*OmniClaw V5.0 | Forged by OMA AI Architect | brain.memory | 2026-04-10*
