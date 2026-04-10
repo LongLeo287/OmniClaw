@@ -115,3 +115,10 @@ brain/registry/OMA_SYSTEM_MAP*.json
 !/brain/memory/corp_memory/brainstorms/_DIR_IDENTITY.md
 !/brain/memory/corp_memory/brainstorms/brainstormtemplate.md
 !/brain/memory/corp_memory/brainstorms/.gitkeep
+
+# 12. Memory - Corp Departments Ledgers (Ignore volatile ledger logs)
+!/brain/memory/corp_memory/departments/
+/brain/memory/corp_memory/departments/*
+!/brain/memory/corp_memory/departments/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/departments/dept_memorytemplate.md
+!/brain/memory/corp_memory/departments/.gitkeep
