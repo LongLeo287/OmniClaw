@@ -1,4 +1,4 @@
-# =============================================================
+﻿# =============================================================
 # OmniClaw - Hardened .gitignore
 # Purpose: Restricted git tracking to Documentation & Workforce Registry
 # =============================================================
@@ -87,7 +87,10 @@ secrets/
 /brain/*
 !/brain/registry/
 !/brain/registry/**
+!/brain/indices/
+!/brain/indices/**
 
 # Ignore systemic logs and massive auto-generated JSONs in registry
 brain/registry/*.log
 brain/registry/OMA_SYSTEM_MAP*.json
+

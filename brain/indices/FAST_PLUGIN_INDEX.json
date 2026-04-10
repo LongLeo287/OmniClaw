@@ -1,0 +1,207 @@
+{
+  "registry": [
+    {
+      "id": "antigravity_mobile",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/antigravity_mobile/payload/_DIR_IDENTITY.md",
+      "name": "antigravity_mobile",
+      "description": ""
+    },
+    {
+      "id": "claude_plugins_official",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/claude_plugins_official/payload/_DIR_IDENTITY.md",
+      "name": "claude_plugins_official",
+      "description": ""
+    },
+    {
+      "id": "claudy_registry",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/claudy_registry/payload/_DIR_IDENTITY.md",
+      "name": "claudy_registry",
+      "description": ""
+    },
+    {
+      "id": "firecrawl_mcp_server",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/firecrawl_mcp_server/payload/_DIR_IDENTITY.md",
+      "name": "firecrawl_mcp_server",
+      "description": ""
+    },
+    {
+      "id": "liquid_glass",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/liquid_glass/payload/_DIR_IDENTITY.md",
+      "name": "liquid_glass",
+      "description": ""
+    },
+    {
+      "id": "llm_lean_log",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/llm_lean_log/payload/_DIR_IDENTITY.md",
+      "name": "llm_lean_log",
+      "description": ""
+    },
+    {
+      "id": "locomotive_scroll",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/locomotive_scroll/payload/_DIR_IDENTITY.md",
+      "name": "locomotive_scroll",
+      "description": ""
+    },
+    {
+      "id": "whatsapp_bridge",
+      "type": "PLUGIN",
+      "coord": "ecosystem/skills/whatsapp_bridge/payload/_DIR_IDENTITY.md",
+      "name": "whatsapp_bridge",
+      "description": ""
+    },
+    {
+      "id": "plugins_domain",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/_DIR_IDENTITY.md",
+      "name": "Plugins",
+      "description": ""
+    },
+    {
+      "id": "byterover",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/byterover/_DIR_IDENTITY.md",
+      "name": "byterover",
+      "description": ""
+    },
+    {
+      "id": "claude_plugin",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/claude_plugin/_DIR_IDENTITY.md",
+      "name": "claude_plugin",
+      "description": ""
+    },
+    {
+      "id": "hindsight",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/hindsight/_DIR_IDENTITY.md",
+      "name": "hindsight",
+      "description": ""
+    },
+    {
+      "id": "holographic",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/holographic/_DIR_IDENTITY.md",
+      "name": "holographic",
+      "description": ""
+    },
+    {
+      "id": "honcho",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/honcho/_DIR_IDENTITY.md",
+      "name": "honcho",
+      "description": ""
+    },
+    {
+      "id": "mem0",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/mem0/_DIR_IDENTITY.md",
+      "name": "mem0",
+      "description": ""
+    },
+    {
+      "id": "notebooklm_mcp",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/notebooklm_mcp/_DIR_IDENTITY.md",
+      "name": "notebooklm_mcp",
+      "description": ""
+    },
+    {
+      "id": "skill-notebooklm-mcp",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/notebooklm_mcp/notebooklm_mcp/_DIR_IDENTITY.md",
+      "name": "NotebookLM MCP Gateway",
+      "description": ""
+    },
+    {
+      "id": "quasipet_pokedex",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/omnipets/_DIR_IDENTITY.md",
+      "name": "quasipet_pokedex",
+      "description": "Virtual Pet Companion System (Pokedex) with RNG Stat generation and Agent Affinity."
+    },
+    {
+      "id": "openviking",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/openviking/_DIR_IDENTITY.md",
+      "name": "openviking",
+      "description": ""
+    },
+    {
+      "id": "retaindb",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/retaindb/_DIR_IDENTITY.md",
+      "name": "retaindb",
+      "description": ""
+    },
+    {
+      "id": "supermemory",
+      "type": "PLUGIN",
+      "coord": "ecosystem/plugins/supermemory/_DIR_IDENTITY.md",
+      "name": "supermemory",
+      "description": ""
+    },
+    {
+      "id": "antigravity_mobile",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/antigravity_mobile/payload/_DIR_IDENTITY.md",
+      "name": "antigravity_mobile",
+      "description": ""
+    },
+    {
+      "id": "claude_plugins_official",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/claude_plugins_official/payload/_DIR_IDENTITY.md",
+      "name": "claude_plugins_official",
+      "description": ""
+    },
+    {
+      "id": "claudy_registry",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/claudy_registry/payload/_DIR_IDENTITY.md",
+      "name": "claudy_registry",
+      "description": ""
+    },
+    {
+      "id": "firecrawl_mcp_server",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/firecrawl_mcp_server/payload/_DIR_IDENTITY.md",
+      "name": "firecrawl_mcp_server",
+      "description": ""
+    },
+    {
+      "id": "liquid_glass",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/liquid_glass/payload/_DIR_IDENTITY.md",
+      "name": "liquid_glass",
+      "description": ""
+    },
+    {
+      "id": "llm_lean_log",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/llm_lean_log/payload/_DIR_IDENTITY.md",
+      "name": "llm_lean_log",
+      "description": ""
+    },
+    {
+      "id": "locomotive_scroll",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/locomotive_scroll/payload/_DIR_IDENTITY.md",
+      "name": "locomotive_scroll",
+      "description": ""
+    },
+    {
+      "id": "whatsapp_bridge",
+      "type": "PLUGIN",
+      "coord": "vault/knowledge/global_codebases/whatsapp_bridge/payload/_DIR_IDENTITY.md",
+      "name": "whatsapp_bridge",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "registry": [
+    {
+      "id": "Acontext-Examples_124650",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/acontext_examples/_DIR_IDENTITY.md",
+      "name": "Acontext-Examples_124650",
+      "description": ""
+    },
+    {
+      "id": "agentscope",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/agentscope/_DIR_IDENTITY.md",
+      "name": "agentscope",
+      "description": ""
+    },
+    {
+      "id": "agent-sandbox_104125",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/agent_sandbox/_DIR_IDENTITY.md",
+      "name": "agent-sandbox_104125",
+      "description": ""
+    },
+    {
+      "id": "airllm_120013",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/airllm/payload/_DIR_IDENTITY.md",
+      "name": "airllm_120013",
+      "description": ""
+    },
+    {
+      "id": "ai_marketing_claude_code_skills",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/ai_marketing_claude_code_skills/_DIR_IDENTITY.md",
+      "name": "ai_marketing_claude_code_skills",
+      "description": ""
+    },
+    {
+      "id": "antigravity",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/antigravity/_DIR_IDENTITY.md",
+      "name": "antigravity",
+      "description": ""
+    },
+    {
+      "id": "Antigravity-Manager_111308",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/antigravity_manager/_DIR_IDENTITY.md",
+      "name": "Antigravity-Manager_111308",
+      "description": ""
+    },
+    {
+      "id": "aperant",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/aperant/_DIR_IDENTITY.md",
+      "name": "aperant",
+      "description": ""
+    },
+    {
+      "id": "arknights_endfield-website-clone_124624",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/arknights_endfield_website_clone/payload/_DIR_IDENTITY.md",
+      "name": "arknights_endfield-website-clone_124624",
+      "description": ""
+    },
+    {
+      "id": "atomic_chat",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/atomic_chat/_DIR_IDENTITY.md",
+      "name": "atomic_chat",
+      "description": ""
+    },
+    {
+      "id": "auto_claude",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/auto_claude/_DIR_IDENTITY.md",
+      "name": "auto_claude",
+      "description": ""
+    },
+    {
+      "id": "awesome-ai-tools_120021",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/awesome_ai_tools/payload/_DIR_IDENTITY.md",
+      "name": "awesome-ai-tools_120021",
+      "description": ""
+    },
+    {
+      "id": "repo_civ_fetched_awesome_openclaw_agents_124707",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/awesome_openclaw_agents/_DIR_IDENTITY.md",
+      "name": "repo_civ_fetched_awesome_openclaw_agents_124707",
+      "description": ""
+    },
+    {
+      "id": "contribai",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/contribai/_DIR_IDENTITY.md",
+      "name": "contribai",
+      "description": ""
+    },
+    {
+      "id": "grpo_rl_training",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/grpo_rl_training/_DIR_IDENTITY.md",
+      "name": "grpo_rl_training",
+      "description": ""
+    },
+    {
+      "id": "FETCHED_hermes-agent_123035",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/hermes/_DIR_IDENTITY.md",
+      "name": "FETCHED_hermes-agent_123035",
+      "description": ""
+    },
+    {
+      "id": "holyclaude",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/holyclaude/_DIR_IDENTITY.md",
+      "name": "holyclaude",
+      "description": ""
+    },
+    {
+      "id": "kilocode",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/kilocode/_DIR_IDENTITY.md",
+      "name": "kilocode",
+      "description": ""
+    },
+    {
+      "id": "kimi_cli",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/kimi_cli/_DIR_IDENTITY.md",
+      "name": "kimi_cli",
+      "description": ""
+    },
+    {
+      "id": "magic-wormhole_120017",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/magic_wormhole/payload/_DIR_IDENTITY.md",
+      "name": "magic-wormhole_120017",
+      "description": ""
+    },
+    {
+      "id": "markdown-printer_111318",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/markdown_printer/payload/_DIR_IDENTITY.md",
+      "name": "markdown-printer_111318",
+      "description": ""
+    },
+    {
+      "id": "mempalace_120244",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/mempalace/payload/_DIR_IDENTITY.md",
+      "name": "mempalace_120244",
+      "description": ""
+    },
+    {
+      "id": "openclaw-admin_120028",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/openclaw_admin/payload/_DIR_IDENTITY.md",
+      "name": "openclaw-admin_120028",
+      "description": ""
+    },
+    {
+      "id": "openclaw-worker_114506",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/openclaw_worker/payload/_DIR_IDENTITY.md",
+      "name": "openclaw-worker_114506",
+      "description": ""
+    },
+    {
+      "id": "orphan_sweep_environments",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/orphan_sweep_environments/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_environments",
+      "description": ""
+    },
+    {
+      "id": "orphan_sweep_yc_bench",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/orphan_sweep_yc_bench/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_yc_bench",
+      "description": ""
+    },
+    {
+      "id": "pattern-craft_124614",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/pattern_craft/payload/_DIR_IDENTITY.md",
+      "name": "pattern-craft_124614",
+      "description": ""
+    },
+    {
+      "id": "recursive-decomposition-skill_123056",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/recursive_decomposition/payload/_DIR_IDENTITY.md",
+      "name": "recursive-decomposition-skill_123056",
+      "description": ""
+    },
+    {
+      "id": "repo_civ_fetched_browser_112830",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/repo_civ_fetched_browser/_DIR_IDENTITY.md",
+      "name": "repo_civ_fetched_browser_112830",
+      "description": ""
+    },
+    {
+      "id": "repo_civ_fetched_claude_subconscious_111317",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/repo_civ_fetched_claude_subconscious/_DIR_IDENTITY.md",
+      "name": "repo_civ_fetched_claude_subconscious_111317",
+      "description": ""
+    },
+    {
+      "id": "skill-generator_121550",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/skill_generator/_DIR_IDENTITY.md",
+      "name": "skill-generator_121550",
+      "description": ""
+    },
+    {
+      "id": "source-map-resolve_120012",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/source_map_resolve/payload/_DIR_IDENTITY.md",
+      "name": "source-map-resolve_120012",
+      "description": ""
+    },
+    {
+      "id": "unsloth",
+      "type": "AGENT",
+      "coord": "ecosystem/skills/unsloth/_DIR_IDENTITY.md",
+      "name": "unsloth",
+      "description": ""
+    },
+    {
+      "id": "Acontext-Examples_124650",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/acontext_examples/_DIR_IDENTITY.md",
+      "name": "Acontext-Examples_124650",
+      "description": ""
+    },
+    {
+      "id": "agentscope",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/agentscope/_DIR_IDENTITY.md",
+      "name": "agentscope",
+      "description": ""
+    },
+    {
+      "id": "agent-sandbox_104125",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/agent_sandbox/_DIR_IDENTITY.md",
+      "name": "agent-sandbox_104125",
+      "description": ""
+    },
+    {
+      "id": "airllm_120013",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/airllm/payload/_DIR_IDENTITY.md",
+      "name": "airllm_120013",
+      "description": ""
+    },
+    {
+      "id": "ai_marketing_claude_code_skills",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/ai_marketing_claude_code_skills/_DIR_IDENTITY.md",
+      "name": "ai_marketing_claude_code_skills",
+      "description": ""
+    },
+    {
+      "id": "Antigravity-Manager_111308",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/antigravity_manager/_DIR_IDENTITY.md",
+      "name": "Antigravity-Manager_111308",
+      "description": ""
+    },
+    {
+      "id": "aperant",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/aperant/_DIR_IDENTITY.md",
+      "name": "aperant",
+      "description": ""
+    },
+    {
+      "id": "arknights_endfield-website-clone_124624",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/arknights_endfield_website_clone/payload/_DIR_IDENTITY.md",
+      "name": "arknights_endfield-website-clone_124624",
+      "description": ""
+    },
+    {
+      "id": "atomic_chat",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/atomic_chat/_DIR_IDENTITY.md",
+      "name": "atomic_chat",
+      "description": ""
+    },
+    {
+      "id": "auto_claude",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/auto_claude/_DIR_IDENTITY.md",
+      "name": "auto_claude",
+      "description": ""
+    },
+    {
+      "id": "awesome-ai-tools_120021",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/awesome_ai_tools/payload/_DIR_IDENTITY.md",
+      "name": "awesome-ai-tools_120021",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-awesome-openclaw-agents-124707",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/awesome_openclaw_agents/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-awesome-openclaw-agents-124707",
+      "description": ""
+    },
+    {
+      "id": "contribai",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/contribai/_DIR_IDENTITY.md",
+      "name": "contribai",
+      "description": ""
+    },
+    {
+      "id": "grpo-rl-training",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/grpo_rl_training/_DIR_IDENTITY.md",
+      "name": "grpo-rl-training",
+      "description": ""
+    },
+    {
+      "id": "FETCHED_hermes-agent_123035",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/hermes_agent/_DIR_IDENTITY.md",
+      "name": "FETCHED_hermes-agent_123035",
+      "description": ""
+    },
+    {
+      "id": "holyclaude",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/holyclaude/_DIR_IDENTITY.md",
+      "name": "holyclaude",
+      "description": ""
+    },
+    {
+      "id": "kilocode",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/kilocode/_DIR_IDENTITY.md",
+      "name": "kilocode",
+      "description": ""
+    },
+    {
+      "id": "kimi_cli",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/kimi_cli/_DIR_IDENTITY.md",
+      "name": "kimi_cli",
+      "description": ""
+    },
+    {
+      "id": "magic-wormhole_120017",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/magic_wormhole/payload/_DIR_IDENTITY.md",
+      "name": "magic-wormhole_120017",
+      "description": ""
+    },
+    {
+      "id": "markdown-printer_111318",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/markdown_printer/payload/_DIR_IDENTITY.md",
+      "name": "markdown-printer_111318",
+      "description": ""
+    },
+    {
+      "id": "openclaw-admin_120028",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/openclaw_admin/payload/_DIR_IDENTITY.md",
+      "name": "openclaw-admin_120028",
+      "description": ""
+    },
+    {
+      "id": "openclaw-worker_114506",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/openclaw_worker/payload/_DIR_IDENTITY.md",
+      "name": "openclaw-worker_114506",
+      "description": ""
+    },
+    {
+      "id": "orphan_sweep_environments",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/orphan_sweep_environments/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_environments",
+      "description": ""
+    },
+    {
+      "id": "orphan_sweep_payload",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/ORPHAN_SWEEP_payload/salvaged_k8s_and_ai_dumps/ORPHAN_SWEEP_payload/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_payload",
+      "description": ""
+    },
+    {
+      "id": "orphan_sweep_yc_bench",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/orphan_sweep_yc_bench/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_yc_bench",
+      "description": ""
+    },
+    {
+      "id": "pattern-craft_124614",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/pattern_craft/payload/_DIR_IDENTITY.md",
+      "name": "pattern-craft_124614",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-browser-112830",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/repo_civ_fetched_browser/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-browser-112830",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-claude-subconscious-111317",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/repo_civ_fetched_claude_subconscious/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-claude-subconscious-111317",
+      "description": ""
+    },
+    {
+      "id": "skill-generator_121550",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/skill_generator/_DIR_IDENTITY.md",
+      "name": "skill-generator_121550",
+      "description": ""
+    },
+    {
+      "id": "skill_smart_memory",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/smart_memory/_DIR_IDENTITY.md",
+      "name": "skill_smart_memory",
+      "description": "Integrated Memory Component"
+    },
+    {
+      "id": "source-map-resolve_120012",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/source_map_resolve/payload/_DIR_IDENTITY.md",
+      "name": "source-map-resolve_120012",
+      "description": ""
+    },
+    {
+      "id": "unsloth",
+      "type": "AGENT",
+      "coord": "vault/knowledge/global_codebases/unsloth/_DIR_IDENTITY.md",
+      "name": "unsloth",
+      "description": ""
+    }
+  ]
+}

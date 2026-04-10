@@ -1,0 +1,277 @@
+{
+  "registry": [
+    {
+      "id": "repo-fetched-agent-teams-lite-052705",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/agent_teams_lite/payload/_DIR_IDENTITY.md",
+      "name": "repo-fetched-agent-teams-lite-052705",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-awesome-eventstorming-121545",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/awesome_eventstorming/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-awesome-eventstorming-121545",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-claudy-releases-121553",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/claudy_releases/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-claudy-releases-121553",
+      "description": ""
+    },
+    {
+      "id": "cli2",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/cli2/payload/_DIR_IDENTITY.md",
+      "name": "cli2",
+      "description": ""
+    },
+    {
+      "id": "repo-homebrew-core",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/homebrew_core/payload/_DIR_IDENTITY.md",
+      "name": "repo-homebrew-core",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-langgraph-105719",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/langgraph/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-langgraph-105719",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-llmware-112844",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/llmware/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-llmware-112844",
+      "description": ""
+    },
+    {
+      "id": "repo_fetched_agent_teams_lite_052705",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/payload/_DIR_IDENTITY.md",
+      "name": "repo_fetched_agent_teams_lite_052705",
+      "description": ""
+    },
+    {
+      "id": "repo-orphan-sweep-tblite",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/skills/tblite/payload/_DIR_IDENTITY.md",
+      "name": "repo-orphan-sweep-tblite",
+      "description": ""
+    },
+    {
+      "id": "workflows_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/_DIR_IDENTITY.md",
+      "name": "Workflows",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/_DIR_IDENTITY.md",
+      "name": "Automations",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-cron",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/cron/_DIR_IDENTITY.md",
+      "name": "Cron",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-daemons",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/daemons/_DIR_IDENTITY.md",
+      "name": "Daemons",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-daemons-ohd",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/daemons/ohd/_DIR_IDENTITY.md",
+      "name": "Ohd",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-daemons-ohd-scripts",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/daemons/ohd/scripts/_DIR_IDENTITY.md",
+      "name": "Scripts",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-daemons-ohd-tools",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/daemons/ohd/tools/_DIR_IDENTITY.md",
+      "name": "Tools",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-daemons-ohd-triggers",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/daemons/ohd/triggers/_DIR_IDENTITY.md",
+      "name": "Triggers",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-daemons-oid",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/daemons/oid/_DIR_IDENTITY.md",
+      "name": "Oid",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-events",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/events/_DIR_IDENTITY.md",
+      "name": "Events",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-rules",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/rules/_DIR_IDENTITY.md",
+      "name": "Rules",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-automations-webhooks",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/automations/webhooks/_DIR_IDENTITY.md",
+      "name": "Webhooks",
+      "description": ""
+    },
+    {
+      "id": "daemons_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/daemons/_DIR_IDENTITY.md",
+      "name": "Daemons",
+      "description": ""
+    },
+    {
+      "id": "ohd_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/daemons/ohd/_DIR_IDENTITY.md",
+      "name": "Ohd",
+      "description": ""
+    },
+    {
+      "id": "scripts_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/daemons/ohd/scripts/_DIR_IDENTITY.md",
+      "name": "Scripts",
+      "description": ""
+    },
+    {
+      "id": "tools_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/daemons/ohd/tools/_DIR_IDENTITY.md",
+      "name": "Tools",
+      "description": ""
+    },
+    {
+      "id": "triggers_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/daemons/ohd/triggers/_DIR_IDENTITY.md",
+      "name": "Triggers",
+      "description": ""
+    },
+    {
+      "id": "oid_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/daemons/oid/_DIR_IDENTITY.md",
+      "name": "Oid",
+      "description": ""
+    },
+    {
+      "id": "events_domain",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/events/_DIR_IDENTITY.md",
+      "name": "Events",
+      "description": ""
+    },
+    {
+      "id": "ecosystem-workflows-legacy_agents",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/legacy_agents/_DIR_IDENTITY.md",
+      "name": "Legacy Agents",
+      "description": ""
+    },
+    {
+      "id": "magic_wormhole",
+      "type": "WORKFLOW",
+      "coord": "ecosystem/workflows/magic_wormhole/_DIR_IDENTITY.md",
+      "name": "magic_wormhole",
+      "description": ""
+    },
+    {
+      "id": "repo-fetched-agent-teams-lite-052705",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/agent_teams_lite/payload/_DIR_IDENTITY.md",
+      "name": "repo-fetched-agent-teams-lite-052705",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-awesome-eventstorming-121545",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/awesome_eventstorming/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-awesome-eventstorming-121545",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-claudy-releases-121553",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/claudy_releases/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-claudy-releases-121553",
+      "description": ""
+    },
+    {
+      "id": "cli2",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/cli2/payload/_DIR_IDENTITY.md",
+      "name": "cli2",
+      "description": ""
+    },
+    {
+      "id": "repo-homebrew-core",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/homebrew_core/payload/_DIR_IDENTITY.md",
+      "name": "repo-homebrew-core",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-langgraph-105719",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/langgraph/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-langgraph-105719",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-llmware-112844",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/llmware/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-llmware-112844",
+      "description": ""
+    },
+    {
+      "id": "ghost_sweep_repo_orphan_sweep_manim_video",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/ORPHAN_SWEEP_payload/salvaged_k8s_and_ai_dumps/GHOST_SWEEP_repo_orphan_sweep_manim_video_142829_215954/_DIR_IDENTITY.md",
+      "name": "ghost_sweep_repo_orphan_sweep_manim_video",
+      "description": ""
+    },
+    {
+      "id": "repo-orphan-sweep-tblite",
+      "type": "WORKFLOW",
+      "coord": "vault/knowledge/global_codebases/tblite/payload/_DIR_IDENTITY.md",
+      "name": "repo-orphan-sweep-tblite",
+      "description": ""
+    }
+  ]
+}
