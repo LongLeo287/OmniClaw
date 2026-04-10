@@ -30,7 +30,7 @@
   [Strengths](#-core-strengths) •
   [Daemons](#%EF%B8%8F-the-8-core-daemons-master-hierarchy) •
   [MemPalace](#-the-mempalace-3-layer-spatial-architecture) •
-  [Ecosystem](#-the-omniclaw-ecosystem) •
+  [Ecosystem](#ecosystem) •
   [Installation](#-installation) •
   [Guides](#-comprehensive-system-maps--guides) •
   [Credits](#-acknowledgments)
@@ -185,7 +185,7 @@ For a deeper understanding of the system's architecture, running services, and l
 
 ---
 
-## 🚀 The OmniClaw Ecosystem (Coming Soon)
+<h2 id="ecosystem">🚀 The OmniClaw Ecosystem</h2>
 
 <p align="center">
   <img src="vault/assets/media/THE OMNICLAW ECOSYSTEM.jpg" alt="The OmniClaw Ecosystem" width="80%" style="border-radius: 8px;" />
