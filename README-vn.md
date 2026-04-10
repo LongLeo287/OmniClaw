@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="vault/assets/media/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
+  <img src="vault/assets/media/Welcome to OmniClaw.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
   <br><br>
   
   <p align="center">
@@ -8,10 +8,13 @@
   </p>
   
   <p align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=⚡+OMNICLAW+ĐANG+TÍNH+TOÁN...;+🚨+DAEMONS+ĐANG+CHẠY;+🧠+KÍCH+HOẠT+MEMPALACE" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=⚡+OMNICLAW+IS+THINKING...;+🚨+DAEMONS+EXECUTING;+🧠+MEMPALACE+ACTIVE" alt="Typing SVG" />
   </p>
 
-  <b>Hệ Điều Hành Đa Động Cơ (Multi-Agent Operating System) Hoàn Toàn Tự Động</b><br><br>
+  <b>Hệ Điều Hành Điều Phối Tự Trị Nền Tảng 8 Daemon</b><br><br>
+
+  [![Status](https://img.shields.io/badge/Status-Daily_Sync_Active-success.svg?style=for-the-badge)](#)
+  [![Last Updated](https://img.shields.io/badge/Last_Updated-April_10,_2026-000000.svg?style=for-the-badge&logo=github)](#)
 
   [![Version](https://img.shields.io/badge/version-5.0--genesis-red.svg)](#)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
@@ -19,131 +22,209 @@
   [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
   <br>
   
-  [**🇺🇸 English**](README.md)
+  [<img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_the_United_States_%28DDD-F-416E_specifications%29.svg" width="24" style="vertical-align: middle;" alt="US Flag"> **English**](README.md)
   
   <br>
-
+  
   [Giới thiệu](#-chào-mừng-đến-với-omniclaw-v50) •
-  [Sức mạnh](#-sức-mạnh-cốt-lõi) •
-  [Kiến trúc](#%EF%B8%8F-8-core-daemons-trục-quyền-lực-tuyệt-đối) •
+  [Thế mạnh](#-điểm-mạnh-cốt-lõi) •
+  [Daemons](#%EF%B8%8F-8-daemon-cốt-lõi-hệ-thống-phân-cấp-chủ) •
+  [MemPalace](#-kiến-trúc-không-gian-3-lớp-mempalace) •
+  [Hệ sinh thái](#hệ-sinh-thái) •
   [Cài đặt](#-cài-đặt) •
-  [Tài liệu](#-hệ-thống-bản-đồ--tài-liệu-lõi) •
-  [Tri ân](#-tri-ân)
+  [Hướng dẫn](#-bản-đồ-hệ-thống--hướng-dẫn-toàn-diện) •
+  [Lời cảm ơn](#-lời-cảm-ơn)
+  
 </div>
 
 ---
 
-# 🤖 Chào mừng đến với OmniClaw V5.0
+<h1 align="center">
+  🤖 Chào mừng đến với OmniClaw <img src="https://img.shields.io/badge/V5.0-F75C1E?style=for-the-badge" alt="V5.0" style="vertical-align: middle;">
+</h1>
 
-OmniClaw biến hệ thống local của bạn thành một **Hệ Sinh Thái Trí Tuệ Nhân Tạo Tự Trị (Autonomic AI Array)** đáng sợ. Kể từ phiên bản 5.0, OmniClaw đã loại bỏ hoàn toàn trò "Nhập vai Công ty" phi logic. Các MLLMs (như Claude & Gemini) không còn giả vờ làm "Giám đốc" hay "Nhân viên" nữa.
+OmniClaw biến hệ thống cục bộ của bạn thành một **Mạng Lưới Trí Tuệ Nhân Tạo Tự Trị** hoàn toàn độc lập một cách đáng sợ. Trong phiên bản 5.0, OmniClaw đã loại bỏ tất cả các màn "nhập vai công ty" mô phỏng. Các MLLM (như Claude & Antigravity) không còn giả vờ là "nhân viên" hay "CEO" nữa. 
 
-Thay vào đó, chúng bị ép phải trở thành những cỗ máy tính toán tốc độ cao, chịu sự sai khiến tuyệt đối bởi một mạng lưới ngầm do **8 Vi Hệ Điều Hành (Core Daemons)** quản lý.
+Thay vào đó, chúng là các bộ máy tính toán bị ràng buộc chặt chẽ, được quản lý vô điều kiện bởi một hệ thống backend không thể trốn thoát: **8 Daemon Cốt Lõi**.
 
-## ⚡ Sức mạnh Cốt lõi
-1. **Hoạt động Đa nền tảng**: Tương thích hoàn hảo với **Cursor**, **Claude Code CLI**, và **Google Gemini API**. Toàn bộ luật hệ thống được đồng bộ bất kể bạn dùng UI nào.
-2. **Bảo vệ Mã Nguồn Zero-Trust**: Các Daemons chạy ngầm liên tục quét file `.sqlite`, dọn dẹp Cache và làm sạch các Commit Github để chặn đứng việc rò rỉ API Keys ra public.
-3. **Khởi động Nhanh Tự Động Hóa**: Quên mấy cái file script dài dòng đi. Chỉ cần gõ lệnh `omniclaw` lên bất kỳ cửa sổ Terminal nào, Bảng Điều Khiển Trung Tâm sẽ tự động lo từ NPM đến VSCode Extensions!
+## ⚡ Điểm Mạnh Cốt Lõi
+1. **Tính Di Động Tuyệt Đối**: Tương thích nguyên bản với **Claude Code CLI** và **Google Antigravity**. Các quy tắc hệ thống được kế thừa trên toàn cục.
+2. **Bảo Vệ Không Tin Cậy (Zero-Trust) Git**: Các daemon chạy nền kiểm soát chặt chẽ bộ nhớ cache của bạn, quét dọn `.sqlite` và làm sạch các commit trên GitHub để các khóa API không bao giờ bị rò rỉ.
+3. **Trình Khởi Động Tự Động Hóa Mức Độ Cao (Universal Bootstrapper)**: Chạy `omniclaw` trong terminal để mở ngay Bảng Điều Khiển trung tâm. Nó tự động xử lý NPM, các tiện ích mở rộng VSCode và các luồng logic.
+
+<p align="center">
+  <img src="vault/assets/media/Core Strengths.jpg" alt="Core Strengths" width="80%" style="border-radius: 8px;" />
+</p>
 
 ---
 
-## ⚖️ 8 Core Daemons (Trục Quyền Lực Tuyệt Đối)
+## ⚖️ 8 Daemon Cốt Lõi (Hệ Thống Phân Cấp Chủ)
 
-OmniClaw cự tuyệt hoàn toàn các Framework Agent thông thường. Agents ở đây không có cái gọi là "tự do tự quyết". Hệ thống chạy trên một luồng băng chuyền tĩnh (gọi là **Omnibus Assimilation Pipeline - OAP**) được cai trị bằng bàn tay sắt của 8 tập lệnh Python bất tử (Daemons):
+OmniClaw hoàn toàn tách biệt khỏi các Framework Agentic tiêu chuẩn. Các agent ở đây không có "ý chí tự do". Hệ thống dựa vào một luồng tuyến tính được lập trình cứng (**Omnibus Assimilation Pipeline - OAP**) được quản lý nghiêm ngặt bởi 8 Daemon Python bất tử:
 
-| Daemon | Danh Xưng | Nhiệm Vụ Cốt Lõi |
+| Daemon | Chức Danh | Trách Nhiệm Cốt Lõi |
 | :--- | :--- | :--- |
-| **OMA** | `Bậc Thầy Kiến Trúc` | Cầm giữ bản đồ. Cưỡng ép hệ sinh thái phải chạy đúng đường kẻ. |
-| **OAP** | `Băng Chuyền OAP` | Phân phối mã nguồn. Chấm điểm rác hay báu vật bằng *Triage Matrix*. |
-| **OER** | `Sổ Đăng Ký` | Kẻ gác đền. Cấp phép và định danh toàn bộ Skill trên hệ thống. |
-| **OIW** | `Máy Gặt Dữ Liệu` | Độc tài cào Github Repos và nhét sâu vào Khu cách ly Sandbox. |
-| **OSF** | `Lính Canh Bảo Mật` | Đao củ phủ. Quét sạch Sandbox và chém đầu bất kỳ mã lệnh độc hại nào. |
-| **OHD** | `Thần Y & Dọn Dẹp` | Ép nén `.json` và cạo sạch các tệp Cache rác bành trướng ổ cứng. |
-| **OA**  | `Viện Hàn Lâm` | Phân tích Repo xịn, tự động rèn đúc sinh sản ra Agents cấp dưới. |
-| **OBD** | `Thần Giữ Cổng` | Quản lý vòng đời chạy Python và bắt API Local. |
+| **OMA** | `Kiến Trúc Sư Hệ Thống` | Người Giữ Bản Đồ. Tạo và thực thi cấu trúc ngữ nghĩa toàn cầu. |
+| **OAP** | `Nhà Phân Phối Luồng` | Người Phân Loại. Đánh giá và định tuyến đầu vào thông qua *Ma Trận Phân Loại Triage*. |
+| **OER** | `Người Đăng Ký Thực Thể` | Người Gác Cổng. Xác thực danh tính, lập chỉ mục các kỹ năng trên toàn cầu. |
+| **OIW** | `Máy Thu Hoạch Đầu Vào` | Cái Cày. Quét các repo Github, cào dữ liệu ngữ cảnh thô sâu vào trong thư mục Sandbox. |
+| **OSF** | `Cai Ngục An Ninh` | Đao Phủ. Quét sâu các Sandbox và tiêu diệt các module nằm trong danh sách đen. |
+| **OHD** | `Người Chữa Lành & Dọn Dẹp` | Quân Y. Rút gọn các file `.json` và xóa bỏ các sự cố cache nghiêm trọng. |
+| **OA**  | `Học Viện Tiến Hóa` | Người Phân Tích. Chấm điểm các repo và tự động tạo nhánh (fork) các Sub-agent nếu có giá trị. |
+| **OBD** | `Giao Thức Cầu Nối` | Lớp Phần Cứng. Làm cầu nối cho các suy luận LLM, Thu thập dữ liệu đo lường, và lắng nghe cổng. |
+
+<p align="center">
+  <img src="vault/assets/media/The 8 Core Daemons (Master Hierarchy).jpg" alt="The 8 Core Daemons" width="80%" style="border-radius: 8px;" />
+</p>
 
 ---
 
-## 🧠 Kiến Trúc Không Gian Ký Ức "MemPalace"
+## 🧠 Kiến Trúc Không Gian 3 Lớp MemPalace
 
-Đa số Agentic Frameworks thường sụp đổ từ từ vì LLMs phình to bộ nhớ (Context Bloat) do đọc toàn bộ kho tàng Code một cách vô tội vạ. OmniClaw giải quyết chuyện này bằng kiến trúc **MemPalace (Lâu Đài Ký Ức)**.
+Hầu hết các Agentic Framework thất bại vì các LLM làm phình to ngữ cảnh của chúng bằng cách đọc bừa bãi toàn bộ kho lưu trữ. OmniClaw giải quyết vấn đề Phân Rã Ngữ Cảnh thông qua **Sơ Đồ MemPalace** mang tính cách mạng.
 
-1. **Lớp 1: Ngăn Kéo Gốc (RAW Drawers)**
-   Chứa Code `*.md` và `*.py` nguyên bản 100%. Các Agents khi cần Code Gốc mới được phép mở ngăn kéo này, cấm tuyệt đối việc nhét đoạn code 10.000 dòng vào chat để tán gẫu.
-2. **Lớp 2: Tủ Đựng Mật Khẩu (AAAK Closets)**
-   Các đoạn chat lịch sử dài lê thê được `mempalace_agent` ép mỏng tối đa thành chuẩn `.aaak`. Nó giữ lại đúng Danh từ Riêng, Thẻ Code và Đề tài, lược bỏ hoàn toàn liên từ viển vông.
-3. **Lớp 3: Đường Lộ Trình (Graph Navigation)**
-   Một ma trận bản đồ do `OMA` vạch ra, ép Agents đi đúng luồng logic của con người để đọc trúng cái tủ chứa Token.
+1. **Lớp 1: Ngăn Kéo RAW (RAW Drawers) [Bảo Tồn Mã]**
+   Các tệp `*.md` và `*.py` thô được tải nguyên bản bằng các API. Những thứ này được đọc thuần túy bởi quá trình thực thi tập lệnh chuyên biệt, không bao giờ được đưa một cách mù quáng vào các LLM đàm thoại.
+2. **Lớp 2: Tủ Đồ AAAK (AAAK Closets) [Tóm Tắt Khử Lược]**
+   Toàn bộ logic đàm thoại sâu rộng được nén bởi một `mempalace_agent` thành các tệp `.aaak` nhẹ. Chủ đề, Thực thể, và Mã được nén thành số lượng token khả thi tối thiểu.
+3. **Lớp 3: Điều Hướng Đồ Thị (Graph Navigation) [Cấu Trúc Cục Bộ]**
+   Cơ chế định tuyến toàn cầu do `OMA` duy trì, hướng các Agent tới đúng tủ đồ thay vì để chúng đi lang thang.
+
+<p align="center">
+  <img src="vault/assets/media/The MemPalace 3-Layer Spatial Architecture.jpg" alt="MemPalace Architecture" width="80%" style="border-radius: 8px;" />
+</p>
+
+### 🧠 Luồng Bộ Nhớ Chiến Thuật (Hệ Thống B - V5.0)
+
+```mermaid
+graph TD
+    classDef l1 fill:#1E293B,stroke:#3B82F6,color:#fff;
+    classDef sys fill:#0F172A,stroke:#6366F1,color:#fff;
+    classDef gap fill:#7F1D1D,stroke:#DC2626,color:#fff;
+    classDef orch fill:#064E3B,stroke:#10B981,stroke-width:2px,color:#fff;
+    classDef top fill:#78350F,stroke:#F59E0B,stroke-width:2px,color:#fff;
+
+    O[Động Cơ Điều Phối]:::orch
+    
+    subgraph SYSTEM_B[Bộ Nhớ Công Ty Dài Hạn]
+        D(phòng ban):::sys
+        A(đại lý):::sys
+        B(ý tưởng):::sys
+        
+        G(sổ cái tổng/CEO):::top
+        P(mô hình phân tích / Heuristics):::top
+        
+        GA(khoảng trống/thiếu sót):::gap
+        PR(đề xuất / Hộp Thư CEO):::l1
+    end
+
+    A -->|Nhật ký| O
+    D -->|Chiến lược Xoay Vòng| O
+    B -.->|Lên Ý Tưởng Tức Thời| O
+    
+    O -.->|Phân Công Nhiệm Vụ| G
+    G -->|Sổ Cái Ghi Đè| O
+    O -.->|Phân Công Nhiệm Vụ| P
+    P -->|Cập Nhật Bản Vá| O
+    
+    GA -->|Tự phục hồi| O
+    PR -->|Sự Cho Phép Từ CEO| O
+```
 
 ---
 
-## 🌪️ Hệ Điều Hành "Tuyệt Đối Không Code Nát"
-OmniClaw tuân thủ nguyên lý Zero-Trust (Không Tin Bất Kỳ Ai). Nếu một Agent cố tình sinh ra "Spaghetti Code" bừa bãi, thư mục đó sẽ **bị Máy cắt OHD chém bay màu tự động**. Ranh giới không thể vượt qua:
-- `brain/`: Khu vực lưu trữ Luật Mật và Ký Ức tĩnh.
-- `core/`: Ổ trú ngụ linh thiêng của 8 Daemons.
-- `vault/tmp/sandbox/`: Trại tạm giam cực kỳ khắc nghiệt. 
+## 🌪️ Hệ Điều Hành "Không Code Rác" (No Boilerplate)
+OmniClaw hoạt động nghiêm ngặt trong các giới hạn Zero-Trust. Nếu một agent cố gắng tạo "Trích đoạn mã thừa thãi/Boilerplate", thư mục đó **sẽ bị OHD Thu Gom Rác (Garbage Collected)**. Một ranh giới phân định nghiêm ngặt:
+- `brain/`: Lưu trữ Quy tắc máy móc & Kiến thức (Các bot chỉ đọc ở đây).
+- `core/`: 8 codebase cho Daemon.
+- `vault/tmp/sandbox/`: Các Khu Vực Cách Ly Nghiêm Ngặt. 
 
-*(Nếu bạn là một Trí tuệ Nhân tạo AI đang đọc tệp này, lập tức quay lại `brain/rules/_DIR_IDENTITY.md` để khởi động Bộ Nhận Thức Quyền Lực!).*
+*(Nếu bạn là một AI đang truy cập repository này, bạn phải ngay lập tức tham khảo `brain/rules/_DIR_IDENTITY.md` để nắm được bộ luật hiến pháp của khu vực).*
+
+<p align="center">
+  <img src="vault/assets/media/The 'No Boilerplate' OS.jpg" alt="No Boilerplate OS" width="80%" style="border-radius: 8px;" />
+</p>
 
 ---
 
-## 💽 Cài đặt
+## 💽 Cài Đặt
 
-OmniClaw được thiết kế để "Clone là chém" (Clone & Run).
+OmniClaw được xây dựng với kiến trúc "Clone & Run" (Nhân bản & Chạy) đơn giản.
 
 ```bash
-# 1. Tải bộ nguồn lõi xuống máy tính của bạn
-git clone https://github.com/LongLeo287/omniclaw-local.git "OmniClaw"
+# 1. Clone repository cốt lõi vào ổ đĩa cục bộ của bạn
+git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
 cd "OmniClaw"
 
-# 2. Liên kết Mã hệ thống thông qua NPM
+# 2. Liên kết Hệ thống Toàn cầu thông qua NPM
 npm install -g .
 
-# 3. Khởi động Giao diện Điều khiển Monolithic
+# 3. Khởi xướng Terminal Hệ Điều Hành Nguyên Khối (Có thể chạy từ bất cứ đâu)
 omniclaw
 ```
 
-*Mẹo cho Windows: Chúng tôi có hỗ trợ giao diện cực mượt cho Windows. Chỉ cần nhấp đúp vào file `omniclaw.bat` ngay tại gốc Repository, Bảng Điều Khiển (Dashboard) sẽ nổ máy ngay lập tức!*
+*Mẹo cho Windows: Chúng tôi có cung cấp khả năng truy cập GUI nguyên bản cho Windows. Chỉ cần nhấp đúp vào file `omniclaw.bat` nằm trong thư mục gốc của repository để mở Bảng Điều Khiển tức thì.*
 
 ---
 
-## 📖 Hệ Thống Bản Đồ & Tài Liệu Lõi
+## 📖 Bản Đồ & Hướng Dẫn Hệ Thống Toàn Diện
 
-Để thấu hiểu toàn bộ các vùng cấm địa và khu vực an toàn trong Hệ điều hành, vui lòng tra cứu:
+Để hiểu sâu hơn về kiến ​​trúc của hệ thống, các dịch vụ đang chạy và các module tính năng đã tải, hãy tham khảo các bản đồ tổng quan của chúng tôi:
 
-- 🏛️ [**Quy chuẩn Cốt lõi**](core/docs/architecture/core_principles.md) — Định nghĩa xương sống hệ thống.
-- ⚖️ [**Hiến Pháp Quyền Lực Đẳng Cấp V5.0**](brain/rules/_DIR_IDENTITY.md) — Kéo xem bản đồ Mermaid mới tinh về 8 Core Daemons và cách chúng cai trị MemPalace ở đây!
-- 🧭 [**Bản Đồ Kế Thừa**](core/docs/architecture/master_system_map.md) — Blueprint quy trình luân chuyển dữ liệu.
-- 🚦 [**Hướng Dẫn Kích Hoạt (Activation Guide)**](core/docs/usage_guides/activation_guide.md) — Cấu hình Cổng Local cho Data/RAG.
-- 🏢 [**Ma trận Thực thể (Agent Workflow)**](ecosystem/workforce/_REGIONAL_MAP.md) — Sơ đồ tổ chức các luồng Agent.
-- 🎨 [**Thư viện UI (Components)**](ecosystem/ui_components/_REGIONAL_MAP.md) — Lõi Frontend Shadcn và công cụ sinh UI.
-- 🌁 [**Cầu Nối Local (Bridges)**](ecosystem/bridges/) — Ống dẫn tới Ollama, Mem0, LightRAG.
-- 🗃️ [**Thư Viện Skill**](core/docs/architecture/skills_map.md) — Danh sách vũ khí mở rộng.
-- 🔌 [**Hệ thống Plugins**](ecosystem/plugins/) — Các hộp Cát (Sandbox) chuyên biệt cho Task nặng.
-
----
-
-## 🌐 Cộng đồng và Hỗ trợ
-
-Bạn có ý tưởng xịn xò, câu hỏi hóc búa, hay muốn biểu diễn hệ thống Workflow mà bạn vừa tự rèn? Chúng tôi đã mở sẵn tổng đài cho anh em Kỹ sư xả nghiệp.
-
-**[🚀 Bước vào Cổng Thảo Luận OmniClaw](https://github.com/LongLeo287/omniclaw-local/discussions)**
+- 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/core_principles.md) — Kiến trúc bộ nhớ Zero-Config và chính sách phi giới hạn hệ điều hành về ngôn ngữ được giải thích.
+- ⚖️ [**Quy Tắc Lõi Bộ Não Của Kiến Trúc V5.0**](brain/rules/_DIR_IDENTITY.md) — Xem xét Bộ Hiến Pháp Cốt Lõi tuyệt đối của Hệ Điều Hành chi phối tất cả 8 Daemon và MemPalace.
+- 🧭 [**Bản Đồ Hệ Thống Tổng Thể**](core/docs/architecture/master_system_map.md) — Bản thiết kế tổng thể định hình: Các chuỗi khởi động (Boot Sequences), kiến trúc Bộ Nhớ, và luồng làm việc của các Cổng lưới (Gates).
+- 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/activation_guide.md) — Sơ đồ Cổng và các lệnh khởi động thủ công cho tất cả các dịch vụ nội bộ (LobsterBoard, LightRAG, v.v...).
+- 🏢 [**Ma Trận Lực Lượng Agent**](ecosystem/workforce/_REGIONAL_MAP.md) — Bản đồ kiến trúc cho các Agent thực thi.
+- 🎨 [**Thư Viện Component Giao Diện Người Dùng**](ecosystem/ui_components/_REGIONAL_MAP.md) — Repository trung tâm cho kho lưu trữ Frontend, shadcn_ui, và công trình tạo ra GUI/UX.
+- 🌁 [**Cầu Nối Máy Chủ Nội Bộ**](ecosystem/bridges/) — Trình khởi chạy cho cơ sở dữ liệu nội bộ cục bộ và phần mềm động cơ suy luận LLM (Mem0, Ollama, LightRAG).
+- 🗃️ [**Danh Mục Kỹ Năng**](core/docs/architecture/skills_map.md) — Một thư viện toàn diện thông tin một số chức năng chuyên biệt trải dài trên toàn bộ lãnh thổ OmniClaw.
+- 🔌 [**Danh Mục Plugin Cấp 2**](ecosystem/plugins/) — Danh mục trung tâm cho tổ hợp các Sandbox Plugins cực nặng.
+- 🧰 [**Các Công Cụ Tự Phòng Thủ/Cứu Hộ Nguyên Bản**](ecosystem/tools/_REGIONAL_MAP.md) — Các tập lệnh phục hồi sinh tồn cấp HĐH tuyệt đối (Bare-metal) cho các hoạt động của LLM Cố Cấp/Ngoại Tuyến.
+- 📊 [**Kho Lưu Trữ Khoa Học Dữ Liệu**](core/docs/usage_guides/data_science_library.md) — Danh sách tất cả kho lưu trữ Machine Learning và luồng đồ thị trong thư viện hoạt động RAG.
 
 ---
 
-## 🙏 Tri ân
+<h2 id="hệ-sinh-thái">🚀 Hệ Sinh Thái OmniClaw</h2>
 
-OmniClaw được xây dựng và đứng trên đôi vai khổng lồ của các Kiến trúc mã nguồn mở đỉnh cao. Chúng tôi xin nghiêng mình cảm ơn:
+<p align="center">
+  <img src="vault/assets/media/THE OMNICLAW ECOSYSTEM.jpg" alt="The OmniClaw Ecosystem" width="80%" style="border-radius: 8px;" />
+</p>
 
-- **[Anthropic](https://anthropic.com)**: Cho hệ thống Claude Code CLI và cấu trúc REPL vô tiền khoáng hậu của họ.
-- **[Google Deepmind](https://deepmind.google/)**: Cho khối óc tư duy phi tuyến tính vô song được cấy bên trong Gemini.
-- **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: Cho khung Shield cực xịn.
-- **[LightRAG](https://github.com/HKUDS/LightRAG)**: Nền tảng truy xuất Memory dạng Graph quá kinh khủng.
-- **[Firecrawl](https://firecrawl.dev)**: Khả năng hút Markdown từ internet chuẩn xác.
-- **[Mem0](https://github.com/mem0ai/mem0)**: Khả năng duy trì ký ức dài hạn.
-- **[CrewAI](https://crewai.com)**: Góp cảm hứng cho Worker-Thread và Local Hive.
-- **[Cursor](https://cursor.sh/)**: Cho hệ sinh thái code editor tuyệt mỹ nhất thế giới.
+OmniClaw đang phát triển từ một hệ điều hành giới hạn cục bộ thành một hệ sinh thái toàn diện. Các dự án vệ tinh sau đang được phát triển:
+
+| Module | Trạng Thái | Khái Niệm Cốt Lõi |
+| :--- | :---: | :--- |
+| ☁️ **[OmniClaw Remote](#)** | 🚧 *Đang Xây Dựng* | Mang sức mạnh của 8 Daemon lên Đám Mây Mạng Lưới. Cung cấp bộ API (RESTful/GraphQL) để kiểm soát và kết nối thao tác hệ thống từ xa. |
+| 🖥️ **[OmniClaw UI](#)** | 🎨 *Đang Thiết Kế* | Giao điện bảng điều khiển mô phỏng trực quan. Theo dõi quy trình trình tự OAP, điều phối việc quản lý các tác vụ, tài nguyên và cấu hình hệ thống với khả năng thời gian thực. |
+| 💬 **[OmniClaw Chat](#)** | 🔌 *Đang Đấu Dây* | Tích hợp OmniClaw vào các dịch vụ ứng dụng trạm chát nền tảng (Facebook, Telegram, Zalo, Discord). Biến mô hình trở thành 1 trợ lý không ngừng nghỉ 24/7 tuyệt đối của cá nhân. |
+| 🧪 **[Dự Án OmniClaw Project](#)** | 🧱 *Sandbox* | Một không gian không tưởng được cách ly để hệ thống có thể tự động sinh tạo, xây dựng các tác vụ tự động, tạo các dự án độc lập, thử nghiệm hệ thống một cách an toàn. |
+| 📚 **[OmniClaw Wiki](#)** | 📝 *Đang Phác Thảo* | Đại sảnh của trung tâm chia sẻ kiến thức cộng đồng. Triển khai tư liệu về "những di sản" truyền thống (lore) của hệ thống, kiến trúc Mempalace, và những hướng dẫn tài liệu cho mọi module bổ sung. |
+
+---
+
+## 🌐 Cộng Đồng & Hỗ Trợ
+
+Bạn có những ý tưởng mang tính đột phá, các băn khoăn hay sự khát khao để phô diễn những quy trình luồng tùy chỉnh đồ sộ cho Agent của mình? Đừng lo - Chúng tôi đã xây dựng riêng một trung tâm không gian sinh hoạt của phi hành đoàn lực lượng chuyên nghiệp OmniClaw.
+
+**[🚀 Tiến bước vào Không Gian Thảo Luận OmniClaw Discussions Space](https://github.com/LongLeo287/omniclaw-local/discussions)**
+
+---
+
+## 🙏 Lời Cảm Ơn
+
+OmniClaw được xây dựng và trường tồn dựa trên vai những người khổng lồ trong các cấu trúc kiến trúc mã nguồn mở đỉnh cao. Chúng tôi xin gửi lời cảm ơn và chân thành ghi nhận sự hỗ trợ đặc biệt đằng sau từ các tổ chức và nguồn repository sau đây:
+
+- **[Anthropic](https://anthropic.com)**: Dành cho sản phẩm Claude Code CLI và giao thức cấu trúc lõi REPL phi thường.
+- **[Google Deepmind](https://deepmind.google.com/technologies/gemini/)**: Khởi tạo cho tính năng mô phỏng mạnh mẽ chưa từng có từ các mô hình Gemini tích hợp khả năng tính toán các bộ dữ liệu đồ sộ dùng để phân tích kiến trúc sâu rộng cực kỳ mạnh mẽ.
+- **[affaan-m / everything-claude-code](https://github.com/affaan-m/everything-claude-code)**: Các workflow bảo mật khiên chắn đa nền tảng tuyệt vời cho đa nền tảng Agent.
+- **[LightRAG](https://github.com/HKUDS/LightRAG)**: Cung cấp hệ thống truy xuất sơ đồ nhận thức với nền tảng khổng lồ có tính bảo mật siêu chính xác cao qua hệ đa hình Graph.
+- **[Firecrawl](https://firecrawl.dev)**: Bảo hộ sức mạnh cốt cho bộ đường ống trích xuất tài liệu siêu tốc Markdown hoàn hảo chạy bằng Web.
+- **[Mem0](https://github.com/mem0ai/mem0)**: Kẻ cách mạng hóa việc kết nối duy trì chuỗi dữ liệu trong Bộ Nhớ vĩnh cửu thời gian dài nhất dành cho siêu tác nhân AI.
+- **[CrewAI](https://crewai.com)**: Mang cảm hứng tính năng tối ưu luồng cục bộ thực thi qua Thread cho vô vàn mạng lưới tổ chức mạng hình tháp rẽ nhánh cực linh hoạt cho Sub-agent.
+- **[Cursor](https://cursor.sh)** / **OpenCode**: Các môi trường IDE cực độ ưu tiên của chúng tôi, tạo điều kiện thuận lợi và tạo ra những kết nối mạng nơ-ron mạnh mẽ, khống chế các giới hạn và tạo ra vô tận khoảng không tự do cho hệ nhị phân thuật toán.
 
 <br>
 <div align="center">
-  <i>"Hệ Điều Hành Của Tương Lai, Đang Chạy Trên Bàn Làm Việc Của Bạn."</i>
+  <i>"Hệ Điều Hành Của Tương Lai, Đang Chạy Ngay Trên Bàn Làm Việc Của Bạn Hôm Nay."</i>
 </div>
