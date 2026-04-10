@@ -1,0 +1,10 @@
+---
+id: logic_guardian
+
+type: atomic_skill
+status: active
+source: deep_extraction
+---
+# logic-guardian
+
+Extracted atomic skill from global codebases.
