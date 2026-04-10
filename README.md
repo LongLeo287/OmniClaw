@@ -13,13 +13,16 @@
 
   <b>The Autonomic, 8-Daemon Orchestration Operating System</b><br><br>
 
+  [![Status](https://img.shields.io/badge/Status-Daily_Sync_Active-success.svg?style=for-the-badge)](#)
+  [![Last Updated](https://img.shields.io/badge/Last_Updated-April_10,_2026-000000.svg?style=for-the-badge&logo=github)](#)
+
   [![Version](https://img.shields.io/badge/version-5.0--genesis-red.svg)](#)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
   [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
   [![Discussions](https://img.shields.io/badge/Join_Community-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
   <br>
   
-  [**🇻🇳 Vietnamese**](README-vn.md)
+  [<img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" width="24" style="vertical-align: middle;" alt="VN Flag"> **Vietnamese**](README-vn.md)
   
   <br>
   
@@ -33,14 +36,16 @@
 
 ---
 
-# 🤖 Welcome to OmniClaw V5.0
+<h1 align="center">
+  🤖 Welcome to OmniClaw <img src="https://img.shields.io/badge/V5.0-F75C1E?style=for-the-badge" alt="V5.0" style="vertical-align: middle;">
+</h1>
 
 OmniClaw transforms your local system into a terrifyingly independent **Autonomic Artificial Intelligence Array**. In version 5.0, OmniClaw abolished all simulated "corporate roleplay". MLLMs (like Claude & Gemini) no longer pretend to be "staff members" or "CEOs". 
 
 Instead, they are deeply constrained computational engines governed unconditionally by an inescapable backend: **The 8 Core Daemons**.
 
 ## ⚡ Core Strengths
-1. **Absolute Portability**: Compatible natively with **Cursor**, **Claude Code CLI**, and **Google Gemini API**. System rules inherit globally.
+1. **Absolute Portability**: Compatible natively with **Claude Code CLI** and **Google Antigravity**. System rules inherit globally.
 2. **Zero-Trust Git Protection**: Background daemons strictly police your cache, sweeping `.sqlite` and sanitizing GitHub commits so API keys never leak.
 3. **Hyper-Automated Universal Bootstrapper**: Run `omniclaw` in your terminal to instantly invoke the central Dashboard. It handles NPM, VSCode extensions, and logic pipelines automatically.
 
@@ -160,6 +165,16 @@ For a deeper understanding of the system's architecture, running services, and l
 - 📊 [**Data Science Repositories**](core/docs/usage_guides/data_science_library.md) — List of active Machine Learning and RAG repositories in the capability library.
 
 ---
+
+## 🚀 The OmniClaw Ecosystem (Coming Soon)
+
+OmniClaw is evolving from a localized operating system into a comprehensive ecosystem. The following satellite projects are currently in development and will be integrated soon:
+
+* ☁️ **[OmniClaw Remote](#)**: Taking the power of the 8 Daemons to the Cloud. Providing APIs (RESTful/GraphQL) to control and connect the system remotely.
+* 🖥️ **[OmniClaw UI](#)**: A visual Dashboard. Monitor the OAP flow, manage tasks, resources, and system configurations in real-time, moving beyond the standard CLI.
+* 💬 **[OmniClaw Chat](#)**: Integrating OmniClaw into messaging platforms (Facebook, Telegram, Zalo, Discord). Transforming the system into a 24/7 personal assistant accessible on any device.
+* 🧪 **[OmniClaw Project](#)**: A specialized Sandbox environment. An absolutely isolated space for the system to autonomously generate, build, and test independent projects/apps safely.
+* 📚 **[OmniClaw Wiki](#)**: The community knowledge hub. Documenting the entire system "lore", MemPalace architecture, AAAK structures, and guides for developing custom modules.
 
 ## 🌐 Community & Support
 
