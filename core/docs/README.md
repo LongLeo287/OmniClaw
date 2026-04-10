@@ -51,3 +51,8 @@ Standard Operating Procedures that dictate how daemons process raw data and main
 
 ---
 *For internal mapping and Daemon routing, reference the absolute Constitution located at `brain/rules/_DIR_IDENTITY.md`.*
+
+
+## ?? Operational Brain (The Ledger)
+- [**brain/registry/**](../../brain/registry/_DIR_IDENTITY.md) — The authoritative V5.0 System Ledger. Strictly regulated by OMA and OER Daemons. Contains FAST_INDEX and SKILL_REGISTRY.
+
