@@ -2673,7 +2673,7 @@
     {
       "id": "channel_manager",
       "name": "channel_manager",
-      "description": "\"Load skill này khi cần gửi thông báo qua Telegram, routing alerts, hoặc quản lý communication channels của AI OS.\"",
+      "description": "\"Load skill này khi cần gửi thông báo qua Telegram, routing alerts, hoặc quản lý communication channels của OmniClaw.\"",
       "source": "frontmatter_legacy"
     },
     {
@@ -4968,7 +4968,7 @@
     {
       "id": "git_mcp",
       "name": "git_mcp",
-      "description": "Read, search, and manipulate Git repositories directly through MCP. Use for code history analysis, commit inspection, diff viewing, branch management, and repository exploration within AI OS Corp.",
+      "description": "Read, search, and manipulate Git repositories directly through MCP. Use for code history analysis, commit inspection, diff viewing, branch management, and repository exploration within OmniClaw Corp.",
       "source": "frontmatter_legacy"
     },
     {
@@ -7513,7 +7513,7 @@
     {
       "id": "observability",
       "name": "observability",
-      "description": "Track and visualize all LLM calls, tool invocations, and agent actions across AI OS Corp. Supports Langfuse (self-hosted/local) AND LangSmith (cloud). Zero configuration required — noop fallback if not set up.",
+      "description": "Track and visualize all LLM calls, tool invocations, and agent actions across OmniClaw Corp. Supports Langfuse (self-hosted/local) AND LangSmith (cloud). Zero configuration required — noop fallback if not set up.",
       "source": "frontmatter_legacy"
     },
     {
@@ -8476,7 +8476,7 @@
     {
       "id": "public_api_search",
       "name": "public_api_search",
-      "description": "\"Tra cứu danh bạ Public APIs cho AI OS\"",
+      "description": "\"Tra cứu danh bạ Public APIs cho OmniClaw\"",
       "source": "frontmatter_legacy"
     },
     {

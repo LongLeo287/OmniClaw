@@ -38,7 +38,7 @@ Whenever a developer forks or clones OmniClaw from Github, their `storage/vault`
 To seamlessly redownload the missing heavy files straight into their correct local paths, run:
 **`python system/ops/scripts/omniclaw_data_pull.py`**
 
-This script utilizes HuggingFace's `snapshot_download` and RClone `copy` to **exactly match and rehydrate** the original directory structures (`d:/LongLeo/AI OS CORP/AI OS/storage/...`). Links will not break, and all Agents will instantly recognize the memory structures.
+This script utilizes HuggingFace's `snapshot_download` and RClone `copy` to **exactly match and rehydrate** the original directory structures (`d:/LongLeo/OmniClaw CORP/OmniClaw/storage/...`). Links will not break, and all Agents will instantly recognize the memory structures.
 
 ---
 
@@ -61,9 +61,10 @@ powershell -ExecutionPolicy Bypass -File system\ops\scripts\memory\backup_soul.p
 ## 3. Automated CI/CD Gates (GitHub Actions)
 The moment the Operator runs a **Git Push** command syncing code to the `main` branch, the cloud awakens two dedicated GitHub Actions C.I. workflow guardians:
 
-- **`.github/workflows/ai-os-tests.yml`:** Continuously checks for python syntax violations (`.py`, `.js`), whilst ensuring changes to expanding components and the newly integrated `docs/` module won't trigger engine crashes.
-- **`.github/workflows/ai-os-validate.yml`:** Scans through critical architectural metadata like the `SKILL_REGISTRY.json` and agent YAML configurations. It ensures every new Skill independently coded by A.I. meets perfect configuration syntax without duplicate IDs or corrupt JSON mapping rules.
+- **`.github/workflows/omniclaw-tests.yml`:** Continuously checks for python syntax violations (`.py`, `.js`), whilst ensuring changes to expanding components and the newly integrated `docs/` module won't trigger engine crashes.
+- **`.github/workflows/omniclaw-validate.yml`:** Scans through critical architectural metadata like the `SKILL_REGISTRY.json` and agent YAML configurations. It ensures every new Skill independently coded by A.I. meets perfect configuration syntax without duplicate IDs or corrupt JSON mapping rules.
 
 ---
 
 Every Data Packaging and Git Push procedure must abide by this strict architecture. OmniClaw System Integrity is inviolable.
+

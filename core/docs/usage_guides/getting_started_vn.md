@@ -33,7 +33,7 @@ Trước khi kích hoạt khung AI 28 phòng ban, đảm bảo đã cài đặt:
 
 ## 3. Khởi Động Lần Đầu
 
-Hệ thống AI OS bắt đầu bằng cách boot file bộ nhớ orchestrator chính.
+Hệ thống OmniClaw bắt đầu bằng cách boot file bộ nhớ orchestrator chính.
 Để kích hoạt **Antigravity** — engine hub trung tâm — nạp file `GEMINI.md` qua giao diện agent trong IDE (hoặc Claude Code với `CLAUDE.md`).
 
 Khi boot lần đầu, hệ thống sẽ:
@@ -45,3 +45,4 @@ Khi boot lần đầu, hệ thống sẽ:
 
 - Đọc [**Lệnh Agent**](agent_commands-vn.md) để hiểu cách tương tác.
 - Gửi repository để xử lý qua giao thức [**CIV Intake**](../workflows/data_intake-vn.md).
+

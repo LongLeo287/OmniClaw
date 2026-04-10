@@ -34,7 +34,7 @@ Before unleashing the 21-department AI framework, ensure you have the following 
 
 ## 3. First Boot (Lighting the Core)
 
-The AI OS starts by booting the main orchestrator memory file.
+The OmniClaw starts by booting the main orchestrator memory file.
 To activate the **Antigravity** central hub engine, load the `GEMINI.md` file using your agent interface in your IDE (or Claude Code for `CLAUDE.md`).
 
 Upon first boot, the system will:
@@ -46,3 +46,4 @@ Upon first boot, the system will:
 
 - Go read the [**Agent Commands**](agent_commands.md) to understand how to interact.
 - Submit a repository for processing via the [**CIV Intake**](../workflows/data_intake.md) protocol.
+

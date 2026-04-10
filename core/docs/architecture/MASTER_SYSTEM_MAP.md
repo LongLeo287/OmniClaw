@@ -1,5 +1,5 @@
 ---
-id: AI-OS-SYSTEM-MAP-001
+id: omniclaw-SYSTEM-MAP-001
 type: REFERENCE
 domain: [system, architecture, meta]
 dept: all
@@ -370,3 +370,4 @@ Every completed task writes a receipt to `telemetry/receipts/<dept>/<task_id>_re
 *OmniClaw Corp — System Map v1.0 — 2026-03-22*
 *Last updated: Cycle 7 system audit*
 *Read on boot. Update when system structure changes.*
+

@@ -79,7 +79,7 @@ OID thực thi chiến lược fetch từng bước để đảm bảo trích xu
 
 ### Cách Chạy OID Daemon
 ```powershell
-$env:OMNICLAW_ROOT = "D:\LongLeo\AI OS CORP\AI OS"
+$env:OMNICLAW_ROOT = "D:\LongLeo\OmniClaw CORP\OmniClaw"
 python system/automations/daemons/omniclaw_oid_daemon.py
 ```
 
@@ -108,3 +108,4 @@ python system/automations/daemons/omniclaw_oid_daemon.py
 - **Xử Lý Lỗi:** Ticket thất bại nghiêm trọng được chuyển vào `storage/vault/DATA/FAILED/`.
 
 > *Tài liệu được tạo bởi Antigravity | OmniClaw V3.1*
+

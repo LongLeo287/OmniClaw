@@ -60,9 +60,10 @@ powershell -ExecutionPolicy Bypass -File system\ops\scripts\memory\backup_soul.p
 ## 4. Cổng CI/CD Tự Động (GitHub Actions)
 Ngay khi Operator chạy lệnh **Git Push** đồng bộ code lên nhánh `main`, hai Guardian GitHub Actions CI được kích hoạt:
 
-- **`.github/workflows/ai-os-tests.yml`:** Liên tục kiểm tra vi phạm cú pháp Python (`.py`, `.js`), đảm bảo các thay đổi module `docs/` mới tích hợp không gây crash engine.
-- **`.github/workflows/ai-os-validate.yml`:** Quét qua metadata kiến trúc quan trọng như `SKILL_REGISTRY.json` và cấu hình YAML agent. Đảm bảo mọi Skill mới được AI code độc lập đều đáp ứng cú pháp cấu hình hoàn hảo, không có ID trùng hoặc JSON mapping bị hỏng.
+- **`.github/workflows/omniclaw-tests.yml`:** Liên tục kiểm tra vi phạm cú pháp Python (`.py`, `.js`), đảm bảo các thay đổi module `docs/` mới tích hợp không gây crash engine.
+- **`.github/workflows/omniclaw-validate.yml`:** Quét qua metadata kiến trúc quan trọng như `SKILL_REGISTRY.json` và cấu hình YAML agent. Đảm bảo mọi Skill mới được AI code độc lập đều đáp ứng cú pháp cấu hình hoàn hảo, không có ID trùng hoặc JSON mapping bị hỏng.
 
 ---
 
 Mọi thủ tục Đóng Gói Dữ Liệu và Git Push phải tuân theo kiến trúc nghiêm ngặt này. Tính toàn vẹn Hệ thống OmniClaw là bất khả xâm phạm.
+

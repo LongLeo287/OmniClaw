@@ -8,7 +8,7 @@ healed_at: 2026-04-03T22:44:27.663079
 
 # 🎓 OmniClaw Academy (OA) Charter
 
-OmniClaw Academy (OA) is the **Supreme Audit Authority** and the Judicial Branch of the OmniClaw AI OS ecosystem. While the CEO commands the vision and the Orchestrator distributes tasks, OA acts as the ultimate gatekeeper of System Integrity, Agent Behavior, and Code Purity.
+OmniClaw Academy (OA) is the **Supreme Audit Authority** and the Judicial Branch of the OmniClaw OmniClaw ecosystem. While the CEO commands the vision and the Orchestrator distributes tasks, OA acts as the ultimate gatekeeper of System Integrity, Agent Behavior, and Code Purity.
 
 [**🇻🇳 Xem Bản Tiếng Việt**](OA_CHARTER-vn.md) | [**Return to Docs Index**](../README.md)
 
@@ -16,7 +16,7 @@ OmniClaw Academy (OA) is the **Supreme Audit Authority** and the Judicial Branch
 
 ## 1. The 7 Pillars of OmniClaw Integrity
 
-OA evaluates all departments, agents, plugins, and architectures strictly against the **7 Pillars of the AI OS**:
+OA evaluates all departments, agents, plugins, and architectures strictly against the **7 Pillars of the OmniClaw**:
 1. **OS-Agnostic Core:** The system and knowledge layers must remain universally readable (English-Only core) and cross-platform compatible.
 2. **Zero-Trust Sandbox:** All incoming code, third-party plugins, and raw data pipelines must undergo multi-layer quarantine.
 3. **Zero-Config Structure:** The 300+ folder skeleton must organically sustain itself without breaking via mandatory `.gitkeep` injections.
@@ -49,3 +49,4 @@ Unlike standard workforce agents, OA is granted absolute unrestricted traversal 
 
 When a flaw, hallucination, or architecture drift is detected, OA generates an **OA Faculty Evaluation Report** detailing the failure against the 7 Pillars. 
 The CEO or an assigned Architecture Agent then executes the mandatory fixes (e.g., stripping bad rules, updating agent prompts, or altering Data Pipelines) to immediately bring the system back into compliance.
+
