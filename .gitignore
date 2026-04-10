@@ -1,4 +1,4 @@
-﻿# =============================================================
+# =============================================================
 # OmniClaw - Hardened .gitignore
 # Purpose: Restricted git tracking to Documentation & Workforce Registry
 # =============================================================
@@ -144,6 +144,9 @@ brain/registry/OMA_SYSTEM_MAP*.json
 !/brain/memory/corp_memory/patterns/system_heuristics.md
 !/brain/memory/corp_memory/patterns/.gitkeep
 
-# 16. Memory - System Proposals (Track everything - CEO directives)
+# 16. Memory - System Proposals (Block volatile proposals, track structure only)
 !/brain/memory/corp_memory/proposals/
-!/brain/memory/corp_memory/proposals/*
+/brain/memory/corp_memory/proposals/*
+!/brain/memory/corp_memory/proposals/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/proposals/proposaltemplate.md
+!/brain/memory/corp_memory/proposals/.gitkeep
