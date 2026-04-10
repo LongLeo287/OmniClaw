@@ -37,7 +37,7 @@ Hệ thống OmniClaw bắt đầu bằng cách boot file bộ nhớ orchestrato
 Để kích hoạt **Antigravity** — engine hub trung tâm — nạp file `GEMINI.md` qua giao diện agent trong IDE (hoặc Claude Code với `CLAUDE.md`).
 
 Khi boot lần đầu, hệ thống sẽ:
-1. Đọc `brain/shared-context/blackboard.json` để xem trạng thái tác vụ toàn cục hiện tại.
+1. Đọc `brain/memory/blackboard.json` để xem trạng thái tác vụ toàn cục hiện tại.
 2. Đăng ký toàn bộ năng lực khả dụng từ `SKILL_REGISTRY.json`.
 3. Chờ lệnh từ CEO (Con Người).
 

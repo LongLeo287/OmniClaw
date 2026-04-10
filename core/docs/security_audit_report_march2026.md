@@ -368,7 +368,7 @@ def send_telegram(text: str):
 
 **Body:**
 ```
-## 🟡 Medium — `brain/shared-context/SKILL_REGISTRY.json`
+## 🟡 Medium — `brain/registry/SKILL_REGISTRY.json`
 
 **Review date:** 2026-03-28
 
@@ -386,7 +386,7 @@ def send_telegram(text: str):
 
 **Impact:** Skill cannot be autos-discovered by the agent routing engine.
 
-**Fix:** Add entry for `dependabot-secretary` to `brain/shared-context/SKILL_REGISTRY.json` with all required fields: `id`, `name`, `description`, `tier`, `category`, `status`, `path`.
+**Fix:** Add entry for `dependabot-secretary` to `brain/registry/SKILL_REGISTRY.json` with all required fields: `id`, `name`, `description`, `tier`, `category`, `status`, `path`.
 ```
 
 ---
@@ -451,7 +451,7 @@ Get-Content CLAUDE.md -Encoding UTF8 | Set-Content CLAUDE.md -Encoding UTF8NoBOM
 | 5 | `system/ops/scripts/sync_identity_1_1.js` | 🟠 High | Hardcoded `<OMNICLAW_ROOT>` placeholder |
 | 6 | `system/ops/omniclaw_orchestrator.py` | 🟡 Medium | Silent LTM import failure |
 | 7 | `system/automations/daemons/system_pulse.py` | 🟡 Medium | Telegram no validation |
-| 8 | `brain/shared-context/SKILL_REGISTRY.json` | 🟡 Medium | dependabot-secretary unregistered |
+| 8 | `brain/registry/SKILL_REGISTRY.json` | 🟡 Medium | dependabot-secretary unregistered |
 | 9 | `CLAUDE.md` + `.clauderules` | 🟡 Medium | Missing boot file + UTF-8 corruption |
 
 **Total:** 5 Critical, 6 High, 8 Medium issues

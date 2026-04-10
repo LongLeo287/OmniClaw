@@ -95,7 +95,7 @@ do not skip. do not exceed authority. do not assume.
 
 ---
 ## section 4 — corp status (live)
-all corp status is pulled live from `brain/shared-context/blackboard.json` (loaded in step 7).
+all corp status is pulled live from `brain/memory/blackboard.json` (loaded in step 7).
 
 *antigravity | omniclaw corp | boot protocol v5.0 | cycle 12 | 2026-04-10*
 *"read first. act second. report always."*

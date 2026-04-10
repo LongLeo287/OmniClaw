@@ -1,4 +1,4 @@
----
+﻿---
 id: omniclaw-SYSTEM-MAP-001
 type: REFERENCE
 domain: [system, architecture, meta]
@@ -8,7 +8,7 @@ version: 1.0
 authority: CEO
 ---
 
-# OmniClaw Corp — Master System Map
+# OmniClaw Corp â€” Master System Map
 ## Complete Knowledge Reference for All Agents, Depts, Workflows, Rules, and Memory
 
 > **READ THIS FIRST.** Any new AI loaded into the system must read this file.
@@ -37,10 +37,10 @@ It features a CEO, C-Suite, 21 departments, 75+ agents, complete workflows, memo
 
 ### Authority Tiers
 ```
-Tier 1: CEO (LongLeo) — final authority on all decisions
-Tier 2: C-Suite (CTO, CMO, COO, CFO, CSO, CIO) — strategic execution
-Tier 3: Dept Heads — dept-level management
-Tier 4: Workers — task execution
+Tier 1: CEO (LongLeo) â€” final authority on all decisions
+Tier 2: C-Suite (CTO, CMO, COO, CFO, CSO, CIO) â€” strategic execution
+Tier 3: Dept Heads â€” dept-level management
+Tier 4: Workers â€” task execution
 ```
 
 ### 21 Departments
@@ -49,25 +49,25 @@ Tier 4: Workers — task execution
 |---|---------|-----------|------|------------|
 | 1 | engineering | backend-architect-agent | GATE_QA (output) | CTO |
 | 2 | qa_testing | test-manager-agent | IS GATE_QA | CTO |
-| 3 | it_infra | it-manager-agent | — | COO |
+| 3 | it_infra | it-manager-agent | â€” | COO |
 | 4 | marketing | growth-agent | GATE_CONTENT (output) | CMO |
 | 5 | support | channel-agent | GATE_CONTENT (output) | COO |
 | 6 | content_review | editor-agent | IS GATE_CONTENT | CMO |
-| 7 | operations | scrum-master-agent | — | COO |
-| 8 | hr_people | hr-manager-agent | — | COO |
+| 7 | operations | scrum-master-agent | â€” | COO |
+| 8 | hr_people | hr-manager-agent | â€” | COO |
 | 9 | security_grc | strix-agent | IS GATE_SECURITY | CSO |
-| 10 | finance | cost-manager-agent | — | CFO |
-| 11 | strategy | product-manager-agent | — | CSO |
+| 10 | finance | cost-manager-agent | â€” | CFO |
+| 11 | strategy | product-manager-agent | â€” | CSO |
 | 12 | legal | legal-agent | IS GATE_LEGAL | CSO |
-| 13 | rd | rd-lead-agent | — | CTO |
-| 14 | registry_capability | registry-manager-agent | — | CTO |
-| 15 | asset_library | library-manager-agent | — | CIO |
-| 16 | od_learning | org-architect-agent | — | CSO |
-| 17 | planning_pmo | pmo-agent | — | COO |
-| 18 | monitoring_inspection | monitor-chief-agent | — | COO |
-| 19 | system_health | health-chief-agent | — | CTO |
+| 13 | rd | rd-lead-agent | â€” | CTO |
+| 14 | registry_capability | registry-manager-agent | â€” | CTO |
+| 15 | asset_library | library-manager-agent | â€” | CIO |
+| 16 | od_learning | org-architect-agent | â€” | CSO |
+| 17 | planning_pmo | pmo-agent | â€” | COO |
+| 18 | monitoring_inspection | monitor-chief-agent | â€” | COO |
+| 19 | system_health | health-chief-agent | â€” | CTO |
 | 20 | content_intake | intake-chief-agent | IS GATE_CIV | CTO |
-| 21 | client_reception | project-intake-agent | — | COO (DORMANT) |
+| 21 | client_reception | project-intake-agent | â€” | COO (DORMANT) |
 
 **Source of truth:** `corp/org_chart.yaml`
 
@@ -99,40 +99,40 @@ Tier 4: Workers — task execution
 
 ### Corp Daily Cycle (7 phases)
 ```
-Phase 1: CEO Brief → reads mission, KPIs, escalations, proposals
-Phase 2: C-Suite Dispatch → strategy → dept goals → blackboard.json
-Phase 3: Dept Dispatch → 21 dept heads assign tasks to workers
-Phase 4: Execute → workers execute, write receipt
-Phase 5: Gate → GATE_QA / GATE_CONTENT / GATE_SECURITY / GATE_LEGAL
-Phase 6: Brief Back → dept heads write daily_briefs
-Phase 7: Reflect → cognitive_reflector → proposals → CEO
+Phase 1: CEO Brief â†’ reads mission, KPIs, escalations, proposals
+Phase 2: C-Suite Dispatch â†’ strategy â†’ dept goals â†’ blackboard.json
+Phase 3: Dept Dispatch â†’ 21 dept heads assign tasks to workers
+Phase 4: Execute â†’ workers execute, write receipt
+Phase 5: Gate â†’ GATE_QA / GATE_CONTENT / GATE_SECURITY / GATE_LEGAL
+Phase 6: Brief Back â†’ dept heads write daily_briefs
+Phase 7: Reflect â†’ cognitive_reflector â†’ proposals â†’ CEO
 ```
 
 ### Knowledge Ingest (7 phases)
 ```
-Phase 1: Intake (intake-chief-agent) → create ticket KI-<timestamp>
-Phase 2: Security Scan (strix-agent) → GATE pass or reject
-Phase 3: Classify (knowledge_navigator) → domain tags + relevant_agents
-  → Domain→Agent matching: org_chart + AGENTS.md + SKILL_REGISTRY.json
-  → Gap detected if relevant_agents=[] + type=TOOL|RESEARCH → Phase 5b
-Phase 4: Enrich (knowledge_enricher) → metadata, cross-links, KI format
-Phase 5a: Agent exists → link to agent memory
-Phase 5b: No agent → trigger agent-auto-create.md
-Phase 6: Archive (archivist) → brain/knowledge/<domain>/
-Phase 7: Notify CEO → if TOOL/RESEARCH or new agent created
+Phase 1: Intake (intake-chief-agent) â†’ create ticket KI-<timestamp>
+Phase 2: Security Scan (strix-agent) â†’ GATE pass or reject
+Phase 3: Classify (knowledge_navigator) â†’ domain tags + relevant_agents
+  â†’ Domainâ†’Agent matching: org_chart + AGENTS.md + SKILL_REGISTRY.json
+  â†’ Gap detected if relevant_agents=[] + type=TOOL|RESEARCH â†’ Phase 5b
+Phase 4: Enrich (knowledge_enricher) â†’ metadata, cross-links, KI format
+Phase 5a: Agent exists â†’ link to agent memory
+Phase 5b: No agent â†’ trigger agent-auto-create.md
+Phase 6: Archive (archivist) â†’ brain/knowledge/<domain>/
+Phase 7: Notify CEO â†’ if TOOL/RESEARCH or new agent created
 ```
 
 ### Agent Auto-Create (7 phases)
 ```
 Phase 1: Validate gap (cognitive_reflector)
-Phase 2: Design spec (product-manager-agent) → brain/agents/proposals/
+Phase 2: Design spec (product-manager-agent) â†’ brain/agents/proposals/
 Phase 3: Security review (strix-agent)
-Phase 4: CEO Proposal (B5 format) → PAUSE for approval
-Phase 5a: Register (hr-manager-agent) → AGENT.md + memory file + receipt
-Phase 5b: New dept? → MANAGER_PROMPT, WORKER_PROMPT, rules.md, dept memory, daily brief, org_chart.yaml, kpi_targets.yaml, kpi_scoreboard.json
-Phase 6: Link (org-architect-agent) → org_chart.yaml, AGENTS.md, daily_briefs
-Phase 7: Activate skills (registry-manager-agent) → SKILL_REGISTRY.json
-→ MASTER CHECKLIST at end of agent-auto-create.md
+Phase 4: CEO Proposal (B5 format) â†’ PAUSE for approval
+Phase 5a: Register (hr-manager-agent) â†’ AGENT.md + memory file + receipt
+Phase 5b: New dept? â†’ MANAGER_PROMPT, WORKER_PROMPT, rules.md, dept memory, daily brief, org_chart.yaml, kpi_targets.yaml, kpi_scoreboard.json
+Phase 6: Link (org-architect-agent) â†’ org_chart.yaml, AGENTS.md, daily_briefs
+Phase 7: Activate skills (registry-manager-agent) â†’ SKILL_REGISTRY.json
+â†’ MASTER CHECKLIST at end of agent-auto-create.md
 ```
 
 ---
@@ -157,7 +157,7 @@ Phase 7: Activate skills (registry-manager-agent) → SKILL_REGISTRY.json
 | `brain/knowledge/support_faq.md` | Support Q&A library |
 | `brain/knowledge/rd_research_log.md` | R&D research tracking |
 | `brain/knowledge/system_health/health_kb.md` | Health event log |
-| `brain/shared-context/sources.yaml` | data-collector-agent source list |
+| `brain/memory/sources.yaml` | data-collector-agent source list |
 
 ---
 
@@ -166,7 +166,7 @@ Phase 7: Activate skills (registry-manager-agent) → SKILL_REGISTRY.json
 ### C-Suite
 | Agent | Role | Dept |
 |-------|------|------|
-| orchestrator_pro | CEO proxy (when CEO offline) | — |
+| orchestrator_pro | CEO proxy (when CEO offline) | â€” |
 | backend-architect-agent | CTO / Eng Lead | engineering |
 | growth-agent | CMO | marketing |
 | scrum-master-agent | COO | operations |
@@ -185,7 +185,7 @@ Phase 7: Activate skills (registry-manager-agent) → SKILL_REGISTRY.json
 | archivist | Memory rotation / archival | operations |
 | notification_bridge | CEO alerts via Telegram | operations |
 
-**Full roster:** `brain/shared-context/AGENTS.md`
+**Full roster:** `brain/indices/FAST_AGENT_INDEX.json`
 **AGENT.md files:** `brain/agents/<agent-id>/AGENT.md` (23 files)
 
 ---
@@ -199,14 +199,14 @@ Phase 7: Activate skills (registry-manager-agent) → SKILL_REGISTRY.json
 
 ### Core Skills (loaded by most agents)
 ```
-reasoning_engine     — complex analysis and decision making
-context_manager      — session and memory context handling
-knowledge_enricher   — metadata and cross-link enrichment
-knowledge_navigator  — domain classification and routing
-diagnostics_engine   — system and performance diagnostics
-resilience_engine    — error recovery and retry logic
-shell_assistant      — terminal and script execution
-notification_bridge  — Telegram/Discord alert routing
+reasoning_engine     â€” complex analysis and decision making
+context_manager      â€” session and memory context handling
+knowledge_enricher   â€” metadata and cross-link enrichment
+knowledge_navigator  â€” domain classification and routing
+diagnostics_engine   â€” system and performance diagnostics
+resilience_engine    â€” error recovery and retry logic
+shell_assistant      â€” terminal and script execution
+notification_bridge  â€” Telegram/Discord alert routing
 ```
 
 ---
@@ -215,13 +215,13 @@ notification_bridge  — Telegram/Discord alert routing
 
 | File | Purpose | Updated by |
 |------|---------|------------|
-| `brain/shared-context/blackboard.json` | Task queue, cycle state, open items | scrum-master-agent |
-| `brain/shared-context/corp/kpi_scoreboard.json` | Live KPI status all 21 depts | monitor-chief-agent |
-| `brain/shared-context/corp/escalations.md` | L1/L2/L3 open escalations | any agent |
-| `brain/shared-context/corp/proposals/` | Pending CEO decisions | strategy dept |
-| `brain/shared-context/corp/daily_briefs/<dept>.md` | Last dept brief | dept head |
-| `brain/shared-context/ROADMAP.md` | Strategic milestones | pmo-agent |
-| `brain/shared-context/sources.yaml` | Data collector source list | data-collector-agent |
+| `brain/memory/blackboard.json` | Task queue, cycle state, open items | scrum-master-agent |
+| `brain/memory/corp_memory/kpi_scoreboard.json` | Live KPI status all 21 depts | monitor-chief-agent |
+| `brain/memory/corp_memory/escalations.md` | L1/L2/L3 open escalations | any agent |
+| `brain/memory/corp_memory/proposals/` | Pending CEO decisions | strategy dept |
+| `brain/memory/corp_memory/daily_briefs/<dept>.md` | Last dept brief | dept head |
+| `brain/memory/roadmap.md` | Strategic milestones | pmo-agent |
+| `brain/memory/sources.yaml` | Data collector source list | data-collector-agent |
 | `corp/kpi_targets.yaml` | KPI targets all 21 depts | strategy |
 
 ---
@@ -229,20 +229,20 @@ notification_bridge  — Telegram/Discord alert routing
 ## 9. FILE PATH RULES
 
 ```
-✅ VALID — OmniClaw workspace:
-  corp/           → org structure, prompts, memory, rules
-  brain/          → knowledge, agents, skills, registry, memory, shared-context
-  ops/            → workflows, scripts, infra
-  tools/clawtask/ → task management API (port 7474)
-  plugins/        → external tools, MCPs, integrations
-  telemetry/      → receipts, logs, monitoring
+âœ… VALID â€” OmniClaw workspace:
+  corp/           â†’ org structure, prompts, memory, rules
+  brain/          â†’ knowledge, agents, skills, registry, memory, shared-context
+  ops/            â†’ workflows, scripts, infra
+  tools/clawtask/ â†’ task management API (port 7474)
+  plugins/        â†’ external tools, MCPs, integrations
+  telemetry/      â†’ receipts, logs, monitoring
 
-🔒 SYSTEM — do not modify (without explicit CEO order):
-  $USERPROFILE/.gemini/  → Antigravity brain/memory
-  $USERPROFILE/.claude/  → Claude Code data
-  $USERPROFILE/.nullclaw/ → NullClaw data
+ðŸ”’ SYSTEM â€” do not modify (without explicit CEO order):
+  $USERPROFILE/.gemini/  â†’ Antigravity brain/memory
+  $USERPROFILE/.claude/  â†’ Claude Code data
+  $USERPROFILE/.nullclaw/ â†’ NullClaw data
 
-❌ NEVER create project files in:
+âŒ NEVER create project files in:
   Desktop, Documents, Temp, or any path outside OmniClaw workspace
 ```
 
@@ -258,7 +258,7 @@ Step 1: Read SOUL.md
 Step 2: Read GOVERNANCE.md
 Step 3: Read THESIS.md (40 pillars)
 Step 4: Read AGENTS.md (roster)
-Step 5: Read brain/shared-context/blackboard.json
+Step 5: Read brain/memory/blackboard.json
 Step 6: Check corp/memory/global/decisions_log.md (last 5 CEO decisions)
 Step 7: Read own AGENT.md from brain/agents/<agent-id>/AGENT.md
 Step 8: Read dept MANAGER_PROMPT.md or WORKER_PROMPT.md
@@ -274,14 +274,14 @@ Source: `GEMINI.md` and `CLAUDE.md` (both carry full boot sequence)
 
 | Level | Trigger | Target | Channel |
 |-------|---------|--------|---------|
-| L1 | Dept-level blocker | Dept Head → C-Suite | blackboard.json flag |
+| L1 | Dept-level blocker | Dept Head â†’ C-Suite | blackboard.json flag |
 | L2 | Cross-dept or P2 incident | COO/CTO | escalations.md + Telegram |
 | L3 | Critical / P1 / CEO-required | CEO directly | Telegram (nullclaw) |
 
 ```
-2-Strike Rule: Agent fails same task twice → set handoff_trigger: BLOCKED
-→ escalate to Antigravity/dept head immediately
-→ Do NOT retry after 2 failures. Stop and report.
+2-Strike Rule: Agent fails same task twice â†’ set handoff_trigger: BLOCKED
+â†’ escalate to Antigravity/dept head immediately
+â†’ Do NOT retry after 2 failures. Stop and report.
 ```
 
 ---
@@ -291,7 +291,7 @@ Source: `GEMINI.md` and `CLAUDE.md` (both carry full boot sequence)
 | Service | Port | Purpose | Start |
 |---------|------|---------|-------|
 | ClawTask API | 7474 | Task dashboard + agent orchestration | `python clawtask_api.py` |
-| Nullclaw (Telegram bot) | — | CEO telegram gateway | `start_nullclaw.ps1` |
+| Nullclaw (Telegram bot) | â€” | CEO telegram gateway | `start_nullclaw.ps1` |
 | open-notebook | 8502/5055 | Local RAG for Nova | Docker |
 | SurrealDB | 8000 | open-notebook backend | Docker |
 | MCP Cluster | various | Tool extensions | Auto |
@@ -301,7 +301,7 @@ Source: `GEMINI.md` and `CLAUDE.md` (both carry full boot sequence)
 
 ---
 
-## 13. DOMAIN → DEPT MAPPING (for knowledge_navigator)
+## 13. DOMAIN â†’ DEPT MAPPING (for knowledge_navigator)
 
 | Domain Tag | Primary Dept | Secondary Dept |
 |-----------|-------------|----------------|
@@ -367,7 +367,8 @@ Every completed task writes a receipt to `telemetry/receipts/<dept>/<task_id>_re
 
 ---
 
-*OmniClaw Corp — System Map v1.0 — 2026-03-22*
+*OmniClaw Corp â€” System Map v1.0 â€” 2026-03-22*
 *Last updated: Cycle 7 system audit*
 *Read on boot. Update when system structure changes.*
+
 

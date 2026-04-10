@@ -38,7 +38,7 @@ The OmniClaw starts by booting the main orchestrator memory file.
 To activate the **Antigravity** central hub engine, load the `GEMINI.md` file using your agent interface in your IDE (or Claude Code for `CLAUDE.md`).
 
 Upon first boot, the system will:
-1. Read the `brain/shared-context/blackboard.json` to view current global state tasks.
+1. Read the `brain/memory/blackboard.json` to view current global state tasks.
 2. Register all accessible capabilities from the `SKILL_REGISTRY.json`.
 3. Stand by for CEO (Human) instructions.
 

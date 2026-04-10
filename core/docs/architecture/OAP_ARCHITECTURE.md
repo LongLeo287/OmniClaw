@@ -78,7 +78,7 @@ To prevent scattered waste ("file pollution") and guarantee a closed Ouroboros l
   2. `_DIR_IDENTITY.md`: Graph Identity Card.
 - **Rules:** RAW code files (`.py, .js`) are **BANNED** from existence inside the Brain zone.
 
-### 🌐 The Logic Zone (`ecosystem/plugins` & `brain/shared-context`)
+### 🌐 The Logic Zone (`ecosystem/plugins` & `brain/memory`)
 - **Allowed:**
   1. `SKILL.md`: Actionable executable markdown plugins.
   2. `*.json` (Registries): `SKILL_REGISTRY.json`, `LIBRARY_GRAPH.json`, `OSF_THREAT_INTELLIGENCE.json`.

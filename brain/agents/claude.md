@@ -81,6 +81,6 @@ step 9  ——► begin work (if no task is ready)
 
 ---
 ## section 4 — corp status (live)
-all corp status is pulled live from `brain/shared-context/blackboard.json`.
+all corp status is pulled live from `brain/memory/blackboard.json`.
 
 *end of claude.md — claude code reads this file on every session start. v5.0 | 2026-04-10*
