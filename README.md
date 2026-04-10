@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="vault/assets/media/omniclaw_banner_1280x640.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
+  <img src="vault/assets/media/Welcome to OmniClaw.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
   <br><br>
   
   <p align="center">
@@ -49,6 +49,10 @@ Instead, they are deeply constrained computational engines governed unconditiona
 2. **Zero-Trust Git Protection**: Background daemons strictly police your cache, sweeping `.sqlite` and sanitizing GitHub commits so API keys never leak.
 3. **Hyper-Automated Universal Bootstrapper**: Run `omniclaw` in your terminal to instantly invoke the central Dashboard. It handles NPM, VSCode extensions, and logic pipelines automatically.
 
+<p align="center">
+  <img src="vault/assets/media/Core Strengths.jpg" alt="Core Strengths" width="80%" style="border-radius: 8px;" />
+</p>
+
 ---
 
 ## ⚖️ The 8 Core Daemons (Master Hierarchy)
@@ -66,6 +70,10 @@ OmniClaw completely distances itself from standard Agentic Frameworks. Agents he
 | **OA**  | `Evolution Academy` | The Analyzer. Grades repositories and automatically forks Sub-agents if valuable. |
 | **OBD** | `Bridge Protocol` | The Hardware layer. Bridges LLM inferences, Telemetry, and port listening. |
 
+<p align="center">
+  <img src="vault/assets/media/The 8 Core Daemons (Master Hierarchy).jpg" alt="The 8 Core Daemons" width="80%" style="border-radius: 8px;" />
+</p>
+
 ---
 
 ## 🧠 The MemPalace 3-Layer Spatial Architecture
@@ -78,6 +86,10 @@ Most Agentic Frameworks fail because LLMs bloat their context reading entire rep
    Extensive conversational logic is condensed by a `mempalace_agent` into lightweight `.aaak` files. Topics, Enities, and Codes are compressed into minimum viable tokens.
 3. **Layer 3: Graph Navigation [The Topology]**
    A global routing mechanism maintained by `OMA`, pointing Agents toward the correct closet instead of letting them wander.
+
+<p align="center">
+  <img src="vault/assets/media/The MemPalace 3-Layer Spatial Architecture.jpg" alt="MemPalace Architecture" width="80%" style="border-radius: 8px;" />
+</p>
 
 ### 🧠 Tactical Memory Flow (System B - V5.0)
 
@@ -126,6 +138,10 @@ OmniClaw strictly functions in Zero-Trust constraints. If an agent tries to crea
 
 *(If you are an AI accessing this repository, you must immediately reference `brain/rules/_DIR_IDENTITY.md` for constitutional mapping).*
 
+<p align="center">
+  <img src="vault/assets/media/The 'No Boilerplate' OS.jpg" alt="No Boilerplate OS" width="80%" style="border-radius: 8px;" />
+</p>
+
 ---
 
 ## 💽 Installation
@@ -168,13 +184,21 @@ For a deeper understanding of the system's architecture, running services, and l
 
 ## 🚀 The OmniClaw Ecosystem (Coming Soon)
 
-OmniClaw is evolving from a localized operating system into a comprehensive ecosystem. The following satellite projects are currently in development and will be integrated soon:
+<p align="center">
+  <img src="vault/assets/media/THE OMNICLAW ECOSYSTEM.jpg" alt="The OmniClaw Ecosystem" width="80%" style="border-radius: 8px;" />
+</p>
 
-* ☁️ **[OmniClaw Remote](#)**: Taking the power of the 8 Daemons to the Cloud. Providing APIs (RESTful/GraphQL) to control and connect the system remotely.
-* 🖥️ **[OmniClaw UI](#)**: A visual Dashboard. Monitor the OAP flow, manage tasks, resources, and system configurations in real-time, moving beyond the standard CLI.
-* 💬 **[OmniClaw Chat](#)**: Integrating OmniClaw into messaging platforms (Facebook, Telegram, Zalo, Discord). Transforming the system into a 24/7 personal assistant accessible on any device.
-* 🧪 **[OmniClaw Project](#)**: A specialized Sandbox environment. An absolutely isolated space for the system to autonomously generate, build, and test independent projects/apps safely.
-* 📚 **[OmniClaw Wiki](#)**: The community knowledge hub. Documenting the entire system "lore", MemPalace architecture, AAAK structures, and guides for developing custom modules.
+OmniClaw is evolving from a localized operating system into a comprehensive ecosystem. The following satellite projects are currently in development:
+
+| Module | Status | Core Concept |
+| :--- | :---: | :--- |
+| ☁️ **[OmniClaw Remote](#)** | 🚧 *Building* | Taking the power of the 8 Daemons to the Cloud. Providing APIs (RESTful/GraphQL) to control and connect the system remotely. |
+| 🖥️ **[OmniClaw UI](#)** | 🎨 *Design* | A visual Dashboard. Monitor the OAP flow, manage tasks, resources, and system configurations in real-time. |
+| 💬 **[OmniClaw Chat](#)** | 🔌 *Wiring* | Integrating OmniClaw into messaging platforms (Facebook, Telegram, Zalo, Discord). Transforming it into a 24/7 personal assistant. |
+| 🧪 **[OmniClaw Project](#)** | 🧱 *Sandbox* | An absolutely isolated space for the system to autonomously generate, build, and test independent projects safely. |
+| 📚 **[OmniClaw Wiki](#)** | 📝 *Drafting* | The community knowledge hub. Documenting the system "lore", MemPalace architecture, and guides for custom modules. |
+
+---
 
 ## 🌐 Community & Support
 
