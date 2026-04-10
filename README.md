@@ -28,10 +28,13 @@
   
   [About](#-welcome-to-omniclaw-v50) •
   [Strengths](#-core-strengths) •
-  [Architecture](#%EF%B8%8F-the-8-core-daemons-master-hierarchy) •
+  [Daemons](#%EF%B8%8F-the-8-core-daemons-master-hierarchy) •
+  [MemPalace](#-the-mempalace-3-layer-spatial-architecture) •
+  [Ecosystem](#-the-omniclaw-ecosystem) •
   [Installation](#-installation) •
   [Guides](#-comprehensive-system-maps--guides) •
   [Credits](#-acknowledgments)
+  
 </div>
 
 ---
