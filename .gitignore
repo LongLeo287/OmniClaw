@@ -81,3 +81,13 @@ secrets/
 /brain/*
 !/brain/rules/
 !/brain/rules/**
+
+# 9. Allow authorized Registry Directory
+!/brain/
+/brain/*
+!/brain/registry/
+!/brain/registry/**
+
+# Ignore systemic logs and massive auto-generated JSONs in registry
+brain/registry/*.log
+brain/registry/OMA_SYSTEM_MAP*.json
