@@ -75,3 +75,9 @@
 secrets/
 **/*.key
 **/*.pem
+
+# 8. Allow authorized Rules Directory
+!/brain/
+/brain/*
+!/brain/rules/
+!/brain/rules/**

@@ -8,239 +8,63 @@
   </p>
   
   <p align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=🚀+TIẾN+HÓA+MỖI+NGÀY;+🌟+OMNICLAW+ĐANG+TƯ+DUY...;+🏠+THÊM+AGENT+MỚI" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=F75C1E&center=true&vCenter=true&width=435&lines=⚡+OMNICLAW+ĐANG+TÍNH+TOÁN...;+🚨+DAEMONS+ĐANG+CHẠY;+🧠+KÍCH+HOẠT+MEMPALACE" alt="Typing SVG" />
   </p>
 
-  <b>Hệ Điều Hành Đa Tác Nhân, Nguyên Khối và Tự Trị</b><br><br>
+  <b>Hệ Điều Hành Đa Động Cơ (Multi-Agent Operating System) Hoàn Toàn Tự Động</b><br><br>
 
-  [![Daily Update](https://img.shields.io/badge/STATUS-UPDATING_DAILY-orange?style=for-the-badge&logo=githubactions&logoColor=white)](#)
-  [![Last Update](https://img.shields.io/github/last-commit/LongLeo287/OmniClaw?label=CẬP%20NHẬT%20MỚI%20NHẤT&style=for-the-badge&color=brightgreen)](https://github.com/LongLeo287/OmniClaw/commits/main)
-  
-  <br>
-
-  [![Version](https://img.shields.io/badge/version-12.0.0--cycle-blue.svg)](#)
+  [![Version](https://img.shields.io/badge/version-5.0--genesis-red.svg)](#)
   [![License](https://img.shields.io/badge/License-MIT-green.svg)](#)
   [![Powered By](https://img.shields.io/badge/Powered_by-Claude_%7C_Gemini_%7C_Cursor-blueviolet.svg)](#)
-  [![Discussions](https://img.shields.io/badge/Tham_Gia_Cộng_Đồng-Discussions-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LongLeo287/OmniClaw/discussions)
   <br>
   
-  [**🇬🇧 English Version**](README.md)
+  [**🇺🇸 English**](README.md)
   
   <br>
-
-[Giới Thiệu](#-giới-thiệu-về-omniclaw) •
-[Sức Mạnh](#-thế-mạnh-cốt-lõi--tại-sao-chọn-omniclaw) •
-[Kiến Trúc](#️-kiến-trúc--plugin-3-tầng) •
-[Phòng Ban](#-28-phòng-ban-kiến-trúc) •
-[Cài Đặt](#-cài-đặt) •
-[Thảo Luận](https://github.com/LongLeo287/OmniClaw/discussions) •
-[Lời Cảm Ơn](#-lời-cảm-ơn)
-
 </div>
 
 ---
 
-## 🌟 Giới Thiệu về OmniClaw
+# 🤖 Chào mừng đến với OmniClaw V5.0
 
-**OmniClaw** là một Hệ Điều Hành đa tác nhân có tính mô-đun cao, được thiết kế để chạy trực tiếp trên các LLM hàng đầu (Anthropic Claude, Google Gemini, OpenAI). Nó biến máy tính cá nhân của bạn thành một tập đoàn kỹ thuật số tự trị.
+OmniClaw biến hệ thống local của bạn thành một **Hệ Sinh Thái Trí Tuệ Nhân Tạo Tự Trị (Autonomic AI Array)** đáng sợ. Kể từ phiên bản 5.0, OmniClaw đã loại bỏ hoàn toàn trò "Nhập vai Công ty" phi logic. Các MLLMs (như Claude & Gemini) không còn giả vờ làm "Giám đốc" hay "Nhân viên" nữa.
 
-Thay vì chỉ hoạt động như một chatbot đơn giản, OmniClaw chủ động điều phối các chỉ thị phức tạp của bạn thông qua các **Phòng Ban Chức Năng** chuyên biệt, tự quản lý bộ nhớ bằng Graph RAG, và liên tục tiến hóa mã nguồn dựa trên hướng dẫn của bạn. Hệ thống được thiết kế với triết lý **Bảo Mật Zero-Trust**, đảm bảo mọi dữ liệu địa phương luôn nằm quyền kiểm soát của bạn.
+Thay vào đó, chúng bị ép phải trở thành những cỗ máy tính toán tốc độ cao, chịu sự sai khiến tuyệt đối bởi một mạng lưới ngầm do **8 Vi Hệ Điều Hành (Core Daemons)** quản lý.
 
----
+## ⚖️ 8 Core Daemons (Trục Quyền Lực Tuyệt Đối)
 
-## ⚡ Thế Mạnh Cốt Lõi & Tại Sao Chọn OmniClaw?
+OmniClaw cự tuyệt hoàn toàn các Framework Agent thông thường. Agents ở đây không có cái gọi là "tự do tự quyết". Hệ thống chạy trên một luồng băng chuyền tĩnh (gọi là **Omnibus Assimilation Pipeline - OAP**) được cai trị bằng bàn tay sắt của 8 tập lệnh Python bất tử (Daemons):
 
-Điều gì khiến OmniClaw khác biệt hoàn toàn so với các trợ lý lập trình AI thông thường?
-
-1. **Khả Năng Di Động Tuyệt Đối & Không Phụ Thuộc Nền Tảng**
-   Chúng tôi không khóa bạn vào một IDE duy nhất. OmniClaw được thiết kế để tương thích với **Cursor**, **Claude Code CLI**, **Google Gemini**, và **OpenCode**. Các quy tắc hệ thống được kế thừa toàn cầu bất kể bạn thích giao diện nào.
-2. **Bảo Vệ Git Zero-Trust**
-   Được trang bị các daemon chạy ngầm `omniclaw_deep_cleaner.py` cực kỳ quyết liệt. Mỗi khi bạn đóng phiên làm việc, HĐH sẽ quét cache, xóa dữ liệu tạm thời (`.sqlite`, `.db`), và làm sạch các commit GitHub để ngăn nòng API key hoặc bí mật rò rỉ.
-3. **Trình Khởi Tạo Siêu Tự Động**
-   Quên việc quản lý hàng chục script shell phức tạp đi. Chỉ cần chạy `omniclaw` trong terminal (hoặc nhấp đúp vào file `omniclaw.bat` trên Windows) để mở Dashboard trung tâm. Nó tự động xử lý các phụ thuộc NPM, Extension VSCode và điều hướng Model.
-4. **Thực Thi Tự Trị (Luồng Công Nhân)**
-   Các Agent bậc thầy (như Claude hoặc Gemini) ủy quyền các tác vụ khổng lồ nhiều bước cho các sub-agent (CrewAI, script Node). Nó hoạt động như một Quản Trị Viên Dự Án, không chỉ là một lập trình viên.
-5. **Khung Xương Nhận Thức Có Sẵn (Zero-Config Memory)**
-   Khi clone OmniClaw, bạn kế thừa cấu trúc 300+ thư mục được khởi tạo sẵn qua `.gitkeep`. Bộ nhớ RAG địa phương và Cơ sở kiến thức đa tác nhân của bạn sẵn sàng hoạt động ngay từ ngày đầu tiên.
-6. **Chính Sách Ngôn Ngữ Toàn Cầu**
-   Kiến trúc tuân thủ nghiêm ngặt Tiếng Anh Kỹ Thuật cho tất cả các file hệ thống, Knowledge Item và Agent. Quy tắc này loại bỏ nghẽn tokenization và đảm bảo tương thích API hoàn hảo, trong khi vẫn hỗ trợ tài liệu Tiếng Việt cho con người qua các mẫu `-vn.md`.
-
----
-
-## 🏛️ Kiến Trúc & Plugin 3 Tầng
-
-- **Tầng 1 (Hạ Tầng Cốt Lõi)**: Các engine bản địa, luôn bật (vd: `LightRAG` cho bộ nhớ, `Firecrawl` cho quét web).
-- **Tầng 2 (Plugin Load-Chậm)**: Công cụ chuyên biệt (như trình xử lý PDF hoặc tạo ảnh Python nặng) được đưa vào sandbox và **chỉ khởi động khi được yêu cầu**, sau đó tự động bị hủy để giải phóng RAM.
-- **Tầng 3 (Danh Sách Đen)**: Các mô-đun lỗi thời hoặc xung đột mà hệ thống bị cấm thực thi.
-
----
-
-## 🌓 Phân Quyền Tuyệt Đối 2 Hệ Thống (The Absolute Boundary)
-
-OmniClaw được chia làm **2 Hệ Thống Tách Biệt** với ranh giới Zero-Trust không thể đảo ngược:
-
-1. **Hệ Thống 1: Tầng Thần Thánh (Core Daemons - System Admins)**
-   - Bao gồm các 7 Trụ cột chạy ngầm (như `osf_warden.py`, `oma_architect.py`).
-   - Quyền hạn: **Root Access (God Mode)**. Chúng quản lý, bảo trì, và nâng cấp toàn bộ nền tảng hệ điều hành OmniClaw. Chúng có quyền sai bảo Orchestrator, dọn dẹp thư mục, và đập bỏ Agent nếu cần.
-2. **Hệ Thống 2: Tầng Làm Thuê (Orchestrator & Agents Workforce)**
-   - Bao gồm khổi lượng lớn LLM Agents nằm ở `brain/agents/`, các phòng ban `corp/` và các kỹ năng `ecosystem/skills/`.
-   - Chức năng: Lực lượng thực thi dự án ngoài + phục vụ yêu cầu logic của Daemons.
-
-**Lằn Ranh Đỏ (The Zero-Trust Rule):** 
-**Tầng 2 bị khóa đè (Sandboxed).** Bất cứ Orchestrator, LLM Agent hay Plugin nào cũng bị CẤM TUYỆT ĐỐI không được can thiệp, sửa đổi mã nguồn hay đụng vào các file của Hệ điều hành (Core Daemons). Daemons có thể dùng Orchestrator, nhưng Orchestrator KHÔNG được phép với tay vào cấu trúc Daemons.
-
-```mermaid
-sequenceDiagram
-    participant Agent
-    participant MCP Registry
-    participant Tier2 as Tier-2 Sandboxed Plugin
-
-    Agent->>MCP Registry: Yêu Cầu Kỹ Năng/Công Cụ Sâu
-    alt Thuộc Tầng 1 (Core)
-        MCP Registry-->>Agent: Truy Cập REST/Graph Tức Thì
-    else Thuộc Tầng 2 (Lazy Load)
-        MCP Registry->>Tier2: Khởi chạy thực thi cục bộ cách ly
-        Tier2-->>Agent: Trả về kết quả tạm thời
-        Tier2->>Tier2: Tự động tháo dỡ & Xóa sạch
-    end
-```
-
----
-
-## 🏢 28 Phòng Ban Kiến Trúc
-
-| ID          | Phòng Ban               | Chức Năng                                                                                     | Agent Trưởng          |
-| :---------- | :---------------------- | :-------------------------------------------------------------------------------------------- | :------------------ |
-| **Dept 01** | **Engineering**         | Backend, UI/UX Frontend, và tích hợp mô hình AI.                                              | `backend-architect` |
-| **Dept 05** | **Strategic Planning**  | Điều phối lộ trình, phân tích KPI, và tiến hóa tổ chức.                                       | `product-manager`   |
-| **Dept 09** | **Content Review**      | Kiểm duyệt chất lượng đầu ra và giọng văn.                                                    | `editor-agent`      |
-| **Dept 10** | **Strix Security**      | Kiểm toán an ninh mạng và thẩm định các thành phần bên ngoài.                                 | `strix-agent`       |
-| **Dept 13** | **Nova Research**       | Nghiên cứu Web chuyên sâu và tạo nguyên mẫu kiến trúc.                                        | `rd-lead`           |
-| **Dept 18** | **Asset Library**       | Quản lý luân chuyển bộ nhớ và Đồ thị kiến thức toàn diện.                                     | `library-manager`   |
-| **Dept 20** | **CIV (Content Intake)**| Hệ thống hóa việc tiêu thụ, quét và phân tích GitHub/PDF thành Markdown thuần túy.            | `intake-chief`      |
-| **Dept 22** | **Operations**          | Vệ sinh phần cứng, dọn dẹp thư mục gốc, bảo vệ Git Force-Push.                                | `scrum-master`      |
-| **Dept 23** | **Reception**           | Tiếp nhận khách hàng tự động, thu thập yêu cầu và tạo đề xuất.                                | `project-intake`    |
-| **...**     | **Và 19 phòng ban khác** | 28 phòng ban Zero-Trust đang quản lý 116 agent!                                               | `various`           |
-
----
-
-> [!TIP]
-> **Tìm hiểu sâu**: Để biết đầy đủ thông tin về tất cả 28 phòng ban, sơ đồ báo cáo và tương tác giữa các agent, hãy xem [**Mục Lục Hệ Thống Chính**](core/docs/README-vn.md).
-
-> [!NOTE]
-> Lực lượng lao động được chia nghiêm ngặt thành 4 Trụ cột vật lý: `agents/` (116 nhân viên tự trị), `subagents/` (nhân viên chạy tác vụ tạm thời), `departments/` (cấu trúc báo cáo), và `system/` (Vùng Cấu hình Khai báo cho các prompt toàn cầu và bản đồ daemon HĐH).
-
----
-
----
-
-## 🛡️ Pipeline OAP (Kiến Trúc Zero-Trust)
-
-OmniClaw thực thi **Pipeline Tự Trị (OAP)** nghiêm ngặt để quản lý cách các tài sản, agent và kỹ năng mới gia nhập hệ thống.
-
-- **Intake Qua Gateway (`OER_INBOX`)**: Các trình tạo không thể đổ file cấu hình trực tiếp vào hệ sinh thái. Chúng phải gửi bản thiết kế vào Hàng Đợi Cách Ly (Quarantine Queue).
-- **Định Danh Trước (`_DIR_IDENTITY.md`)**: Không Agent hay Phòng ban nào có thể được triệu hồi nếu không có "hộ chiếu" `_DIR_IDENTITY.md`. Các node không ánh xạ sẽ bị từ chối.
-- **Đồng Bộ Đồ Thị Tổng**: Các tài sản đã qua kiểm duyệt mới được đưa vào `FAST_INDEX.json` và Bản Đồ Năng Lực Toàn Cầu.
-
----
-
-## ⚙️ Daemon Hệ Thống Cốt Lõi (7 Trụ Cột Quản Trị)
-
-OmniClaw điều phối các chức năng tự trị thông qua 7 daemon chạy ngầm vĩnh viễn:
-
-| Daemon | Định Danh | Trách Nhiệm Cốt Lõi |
+| Daemon | Danh Xưng | Nhiệm Vụ Cốt Lõi |
 | :--- | :--- | :--- |
-| **OMA Architect** | `oma_architect` | Người quản lý bản đồ. Thực thi cấu trúc node và xác thực lưới hệ thống toàn cầu. |
-| **OA Academy** | `oa_academy` | Động cơ tự cải thiện. Huấn luyện sub-agent, quản trị nhân sự 116 agent. |
-| **OIW Intake** | `oiw_intake` | Kiểm soát biên giới internet (GitHub/Web), đưa dữ liệu thô vào HĐH. |
-| **OER Registry** | `oer_registry` | Người giữ cổng. Xác thực định danh OAP và cấp quyền thực thi chính thức. |
-| **OBD Bridge** | `obd_harbor` | Thuyền trưởng cảng. Xử lý khởi chạy tiến trình Docker và cầu nối Python. |
-| **OHD Healer** | `ohd_healer` | Sửa lỗi cây cú pháp, tự động lint file nguồn và đặt lại các tag YAML bị thiếu. |
-| **OSF Warden** | `osf_warden` | Quét sâu heuristic. Từ chối mã nguy hiểm thông qua các trạm kiểm soát biên giới. |
+| **OMA** | `Bậc Thầy Kiến Trúc` | Cầm giữ bản đồ. Cưỡng ép hệ sinh thái phải chạy đúng đường kẻ. |
+| **OAP** | `Băng Chuyền OAP` | Phân phối mã nguồn. Chấm điểm rác hay báu vật bằng *Triage Matrix*. |
+| **OER** | `Sổ Đăng Ký` | Kẻ gác đền. Cấp phép và định danh toàn bộ Skill trên hệ thống. |
+| **OIW** | `Máy Gặt Dữ Liệu` | Độc tài cào Github Repos và nhét sâu vào Khu cách ly Sandbox. |
+| **OSF** | `Lính Canh Bảo Mật` | Đao củ phủ. Quét sạch Sandbox và chém đầu bất kỳ mã lệnh độc hại nào. |
+| **OHD** | `Thần Y & Dọn Dẹp` | Ép nén `.json` và cạo sạch các tệp Cache rác bành trướng ổ cứng. |
+| **OA**  | `Viện Hàn Lâm` | Phân tích Repo xịn, tự động rèn đúc sinh sản ra Agents cấp dưới. |
+| **OBD** | `Thần Giữ Cổng` | Quản lý vòng đời chạy Python và bắt API Local. |
 
 ---
 
-## 🗺️ Bản Đồ Tổng & Theo Dõi Kiến Thức
+## 🧠 Kiến Trúc Không Gian Ký Ức "MemPalace"
 
-Để đảm bảo đồng bộ tuyệt đối trên toàn hệ thống file, OmniClaw sử dụng kiến trúc lai tập trung/phân tán được quản lý linh hoạt bởi daemon OMA:
+Đa số Agentic Frameworks thường sụp đổ từ từ vì LLMs phình to bộ nhớ (Context Bloat) do đọc toàn bộ kho tàng Code một cách vô tội vạ. OmniClaw giải quyết chuyện này bằng kiến trúc **MemPalace (Lâu Đài Ký Ức)**.
 
-- **Chỉ Mục Nhanh (`FAST_INDEX.json`)**: Sổ cái có thẩm quyền của hệ điều hành. Mọi Agent, Phòng ban và Skill hợp lệ trên mạng lưới đều được đóng dấu tại đây. 
-- **Đồ Thị Thư Viện (`LIBRARY_GRAPH.json`)**: Ánh xạ các ranh giới quan hệ phức tạp giữa các sub-agent và các file Kiến thức cần thiết.
-- **Bản Đồ Khu Vực (`_REGIONAL_MAP.md`)**: Mạng lưới các điểm neo (node) phân tán tại từng ngóc ngách của hệ sinh thái (vd: `ecosystem/workforce/agents/_REGIONAL_MAP.md`). Chúng đóng vai trò là danh mục nội bộ, liên tục kiểm đếm dữ liệu cục bộ và cấp nguồn thẳng vào Đồ Thị Thư Viện Tổng, nối liền hệ tọa độ khu vực vào lưới mạng toàn cầu.
-- **Theo Dõi Tài Liệu (`core/docs`)**: Tất cả bộ nhớ tổ chức, Bảng điểm KPI và kiến trúc lưu trữ dài hạn được lưu trong thư mục `core/docs/`.
-
----
-
-## 🧠 Kiến Trúc Trí Nhớ MemPalace (3-Layer Memory)
-
-Kể từ V2, OmniClaw ứng dụng kiến trúc **Drawers & Closets** từ thuật toán MemPalace, được tích hợp thẳng vào Pipeline OAP (Tự Động) thông qua đặc vụ `mempalace_agent`. Hệ thống quản lý tri thức gồm 3 tầng:
-
-1. **Layer 1: RAW Drawers (Ngăn kéo File Thô):** Các file `.md`, `.py` tĩnh nắm giữ sự thật 100% (Ví dụ: `_DISTILLED.md`). Bắt buộc tồn tại. Đựng mã nguồn và tài liệu kỹ thuật dài dòng.
-2. **Layer 2: AAAK Closets (Tủ nén Bối cảnh):** Áp dụng *Lossy Abbreviation Dialect*. Core Daemon (hoặc MemPalace Agent) sinh ra các file `_CLOSET.aaak` cực nhẹ đi kèm các Drawer mang tính chất trò chuyện, lịch sử chat. Các file `.aaak` này dùng để cung cấp *Entity Codes, Topic, Emotion* tốn cực ít Token.
-3. **Layer 3: Graph Navigation (Neo Đồ Thị):** Kiến trúc Wings (Phân tầng dự án) và Rooms (Chủ đề) được quản lý tự động bởi `oma_architect`. Giúp Agent quét bản đồ theo logic con người.
+1. **Lớp 1: Ngăn Kéo Gốc (RAW Drawers)**
+   Chứa Code `*.md` và `*.py` nguyên bản 100%. Các Agents khi cần Code Gốc mới được phép mở ngăn kéo này, cấm tuyệt đối việc nhét đoạn code 10.000 dòng vào chat để tán gẫu.
+2. **Lớp 2: Tủ Đựng Mật Khẩu (AAAK Closets)**
+   Các đoạn chat lịch sử dài lê thê được `mempalace_agent` ép mỏng tối đa thành chuẩn `.aaak`. Nó giữ lại đúng Danh từ Riêng, Thẻ Code và Đề tài, lược bỏ hoàn toàn liên từ viển vông.
+3. **Lớp 3: Đường Lộ Trình (Graph Navigation)**
+   Một ma trận bản đồ do `OMA` vạch ra, ép Agents đi đúng luồng logic của con người để đọc trúng cái tủ chứa Token.
 
 ---
 
-## 🔒 Phân Tách Daemon Nghiêm Ngặt (Ranh Giới Zero-Trust)
+## 🌪️ Hệ Điều Hành "Tuyệt Đối Không Code Nát"
+OmniClaw tuân thủ nguyên lý Zero-Trust (Không Tin Bất Kỳ Ai). Nếu một Agent cố tình sinh ra "Spaghetti Code" bừa bãi, thư mục đó sẽ **bị Máy cắt OHD chém bay màu tự động**. Ranh giới không thể vượt qua:
+- `brain/`: Khu vực lưu trữ Luật Mật và Ký Ức tĩnh.
+- `core/`: Ổ trú ngụ linh thiêng của 8 Daemons.
+- `vault/tmp/sandbox/`: Trại tạm giam cực kỳ khắc nghiệt. 
 
-Một nguyên tắc cơ bản của kiến trúc Zero-Trust của OmniClaw là sự tách biệt tuyệt đối giữa Thực thi vs Chữa lành vs Kiến trúc:
-- **`system_security`**: Nắm quyền tối cao đối với các điểm kiểm soát (`QUARANTINE`). Chỉ những Border Agent chuyên dụng mới có quyền vô hiệu hóa các mối đe dọa.
-- **`system_health`**: `ohd_healer` chỉ chạm vào những file mà OSF đánh dấu là lỗi, nhưng không thể từ chối hoặc xóa bỏ kiến trúc hợp lệ.
-- **`system_daemons`**: Các daemon như **OA Academy** bị cấm truy cập các vùng cách ly dể tránh nhiễm độc nhận thức! Nếu OA cần phân tích một kho lưu trữ xấu, nó phải yêu cầu OSF xử lý trước.
-
----
-
-## 💽 Cài Đặt
-
-OmniClaw được xây dựng theo kiến trúc "Clone & Run".
-
-```bash
-# 1. Clone repository về máy địa phương
-git clone https://github.com/LongLeo287/omniclaw-local.git "OmniClaw"
-cd "OmniClaw"
-
-# 2. Liên kết hệ thống toàn cầu qua NPM
-npm install -g .
-
-# 3. Khởi động Terminal HĐH (Có thể chạy từ bất cứ đâu)
-omniclaw
-```
-
----
-
-## 📚 Tài Liệu & Quy Trình Nội Bộ
-
-Để sử dụng hàng ngày và xử lý dữ liệu tự động, vui lòng tham khảo các hướng dẫn vận hành nội bộ của chúng tôi:
-
-- [**Giao Thức Tiếp Nhận GitHub An Toàn (CIV)**](core/docs/workflows/data_intake.md)
-- [**Dọn Dẹp Sâu HĐH & Bảo Vệ Vault**](core/docs/workflows/deep_cleaner.md)
-
----
-
-## 📖 Hướng Dẫn & Bản Đồ Hệ Thống Toàn Diện
-
-Để hiểu sâu hơn về kiến trúc hệ thống, các dịch vụ đang chạy và các năng lực đã tải, hãy tham khảo các bản đồ tổng của chúng tôi:
-
-- 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/core_principles.md) — Giải thích về khung xương bộ nhớ Zero-Config và chính sách ngôn ngữ không phụ thuộc OS.
-- 🧭 [**Bản Đồ Hệ Thống Tổng**](core/docs/architecture/master_system_map.md) — Bản thiết kế đầy đủ: 28 phòng ban, Trình tự khởi động, Kiến trúc bộ nhớ và Quy trình cổng.
-- 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/activation_guide.md) — Ánh xạ cổng và các lệnh khởi động thủ công cho các dịch vụ địa phương.
-- 🏢 [**Ma Trận Nhân Sự 28 Phòng Ban**](ecosystem/workforce/_REGIONAL_MAP.md) — Bản đồ Kiến trúc phân bổ của 28 bộ phận và 94 Đặc vụ chuyên môn đang hoạt động.
-- 🎨 [**Thư Viện Giao Diện UI**](ecosystem/ui_components/_REGIONAL_MAP.md) — Cột trụ thứ 5: Kho chứa Shadcn_UI và các luồng sinh mã Frontend.
-- 🌁 [**Cầu Nối Máy Chủ Cục Bộ**](ecosystem/bridges/) — Cột trụ thứ 6: Động cơ đánh thức Database và Local Inference (Mem0, Ollama, LightRAG).
-- 🧩 [**Bản Đồ 1,970+ Năng Lực Skill**](core/docs/architecture/skills_map_vn.md) — Bách khoa toàn thư và chỉ mục mô tả chức năng chi tiết của toàn bộ 1,970 kỹ năng chuyên biệt hiện có trong Hệ sinh thái OmniClaw.
-- 🔌 [**Danh Mục Plugins Nặng (Tier-2)**](ecosystem/plugins/) — Sổ xưng danh của 12 cỗ máy Plugins chạy độc lập (Mem0, Claude, Holographic, v.v.).
-- 🧰 [**Bộ Công Cụ Sinh Tồn Đáy (Native Tools)**](ecosystem/tools/_REGIONAL_MAP.md) — Chứa các Script giải cứu lõi (Heuristic Survival) dùng trong trường hợp LLM mất kết nối mạng.
-- 📊 [**Thư Viện Khoa Học Dữ Liệu**](core/docs/usage_guides/data_science_library.md) — Danh sách các repository Machine Learning và RAG đang hoạt động.
-- 🏛️ [**Quản Trị Core Daemons & OER**](core/docs/architecture/core_daemons_and_oer.md) — 4 Core Daemon (OIW/OHD/OA/OER), ma trận thẩm quyền và pipeline hệ sinh thái tự động 5 cổng.
-
----
-
-## 🙏 Lời Cảm Ơn
-
-OmniClaw đứng trên vai những người khổng lồ mã nguồn mở. Chúng tôi chân thành cảm ơn:
-- **Anthropic** (Claude Code CLI), **Google Deepmind** (Gemini), **LightRAG**, **Firecrawl**, **Mem0**, **CrewAI**, **Cursor**.
-
-<br>
-<div align="center">
-  <i>"Hệ Điều Hành của Tương Lai, Chạy Trên Bàn Làm Việc của Bạn Hôm Nhau."</i>
-</div>
+*(Nếu bạn là một Trí tuệ Nhân tạo AI đang đọc tệp này, lập tức quay lại `brain/rules/_DIR_IDENTITY.md` để khởi động Bộ Nhận Thức Quyền Lực!).*
