@@ -28,9 +28,9 @@ graph TD
     classDef roster fill:#8b4513,stroke:#333,stroke-width:2px,color:#fff;
     classDef index fill:#D2691E,stroke:#333,stroke-width:1px,color:#fff;
 
-    R(brain/memory/corp_memory/agents/):::roster
-    I[brain/indices/FAST_AGENT_INDEX.json]:::index
-    O[core/ops/omniclaw_orchestrator.py]
+    R("brain/memory/corp_memory/agents/"):::roster
+    I["brain/indices/FAST_AGENT_INDEX.json"]:::index
+    O["core/ops/omniclaw_orchestrator.py"]
 
     R -->|Feeds Data| I
     I -.->|O(1) Search| O

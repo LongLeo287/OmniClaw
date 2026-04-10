@@ -26,22 +26,22 @@ graph LR
     classDef ext fill:#8B5CF6,stroke:#4C1D95,stroke-width:2px,color:#fff;
 
     subgraph INTRANET [Local Backend]
-        ORCH(omniclaw_orchestrator.py\n[Data Writer]):::daemon
-        START(omniclaw_startup.py\n[Data Writer]):::daemon
+        ORCH("omniclaw_orchestrator.py<br/>[Data Writer]"):::daemon
+        START("omniclaw_startup.py<br/>[Data Writer]"):::daemon
         
         subgraph MEMORY_CORE [brain/memory/core]
-            STAT[(STATUS.json\nHeadless API Payload)]:::ltm
+            STAT[("STATUS.json<br/>Headless API Payload")]:::ltm
         end
 
-        OBD(OBD_Daemon\n[Bridge Protocol]):::daemon
-        PORT((Port 7474\nclawtask_api)):::api
-        TEL((Telegram Bot\nDispatcher)):::api
+        OBD("OBD_Daemon<br/>[Bridge Protocol]"):::daemon
+        PORT(("Port 7474<br/>clawtask_api")):::api
+        TEL(("Telegram Bot<br/>Dispatcher")):::api
     end
 
     subgraph EXTRANET [Client Tier]
-        UI([OmniClaw UI\nReact/Tailwind]):::ext
-        REM([OmniClaw Remote\nMobile/Web]):::ext
-        CEO([CEO / Admin]):::ext
+        UI(["OmniClaw UI<br/>React/Tailwind"]):::ext
+        REM(["OmniClaw Remote<br/>Mobile/Web"]):::ext
+        CEO(["CEO / Admin"]):::ext
     end
 
     START -->|Inject Boot Status| STAT
