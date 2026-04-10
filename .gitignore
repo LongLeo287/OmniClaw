@@ -143,3 +143,7 @@ brain/registry/OMA_SYSTEM_MAP*.json
 !/brain/memory/corp_memory/patterns/_DIR_IDENTITY.md
 !/brain/memory/corp_memory/patterns/system_heuristics.md
 !/brain/memory/corp_memory/patterns/.gitkeep
+
+# 16. Memory - System Proposals (Track everything - CEO directives)
+!/brain/memory/corp_memory/proposals/
+!/brain/memory/corp_memory/proposals/*
