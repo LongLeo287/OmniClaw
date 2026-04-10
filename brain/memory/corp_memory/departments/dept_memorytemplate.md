@@ -4,20 +4,23 @@ type: corp_document
 registered: true
 ---
 
-# Department Memory (Long-term System B)
+# {DEPT_NAME} Institutional Memory (System B)
 
-## Cycle N — [{DATE RANGE}]
-**Goals achieved:** 
+> [!NOTE]  
+> **To AI Agents:** Use TOP APPEND format. When updating this document during `[REFLECTION]`, insert your new blocks directly UNDER the section headers. Do not delete historical logs unless explicitly commanded to aggregate.
+
+## 1. Active Roster & Status
+- **Last Sync:** {DATE}
+- **Head Agent:** {HANDLER}
+- **Active Operational Status:** Online
+
+## 2. Institutional Lessons & Fact Summaries
+<!-- INSERT NEW LESSONS HERE (TOP APPEND) -->
 - 
-**Goals missed:** 
-- [Goal] — [Root cause]
-**Patterns observed:** 
+
+## 3. Cross-Department Dependencies & Handshakes
+<!-- INSERT NEW DEPENDENCIES HERE (TOP APPEND) -->
 - 
-**Cross-dept dependencies:** 
+
+## 4. Historical Archive (Bottom Drop)
 - 
-**Lessons learned:** 
-- 
-**Next cycle focus:** 
-1. 
-2. 
-3. 
