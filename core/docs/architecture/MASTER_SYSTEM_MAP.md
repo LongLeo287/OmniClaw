@@ -1,4 +1,4 @@
-﻿---
+---
 id: omniclaw-SYSTEM-MAP-001
 type: REFERENCE
 domain: [system, architecture, meta]
@@ -137,27 +137,61 @@ Phase 7: Activate skills (registry-manager-agent) â†’ SKILL_REGISTRY.json
 
 ---
 
-## 5. MEMORY ARCHITECTURE (5 Layers)
+## 5. MEMORY ARCHITECTURE (V5.0 Structural Logic)
+
+```mermaid
+graph TD
+    classDef l1 fill:#1E293B,stroke:#3B82F6,color:#fff;
+    classDef sys fill:#0F172A,stroke:#6366F1,color:#fff;
+    classDef gap fill:#7F1D1D,stroke:#DC2626,color:#fff;
+    classDef orch fill:#064E3B,stroke:#10B981,stroke-width:2px,color:#fff;
+    classDef top fill:#78350F,stroke:#F59E0B,stroke-width:2px,color:#fff;
+
+    O[omniclaw_orchestrator]:::orch
+    
+    subgraph SYSTEM_B[Corp Memory - System B]
+        D(departments):::sys
+        A(agents):::sys
+        B(brainstorms):::sys
+        
+        G(global / CEO Ledger):::top
+        P(patterns / Heuristics):::top
+        
+        GA(gaps):::gap
+        PR(proposals):::l1
+    end
+
+    A -->|Task logs 7-day| O
+    D -->|Rolling strategies| O
+    B -.->|Ad-hoc Ideation| O
+    
+    O -.->|Task Payload Injection| G
+    G -->|Overriding Ledger| O
+    O -.->|Task Payload Injection| P
+    P -->|Patch Overlays| O
+    
+    GA -->|Self-Healing Intake| O
+    PR -->|CEO Inbox Approvals| O
+```
 
 | Layer | Path | Owner | Retention | Content |
 |-------|------|-------|-----------|---------|
-| L1 Knowledge Base | `brain/knowledge/` | library-manager-agent | PERMANENT | Research, KIs, FAQs (72+ files) |
-| L2 Global | `corp/memory/global/` | CEO | PERMANENT | Strategic decisions |
-| L3 Dept | `corp/memory/departments/<dept>.md` | Dept head | 30-day rolling | Sprint lessons, patterns |
-| L4 Agent | `corp/memory/agents/<agent>.md` | Agent | 7-day auto-purge | Task context, outcomes |
-| L5 Daily | `brain/memory/daily/<DATE>.md` | archivist | 7-day auto-purge | Session events |
+| L1 Knowledge Base | `brain/knowledge/` | library agent | PERMANENT | Research, KIs, FAQs (72+ files) |
+| L2 Global | `brain/memory/corp_memory/global/` | CEO | PERMANENT | Strategic overriding decisions |
+| L3 Patterns | `brain/memory/corp_memory/patterns/` | Agents | PERMANENT | Agent-written heuristic hotfixes |
+| L4 Dept | `brain/memory/corp_memory/departments/` | Dept head | 30-day rolling | Sprint lessons, patterns |
+| L5 Agent | `brain/memory/corp_memory/agents/` | Agent | 7-day rolling | Task context, outcomes |
+| Inbox / Queues | `gaps/` & `proposals/` | Orchestrator | Volatile | Self-healing targets & CEO unread inbox |
 
-**Spec:** `corp/memory/MEMORY_SPEC.md` (v2.0)
-**Rotation:** archivist agent runs weekly on-demand
+**Spec:** `brain/memory/corp_memory/memory_spec.md` (v5.0)
 
 ### Key Knowledge Files
 | File | Purpose |
 |------|---------|
 | `brain/knowledge/knowledge_index.md` | Master index of all KIs |
-| `brain/knowledge/support_faq.md` | Support Q&A library |
+| `brain/memory/corp_memory/global/global_ceo_ledger.md` | Single point of truth for AI behavior |
+| `brain/memory/corp_memory/patterns/system_heuristics.md` | Hotfix registry for agent AI bugs |
 | `brain/knowledge/rd_research_log.md` | R&D research tracking |
-| `brain/knowledge/system_health/health_kb.md` | Health event log |
-| `brain/memory/sources.yaml` | data-collector-agent source list |
 
 ---
 

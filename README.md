@@ -100,6 +100,7 @@ graph TD
 
     A -->|Logs| O
     D -->|Rolling Strategies| O
+    B -.->|Ad-hoc Ideation| O
     
     O -.->|Task Dispatch| G
     G -->|Overriding Ledger| O

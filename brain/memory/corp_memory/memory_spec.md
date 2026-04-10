@@ -35,6 +35,7 @@ graph TD
 
     A -->|Agent History| O
     D -->|Department Patterns| O
+    B -.->|Ad-hoc Ideation| O
     
     O -.->|Task Dispatch| G
     G -->|Overriding CEO Ledger| O
