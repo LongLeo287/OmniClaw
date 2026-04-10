@@ -1,6 +1,10 @@
 ---
-id: gemini
+id: gemini_core_prompt
 type: core_agent_prompt
+namespace: brain.agents
+owner: OSF_Daemon
+status: standard_v5
+description: "Master boot protocol and system instructions for Antigravity (Gemini)."
 registered: true
 ---
 
