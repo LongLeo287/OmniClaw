@@ -136,3 +136,10 @@ brain/registry/OMA_SYSTEM_MAP*.json
 !/brain/memory/corp_memory/global/_DIR_IDENTITY.md
 !/brain/memory/corp_memory/global/global_ceo_ledger.md
 !/brain/memory/corp_memory/global/.gitkeep
+
+# 15. Memory - System Heuristics (Track Adaptive Patches)
+!/brain/memory/corp_memory/patterns/
+/brain/memory/corp_memory/patterns/*
+!/brain/memory/corp_memory/patterns/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/patterns/system_heuristics.md
+!/brain/memory/corp_memory/patterns/.gitkeep
