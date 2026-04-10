@@ -96,8 +96,7 @@ secrets/
 brain/registry/*.log
 brain/registry/OMA_SYSTEM_MAP*.json
 
-# Ignore vector databases weighing over 100MB
-brain/chroma_db/chroma.sqlite3
+
 
 
 

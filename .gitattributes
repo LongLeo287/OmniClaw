@@ -1,0 +1,12 @@
+# =============================================================
+# OmniClaw - GitAttributes for Security & Search Optimizations
+# =============================================================
+# 1. Ignore massive plugin/skill directories from GitHub Dependabot Vulnerability Alerts
+ecosystem/skills/** linguist-vendored=true
+ecosystem/plugins/** linguist-vendored=true
+vault/** linguist-vendored=true
+ecosystem/ui_components/** linguist-vendored=true
+# 2. Exclude these components from GitHub Language statistics
+ecosystem/skills/** linguist-generated=true
+ecosystem/plugins/** linguist-generated=true
+*.sqlite3 filter=lfs diff=lfs merge=lfs -text
