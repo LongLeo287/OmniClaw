@@ -1,60 +1,43 @@
-# OmniClaw Corp — OpenClaw Skill Router
-# Inspired by OpenClaw (🦞) Typed Pipeline Architecture
-# Each pipeline type maps to a set of Workflows + Agents
+# ==========================================
+# OmniClaw V5.0 | Protected by OSF Daemon
+# ==========================================
+# The 8-Daemon OmniClaw Skill Router
+# Authoritative routing matrix for Execution Agents utilizing OER registered skills.
 
-version: "1.0"
-schema: openclaw-pipeline-v1
+version: "5.0"
+schema: omniclaw-pipeline-v5
 
 pipelines:
 
-  CODE:
+  CODE_EXECUTION:
     keywords: [code, write, fix, bug, debug, build, app, feature, refactor, test, deploy, push, git]
-    description: "Create/edit code, build app, deploy"
+    description: "Write code, execute deployments, and compile apps"
     workflows:
-      - ops/workflows/create-plugin.md
-      - ops/workflows/build-fast-index.md
-    agent: antigravity
-    tool_hint: "shell + file_write"
+      - brain/rules/sops/workflow.md
+    core_daemon_delegate: "OAP"
+    agent_hints: "antigravity, cline, gemini"
+    tool_hint: "shell + file_write + read_file"
 
-  DESIGN:
+  UI_DESIGN:
     keywords: [design, ui, ux, interface, colors, layout, figma, css, component, dashboard]
-    description: "UI/UX design, interface"
+    description: "Generate frontend UI/UX logic and layouts"
     workflows:
-      - ops/workflows/nemoclaw-slides.md
-    agent: nemoclaw
-    tool_hint: "file_write + web_fetch"
+      - core/docs/usage_guides/figma_mcp_usage.md
+    core_daemon_delegate: "OAP"
+    tool_hint: "file_write + mcp_figma"
 
-  DATA:
-    keywords: [data, database, sql, supabase, json, csv, analysis, report, report, analytics, query]
-    description: "Data query, analysis"
+  RESEARCH_AND_INTAKE:
+    keywords: [scrape, search, github, clone, read, docs, learn, memory]
+    description: "Scrape external repositories and save to MemPalace Layer 1"
     workflows:
-      - ops/workflows/data-ingest.md
-    agent: antigravity
-    tool_hint: "shell + web_fetch"
+      - brain/rules/sops/enrichment_sop.md
+    core_daemon_delegate: "OIW"
+    tool_hint: "web_fetch + git_clone + memory_write"
 
-  RESEARCH:
-    keywords: [learn, research, search, compare, evaluate, review, explain, explain, what]
-    description: "Search, explain, research"
-    agent: antigravity
-    tool_hint: "web_search + file_read"
-
-  OPS:
-    keywords: [start, restart, stop, deploy, docker, service, task, monitor, log, health, check]
-    description: "System operation, service management"
+  CLEANUP_AND_HEAL:
+    keywords: [clean, delete, cache, minify, json, logs, bloat]
+    description: "Automatically purge massive logs and minify system indexes"
     workflows:
-      - ops/workflows/bot-reporting.md
-      - ops/workflows/start-services.md
-    agent: omniclaw_bot
-    tool_hint: "shell"
-
-  PLAN:
-    keywords: [plan, plan, roadmap, okr, sprint, brainstorm, idea, idea, strategy]
-    description: "Planning, brainstorming"
-    agent: antigravity
-    tool_hint: "file_write"
-
-  CHAT:
-    keywords: []
-    description: "Common conversation, quick questions"
-    agent: omniclaw_bot
-    tool_hint: "none — respond directly"
+      - brain/rules/sops/orchestration_sop.md
+    core_daemon_delegate: "OHD"
+    tool_hint: "shell + file_delete"
