@@ -1,27 +1,24 @@
 ---
-id: brain_decisions
+id: unique_slug
 type: directory_identity
-namespace: brain.knowledge.corp.decisions
-owner: OMA_AI_FORGER
+namespace: brain.example.path
+owner: OSF_Daemon
 status: standard_v5
-description: "Manages corporate decisions and their associated logs, ensuring transparency and traceability in decision-making processes."
+description: "Contains log files related to decision-making processes within the corporation."
 registered_by: OMA_AI_FORGER
-tags: ["decisions", "corporate", "logs", "traceability"]
+tags: ["decisions", "log_files"]
 ---
 
 # Decisions Identity
 
-Manages corporate decisions and their associated logs, ensuring transparency and traceability in decision-making processes.
+Contains log files related to decision-making processes within the corporation.
 
 ## Topological View
 
 ```mermaid
-Graph TD;
-Root("brain/knowledge/corp"):::directory
-NodeA("decisions"):::directory
-NodeB("log.md"):::file
-Root --> NodeA
-NodeA --> NodeB;
+graph TD
+  Parent("brain/knowledge/corp") --> Node("decisions")
+  Node --> Sub1("log.md")
 ```
 
 ---

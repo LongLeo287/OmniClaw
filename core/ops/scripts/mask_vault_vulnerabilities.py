@@ -1,6 +1,9 @@
 import os
 
-VAULT_PATH = r"D:\OmniClaw\vault\knowledge\global_codebases"
+PATHS_TO_CLEAN = [
+    r"D:\OmniClaw\vault\knowledge\global_codebases",
+    r"D:\OmniClaw\ecosystem\skills"
+]
 
 extensions_to_hide = [
     "package.json",
@@ -16,13 +19,14 @@ extensions_to_hide = [
 
 def hide_manifests(root_path):
     renamed_count = 0
+    if not os.path.exists(root_path):
+        return 0
     for root, dirs, files in os.walk(root_path):
         for file in files:
             if file in extensions_to_hide:
                 old_path = os.path.join(root, file)
                 new_path = old_path + ".knowledge"
                 try:
-                    # If target already exists, delete it first to allow rename
                     if os.path.exists(new_path):
                         os.remove(new_path)
                     os.rename(old_path, new_path)
@@ -32,5 +36,9 @@ def hide_manifests(root_path):
     return renamed_count
 
 if __name__ == "__main__":
-    count = hide_manifests(VAULT_PATH)
-    print(f"SUCCESS: Renamed {count} manifest files to .knowledge extension.")
+    total = 0
+    for path in PATHS_TO_CLEAN:
+        count = hide_manifests(path)
+        print(f"Processed {path}: Renamed {count} files.")
+        total += count
+    print(f"FINAL SUCCESS: Renamed {total} manifest files system-wide.")
