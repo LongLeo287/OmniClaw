@@ -13,7 +13,7 @@ injection_target: ALL_AGENTS
 
 ---
 <!-- ========================================== -->
-<!-- ⚠️ CEO: Thêm Lệnh Mới Nhất Lên Trên Cùng ⚠️ -->
+<!-- ⚠️ CEO: Append New Directives at the Top ⚠️ -->
 <!-- ========================================== -->
 
 ## 1. Zero-Cloud Security Doctrine
