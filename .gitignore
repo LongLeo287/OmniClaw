@@ -108,3 +108,10 @@ brain/registry/OMA_SYSTEM_MAP*.json
 /brain/memory/corp_memory/agents/*
 !/brain/memory/corp_memory/agents/_DIR_IDENTITY.md
 !/brain/memory/corp_memory/agents/.gitkeep
+
+# 11. Memory - Brainstorms Buffer (Ignore volatile ideation logs)
+!/brain/memory/corp_memory/brainstorms/
+/brain/memory/corp_memory/brainstorms/*
+!/brain/memory/corp_memory/brainstorms/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/brainstorms/brainstormtemplate.md
+!/brain/memory/corp_memory/brainstorms/.gitkeep
