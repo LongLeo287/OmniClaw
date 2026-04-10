@@ -122,3 +122,10 @@ brain/registry/OMA_SYSTEM_MAP*.json
 !/brain/memory/corp_memory/departments/_DIR_IDENTITY.md
 !/brain/memory/corp_memory/departments/dept_memorytemplate.md
 !/brain/memory/corp_memory/departments/.gitkeep
+
+# 13. Memory - System Gaps Logging (Ignore volatile tickets)
+!/brain/memory/corp_memory/gaps/
+/brain/memory/corp_memory/gaps/*
+!/brain/memory/corp_memory/gaps/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/gaps/gap_reporttemplate.md
+!/brain/memory/corp_memory/gaps/.gitkeep
