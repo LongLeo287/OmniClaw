@@ -3,7 +3,6 @@
 > **Tổng số lượng**: 1,970 Đặc Vụ Atomic tinh khiết.
 > Quy chuẩn: `snake_case` (Python Standard).
 
-
 ## 🗃️ Cụm Tọa Độ [#]
 - `007`
 - `00_andruia_consultant`
