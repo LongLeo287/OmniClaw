@@ -28,7 +28,9 @@ graph TD
 
     subgraph "brain/registry/"
         FAST[FAST_INDEX.json]:::index
+        SYS[SYSTEM_INDEX.yaml]:::index
         SKILL[SKILL_REGISTRY.json]:::index
+        EXT[EXTERNAL_SKILL_SOURCES.yaml]:::index
         ROUTER[SKILL_ROUTER.yaml]:::index
     end
 
@@ -38,21 +40,26 @@ graph TD
     
     AGENTS(Execution Agents):::agent
 
-    %% Daemons ruling the indexes
+    %% OMA Architect controls structural indexes
     OMA -->|Compiles Map| FAST
-    OER -->|Validates tools| SKILL
+    OMA -->|Indexes Content| SYS
+
+    %% OER Registrar controls skills
+    OER -->|Validates Tools| SKILL
+    OER -->|Fetches Repos| EXT
+
+    %% OAP controls Agents
     OAP -->|Directs logic| ROUTER
 
     %% Execution Agents reading the indexes
     AGENTS -.->|Read Only| FAST
     AGENTS -.->|Read Only| SKILL
     
-    %% OAP controls Agents
+    %% Instruction Flow
     ROUTER -.->|Forces task| AGENTS
     
     %% Strict protection
-    OSF(OSF Warden):::daemon -->|Protects| FAST
-    OSF -->|Protects| SKILL
+    OSF(OSF Warden):::daemon -->|Protects All Indexes| FAST
 ```
 
 ## Core Mechanisms
