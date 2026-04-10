@@ -27,6 +27,9 @@ def get_context_for_directory(dir_path: str):
     folder_name = os.path.basename(dir_path)
     rel_path = os.path.relpath(dir_path, OMNICLAW_ROOT).replace("\\", "/")
     
+    parent_dir = os.path.dirname(dir_path)
+    parent_rel = os.path.relpath(parent_dir, OMNICLAW_ROOT).replace("\\", "/") if parent_dir != OMNICLAW_ROOT else "root"
+
     subdirs = []
     files = []
     
@@ -35,52 +38,53 @@ def get_context_for_directory(dir_path: str):
             continue
         p = os.path.join(dir_path, item)
         if os.path.isdir(p):
-            subdirs.append(item + "/")
+            subdirs.append(item)
         elif os.path.isfile(p):
             files.append(item)
             
     return {
         "folder_name": folder_name,
         "path": rel_path,
+        "parent_path": parent_rel,
         "subdirs_found": subdirs,
-        "files_found": files[:15]  # Limit to 15 files to save tokens
+        "files_found": files[:10]
     }
 
 def build_llm_prompt(context_dict: dict) -> str:
     ctx = json.dumps(context_dict, indent=2)
-    return f"""You are the OMA Chief Architect of a Multi-Agent AI OS named OmniClaw (v5.0).
-Your task is to enrich an empty taxonomy node by writing a rich semantic description and routing map.
+    return f"""You are the OMA Chief Architect of OmniClaw (v5.0).
+Enrich this taxonomy node with a deep description and a TOPOLOGICAL graph.
 
-Here is the directory context you discovered:
+DIRECTORY CONTEXT:
 {ctx}
 
-Generate a JSON object with the following schema:
+MANDATORY JSON SCHEMA:
 {{
-  "id": "A unique slug, e.g. brain_rules_governance",
+  "id": "unique_slug",
   "type": "directory_identity",
-  "namespace": "the dot-separated namespace, e.g. brain.rules.governance",
-  "description": "A 1-2 sentence profound, rich semantic description of what this directory manages.",
-  "tags": ["tag1", "tag2", "tag3"],
-  "mermaid_graph": "A valid GitHub Mermaid diagram showing how this node connects to its subdirectories or parent."
+  "namespace": "brain.example.path",
+  "description": "2-3 high-level impact sentences.",
+  "tags": ["tag1", "tag2"],
+  "mermaid_graph": "graph TD\\n  Parent(\\"parent_path\\") --> Node(\\"folder_name\\")\\n  Node --> Sub1(\\"subdir\\")..."
 }}
 
-CRITICAL MERMAID RULES TO PREVENT PARSE CRASHES:
-1. ALWAYS start with lowercase `graph TD` or `graph LR`.
-2. Identify all nodes in quotes! Do NOT put dots `.` or slashes `/` inside unquoted nodes! Example: `Root("brain/rules")`.
-3. Never use `\\n` raw inside node labels! Use `<br/>` instead. Example: `NodeA("File Name<br/>Descr")`
-4. DO NOT use the `:::` syntax for styling classes (like `:::directory`) unless you also Output the `classDef` at the bottom. To be safe, just don't use `:::` at all.
+CRITICAL MERMAID RULES:
+1. USE ARROWS `-->` TO CONNECT THE PARENT TO THIS FOLDER, AND THIS FOLDER TO ITS SUBDIRS.
+2. DISCONNECTED NODES ARE A SYSTEM FAILURE. Every node MUST have a connection.
+3. Node names MUST be in DOUBLE QUOTES! Example: Root("core/ops") --> Scripts("scripts")
+4. No backslashes in Mermaid labels. Use forward slashes.
 
-Generate ONLY the JSON object, formatted strictly as valid JSON.
+Generate STRITCTLY VALID JSON.
 """
 
-def process_batch(limit=3):
-    print(f"=== OMA AI Forger: Commencing Batch Scan (Limit: {limit}) ===")
+def process_batch(limit=None, force=False):
+    print(f"=== OMA AI Forger: Commencing Scan (Force Overwrite: {force}) ===")
     
     targets_processed = 0
-    search_root = os.path.join(OMNICLAW_ROOT, "brain") # We stick to brain/ for now prioritizing knowledge/rules
+    search_root = os.path.join(OMNICLAW_ROOT, "brain")
     
     for root, dirs, files in os.walk(search_root):
-        if targets_processed >= limit:
+        if limit and targets_processed >= limit:
             break
             
         if "_DIR_IDENTITY.md" in files:
@@ -91,30 +95,29 @@ def process_batch(limit=3):
             except Exception:
                 continue
                 
-            # Detect Auto-generated stub
-            if "Auto-generated identity for" in content or "Auto-generated identity tag by OMA" in content:
-                print(f"[OMA-FORGER] Discovered Hollow Node: {os.path.relpath(id_path, OMNICLAW_ROOT)}")
+            is_hollow = "Auto-generated" in content or "No topology generated" in content or "graph TD\\n  " not in content.replace("graph TD\n", "graph TD\\n")
+            # If the graph doesn't have connections (-->), it's considered poor quality
+            is_disconnected = "-->" not in content and "graph" in content
+            
+            if force or is_hollow or is_disconnected:
+                print(f"[OMA-FORGER] Targeting Node: {os.path.relpath(id_path, OMNICLAW_ROOT)}")
                 
-                # Fetch Context
                 ctx = get_context_for_directory(root)
                 prompt = build_llm_prompt(ctx)
-                
-                print(f"  -> Consulting Central Oracle (LLM) for semantic enrichment...")
                 
                 try:
                     result_json_str = call_omniclaw_model(prompt, json_format=True, timeout=120)
                     if not result_json_str:
-                        print("  -> [ERROR] Timeout or empty response from LLM.")
+                        print("  -> [ERROR] Timeout/Empty response.")
                         continue
                         
                     data = json.loads(result_json_str)
                     
-                    # Convert dict to beautiful Markdown
                     md_content = f"""---
 id: {data.get('id', 'unknown_id')}
 type: {data.get('type', 'directory_identity')}
 namespace: {data.get('namespace', 'unknown.namespace')}
-owner: OMA_AI_FORGER
+owner: OSF_Daemon
 status: standard_v5
 description: "{data.get('description', '')}"
 registered_by: OMA_AI_FORGER
@@ -134,21 +137,22 @@ tags: {json.dumps(data.get('tags', []))}
 ---
 *OmniClaw V5.0 | Forged by AI Architect | Evaluated dynamically*
 """
-                    # Write back to file
                     with open(id_path, "w", encoding="utf-8") as f:
                         f.write(md_content)
-                    print(f"  -> [SUCCESS] Deep Identity Forged and Injected!")
+                    print(f"  -> [SUCCESS] Deep Identity Forged with connections!")
                     targets_processed += 1
 
                 except Exception as e:
-                    print(f"  -> [CRASH] Failed to forge. Data schema mismatch? Error: {e}")
+                    print(f"  -> [CRASH] {e}")
 
-    print(f"\n[OMA-FORGER] Scan cycle complete. Processed {targets_processed} nodes.")
+    print(f"\n[OMA-FORGER] Scan complete. Processed {targets_processed} nodes.")
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--batch", type=int, default=3, help="Max number of files to process per run.")
+    parser.add_argument("--batch", type=int, default=0, help="Max nodes to process (0 = all).")
+    parser.add_argument("--force", action="store_true", help="Overwrite even if not detected as hollow.")
     args = parser.parse_args()
     
-    process_batch(limit=args.batch)
+    process_batch(limit=args.batch if args.batch > 0 else None, force=args.force)
+

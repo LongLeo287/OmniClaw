@@ -1,23 +1,24 @@
 ---
-id: brain_chroma_db
-type: core_system_prompt
-namespace: brain.chroma_db
+id: chroma_db
+type: directory_identity
+namespace: brain.example.path
 owner: OSF_Daemon
 status: standard_v5
-description: "Manages the core database for OmniClaw v5.0, storing and retrieving structured knowledge essential for the AI's operations."
-registered_by: OA_Auditor
-tags: ["database", "knowledge_graph", "core_storage"]
+description: "This directory contains the database used by OmniClaw for storing vectorized data and metadata."
+registered_by: OMA_AI_FORGER
+tags: ["database", "vector_storage"]
 ---
 
 # Chroma Db Identity
 
-Manages the core database for OmniClaw v5.0, storing and retrieving structured knowledge essential for the AI's operations.
+This directory contains the database used by OmniClaw for storing vectorized data and metadata.
 
 ## Topological View
 
 ```mermaid
 graph TD
- Root("brain/chroma_db")
+  Parent("brain") --> Node("chroma_db")
+  Node --> Sub1("chroma.sqlite3")
 ```
 
 ---

@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Maintain Python dependencies ONLY in the core logic directories
+  - package-ecosystem: "pip"
+    directory: "/core"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+
+  # Maintain NPM dependencies ONLY in the core logic directories
+  - package-ecosystem: "npm"
+    directory: "/core"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+
+  # GLOBALLY IGNORE everything in the /vault and /ecosystem/skills
+  # Note: The 'directory' field above already limits automated PRs.
+  # To stop GitHub from scanning for security alerts in knowledge areas, 
+  # we must use .gitattributes or rename manifests.
+
+
+  # Explicitly overriding implicit root scanning behaviour
+  # By ONLY defining `/core`, Dependabot will completely ignore `/ecosystem/skills/**`
+  # This stops Dependabot from attempting to upgrade 500+ deprecated sample scripts.
