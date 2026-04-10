@@ -97,3 +97,14 @@ brain/registry/*.log
 brain/registry/OMA_SYSTEM_MAP*.json
 
 
+
+# 10. Memory - Corp Agents Roster (Ignore Agent Profiles, keep folder)
+!/brain/memory/
+/brain/memory/*
+!/brain/memory/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/
+/brain/memory/corp_memory/*
+!/brain/memory/corp_memory/agents/
+/brain/memory/corp_memory/agents/*
+!/brain/memory/corp_memory/agents/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/agents/.gitkeep
