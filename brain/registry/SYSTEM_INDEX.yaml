@@ -1,4 +1,4 @@
-# ==========================================
+﻿# ==========================================
 # OmniClaw V5.0 | Protected by OSF Daemon
 # OmniClaw MASTER REGISTRY (SYSTEM_INDEX)
 # ==========================================
@@ -850,8 +850,8 @@ omniclaw_system_index:
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_shared_context
-    name: shared-context
-    path: brain/shared-context
+    name: brain/memory
+    path: brain/memory
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: UNREGISTERED_ROGUE
@@ -43884,3 +43884,4 @@ omniclaw_system_index:
     category: VAULT
     type: DIRECTORY
     oa_vetting_status: UNREGISTERED_ROGUE
+
