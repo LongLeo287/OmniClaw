@@ -1,6 +1,8 @@
 ---
-id: brainstorm.template
+id: template.brainstorm
 type: corp_document
+namespace: brain.memory.corp_memory.brainstorms
+status: standard_v5
 registered: true
 ---
 
@@ -8,10 +10,13 @@ registered: true
 
 ## Topic: {Topic Name}
 **Date:** {DATE}
-**Participants:** {Agent/User names}
-**Raw Ideas:**
+**Participants:** {Agent IDs}
+
+### Raw Ideas
 - 
-**Promising Directions:**
+
+### Promising Directions
 - 
-**Next Steps/Action Items:**
+
+### Next Steps / Action Items
 - 

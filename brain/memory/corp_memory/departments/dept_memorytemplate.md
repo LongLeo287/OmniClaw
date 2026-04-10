@@ -1,13 +1,15 @@
 ---
-id: dept_memory.template
+id: template.dept_memory
 type: corp_document
+namespace: brain.memory.corp_memory.departments
+status: standard_v5
 registered: true
 ---
 
 # {DEPT_NAME} Institutional Memory (System B)
 
 > [!NOTE]  
-> **To AI Agents:** Use TOP APPEND format. When updating this document during `[REFLECTION]`, insert your new blocks directly UNDER the section headers. Do not delete historical logs unless explicitly commanded to aggregate.
+> **To AI Agents:** Use TOP APPEND format. When updating this document during `[REFLECTION]`, insert your new blocks directly UNDER the section headers. Do not delete historical logs unless explicitly commanded.
 
 ## 1. Active Roster & Status
 - **Last Sync:** {DATE}

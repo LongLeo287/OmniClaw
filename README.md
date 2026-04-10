@@ -74,6 +74,42 @@ Most Agentic Frameworks fail because LLMs bloat their context reading entire rep
 3. **Layer 3: Graph Navigation [The Topology]**
    A global routing mechanism maintained by `OMA`, pointing Agents toward the correct closet instead of letting them wander.
 
+### 🧠 Tactical Memory Flow (System B - V5.0)
+
+```mermaid
+graph TD
+    classDef l1 fill:#1E293B,stroke:#3B82F6,color:#fff;
+    classDef sys fill:#0F172A,stroke:#6366F1,color:#fff;
+    classDef gap fill:#7F1D1D,stroke:#DC2626,color:#fff;
+    classDef orch fill:#064E3B,stroke:#10B981,stroke-width:2px,color:#fff;
+    classDef top fill:#78350F,stroke:#F59E0B,stroke-width:2px,color:#fff;
+
+    O[Orchestrator Engine]:::orch
+    
+    subgraph SYSTEM_B[Long-Term Corp Memory]
+        D(departments):::sys
+        A(agents):::sys
+        B(brainstorms):::sys
+        
+        G(global / CEO Ledger):::top
+        P(patterns / Heuristics):::top
+        
+        GA(gaps):::gap
+        PR(proposals / CEO Inbox):::l1
+    end
+
+    A -->|Logs| O
+    D -->|Rolling Strategies| O
+    
+    O -.->|Task Dispatch| G
+    G -->|Overriding Ledger| O
+    O -.->|Task Dispatch| P
+    P -->|Patch Overlays| O
+    
+    GA -->|Self-Healing Ingestion| O
+    PR -->|CEO Approval Ingestion| O
+```
+
 ---
 
 ## 🌪️ The "No Boilerplate" OS

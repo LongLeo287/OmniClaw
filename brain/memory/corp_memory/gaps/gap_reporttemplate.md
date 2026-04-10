@@ -1,26 +1,20 @@
 ---
-id: gap_report.template
-type: system_gap_log
+id: template.gap_report
+type: corp_document
+namespace: brain.memory.corp_memory.gaps
+status: standard_v5
 registered: true
 ---
 
-# OmniClaw System Gap Report
-> [!NOTE]  
-> Agent: Copy this template to `brain/memory/corp_memory/gaps/GAP_{TaskID}.md` when submitting an anomaly ticket.
+# Gap Report (Self-Healing System)
 
 **Date:** {DATE}
-**Agent Reporter:** {HANDLER}
-**Triggering Task:** {TASK_ID}
+**Agent:** {HANDLER}
+**Triggered By:** CIRCUIT BREAKER
+**Failure Domain:** {Tool / Logic / Capability}
 
----
+## Overview
+<!-- Briefly describe the recurring error or missing capability -->
 
-## 1. Description of the Gap
-<!-- Describe the missing capability, logic flaw, or missing skill here. -->
-
-
-## 2. Blocked Objective (Impact)
-<!-- What were you trying to accomplish before the failure? -->
-
-
-## 3. Recommended Action
-<!-- Suggest a new Skill, Tool, or Prompt Patch that would fix this. -->
+## Proposed Fix
+<!-- Outline technical steps for Refactoring -->
