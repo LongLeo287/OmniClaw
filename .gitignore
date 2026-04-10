@@ -129,3 +129,10 @@ brain/registry/OMA_SYSTEM_MAP*.json
 !/brain/memory/corp_memory/gaps/_DIR_IDENTITY.md
 !/brain/memory/corp_memory/gaps/gap_reporttemplate.md
 !/brain/memory/corp_memory/gaps/.gitkeep
+
+# 14. Memory - Global Strategy (Track the ledger but block clutter)
+!/brain/memory/corp_memory/global/
+/brain/memory/corp_memory/global/*
+!/brain/memory/corp_memory/global/_DIR_IDENTITY.md
+!/brain/memory/corp_memory/global/global_ceo_ledger.md
+!/brain/memory/corp_memory/global/.gitkeep
