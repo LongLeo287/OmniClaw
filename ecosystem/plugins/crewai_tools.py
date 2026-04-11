@@ -16,14 +16,14 @@ class GitingestTool(BaseTool):
 
     def _run(self, repo_url: str) -> str:
         try:
-            # Thu vien gitingest local hoac API HTTP
+            # Local gitingest library or HTTP API
             from gitingest import ingest
             print(f"[{self.name}] Ingesting {repo_url}...")
             summary, tree, content = ingest(repo_url)
-            # Truncate content de tranh qua gioi han token cua mode nhe
+            # Truncate content to avoid exceeding light mode token limits
             return f"Directory Tree:\n{tree}\n\nKey Content Snippet:\n{content[:3000]}"
         except ImportError:
-            # Fallback tool neu chua install gitingest module python
+            # Fallback tool if gitingest python module is not installed
             return f"Fallback Error: Python module 'gitingest' not found. Please install."
         except Exception as e:
             return f"Error grabbing repo: {e}"
@@ -40,7 +40,7 @@ class LightRAGTool(BaseTool):
             print(f"[{self.name}] Inserting text into graph ({len(document_content)} chars)...")
             success = rag.insert(document_content, source_hint="CrewAI Multi-Agent Pipeline")
             if success:
-                return "Graph Node Insertion SUCCESS. Da cap nhat kien thuc vao he thong."
+                return "Graph Node Insertion SUCCESS. Knowledge successfully updated into the system."
             return "Failed to insert into Graph RAG."
         except Exception as e:
             return f"Error indexing document: {e}"

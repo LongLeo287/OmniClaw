@@ -19,21 +19,21 @@
 |------|---------|------|----------------|---------|
 | `LightRAG` | ✅ ACTIVE | Tier 1 | No conflict | Core RAG engine. check weekly. OPEN-004 in progress. |
 | `mem0` | ✅ ACTIVE | Tier 1 | Safe | Phase 1 DONE. Hooks: onTaskStart/onTaskComplete/onHandoff. |
-| `open-notebook` | ✅ ACTIVE | Tier 2 | — | Nova primary tool. Port 8502/5055. KHÔNG thay đổi. |
-| `open-notebooklm` | ✅ ACTIVE | Tier 2 | — | Audio podcast gen. KHÔNG thay đổi. |
+| `open-notebook` | ✅ ACTIVE | Tier 2 | — | Nova primary tool. Port 8502/5055. DO NOT modify. |
+| `open-notebooklm` | ✅ ACTIVE | Tier 2 | — | Audio podcast gen. DO NOT modify. |
 | `notebooklm-skill` | ✅ ACTIVE | Tier 2 | — | NotebookLM browser automation. Nova primary. |
 | `nexusrag` | 🔖 DEFER → Phase 6 | Tier 2 | ⚠️ Overlap LightRAG | **Verdict:** DEFER. Can complement UI for LightRAG after PoC. DO NOT deploy standalone. |
 | `graphrag` | 📚 REFERENCE | — | ⚠️ Overlap LightRAG | **Verdict:** REFERENCE. Tool unused (API cost), but learn concept of **Community Detection** + entity-typed extraction. KI: `brain/knowledge/notes/KI-GRAPHRAG-CONCEPTS-01.md` |
 | `cognee` | 🔖 DEFER → Phase 6 | Tier 2 | ⚠️ Partial overlap LightRAG | **Verdict:** DEFER. Awaiting LightRAG PoC (OPEN-004). If LightRAG suffices, REJECT. |
-| `ai-tagger` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Semantic auto-tagging bổ sung cho Knowledge pipeline. No conflict. Integrate khi Knowledge dept cần. |
+| `ai-tagger` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Semantic auto-tagging complements Knowledge pipeline. No conflict. Integrate khi Knowledge dept cần. |
 | `smart-search` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Hybrid search (semantic + keyword). Integrate after LightRAG stable. No conflict. |
 | `claude-mem` | 📚 REFERENCE | — | ⚠️ Overlap mem0 | **Verdict:** REFERENCE. Tool không dùng (mem0 is better), nhưng đọc để học cách handle Claude-specific memory patterns nếu cần tương thích API trong tương lai. |
-| `autoresearchclaw` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Auto research agent — bổ sung cho web-researcher workflow. Evaluate khi Dept R&D cần agent tự động. |
+| `autoresearchclaw` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Auto research agent — complements web-researcher workflow. Evaluate when Dept R&D cần agent tự động. |
 | `openrag` | ❌ REJECT | Tier 3 | ❌ nexusrag is better | **Verdict:** REJECT đã từ trước. nexusrag đầy đủ hơn. Now REJECTING nexusrag entirely as LightRAG covers it. |
 | `neural-memory-repo` | 🔖 DEFER → Phase 6 | Tier 2 | Safe | **Verdict:** DEFER. Neural memory implementation — evaluate when advanced memory needed. |
 | `notebooklm-mcp` | 👁️ | Tier 2 | Safe | **Verdict:** Read. MCP server for NotebookLM API with session support. |
 | `notebooklm-mcp-cli` | ✅ ACTIVE | Tier 2 | — | Active. NotebookLM MCP bridge. |
-| `langextract` | ✅ ACTIVE | Tier 2 | — | Active, KHÔNG thay đổi. check monthly. |
+| `langextract` | ✅ ACTIVE | Tier 2 | — | Active, DO NOT modify. check monthly. |
 
 ---
 
@@ -42,10 +42,10 @@
 | Repo | Verdict | Tier | Conflict check | Notes |
 |------|---------|------|----------------|---------|
 | `firecrawl` | ✅ ACTIVE | Tier 1 | Safe | Phase 2 DONE. Pipeline: Firecrawl→LangExtract→LightRAG. |
-| `gitingest` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. GitHub repo → LLM context. Complements GitNexus khi cần feed repo vào RAG. Integrate khi Dept Engineering yêu cầu. |
+| `gitingest` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. GitHub repo → LLM context. Complements GitNexus khi cần feed repo vào RAG. Integrate when Dept Engineering requires. |
 | `scrapling` | 🔖 DEFER → Phase 5 | Tier 2 | ⚠️ Overlap Firecrawl | **Verdict:** DEFER as BACKUP ONLY. Dùng khi Firecrawl không có API key (self-hosted mode down). KHÔNG integrate song song. |
 | `scrapling-mcp` | ❌ REJECT | Tier 3 | ❌ Duplicate scrapling + Firecrawl | **Verdict:** REJECT. MCP wrapper của scrapling — đã có Firecrawl MCP adapter is better. 2 lớp trùng nhau. |
-| `agent-browser` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. Browser automation cho agent (lấy JS-rendered content). Complement Firecrawl cho case JS-heavy. Integrate khi Dept Engineering cần. |
+| `agent-browser` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. Browser automation cho agent (lấy JS-rendered content). Complement Firecrawl cho case JS-heavy. Integrate when Dept Engineering cần. |
 | `cerberus-cve-tool` | 🔖 DEFER → Phase 3 | Tier 2 | Safe (security) | **Verdict:** DEFER. CVE scanning — Dept 10 (Security) sở hữu. Integrate vào nemoclaw-strix-scan.md pipeline. |
 | `pageindex` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Page indexing system — evaluate when web crawling needs expand. |
 | `dbcooper` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Database cooperation tools — evaluate when multi-db operations needed. |
@@ -81,7 +81,7 @@
 | `ui-ux-pro-max` | ✅ ACTIVE | Tier 2 | — | Active. Premium UI generation. |
 | `LobsterBoard` | ✅ ACTIVE | Tier 2 | — | Beta, audit needed. Dashboard UI. |
 | `lobe-chat` | 🔖 DEFER → Phase 7 | Tier 2 | ⚠️ Overlap nullclaw | **Verdict:** DEFER. Full AI chat platform — evaluate chỉ khi CEO muốn public-facing chat UI mạnh hơn nullclaw. |
-| `antigravity-deck` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Presentation/deck tool cho Antigravity. Review khi Dept Marketing cần slide generation. |
+| `antigravity-deck` | 🔖 DEFER → Phase 5 | Tier 2 | Safe | **Verdict:** DEFER. Presentation/deck tool cho Antigravity. Review when Dept Marketing cần slide generation. |
 | `antigravity-mobile` | 🔖 DEFER → Phase 7 | Tier 2 | Safe | **Verdict:** DEFER. Mobile UI — integrate khi có kế hoạch mobile app cụ thể. |
 | `PerformanceStudio` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. Performance monitoring UI — review cùng prometheus-grafana. Dept 14 (Monitoring) sở hữu. |
 | `prometheus-grafana-alerts` | 🔖 DEFER → Phase 4 | Tier 2 | Safe | **Verdict:** DEFER. Monitoring stack — integrate vào Dept 14 (Monitoring/Inspection). Phase 3 ops. |
@@ -136,7 +136,7 @@
 | `antigravity-awesome-skills` | 🔖 DEFER → Phase 4 | **Verdict:** DEFER. Review skill list xem có skill nào chưa có trong SKILL_REGISTRY.json → cherry-pick và import từng skill, không clone toàn bộ. |
 | `awesome-agent-skills` | 🔖 DEFER → Phase 4 | **Verdict:** DEFER. Same as above — cherry-pick, không clone. |
 | `awesome-claude-skills` | 🔖 DEFER → Phase 4 | **Verdict:** Same — cherry-pick các skill Claude-specific phù hợp với OmniClaw. |
-| `ai-engineering-toolkit` | 🔖 DEFER → Phase 5 | **Verdict:** DEFER. Toolkit tổng hợp — xem xét khi Dept Engineering cần expand toolkit. |
+| `ai-engineering-toolkit` | 🔖 DEFER → Phase 5 | **Verdict:** DEFER. Toolkit tổng hợp — xem xét when Dept Engineering cần expand toolkit. |
 | `api-mega-list` | 🔖 REFERENCE | **Verdict:** REFERENCE ONLY. Danh sách API — không integrate. Đọc khi cần tìm API mới. |
 | `affiliate-skills` | 👁️ | Reference | Affiliate marketing skills — reference for marketing automation. |
 | `affitor-affiliate-skills` | 👁️ | Reference | Affiliate marketing skills — reference for marketing automation. |

@@ -4,19 +4,19 @@
 
 ---
 
-## THỐNG KÊ
+## STATISTICS
 
-| Kho | Count | Trạng thái |
+| Repo | Count | Status |
 |-----|-------|-----------|
-| ⭐ ACTIVE | 38 | Đang dùng trong OmniClaw |
-| 🔖 PENDING | 1245 | Đã APPROVE, chưa cài đặt |
-| ❌ ARCHIVED | 140 | REJECT/DEFER — CEO xem xét lại |
+| ⭐ ACTIVE | 38 | Active in OmniClaw |
+| 🔖 PENDING | 1245 | Đã APPROVE, not installed đặt |
+| ❌ ARCHIVED | 140 | REJECT/DEFER — CEO review required |
 
 ---
 
-## ⭐ REPO ĐANG ACTIVE TRONG OmniClaw
+## ⭐ ACTIVE REPOS IN OmniClaw
 
-> Các repo này cần được update thường xuyên. Mỗi tuần Dept 20 CIV kiểm tra version mới.
+> These repos require regular updates. Dept 20 CIV checks for new versions weekly.
 
 | # | Repo | Stars | Dept | Notes |
 |---|------|-------|------|---------|
@@ -275,7 +275,7 @@
 
 ## ❌ ARCHIVED — REJECT/DEFER
 
-> Tổng 140 repos. Gom về đây để CEO xem xét lại khi cần.
+> Tổng 140 repos. Gom về đây để CEO review required khi cần.
 > Không clone, không cài đặt cho đến khi CEO unarchive.
 
 | # | Repo | Verdict | Lý do |

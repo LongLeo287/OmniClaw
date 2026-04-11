@@ -1,5 +1,5 @@
 # PLUGIN_SPEC.md — OmniClaw Plugin Schema Standard
-# Version: 2.0 | Updated: 2026-03-14
+# Version: 5.0 | Updated: 2026-04-11
 #
 # SCOPE: OmniClaw-level plugins ($OMNICLAW_ROOT\plugins\)
 # This is NOT the BookMark Extension plugin spec.
