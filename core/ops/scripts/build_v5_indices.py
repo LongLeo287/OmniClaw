@@ -27,7 +27,7 @@ BUCKETS = {
     "SKILL": [os.path.normpath("ecosystem/skills"), os.path.normpath("ecosystem/tools"), os.path.normpath("ecosystem/ui_components")],
     "WORKFLOW": [os.path.normpath("ecosystem/workflows")],
     "PLUGIN": [os.path.normpath("ecosystem/plugins")],
-    "KNOWLEDGE": [os.path.normpath("vault/knowledge"), os.path.normpath("brain/knowledge")],
+    "KNOWLEDGE": [os.path.normpath("brain/knowledge")],
     "DOCUMENT": [os.path.normpath("vault/docs"), os.path.normpath("core/docs")]
 }
 
