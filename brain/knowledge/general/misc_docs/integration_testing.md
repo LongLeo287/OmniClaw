@@ -196,4 +196,4 @@ Each feature integration test should cover:
 
 ## Related Topics
 
-[Robot Pattern](./robot-pattern.md) | [Widget Testing](./widget-testing.md) | [Test Organization](./test-organization.md)
+Robot Pattern | Widget Testing | Test Organization

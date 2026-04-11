@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for channel_agent
+# Knowledge Dump for channel_agent
 
 ## File: agent.md
 ```

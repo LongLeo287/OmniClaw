@@ -1,4 +1,4 @@
-﻿---
+---
 id: notification-bridge
 type: document
 owner: OHD
@@ -19,7 +19,7 @@ description: OmniClaw notification routing â€” gá»­i alert qua Telegram,
 
 ## Overview
 
-notification-bridge lÃ  lá»›p trung gian nháº­n notification tá»« má»i agent vÃ  route Ä‘Ãºng channel:
+notification-bridge lÃ  lá»›p trung gian nháº­n notification tá»« má»i agent vÃ  route Ä‘úng channel:
 
 ```
 Agent â†’ [notification-bridge] â†’ Telegram (CEO)
@@ -98,16 +98,16 @@ Invoke-RestMethod -Uri "http://localhost:<nullclaw-port>/notify" -Method POST -B
 ```
 ðŸ†• GAP PROPOSAL â€” [GAP-2026-03-24-DOMAIN]
 
-DOMAIN: <chÆ°a cÃ³ agent/dept phá»¥ trÃ¡ch X>
-CONTENT: <tÃªn repo/URL Ä‘Ã£ nháº­n>
+DOMAIN: <chÆ°a có agent/dept phá»¥ trách X>
+CONTENT: <tên repo/URL Ä‘ã nháº­n>
 
 Options:
 [A] Táº¡o agent má»›i â†’ agent-auto-create.md
 [B] Assign vÃ o dept gáº§n nháº¥t: <dept-name>
 [C] Create new department â†’ dept-builder-agent
-[D] Skip â€” lÆ°u reference, khÃ´ng táº¡o gÃ¬
+[D] Skip â€” lÆ°u reference, không táº¡o gÃ¬
 
-Reply A/B/C/D trong 24h. Default: B náº¿u khÃ´ng reply.
+Reply A/B/C/D trong 24h. Default: B náº¿u không reply.
 GAP saved: corp/gaps/GAP-<date>-<domain>.md
 ```
 
@@ -146,19 +146,19 @@ curl http://localhost:5055/health
 
 ## KPI / Escalations / Mission â€” Correct Paths
 
-> **CANONICAL PATH:** `brain/brain/memory/corp_memory/`
+> **CANONICAL PATH:** `brain/brain/memory/system_memory/`
 
 | File | Correct Path |
 |------|-------------|
-| kpi_scoreboard.json | `brain/memory/corp_memory/kpi_scoreboard.json` |
-| escalations.md | `brain/brain/memory/corp_memory/escalations.md` |
-| mission.md | `brain/brain/memory/corp_memory/mission.md` |
-| proposals/ | `brain/brain/memory/corp_memory/proposals/` |
-| daily_briefs/ | `brain/brain/memory/corp_memory/daily_briefs/` |
+| kpi_scoreboard.json | `brain/memory/system_memory/kpi_scoreboard.json` |
+| escalations.md | `brain/brain/memory/system_memory/escalations.md` |
+| mission.md | `brain/brain/memory/system_memory/mission.md` |
+| proposals/ | `brain/brain/memory/system_memory/proposals/` |
+| daily_briefs/ | `brain/brain/memory/system_memory/daily_briefs/` |
 
-**corp/escalations.md** = redirect/alias. Real file = `brain/brain/memory/corp_memory/escalations.md`
+**corp/escalations.md** = redirect/alias. Real file = `brain/brain/memory/system_memory/escalations.md`
 
-GEMINI.md boot references should use `brain/brain/memory/corp_memory/` prefix.
+GEMINI.md boot references should use `brain/brain/memory/system_memory/` prefix.
 
 ---
 

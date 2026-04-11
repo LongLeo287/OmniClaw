@@ -1436,7 +1436,7 @@ Use `action-validator -h` to see additional options.
 The action-validator can be run in a Github action itself, as a pull request job. See the `actions` job in the [QA workflow](https://github.com/mpalmer/action-validator/tree/main/.github/workflows/qa.yml), in this repository, as an example of how to use action-validator + asdf in a GitHub workflow.
 This may seem a little redundant (after all, an action has to be valid in order for GitHub to run it), but this job will make sure that all your *other* actions are also valid.
 
-Alternatively, use the [composite action](./action.yml) from this repository by adding this step to your job:
+Alternatively, use the composite action from this repository by adding this step to your job:
 
 ```yml
       - name: action-validator
@@ -1551,7 +1551,7 @@ const isValid = state.errors.length === 0;
 
 # Contributing
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+Please see CONTRIBUTING.md.
 
 
 # Licence
@@ -2056,7 +2056,7 @@ Use `action-validator -h` to see additional options.
 The action-validator can be run in a Github action itself, as a pull request job. See the `actions` job in the [QA workflow](https://github.com/mpalmer/action-validator/tree/main/.github/workflows/qa.yml), in this repository, as an example of how to use action-validator + asdf in a GitHub workflow.
 This may seem a little redundant (after all, an action has to be valid in order for GitHub to run it), but this job will make sure that all your *other* actions are also valid.
 
-Alternatively, use the [composite action](./action.yml) from this repository by adding this step to your job:
+Alternatively, use the composite action from this repository by adding this step to your job:
 
 ```yml
       - name: action-validator

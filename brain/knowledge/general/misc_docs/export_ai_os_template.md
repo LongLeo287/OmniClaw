@@ -1,4 +1,4 @@
-﻿---
+---
 id: export-ai-os-template
 type: document
 owner: OHD
@@ -52,6 +52,6 @@ Remove-Item -Path "$dest\archive\*" -Recurse -Force -ErrorAction SilentlyContinu
 
 # Create empty anchor files for the new project
 New-Item -ItemType File -Path "$dest\tasks\task.md" -Value "# Task Decomposition`n`n## Objective`n[Define your new project goal here]" -Force
-New-Item -ItemType File -Path "$dest\knowledge\knowledge_index.md" -Value "# Knowledge Index`n`n## Governance Core`n- [AGENTS.md](../../../.claude/skills/supabase-postgres-best-practices/AGENTS.md)`n`n## Technical Library`n[Add new project docs here]" -Force
+New-Item -ItemType File -Path "$dest\knowledge\knowledge_index.md" -Value "# Knowledge Index`n`n## Governance Core`n- AGENTS.md`n`n## Technical Library`n[Add new project docs here]" -Force
 ```
 

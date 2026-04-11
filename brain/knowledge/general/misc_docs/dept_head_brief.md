@@ -1,4 +1,4 @@
-﻿---
+---
 id: dept-head-brief
 type: document
 owner: OHD
@@ -76,7 +76,7 @@ During the cycle, dept head:
 
 ## Step 5: Write Daily Brief Back
 
-At end of cycle, write to `brain/memory/corp_memory/daily_briefs/<dept>.md`:
+At end of cycle, write to `brain/memory/system_memory/daily_briefs/<dept>.md`:
 
 ```markdown
 # Daily Brief â€” <DEPT> â€” <YYYY-MM-DD>

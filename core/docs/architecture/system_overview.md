@@ -10,7 +10,7 @@ healed_at: 2026-04-03T22:44:27.666487
 
 OmniClaw functions exactly like a digital mega-corporation, boasting **21 distinct structural "Departments"** managed by AI Agents working in concert via multi-agent pipelines.
 
-[**🇻🇳 Xem Bản Tiếng Việt**](system_overview-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
+[**🇻🇳 Xem   **](system_overview-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 
 ---
 

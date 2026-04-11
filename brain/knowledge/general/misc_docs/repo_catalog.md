@@ -1,4 +1,4 @@
-﻿---
+---
 id: repo-catalog
 type: document
 owner: OHD
@@ -9,17 +9,17 @@ healed_at: 2026-04-02T20:31:08.936240
 # OmniClaw Corp â€” Master Repo Catalog
 **Cáº­p nháº­t:** 2026-03-19 v6 | **Tá»•ng:** 112 plugins + 97 knowledge repos | **CIV Batch 4:** 2026-03-19
 
-> Má»—i repo cÃ³: tÃªn | GitHub URL | vá»‹ trÃ­ | domain | ghi chÃº ngáº¯n
-> Äá»ƒ tÃ¬m: Ctrl+F theo tÃªn, domain, hoáº·c keyword
+> Má»—i repo có: tên | GitHub URL | vá»‹ trÃ­ | domain | ghi chú ngáº¯n
+> Äá»ƒ tÃ¬m: Ctrl+F theo tên, domain, hoáº·c keyword
 
 ---
 
 ## ðŸ“ PLUGINS â€” `$OMNICLAW_ROOT\plugins\`
-*Repos Ä‘Ã£ sáºµn sÃ ng dÃ¹ng trá»±c tiáº¿p bá»Ÿi agents*
+*Repos Ä‘ã sáºµn sÃ ng dùng trá»±c tiáº¿p bá»Ÿi agents*
 
 ### ðŸ¤– Claude Code & Antigravity Core
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | anthropic-skills | https://github.com/anthropics/anthropic-skills | Official Anthropic skills |
 | claude-code-best-practice | https://github.com/shanraisshan/claude-code-best-practice | Best practices patterns |
@@ -39,7 +39,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ¦… Antigravity Extensions
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | AntigravityManager | https://github.com/lbjlaq/Antigravity-Manager | Manager plugin |
 | antigravity-manager | https://github.com/lbjlaq/Antigravity-Manager | (same) |
@@ -56,7 +56,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ¦¾ AI Agents & Frameworks
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | agency-agents | *(local)* | Agency-style multi-agent |
 | agent-skills-standard | *(local)* | Standard skill specs |
@@ -77,7 +77,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸª¥ Claw Variants â€” `REMOTE/claws/`
 
-| TÃªn | Ghi chÃº |
+| Tên | Ghi chú |
 |-----|---------|
 | nullclaw | **ACTIVE** â€” Client-facing Telegram/Discord gateway |
 | tinyclaw | **ACTIVE** â€” Internal ops coordination |
@@ -96,7 +96,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ““ NotebookLLM Stack
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | notebooklm-mcp-cli | https://github.com/jacob-bd/notebooklm-mcp-cli | MCP-native NLM interface |
 | notebooklm-mcp | https://github.com/PleasePrompto/notebooklm-mcp | MCP server â€” query NLM notebooks via agents â­1.4k |
@@ -106,7 +106,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ” Security & Pentest
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | zeroleaks | *(local)* | Secret/leak scanner |
 | cerberus-cve-tool | *(local)* | CVE scanning |
@@ -120,7 +120,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ” Data & Research
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | firecrawl | https://github.com/mendableai/firecrawl | Web crawl to LLM-ready data |
 | gitingest | https://github.com/coderamp-labs/gitingest | GitHub â†’ text digest |
@@ -135,7 +135,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ’° Affiliate & Business
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | affiliate-skills | *(local)* | Affiliate skill pack |
 | affitor-affiliate-skills | *(local)* | Affitor network skills |
@@ -144,7 +144,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### âš™ï¸ Cloud & DevOps
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | cloudflare-skills | *(local)* | Cloudflare automation |
 | vercel-agent-skills | *(local)* | Vercel deployment |
@@ -153,14 +153,14 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸŽ¤ Multimedia & MCP (MiniMax Stack)
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | MiniMax-MCP | https://github.com/MiniMax-AI/MiniMax-MCP | TTS + Image/Video gen via MCP â­1.3k (official Python) |
 | MiniMax-MCP-JS | https://github.com/MiniMax-AI/MiniMax-MCP-JS | MiniMax MCP â€” Node.js/TypeScript variant â­109 |
 
 ### ðŸŽ¨ UI & Frontend
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | ui-ux-pro-max | *(local)* | Premium UI/UX framework |
 | open-lovable | https://github.com/firecrawl/open-lovable | AI web app builder (React) |
@@ -174,7 +174,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ“š Skills & Communities
 
-| TÃªn | GitHub URL | Ghi chÃº |
+| Tên | GitHub URL | Ghi chú |
 |-----|-----------|---------|
 | awesome-claude-skills | https://github.com/ComposioHQ/awesome-claude-skills | Community Claude skills |
 | composio-awesome-claude-skills | https://github.com/ComposioHQ/awesome-claude-skills | (alt ref) |
@@ -194,11 +194,11 @@ healed_at: 2026-04-02T20:31:08.936240
 ---
 
 ## ðŸ“š KNOWLEDGE REPOS â€” `$OMNICLAW_ROOT\knowledge\repos\`
-*Reference material, khÃ´ng pháº£i plugins â€” dÃ¹ng Ä‘á»ƒ nghiÃªn cá»©u, há»c há»i*
+*Reference material, không pháº£i plugins â€” dùng Ä‘á»ƒ nghiên cá»©u, há»c há»i*
 
 ### ðŸ¤– AI & Machine Learning
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | awesome-generative-ai-guide | https://github.com/aishwaryanr/awesome-generative-ai-guide | GenAI learning guide â­100 |
 | awesome-llm-apps | *(local)* | LLM app examples |
@@ -211,7 +211,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ““ NotebookLLM & Research
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | awesome-notebooklm | https://github.com/etewiah/awesome-notebooklm | NLM resources |
 | awesome-notebooklm-prompts | https://github.com/serenakeyitan/awesome-notebookLM-prompts | NLM prompt library |
@@ -220,7 +220,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ—ï¸ Architecture & DDD
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | awesome-ddd | *(local)* | Domain-Driven Design resources |
 | ddd-cqrs | *(local)* | CQRS patterns |
@@ -230,7 +230,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### âš›ï¸ React & Frontend
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | lenis | https://github.com/darkroomengineering/lenis | Smooth scroll JS library â­13k |
 | react-doctor | *(local)* | React diagnostics |
@@ -243,7 +243,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ”§ Dev Tools & CLI
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | OpenSandbox | https://github.com/alibaba/OpenSandbox | Code sandbox (Alibaba) â­8k |
 | codebuff | *(local)* | Code buffer tool |
@@ -262,7 +262,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ” Security & Pentest
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | pentest-ops | *(local)* | Pentest operations |
 | strix | *(local)* | Strix scanner core |
@@ -271,7 +271,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ¤ Agents & Multi-Agent
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | agentsview | *(local)* | Agents visualization |
 | agent-teams-lite | *(local)* | Lightweight agent teams |
@@ -284,7 +284,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### â˜ï¸ Backend & APIs
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | node-api-boilerplate | *(local)* | Node.js API template |
 | paradedb | *(local)* | PostgreSQL search DB |
@@ -296,7 +296,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸŽ™ï¸ Audio, Video & Media
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | lux-tts | *(local)* | TTS synthesis |
 | vieneu-tts | *(local)* | Vietnamese TTS |
@@ -307,7 +307,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸŒ Web & Browser Automation
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | firecrawl | https://github.com/mendableai/firecrawl | Web crawl (ref copy) |
 | gitingest-ref | *(local)* | Gitingest reference |
@@ -316,7 +316,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ### ðŸ“¦ Utilities & Tools
 
-| TÃªn | GitHub URL | Domain |
+| Tên | GitHub URL | Domain |
 |-----|-----------|--------|
 | ai-devkit | *(local)* | AI dev toolkit |
 | ai-project-gallery | *(local)* | AI project showcase |
@@ -343,7 +343,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ## ðŸ”Ž Quick Reference by Use Case
 
-| Báº¡n cáº§n | Xem á»Ÿ Ä‘Ã¢y |
+| Báº¡n cáº§n | Xem á»Ÿ Ä‘ây |
 |---------|----------|
 | Claude Code templates / scaffolding | `plugins/claude-code-templates` |
 | Web crawling / scraping | `plugins/firecrawl`, `plugins/gitingest`, `knowledge/repos/katana` |
@@ -369,21 +369,21 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ---
 
-## â³ BLOCKED / PENDING â€” TÃ¡i kiá»ƒm tra sau
+## â³ BLOCKED / PENDING â€” Tái kiá»ƒm tra sau
 
-| Repo | URL | Score | LÃ½ do | Re-check |
+| Repo | URL | Score | Lý do | Re-check |
 |------|-----|-------|---------|---------|
 | maxclaw | https://github.com/Lichas/maxclaw | 65 | 1 month old | 2026-06-18 |
 | notebooklm-cli | https://github.com/jacob-bd/notebooklm-cli | 65 | 2 months old | 2026-05-18 |
-| docutranslate | https://github.com/xunbu/docutranslate | 65 | Score 65 REVIEW â€” declined | TÃ¹y chá»n |
+| docutranslate | https://github.com/xunbu/docutranslate | 65 | Score 65 REVIEW â€” declined | Tùy chá»n |
 
 ---
 
 ## ðŸŒ LOBEHUB ECOSYSTEM â€” Web Marketplace
 
-> KhÃ´ng clone trá»±c tiáº¿p â€” truy cáº­p qua lobehub.com hoáº·c import URL
+> Không clone trá»±c tiáº¿p â€” truy cáº­p qua lobehub.com hoáº·c import URL
 
-| TÃ i nguyÃªn | URL | Description: |
+| TÃ i nguyên | URL | Description: |
 |-----------|-----|-------|
 | LobeHub Skills | https://lobehub.com/vi-VN/skills | Marketplace skills cho agents |
 | LobeHub Agents | https://lobehub.com/vi-VN/agent | Pre-built agents catalog |
@@ -395,7 +395,7 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ## ðŸ¤– MINIMAX-AI ORG â€” Remaining Repos
 
-> ÄÃ£ ingest: MiniMax-MCP, MiniMax-MCP-JS, Mini-Agent, MiniMax-M1, MiniMax-M2
+> Äã ingest: MiniMax-MCP, MiniMax-MCP-JS, Mini-Agent, MiniMax-M1, MiniMax-M2
 > SKIP (score tháº¥p): Mini-vela (25â­, 2m), minimax_search (33â­, 5m)
 > Not found: awesome-minimax-integrations
 
@@ -418,8 +418,8 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ## ðŸ§  NOTEBOOKLM INTEGRATION MAP
 
-> DÃ¹ng `gitingest` Ä‘á»ƒ convert repo â†’ text digest, rá»“i load vÃ o `open-notebook` hoáº·c Google NotebookLM.
-> Xem workflow Ä‘áº§y Ä‘á»§: [`notebooklm-usecases.md`](notebooklm-usecases.md)
+> Dùng `gitingest` Ä‘á»ƒ convert repo â†’ text digest, rá»“i load vÃ o `open-notebook` hoáº·c Google NotebookLM.
+> Xem workflow Ä‘áº§y Ä‘á»§: `notebooklm-usecases.md`
 
 ### Workflow chuáº©n
 
@@ -429,23 +429,23 @@ healed_at: 2026-04-02T20:31:08.936240
 
 ---
 
-### ðŸ” CIV â€” PhÃ¢n tÃ­ch repo má»›i nháº­p
+### ðŸ” CIV â€” Phân tÃ­ch repo má»›i nháº­p
 
 | Repo lÃ m nguá»“n | Má»¥c Ä‘Ã­ch NLM | NLM Output |
 |---------------|-------------|-----------|
-| Báº¥t ká»³ repo vá»«a ingest | PhÃ¢n tÃ­ch má»¥c Ä‘Ã­ch, conflict, routing | `_CIV_ANALYSIS.md` |
-| `plugins/gitingest` | DÃ¹ng gitingest digest lÃ m NLM source | Text digest |
-| `knowledge/repos/awesome-generative-ai-guide` | So sÃ¡nh repo má»›i vá»›i state-of-art | Competitive brief |
+| Báº¥t ká»³ repo vá»«a ingest | Phân tÃ­ch má»¥c Ä‘Ã­ch, conflict, routing | `_CIV_ANALYSIS.md` |
+| `plugins/gitingest` | Dùng gitingest digest lÃ m NLM source | Text digest |
+| `knowledge/repos/awesome-generative-ai-guide` | So sánh repo má»›i vá»›i state-of-art | Competitive brief |
 
 **Prompt máº«u:**
 ```
-"Repo nÃ y lÃ m gÃ¬? CÃ³ conflict vá»›i [danh sÃ¡ch plugin hiá»‡n táº¡i] khÃ´ng?
-PhÃ²ng nÃ o nÃªn nháº­n? Äiá»ƒm cháº¥t lÆ°á»£ng 1-10?"
+"Repo nÃ y lÃ m gÃ¬? Có conflict vá»›i [danh sách plugin hiá»‡n táº¡i] không?
+Phòng nÃ o nên nháº­n? Äiá»ƒm cháº¥t lÆ°á»£ng 1-10?"
 ```
 
 ---
 
-### ðŸ§ª R&D â€” Tá»•ng há»£p nghiÃªn cá»©u
+### ðŸ§ª R&D â€” Tá»•ng há»£p nghiên cá»©u
 
 | Repo lÃ m nguá»“n | Má»¥c Ä‘Ã­ch NLM | NLM Output |
 |---------------|-------------|-----------|
@@ -460,13 +460,13 @@ PhÃ²ng nÃ o nÃªn nháº­n? Äiá»ƒm cháº¥t lÆ°á»£ng 1-10?"
 
 **Prompt máº«u:**
 ```
-"So sÃ¡nh [repo A] vÃ  [repo B]: cÃ¡i nÃ o phÃ¹ há»£p nháº¥t vá»›i OmniClaw?
-Liá»‡t kÃª pros/cons theo 5 tiÃªu chÃ­."
+"So sánh [repo A] vÃ  [repo B]: cái nÃ o phù há»£p nháº¥t vá»›i OmniClaw?
+Liá»‡t kê pros/cons theo 5 tiêu chÃ­."
 ```
 
 ---
 
-### ðŸ“‹ Strategy â€” BÃ¡o cÃ¡o & quyáº¿t Ä‘á»‹nh
+### ðŸ“‹ Strategy â€” Báo cáo & quyáº¿t Ä‘á»‹nh
 
 | Repo lÃ m nguá»“n | Má»¥c Ä‘Ã­ch NLM | NLM Output |
 |---------------|-------------|-----------|
@@ -506,7 +506,7 @@ research docs â†’ gitingest â†’ open-notebooklm â†’ Audio Overvie
 
 ---
 
-### ðŸ” Security GRC â€” BÃ¡o cÃ¡o & compliance
+### ðŸ” Security GRC â€” Báo cáo & compliance
 
 | Repo lÃ m nguá»“n | Má»¥c Ä‘Ã­ch NLM | NLM Output |
 |---------------|-------------|-----------|
@@ -546,7 +546,7 @@ research docs â†’ gitingest â†’ open-notebooklm â†’ Audio Overvie
 
 | Repo lÃ m nguá»“n | Má»¥c Ä‘Ã­ch NLM | NLM Output |
 |---------------|-------------|-----------|
-| Táº¥t cáº£ `brain/memory/corp_memory/daily_briefs/` | Weekly digest | 1-page CEO summary |
+| Táº¥t cáº£ `brain/memory/system_memory/daily_briefs/` | Weekly digest | 1-page CEO summary |
 | `knowledge/repos/awesome-generative-ai-guide` | AI landscape brief | Board presentation |
 | `plugins/LightRAG` + `plugins/openviking` | Tech selection | Decision memo |
 

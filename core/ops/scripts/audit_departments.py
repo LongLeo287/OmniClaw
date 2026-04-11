@@ -1,16 +1,20 @@
 import os
 from pathlib import Path
 
-ROOT = Path(r"D:\OmniClaw\ecosystem\workforce\departments")
+import os
+__TEMP_ROOT__ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+
+
+ROOT = Path(os.path.join(__TEMP_ROOT__, "ecosystem", "workforce", "departments"))
 
 def remediate_departments():
     remediations = {
         # Encoding bugs
-        "Ã¢â‚¬â€": "â€”",
-        "Ã¢â€ â€™": "â†’",
-        "Ã¢â‚¬Å“": '"',
-        "Ã¢â‚¬": '"',
-        "Ã¯Â»Â¿": "",  # BOM artifact
+        "‚¬€": "€”",
+        "€ €™": "†’",
+        "‚¬Å“": '"',
+        "‚¬": '"',
+        "ï»¿": "",  # BOM artifact
         
         # Branding
         "OmniClaw Corp": "OmniClaw OS",
@@ -23,8 +27,8 @@ def remediate_departments():
         "corp/departments": "ecosystem/workforce/departments",
         "ecosystem/workforce/agents": "ecosystem/workforce/departments",
         "corp/memory/departments": "brain/knowledge/org",
-        "shared-context/brain/corp/kpi_scoreboard.json": "brain/memory/corp_memory/kpi_targets.json",
-        "corp/kpi_targets.yaml": "brain/memory/corp_memory/kpi_targets.json"
+        "shared-context/brain/corp/kpi_scoreboard.json": "brain/memory/system_memory/kpi_targets.json",
+        "corp/kpi_targets.yaml": "brain/memory/system_memory/kpi_targets.json"
     }
 
     modified_files = 0

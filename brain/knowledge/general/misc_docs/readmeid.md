@@ -287,7 +287,7 @@ Proyek ini dilisensikan di bawah **GNU Affero General Public License v3.0** (AGP
 
 Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 
-Lihat file [LICENSE](LICENSE) untuk detail lengkap.
+Lihat file LICENSE untuk detail lengkap.
 
 **Apa Artinya:**
 
@@ -296,7 +296,7 @@ Lihat file [LICENSE](LICENSE) untuk detail lengkap.
 - Karya turunan juga harus dilisensikan di bawah AGPL-3.0
 - TIDAK ADA JAMINAN untuk perangkat lunak ini
 
-**Catatan tentang Ragtime**: Direktori `ragtime/` dilisensikan secara terpisah di bawah **PolyForm Noncommercial License 1.0.0**. Lihat [ragtime/LICENSE](ragtime/LICENSE) untuk detail.
+**Catatan tentang Ragtime**: Direktori `ragtime/` dilisensikan secara terpisah di bawah **PolyForm Noncommercial License 1.0.0**. Lihat ragtime/LICENSE untuk detail.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for crawlee_agent
+# Knowledge Dump for crawlee_agent
 
 ## File: agent.md
 ```

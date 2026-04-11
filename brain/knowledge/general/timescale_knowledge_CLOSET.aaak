@@ -1,2 +1,0 @@
-BrainKnowledge|general|?|timescale_knowledge
-0:EXT+SOU+FIL|postgresql_pg_textsearch_timescale|"CREATE TABLE documents (id bigserial PRIMARY KEY, co..."|ORIGIN+CORE+TECHNICAL

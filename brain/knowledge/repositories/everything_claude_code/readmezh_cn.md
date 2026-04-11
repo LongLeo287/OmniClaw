@@ -14,7 +14,7 @@
 
 **🌐 Language / 语言 / 語言**
 
-[**English**](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md)
+[**English**](README.md) | 简体中文 | 繁體中文 | 日本語 | 한국어
 
 </div>
 
@@ -148,7 +148,7 @@ node scripts/setup-package-manager.js --detect
 
 ```
 everything-claude-code/
-|-- .claude-plugin/   # 插件和市场清单
+|-- claude_plugin/   # 插件和市场清单
 |   |-- plugin.json         # 插件元数据和组件路径
 |   |-- marketplace.json    # /plugin marketplace add 的市场目录
 |

@@ -1,4 +1,4 @@
-﻿---
+---
 id: incident-response-sop
 type: document
 owner: OHD
@@ -65,7 +65,7 @@ incident-agent monitors:
 
 ## Phase 2: CLASSIFY + INITIAL RESPONSE
 
-On incident detection, write to `brain/memory/corp_memory/escalations.md`:
+On incident detection, write to `brain/memory/system_memory/escalations.md`:
 ```markdown
 ## SECURITY INCIDENT â€” [INC-ID] â€” [DATETIME]
 Severity: CRITICAL | HIGH | MEDIUM | LOW

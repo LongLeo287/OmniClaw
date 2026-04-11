@@ -532,7 +532,7 @@ See `CLAUDE.md` for developer notes and the branching workflow.
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT — see LICENSE for details.
 
 ```
 

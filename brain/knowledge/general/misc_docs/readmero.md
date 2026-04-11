@@ -287,7 +287,7 @@ Acest proiect este licențiat sub **GNU Affero General Public License v3.0** (AG
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Toate drepturile rezervate.
 
-Consultați fișierul [LICENSE](LICENSE) pentru detalii complete.
+Consultați fișierul LICENSE pentru detalii complete.
 
 **Ce Înseamnă Asta:**
 
@@ -296,7 +296,7 @@ Consultați fișierul [LICENSE](LICENSE) pentru detalii complete.
 - Lucrările derivate trebuie să fie licențiate și ele sub AGPL-3.0
 - NU EXISTĂ NICIO GARANȚIE pentru acest software
 
-**Notă despre Ragtime**: Directorul `ragtime/` este licențiat separat sub **PolyForm Noncommercial License 1.0.0**. Consultați [ragtime/LICENSE](ragtime/LICENSE) pentru detalii.
+**Notă despre Ragtime**: Directorul `ragtime/` este licențiat separat sub **PolyForm Noncommercial License 1.0.0**. Consultați ragtime/LICENSE pentru detalii.
 
 ---
 

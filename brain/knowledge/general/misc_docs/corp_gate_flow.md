@@ -1,4 +1,4 @@
-﻿---
+---
 id: corp-gate-flow
 type: document
 owner: OHD
@@ -73,7 +73,7 @@ Notes: <anything QA should know>
 - QA writes specific failed checklist items to `subagents/mq/<dept>_qa_reject.md`
 - Worker reads: `subagents/mq/<dept>_qa_reject.md` â†’ must fix exactly those items
 - Re-submit with same T-ID suffix: `<T-ID>-r2`, `<T-ID>-r3`
-- 3rd FAIL: write L2 escalation to `brain/memory/corp_memory/escalations.md` (to: CTO)
+- 3rd FAIL: write L2 escalation to `brain/memory/system_memory/escalations.md` (to: CTO)
 
 ---
 
@@ -142,7 +142,7 @@ All 4 must review before final decision.
 
 **Receipt stored:** `telemetry/qa_receipts/gate_security/<item-id>.json`
 **On CRITICAL finding:**
-- strix-agent writes L3 DIRECTLY to `brain/memory/corp_memory/escalations.md` (skip L1/L2)
+- strix-agent writes L3 DIRECTLY to `brain/memory/system_memory/escalations.md` (skip L1/L2)
 - Format: `## L3 ESCALATION â€” ESC-L3-<DATE>-<SEQ>  âš ï¸ CEO REQUIRED`
 - All affected systems PAUSE immediately
 - CEO notified via Telegram (if configured)
@@ -187,7 +187,7 @@ Notes: <key concerns>
 
 ## Gate Status Dashboard
 
-Track in `brain/memory/corp_memory/daily_briefs/<gate>.md`:
+Track in `brain/memory/system_memory/daily_briefs/<gate>.md`:
 ```
 GATE STATUS â€” [DATE]
 â”‚

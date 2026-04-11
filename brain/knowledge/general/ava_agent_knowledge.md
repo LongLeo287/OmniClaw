@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for ava_agent
+# Knowledge Dump for ava_agent
 
 ## File: agent.md
 ```

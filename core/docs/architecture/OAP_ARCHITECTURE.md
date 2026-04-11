@@ -27,8 +27,8 @@ Any daemon or script attempting to inject data into OmniClaw MUST adhere to thes
   - OSF scans all incoming scripts using rules generated dynamically from `OSF_THREAT_INTELLIGENCE.json`.
   - Checks for Base64 encodings, destructive shell commands, and malicious payloads.
   - **Verdict:**
-    - `0` (Sạch/Pass): Move to Stage 3.
-    - `1` (Độc/Fail): Halt Pipeline. Send to OHD for Vaporization.
+    - `0` (/Pass): Move to Stage 3.
+    - `1` (/Fail): Halt Pipeline. Send to OHD for Vaporization.
 
 ### 🟠 Stage 3: TRIAGE (The Sorter & Deduplicator)
 - **Actor:** `oa_inbox_triage.py` (Governed by Omni Agent - OA)

@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD:brain/knowledge/ai_os_system_map.md
+id: AI-OS-SYSTEM-MAP-001
+=======
 id: OMNICLAW-SYSTEM-MAP-001
+>>>>>>> origin/main:brain/knowledge/omniclaw_system_map.md
 type: REFERENCE
 domain: [system, architecture, meta]
 dept: all
@@ -216,10 +220,17 @@ notification_bridge  â€” Telegram/Discord alert routing
 | File | Purpose | Updated by |
 |------|---------|------------|
 | `brain/memory/blackboard.json` | Task queue, cycle state, open items | scrum-master-agent |
+<<<<<<< HEAD:brain/knowledge/ai_os_system_map.md
+| `brain/memory/system_memory/kpi_scoreboard.json` | Live KPI status all 21 depts | monitor-chief-agent |
+| `brain/memory/system_memory/escalations.md` | L1/L2/L3 open escalations | any agent |
+| `brain/memory/system_memory/proposals/` | Pending CEO decisions | strategy dept |
+| `brain/memory/system_memory/daily_briefs/<dept>.md` | Last dept brief | dept head |
+=======
 | `brain/memory/memory/kpi_scoreboard.json` | Live KPI status all 21 depts | monitor-chief-agent |
 | `brain/memory/memory/escalations.md` | L1/L2/L3 open escalations | any agent |
 | `brain/memory/memory/proposals/` | Pending CEO decisions | strategy dept |
 | `brain/memory/memory/daily_briefs/<dept>.md` | Last dept brief | dept head |
+>>>>>>> origin/main:brain/knowledge/omniclaw_system_map.md
 | `brain/memory/roadmap.md` | Strategic milestones | pmo-agent |
 | `brain/memory/sources.yaml` | Data collector source list | data-collector-agent |
 | `brain/memory/kpi_targets.yaml` | KPI targets all 21 depts | strategy |

@@ -286,7 +286,7 @@ Tämä projekti on lisensoitu **GNU Affero General Public License v3.0** (AGPL-3
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Kaikki oikeudet pidätetään.
 
-Katso [LICENSE](LICENSE)-tiedosto täydellisistä yksityiskohdista.
+Katso LICENSE-tiedosto täydellisistä yksityiskohdista.
 
 **Mitä tämä tarkoittaa:**
 
@@ -295,7 +295,7 @@ Katso [LICENSE](LICENSE)-tiedosto täydellisistä yksityiskohdista.
 - Johdannaisten teosten on myös oltava AGPL-3.0-lisensoituja
 - Tälle ohjelmistolle EI OLE TAKUUTA
 
-**Huomautus Ragtimesta**: `ragtime/`-hakemisto on erikseen lisensoitu **PolyForm Noncommercial License 1.0.0** -lisenssillä. Katso [ragtime/LICENSE](ragtime/LICENSE) yksityiskohdista.
+**Huomautus Ragtimesta**: `ragtime/`-hakemisto on erikseen lisensoitu **PolyForm Noncommercial License 1.0.0** -lisenssillä. Katso ragtime/LICENSE yksityiskohdista.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿---
+---
 id: pos-tiem-nuoc-nho
 type: document
 owner: OHD
@@ -8,7 +8,7 @@ healed_at: 2026-04-02T20:31:01.618447
 
 # Department: operations
 ---
-description: POS Tiá»‡m NÆ°á»›c Nhá» v5 â€” workflow cho má»i tÃ¡c vá»¥ phÃ¡t triá»ƒn vÃ  maintain
+description: POS Tiá»‡m NÆ°á»›c Nhá» v5 â€” workflow cho má»i tác vá»¥ phát triá»ƒn vÃ  maintain
 project_id: PRJ-003
 workspace: d:\Tiem_Nuoc_Nho_v5
 registered: 2026-03-14

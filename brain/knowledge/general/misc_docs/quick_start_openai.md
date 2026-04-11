@@ -185,7 +185,7 @@ docker compose restart  # Restart everything
 
 1. **Add Your Own Content**: PDFs, web links, documents
 2. **Explore Features**: Podcasts, transformations, search
-3. **Full Documentation**: [See all features](../3-USER-GUIDE/index.md)
+3. **Full Documentation**: See all features
 
 ---
 

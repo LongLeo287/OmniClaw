@@ -10,7 +10,7 @@ healed_at: 2026-04-02T20:31:26.728653
 
 This guide covers advanced usage patterns, best practices, and detailed examples for the NotebookLM MCP server.
 
-> 📘 For installation and quick start, see the main [README](../README.md).
+> 📘 For installation and quick start, see the main README.
 
 ## Research Patterns
 

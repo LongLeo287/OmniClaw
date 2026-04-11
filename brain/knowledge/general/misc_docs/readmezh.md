@@ -287,7 +287,7 @@ npm run bug-report
 
 Copyright (C) 2025 Alex Newman (@thedotmack)。保留所有权利。
 
-详见 [LICENSE](LICENSE) 文件了解完整详情。
+详见 LICENSE 文件了解完整详情。
 
 **这意味着什么:**
 
@@ -296,7 +296,7 @@ Copyright (C) 2025 Alex Newman (@thedotmack)。保留所有权利。
 - 衍生作品也必须采用 AGPL-3.0 许可
 - 本软件不提供任何保证
 
-**关于 Ragtime 的说明**: `ragtime/` 目录单独采用 **PolyForm Noncommercial License 1.0.0** 许可。详见 [ragtime/LICENSE](ragtime/LICENSE)。
+**关于 Ragtime 的说明**: `ragtime/` 目录单独采用 **PolyForm Noncommercial License 1.0.0** 许可。详见 ragtime/LICENSE。
 
 ---
 

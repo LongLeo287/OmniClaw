@@ -104,7 +104,7 @@ metadata:
 
 ### Skill Effectiveness Testing
 
-See [testing.md](../bmad_repo/testing.md) for the full process including:
+See testing.md for the full process including:
 - Writing `evals/evals.json` eval cases
 - Designing should-trigger / should-not-trigger query sets
 - Measuring and optimizing trigger rate

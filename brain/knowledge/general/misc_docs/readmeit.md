@@ -287,7 +287,7 @@ Questo progetto è rilasciato sotto la **GNU Affero General Public License v3.0*
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Tutti i diritti riservati.
 
-Vedi il file [LICENSE](LICENSE) per i dettagli completi.
+Vedi il file LICENSE per i dettagli completi.
 
 **Cosa Significa:**
 
@@ -296,7 +296,7 @@ Vedi il file [LICENSE](LICENSE) per i dettagli completi.
 - Le opere derivate devono anche essere rilasciate sotto AGPL-3.0
 - NON c'è GARANZIA per questo software
 
-**Nota su Ragtime**: La directory `ragtime/` è rilasciata separatamente sotto la **PolyForm Noncommercial License 1.0.0**. Vedi [ragtime/LICENSE](ragtime/LICENSE) per i dettagli.
+**Nota su Ragtime**: La directory `ragtime/` è rilasciata separatamente sotto la **PolyForm Noncommercial License 1.0.0**. Vedi ragtime/LICENSE per i dettagli.
 
 ---
 

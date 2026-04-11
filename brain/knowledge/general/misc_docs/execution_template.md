@@ -1,4 +1,4 @@
-﻿---
+---
 id: execution-template
 type: document
 owner: OHD

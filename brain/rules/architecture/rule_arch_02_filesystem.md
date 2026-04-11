@@ -37,7 +37,6 @@ This is the Semantic Graph Space. The system strictly governs this space via the
 
 ---
 
-### âš™ï¸ 2. `/core/` (System Engine Zone)
 This is the executing Heart of the Operating System. Contains critically important Python/Powershell Backend scripts. *[Sanctum Zone]*
 - ðŸ“‚ **`daemons/`** (Headquarters of the 5 Forces). Forcing the creation of any Daemon outside of OIW, OMA, OER, OHD, OA is prohibited.
 - ðŸ“‚ **`security/`** (Firewall & Security).

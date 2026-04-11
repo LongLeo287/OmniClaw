@@ -1,4 +1,4 @@
-﻿---
+---
 id: skill-spec
 type: document
 owner: OHD

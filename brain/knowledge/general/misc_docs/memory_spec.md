@@ -1,4 +1,4 @@
-﻿---
+---
 id: memory-spec
 type: document
 owner: OHD

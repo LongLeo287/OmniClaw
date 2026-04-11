@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for cost_manager_agent
+# Knowledge Dump for cost_manager_agent
 
 ## File: agent.md
 ```

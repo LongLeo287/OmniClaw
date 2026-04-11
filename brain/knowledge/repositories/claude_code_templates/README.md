@@ -143,7 +143,7 @@ We respect and credit all original creators for their work and contributions to 
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🔗 Links
 

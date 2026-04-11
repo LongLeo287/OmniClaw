@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for corp
+# Knowledge Dump for corp
 
 ## File: escalation_rules.yaml
 ```
@@ -8,28 +8,28 @@ type: corp_document
 registered: true
 ---
 
-# OmniClaw â€” Escalation Rules
+# OmniClaw — Escalation Rules
 # Version: 1.0 | Updated: 2026-03-17
 # Authority: Tier 2 (Operations)
 # Executed by: chief-of-staff, corp_orchestrator
 
 escalation_levels:
 
-  # â”€â”€â”€ LEVEL 1: Worker â†’ Dept Head â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── LEVEL 1: Worker → Dept Head ───────────────────
   level_1:
     from: "Worker Agent"
     to: "Department Head"
     triggers:
       - "Task BLOCKED for > 1 retry cycle (2-strike rule)"
       - "External API or tool failure with no fallback"
-      - "Ambiguous instructions â€” cannot determine intent"
+      - "Ambiguous instructions — cannot determine intent"
       - "Security concern detected in task scope"
     action: |
       Worker writes escalation note to subagents/mq/<dept>_escalation.md
       Dept Head reads, decides: reassign | provide guidance | escalate to C-Suite
     sla: "Dept Head responds within same session"
 
-  # â”€â”€â”€ LEVEL 2: Dept Head â†’ C-Suite â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── LEVEL 2: Dept Head → C-Suite ──────────────────
   level_2:
     from: "Department Head"
     to: "Relevant C-Suite (CTO / CMO / COO / CSO)"
@@ -39,7 +39,7 @@ escalation_levels:
       - "Worker agent cannot complete task after 2 retries"
       - "Proposed solution contradicts THESIS.md principles"
     action: |
-      Dept Head appends to brain/memory/corp_memory/escalations.md with:
+      Dept Head appends to brain/memory/system_memory/escalations.md with:
         - Department
         - Issue description
         - Root cause (if known)
@@ -48,7 +48,7 @@ escalation_levels:
       C-Suite reviews and responds in same file
     sla: "C-Suite responds within 24 hours"
 
-  # â”€â”€â”€ LEVEL 3: C-Suite â†’ CEO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  # ─── LEVEL 3: C-Suite → CEO ─────────────────────────
   level_3:
     from: "C-Suite Agent"
     to: "CEO (Human Operator)"
@@ -59,26 +59,26 @@ escalation_levels:
       - "Cross-company decision affecting multiple departments"
       - "KPI critical (0%) for any department"
     action: |
-      C-Suite writes proposal to brain/memory/corp_memory/proposals/ESCALATION_<date>_<topic>.md
+      C-Suite writes proposal to brain/memory/system_memory/proposals/ESCALATION_<date>_<topic>.md
       CEO notified via Antigravity session summary
       CEO must explicitly approve/reject before work continues
     sla: "CEO responds before next daily cycle"
     blocking: true  # work pauses on this item until CEO responds
 
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 # AUTO-ESCALATION RULES (triggered by kpi_scoreboard)
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 auto_escalation:
   - condition: "department.status == 'critical'"
-    action: "Immediately write to escalations.md â†’ notify CEO via Antigravity"
+    action: "Immediately write to escalations.md → notify CEO via Antigravity"
   - condition: "department.status == 'behind' for 2 days"
     action: "Level 2 escalation to C-Suite"
   - condition: "blackboard.handoff_trigger == 'BLOCKED'"
     action: "Level 1 escalation to Dept Head + Chief of Staff notified"
 
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 # FALSE ESCALATION PREVENTION
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 do_not_escalate:
   - "Routine task delays < 2 hours"
   - "Missing context solvable by RESEARCHER role"
@@ -96,9 +96,9 @@ type: corp_document
 registered: true
 ---
 
-# OmniClaw â€” KPI Targets by Department
+# OmniClaw — KPI Targets by Department
 # Version: 2.0 | Updated: 2026-03-22
-# Authority: CEO â†’ C-Suite â†’ Dept Heads
+# Authority: CEO → C-Suite → Dept Heads
 # Reviewed: daily by corp_learning_loop
 # Coverage: 21 / 21 departments
 
@@ -356,7 +356,7 @@ departments:
         unit: "HEALTH_REPORT produced"
       - metric: "Retro lessons extracted"
         target: 100
-        unit: "percent of lessons â†’ knowledge/"
+        unit: "percent of lessons → knowledge/"
     monthly_targets:
       - metric: "Org improvement proposals"
         target: 2
@@ -418,11 +418,11 @@ departments:
         unit: "QUARANTINE/logs/intake_log.md cleaned"
 
   client_reception:
-    kpi_mode: "DORMANT â€” activates when CEO offline"
+    kpi_mode: "DORMANT — activates when CEO offline"
     active_targets:
       - metric: "Proposal within SLA"
         target: 100
-        unit: "percent of intakes â†’ proposal within 2h"
+        unit: "percent of intakes → proposal within 2h"
       - metric: "Client satisfaction"
         target: 4.0
         unit: "avg score 1-5"
@@ -430,14 +430,14 @@ departments:
         target: 70
         unit: "percent of accepted proposals started"
 
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 # STATUS THRESHOLDS
-# â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ─────────────────────────────────────────
 status_thresholds:
   on_track:   ">= 80% of daily target met"
   at_risk:    "50-79% of daily target met"
-  behind:     "< 50% of daily target met â†’ auto-escalate"
-  critical:   "0% â†’ immediate CEO notification"
+  behind:     "< 50% of daily target met → auto-escalate"
+  critical:   "0% → immediate CEO notification"
 
 
 ```
@@ -455,23 +455,23 @@ version: '3.0'
 updated: '2026-03-24'
 workflow_mode: on-demand
 ceo:
-  role: CEO â€” Human Operator
+  role: CEO — Human Operator
   co_pilot: orchestrator_pro
-  authority: ALL â€” final approval on strategy, budget, hires, architectural decisions
+  authority: ALL — final approval on strategy, budget, hires, architectural decisions
   prompt: brain/corp/prompts/CEO_PROMPT.md
   read_inputs:
-  - brain/memory/corp_memory/proposals/
-  - brain/memory/corp_memory/escalations.md
-  - brain/memory/corp_memory/kpi_scoreboard.json
+  - brain/memory/system_memory/proposals/
+  - brain/memory/system_memory/escalations.md
+  - brain/memory/system_memory/kpi_scoreboard.json
   - brain/corp/memory/global/decisions_log.md
   write_outputs:
-  - brain/memory/corp_memory/mission.md
-  - brain/memory/corp_memory/decisions/
+  - brain/memory/system_memory/mission.md
+  - brain/memory/system_memory/decisions/
 c_suite:
   prompt: brain/corp/prompts/CSUITE_PROMPT.md
   rules: brain/corp/rules/csuite_rules.md
   cto:
-    title: CTO â€” Chief Technology Officer
+    title: CTO — Chief Technology Officer
     agent: software-architect-agent
     reports_to: CEO
     oversees:
@@ -486,7 +486,7 @@ c_suite:
     escalation_threshold: 2 consecutive sprint blockers OR security critical OR system
       health CRITICAL
   cmo:
-    title: CMO â€” Chief Marketing Officer
+    title: CMO — Chief Marketing Officer
     agent: growth-agent
     reports_to: CEO
     oversees:
@@ -496,7 +496,7 @@ c_suite:
     kpi: Engagement rate, content output, audience growth, CSAT
     escalation_threshold: 3 missed content deadlines OR brand violation
   coo:
-    title: COO â€” Chief Operating Officer
+    title: COO — Chief Operating Officer
     agent: scrum-master-agent
     reports_to: CEO
     oversees:
@@ -513,7 +513,7 @@ c_suite:
     escalation_threshold: 1 unresolved blocker > 24h OR security incident OR compliance
       violation CRITICAL
   cfo:
-    title: CFO â€” Chief Financial Officer
+    title: CFO — Chief Financial Officer
     agent: cost-manager-agent
     reports_to: CEO
     oversees:
@@ -521,7 +521,7 @@ c_suite:
     kpi: Token budget utilization, cost per dept, monthly LLM cost
     escalation_threshold: Budget overage > 20% OR unauthorized spend
   cso:
-    title: CSO â€” Chief Strategy Officer
+    title: CSO — Chief Strategy Officer
     agent: product-manager-agent
     reports_to: CEO
     oversees:
@@ -540,22 +540,22 @@ departments:
     rules: brain/corp/rules/manager_rules.md
     workers:
     - agent: frontend-agent
-      role: Frontend Developer â€” UI/UX, React/Vue
+      role: Frontend Developer — UI/UX, React/Vue
       prompt: brain/corp/departments/engineering/WORKER_PROMPT.md
     - agent: ai-ml-agent
-      role: AI/ML Engineer â€” model integration, RAG, embeddings
+      role: AI/ML Engineer — model integration, RAG, embeddings
       prompt: brain/corp/departments/engineering/WORKER_PROMPT.md
     - agent: devops-agent
-      role: DevOps Engineer â€” CI/CD, Docker, pipelines
+      role: DevOps Engineer — CI/CD, Docker, pipelines
       prompt: brain/corp/departments/engineering/WORKER_PROMPT.md
     - agent: sre-agent
-      role: SRE â€” reliability, monitoring, incident response
+      role: SRE — reliability, monitoring, incident response
       prompt: brain/corp/departments/engineering/WORKER_PROMPT.md
     - agent: mobile-agent
-      role: Mobile Developer â€” iOS/Android, app store
+      role: Mobile Developer — iOS/Android, app store
       prompt: brain/corp/departments/engineering/WORKER_PROMPT.md
     - agent: agent-skills-integrator
-      role: TrÃ­ch xuáº¥t vÃ  Ä‘Ã³ng gÃ³i skills tá»« repo microsoft/agent-skills
+      role: Trích xuất và đóng gói skills từ repo microsoft/agent-skills
       prompt: ecosystem/workforce/departments/engineering/WORKER_PROMPT.md
       created_by: CEO Auto-create
       knowledge_source: KI-agent-skills-repo
@@ -649,7 +649,7 @@ departments:
       prompt: ecosystem/workforce/departments/engineering/WORKER_PROMPT.md
       created_by: Auto_Assimilator
       auto_created: true
-    output_channel: brain/memory/corp_memory/daily_briefs/engineering.md
+    output_channel: brain/memory/system_memory/daily_briefs/engineering.md
     qa_required: true
     qa_dept: qa_testing
     llm_tier: balanced
@@ -662,15 +662,15 @@ departments:
     rules: brain/corp/rules/qa_rules.md
     workers:
     - agent: superpowers-agent
-      role: QA Engineer â€” TDD enforcement, test coverage
+      role: QA Engineer — TDD enforcement, test coverage
       prompt: brain/corp/departments/qa_testing/WORKER_PROMPT.md
     - agent: security-engineer-agent
-      role: Security QA Lead â€” OWASP, SkillSentry, security test plans
+      role: Security QA Lead — OWASP, SkillSentry, security test plans
       prompt: brain/corp/departments/qa_testing/WORKER_PROMPT.md
     - agent: security-auditor-agent
-      role: Security Auditor â€” vulnerability scanning, audit reports
+      role: Security Auditor — vulnerability scanning, audit reports
       prompt: brain/corp/departments/qa_testing/WORKER_PROMPT.md
-    output_channel: brain/memory/corp_memory/daily_briefs/qa.md
+    output_channel: brain/memory/system_memory/daily_briefs/qa.md
     qa_required: false
     is_gate: true
     llm_tier: economy
@@ -682,12 +682,12 @@ departments:
     prompt: brain/corp/departments/it_infra/MANAGER_PROMPT.md
     workers:
     - agent: sysadmin-agent
-      role: SysAdmin â€” server setup, env maintenance, Docker hosts
+      role: SysAdmin — server setup, env maintenance, Docker hosts
     - agent: netops-agent
-      role: NetOps â€” DNS, CDN, networking, uptime monitoring
+      role: NetOps — DNS, CDN, networking, uptime monitoring
     - agent: database-agent
-      role: DBA â€” schema, migrations, backups, query optimization
-    output_channel: brain/memory/corp_memory/daily_briefs/it_infra.md
+      role: DBA — schema, migrations, backups, query optimization
+    output_channel: brain/memory/system_memory/daily_briefs/it_infra.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/it_infra.md
@@ -698,19 +698,19 @@ departments:
     prompt: brain/corp/departments/marketing/MANAGER_PROMPT.md
     workers:
     - agent: content-agent
-      role: Content Creator â€” blog, scripts, copywriting, SEO/AEO
+      role: Content Creator — blog, scripts, copywriting, SEO/AEO
       prompt: brain/corp/departments/marketing/WORKER_PROMPT.md
     - agent: seo-agent
-      role: SEO/AEO Specialist â€” keyword research, rank tracking
+      role: SEO/AEO Specialist — keyword research, rank tracking
       prompt: brain/corp/departments/marketing/WORKER_PROMPT.md
     - agent: ads-agent
-      role: Paid Ads Manager â€” Meta Ads, Google Ads, ROI tracking
+      role: Paid Ads Manager — Meta Ads, Google Ads, ROI tracking
       prompt: brain/corp/departments/marketing/WORKER_PROMPT.md
     - agent: social-agent
-      role: Social Media Manager â€” scheduling, engagement, analytics
+      role: Social Media Manager — scheduling, engagement, analytics
       prompt: brain/corp/departments/marketing/WORKER_PROMPT.md
     - agent: affiliate-agent
-      role: Affiliate Manager â€” affiliate networks, commission tracking, partner programs
+      role: Affiliate Manager — affiliate networks, commission tracking, partner programs
       prompt: brain/corp/departments/marketing/WORKER_PROMPT.md
       manages_plugins:
       - affiliate-skills
@@ -739,7 +739,7 @@ departments:
       prompt: ecosystem/workforce/departments/marketing/WORKER_PROMPT.md
       created_by: Auto_Assimilator
       auto_created: true
-    output_channel: brain/memory/corp_memory/daily_briefs/marketing.md
+    output_channel: brain/memory/system_memory/daily_briefs/marketing.md
     qa_required: true
     qa_dept: content_review
     llm_tier: economy
@@ -751,15 +751,15 @@ departments:
     prompt: brain/corp/departments/support/MANAGER_PROMPT.md
     workers:
     - agent: faq-agent
-      role: FAQ Builder â€” maintain help docs, response templates
+      role: FAQ Builder — maintain help docs, response templates
       prompt: brain/corp/departments/support/WORKER_PROMPT.md
     - agent: knowledge-agent
-      role: Knowledge Agent â€” context retrieval, answer synthesis
+      role: Knowledge Agent — context retrieval, answer synthesis
       prompt: brain/corp/departments/support/WORKER_PROMPT.md
     - agent: crm-agent
-      role: CRM Agent â€” customer tracking, follow-up, satisfaction
+      role: CRM Agent — customer tracking, follow-up, satisfaction
       prompt: brain/corp/departments/support/WORKER_PROMPT.md
-    output_channel: brain/memory/corp_memory/daily_briefs/support.md
+    output_channel: brain/memory/system_memory/daily_briefs/support.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/support.md
@@ -771,14 +771,14 @@ departments:
     prompt: brain/corp/departments/content_review/MANAGER_PROMPT.md
     workers:
     - agent: senior-editor-agent
-      role: Senior Editor â€” grammar, tone consistency, style guide enforcement
+      role: Senior Editor — grammar, tone consistency, style guide enforcement
     - agent: fact-checker
-      role: Fact Checker â€” verify claims, source validation
+      role: Fact Checker — verify claims, source validation
     - agent: content-moderator
-      role: Content Moderator â€” policy compliance, harmful content detection
+      role: Content Moderator — policy compliance, harmful content detection
     - agent: brand-guardian
-      role: Brand Guardian â€” voice consistency, visual brand compliance
-    output_channel: brain/memory/corp_memory/daily_briefs/content_review.md
+      role: Brand Guardian — voice consistency, visual brand compliance
+    output_channel: brain/memory/system_memory/daily_briefs/content_review.md
     qa_required: false
     is_gate: true
     llm_tier: economy
@@ -790,18 +790,18 @@ departments:
     prompt: brain/corp/departments/operations/MANAGER_PROMPT.md
     workers:
     - agent: platform-ops-agent
-      role: Platform Ops â€” infra automation, environment management, deploy pipelines
+      role: Platform Ops — infra automation, environment management, deploy pipelines
       prompt: brain/corp/departments/operations/WORKER_PROMPT.md
     - agent: archivist
-      role: Knowledge Archivist â€” memory rotation, knowledge base
+      role: Knowledge Archivist — memory rotation, knowledge base
       prompt: brain/corp/departments/operations/WORKER_PROMPT.md
     - agent: comms-ops-agent
-      role: Comms Ops â€” internal Telegram/Discord bridges, ops notifications
+      role: Comms Ops — internal Telegram/Discord bridges, ops notifications
       prompt: brain/corp/departments/operations/WORKER_PROMPT.md
     - agent: pipeline-architect
-      role: Pipeline Architect â€” automate operational workflows and triggers
+      role: Pipeline Architect — automate operational workflows and triggers
       primary_skill: shell_assistant
-    output_channel: brain/memory/corp_memory/daily_briefs/operations.md
+    output_channel: brain/memory/system_memory/daily_briefs/operations.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/operations.md
@@ -813,14 +813,14 @@ departments:
     prompt: brain/corp/departments/hr_people/MANAGER_PROMPT.md
     workers:
     - agent: recruiter-agent
-      role: Recruiter â€” find and propose new agents for tasks
+      role: Recruiter — find and propose new agents for tasks
     - agent: payroll-agent
-      role: Payroll/Budget â€” token budget allocation per agent/dept
+      role: Payroll/Budget — token budget allocation per agent/dept
     - agent: onboard-agent
-      role: Onboarding â€” context injection for new agents, setup docs
+      role: Onboarding — context injection for new agents, setup docs
     - agent: performance-agent
-      role: Performance Review â€” weekly agent KPI reports
-    output_channel: brain/memory/corp_memory/daily_briefs/hr_people.md
+      role: Performance Review — weekly agent KPI reports
+    output_channel: brain/memory/system_memory/daily_briefs/hr_people.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/hr_people.md
@@ -828,19 +828,19 @@ departments:
     head: strix-agent
     head_title: Head of Security & GRC
     reports_to: COO
-    note: AUTONOMOUS SCANNING â€” runs independently. Alerts COO/CEO on critical.
+    note: AUTONOMOUS SCANNING — runs independently. Alerts COO/CEO on critical.
     prompt: brain/corp/departments/security_grc/MANAGER_PROMPT.md
     workers:
     - agent: security-scanner
-      role: Security Scanner â€” SkillSentry 9-layer, vuln scanning
+      role: Security Scanner — SkillSentry 9-layer, vuln scanning
     - agent: compliance-agent
-      role: Compliance â€” GDPR, policy, license checks
+      role: Compliance — GDPR, policy, license checks
     - agent: incident-agent
-      role: Incident Response â€” triage alerts, coordinate remediation
+      role: Incident Response — triage alerts, coordinate remediation
     - agent: access-control-agent
-      role: Access Control â€” permissions per agent, gatekeeper logs
+      role: Access Control — permissions per agent, gatekeeper logs
     - agent: pentest-agent
-      role: Pen Tester â€” ethical hacking, CVE scanning, bug bounty triage
+      role: Pen Tester — ethical hacking, CVE scanning, bug bounty triage
       primary_skill: security_shield
       manages_plugins:
       - cerberus-cve-tool
@@ -850,7 +850,7 @@ departments:
       - identYwaf
       - zeroleaks
       - kong-reverse-engineer
-    output_channel: brain/memory/corp_memory/daily_briefs/security_grc.md
+    output_channel: brain/memory/system_memory/daily_briefs/security_grc.md
     qa_required: false
     autonomous_alerts: true
     llm_tier: economy
@@ -862,12 +862,12 @@ departments:
     prompt: brain/corp/departments/finance/MANAGER_PROMPT.md
     workers:
     - agent: budget-agent
-      role: Budget Planner â€” monthly LLM budget per dept
+      role: Budget Planner — monthly LLM budget per dept
     - agent: invoice-agent
-      role: Billing Tracker â€” API costs, provider comparison
+      role: Billing Tracker — API costs, provider comparison
     - agent: report-agent
-      role: Financial Reporter â€” monthly cost summaries for CEO
-    output_channel: brain/memory/corp_memory/daily_briefs/finance.md
+      role: Financial Reporter — monthly cost summaries for CEO
+    output_channel: brain/memory/system_memory/daily_briefs/finance.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/finance.md
@@ -878,18 +878,18 @@ departments:
     prompt: brain/corp/departments/strategy/MANAGER_PROMPT.md
     workers:
     - agent: cognitive_reflector
-      role: Strategy Analyst â€” reflection, lessons, learning loop
+      role: Strategy Analyst — reflection, lessons, learning loop
       prompt: brain/corp/departments/strategy/WORKER_PROMPT.md
     - agent: data-agent
-      role: Data Analyst â€” KPI analytics, market signals
+      role: Data Analyst — KPI analytics, market signals
       prompt: brain/corp/departments/strategy/WORKER_PROMPT.md
     - agent: market-agent
-      role: Market Researcher â€” trends, competitor analysis
+      role: Market Researcher — trends, competitor analysis
       prompt: brain/corp/departments/strategy/WORKER_PROMPT.md
     - agent: roadmap-agent
-      role: Roadmap Planner â€” OKR tracking, milestone planning
+      role: Roadmap Planner — OKR tracking, milestone planning
       prompt: brain/corp/departments/strategy/WORKER_PROMPT.md
-    output_channel: brain/memory/corp_memory/proposals/
+    output_channel: brain/memory/system_memory/proposals/
     qa_required: false
     llm_tier: premium
     memory: brain/corp/memory/departments/strategy.md
@@ -900,12 +900,12 @@ departments:
     prompt: brain/corp/departments/legal/MANAGER_PROMPT.md
     workers:
     - agent: contract-agent
-      role: Contract Drafter â€” templates, review, redline
+      role: Contract Drafter — templates, review, redline
     - agent: ip-agent
-      role: IP Manager â€” copyright, trademark, license compliance
+      role: IP Manager — copyright, trademark, license compliance
     - agent: gdpr-agent
-      role: GDPR Specialist â€” data protection, privacy policy
-    output_channel: brain/memory/corp_memory/daily_briefs/legal.md
+      role: GDPR Specialist — data protection, privacy policy
+    output_channel: brain/memory/system_memory/daily_briefs/legal.md
     qa_required: false
     llm_tier: balanced
     memory: brain/corp/memory/departments/legal.md
@@ -916,24 +916,24 @@ departments:
     prompt: brain/corp/departments/rd/MANAGER_PROMPT.md
     workers:
     - agent: notebooklm-agent
-      role: Nova â€” Research Intelligence, knowledge intake, cross-dept synthesis
+      role: Nova — Research Intelligence, knowledge intake, cross-dept synthesis
       agent_file: brain/agents/notebooklm-agent/AGENT.md
       primary_skill: knowledge_enricher
     - agent: research-agent
-      role: Researcher â€” literature review, state-of-art exploration
+      role: Researcher — literature review, state-of-art exploration
     - agent: experiment-agent
-      role: Experimenter â€” POC, prototype, A/B test
+      role: Experimenter — POC, prototype, A/B test
     - agent: pilot-agent
-      role: Pilot Manager â€” deploy experiments, collect feedback
+      role: Pilot Manager — deploy experiments, collect feedback
     - agent: web_researcher
-      role: Web Intelligence Specialist â€” deep internet scraping, structured extraction,
+      role: Web Intelligence Specialist — deep internet scraping, structured extraction,
         site mapping
       primary_skill: web_intelligence
       manages_plugins:
       - firecrawl
       - mem0
     - agent: data-collector-agent
-      role: Data Collector â€” repo ingest, internal source aggregation
+      role: Data Collector — repo ingest, internal source aggregation
       primary_skill: knowledge_enricher
       manages_plugins:
       - gitingest
@@ -941,7 +941,7 @@ departments:
       - pageindex
       - autoresearchclaw
       - public-apis
-    output_channel: brain/memory/corp_memory/daily_briefs/rd.md
+    output_channel: brain/memory/system_memory/daily_briefs/rd.md
     qa_required: false
     llm_tier: balanced
     memory: brain/corp/memory/departments/rd.md
@@ -958,16 +958,16 @@ departments:
     - scripts/validate_skills.ps1
     workers:
     - agent: skill-creator-agent
-      role: Skill Creator â€” builds new skills using skill_generator
+      role: Skill Creator — builds new skills using skill_generator
       primary_skill: skill_generator
     - agent: skill-curator-agent
-      role: Skill Curator â€” reviews and QA-grades all new skills
+      role: Skill Curator — reviews and QA-grades all new skills
       primary_skill: production_qa
     - agent: plugin-librarian-agent
-      role: Plugin Librarian â€” manages plugin catalog lifecycle
+      role: Plugin Librarian — manages plugin catalog lifecycle
       primary_skill: knowledge_enricher
     - agent: rule-builder-agent
-      role: Rule Builder â€” creates and maintains agent/dept rule files
+      role: Rule Builder — creates and maintains agent/dept rule files
       primary_skill: reasoning_engine
   asset_library:
     head: library-manager-agent
@@ -983,19 +983,19 @@ departments:
     - ecosystem/skills/neural_memory/SKILL.md
     workers:
     - agent: knowledge-curator-agent
-      role: Knowledge Curator â€” curate and index all knowledge/
+      role: Knowledge Curator — curate and index all knowledge/
       primary_skill: knowledge_enricher
     - agent: memory-builder-agent
-      role: Memory Builder â€” design and maintain all memory schemas
+      role: Memory Builder — design and maintain all memory schemas
       primary_skill: cosmic_memory
     - agent: asset-tracker-agent
-      role: Asset Tracker â€” catalog all digital assets
+      role: Asset Tracker — catalog all digital assets
       primary_skill: knowledge_enricher
     - agent: repo-analyst-agent
-      role: Repo Analyst â€” analyze and catalog code repositories
+      role: Repo Analyst — analyze and catalog code repositories
       primary_skill: repo_analyst
     - agent: retrieval-master
-      role: Deep Retrieval Master â€” high-speed parallel RAG extraction
+      role: Deep Retrieval Master — high-speed parallel RAG extraction
       primary_skill: knowledge_enricher
   od_learning:
     head: org-architect-agent
@@ -1005,9 +1005,9 @@ departments:
     rules: brain/corp/departments/od_learning/rules.md
     mission: Build, upgrade, and evolve OmniClaw as an organization
     primary_inputs:
-    - brain/memory/corp_memory/proposals/RETRO_*.md
-    - brain/memory/corp_memory/kpi_scoreboard.json
-    - brain/memory/corp_memory/daily_briefs/
+    - brain/memory/system_memory/proposals/RETRO_*.md
+    - brain/memory/system_memory/kpi_scoreboard.json
+    - brain/memory/system_memory/daily_briefs/
     tools:
     - ecosystem/skills/cognitive_reflector/SKILL.md
     - ecosystem/skills/reasoning_engine/SKILL.md
@@ -1016,16 +1016,16 @@ departments:
     - ecosystem/skills/cognitive_evolver/SKILL.md
     workers:
     - agent: dept-builder-agent
-      role: Dept Builder â€” full-cycle new department construction
+      role: Dept Builder — full-cycle new department construction
       primary_skill: reasoning_engine
     - agent: training-agent
-      role: Training â€” upgrade existing agents with new ecosystem/skills/prompts
+      role: Training — upgrade existing agents with new ecosystem/skills/prompts
       primary_skill: knowledge_enricher
     - agent: org-analyst-agent
-      role: Org Analyst â€” monitor org health, diagnose structural problems
+      role: Org Analyst — monitor org health, diagnose structural problems
       primary_skill: cognitive_reflector
     - agent: learning-curator-agent
-      role: Learning Curator â€” extract org learning from retros into knowledge library
+      role: Learning Curator — extract org learning from retros into knowledge library
       primary_skill: cosmic_memory
   planning_pmo:
     head: pmo-agent
@@ -1041,13 +1041,13 @@ departments:
     - brain/memory/blackboard.json (plan layer owner)
     workers:
     - agent: capacity-planner-agent
-      role: Capacity Planner â€” track workload across all 20 depts
+      role: Capacity Planner — track workload across all 20 depts
       primary_skill: knowledge_enricher
     - agent: resource-allocator-agent
-      role: Resource Allocator â€” match tasks to agents by skill + capacity
+      role: Resource Allocator — match tasks to agents by skill + capacity
       primary_skill: reasoning_engine
     - agent: milestone-tracker-agent
-      role: Milestone Tracker â€” monitor deadlines, alert on risk
+      role: Milestone Tracker — monitor deadlines, alert on risk
       primary_skill: reasoning_engine
   monitoring_inspection:
     head: monitor-chief-agent
@@ -1063,13 +1063,13 @@ departments:
     - telemetry/monitoring/alerts.md (audit log owner)
     workers:
     - agent: process-monitor-agent
-      role: Process Monitor â€” SLA, gate compliance, workflow adherence
+      role: Process Monitor — SLA, gate compliance, workflow adherence
       primary_skill: diagnostics_engine
     - agent: compliance-inspector-agent
-      role: Compliance Inspector â€” verify all depts follow rules.md
+      role: Compliance Inspector — verify all depts follow rules.md
       primary_skill: reasoning_engine
     - agent: performance-monitor-agent
-      role: Performance Monitor â€” API latency, cost spikes, memory metrics
+      role: Performance Monitor — API latency, cost spikes, memory metrics
       primary_skill: diagnostics_engine
   system_health:
     head: health-chief-agent
@@ -1086,13 +1086,13 @@ departments:
     - knowledge/system_health/health_kb.md (knowledge base owner)
     workers:
     - agent: agent-health-agent
-      role: Agent Health â€” weekly scan of all 75+ agents for health signals
+      role: Agent Health — weekly scan of all 75+ agents for health signals
       primary_skill: diagnostics_engine
     - agent: system-diagnostics-agent
-      role: System Diagnostics â€” full-cycle technical system health scans
+      role: System Diagnostics — full-cycle technical system health scans
       primary_skill: diagnostics_engine
     - agent: recovery-agent
-      role: Recovery â€” execute recovery procedures, update health_kb
+      role: Recovery — execute recovery procedures, update health_kb
       primary_skill: resilience_engine
   content_intake:
     head: intake-chief-agent
@@ -1114,27 +1114,27 @@ departments:
     - QUARANTINE/logs/intake_log.md (ticket master log)
     workers:
     - agent: intake-agent
-      role: Intake â€” receive + ticket ALL incoming external content
+      role: Intake — receive + ticket ALL incoming external content
       primary_skill: context_manager
     - agent: classifier-agent
-      role: Classifier â€” tag input type (REPO/WEB/DOC/IMAGE/TEXT/PLUGIN)
+      role: Classifier — tag input type (REPO/WEB/DOC/IMAGE/TEXT/PLUGIN)
       primary_skill: reasoning_engine
     - agent: repo-fetcher-agent
-      role: Repo Fetcher â€” clone repos into QUARANTINE for security vetting
+      role: Repo Fetcher — clone repos into QUARANTINE for security vetting
       primary_skill: shell_assistant
     - agent: web-crawler-agent
-      role: Web Crawler â€” fetch + extract web article/research content
+      role: Web Crawler — fetch + extract web article/research content
       primary_skill: knowledge_enricher
     - agent: doc-parser-agent
-      role: Doc Parser â€” extract text from PDF, DOCX, MD
+      role: Doc Parser — extract text from PDF, DOCX, MD
       primary_skill: knowledge_enricher
     - agent: content-analyst-agent
-      role: Content Analyst â€” 6-question CIV deep analysis
+      role: Content Analyst — 6-question CIV deep analysis
     - agent: content-validator-agent
-      role: Content Validator â€” quality + safety score (reject if <4/10)
+      role: Content Validator — quality + safety score (reject if <4/10)
       primary_skill: reasoning_engine
     - agent: ingest-router-agent
-      role: Ingest Router â€” route cleared content to correct OmniClaw destination
+      role: Ingest Router — route cleared content to correct OmniClaw destination
       primary_skill: context_manager
   client_reception:
     head: project-intake-agent
@@ -1142,9 +1142,9 @@ departments:
     reports_to: COO
     status: DORMANT
     activation_mode: REMOTE_ONLY
-    use_case: 'Chá»‰ activate khi CEO váº¯ng máº·t / lÃ m viá»‡c xa mÃ¡y tÃ­nh. Khi CEO online
-      trá»±c tiáº¿p â†’ CEO tá»± xá»­ lÃ½ intake thá»§ cÃ´ng. Khi CEO offline â†’ Bot tá»± Ä‘á»™ng tiáº¿p
-      nháº­n + propose, ping CEO qua Telegram.
+    use_case: 'Chỉ activate khi CEO vắng mặt / làm việc xa máy tính. Khi CEO online
+      trực tiếp → CEO tự xử lý intake thủ công. Khi CEO offline → Bot tự động tiếp
+      nhận + propose, ping CEO qua Telegram.
 
       '
     escalate_to_ceo_channels:
@@ -1154,16 +1154,16 @@ departments:
     prompt: brain/corp/sops/CLIENT_INTAKE_GATEWAY.md
     workers:
     - agent: project-intake-agent
-      role: Client Intake Specialist â€” thu tháº­p brief, validate, route
+      role: Client Intake Specialist — thu thập brief, validate, route
       primary_skill: project_intake_agent
       managed_plugins:
       - nullclaw
       - tinyclaw
     - agent: proposal-writer-agent
-      role: Proposal Writer â€” auto-generate proposal tá»« brief
+      role: Proposal Writer — auto-generate proposal từ brief
       primary_skill: proposal_engine
     - agent: client-comms-agent
-      role: Client Communications â€” follow-up, updates, delivery confirm
+      role: Client Communications — follow-up, updates, delivery confirm
       primary_skill: notification_bridge
     channels:
       phase_1:
@@ -1182,10 +1182,10 @@ departments:
     - Revenue generated (USD)
     - Client satisfaction score (1-5)
     flows:
-    - CLIENT â†’ Channel â†’ project-intake-agent â†’ Collect 5 fields
-    - project-intake-agent â†’ proposal_engine â†’ auto-generate proposal
-    - proposal_engine â†’ client-comms-agent â†’ send to client
-    - Client ACCEPT â†’ operations â†’ assign dept â†’ DELIVERY_PIPELINE.md
+    - CLIENT → Channel → project-intake-agent → Collect 5 fields
+    - project-intake-agent → proposal_engine → auto-generate proposal
+    - proposal_engine → client-comms-agent → send to client
+    - Client ACCEPT → operations → assign dept → DELIVERY_PIPELINE.md
     memory: brain/corp/memory/departments/client_reception.md
   facility:
     head: facility-agent
@@ -1198,9 +1198,9 @@ departments:
     - system/ops/scripts/omniclaw_deep_cleaner.py
     workers:
     - agent: deep-cleaner-agent
-      role: Deep Cleaner â€” execute staleness scan and vacuum
+      role: Deep Cleaner — execute staleness scan and vacuum
       primary_skill: shell_assistant
-    output_channel: brain/memory/corp_memory/daily_briefs/facility.md
+    output_channel: brain/memory/system_memory/daily_briefs/facility.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/facility.md
@@ -1217,12 +1217,12 @@ departments:
     - .agents/workflows/agent-orchestration.md
     workers:
     - agent: router-agent
-      role: Router Specialist â€” parse prompt into subtasks, route to correct depts
+      role: Router Specialist — parse prompt into subtasks, route to correct depts
       primary_skill: reasoning_engine
     - agent: swarm-coordinator
-      role: Swarm Coordinator â€” merge parallel responses into unified output
+      role: Swarm Coordinator — merge parallel responses into unified output
       primary_skill: context_manager
-    output_channel: brain/memory/corp_memory/daily_briefs/orchestration.md
+    output_channel: brain/memory/system_memory/daily_briefs/orchestration.md
     qa_required: false
     llm_tier: premium
     memory: brain/corp/memory/departments/orchestration.md
@@ -1542,38 +1542,38 @@ gates:
   blocks: contracts, partnerships, data sharing agreements
   condition: Any external agreement must pass GATE_LEGAL
 collaboration_rules:
-- 'Engineering â†’ QA_Testing: all code must pass GATE_QA before deploy'
-- 'Marketing â†’ Content_Review: all content must pass GATE_CONTENT'
-- 'Strategy â†’ CEO: proposals posted daily to brain/memory/corp_memory/proposals/'
-- 'Security_GRC â†’ ALL: can write alerts to escalations.md autonomously'
-- 'HR_People â†’ Operations: headcount and workload reports weekly'
-- 'Finance â†’ CEO: monthly budget report, alerts on overage'
-- 'cognitive_reflector: cross-dept reader â€” reads ALL daily_briefs'
-- 'R&D â†’ Strategy: research feeds into proposal pipeline'
-- 'Registry_Capability â†’ ALL: run skill_loader after any skill change'
-- 'Registry_Capability â†’ Security_GRC: GATE_SECURITY for all external skills'
-- 'Asset_Library â†’ Operations: coordinate memory rotation with archivist'
-- 'Asset_Library â†’ ALL: knowledge_index.md available to all depts'
-- 'OD_Learning â†’ ALL: org health monitoring reads all daily_briefs every cycle'
-- 'OD_Learning â†’ HR: coordinate agent onboarding for new dept builds'
-- 'OD_Learning â†’ Registry: coordinate skill registration for new agents'
-- 'OD_Learning â†’ CSO: all org change proposals route through CSO to CEO'
-- 'cognitive_reflector (Strategy) â†’ OD_Learning: retro outputs feed org improvement
+- 'Engineering → QA_Testing: all code must pass GATE_QA before deploy'
+- 'Marketing → Content_Review: all content must pass GATE_CONTENT'
+- 'Strategy → CEO: proposals posted daily to brain/memory/system_memory/proposals/'
+- 'Security_GRC → ALL: can write alerts to escalations.md autonomously'
+- 'HR_People → Operations: headcount and workload reports weekly'
+- 'Finance → CEO: monthly budget report, alerts on overage'
+- 'cognitive_reflector: cross-dept reader — reads ALL daily_briefs'
+- 'R&D → Strategy: research feeds into proposal pipeline'
+- 'Registry_Capability → ALL: run skill_loader after any skill change'
+- 'Registry_Capability → Security_GRC: GATE_SECURITY for all external skills'
+- 'Asset_Library → Operations: coordinate memory rotation with archivist'
+- 'Asset_Library → ALL: knowledge_index.md available to all depts'
+- 'OD_Learning → ALL: org health monitoring reads all daily_briefs every cycle'
+- 'OD_Learning → HR: coordinate agent onboarding for new dept builds'
+- 'OD_Learning → Registry: coordinate skill registration for new agents'
+- 'OD_Learning → CSO: all org change proposals route through CSO to CEO'
+- 'cognitive_reflector (Strategy) → OD_Learning: retro outputs feed org improvement
   pipeline'
-- 'R&D pilot_success â†’ Registry_Capability: pilot â†’ skill creation pipeline'
-- 'Client_Reception â†’ Operations: new intake ACCEPT â†’ ops assigns dept + kickoff'
-- 'Client_Reception â†’ CEO: budget >$10k intakes escalated immediately'
-- 'Client_Reception â†’ Engineering/RD/Marketing: intake brief â†’ dept brief when project
+- 'R&D pilot_success → Registry_Capability: pilot → skill creation pipeline'
+- 'Client_Reception → Operations: new intake ACCEPT → ops assigns dept + kickoff'
+- 'Client_Reception → CEO: budget >$10k intakes escalated immediately'
+- 'Client_Reception → Engineering/RD/Marketing: intake brief → dept brief when project
   starts'
-- 'Client_Reception â†’ Finance: invoice generated after delivery â†’ Finance tracks payment'
+- 'Client_Reception → Finance: invoice generated after delivery → Finance tracks payment'
 shared_data:
   blackboard: brain/memory/blackboard.json
-  mission: brain/memory/corp_memory/mission.md
-  kpi_scoreboard: brain/memory/corp_memory/kpi_scoreboard.json
-  escalations: brain/memory/corp_memory/escalations.md
-  proposals: brain/memory/corp_memory/proposals/
-  daily_briefs: brain/memory/corp_memory/daily_briefs/
-  decisions_log: brain/memory/corp_memory/decisions/log.md
+  mission: brain/memory/system_memory/mission.md
+  kpi_scoreboard: brain/memory/system_memory/kpi_scoreboard.json
+  escalations: brain/memory/system_memory/escalations.md
+  proposals: brain/memory/system_memory/proposals/
+  daily_briefs: brain/memory/system_memory/daily_briefs/
+  decisions_log: brain/memory/system_memory/decisions/log.md
   global_memory: brain/corp/memory/global/decisions_log.md
   dept_memory: brain/corp/memory/departments/
   agent_memory: brain/corp/memory/agents/

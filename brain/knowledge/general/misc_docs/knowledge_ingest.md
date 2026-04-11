@@ -1,4 +1,4 @@
-﻿---
+---
 id: knowledge-ingest
 type: document
 owner: OHD
@@ -109,7 +109,7 @@ Results:
   PASS â†’ move to brain/knowledge/staging/<KI-id>/
          update ticket status â†’ "CLASSIFYING"
   FAIL â†’ move to security/QUARANTINE/REJECTED/<KI-id>/
-         write ESCALATION_REPORT to brain/memory/corp_memory/escalations.md
+         write ESCALATION_REPORT to brain/memory/system_memory/escalations.md
          notify CEO via notification_bridge
          STOP â€” do not proceed further
 ```
@@ -295,7 +295,7 @@ IF relevant_agents is empty AND knowledge_type = "TOOL" or "RESEARCH":
    brain/knowledge/INDEX.md â€” append new entry
 
 3. Update dept brief if significant:
-   brain/memory/corp_memory/daily_briefs/<target_dept>.md
+   brain/memory/system_memory/daily_briefs/<target_dept>.md
 
 4. Write archivist receipt:
    telemetry/receipts/knowledge_ingest/<KI-id>_receipt.json

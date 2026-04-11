@@ -364,7 +364,7 @@ SOFTWARE.
   <!-- BADGE_COUNT_END -->
 </p>
 
-English | [简体中文](./README.zh-CN.md)
+English | 简体中文
 
 > A curated list of awesome things related to Arknights: Endfield.
 
@@ -385,7 +385,7 @@ If you are looking for content related to [Arknights](https://ak.hypergryph.com/
 
 ## List
 
-\>\> See [LIST.md](./LIST.md) for the full list of projects.
+\>\> See LIST.md for the full list of projects.
 
 ## Recent Updates
 
@@ -410,13 +410,13 @@ If you are looking for content related to [Arknights](https://ak.hypergryph.com/
   - A gacha record statistics and analysis tool for Arknights: Endfield, supporting official server, Bilibili server, and global servers.
 <!-- RECENT_END -->
 
-More projects can be found in the [LIST.md](./LIST.md).
+More projects can be found in the LIST.md.
 
 ## Contributing
 
 If you discover an open-source project that is not yet included in this list, or if you have open-sourced your own project—whether it is under active development or already archived—as long as it provides value, it is welcome here. Issues, pull requests, and forks are all appreciated.
 
-For detailed contribution steps, please refer to [CONTRIBUTING.md](./CONTRIBUTING.md).
+For detailed contribution steps, please refer to CONTRIBUTING.md.
 
 ## Badge
 
@@ -438,7 +438,7 @@ If you maintain a project related to *Arknights: Endfield* and would like it to 
 
 - Source File
 
-  Download and use the [badge.svg](./assets/badge.svg) file directly.
+  Download and use the badge.svg file directly.
 
 The badge will appear as follows:
 
@@ -484,7 +484,7 @@ The default badge uses the `flat` style. If you need other styles, you can use t
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE.md) file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Copyright
 
@@ -518,7 +518,7 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
   <!-- BADGE_COUNT_END -->
 </p>
 
-[English](./README.md) | 简体中文
+English | 简体中文
 
 > 与《明日方舟：终末地》相关的精选优质内容列表。
 
@@ -540,7 +540,7 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
 
 ## 列表
 
-\>\> 请移步 [LIST.zh-CN.md](./LIST.zh-CN.md) 以查看完整项目列表。
+\>\> 请移步 LIST.zh-CN.md 以查看完整项目列表。
 
 ## 最近更新
 
@@ -565,13 +565,13 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
   - 《明日方舟：终末地》寻访（抽卡）统计工具，支持官服/B服/国际服。
 <!-- RECENT_END -->
 
-更多项目请参阅 [LIST.zh-CN.md](./LIST.zh-CN.md)。
+更多项目请参阅 LIST.zh-CN.md。
 
 ## 贡献
 
 如果您发现了未收录在本列表的开源项目或者开源了自己的项目，无论是在开发中还是已归档，只要有价值，都可以被收录，欢迎 Issue、PR 或 Fork。
 
-更多详细步骤请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 文件。
+更多详细步骤请参阅 CONTRIBUTING.md 文件。
 
 ## 徽标
 ### 添加徽标
@@ -594,7 +594,7 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
 
 - 源文件
 
-  直接下载并使用 [badge.svg](./assets/badge.svg) 文件
+  直接下载并使用 badge.svg 文件
 
 将会显示如下：
 
@@ -621,7 +621,7 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
 
   - 源文件
 
-    下载 [badge-flat-square.svg](./assets/badge-flat-square.svg)
+    下载 badge-flat-square.svg
 
 
   - Markdown
@@ -640,11 +640,11 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
 
   - 源文件
 
-    下载 [badge-for-the-badge.svg](./assets/badge-for-the-badge.svg)
+    下载 badge-for-the-badge.svg
 
 ## 协议
 
-本项目采用 MIT 许可证。详情请参阅 [LICENSE](./LICENSE.md) 文件。
+本项目采用 MIT 许可证。详情请参阅 LICENSE 文件。
 
 ## 版权
 
@@ -971,7 +971,7 @@ FILE: README.md
   <!-- BADGE_COUNT_END -->
 </p>
 
-English | [简体中文](./README.zh-CN.md)
+English | 简体中文
 
 > A curated list of awesome things related to Arknights: Endfield.
 
@@ -992,7 +992,7 @@ If you are looking for content related to [Arknights](https://ak.hypergryph.com/
 
 ## List
 
-\>\> See [LIST.md](./LIST.md) for the full list of projects.
+\>\> See LIST.md for the full list of projects.
 
 ## Recent Updates
 
@@ -1017,13 +1017,13 @@ If you are looking for content related to [Arknights](https://ak.hypergryph.com/
   - A gacha record statistics and analysis tool for Arknights: Endfield, supporting official server, Bilibili server, and global servers.
 <!-- RECENT_END -->
 
-More projects can be found in the [LIST.md](./LIST.md).
+More projects can be found in the LIST.md.
 
 ## Contributing
 
 If you discover an open-source project that is not yet included in this list, or if you have open-sourced your own project—whether it is under active development or already archived—as long as it provides value, it is welcome here. Issues, pull requests, and forks are all appreciated.
 
-For detailed contribution steps, please refer to [CONTRIBUTING.md](./CONTRIBUTING.md).
+For detailed contribution steps, please refer to CONTRIBUTING.md.
 
 ## Badge
 
@@ -1045,7 +1045,7 @@ If you maintain a project related to *Arknights: Endfield* and would like it to 
 
 - Source File
 
-  Download and use the [badge.svg](./assets/badge.svg) file directly.
+  Download and use the badge.svg file directly.
 
 The badge will appear as follows:
 
@@ -1104,7 +1104,7 @@ FILE: README.zh-CN.md
   <!-- BADGE_COUNT_END -->
 </p>
 
-[English](./README.md) | 简体中文
+English | 简体中文
 
 > 与《明日方舟：终末地》相关的精选优质内容列表。
 
@@ -1126,7 +1126,7 @@ FILE: README.zh-CN.md
 
 ## 列表
 
-\>\> 请移步 [LIST.zh-CN.md](./LIST.zh-CN.md) 以查看完整项目列表。
+\>\> 请移步 LIST.zh-CN.md 以查看完整项目列表。
 
 ## 最近更新
 
@@ -1151,13 +1151,13 @@ FILE: README.zh-CN.md
   - 《明日方舟：终末地》寻访（抽卡）统计工具，支持官服/B服/国际服。
 <!-- RECENT_END -->
 
-更多项目请参阅 [LIST.zh-CN.md](./LIST.zh-CN.md)。
+更多项目请参阅 LIST.zh-CN.md。
 
 ## 贡献
 
 如果您发现了未收录在本列表的开源项目或者开源了自己的项目，无论是在开发中还是已归档，只要有价值，都可以被收录，欢迎 Issue、PR 或 Fork。
 
-更多详细步骤请参阅 [CONTRIBUTING.md](./CONTRIBUTING.md) 文件。
+更多详细步骤请参阅 CONTRIBUTING.md 文件。
 
 ## 徽标
 ### 添加徽标
@@ -1180,7 +1180,7 @@ FILE: README.zh-CN.md
 
 - 源文件
 
-  直接下载并使用 [badge.svg](./assets/badge.svg) 文件
+  直接下载并使用 badge.svg 文件
 
 将会显示如下：
 
@@ -1207,7 +1207,7 @@ FILE: README.zh-CN.md
 
   - 源文件
 
-    下载 [badge-flat-square.svg](./assets/badge-flat-square.svg)
+    下载 badge-flat-square.svg
 
 
   - Markdown
@@ -1226,11 +1226,11 @@ FILE: README.zh-CN.md
 
   - 源文件
 
-    下载 [badge-for-the-badge.svg](./assets/badge-for-the-badge.svg)
+    下载 badge-for-the-badge.svg
 
 ## 协议
 
-本项目采用 MIT 许可证。详情请参阅 [LICENSE](./LICENSE.md) 文件。
+本项目采用 MIT 许可证。详情请参阅 LICENSE 文件。
 
 ## 版权
 
@@ -1826,7 +1826,7 @@ function slugify(text: string): string {
 const LINE_BREAK = '\n';
 
 function generateLink(href: string, text: string) {
-  return `[${text}](${href})`;
+  return `${text}`;
 }
 
 function generateBanner() {
@@ -2251,7 +2251,7 @@ English | [简体中文](https://github.com/palmcivet/awesome-arknights-endfield
   - [Form Tags (what form the project takes)](#form-tags-what-form-the-project-takes)
   - [Tag Guidelines](#tag-guidelines)
 
-This document defines the classification system for [`data/LIST.json`](data/LIST.json). Categories are designed to be **orthogonal** — each project should belong to exactly one category with no ambiguity.
+This document defines the classification system for `data/LIST.json`. Categories are designed to be **orthogonal** — each project should belong to exactly one category with no ambiguity.
 
 ## Categories
 
@@ -2326,7 +2326,7 @@ Tags are **multi-select** and describe specific characteristics of a project. Th
   - [形态标签（项目的形态）](#形态标签项目的形态)
   - [标签使用规范](#标签使用规范)
 
-本文档定义了 [`data/LIST.json`](data/LIST.json) 的分类体系。分类设计遵循**正交原则** —— 每个项目应且仅应归属于一个分类，不存在歧义。
+本文档定义了 `data/LIST.json` 的分类体系。分类设计遵循**正交原则** —— 每个项目应且仅应归属于一个分类，不存在歧义。
 
 ## 分类指南
 
@@ -2473,7 +2473,7 @@ You may either create an Issue or submit a Pull Request with the relevant change
 
 ### JSON Format Guidelines
 
-Each entry in [`data/LIST.json`](./data/LIST.json) must follow a unified data structure. The fields are defined as follows; some fields are optional:
+Each entry in `data/LIST.json` must follow a unified data structure. The fields are defined as follows; some fields are optional:
 
 ```ts
 export interface Project {
@@ -2623,7 +2623,7 @@ bun generate:list
 
 ### JSON 格式规范
 
-[`data/LIST.json`](./data/LIST.json) 中的每个条目需遵循统一的数据结构。字段说明如下，其中部分字段为可选项：
+`data/LIST.json` 中的每个条目需遵循统一的数据结构。字段说明如下，其中部分字段为可选项：
 
 ```ts
 export interface Project {
@@ -3983,7 +3983,7 @@ function slugify(text: string): string {
 const LINE_BREAK = '\n';
 
 function generateLink(href: string, text: string) {
-  return `[${text}](${href})`;
+  return `${text}`;
 }
 
 function generateBanner() {

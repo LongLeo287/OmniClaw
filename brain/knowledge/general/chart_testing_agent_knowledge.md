@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for chart_testing_agent
+# Knowledge Dump for chart_testing_agent
 
 ## File: agent.md
 ```

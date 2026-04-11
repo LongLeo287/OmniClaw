@@ -1,4 +1,4 @@
-﻿---
+---
 id: rule-structure-01-system-structure
 type: document
 owner: SYSTEM
@@ -152,7 +152,7 @@ Telegram bot    3000    nullclaw bot service running
 - Notebook agent writes to `brain/memory/blackboard.json` â†’ all agents see it
 - `ops/runtime/blackboard.json` = runtime operation mirror only (NOT for boot reads)
 - **receipts** go to `telemetry/receipts/<dept>/<task-id>.json`
-- **proposals** go to `brain/memory/corp_memory/proposals/PROPOSAL_<date>_<topic>.md`
+- **proposals** go to `brain/memory/system_memory/proposals/PROPOSAL_<date>_<topic>.md`
 
 ---
 

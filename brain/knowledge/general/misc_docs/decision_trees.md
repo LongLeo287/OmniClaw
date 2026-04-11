@@ -10,7 +10,7 @@ healed_at: 2026-04-02T20:19:16.945589
 
 > Context-based design THINKING, not fixed solutions.
 > **These are decision GUIDES, not copy-paste templates.**
-> **For UX psychology principles (Hick's, Fitts', etc.) see:** [ux-psychology.md](ux-psychology.md)
+> **For UX psychology principles (Hick's, Fitts', etc.) see:** ux-psychology.md
 
 ---
 

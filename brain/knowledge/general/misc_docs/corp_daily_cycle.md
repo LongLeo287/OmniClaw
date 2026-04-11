@@ -1,4 +1,4 @@
-﻿---
+---
 id: corp-daily-cycle
 type: document
 owner: OHD
@@ -54,8 +54,8 @@ CEO reads proposals â†’ decides â†’ RESET â†’ next cycle
 Step 0.1 â€” Critical file check (STOP if any fail):
   [ ] brain/memory/blackboard.json        â€” readable + valid JSON
   [ ] brain/registry/SKILL_REGISTRY.json    â€” readable + no nulls in load_order
-  [ ] brain/memory/corp_memory/kpi_scoreboard.json
-  [ ] brain/brain/memory/corp_memory/escalations.md
+  [ ] brain/memory/system_memory/kpi_scoreboard.json
+  [ ] brain/brain/memory/system_memory/escalations.md
   [ ] corp/org_chart.yaml
   [ ] corp/rules/APPROVAL_GATES.md
 
@@ -93,15 +93,15 @@ On Step 0.3 FAIL: log warning, proceed with stale SKILL_REGISTRY, mark for manua
 
 ```
 CEO reads in order:
-1. brain/brain/memory/corp_memory/mission.md          â† current strategic direction
-2. brain/memory/corp_memory/kpi_scoreboard.json â† all 21 dept KPI status
-3. brain/brain/memory/corp_memory/escalations.md      â† open L2/L3 items
-4. brain/brain/memory/corp_memory/proposals/          â† pending decisions from last cycle
+1. brain/brain/memory/system_memory/mission.md          â† current strategic direction
+2. brain/memory/system_memory/kpi_scoreboard.json â† all 21 dept KPI status
+3. brain/brain/memory/system_memory/escalations.md      â† open L2/L3 items
+4. brain/brain/memory/system_memory/proposals/          â† pending decisions from last cycle
 5. corp/memory/global/decisions_log.md           â† last 5 CEO decisions for context
 
 CEO outputs:
   - Decision on any open proposals â†’ decisions_log.md
-  - Mission update if needed â†’ brain/brain/memory/corp_memory/mission.md
+  - Mission update if needed â†’ brain/brain/memory/system_memory/mission.md
   - Priority instruction to C-Suite â†’ brain/memory/blackboard.json or direct brief
 ```
 
@@ -114,7 +114,7 @@ CEO outputs:
 
 ```
 Each C-Suite member:
-1. Read CEO mission + their domain KPIs from brain/brain/memory/corp_memory/mission.md
+1. Read CEO mission + their domain KPIs from brain/brain/memory/system_memory/mission.md
 2. Translate CEO intent â†’ dept-level goals for each of their depts
 3. Write dept task entries to brain/memory/blackboard.json:
    { "dept": "engineering", "goal": "...", "kpi_targets": [...] }
@@ -199,7 +199,7 @@ Failed items: return to worker for fix â†’ re-submit
 **Ref:** `MANAGER_PROMPT.md` brief format
 
 ```
-Each dept head writes to: brain/memory/corp_memory/daily_briefs/<dept>.md
+Each dept head writes to: brain/memory/system_memory/daily_briefs/<dept>.md
 
 Format includes:
   DATE / DEPT / HEAD
@@ -231,11 +231,11 @@ archivist:
 cognitive_reflector:
   - Read ALL 21 dept daily_briefs
   - Identify cross-dept patterns, blockers, wins
-  - Write: brain/memory/corp_memory/proposals/RETRO_<date>.md
+  - Write: brain/memory/system_memory/proposals/RETRO_<date>.md
 
 strategy/product-manager-agent:
   - Synthesize retro into CEO proposals
-  - Write to: brain/memory/corp_memory/proposals/PROPOSAL_<date>_<topic>.md
+  - Write to: brain/memory/system_memory/proposals/PROPOSAL_<date>_<topic>.md
   - Proposals: KPI_CHANGE | NEW_SKILL | ROLE_CHANGE | STRATEGIC
 
 CEO receives proposals â†’ next Phase 1
@@ -247,7 +247,7 @@ CEO receives proposals â†’ next Phase 1
 
 After Phase 7:
 ```
-Update: brain/memory/corp_memory/kpi_scoreboard.json (actual values from briefs)
+Update: brain/memory/system_memory/kpi_scoreboard.json (actual values from briefs)
 Write: corp/memory/departments/<dept>.md (cycle summary by each manager)
 Reset: brain/memory/blackboard.json corp_cycle_status = "IDLE"
 Clear: done task cards from subagents/mq/<dept>_tasks.md

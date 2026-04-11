@@ -1,5 +1,18 @@
 # OmniClaw Activation Guide
 
+<<<<<<< HEAD
+This guide separates OmniClaw into two boot paths.
+
+## 1. Agent System
+
+Use this when the goal is to run OmniClaw as the project-facing agent layer.
+This path should leave OmniClaw ready for user work, with skills, plugins,
+memory state, routing, and orchestrator readiness all checked.
+
+Commands:
+
+```bash
+=======
 This guide covers the smallest reliable path to bootstrap the OmniClaw core repository for local use.
 
 ## Prerequisites
@@ -15,9 +28,22 @@ This guide covers the smallest reliable path to bootstrap the OmniClaw core repo
 git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
 cd "OmniClaw"
 npm install -g .
+>>>>>>> origin/main
 omniclaw doctor
+omniclaw startup
+omniclaw watch 30
+omniclaw agent-status
 ```
 
+<<<<<<< HEAD
+Meaning:
+
+- `omniclaw startup` runs the agent boot path and validates user-facing readiness.
+- `omniclaw watch 30` keeps the orchestrator polling in watch mode.
+- `omniclaw agent-status` reports agent-side routing and activation state.
+
+Scope:
+=======
 If you do not want to install the CLI globally, run the local Windows wrapper instead:
 
 ```powershell
@@ -58,10 +84,69 @@ omniclaw doctor
 - optional Docker availability
 
 ## Manual Bridge Launches
+>>>>>>> origin/main
 
-Examples:
+- orchestrator
+- agent routing
+- skill registry
+- tool registry
+- plugin inventory
+- memory state
+- workforce-facing execution flow
+
+Constraint:
+
+- the agent system may use OmniClaw, but it must not trigger self-healing, repair, registry mutation, or core-improvement flows
+
+Excluded from this flow:
+
+- core daemon maintenance
+- bridge, UI, remote, port provisioning
+
+## 2. Core Daemon System
+
+Use this when the goal is to repair, maintain, sync, and upgrade OmniClaw itself.
+This path is for the internal daemon side of OmniClaw, not for project-facing use.
+
+Commands:
 
 ```bash
+<<<<<<< HEAD
+omniclaw doctor
+omniclaw core-daemon
+omniclaw core-loop 120
+omniclaw core-status
+omniclaw sync
+```
+
+Meaning:
+
+- `omniclaw core-daemon` runs core startup preflight for the maintenance layer.
+- `omniclaw core-loop 120` keeps internal upkeep running.
+- `omniclaw core-status` reports internal state readiness.
+- `omniclaw sync` refreshes internal registries and maps.
+
+Scope:
+
+- blackboard state
+- trust matrix compliance
+- daemon activation state
+- registry and telemetry upkeep
+- self-maintenance readiness
+- system repair and improvement flows
+
+Excluded from this flow:
+
+- orchestrator watch for external project work
+- bridge, UI, remote, port provisioning
+
+## Operating Rule
+
+Keep these two boot paths separate and logical:
+
+- `Khởi động OmniClaw` => boot the agent system.
+- `Khởi động Core Daemon` => boot the internal core daemon system.
+=======
 python ecosystem/bridges/launch_ollama.py
 python ecosystem/bridges/launch_model_ai.py
 python ecosystem/bridges/launch_system_pulse.py
@@ -82,3 +167,4 @@ Some scripts support explicit repair behavior through flags or environment varia
 - `OMNICLAW_ASSIMILATOR_REPAIR=1`
 
 Use repair mode intentionally during provisioning, not as part of steady-state runtime.
+>>>>>>> origin/main

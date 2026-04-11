@@ -11,6 +11,17 @@ healed_at: 2026-04-03T22:44:27.436460
 **Last Updated:** 2026-04-07
 
 ## 🗺️  System Map (READ FIRST)
+<<<<<<< HEAD
+- omniclaw_system_map.md — **MASTER REFERENCE** — Entire OmniClaw system: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
+- MASTER_SYSTEM_MAP.md — **SYSTEM MAP v2 (2026-03-23)** — Boot -> Corp Cycle 8-phase -> 21 Depts -> 3-Tier Plugin -> Agent Memory -> Knowledge Flow -> Escalation -> CLI Commands
+
+## 🏛️ Governance & Identity (Tier 0-1)
+- [CLAUDE.md](../../.claude/skills/supabase-postgres-best-practices/CLAUDE.md) — Master entry point, boot sequence, directory map
+- AGENTS.md — Agent roster, hierarchy, decision authority
+
+## ⚙️  Operations & Governance (Tier 2)
+- WORKFLOW.md — Event-driven operational workflow (v2)
+=======
 - [omniclaw_system_map.md](omniclaw_system_map.md) — **MASTER REFERENCE** — Entire OmniClaw system: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
 - [MASTER_SYSTEM_MAP.md](omniclaw_system_map.md) — **SYSTEM MAP v2 (2026-03-23)** — Boot -> Corp Cycle 8-phase -> 21 Depts -> 3-Tier Plugin -> Agent Memory -> Knowledge Flow -> Escalation -> CLI Commands
 
@@ -20,6 +31,7 @@ healed_at: 2026-04-03T22:44:27.436460
 
 ## ⚙️  Operations & Governance (Tier 2)
 - [WORKFLOW.md](bmad_repo/workflow.md) — Event-driven operational workflow (v2)
+>>>>>>> origin/main
 
 ## 🔧 Skill System
 - **Domain Packs** (`skills/domains/`):
@@ -38,11 +50,19 @@ healed_at: 2026-04-03T22:44:27.436460
 
 ## 🤖 AI Agent Systems
 - [Agentic Patterns](agent_architecture/agentic_patterns.md) — 10 core patterns: ReAct, Reflection, Planning, Multi-Agent, Meta-Controller...
+<<<<<<< HEAD
+- BMAD Method — Agile AI development framework: 4-phase cycle, agent personas, Party Mode
+- [MCP Server Architecture](architecture/mcp_server_architecture.md)
+
+## 🛠️  Claude Code Ecosystem  
+- Claude Code Ecosystem — everything-claude-code, claude-mem plugin, best practices
+=======
 - [BMAD Method](bmad_repo/bmad_method.md) — Agile AI development framework: 4-phase cycle, agent personas, Party Mode
 - [MCP Server Architecture](architecture/mcp_server_architecture.md)
 
 ## 🛠️  Claude Code Ecosystem  
 - [Claude Code Ecosystem](claude_bp_repo/claude_code_ecosystem.md) — everything-claude-code, claude-mem plugin, best practices
+>>>>>>> origin/main
 
 ## 🔬 AI/ML Deep Dives
 
@@ -117,8 +137,13 @@ healed_at: 2026-04-03T22:44:27.436460
 ### Learning Loop (Cycle 8 Retro)
 | File | Type |
 |------|------|
+<<<<<<< HEAD
+| brain/memory/system_memory/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective - 5 patterns, 5 lessons, 3 proposals |
+| brain/memory/system_memory/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
+=======
 | brain/memory/corp_memory/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective - 5 patterns, 5 lessons, 3 proposals |
 | brain/memory/corp_memory/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
+>>>>>>> origin/main
 | corp/memory/global/decisions_log.md | +4 LESSON_LEARNED entries (permanent) |
 
 ---
@@ -164,8 +189,13 @@ healed_at: 2026-04-03T22:44:27.436460
 | File | Rule ID | Description |
 |------|---------|-------------|
 | `brain/corp/gaps/GAP-2026-04-07-vault-recursion.md` | `GAP-002` | Post-mortem: Vault-in-databases recursion from ZIP extract V1. Defines RULE-ARCH-01/02/03 |
+<<<<<<< HEAD
+| `vault/assets/databases/_DIR_IDENTITY.md` | `RULE-ARCH-02` | Constraint lock cho database zone — chá»‰ cho phép engine namespace vÃ  file `.db/.sqlite/.json` |
+| `core/docs/_DIR_IDENTITY.md` | N/A | Khai báo Ä‘á»‹nh danh khu vá»±c Docs, quy Ä‘á»‹nh 100% song ngá»¯ (EN/VN) cho má»i file tÃ i liá»‡u |
+=======
 | `vault/assets/databases/_DIR_IDENTITY.md` | `RULE-ARCH-02` | Constraint lock cho database zone — chá»‰ cho phÃ©p engine namespace vÃ  file `.db/.sqlite/.json` |
 | `core/docs/_DIR_IDENTITY.md` | N/A | Khai bÃ¡o Ä‘á»‹nh danh khu vá»±c Docs, quy Ä‘á»‹nh 100% song ngá»¯ (EN/VN) cho má»i file tÃ i liá»‡u |
+>>>>>>> origin/main
 
 ### Documentation (1 file)
 | File | Rule ID | Description |
@@ -175,11 +205,19 @@ healed_at: 2026-04-03T22:44:27.436460
 ### Utilities & Watchdogs (5 files)
 | File | Rule ID | Description |
 |------|---------|-------------|
+<<<<<<< HEAD
+| `core/ops/scripts/utils/safe_fs.py` | `RULE-FS-01` | Safe rename/merge trên Windows NTFS — ngÄƒn data loss do case-insensitive path collision |
+| `core/ops/scripts/utils/db_hygiene_sweep.py` | `RULE-ARCH-03` | OMA Watchdog lÃ m sáº¡ch Data Zone |
+| `vault/archives/` | `RULE-ARCH-01` | [GLACIER] Tráº¡m lÆ°u trá»¯ dá»¯ liá»‡u nén/bã rác |
+| `core/bridge/*.py` | N/A | Fix rò rá»‰ cáº¥u trúc: Clean hardcode `system/` to `core/` |
+| `core/config/config.json` | `RULE-ARCH-01` | Quy hoáº¡ch cáº¥u trúc: Di dá»i táº­p trung cáº¥u hÃ¬nh ra khá»i khu logic `core/ops/scripts/` |
+=======
 | `core/ops/scripts/utils/safe_fs.py` | `RULE-FS-01` | Safe rename/merge trÃªn Windows NTFS — ngÄƒn data loss do case-insensitive path collision |
 | `core/ops/scripts/utils/db_hygiene_sweep.py` | `RULE-ARCH-03` | OMA Watchdog lÃ m sáº¡ch Data Zone |
 | `vault/archives/` | `RULE-ARCH-01` | [GLACIER] Tráº¡m lÆ°u trá»¯ dá»¯ liá»‡u nÃ©n/bÃ£ rÃ¡c |
 | `core/bridge/*.py` | N/A | Fix rÃ² rá»‰ cáº¥u trÃºc: Clean hardcode `system/` to `core/` |
 | `core/config/config.json` | `RULE-ARCH-01` | Quy hoáº¡ch cáº¥u trÃºc: Di dá»i táº­p trung cáº¥u hÃ¬nh ra khá»i khu logic `core/ops/scripts/` |
+>>>>>>> origin/main
 | `core/daemons/daemon_utils.py` | N/A | Fix system structure leak: Change hardcode `system/ops/secrets/MASTER.env` to `core/` |
 | `core/daemons/_DIR_IDENTITY.md` | N/A | Äá»‹nh danh Ä‘áº§y Ä‘á»§ 7 Daemons (Bao hÃ m cáº£ OSF Firewall) báº±ng song ngá»¯ |
 

@@ -3435,7 +3435,7 @@ node http-server.mjs 2>&1 | tee server.log
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see LICENSE.
 
 ## Acknowledgments
 

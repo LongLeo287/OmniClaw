@@ -1,4 +1,4 @@
-﻿---
+---
 id: manager-rules
 type: document
 owner: OHD
@@ -11,7 +11,7 @@ healed_at: 2026-04-02T20:29:06.569954
 # Applied to: all Department Heads
 
 RULE MGR-01: BRIEF IS MANDATORY
-  A dept brief must be written to brain/memory/corp_memory/daily_briefs/<dept>.md
+  A dept brief must be written to brain/memory/system_memory/daily_briefs/<dept>.md
   after every active work cycle. No exceptions.
   Missing 2 consecutive briefs â†’ L2 escalation triggered automatically.
 

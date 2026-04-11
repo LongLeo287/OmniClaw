@@ -1,4 +1,4 @@
-﻿---
+---
 id: knowledge-index
 type: document
 owner: OHD
@@ -121,8 +121,8 @@ healed_at: 2026-04-02T20:29:01.465856
 ### Learning Loop (Cycle 8 Retro)
 | File | Type |
 |------|------|
-| brain/brain/memory/corp_memory/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective ï¿½ 5 patterns, 5 lessons, 3 proposals |
-| brain/brain/memory/corp_memory/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
+| brain/brain/memory/system_memory/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective ï¿½ 5 patterns, 5 lessons, 3 proposals |
+| brain/brain/memory/system_memory/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
 | corp/memory/global/decisions_log.md | +4 LESSON_LEARNED entries (permanent) |
 
 ---

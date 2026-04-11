@@ -287,7 +287,7 @@ Tento projekt je licencován pod **GNU Affero General Public License v3.0** (AGP
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Všechna práva vyhrazena.
 
-Úplné podrobnosti najdete v souboru [LICENSE](LICENSE).
+Úplné podrobnosti najdete v souboru LICENSE.
 
 **Co to znamená:**
 
@@ -296,7 +296,7 @@ Copyright (C) 2025 Alex Newman (@thedotmack). Všechna práva vyhrazena.
 - Odvozená díla musí být také licencována pod AGPL-3.0
 - Pro tento software neexistuje ŽÁDNÁ ZÁRUKA
 
-**Poznámka k Ragtime**: Adresář `ragtime/` je licencován samostatně pod **PolyForm Noncommercial License 1.0.0**. Podrobnosti najdete v [ragtime/LICENSE](ragtime/LICENSE).
+**Poznámka k Ragtime**: Adresář `ragtime/` je licencován samostatně pod **PolyForm Noncommercial License 1.0.0**. Podrobnosti najdete v ragtime/LICENSE.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for bridge_commander_agent
+# Knowledge Dump for bridge_commander_agent
 
 ## File: agent.md
 ```

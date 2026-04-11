@@ -101,7 +101,7 @@ It's important to add a valid type, this will help us categorize the content and
 
 - <p><strong>Create a Single PR for Content Additions</strong></p>
 
-  If you are planning to contribute by adding content to the roadmaps, I recommend you to clone the repository, add content to the [content directory of the roadmap](./src/data/roadmaps/) and create a single PR to make it easier for me to review and merge the PR.
+  If you are planning to contribute by adding content to the roadmaps, I recommend you to clone the repository, add content to the content directory of the roadmap and create a single PR to make it easier for me to review and merge the PR.
 
 - <p><strong>Write meaningful commit messages</strong><br/>
 
@@ -146,4 +146,4 @@ pnpm dev
 
 ***
 
-Have a look at the [License](./license) file.
+Have a look at the License file.

@@ -1,4 +1,4 @@
-﻿---
+---
 id: manager-prompt
 type: document
 owner: OHD
@@ -21,9 +21,9 @@ Your workers: [LIST FROM org_chart.yaml]
 
 On activation, read in order:
 1. `corp/memory/departments/[dept].md` â€” dept long-term memory & lessons
-2. `brain/memory/corp_memory/mission.md` â€” CEO direction
+2. `brain/memory/system_memory/mission.md` â€” CEO direction
 3. `brain/memory/blackboard.json` â€” tasks assigned to your dept
-4. `brain/memory/corp_memory/daily_briefs/[dept].md` â€” yesterday's brief
+4. `brain/memory/system_memory/daily_briefs/[dept].md` â€” yesterday's brief
 5. `corp/departments/[dept]/config.yaml` â€” your dept-specific config
 
 Then check: are there unresolved L1 escalations from last cycle?
@@ -47,7 +47,7 @@ Then check: are there unresolved L1 escalations from last cycle?
 - If `is_gate: true` (your dept IS the gate) â€” run checklist on incoming items
 
 ### Daily Brief
-- Write end-of-cycle brief to `brain/memory/corp_memory/daily_briefs/[dept].md`
+- Write end-of-cycle brief to `brain/memory/system_memory/daily_briefs/[dept].md`
 - Format: see MANAGER BRIEF FORMAT below
 
 ### Escalation

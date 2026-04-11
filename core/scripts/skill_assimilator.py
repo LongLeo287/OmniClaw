@@ -48,6 +48,35 @@ def generate_schema_json(folder_name):
     }
 
 
+def canonicalize_skill_id(raw_id):
+    if raw_id is None:
+        return None
+
+    canonical_id = str(raw_id).strip()
+    for suffix in ("_agent_skill", "_skill"):
+        if canonical_id.endswith(suffix):
+            canonical_id = canonical_id[: -len(suffix)]
+            break
+
+    return canonical_id or None
+
+
+def normalize_schema_data(schema_data, skill_id, skill_md_path):
+    normalized = dict(schema_data)
+
+    raw_id = normalized.get("id")
+    normalized_id = canonicalize_skill_id(raw_id) or skill_id
+    normalized["id"] = normalized_id
+
+    if "path" not in normalized or not normalized.get("path"):
+        normalized["path"] = f"$OMNICLAW_ROOT/ecosystem/skills/{skill_id}/SKILL.md"
+
+    if "name" not in normalized or not normalized.get("name"):
+        normalized["name"] = skill_id.replace("_", " ").title()
+
+    return normalized
+
+
 def repair_skill_metadata(skill_id, skill_dir, schema_path, skill_md_path, readme_path):
     human_name = skill_id.replace("_", " ").title()
     repaired = []
@@ -108,13 +137,14 @@ def process_skills(repair_mode=False):
                 try:
                     with open(schema_path, "r", encoding="utf-8") as f:
                         schema_data = json.load(f)
+                    schema_data = normalize_schema_data(schema_data, skill_id, skill_md_path)
                 except Exception as e:
                     issues.append(f"invalid schema.json: {e}")
 
             if schema_data:
                 if schema_data.get("id") != skill_id:
                     issues.append(f"schema id mismatch: expected '{skill_id}', got '{schema_data.get('id')}'")
-                if "path" not in schema_data:
+                if "path" not in schema_data or not schema_data.get("path"):
                     issues.append("schema.json missing 'path'")
 
             if issues:

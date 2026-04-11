@@ -1,4 +1,4 @@
-﻿---
+---
 id: rule-dynamic-01-no-hardcode
 type: document
 owner: SYSTEM

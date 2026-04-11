@@ -27,7 +27,7 @@ Two skills are implemented in this repo as part of the **Command → Agent → S
 
 ## Weather SVG Creator (Skill)
 
-**File**: [`.claude/skills/weather-svg-creator/SKILL.md`](../../../.claude/skills/supabase-postgres-best-practices/SKILL.md)
+**File**: `.claude/skills/weather-svg-creator/SKILL.md`
 
 ```yaml
 ---
@@ -67,7 +67,7 @@ This is a **skill** — invoked directly by the command via the Skill tool. It r
 
 ## Weather Fetcher (Agent Skill)
 
-**File**: [`.claude/skills/weather-fetcher/SKILL.md`](../../../.claude/skills/supabase-postgres-best-practices/SKILL.md)
+**File**: `.claude/skills/weather-fetcher/SKILL.md`
 
 ```yaml
 ---
@@ -125,4 +125,6 @@ Ask Claude to create one for you — it will generate the markdown file with YAM
 # My Skill
 
 Instructions for what the skill does.
+```
+
 ```

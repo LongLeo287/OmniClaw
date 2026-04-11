@@ -170,6 +170,6 @@ python -m pytest tests/ -q
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see LICENSE.
 
 Built by [Nous Research](https://nousresearch.com).

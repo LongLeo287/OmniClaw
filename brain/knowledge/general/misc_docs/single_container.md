@@ -14,7 +14,7 @@ All-in-one container setup. **Simpler than Docker Compose, but less flexible.**
 
 > **Alternative Registry:** Images available on both Docker Hub (`lfnovo/open_notebook:v1-latest-single`) and GitHub Container Registry (`ghcr.io/lfnovo/open-notebook:v1-latest-single`).
 
-> **Note**: While this is a simple way to get started, we recommend [Docker Compose](docker-compose.md) for most users. Docker Compose is more flexible and will make it easier if we add more services to the setup in the future. This single-container option is best for platforms that specifically require it (PikaPods, Railway, etc.).
+> **Note**: While this is a simple way to get started, we recommend Docker Compose for most users. Docker Compose is more flexible and will make it easier if we add more services to the setup in the future. This single-container option is best for platforms that specifically require it (PikaPods, Railway, etc.).
 
 ## Prerequisites
 
@@ -142,4 +142,4 @@ Same as Docker Compose setup - just access via `http://localhost:8502` (local) o
 1. Go to **Settings → API Keys** to add your AI provider credential
 2. **Test Connection** and **Discover Models**
 
-See [Docker Compose](docker-compose.md) for full post-install guide.
+See Docker Compose for full post-install guide.

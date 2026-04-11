@@ -286,7 +286,7 @@ Bu proje **GNU Affero General Public License v3.0** (AGPL-3.0) altında lisansla
 
 Telif Hakkı (C) 2025 Alex Newman (@thedotmack). Tüm hakları saklıdır.
 
-Tam detaylar için [LICENSE](LICENSE) dosyasına bakın.
+Tam detaylar için LICENSE dosyasına bakın.
 
 **Bu Ne Anlama Gelir:**
 
@@ -295,7 +295,7 @@ Tam detaylar için [LICENSE](LICENSE) dosyasına bakın.
 - Türev çalışmalar da AGPL-3.0 altında lisanslanmalıdır
 - Bu yazılım için HİÇBİR GARANTİ yoktur
 
-**Ragtime Hakkında Not**: `ragtime/` dizini ayrı olarak **PolyForm Noncommercial License 1.0.0** altında lisanslanmıştır. Detaylar için [ragtime/LICENSE](ragtime/LICENSE) dosyasına bakın.
+**Ragtime Hakkında Not**: `ragtime/` dizini ayrı olarak **PolyForm Noncommercial License 1.0.0** altında lisanslanmıştır. Detaylar için ragtime/LICENSE dosyasına bakın.
 
 ---
 

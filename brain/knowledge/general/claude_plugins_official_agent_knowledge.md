@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for claude_plugins_official_agent
+# Knowledge Dump for claude_plugins_official_agent
 
 ## File: agent.md
 ```

@@ -320,5 +320,5 @@ mkdir -p ~/my_tiktoken_cache
 If you encounter issues not covered in this guide:
 
 1. Check the [GitHub Issues](https://github.com/HKUDS/LightRAG/issues)
-2. Review the [project documentation](../../../README.md)
+2. Review the project documentation
 3. Create a new issue with your offline deployment details

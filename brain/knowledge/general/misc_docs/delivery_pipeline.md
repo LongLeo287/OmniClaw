@@ -1,4 +1,4 @@
-﻿---
+---
 id: delivery-pipeline
 type: document
 owner: OHD
@@ -144,7 +144,7 @@ deliverables/
 
 **Invoice Generation:**
 ```
-brain/memory/corp_memory/invoices/INVOICE-<YYYYMMDD>-<PROJECT-ID>.md
+brain/memory/system_memory/invoices/INVOICE-<YYYYMMDD>-<PROJECT-ID>.md
 
 Content:
   - Project summary
@@ -156,7 +156,7 @@ Content:
 ```
 
 **Payment Status Tracking:**
-- `brain/memory/corp_memory/invoices/_payment_tracker.json`
+- `brain/memory/system_memory/invoices/_payment_tracker.json`
 - Reminder: +7 days unpaid â†’ follow up
 - Reminder: +14 days â†’ escalate
 
@@ -227,6 +227,6 @@ PAID â†’ CLOSED
 ---
 
 *Projects directory: `brain/memory/projects/`*
-*Invoices: `brain/memory/corp_memory/invoices/`*
+*Invoices: `brain/memory/system_memory/invoices/`*
 *Knowledge base: `knowledge/project_learnings/`*
 

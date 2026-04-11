@@ -1,4 +1,4 @@
-﻿---
+---
 id: proposal-flow
 type: document
 owner: OHD
@@ -12,7 +12,7 @@ description: OmniClaw Proposal handling workflow â€” tá»« proposal creat
 ---
 # ops/workflows/proposal-flow.md
 # Version: 1.0 | 2026-03-24 | Owner: strategy + C-Suite
-# Purpose: Xá»­ lÃ½ 5 loáº¡i proposals Ä‘ang pending + standard flow
+# Purpose: Xá»­ lý 5 loáº¡i proposals Ä‘ang pending + standard flow
 
 ---
 
@@ -33,7 +33,7 @@ description: OmniClaw Proposal handling workflow â€” tá»« proposal creat
 ```
 STEP 1: CREATION (Agent â†’ Proposal file)
   Agent writes proposal to:
-  brain/brain/memory/corp_memory/proposals/PROP_<date>_<topic>.md
+  brain/brain/memory/system_memory/proposals/PROP_<date>_<topic>.md
   Format required:
     ## PROPOSAL: <title>
     Owner: <agent>
@@ -93,7 +93,7 @@ STEP 5: ARCHIVE
 | PROP_2026-03-23_OBSERVABILITY_LAYER | rd + engineering | STRATEGIC | CEO: APPROVE or DEFER |
 | PROP_2026-03-23_4C_VERIFICATION_GATES | security | STRATEGIC | CEO: APPROVE or DEFER |
 
-**CEO Action:** Äá»c tá»«ng file trong `brain/brain/memory/corp_memory/proposals/` vÃ  reply `## CEO DECISION`.
+**CEO Action:** Äá»c tá»«ng file trong `brain/brain/memory/system_memory/proposals/` vÃ  reply `## CEO DECISION`.
 
 ---
 

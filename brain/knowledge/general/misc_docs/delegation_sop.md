@@ -20,7 +20,7 @@ Standard Operating Procedure for delegating tasks from Architect (Antigravity) t
 
 1. **Research:** Antigravity analyzes links, images, and files in Vietnamese.
 2. **Planning:** Brainstorming and Planning conducted in **<!--LANG-->Vietnamese<!--/LANG-->**. Technical plan files written in **<!--LANG-->Vietnamese<!--/LANG-->**.
-3. **Decomposition & Anchoring:** Create [task.md](../../../vault/archives/archive_legacy/openapi-generator/samples/openapi3/client/petstore/python/docs/Task.md) (in English). 
+3. **Decomposition & Anchoring:** Create task.md (in English). 
    - **MANDATORY:** All relevant Rules, Skills, and Plugins **MUST** be linked in `task.md` for context anchoring.
 4. **Automated Handoff (NEW):** 
    - Antigravity **MUST NOT** ask the user to manually run Claude Code.

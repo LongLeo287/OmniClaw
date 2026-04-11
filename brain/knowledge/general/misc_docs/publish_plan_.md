@@ -1,4 +1,4 @@
-﻿---
+---
 id: ki-publish-plan-2026-03-24
 type: document
 owner: OHD

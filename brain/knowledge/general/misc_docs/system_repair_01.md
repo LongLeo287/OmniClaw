@@ -24,7 +24,7 @@ Used by `system-repair-agent` as primary reference for repair runs.
 
 ### FP-01 — UTF-8 Mojibake (Double Encoding)
 
-**Symptom:** Files display garbled text like `Ã¢â‚¬â€`, `Ã¢â€â‚¬`, `Ã¢â€"Âº`
+**Symptom:** Files display garbled text like `ââ‚¬â€`, `ââ€â‚¬`, `ââ€"º`
 **Root cause:** UTF-8 bytes read as CP1252/Latin-1, then re-encoded as UTF-8
 **Affected files:** `.md`, `.ps1`, `.py`, `.yaml`, `.yml`
 **Detection:** `ftfy.fix_text()` returns different content than input
@@ -34,7 +34,7 @@ Used by `system-repair-agent` as primary reference for repair runs.
 
 **Example:**
 ```
-Corrupted:  Ã¢â‚¬â€
+Corrupted:  ââ‚¬â€
 Fixed:      —
 ```
 

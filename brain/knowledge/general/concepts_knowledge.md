@@ -19,11 +19,11 @@ OpenClaw uses a single agent workspace directory (`agents.defaults.workspace`) a
 
 Recommended: use `openclaw setup` to create `~/.openclaw/openclaw.json` if missing and initialize the workspace files.
 
-Full workspace layout + backup guide: [Agent workspace](/concepts/agent-workspace)
+Full workspace layout + backup guide: Agent workspace
 
 If `agents.defaults.sandbox` is enabled, non-main sessions can override this with
 per-session workspaces under `agents.defaults.sandbox.workspaceRoot` (see
-[Gateway configuration](/gateway/configuration)).
+Gateway configuration).
 
 ## Bootstrap files (injected)
 
@@ -68,7 +68,7 @@ OpenClaw loads skills from these locations (highest precedence first):
 - Bundled (shipped with the install)
 - Extra skill folders: `skills.load.extraDirs`
 
-Skills can be gated by config/env (see `skills` in [Gateway configuration](/gateway/configuration)).
+Skills can be gated by config/env (see `skills` in Gateway configuration).
 
 ## Runtime boundaries
 
@@ -95,7 +95,7 @@ message at the next model boundary instead.
 
 When queue mode is `followup` or `collect`, inbound messages are held until the
 current turn ends, then a new agent turn starts with the queued payloads. See
-[Queue](/concepts/queue) for mode + debounce/cap behavior.
+Queue for mode + debounce/cap behavior.
 
 Block streaming sends completed assistant blocks as soon as they finish; it is
 **off by default** (`agents.defaults.blockStreamingDefault: "off"`).
@@ -107,7 +107,7 @@ single-line spam (idle-based merging before send). Non-Telegram channels require
 explicit `*.blockStreaming: true` to enable block replies.
 Verbose tool summaries are emitted at tool start (no debounce); Control UI
 streams tool output via agent events when available.
-More details: [Streaming + chunking](/concepts/streaming).
+More details: Streaming + chunking.
 
 ## Model refs
 
@@ -130,7 +130,7 @@ At minimum, set:
 
 ---
 
-_Next: [Group Chats](/channels/group-messages)_ 🦞
+_Next: Group Chats_ 🦞
 
 ```
 
@@ -185,7 +185,7 @@ wired end-to-end.
 - Runs are serialized per session key (session lane) and optionally through a global lane.
 - This prevents tool/session races and keeps session history consistent.
 - Messaging channels can choose queue modes (collect/steer/followup) that feed this lane system.
-  See [Command Queue](/concepts/queue).
+  See Command Queue.
 
 ## Session + workspace preparation
 
@@ -212,7 +212,7 @@ OpenClaw has two hook systems:
   Use this to add/remove bootstrap context files.
 - **Command hooks**: `/new`, `/reset`, `/stop`, and other command events (see Hooks doc).
 
-See [Hooks](/automation/hooks) for setup and examples.
+See Hooks for setup and examples.
 
 ### Plugin hooks (agent + gateway lifecycle)
 
@@ -240,7 +240,7 @@ Hook decision rules for outbound/tool guards:
 - `message_sending`: `{ cancel: true }` is terminal and stops lower-priority handlers.
 - `message_sending`: `{ cancel: false }` is a no-op and does not clear a prior cancel.
 
-See [Plugin hooks](/plugins/architecture#provider-runtime-hooks) for the hook API and registration details.
+See Plugin hooks for the hook API and registration details.
 
 ## Streaming + partial replies
 
@@ -321,7 +321,7 @@ sessions.
 **Important:** the workspace is the **default cwd**, not a hard sandbox. Tools
 resolve relative paths against the workspace, but absolute paths can still reach
 elsewhere on the host unless sandboxing is enabled. If you need isolation, use
-[`agents.defaults.sandbox`](/gateway/sandboxing) (and/or per‑agent sandbox config).
+`agents.defaults.sandbox` (and/or per‑agent sandbox config).
 When sandboxing is enabled and `workspaceAccess` is not `"rw"`, tools operate
 inside a sandbox workspace under `~/.openclaw/sandboxes`, not your host workspace.
 
@@ -411,7 +411,7 @@ These are the standard files OpenClaw expects inside the workspace:
   - Curated long-term memory.
   - Only load in the main, private session (not shared/group contexts).
 
-See [Memory](/concepts/memory) for the workflow and automatic memory flush.
+See Memory for the workflow and automatic memory flush.
 
 - `skills/` (optional)
   - Workspace-specific skills.
@@ -537,7 +537,7 @@ Suggested `.gitignore` starter:
 ## Advanced notes
 
 - Multi-agent routing can use different workspaces per agent. See
-  [Channel routing](/channels/channel-routing) for routing configuration.
+  Channel routing for routing configuration.
 - If `agents.defaults.sandbox` is enabled, non-main sessions can use per-session sandbox
   workspaces under `agents.defaults.sandbox.workspaceRoot`.
 
@@ -664,8 +664,8 @@ sequenceDiagram
 - Gateway auth (`gateway.auth.*`) still applies to **all** connections, local or
   remote.
 
-Details: [Gateway protocol](/gateway/protocol), [Pairing](/channels/pairing),
-[Security](/gateway/security).
+Details: Gateway protocol, Pairing,
+Security.
 
 ## Protocol typing and codegen
 
@@ -744,7 +744,7 @@ exceeded`.
 
 <Info>
 Before compacting, OpenClaw automatically reminds the agent to save important
-notes to [memory](/concepts/memory) files. This prevents context loss.
+notes to memory files. This prevents context loss.
 </Info>
 
 Use the `agents.defaults.compaction` setting in your `openclaw.json` to configure compaction behavior (mode, target tokens, etc.).
@@ -810,7 +810,7 @@ You’ll see:
 - `/status` showing `🧹 Compactions: <count>`
 
 Before compaction, OpenClaw can run a **silent memory flush** turn to store
-durable notes to disk. See [Memory](/concepts/memory) for details and config.
+durable notes to disk. See Memory for details and config.
 
 ## Manual compaction
 
@@ -866,24 +866,24 @@ context...") at the start of each compaction run.
 | **Saved?**       | Yes (in session transcript)   | No (in-memory only, per request) |
 | **Scope**        | Entire conversation           | Tool results only                |
 
-[Session pruning](/concepts/session-pruning) is a lighter-weight complement that
+Session pruning is a lighter-weight complement that
 trims tool output without summarizing.
 
 ## Troubleshooting
 
 **Compacting too often?** The model's context window may be small, or tool
 outputs may be large. Try enabling
-[session pruning](/concepts/session-pruning).
+session pruning.
 
 **Context feels stale after compaction?** Use `/compact Focus on <topic>` to
-guide the summary, or enable the [memory flush](/concepts/memory) so notes
+guide the summary, or enable the memory flush so notes
 survive.
 
 **Need a clean slate?** `/new` starts a fresh session without compacting.
 
 For advanced configuration (reserve tokens, identifier preservation, custom
 context engines, OpenAI server-side compaction), see the
-[Session Management Deep Dive](/reference/session-management-compaction).
+Session Management Deep Dive.
 
 ## Related
 
@@ -921,7 +921,7 @@ Context is _not the same thing_ as “memory”: memory can be stored on disk an
 - `/usage tokens` → append per-reply usage footer to normal replies.
 - `/compact` → summarize older history into a compact entry to free window space.
 
-See also: [Slash commands](/tools/slash-commands), [Token use & costs](/reference/token-use), [Compaction](/concepts/compaction).
+See also: Slash commands, Token use & costs, Compaction.
 
 ## Example output
 
@@ -992,7 +992,7 @@ The system prompt is **OpenClaw-owned** and rebuilt each run. It includes:
 - Runtime metadata (host/OS/model/thinking).
 - Injected workspace bootstrap files under **Project Context**.
 
-Full breakdown: [System Prompt](/concepts/system-prompt).
+Full breakdown: System Prompt.
 
 ## Injected workspace files (Project Context)
 
@@ -1035,7 +1035,7 @@ Slash commands are handled by the Gateway. There are a few different behaviors:
   - Inline directives in a normal message act as per-message hints.
 - **Inline shortcuts** (allowlisted senders only): certain `/...` tokens inside a normal message can run immediately (example: “hey /status”), and are stripped before the model sees the remaining text.
 
-Details: [Slash commands](/tools/slash-commands).
+Details: Slash commands.
 
 ## Sessions, compaction, and pruning (what persists)
 
@@ -1045,7 +1045,7 @@ What persists across messages depends on the mechanism:
 - **Compaction** persists a summary into the transcript and keeps recent messages intact.
 - **Pruning** removes old tool results from the _in-memory_ prompt for a run, but does not rewrite the transcript.
 
-Docs: [Session](/concepts/session), [Compaction](/concepts/compaction), [Session pruning](/concepts/session-pruning).
+Docs: Session, Compaction, Session pruning.
 
 By default, OpenClaw uses the built-in `legacy` context engine for assembly and
 compaction. If you install a plugin that provides `kind: "context-engine"` and
@@ -1053,7 +1053,7 @@ select it with `plugins.slots.contextEngine`, OpenClaw delegates context
 assembly, `/compact`, and related subagent context lifecycle hooks to that
 engine instead. `ownsCompaction: false` does not auto-fallback to the legacy
 engine; the active engine must still implement `compact()` correctly. See
-[Context Engine](/concepts/context-engine) for the full
+Context Engine for the full
 pluggable interface, lifecycle hooks, and configuration.
 
 ## What `/context` actually reports
@@ -1349,8 +1349,8 @@ OpenClaw resolves when it needs a context engine.
 - For development, use `openclaw plugins install -l ./my-engine` to link a
   local plugin directory without copying.
 
-See also: [Compaction](/concepts/compaction), [Context](/concepts/context),
-[Plugins](/tools/plugin), [Plugin manifest](/plugins/manifest).
+See also: Compaction, Context,
+Plugins, Plugin manifest.
 
 ## Related
 
@@ -1370,7 +1370,7 @@ status: active
 
 Goal: run OpenClaw as a **named delegate** — an agent with its own identity that acts "on behalf of" people in an organization. The agent never impersonates a human. It sends, reads, and schedules under its own account with explicit delegation permissions.
 
-This extends [Multi-Agent Routing](/concepts/multi-agent) from personal use into organizational deployments.
+This extends Multi-Agent Routing from personal use into organizational deployments.
 
 ## What is a delegate?
 
@@ -1430,7 +1430,7 @@ The delegate operates **autonomously** on a schedule, executing standing orders 
 - Automated social media publishing via approved content queues.
 - Inbox triage with auto-categorization and flagging.
 
-This tier combines Tier 2 permissions with [Cron Jobs](/automation/cron-jobs) and [Standing Orders](/automation/standing-orders).
+This tier combines Tier 2 permissions with Cron Jobs and Standing Orders.
 
 > **Security warning**: Tier 3 requires careful configuration of hard blocks — actions the agent must never take regardless of instruction. Complete the prerequisites below before granting any identity provider permissions.
 
@@ -1479,7 +1479,7 @@ For high-security deployments, sandbox the delegate agent so it cannot access th
 }
 ```
 
-See [Sandboxing](/gateway/sandboxing) and [Multi-Agent Sandbox & Tools](/tools/multi-agent-sandbox-tools).
+See Sandboxing and Multi-Agent Sandbox & Tools.
 
 ### Audit trail
 
@@ -1562,7 +1562,7 @@ The service account impersonates the delegate user (not the principal), preservi
 
 ### 3. Bind the delegate to channels
 
-Route inbound messages to the delegate agent using [Multi-Agent Routing](/concepts/multi-agent) bindings:
+Route inbound messages to the delegate agent using Multi-Agent Routing bindings:
 
 ```json5
 {
@@ -1604,7 +1604,7 @@ Copy or create auth profiles for the delegate's `agentDir`:
 ~/.openclaw/agents/delegate/agent/auth-profiles.json
 ```
 
-Never share the main agent's `agentDir` with the delegate. See [Multi-Agent Routing](/concepts/multi-agent) for auth isolation details.
+Never share the main agent's `agentDir` with the delegate. See Multi-Agent Routing for auth isolation details.
 
 ## Example: organizational assistant
 
@@ -1640,7 +1640,7 @@ A complete delegate configuration for an organizational assistant that handles e
 }
 ```
 
-The delegate's `AGENTS.md` defines its autonomous authority — what it may do without asking, what requires approval, and what is forbidden. [Cron Jobs](/automation/cron-jobs) drive its daily schedule.
+The delegate's `AGENTS.md` defines its autonomous authority — what it may do without asking, what requires approval, and what is forbidden. Cron Jobs drive its daily schedule.
 
 If you grant `sessions_history`, remember it is a bounded, safety-filtered
 recall view. OpenClaw redacts credential/token-like text, truncates long
@@ -1660,7 +1660,7 @@ The delegate model works for any small organization:
 1. **Create one delegate agent** per organization.
 2. **Harden first** — tool restrictions, sandbox, hard blocks, audit trail.
 3. **Grant scoped permissions** via the identity provider (least privilege).
-4. **Define [standing orders](/automation/standing-orders)** for autonomous operations.
+4. **Define standing orders** for autonomous operations.
 5. **Schedule cron jobs** for recurring tasks.
 6. **Review and adjust** the capability tier as trust builds.
 
@@ -1884,7 +1884,7 @@ All settings live under `plugins.entries.memory-core.config.dreaming`.
 Phase policy, thresholds, and storage behavior are internal implementation
 details (not user-facing config).
 
-See [Memory configuration reference](/reference/memory-config#dreaming-experimental)
+See Memory configuration reference
 for the full key list.
 
 ## Dreams UI
@@ -2082,7 +2082,7 @@ channels:
   chunks; the renderer reopens styles inside each chunk.
 
 If you need more on chunking behavior across channels, see
-[Streaming + chunking](/concepts/streaming).
+Streaming + chunking.
 
 ## Link policy
 
@@ -2178,7 +2178,7 @@ It does not replace the active memory plugin. The active memory plugin still
 owns recall, promotion, and dreaming. `memory-wiki` adds a provenance-rich
 knowledge layer beside it.
 
-See [Memory Wiki](/plugins/memory-wiki).
+See Memory Wiki.
 
 ## Memory search
 
@@ -2194,7 +2194,7 @@ enabled automatically.
 </Info>
 
 For details on how search works, tuning options, and provider setup, see
-[Memory Search](/concepts/memory-search).
+Memory Search.
 
 ## Memory backends
 
@@ -2224,7 +2224,7 @@ dashboards, bridge mode, and Obsidian-friendly workflows.
 
 ## Automatic memory flush
 
-Before [compaction](/concepts/compaction) summarizes your conversation, OpenClaw
+Before compaction summarizes your conversation, OpenClaw
 runs a silent turn that reminds the agent to save important context to memory
 files. This is on by default -- you do not need to configure anything.
 
@@ -2251,7 +2251,7 @@ It is designed to keep long-term memory high signal:
   for human review.
 
 For phase behavior, scoring signals, and Dream Diary details, see
-[Dreaming (experimental)](/concepts/dreaming).
+Dreaming (experimental).
 
 ## Grounded backfill and live promotion
 
@@ -2375,7 +2375,7 @@ OpenClaw indexes `MEMORY.md` and `memory/*.md` into chunks (~400 tokens with
 <Info>
 You can also index Markdown files outside the workspace with
 `memorySearch.extraPaths`. See the
-[configuration reference](/reference/memory-config#additional-memory-paths).
+configuration reference.
 </Info>
 
 ## When to use
@@ -2387,10 +2387,10 @@ The builtin engine is the right choice for most users:
 - Supports all embedding providers.
 - Hybrid search combines the best of both retrieval approaches.
 
-Consider switching to [QMD](/concepts/memory-qmd) if you need reranking, query
+Consider switching to QMD if you need reranking, query
 expansion, or want to index directories outside the workspace.
 
-Consider [Honcho](/concepts/memory-honcho) if you want cross-session memory with
+Consider Honcho if you want cross-session memory with
 automatic user modeling.
 
 ## Troubleshooting
@@ -2409,7 +2409,7 @@ automatically. Check logs for the specific load error.
 For embedding provider setup, hybrid search tuning (weights, MMR, temporal
 decay), batch indexing, multimodal memory, sqlite-vec, extra paths, and all
 other config knobs, see the
-[Memory configuration reference](/reference/memory-config).
+Memory configuration reference.
 
 ```
 
@@ -2708,7 +2708,7 @@ Choose QMD when you need:
 - To recall past session conversations.
 - Fully local search with no API keys.
 
-For simpler setups, the [builtin engine](/concepts/memory-builtin) works well
+For simpler setups, the builtin engine works well
 with no extra dependencies.
 
 ## Troubleshooting
@@ -2736,7 +2736,7 @@ cycle-safe traversal or explicit exclusion controls.
 
 For the full config surface (`memory.qmd.*`), search modes, update intervals,
 scope rules, and all other knobs, see the
-[Memory configuration reference](/reference/memory-config).
+Memory configuration reference.
 
 ```
 
@@ -2859,7 +2859,7 @@ different daily notes.
 
 With Gemini Embedding 2, you can index images and audio files alongside
 Markdown. Search queries remain text, but they match against visual and audio
-content. See the [Memory configuration reference](/reference/memory-config) for
+content. See the Memory configuration reference for
 setup.
 
 ## Session memory search
@@ -2867,7 +2867,7 @@ setup.
 You can optionally index session transcripts so `memory_search` can recall
 earlier conversations. This is opt-in via
 `memorySearch.experimental.sessionMemory`. See the
-[configuration reference](/reference/memory-config) for details.
+configuration reference for details.
 
 ## Troubleshooting
 
@@ -2917,7 +2917,7 @@ Key knobs live in configuration:
 - `agents.defaults.*` for block streaming and chunking defaults.
 - Channel overrides (`channels.whatsapp.*`, `channels.telegram.*`, etc.) for caps and streaming toggles.
 
-See [Configuration](/gateway/configuration) for full schema.
+See Configuration for full schema.
 
 ## Inbound dedupe
 
@@ -2966,7 +2966,7 @@ synced back to every client. Recommendation: use one primary device for long
 conversations to avoid divergent context. The Control UI and TUI always show the
 gateway-backed session transcript, so they are the source of truth.
 
-Details: [Session management](/concepts/session).
+Details: Session management.
 
 ## Inbound bodies and history context
 
@@ -3005,7 +3005,7 @@ current run, or collected for a followup turn.
 - Configure via `messages.queue` (and `messages.queue.byChannel`).
 - Modes: `interrupt`, `steer`, `followup`, `collect`, plus backlog variants.
 
-Details: [Queueing](/concepts/queue).
+Details: Queueing.
 
 ## Streaming, chunking, and batching
 
@@ -3021,7 +3021,7 @@ Key settings:
 - `agents.defaults.humanDelay` (human-like pause between block replies)
 - Channel overrides: `*.blockStreaming` and `*.blockStreamingCoalesce` (non-Telegram channels require explicit `*.blockStreaming: true`)
 
-Details: [Streaming + chunking](/concepts/streaming).
+Details: Streaming + chunking.
 
 ## Reasoning visibility and tokens
 
@@ -3031,7 +3031,7 @@ OpenClaw can expose or hide model reasoning:
 - Reasoning content still counts toward token usage when produced by the model.
 - Telegram supports reasoning stream into the draft bubble.
 
-Details: [Thinking + reasoning directives](/tools/thinking) and [Token use](/reference/token-use).
+Details: Thinking + reasoning directives and Token use.
 
 ## Prefixes, threading, and replies
 
@@ -3040,7 +3040,7 @@ Outbound message formatting is centralized in `messages`:
 - `messages.responsePrefix`, `channels.<channel>.responsePrefix`, and `channels.<channel>.accounts.<id>.responsePrefix` (outbound prefix cascade), plus `channels.whatsapp.messagePrefix` (WhatsApp inbound prefix)
 - Reply threading via `replyToMode` and per-channel defaults
 
-Details: [Configuration](/gateway/configuration-reference#messages) and channel docs.
+Details: Configuration and channel docs.
 
 ## Related
 
@@ -3060,9 +3060,9 @@ title: "Models CLI"
 
 # Models CLI
 
-See [/concepts/model-failover](/concepts/model-failover) for auth profile
+See /concepts/model-failover for auth profile
 rotation, cooldowns, and how that interacts with fallbacks.
-Quick provider overview + examples: [/concepts/model-providers](/concepts/model-providers).
+Quick provider overview + examples: /concepts/model-providers.
 
 ## How model selection works
 
@@ -3115,7 +3115,7 @@ Model refs are normalized to lowercase. Provider aliases like `z.ai/*` normalize
 to `zai/*`.
 
 Provider configuration examples (including OpenCode) live in
-[/providers/opencode](/providers/opencode).
+/providers/opencode.
 
 ## "Model is not allowed" (and why replies stop)
 
@@ -3180,7 +3180,7 @@ Notes:
      instead falls back to the first configured provider/model to avoid
      surfacing a stale removed-provider default.
 
-Full command behavior/config: [Slash commands](/tools/slash-commands).
+Full command behavior/config: Slash commands.
 
 ## CLI commands
 
@@ -3370,7 +3370,7 @@ OpenClaw uses **auth profiles** for both API keys and OAuth tokens.
 - Config `auth.profiles` / `auth.order` are **metadata + routing only** (no secrets).
 - Legacy import-only OAuth file: `~/.openclaw/credentials/oauth.json` (imported into `auth-profiles.json` on first use).
 
-More detail: [/concepts/oauth](/concepts/oauth)
+More detail: /concepts/oauth
 
 Credential types:
 
@@ -3644,7 +3644,7 @@ That cooldown summary is model-aware:
 
 ## Related config
 
-See [Gateway configuration](/gateway/configuration) for:
+See Gateway configuration for:
 
 - `auth.profiles` / `auth.order`
 - `auth.cooldowns.billingBackoffHours` / `auth.cooldowns.billingBackoffHoursByProvider`
@@ -3654,7 +3654,7 @@ See [Gateway configuration](/gateway/configuration) for:
 - `agents.defaults.model.primary` / `agents.defaults.model.fallbacks`
 - `agents.defaults.imageModel` routing
 
-See [Models](/concepts/models) for the broader model selection and fallback overview.
+See Models for the broader model selection and fallback overview.
 
 ```
 
@@ -3671,7 +3671,7 @@ title: "Model Providers"
 # Model providers
 
 This page covers **LLM/model providers** (not chat channels like WhatsApp/Telegram).
-For model selection rules, see [/concepts/models](/concepts/models).
+For model selection rules, see /concepts/models.
 
 ## Quick rules
 
@@ -3679,7 +3679,7 @@ For model selection rules, see [/concepts/models](/concepts/models).
 - If you set `agents.defaults.models`, it becomes the allowlist.
 - CLI helpers: `openclaw onboard`, `openclaw models list`, `openclaw models set <provider/model>`.
 - Fallback runtime rules, cooldown probes, and session-override persistence are
-  documented in [/concepts/model-failover](/concepts/model-failover).
+  documented in /concepts/model-failover.
 - `models.providers.*.models[].contextWindow` is native model metadata;
   `models.providers.*.models[].contextTokens` is the effective runtime cap.
 - Provider plugins can inject model catalogs via `registerProvider({ catalog })`;
@@ -3710,7 +3710,7 @@ For model selection rules, see [/concepts/models](/concepts/models).
   `onModelSelected`.
 - Note: provider runtime `capabilities` is shared runner metadata (provider
   family, transcript/tooling quirks, transport/cache hints). It is not the
-  same as the [public capability model](/plugins/architecture#public-capability-model)
+  same as the public capability model
   which describes what a plugin registers (text inference, speech, etc.).
 
 ## Plugin-owned provider behavior
@@ -4056,7 +4056,7 @@ OpenClaw ships with the pi‑ai catalog. These providers require **no**
 - Exact upstream routing behind `kilocode/kilo/auto` is owned by Kilo Gateway,
   not hard-coded in OpenClaw.
 
-See [/providers/kilocode](/providers/kilocode) for setup details.
+See /providers/kilocode for setup details.
 
 ### Other bundled provider plugins
 
@@ -4310,7 +4310,7 @@ MiniMax is configured via `models.providers` because it uses custom endpoints:
 - Auth: `MINIMAX_API_KEY` for `minimax`; `MINIMAX_OAUTH_TOKEN` or
   `MINIMAX_API_KEY` for `minimax-portal`
 
-See [/providers/minimax](/providers/minimax) for setup details, model options, and config snippets.
+See /providers/minimax for setup details, model options, and config snippets.
 
 On MiniMax's Anthropic-compatible streaming path, OpenClaw disables thinking by
 default unless you explicitly set it, and `/fast on` rewrites
@@ -4347,7 +4347,7 @@ ollama pull llama3.3
 
 Ollama is detected locally at `http://127.0.0.1:11434` when you opt in with
 `OLLAMA_API_KEY`, and the bundled provider plugin adds Ollama directly to
-`openclaw onboard` and the model picker. See [/providers/ollama](/providers/ollama)
+`openclaw onboard` and the model picker. See /providers/ollama
 for onboarding, cloud/local mode, and custom configuration.
 
 ### vLLM
@@ -4375,7 +4375,7 @@ Then set a model (replace with one of the IDs returned by `/v1/models`):
 }
 ```
 
-See [/providers/vllm](/providers/vllm) for details.
+See /providers/vllm for details.
 
 ### SGLang
 
@@ -4403,7 +4403,7 @@ Then set a model (replace with one of the IDs returned by `/v1/models`):
 }
 ```
 
-See [/providers/sglang](/providers/sglang) for details.
+See /providers/sglang for details.
 
 ### Local proxies (LM Studio, vLLM, LiteLLM, etc.)
 
@@ -4466,7 +4466,7 @@ openclaw models set opencode/claude-opus-4-6
 openclaw models list
 ```
 
-See also: [/gateway/configuration](/gateway/configuration) for full configuration examples.
+See also: /gateway/configuration for full configuration examples.
 
 ## Related
 
@@ -4517,15 +4517,15 @@ Skills are loaded from each agent workspace plus shared roots such as
 `~/.openclaw/skills`, then filtered by the effective agent skill allowlist when
 configured. Use `agents.defaults.skills` for a shared baseline and
 `agents.list[].skills` for per-agent replacement. See
-[Skills: per-agent vs shared](/tools/skills#per-agent-vs-shared-skills) and
-[Skills: agent skill allowlists](/tools/skills#agent-skill-allowlists).
+Skills: per-agent vs shared and
+Skills: agent skill allowlists.
 
 The Gateway can host **one agent** (default) or **many agents** side-by-side.
 
 **Workspace note:** each agent’s workspace is the **default cwd**, not a hard
 sandbox. Relative paths resolve inside the workspace, but absolute paths can
 reach other host locations unless sandboxing is enabled. See
-[Sandboxing](/gateway/sandboxing).
+Sandboxing.
 
 ## Paths (quick map)
 
@@ -4588,7 +4588,7 @@ Create one account per agent on your preferred channels:
 openclaw channels login --channel whatsapp --account work
 ```
 
-See channel guides: [Discord](/channels/discord), [Telegram](/channels/telegram), [WhatsApp](/channels/whatsapp).
+See channel guides: Discord, Telegram, WhatsApp.
 
   </Step>
 
@@ -5080,7 +5080,7 @@ Note: `tools.elevated` is **global** and sender-based; it is not configurable pe
 If you need per-agent boundaries, use `agents.list[].tools` to deny `exec`.
 For group targeting, use `agents.list[].groupChat.mentionPatterns` so @mentions map cleanly to the intended agent.
 
-See [Multi-Agent Sandbox & Tools](/tools/multi-agent-sandbox-tools) for detailed examples.
+See Multi-Agent Sandbox & Tools for detailed examples.
 
 ## Related
 
@@ -5153,9 +5153,9 @@ Legacy import-only file (still supported, but not the main store):
 
 - `~/.openclaw/credentials/oauth.json` (imported into `auth-profiles.json` on first use)
 
-All of the above also respect `$OPENCLAW_STATE_DIR` (state dir override). Full reference: [/gateway/configuration](/gateway/configuration-reference#auth-storage)
+All of the above also respect `$OPENCLAW_STATE_DIR` (state dir override). Full reference: /gateway/configuration
 
-For static secret refs and runtime snapshot activation behavior, see [Secrets Management](/gateway/secrets).
+For static secret refs and runtime snapshot activation behavior, see Secrets Management.
 
 ## Anthropic legacy token compatibility
 
@@ -5172,10 +5172,10 @@ plan](https://support.claude.com/en/articles/11145838-using-claude-code-with-you
 and [Using Claude Code with your Team or Enterprise
 plan](https://support.anthropic.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan/).
 
-If you want other subscription-style options in OpenClaw, see [OpenAI
-Codex](/providers/openai), [Qwen Cloud Coding
-Plan](/providers/qwen), [MiniMax Coding Plan](/providers/minimax),
-and [Z.AI / GLM Coding Plan](/providers/glm).
+If you want other subscription-style options in OpenClaw, see OpenAI
+Codex, Qwen Cloud Coding
+Plan, MiniMax Coding Plan,
+and Z.AI / GLM Coding Plan.
 </Warning>
 
 OpenClaw also exposes Anthropic setup-token as a supported token-auth path, but it now prefers Claude CLI reuse and `claude -p` when available.
@@ -5822,7 +5822,7 @@ Your full history is always preserved.
 ## Why it matters
 
 Long sessions accumulate tool output that inflates the context window. This
-increases cost and can force [compaction](/concepts/compaction) sooner than
+increases cost and can force compaction sooner than
 necessary.
 
 Pruning is especially valuable for **Anthropic prompt caching**. After the cache
@@ -6014,7 +6014,7 @@ the completion origin only identifies a channel OpenClaw can still reuse the
 requester session's stored route (`lastChannel` / `lastTo`) for direct
 delivery.
 
-For ACP-specific behavior, see [ACP Agents](/tools/acp-agents).
+For ACP-specific behavior, see ACP Agents.
 
 ## Visibility
 
@@ -6444,9 +6444,9 @@ Internal hooks can intercept this step via `agent:bootstrap` to mutate or replac
 the injected bootstrap files (for example swapping `SOUL.md` for an alternate persona).
 
 If you want to make the agent sound less generic, start with
-[SOUL.md Personality Guide](/concepts/soul).
+SOUL.md Personality Guide.
 
-To inspect how much each injected file contributes (raw vs injected, truncation, plus tool schema overhead), use `/context list` or `/context detail`. See [Context](/concepts/context).
+To inspect how much each injected file contributes (raw vs injected, truncation, plus tool schema overhead), use `/context list` or `/context detail`. See Context.
 
 ## Time handling
 
@@ -6463,7 +6463,7 @@ Configure with:
 - `agents.defaults.userTimezone`
 - `agents.defaults.timeFormat` (`auto` | `12` | `24`)
 
-See [Date & Time](/date-time) for full behavior details.
+See Date & Time for full behavior details.
 
 ## Skills
 
@@ -6592,7 +6592,7 @@ The system prompt includes:
 
 You can control the prompt format with `agents.defaults.timeFormat` (`auto` | `12` | `24`).
 
-See [Date & Time](/date-time) for the full behavior and examples.
+See Date & Time for the full behavior and examples.
 
 ## Related
 
@@ -6618,7 +6618,7 @@ drive **runtime validation**, **JSON Schema export**, and **Swift codegen** for
 the macOS app. One source of truth; everything else is generated.
 
 If you want the higher-level protocol context, start with
-[Gateway architecture](/concepts/architecture).
+Gateway architecture.
 
 ## Mental model (30 seconds)
 

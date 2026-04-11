@@ -9,7 +9,7 @@ tags: [human-readable, index]
 
 Welcome to the **OmniClaw Core Documentation**. This directory serves as the centralized library for all human-facing guides, architectural overviews, and tutorials for understanding the **V5.0 8-Daemon Operating System**.
 
-[**🇻🇳 Xem Bản Tiếng Việt (Vietnamese)**](README-vn.md)
+[**🇻🇳 Xem    (Vietnamese)**](README-vn.md)
 
 > [!WARNING]
 > This directory is expressly maintained for **Human Engineers & Visitors**. If you are an AI MLLM Agent attempting to read systemic behaviors, governance, or execution rules, you must navigate to the `brain/rules/` directory instead.

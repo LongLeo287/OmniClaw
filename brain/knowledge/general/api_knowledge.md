@@ -20,7 +20,7 @@ Returns: `Agent`
 
 ### Parameter: `AgentOptions`
 
-Extends: [`PoolOptions`](/docs/docs/api/Pool.md#parameter-pooloptions)
+Extends: `PoolOptions`
 
 * **factory** `(origin: URL, opts: Object) => Dispatcher` - Default: `(origin, opts) => new Pool(origin, opts)`
 * **maxOrigins** `number` (optional) - Default: `Infinity` - Limits the total number of origins that can receive requests at a time, throwing an `MaxOriginsReachedError` error when attempting to dispatch when the max is reached. If `Infinity`, no limit is enforced.
@@ -29,11 +29,11 @@ Extends: [`PoolOptions`](/docs/docs/api/Pool.md#parameter-pooloptions)
 
 ### `Agent.closed`
 
-Implements [Client.closed](/docs/docs/api/Client.md#clientclosed)
+Implements Client.closed
 
 ### `Agent.destroyed`
 
-Implements [Client.destroyed](/docs/docs/api/Client.md#clientdestroyed)
+Implements Client.destroyed
 
 ## Instance Methods
 
@@ -47,11 +47,11 @@ Implements [`Dispatcher.destroy([error, callback])`](/docs/docs/api/Dispatcher.m
 
 ### `Agent.dispatch(options, handler: AgentDispatchOptions)`
 
-Implements [`Dispatcher.dispatch(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handler)`.
 
 #### Parameter: `AgentDispatchOptions`
 
-Extends: [`DispatchOptions`](/docs/docs/api/Dispatcher.md#parameter-dispatchoptions)
+Extends: `DispatchOptions`
 
 * **origin** `string | URL`
 
@@ -63,11 +63,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `Agent.dispatch(options, handler)`
 
-Implements [`Dispatcher.dispatch(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handler)`.
 
 ### `Agent.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `Agent.request(options[, callback])`
 
@@ -85,7 +85,7 @@ See [`Dispatcher.upgrade(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 Returns an object of stats by origin in the format of `Record<string, TClientStats | TPoolStats>`
 
-See [`PoolStats`](/docs/docs/api/PoolStats.md) and [`ClientStats`](/docs/docs/api/ClientStats.md).
+See `PoolStats` and `ClientStats`.
 
 ```
 
@@ -101,7 +101,7 @@ See [`PoolStats`](/docs/docs/api/PoolStats.md) and [`ClientStats`](/docs/docs/ap
 ```
 # Client Lifecycle
 
-An Undici [Client](/docs/docs/api/Client.md) can be best described as a state machine. The following list is a summary of the various state transitions the `Client` will go through in its lifecycle. This document also contains detailed breakdowns of each state.
+An Undici Client can be best described as a state machine. The following list is a summary of the various state transitions the `Client` will go through in its lifecycle. This document also contains detailed breakdowns of each state.
 
 > This diagram is not a perfect representation of the undici Client. Since the Client class is not actually implemented as a state-machine, actual execution may deviate slightly from what is described below. Consider this as a general resource for understanding the inner workings of the Undici client rather than some kind of formal specification.
 
@@ -159,33 +159,33 @@ stateDiagram-v2
 
 ### idle
 
-The **idle** state is the initial state of a `Client` instance. While an `origin` is required for instantiating a `Client` instance, the underlying socket connection will not be established until a request is queued using [`Client.dispatch()`](/docs/docs/api/Client.md#clientdispatchoptions-handlers). By calling `Client.dispatch()` directly or using one of the multiple implementations ([`Client.connect()`](Client.md#clientconnectoptions-callback), [`Client.pipeline()`](Client.md#clientpipelineoptions-handler), [`Client.request()`](Client.md#clientrequestoptions-callback), [`Client.stream()`](Client.md#clientstreamoptions-factory-callback), and [`Client.upgrade()`](/docs/docs/api/Client.md#clientupgradeoptions-callback)), the `Client` instance will transition from **idle** to [**pending**](/docs/docs/api/Client.md#pending) and then most likely directly to [**processing**](/docs/docs/api/Client.md#processing).
+The **idle** state is the initial state of a `Client` instance. While an `origin` is required for instantiating a `Client` instance, the underlying socket connection will not be established until a request is queued using `Client.dispatch()`. By calling `Client.dispatch()` directly or using one of the multiple implementations (`Client.connect()`, `Client.pipeline()`, `Client.request()`, `Client.stream()`, and `Client.upgrade()`), the `Client` instance will transition from **idle** to **pending** and then most likely directly to **processing**.
 
-Calling [`Client.close()`](/docs/docs/api/Client.md#clientclosecallback) or [`Client.destroy()`](Client.md#clientdestroyerror-callback) transitions directly to the [**destroyed**](/docs/docs/api/Client.md#destroyed) state since the `Client` instance will have no queued requests in this state.
+Calling `Client.close()` or `Client.destroy()` transitions directly to the **destroyed** state since the `Client` instance will have no queued requests in this state.
 
 ### pending
 
-The **pending** state signifies a non-processing `Client`. Upon entering this state, the `Client` establishes a socket connection and emits the [`'connect'`](/docs/docs/api/Client.md#event-connect) event signalling a connection was successfully established with the `origin` provided during `Client` instantiation. The internal queue is initially empty, and requests can start queueing.
+The **pending** state signifies a non-processing `Client`. Upon entering this state, the `Client` establishes a socket connection and emits the `'connect'` event signalling a connection was successfully established with the `origin` provided during `Client` instantiation. The internal queue is initially empty, and requests can start queueing.
 
-Calling [`Client.close()`](/docs/docs/api/Client.md#clientclosecallback) with queued requests, transitions the `Client` to the [**processing**](/docs/docs/api/Client.md#processing) state. Without queued requests, it transitions to the [**destroyed**](/docs/docs/api/Client.md#destroyed) state.
+Calling `Client.close()` with queued requests, transitions the `Client` to the **processing** state. Without queued requests, it transitions to the **destroyed** state.
 
-Calling [`Client.destroy()`](/docs/docs/api/Client.md#clientdestroyerror-callback) transitions directly to the [**destroyed**](/docs/docs/api/Client.md#destroyed) state regardless of existing requests.
+Calling `Client.destroy()` transitions directly to the **destroyed** state regardless of existing requests.
 
 ### processing
 
-The **processing** state is a state machine within itself. It initializes to the [**processing.running**](/docs/docs/api/Client.md#running) state. The [`Client.dispatch()`](/docs/docs/api/Client.md#clientdispatchoptions-handlers), [`Client.close()`](Client.md#clientclosecallback), and [`Client.destroy()`](Client.md#clientdestroyerror-callback) can be called at any time while the `Client` is in this state. `Client.dispatch()` will add more requests to the queue while existing requests continue to be processed. `Client.close()` will transition to the [**processing.closing**](/docs/docs/api/Client.md#closing) state. And `Client.destroy()` will transition to [**destroyed**](/docs/docs/api/Client.md#destroyed).
+The **processing** state is a state machine within itself. It initializes to the **processing.running** state. The `Client.dispatch()`, `Client.close()`, and `Client.destroy()` can be called at any time while the `Client` is in this state. `Client.dispatch()` will add more requests to the queue while existing requests continue to be processed. `Client.close()` will transition to the **processing.closing** state. And `Client.destroy()` will transition to **destroyed**.
 
 #### running
 
-In the **processing.running** sub-state, queued requests are being processed in a FIFO order. If a request body requires draining, the *needDrain* event transitions to the [**processing.busy**](/docs/docs/api/Client.md#busy) sub-state. The *close* event transitions the Client to the [**process.closing**](/docs/docs/api/Client.md#closing) sub-state. If all queued requests are processed and neither [`Client.close()`](/docs/docs/api/Client.md#clientclosecallback) nor [`Client.destroy()`](Client.md#clientdestroyerror-callback) are called, then the [**processing**](/docs/docs/api/Client.md#processing) machine will trigger a *keepalive* event transitioning the `Client` back to the [**pending**](/docs/docs/api/Client.md#pending) state. During this time, the `Client` is waiting for the socket connection to timeout, and once it does, it triggers the *timeout* event and transitions to the [**idle**](/docs/docs/api/Client.md#idle) state.
+In the **processing.running** sub-state, queued requests are being processed in a FIFO order. If a request body requires draining, the *needDrain* event transitions to the **processing.busy** sub-state. The *close* event transitions the Client to the **process.closing** sub-state. If all queued requests are processed and neither `Client.close()` nor `Client.destroy()` are called, then the **processing** machine will trigger a *keepalive* event transitioning the `Client` back to the **pending** state. During this time, the `Client` is waiting for the socket connection to timeout, and once it does, it triggers the *timeout* event and transitions to the **idle** state.
 
 #### busy
 
-This sub-state is only entered when a request body is an instance of [Stream](https://nodejs.org/api/stream.html) and requires draining. The `Client` cannot process additional requests while in this state and must wait until the currently processing request body is completely drained before transitioning back to [**processing.running**](/docs/docs/api/Client.md#running).
+This sub-state is only entered when a request body is an instance of [Stream](https://nodejs.org/api/stream.html) and requires draining. The `Client` cannot process additional requests while in this state and must wait until the currently processing request body is completely drained before transitioning back to **processing.running**.
 
 #### closing
 
-This sub-state is only entered when a `Client` instance has queued requests and the [`Client.close()`](/docs/docs/api/Client.md#clientclosecallback) method is called. In this state, the `Client` instance continues to process requests as usual, with the one exception that no additional requests can be queued. Once all of the queued requests are processed, the `Client` will trigger the *done* event gracefully entering the [**destroyed**](/docs/docs/api/Client.md#destroyed) state without an error.
+This sub-state is only entered when a `Client` instance has queued requests and the `Client.close()` method is called. In this state, the `Client` instance continues to process requests as usual, with the one exception that no additional requests can be queued. Once all of the queued requests are processed, the `Client` will trigger the *done* event gracefully entering the **destroyed** state without an error.
 
 ### destroyed
 
@@ -199,7 +199,7 @@ The **destroyed** state is a final state for the `Client` instance. Once in this
 
 Extends: `undici.Dispatcher`
 
-A pool of [Pool](/docs/docs/api/Pool.md) instances connected to multiple upstreams.
+A pool of Pool instances connected to multiple upstreams.
 
 Requests are not guaranteed to be dispatched in order of invocation.
 
@@ -212,7 +212,7 @@ Arguments:
 
 ### Parameter: `BalancedPoolOptions`
 
-Extends: [`PoolOptions`](/docs/docs/api/Pool.md#parameter-pooloptions)
+Extends: `PoolOptions`
 
 * **factory** `(origin: URL, opts: Object) => Dispatcher` - Default: `(origin, opts) => new Pool(origin, opts)`
 
@@ -225,15 +225,15 @@ Returns an array of upstreams that were previously added.
 
 ### `BalancedPool.closed`
 
-Implements [Client.closed](/docs/docs/api/Client.md#clientclosed)
+Implements Client.closed
 
 ### `BalancedPool.destroyed`
 
-Implements [Client.destroyed](/docs/docs/api/Client.md#clientdestroyed)
+Implements Client.destroyed
 
 ### `Pool.stats`
 
-Returns [`PoolStats`](/docs/docs/api/PoolStats.md) instance for this pool.
+Returns `PoolStats` instance for this pool.
 
 ## Instance Methods
 
@@ -263,11 +263,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `BalancedPool.dispatch(options, handlers)`
 
-Implements [`Dispatcher.dispatch(options, handlers)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handlers)`.
 
 ### `BalancedPool.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `BalancedPool.request(options[, callback])`
 
@@ -285,15 +285,15 @@ See [`Dispatcher.upgrade(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### Event: `'connect'`
 
-See [Dispatcher Event: `'connect'`](/docs/docs/api/Dispatcher.md#event-connect).
+See Dispatcher Event: `'connect'`.
 
 ### Event: `'disconnect'`
 
-See [Dispatcher Event: `'disconnect'`](/docs/docs/api/Dispatcher.md#event-disconnect).
+See Dispatcher Event: `'disconnect'`.
 
 ### Event: `'drain'`
 
-See [Dispatcher Event: `'drain'`](/docs/docs/api/Dispatcher.md#event-drain).
+See Dispatcher Event: `'drain'`.
 
 ```
 
@@ -495,7 +495,7 @@ and defines extra properties relevant to the cache interceptor.
 
 ### Getter: `value`
 
-The response's [`CacheStoreValue`](/docs/docs/api/CacheStore.md#cachestorevalue)
+The response's `CacheStoreValue`
 
 ## `CacheStoreWriteable`
 
@@ -634,11 +634,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `Client.dispatch(options, handlers)`
 
-Implements [`Dispatcher.dispatch(options, handlers)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handlers)`.
 
 ### `Client.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `Client.request(options[, callback])`
 
@@ -676,7 +676,7 @@ Property to get and set the pipelining factor.
 
 ### Event: `'connect'`
 
-See [Dispatcher Event: `'connect'`](/docs/docs/api/Dispatcher.md#event-connect).
+See Dispatcher Event: `'connect'`.
 
 Parameters:
 
@@ -722,7 +722,7 @@ try {
 
 ### Event: `'disconnect'`
 
-See [Dispatcher Event: `'disconnect'`](/docs/docs/api/Dispatcher.md#event-disconnect).
+See Dispatcher Event: `'disconnect'`.
 
 Parameters:
 
@@ -767,7 +767,7 @@ try {
 
 Emitted when pipeline is no longer busy.
 
-See [Dispatcher Event: `'drain'`](/docs/docs/api/Dispatcher.md#event-drain).
+See Dispatcher Event: `'drain'`.
 
 #### Example - Client drain event
 
@@ -811,7 +811,7 @@ Invoked for user errors such as throwing in the `onResponseError` handler.
 ```
 # Class: ClientStats
 
-Stats for a [Client](/docs/docs/api/Client.md).
+Stats for a Client.
 
 ## `new ClientStats(client)`
 
@@ -1968,7 +1968,7 @@ Returns: `stream.Duplex`
 
 #### Parameter: PipelineOptions
 
-Extends: [`RequestOptions`](/docs/docs/api/Dispatcher.md#parameter-requestoptions)
+Extends: `RequestOptions`
 
 * **objectMode** `boolean` (optional) - Default: `false` - Set to `true` if the `handler` will return an object stream.
 
@@ -2058,7 +2058,7 @@ Returns: `void | Promise<ResponseData>` - Only returns a `Promise` if no `callba
 
 #### Parameter: `RequestOptions`
 
-Extends: [`DispatchOptions`](/docs/docs/api/Dispatcher.md#parameter-dispatchoptions)
+Extends: `DispatchOptions`
 
 * **opaque** `unknown` (optional) - Default: `null` - Used for passing through context to `ResponseData`.
 * **signal** `AbortSignal | events.EventEmitter | null` (optional) - Default: `null`.
@@ -2246,7 +2246,7 @@ return null
 
 A faster version of `Dispatcher.request`. This method expects the second argument `factory` to return a [`stream.Writable`](https://nodejs.org/api/stream.html#stream_class_stream_writable) stream which the response will be written to. This improves performance by avoiding creating an intermediate [`stream.Readable`](https://nodejs.org/api/stream.html#stream_readable_streams) stream when the user expects to directly pipe the response body to a [`stream.Writable`](https://nodejs.org/api/stream.html#stream_class_stream_writable) stream.
 
-As demonstrated in [Example 1 - Basic GET stream request](/docs/docs/api/Dispatcher.md#example-1-basic-get-stream-request), it is recommended to use the `option.opaque` property to avoid creating a closure for the `factory` method. This pattern works well with Node.js Web Frameworks such as [Fastify](https://fastify.io). See [Example 2 - Stream to Fastify Response](/docs/docs/api/Dispatch.md#example-2-stream-to-fastify-response) for more details.
+As demonstrated in Example 1 - Basic GET stream request, it is recommended to use the `option.opaque` property to avoid creating a closure for the `factory` method. This pattern works well with Node.js Web Frameworks such as [Fastify](https://fastify.io). See Example 2 - Stream to Fastify Response for more details.
 
 Arguments:
 
@@ -2547,7 +2547,7 @@ await client.request({ path: '/', method: 'GET' })
 
 The `redirect` interceptor allows you to customize the way your dispatcher handles redirects.
 
-It accepts the same arguments as the [`RedirectHandler` constructor](/docs/docs/api/RedirectHandler.md).
+It accepts the same arguments as the `RedirectHandler` constructor.
 
 **Example - Basic Redirect Interceptor**
 
@@ -2565,7 +2565,7 @@ client.request({ path: "/" })
 
 The `retry` interceptor allows you to customize the way your dispatcher handles retries.
 
-It accepts the same arguments as the [`RetryHandler` constructor](/docs/docs/api/RetryHandler.md).
+It accepts the same arguments as the `RetryHandler` constructor.
 
 **Example - Basic Redirect Interceptor**
 
@@ -2865,7 +2865,7 @@ Requests are considered identical if they have the same:
 
 All deduplicated requests receive the complete response including status code, headers, and body.
 
-For observability, request deduplication events are published to the `undici:request:pending-requests` [diagnostic channel](/docs/docs/api/DiagnosticsChannel.md#undicirequestpending-requests).
+For observability, request deduplication events are published to the `undici:request:pending-requests` diagnostic channel.
 
 ## Instance Events
 
@@ -2913,7 +2913,7 @@ Emitted when dispatcher is no longer busy.
 
 * `Record<string, string | string[] | undefined> | string[] | Iterable<[string, string | string[] | undefined]> | null`
 
-Header arguments such as `options.headers` in [`Client.dispatch`](/docs/docs/api/Client.md#clientdispatchoptions-handlers) can be specified in three forms:
+Header arguments such as `options.headers` in `Client.dispatch` can be specified in three forms:
 * As an object specified by the `Record<string, string | string[] | undefined>` (`IncomingHttpHeaders`) type.
 * As an array of strings. An array representation of a header list must have an even length, or an `InvalidArgumentError` will be thrown.
 * As an iterable that can encompass `Headers`, `Map`, or a custom iterator returning key-value pairs.
@@ -2923,7 +2923,7 @@ Undici validates header syntax at the protocol level (for example, invalid heade
 
 When using the array header format (`string[]`), Undici processes only indexed elements. Additional properties assigned to the array object are ignored.
 
-Response headers will derive a `host` from the `url` of the [Client](/docs/docs/api/Client.md#class-client) instance if no `host` header was previously specified.
+Response headers will derive a `host` from the `url` of the Client instance if no `host` header was previously specified.
 
 ### Example 1 - Object
 
@@ -3051,7 +3051,7 @@ Returns: `EnvHttpProxyAgent`
 
 ### Parameter: `EnvHttpProxyAgentOptions`
 
-Extends: [`AgentOptions`](/docs/docs/api/Agent.md#parameter-agentoptions)
+Extends: `AgentOptions`
 
 * **httpProxy** `string` (optional) - When set, it will override the `HTTP_PROXY` environment variable.
 * **httpsProxy** `string` (optional) - When set, it will override the `HTTPS_PROXY` environment variable.
@@ -3157,11 +3157,11 @@ Implements [`Dispatcher.destroy([error, callback])`](/docs/docs/api/Dispatcher.m
 
 ### `EnvHttpProxyAgent.dispatch(options, handler: AgentDispatchOptions)`
 
-Implements [`Dispatcher.dispatch(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handler)`.
 
 #### Parameter: `AgentDispatchOptions`
 
-Extends: [`DispatchOptions`](/docs/docs/api/Dispatcher.md#parameter-dispatchoptions)
+Extends: `DispatchOptions`
 
 * **origin** `string | URL`
 
@@ -3173,11 +3173,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `EnvHttpProxyAgent.dispatch(options, handler)`
 
-Implements [`Dispatcher.dispatch(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handler)`.
 
 ### `EnvHttpProxyAgent.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `EnvHttpProxyAgent.request(options[, callback])`
 
@@ -3346,7 +3346,7 @@ same implementation. Use the built-in global `FormData` with the built-in
 global `fetch()`, and use `undici`'s `FormData` with `undici.fetch()`.
 
 If you want the installed `undici` package to provide the globals, call
-[`install()`](/docs/api/GlobalInstallation.md) so `fetch`, `Headers`,
+`install()` so `fetch`, `Headers`,
 `Response`, `Request`, and `FormData` are installed together as a matching set.
 
 ## Response
@@ -3649,11 +3649,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `H2CClient.dispatch(options, handlers)`
 
-Implements [`Dispatcher.dispatch(options, handlers)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handlers)`.
 
 ### `H2CClient.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `H2CClient.request(options[, callback])`
 
@@ -3691,7 +3691,7 @@ Property to get and set the pipelining factor.
 
 ### Event: `'connect'`
 
-See [Dispatcher Event: `'connect'`](/docs/docs/api/Dispatcher.md#event-connect).
+See Dispatcher Event: `'connect'`.
 
 Parameters:
 
@@ -3737,7 +3737,7 @@ try {
 
 ### Event: `'disconnect'`
 
-See [Dispatcher Event: `'disconnect'`](/docs/docs/api/Dispatcher.md#event-disconnect).
+See Dispatcher Event: `'disconnect'`.
 
 Parameters:
 
@@ -3782,7 +3782,7 @@ try {
 
 Emitted when pipeline is no longer busy.
 
-See [Dispatcher Event: `'drain'`](/docs/docs/api/Dispatcher.md#event-drain).
+See Dispatcher Event: `'drain'`.
 
 #### Example - Client drain event
 
@@ -3873,7 +3873,7 @@ Returns: `MockAgent`
 
 ### Parameter: `MockAgentOptions`
 
-Extends: [`AgentOptions`](/docs/docs/api/Agent.md#parameter-agentoptions)
+Extends: `AgentOptions`
 
 * **agent** `Agent` (optional) - Default: `new Agent([options])` - a custom agent encapsulated by the MockAgent.
 
@@ -4164,7 +4164,7 @@ await mockAgent.close()
 
 ### `MockAgent.dispatch(options, handlers)`
 
-Implements [`Agent.dispatch(options, handlers)`](/docs/docs/api/Agent.md#parameter-agentdispatchoptions).
+Implements `Agent.dispatch(options, handlers)`.
 
 ### `MockAgent.request(options[, callback])`
 
@@ -4539,7 +4539,7 @@ mockAgent.getCallHistory()?.nthCall(3) // the third MockCallHistoryLog registere
 
 Filter MockCallHistoryLog by protocol.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByProtocol(/https/)
@@ -4550,7 +4550,7 @@ mockAgent.getCallHistory()?.filterCallsByProtocol('https:')
 
 Filter MockCallHistoryLog by host.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByHost(/localhost/)
@@ -4561,7 +4561,7 @@ mockAgent.getCallHistory()?.filterCallsByHost('localhost:3000')
 
 Filter MockCallHistoryLog by port.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByPort(/3000/)
@@ -4573,7 +4573,7 @@ mockAgent.getCallHistory()?.filterCallsByPort('')
 
 Filter MockCallHistoryLog by origin.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByOrigin(/http:\/\/localhost:3000/)
@@ -4584,7 +4584,7 @@ mockAgent.getCallHistory()?.filterCallsByOrigin('http://localhost:3000')
 
 Filter MockCallHistoryLog by path.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByPath(/api\/v1\/graphql/)
@@ -4595,7 +4595,7 @@ mockAgent.getCallHistory()?.filterCallsByPath('/api/v1/graphql')
 
 Filter MockCallHistoryLog by hash.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByPath(/hash/)
@@ -4606,7 +4606,7 @@ mockAgent.getCallHistory()?.filterCallsByPath('#hash')
 
 Filter MockCallHistoryLog by fullUrl. fullUrl contains protocol, host, port, path, hash, and query params
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByFullUrl(/https:\/\/localhost:3000\/\?query=value#hash/)
@@ -4617,7 +4617,7 @@ mockAgent.getCallHistory()?.filterCallsByFullUrl('https://localhost:3000/?query=
 
 Filter MockCallHistoryLog by method.
 
-> more details for the first parameter can be found [here](/docs/docs/api/MockCallHistory.md#filter-parameter)
+> more details for the first parameter can be found here
 
 ```js
 mockAgent.getCallHistory()?.filterCallsByMethod(/POST/)
@@ -4717,7 +4717,7 @@ mockAgent.getCallHistory()?.firstCall()?.toString()
 
 Extends: `undici.Client`
 
-A mock client class that implements the same api as [MockPool](/docs/docs/api/MockPool.md).
+A mock client class that implements the same api as MockPool.
 
 ## `new MockClient(origin, [options])`
 
@@ -4751,19 +4751,19 @@ const mockClient = mockAgent.get('http://localhost:3000')
 
 ### `MockClient.intercept(options)`
 
-Implements: [`MockPool.intercept(options)`](/docs/docs/api/MockPool.md#mockpoolinterceptoptions)
+Implements: `MockPool.intercept(options)`
 
 ### `MockClient.cleanMocks()`
 
-Implements: [`MockPool.cleanMocks()`](/docs/docs/api/MockPool.md#mockpoolcleanmocks)
+Implements: `MockPool.cleanMocks()`
 
 ### `MockClient.close()`
 
-Implements: [`MockPool.close()`](/docs/docs/api/MockPool.md#mockpoolclose)
+Implements: `MockPool.close()`
 
 ### `MockClient.dispatch(options, handlers)`
 
-Implements [`Dispatcher.dispatch(options, handlers)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handlers)`.
 
 ### `MockClient.request(options[, callback])`
 
@@ -5331,7 +5331,7 @@ await mockPool.close()
 
 ### `MockPool.dispatch(options, handlers)`
 
-Implements [`Dispatcher.dispatch(options, handlers)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handlers)`.
 
 ### `MockPool.request(options[, callback])`
 
@@ -5398,7 +5398,7 @@ Returns: `void`
 
 Extends: `undici.Dispatcher`
 
-A pool of [Client](/docs/docs/api/Client.md) instances connected to the same upstream target.
+A pool of Client instances connected to the same upstream target.
 
 Requests are not guaranteed to be dispatched in order of invocation.
 
@@ -5411,7 +5411,7 @@ Arguments:
 
 ### Parameter: `PoolOptions`
 
-Extends: [`ClientOptions`](/docs/docs/api/Client.md#parameter-clientoptions)
+Extends: `ClientOptions`
 
 * **factory** `(origin: URL, opts: Object) => Dispatcher` - Default: `(origin, opts) => new Client(origin, opts)`
 * **connections** `number | null` (optional) - Default: `null` - The number of `Client` instances to create. When set to `null`, the `Pool` instance will create an unlimited amount of `Client` instances.
@@ -5421,15 +5421,15 @@ Extends: [`ClientOptions`](/docs/docs/api/Client.md#parameter-clientoptions)
 
 ### `Pool.closed`
 
-Implements [Client.closed](/docs/docs/api/Client.md#clientclosed)
+Implements Client.closed
 
 ### `Pool.destroyed`
 
-Implements [Client.destroyed](/docs/docs/api/Client.md#clientdestroyed)
+Implements Client.destroyed
 
 ### `Pool.stats`
 
-Returns [`PoolStats`](PoolStats.md) instance for this pool.
+Returns `PoolStats` instance for this pool.
 
 ## Instance Methods
 
@@ -5447,11 +5447,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `Pool.dispatch(options, handler)`
 
-Implements [`Dispatcher.dispatch(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handler)`.
 
 ### `Pool.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `Pool.request(options[, callback])`
 
@@ -5469,15 +5469,15 @@ See [`Dispatcher.upgrade(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### Event: `'connect'`
 
-See [Dispatcher Event: `'connect'`](/docs/docs/api/Dispatcher.md#event-connect).
+See Dispatcher Event: `'connect'`.
 
 ### Event: `'disconnect'`
 
-See [Dispatcher Event: `'disconnect'`](/docs/docs/api/Dispatcher.md#event-disconnect).
+See Dispatcher Event: `'disconnect'`.
 
 ### Event: `'drain'`
 
-See [Dispatcher Event: `'drain'`](/docs/docs/api/Dispatcher.md#event-drain).
+See Dispatcher Event: `'drain'`.
 
 ```
 
@@ -5485,7 +5485,7 @@ See [Dispatcher Event: `'drain'`](/docs/docs/api/Dispatcher.md#event-drain).
 ```
 # Class: PoolStats
 
-Aggregate stats for a [Pool](/docs/docs/api/Pool.md) or [BalancedPool](/docs/docs/api/BalancedPool.md).
+Aggregate stats for a Pool or BalancedPool.
 
 ## `new PoolStats(pool)`
 
@@ -5629,7 +5629,7 @@ Returns: `ProxyAgent`
 
 ### Parameter: `ProxyAgentOptions`
 
-Extends: [`AgentOptions`](/docs/docs/api/Agent.md#parameter-agentoptions)
+Extends: `AgentOptions`
 > It ommits `AgentOptions#connect`.
 
 > **Note:** When `AgentOptions#connections` is set, and different from `0`, the non-standard [`proxy-connection` header](https://udger.com/resources/http-request-headers-detail?header=Proxy-Connection) will be set to `keep-alive` in the request.
@@ -5747,7 +5747,7 @@ await proxyAgent.close()
 
 ### `ProxyAgent.dispatch(options, handlers)`
 
-Implements [`Agent.dispatch(options, handlers)`](/docs/docs/api/Agent.md#parameter-agentdispatchoptions).
+Implements `Agent.dispatch(options, handlers)`.
 
 ### `ProxyAgent.request(options[, callback])`
 
@@ -6040,7 +6040,7 @@ Returns: `retryHandler`
 
 ### Parameter: `Dispatch.DispatchOptions & RetryOptions`
 
-Extends: [`Dispatch.DispatchOptions`](/docs/docs/api/Dispatcher.md#parameter-dispatchoptions).
+Extends: `Dispatch.DispatchOptions`.
 
 #### `RetryOptions`
 
@@ -6147,9 +6147,9 @@ const handler = new RetryHandler(dispatchOptions, {
 
 Extends: `undici.Dispatcher`
 
-A pool of [Client](/docs/docs/api/Client.md) instances connected to the same upstream target with round-robin client selection.
+A pool of Client instances connected to the same upstream target with round-robin client selection.
 
-Unlike [`Pool`](/docs/docs/api/Pool.md), which always selects the first available client, `RoundRobinPool` cycles through clients in a round-robin fashion. This ensures even distribution of requests across all connections, which is particularly useful when the upstream target is behind a load balancer that round-robins TCP connections across multiple backend servers (e.g., Kubernetes Services).
+Unlike `Pool`, which always selects the first available client, `RoundRobinPool` cycles through clients in a round-robin fashion. This ensures even distribution of requests across all connections, which is particularly useful when the upstream target is behind a load balancer that round-robins TCP connections across multiple backend servers (e.g., Kubernetes Services).
 
 Requests are not guaranteed to be dispatched in order of invocation.
 
@@ -6162,7 +6162,7 @@ Arguments:
 
 ### Parameter: `RoundRobinPoolOptions`
 
-Extends: [`ClientOptions`](/docs/docs/api/Client.md#parameter-clientoptions)
+Extends: `ClientOptions`
 
 * **factory** `(origin: URL, opts: Object) => Dispatcher` - Default: `(origin, opts) => new Client(origin, opts)`
 * **connections** `number | null` (optional) - Default: `null` - The number of `Client` instances to create. When set to `null`, the `RoundRobinPool` instance will create an unlimited amount of `Client` instances.
@@ -6197,21 +6197,21 @@ Extends: [`ClientOptions`](/docs/docs/api/Client.md#parameter-clientoptions)
 3. `RoundRobinPool` cycles HTTP requests across those N connections
 4. Result: Requests distributed proportionally to how the LB distributed the connections
 
-If the load balancer assigns all connections to the same backend (e.g., due to session affinity), `RoundRobinPool` cannot overcome this. In such cases, consider using [`BalancedPool`](/docs/docs/api/BalancedPool.md) with direct backend addresses (e.g., individual pod IPs) instead of a load-balanced endpoint.
+If the load balancer assigns all connections to the same backend (e.g., due to session affinity), `RoundRobinPool` cannot overcome this. In such cases, consider using `BalancedPool` with direct backend addresses (e.g., individual pod IPs) instead of a load-balanced endpoint.
 
 ## Instance Properties
 
 ### `RoundRobinPool.closed`
 
-Implements [Client.closed](/docs/docs/api/Client.md#clientclosed)
+Implements Client.closed
 
 ### `RoundRobinPool.destroyed`
 
-Implements [Client.destroyed](/docs/docs/api/Client.md#clientdestroyed)
+Implements Client.destroyed
 
 ### `RoundRobinPool.stats`
 
-Returns [`PoolStats`](PoolStats.md) instance for this pool.
+Returns `PoolStats` instance for this pool.
 
 ## Instance Methods
 
@@ -6229,11 +6229,11 @@ See [`Dispatcher.connect(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### `RoundRobinPool.dispatch(options, handler)`
 
-Implements [`Dispatcher.dispatch(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler).
+Implements `Dispatcher.dispatch(options, handler)`.
 
 ### `RoundRobinPool.pipeline(options, handler)`
 
-See [`Dispatcher.pipeline(options, handler)`](/docs/docs/api/Dispatcher.md#dispatcherpipelineoptions-handler).
+See `Dispatcher.pipeline(options, handler)`.
 
 ### `RoundRobinPool.request(options[, callback])`
 
@@ -6251,15 +6251,15 @@ See [`Dispatcher.upgrade(options[, callback])`](/docs/docs/api/Dispatcher.md#dis
 
 ### Event: `'connect'`
 
-See [Dispatcher Event: `'connect'`](/docs/docs/api/Dispatcher.md#event-connect).
+See Dispatcher Event: `'connect'`.
 
 ### Event: `'disconnect'`
 
-See [Dispatcher Event: `'disconnect'`](/docs/docs/api/Dispatcher.md#event-disconnect).
+See Dispatcher Event: `'disconnect'`.
 
 ### Event: `'drain'`
 
-See [Dispatcher Event: `'drain'`](/docs/docs/api/Dispatcher.md#event-drain).
+See Dispatcher Event: `'drain'`.
 
 ## Example
 
@@ -6946,7 +6946,7 @@ Returns: `Socks5ProxyAgent`
 
 ### Parameter: `Socks5ProxyAgent.Options`
 
-Extends: [`PoolOptions`](/docs/docs/api/Pool.md#parameter-pooloptions)
+Extends: `PoolOptions`
 
 * **headers** `IncomingHttpHeaders` (optional) - Additional headers to send with proxy connections.
 * **username** `string` (optional) - SOCKS5 proxy username for authentication. Can also be provided in the proxy URL.
@@ -7138,7 +7138,7 @@ await socks5Proxy.destroy()
 
 ### `Socks5ProxyAgent.dispatch(options, handlers)`
 
-Implements [`Dispatcher.dispatch(options, handlers)`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handlers).
+Implements `Dispatcher.dispatch(options, handlers)`.
 
 ### `Socks5ProxyAgent.request(options[, callback])`
 
@@ -7446,7 +7446,7 @@ Generated automatically via Phoenix V3 Pipeline.
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Anthropic](../../models/anthropic.md).
+For details on how to set up authentication with this model, see model configuration for Anthropic.
 
 ::: pydantic_ai.models.anthropic
 
@@ -7476,7 +7476,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Bedrock](../../models/bedrock.md).
+For details on how to set up authentication with this model, see model configuration for Bedrock.
 
 ::: pydantic_ai.models.bedrock
 
@@ -7488,7 +7488,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Cerebras](../../models/cerebras.md).
+For details on how to set up authentication with this model, see model configuration for Cerebras.
 
 ::: pydantic_ai.models.cerebras
 
@@ -7500,7 +7500,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Cohere](../../models/cohere.md).
+For details on how to set up authentication with this model, see model configuration for Cohere.
 
 ::: pydantic_ai.models.cohere
 
@@ -7520,7 +7520,7 @@ For details on how to set up authentication with this model, see [model configur
 
 A model controlled by a local function.
 
-[`FunctionModel`][pydantic_ai.models.function.FunctionModel] is similar to [`TestModel`](test.md),
+[`FunctionModel`][pydantic_ai.models.function.FunctionModel] is similar to `TestModel`,
 but allows greater control over the model's behavior.
 
 Its primary use case is for more advanced unit testing than is possible with `TestModel`.
@@ -7576,7 +7576,7 @@ async def test_my_agent():
         assert result.output == 'hello world'
 ```
 
-See [Unit testing with `FunctionModel`](../../testing.md#unit-testing-with-functionmodel) for detailed documentation.
+See Unit testing with `FunctionModel` for detailed documentation.
 
 ::: pydantic_ai.models.function
 
@@ -7591,7 +7591,7 @@ access Google's Gemini models via both the Generative Language API and Vertex AI
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Google](../../models/google.md).
+For details on how to set up authentication with this model, see model configuration for Google.
 
 ::: pydantic_ai.models.google
 
@@ -7603,7 +7603,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Groq](../../models/groq.md).
+For details on how to set up authentication with this model, see model configuration for Groq.
 
 ::: pydantic_ai.models.groq
 
@@ -7615,7 +7615,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Hugging Face](../../models/huggingface.md).
+For details on how to set up authentication with this model, see model configuration for Hugging Face.
 
 ::: pydantic_ai.models.huggingface
 
@@ -7643,7 +7643,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for Mistral](../../models/mistral.md).
+For details on how to set up authentication with this model, see model configuration for Mistral.
 
 ::: pydantic_ai.models.mistral
 
@@ -7655,7 +7655,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for OpenAI](../../models/openai.md).
+For details on how to set up authentication with this model, see model configuration for OpenAI.
 
 ::: pydantic_ai.models.openai
 
@@ -7667,7 +7667,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for OpenRouter](../../models/openrouter.md).
+For details on how to set up authentication with this model, see model configuration for OpenRouter.
 
 ::: pydantic_ai.models.openrouter
 
@@ -7679,7 +7679,7 @@ For details on how to set up authentication with this model, see [model configur
 
 ## Setup
 
-For details on how to set up this model, see [model configuration for Outlines](../../models/outlines.md).
+For details on how to set up this model, see model configuration for Outlines.
 
 ::: pydantic_ai.models.outlines
 
@@ -7709,7 +7709,7 @@ async def test_my_agent():
     assert m.last_model_request_parameters.function_tools == []
 ```
 
-See [Unit testing with `TestModel`](../../testing.md#unit-testing-with-testmodel) for detailed documentation.
+See Unit testing with `TestModel` for detailed documentation.
 
 ::: pydantic_ai.models.test
 
@@ -7729,7 +7729,7 @@ See [Unit testing with `TestModel`](../../testing.md#unit-testing-with-testmodel
 
 ## Setup
 
-For details on how to set up authentication with this model, see [model configuration for xAI](../../models/xai.md).
+For details on how to set up authentication with this model, see model configuration for xAI.
 
 ::: pydantic_ai.models.xai
 
@@ -7933,3 +7933,5 @@ For details on how to set up authentication with this model, see [model configur
 
 ```
 
+
+```

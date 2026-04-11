@@ -1271,3 +1271,705 @@
  ├── ux_flow
  ├── ux_persuasion_engineer
 ```
+
+## 🌱 Emerging / Standalone Skills
+- `00`: 00_andruia_consultant
+- `10`: 10_andruia_skill_smith
+- `20`: 20_andruia_niche_intelligence
+- `2d`: 2d_games
+- `3d`: 3d_games, 3d_web_experience
+- `a2`: a2_ui_response_generator
+- `ab`: ab_test_setup
+- `acceptance`: acceptance_orchestrator
+- `accessibility`: accessibility_compliance_accessibility_audit
+- `acontext`: acontext_examples
+- `active`: active_directory_attacks
+- `activecampaign`: activecampaign_automation
+- `ad`: ad_creative
+- `address`: address_github_comments
+- `advanced`: advanced_evaluation
+- `advogado`: advogado_criminal, advogado_especialista
+- `aegisops`: aegisops_ai
+- `agentic`: agentic_actions_auditor
+- `agents`: agents_md, agents_v2_py
+- `airflow`: airflow_dag_patterns
+- `airtable`: airtable_automation
+- `akf`: akf_trust_metadata
+- `algolia`: algolia_search
+- `algorithmic`: algorithmic_art
+- `alpha`: alpha_vantage
+- `amazon`: amazon_alexa
+- `amplitude`: amplitude_automation
+- `analytics`: analytics_product, analytics_tracking
+- `analyze`: analyze_project
+- `analyzing`: analyzing_agentscope_library
+- `andrej`: andrej_karpathy
+- `android`: android_jetpack_compose_expert, android_ui_verification
+- `angular`: angular_best_practices, angular_migration, angular_state_management, angular_ui_patterns
+- `animejs`: animejs_animation
+- `anti`: anti_reversing_techniques
+- `app`: app_builder, app_store_changelog, app_store_optimization
+- `appinsights`: appinsights_instrumentation
+- `apple`: apple_notes, apple_reminders
+- `application`: application_performance_performance_optimization
+- `architect`: architect_review
+- `architecture`: architecture_decision_records, architecture_patterns
+- `arknights`: arknights_endfield_website_clone
+- `arm`: arm_cortex_expert
+- `asana`: asana_automation
+- `ask`: ask_questions_if_underspecified
+- `asset`: asset_creator
+- `async`: async_python_patterns
+- `atomic`: atomic_chat
+- `attack`: attack_tree_construction
+- `audio`: audio_transcriber
+- `audit`: audit_context_building, audit_skills
+- `auri`: auri_core
+- `auth`: auth_implementation_patterns
+- `auto`: auto_claude
+- `autonomous`: autonomous_agent_patterns, autonomous_agents
+- `avalonia`: avalonia_layout_zafiro, avalonia_viewmodels_zafiro, avalonia_zafiro_development
+- `avoid`: avoid_ai_writing
+- `awareness`: awareness_stage_mapper
+- `awt`: awt_e2e_testing
+- `azd`: azd_deployment
+- `backend`: backend_architect, backend_dev_guidelines, backend_development_feature_development, backend_security_coder
+- `backtesting`: backtesting_frameworks
+- `bamboohr`: bamboohr_automation
+- `basecamp`: basecamp_automation
+- `baseline`: baseline_ui
+- `bash`: bash_defensive_patterns, bash_linux, bash_pro, bash_scripting
+- `bats`: bats_testing_patterns
+- `bazel`: bazel_build_optimization
+- `bb`: bb_methodology
+- `bdi`: bdi_mental_states
+- `bdistill`: bdistill_behavioral_xray, bdistill_knowledge_extraction
+- `beautiful`: beautiful_prose
+- `behavioral`: behavioral_modes
+- `bevy`: bevy_ecs_expert
+- `bill`: bill_gates
+- `billing`: billing_automation
+- `binary`: binary_analysis_patterns
+- `bitbucket`: bitbucket_automation
+- `blockchain`: blockchain_developer
+- `blog`: blog_writing_guide
+- `box`: box_automation
+- `branch`: branch_pr
+- `brand`: brand_guidelines, brand_guidelines_anthropic, brand_perception_psychologist
+- `brave`: brave_search
+- `brevo`: brevo_automation
+- `bridge`: bridge_commander
+- `broken`: broken_authentication
+- `browser`: browser_automation, browser_extension_builder, browser_pilot
+- `bug`: bug_bounty, bug_hunter
+- `build`: build_feature
+- `building`: building_native_ui
+- `bullmq`: bullmq_specialist
+- `bun`: bun_development
+- `burp`: burp_suite_testing
+- `burpsuite`: burpsuite_project_parser
+- `business`: business_analyst
+- `busybox`: busybox_on_windows
+- `c`: c_pro
+- `cal`: cal_com_automation
+- `calendly`: calendly_automation
+- `canva`: canva_automation
+- `canvas`: canvas_design
+- `carrier`: carrier_relationship_management
+- `case`: case_study_builder
+- `cdk`: cdk_patterns
+- `changelog`: changelog_automation
+- `channel`: channel_manager
+- `chart`: chart_testing
+- `chat`: chat_sdk, chat_widget
+- `chrome`: chrome_extension_developer, chrome_webstore_release_blueprint
+- `churn`: churn_prevention
+- `ci`: ci_workflow_guide
+- `cicd`: cicd_automation_workflow_automate
+- `circleci`: circleci_automation
+- `citation`: citation_check, citation_management
+- `civ`: civ_fetched_claude_bug_bounty
+- `claimable`: claimable_postgres
+- `clarity`: clarity_gate
+- `clarvia`: clarvia_aeo_check
+- `claudy`: claudy_registry, claudy_releases
+- `clean`: clean_code
+- `clerk`: clerk_auth
+- `clickhouse`: clickhouse_best_practices
+- `clickup`: clickup_automation
+- `close`: close_automation
+- `closed`: closed_loop_delivery
+- `cloud`: cloud_architect, cloud_devops, cloud_penetration_testing, cloud_solution_architect
+- `cloudflare`: cloudflare_workers_expert
+- `cloudformation`: cloudformation_best_practices
+- `coda`: coda_automation
+- `codebase`: codebase_audit_pre_push, codebase_cleanup_deps_audit, codebase_cleanup_refactor_clean
+- `codex`: codex_review
+- `cognitive`: cognitive_reflector
+- `cold`: cold_email, cold_outreach_sequence
+- `comfyui`: comfyui_gateway
+- `competitive`: competitive_landscape
+- `competitor`: competitor_alternatives
+- `completion`: completion_gate
+- `comprehensive`: comprehensive_review_full_review, comprehensive_review_pr_enhance
+- `computer`: computer_use_agents, computer_vision_expert
+- `concise`: concise_planning
+- `confluence`: confluence_automation
+- `constant`: constant_time_analysis
+- `constraint`: constraint_check
+- `context7`: context7_auto_research
+- `continual`: continual_learning
+- `continuous`: continuous_learning_v2
+- `conversation`: conversation_memory
+- `convertkit`: convertkit_automation
+- `copilot`: copilot_sdk
+- `copy`: copy_editing
+- `copywriting`: copywriting_psychologist
+- `core`: core_components
+- `cost`: cost_manager, cost_optimization
+- `cpp`: cpp_pro
+- `cqrs`: cqrs_implementation
+- `create`: create_branch, create_issue_gate, create_pr
+- `cred`: cred_omega
+- `crypto`: crypto_bd
+- `csharp`: csharp_pro
+- `customer`: customer_psychographic_profiler, customer_support
+- `customs`: customs_trade_compliance
+- `daily`: daily_briefing_builder, daily_news_report
+- `datadog`: datadog_automation
+- `db`: db_migrations
+- `dbos`: dbos_golang, dbos_python, dbos_typescript
+- `dbt`: dbt_transformation_patterns
+- `ddd`: ddd_context_mapping, ddd_strategic_design, ddd_tactical_patterns
+- `de`: de_ai_ify
+- `debug`: debug_buttercup, debug_cuda_crash, debug_orchestration
+- `debugging`: debugging_strategies, debugging_toolkit_smart_debug
+- `deep`: deep_research
+- `defi`: defi_protocol_templates
+- `delegation`: delegation_intelligence
+- `dependency`: dependency_doctor, dependency_management_deps_audit, dependency_upgrade
+- `deploy`: deploy_model
+- `deployment`: deployment_engineer, deployment_pipeline_design, deployment_procedures, deployment_validation_config_validate
+- `design`: design_md, design_orchestration, design_spells
+- `devcontainer`: devcontainer_setup
+- `develop`: develop_web_game
+- `devops`: devops_deploy, devops_troubleshooter
+- `differential`: differential_review
+- `discord`: discord_automation, discord_bot_architect
+- `dispatching`: dispatching_parallel_agents
+- `distributed`: distributed_debugging_debug_trace, distributed_tracing
+- `django`: django_access_review, django_perf_review, django_pro
+- `doc`: doc_coauthoring, doc_processor
+- `docker`: docker_expert
+- `docs`: docs_architect, docs_seeker
+- `documentation`: documentation_templates
+- `docusign`: docusign_automation
+- `docx`: docx_official
+- `domain`: domain_driven_design, domain_driven_hexagon
+- `dotnet`: dotnet_architect, dotnet_backend, dotnet_backend_patterns
+- `drizzle`: drizzle_orm_expert
+- `dropbox`: dropbox_automation
+- `dwarf`: dwarf_expert
+- `dx`: dx_optimizer
+- `e2e`: e2e_testing, e2e_testing_patterns
+- `earllm`: earllm_build
+- `ecc`: ecc_patterns
+- `electron`: electron_development
+- `elixir`: elixir_pro
+- `elon`: elon_musk
+- `email`: email_sequence, email_systems
+- `embedding`: embedding_strategies
+- `emblemai`: emblemai_crypto_wallet
+- `emergency`: emergency_card
+- `emotional`: emotional_arc_designer
+- `employment`: employment_contract_templates
+- `energy`: energy_procurement
+- `enhance`: enhance_prompt
+- `entra`: entra_agent_id, entra_app_registration
+- `environment`: environment_setup_guide
+- `ethical`: ethical_hacking_methodology
+- `event`: event_sourcing_architect, event_store_design
+- `evidence`: evidence_discipline
+- `exa`: exa_search
+- `example`: example_skill_skills
+- `executing`: executing_plans
+- `explain`: explain_like_socrates
+- `explore`: explore_recipes
+- `faf`: faf_expert, faf_wizard
+- `family`: family_health_analyzer
+- `fastapi`: fastapi_pro, fastapi_router_py, fastapi_templates
+- `fda`: fda_food_safety_auditor, fda_medtech_compliance_auditor
+- `ffuf`: ffuf_claude, ffuf_web_fuzzing
+- `figma`: figma_automation
+- `file`: file_organizer, file_path_traversal, file_uploads
+- `filesystem`: filesystem_context
+- `filter`: filter_benchmark
+- `find`: find_bugs, find_skills
+- `finishing`: finishing_a_development_branch
+- `firecrawl`: firecrawl_mcp_server, firecrawl_scraper
+- `firmware`: firmware_analyst
+- `fitness`: fitness_analyzer
+- `fix`: fix_review, fix_sentry_issues
+- `fixing`: fixing_accessibility, fixing_metadata, fixing_motion_performance
+- `flutter`: flutter_expert
+- `food`: food_database_query
+- `form`: form_cro
+- `framework`: framework_migration_code_migrate, framework_migration_deps_upgrade, framework_migration_legacy_modernize, framework_standards
+- `free`: free_tool_strategy
+- `freshdesk`: freshdesk_automation
+- `freshservice`: freshservice_automation
+- `full`: full_stack_orchestration_full_stack_feature
+- `gcp`: gcp_architect, gcp_cloud_run, gcp_deploy
+- `gdb`: gdb_cli
+- `gdpr`: gdpr_data_handling
+- `gemini`: gemini_api_dev, gemini_api_integration
+- `generate`: generate_profile
+- `generative`: generative_ai
+- `geo`: geo_fundamentals
+- `geoffrey`: geoffrey_hinton
+- `gh`: gh_review_requests
+- `gha`: gha_security_review
+- `ghost`: ghost_sweep_angular, ghost_sweep_global_code_reference
+- `github`: github_actions_templates, github_automation, github_issue_creator, github_workflow_automation
+- `gitingest`: gitingest_extension
+- `gitlab`: gitlab_automation, gitlab_ci_patterns
+- `gitnexus`: gitnexus_analyzer
+- `gitops`: gitops_workflow
+- `global`: global_chat_agent_discovery, global_code_reference
+- `gmail`: gmail_automation
+- `goal`: goal_analyzer
+- `godot`: godot_4_migration, godot_gdscript_patterns
+- `golang`: golang_pro
+- `golangci`: golangci_lint
+- `googlesheets`: googlesheets_automation
+- `grafana`: grafana_dashboards
+- `graphql`: graphql_architect
+- `grill`: grill_me
+- `growth`: growth_engine
+- `grpc`: grpc_golang
+- `grpo`: grpo_rl_training
+- `hallucination`: hallucination_guard
+- `haskell`: haskell_pro
+- `headline`: headline_psychologist
+- `health`: health_chief, health_trend_analyzer
+- `helm`: helm_chart_scaffolding
+- `helpdesk`: helpdesk_automation
+- `hierarchical`: hierarchical_agent_memory
+- `hivemind`: hivemind_architect_strategist, hivemind_governance
+- `homebrew`: homebrew_core
+- `homepage`: homepage_audit
+- `hosted`: hosted_agents
+- `hr`: hr_manager, hr_pro
+- `html`: html_injection_testing
+- `hubspot`: hubspot_automation, hubspot_integration
+- `humanize`: humanize_chinese
+- `hybrid`: hybrid_cloud_architect, hybrid_cloud_networking, hybrid_search_implementation
+- `i18n`: i18n_localization
+- `iconsax`: iconsax_library
+- `idea`: idea_darwin
+- `identity`: identity_mirror
+- `idor`: idor_testing
+- `ilya`: ilya_sutskever
+- `image`: image_studio
+- `incident`: incident_responder, incident_response_incident_response, incident_response_smart_fix, incident_runbook_templates
+- `infinite`: infinite_gratitude
+- `instagram`: instagram_automation
+- `intake`: intake_chief
+- `integrity`: integrity_check
+- `interactive`: interactive_portfolio
+- `intercom`: intercom_automation
+- `internal`: internal_comms
+- `interview`: interview_coach
+- `inventory`: inventory_demand_planning
+- `ios`: ios_debugger, ios_developer
+- `issue`: issue_creation
+- `istio`: istio_traffic_management
+- `it`: it_manager
+- `iterate`: iterate_pr
+- `java`: java_pro
+- `javascript`: javascript_mastery, javascript_pro, javascript_testing_patterns, javascript_typescript_typescript_scaffold
+- `jira`: jira_automation
+- `jobs`: jobs_to_be_done_analyst
+- `json`: json_canvas
+- `judgment`: judgment_day
+- `julia`: julia_pro
+- `junta`: junta_leiloeiros
+- `jupyter`: jupyter_live_kernel
+- `k6`: k6_load_testing
+- `k8s`: k8s_manifest_generator, k8s_security_policies
+- `keyword`: keyword_extractor
+- `kimi`: kimi_cli
+- `klaviyo`: klaviyo_automation
+- `knowledge`: knowledge_navigator
+- `kotlin`: kotlin_coroutines_expert
+- `kpi`: kpi_dashboard_design
+- `kubernetes`: kubernetes_architect, kubernetes_deployment
+- `landing`: landing_page_generator
+- `langchain`: langchain_architecture
+- `laravel`: laravel_expert, laravel_security_audit
+- `latex`: latex_paper_conversion
+- `launch`: launch_strategy
+- `lazy`: lazy_nvim
+- `lead`: lead_magnets
+- `legacy`: legacy_modernizer
+- `legal`: legal_advisor
+- `library`: library_manager
+- `lightning`: lightning_architecture_review, lightning_channel_factories, lightning_factory_explainer
+- `linear`: linear_automation, linear_claude
+- `linkedin`: linkedin_authority_builder, linkedin_automation, linkedin_cli, linkedin_profile_optimizer
+- `linkerd`: linkerd_patterns
+- `lint`: lint_and_validate
+- `linux`: linux_privilege_escalation, linux_shell_scripting, linux_troubleshooting
+- `liquid`: liquid_glass
+- `llama`: llama_trainer
+- `local`: local_legal_seo_audit, local_llm_expert, local_testing
+- `locomotive`: locomotive_scroll
+- `logging`: logging_best_practices
+- `logic`: logic_guardian
+- `logistics`: logistics_exception_management
+- `loki`: loki_mode
+- `loss`: loss_aversion_designer
+- `m365`: m365_agents_dotnet, m365_agents_py, m365_agents_ts
+- `machine`: machine_learning_ops_ml_pipeline
+- `macos`: macos_menubar_tuist_app, macos_spm_app_packaging
+- `magic`: magic_animator, magic_ui_generator, magic_wormhole
+- `mailchimp`: mailchimp_automation
+- `make`: make_automation
+- `malware`: malware_analyst
+- `markdown`: markdown_printer
+- `market`: market_sizing_analysis
+- `marketing`: marketing_ideas, marketing_principles, marketing_psychology
+- `matematico`: matematico_tao
+- `mcp`: mcp_builder, mcp_builder_ms, mcp_server
+- `media`: media_writer
+- `meeting`: meeting_prep
+- `mental`: mental_health_analyzer
+- `mermaid`: mermaid_expert
+- `metasploit`: metasploit_framework
+- `micro`: micro_saas_launcher
+- `microservices`: microservices_patterns
+- `microsoft`: microsoft_azure_webjobs_extensions_authentication_events_dotnet, microsoft_docs, microsoft_foundry, microsoft_teams_automation
+- `minecraft`: minecraft_bukkit_pro, minecraft_modpack_server
+- `miro`: miro_automation
+- `mixpanel`: mixpanel_automation
+- `ml`: ml_engineer, ml_pipeline_workflow
+- `mlops`: mlops_engineer
+- `mobile`: mobile_design, mobile_developer, mobile_games, mobile_security_coder
+- `modern`: modern_javascript_patterns
+- `monday`: monday_automation
+- `monitor`: monitor_chief
+- `monorepo`: monorepo_architect, monorepo_management
+- `monte`: monte_carlo_monitor_creation, monte_carlo_prevent, monte_carlo_push_ingestion, monte_carlo_validation_notebook
+- `moodle`: moodle_external_api_development
+- `mtls`: mtls_configuration
+- `nano`: nano_pdf
+- `nanobanana`: nanobanana_ppt_skills
+- `native`: native_data_fetching, native_mcp
+- `neon`: neon_postgres
+- `nerdzao`: nerdzao_elite, nerdzao_elite_gemini_high
+- `nestjs`: nestjs_expert
+- `network`: network_engineer
+- `neural`: neural_memory, neural_navigator
+- `new`: new_rails_project
+- `newsletter`: newsletter_creation_curation
+- `nextjs`: nextjs_app_router_patterns, nextjs_best_practices, nextjs_supabase_auth
+- `nft`: nft_standards
+- `nodejs`: nodejs_backend_patterns, nodejs_best_practices
+- `nosql`: nosql_expert
+- `notion`: notion_automation, notion_template_business
+- `nutrition`: nutrition_analyzer
+- `nx`: nx_workspace_patterns
+- `oa`: oa_chief
+- `objection`: objection_preemptor
+- `observability`: observability_engineer, observability_monitoring_monitor_setup, observability_monitoring_slo_implement
+- `obsidian`: obsidian_bases, obsidian_cli, obsidian_clipper_template_creator, obsidian_markdown
+- `occupational`: occupational_health_analyzer
+- `office`: office_productivity
+- `ohd`: ohd_healer
+- `omniclaw`: omniclaw_bot
+- `on`: on_call_handoff_patterns
+- `onboarding`: onboarding_cro, onboarding_psychologist
+- `one`: one_drive_automation, one_three_one_rule
+- `ontology`: ontology_auditor
+- `openai`: openai_docs
+- `openapi`: openapi_spec_generation
+- `openclaw`: openclaw_admin, openclaw_github_repo_commander, openclaw_worker
+- `oral`: oral_health_analyzer
+- `orchestrate`: orchestrate_batch_refactor
+- `orchestrator`: orchestrator_pro
+- `org`: org_architect
+- `orphan`: orphan_sweep_digital_brain, orphan_sweep_environments, orphan_sweep_yc_bench
+- `os`: os_scripting
+- `oss`: oss_hunter
+- `outlook`: outlook_automation, outlook_calendar_automation
+- `page`: page_cro
+- `pagerduty`: pagerduty_automation
+- `paid`: paid_ads
+- `pakistan`: pakistan_payments_stack
+- `parallel`: parallel_agents, parallel_debugging_hivemind
+- `pattern`: pattern_craft
+- `payment`: payment_integration
+- `paypal`: paypal_integration
+- `paywall`: paywall_upgrade_cro
+- `pc`: pc_games
+- `pci`: pci_compliance
+- `pdf`: pdf_official
+- `pentest`: pentest_checklist, pentest_commands
+- `performance`: performance_engineer, performance_optimizer, performance_profiling, performance_testing_review_ai_review
+- `personal`: personal_tool_builder
+- `phase`: phase_gated_debugging
+- `php`: php_pro
+- `pipecat`: pipecat_friday
+- `pipedrive`: pipedrive_automation
+- `pitch`: pitch_psychologist
+- `plaid`: plaid_fintech
+- `plan`: plan_my_day, plan_writing
+- `planning`: planning_with_files
+- `playwright`: playwright_java
+- `plotly`: plotly_js
+- `podcast`: podcast_generation
+- `pokemon`: pokemon_player
+- `popup`: popup_cro
+- `positioning`: positioning_basics
+- `posix`: posix_shell_pro
+- `postgres`: postgres_best_practices
+- `postgresql`: postgresql_optimization
+- `posthog`: posthog_automation
+- `postmark`: postmark_automation
+- `postmortem`: postmortem_writing
+- `powershell`: powershell_windows
+- `pptx`: pptx_official
+- `pr`: pr_writer
+- `presentation`: presentation_structure, presentation_styling
+- `price`: price_psychology_strategist
+- `pricing`: pricing_strategy
+- `prisma`: prisma_expert
+- `privacy`: privacy_by_design
+- `privilege`: privilege_escalation_methods
+- `problem`: problem_solver
+- `production`: production_code_audit, production_scheduling
+- `professional`: professional_proofreader
+- `programmatic`: programmatic_seo
+- `progressive`: progressive_estimation, progressive_web_app
+- `project`: project_development, project_intake, project_overview, project_skill_audit
+- `projection`: projection_patterns
+- `prometheus`: prometheus_configuration
+- `protect`: protect_mcp_governance
+- `protocol`: protocol_reverse_engineering
+- `public`: public_api_search
+- `pubmed`: pubmed_database
+- `pydantic`: pydantic_ai, pydantic_models_py
+- `pytest`: pytest_runner
+- `quality`: quality_nonconformance
+- `quant`: quant_analyst
+- `qwen`: qwen_code
+- `radix`: radix_ui_design_system
+- `rag`: rag_engineer, rag_implementation
+- `rd`: rd_lead
+- `reasoning`: reasoning_engine
+- `receiving`: receiving_code_review
+- `recent`: recent_data
+- `recursive`: recursive_decomposition
+- `red`: red_team_tactics, red_team_tools
+- `reddit`: reddit_automation, reddit_insights
+- `reference`: reference_builder
+- `referral`: referral_program
+- `registry`: registry_manager
+- `rehabilitation`: rehabilitation_analyzer
+- `remotion`: remotion_best_practices
+- `render`: render_automation
+- `repo`: repo_civ_fetched_browser, repo_civ_fetched_claude_subconscious, repo_ingest, repo_orphan_sweep_outlines
+- `report`: report_writing
+- `requesting`: requesting_code_review
+- `resilience`: resilience_engine
+- `response`: response_compliance
+- `returns`: returns_reverse_logistics
+- `reverse`: reverse_engineer
+- `review`: review_intake
+- `risk`: risk_manager, risk_metrics_calculation
+- `rootly`: rootly_mcp_server
+- `ruby`: ruby_pro
+- `rust`: rust_async_patterns, rust_pro
+- `saas`: saas_multi_tenant, saas_mvp_launcher
+- `saga`: saga_orchestration
+- `saleor`: saleor_commit, saleor_django_migration
+- `sales`: sales_automator, sales_enablement
+- `salesforce`: salesforce_automation, salesforce_development
+- `sam`: sam_altman
+- `sanity`: sanity_best_practices
+- `sankhya`: sankhya_dashboard_html_jsp_custom_best_pratices
+- `sast`: sast_configuration
+- `scala`: scala_pro
+- `scanning`: scanning_tools
+- `scarcity`: scarcity_urgency_psychologist
+- `schema`: schema_markup
+- `scientific`: scientific_writing
+- `scikit`: scikit_learn
+- `scope`: scope_guard
+- `screen`: screen_reader_testing
+- `scroll`: scroll_experience
+- `scrum`: scrum_master
+- `search`: search_specialist
+- `secrets`: secrets_management
+- `seek`: seek_and_analyze_video
+- `segment`: segment_automation, segment_cdp
+- `semgrep`: semgrep_rule_creator, semgrep_rule_variant_creator
+- `sendgrid`: sendgrid_automation
+- `senior`: senior_architect, senior_frontend, senior_fullstack
+- `sentinel`: sentinel_env
+- `sentry`: sentry_automation
+- `sequence`: sequence_psychologist
+- `sequential`: sequential_orchestration, sequential_thinking
+- `server`: server_management
+- `service`: service_mesh_expert, service_mesh_observability
+- `session`: session_bridge, session_lifecycle
+- `sexual`: sexual_health_analyzer
+- `shader`: shader_programming_glsl
+- `sharp`: sharp_edges
+- `shell`: shell_assistant
+- `shellcheck`: shellcheck_configuration
+- `shodan`: shodan_reconnaissance
+- `shopify`: shopify_apps, shopify_automation, shopify_development
+- `signup`: signup_flow_cro
+- `similarity`: similarity_search_patterns
+- `simplify`: simplify_code
+- `site`: site_architecture
+- `skin`: skin_health_analyzer
+- `slack`: slack_automation, slack_bot_builder, slack_gif_creator
+- `sleep`: sleep_analyzer
+- `slo`: slo_implementation
+- `smart`: smart_memory
+- `smtp`: smtp_penetration_testing
+- `snowflake`: snowflake_development
+- `social`: social_card_gen, social_content, social_orchestrator, social_proof_architect
+- `software`: software_architect, software_architecture, software_engineer
+- `solidity`: solidity_security
+- `source`: source_map_resolve
+- `spa`: spa_routes
+- `spark`: spark_optimization
+- `spec`: spec_to_code_compliance
+- `speckit`: speckit_updater
+- `spline`: spline_3d_integration
+- `sql`: sql_injection_testing, sql_optimization_patterns, sql_pro
+- `sqlmap`: sqlmap_database_pentesting
+- `square`: square_automation
+- `sred`: sred_project_organizer, sred_work_summary
+- `ssh`: ssh_penetration_testing
+- `stability`: stability_ai
+- `steve`: steve_jobs
+- `stitch`: stitch_loop, stitch_ui_design
+- `stock`: stock_analyzer
+- `store`: store_data_structures
+- `stride`: stride_analysis_patterns
+- `stripe`: stripe_automation, stripe_integration
+- `subagent`: subagent_driven_development
+- `subject`: subject_line_psychologist
+- `supabase`: supabase_automation
+- `superpowers`: superpowers_lab
+- `supply`: supply_chain_risk_auditor
+- `swift`: swift_composable_architecture, swift_concurrency_expert
+- `systematic`: systematic_debugging, systematic_debugging_hivemind
+- `systems`: systems_programming_rust_project
+- `tai`: tai_video
+- `tailwind`: tailwind_design_system, tailwind_patterns
+- `tanstack`: tanstack_query_expert
+- `task`: task_intelligence
+- `tavily`: tavily_web
+- `tcm`: tcm_constitution_analyzer
+- `team`: team_collaboration_issue, team_collaboration_standup_notes, team_composition_analysis
+- `technical`: technical_change_tracker
+- `telegram`: telegram_automation, telegram_bot_builder, telegram_mini_app
+- `telescope`: telescope_nvim
+- `temporal`: temporal_golang_pro, temporal_python_pro, temporal_python_testing
+- `termux`: termux_packages
+- `terraform`: terraform_aws_modules, terraform_infrastructure, terraform_module_library, terraform_specialist
+- `testimonial`: testimonial_collector
+- `testing`: testing_patterns, testing_qa
+- `theme`: theme_factory
+- `threat`: threat_mitigation_mapping, threat_modeling_expert
+- `tiktok`: tiktok_automation
+- `time`: time_fetcher, time_svg_creator
+- `todoist`: todoist_automation
+- `tookie`: tookie_osint
+- `tool`: tool_design, tool_use_guardian
+- `top`: top_web_vulnerabilities
+- `track`: track_management
+- `trading`: trading_engine
+- `transformers`: transformers_js
+- `travel`: travel_health_analyzer
+- `trello`: trello_automation
+- `trend`: trend_scout
+- `triage`: triage_validation
+- `trigger`: trigger_dev
+- `trpc`: trpc_fullstack, trpc_router
+- `trust`: trust_calibrator
+- `turborepo`: turborepo_caching
+- `tutorial`: tutorial_engineer
+- `tweet`: tweet_draft_reviewer
+- `twilio`: twilio_communications
+- `twitter`: twitter_automation
+- `typescript`: typescript_advanced_types, typescript_expert, typescript_pro
+- `uncle`: uncle_bob_craft
+- `understand`: understand_anything
+- `uniprot`: uniprot_database
+- `unit`: unit_testing_test_generate
+- `unity`: unity_developer, unity_ecs_patterns
+- `unreal`: unreal_engine_cpp_pro
+- `unsplash`: unsplash_integration
+- `update`: update_skills, update_swiftui_apis
+- `upgrading`: upgrading_expo
+- `upstash`: upstash_qstash, upstash_workflow
+- `using`: using_git_worktrees, using_neon, using_superpowers
+- `uv`: uv_package_manager
+- `uxui`: uxui_principles
+- `variant`: variant_analysis
+- `varlock`: varlock_claude
+- `vault`: vault_cleanup_auditor, vault_janitor
+- `vector`: vector_database_engineer, vector_index_tuning
+- `vercel`: vercel_ai_sdk_expert, vercel_automation, vercel_deployment
+- `verification`: verification_before_completion
+- `version`: version_release
+- `vexor`: vexor_cli
+- `vibe`: vibe_code_auditor, vibe_coding, vibe_kanban, vibe_to_agentic_framework
+- `vibers`: vibers_code_review
+- `video`: video_creator
+- `videodb`: videodb_skills
+- `viral`: viral_generator_builder
+- `visual`: visual_emotion_engineer
+- `voice`: voice_agents, voice_ai_development, voice_ai_engine_development, voice_extractor
+- `vr`: vr_ar
+- `vscode`: vscode_visual_regression
+- `vue`: vue_skills
+- `vulnerability`: vulnerability_scanner
+- `warren`: warren_buffett
+- `wcag`: wcag_audit_patterns
+- `weather`: weather_fetcher, weather_svg_creator
+- `web2`: web2_recon, web2_vuln_classes
+- `web3`: web3_audit, web3_testing
+- `webapp`: webapp_testing
+- `webflow`: webflow_automation
+- `webhook`: webhook_subscriptions
+- `weightloss`: weightloss_analyzer
+- `wellally`: wellally_tech
+- `whatsapp`: whatsapp_automation, whatsapp_bridge, whatsapp_cloud_api
+- `windows`: windows_privilege_escalation, windows_shell_reliability
+- `wireshark`: wireshark_analysis
+- `wordpress`: wordpress_penetration_testing, wordpress_plugin_development, wordpress_theme_development, wordpress_woocommerce_development
+- `workflow`: workflow_automation, workflow_orchestration_patterns, workflow_patterns
+- `wrike`: wrike_automation
+- `write`: write_sglang_test
+- `writing`: writing_plans, writing_skills
+- `x`: x_article_publisher, x_twitter_scraper
+- `xlsx`: xlsx_official
+- `xss`: xss_html_injection
+- `xvary`: xvary_stock_research
+- `yann`: yann_lecun, yann_lecun_debate, yann_lecun_filosofia, yann_lecun_tecnico
+- `yes`: yes_md
+- `youtube`: youtube_automation, youtube_clipper, youtube_summarizer
+- `zapier`: zapier_make_patterns
+- `zendesk`: zendesk_automation
+- `zeroize`: zeroize_audit
+- `zod`: zod_validation_expert
+- `zoho`: zoho_crm_automation
+- `zoom`: zoom_automation
+- `zustand`: zustand_store_ts

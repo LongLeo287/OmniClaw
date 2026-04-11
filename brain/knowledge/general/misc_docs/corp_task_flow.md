@@ -1,4 +1,4 @@
-﻿---
+---
 id: corp-task-flow
 type: document
 owner: OHD
@@ -40,7 +40,7 @@ CEO           â”€â”€â–º READ RESULTS + NEXT DECISION
 
 ## Step 1: CEO â†’ Mission
 
-CEO writes to `brain/memory/corp_memory/mission.md`:
+CEO writes to `brain/memory/system_memory/mission.md`:
 ```markdown
 ## Mission â€” [DATE]
 Strategic Focus: [1-2 sentences]
@@ -144,9 +144,9 @@ After all tasks complete (or cycle ends):
 ```
 Manager writes:
 - Updated task statuses in subagents/mq/<dept>_tasks.md
-- Daily brief to brain/memory/corp_memory/daily_briefs/<dept>.md
+- Daily brief to brain/memory/system_memory/daily_briefs/<dept>.md
 - Lesson to corp/memory/departments/<dept>.md (if learned anything)
-- Any L2 escalations to brain/memory/corp_memory/escalations.md
+- Any L2 escalations to brain/memory/system_memory/escalations.md
 ```
 
 ---
@@ -166,9 +166,9 @@ C-Suite reads all dept briefs in their domain:
 ## Step 8: CEO â†’ Decision
 
 CEO reads:
-- `brain/memory/corp_memory/kpi_scoreboard.json`
-- `brain/memory/corp_memory/escalations.md`
-- `brain/memory/corp_memory/proposals/`
+- `brain/memory/system_memory/kpi_scoreboard.json`
+- `brain/memory/system_memory/escalations.md`
+- `brain/memory/system_memory/proposals/`
 
 CEO decides:
 - APPROVE items â†’ log to decisions_log.md

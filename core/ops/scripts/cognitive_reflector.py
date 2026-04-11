@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-ops/scripts/cognitive_reflector.py â€” Phase 5 Auto-Synthesis (B3)
-Reads all dept briefs from today â†’ writes SYNTHESIS_<date>.md + Telegram notify
+ops/scripts/cognitive_reflector.py €” Phase 5 Auto-Synthesis (B3)
+Reads all dept briefs from today †’ writes SYNTHESIS_<date>.md + Telegram notify
 
 Usage:
   python ops/scripts/cognitive_reflector.py        # Synthesize today's briefs
@@ -110,7 +110,7 @@ def consolidate(date: str, focus: str, signal: dict, pruned_count: int) -> str:
 
     briefs = signal["briefs"]
     lines = [
-        f"# Auto-Dream Synthesis â€” Cycle {cycle} â€” {date}",
+        f"# Auto-Dream Synthesis €” Cycle {cycle} €” {date}",
         "---",
         "## 1. Orientation Context",
         f"- **CEO Intent Lens:** {focus}",
@@ -144,7 +144,7 @@ def main():
         if arg.startswith("--date"):
             date = arg.split("=")[-1] if "=" in arg else sys.argv[sys.argv.index(arg)+1]
 
-    print(f"cognitive_reflector â€” Auto-Dream REM Sleep â€” {date}")
+    print(f"cognitive_reflector €” Auto-Dream REM Sleep €” {date}")
 
     # 4 Phases of Auto-Dream
     focus = orientation()
@@ -157,7 +157,7 @@ def main():
     synth_dir.mkdir(parents=True, exist_ok=True)
     synth_file = synth_dir / f"SYNTHESIS_{date}.md"
     synth_file.write_text(synthesis, encoding="utf-8")
-    print(f"  âœ… {synth_file.relative_to(ROOT)}")
+    print(f"  œ… {synth_file.relative_to(ROOT)}")
 
     # Telegram notify
     bb = {}
@@ -166,13 +166,13 @@ def main():
         except: pass
     cycle = bb.get("corp_cycle_number", "?")
     msg = (
-        f"ðŸ’¤ *Auto-Dream SYNTHESIS â€” Cycle {cycle}*\n"
+        f"ðŸ’¤ *Auto-Dream SYNTHESIS €” Cycle {cycle}*\n"
         f"ðŸ“… {date} | {len(signal['briefs'])} depts reporting\n"
         f"ðŸ§¹ Pruned memory files: {pruned_count}\n"
         f"File: `corp/daily_briefs/SYNTHESIS_{date}.md`"
     )
     send_telegram(msg)
-    print("  âœ… Telegram notify sent")
+    print("  œ… Telegram notify sent")
 
 if __name__ == "__main__":
     main()

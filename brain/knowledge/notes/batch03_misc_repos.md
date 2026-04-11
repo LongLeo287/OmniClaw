@@ -6,7 +6,7 @@ tags: [auto-healed]
 healed_at: 2026-04-03T22:46:22.596352
 ---
 
-# KI: pm-skills, ai-hands-on, xtool — Các Repos Phụ
+# KI: pm-skills, ai-hands-on, xtool — the Repos Phụ
 
 ## Metadata
 - **Ingested:** 2026-03-21
@@ -21,10 +21,10 @@ healed_at: 2026-04-03T22:46:22.596352
 **Priority:** 🟢 MEDIUM
 
 ### Tóm Tắt
-PM Skills Marketplace: **100+ agentic skills, commands, và plugins** cho Product Managers. Từ discovery → strategy → execution → launch → growth.
+PM Skills Marketplace: **100+ agentic skills, commands, and plugins** for Product Managers. from discovery → strategy → execution → launch → growth.
 
 ### Plugins
-- Compatible với Claude Cowork (recommended for non-developers)
+- Compatible with Claude Cowork (recommended for non-developers)
 - Claude Code CLI
 - Other AI assistants (skills only)
 
@@ -33,7 +33,7 @@ PM Skills Marketplace: **100+ agentic skills, commands, và plugins** cho Produc
 
 ### OmniClaw Action
 ```
-STATUS: 🟢 LOW-MEDIUM — Tham khảo cho Product/Strategy skills
+STATUS: 🟢 LOW-MEDIUM — Tham khảo for Product/Strategy skills
 RELEVANT: Nếu OmniClaw cần PM workflow automation
 ```
 
@@ -45,7 +45,7 @@ RELEVANT: Nếu OmniClaw cần PM workflow automation
 **Priority:** 🟢 LOW
 
 ### Tóm Tắt
-Collection notebooks để học AI từ scratch: Math Fundamentals → PyTorch → Neural Networks → Transformers → RAG → OCR.
+Collection notebooks để học AI from scratch: Math Fundamentals → PyTorch → Neural Networks → Transformers → RAG → OCR.
 
 ### Repository Structure
 1. Math Fundamentals
@@ -58,7 +58,7 @@ Collection notebooks để học AI từ scratch: Math Fundamentals → PyTorch 
 ### OmniClaw Action
 ```
 STATUS: 🟢 LOW — Learning reference, not for production
-RELEVANT: Background reading cho OmniClaw team onboarding
+RELEVANT: Background reading for OmniClaw team onboarding
 ```
 
 ---
@@ -69,7 +69,7 @@ RELEVANT: Background reading cho OmniClaw team onboarding
 **Priority:** 🟢 LOW (not in scope)
 
 ### Tóm Tắt
-Cross-platform Xcode replacement. Build và deploy iOS apps với SwiftPM trên **Linux, Windows, macOS** — không cần Xcode.
+Cross-platform Xcode replacement. Build and deploy iOS apps with SwiftPM trên **Linux, Windows, macOS** — not cần Xcode.
 
 ### Tính Năng
 - Command line interface
@@ -79,6 +79,6 @@ Cross-platform Xcode replacement. Build và deploy iOS apps với SwiftPM trên 
 
 ### OmniClaw Action
 ```
-STATUS: ⚪ SKIP — Out of scope cho OmniClaw
+STATUS: ⚪ SKIP — Out of scope for OmniClaw
 RELEVANT: Chỉ nếu OmniClaw develop iOS apps
 ```

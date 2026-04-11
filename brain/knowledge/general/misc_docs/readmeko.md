@@ -287,7 +287,7 @@ npm run bug-report
 
 Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 
-전체 세부 정보는 [LICENSE](LICENSE) 파일을 참조하세요.
+전체 세부 정보는 LICENSE 파일을 참조하세요.
 
 **의미:**
 
@@ -296,7 +296,7 @@ Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 - 파생 작업물도 AGPL-3.0에 따라 라이선스가 부여되어야 합니다
 - 이 소프트웨어에는 보증이 없습니다
 
-**Ragtime에 대한 참고 사항**: `ragtime/` 디렉토리는 **PolyForm Noncommercial License 1.0.0**에 따라 별도로 라이선스가 부여됩니다. 자세한 내용은 [ragtime/LICENSE](ragtime/LICENSE)를 참조하세요.
+**Ragtime에 대한 참고 사항**: `ragtime/` 디렉토리는 **PolyForm Noncommercial License 1.0.0**에 따라 별도로 라이선스가 부여됩니다. 자세한 내용은 ragtime/LICENSE를 참조하세요.
 
 ---
 

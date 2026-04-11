@@ -41,13 +41,11 @@ class VaultKeeper:
         # Structure: token_hash -> {"level": str, "owner": str, "expires": float}
         self._tokens: dict = {}
 
-        # HQ Master Key tá»« env var (khÃ´ng hardcode trong source)
         raw_master = os.environ.get("OMNICLAW_HQ_MASTER_KEY", "OMNICLAW-HQ-MASTER-ROOT-2026")
         self._hq_master_key_hash = hashlib.sha256(raw_master.encode()).hexdigest()
 
         self._load_tokens()
 
-    # â”€â”€ Persistence â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     def _load_tokens(self):
         """Load tokens from file (survive restart)."""
@@ -68,9 +66,8 @@ class VaultKeeper:
             with open(_VAULT_FILE, 'w', encoding='utf-8') as f:
                 json.dump(self._tokens, f, ensure_ascii=False, indent=2)
         except Exception:
-            pass  # Non-fatal â€” token still works in-memory
+            pass  # Non-fatal €” token still works in-memory
 
-    # â”€â”€ Public API â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     def issue_passport(self, owner: str, level: str = "GUEST", duration_days: int = 30) -> str:
         """Issue Wooden Tag for a Client/Bot. Return raw token (only once)."""
@@ -92,7 +89,7 @@ class VaultKeeper:
         return raw_token
 
     def verify_passport(self, raw_token: str) -> dict:
-        """Customs inspects Tag â€” returns dict with status/level/owner/msg."""
+        """Customs inspects Tag €” returns dict with status/level/owner/msg."""
         if not raw_token:
             return {"status": "NO_PASS", "level": "UNKNOWN", "msg": "No Pass"}
 

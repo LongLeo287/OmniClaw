@@ -104,7 +104,7 @@ Two startup flags relate to usage budgets (API key users only, print mode):
 | `--max-budget-usd <AMOUNT>` | Maximum dollar amount for API calls before stopping |
 | `--max-turns <NUMBER>` | Limit number of agentic turns |
 
-See [CLI Startup Flags Reference](claude-cli-startup-flags.md) for the full list.
+See CLI Startup Flags Reference for the full list.
 
 ---
 

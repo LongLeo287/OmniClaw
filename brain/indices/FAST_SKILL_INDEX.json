@@ -19914,6 +19914,13 @@
       "coord": "ecosystem/ui_components/_DIR_IDENTITY.md",
       "name": "Frontend UI Components Storage",
       "description": ""
+    },
+    {
+      "id": "oma_gps_navigator",
+      "type": "skill",
+      "coord": "ecosystem/skills/oma_gps_navigator",
+      "owner": "OA_DECOMPOSE",
+      "registered_at": "2026-04-12T05:00:28.134234"
     }
   ]
 }
