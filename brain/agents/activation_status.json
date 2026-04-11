@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-04-03T00:44:48.882804Z",
+    "updated": "2026-04-11T11:42:00Z",
     "description": "System Daemon and Core Agent activation statuses"
   },
   "daemons": {
@@ -12,7 +12,7 @@
   },
   "agents": {
     "ai_ml_agent": "OFFLINE",
-    "antigravity": "OFFLINE",
+    "antigravity": "ONLINE",
     "content_agent": "OFFLINE",
     "data_agent": "OFFLINE",
     "devops_agent": "OFFLINE",
