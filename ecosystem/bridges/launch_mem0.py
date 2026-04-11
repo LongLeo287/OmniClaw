@@ -1,25 +1,35 @@
 import os
 import sys
 import subprocess
+import time
 
-# Hardcoded Port Assignment (Enforced by backend repo compatibility)
-PORT = "7000"
+# Port Assignment from OBD Harbor
+PORT = sys.argv[1] if len(sys.argv) > 1 else "7000"
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-TARGET_DIR = os.path.join(current_dir, "..", "..", "..", "OmniClaw REMOTE", "plugins", "mem0")
+OMNICLAW_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-if not os.path.exists(TARGET_DIR):
-    print(f"[OmniClaw Bridge] ERR: Mem0 target directory not found: {TARGET_DIR}")
-    sys.exit(1)
+def launch():
+    print(f"[OmniClaw Bridge] Activating Mem0 Vector Memory (Docker) on Port {PORT}...")
+    
+    compose_file = os.path.join(OMNICLAW_ROOT, "docker-compose.yml")
+    
+    if not os.path.exists(compose_file):
+        print(f"[OmniClaw Bridge] ERR: Topology not found at {compose_file}")
+        sys.exit(1)
 
-os.chdir(TARGET_DIR)
+    # Start the service (depends_on qdrant handles DB startup)
+    cmd_up = ["docker", "compose", "-f", compose_file, "up", "mem0"]
+    
+    try:
+        print(f"[OmniClaw Bridge] Harbor Lock Engaged. Press Ctrl+C to terminate container.")
+        subprocess.run(cmd_up, cwd=OMNICLAW_ROOT, check=True)
+    except KeyboardInterrupt:
+        print("\n[OmniClaw Bridge] Signal caught. Terminating Mem0 Container...")
+    except Exception as e:
+        print(f"[OmniClaw Bridge] Mem0 crashed: {e}")
+    finally:
+        print("[OmniClaw Bridge] Shutting down instance...")
+        subprocess.run(["docker", "compose", "-f", compose_file, "stop", "mem0"], cwd=OMNICLAW_ROOT)
 
-print(f"[OmniClaw Bridge] Launching Mem0 API Server from {TARGET_DIR} on Port {PORT}...")
-COMMAND = ["poetry", "run", "uvicorn", "server.main:app", "--host", "0.0.0.0", "--port", str(PORT)]
-
-try:
-    subprocess.run(COMMAND, check=True)
-except KeyboardInterrupt:
-    print("\n[OmniClaw Bridge] Mem0 stopped safely.")
-except Exception as e:
-    print(f"[OmniClaw Bridge] Mem0 crashed: {e}")
+if __name__ == "__main__":
+    launch()

@@ -57,20 +57,19 @@ services:
   # ==========================================
   # 📂 MEM0 CORE (Local Memory Server)
   # Map: config.json -> Port 7000 
-  # Note: Requires building via local plugin or using a generic python API base if image absent
   # ==========================================
-  # mem0:
-  #   image: mem0ai/mem0:latest
-  #   container_name: omniclaw_mem0
-  #   ports:
-  #     - "7000:7000"
-  #   environment:
-  #     - QDRANT_URL=http://qdrant:6333
-  #     - OPENAI_API_KEY=${OPENAI_API_KEY:-}
-  #   networks:
-  #     - omniclaw-remote-net
-  #   depends_on:
-  #     - qdrant
+  mem0:
+    image: mem0ai/mem0:latest
+    container_name: omniclaw_mem0
+    ports:
+      - "7000:7000"
+    environment:
+      - QDRANT_URL=http://qdrant:6333
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    networks:
+      - omniclaw-remote-net
+    depends_on:
+      - qdrant
 
 networks:
   omniclaw-remote-net:
