@@ -67,8 +67,13 @@ This project consists of {{parts_count}} parts:
 {{#if is_single_part}}
 
 - [Architecture](./architecture.md) - Detailed technical architecture
+<<<<<<< HEAD
   {{#if has_api_docs}}- API Contracts - API endpoints and schemas{{/if}}
   {{#if has_data_models}}- Data Models - Database schema and models{{/if}}
+=======
+  {{#if has_api_docs}}- [API Contracts](./api-contracts.md) - API endpoints and schemas{{/if}}
+  {{#if has_data_models}}- [Data Models](./data-models.md) - Database schema and models{{/if}}
+>>>>>>> origin/main
   {{else}}
 
 ### Part-Specific Documentation
@@ -77,9 +82,15 @@ This project consists of {{parts_count}} parts:
 
 #### {{part_name}} ({{part_id}})
 
+<<<<<<< HEAD
   {{#if has_components}}- Components - Component catalog{{/if}}
   {{#if has_api}}- API Contracts - API documentation{{/if}}
   {{#if has_data}}- Data Models - Data architecture{{/if}}
+=======
+  {{#if has_components}}- [Components](./component-inventory-{{part_id}}.md) - Component catalog{{/if}}
+  {{#if has_api}}- [API Contracts](./api-contracts-{{part_id}}.md) - API documentation{{/if}}
+  {{#if has_data}}- [Data Models](./data-models-{{part_id}}.md) - Data architecture{{/if}}
+>>>>>>> origin/main
   {{/each}}
 
 ### Integration

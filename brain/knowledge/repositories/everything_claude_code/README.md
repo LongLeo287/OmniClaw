@@ -27,7 +27,11 @@
 
 **🌐 Language / 语言 / 語言 / Dil**
 
+<<<<<<< HEAD
 [**English**](README.md) | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어
+=======
+[**English**](README.md) | [Português (Brasil)](docs/pt-BR/README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md)
+>>>>>>> origin/main
 
 </div>
 

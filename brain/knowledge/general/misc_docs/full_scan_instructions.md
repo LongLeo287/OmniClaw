@@ -763,11 +763,19 @@ When a document SHOULD be generated but wasn't (due to quick scan, missing data,
 
 ### Generated Documentation
 
+<<<<<<< HEAD
   {{#if deployment_found}}- Deployment Guide{{#unless deployment_guide_exists}} (To be generated) {{/unless}}{{/if}}
   {{#if contribution_found}}- Contribution Guide{{/if}}
   {{#if api_documented}}- API Contracts{{#unless api_contracts_exists}} (To be generated) {{/unless}}{{/if}}
   {{#if data_models_documented}}- Data Models{{#unless data_models_exists}} (To be generated) {{/unless}}{{/if}}
   {{#if multi-part}}- Integration Architecture{{#unless integration_arch_exists}} (To be generated) {{/unless}}{{/if}}
+=======
+  {{#if deployment_found}}- [Deployment Guide](./deployment-guide.md){{#unless deployment_guide_exists}} (To be generated) {{/unless}}{{/if}}
+  {{#if contribution_found}}- [Contribution Guide](./contribution-guide.md){{/if}}
+  {{#if api_documented}}- [API Contracts](./api-contracts{{#if multi-part}}-{part_id}{{/if}}.md){{#unless api_contracts_exists}} (To be generated) {{/unless}}{{/if}}
+  {{#if data_models_documented}}- [Data Models](./data-models{{#if multi-part}}-{part_id}{{/if}}.md){{#unless data_models_exists}} (To be generated) {{/unless}}{{/if}}
+  {{#if multi-part}}- [Integration Architecture](./integration-architecture.md){{#unless integration_arch_exists}} (To be generated) {{/unless}}{{/if}}
+>>>>>>> origin/main
 
 ### Existing Documentation
 

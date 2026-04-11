@@ -1254,7 +1254,11 @@ java-development-assistant:08-java-devops
 
 | Document | Description |
 |----------|-------------|
+<<<<<<< HEAD
 | LICENSE | License information |
+=======
+| [LICENSE](LICENSE) | License information |
+>>>>>>> origin/main
 
 ---
 
