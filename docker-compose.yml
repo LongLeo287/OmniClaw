@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  # ==========================================
+  # 🌐 FIRECRAWL WEB SCRAPER 
+  # OmniClaw Intake Worker's main scraping engine
+  # Map: config.json -> Port 3002
+  # ==========================================
+  firecrawl-api:
+    image: mendableai/firecrawl:latest
+    container_name: omniclaw_firecrawl
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - NODE_ENV=production
+      - REDIS_URL=redis://redis:6379/0
+      - REDIS_RATE_LIMIT_URL=redis://redis:6379/1
+    restart: unless-stopped
+    networks:
+      - omniclaw-remote-net
+    depends_on:
+      - redis
+
+  # ==========================================
+  # 🧠 QDRANT VECTOR DATABASE
+  # Supports LightRAG (Port 9621) and Mem0 (Port 7000) memory embedding operations
+  # ==========================================
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: omniclaw_qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./vault/vectors/qdrant_storage:/qdrant/storage
+    restart: unless-stopped
+    networks:
+      - omniclaw-remote-net
+
+  # ==========================================
+  # 🚀 REDIS CACHE
+  # Rate limiting and queuing cache backend
+  # ==========================================
+  redis:
+    image: redis:alpine
+    container_name: omniclaw_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./vault/vectors/redis_data:/data
+    command: redis-server --appendonly yes
+    restart: unless-stopped
+    networks:
+      - omniclaw-remote-net
+
+  # ==========================================
+  # 📂 MEM0 CORE (Local Memory Server)
+  # Map: config.json -> Port 7000 
+  # Note: Requires building via local plugin or using a generic python API base if image absent
+  # ==========================================
+  # mem0:
+  #   image: mem0ai/mem0:latest
+  #   container_name: omniclaw_mem0
+  #   ports:
+  #     - "7000:7000"
+  #   environment:
+  #     - QDRANT_URL=http://qdrant:6333
+  #     - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+  #   networks:
+  #     - omniclaw-remote-net
+  #   depends_on:
+  #     - qdrant
+
+networks:
+  omniclaw-remote-net:
+    driver: bridge
+
+volumes:
+  qdrant_storage:
+  redis_data:
