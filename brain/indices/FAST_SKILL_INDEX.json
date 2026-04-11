@@ -16876,6 +16876,13 @@
       "coord": "ecosystem/skills/ghost_sweep_angular",
       "owner": "OA",
       "registered_at": "2026-04-10T21:37:35.634289"
+    },
+    {
+      "id": "ghost_sweep_global_code_reference",
+      "type": "skill",
+      "coord": "ecosystem/skills/ghost_sweep_global_code_reference",
+      "owner": "OA",
+      "registered_at": "2026-04-10T22:41:39.387993"
     }
   ]
 }

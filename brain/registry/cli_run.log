@@ -523,3 +523,165 @@
 [2026-04-10 22:36:07] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
 [2026-04-10 22:36:37] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fp_taskeither_ref, GHOST_SWEEP_fp_ts_errors, GHOST_SWEEP_fp_ts_pragmatic, GHOST_SWEEP_fp_ts_react, oma_test.log (count=6)
 [2026-04-10 22:36:37] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:37:07] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_fp_types_ref, GHOST_SWEEP_framework_migration_legacy_modernize, GHOST_SWEEP_framework_standards, GHOST_SWEEP_free_tool_strategy, GHOST_SWEEP_freshdesk_automation (count=8)
+[2026-04-10 22:37:08] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:37:38] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_freshservice_automation, GHOST_SWEEP_frontend_design, GHOST_SWEEP_frontend_developer, GHOST_SWEEP_frontend_mobile_development_component_scaffold, GHOST_SWEEP_frontend_mobile_security_xss_scan (count=7)
+[2026-04-10 22:37:38] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:38:08] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_frontend_security_coder, GHOST_SWEEP_full_stack_orchestration_full_stack_feature, GHOST_SWEEP_game_art, GHOST_SWEEP_game_audio, oma_test.log (count=6)
+[2026-04-10 22:38:08] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:38:38] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_game_design, GHOST_SWEEP_game_development, GHOST_SWEEP_gcp_cloud_run, GHOST_SWEEP_gcp_deploy, GHOST_SWEEP_gdb_cli (count=7)
+[2026-04-10 22:38:38] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:39:09] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_gemini_api_dev, GHOST_SWEEP_gemini_api_integration, GHOST_SWEEP_generate_profile, GHOST_SWEEP_geoffrey_hinton, oma_test.log (count=6)
+[2026-04-10 22:39:09] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:39:39] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_geo_fundamentals, GHOST_SWEEP_gha_security_review, GHOST_SWEEP_gh_review_requests, GHOST_SWEEP_git, GHOST_SWEEP_github (count=13)
+[2026-04-10 22:39:39] [OHD]  OK END PROCESS_QUARANTINE | success=11 failed=0 skipped=2
+[2026-04-10 22:40:09] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_gitnexus_analyzer, GHOST_SWEEP_git_advanced_workflows, GHOST_SWEEP_git_hooks_automation, GHOST_SWEEP_git_mcp, oma_test.log (count=6)
+[2026-04-10 22:40:09] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:40:40] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_git_pr_workflows_git_workflow, GHOST_SWEEP_git_pr_workflows_onboard, GHOST_SWEEP_git_pushing, GHOST_SWEEP_global_chat_agent_discovery, oma_test.log (count=6)
+[2026-04-10 22:40:40] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:41:10] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 22:41:10] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 22:41:40] [OHD]  START PROCESS_QUARANTINE | targets=oma_test.log, omniclaw.bat (count=2)
+[2026-04-10 22:41:40] [OHD]  OK END PROCESS_QUARANTINE | success=0 failed=0 skipped=2
+[2026-04-10 22:42:10] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_gmail, GHOST_SWEEP_gmail_automation, GHOST_SWEEP_goal_analyzer, GHOST_SWEEP_godot_4_migration, GHOST_SWEEP_golang_pro (count=10)
+[2026-04-10 22:42:10] [OHD]  OK END PROCESS_QUARANTINE | success=8 failed=0 skipped=2
+[2026-04-10 22:42:41] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_google_calendar, GHOST_SWEEP_google_calendar_automation, GHOST_SWEEP_google_chat, GHOST_SWEEP_google_docs, oma_test.log (count=6)
+[2026-04-10 22:42:41] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:43:11] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_google_docs_automation, GHOST_SWEEP_google_drive, GHOST_SWEEP_google_drive_automation, GHOST_SWEEP_google_sheets_automation, GHOST_SWEEP_google_slides_automation (count=7)
+[2026-04-10 22:43:11] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:43:41] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_go_testing, GHOST_SWEEP_grafana_dashboards, GHOST_SWEEP_graphql, GHOST_SWEEP_graphql_architect, oma_test.log (count=6)
+[2026-04-10 22:43:41] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:44:11] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_grill_me, GHOST_SWEEP_growth_engine, GHOST_SWEEP_hallucination_guard, GHOST_SWEEP_haskell_pro, GHOST_SWEEP_headline_psychologist (count=7)
+[2026-04-10 22:44:12] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:44:42] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_health_trend_analyzer, GHOST_SWEEP_helpdesk_automation, GHOST_SWEEP_helpers, GHOST_SWEEP_hierarchical_agent_memory, oma_test.log (count=7)
+[2026-04-10 22:44:42] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:45:12] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_hig_project_context, GHOST_SWEEP_hivefiver_bilingual_tutor, GHOST_SWEEP_hivefiver_domain_pack_router, GHOST_SWEEP_hivefiver_gsd_compat, GHOST_SWEEP_hivefiver_persona_routing (count=7)
+[2026-04-10 22:45:12] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:45:42] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_hivefiver_ralph_tasking, GHOST_SWEEP_hivefiver_spec_distillation, GHOST_SWEEP_hivemind_architect_strategist, GHOST_SWEEP_hivemind_governance, oma_test.log (count=6)
+[2026-04-10 22:45:42] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:46:13] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_honcho, GHOST_SWEEP_hono, GHOST_SWEEP_hosted_agents, GHOST_SWEEP_hotkey, GHOST_SWEEP_hr_pro (count=7)
+[2026-04-10 22:46:13] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:46:43] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_html_injection_testing, GHOST_SWEEP_hubspot_automation, GHOST_SWEEP_hubspot_integration, GHOST_SWEEP_hugging_face_cli, oma_test.log (count=7)
+[2026-04-10 22:46:43] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:47:13] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_hugging_face_datasets, GHOST_SWEEP_hugging_face_dataset_viewer, GHOST_SWEEP_hugging_face_evaluation, GHOST_SWEEP_hugging_face_papers, GHOST_SWEEP_hugging_face_tool_builder (count=7)
+[2026-04-10 22:47:13] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:47:43] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_humanize_chinese, GHOST_SWEEP_hybrid_cloud_architect, GHOST_SWEEP_hybrid_cloud_networking, GHOST_SWEEP_hyperliquid, oma_test.log (count=6)
+[2026-04-10 22:47:43] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:48:14] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_i18n, GHOST_SWEEP_iconsax_library, GHOST_SWEEP_idea_darwin, GHOST_SWEEP_identity_mirror, GHOST_SWEEP_idor_testing (count=7)
+[2026-04-10 22:48:14] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:48:44] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ilya_sutskever, GHOST_SWEEP_image_studio, GHOST_SWEEP_impress, GHOST_SWEEP_incident, oma_test.log (count=6)
+[2026-04-10 22:48:44] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:49:14] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_incident_responder, GHOST_SWEEP_incident_response_incident_response, GHOST_SWEEP_incident_runbook_templates, GHOST_SWEEP_infinite_gratitude, GHOST_SWEEP_inngest (count=8)
+[2026-04-10 22:49:14] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:49:45] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_instagram_automation, GHOST_SWEEP_integrity_check, GHOST_SWEEP_interactive_portfolio, GHOST_SWEEP_intercom_automation, oma_test.log (count=6)
+[2026-04-10 22:49:45] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:50:15] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_internal_comms, GHOST_SWEEP_interview_coach, GHOST_SWEEP_ios_debugger, GHOST_SWEEP_ios_developer, GHOST_SWEEP_issues (count=7)
+[2026-04-10 22:50:15] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:50:45] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_issue_creation, GHOST_SWEEP_istio_traffic_management, GHOST_SWEEP_iterate_pr, GHOST_SWEEP_javascript_mastery, GHOST_SWEEP_javascript_pro (count=7)
+[2026-04-10 22:50:45] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:51:15] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_javascript_typescript_typescript_scaffold, GHOST_SWEEP_java_pro, GHOST_SWEEP_jira_automation, GHOST_SWEEP_jobgpt, oma_test.log (count=6)
+[2026-04-10 22:51:16] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:51:46] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_jobs_to_be_done_analyst, GHOST_SWEEP_journal, GHOST_SWEEP_jq, GHOST_SWEEP_judgment_day, GHOST_SWEEP_jules (count=8)
+[2026-04-10 22:51:46] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:52:16] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_julia_pro, GHOST_SWEEP_jupyter_live_kernel, GHOST_SWEEP_k6_load_testing, GHOST_SWEEP_kaizen, oma_test.log (count=6)
+[2026-04-10 22:52:16] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:52:46] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_keyword_extractor, GHOST_SWEEP_klaviyo_automation, GHOST_SWEEP_knip, GHOST_SWEEP_knowledge_navigator, GHOST_SWEEP_kotlin_coroutines_expert (count=7)
+[2026-04-10 22:52:46] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:53:17] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_kpi_dashboard_design, GHOST_SWEEP_kubernetes_architect, GHOST_SWEEP_kubernetes_deployment, GHOST_SWEEP_langchain_architecture, oma_test.log (count=6)
+[2026-04-10 22:53:17] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:53:47] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_langfuse, GHOST_SWEEP_laravel_expert, GHOST_SWEEP_laravel_security_audit, GHOST_SWEEP_latex_paper_conversion, GHOST_SWEEP_launch (count=7)
+[2026-04-10 22:53:47] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:54:17] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_launch_strategy, GHOST_SWEEP_legacy_modernizer, GHOST_SWEEP_legal_advisor, GHOST_SWEEP_lightning_architecture_review, oma_test.log (count=7)
+[2026-04-10 22:54:17] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:54:47] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_lightning_channel_factories, GHOST_SWEEP_lightning_factory_explainer, GHOST_SWEEP_linear, GHOST_SWEEP_linear_automation, oma_test.log (count=6)
+[2026-04-10 22:54:47] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:55:18] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_linear_claude, GHOST_SWEEP_linkedin_automation, GHOST_SWEEP_linkedin_cli, GHOST_SWEEP_linkerd_patterns, GHOST_SWEEP_linux_privilege_escalation (count=7)
+[2026-04-10 22:55:18] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:55:48] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_linux_shell_scripting, GHOST_SWEEP_linux_troubleshooting, GHOST_SWEEP_llm_application_dev_langchain, GHOST_SWEEP_llm_app_patterns, oma_test.log (count=6)
+[2026-04-10 22:55:48] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:56:18] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_llm_evaluation, GHOST_SWEEP_llm_ops, GHOST_SWEEP_llm_prompt_optimizer, GHOST_SWEEP_llm_structured_output, GHOST_SWEEP_local_legal_seo_audit (count=8)
+[2026-04-10 22:56:18] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:56:49] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_local_llm_expert, GHOST_SWEEP_local_testing, GHOST_SWEEP_logic_guardian, GHOST_SWEEP_loss_aversion_designer, oma_test.log (count=6)
+[2026-04-10 22:56:49] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:57:19] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_machine_learning_ops_ml_pipeline, GHOST_SWEEP_macos_menubar_tuist_app, GHOST_SWEEP_magic_animator, GHOST_SWEEP_magic_ui_generator, GHOST_SWEEP_mailchimp_automation (count=7)
+[2026-04-10 22:57:19] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:57:49] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_makepad_animation, GHOST_SWEEP_makepad_basics, GHOST_SWEEP_makepad_deployment, GHOST_SWEEP_makepad_dsl, oma_test.log (count=6)
+[2026-04-10 22:57:49] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:58:20] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_makepad_event_action, GHOST_SWEEP_makepad_font, GHOST_SWEEP_makepad_layout, GHOST_SWEEP_makepad_platform, GHOST_SWEEP_makepad_reference (count=7)
+[2026-04-10 22:58:20] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 22:58:50] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_makepad_shaders, GHOST_SWEEP_makepad_skills, GHOST_SWEEP_makepad_splash, GHOST_SWEEP_makepad_widgets, GHOST_SWEEP_make_automation (count=8)
+[2026-04-10 22:58:50] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 22:59:20] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_malware_analyst, GHOST_SWEEP_manifest, GHOST_SWEEP_marketing, GHOST_SWEEP_marketing_ideas, oma_test.log (count=6)
+[2026-04-10 22:59:20] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 22:59:50] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_marketing_psychology, GHOST_SWEEP_matplotlib, GHOST_SWEEP_maxia, GHOST_SWEEP_mcporter, GHOST_SWEEP_mcp_builder_ms (count=7)
+[2026-04-10 22:59:50] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:00:21] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_memory_audit, GHOST_SWEEP_memory_evolution, GHOST_SWEEP_memory_forensics, GHOST_SWEEP_memory_intake, GHOST_SWEEP_memory_systems (count=7)
+[2026-04-10 23:00:21] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:00:51] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_mempalace, GHOST_SWEEP_mental_health_analyzer, GHOST_SWEEP_mermaid_expert, GHOST_SWEEP_metasploit_framework, oma_test.log (count=6)
+[2026-04-10 23:00:51] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:01:21] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_microsoft_docs, GHOST_SWEEP_microsoft_teams_automation, GHOST_SWEEP_micro_saas_launcher, GHOST_SWEEP_minecraft_bukkit_pro, GHOST_SWEEP_minecraft_modpack_server (count=8)
+[2026-04-10 23:01:21] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 23:01:52] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_miro_automation, GHOST_SWEEP_mixpanel_automation, GHOST_SWEEP_mlops_engineer, GHOST_SWEEP_ml_engineer, GHOST_SWEEP_ml_pipeline_workflow (count=7)
+[2026-04-10 23:01:52] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:02:22] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_mobile_developer, GHOST_SWEEP_mobile_games, GHOST_SWEEP_mobile_security_coder, GHOST_SWEEP_modal, oma_test.log (count=6)
+[2026-04-10 23:02:22] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:02:52] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_molykit, GHOST_SWEEP_monday_automation, GHOST_SWEEP_monetization, GHOST_SWEEP_monorepo_architect, GHOST_SWEEP_moodle_external_api_development (count=7)
+[2026-04-10 23:02:52] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:03:22] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_moyu, GHOST_SWEEP_mtls_configuration, GHOST_SWEEP_multiplayer, GHOST_SWEEP_multi_advisor, GHOST_SWEEP_multi_agent_brainstorming (count=7)
+[2026-04-10 23:03:22] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:03:53] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_multi_agent_patterns, GHOST_SWEEP_multi_agent_task_orchestrator, GHOST_SWEEP_multi_cloud_architecture, GHOST_SWEEP_multi_platform_apps_multi_platform, oma_test.log (count=7)
+[2026-04-10 23:03:53] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:04:23] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_n8n_code_javascript, GHOST_SWEEP_n8n_code_python, GHOST_SWEEP_n8n_expression_syntax, GHOST_SWEEP_n8n_mcp_tools_expert, GHOST_SWEEP_n8n_node_configuration (count=7)
+[2026-04-10 23:04:23] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:04:53] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_n8n_validation_expert, GHOST_SWEEP_n8n_workflow_patterns, GHOST_SWEEP_nanobanana_ppt_skills, GHOST_SWEEP_nano_pdf, oma_test.log (count=6)
+[2026-04-10 23:04:53] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:05:24] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_native_data_fetching, GHOST_SWEEP_native_mcp, GHOST_SWEEP_neon_postgres, GHOST_SWEEP_nerdzao_elite, GHOST_SWEEP_nerdzao_elite_gemini_high (count=7)
+[2026-04-10 23:05:24] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:05:54] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_nestjs_expert, GHOST_SWEEP_netlify_ai_gateway, GHOST_SWEEP_netlify_blobs, GHOST_SWEEP_netlify_caching, GHOST_SWEEP_netlify_cli_and_deploy (count=8)
+[2026-04-10 23:05:54] [OHD]  OK END PROCESS_QUARANTINE | success=6 failed=0 skipped=2
+[2026-04-10 23:06:24] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_netlify_config, GHOST_SWEEP_netlify_db, GHOST_SWEEP_netlify_edge_functions, GHOST_SWEEP_netlify_forms, oma_test.log (count=6)
+[2026-04-10 23:06:24] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:06:54] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_netlify_functions, GHOST_SWEEP_network, GHOST_SWEEP_networkx, GHOST_SWEEP_network_engineer, oma_test.log (count=6)
+[2026-04-10 23:06:55] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:07:25] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_neural_memory, GHOST_SWEEP_neural_navigator, GHOST_SWEEP_new_rails_project, GHOST_SWEEP_nextjs_best_practices, GHOST_SWEEP_nextjs_supabase_auth (count=7)
+[2026-04-10 23:07:25] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:07:55] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_nft_standards, GHOST_SWEEP_nodejs_best_practices, GHOST_SWEEP_nosql_expert, GHOST_SWEEP_notion, oma_test.log (count=6)
+[2026-04-10 23:07:55] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:08:25] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_notion_automation, GHOST_SWEEP_notion_template_business, GHOST_SWEEP_nutrition_analyzer, GHOST_SWEEP_nx_workspace_patterns, GHOST_SWEEP_objection_preemptor (count=10)
+[2026-04-10 23:08:26] [OHD]  OK END PROCESS_QUARANTINE | success=8 failed=0 skipped=2
+[2026-04-10 23:08:56] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_observability, GHOST_SWEEP_observability_engineer, GHOST_SWEEP_obsidian, GHOST_SWEEP_obsidian_cli, oma_test.log (count=6)
+[2026-04-10 23:08:56] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:09:26] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_occupational_health_analyzer, GHOST_SWEEP_odoo_accounting_setup, GHOST_SWEEP_odoo_automated_tests, GHOST_SWEEP_odoo_backup_strategy, GHOST_SWEEP_odoo_docker_deployment (count=7)
+[2026-04-10 23:09:27] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:09:57] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_odoo_ecommerce_configurator, GHOST_SWEEP_odoo_edi_connector, GHOST_SWEEP_odoo_hr_payroll_setup, GHOST_SWEEP_odoo_inventory_optimizer, oma_test.log (count=6)
+[2026-04-10 23:09:57] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:10:27] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_odoo_l10n_compliance, GHOST_SWEEP_odoo_manufacturing_advisor, GHOST_SWEEP_odoo_migration_helper, GHOST_SWEEP_odoo_module_developer, GHOST_SWEEP_odoo_orm_expert (count=7)
+[2026-04-10 23:10:27] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:10:57] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_odoo_performance_tuner, GHOST_SWEEP_odoo_project_timesheet, GHOST_SWEEP_odoo_purchase_workflow, GHOST_SWEEP_odoo_qweb_templates, oma_test.log (count=9)
+[2026-04-10 23:10:58] [OHD]  OK END PROCESS_QUARANTINE | success=7 failed=0 skipped=2
+[2026-04-10 23:11:28] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_odoo_rpc_api, GHOST_SWEEP_odoo_sales_crm_expert, GHOST_SWEEP_odoo_security_rules, GHOST_SWEEP_odoo_shopify_integration, GHOST_SWEEP_odoo_upgrade_advisor (count=7)
+[2026-04-10 23:11:28] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:11:58] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_odoo_woocommerce_bridge, GHOST_SWEEP_odoo_xml_views_builder, GHOST_SWEEP_office_productivity, GHOST_SWEEP_okx_cex_earn, oma_test.log (count=6)
+[2026-04-10 23:11:58] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:12:29] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_okx_cex_portfolio, GHOST_SWEEP_okx_cex_skill_mp, GHOST_SWEEP_onboard, GHOST_SWEEP_onboarding_cro, GHOST_SWEEP_onboarding_psychologist (count=7)
+[2026-04-10 23:12:29] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:12:59] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_one_drive_automation, GHOST_SWEEP_one_three_one_rule, GHOST_SWEEP_ontology_auditor, GHOST_SWEEP_on_call_handoff_patterns, oma_test.log (count=6)
+[2026-04-10 23:12:59] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:13:29] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_openclaw_github_repo_commander, GHOST_SWEEP_opencode, GHOST_SWEEP_openhue, GHOST_SWEEP_oral_health_analyzer, oma_test.log (count=9)
+[2026-04-10 23:13:29] [OHD]  OK END PROCESS_QUARANTINE | success=7 failed=0 skipped=2
+[2026-04-10 23:13:59] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_orchestrator_pro, GHOST_SWEEP_ORPHAN_SWEEP_2d_games, GHOST_SWEEP_ORPHAN_SWEEP_3d_games, GHOST_SWEEP_orphan_sweep_components, GHOST_SWEEP_ORPHAN_SWEEP_game_art (count=7)
+[2026-04-10 23:13:59] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:14:30] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_game_audio, GHOST_SWEEP_ORPHAN_SWEEP_game_design, GHOST_SWEEP_ORPHAN_SWEEP_kilocode, GHOST_SWEEP_ORPHAN_SWEEP_mobile_games, oma_test.log (count=6)
+[2026-04-10 23:14:30] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:15:00] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_multiplayer, GHOST_SWEEP_ORPHAN_SWEEP_oa_academy, GHOST_SWEEP_ORPHAN_SWEEP_obd_harbor, GHOST_SWEEP_ORPHAN_SWEEP_oer_registry, GHOST_SWEEP_ORPHAN_SWEEP_oiw_intake (count=7)
+[2026-04-10 23:15:00] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:15:30] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_oma_architect, GHOST_SWEEP_ORPHAN_SWEEP_osf_auditor, GHOST_SWEEP_ORPHAN_SWEEP_osf_quarantine_guard, GHOST_SWEEP_ORPHAN_SWEEP_osf_warden, oma_test.log (count=6)
+[2026-04-10 23:15:30] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:16:01] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_pc_games, GHOST_SWEEP_ORPHAN_SWEEP_project_setup_info_context7, GHOST_SWEEP_ORPHAN_SWEEP_siyuan, GHOST_SWEEP_ORPHAN_SWEEP_skill_debate, GHOST_SWEEP_ORPHAN_SWEEP_sora (count=10)
+[2026-04-10 23:16:01] [OHD]  OK END PROCESS_QUARANTINE | success=8 failed=0 skipped=2
+[2026-04-10 23:16:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_ORPHAN_SWEEP_subagents_021555, GHOST_SWEEP_ORPHAN_SWEEP_vr_ar, GHOST_SWEEP_ORPHAN_SWEEP_web_games, GHOST_SWEEP_oss_hunter, oma_test.log (count=6)
+[2026-04-10 23:16:31] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-10 23:17:01] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_os_scripting, GHOST_SWEEP_outlook_automation, GHOST_SWEEP_outlook_calendar_automation, GHOST_SWEEP_pagerduty_automation, GHOST_SWEEP_page_cro (count=7)
+[2026-04-10 23:17:01] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
+[2026-04-10 23:17:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_paid_ads, GHOST_SWEEP_pakistan_payments_stack, GHOST_SWEEP_parallel_agents, GHOST_SWEEP_parallel_debugging_hivemind, oma_test.log (count=6)
+[2026-04-10 23:17:31] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
