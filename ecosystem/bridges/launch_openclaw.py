@@ -2,7 +2,8 @@ import os
 import sys
 import subprocess
 
-TARGET_DIR = r"D:\LongLeo\AI OS CORP\OmniClaw REMOTE\plugins\openclaw"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+TARGET_DIR = os.path.join(current_dir, "..", "..", "..", "OmniClaw REMOTE", "plugins", "openclaw")
 
 if not os.path.exists(TARGET_DIR):
     print(f"Error: OpenClaw target directory not found: {TARGET_DIR}")
