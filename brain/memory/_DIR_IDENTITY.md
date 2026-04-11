@@ -23,7 +23,7 @@ The 'memory' directory within OmniClaw v5.0 is responsible for managing and stor
 graph TD
   Parent("brain") --> Node("memory")
   Node --> S1("core")
-  Node --> S2("corp_memory")
+  Node --> S2("system_memory")
 ```
 
 ---
