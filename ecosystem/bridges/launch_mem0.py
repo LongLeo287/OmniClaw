@@ -1,23 +1,24 @@
 import os
 import sys
 import subprocess
+from pathlib import Path
 
 # Port Assignment from OBD Harbor
 PORT = sys.argv[1] if len(sys.argv) > 1 else "7000"
 
-OMNICLAW_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+CURRENT_DIR = Path(__file__).resolve().parent
+OMNICLAW_ROOT = Path(os.getenv("OMNICLAW_ROOT", CURRENT_DIR.parents[1])).resolve()
+COMPOSE_FILE = CURRENT_DIR / "docker-compose.yml"
 
 def launch():
     print(f"[OmniClaw Bridge] Activating Mem0 Vector Memory (Docker) on Port {PORT}...")
     
-    compose_file = os.path.join(OMNICLAW_ROOT, "docker-compose.yml")
-    
-    if not os.path.exists(compose_file):
-        print(f"[OmniClaw Bridge] ERR: Topology not found at {compose_file}")
+    if not COMPOSE_FILE.exists():
+        print(f"[OmniClaw Bridge] ERR: Topology not found at {COMPOSE_FILE}")
         sys.exit(1)
 
     # Start the service (depends_on qdrant handles DB startup)
-    cmd_up = ["docker", "compose", "-f", compose_file, "up", "mem0"]
+    cmd_up = ["docker", "compose", "-f", str(COMPOSE_FILE), "up", "mem0"]
     
     try:
         print(f"[OmniClaw Bridge] Harbor Lock Engaged. Press Ctrl+C to terminate container.")

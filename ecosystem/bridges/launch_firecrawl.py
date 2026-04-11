@@ -1,24 +1,24 @@
 import os
 import sys
 import subprocess
+from pathlib import Path
 
 # Port Assignment from OBD Harbor (Default to config port)
 PORT = sys.argv[1] if len(sys.argv) > 1 else "3002"
 
-OMNICLAW_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+CURRENT_DIR = Path(__file__).resolve().parent
+OMNICLAW_ROOT = Path(os.getenv("OMNICLAW_ROOT", CURRENT_DIR.parents[1])).resolve()
+COMPOSE_FILE = CURRENT_DIR / "docker-compose.yml"
 
 def launch():
     print(f"[OmniClaw Bridge] Activating Firecrawl Web Scraper (Docker) on Port {PORT}...")
     
-    # Ensuring backend redis is up first, then firecrawl
-    compose_file = os.path.join(OMNICLAW_ROOT, "docker-compose.yml")
-    
-    if not os.path.exists(compose_file):
-        print(f"[OmniClaw Bridge] ERR: Topology not found at {compose_file}")
+    if not COMPOSE_FILE.exists():
+        print(f"[OmniClaw Bridge] ERR: Topology not found at {COMPOSE_FILE}")
         sys.exit(1)
 
     # Start the service
-    cmd_up = ["docker", "compose", "-f", compose_file, "up", "firecrawl-api"]
+    cmd_up = ["docker", "compose", "-f", str(COMPOSE_FILE), "up", "firecrawl-api"]
     
     try:
         # Run Docker Compose (blocking, so OBD Harbor can monitor it)
