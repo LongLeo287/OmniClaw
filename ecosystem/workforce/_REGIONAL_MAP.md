@@ -1,23 +1,22 @@
 ---
 id: workforce_regional_map
 type: regional_map
-zone: ecosystem\workforce
-generated_at: 2026-04-09
-total_files: 1
-total_subdirs: 4
+zone: ecosystem/workforce
+generated_at: 2026-04-11
+status: v5.0_consolidated
 ---
 
-# _REGIONAL_MAP — D:\OmniClaw\ecosystem\workforce
+# 🗺️ _REGIONAL_MAP — D:\OmniClaw\ecosystem\workforce
 
-## Subdirectories (4)
+> Architecture consolidated: Agents & Subagents are nested inside Departments.
 
-| Name | Contents |
-|------|---------|
-| `agents/` | 8576 items |
-| `departments/` | 201 items |
-| `subagents/` | 117 items |
-| `system/` | 28 items |
+## Subdirectories (2)
 
-## Markdown Files (1)
+| Name | Contents | Role |
+|------|----------|------|
+| `departments/` | 28 departments, 172 files | Agent rosters, prompts, rules, governance |
+| `system/` | 2 sub-dirs, 25 files | Corp prompts, daemon identity YAMLs |
 
-- `subagent_operating_guide.md`
+## Root Files (1)
+
+- `subagent_operating_guide.md` — Operations manual for DEVELOPER/QA/RESEARCHER roles

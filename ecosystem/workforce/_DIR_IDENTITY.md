@@ -4,8 +4,7 @@ name: Workforce
 path: ecosystem/workforce
 type: directory_identity
 status: active
-node_count: 178
-last_updated: 2026-04-08
+last_updated: 2026-04-11
 owner: OMA_ARCHITECT
 ---
 
@@ -14,20 +13,18 @@ owner: OMA_ARCHITECT
 > [!CAUTION]
 > **IRON DIRECTIVE**: This is the Autonomous Workforce Architecture directory.
 > Core Daemons (OER, OA, OIW) are **STRICTLY PROHIBITED** from dropping raw or unclassified repositories directly into this root folder.
-> All new assets MUST be registered via the OAP Pipeline and placed inside the correct Pillar below.
+> All new assets MUST be registered via the OAP Pipeline and placed inside the correct Department below.
 
 ---
 
-## The 4 Pillars
+## Architecture (V5.0 Consolidated)
 
-| Pillar | Folder | Nodes | Role |
-|---|---|---|---|
-| **PILLAR-1** | `agents/` | **116** | Independent autonomous workers. Each agent carries its own `AGENT.md`, `SKILL.md`, and `_DIR_IDENTITY.md`. |
-| **PILLAR-2** | `subagents/` | **37** | Ephemeral task specialists. Activated on-demand, terminated upon task completion. |
-| **PILLAR-3** | `departments/` | **28** | Organizational reporting structures. Groups agents by domain and defines command chains. |
-| **PILLAR-4** | `system/` | **2 sub-dirs** | Declarative Configuration Zone (NO executable code or autonomous agents permitted). Stores global prompt templates (`corp_prompts/`) and Daemon identity registry (`daemons/`). Governed by `SYSTEM_PROTOCOL.md`. |
+All Agents (116), Subagents (37), and organizational units are consolidated **within the Departments pillar**. Each department's `department.md` contains the full roster of agents and subagents assigned to it.
 
-**Total Workforce: 178 Nodes (116 Agents + 37 Subagents + 28 Departments + 2 System Configs)**
+| Domain | Folder | Role |
+|---|---|---|
+| **Departments** | `departments/` | 28 functional domains. Each contains its agent roster, manager/worker prompts, governance rules, and subagent assignments. |
+| **System Config** | `system/` | Declarative Configuration Zone (NO executable code). Stores global prompt templates (`corp_prompts/`) and Daemon identity registry (`daemons/`). Governed by `SYSTEM_PROTOCOL.md`. |
 
 ---
 
@@ -36,16 +33,15 @@ owner: OMA_ARCHITECT
 | File | Purpose |
 |---|---|
 | `_DIR_IDENTITY.md` | This file — Workforce root identity card |
-| `SUBAGENT_OPERATING_GUIDE.md` | Operational guide (v1.2): DEVELOPER/QA/RESEARCHER workflow, MQ Protocol, Receipt Schema |
+| `subagent_operating_guide.md` | Operational guide (v1.2): DEVELOPER/QA/RESEARCHER workflow, MQ Protocol, Receipt Schema |
 
 ---
 
-## Regional Maps
+## Key References
 
-- [Agents Regional Map — 116 nodes](agents/_REGIONAL_MAP.md)
-- [Subagents Regional Map — 37 nodes](subagents/_REGIONAL_MAP.md)
-- [Departments Regional Map — 28 nodes](departments/_REGIONAL_MAP.md)
+- [Departments Regional Map — 28 domains](departments/_REGIONAL_MAP.md)
 - [System Regional Map](system/_REGIONAL_MAP.md)
+- [Subagent Operating Guide](subagent_operating_guide.md)
 
 ---
-*Governed by OMA Architect | Zero-Trust, Zero-Debt*
+*Governed by OMA Architect | Zero-Trust, Zero-Debt | V5.0 Consolidated Architecture*
