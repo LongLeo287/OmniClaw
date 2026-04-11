@@ -72,3 +72,9 @@ RULE WRK-12: STRICT LANGUAGE COMPLIANCE
   2. All other files (Code, Configs, Logs, System files, Prompts): ENGLISH code/text, but MUST include VIETNAMESE comments/annotations.
   3. Agent-to-agent messages: ENGLISH.
 
+RULE WRK-13: FULL ECOSYSTEM UTILIZATION (CLI AGENTS)
+  All CLI worker agents (including Claude Code CLI and Codex CLI) are fully authorized and expected to:
+  - Access and utilize omni-system knowledge bases and contextual data arrays.
+  - Dynamically orchestrate sub-agents or request delegation when facing complex bounds.
+  - Native invocation and consumption of existing Skills and Plugins within the OmniClaw ecosystem.
+  Leverage the full power and interconnectedness of the OmniClaw system. Do not operate in tooling isolation.
