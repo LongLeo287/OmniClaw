@@ -13,10 +13,13 @@ import sys
 import subprocess
 import json
 import glob
+from pathlib import Path
 
 # Define constants
-MODELS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..", "OmniClaw_Models"))
-CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "gguf_multi_model.json"))
+CURRENT_DIR = Path(__file__).resolve().parent
+OMNICLAW_ROOT = Path(os.getenv("OMNICLAW_ROOT", CURRENT_DIR.parents[1])).resolve()
+MODELS_DIR = Path(os.getenv("OMNICLAW_MODELS_ROOT", OMNICLAW_ROOT.parent / "OmniClaw_Models")).resolve()
+CONFIG_PATH = CURRENT_DIR / "gguf_multi_model.json"
 
 # Port Assignment from OBD Harbor
 API_PORT = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] != "menu" else "11435"
@@ -57,12 +60,16 @@ AI_CATALOG = {
 }
 
 
+def repair_requested():
+    return "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1"
+
+
 def get_hf_hub_download():
     try:
         from huggingface_hub import hf_hub_download
         return hf_hub_download
     except ImportError as e:
-        if "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1":
+        if repair_requested():
             print("[OmniClaw Bridge] Repair mode: installing huggingface_hub...")
             subprocess.check_call([sys.executable, "-m", "pip", "install", "huggingface_hub"])
             from huggingface_hub import hf_hub_download
@@ -90,7 +97,7 @@ def download_model(model_key: str):
         downloaded = hf_hub_download(
             repo_id=model_data['repo'], 
             filename=model_data['file'], 
-            local_dir=MODELS_DIR, 
+            local_dir=str(MODELS_DIR), 
             local_dir_use_symlinks=False
         )
         print(f"[OmniClaw Bridge] SUCCESS: Model downloaded safely to: {downloaded}\n")
@@ -146,17 +153,20 @@ def interactive_market():
 def ensure_models_headless():
     """Headless initialization for continuous operation."""
     os.makedirs(MODELS_DIR, exist_ok=True)
-    gguf_files = glob.glob(os.path.join(MODELS_DIR, "*.gguf"))
-    
-    # AUTO-HEALING
+    gguf_files = glob.glob(os.path.join(str(MODELS_DIR), "*.gguf"))
+
     if not gguf_files:
         print(f"[OmniClaw Bridge] WARN: Vault {MODELS_DIR} is empty!")
-        print("[OmniClaw Bridge] HEAL: Activating Auto-Healing Protocol. Injecting Default Qwen 0.5B Payload...")
+        if not repair_requested():
+            print("[OmniClaw Bridge] ERR: No GGUF models are provisioned for runtime launch.")
+            print("[OmniClaw Bridge] Action required: place models in the vault or rerun this bridge with --repair.")
+            sys.exit(1)
+        print("[OmniClaw Bridge] Repair mode: provisioning default Qwen 0.5B payload...")
         def_id = [k for k,v in AI_CATALOG.items() if v.get("is_default")][0]
         if download_model(def_id):
-            gguf_files = glob.glob(os.path.join(MODELS_DIR, "*.gguf"))
+            gguf_files = glob.glob(os.path.join(str(MODELS_DIR), "*.gguf"))
         else:
-            print("[OmniClaw Bridge] ERR: All Auto-Healing Subroutines failed. Terminal shutdown.")
+            print("[OmniClaw Bridge] ERR: Repair-mode model provisioning failed. Terminal shutdown.")
             sys.exit(1)
             
     print(f"[OmniClaw Bridge] INFO: Detected {len(gguf_files)} GGUF models. Compiling Multi-Model Routing schema...")
@@ -196,11 +206,15 @@ def launch_server():
     ]
     
     try:
-        subprocess.run(cmd)
+        subprocess.run(cmd, check=True)
     except KeyboardInterrupt:
         print("\n[OmniClaw Bridge] WARN: Universal GGUF Server gracefully terminated.")
+    except subprocess.CalledProcessError as e:
+        print(f"[OmniClaw Bridge] ERR: Universal GGUF Server exited with failure: {e}")
+        sys.exit(e.returncode or 1)
     except Exception as e:
         print(f"[OmniClaw Bridge] ERR: Reactor catastrophically failed: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1].lower() == "menu":

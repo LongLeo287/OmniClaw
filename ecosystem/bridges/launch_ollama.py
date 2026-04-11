@@ -10,8 +10,8 @@ PORT = "11434"
 current_file = Path(__file__).resolve()
 # System core root (prefer explicit env var, otherwise derive repo root from this file)
 CORP_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_file.parents[2])).resolve()
-
-MODELS_VAULT = CORP_ROOT / "OmniClaw_Models" / "ollama"
+MODELS_ROOT = Path(os.getenv("OMNICLAW_MODELS_ROOT", CORP_ROOT.parent / "OmniClaw_Models")).resolve()
+MODELS_VAULT = Path(os.getenv("OMNICLAW_OLLAMA_MODELS_DIR", MODELS_ROOT / "ollama")).resolve()
 
 if not MODELS_VAULT.exists():
     print(f"[OmniClaw Bridge] P&P Protocol: Vault missing at {MODELS_VAULT}. Auto-generating isolated workspace...")
@@ -32,3 +32,4 @@ except KeyboardInterrupt:
     print("\n[OmniClaw Bridge] Ollama terminating safely.")
 except Exception as e:
     print(f"[OmniClaw Bridge] Ollama crashed catastrophically: {e}")
+    sys.exit(1)

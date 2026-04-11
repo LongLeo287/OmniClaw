@@ -8,7 +8,9 @@ from pathlib import Path
 PORT = "20128"
 
 current_dir = Path(__file__).resolve().parent
-TARGET_DIR = (current_dir / ".." / ".." / ".." / "OmniClaw REMOTE" / "plugins" / "9router").resolve()
+REPO_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_dir.parents[1])).resolve()
+REMOTE_ROOT = Path(os.getenv("OMNICLAW_REMOTE_ROOT", REPO_ROOT.parent / "OmniClaw REMOTE")).resolve()
+TARGET_DIR = (REMOTE_ROOT / "plugins" / "9router").resolve()
 LOCAL_BINARY = TARGET_DIR / "node_modules" / ".bin" / ("9router.cmd" if os.name == "nt" else "9router")
 
 def is_global_installed():

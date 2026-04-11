@@ -1,7 +1,6 @@
 import os
 import sys
 import subprocess
-import time
 
 # Port Assignment from OBD Harbor
 PORT = sys.argv[1] if len(sys.argv) > 1 else "7000"
@@ -27,9 +26,7 @@ def launch():
         print("\n[OmniClaw Bridge] Signal caught. Terminating Mem0 Container...")
     except Exception as e:
         print(f"[OmniClaw Bridge] Mem0 crashed: {e}")
-    finally:
-        print("[OmniClaw Bridge] Shutting down instance...")
-        subprocess.run(["docker", "compose", "-f", compose_file, "stop", "mem0"], cwd=OMNICLAW_ROOT)
+        sys.exit(1)
 
 if __name__ == "__main__":
     launch()

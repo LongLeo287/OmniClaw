@@ -7,7 +7,9 @@ from pathlib import Path
 PORT = "8501"
 
 current_dir = Path(__file__).resolve().parent
-TARGET_DIR = (current_dir / ".." / ".." / ".." / "OmniClaw REMOTE" / "plugins" / "omniclaw_ui").resolve()
+REPO_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_dir.parents[1])).resolve()
+REMOTE_ROOT = Path(os.getenv("OMNICLAW_REMOTE_ROOT", REPO_ROOT.parent / "OmniClaw REMOTE")).resolve()
+TARGET_DIR = (REMOTE_ROOT / "plugins" / "omniclaw_ui").resolve()
 
 
 def detect_launch_command():

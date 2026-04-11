@@ -7,7 +7,9 @@ from pathlib import Path
 PORT = "18789"
 
 current_dir = Path(__file__).resolve().parent
-TARGET_DIR = (current_dir / ".." / ".." / ".." / "OmniClaw REMOTE" / "plugins" / "openclaw").resolve()
+REPO_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_dir.parents[1])).resolve()
+REMOTE_ROOT = Path(os.getenv("OMNICLAW_REMOTE_ROOT", REPO_ROOT.parent / "OmniClaw REMOTE")).resolve()
+TARGET_DIR = (REMOTE_ROOT / "plugins" / "openclaw").resolve()
 NODE_MODULES_DIR = TARGET_DIR / "node_modules"
 
 if not TARGET_DIR.exists():

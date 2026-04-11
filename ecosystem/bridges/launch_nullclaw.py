@@ -1,23 +1,28 @@
 import os
 import sys
 import subprocess
+from pathlib import Path
 
 # Port Assignment from OBD Harbor
 PORT = sys.argv[1] if len(sys.argv) > 1 else "Unknown"
 
-def launch():
-    remote_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../OmniClaw REMOTE/agentic_zone/nullclaw/zig-out/bin/nullclaw.exe"))
-    config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../OmniClaw REMOTE/agentic_zone/nullclaw/configs/omniclaw_bridge.json"))
+current_dir = Path(__file__).resolve().parent
+REPO_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_dir.parents[1])).resolve()
+REMOTE_ROOT = Path(os.getenv("OMNICLAW_REMOTE_ROOT", REPO_ROOT.parent / "OmniClaw REMOTE")).resolve()
 
-    if not os.path.exists(remote_path):
+def launch():
+    remote_path = (REMOTE_ROOT / "agentic_zone" / "nullclaw" / "zig-out" / "bin" / "nullclaw.exe").resolve()
+    config_path = (REMOTE_ROOT / "agentic_zone" / "nullclaw" / "configs" / "omniclaw_bridge.json").resolve()
+
+    if not remote_path.exists():
         print(f"[OmniClaw Bridge] ERR: NullClaw binary not found at {remote_path}")
         print("[OmniClaw Bridge] Action required: provision the NullClaw binary before launching this bridge.")
         sys.exit(1)
 
-    if not os.path.exists(config_path):
+    if not config_path.exists():
         if "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1":
             print(f"[OmniClaw Bridge] Repair mode: generating default bridge config at {config_path}...")
-            os.makedirs(os.path.dirname(config_path), exist_ok=True)
+            os.makedirs(config_path.parent, exist_ok=True)
             import json
             with open(config_path, "w", encoding="utf-8") as f:
                 json.dump({"agent": "nullclaw", "mode": "bridge", "allow_inbound": True}, f, indent=2)
@@ -28,7 +33,7 @@ def launch():
 
     print(f"[OmniClaw Bridge] Routing connection to REMOTE: {remote_path} (Assigned Port: {PORT})")
     try:
-        subprocess.run([remote_path, "--config", config_path], cwd=os.path.dirname(remote_path), check=True)
+        subprocess.run([str(remote_path), "--config", str(config_path)], cwd=str(remote_path.parent), check=True)
     except KeyboardInterrupt:
         print("\n[OmniClaw Bridge] NullClaw terminated safely.")
     except subprocess.CalledProcessError as e:

@@ -1,7 +1,6 @@
 import os
 import sys
 import subprocess
-import time
 
 # Port Assignment from OBD Harbor (Default to config port)
 PORT = sys.argv[1] if len(sys.argv) > 1 else "3002"
@@ -29,10 +28,7 @@ def launch():
         print("\n[OmniClaw Bridge] Signal caught. Terminating Firecrawl Container...")
     except Exception as e:
         print(f"[OmniClaw Bridge] Firecrawl crashed: {e}")
-    finally:
-        # Cleanup when bridge is killed
-        print("[OmniClaw Bridge] Shutting down instance...")
-        subprocess.run(["docker", "compose", "-f", compose_file, "stop", "firecrawl-api"], cwd=OMNICLAW_ROOT)
+        sys.exit(1)
 
 if __name__ == "__main__":
     launch()

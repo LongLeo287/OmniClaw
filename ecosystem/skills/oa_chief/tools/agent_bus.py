@@ -5,8 +5,8 @@ import os
 import threading
 from pathlib import Path
 
-# Dynamic path: use AOS_ROOT env var or calculate from current file
-_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[3])
+# Dynamic path: use OMNICLAW_ROOT env var or derive the repository root from this file.
+_AOS_ROOT = os.getenv("OMNICLAW_ROOT") or str(Path(__file__).resolve().parents[4])
 DB_PATH = os.path.join(_AOS_ROOT, "brain", "shared-context", "event_bus.db")
 CLAIM_LIMIT = max(1, int(os.getenv("OMNICLAW_EVENT_CLAIM_LIMIT", "25")))
 LEASE_SECONDS = max(30, int(os.getenv("OMNICLAW_EVENT_LEASE_SECONDS", "900")))
@@ -89,31 +89,35 @@ class AgentBus:
 
         with self._lock:
             conn = self._get_conn()
-            conn.execute("BEGIN IMMEDIATE")
-            self._requeue_stale_processing(conn)
-            rows = conn.execute(query, [*topics, CLAIM_LIMIT]).fetchall()
+            try:
+                conn.execute("BEGIN IMMEDIATE")
+                self._requeue_stale_processing(conn)
+                rows = conn.execute(query, [*topics, CLAIM_LIMIT]).fetchall()
 
-            events = []
-            for row in rows:
-                event_id, topic, payload_str = row
-                cursor = conn.execute(
-                    """
-                    UPDATE events
-                    SET status='PROCESSING',
-                        picked_by=?,
-                        processing_started_at=CURRENT_TIMESTAMP
-                    WHERE id=? AND status='PENDING'
-                    """,
-                    (agent_id, event_id),
-                )
-                if cursor.rowcount != 1:
-                    continue
-                events.append({
-                    "id": event_id,
-                    "topic": topic,
-                    "payload": json.loads(payload_str)
-                })
-            conn.commit()
+                events = []
+                for row in rows:
+                    event_id, topic, payload_str = row
+                    cursor = conn.execute(
+                        """
+                        UPDATE events
+                        SET status='PROCESSING',
+                            picked_by=?,
+                            processing_started_at=CURRENT_TIMESTAMP
+                        WHERE id=? AND status='PENDING'
+                        """,
+                        (agent_id, event_id),
+                    )
+                    if cursor.rowcount != 1:
+                        continue
+                    events.append({
+                        "id": event_id,
+                        "topic": topic,
+                        "payload": json.loads(payload_str)
+                    })
+                conn.commit()
+            except Exception:
+                conn.rollback()
+                raise
         return events
 
     def mark_completed(self, event_id):
@@ -129,7 +133,7 @@ class AgentBus:
         with self._lock:
             conn = self._get_conn()
             conn.execute(
-                "UPDATE events SET status='FAILED', processing_started_at=NULL WHERE id=?",
+                "UPDATE events SET status='FAILED', picked_by=NULL, processing_started_at=NULL WHERE id=?",
                 (event_id,),
             )
             conn.commit()
