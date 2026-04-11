@@ -39,5 +39,6 @@ Nếu module sếp tích hợp là một con Cảnh binh chạy ngầm (ví dụ
 - Bridge phải bám vào **tiến trình thật** bằng `subprocess.run(...)` hoặc một vòng giám sát tường minh. Không được `Popen(...)` rồi tự thoát.
 - Cài dependency, bootstrap repo, sinh config mặc định chỉ được phép trong luồng `--repair` hoặc một lệnh provisioning riêng.
 - Nếu service không tự mở port, OBD cần đọc health từ lifecycle/process signal thật thay vì dummy socket.
+- `OmniClaw`, `OmniClaw REMOTE`, `OmniClaw UI`, và kho model là các project root tách biệt. Bridge phải resolve chúng qua biến môi trường riêng như `OMNICLAW_ROOT`, `OMNICLAW_REMOTE_ROOT`, `OMNICLAW_UI_ROOT`; không được giả định tất cả nằm chung dưới một repo root.
 
 *Tài liệu Vận hành Trạm điều tiết OBD | OmniClaw V5.0*

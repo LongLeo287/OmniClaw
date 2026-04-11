@@ -13,8 +13,11 @@ PORT = sys.argv[1] if len(sys.argv) > 1 else "Unknown"
 
 # Absolute path resolution
 current_dir = Path(__file__).resolve().parent
-# REPLACE with actual target script or executable:
-# TARGET_EXEC = (current_dir / "../../path/to/target").resolve()
+# Repository root of the OmniClaw orchestrator itself:
+# OMNICLAW_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_dir.parents[1])).resolve()
+# Separate project roots should be resolved explicitly, for example:
+# TARGET_ROOT = Path(os.getenv("OMNICLAW_REMOTE_ROOT", OMNICLAW_ROOT.parent / "OmniClaw REMOTE")).resolve()
+# TARGET_EXEC = (TARGET_ROOT / "path" / "to" / "target").resolve()
 # Optional explicit repair mode:
 # REPAIR_FLAG = "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1"
 

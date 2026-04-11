@@ -9,7 +9,22 @@ PORT = "8501"
 current_dir = Path(__file__).resolve().parent
 REPO_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_dir.parents[1])).resolve()
 REMOTE_ROOT = Path(os.getenv("OMNICLAW_REMOTE_ROOT", REPO_ROOT.parent / "OmniClaw REMOTE")).resolve()
-TARGET_DIR = (REMOTE_ROOT / "plugins" / "omniclaw_ui").resolve()
+
+
+def resolve_ui_root():
+    explicit_ui_root = os.getenv("OMNICLAW_UI_ROOT")
+    if explicit_ui_root:
+        return Path(explicit_ui_root).resolve()
+
+    sibling_ui_root = (REPO_ROOT.parent / "OmniClaw UI").resolve()
+    if sibling_ui_root.exists():
+        return sibling_ui_root
+
+    legacy_plugin_root = (REMOTE_ROOT / "plugins" / "omniclaw_ui").resolve()
+    return legacy_plugin_root
+
+
+TARGET_DIR = resolve_ui_root()
 
 
 def detect_launch_command():

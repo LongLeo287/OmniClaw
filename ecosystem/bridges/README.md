@@ -25,3 +25,4 @@ docker-compose up -d
 - Bridges must launch real services or fail fast. They must not bind fake sockets just to appear healthy.
 - Dependency installation and workspace bootstrap belong in explicit repair/setup flows, not normal runtime startup.
 - A bridge should stay attached to the real child process, or supervise it explicitly, so Harbor health reflects reality.
+- OmniClaw, OmniClaw REMOTE, OmniClaw UI, and model vaults should be treated as separate project roots. Resolve them through dedicated env vars such as `OMNICLAW_ROOT`, `OMNICLAW_REMOTE_ROOT`, and `OMNICLAW_UI_ROOT` instead of assuming a single monorepo root.
