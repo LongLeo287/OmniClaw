@@ -1,0 +1,20 @@
+{
+    "id": "frontend_ui_dark_ts",
+    "name": "Frontend Ui Dark Ts",
+    "version": "1.0.0",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\frontend_ui_dark_ts\\SKILL.md",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": [],
+    "exposed_functions": [],
+    "consumed_by": [],
+    "emits_events": [],
+    "listens_to": [],
+    "tags": [
+        "auto-assimilated"
+    ]
+}

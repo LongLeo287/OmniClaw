@@ -1,0 +1,20 @@
+{
+    "id": "performance_testing_review_ai_review",
+    "name": "Performance Testing Review Ai Review",
+    "version": "1.0.0",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\performance_testing_review_ai_review\\SKILL.md",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": [],
+    "exposed_functions": [],
+    "consumed_by": [],
+    "emits_events": [],
+    "listens_to": [],
+    "tags": [
+        "auto-assimilated"
+    ]
+}

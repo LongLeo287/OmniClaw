@@ -1,0 +1,20 @@
+{
+    "id": "github_issue_creator",
+    "name": "Github Issue Creator",
+    "version": "1.0.0",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\github_issue_creator\\SKILL.md",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": [],
+    "exposed_functions": [],
+    "consumed_by": [],
+    "emits_events": [],
+    "listens_to": [],
+    "tags": [
+        "auto-assimilated"
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "id": "mobile_developer",
+    "name": "Mobile Developer",
+    "version": "1.0.0",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\mobile_developer\\SKILL.md",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": [],
+    "exposed_functions": [],
+    "consumed_by": [],
+    "emits_events": [],
+    "listens_to": [],
+    "tags": [
+        "auto-assimilated"
+    ]
+}

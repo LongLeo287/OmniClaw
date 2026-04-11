@@ -1,0 +1,20 @@
+{
+    "id": "using_git_worktrees",
+    "name": "Using Git Worktrees",
+    "version": "1.0.0",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\using_git_worktrees\\SKILL.md",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": [],
+    "exposed_functions": [],
+    "consumed_by": [],
+    "emits_events": [],
+    "listens_to": [],
+    "tags": [
+        "auto-assimilated"
+    ]
+}

@@ -1,9 +1,8 @@
-# 🗺️ Kỷ Nguyên Lõi - Bản Đồ Tổng (Regional Map)
+# 🗺️ OmniClaw Regional Map (Alphabetical Index)
+> **Total Active Skills**: 1932
+> **Standard enforced**: `snake_case` (Python Standard)
 
-> **Tổng số lượng**: 1,970 Đặc Vụ Atomic tinh khiết.
-> Quy chuẩn: `snake_case` (Python Standard).
-
-## 🗃️ Cụm Tọa Độ [#]
+## 📍 Cluster [#]
 - `007`
 - `00_andruia_consultant`
 - `10_andruia_skill_smith`
@@ -13,7 +12,7 @@
 - `3d_games`
 - `3d_web_experience`
 
-## 🗃️ Cụm Tọa Độ [A]
+## 📍 Cluster [A]
 - `a2_ui_response_generator`
 - `ab_test_setup`
 - `acceptance_orchestrator`
@@ -34,7 +33,6 @@
 - `advogado_criminal`
 - `advogado_especialista`
 - `aegisops_ai`
-- `agent`
 - `agent_browser`
 - `agent_builder_skills`
 - `agent_config`
@@ -58,7 +56,6 @@
 - `agentic_actions_auditor`
 - `agentmail`
 - `agentphone`
-- `agents`
 - `agents_md`
 - `agents_v2_py`
 - `agentscope`
@@ -66,7 +63,6 @@
 - `agentskills`
 - `agentune`
 - `ai_agent_development`
-- `ai_agent_orchestration`
 - `ai_agents_architect`
 - `ai_analyzer`
 - `ai_discoverability_audit`
@@ -352,7 +348,7 @@
 - `azure_validate`
 - `azure_web_pubsub_ts`
 
-## 🗃️ Cụm Tọa Độ [B]
+## 📍 Cluster [B]
 - `ba`
 - `backend_architect`
 - `backend_dev_guidelines`
@@ -375,7 +371,6 @@
 - `bdistill_knowledge_extraction`
 - `beautiful_prose`
 - `behavioral_modes`
-- `benchmarks`
 - `bevy_ecs_expert`
 - `bill_gates`
 - `billing_automation`
@@ -404,7 +399,6 @@
 - `browser_pilot`
 - `bug_bounty`
 - `bug_hunter`
-- `build`
 - `build_feature`
 - `building_native_ui`
 - `bullmq_specialist`
@@ -415,7 +409,7 @@
 - `business_analyst`
 - `busybox_on_windows`
 
-## 🗃️ Cụm Tọa Độ [C]
+## 📍 Cluster [C]
 - `c4_architecture_c4_architecture`
 - `c4_code`
 - `c4_component`
@@ -476,7 +470,6 @@
 - `claudy_releases`
 - `clean_code`
 - `clerk_auth`
-- `cli`
 - `cli2`
 - `clickhouse_best_practices`
 - `clickup_automation`
@@ -582,7 +575,7 @@
 - `customize`
 - `customs_trade_compliance`
 
-## 🗃️ Cụm Tọa Độ [D]
+## 📍 Cluster [D]
 - `daily`
 - `daily_briefing_builder`
 - `daily_news_report`
@@ -650,7 +643,6 @@
 - `devops_troubleshooter`
 - `diary`
 - `differential_review`
-- `digital_brain`
 - `discord_automation`
 - `discord_bot_architect`
 - `dispatching_parallel_agents`
@@ -684,7 +676,7 @@
 - `dx_optimizer`
 - `dxt`
 
-## 🗃️ Cụm Tọa Độ [E]
+## 📍 Cluster [E]
 - `e2e_testing`
 - `e2e_testing_patterns`
 - `earllm_build`
@@ -734,7 +726,7 @@
 - `expo_ui_jetpack_compose`
 - `expo_ui_swift_ui`
 
-## 🗃️ Cụm Tọa Độ [F]
+## 📍 Cluster [F]
 - `faf_expert`
 - `faf_wizard`
 - `fal_audio`
@@ -810,7 +802,7 @@
 - `frontend_ui_dark_ts`
 - `full_stack_orchestration_full_stack_feature`
 
-## 🗃️ Cụm Tọa Độ [G]
+## 📍 Cluster [G]
 - `gah`
 - `game_art`
 - `game_audio`
@@ -830,6 +822,8 @@
 - `geoffrey_hinton`
 - `gh_review_requests`
 - `gha_security_review`
+- `ghost_sweep_angular`
+- `ghost_sweep_global_code_reference`
 - `git`
 - `git_advanced_workflows`
 - `git_hooks_automation`
@@ -889,7 +883,7 @@
 - `grpc_golang`
 - `grpo_rl_training`
 
-## 🗃️ Cụm Tọa Độ [H]
+## 📍 Cluster [H]
 - `hallucination_guard`
 - `haskell_pro`
 - `headline_psychologist`
@@ -898,7 +892,6 @@
 - `helm_chart_scaffolding`
 - `helpdesk_automation`
 - `hermes`
-- `hermes_cli`
 - `hierarchical_agent_memory`
 - `hig_components_content`
 - `hig_components_controls`
@@ -957,7 +950,7 @@
 - `hybrid_search_implementation`
 - `hyperliquid`
 
-## 🗃️ Cụm Tọa Độ [I]
+## 📍 Cluster [I]
 - `i18n`
 - `i18n_localization`
 - `iconsax_library`
@@ -974,7 +967,6 @@
 - `incident_response_incident_response`
 - `incident_response_smart_fix`
 - `incident_runbook_templates`
-- `inference`
 - `infinite_gratitude`
 - `inngest`
 - `instagram`
@@ -994,20 +986,8 @@
 - `it_manager`
 - `iterate_pr`
 
-## 🗃️ Cụm Tọa Độ [J]
-- `java_concurrency`
-- `java_docker`
-- `java_fundamentals`
-- `java_gradle`
-- `java_jpa_hibernate`
-- `java_maven`
-- `java_maven_gradle`
-- `java_microservices`
-- `java_performance`
+## 📍 Cluster [J]
 - `java_pro`
-- `java_spring_boot`
-- `java_testing`
-- `java_testing_advanced`
 - `javascript_mastery`
 - `javascript_pro`
 - `javascript_testing_patterns`
@@ -1024,7 +1004,7 @@
 - `junta_leiloeiros`
 - `jupyter_live_kernel`
 
-## 🗃️ Cụm Tọa Độ [K]
+## 📍 Cluster [K]
 - `k6_load_testing`
 - `k8s_manifest_generator`
 - `k8s_security_policies`
@@ -1042,7 +1022,7 @@
 - `kubernetes_architect`
 - `kubernetes_deployment`
 
-## 🗃️ Cụm Tọa Độ [L]
+## 📍 Cluster [L]
 - `landing_page_generator`
 - `langchain_architecture`
 - `langfuse`
@@ -1083,7 +1063,6 @@
 - `linux_shell_scripting`
 - `linux_troubleshooting`
 - `liquid_glass`
-- `llama_factory`
 - `llama_trainer`
 - `llm_app_patterns`
 - `llm_application_dev_ai_assistant`
@@ -1107,7 +1086,7 @@
 - `loki_mode`
 - `loss_aversion_designer`
 
-## 🗃️ Cụm Tọa Độ [M]
+## 📍 Cluster [M]
 - `m365_agents_dotnet`
 - `m365_agents_py`
 - `m365_agents_ts`
@@ -1209,7 +1188,7 @@
 - `mypy`
 - `mysql`
 
-## 🗃️ Cụm Tọa Độ [N]
+## 📍 Cluster [N]
 - `n8n_code_javascript`
 - `n8n_code_python`
 - `n8n_expression_syntax`
@@ -1262,10 +1241,8 @@
 - `nutrition_analyzer`
 - `nx_workspace_patterns`
 
-## 🗃️ Cụm Tọa Độ [O]
-- `oa_academy`
+## 📍 Cluster [O]
 - `oa_chief`
-- `obd_harbor`
 - `objection_preemptor`
 - `observability`
 - `observability_engineer`
@@ -1301,16 +1278,13 @@
 - `odoo_upgrade_advisor`
 - `odoo_woocommerce_bridge`
 - `odoo_xml_views_builder`
-- `oer_registry`
 - `office_productivity`
 - `ohd_healer`
-- `oiw_intake`
 - `okx_cex_earn`
 - `okx_cex_market`
 - `okx_cex_portfolio`
 - `okx_cex_skill_mp`
 - `okx_cex_trade`
-- `oma_architect`
 - `omniclaw_bot`
 - `on_call_handoff_patterns`
 - `onboard`
@@ -1331,19 +1305,16 @@
 - `orchestrate_batch_refactor`
 - `orchestrator_pro`
 - `org_architect`
+- `orphan_sweep_digital_brain`
 - `orphan_sweep_environments`
-- `orphan_sweep_repo`
 - `orphan_sweep_yc_bench`
 - `os_scripting`
-- `osf_auditor`
-- `osf_quarantine_guard`
-- `osf_warden`
 - `oss_hunter`
 - `outline`
 - `outlook_automation`
 - `outlook_calendar_automation`
 
-## 🗃️ Cụm Tọa Độ [P]
+## 📍 Cluster [P]
 - `page_cro`
 - `pagerduty_automation`
 - `paid_ads`
@@ -1425,7 +1396,6 @@
 - `project_development`
 - `project_intake`
 - `project_overview`
-- `project_setup_info_context7`
 - `project_skill_audit`
 - `projection_patterns`
 - `prometheus_configuration`
@@ -1452,14 +1422,14 @@
 - `python_pro`
 - `python_testing_patterns`
 
-## 🗃️ Cụm Tọa Độ [Q]
+## 📍 Cluster [Q]
 - `qiskit`
 - `quality_nonconformance`
 - `quant_analyst`
 - `qwen`
 - `qwen_code`
 
-## 🗃️ Cụm Tọa Độ [R]
+## 📍 Cluster [R]
 - `radix_ui_design_system`
 - `rag_engineer`
 - `rag_implementation`
@@ -1523,11 +1493,10 @@
 - `robius_widget_patterns`
 - `rootly_mcp_server`
 - `ruby_pro`
-- `run`
 - `rust_async_patterns`
 - `rust_pro`
 
-## 🗃️ Cụm Tọa Độ [S]
+## 📍 Cluster [S]
 - `saas_multi_tenant`
 - `saas_mvp_launcher`
 - `safeguard`
@@ -1661,12 +1630,10 @@
 - `simplify`
 - `simplify_code`
 - `site_architecture`
-- `siyuan`
 - `skill_aaak_compression`
 - `skill_check`
 - `skill_creator`
 - `skill_creator_ms`
-- `skill_debate`
 - `skill_developer`
 - `skill_forge`
 - `skill_generator`
@@ -1700,13 +1667,11 @@
 - `software_engineer`
 - `solidity_security`
 - `songsee`
-- `sora`
 - `source_map_resolve`
 - `spa_routes`
 - `spark_optimization`
 - `spec_to_code_compliance`
 - `speckit_updater`
-- `speech`
 - `speed`
 - `spline_3d_integration`
 - `sql_injection_testing`
@@ -1758,7 +1723,7 @@
 - `systematic_debugging_hivemind`
 - `systems_programming_rust_project`
 
-## 🗃️ Cụm Tọa Độ [T]
+## 📍 Cluster [T]
 - `tai_video`
 - `tailwind_design_system`
 - `tailwind_patterns`
@@ -1832,10 +1797,8 @@
 - `tmux`
 - `todoist_automation`
 - `tookie_osint`
-- `tool_call_parsers`
 - `tool_design`
 - `tool_use_guardian`
-- `tools`
 - `top_web_vulnerabilities`
 - `track_management`
 - `trading_engine`
@@ -1862,7 +1825,7 @@
 - `typescript_expert`
 - `typescript_pro`
 
-## 🗃️ Cụm Tọa Độ [U]
+## 📍 Cluster [U]
 - `ui_a11y`
 - `ui_component`
 - `ui_page`
@@ -1900,7 +1863,7 @@
 - `ux_persuasion_engineer`
 - `uxui_principles`
 
-## 🗃️ Cụm Tọa Độ [V]
+## 📍 Cluster [V]
 - `variant_analysis`
 - `varlock`
 - `varlock_claude`
@@ -1910,7 +1873,6 @@
 - `vector_index_tuning`
 - `vercel_ai_sdk_expert`
 - `vercel_automation`
-- `vercel_composition_patterns`
 - `vercel_deployment`
 - `verification`
 - `verification_before_completion`
@@ -1937,10 +1899,9 @@
 - `vr_ar`
 - `vscode_visual_regression`
 - `vue_skills`
-- `vueuse`
 - `vulnerability_scanner`
 
-## 🗃️ Cụm Tọa Độ [W]
+## 📍 Cluster [W]
 - `wallet`
 - `warren_buffett`
 - `watchdog`
@@ -1998,7 +1959,7 @@
 - `writing_plans`
 - `writing_skills`
 
-## 🗃️ Cụm Tọa Độ [X]
+## 📍 Cluster [X]
 - `x_article_publisher`
 - `x_twitter_scraper`
 - `xlsx`
@@ -2007,7 +1968,7 @@
 - `xsv`
 - `xvary_stock_research`
 
-## 🗃️ Cụm Tọa Độ [Y]
+## 📍 Cluster [Y]
 - `yann_lecun`
 - `yann_lecun_debate`
 - `yann_lecun_filosofia`
@@ -2017,7 +1978,7 @@
 - `youtube_clipper`
 - `youtube_summarizer`
 
-## 🗃️ Cụm Tọa Độ [Z]
+## 📍 Cluster [Z]
 - `zapier_make_patterns`
 - `zendesk_automation`
 - `zeroize_audit`

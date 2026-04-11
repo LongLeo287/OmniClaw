@@ -1,0 +1,20 @@
+{
+    "id": "sglang_diffusion_ako4all_kernel",
+    "name": "Sglang Diffusion Ako4All Kernel",
+    "version": "1.0.0",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\sglang_diffusion_ako4all_kernel\\SKILL.md",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": [],
+    "exposed_functions": [],
+    "consumed_by": [],
+    "emits_events": [],
+    "listens_to": [],
+    "tags": [
+        "auto-assimilated"
+    ]
+}
