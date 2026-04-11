@@ -18,6 +18,8 @@
 /core/*
 !/core/docs/
 !/core/docs/**
+!/core/scripts/
+!/core/scripts/**
 
 # 4. Allow authorized Workforce Registry
 !/ecosystem/

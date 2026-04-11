@@ -20,3 +20,8 @@ docker-compose up -d
 ```
 > [!WARNING]
 > Do not move `docker-compose.yml` to the root `C:/.../OmniClaw/` directory. The volume mounts are strictly configured to tunnel back `../../` into the secure `vault/vectors/` cache.
+
+## Bridge Rules
+- Bridges must launch real services or fail fast. They must not bind fake sockets just to appear healthy.
+- Dependency installation and workspace bootstrap belong in explicit repair/setup flows, not normal runtime startup.
+- A bridge should stay attached to the real child process, or supervise it explicitly, so Harbor health reflects reality.

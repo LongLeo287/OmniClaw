@@ -5,56 +5,41 @@
 
 import os
 import sys
-import time
-import socket
 import subprocess
+from pathlib import Path
 
 # Port Assignment from OBD Harbor
 PORT = sys.argv[1] if len(sys.argv) > 1 else "Unknown"
 
 # Absolute path resolution
-current_dir = os.path.dirname(os.path.abspath(__file__))
+current_dir = Path(__file__).resolve().parent
 # REPLACE with actual target script or executable:
-# TARGET_EXEC = os.path.join(current_dir, "../../path/to/target")
+# TARGET_EXEC = (current_dir / "../../path/to/target").resolve()
+# Optional explicit repair mode:
+# REPAIR_FLAG = "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1"
 
 def launch():
     print(f"[OmniClaw Bridge] Igniting Template_Service on Port {PORT}...")
     
     # 1. Verification
-    # if not os.path.exists(TARGET_EXEC):
+    # if not TARGET_EXEC.exists():
     #     print(f"[OmniClaw Bridge] Error: Executable not found at {TARGET_EXEC}")
     #     sys.exit(1)
 
-    # 2. Spawning process (Detached / No Window / Managed)
-    print(f"[OmniClaw Bridge] Spawning background worker...")
-    # proc = subprocess.Popen(...)
+    # 2. Optional explicit repair/bootstrap path
+    # if REPAIR_FLAG:
+    #     subprocess.run(["npm", "install"], cwd=TARGET_EXEC.parent, check=True)
 
-    print(f"[OmniClaw Bridge] Maintaining Active State...")
+    # 3. Launch the real process and stay attached to it
+    print("[OmniClaw Bridge] Launching managed worker...")
     try:
-        # 3. Simulate or actual Port Binding (Optional if Target handles it)
-        # If Target handles the HTTP/TCP binding on PORT, we don't need this socket mocking block.
-        # If the script is a background daemon (no port), use mock socket so OBD sees it as "ONLINE"
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-            s.bind(('127.0.0.1', int(PORT)))
-            s.listen()
-            while True:
-                # Add Health checks here
-                # if proc.poll() is not None: break
-                s.settimeout(1.0)
-                try:
-                    conn, addr = s.accept()
-                    conn.close()
-                except socket.timeout:
-                    pass
-    except OSError as e:
-        print(f"[OmniClaw Bridge] Port {PORT} may be in use. Detail: {e}")
+        # subprocess.run([str(TARGET_EXEC), "--port", str(PORT)], cwd=TARGET_EXEC.parent, check=True)
+        pass
     except KeyboardInterrupt:
         print("\n[OmniClaw Bridge] Terminated.")
-    finally:
-        # Cleanup routine
-        # if proc.poll() is None: proc.terminate()
-        pass
+    except subprocess.CalledProcessError as e:
+        print(f"[OmniClaw Bridge] Underlying process exited with failure: {e}")
+        sys.exit(e.returncode or 1)
 
 if __name__ == "__main__":
     launch()

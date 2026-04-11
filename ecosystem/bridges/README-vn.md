@@ -33,4 +33,11 @@ Nếu module sếp tích hợp là một con Cảnh binh chạy ngầm (ví dụ
 **Cách fix:** Trong file Bridge, hãy mượn thư viện `socket` nặn ra một vòng lặp Listen ảo trên đúng số cổng được giao. Cảng giả này không lưu lượng, nó chỉ ngồi đó hứng Ping của OBD Harbor để báo cáo `ONLINE` đầy đủ! (Xem ví dụ tại `launch_system_pulse.py` hoặc đọc mô tả tại `bridgetemplate.md`).
 
 ---
+## Chính sách Runtime Mới (Bắt buộc)
+
+- Bridge phải khởi chạy **service thật** hoặc fail fast. Cấm bind cổng giả chỉ để OBD thấy `ONLINE`.
+- Bridge phải bám vào **tiến trình thật** bằng `subprocess.run(...)` hoặc một vòng giám sát tường minh. Không được `Popen(...)` rồi tự thoát.
+- Cài dependency, bootstrap repo, sinh config mặc định chỉ được phép trong luồng `--repair` hoặc một lệnh provisioning riêng.
+- Nếu service không tự mở port, OBD cần đọc health từ lifecycle/process signal thật thay vì dummy socket.
+
 *Tài liệu Vận hành Trạm điều tiết OBD | OmniClaw V5.0*
