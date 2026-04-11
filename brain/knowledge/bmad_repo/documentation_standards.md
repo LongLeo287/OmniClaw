@@ -59,7 +59,6 @@ NEVER document time estimates, durations, level of effort or completion times fo
 
 **Links:**
 
-- Inline: `[text](url)`
 - Reference: `[text][ref]` then `[ref]: url` at bottom
 - NO bare URLs without `<>` brackets
 

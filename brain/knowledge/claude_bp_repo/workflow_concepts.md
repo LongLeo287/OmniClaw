@@ -202,7 +202,6 @@ After presenting the report (and confirming changelog was updated), ask the user
 When executing:
 - **Missing concepts**: Add a new row to the CONCEPTS table in `README.md` following the existing format:
   ```
-  | [**Name**](docs-url) | `location` | Description |
   ```
   Add badges (best-practice, implemented) only if corresponding files exist.
 - **Changed concepts**: Update the specific column(s) that changed

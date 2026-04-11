@@ -1049,11 +1049,6 @@ Initial request: $ARGUMENTS
 8. Update todos as you progress
 
 **Reference documentation:**
-- [skills/apify-actor-development/references/actor-json.md](skills/apify-actor-development/references/actor-json.md)
-- [skills/apify-actor-development/references/input-schema.md](skills/apify-actor-development/references/input-schema.md)
-- [skills/apify-actor-development/references/output-schema.md](skills/apify-actor-development/references/output-schema.md)
-- [skills/apify-actor-development/references/dataset-schema.md](skills/apify-actor-development/references/dataset-schema.md)
-- [skills/apify-actor-development/references/key-value-store-schema.md](skills/apify-actor-development/references/key-value-store-schema.md)
 
 ---
 
@@ -5415,9 +5410,6 @@ This creates:
 
 Choose based on your project's language:
 
-- **JavaScript/TypeScript**: See [js-ts-actorization.md](references/js-ts-actorization.md)
-- **Python**: See [python-actorization.md](references/python-actorization.md)
-- **Other Languages (CLI-based)**: See [cli-actorization.md](references/cli-actorization.md)
 
 ### Quick Reference
 

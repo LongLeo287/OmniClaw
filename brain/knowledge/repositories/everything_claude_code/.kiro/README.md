@@ -589,9 +589,6 @@ kiro-cli --agent doc-updater
 
 For more detailed information, see the `docs/` directory:
 
-- **[Longform Guide](docs/longform-guide.md)** - Deep dive on agentic workflows and best practices
-- **[Shortform Guide](docs/shortform-guide.md)** - Quick reference for common tasks
-- **[Security Guide](docs/security-guide.md)** - Comprehensive security best practices
 
 
 

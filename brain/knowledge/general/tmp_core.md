@@ -155,15 +155,6 @@ CEO / Orchestrator / Dept Lead requests:
 
 | File | Purpose |
 |---|---|
-| [`OER_CHARTER.md`](OER_CHARTER.md) | Full OER charter (English) |
-| [`OER_CHARTER-vn.md`](OER_CHARTER-vn.md) | Full OER charter (Vietnamese) |
-| [`MASTER_SYSTEM_MAP-vn.md`](MASTER_SYSTEM_MAP-vn.md) | Full system map with 4 Daemon matrix |
-| [`OA_CHARTER.md`](OA_CHARTER.md) | OA's 8 Pillars of integrity |
-| [`../brain/rules/OIW_INTAKE_STRICT_RULE.md`](../../../../rules/OIW_INTAKE_STRICT_RULE.md) | OIW rules (incl. Rule 20.4: Zero Registration Rights) |
-| [`../brain/rules/GLOBAL_BLACKLIST.md`](../../../../rules/GLOBAL_BLACKLIST.md) | Active IOC blacklist (OHD enforcement) |
-| [`../system/ops/scripts/oer_register.py`](../system/ops/scripts/oer_register.py) | Phase 5 automation script |
-| [`../system/security/supply_chain_scan.ps1`](../system/security/supply_chain_scan.ps1) | Phase 2 OHD scan script |
-| [`../system/security/strix_policy.yaml`](../system/security/strix_policy.yaml) | Phase 3 OA scoring policy |
 
 ---
 

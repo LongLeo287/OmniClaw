@@ -216,7 +216,6 @@ env | grep -E "^[A-Z_]+=" | sort
 - **Restart required:** Changes take effect after restarting services
 - **Secrets:** Don't commit encryption keys or passwords to git
 - **AI Providers:** Configure via **Settings → API Keys** in the browser (not via env vars)
-- **Migration:** Use Settings UI to migrate existing env vars to the credential system. See [API Configuration](api-configuration.md#migrating-from-environment-variables)
 
 ---
 

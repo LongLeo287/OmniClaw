@@ -334,9 +334,6 @@ docker compose up -d
 
 Looking for different configurations? Check out our [examples/](../../examples/) folder:
 
-- **[Ollama Setup](../../examples/docker-compose-ollama.yml)** - Run local AI models (free, private)
-- **[Single Container](../../examples/docker-compose-single.yml)** - All-in-one container (deprecated, not recommended)
-- **[Development](../../examples/docker-compose-dev.yml)** - For contributors and developers
 
 Each example includes detailed comments and usage instructions.
 
@@ -354,8 +351,6 @@ Each example includes detailed comments and usage instructions.
 ## Production Deployment
 
 For production use, see:
-- [Security Hardening](../bmad_repo/SECURITY.md)
-- [Reverse Proxy](reverse-proxy.md)
 
 ---
 
@@ -363,4 +358,3 @@ For production use, see:
 
 - **Discord**: [Community support](https://discord.gg/37XJPXfz2w)
 - **Issues**: [GitHub Issues](https://github.com/lfnovo/open-notebook/issues)
-- **Docs**: [Full documentation](../index.md)

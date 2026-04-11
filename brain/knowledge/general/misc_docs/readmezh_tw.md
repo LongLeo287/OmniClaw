@@ -307,7 +307,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 
 ## 支援
 
-- **文件**：[docs/](docs/)
 - **Issues**：[GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **儲存庫**：[github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **官方 X 帳號**：[@Claude_Memory](https://x.com/Claude_Memory)

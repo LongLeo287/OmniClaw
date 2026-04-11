@@ -936,7 +936,5 @@ openspec completion uninstall
 
 ## Related Documentation
 
-- [Commands](../bmad_repo/commands.md) - AI slash commands (`/opsx:propose`, `/opsx:apply`, etc.)
 - [Workflows](workflows.md) - Common patterns and when to use each command
 - [Customization](customization.md) - Create custom schemas and templates
-- [Getting Started](../bmad_repo/getting-started.md) - First-time setup guide

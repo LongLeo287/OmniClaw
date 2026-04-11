@@ -465,11 +465,5 @@ If you are migrating from an older version that used environment variables, go t
 
 ## Related
 
-- **[API Configuration](api-configuration.md)** — Detailed credential management guide
-- **[Environment Reference](environment-reference.md)** - Complete list of all environment variables
 - **[Advanced Configuration](advanced.md)** - Timeouts, SSL, performance tuning
 - **[Ollama Setup](ollama.md)** - Detailed Ollama configuration guide
-- **[OpenAI-Compatible](openai-compatible.md)** - LM Studio and other compatible providers
-- **[Local TTS Setup](local-tts.md)** - Text-to-speech with Speaches
-- **[Local STT Setup](local-stt.md)** - Speech-to-text with Speaches
-- **[Troubleshooting](../bmad_repo/quick-fixes.md)** - Common issues and fixes

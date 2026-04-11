@@ -1460,12 +1460,6 @@ docker compose up -d dashboard scheduler  # Dashboard + cron scheduler
 
 | Document | Description |
 |:---------|:------------|
-| [**Hall of Fame**](HALL_OF_FAME.md) | 10 merged · 14 closed across 21+ repos |
-| [**AGENTS.md**](AGENTS.md) | AI agent guide — architecture, patterns, CLI reference |
-| [**Deployment Guide**](docs/deployment-guide.md) | Install, Docker, config, all 22 CLI commands |
-| [**System Architecture**](docs/system-architecture.md) | Pipeline, middleware, events, LLM routing |
-| [**Codebase Summary**](docs/codebase-summary.md) | Module map, tech stack, data structures |
-| [**Project Roadmap**](docs/project-roadmap.md) | Version history and future plans |
 
 ---
 
@@ -34599,19 +34593,12 @@ Welcome to the ContribAI documentation suite. This directory contains comprehens
 ## Quick Navigation
 
 ### For Product Managers & Decision Makers
-- **[Project Overview & PDR](./project-overview-pdr.md)** — Product definition, requirements, success metrics (344 LOC)
-- **[Project Roadmap](./project-roadmap.md)** — Version history, milestones, future plans (401 LOC)
 
 ### For Developers & Contributors
-- **[Codebase Summary](./codebase-summary.md)** — Module map, architecture, tech stack (419 LOC)
-- **[Code Standards](./code-standards.md)** — Development conventions, patterns, testing (764 LOC)
-- **[System Architecture](./system-architecture.md)** — Pipeline, middleware, agents, config (661 LOC)
 
 ### For DevOps & Operations
-- **[Deployment Guide](./deployment-guide.md)** — Installation, Docker, Kubernetes, CLI (822 LOC)
 
 ### Reference
-- **[ARCHITECTURE.md](./ARCHITECTURE.md)** — High-level system overview (247 LOC)
 
 ---
 
@@ -34667,16 +34654,6 @@ docs/
 
 | Term | Definition | Learn More |
 |------|-----------|------------|
-| **Pipeline** | 6-stage flow: Discovery → Analysis → Generation → PR | [System Architecture](./system-architecture.md) |
-| **Hunt Mode** | Autonomous multi-round discovery + contribution | [Project Overview](./project-overview-pdr.md) |
-| **Middleware** | Cross-cutting concerns (rate limit, retry, DCO, etc.) | [System Architecture](./system-architecture.md) |
-| **Sub-Agent** | Specialized executor (Analyzer, Generator, Patrol) | [System Architecture](./system-architecture.md) |
-| **Finding** | Issue detected by analyzer (security, code quality, etc.) | [Codebase Summary](./codebase-summary.md) |
-| **Contribution** | Proposed code fix for a finding | [Codebase Summary](./codebase-summary.md) |
-| **Event Bus** | Typed event system for audit trail + integrations | [System Architecture](./system-architecture.md) |
-| **MCP** | Model Context Protocol (Claude Desktop integration) | [System Architecture](./system-architecture.md) |
-| **Profile** | Named preset configuration (security-focused, etc.) | [Deployment Guide](./deployment-guide.md) |
-| **CLA/DCO** | Compliance: Contributor License Agreement / Developer Certificate | [System Architecture](./system-architecture.md) |
 
 ---
 
@@ -34810,7 +34787,6 @@ A: Yes, open a GitHub issue or discussion with `[DOCS]` prefix.
 - **Report Issues:** [GitHub Issues](https://github.com/tang-vu/ContribAI/issues)
 - **Discuss Ideas:** [GitHub Discussions](https://github.com/tang-vu/ContribAI/discussions)
 - **Suggest Docs:** Label with `[DOCS]` in title
-- **Security Issues:** See [SECURITY.md](../SECURITY.md)
 
 ---
 

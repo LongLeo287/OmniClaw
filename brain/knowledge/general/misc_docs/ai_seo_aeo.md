@@ -203,25 +203,16 @@ Low-citation content:
 > [Brand description in 1–2 sentences — what you do, who you serve]
 
 ## Core Documentation
-- [Page Title](URL): [One-line description — what this page covers and why it matters]
-- [Page Title](URL): [Description]
 
 ## How-To Guides  
-- [Guide Title](URL): [Description]
-- [Guide Title](URL): [Description]
 
 ## Definitions & Glossary
-- [Term Page](URL): [Description]
 
 ## Research & Data
-- [Study/Report Title](URL): [Description — what data it contains]
 
 ## About & Authority
-- [About Page](URL): [Team, credentials, company history]
-- [Press Page](URL): [Media mentions, awards, recognition]
 
 ## Contact
-- [Contact](URL): [How to reach the team]
 ```
 
 **File 2: `/llms-full.txt` (full content)**

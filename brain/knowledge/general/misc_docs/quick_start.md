@@ -69,8 +69,6 @@ cd frontend && npm run dev
 
 - **First Issue?** Pick a [good first issue](https://github.com/lfnovo/open-notebook/issues?q=label%3A%22good+first+issue%22)
 - **Understand the code?** Read [Architecture Overview](architecture.md)
-- **Make changes?** Follow [Contributing Guide](contributing.md)
-- **Setup details?** See [Development Setup](development-setup.md)
 
 ---
 

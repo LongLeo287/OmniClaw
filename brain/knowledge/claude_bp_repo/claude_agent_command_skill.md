@@ -213,6 +213,3 @@ Then **nothing fires automatically**. Claude would fall back to its own general 
 - [Claude Code Skills — Docs](https://code.claude.com/docs/en/skills)
 - [Claude Code Sub-agents — Docs](https://code.claude.com/docs/en/sub-agents)
 - [Claude Code Slash Commands — Docs](https://code.claude.com/docs/en/slash-commands)
-- [Skills Best Practice](claude-skills.md)
-- [Commands Best Practice](claude-commands.md)
-- [Sub-agents Best Practice](claude-subagents.md)

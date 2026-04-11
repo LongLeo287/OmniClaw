@@ -644,10 +644,6 @@ MIT
 
 - [Agent Skills Open Standard](https://github.com/anthropics/agent-skills-spec)
 - [What are Claude Skills? (video)](https://www.youtube.com/watch?v=izJkgLqlbN8)
-- [Cross-Platform Guide](references/cross-platform-guide.md)
-- [Architecture Guide](references/architecture-guide.md)
-- [Pipeline Phases](references/pipeline-phases.md)
-- [Export Guide](references/export-guide.md)
 
 ```
 

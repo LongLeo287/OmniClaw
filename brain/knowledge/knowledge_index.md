@@ -64,11 +64,6 @@ healed_at: 2026-04-03T22:44:27.436460
 
 ### Session 6 — Ingested 2026-03-19
 
-- **[temm1e](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Rust autonomous AI agent runtime. 15MB idle, 31ms cold start. Î»-Memory + Blueprints. `T1`
-- **[awesome-openclaw-skills](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Curated catalog 5400+ OpenClaw skills, 30+ categories. By VoltAgent. `T1`
-- **[GitNexus](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Zero-server code intelligence. Knowledge graph + Graph RAG. Browser-native + MCP server. `T1`
-- **[OSINT-CTFs](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Directory OSINT CTF platforms. Security training reference. `T2`
-- **[forgewright](../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** — Antigravity plugin. SaaS/game lifecycle pipeline. 48 skills, 19 modes, 15 protocols. By buiphucminhtam. `T1`
 
 
 ## Session 7 — Ingested 2026-03-19

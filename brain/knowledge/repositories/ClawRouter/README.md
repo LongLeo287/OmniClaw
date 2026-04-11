@@ -432,22 +432,11 @@ Run Claude Code with 50+ models, no rate limits, no Anthropic account, no phone 
 | ------------------------------------------------------ | ------------------------ |
 | [Documentation](https://blockrun.ai/docs)              | Full docs                |
 | [Model Pricing](https://blockrun.ai/models)            | All models & prices      |
-| [Image Generation & Editing](docs/image-generation.md) | API examples, 5 models   |
-| [Routing Profiles](docs/routing-profiles.md)           | ECO/AUTO/PREMIUM details |
-| [Architecture](docs/architecture.md)                   | Technical deep dive      |
-| [Configuration](docs/configuration.md)                 | Environment variables    |
-| [Troubleshooting](docs/troubleshooting.md)             | Common issues            |
 
 ### Blog
 
 | Article | Topic |
 | ------- | ----- |
-| [11 Free AI Models, Zero Cost](docs/11-free-ai-models-zero-cost-blockrun.md) | How BlockRun gives developers top-tier LLMs for nothing |
-| [ClawRouter Cuts LLM API Costs 500×](docs/clawrouter-cuts-llm-api-costs-500x.md) | Deep dive into cost savings |
-| [ClawRouter vs OpenRouter](docs/clawrouter-vs-openrouter-llm-routing-comparison.md) | Head-to-head comparison |
-| [Smart LLM Router: 14-Dimension Classifier](docs/smart-llm-router-14-dimension-classifier.md) | How the routing engine works |
-| [LLM Router Benchmark: 46 Models, Sub-1ms](docs/llm-router-benchmark-46-models-sub-1ms-routing.md) | Performance benchmarks |
-| [Anthropic Cost Savings](docs/anthropic-cost-savings.md) | Reducing Claude API spend |
 
 ---
 

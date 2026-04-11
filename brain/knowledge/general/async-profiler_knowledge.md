@@ -692,7 +692,6 @@ What can be profiled:
 - Native memory allocations and leaks
 - Contended locks
 - Hardware and software performance counters like cache misses, page faults, context switches
-- and [more](docs/ProfilingModes.md).
 
 See our [3 hours playlist](https://www.youtube.com/playlist?list=PLNCLTEx3B8h4Yo_WvKWdLvI9mj1XpTKBr)
 to learn about more features.
@@ -766,26 +765,12 @@ Other Makefile targets:
 
 ## Basic usage
 
-- [Getting Started](docs/GettingStarted.md)
-- [Profiler Options](docs/ProfilerOptions.md)
-- [Profiling Modes](docs/ProfilingModes.md)
-- [Integrating async-profiler](docs/IntegratingAsyncProfiler.md)
-- [Profiling In Container](docs/ProfilingInContainer.md)
 
 ## Profiler output
 
-- [Output Formats](docs/OutputFormats.md)
-- [FlameGraph Interpretation](docs/FlamegraphInterpretation.md)
-- [JFR Visualization](docs/JfrVisualization.md)
-- [Converter Usage](docs/ConverterUsage.md)
-- [Heatmap](docs/Heatmap.md)
 
 ## Advanced usage
 
-- [CPU Sampling Engines](docs/CpuSamplingEngines.md)
-- [Stack Walking Modes](docs/StackWalkingModes.md)
-- [Advanced Stacktrace Features](docs/AdvancedStacktraceFeatures.md)
-- [Profiling Non-Java Applications](docs/ProfilingNonJavaApplications.md)
 
 ## Troubleshooting
 
@@ -1010,7 +995,6 @@ What can be profiled:
 - Native memory allocations and leaks
 - Contended locks
 - Hardware and software performance counters like cache misses, page faults, context switches
-- and [more](docs/ProfilingModes.md).
 
 See our [3 hours playlist](https://www.youtube.com/playlist?list=PLNCLTEx3B8h4Yo_WvKWdLvI9mj1XpTKBr)
 to learn about more features.
@@ -1084,26 +1068,12 @@ Other Makefile targets:
 
 ## Basic usage
 
-- [Getting Started](docs/GettingStarted.md)
-- [Profiler Options](docs/ProfilerOptions.md)
-- [Profiling Modes](docs/ProfilingModes.md)
-- [Integrating async-profiler](docs/IntegratingAsyncProfiler.md)
-- [Profiling In Container](docs/ProfilingInContainer.md)
 
 ## Profiler output
 
-- [Output Formats](docs/OutputFormats.md)
-- [FlameGraph Interpretation](docs/FlamegraphInterpretation.md)
-- [JFR Visualization](docs/JfrVisualization.md)
-- [Converter Usage](docs/ConverterUsage.md)
-- [Heatmap](docs/Heatmap.md)
 
 ## Advanced usage
 
-- [CPU Sampling Engines](docs/CpuSamplingEngines.md)
-- [Stack Walking Modes](docs/StackWalkingModes.md)
-- [Advanced Stacktrace Features](docs/AdvancedStacktraceFeatures.md)
-- [Profiling Non-Java Applications](docs/ProfilingNonJavaApplications.md)
 
 ## Troubleshooting
 
@@ -1502,9 +1472,6 @@ call stack leading to it comes from `Primes.primesThread`.
 
 ## Other use cases
 
-- [Launching as an agent](IntegratingAsyncProfiler.md#launching-as-an-agent)
-- [Java API](IntegratingAsyncProfiler.md#using-java-api)
-- [IntelliJ IDEA](IntegratingAsyncProfiler.md#intellij-idea)
 
 ## FlameGraph visualization
 
@@ -13896,9 +13863,6 @@ call stack leading to it comes from `Primes.primesThread`.
 
 ## Other use cases
 
-- [Launching as an agent](IntegratingAsyncProfiler.md#launching-as-an-agent)
-- [Java API](IntegratingAsyncProfiler.md#using-java-api)
-- [IntelliJ IDEA](IntegratingAsyncProfiler.md#intellij-idea)
 
 ## FlameGraph visualization
 
@@ -14231,7 +14195,6 @@ The below options are `action`s for async-profiler and common for both `asprof` 
 | `-o fmt`             | `fmt`              | Specifies what information to dump when profiling ends. For various dump option details, please refer to [Dump Option Appendix](#dump-option).                                                                                                                                                                                                                                                                                                                                                                                              |
 | `-d N`               | N/A                | asprof-only option designed for interactive use. It is a shortcut for running 3 actions: start, sleep for N seconds, stop. If no `start`, `resume`, `stop` or `status` option is given, the profiler will run for the specified period of time and then automatically stop.<br>Example: `asprof -d 30 <pid>`                                                                                                                                                                                                                                |
 | `--timeout N`        | `timeout=N`        | The profiling duration, in seconds. The profiler will run for the specified period of time and then automatically stop.<br>Example: `java -agentpath:/path/to/libasyncProfiler.so=start,event=cpu,timeout=30,file=profile.html <application>`                                                                                                                                                                                                                                                                                               |
-| `-e --event EVENT`   | `event=EVENT`      | The profiling event: `cpu`, `alloc`, `nativemem`, `lock`, `cache-misses` etc. Use `list` to see the complete list of available events.<br>Please refer to [Profiling Modes](ProfilingModes.md) for additional information.                                                                                                                                                                                                                                                                                                                  |
 | `-i --interval N`    | `interval=N`       | Interval has different meaning depending on the event. For CPU profiling, it's CPU time in nanoseconds. In wall clock mode, it's wall clock time. For Java method profiling or native function profiling, it's number of calls. For PMU profiling, it's number of events. Time intervals may be followed by `s` for seconds, `ms` for milliseconds, `us` for microseconds or `ns` for nanoseconds.<br>Example: `asprof -e cpu -i 5ms 8983`                                                                                                  |
 | `--alloc N`          | `alloc=N`          | Allocation profiling interval in bytes or in other units, if N is followed by `k` (kilobytes), `m` (megabytes), or `g` (gigabytes).                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `--live`             | `live`             | Retain allocation samples with live objects only (object that have not been collected by the end of profiling session). Useful for finding Java heap memory leaks.                                                                                                                                                                                                                                                                                                                                                                          |
@@ -14246,7 +14209,6 @@ The below options are `action`s for async-profiler and common for both `asprof` 
 | `-I PATTERN`         | `include=PATTERN`  | Filter stack traces by the given pattern(s). `-I` defines the name pattern that _must_ be present in the stack traces. `-I` can be specified multiple times. A pattern may begin or end with a star `*` that denotes any (possibly empty) sequence of characters.<br>Example: `asprof -I 'Primes.*' -I 'java/*' 8983`                                                                                                                                                                                                                       |
 | `-X PATTERN`         | `exclude=PATTERN`  | Filter stack traces by the given pattern(s). `-X` defines the name pattern that _must not_ occur in any of stack traces in the output. `-X` can be specified multiple times. A pattern may begin or end with a star `*` that denotes any (possibly empty) sequence of characters.<br>Example: `asprof -X '*Unsafe.park*' 8983`                                                                                                                                                                                                              |
 | `-L level`           | `loglevel=level`   | Log level: `debug`, `info`, `warn`, `error` or `none`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `-F features`        | `features=LIST`    | Comma separated (or `+` separated when launching as an agent) list of stack walking features. Supported features are:<ul><li>`stats` - log stack walking performance stats.</li><li>`vtable` - display targets of megamorphic virtual calls as an extra frame on top of `vtable stub` or `itable stub`.</li><li>`comptask` - display current compilation task (a Java method being compiled) in a JIT compiler stack trace.</li><li>`pcaddr` - display instruction addresses .</li></ul>More details [here](AdvancedStacktraceFeatures.md). |
 | `-f FILENAME`        | `file`             | The file name to dump the profile information to.<br>`%p` in the file name is expanded to the PID of the target JVM;<br>`%t` - to the timestamp;<br>`%n{MAX}` - to the sequence number;<br>`%{ENV}` - to the value of the given environment variable.<br>Example: `asprof -o collapsed -f /tmp/traces-%t.txt 8983`                                                                                                                                                                                                                          |
 | `--loop TIME`        | `loop=TIME`        | Run profiler in a loop (continuous profiling). The argument is either a clock time (`hh:mm:ss`) or a loop duration in `s`econds, `m`inutes, `h`ours, or `d`ays. Make sure the filename includes a timestamp pattern, or the output will be overwritten on each iteration.<br>Example: `asprof --loop 1h -f /var/log/profile-%t.jfr 8983`                                                                                                                                                                                                    |
 | `--all-user`         | `alluser`          | Include only user-mode events. This option is helpful when kernel profiling is restricted by `perf_event_paranoid` settings.                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -14260,7 +14222,6 @@ The below options are `action`s for async-profiler and common for both `asprof` 
 | `--nostop`           | `nostop`           | Record profiling window between `--begin` and `--end`, but do not stop profiling outside window.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `--libpath PATH`     | `libpath=PATH`     | Full path to `libasyncProfiler.so` (useful when profiling a container from the host).                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `--filter FILTER`    | `filter=FILTER`    | In the wall-clock profiling mode, profile only threads with the specified ids.<br>Example: `asprof -e wall -d 30 --filter 120-127,132,134 Computey`                                                                                                                                                                                                                                                                                                                                                                                         |
-| `--fdtransfer`       | `fdtransfer`       | Run a background process that provides access to perf_events to an unprivileged process. `--fdtransfer` is useful for profiling a process in a container (which lacks access to perf_events) from the host.<br>See [Profiling Java in a container](ProfilingInContainer.md).                                                                                                                                                                                                                                                                |
 | `--target-cpu`       | `target-cpu`       | In perf_events profiling mode, instruct the profiler to only sample threads running on the specified CPU, defaults to -1.<br>Example: `asprof --target-cpu 3`.                                                                                                                                                                                                                                                                                                                                                                              |
 | `--record-cpu`       | `record-cpu`       | In perf_events profiling mode, instruct the profiler to capture which CPU a sample was taken on.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `-v --version`       | `version`          | Prints the version of profiler library. If PID is specified, gets the version of the library loaded into the given process.                                                                                                                                                                                                                                                                                                                                                                                                                 |

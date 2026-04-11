@@ -302,7 +302,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack). Все права защищены
 
 ## Поддержка
 
-- **Документация**: [docs/](docs/)
 - **Проблемы**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Репозиторий**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Автор**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

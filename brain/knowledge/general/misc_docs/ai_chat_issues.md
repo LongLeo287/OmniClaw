@@ -446,7 +446,5 @@ In Chat:
 
 ## Still Having Chat Issues?
 
-- Try [Quick Fixes](../bmad_repo/quick-fixes.md)
-- Try [Chat Effectively Guide](chat-effectively.md)
 - Check logs: `docker compose logs api | grep -i "error"`
 - Ask for help: [Troubleshooting Index](index.md#getting-help)

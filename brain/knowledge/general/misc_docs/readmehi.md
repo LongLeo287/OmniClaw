@@ -302,7 +302,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack)। सर्वाधिकार �
 
 ## समर्थन
 
-- **दस्तावेज़ीकरण**: [docs/](docs/)
 - **समस्याएं**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **रिपॉजिटरी**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **लेखक**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

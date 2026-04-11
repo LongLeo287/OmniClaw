@@ -313,7 +313,6 @@ npm run build
 
 ## Public Config Policy
 
-- Simpan config publik di [wrangler.clean.toml](./wrangler.clean.toml).
 - Hindari commit secret (misalnya `ACCESS_KEY`) ke repository.
 - Untuk setup production pribadi, gunakan `wrangler.toml` lokal dan simpan secret lewat Wrangler Secret.
 

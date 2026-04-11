@@ -630,7 +630,5 @@ openspec/
 
 ## Next Steps
 
-- [Getting Started](../bmad_repo/getting-started.md) - Practical first steps
 - [Workflows](workflows.md) - Common patterns and when to use each
-- [Commands](../bmad_repo/commands.md) - Full command reference
 - [Customization](customization.md) - Create custom schemas and configure your project

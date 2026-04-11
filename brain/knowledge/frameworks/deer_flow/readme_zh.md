@@ -474,9 +474,6 @@ client.upload_files("thread-1", ["./report.pdf"])  # {"success": True, "files": 
 ## 文档
 
 - [贡献指南](CONTRIBUTING.md) - 开发环境搭建与协作流程
-- [配置指南](backend/docs/CONFIGURATION.md) - 安装与配置说明
-- [架构概览](backend/CLAUDE.md) - 技术架构说明
-- [后端架构](backend/README.md) - 后端架构与 API 参考
 
 ## ⚠️ 安全使用
 

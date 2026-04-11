@@ -64,83 +64,6 @@
       "description": "This directory contains the blueprint repository for Claude, including video workflows and related documentation. It serves as a central hub for managing and updating Claude's knowledge base."
     },
     {
-      "id": "corp",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/_DIR_IDENTITY.md",
-      "name": "corp",
-      "description": "The 'corp' directory serves as the central repository for all corporate-related documents and data, including daily briefs, decisions, invoices, projects, and proposals. It also houses system maps, master indexes, and vocabularies essential for knowledge management within OmniClaw."
-    },
-    {
-      "id": "daily_briefs",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/daily_briefs/_DIR_IDENTITY.md",
-      "name": "daily_briefs",
-      "description": "This directory holds daily briefs for the corporation, covering various departments and operations. It serves as a central repository for day-to-day updates and insights."
-    },
-    {
-      "id": "decisions",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/decisions/_DIR_IDENTITY.md",
-      "name": "decisions",
-      "description": "This directory holds the log of decision-making processes within OmniClaw, providing a record of all significant decisions and their outcomes."
-    },
-    {
-      "id": "invoices_123",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/invoices/_DIR_IDENTITY.md",
-      "name": "invoices_123",
-      "description": "This directory contains payment tracking information for the company's invoices."
-    },
-    {
-      "id": "projects_directory",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/projects/_DIR_IDENTITY.md",
-      "name": "projects_directory",
-      "description": "Contains project-related directories and files, including templates and specific projects."
-    },
-    {
-      "id": "prj_004",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/projects/PRJ-004/_DIR_IDENTITY.md",
-      "name": "prj_004",
-      "description": "This directory node represents PRJ-004 within the OmniClaw project structure, responsible for housing workflows and related documentation specific to this project."
-    },
-    {
-      "id": "workflows",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/projects/PRJ-004/workflows/_DIR_IDENTITY.md",
-      "name": "workflows",
-      "description": "This directory contains the workflow definitions for PRJ-004, including development and post-session processes. It ensures that all project-related workflows are well-defined and executed correctly."
-    },
-    {
-      "id": "prj_004",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/projects/prj_004/_DIR_IDENTITY.md",
-      "name": "prj_004",
-      "description": "Project prj_004 is a critical component of the OmniClaw v5.0 project, focusing on advanced workflow management and integration."
-    },
-    {
-      "id": "workflows_prj_004",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/projects/prj_004/workflows/_DIR_IDENTITY.md",
-      "name": "workflows_prj_004",
-      "description": "Contains the development workflows for project prj_004."
-    },
-    {
-      "id": "template",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/projects/TEMPLATE/_DIR_IDENTITY.md",
-      "name": "template",
-      "description": "This directory serves as a template for project documentation within OmniClaw, ensuring consistency and standardization across all projects."
-    },
-    {
-      "id": "proposals",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/corp/proposals/_DIR_IDENTITY.md",
-      "name": "proposals",
-      "description": "Contains various proposals related to OmniClaw's operations and development, including session improvements, new department bridge gateways, and CLI enhancements."
-    },
-    {
       "id": "corp_feeds",
       "type": "KNOWLEDGE",
       "coord": "brain/knowledge/corp_feeds/_DIR_IDENTITY.md",
@@ -202,13 +125,6 @@
       "coord": "brain/knowledge/docker_swag/_DIR_IDENTITY.md",
       "name": "docker_swag",
       "description": "This directory contains deep knowledge and upgrade proposals related to Docker Swarm, serving as a central repository for OmniClaw v5.0."
-    },
-    {
-      "id": "docs",
-      "type": "KNOWLEDGE",
-      "coord": "brain/knowledge/docs/_DIR_IDENTITY.md",
-      "name": "docs",
-      "description": "This directory holds documentation related to OmniClaw's AI operations, setup guides, and contribution guidelines. It serves as a central repository for knowledge and procedures."
     },
     {
       "id": "frameworks_v5_0",

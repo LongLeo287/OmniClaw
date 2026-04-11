@@ -301,7 +301,6 @@ npm run bug-report
 
 ## תמיכה
 
-- **תיעוד**: [docs/](docs/)
 - **בעיות**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **מאגר**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **מחבר**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

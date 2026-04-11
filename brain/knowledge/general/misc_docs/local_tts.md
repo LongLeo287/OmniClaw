@@ -346,7 +346,3 @@ Any OpenAI-compatible TTS server works. The key is:
 
 ## Related
 
-- **[Local STT Setup](local-stt.md)** - Speech-to-text with Speaches
-- **[OpenAI-Compatible Providers](openai-compatible.md)** - General compatible provider setup
-- **[AI Providers](ai-providers.md)** - All provider configuration
-- **[Creating Podcasts](creating-podcasts.md)** - Using TTS for podcasts

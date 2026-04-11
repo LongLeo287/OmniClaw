@@ -305,7 +305,6 @@ npm run bug-report
 
 ## الدعم
 
-- **التوثيق**: [docs/](docs/)
 - **المشكلات**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **المستودع**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **المؤلف**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

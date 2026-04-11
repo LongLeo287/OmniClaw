@@ -447,7 +447,6 @@ Example: http://localhost:1234/v1
 
 ## Still Having Issues?
 
-- Check [Quick Fixes](../bmad_repo/quick-fixes.md)
 - Check [FAQ](faq.md)
 - Check logs: `docker compose logs`
 - Try restart: `docker compose restart`

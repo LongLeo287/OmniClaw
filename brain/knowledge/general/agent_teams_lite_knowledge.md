@@ -122,18 +122,6 @@ When working on this project, load the relevant skill(s) BEFORE writing any code
 
 | Skill | Trigger | Path |
 |-------|---------|------|
-| `sdd-init` | When initializing SDD in a project, or user says "sdd init". | [`skills/sdd-init/SKILL.md`](skills/sdd-init/SKILL.md) |
-| `sdd-explore` | When thinking through a feature, investigating the codebase, or clarifying requirements. | [`skills/sdd-explore/SKILL.md`](skills/sdd-explore/SKILL.md) |
-| `sdd-propose` | When creating or updating a change proposal with intent, scope, and approach. | [`skills/sdd-propose/SKILL.md`](skills/sdd-propose/SKILL.md) |
-| `sdd-spec` | When writing or updating specifications with requirements and scenarios. | [`skills/sdd-spec/SKILL.md`](skills/sdd-spec/SKILL.md) |
-| `sdd-design` | When writing or updating technical design with architecture decisions. | [`skills/sdd-design/SKILL.md`](skills/sdd-design/SKILL.md) |
-| `sdd-tasks` | When breaking down a change into implementation task checklist. | [`skills/sdd-tasks/SKILL.md`](skills/sdd-tasks/SKILL.md) |
-| `sdd-apply` | When implementing tasks, writing actual code following specs and design. | [`skills/sdd-apply/SKILL.md`](skills/sdd-apply/SKILL.md) |
-| `sdd-verify` | When validating that implementation matches specs, design, and tasks. | [`skills/sdd-verify/SKILL.md`](skills/sdd-verify/SKILL.md) |
-| `sdd-archive` | When archiving a completed change after implementation and verification. | [`skills/sdd-archive/SKILL.md`](skills/sdd-archive/SKILL.md) |
-| `skill-registry` | When creating or updating the skill registry for the project. | [`skills/skill-registry/SKILL.md`](skills/skill-registry/SKILL.md) |
-| `issue-creation` | When creating a GitHub issue, reporting a bug, or requesting a feature. | [`skills/issue-creation/SKILL.md`](skills/issue-creation/SKILL.md) |
-| `branch-pr` | When creating a pull request, opening a PR, or preparing changes for review. | [`skills/branch-pr/SKILL.md`](skills/branch-pr/SKILL.md) |
 
 ```
 
@@ -1491,8 +1479,6 @@ cp examples/opencode/AGENTS.md ~/.config/opencode/AGENTS.md
 **2. Add orchestrator agent to `~/.config/opencode/opencode.json`:**
 
 Merge the `agent` block from the config template into your existing config:
-- Single mode: [`examples/opencode/opencode.single.json`](examples/opencode/opencode.single.json)
-- Multi mode: [`examples/opencode/opencode.multi.json`](examples/opencode/opencode.multi.json)
 
 The OpenCode examples now reference `~/.config/opencode/AGENTS.md` via `"prompt": "{file:./AGENTS.md}"`, so copy that file too.
 
@@ -8492,8 +8478,6 @@ metadata:
 
 ## Resources
 
-- **Templates**: See [assets/](assets/) for {description}
-- **Documentation**: See [references/](references/) for local docs
 ```
 
 ---
@@ -8557,7 +8541,6 @@ Link to external guides?    → references/ (with local path)
 After creating the skill, add it to `AGENTS.md`:
 
 ```markdown
-| `{skill-name}` | {Description} | [SKILL.md](skills/{skill-name}/SKILL.md) |
 ```
 
 ---
@@ -8575,7 +8558,6 @@ After creating the skill, add it to `AGENTS.md`:
 
 ## Resources
 
-- **Templates**: See [assets/](assets/) for SKILL.md template
 
 ```
 

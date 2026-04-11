@@ -307,7 +307,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack)۔ تمام حقوق محفوظ ہی
 
 ## معاونت
 
-- **دستاویزات**: [docs/](docs/)
 - **مسائل**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **رپوزیٹری**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **مصنف**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

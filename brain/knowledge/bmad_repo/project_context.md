@@ -132,8 +132,6 @@ sections_completed: ['technology_stack', 'critical_rules']
 
 ## 后续步骤
 
-- [**项目上下文说明**](project-context.md) — 了解其工作原理
-- [**工作流程图**](workflow-map.md) — 查看哪些工作流程加载项目上下文
 
 ---
 ## 术语说明

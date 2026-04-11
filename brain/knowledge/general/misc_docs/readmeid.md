@@ -302,7 +302,6 @@ Lihat file [LICENSE](LICENSE) untuk detail lengkap.
 
 ## Dukungan
 
-- **Dokumentasi**: [docs/](docs/)
 - **Issues**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repositori**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Penulis**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

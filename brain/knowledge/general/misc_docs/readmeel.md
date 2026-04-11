@@ -302,7 +302,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack). Με επιφύλαξη παντό
 
 ## Υποστήριξη
 
-- **Τεκμηρίωση**: [docs/](docs/)
 - **Ζητήματα**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repository**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Συγγραφέας**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

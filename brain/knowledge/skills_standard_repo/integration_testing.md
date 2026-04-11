@@ -17,7 +17,6 @@ Integration tests (`*_integration_test.dart`) belong **ONLY** in `integration_te
 - **NEVER** place `_integration_test.dart` in `test/features/`.
 - Widget tests using `testWidgets`, `MockBloc`, `flutter_test` are **widget tests** — use `_test.dart`.
 - Only `patrolTest`, `$.native.*`, or real device tests belong here.
-- See [Test Organization](test-organization.md) for full classification.
 
 ## 🚨 Robot Pattern is MANDATORY
 

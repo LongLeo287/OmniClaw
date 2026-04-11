@@ -215,8 +215,6 @@ metadata:
 **Assigned Department**: Dept 10 (Finance)
 
 ## 2. Linked Toolkit
-- **Primary Core Skill**: [cost_manager_skill.md](../../../skills/cost_manager_skill.md)
-- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [cost_manager_skill.md](../../../skills/cost_manager_skill.md).
 
 ## 3. Standard OS Tooling Access
 - Local File Read/Write access (Constrained to Workspace)

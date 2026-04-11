@@ -84,8 +84,6 @@ graph TD
 ---
 
 ## ðŸ“‚ Related Resources
-- **Org Chart Data**: [brain/corp/org_chart.yaml](file:///d:/AI%20OS%20CORP/AI%20OS/brain/corp/org_chart.yaml)
-- **Agent Definitions**: [brain/indices/FAST_AGENT_INDEX.json](../bmad_repo/agents.md)
 
 ---
 *End of Master Index*

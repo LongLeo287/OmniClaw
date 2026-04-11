@@ -94,8 +94,6 @@ Structure the report:
 
 ## 1. [First Major Theme]
 [Findings with inline citations]
-- Key point ([Source Name](url))
-- Supporting data ([Source Name](url))
 
 ## 2. [Second Major Theme]
 ...

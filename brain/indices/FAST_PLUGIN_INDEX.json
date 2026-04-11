@@ -83,13 +83,6 @@
       "coord": "ecosystem/plugins/supermemory/_DIR_IDENTITY.md",
       "name": "supermemory",
       "description": ""
-    },
-    {
-      "id": "supermemory",
-      "type": "PLUGIN",
-      "coord": "ecosystem/plugins/supermemory/_DIR_IDENTITY.md",
-      "name": "supermemory",
-      "description": ""
     }
   ]
 }

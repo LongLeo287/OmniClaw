@@ -414,11 +414,8 @@ Example: "Keep this in notebook but don't use in this conversation"
 
 Once you've added sources, you can:
 
-- **Chat** → Ask questions (see [Chat Effectively](chat-effectively.md))
 - **Search** → Find specific content (see [Search Effectively](search.md))
-- **Transformations** → Extract structured insights (see [Working with Notes](working-with-notes.md))
 - **Ask** → Get comprehensive answers (see [Search Effectively](search.md))
-- **Podcasts** → Turn into audio (see [Creating Podcasts](creating-podcasts.md))
 
 ---
 

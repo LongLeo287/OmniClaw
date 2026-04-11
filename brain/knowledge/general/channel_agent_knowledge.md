@@ -216,8 +216,6 @@ metadata:
 **Assigned Department**: Dept 5 (Support)
 
 ## 2. Linked Toolkit
-- **Primary Core Skill**: [enhance.md](../../../skills/enhance.md)
-- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [enhance.md](../../../skills/enhance.md).
 
 ## 3. Standard OS Tooling Access
 - Local File Read/Write access (Constrained to Workspace)

@@ -2802,7 +2802,6 @@ The `cache` interceptor implements client-side response caching as described in
 
 **Options**
 
-- `store` - The [`CacheStore`](/docs/docs/api/CacheStore.md) to store and retrieve responses from. Default is [`MemoryCacheStore`](/docs/docs/api/CacheStore.md#memorycachestore).
 - `methods` - The [**safe** HTTP methods](https://www.rfc-editor.org/rfc/rfc9110#section-9.2.1) to cache the response of.
 - `cacheByDefault` - The default expiration time to cache responses by if they don't have an explicit expiration and cannot have an heuristic expiry computed. If this isn't present, responses neither with an explicit expiration nor heuristically cacheable will not be cached. Default `undefined`.
 - `type` - The [type of cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching#types_of_caches) for Undici to act as. Can be `shared` or `private`. Default `shared`. `private` implies privately cacheable responses will be cached and potentially shared with other users of your application.
@@ -4633,8 +4632,6 @@ Parameters :
 
 - criteria : the first parameter. a function, regexp or object.
   - function : filter MockCallHistoryLog when the function returns false
-  - regexp : filter MockCallHistoryLog when the regexp does not match on MockCallHistoryLog.toString() ([see](./MockCallHistoryLog.md#to-string))
-  - object : an object with MockCallHistoryLog properties as keys to apply multiple filters. each values are a [filter parameter](/docs/docs/api/MockCallHistory.md#filter-parameter)
 - options : the second parameter. an object.
   - options.operator : `'AND'` or `'OR'` (default `'OR'`). Used only if criteria is an object. see below
 
@@ -5643,8 +5640,6 @@ For detailed information on the parsing process and potential validation errors,
 * **token** `string` (optional) - It can be passed by a string of token for authentication.
 * **auth** `string` (**deprecated**) - Use token.
 * **clientFactory** `(origin: URL, opts: Object) => Dispatcher` (optional) - Default: `(origin, opts) => new Pool(origin, opts)`
-* **requestTls** `BuildOptions` (optional) - Options object passed when creating the underlying socket via the connector builder for the request. It extends from [`Client#ConnectOptions`](/docs/docs/api/Client.md#parameter-connectoptions).
-* **proxyTls** `BuildOptions` (optional) - Options object passed when creating the underlying socket via the connector builder for the proxy server. It extends from [`Client#ConnectOptions`](/docs/docs/api/Client.md#parameter-connectoptions).
 * **proxyTunnel** `boolean` (optional) - For connections involving secure protocols, Undici will always establish a tunnel via the HTTP2  CONNECT extension. If proxyTunnel is set to true, this will occur for unsecured proxy/endpoint connections as well. Currently, there is no way to facilitate HTTP1 IP tunneling as described in https://www.rfc-editor.org/rfc/rfc9484.html#name-http-11-request. If proxyTunnel is set to false (the default), ProxyAgent connections where both the Proxy and Endpoint are unsecured will issue all requests to the Proxy, and prefix the endpoint request path with the endpoint origin address.
 
 Examples:
@@ -6074,7 +6069,6 @@ It represents the retry state for a given request.
 ### Parameter `RetryHandlers`
 
 - **dispatch** `(options: Dispatch.DispatchOptions, handlers: Dispatch.DispatchHandler) => Promise<Dispatch.DispatchResponse>` (required) - Dispatch function to be called after every retry.
-- **handler** Extends [`Dispatch.DispatchHandler`](/docs/docs/api/Dispatcher.md#dispatcherdispatchoptions-handler) (required) - Handler function to be called after the request is successful or the retries are exhausted.
 
 >__Note__: The `RetryHandler` does not retry over stateful bodies (e.g. streams, AsyncIterable) as those, once consumed, are left in a state that cannot be reutilized. For these situations the `RetryHandler` will identify
 >the body as stateful and will not retry the request rejecting with the error `UND_ERR_REQ_RETRY`.
@@ -6290,8 +6284,6 @@ await pool.close()
 
 ## See Also
 
-- [Pool](/docs/docs/api/Pool.md) - Connection pool without round-robin
-- [BalancedPool](/docs/docs/api/BalancedPool.md) - Load balancing across multiple origins
 - [Issue #3648](https://github.com/nodejs/undici/issues/3648) - Original issue describing uneven distribution
 
 
@@ -6933,9 +6925,6 @@ SnapshotAgent provides similar functionality to nock but is specifically designe
 
 ## See Also
 
-- [MockAgent](./MockAgent.md) - Manual mocking for more control
-- [MockCallHistory](./MockCallHistory.md) - Inspecting request history
-- [Testing Best Practices](../best-practices/writing-tests.md) - General testing guidance
 ```
 
 ## File: socks5proxyagent.md
@@ -7301,14 +7290,12 @@ The WebSocket object provides a way to manage a WebSocket connection to a server
 Arguments:
 
 * **url** `URL | string`
-* **protocol** `string | string[] | WebSocketInit` (optional) - Subprotocol(s) to request the server use, or a [`Dispatcher`](/docs/docs/api/Dispatcher.md).
 
 ### WebSocketInit
 
 When passing an object as the second argument, the following options are available:
 
 * **protocols** `string | string[]` (optional) - Subprotocol(s) to request the server use.
-* **dispatcher** `Dispatcher` (optional) - A custom [`Dispatcher`](/docs/docs/api/Dispatcher.md) to use for the connection.
 * **headers** `HeadersInit` (optional) - Custom headers to include in the WebSocket handshake request.
 
 ### Example:

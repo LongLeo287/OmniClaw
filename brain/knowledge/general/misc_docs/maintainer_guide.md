@@ -19,8 +19,6 @@ All maintainer guidelines have been consolidated into the new development docume
 ## Quick Links
 
 - **Maintainer Guide** → [docs/7-DEVELOPMENT/maintainer-guide.md](maintainer-guide.md)
-- **Contributing Guide** → [docs/7-DEVELOPMENT/contributing.md](../bmad_repo/CONTRIBUTING.md)
-- **Design Principles** → [docs/7-DEVELOPMENT/design-principles.md](design-principles.md)
 
 ---
 

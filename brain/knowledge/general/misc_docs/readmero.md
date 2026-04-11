@@ -302,7 +302,6 @@ Consultați fișierul [LICENSE](LICENSE) pentru detalii complete.
 
 ## Suport
 
-- **Documentație**: [docs/](docs/)
 - **Probleme**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repository**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Autor**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

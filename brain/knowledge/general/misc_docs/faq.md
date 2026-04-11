@@ -261,6 +261,3 @@ Submit to: [GitHub Issues](https://github.com/lfnovo/open-notebook/issues)
 
 ## Related
 
-- [Quick Fixes](../bmad_repo/quick-fixes.md) - Common issues with 1-minute solutions
-- [AI & Chat Issues](ai-chat-issues.md) - Model and chat problems
-- [Connection Issues](connection-issues.md) - Network and API problems

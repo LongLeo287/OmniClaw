@@ -1,0 +1,179 @@
+automations:
+
+  system_pulse:
+    type: daemon
+    path: system/automations/daemons/system_pulse.py
+    status: active
+    owner: SRE-Agent
+    description: Heartbeat reporting loop — monitors OS health, alerts on crash or resource overload.
+
+  update_hud:
+    type: daemon
+    path: system/automations/daemons/update_hud.ps1
+    status: active
+    owner: system
+    description: Continuous HUD update loop — refreshes OmniClaw dashboard metrics and overview display.
+
+  handoff_to_claude_code:
+    type: daemon
+    path: system/automations/daemons/handoff_to_claude_code.ps1
+    status: active
+    owner: Antigravity
+    description: Session handoff shell — maintains control and transfers work session to Claude Code.
+
+  auto_sync_omniclaw:
+    type: daemon
+    path: system/automations/daemons/auto_sync_omniclaw.ps1
+    status: active
+    owner: sec-agent
+    description: Auto-push backup to shared repository every 60 seconds.
+
+  process_github_queue:
+    type: event
+    path: system/automations/events/process_github_queue.py
+    status: active
+    owner: intake-chief-agent
+    description: Triggers automated CIV intake pipeline (Format 6) when new data arrives in the inbox.
+
+  ontology_sweep:
+    type: cron
+    path: system/ops/scripts/ontology_auditor.py
+    status: active
+    owner: sre-agent
+    description: Weekly data hygiene scan (every Friday). Maintains zero unlinked entities in the knowledge graph.
+
+  auto_evolution_engine:
+    type: daemon
+    path: system/automations/daemons/omniclaw_oid_daemon.py
+    status: active
+    owner: registry-manager-agent
+    description: "OmniClaw Ingestion Daemon (OID V2) Daemon: Runs sequentially in background, polls Vault/DATA for new knowledge, manages Anti-Crash Queue, and triggers Librarian for ecosystem evolution."
+
+  omniclaw_ohd_daemon:
+    type: daemon
+    path: system/automations/daemons/ohd/omniclaw_ohd_daemon.py
+    status: active
+    owner: system-daemon
+    description: "OmniClaw Health Daemon (OHD V1): Bệnh Viện Đa Khoa & Lao Công chạy nền (Background lock). Tuần tra rác (gọi cleanup_crew), nắn UTF-8/Naming, và bắn JSON Ticket báo động cấp cứu cho Học Viện OA."
+
+  oa_dispatch_listener:
+    type: event
+    path: ecosystem/workforce/system/education/oa-chief-agent/dispatch_listener.py
+    status: active
+    owner: oa-chief-agent
+    description: "OmniClaw Academy (OA) Event Listener: Subscribes to OA_DISPATCH_QUEUE. Wakes up the oa-chief-agent to perform post-mortem analysis on quarantined trash and extract Self-Learning Rules."
+
+  repo_catalog_updater:
+    type: cron
+    trigger: "weekly (Monday 00:00)"
+    path:
+      - system/ops/scripts/build_master_catalog.py
+      - system/ops/scripts/repo_eval_github_api.py
+      - ecosystem/workflows/repo-catalog-update.md
+    status: active
+    owner: oa-chief-agent
+    description: "OA Weekly Repo Radar: OA health-checks 38+ ACTIVE external repos for new versions. When a Tier-1 repo (e.g., Supabase, NextJS) has updates, OA dispatches OIW (Universal Ingestion Workflow) to scrape the new documentation automatically."
+
+  repo_active_monitor:
+    type: event
+    trigger: "ceo_command: update repos"
+    path:
+      - system/ops/scripts/repo_eval_github_api.py
+    status: active
+    owner: oa-chief-agent
+    description: "On CEO command 'update repos' — OA runs GitHub API check for all ACTIVE repos and commands OIW to fetch new updates."
+
+  memory_daemon:
+    type: daemon
+    path: system/ops/scripts/memory_daemon.py
+    status: active
+    owner: knowledge_agent
+    description: Long-term memory daemon using mem0ai + Qdrant local. Stores and retrieves vectorized session memories for persistent OmniClaw context.
+
+  agent_bus:
+    type: daemon
+    path: system/ops/scripts/agent_bus.py
+    status: active
+    owner: orchestrator_pro
+    description: SQLite-based pub/sub event bus for real-time task distribution between agents. Replaces blackboard.json for high-frequency events.
+
+  remote_bridge_gateway:
+    type: daemon
+    path: system/bridge/main.py
+    launcher: system/bridge/open_port.bat
+    port: 8000
+    status: on_demand
+    owner: bridge-commander-agent
+    description: "FastAPI gateway receiving traffic from Remote/bots. Dispatches to agent_bus (SQLite) or blackboard fallback. Start: system\\bridge\\open_port.bat"
+    endpoints:
+      - "POST /dock/bots/{platform} — Zalo/Telegram/Facebook/Discord/Line webhooks"
+      - "POST /dock/mcp/dispatch — MCP tool agent calls"
+      - "POST /dock/agentic_ai/sync — OpenClaw AI sync"
+      - "POST /dock/cloud/webhook — Supabase/GCloud updates"
+      - "POST /dock/dashboard/ui_command — Web/Mobile UI"
+      - "POST /vault/auth/issue_temp_pass — Issue token (HQ only)"
+      - "POST /vault/auth/revoke — Revoke token"
+      - "GET /vault/auth/list — List active tokens"
+      - "GET /health — Health check"
+    auth: "Header X-OMNICLAW-HQ-TOKEN (VaultKeeper). Key from OMNICLAW_HQ_MASTER_KEY in MASTER.env"
+    connections:
+      - "agent_bus.py (publish events) — fallback blackboard.json"
+      - "passport_issuer.py (token verify) — vault_tokens.json (persist)"
+      - "customs_checkpoint.py (scan payload) — border_security.log"
+
+  strix_security_scan:
+    type: cron
+    trigger: "daily (06:00)"
+    agent: strix-agent
+    skills:
+      - secret-scanner
+      - threat-detector
+      - agentshield
+    tasks:
+      - "Scan codebase for leaked secrets/tokens (secret-scanner)"
+      - "Analyze bridge gateway threat log (threat-detector)"
+      - "Check gitignore coverage for new secret files"
+      - "Report security posture to blackboard.json"
+    status: active
+    owner: strix-agent
+    department: security_grc
+    description: "Daily security scan: secrets leak detection + bridge threat analysis + gitignore audit. Results written to brain/corp/memory/departments/security_grc.md and blackboard.json."
+    outputs:
+      - "brain/corp/memory/departments/security_grc.md (department memory)"
+      - "system/ops/telemetry/receipts/gate_security/ (scan receipts)"
+    escalation: "CRITICAL findings — notify CEO via blackboard.json immediately"
+
+  fix_encoding_bom:
+    type: on_demand
+    path: system/ops/scripts/fix_encoding_bom.ps1
+    status: active
+    owner: engineering
+    description: "Fix UTF-8 BOM encoding issues across codebase. Run: pwsh system/ops/scripts/fix_encoding_bom.ps1. Dry-run: add -DryRun flag."
+
+  # ── REMOTE SERVICES (run from <OMNICLAW_REMOTE_ROOT>) ──────────────────
+
+  telegram_bridge:
+    type: daemon
+    location: REMOTE
+    path: "<OMNICLAW_REMOTE_ROOT>\\infra\\channels\\start_bridges.py"
+    status: active
+    owner: channel-agent
+    description: "Telegram <-> OmniClaw bridge. Start: python <OMNICLAW_REMOTE_ROOT>/infra/channels/start_bridges.py"
+
+  clawtask_stack:
+    type: daemon
+    location: REMOTE
+    path: "<OMNICLAW_REMOTE_ROOT>\\scripts\\start_nullclaw.ps1"
+    port: 7474
+    status: on_demand
+    owner: it-manager-agent
+    description: "ClawTask API :7474 + NullClaw workspace. Start: <OMNICLAW_REMOTE_ROOT>/launcher/START_OMNICLAW.ps1"
+
+  lightrag_server:
+    type: daemon
+    location: REMOTE
+    path: "<OMNICLAW_REMOTE_ROOT>\\scripts\\lightrag_server.py"
+    port: 9621
+    status: on_demand
+    owner: knowledge_agent
+    description: "LightRAG RAG server :9621. Start: python <OMNICLAW_REMOTE_ROOT>/scripts/lightrag_server.py"

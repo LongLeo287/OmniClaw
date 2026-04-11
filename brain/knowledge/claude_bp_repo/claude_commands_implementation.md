@@ -86,6 +86,4 @@ The weather orchestrator is the **Command** in the Command → Agent → Skill o
 
 | Component | Role | This Repo |
 |-----------|------|-----------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](weather-agent.md) with [`weather-fetcher`](../../../.claude/skills/supabase-postgres-best-practices/SKILL.md) |
 | **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../../../.claude/skills/supabase-postgres-best-practices/SKILL.md) |

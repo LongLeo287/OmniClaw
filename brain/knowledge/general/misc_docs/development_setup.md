@@ -417,7 +417,6 @@ If you get stuck:
 - **Discord**: [Join our server](https://discord.gg/37XJPXfz2w) for real-time help
 - **GitHub Issues**: Check existing issues for similar problems
 - **GitHub Discussions**: Ask questions in discussions
-- **Documentation**: See [code-standards.md](code-standards.md) and [testing.md](../bmad_repo/testing.md)
 
 ---
 

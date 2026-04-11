@@ -102,9 +102,6 @@ This project consists of {{parts_count}} distinct parts:
 For detailed information, see:
 
 - [index.md](./index.md) - Master documentation index
-- [architecture.md](./architecture{{#if is_multi_part}}-{part_id}{{/if}}.md) - Detailed architecture
-- [source-tree-analysis.md](./source-tree-analysis.md) - Directory structure
-- [development-guide.md](./development-guide{{#if is_multi_part}}-{part_id}{{/if}}.md) - Development workflow
 
 ---
 

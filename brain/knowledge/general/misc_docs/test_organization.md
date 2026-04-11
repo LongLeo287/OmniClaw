@@ -155,6 +155,3 @@ When misnamed/misplaced test files found:
 
 ## Related
 
-- [Widget Testing](widget-testing.md) — TestWrapper setup, common pitfalls
-- [Integration Testing](integration-testing.md) — Patrol patterns, native interactions
-- [Robot Pattern](robot-pattern.md) — UI abstraction for test assertions

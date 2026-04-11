@@ -198,7 +198,6 @@ wired end-to-end.
 
 - System prompt is built from OpenClaw’s base prompt, skills prompt, bootstrap context, and per-run overrides.
 - Model-specific limits and compaction reserve tokens are enforced.
-- See [System prompt](/concepts/system-prompt) for what the model sees.
 
 ## Hook points (where you can intercept)
 
@@ -248,7 +247,6 @@ See [Plugin hooks](/plugins/architecture#provider-runtime-hooks) for the hook AP
 - Assistant deltas are streamed from pi-agent-core and emitted as `assistant` events.
 - Block streaming can emit partial replies either on `text_end` or `message_end`.
 - Reasoning streaming can be emitted as a separate stream or as block replies.
-- See [Streaming](/concepts/streaming) for chunking and block reply behavior.
 
 ## Tool execution + messaging tools
 
@@ -272,7 +270,6 @@ See [Plugin hooks](/plugins/architecture#provider-runtime-hooks) for the hook AP
 
 - Auto-compaction emits `compaction` stream events and can trigger a retry.
 - On retry, in-memory buffers and tool summaries are reset to avoid duplicate output.
-- See [Compaction](/concepts/compaction) for the compaction pipeline.
 
 ## Event streams (today)
 
@@ -300,11 +297,6 @@ See [Plugin hooks](/plugins/architecture#provider-runtime-hooks) for the hook AP
 
 ## Related
 
-- [Tools](/tools) — available agent tools
-- [Hooks](/automation/hooks) — event-driven scripts triggered by agent lifecycle events
-- [Compaction](/concepts/compaction) — how long conversations are summarized
-- [Exec Approvals](/tools/exec-approvals) — approval gates for shell commands
-- [Thinking](/tools/thinking) — thinking/reasoning level configuration
 
 ```
 
@@ -385,7 +377,6 @@ These are the standard files OpenClaw expects inside the workspace:
 - `SOUL.md`
   - Persona, tone, and boundaries.
   - Loaded every session.
-  - Guide: [SOUL.md Personality Guide](/concepts/soul)
 
 - `USER.md`
   - Who the user is and how to address them.
@@ -552,10 +543,6 @@ Suggested `.gitignore` starter:
 
 ## Related
 
-- [Standing Orders](/automation/standing-orders) — persistent instructions in workspace files
-- [Heartbeat](/gateway/heartbeat) — HEARTBEAT.md workspace file
-- [Session](/concepts/session) — session storage paths
-- [Sandboxing](/gateway/sandboxing) — workspace access in sandboxed environments
 
 ```
 
@@ -609,7 +596,6 @@ title: "Gateway Architecture"
 
 Protocol details:
 
-- [Gateway protocol](/gateway/protocol)
 
 ### WebChat
 
@@ -713,10 +699,6 @@ Details: [Gateway protocol](/gateway/protocol), [Pairing](/channels/pairing),
 
 ## Related
 
-- [Agent Loop](/concepts/agent-loop) — detailed agent execution cycle
-- [Gateway Protocol](/gateway/protocol) — WebSocket protocol contract
-- [Queue](/concepts/queue) — command queue and concurrency
-- [Security](/gateway/security) — trust model and hardening
 
 ```
 
@@ -905,10 +887,6 @@ context engines, OpenAI server-side compaction), see the
 
 ## Related
 
-- [Session](/concepts/session) — session management and lifecycle
-- [Session Pruning](/concepts/session-pruning) — trimming tool results
-- [Context](/concepts/context) — how context is built for agent turns
-- [Hooks](/automation/hooks) — compaction lifecycle hooks (before_compaction, after_compaction)
 
 ```
 
@@ -1089,10 +1067,6 @@ Either way, it reports sizes and top contributors; it does **not** dump the full
 
 ## Related
 
-- [Context Engine](/concepts/context-engine) — custom context injection via plugins
-- [Compaction](/concepts/compaction) — summarizing long conversations
-- [System Prompt](/concepts/system-prompt) — how the system prompt is built
-- [Agent Loop](/concepts/agent-loop) — the full agent execution cycle
 
 ```
 
@@ -1380,9 +1354,6 @@ See also: [Compaction](/concepts/compaction), [Context](/concepts/context),
 
 ## Related
 
-- [Context](/concepts/context) — how context is built for agent turns
-- [Plugin Architecture](/plugins/architecture) — registering context engine plugins
-- [Compaction](/concepts/compaction) — summarizing long conversations
 
 ```
 
@@ -1408,7 +1379,6 @@ A **delegate** is an OpenClaw agent that:
 - Has its **own identity** (email address, display name, calendar).
 - Acts **on behalf of** one or more humans — never pretends to be them.
 - Operates under **explicit permissions** granted by the organization's identity provider.
-- Follows **[standing orders](/automation/standing-orders)** — rules defined in the agent's `AGENTS.md` that specify what it may do autonomously vs. what requires human approval (see [Cron Jobs](/automation/cron-jobs) for scheduled execution).
 
 The delegate model maps directly to how executive assistants work: they have their own credentials, send mail "on behalf of" their principal, and follow a defined scope of authority.
 
@@ -1930,10 +1900,6 @@ When enabled, the Gateway **Dreams** tab shows:
 
 ## Related
 
-- [Memory](/concepts/memory)
-- [Memory Search](/concepts/memory-search)
-- [memory CLI](/cli/memory)
-- [Memory configuration reference](/reference/memory-config)
 
 ```
 
@@ -2120,10 +2086,7 @@ If you need more on chunking behavior across channels, see
 
 ## Link policy
 
-- **Slack:** `[label](url)` -> `<url|label>`; bare URLs remain bare. Autolink
   is disabled during parse to avoid double-linking.
-- **Telegram:** `[label](url)` -> `<a href="url">label</a>` (HTML parse mode).
-- **Signal:** `[label](url)` -> `label (url)` unless label matches the URL.
 
 ## Spoilers
 
@@ -2335,16 +2298,8 @@ openclaw memory index --force   # Rebuild the index
 
 ## Further reading
 
-- [Builtin Memory Engine](/concepts/memory-builtin) -- default SQLite backend
-- [QMD Memory Engine](/concepts/memory-qmd) -- advanced local-first sidecar
-- [Honcho Memory](/concepts/memory-honcho) -- AI-native cross-session memory
-- [Memory Wiki](/plugins/memory-wiki) -- compiled knowledge vault and wiki-native tools
-- [Memory Search](/concepts/memory-search) -- search pipeline, providers, and
   tuning
-- [Dreaming (experimental)](/concepts/dreaming) -- background promotion
   from short-term recall to long-term memory
-- [Memory configuration reference](/reference/memory-config) -- all config knobs
-- [Compaction](/concepts/compaction) -- how compaction interacts with memory
 
 ```
 
@@ -2598,8 +2553,6 @@ openclaw honcho search <query> [-k N] [-d D] # Semantic search over memory
 - [Plugin source code](https://github.com/plastic-labs/openclaw-honcho)
 - [Honcho documentation](https://docs.honcho.dev)
 - [Honcho OpenClaw integration guide](https://docs.honcho.dev/v3/guides/integrations/openclaw)
-- [Memory](/concepts/memory) -- OpenClaw memory overview
-- [Context Engines](/concepts/context-engine) -- how plugin context engines work
 
 ```
 
@@ -2929,8 +2882,6 @@ earlier conversations. This is opt-in via
 
 ## Further reading
 
-- [Memory](/concepts/memory) -- file layout, backends, tools
-- [Memory configuration reference](/reference/memory-config) -- all config knobs
 
 ```
 
@@ -3093,10 +3044,6 @@ Details: [Configuration](/gateway/configuration-reference#messages) and channel 
 
 ## Related
 
-- [Streaming](/concepts/streaming) — real-time message delivery
-- [Retry](/concepts/retry) — message delivery retry behavior
-- [Queue](/concepts/queue) — message processing queue
-- [Channels](/channels) — messaging platform integrations
 
 ```
 
@@ -3136,7 +3083,6 @@ Related:
 - `agents.defaults.imageGenerationModel` is used by the shared image-generation capability. If omitted, `image_generate` can still infer an auth-backed provider default. It tries the current default provider first, then the remaining registered image-generation providers in provider-id order. If you set a specific provider/model, also configure that provider's auth/API key.
 - `agents.defaults.musicGenerationModel` is used by the shared music-generation capability. If omitted, `music_generate` can still infer an auth-backed provider default. It tries the current default provider first, then the remaining registered music-generation providers in provider-id order. If you set a specific provider/model, also configure that provider's auth/API key.
 - `agents.defaults.videoGenerationModel` is used by the shared video-generation capability. If omitted, `video_generate` can still infer an auth-backed provider default. It tries the current default provider first, then the remaining registered video-generation providers in provider-id order. If you set a specific provider/model, also configure that provider's auth/API key.
-- Per-agent defaults can override `agents.defaults.model` via `agents.list[].model` plus bindings (see [/concepts/multi-agent](/concepts/multi-agent)).
 
 ## Quick model policy
 
@@ -3328,7 +3274,6 @@ Scan results are ranked by:
 Input
 
 - OpenRouter `/models` list (filter `:free`)
-- Requires OpenRouter API key from auth profiles or `OPENROUTER_API_KEY` (see [/environment](/help/environment))
 - Optional filters: `--max-age-days`, `--min-params`, `--provider`, `--max-candidates`
 - Probe controls: `--timeout`, `--concurrency`
 
@@ -3355,12 +3300,6 @@ This applies whenever OpenClaw regenerates `models.json`, including command-driv
 
 ## Related
 
-- [Model Providers](/concepts/model-providers) — provider routing and auth
-- [Model Failover](/concepts/model-failover) — fallback chains
-- [Image Generation](/tools/image-generation) — image model configuration
-- [Music Generation](/tools/music-generation) — music model configuration
-- [Video Generation](/tools/video-generation) — video model configuration
-- [Configuration Reference](/gateway/configuration-reference#agent-defaults) — model config keys
 
 ```
 
@@ -4043,9 +3982,6 @@ OpenClaw ships with the pi‑ai catalog. These providers require **no**
 
 ### Other subscription-style hosted options
 
-- [Qwen Cloud](/providers/qwen): Qwen Cloud provider surface plus Alibaba DashScope and Coding Plan endpoint mapping
-- [MiniMax](/providers/minimax): MiniMax Coding Plan OAuth or API key access
-- [GLM Models](/providers/glm): Z.AI Coding Plan or general API endpoints
 
 ### OpenCode
 
@@ -4185,7 +4121,6 @@ See [/providers/kilocode](/providers/kilocode) for setup details.
   - GLM models on Cerebras use ids `zai-glm-4.7` and `zai-glm-4.6`.
   - OpenAI-compatible base URL: `https://api.cerebras.ai/v1`.
 - GitHub Copilot: `github-copilot` (`COPILOT_GITHUB_TOKEN` / `GH_TOKEN` / `GITHUB_TOKEN`)
-- Hugging Face Inference example model: `huggingface/deepseek-ai/DeepSeek-R1`; CLI: `openclaw onboard --auth-choice huggingface-api-key`. See [Hugging Face (Inference)](/providers/huggingface).
 
 ## Providers via `models.providers` (custom/base URL)
 
@@ -4535,10 +4470,6 @@ See also: [/gateway/configuration](/gateway/configuration) for full configuratio
 
 ## Related
 
-- [Models](/concepts/models) — model configuration and aliases
-- [Model Failover](/concepts/model-failover) — fallback chains and retry behavior
-- [Configuration Reference](/gateway/configuration-reference#agent-defaults) — model config keys
-- [Providers](/providers) — per-provider setup guides
 
 ```
 
@@ -4768,7 +4699,6 @@ Example:
 Notes:
 
 - DM access control is **global per WhatsApp account** (pairing/allowlist), not per agent.
-- For shared groups, bind the group to one agent or use [Broadcast groups](/channels/broadcast-groups).
 
 ## Routing rules (how messages pick an agent)
 
@@ -5154,11 +5084,6 @@ See [Multi-Agent Sandbox & Tools](/tools/multi-agent-sandbox-tools) for detailed
 
 ## Related
 
-- [Channel Routing](/channels/channel-routing) — how messages route to agents
-- [Sub-Agents](/tools/subagents) — spawning background agent runs
-- [ACP Agents](/tools/acp-agents) — running external coding harnesses
-- [Presence](/concepts/presence) — agent presence and availability
-- [Session](/concepts/session) — session isolation and routing
 
 ```
 
@@ -5335,14 +5260,9 @@ How to see what profile IDs exist:
 
 Related docs:
 
-- [/concepts/model-failover](/concepts/model-failover) (rotation + cooldown rules)
-- [/tools/slash-commands](/tools/slash-commands) (command surface)
 
 ## Related
 
-- [Authentication](/gateway/authentication) — model provider auth overview
-- [Secrets](/gateway/secrets) — credential storage and SecretRef
-- [Configuration Reference](/gateway/configuration-reference#auth-storage) — auth config keys
 
 ```
 
@@ -5594,9 +5514,6 @@ When no `--judge-model` is passed, the judges default to
 
 ## Related docs
 
-- [Testing](/help/testing)
-- [QA Channel](/channels/qa-channel)
-- [Dashboard](/web/dashboard)
 
 ```
 
@@ -5683,7 +5600,6 @@ Defaults: `debounceMs: 1000`, `cap: 20`, `drop: summarize`.
 
 - Applies to auto-reply agent runs across all inbound channels that use the gateway reply pipeline (WhatsApp web, Telegram, Slack, Discord, Signal, iMessage, webchat, etc.).
 - Default lane (`main`) is process-wide for inbound + main heartbeats; set `agents.defaults.maxConcurrent` to allow multiple sessions in parallel.
-- Additional lanes may exist (e.g. `cron`, `subagent`) so background jobs can run in parallel without blocking inbound replies. These detached runs are tracked as [background tasks](/automation/tasks).
 - Per-session lanes guarantee that only one agent run touches a given session at a time.
 - No external dependencies or background worker threads; pure TypeScript + promises.
 
@@ -5878,14 +5794,7 @@ Preview with `openclaw sessions cleanup --dry-run`.
 
 ## Further reading
 
-- [Session Pruning](/concepts/session-pruning) -- trimming tool results
-- [Compaction](/concepts/compaction) -- summarizing long conversations
-- [Session Tools](/concepts/session-tool) -- agent tools for cross-session work
-- [Session Management Deep Dive](/reference/session-management-compaction) --
   store schema, transcripts, send policy, origin metadata, and advanced config
-- [Multi-Agent](/concepts/multi-agent) — routing and session isolation across agents
-- [Background Tasks](/automation/tasks) — how detached work creates task records with session references
-- [Channel Routing](/channels/channel-routing) — how inbound messages are routed to sessions
 
 ```
 
@@ -5980,8 +5889,6 @@ compaction cycles.
 
 ## Further reading
 
-- [Compaction](/concepts/compaction) -- summarization-based context reduction
-- [Gateway Configuration](/gateway/configuration) -- all pruning config knobs
   (`contextPruning.*`)
 
 ```
@@ -6125,10 +6032,6 @@ config.
 
 ## Further reading
 
-- [Session Management](/concepts/session) -- routing, lifecycle, maintenance
-- [ACP Agents](/tools/acp-agents) -- external harness spawning
-- [Multi-agent](/concepts/multi-agent) -- multi-agent architecture
-- [Gateway Configuration](/gateway/configuration) -- session tool config knobs
 
 ```
 
@@ -6241,9 +6144,6 @@ Sharp is good. Annoying is not.
 
 ## Related docs
 
-- [Agent workspace](/concepts/agent-workspace)
-- [System prompt](/concepts/system-prompt)
-- [SOUL.md template](/reference/templates/SOUL)
 
 ```
 
@@ -6408,9 +6308,6 @@ Slack:
 
 ## Related
 
-- [Messages](/concepts/messages) — message lifecycle and delivery
-- [Retry](/concepts/retry) — retry behavior on delivery failure
-- [Channels](/channels) — per-channel streaming support
 
 ```
 
@@ -6699,9 +6596,6 @@ See [Date & Time](/date-time) for the full behavior and examples.
 
 ## Related
 
-- [Heartbeat](/gateway/heartbeat) — active hours use timezone for scheduling
-- [Cron Jobs](/automation/cron-jobs) — cron expressions use timezone for scheduling
-- [Date & Time](/date-time) — full date/time behavior and examples
 
 ```
 

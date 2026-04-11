@@ -289,14 +289,10 @@ Every pull request runs the backend regression workflow at [.github/workflows/ba
 
 ## Documentation
 
-- [Configuration Guide](backend/docs/CONFIGURATION.md) - Setup and configuration
-- [Architecture Overview](backend/CLAUDE.md) - Technical architecture
-- [MCP Setup Guide](MCP_SETUP.md) - Model Context Protocol configuration
 
 ## Need Help?
 
 - Check existing [Issues](https://github.com/bytedance/deer-flow/issues)
-- Read the [Documentation](backend/docs/)
 - Ask questions in [Discussions](https://github.com/bytedance/deer-flow/discussions)
 
 ## License
