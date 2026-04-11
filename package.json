@@ -1,0 +1,18 @@
+{
+  "name": "omniclaw",
+  "version": "5.0.0",
+  "description": "Lightweight OmniClaw bootstrap CLI for diagnostics and path discovery.",
+  "license": "MIT",
+  "bin": {
+    "omniclaw": "bin/omniclaw.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "README-vn.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

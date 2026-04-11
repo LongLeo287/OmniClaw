@@ -34,9 +34,9 @@ Explore the high-level blueprints and structural mandates that define OmniClaw's
 
 Quick-start manuals and tool instructions for human operators.
 
-- [**Getting Started**](usage_guides/getting_started.md) — Initial deployment and environment setup.
-- [**Activation Guide**](usage_guides/activation_guide.md) — Port mappings for external modules (LobsterBoard, Ollama, LightRAG).
-- [**Agent Commands**](usage_guides/agent_commands.md) — Invocation syntax for directing Agent execution.
+- [**Getting Started**](usage_guides/getting_started.md) — Public bootstrap path for the current core repository.
+- [**Activation Guide**](usage_guides/activation_guide.md) — Diagnostics, environment variables, repair modes, and manual bridge launches.
+- [**Agent Commands**](usage_guides/agent_commands.md) — Current invocation patterns for boot prompts, maps, and runtime helpers.
 - [**MCP Figma Usage**](usage_guides/figma_mcp_usage.md) — Utilizing the Figma Model Context Protocol bridge.
 - [**Data Science Library**](usage_guides/data_science_library.md) — Integrating Python analytic endpoints.
 
@@ -46,7 +46,7 @@ Standard Operating Procedures that dictate how daemons process raw data and main
 
 - [**Deep Cleaner**](workflows/deep_cleaner.md) — The continuous, aggressive sanitation mechanism governing GitHub pushes.
 - [**Data Intake (CIV Gate)**](workflows/data_intake.md) — The legacy protocol for validating external repository imports.
-- [**Data Packaging & Sync**](workflows/data_packaging_sync.md) — Safely syncing local memory to cloud endpoints (HuggingFace/GDrive).
+- [**Data Packaging & Sync**](workflows/data_packaging_sync.md) — Policy for syncing large state outside the public bootstrap path.
 - [**OIW Daemon SOP**](workflows/oiw_daemon.md) — Intake Harvester scraping routines.
 
 ---

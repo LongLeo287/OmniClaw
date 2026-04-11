@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-OmniClaw V2.0 — System Startup Script
-Path: system/ops/omniclaw_startup.py
+OmniClaw V5.0 — System Startup Script
+Path: core/ops/omniclaw_startup.py
 Built: 2026-03-26 | Author: Antigravity
 
 Usage:
-  python system/ops/omniclaw_startup.py              # Boot check + Telegram report
-  python system/ops/omniclaw_startup.py --verbose     # [Removed legacy comment]
-  python system/ops/omniclaw_startup.py --check-only # Only check, do not start
-  python system/ops/omniclaw_startup.py --no-telegram  # [Removed legacy comment]
+  python core/ops/omniclaw_startup.py                 # Boot check + status refresh
+  python core/ops/omniclaw_startup.py --verbose       # Verbose output
+  python core/ops/omniclaw_startup.py --check-only    # Only check, do not write status
+  python core/ops/omniclaw_startup.py --telegram      # Opt in to Telegram reporting
 """
 
 import json
@@ -26,7 +26,7 @@ ROOT = Path(__file__).parent.parent.parent
 ARGS = sys.argv[1:]
 VERBOSE    = "--verbose" in ARGS or "-v" in ARGS
 CHECK_ONLY = "--check-only" in ARGS
-NO_TELEGRAM = "--no-telegram" in ARGS
+SEND_TELEGRAM = "--telegram" in ARGS
 
 def now_iso():
     return datetime.datetime.now(
@@ -128,7 +128,9 @@ def check_critical_files() -> tuple[bool, list]:
         if f.exists():
             ok(f.name)
         else:
-            warn(f"{f.name} — MISSING. Attempting Auto-Bootstrap...")
+            err(f"{f.name} — MISSING")
+            errors.append(str(f))
+            continue
             try:
                 f.parent.mkdir(parents=True, exist_ok=True)
                 if f.suffix == ".json":
@@ -286,8 +288,8 @@ def update_hud(services: dict, reg_info: dict) -> dict:
 
 def send_telegram_boot_report(status: dict, bb: dict, services: dict):
     hdr("STEP 1.6 — Telegram Boot Report")
-    if NO_TELEGRAM:
-        info("Skip Telegram (--no-telegram)")
+    if not SEND_TELEGRAM:
+        info("Skip Telegram (use --telegram to enable reporting)")
         return
 
     token = ENV.get("TELEGRAM_BOT_TOKEN", "")
@@ -304,7 +306,7 @@ def send_telegram_boot_report(status: dict, bb: dict, services: dict):
     trigger  = bb.get("handoff_trigger", "IDLE")
 
     msg = (
-        f"🚀 *OmniClaw V2.0 — SYSTEM BOOT*\n"
+        f"🚀 *OmniClaw V5.0 — SYSTEM BOOT*\n"
         f"⏰ {now_iso()[11:16]} GMT+7\n\n"
         f"━━━━━━━━━━━━━━━\n"
         f"• 🏢 System: `ONLINE`\n"
@@ -336,7 +338,7 @@ def print_summary(files_ok: bool, cycle_status: str, services: dict, reg_info: d
     total = len(services)
 
     print(f"\n{'═'*52}")
-    print(f"  {C.BOLD}OmniClaw V2.0 — BOOT SUMMARY{C.RESET}")
+    print(f"  {C.BOLD}OmniClaw V5.0 — BOOT SUMMARY{C.RESET}")
     print(f"{'═'*52}")
 
     status_icon = "✅" if files_ok else "❌"
@@ -354,9 +356,9 @@ def print_summary(files_ok: bool, cycle_status: str, services: dict, reg_info: d
     elif cycle_status == "RUNNING":
         print("[OmniClaw System Event]")
     else:
-        print(f"  {C.GREEN}→ python system/ops/omniclaw_orchestrator.py once{C.RESET}")
-        print(f"  {C.GREEN}→ python ops/omniclaw.py corp start (Corp Daily Cycle){C.RESET}")
-        print("[OmniClaw System Event]")
+        print(f"  {C.GREEN}→ Run `omniclaw doctor` to verify the core workspace{C.RESET}")
+        print(f"  {C.GREEN}→ Launch only the specific bridges or daemons you intend to provision{C.RESET}")
+        print(f"  {C.GREEN}→ Use `python core/ops/omniclaw_startup.py --telegram` only when external reporting is intended{C.RESET}")
 
     print(f"\n  {C.CYAN}📊 HUD:     system/hud/STATUS.json{C.RESET}")
     print(f"  {C.CYAN}📋 Tasks:   http://localhost:7474{C.RESET}")
@@ -368,7 +370,7 @@ def print_summary(files_ok: bool, cycle_status: str, services: dict, reg_info: d
 def main():
     ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"\n{'═'*52}")
-    print(f"  {C.BOLD}🚀 OmniClaw V2.0 — STARTUP BOOT{C.RESET}")
+    print(f"  {C.BOLD}🚀 OmniClaw V5.0 — STARTUP BOOT{C.RESET}")
     print(f"  {C.CYAN}{ts}{C.RESET}")
     print(f"{'═'*52}")
 

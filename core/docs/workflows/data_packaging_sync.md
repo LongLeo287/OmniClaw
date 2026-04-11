@@ -2,43 +2,35 @@
 id: data-packaging-sync
 type: document
 owner: SYSTEM
-tags: [auto-healed]
-healed_at: 2026-04-03T22:44:27.671754
+tags: [deployment, sync]
 ---
 
 # Packaging & Sync Workflow (Cloud Push Process)
 
-[**🇻🇳 Xem Bản Tiếng Việt**](data_packaging_sync-vn.md) | [**Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
+[**🇻🇳 Vietnamese Translation**](data_packaging_sync_vn.md) | [**Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 
 ---
 
-This is the end-to-end workflow for backing up and packaging the entire Brain, State, and Memory of OmniClaw to simultaneously sync it to three cloud hubs: **HuggingFace**, **Google Drive**, and **GitHub**. Strict adherence to this workflow ensures no broken paths or large file constraint errors (Git LFS limit).
+This document describes deployment-specific state backup and sync policy. It is not part of the baseline public bootstrap path for a fresh OmniClaw clone.
 
 ---
 
-## 1. Targeted Data Push (The Cloud Sniper)
-To prevent bloating the standard Git repository or flooding it with unnecessary junk folders, the system prioritizes "Targeted Data Sync" rather than a full root copy.
+## 1. Scope
+The public OmniClaw core repository is intentionally lighter than a full private deployment. Large state, caches, and external datasets may exist outside GitHub and may require deployment-specific tooling.
 
-The core script handling this data vault operation is:
-**`system/ops/scripts/omniclaw_data_push.py`** 
+Typical large-state zones include:
+1. `brain/memory/`
+2. `vault/`
+3. `ecosystem/plugins/`
 
-It intelligently extracts and pushes the three heaviest system directories:
-1. `brain/memory/` (Long-term Agent Experience Memory)
-2. `storage/vault/` (Library of Raw Extracted Data and Media Assets)
-3. `ecosystem/plugins/` (Third-Party Repositories and Agent Source Code)
-
-These large assets securely stream into the primary **HuggingFace Dataset** and **Google Drive** Vault.
-
-> **⚠️ Warning:** Never force push raw database files (`.db`, `.sqlite`, `.webp`) or massive archival repositories (exceeding > 100MB) directly to the root GitHub branch (`main`). Doing so violates GitHub's LFS limit and will trigger a "pre-receive hook declined" failure.
+> **Warning:** Never force push raw database files, private state, or large archives directly to `main`.
 
 ---
 
-## 2. Targeted Data Pull (Rehydrating the Vault)
-Whenever a developer forks or clones OmniClaw from Github, their `storage/vault` and `brain/memory` will likely be empty.
-To seamlessly redownload the missing heavy files straight into their correct local paths, run:
-**`python system/ops/scripts/omniclaw_data_pull.py`**
+## 2. Public Repository Rule
+Bootstrap the core repository first with `omniclaw doctor`. Provision any external state intentionally for the target environment. Do not assume a fresh public clone includes private memory, private datasets, or cloud credentials.
 
-This script utilizes HuggingFace's `snapshot_download` and RClone `copy` to **exactly match and rehydrate** the original directory structures (`d:/LongLeo/OmniClaw CORP/OmniClaw/storage/...`). Links will not break, and all Agents will instantly recognize the memory structures.
+> **Important:** Any deployment-specific commands further below should be treated as legacy internal examples unless they are explicitly validated for your environment.
 
 ---
 

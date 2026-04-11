@@ -12,6 +12,9 @@
 !/README-vn.md
 !/LICENSE
 !/omniclaw.bat
+!/package.json
+!/bin/
+!/bin/**
 
 # 3. Allow authorized "Operating System" Documentation
 !/core/
@@ -36,6 +39,8 @@
 !/ecosystem/ui_components/**
 !/ecosystem/bridges/
 !/ecosystem/bridges/**
+!/ecosystem/workflows/
+!/ecosystem/workflows/**
 !/docs/
 !/docs/**
 

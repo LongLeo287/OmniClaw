@@ -43,6 +43,6 @@ Khi boot lần đầu, hệ thống sẽ:
 
 ## 4. Bước Tiếp Theo
 
-- Đọc [**Lệnh Agent**](agent_commands-vn.md) để hiểu cách tương tác.
-- Gửi repository để xử lý qua giao thức [**CIV Intake**](../workflows/data_intake-vn.md).
+- Đọc [**Lệnh Agent**](agent_commands_vn.md) để hiểu cách tương tác.
+- Gửi repository để xử lý qua giao thức [**CIV Intake**](../workflows/data_intake_vn.md).
 

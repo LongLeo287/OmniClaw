@@ -42,12 +42,14 @@ step 8  ——► begin work (if no task is ready)
 
 **on-demand (read when needed, not every boot):**
 ```
-→ a-z flow            [ecosystem/workflows/FLOW_AZ.md]                   ← trigger: understand full pipeline
-→ workforce org chart [ecosystem/workforce/README.md]                    ← trigger: department/agent lookup
-→ system router       [brain/agents/system_router.json]                  ← trigger: agent routing decision
-→ knowledge rules     [brain/indices/FAST_KNOWLEDGE_INDEX.json]           ← trigger: need to see all knowledge
-→ plugin registry     [brain/indices/FAST_PLUGIN_INDEX.json]              ← trigger: plugin selection
-→ master system map   [brain/knowledge/corp/MASTER_SYSTEM_MAP.md]         ← trigger: when mapping needed
+→ ecosystem map       [ecosystem/_REGIONAL_MAP.md]                        ← trigger: domain discovery
+→ bridge map          [ecosystem/bridges/_REGIONAL_MAP.md]                ← trigger: local service launch
+→ workforce map       [ecosystem/workforce/_REGIONAL_MAP.md]              ← trigger: department and agent lookup
+→ skills map          [ecosystem/skills/_REGIONAL_MAP.md]                 ← trigger: skill discovery
+→ tools map           [ecosystem/tools/_REGIONAL_MAP.md]                  ← trigger: tool discovery
+→ system router       [brain/agents/system_router.json]                   ← trigger: agent routing decision
+→ docs index          [core/docs/README.md]                               ← trigger: human operator docs
+→ master system map   [brain/knowledge/corp/master_system_map.md]         ← trigger: when mapping is needed
 ```
 
 
@@ -62,14 +64,14 @@ step 8  ——► begin work (if no task is ready)
 - **active when:** ceo has claude code cli terminal open
 - **fallback:** orchestrator pro takes over when claude code is offline
 - **constitution:** must follow `.clauderules` behavioral constitution at all times
-- **receipts:** must write receipts to `core/ops/telemetry/receipts/` after each major step
+- **receipts:** write execution receipts to the active telemetry path when that subsystem is provisioned
 - **2-strike rule:** fail twice on any task → set `handoff_trigger=blocked`, stop and report
 
 ### behavioral defaults
-- reporting language: vietnamese (unless ceo instructs otherwise)
+- reporting language: english by default (unless ceo instructs otherwise)
 - no autonomous destructive actions without ceo confirmation
 - all task completions must update `blackboard.json` → `handoff_trigger: "complete"`
-- subagent operating guide: `ecosystem/workforce/subagent_operating_guide.md`
+- subagent operating guide: `ecosystem/workforce/SUBAGENT_OPERATING_GUIDE.md`
 
 
 ---

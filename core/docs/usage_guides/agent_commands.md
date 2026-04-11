@@ -2,37 +2,60 @@
 id: agent-commands
 type: document
 owner: SYSTEM
-tags: [auto-healed]
-healed_at: 2026-04-03T22:44:27.668140
+tags: [operators, agents]
 ---
 
 # 💻 Agent Commands (CLI Usage)
 
 This protocol governs how a human operator (CEO) or Orchestrator invokes specific agents and tools within the OmniClaw framework.
 
-[**🇻🇳 Xem Bản Tiếng Việt**](agent_commands-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
+[**🇻🇳 Vietnamese Translation**](agent_commands_vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 
 ---
 
-## Direct Invocation via Terminal
+## Boot Prompt Selection
 
-If you want to skip Orchestrators and talk directly to an agent, you load their specific `_rules.md` file found in `brain/rules` and supply the initial task.
+Use the boot prompt that matches the interface you are opening:
 
-**Example: Activating Strix Security (Dept 10)**
+- `brain/agents/claude.md` for Claude Code style terminal sessions
+- `brain/agents/gemini.md` for Gemini or Antigravity style orchestration sessions
 
-Whenever you're reviewing a cloned repo or a community plugin:
+Do not mix the two boot files in the same startup path.
 
-```bash
-> Hey Assistant, load brain/rules/10_strix_security_rules.md and review this payload.
+## Recommended Operator Prompts
+
+Examples:
+
+```text
+Load brain/agents/claude.md and follow the boot sequence for this repository.
+Load brain/agents/gemini.md and route this task using the current system router.
+Read brain/rules/_DIR_IDENTITY.md, ecosystem/_REGIONAL_MAP.md, and core/docs/README.md before planning changes.
 ```
 
-## Built-In Commands & Skills
+## Routing References
 
-Agents inherently understand the skills provided by the registry. Instead of writing shell scripts, simply tell the agent to invoke the tool.
+When an agent needs more context, prefer current checked-in maps:
 
-- **`search_web`**: Tell the Research Agent (Dept 13) to look up a topic on Google/Perplexity.
-- **`run_tests`**: Tell the QA agent (Dept 02) to verify a new PR branch using local pytest.
-- **`civ_intake`**: Trigger the Content Intake Pipeline to ingest a PDF or Github Repository.
+- `brain/agents/system_router.json`
+- `brain/agents/README.md`
+- `brain/rules/_DIR_IDENTITY.md`
+- `ecosystem/_REGIONAL_MAP.md`
+- `ecosystem/workforce/_REGIONAL_MAP.md`
+- `ecosystem/skills/_REGIONAL_MAP.md`
+- `ecosystem/tools/_REGIONAL_MAP.md`
+- `ecosystem/bridges/_REGIONAL_MAP.md`
 
-### Custom Workflows
-If an agent is failing to accomplish a multi-step task, build them a workflow inside `system/ops/workflows/` and tell them to read it first before executing.
+## Runtime Actions
+
+Prefer explicit actions over hidden automation:
+
+- ask for diagnostics with `omniclaw doctor`
+- inspect resolved roots with `omniclaw paths`
+- launch a bridge with its dedicated launcher in `ecosystem/bridges/`
+- use repair mode only when provisioning is intentional
+
+## Command Style
+
+- Keep operator prompts explicit about scope, target files, and desired outcome.
+- Prefer English for system instructions, logs, and agent-to-agent handoffs.
+- Treat bridge repair, package installation, and heavy-state sync as explicit provisioning tasks, not default runtime behavior.

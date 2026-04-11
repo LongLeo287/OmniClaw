@@ -2,48 +2,55 @@
 id: getting-started
 type: document
 owner: SYSTEM
-tags: [auto-healed]
-healed_at: 2026-04-03T22:44:27.670194
+tags: [bootstrap, public]
 ---
 
 # 🚀 Getting Started with OmniClaw
 
 Welcome aboard! This guide will walk you through setting up OmniClaw, booting your first AI orchestrator, and linking your local workspace.
 
-[**🇻🇳 Xem Bản Tiếng Việt**](getting_started-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
+[**🇻🇳 Vietnamese Translation**](getting_started_vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 
 ---
 
 ## 1. Prerequisites
 
-Before unleashing the 21-department AI framework, ensure you have the following installed:
-- **Node.js (v18+)** for the MCP ecosystem and JavaScript-based tools.
-- **Python (3.11+)** for the deep reasoning backends and pipeline workflows.
-- **Docker** (Optional but recommended) for spinning up isolated local DBs and APIs.
-- API Keys: Provide instances of `GEMINI_API_KEY` (or Anthropic keys if defaulting to Claude Code).
+Before bootstrapping the current OmniClaw core repository, ensure you have:
+- **Node.js (v18+)** for the bootstrap CLI and JavaScript tooling.
+- **Python 3** for core scripts and bridge launchers.
+- **Git** for repository workflows.
+- **Docker Desktop** (optional) for bridge-managed local services.
 
 ## 2. Installation Setup
 
-1. Clone the repository to your local machine: `git clone <repo-url>`
-2. **[CRITICAL] Pull the Heavy Vaults:** Since heavy data (like Agent Memory and massive code plugins) are not stored on GitHub due to the 100MB limit, you MUST pull the delta fragments back from HuggingFace/Drive:
-   ```bash
-   python system/ops/scripts/omniclaw_data_pull.py
-   ```
-3. Install the dependencies: `pip install -r requirements.txt`
-4. Spin up the initial routers using `infra/llm/router.yaml`.
+```bash
+git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
+cd "OmniClaw"
+npm install -g .
+omniclaw doctor
+```
 
-## 3. First Boot (Lighting the Core)
+On Windows, you can also run:
 
-The OmniClaw starts by booting the main orchestrator memory file.
-To activate the **Antigravity** central hub engine, load the `GEMINI.md` file using your agent interface in your IDE (or Claude Code for `CLAUDE.md`).
+```powershell
+.\omniclaw.bat doctor
+```
 
-Upon first boot, the system will:
-1. Read the `brain/memory/blackboard.json` to view current global state tasks.
-2. Register all accessible capabilities from the `SKILL_REGISTRY.json`.
-3. Stand by for CEO (Human) instructions.
+## 3. First Boot
+
+The public bootstrap path is diagnostic-first:
+
+1. Resolve the workspace root with `omniclaw doctor`.
+2. Inspect external project roots with `omniclaw paths`.
+3. Load the boot prompt that matches your interface:
+   - `brain/agents/claude.md`
+   - `brain/agents/gemini.md`
+
+`OmniClaw REMOTE` and `OmniClaw UI` are optional sibling projects. They are not required for the core repository to pass baseline diagnostics.
 
 ## 4. Next Steps
 
-- Go read the [**Agent Commands**](agent_commands.md) to understand how to interact.
-- Submit a repository for processing via the [**CIV Intake**](../workflows/data_intake.md) protocol.
+- Read [**Activation Guide**](activation_guide.md) for environment variables and repair modes.
+- Read [**Agent Commands**](agent_commands.md) for current invocation patterns.
+- Read [**Data Packaging & Sync**](../workflows/data_packaging_sync.md) only if your deployment needs external state backup or rehydration.
 

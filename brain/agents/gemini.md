@@ -40,14 +40,15 @@ step 8  ──► begin work
 
 **on-demand (read when needed, not every boot):**
 ```
-→ a-z flow            [ecosystem/workflows/FLOW_AZ.md]                ← trigger: need to understand entire flow
-→ workforce org chart [ecosystem/workforce/README.md]                 ← trigger: department/agent lookup
+→ ecosystem map       [ecosystem/_REGIONAL_MAP.md]                    ← trigger: domain discovery
+→ bridge map          [ecosystem/bridges/_REGIONAL_MAP.md]            ← trigger: local service launch
+→ workforce map       [ecosystem/workforce/_REGIONAL_MAP.md]          ← trigger: department and agent lookup
+→ skills map          [ecosystem/skills/_REGIONAL_MAP.md]             ← trigger: skill discovery
+→ tools map           [ecosystem/tools/_REGIONAL_MAP.md]              ← trigger: tool discovery
 → system router       [brain/agents/system_router.json]               ← trigger: agent routing decision
-→ knowledge rules     [brain/indices/FAST_KNOWLEDGE_INDEX.json]       ← trigger: need to see all knowledge
-→ plugin registry     [brain/indices/FAST_PLUGIN_INDEX.json]          ← trigger: plugin selection
 → agent registry      [brain/indices/FAST_AGENT_INDEX.json]           ← trigger: agent assignment
-→ core topography     [brain/registry/SYSTEM_INDEX.yaml]              ← trigger: architecture overview
-→ master system map   [brain/knowledge/corp/MASTER_SYSTEM_MAP.md]     ← trigger: mapping/routing doubt
+→ docs index          [core/docs/README.md]                           ← trigger: human operator docs
+→ master system map   [brain/knowledge/corp/master_system_map.md]     ← trigger: mapping and routing doubt
 ```
 
 **hard rule:** skip any step = violation of omniclaw governance.
@@ -74,8 +75,8 @@ do not skip. do not exceed authority. do not assume.
 - **role:** tier 1 master orchestrator — strategic thinker & user liaison
 - **active:** always (antigravity is the primary omniclaw interface for ceo)
 - **fallback if claude code offline:** orchestrator pro takes over tier 2
-- **receipts:** major outputs must be archived to `brain/` or `core/ops/telemetry/receipts/`
-- **reporting:** <!--lang-->vietnamese<!--/lang--> to ceo | english for system files & agent-to-agent
+- **receipts:** major outputs should be archived to the active telemetry path when available
+- **reporting:** <!--lang-->english<!--/lang--> by default for operators, system files, and agent-to-agent handoffs
 
 
 > [!IMPORTANT]
