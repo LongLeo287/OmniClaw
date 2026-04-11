@@ -149,39 +149,38 @@ OmniClaw hoạt động nghiêm ngặt trong các giới hạn Zero-Trust. Nếu
 
 ## 💽 Cài Đặt
 
-OmniClaw được xây dựng với kiến trúc "Clone & Run" (Nhân bản & Chạy) đơn giản.
+Hiện tại OmniClaw ship một CLI bootstrap gọn nhẹ để kiểm tra môi trường và resolve các project root. Nó chưa tự provision `OmniClaw REMOTE` hay `OmniClaw UI`.
 
 ```bash
 # 1. Clone repository cốt lõi vào ổ đĩa cục bộ của bạn
 git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
 cd "OmniClaw"
 
-# 2. Liên kết Hệ thống Toàn cầu thông qua NPM
+# 2. Cài CLI chẩn đoán cục bộ qua NPM
 npm install -g .
 
-# 3. Khởi xướng Terminal Hệ Điều Hành Nguyên Khối (Có thể chạy từ bất cứ đâu)
-omniclaw
+# 3. Kiểm tra workspace trước khi chạy bridge hoặc daemon
+omniclaw doctor
+
+# 4. Xem các root path đã resolve nếu cần
+omniclaw paths
 ```
 
-*Mẹo cho Windows: Chúng tôi có cung cấp khả năng truy cập GUI nguyên bản cho Windows. Chỉ cần nhấp đúp vào file `omniclaw.bat` nằm trong thư mục gốc của repository để mở Bảng Điều Khiển tức thì.*
+*Mẹo cho Windows: Repository hiện có sẵn file `omniclaw.bat` ở thư mục gốc. Bạn có thể nhấp đúp hoặc chạy `omniclaw.bat doctor` để dùng cùng CLI chẩn đoán mà không cần dashboard riêng.*
 
 ---
 
 ## 📖 Bản Đồ & Hướng Dẫn Hệ Thống Toàn Diện
 
-Để hiểu sâu hơn về kiến ​​trúc của hệ thống, các dịch vụ đang chạy và các module tính năng đã tải, hãy tham khảo các bản đồ tổng quan của chúng tôi:
+Để hiểu sâu hơn về kiến trúc hiện đang có thật trên `main`, hãy tham khảo các bản đồ và thư mục đã được kiểm chứng trong repo:
 
-- 🏛️ [**Các Nguyên Tắc Kiến Trúc Cốt Lõi**](core/docs/architecture/core_principles.md) — Kiến trúc bộ nhớ Zero-Config và chính sách phi giới hạn hệ điều hành về ngôn ngữ được giải thích.
-- ⚖️ [**Quy Tắc Lõi Bộ Não Của Kiến Trúc V5.0**](brain/rules/_DIR_IDENTITY.md) — Xem xét Bộ Hiến Pháp Cốt Lõi tuyệt đối của Hệ Điều Hành chi phối tất cả 8 Daemon và MemPalace.
-- 🧭 [**Bản Đồ Hệ Thống Tổng Thể**](core/docs/architecture/master_system_map.md) — Bản thiết kế tổng thể định hình: Các chuỗi khởi động (Boot Sequences), kiến trúc Bộ Nhớ, và luồng làm việc của các Cổng lưới (Gates).
-- 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/activation_guide.md) — Sơ đồ Cổng và các lệnh khởi động thủ công cho tất cả các dịch vụ nội bộ (LobsterBoard, LightRAG, v.v...).
-- 🏢 [**Ma Trận Lực Lượng Agent**](ecosystem/workforce/_REGIONAL_MAP.md) — Bản đồ kiến trúc cho các Agent thực thi.
-- 🎨 [**Thư Viện Component Giao Diện Người Dùng**](ecosystem/ui_components/_REGIONAL_MAP.md) — Repository trung tâm cho kho lưu trữ Frontend, shadcn_ui, và công trình tạo ra GUI/UX.
-- 🌁 [**Cầu Nối Máy Chủ Nội Bộ**](ecosystem/bridges/) — Trình khởi chạy cho cơ sở dữ liệu nội bộ cục bộ và phần mềm động cơ suy luận LLM (Mem0, Ollama, LightRAG).
-- 🗃️ [**Danh Mục Kỹ Năng**](core/docs/architecture/skills_map.md) — Một thư viện toàn diện thông tin một số chức năng chuyên biệt trải dài trên toàn bộ lãnh thổ OmniClaw.
-- 🔌 [**Danh Mục Plugin Cấp 2**](ecosystem/plugins/) — Danh mục trung tâm cho tổ hợp các Sandbox Plugins cực nặng.
-- 🧰 [**Các Công Cụ Tự Phòng Thủ/Cứu Hộ Nguyên Bản**](ecosystem/tools/_REGIONAL_MAP.md) — Các tập lệnh phục hồi sinh tồn cấp HĐH tuyệt đối (Bare-metal) cho các hoạt động của LLM Cố Cấp/Ngoại Tuyến.
-- 📊 [**Kho Lưu Trữ Khoa Học Dữ Liệu**](core/docs/usage_guides/data_science_library.md) — Danh sách tất cả kho lưu trữ Machine Learning và luồng đồ thị trong thư viện hoạt động RAG.
+- ⚖️ [**Quy Tắc Lõi Bộ Não Của Kiến Trúc V5.0**](brain/rules/_DIR_IDENTITY.md) — Bộ hiến pháp cốt lõi chi phối hệ điều hành.
+- 🗺️ [**Bản Đồ Tổng Quan Ecosystem**](ecosystem/_REGIONAL_MAP.md) — Chỉ mục cấp cao của toàn bộ các domain trong `ecosystem`.
+- 🌁 [**Cầu Nối Máy Chủ Nội Bộ**](ecosystem/bridges/) — Launcher và topology compose cho runtime cục bộ.
+- 🗃️ [**Bản Đồ Kho Kỹ Năng**](ecosystem/skills/_REGIONAL_MAP.md) — Bản đồ registry-backed của kho skill hiện tại.
+- 🧰 [**Bản Đồ Armory Tools**](ecosystem/tools/_REGIONAL_MAP.md) — Bản đồ registry-backed của các tool đã validate.
+- 🏢 [**Bản Đồ Workforce**](ecosystem/workforce/_REGIONAL_MAP.md) — Topology phòng ban và hệ thống tác nhân.
+- 🎨 [**Khu Vực Staging UI Components**](ecosystem/ui_components/_REGIONAL_MAP.md) — Trạng thái hiện tại của vùng frontend asset.
 
 ---
 

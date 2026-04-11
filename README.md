@@ -149,39 +149,38 @@ OmniClaw strictly functions in Zero-Trust constraints. If an agent tries to crea
 
 ## 💽 Installation
 
-OmniClaw is built to be a simple "Clone & Run" architecture.
+OmniClaw currently ships a lightweight bootstrap CLI for environment checks and path discovery. It does not auto-provision `OmniClaw REMOTE` or `OmniClaw UI`.
 
 ```bash
 # 1. Clone the core repository to your local drive
 git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
 cd "OmniClaw"
 
-# 2. Link the Global System via NPM
+# 2. Install the local diagnostics CLI globally
 npm install -g .
 
-# 3. Boot the Monolithic OS Terminal (Can be run from anywhere)
-omniclaw
+# 3. Verify the workspace before launching bridges or daemons
+omniclaw doctor
+
+# 4. Inspect resolved project roots if needed
+omniclaw paths
 ```
 
-*Windows Tip: We have provided native Windows GUI accessibility. Simply double-click the `omniclaw.bat` script located in the root repository to instantly open the Control Dashboard.*
+*Windows Tip: The repository now includes a local `omniclaw.bat` wrapper in the root. Double-clicking it, or running `omniclaw.bat doctor`, executes the same diagnostics CLI without requiring a separate dashboard project.*
 
 ---
 
 ## 📖 Comprehensive System Maps & Guides
 
-For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult our master maps:
+For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult the checked-in maps that currently exist on `main`:
 
-- 🏛️ [**Core Architectural Principles**](core/docs/architecture/core_principles.md) — The Zero-Config Memory skeleton and OS-Agnostic language policy explained.
-- ⚖️ [**V5.0 Architectural Brain Rules**](brain/rules/_DIR_IDENTITY.md) — View the absolute Core Constitution of the Operating System governing all 8 Daemons and the MemPalace.
-- 🧭 [**Master System Map**](core/docs/architecture/master_system_map.md) — The legacy blueprint mapping: Boot Sequences, Memory architecture, and Gate workflows.
-- 🚦 [**Activation Guide**](core/docs/usage_guides/activation_guide.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
-- 🏢 [**Agent Workforce Matrix**](ecosystem/workforce/README.md) — The Corporate Brain: 28 Departments, 116 Agents, governance prompts, and organizational command chains.
-- 🎨 [**UI Components Factory**](ecosystem/ui_components/README.md) — Clean staging area for Agent-generated frontend assets (React/Tailwind/CSS).
-- 🌁 [**Local Server Bridges**](ecosystem/bridges/) — Launchers for local database and LLM inference engines (Mem0, Ollama, LightRAG).
-- 🗃️ [**Skills Directory**](ecosystem/skills/) — The Passive Competency Warehouse housing **1,932+** AI Persona & Knowledge prompts.
-- 🔌 [**Plugins Registry**](ecosystem/plugins/) — The Cold-Storage Library for 3rd-party repositories and sandboxed logic.
-- 🧰 [**Tools Armory**](ecosystem/tools/) — The Active Armory containing Native Executables and **MCP Gateways**.
-- 📊 [**Data Science Repositories**](core/docs/usage_guides/data_science_library.md) — List of active Machine Learning and RAG repositories in the capability library.
+- ⚖️ [**V5.0 Architectural Brain Rules**](brain/rules/_DIR_IDENTITY.md) — Core constitution and governance mapping for the operating system.
+- 🗺️ [**Ecosystem Master Map**](ecosystem/_REGIONAL_MAP.md) — Top-level index of the shipped `ecosystem` domains.
+- 🌁 [**Local Server Bridges**](ecosystem/bridges/) — Launchers and compose topology for local runtime services.
+- 🗃️ [**Skills Directory Map**](ecosystem/skills/_REGIONAL_MAP.md) — Current registry-backed map of the skills warehouse.
+- 🔌 [**Tools Armory Map**](ecosystem/tools/_REGIONAL_MAP.md) — Registry-backed map of validated tools.
+- 🏢 [**Workforce Map**](ecosystem/workforce/_REGIONAL_MAP.md) — Department and system roster topology.
+- 🎨 [**UI Components Staging Area**](ecosystem/ui_components/_REGIONAL_MAP.md) — Current state of the frontend asset area.
 
 ---
 
