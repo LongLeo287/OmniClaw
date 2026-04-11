@@ -175,8 +175,8 @@ For a deeper understanding of the system's architecture, running services, and l
 - ⚖️ [**V5.0 Architectural Brain Rules**](brain/rules/_DIR_IDENTITY.md) — View the absolute Core Constitution of the Operating System governing all 8 Daemons and the MemPalace.
 - 🧭 [**Master System Map**](core/docs/architecture/master_system_map.md) — The legacy blueprint mapping: Boot Sequences, Memory architecture, and Gate workflows.
 - 🚦 [**Activation Guide**](core/docs/usage_guides/activation_guide.md) — Port mappings and manual start commands for all local services (LobsterBoard, LightRAG, etc.).
-- 🏢 [**Agent Workforce Matrix**](ecosystem/workforce/_REGIONAL_MAP.md) — Architectural map of the execution Agents.
-- 🎨 [**UI Components Library**](ecosystem/ui_components/_REGIONAL_MAP.md) — Central repository for frontend assets, shadcn_ui, and UI/UX generator workflows.
+- 🏢 [**Agent Workforce Matrix**](ecosystem/workforce/README.md) — The Corporate Brain: 28 Departments, 116 Agents, governance prompts, and organizational command chains.
+- 🎨 [**UI Components Factory**](ecosystem/ui_components/README.md) — Clean staging area for Agent-generated frontend assets (React/Tailwind/CSS).
 - 🌁 [**Local Server Bridges**](ecosystem/bridges/) — Launchers for local database and LLM inference engines (Mem0, Ollama, LightRAG).
 - 🗃️ [**Skills Directory**](ecosystem/skills/) — The Passive Competency Warehouse housing **1,932+** AI Persona & Knowledge prompts.
 - 🔌 [**Plugins Registry**](ecosystem/plugins/) — The Cold-Storage Library for 3rd-party repositories and sandboxed logic.
