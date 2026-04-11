@@ -1,50 +1,61 @@
-# 🏛️ OER & Core Daemons — OmniClaw Ecosystem Governance
+# 🏛️ Core Daemons — OmniClaw Ecosystem Governance
 
-> **Authority:** CEO (LongLeo) | **Version:** 3.0 | **Date:** 2026-04-08
+> **Authority:** CEO (LongLeo) | **Version:** 5.0 | **Date:** 2026-04-11
 > **Status:** ACTIVE — This document supersedes all previous ecosystem authority definitions.
 
 [**Back to Docs**](../../../README.md)
 
-This document defines the **7 Core Daemons** of OmniClaw OS and the **Zero-Trust Automated Pipeline** that governs how every Skill, Plugin, Agent, and Workflow enters the ecosystem.
+This document defines the **8 Core Daemons** of OmniClaw OS and the **Zero-Trust Automated Pipeline** that governs how every Skill, Plugin, Agent, and Workflow enters the ecosystem.
 
 ---
 
-## 1. The 7 Pillars of Governance (Core Daemons)
+## 1. The 8 Pillars of Governance (Master Hierarchy)
 
-To prevent scope overreach and Zero-Trust violations, ecosystem authority is strictly distributed across 7 specialized Agents (Daemons) housed strictly within 3 distinct architectural departments (`system_daemons`, `system_health`, `system_security`):
+To prevent scope overreach and Zero-Trust violations, ecosystem authority is strictly distributed across 8 specialized Agents (Daemons) housed strictly within 3 distinct architectural departments (`system_daemons`, `system_health`, `system_security`):
 
 | Node ID | Designation | General Role | Department |
 | :--- | :--- | :--- | :--- |
+| **`oma_architect`**| OmniClaw Map Architect | Infrastructure Config | `system_daemons` |
+| **`oap_pipeline`** | Omnibus Assimilation | Pipeline Sorter | `system_daemons` |
+| **`oer_registry`**| OmniClaw Ecosystem Registry | Registrar | `system_daemons` |
 | **`oiw_intake`** | OmniClaw Intake Worker | Harvester | `system_daemons` |
 | **`osf_warden`** | OmniClaw Sandbox Firewall | Border Firewall | `system_security` |
-| **`osf_auditor`** | OmniClaw Security Auditor | (Sub) File Auditing | `system_security` |
-| **`osf_quarantine_guard`** | OmniClaw Quarantine Guard | (Sub) Jailer | `system_security` |
 | **`ohd_healer`** | OmniClaw Health Daemon | System Doctor | `system_health` |
 | **`oa_academy`** | OmniClaw Academy | Execution Auditor | `system_daemons` |
-| **`oer_registry`**| OmniClaw Ecosystem Registry | Registrar | `system_daemons` |
-| **`oma_architect`**| OmniClaw Map Architect | Infrastructure Config | `system_daemons` |
-| **`obd_harbor`** | OmniClaw Bridge Daemon | Harbor Master | `system_daemons` |
+| **`obd_harbor`** | OmniClaw Bridge Daemon | Harbor Master / Port Firewall | `system_security` |
 
 ---
 
 ## 2. Authority Matrix (Who Does What)
 
-| Function | OIW | OSF | OHD | OA | OER | OMA | OBD |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| Git Clone / Harvest | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Quarantine Check (Border) | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| Fix Files (Lint/Auto-Heal) | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Audit Logic & Recruit Agents | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
-| Update `SKILL_REGISTRY.json` | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ |
-| Map Node Paths & Identities | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
-| Run Subprocess/Terminals | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Function | OMA | OAP | OER | OIW | OSF | OHD | OA | OBD |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Map Node Paths & Identities | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Route Triage Matrix | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Update `REGISTRY.json` | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Git Clone / Harvest | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Quarantine Check (Border) | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ |
+| Fix Files (Lint/Auto-Heal) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | ❌ |
+| Audit Logic & Recruit Agents | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Open Localhost Ports & Bridges | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
 
 > [!CAUTION]
-> **Zero-Trust Compartmentalization**: All 7 Daemons are fully registered agent nodes with restricted skill files. If any daemon attempts to execute a script outside its `SKILL.md` boundaries, the Orchestrator will instantly terminate the instance.
+> **Zero-Trust Compartmentalization**: All 8 Daemons are fully registered agent nodes with restricted skill boundaries. If any daemon attempts to execute a script outside its mandate, the Orchestrator will instantly terminate the instance.
 
 ---
 
-## 3. The Autonomous OAP Hierarchy
+## 3. OBD Harbor – The Strict Perimeter
+
+As of Version 5.0, **OBD (OmniClaw Bridge Daemon)** is elevated to handle absolute networking and perimeter defense:
+* **No Auto-Connections:** Third-party skills and web servers CANNOT bind to ports unmanaged by OBD.
+* **127.0.0.1 Enforcement:** Opening `0.0.0.0` is strictly illegal unless explicit API Gateway authorization is granted. 
+* **MCP Integration:** Claude/Cursor MCP modules running natively via `stdio` are tracked directly inside the OBD Dashboard to ensure full visibility of AI-managed bypasses.
+
+For exact bridge protocol documentation, refer to `ecosystem/bridges/README.md`.
+
+---
+
+## 4. The Autonomous OAP Hierarchy
 
 ```mermaid
 graph TD
@@ -54,8 +65,7 @@ graph TD
     
     subgraph system_security[🏢 system_security / Boundary Defense]
         OSF["🛡️ OSF Firewall (osf_warden)"]:::sec
-        OSF_SUB["osf_auditor & osf_quarantine_guard"]:::sec
-        OBD["🌉 OBD Bridge (bridge_commander)"]:::sec
+        OBD["🌉 OBD Harbor (obd_harbor)"]:::sec
     end
     
     subgraph system_health[🏥 system_health / Clinical Operations]
@@ -64,20 +74,21 @@ graph TD
 
     subgraph system_daemons[⚙️ system_daemons / Core Infrastructure]
         OMA["🗺️ OMA Architect (oma_architect)"]:::sys
+        OAP["🔀 OAP Pipeline (oap_pipeline)"]:::sys
         OA["👑 OA Academy (oa_academy)"]:::sys
         OIW["📥 OIW Intake (oiw_intake)"]:::sys
         OER["📜 OER Registry (oer_registry)"]:::sys
     end
 
-    OMA -->|"Maps & Routes"| OA
-    OA -->|"Heuristics & Personnel"| OHD
+    OMA -->|"Maps & Routes"| OAP
+    OAP -->|"Triage"| OIW
     OIW -->|"Pulls Code"| OSF
     OSF -->|"Quarantines"| OHD
     OHD -->|"Healed Files"| OER
-    OER -->|"Stamps ID"| OMA
+    OER -->|"Stamps ID"| OA
     OBD -->|"Bridge APIs"| OSF
 ```
 
 ---
 
-*OER & Core Daemons v3.0 — OmniClaw Corp — 2026-04-08*
+*Core Daemons v5.0 — OmniClaw Corp — 2026-04-11*

@@ -1,5 +1,7 @@
 # 🌉 OmniClaw Bridges Architecture
 
+[🇻🇳 Xem bản Tiếng Việt (Vietnamese)](README-vn.md)
+
 **Bridges** are the strict perimeter firewalls and local gateways of the OmniClaw Artificial Intelligence Operating System (`v5.0`). 
 
 Everything within this directory serves as a **Harbor Launch Script** exclusively governed by the **OBD Harbor** (OmniClaw Bridge Daemon). This directory enforces isolation, ensuring that no external or background process can start and expose a network connection into OmniClaw without Explicit Authorization via the OBD Console.
