@@ -10,7 +10,7 @@ healed_at: 2026-04-03T22:44:27.665225
 
 OmniClaw uses a strict 3-Tier Plugin Architecture to safely extend its capabilities. All code that interacts with the internet, touches sensitive files, or runs unvetted scripts goes through these tiers.
 
-[**🇻🇳 Xem Bản Tiếng Việt**](plugin_architecture-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
+[**🇻🇳 Xem   **](plugin_architecture-vn.md) | [**Return to Docs Index**](../README.md) | [**📚 Wiki Reference**](https://github.com/LongLeo287/OmniClaw/wiki)
 
 ---
 

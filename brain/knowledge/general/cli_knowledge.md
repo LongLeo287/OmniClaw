@@ -41,7 +41,6 @@ external harness such as Codex or Claude Code through `acpx`.
 Quick rule:
 
 - editor/client wants to talk ACP to OpenClaw: use `openclaw acp`
-- OpenClaw should launch Codex/Claude/Gemini as an ACP harness: use `/acp spawn` and [ACP Agents](/tools/acp-agents)
 
 ## Compatibility Matrix
 
@@ -343,7 +342,6 @@ Pass at least one session selector:
 
 Related:
 
-- Agent send tool: [Agent send](/tools/agent-send)
 
 ## Options
 
@@ -398,9 +396,6 @@ Manage isolated agents (workspaces + auth + routing).
 
 Related:
 
-- Multi-agent routing: [Multi-Agent Routing](/concepts/multi-agent)
-- Agent workspace: [Agent workspace](/concepts/agent-workspace)
-- Skill visibility config: [Skills config](/tools/skills-config)
 
 ## Examples
 
@@ -627,8 +622,6 @@ Alias: `openclaw exec-approvals`
 
 Related:
 
-- Exec approvals: [Exec approvals](/tools/exec-approvals)
-- Nodes: [Nodes](/nodes)
 
 ## Common commands
 
@@ -855,7 +848,6 @@ Manage OpenClaw's browser control surface and run browser actions (lifecycle, pr
 
 Related:
 
-- Browser tool + API: [Browser tool](/tools/browser)
 
 ## Common flags
 
@@ -1092,8 +1084,6 @@ Manage chat channel accounts and their runtime status on the Gateway.
 
 Related docs:
 
-- Channel guides: [Channels](/channels/index)
-- Gateway configuration: [Configuration](/gateway/configuration)
 
 ## Common commands
 
@@ -1228,7 +1218,6 @@ Legacy alias namespace kept for backwards compatibility.
 
 Current supported alias:
 
-- `openclaw clawbot qr` (same behavior as [`openclaw qr`](/cli/qr))
 
 ## Migration
 
@@ -1433,7 +1422,6 @@ openclaw config set --batch-file ./config-set.batch.json --dry-run
 
 Policy note:
 
-- SecretRef assignments are rejected on unsupported runtime-mutable surfaces (for example `hooks.token`, `commands.ownerDisplaySecret`, Discord thread-binding webhook tokens, and WhatsApp creds JSON). See [SecretRef Credential Surface](/reference/secretref-credential-surface).
 
 Batch parsing always uses the batch payload (`--batch-json`/`--batch-file`) as the source of truth.
 `--strict-json` / `--json` do not change batch parsing behavior.
@@ -1673,8 +1661,6 @@ follow-up prompts:
 
 Related:
 
-- Gateway configuration reference: [Configuration](/gateway/configuration)
-- Config CLI: [Config](/cli/config)
 
 ## Options
 
@@ -1727,7 +1713,6 @@ Manage cron jobs for the Gateway scheduler.
 
 Related:
 
-- Cron jobs: [Cron jobs](/automation/cron-jobs)
 
 Tip: run `openclaw cron --help` for the full command surface.
 
@@ -1937,7 +1922,6 @@ Notes:
 - When token auth requires a token and `gateway.auth.token` is SecretRef-managed, `install` validates that the SecretRef is resolvable but does not persist the resolved token into service environment metadata.
 - If token auth requires a token and the configured token SecretRef is unresolved, install fails closed.
 - If both `gateway.auth.token` and `gateway.auth.password` are configured and `gateway.auth.mode` is unset, install is blocked until mode is set explicitly.
-- If you intentionally run multiple gateways on one host, isolate ports, config/state, and workspaces; see [/gateway#multiple-gateways-same-host](/gateway#multiple-gateways-same-host).
 
 ## Prefer
 
@@ -2143,8 +2127,6 @@ Notes:
 
 Related:
 
-- [Dashboard auth troubleshooting](/web/dashboard#if-you-see-unauthorized-1008)
-- [Gateway troubleshooting](/gateway/troubleshooting#dashboard-control-ui-connectivity)
 
 ```
 
@@ -2232,8 +2214,6 @@ DNS helpers for wide-area discovery (Tailscale + CoreDNS). Currently focused on 
 
 Related:
 
-- Gateway discovery: [Discovery](/gateway/discovery)
-- Wide-area discovery config: [Configuration](/gateway/configuration)
 
 ## Setup
 
@@ -2318,8 +2298,6 @@ Health checks + quick fixes for the gateway and channels.
 
 Related:
 
-- Troubleshooting: [Troubleshooting](/gateway/troubleshooting)
-- Security audit: [Security](/gateway/security)
 
 ## Examples
 
@@ -2412,9 +2390,6 @@ Subcommands in this page live under `openclaw gateway …`.
 
 Related docs:
 
-- [/gateway/bonjour](/gateway/bonjour)
-- [/gateway/discovery](/gateway/discovery)
-- [/gateway/configuration](/gateway/configuration)
 
 ## Run the Gateway
 
@@ -2661,7 +2636,6 @@ Notes:
 `gateway discover` scans for Gateway beacons (`_openclaw-gw._tcp`).
 
 - Multicast DNS-SD: `local.`
-- Unicast DNS-SD (Wide-Area Bonjour): choose a domain (example: `openclaw.internal.`) and set up split DNS + a DNS server; see [/gateway/bonjour](/gateway/bonjour)
 
 Only gateways with Bonjour discovery enabled (default) advertise the beacon.
 
@@ -2763,8 +2737,6 @@ Running `openclaw hooks` with no subcommand is equivalent to `openclaw hooks lis
 
 Related:
 
-- Hooks: [Hooks](/automation/hooks)
-- Plugin hooks: [Plugin hooks](/plugins/architecture#provider-runtime-hooks)
 
 ## List All Hooks
 
@@ -3103,57 +3075,6 @@ This page describes the current CLI behavior. If commands change, update this do
 
 ## Command pages
 
-- [`setup`](/cli/setup)
-- [`onboard`](/cli/onboard)
-- [`configure`](/cli/configure)
-- [`config`](/cli/config)
-- [`completion`](/cli/completion)
-- [`doctor`](/cli/doctor)
-- [`dashboard`](/cli/dashboard)
-- [`backup`](/cli/backup)
-- [`reset`](/cli/reset)
-- [`uninstall`](/cli/uninstall)
-- [`update`](/cli/update)
-- [`message`](/cli/message)
-- [`agent`](/cli/agent)
-- [`agents`](/cli/agents)
-- [`acp`](/cli/acp)
-- [`mcp`](/cli/mcp)
-- [`status`](/cli/status)
-- [`health`](/cli/health)
-- [`sessions`](/cli/sessions)
-- [`gateway`](/cli/gateway)
-- [`logs`](/cli/logs)
-- [`system`](/cli/system)
-- [`models`](/cli/models)
-- [`infer`](/cli/infer)
-- [`memory`](/cli/memory)
-- [`wiki`](/cli/wiki)
-- [`directory`](/cli/directory)
-- [`nodes`](/cli/nodes)
-- [`devices`](/cli/devices)
-- [`node`](/cli/node)
-- [`approvals`](/cli/approvals)
-- [`sandbox`](/cli/sandbox)
-- [`tui`](/cli/tui)
-- [`browser`](/cli/browser)
-- [`cron`](/cli/cron)
-- [`tasks`](/cli/index#tasks)
-- [`flows`](/cli/flows)
-- [`dns`](/cli/dns)
-- [`docs`](/cli/docs)
-- [`hooks`](/cli/hooks)
-- [`webhooks`](/cli/webhooks)
-- [`pairing`](/cli/pairing)
-- [`qr`](/cli/qr)
-- [`plugins`](/cli/plugins) (plugin commands)
-- [`channels`](/cli/channels)
-- [`security`](/cli/security)
-- [`secrets`](/cli/secrets)
-- [`skills`](/cli/skills)
-- [`daemon`](/cli/daemon) (legacy alias for gateway service commands)
-- [`clawbot`](/cli/clawbot) (legacy alias namespace)
-- [`voicecall`](/cli/voicecall) (plugin; if installed)
 
 ## Global flags
 
@@ -4350,7 +4271,6 @@ Notes:
 - Providers with current usage windows: Anthropic, GitHub Copilot, Gemini CLI, OpenAI Codex, MiniMax, Xiaomi, and z.ai.
 - MiniMax note: raw `usage_percent` / `usagePercent` means remaining quota, so OpenClaw inverts it before display; count-based fields still win when present. `model_remains` responses prefer the chat-model entry, derive the window label from timestamps when needed, and include the model name in the plan label.
 - Usage auth comes from provider-specific hooks when available; otherwise OpenClaw falls back to matching OAuth/API-key credentials from auth profiles, env, or config. If none resolve, usage is hidden.
-- Details: see [Usage tracking](/concepts/usage-tracking).
 
 ### `health`
 
@@ -5236,8 +5156,6 @@ Tail Gateway file logs over RPC (works in remote mode).
 
 Related:
 
-- Logging overview: [Logging](/logging)
-- Gateway CLI: [gateway](/cli/gateway)
 
 ## Options
 
@@ -5812,10 +5730,6 @@ Provided by the active memory plugin (default: `memory-core`; set `plugins.slots
 
 Related:
 
-- Memory concept: [Memory](/concepts/memory)
-- Memory wiki: [Memory Wiki](/plugins/memory-wiki)
-- Wiki CLI: [wiki](/cli/wiki)
-- Plugins: [Plugins](/tools/plugin)
 
 ## Examples
 
@@ -5969,7 +5883,6 @@ Notes:
 - `memory rem-backfill --path <file-or-dir>` writes reversible grounded diary entries into `DREAMS.md` for UI review.
 - `memory rem-backfill --path <file-or-dir> --stage-short-term` also seeds grounded durable candidates into the live short-term promotion store so the normal deep phase can rank them.
 - `memory rem-backfill --rollback` removes previously written grounded diary entries, and `memory rem-backfill --rollback-short-term` removes previously staged grounded short-term candidates.
-- See [Dreaming](/concepts/dreaming) for full phase descriptions and configuration reference.
 
 ```
 
@@ -6294,8 +6207,6 @@ Model discovery, scanning, and configuration (default model, fallbacks, auth pro
 
 Related:
 
-- Providers + models: [Models](/providers/models)
-- Provider auth setup: [Getting started](/start/getting-started)
 
 ## Common commands
 
@@ -6549,7 +6460,6 @@ The node host stores its node id, token, display name, and gateway connection in
 `system.run` is gated by local exec approvals:
 
 - `~/.openclaw/exec-approvals.json`
-- [Exec approvals](/tools/exec-approvals)
 - `openclaw approvals --node <id|name|ip>` (edit from the Gateway)
 
 For approved async node exec, OpenClaw prepares a canonical `systemRunPlan`
@@ -6575,9 +6485,6 @@ Manage paired nodes (devices) and invoke node capabilities.
 
 Related:
 
-- Nodes overview: [Nodes](/nodes)
-- Camera: [Camera nodes](/nodes/camera)
-- Images: [Image nodes](/nodes/images)
 
 Common options:
 
@@ -6645,11 +6552,6 @@ Interactive onboarding for local or remote Gateway setup.
 
 ## Related guides
 
-- CLI onboarding hub: [Onboarding (CLI)](/start/wizard)
-- Onboarding overview: [Onboarding Overview](/start/onboarding-overview)
-- CLI onboarding reference: [CLI Setup Reference](/start/wizard-cli-reference)
-- CLI automation: [CLI Automation](/start/wizard-cli-automation)
-- macOS onboarding: [Onboarding (macOS App)](/start/onboarding)
 
 ## Examples
 
@@ -6788,7 +6690,6 @@ Flow notes:
     and an `x_search` model choice.
   - **Kimi** can ask for the Moonshot API region (`api.moonshot.ai` vs
     `api.moonshot.cn`) and the default Kimi web-search model.
-- Local onboarding DM scope behavior: [CLI Setup Reference](/start/wizard-cli-reference#outputs-and-internals).
 - Fastest first chat: `openclaw dashboard` (Control UI, no channel setup).
 - Custom Provider: connect any OpenAI or Anthropic compatible endpoint,
   including hosted providers not listed. Use Unknown to auto-detect.
@@ -6821,7 +6722,6 @@ Approve or inspect DM pairing requests (for channels that support pairing).
 
 Related:
 
-- Pairing flow: [Pairing](/channels/pairing)
 
 ## Commands
 
@@ -6892,10 +6792,6 @@ Manage Gateway plugins/extensions, hook packs, and compatible bundles.
 
 Related:
 
-- Plugin system: [Plugins](/tools/plugin)
-- Bundle compatibility: [Plugin bundles](/plugins/bundles)
-- Plugin manifest + schema: [Plugin manifest](/plugins/manifest)
-- Security hardening: [Security](/gateway/security)
 
 ## Commands
 
@@ -7479,9 +7375,6 @@ Sandbox settings live in `~/.openclaw/openclaw.json` under `agents.defaults.sand
 
 ## See Also
 
-- [Sandbox Documentation](/gateway/sandboxing)
-- [Agent Configuration](/concepts/agent-workspace)
-- [Doctor Command](/gateway/doctor) - Check sandbox setup
 
 ```
 
@@ -7527,9 +7420,6 @@ Exit code note for CI/gates:
 
 Related:
 
-- Secrets guide: [Secrets Management](/gateway/secrets)
-- Credential surface: [SecretRef Credential Surface](/reference/secretref-credential-surface)
-- Security guide: [Security](/gateway/security)
 
 ## Reload runtime snapshot
 
@@ -7624,7 +7514,6 @@ Notes:
 - You cannot combine `--providers-only` with `--skip-provider-setup`.
 - `configure` targets secret-bearing fields in `openclaw.json` plus `auth-profiles.json` for the selected agent scope.
 - `configure` supports creating new `auth-profiles.json` mappings directly in the picker flow.
-- Canonical supported surface: [SecretRef Credential Surface](/reference/secretref-credential-surface).
 - It performs preflight resolution before apply.
 - If preflight/apply includes exec refs, keep `--allow-exec` set for both steps.
 - Generated plans default to scrub options (`scrubEnv`, `scrubAuthProfilesForProviderTargets`, `scrubLegacyAuthJson` all enabled).
@@ -7660,7 +7549,6 @@ Exec behavior:
 
 Plan contract details (allowed target paths, validation rules, and failure semantics):
 
-- [Secrets Apply Plan Contract](/gateway/secrets-plan-contract)
 
 What `apply` may update:
 
@@ -7703,7 +7591,6 @@ Security tools (audit + optional fixes).
 
 Related:
 
-- Security guide: [Security](/gateway/security)
 
 ## Audit
 
@@ -7850,7 +7737,6 @@ openclaw sessions cleanup --json
 
 `openclaw sessions cleanup` uses `session.maintenance` settings from config:
 
-- Scope note: `openclaw sessions cleanup` maintains session stores/transcripts only. It does not prune cron run logs (`cron/runs/<jobId>.jsonl`), which are managed by `cron.runLog.maxBytes` and `cron.runLog.keepLines` in [Cron configuration](/automation/cron-jobs#configuration) and explained in [Cron maintenance](/automation/cron-jobs#maintenance).
 
 - `--dry-run`: preview how many entries would be pruned/capped without writing.
   - In text mode, dry-run prints a per-session action table (`Action`, `Key`, `Age`, `Model`, `Flags`) so you can see what would be kept vs removed.
@@ -7892,7 +7778,6 @@ openclaw sessions cleanup --json
 
 Related:
 
-- Session config: [Configuration reference](/gateway/configuration-reference#session)
 
 ```
 
@@ -7912,8 +7797,6 @@ Initialize `~/.openclaw/openclaw.json` and the agent workspace.
 
 Related:
 
-- Getting started: [Getting started](/start/getting-started)
-- CLI onboarding: [Onboarding (CLI)](/start/wizard)
 
 ## Examples
 
@@ -7982,9 +7865,6 @@ Inspect local skills and install/update skills from ClawHub.
 
 Related:
 
-- Skills system: [Skills](/tools/skills)
-- Skills config: [Skills config](/tools/skills-config)
-- ClawHub installs: [ClawHub](/tools/clawhub)
 
 ## Commands
 
@@ -8061,7 +7941,6 @@ Notes:
 - Output includes per-agent session stores when multiple agents are configured.
 - Overview includes Gateway + node host service install/runtime status when available.
 - Overview includes update channel + git SHA (for source checkouts).
-- Update info surfaces in the Overview; if an update is available, status prints a hint to run `openclaw update` (see [Updating](/install/updating)).
 - Read-only status surfaces (`status`, `status --json`, `status --all`) resolve supported SecretRefs for their targeted config paths when possible.
 - If a supported channel SecretRef is configured but unavailable in the current command path, status stays read-only and reports degraded output instead of crashing. Human output shows warnings such as “configured token unavailable in this command path”, and JSON output includes `secretDiagnostics`.
 - When command-local SecretRef resolution succeeds, status prefers the resolved snapshot and clears transient “secret unavailable” channel markers from the final output.
@@ -14574,7 +14453,6 @@ Open the terminal UI connected to the Gateway.
 
 Related:
 
-- TUI guide: [TUI](/web/tui)
 
 Notes:
 
@@ -14751,9 +14629,6 @@ If pnpm bootstrap still fails, the updater now stops early with a package-manage
 ## See also
 
 - `openclaw doctor` (offers to run update first on git checkouts)
-- [Development channels](/install/development-channels)
-- [Updating](/install/updating)
-- [CLI reference](/cli)
 
 ```
 
@@ -14773,7 +14648,6 @@ title: "voicecall"
 
 Primary doc:
 
-- Voice-call plugin: [Voice Call](/plugins/voice-call)
 
 ## Common commands
 
@@ -14812,8 +14686,6 @@ Webhook helpers and integrations (Gmail Pub/Sub, webhook helpers).
 
 Related:
 
-- Webhooks: [Webhooks](/automation/cron-jobs#webhooks)
-- Gmail Pub/Sub: [Gmail Pub/Sub](/automation/cron-jobs#gmail-pubsub-integration)
 
 ## Gmail
 
@@ -14910,9 +14782,6 @@ Provided by the bundled `memory-wiki` plugin.
 
 Related:
 
-- [Memory Wiki plugin](/plugins/memory-wiki)
-- [Memory Overview](/concepts/memory)
-- [CLI: memory](/cli/memory)
 
 ## What it is for
 

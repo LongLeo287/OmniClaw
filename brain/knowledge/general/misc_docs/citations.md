@@ -165,7 +165,6 @@ Citations work in exports:
 
 | Format | Citation Behavior |
 |--------|-------------------|
-| **Markdown** | Links preserved as `[text](link)` |
 | **Copy/Paste** | Plain text with reference numbers |
 | **PDF** | Clickable references (if supported) |
 

@@ -900,5 +900,3 @@ docker exec open-notebook cat /app/package.json | grep version
 
 - **[Security Configuration](security.md)** - Password protection and hardening
 - **[Advanced Configuration](advanced.md)** - Ports, timeouts, and SSL settings
-- **[Troubleshooting](../6-TROUBLESHOOTING/connection-issues.md)** - Connection problems
-- **[Docker Deployment](../1-INSTALLATION/docker-compose.md)** - Complete deployment guide

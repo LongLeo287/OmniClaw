@@ -49,7 +49,7 @@ Both modes run identical phases. In mandatory mode, cognitive_reflector starts i
 ## Phase 1: Archive (archivist)
 
 ```
-1. Collect: all brain/memory/corp_memory/daily_briefs/*.md for this cycle
+1. Collect: all brain/memory/system_memory/daily_briefs/*.md for this cycle
 2. Archive telemetry:
    - Move telemetry/receipts/<dept>/* â†’ archive/receipts/<YYYY-MM>/<dept>/
    - (if receipt age > 30 days)
@@ -68,7 +68,7 @@ Both modes run identical phases. In mandatory mode, cognitive_reflector starts i
 cognitive_reflector triggers a 4-step "REM Sleep" process to extract wisdom without bloating memory.
 
 ### Step 2a: Orientation (Äá»‹nh hÆ°á»›ng)
-- Reads `brain/memory/corp_memory/mission.md` (CEO Intent).
+- Reads `brain/memory/system_memory/mission.md` (CEO Intent).
 - Reads `brain/memory/blackboard.json` (Cycle context).
 - Sets the "Focus Lens" for what signals matter.
 
@@ -77,7 +77,7 @@ cognitive_reflector triggers a 4-step "REM Sleep" process to extract wisdom with
 - Scans `corp/daily_briefs/BRIEF_<date>.md` for anomalies.
 
 ### Step 2c: Consolidation (Há»£p Nháº¥t)
-- Synthesizes findings into `brain/memory/corp_memory/daily_briefs/SYNTHESIS_<date>.md`.
+- Synthesizes findings into `brain/memory/system_memory/daily_briefs/SYNTHESIS_<date>.md`.
 - Formats cross-dept blockers, global wins, and skill gaps.
 
 ### Step 2d: Prune & Index (Tá»‰a rÃ¡c vÃ  ÄÃ¡nh Chá»‰ Má»¥c)
@@ -158,7 +158,7 @@ Strategy dept (product-manager-agent) synthesizes retro findings into:
 4. **Strategic proposals** â€” if pattern reveals strategic risk or opportunity
 
 Each proposal follows format from `corp/departments/strategy/MANAGER_PROMPT.md`
-Stored in: `brain/memory/corp_memory/proposals/PROPOSAL_<date>_<topic>.md`
+Stored in: `brain/memory/system_memory/proposals/PROPOSAL_<date>_<topic>.md`
 
 ---
 
@@ -178,8 +178,8 @@ Stored in: `brain/memory/corp_memory/proposals/PROPOSAL_<date>_<topic>.md`
 ```
 Phase 7 (THIS cycle) completes
     â”‚
-cognitive_reflector writes â†’ brain/memory/corp_memory/proposals/RETRO_<date>.md
-product-manager-agent writes â†’ brain/memory/corp_memory/proposals/PROPOSAL_<date>_*.md
+cognitive_reflector writes â†’ brain/memory/system_memory/proposals/RETRO_<date>.md
+product-manager-agent writes â†’ brain/memory/system_memory/proposals/PROPOSAL_<date>_*.md
     â”‚
     â–¼
 Cycle resets: blackboard.json corp_cycle_status = "IDLE"
@@ -188,8 +188,8 @@ Cycle resets: blackboard.json corp_cycle_status = "IDLE"
 NEXT CYCLE Phase 0 (Pre-flight) â†’ Phase 1 (CEO BRIEF)
     â”‚
 CEO reads in Phase 1:
-  4. brain/memory/corp_memory/proposals/    â† âœ… proposals from this retro are HERE
-  3. brain/memory/corp_memory/escalations.md
+  4. brain/memory/system_memory/proposals/    â† âœ… proposals from this retro are HERE
+  3. brain/memory/system_memory/escalations.md
     â”‚
 CEO decides â†’ feeds into Phase 2 C-Suite dispatch â†’ cycle improves
 ```

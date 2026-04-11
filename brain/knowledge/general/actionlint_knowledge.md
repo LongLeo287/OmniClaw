@@ -5326,7 +5326,6 @@ func TestConfigGenerateDefaultConfigFileError(t *testing.T) {
 
 - actionlint focuses on detecting mistakes. Feature requests and patches for checks that enforces code style or
   some conventions are generally not accepted.
-- actionlint tries to keep [the configuration](docs/config.md) as minimal as possible. Feature requests and patches
   for checks that require user configurations are generally not accepted.
 
 These are important to keep actionlint useful and convenient for everyone. I believe that no one wants to create and
@@ -5353,9 +5352,7 @@ https://github.com/rhysd/actionlint/pulls
 Before submitting your PR, please ensure the following points:
 
 - Confirm build/tests/lints passed on your branch. How to run them is described in the following sections.
-- If you added a new feature, consider to add tests and explain it in [the usage document](docs/usage.md).
 - If you added a new public API, consider to add tests and a doc comment for the API.
-- If you updated [the checks document](docs/checks.md), ensure to run [the maintenance script](#about-checks-doc).
 
 Special thanks to the native English speakers for proofreading the documentation and error messages, as the author is not
 proficient in English.
@@ -5422,7 +5419,6 @@ Automated tests are as follows.
   `testdata/` directory.
 - UI tests based on matching to error messages are implemented in `linter_test.go` and all test data are stored in `testdata/`
   directory.
-  - `testdata/examples/` contains tests for all examples in ['Checks' document](docs/checks.md). `*.yaml` files are an input
     workflow and `*.out` files are expected error messages.
   - `testdata/ok/` contains 'OK' tests. All workflow files in this directory should cause no errors.
   - `testdata/err/` contains 'Error' tests. Each `*.yaml` files are workflow inputs and corresponding `*.out` files are expected
@@ -5478,7 +5474,6 @@ When releasing v1.2.3 as example:
 1. Ensure all changes were already pushed to remote by checking `git push origin master` outputs `Everything up-to-date`
 2. Run `bash ./scripts/bump-version.bash 1.2.3`
 3. Wait until [the CI release job](.github/workflows/release.yaml) completes successfully:
-   - GoReleaser builds release binaries and make pre-release at GitHub and updates [Homebrew formula](./HomebrewFormula/actionlint.rb)
    - The CI job also updates version string in `./scripts/download-actionlint.bash`
 4. Open the pre-release at [release page](https://github.com/rhysd/actionlint/releases) with browser
 5. Write up release notes, uncheck pre-release checkbox and publish the new release
@@ -35265,7 +35260,6 @@ FILE: CONTRIBUTING.md
 
 - actionlint focuses on detecting mistakes. Feature requests and patches for checks that enforces code style or
   some conventions are generally not accepted.
-- actionlint tries to keep [the configuration](docs/config.md) as minimal as possible. Feature requests and patches
   for checks that require user configurations are generally not accepted.
 
 These are important to keep actionlint useful and convenient for everyone. I believe that no one wants to create and
@@ -35292,9 +35286,7 @@ https://github.com/rhysd/actionlint/pulls
 Before submitting your PR, please ensure the following points:
 
 - Confirm build/tests/lints passed on your branch. How to run them is described in the following sections.
-- If you added a new feature, consider to add tests and explain it in [the usage document](docs/usage.md).
 - If you added a new public API, consider to add tests and a doc comment for the API.
-- If you updated [the checks document](docs/checks.md), ensure to run [the maintenance script](#about-checks-doc).
 
 Special thanks to the native English speakers for proofreading the documentation and error messages, as the author is not
 proficient in English.
@@ -35361,7 +35353,6 @@ Automated tests are as follows.
   `testdata/` directory.
 - UI tests based on matching to error messages are implemented in `linter_test.go` and all test data are stored in `testdata/`
   directory.
-  - `testdata/examples/` contains tests for all examples in ['Checks' document](docs/checks.md). `*.yaml` files are an input
     workflow and `*.out` files are expected error messages.
   - `testdata/ok/` contains 'OK' tests. All workflow files in this directory should cause no errors.
   - `testdata/err/` contains 'Error' tests. Each `*.yaml` files are workflow inputs and corresponding `*.out` files are expected
@@ -45188,8 +45179,6 @@ Followings are unexhaustive list of interesting APIs.
   found by the validator.
 - `ActionMetadata` is a struct for action metadata file (`action.yml`). It is used to check inputs specified at `with:`
   and typing `steps.{id}.outputs` object strictly.
-- `PopularActions` global variable is the data set of popular actions' metadata collected by [the script](../scripts/generate-popular-actions).
-- `AllWebhookTypes` global variable is the mapping from all webhook names to their types collected by [the script](../scripts/generate-webhook-events).
 - `WorkflowKeyAvailability()` returns available context names and special function names for the given workflow key like
   `jobs.<job_id>.outputs.<output_id>`. This function uses the data collected by [the script](../scripts/generate-availability).
 
@@ -45601,15 +45590,9 @@ FILE: docs\README.md
 Documents
 =========
 
-- [Checks](checks.md): Full list of all checks done by actionlint with example inputs, outputs, and playground links.
-- [Installation](install.md): Installation instructions. Prebuilt binaries, Homebrew package, a Docker image, building from
   source, a download script (for CI) are available.
-- [Usage](usage.md): How to use `actionlint` command locally or on GitHub Actions, the online playground, an official Docker
   image, and integrations with reviewdog, Problem Matchers, super-linter, pre-commit.
-- [Configuration](config.md): How to configure actionlint behavior. Currently, only labels of self-hosted runners can be
   configured.
-- [Go API](api.md): How to use actionlint as Go library.
-- [References](reference.md): Links to resources.
 
 
 ================================================
@@ -48466,7 +48449,6 @@ If you attempt to dereference a nonexistent property, it will evaluate to an emp
 
 {% data variables.product.prodname_actions %} includes a collection of variables called _contexts_ and a similar collection of variables called _default variables_. These variables are intended for use at different points in the workflow:
 
-* **Default environment variables:** These environment variables exist only on the runner that is executing your job. For more information, see "[AUTOTITLE](/actions/learn-github-actions/variables#default-environment-variables)."
 * **Contexts:** You can use most contexts at any point in your workflow, including when _default variables_ would be unavailable. For example, you can use contexts with expressions to perform initial processing before the job is routed to a runner for execution; this allows you to use a context with the conditional `if` keyword to determine whether a step should run. Once the job is running, you can also retrieve context variables from the runner that is executing the job, such as `runner.os`. For details of where you can use various contexts within a workflow, see "[Context availability](#context-availability)."
 
 The following example demonstrates how these different types of variables can be used toget
@@ -50872,8 +50854,6 @@ Followings are unexhaustive list of interesting APIs.
   found by the validator.
 - `ActionMetadata` is a struct for action metadata file (`action.yml`). It is used to check inputs specified at `with:`
   and typing `steps.{id}.outputs` object strictly.
-- `PopularActions` global variable is the data set of popular actions' metadata collected by [the script](../scripts/generate-popular-actions).
-- `AllWebhookTypes` global variable is the mapping from all webhook names to their types collected by [the script](../scripts/generate-webhook-events).
 - `WorkflowKeyAvailability()` returns available context names and special function names for the given workflow key like
   `jobs.<job_id>.outputs.<output_id>`. This function uses the data collected by [the script](../scripts/generate-availability).
 
@@ -54459,15 +54439,9 @@ go install github.com/rhysd/actionlint/cmd/actionlint@main
 Documents
 =========
 
-- [Checks](checks.md): Full list of all checks done by actionlint with example inputs, outputs, and playground links.
-- [Installation](install.md): Installation instructions. Prebuilt binaries, Homebrew package, a Docker image, building from
   source, a download script (for CI) are available.
-- [Usage](usage.md): How to use `actionlint` command locally or on GitHub Actions, the online playground, an official Docker
   image, and integrations with reviewdog, Problem Matchers, super-linter, pre-commit.
-- [Configuration](config.md): How to configure actionlint behavior. Currently, only labels of self-hosted runners can be
   configured.
-- [Go API](api.md): How to use actionlint as Go library.
-- [References](reference.md): Links to resources.
 
 ```
 
@@ -54881,7 +54855,6 @@ As alternatives to `actionlint` hook, `actionlint-docker` or `actionlint-system`
 |-|-|
 | `actionlint` | Automatically installs `actionlint` command in isolated `$GOPATH` directory using [Go toolchain][go-install]. |
 | `actionlint-docker` | Automatically pulls [the actionlint Docker image](#docker). |
-| `actionlint-system` | Uses system-installed `actionlint` command. The command is necessary to be [installed manually](install.md). |
 
 ### VS Code
 
@@ -63237,7 +63210,6 @@ If you attempt to dereference a nonexistent property, it will evaluate to an emp
 
 {% data variables.product.prodname_actions %} includes a collection of variables called _contexts_ and a similar collection of variables called _default variables_. These variables are intended for use at different points in the workflow:
 
-* **Default environment variables:** These environment variables exist only on the runner that is executing your job. For more information, see "[AUTOTITLE](/actions/learn-github-actions/variables#default-environment-variables)."
 * **Contexts:** You can use most contexts at any point in your workflow, including when _default variables_ would be unavailable. For example, you can use contexts with expressions to perform initial processing before the job is routed to a runner for execution; this allows you to use a context with the conditional `if` keyword to determine whether a step should run. Once the job is running, you can also retrieve context variables from the runner that is executing the job, such as `runner.os`. For details of where you can use various contexts within a workflow, see "[Context availability](#context-availability)."
 
 The following example demonstrates how these different types of variables can be used together in a job:

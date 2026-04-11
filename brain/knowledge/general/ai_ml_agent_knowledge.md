@@ -92,8 +92,6 @@ metadata:
 **Assigned Department**: unassigned
 
 ## 2. Linked Toolkit
-- **Primary Core Skill**: [gas_skill.md](../../../skills/gas_skill.md)
-- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [gas_skill.md](../../../skills/gas_skill.md).
 
 ## 3. Standard OS Tooling Access
 - Local File Read/Write access (Constrained to Workspace)

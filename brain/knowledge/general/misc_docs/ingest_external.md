@@ -142,7 +142,6 @@ vet_status: PASS | WARN (reason)
 - ...
 
 ## References
-- [Original Source](<URL>)
 ```
 
 ---

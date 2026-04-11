@@ -378,9 +378,6 @@ open-notebook/
 ```
 
 See component-specific CLAUDE.md files for detailed architecture:
-- [frontend/CLAUDE.md](frontend/CLAUDE.md)
-- [api/CLAUDE.md](api/CLAUDE.md)
-- [open_notebook/CLAUDE.md](open_notebook/CLAUDE.md)
 
 ---
 
@@ -449,7 +446,6 @@ make clean-cache
 - **Documentation:** https://open-notebook.ai
 - **Discord:** https://discord.gg/37XJPXfz2w
 - **Issues:** https://github.com/lfnovo/open-notebook/issues
-- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Maintainer Guide:** [MAINTAINER_GUIDE.md](MAINTAINER_GUIDE.md)
 
 ---

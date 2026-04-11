@@ -197,7 +197,6 @@ If you hit the 1500 requests/day limit:
 ## Next Steps
 
 - Read [README.md](README.md) for detailed hook documentation
-- Check [CONTEXT-INJECTION.md](CONTEXT-INJECTION.md) for context behavior details
 - Visit https://docs.claude-mem.ai for full documentation
 
 ## Quick Reference

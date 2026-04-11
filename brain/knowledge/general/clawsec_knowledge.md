@@ -7868,8 +7868,6 @@ Each skill release includes:
 ### Signing Operations Documentation
 
 For feed/release signing rollout and operations guidance:
-- [`wiki/security-signing-runbook.md`](wiki/security-signing-runbook.md) - key generation, GitHub secrets, rotation/revocation, incident response
-- [`wiki/migration-signed-feed.md`](wiki/migration-signed-feed.md) - phased migration from unsigned feed, enforcement gates, rollback plan
 
 ---
 
@@ -8025,7 +8023,6 @@ LLM exports are generated from `wiki/` into `public/wiki/`:
 ## 📄 License
 
 - Source code: GNU AGPL v3.0 or later - See [LICENSE](LICENSE) for details.
-- Fonts in `font/`: Licensed separately - See [`font/README.md`](font/README.md).
 
 ---
 
@@ -10974,8 +10971,6 @@ Planned features for future releases:
 
 ## Documentation
 
-- [Skill Documentation](skills/clawsec-nanoclaw/SKILL.md) - Features and architecture
-- [Installation Guide](skills/clawsec-nanoclaw/INSTALL.md) - Detailed setup instructions
 - [ClawSec Main README](README.md) - Overall ClawSec documentation
 - [Security & Signing](../../wiki/s
 
@@ -18869,41 +18864,19 @@ FILE: wiki\INDEX.md
 - Purpose: Document ClawSec as a combined web catalog, signed advisory channel, and multi-skill security distribution system.
 - Tech stack: React 19 + Vite + TypeScript frontend, Node/ESM scripts, Python utilities, Bash automation, GitHub Actions pipelines.
 - Entry points: `index.tsx`, `App.tsx`, `scripts/prepare-to-push.sh`, `scripts/populate-local-feed.sh`, `scripts/populate-local-skills.sh`, workflow files under `.github/workflows/`.
-- Where to start: Read [Overview](overview.md), then [Architecture](architecture.md), then module pages for the area you are editing.
 - How to navigate: Use Guides for cross-cutting concerns, Operations for runbooks and migration plans, Modules for implementation boundaries, and Source References at the end of each page to jump into code.
 
 ## Start Here
-- [Overview](overview.md)
-- [Architecture](architecture.md)
 
 ## Guides
-- [Dependencies](dependencies.md)
-- [Data Flow](data-flow.md)
-- [Configuration](configuration.md)
-- [Testing](testing.md)
-- [Workflow](workflow.md)
-- [Security](security.md)
 
 ## Operations
-- [Security Signing Runbook](security-signing-runbook.md)
-- [Signed Feed Migration Plan](migration-signed-feed.md)
-- [Platform Verification Checklist](platform-verification.md)
-- [Cross-Platform Remediation Plan](remediation-plan.md)
-- [Cross-Platform Compatibility Report](compatibility-report.md)
 
 ## Modules
-- [Frontend Web App](modules/frontend-web.md)
-- [ClawSec Suite Core](modules/clawsec-suite.md)
-- [ClawSec Scanner](modules/clawsec-scanner.md)
-- [NanoClaw Integration](modules/nanoclaw-integration.md)
-- [Automation and Release Pipelines](modules/automation-release.md)
-- [Local Validation and Packaging Tools](modules/local-tooling.md)
 
 ## Glossary
-- [Glossary](glossary.md)
 
 ## Generation Metadata
-- [Generation Metadata](GENERATION.md)
 
 ## Update Notes
 - 2026-03-10: Added ClawSec Scanner module documentation and linked it under Modules.
@@ -34876,41 +34849,19 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for detailed contribution guidelines.
 - Purpose: Document ClawSec as a combined web catalog, signed advisory channel, and multi-skill security distribution system.
 - Tech stack: React 19 + Vite + TypeScript frontend, Node/ESM scripts, Python utilities, Bash automation, GitHub Actions pipelines.
 - Entry points: `index.tsx`, `App.tsx`, `scripts/prepare-to-push.sh`, `scripts/populate-local-feed.sh`, `scripts/populate-local-skills.sh`, workflow files under `.github/workflows/`.
-- Where to start: Read [Overview](overview.md), then [Architecture](architecture.md), then module pages for the area you are editing.
 - How to navigate: Use Guides for cross-cutting concerns, Operations for runbooks and migration plans, Modules for implementation boundaries, and Source References at the end of each page to jump into code.
 
 ## Start Here
-- [Overview](overview.md)
-- [Architecture](architecture.md)
 
 ## Guides
-- [Dependencies](dependencies.md)
-- [Data Flow](data-flow.md)
-- [Configuration](configuration.md)
-- [Testing](testing.md)
-- [Workflow](workflow.md)
-- [Security](security.md)
 
 ## Operations
-- [Security Signing Runbook](security-signing-runbook.md)
-- [Signed Feed Migration Plan](migration-signed-feed.md)
-- [Platform Verification Checklist](platform-verification.md)
-- [Cross-Platform Remediation Plan](remediation-plan.md)
-- [Cross-Platform Compatibility Report](compatibility-report.md)
 
 ## Modules
-- [Frontend Web App](modules/frontend-web.md)
-- [ClawSec Suite Core](modules/clawsec-suite.md)
-- [ClawSec Scanner](modules/clawsec-scanner.md)
-- [NanoClaw Integration](modules/nanoclaw-integration.md)
-- [Automation and Release Pipelines](modules/automation-release.md)
-- [Local Validation and Packaging Tools](modules/local-tooling.md)
 
 ## Glossary
-- [Glossary](glossary.md)
 
 ## Generation Metadata
-- [Generation Metadata](GENERATION.md)
 
 ## Update Notes
 - 2026-03-10: Added ClawSec Scanner module documentation and linked it under Modules.

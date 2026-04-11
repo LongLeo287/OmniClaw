@@ -301,7 +301,6 @@ Tam detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
 ## Destek
 
-- **Dokümantasyon**: [docs/](docs/)
 - **Sorunlar**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Depo**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Yazar**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

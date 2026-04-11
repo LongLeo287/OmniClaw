@@ -546,7 +546,7 @@ research docs â†’ gitingest â†’ open-notebooklm â†’ Audio Overvie
 
 | Repo lÃ m nguá»“n | Má»¥c Ä‘Ã­ch NLM | NLM Output |
 |---------------|-------------|-----------|
-| Táº¥t cáº£ `brain/memory/corp_memory/daily_briefs/` | Weekly digest | 1-page CEO summary |
+| Táº¥t cáº£ `brain/memory/system_memory/daily_briefs/` | Weekly digest | 1-page CEO summary |
 | `knowledge/repos/awesome-generative-ai-guide` | AI landscape brief | Board presentation |
 | `plugins/LightRAG` + `plugins/openviking` | Tech selection | Decision memo |
 

@@ -74,33 +74,11 @@ Public Netlify skills for AI coding agents. Each skill is a focused, factual ref
 
 | Skill | What it covers |
 |---|---|
-| [netlify-functions](skills/netlify-functions/SKILL.md) | Serverless functions — modern syntax, routing, background/scheduled/streaming |
-| [netlify-edge-functions](skills/netlify-edge-functions/SKILL.md) | Edge compute — Deno runtime, middleware, geolocation |
-| [netlify-blobs](skills/netlify-blobs/SKILL.md) | Object storage — key-value and binary data |
-| [netlify-db](skills/netlify-db/SKILL.md) | Managed Postgres (Neon) with Drizzle ORM and migrations |
-| [netlify-image-cdn](skills/netlify-image-cdn/SKILL.md) | Image transformation and optimization via CDN |
-| [netlify-forms](skills/netlify-forms/SKILL.md) | HTML form handling, AJAX submissions, spam filtering |
-| [netlify-config](skills/netlify-config/SKILL.md) | `netlify.toml` — redirects, headers, build settings, deploy contexts |
-| [netlify-cli-and-deploy](skills/netlify-cli-and-deploy/SKILL.md) | CLI commands, Git vs manual deploys, environment variables |
-| [netlify-frameworks](skills/netlify-frameworks/SKILL.md) | Framework adapters for Vite, Astro, TanStack, and Next.js |
-| [netlify-caching](skills/netlify-caching/SKILL.md) | CDN cache control, cache tags, purge, stale-while-revalidate |
-| [netlify-ai-gateway](skills/netlify-ai-gateway/SKILL.md) | AI Gateway proxy for OpenAI, Anthropic, and Google SDKs |
-| [netlify-identity](skills/netlify-identity/SKILL.md) | User authentication — signups, logins, OAuth, role-based access control |
-| [netlify-deploy](skills/netlify-deploy/SKILL.md) | Deployment workflow — auth, site linking, preview/production deploys |
 
 ### References
 
 Some skills include `references/` subdirectories with deeper content:
 
-- [User-uploaded images pipeline](skills/netlify-image-cdn/references/user-uploads.md) — composing Functions + Blobs + Image CDN
-- [Vite on Netlify](skills/netlify-frameworks/references/vite.md)
-- [Astro on Netlify](skills/netlify-frameworks/references/astro.md)
-- [TanStack Start on Netlify](skills/netlify-frameworks/references/tanstack.md)
-- [Next.js on Netlify](skills/netlify-frameworks/references/nextjs.md)
-- [Advanced identity patterns](skills/netlify-identity/references/advanced-patterns.md) — external providers, role-based access, server-side validation
-- [CLI commands reference](skills/netlify-deploy/references/cli-commands.md)
-- [Deployment patterns](skills/netlify-deploy/references/deployment-patterns.md)
-- [netlify.toml guide](skills/netlify-deploy/references/netlify-toml.md)
 
 ## Installation
 
@@ -284,33 +262,11 @@ Public Netlify skills for AI coding agents. Each skill is a focused, factual ref
 
 | Skill | What it covers |
 |---|---|
-| [netlify-functions](skills/netlify-functions/SKILL.md) | Serverless functions — modern syntax, routing, background/scheduled/streaming |
-| [netlify-edge-functions](skills/netlify-edge-functions/SKILL.md) | Edge compute — Deno runtime, middleware, geolocation |
-| [netlify-blobs](skills/netlify-blobs/SKILL.md) | Object storage — key-value and binary data |
-| [netlify-db](skills/netlify-db/SKILL.md) | Managed Postgres (Neon) with Drizzle ORM and migrations |
-| [netlify-image-cdn](skills/netlify-image-cdn/SKILL.md) | Image transformation and optimization via CDN |
-| [netlify-forms](skills/netlify-forms/SKILL.md) | HTML form handling, AJAX submissions, spam filtering |
-| [netlify-config](skills/netlify-config/SKILL.md) | `netlify.toml` — redirects, headers, build settings, deploy contexts |
-| [netlify-cli-and-deploy](skills/netlify-cli-and-deploy/SKILL.md) | CLI commands, Git vs manual deploys, environment variables |
-| [netlify-frameworks](skills/netlify-frameworks/SKILL.md) | Framework adapters for Vite, Astro, TanStack, and Next.js |
-| [netlify-caching](skills/netlify-caching/SKILL.md) | CDN cache control, cache tags, purge, stale-while-revalidate |
-| [netlify-ai-gateway](skills/netlify-ai-gateway/SKILL.md) | AI Gateway proxy for OpenAI, Anthropic, and Google SDKs |
-| [netlify-identity](skills/netlify-identity/SKILL.md) | User authentication — signups, logins, OAuth, role-based access control |
-| [netlify-deploy](skills/netlify-deploy/SKILL.md) | Deployment workflow — auth, site linking, preview/production deploys |
 
 ### References
 
 Some skills include `references/` subdirectories with deeper content:
 
-- [User-uploaded images pipeline](skills/netlify-image-cdn/references/user-uploads.md) — composing Functions + Blobs + Image CDN
-- [Vite on Netlify](skills/netlify-frameworks/references/vite.md)
-- [Astro on Netlify](skills/netlify-frameworks/references/astro.md)
-- [TanStack Start on Netlify](skills/netlify-frameworks/references/tanstack.md)
-- [Next.js on Netlify](skills/netlify-frameworks/references/nextjs.md)
-- [Advanced identity patterns](skills/netlify-identity/references/advanced-patterns.md) — external providers, role-based access, server-side validation
-- [CLI commands reference](skills/netlify-deploy/references/cli-commands.md)
-- [Deployment patterns](skills/netlify-deploy/references/deployment-patterns.md)
-- [netlify.toml guide](skills/netlify-deploy/references/netlify-toml.md)
 
 ## Installation
 
@@ -2495,10 +2451,6 @@ Check these files to determine the framework:
 
 Each framework has specific adapter/plugin requirements and local dev patterns:
 
-- **Vite + React (SPA or with server routes)**: See [references/vite.md](references/vite.md)
-- **Astro**: See [references/astro.md](references/astro.md)
-- **TanStack Start**: See [references/tanstack.md](references/tanstack.md)
-- **Next.js**: See [references/nextjs.md](references/nextjs.md)
 
 ## General Patterns
 
@@ -5747,10 +5699,6 @@ Check these files to determine the framework:
 
 Each framework has specific adapter/plugin requirements and local dev patterns:
 
-- **Vite + React (SPA or with server routes)**: See [references/vite.md](references/vite.md)
-- **Astro**: See [references/astro.md](references/astro.md)
-- **TanStack Start**: See [references/tanstack.md](references/tanstack.md)
-- **Next.js**: See [references/nextjs.md](references/nextjs.md)
 
 ## General Patterns
 
@@ -8339,9 +8287,6 @@ For secrets and configuration:
 
 ## References
 
-- [CLI commands](references/cli-commands.md)
-- [Deployment patterns](references/deployment-patterns.md)
-- [netlify.toml guide](references/netlify-toml.md)
 
 ```
 
@@ -9424,10 +9369,6 @@ Check these files to determine the framework:
 
 Each framework has specific adapter/plugin requirements and local dev patterns:
 
-- **Vite + React (SPA or with server routes)**: See [references/vite.md](references/vite.md)
-- **Astro**: See [references/astro.md](references/astro.md)
-- **TanStack Start**: See [references/tanstack.md](references/tanstack.md)
-- **Next.js**: See [references/nextjs.md](references/nextjs.md)
 
 ## General Patterns
 
@@ -10370,7 +10311,6 @@ Rules are evaluated top-to-bottom. The `nf_jwt` cookie is read by the CDN to eva
 
 ## References
 
-- [Advanced patterns](references/advanced-patterns.md) — password recovery, invite acceptance, email change, session hydration, SSR integration
 
 ```
 

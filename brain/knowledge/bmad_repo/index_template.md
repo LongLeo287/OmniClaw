@@ -63,14 +63,9 @@ This project consists of {{parts_count}} parts:
 
 ### Core Documentation
 
-- [Project Overview](./project-overview.md) - Executive summary and high-level architecture
-- [Source Tree Analysis](./source-tree-analysis.md) - Annotated directory structure
 
 {{#if is_single_part}}
 
-- [Architecture](../general/ARCHITECTURE.md) - Detailed technical architecture
-- [Component Inventory](./component-inventory.md) - Catalog of major components{{#if has_ui_components}} and UI elements{{/if}}
-- [Development Guide](./development-guide.md) - Local setup and development workflow
   {{#if has_api_docs}}- [API Contracts](./api-contracts.md) - API endpoints and schemas{{/if}}
   {{#if has_data_models}}- [Data Models](./data-models.md) - Database schema and models{{/if}}
   {{else}}
@@ -81,17 +76,13 @@ This project consists of {{parts_count}} parts:
 
 #### {{part_name}} ({{part_id}})
 
-- [Architecture](./architecture-{{part_id}}.md) - Technical architecture for {{part_name}}
   {{#if has_components}}- [Components](./component-inventory-{{part_id}}.md) - Component catalog{{/if}}
-- [Development Guide](./development-guide-{{part_id}}.md) - Setup and dev workflow
   {{#if has_api}}- [API Contracts](./api-contracts-{{part_id}}.md) - API documentation{{/if}}
   {{#if has_data}}- [Data Models](./data-models-{{part_id}}.md) - Data architecture{{/if}}
   {{/each}}
 
 ### Integration
 
-- [Integration Architecture](./integration-architecture.md) - How parts communicate
-- [Project Parts Metadata](./project-parts.json) - Machine-readable structure
   {{/if}}
 
 ### Optional Documentation
@@ -104,7 +95,6 @@ This project consists of {{parts_count}} parts:
 {{#if has_existing_docs}}
 {{#each existing_docs}}
 
-- [{{title}}]({{path}}) - {{description}}
   {{/each}}
   {{else}}
   No existing documentation files were found in the project.

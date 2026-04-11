@@ -113,7 +113,6 @@ All your sessions can be viewed on the [AgentOps dashboard](https://app.agentops
 
 Looking to run the full AgentOps app (Dashboard + API backend) on your machine? Follow the setup guide in `app/README.md`:
 
-- [Run the App and Backend (Dashboard + API)](app/README.md)
 
 
 <details>
@@ -523,7 +522,6 @@ await main()
 
 Track agents built with the Mistral Python SDK (>=0.32.0).
 
-- [AgentOps integration example](./examples/mistral//mistral_example.ipynb)
 - [Official Mistral documentation](https://docs.mistral.ai)
 
 <details>

@@ -37,7 +37,7 @@ description: Cross-department task protocol â€” when a task requires cooper
 }
 ```
 
-Save to: `brain/brain/memory/corp_memory/cross_dept_tasks.json`
+Save to: `brain/brain/memory/system_memory/cross_dept_tasks.json`
 ---
 
 ## Step 2: â€” pmo-agent Dispatch

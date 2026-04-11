@@ -302,7 +302,6 @@ A teljes részletekért lásd a [LICENSE](LICENSE) fájlt.
 
 ## Támogatás
 
-- **Dokumentáció**: [docs/](docs/)
 - **Hibák**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Tároló**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Szerző**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

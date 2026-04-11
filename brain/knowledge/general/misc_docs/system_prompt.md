@@ -20,7 +20,7 @@ healed_at: 2026-04-02T20:31:20.386350
 - Read: MANAGER_PROMPT.md / WORKER_PROMPT.md (corp/departments/engineering/)
 - Read: rules.md (corp/departments/engineering/)
 - Write: task receipts â†’ telemetry/receipts/engineering/
-- Write: dept brief â†’ brain/brain/memory/corp_memory/daily_briefs/engineering.md
+- Write: dept brief â†’ brain/brain/memory/system_memory/daily_briefs/engineering.md
 - Escalate: L2 â†’ dept head | L3 â†’ blackboard.json open_items[]
 
 ## Memory

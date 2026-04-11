@@ -638,7 +638,6 @@ rag = LightRAG(
 LightRAG 支持与 LlamaIndex 集成（`llm/llama_index_impl.py`）：
 
 - 通过 LlamaIndex 与 OpenAI 和其他提供商集成
-- 详细设置请参阅 [LlamaIndex 文档](https://developers.llamaindex.ai/python/framework/) 或 [示例](examples/unofficial-sample/)
 
 **示例用法**
 
@@ -703,9 +702,6 @@ if __name__ == "__main__":
 **详细文档和示例请参阅：**
 
 - [LlamaIndex 文档](https://developers.llamaindex.ai/python/framework/)
-- [直接使用 OpenAI 示例](examples/unofficial-sample/lightrag_llamaindex_direct_demo.py)
-- [LiteLLM 代理示例](examples/unofficial-sample/lightrag_llamaindex_litellm_demo.py)
-- [LiteLLM 代理与 Opik 集成示例](examples/unofficial-sample/lightrag_llamaindex_litellm_opik_demo.py)
 
 </details>
 

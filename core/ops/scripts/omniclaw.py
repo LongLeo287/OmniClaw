@@ -27,9 +27,9 @@ from pathlib import Path
 
 ROOT     = os.path.normpath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 BB_PATH  = os.path.join(ROOT, "brain", "memory", "blackboard.json")
-KPI_PATH = os.path.join(ROOT, "brain", "memory", "corp_memory", "kpi_scoreboard.json")
-PROP_DIR = os.path.join(ROOT, "brain", "memory", "corp_memory", "proposals")
-BRIEF_DIR= os.path.join(ROOT, "brain", "memory", "corp_memory", "daily_briefs")
+KPI_PATH = os.path.join(ROOT, "brain", "memory", "system_memory", "kpi_scoreboard.json")
+PROP_DIR = os.path.join(ROOT, "brain", "memory", "system_memory", "proposals")
+BRIEF_DIR= os.path.join(ROOT, "brain", "memory", "system_memory", "daily_briefs")
 HUD_PS1  = os.path.join(ROOT, "system", "ops", "scripts", "update_hud.ps1")
 
 CYAN  = "\033[96m"
@@ -115,7 +115,7 @@ def cmd_corp_retro():
     bb = load_json(BB_PATH)
     cycle = bb.get("corp_cycle_number", "?")
     today = datetime.now().strftime("%Y-%m-%d")
-    retro_dir = os.path.join(ROOT, "brain", "memory", "corp_memory", "daily_briefs")
+    retro_dir = os.path.join(ROOT, "brain", "memory", "system_memory", "daily_briefs")
     os.makedirs(retro_dir, exist_ok=True)
     retro_file = os.path.join(retro_dir, f"RETRO_{today}.md")
     with open(retro_file, "w", encoding="utf-8") as f:

@@ -369,6 +369,3 @@ The key requirements:
 
 ## Related
 
-- **[Local TTS Setup](local-tts.md)** - Text-to-speech with Speaches
-- **[OpenAI-Compatible Providers](openai-compatible.md)** - General compatible provider setup
-- **[AI Providers](ai-providers.md)** - All provider configuration

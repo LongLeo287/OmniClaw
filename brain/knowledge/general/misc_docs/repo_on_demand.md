@@ -35,7 +35,7 @@ python ops/scripts/repo_resolver.py "Build analytics dashboard with KPI charts"
 python ops/scripts/repo_resolver.py --dept engineering
 
 # Tá»« file proposal
-python ops/scripts/repo_resolver.py --file brain/brain/memory/corp_memory/proposals/PROP_xyz.md
+python ops/scripts/repo_resolver.py --file brain/brain/memory/system_memory/proposals/PROP_xyz.md
 
 # Auto-clone ngay
 python ops/scripts/repo_resolver.py "Build security scanner for CIV" --clone

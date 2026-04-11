@@ -303,7 +303,6 @@ Ver el archivo [LICENSE](LICENSE) para detalles completos.
 
 ## Soporte
 
-- **Documentación**: [docs/](docs/)
 - **Problemas**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repositorio**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Autor**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

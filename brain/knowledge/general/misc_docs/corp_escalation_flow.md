@@ -81,7 +81,7 @@ Awaiting manager response.
 **Responder:** Relevant C-Suite member
 **SLA:** Same session
 
-**Manager writes to `brain/memory/corp_memory/escalations.md`:**
+**Manager writes to `brain/memory/system_memory/escalations.md`:**
 ```markdown
 ## L2 ESCALATION â€” [ESC-ID] â€” [DATE]
 
@@ -124,7 +124,7 @@ Deadline: <when needed>
 **Responder:** CEO
 **Effect: BLOCKING** â€” affected work PAUSES until CEO responds
 
-**C-Suite writes to `brain/memory/corp_memory/escalations.md`:**
+**C-Suite writes to `brain/memory/system_memory/escalations.md`:**
 ```markdown
 ## L3 ESCALATION â€” [ESC-ID] â€” [DATE]  âš ï¸ CEO REQUIRED
 

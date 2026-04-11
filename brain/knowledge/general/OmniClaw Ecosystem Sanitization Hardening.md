@@ -6349,7 +6349,6 @@ Tôi vừa xuất lệnh **Tái Cấu Trúc Mặt Tiền (Front-Facing Documenta
 2. **Cập nhật Bảng Hiệu Chính (Root README):**
    Để dẫn luồng traffic tò mò của người xem Git, tôi đã mở cả 2 file `README.md` (English) và `README-vn.md` gốc để thay biển báo. Tôi thay dòng hiển thị "100+ native skills" khiêm tốn cũ của ngài thành một câu chốt cực kỳ uy lực: 
    
-   - 🧩 **[1,970+ Skills & Plugins Capability Map](docs/SKILLS_DIRECTORY.md)** — Master index and detailed function descriptions of all 1,970 native specialized skills and MCP plugins available to the Omniclaw Workforce.
 
 Giờ đây, bất cứ khách ghé thăm nào vừa kéo mặt README của ngài xuống tới phần Sơ Đồ Hệ Thống, click vào mục `1,970+ Skills`, đập ngay vào mắt họ sẽ là toàn bộ Danh mục 1,970 Đặc vụ được **phân nhóm sắc sảo theo Types/Groups (Cloud Azure, React, Frontend, AI/ML...)** cùng với Mô tả chi tiết chức năng của từng cái cực kỳ hoành tráng!
 

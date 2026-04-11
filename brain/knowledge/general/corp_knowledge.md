@@ -39,7 +39,7 @@ escalation_levels:
       - "Worker agent cannot complete task after 2 retries"
       - "Proposed solution contradicts THESIS.md principles"
     action: |
-      Dept Head appends to brain/memory/corp_memory/escalations.md with:
+      Dept Head appends to brain/memory/system_memory/escalations.md with:
         - Department
         - Issue description
         - Root cause (if known)
@@ -59,7 +59,7 @@ escalation_levels:
       - "Cross-company decision affecting multiple departments"
       - "KPI critical (0%) for any department"
     action: |
-      C-Suite writes proposal to brain/memory/corp_memory/proposals/ESCALATION_<date>_<topic>.md
+      C-Suite writes proposal to brain/memory/system_memory/proposals/ESCALATION_<date>_<topic>.md
       CEO notified via Antigravity session summary
       CEO must explicitly approve/reject before work continues
     sla: "CEO responds before next daily cycle"
@@ -460,13 +460,13 @@ ceo:
   authority: ALL â€” final approval on strategy, budget, hires, architectural decisions
   prompt: brain/corp/prompts/CEO_PROMPT.md
   read_inputs:
-  - brain/memory/corp_memory/proposals/
-  - brain/memory/corp_memory/escalations.md
-  - brain/memory/corp_memory/kpi_scoreboard.json
+  - brain/memory/system_memory/proposals/
+  - brain/memory/system_memory/escalations.md
+  - brain/memory/system_memory/kpi_scoreboard.json
   - brain/corp/memory/global/decisions_log.md
   write_outputs:
-  - brain/memory/corp_memory/mission.md
-  - brain/memory/corp_memory/decisions/
+  - brain/memory/system_memory/mission.md
+  - brain/memory/system_memory/decisions/
 c_suite:
   prompt: brain/corp/prompts/CSUITE_PROMPT.md
   rules: brain/corp/rules/csuite_rules.md
@@ -649,7 +649,7 @@ departments:
       prompt: ecosystem/workforce/departments/engineering/WORKER_PROMPT.md
       created_by: Auto_Assimilator
       auto_created: true
-    output_channel: brain/memory/corp_memory/daily_briefs/engineering.md
+    output_channel: brain/memory/system_memory/daily_briefs/engineering.md
     qa_required: true
     qa_dept: qa_testing
     llm_tier: balanced
@@ -670,7 +670,7 @@ departments:
     - agent: security-auditor-agent
       role: Security Auditor â€” vulnerability scanning, audit reports
       prompt: brain/corp/departments/qa_testing/WORKER_PROMPT.md
-    output_channel: brain/memory/corp_memory/daily_briefs/qa.md
+    output_channel: brain/memory/system_memory/daily_briefs/qa.md
     qa_required: false
     is_gate: true
     llm_tier: economy
@@ -687,7 +687,7 @@ departments:
       role: NetOps â€” DNS, CDN, networking, uptime monitoring
     - agent: database-agent
       role: DBA â€” schema, migrations, backups, query optimization
-    output_channel: brain/memory/corp_memory/daily_briefs/it_infra.md
+    output_channel: brain/memory/system_memory/daily_briefs/it_infra.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/it_infra.md
@@ -739,7 +739,7 @@ departments:
       prompt: ecosystem/workforce/departments/marketing/WORKER_PROMPT.md
       created_by: Auto_Assimilator
       auto_created: true
-    output_channel: brain/memory/corp_memory/daily_briefs/marketing.md
+    output_channel: brain/memory/system_memory/daily_briefs/marketing.md
     qa_required: true
     qa_dept: content_review
     llm_tier: economy
@@ -759,7 +759,7 @@ departments:
     - agent: crm-agent
       role: CRM Agent â€” customer tracking, follow-up, satisfaction
       prompt: brain/corp/departments/support/WORKER_PROMPT.md
-    output_channel: brain/memory/corp_memory/daily_briefs/support.md
+    output_channel: brain/memory/system_memory/daily_briefs/support.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/support.md
@@ -778,7 +778,7 @@ departments:
       role: Content Moderator â€” policy compliance, harmful content detection
     - agent: brand-guardian
       role: Brand Guardian â€” voice consistency, visual brand compliance
-    output_channel: brain/memory/corp_memory/daily_briefs/content_review.md
+    output_channel: brain/memory/system_memory/daily_briefs/content_review.md
     qa_required: false
     is_gate: true
     llm_tier: economy
@@ -801,7 +801,7 @@ departments:
     - agent: pipeline-architect
       role: Pipeline Architect â€” automate operational workflows and triggers
       primary_skill: shell_assistant
-    output_channel: brain/memory/corp_memory/daily_briefs/operations.md
+    output_channel: brain/memory/system_memory/daily_briefs/operations.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/operations.md
@@ -820,7 +820,7 @@ departments:
       role: Onboarding â€” context injection for new agents, setup docs
     - agent: performance-agent
       role: Performance Review â€” weekly agent KPI reports
-    output_channel: brain/memory/corp_memory/daily_briefs/hr_people.md
+    output_channel: brain/memory/system_memory/daily_briefs/hr_people.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/hr_people.md
@@ -850,7 +850,7 @@ departments:
       - identYwaf
       - zeroleaks
       - kong-reverse-engineer
-    output_channel: brain/memory/corp_memory/daily_briefs/security_grc.md
+    output_channel: brain/memory/system_memory/daily_briefs/security_grc.md
     qa_required: false
     autonomous_alerts: true
     llm_tier: economy
@@ -867,7 +867,7 @@ departments:
       role: Billing Tracker â€” API costs, provider comparison
     - agent: report-agent
       role: Financial Reporter â€” monthly cost summaries for CEO
-    output_channel: brain/memory/corp_memory/daily_briefs/finance.md
+    output_channel: brain/memory/system_memory/daily_briefs/finance.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/finance.md
@@ -889,7 +889,7 @@ departments:
     - agent: roadmap-agent
       role: Roadmap Planner â€” OKR tracking, milestone planning
       prompt: brain/corp/departments/strategy/WORKER_PROMPT.md
-    output_channel: brain/memory/corp_memory/proposals/
+    output_channel: brain/memory/system_memory/proposals/
     qa_required: false
     llm_tier: premium
     memory: brain/corp/memory/departments/strategy.md
@@ -905,7 +905,7 @@ departments:
       role: IP Manager â€” copyright, trademark, license compliance
     - agent: gdpr-agent
       role: GDPR Specialist â€” data protection, privacy policy
-    output_channel: brain/memory/corp_memory/daily_briefs/legal.md
+    output_channel: brain/memory/system_memory/daily_briefs/legal.md
     qa_required: false
     llm_tier: balanced
     memory: brain/corp/memory/departments/legal.md
@@ -941,7 +941,7 @@ departments:
       - pageindex
       - autoresearchclaw
       - public-apis
-    output_channel: brain/memory/corp_memory/daily_briefs/rd.md
+    output_channel: brain/memory/system_memory/daily_briefs/rd.md
     qa_required: false
     llm_tier: balanced
     memory: brain/corp/memory/departments/rd.md
@@ -1005,9 +1005,9 @@ departments:
     rules: brain/corp/departments/od_learning/rules.md
     mission: Build, upgrade, and evolve OmniClaw as an organization
     primary_inputs:
-    - brain/memory/corp_memory/proposals/RETRO_*.md
-    - brain/memory/corp_memory/kpi_scoreboard.json
-    - brain/memory/corp_memory/daily_briefs/
+    - brain/memory/system_memory/proposals/RETRO_*.md
+    - brain/memory/system_memory/kpi_scoreboard.json
+    - brain/memory/system_memory/daily_briefs/
     tools:
     - ecosystem/skills/cognitive_reflector/SKILL.md
     - ecosystem/skills/reasoning_engine/SKILL.md
@@ -1200,7 +1200,7 @@ departments:
     - agent: deep-cleaner-agent
       role: Deep Cleaner â€” execute staleness scan and vacuum
       primary_skill: shell_assistant
-    output_channel: brain/memory/corp_memory/daily_briefs/facility.md
+    output_channel: brain/memory/system_memory/daily_briefs/facility.md
     qa_required: false
     llm_tier: economy
     memory: brain/corp/memory/departments/facility.md
@@ -1222,7 +1222,7 @@ departments:
     - agent: swarm-coordinator
       role: Swarm Coordinator â€” merge parallel responses into unified output
       primary_skill: context_manager
-    output_channel: brain/memory/corp_memory/daily_briefs/orchestration.md
+    output_channel: brain/memory/system_memory/daily_briefs/orchestration.md
     qa_required: false
     llm_tier: premium
     memory: brain/corp/memory/departments/orchestration.md
@@ -1544,7 +1544,7 @@ gates:
 collaboration_rules:
 - 'Engineering â†’ QA_Testing: all code must pass GATE_QA before deploy'
 - 'Marketing â†’ Content_Review: all content must pass GATE_CONTENT'
-- 'Strategy â†’ CEO: proposals posted daily to brain/memory/corp_memory/proposals/'
+- 'Strategy â†’ CEO: proposals posted daily to brain/memory/system_memory/proposals/'
 - 'Security_GRC â†’ ALL: can write alerts to escalations.md autonomously'
 - 'HR_People â†’ Operations: headcount and workload reports weekly'
 - 'Finance â†’ CEO: monthly budget report, alerts on overage'
@@ -1568,12 +1568,12 @@ collaboration_rules:
 - 'Client_Reception â†’ Finance: invoice generated after delivery â†’ Finance tracks payment'
 shared_data:
   blackboard: brain/memory/blackboard.json
-  mission: brain/memory/corp_memory/mission.md
-  kpi_scoreboard: brain/memory/corp_memory/kpi_scoreboard.json
-  escalations: brain/memory/corp_memory/escalations.md
-  proposals: brain/memory/corp_memory/proposals/
-  daily_briefs: brain/memory/corp_memory/daily_briefs/
-  decisions_log: brain/memory/corp_memory/decisions/log.md
+  mission: brain/memory/system_memory/mission.md
+  kpi_scoreboard: brain/memory/system_memory/kpi_scoreboard.json
+  escalations: brain/memory/system_memory/escalations.md
+  proposals: brain/memory/system_memory/proposals/
+  daily_briefs: brain/memory/system_memory/daily_briefs/
+  decisions_log: brain/memory/system_memory/decisions/log.md
   global_memory: brain/corp/memory/global/decisions_log.md
   dept_memory: brain/corp/memory/departments/
   agent_memory: brain/corp/memory/agents/

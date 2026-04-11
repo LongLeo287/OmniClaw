@@ -336,7 +336,6 @@ cm deploy <env>   → Record deployment
 
 - 🌍 [Website](https://cody.todyle.com) — Overview & demos
 - 📖 [Documentation](https://cody.todyle.com/docs) — Full deep-dive
-- 🛠️ [Skills Reference](skills/) — Browse all 34 SKILL.md files
 - 📖 [Our Story](https://cody.todyle.com/story) — Why this exists
 
 ---

@@ -1,7 +1,0 @@
-{
-    "pending_usd": 0,
-    "_description": "Track payment status for all invoices",
-    "total_revenue_usd": 0,
-    "invoices": [],
-    "_version": "1.0"
-}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-OmniClaw V2.0 â€” Central Workflow Orchestrator (FULL EDITION)
+OmniClaw V2.0 €” Central Workflow Orchestrator (FULL EDITION)
 Path: system/ops/omniclaw_orchestrator.py
 Built: 2026-03-26 | Based on AGENTS.md v4.0
 
@@ -10,7 +10,7 @@ Coverage:
   - 99 Agent definitions (Tier 1-3)
   - 38 Subagents (spawned on-demand)
   - Corp Mode (daily cycle 7-phase)
-  - Blackboard â†’ Route â†’ Dispatch â†’ HUD â†’ Telegram
+  - Blackboard †’ Route †’ Dispatch †’ HUD †’ Telegram
 """
 
 import json
@@ -23,7 +23,6 @@ import warnings
 warnings.filterwarnings("ignore")
 from pathlib import Path
 
-# â”€â”€â”€ OPTIONAL: Memory & Event Bus (graceful degrade if not ready) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 try:
     sys.path.insert(0, str(Path(__file__).parent.parent.parent))
     from core.ops.scripts.memory_daemon import MemoryCore as _MemoryCore
@@ -37,7 +36,6 @@ except Exception as _e:
     _MEMORY_CORE = None
     _AGENT_BUS   = None
 
-# â”€â”€â”€ HARDENED CLAW ARCHITECTURE INJECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 try:
     from core.daemons.omniclaw_worker_boot import WorkerRegistry
     from core.ops.omniclaw_task_packet import build_task_packet
@@ -52,7 +50,6 @@ except Exception as e:
     print(f"[OmniClaw] Clawable Architecture Offline/Degraded: {e}")
     _CLAWABLE_ONLINE = False
 
-# â”€â”€â”€ CONFIG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 ROOT = Path(__file__).parent.parent.parent
 BLACKBOARD     = ROOT / "brain" / "memory" / "blackboard.json"
 SKILL_REGISTRY = ROOT / "brain" / "registry" / "SKILL_REGISTRY.json"
@@ -63,7 +60,6 @@ ACT_STATUS     = ROOT / "brain" / "agents" / "activation_status.json"
 DEPTS_DIR      = ROOT / "ecosystem" / "workforce" / "departments"
 PLUGINS_DIR    = ROOT / "ecosystem" / "plugins"
 
-# â”€â”€â”€ ENV â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def _load_env():
     env, path = {}, ROOT / ".env"
     if path.exists():
@@ -73,7 +69,6 @@ def _load_env():
     return env
 ENV = _load_env()
 
-# â”€â”€â”€ DYNAMIC AGENT ROUTING TABLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def _load_system_router():
     try:
         with open(SYSTEM_ROUTER, "r", encoding="utf-8") as f:
@@ -85,7 +80,6 @@ def _load_system_router():
 
 ROUTING_TABLE, DEPARTMENTS = _load_system_router()
 
-# â”€â”€â”€ HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def now_iso(): return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=7))).isoformat()
 def now_ts(): return datetime.datetime.now().strftime("%H:%M:%S")
 
@@ -127,10 +121,9 @@ def log(msg, level="INFO"):
         if gh_token and len(gh_token) > 4 and gh_token in msg:
              msg = msg.replace(gh_token, "***MASKED_GITHUB_TOKEN***")
 
-    icon = {"INFO": "â„¹ï¸", "OK": "âœ…", "WARN": "âš ï¸", "ERR": "âŒ", "ROUTE": "ðŸ”€", "DISPATCH": "ðŸ“¤"}.get(level, "â€¢")
+    icon = {"INFO": "„¹ï¸", "OK": "œ…", "WARN": "š ï¸", "ERR": "Œ", "ROUTE": "ðŸ”€", "DISPATCH": "ðŸ“¤"}.get(level, "€¢")
     print(f"[{now_ts()}] {icon} {msg}")
 
-# â”€â”€â”€ LTM + BUS HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def _bus_publish(topic: str, payload: dict):
     """Publish task event to Agent Bus (silent fail if offline)"""
     if _AGENT_BUS:
@@ -145,7 +138,6 @@ def _ltm_save(fact: str, agent_id: str = "orchestrator"):
             _MEMORY_CORE.add_fact(fact, user_id="CEO", agent_id=agent_id)
         except: pass
 
-# â”€â”€â”€ ROUTING ENGINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def intent_gate(task: dict) -> str:
     """Analyze user intent before routing (IntentGate). Returns Intent classification."""
     text = f"{task.get('title', '')} {task.get('description', '')}".lower()
@@ -155,24 +147,24 @@ def intent_gate(task: dict) -> str:
         return "Implementation (Bypassed)"
         
     # [CodeX] Ambiguity Check (Deep Interview)
-    if any(k in text for k in ["deep interview", "ouroboros", "don't assume", "phá»ng váº¥n tÃ´i"]):
+    if any(k in text for k in ["deep interview", "ouroboros", "don't assume", "  "]):
         return "Deep-Interview"
         
     # [CodeX] Consensus Planning
-    if any(k in text for k in ["ralplan", "consensus", "plan this", "lÃªn káº¿ hoáº¡ch"]):
+    if any(k in text for k in ["ralplan", "consensus", "plan this", "  "]):
         return "Consensus-Planning"
         
     # [CodeX] Slop Cleaner
-    if any(k in text for k in ["deslop", "cleanup", "slop", "dá»n rÃ¡c", "refactor"]):
+    if any(k in text for k in ["deslop", "cleanup", "slop", " ", "refactor"]):
         return "Refactoring"
     
-    if any(k in text for k in ["clarify", "research", "investigate", "explore", "phÃ¢n tÃ­ch", "tÃ¬m hiá»ƒu"]):
+    if any(k in text for k in ["clarify", "research", "investigate", "explore", "phn tch", "tm »ƒu"]):
         return "Research"
-    if any(k in text for k in ["setup", "install", "config", "cÃ i Ä‘áº·t", "khá»Ÿi táº¡o"]):
+    if any(k in text for k in ["setup", "install", "config", " i Ä‘º·t", "»Ÿi º¡o"]):
         return "Setup"
-    if any(k in text for k in ["bug", "fix", "error", "trace", "lá»—i", "sá»­a"]):
+    if any(k in text for k in ["bug", "fix", "error", "trace", "»—i", "»­a"]):
         return "Debug"
-    if any(k in text for k in ["review", "audit", "check", "Ä‘Ã¡nh giÃ¡", "kiá»ƒm tra", "chuáº©n hÃ³a"]):
+    if any(k in text for k in ["review", "audit", "check", "Ä‘nh gi", "»ƒm tra", "º©n ha"]):
         return "Review"
     return "Implementation"
 
@@ -195,11 +187,11 @@ def route_task(task: dict) -> dict:
         field_lower = field.lower()
         for keyword, route in ROUTING_TABLE.items():
             if keyword in field_lower:
-                log(f"Matched keyword '{keyword}' â†’ {route['agent']} (Tier {route['tier']}, {route['dept']})", "ROUTE")
+                log(f"Matched keyword '{keyword}' †’ {route['agent']} (Tier {route['tier']}, {route['dept']})", "ROUTE")
                 return route
 
     # Default fallback
-    log("No domain match â€” defaulting to orchestrator_pro", "WARN")
+    log("No domain match €” defaulting to orchestrator_pro", "WARN")
     return ROUTING_TABLE["orchestration"]
 
 
@@ -218,14 +210,14 @@ def dispatch_task(task: dict, route: dict, act_status: dict) -> dict:
     # Use fallback if primary is PLACEHOLDER
     if not check_agent_active(agent_id, act_status):
         fallback = route.get("fallback", "orchestrator_pro")
-        log(f"Agent {agent_id} is PLACEHOLDER â†’ routing to fallback: {fallback}", "WARN")
+        log(f"Agent {agent_id} is PLACEHOLDER †’ routing to fallback: {fallback}", "WARN")
         agent_id = fallback
 
     # Load CONTRACT_ANCHOR if present
     contract_content = ""
     anchor_paths = [
-        ROOT / "brain" / "memory" / "corp_memory" / "global" / "global_ceo_ledger.md",
-        ROOT / "brain" / "memory" / "corp_memory" / "patterns" / "system_heuristics.md",
+        ROOT / "brain" / "memory" / "system_memory" / "global" / "global_ceo_ledger.md",
+        ROOT / "brain" / "memory" / "system_memory" / "patterns" / "system_heuristics.md",
         ROOT / "_CONTRACT_ANCHOR.md",
         ROOT / "ecosystem" / "workforce" / "agents" / agent_id / "_CONTRACT_ANCHOR.md"
     ]
@@ -265,7 +257,7 @@ def dispatch_task(task: dict, route: dict, act_status: dict) -> dict:
     receipt_dir.mkdir(parents=True, exist_ok=True)
     save_json(receipt_dir / f"{receipt['task_id']}.json", receipt)
 
-    log(f"DISPATCHED {receipt['task_id']} â†’ [{route['dept']}] {agent_id} | skill: {route['skill']}", "DISPATCH")
+    log(f"DISPATCHED {receipt['task_id']} †’ [{route['dept']}] {agent_id} | skill: {route['skill']}", "DISPATCH")
     return receipt
 
 
@@ -340,7 +332,7 @@ def send_telegram_simple(msg: str) -> bool:
 
 def _provision_brainstorm_room(task_id: str, topic: str) -> str:
     """Create a new brainstorm session file for agents to intercommunicate."""
-    bs_dir = ROOT / "brain" / "memory" / "corp_memory" / "brainstorms"
+    bs_dir = ROOT / "brain" / "memory" / "system_memory" / "brainstorms"
     bs_dir.mkdir(parents=True, exist_ok=True)
     template_path = bs_dir / "brainstormtemplate.md"
     session_path = bs_dir / f"SESSION_{task_id}.md"
@@ -359,8 +351,8 @@ def _provision_brainstorm_room(task_id: str, topic: str) -> str:
 import shutil
 
 def _ingest_system_gaps() -> dict:
-    """Scan corp_memory/gaps for unhandled reports and generate self-healing tasks."""
-    gaps_dir = ROOT / "brain" / "memory" / "corp_memory" / "gaps"
+    """Scan system_memory/gaps for unhandled reports and generate self-healing tasks."""
+    gaps_dir = ROOT / "brain" / "memory" / "system_memory" / "gaps"
     archive_dir = ROOT / "brain" / "archive" / "gaps"
     
     if not gaps_dir.exists():
@@ -393,8 +385,8 @@ def _ingest_system_gaps() -> dict:
     return None
 
 def _ingest_approved_proposals() -> dict:
-    """Scan corp_memory/proposals for approved tickets and generate execution tasks."""
-    prop_dir = ROOT / "brain" / "memory" / "corp_memory" / "proposals"
+    """Scan system_memory/proposals for approved tickets and generate execution tasks."""
+    prop_dir = ROOT / "brain" / "memory" / "system_memory" / "proposals"
     archive_dir = ROOT / "brain" / "archive" / "proposals"
     
     if not prop_dir.exists():
@@ -501,7 +493,7 @@ def run_cycle(verbose=True) -> dict:
                     emit_event(task_id, "lane.started", f"Ultrawork parallel span launched")
                     route = route_task(item)
                     dept_name = route.get("dept", "unassigned")
-                    item["dept_ledger"] = f"brain/memory/corp_memory/departments/{dept_name}.md"
+                    item["dept_ledger"] = f"brain/memory/system_memory/departments/{dept_name}.md"
                     rec = dispatch_task(item, route, act_status)
                     _WORKER_REGISTRY.spawn_worker(task_id, str(ROOT), item)
                     receipts.append(rec)
@@ -541,7 +533,7 @@ def run_cycle(verbose=True) -> dict:
             
             route = route_task(task_data)
             dept_name = route.get("dept", "unassigned")
-            task_data["dept_ledger"] = f"brain/memory/corp_memory/departments/{dept_name}.md"
+            task_data["dept_ledger"] = f"brain/memory/system_memory/departments/{dept_name}.md"
             receipt = dispatch_task(task_data, route, act_status)
             
             # Boot Machine Strict Policy
@@ -553,7 +545,7 @@ def run_cycle(verbose=True) -> dict:
             task_data["brainstorm_room"] = _provision_brainstorm_room(task_id, task_data.get("title", "Legacy Task"))
             route = route_task(task_data)
             dept_name = route.get("dept", "unassigned")
-            task_data["dept_ledger"] = f"brain/memory/corp_memory/departments/{dept_name}.md"
+            task_data["dept_ledger"] = f"brain/memory/system_memory/departments/{dept_name}.md"
             receipt = dispatch_task(task_data, route, act_status)
 
         # Update blackboard
@@ -581,10 +573,10 @@ def run_cycle(verbose=True) -> dict:
 
         send_telegram_simple(
             f"ðŸ“¤ *Task Dispatched*\n"
-            f"â†’ Agent: `{receipt['agent']}`\n"
-            f"â†’ Dept: `{receipt['dept']}` (Tier {receipt['tier']})\n"
-            f"â†’ Skill: `{receipt['primary_skill']}`\n"
-            f"â†’ Task: `{receipt['task_id']}`"
+            f"†’ Agent: `{receipt['agent']}`\n"
+            f"†’ Dept: `{receipt['dept']}` (Tier {receipt['tier']})\n"
+            f"†’ Skill: `{receipt['primary_skill']}`\n"
+            f"†’ Task: `{receipt['task_id']}`"
         )
         result["receipt"] = receipt
 
@@ -604,16 +596,16 @@ def run_cycle(verbose=True) -> dict:
                 emit_event(task_id, "lane.finished", "Lane fully completed. Cleaning up resources.")
                 
                 send_telegram_simple(
-                    f"ðŸ“Š *OmniClaw V2.0 â€” System Status*\n"
-                    f"â€¢ ðŸ¤– Agents: `{s['agents']}` (+`{s['brain_agent_profiles']}` profiles)\n"
-                    f"â€¢ ðŸ§  Skills: `{s['skills']}`\n"
-                    f"â€¢ ðŸ ¢ Depts: `{s['departments']}`\n"
-                    f"â€¢ ðŸ”€ Routes: `{s['routing_rules']}`\n"
+                    f"ðŸ“Š *OmniClaw V2.0 €” System Status*\n"
+                    f"€¢ ðŸ¤– Agents: `{s['agents']}` (+`{s['brain_agent_profiles']}` profiles)\n"
+                    f"€¢ ðŸ§  Skills: `{s['skills']}`\n"
+                    f"€¢ ðŸ ¢ Depts: `{s['departments']}`\n"
+                    f"€¢ ðŸ”€ Routes: `{s['routing_rules']}`\n"
                     f"• ðŸ”Œ MCPs: `{s['vault']['mcp']['servers']}`\n"
                     f"• ðŸ“¦ Plugins: `{s['vault']['plugins']['plugins']}`\n"
-                    f"â€¢ âœ… Reconnect: `{s['v31_reconnect']}`"
+                    f"€¢ œ… Reconnect: `{s['v31_reconnect']}`"
                 )
-                log("System idle â€” status digest sent", "OK")
+                log("System idle €” status digest sent", "OK")
                 bb["handoff_trigger"] = "IDLE"
             else:
                 emit_event(task_id, "lane.rejected", "DONE trigger rejected: Failed Green Rule. Resuming lane.")
@@ -622,11 +614,11 @@ def run_cycle(verbose=True) -> dict:
                 
             save_json(BLACKBOARD, bb)
         else:
-            send_telegram_simple(f"ðŸ“Š *OmniClaw V2.0 â€” System Status* (Legacy Mode)")
+            send_telegram_simple(f"ðŸ“Š *OmniClaw V2.0 €” System Status* (Legacy Mode)")
             log("System idle (Legacy)", "OK")
 
     if verbose:
-        print("â”€" * 65)
+        print("”€" * 65)
         log("Orchestration cycle complete", "OK")
 
     return result
@@ -635,7 +627,7 @@ def run_cycle(verbose=True) -> dict:
 def list_routes():
     """Print full routing table for verification"""
     print(f"\n{'='*65}")
-    print(f"  ROUTING TABLE â€” {len(ROUTING_TABLE)} rules | {len(DEPARTMENTS)} depts")
+    print(f"  ROUTING TABLE €” {len(ROUTING_TABLE)} rules | {len(DEPARTMENTS)} depts")
     print(f"{'='*65}")
     by_dept = {}
     for kw, r in ROUTING_TABLE.items():
@@ -643,10 +635,9 @@ def list_routes():
     for dept, entries in sorted(by_dept.items()):
         print(f"\n  [{dept}]")
         for kw, agent, tier in sorted(entries):
-            print(f"    '{kw}' â†’ {agent} (T{tier})")
+            print(f"    '{kw}' †’ {agent} (T{tier})")
 
 
-# â”€â”€â”€ ENTRY POINT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "once"
 
@@ -659,7 +650,7 @@ if __name__ == "__main__":
 
     elif cmd == "watch":
         interval = int(sys.argv[2]) if len(sys.argv) > 2 else 30
-        log(f"Watch mode â€” polling every {interval}s | Ctrl+C to stop", "OK")
+        log(f"Watch mode €” polling every {interval}s | Ctrl+C to stop", "OK")
         while True:
             try:
                 run_cycle(verbose=False)

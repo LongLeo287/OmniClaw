@@ -418,5 +418,3 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
 - [README.md](./README.md) - Installation and features
 - [CONTRIBUTING.md](./CONTRIBUTING.md) - Development guidelines
-- [docs/](./docs/) - Detailed documentation
-- [examples/](./examples/) - Usage examples

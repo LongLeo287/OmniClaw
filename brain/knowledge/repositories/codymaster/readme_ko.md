@@ -268,7 +268,6 @@ cp -r ~/.cody-master/skills/* ~/.gemini/antigravity/skills/
 
 - 🌍 [웹사이트](https://cody.todyle.com) — 개요 및 데모
 - 📖 [문서](https://cody.todyle.com/docs) — 상세 가이드
-- 🛠️ [스킬 레퍼런스](skills/) — 34개의 모든 SKILL.md 파일 찾아보기
 - 📖 [스토리](https://cody.todyle.com/story) — 이것이 존재하는 이유
 
 ---

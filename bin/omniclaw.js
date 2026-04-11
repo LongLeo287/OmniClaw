@@ -93,10 +93,15 @@ function printHelp() {
   console.log("  omniclaw help");
   console.log("  omniclaw doctor");
   console.log("  omniclaw paths");
+  console.log("  omniclaw sync");
+  console.log("  omniclaw startup [--no-sync] [--check-only]");
+  console.log("  omniclaw core [--no-bridge] [--no-orchestrator] [--interval N] [--host HOST] [--port PORT]");
+  console.log("  omniclaw status [--port PORT]");
   console.log("");
   console.log("Notes:");
   console.log("  Run inside an OmniClaw clone, or set OMNICLAW_ROOT first.");
   console.log("  OmniClaw REMOTE and OmniClaw UI are optional external projects.");
+  console.log("  The public core runtime is Bridge Gateway + Orchestrator.");
 }
 
 function printPaths() {
@@ -173,8 +178,56 @@ function runDoctor() {
   console.log("Doctor completed without blocking issues.");
 }
 
+function getPythonCommand() {
+  if (commandExists("python")) {
+    return "python";
+  }
+  if (commandExists("py")) {
+    return "py";
+  }
+  return null;
+}
+
+function runCoreBootManager(args) {
+  const workspaceRoot = getWorkspaceRoot();
+
+  if (!workspaceRoot || !hasWorkspaceMarkers(workspaceRoot)) {
+    console.error("Workspace root not found.");
+    console.error("Run this inside an OmniClaw clone, or set OMNICLAW_ROOT.");
+    process.exitCode = 1;
+    return;
+  }
+
+  const python = getPythonCommand();
+  if (!python) {
+    console.error("Python runtime not found.");
+    process.exitCode = 1;
+    return;
+  }
+
+  const scriptPath = path.join(workspaceRoot, "core", "ops", "omniclaw_core_boot.py");
+  const env = {
+    ...process.env,
+    OMNICLAW_ROOT: workspaceRoot,
+  };
+
+  const result = childProcess.spawnSync(python, [scriptPath, ...args], {
+    cwd: workspaceRoot,
+    stdio: "inherit",
+    env,
+  });
+
+  if (typeof result.status === "number") {
+    process.exitCode = result.status;
+    return;
+  }
+
+  process.exitCode = 1;
+}
+
 function main() {
   const command = (process.argv[2] || "help").toLowerCase();
+  const args = process.argv.slice(3);
 
   switch (command) {
     case "help":
@@ -187,6 +240,18 @@ function main() {
       break;
     case "doctor":
       runDoctor();
+      break;
+    case "sync":
+      runCoreBootManager(["sync", ...args]);
+      break;
+    case "startup":
+      runCoreBootManager(["startup", ...args]);
+      break;
+    case "core":
+      runCoreBootManager(["core", ...args]);
+      break;
+    case "status":
+      runCoreBootManager(["status", ...args]);
       break;
     default:
       console.error(`Unknown command: ${command}`);

@@ -12,8 +12,6 @@ Testing configuration and CI/CD patterns.
 
 ## References
 
-- [**Testing Setup**](testing-setup.md) - Jest and Vitest configuration.
-- [**CI/CD**](ci-cd.md) - GitHub Actions and continuous integration.
 
 ## Jest Configuration
 

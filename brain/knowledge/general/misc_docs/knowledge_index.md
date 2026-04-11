@@ -10,27 +10,16 @@ healed_at: 2026-04-02T20:29:01.465856
 **Last Updated:** 2026-03-23
 
 ## ðŸ—ºï¸ System Map (READ FIRST)
-- [AI_OS_SYSTEM_MAP.md](../AI_OS_SYSTEM_MAP.md) â€” **MASTER REFERENCE** â€” ToÃ n bá»™ há»‡ thá»‘ng OmniClaw: org structure, 21 depts, 4 gates, 5 workflows, 5 memory layers, agents, skills, file rules, boot sequence, commands
-- [MASTER_SYSTEM_MAP.md](../corp/MASTER_SYSTEM_MAP.md) â€” **SYSTEM MAP v2 (2026-03-23)** â€” Boot â†’ Corp Cycle 8-phase â†’ 21 Depts â†’ 3-Tier Plugin â†’ Agent Memory â†’ Knowledge Flow â†’ Escalation â†’ CLI Commands
 
 ## ðŸ›ï¸ Governance & Identity (Tier 0-1)
-- [CLAUDE.md](../../agents/CLAUDE.md) â€” Master entry point, boot sequence, directory map
 - [SOUL.md](SOUL.md) â€” Platform identity & core values
-- [AGENTS.md](../bmad_repo/agents.md) â€” Agent roster, hierarchy, decision authority
 - [GOVERNANCE.md](GOVERNANCE.md) â€” Safety anchors
 - [THESIS.md](THESIS.md) â€” 40 Pillars (The WHY)
 
 ## âš™ï¸ Operations & Governance (Tier 2)
-- [ORCHESTRATION_SOP.md](../../rules/security/rules/ORCHESTRATION_SOP.md) â€” 6-phase multi-agent loop
-- [WORKFLOW.md](../bmad_repo/workflow.md) â€” Event-driven operational workflow (v2)
-- [APPROVAL_GATES.md](APPROVAL_GATES.md) â€” 4 universal approval gates
-- [LEARNING_CYCLE_PROTOCOL.md](../../rules/security/rules/LEARNING_CYCLE_PROTOCOL.md) â€” Self-improvement loop
-- [CLAUDE_CODE_MANAGER.md](CLAUDE_CODE_MANAGER.md) â€” 3 roles, fix-retry, receipts
 
 ## ðŸ”§ Skill System
 - [SKILL_SPEC.md](SKILL_SPEC.md) â€” Skill schema standard
-- [SKILL_REGISTRY.json](../brain/registry/SKILL_REGISTRY.json) â€” 103+ registered entries
-- [EXTERNAL_SKILL_SOURCES.yaml](../brain/registry/EXTERNAL_SKILL_SOURCES.yaml) â€” 15+ external sources
 - **Domain Packs** (`skills/domains/`):
   - `google-workspace/` â€” gas, sheets, sheets-performance
   - `databases/` â€” supabase-postgres
@@ -46,31 +35,17 @@ healed_at: 2026-04-02T20:29:01.465856
 
 ## ðŸ”’ Security & Ingestion Protocol
 
-- [Clone Security Protocol](../../rules/security/rules/clone_security_protocol.md) â€” MANDATORY pre-clone rules, quarantine zone, absolute rules
-- [Repo Vetting Knowledge](./repo_vetting_knowledge.md) â€” Supply chain attacks, detection patterns, repo trust ratings
-- [Security Shield Skill](../bmad_repo/SKILL.md) â€” /vet-repo, /scan, /secure-patch
-- [Vet Script](../skills/security_shield/vet_repo.ps1) â€” 7-scan PowerShell automation (git hooks, npm, network, secrets...)
-- [Knowledge Ingest Workflow](knowledge-ingest.md) â€” 7-phase pipeline: intake â†’ scan â†’ classify â†’ enrich â†’ route â†’ archive â†’ notify
-- [Agent Auto-Create Protocol](agent-auto-create.md) â€” Auto-create new agents when knowledge has no existing agent
-- [Secure External Ingestion](ingest-external.md) â€” Legacy ingest (see knowledge-ingest.md for v2)
 
 ## ðŸ¤– AI Agent Systems
-- [Agentic Patterns](./agentic_patterns.md) â€” 10 core patterns: ReAct, Reflection, Planning, Multi-Agent, Meta-Controller...
 - [BMAD Method](./bmad_method.md) â€” Agile AI development framework: 4-phase cycle, agent personas, Party Mode
-- [AI Integration](./ai-integration.md) â€” AI integration patterns
-- [Multi-Agent Orchestration](./multi-agent-orchestration.md)
 - [MCP Server Architecture](./mcp_server_architecture.md)
-- [Star Office UI](../ui/star_office_ui.md) â€” Pixel-art AI Agent dashboard: 6 states, multi-agent office, memory â†’ visual card, desktop pet mode (4.7K â˜…, MIT)
 
 ## ðŸ› ï¸ Claude Code Ecosystem  
 - [Claude Code Ecosystem](./claude_code_ecosystem.md) â€” everything-claude-code, claude-mem plugin, best practices
 - [Local AI Explanation](./local_ai_explanation.md)
-- [Safe AI Strategy](./safe_ai_strategy.md)
 
 ## ðŸ”¬ AI/ML Deep Dives
-- [AI Capability Deep Dive](./ai_capability_deep_dive.md)
 - [Intelligence Upgrade Analysis](./intelligence_upgrade_analysis.md)
-- [LightRAG](./lightrag_deep_dive.md) *(pending Phase 11)*
 
 ## ðŸ—ï¸ Architecture & Design
 - [Architect Handbook](./architect_handbook.md) â€” DDD, Hexagonal, SOLID patterns
@@ -78,8 +53,6 @@ healed_at: 2026-04-02T20:29:01.465856
 - [DSA Patterns](./dsa_patterns.md)
 
 ## ðŸŒ Web & Extensions
-- [Chrome Extension API](./chrome-extension-api.md)
-- [Bookmark UX Patterns](./bookmark-ux-patterns.md)
 
 - [References](./references.md) â€” All external repos
 - [Repo Analysis Report](./repo_analysis_report.md) â€” âœ… CLONE / ðŸ“š LEARN-ONLY / â­ï¸ SKIP decisions
@@ -91,16 +64,10 @@ healed_at: 2026-04-02T20:29:01.465856
 - [Non-Cloneable Repos Analysis](./non_cloneable_repos_analysis.md) â€” 23 repos analyzed via GitHub README: Auto-Claude (12-agent GUI), ProxyPal (multi-AI proxy), SkillSentry (9-layer security), marketingskills (35 skills), trainingAI (8-level Vietnamese AI guide), ChatDev, llmfit, autoclip, SmartTube, social downloader, aPix/SDVN, SpringBoot skill, Clean Arch Next.js + more
 - **LobsterBoard** (plugins/LobsterBoard/) â€” Self-hosted drag-and-drop dashboard (60+ widgets). OpenClaw-compatible. **Antigravity, Claude Code, Gemini, Cursor** usage monitoring widgets built-in. Node.js server.
 
-- [ACTIVATION_BOARD](./ACTIVATION_BOARD.md) ï¿½ ?? T?t c? plugin/service c?n kï¿½ch ho?t/m? localhost: LobsterBoard (port 3000), Remote Bridge (port 5001), LightRAG (port 9621), Firecrawl (port 3002), AI OS Dashboard (port 19000)
 
 
 ### Session 6 â€” Ingested 2026-03-19
 
-- **[temm1e](../../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** â€” Rust autonomous AI agent runtime. 15MB idle, 31ms cold start. Î»-Memory + Blueprints. `T1`
-- **[awesome-openclaw-skills](../../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** â€” Curated catalog 5400+ OpenClaw skills, 30+ categories. By VoltAgent. `T1`
-- **[GitNexus](../../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** â€” Zero-server code intelligence. Knowledge graph + Graph RAG. Browser-native + MCP server. `T1`
-- **[OSINT-CTFs](../../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** â€” Directory OSINT CTF platforms. Security training reference. `T2`
-- **[forgewright](../../../vault/archives/archive_legacy/awesome-openclaw-skills/knowledge.md)** â€” Antigravity plugin. SaaS/game lifecycle pipeline. 48 skills, 19 modes, 15 protocols. By buiphucminhtam. `T1`
 
 
 ## Session 7 â€” Ingested 2026-03-19
@@ -154,8 +121,8 @@ healed_at: 2026-04-02T20:29:01.465856
 ### Learning Loop (Cycle 8 Retro)
 | File | Type |
 |------|------|
-| brain/brain/memory/corp_memory/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective ï¿½ 5 patterns, 5 lessons, 3 proposals |
-| brain/brain/memory/corp_memory/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
+| brain/brain/memory/system_memory/proposals/RETRO_2026-03-23.md | Cycle 8 Retrospective ï¿½ 5 patterns, 5 lessons, 3 proposals |
+| brain/brain/memory/system_memory/proposals/PROPOSAL_2026-03-23_session-improvements.md | 3 CEO Proposals pending |
 | corp/memory/global/decisions_log.md | +4 LESSON_LEARNED entries (permanent) |
 
 ---

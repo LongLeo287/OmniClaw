@@ -326,7 +326,6 @@ Tingnan ang [LICENSE](LICENSE) file para sa buong detalye.
 
 ## Suporta
 
-- **Dokumentasyon**: [docs/](docs/)
 - **Issues**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repository**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Author**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

@@ -1,0 +1,8 @@
+{
+  "_comment": "OmniClaw Health Daemon (OHD) - Target list for Vietnamese IME Patch (npx fix-vietnamese-claude-code)",
+  "_instruction": "Add absolute paths to any Node.js cli.js or binaries (like Antigravity) that suffer from the \\x7f input bug. OHD will auto-patch them on its next cycle.",
+  "patch_files": [
+    "C:\\path\\to\\your\\antigravity-cli.js",
+    "C:\\path\\to\\other\\node_modules\\ink-cli\\bin.js"
+  ]
+}

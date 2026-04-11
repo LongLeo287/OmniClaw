@@ -8,7 +8,7 @@ version: 1.0
 authority: registry_capability
 ---
 
-# OmniClaw Corp — Capability Map
+# OmniClaw — Capability Map
 ## Skill / Plugin Discovery Index (Human + Agent readable)
 
 > **Purpose:** `knowledge_navigator` reads this file in Phase 3 to find the correct skill/plugin  
@@ -126,12 +126,12 @@ FUTURE (Phase 3): GitNexus impact analysis → exact blast radius when modifying
 ### codebase_navigation (code understanding, refactoring, debugging)
 | Need | Use | Type | Path |
 |------|-----|------|------|
-| Code exploration | `gitnexus-exploring` | skill | tools/gitnexus-web/gitnexus/skills/ |
-| Blast radius analysis | `gitnexus-impact-analysis` | skill | tools/gitnexus-web/gitnexus/skills/ |
-| Bug tracing | `gitnexus-debugging` | skill | tools/gitnexus-web/gitnexus/skills/ |
-| Refactoring | `gitnexus-refactoring` | skill | tools/gitnexus-web/gitnexus/skills/ |
-| PR review | `gitnexus-pr-review` | skill | tools/gitnexus-web/gitnexus/skills/ |
-| Cypher graph query | `gitnexus-cli` | skill | tools/gitnexus-web/gitnexus/skills/ |
+| Code exploration | `gitnexus-exploring` | skill | OmniClaw Remote (OBD Gateway) |
+| Blast radius analysis | `gitnexus-impact-analysis` | skill | OmniClaw Remote (OBD Gateway) |
+| Bug tracing | `gitnexus-debugging` | skill | OmniClaw Remote (OBD Gateway) |
+| Refactoring | `gitnexus-refactoring` | skill | OmniClaw Remote (OBD Gateway) |
+| PR review | `gitnexus-pr-review` | skill | OmniClaw Remote (OBD Gateway) |
+| Cypher graph query | `gitnexus-cli` | skill | OmniClaw Remote (OBD Gateway) |
 
 ### google_workspace (GAS, Sheets, Docs, Drive)
 | Need | Use | Type | Path |
@@ -192,13 +192,13 @@ NEED A TOOL FOR: <task>
 
 ---
 
-## LightRAG Query Interface (when service running at localhost:5055)
+## LightRAG Query Interface (when service running at OBD Gateway)
 
 ```python
 # knowledge_navigator Phase 3 upgrade
 import httpx
 result = await httpx.post(
-    "http://localhost:5055/api/rag/query",
+    "http://obd-gateway.omniclaw.internal/api/rag/query",
     json={"query": domain_tag, "mode": "mix"}
 )
 # Returns: entities, relationships, relevant chunks → identify skill/plugin
@@ -210,10 +210,10 @@ result = await httpx.post(
 
 ```
 # Impact analysis — what breaks if I remove plugin X?
-gitnexus://repo/ai-os/impact?symbol=<plugin_id>&depth=3
+gitnexus://repo/omniclaw/impact?symbol=<plugin_id>&depth=3
 
 # Explore skill dependencies
-gitnexus://repo/ai-os/context?symbol=<skill_id>
+gitnexus://repo/omniclaw/context?symbol=<skill_id>
 
 # Raw graph query
 cypher: MATCH (s:Skill)-[:CALLS]->(p:Plugin) WHERE s.id = '<id>' RETURN p

@@ -741,51 +741,51 @@ omniclaw_system_index:
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
-  - id: brain_corp_memory
-    name: corp_memory
-    path: brain/memory/corp_memory
+  - id: brain_system_memory
+    name: system_memory
+    path: brain/memory/system_memory
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_agents
     name: agents
-    path: brain/memory/corp_memory/agents
+    path: brain/memory/system_memory/agents
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_brainstorms
     name: brainstorms
-    path: brain/memory/corp_memory/brainstorms
+    path: brain/memory/system_memory/brainstorms
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_departments
     name: departments
-    path: brain/memory/corp_memory/departments
+    path: brain/memory/system_memory/departments
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_gaps
     name: gaps
-    path: brain/memory/corp_memory/gaps
+    path: brain/memory/system_memory/gaps
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_global
     name: global
-    path: brain/memory/corp_memory/global
+    path: brain/memory/system_memory/global
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_patterns
     name: patterns
-    path: brain/memory/corp_memory/patterns
+    path: brain/memory/system_memory/patterns
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA
   - id: brain_proposals
     name: proposals
-    path: brain/memory/corp_memory/proposals
+    path: brain/memory/system_memory/proposals
     category: BRAIN
     type: DIRECTORY
     oa_vetting_status: VETTED_BY_OA

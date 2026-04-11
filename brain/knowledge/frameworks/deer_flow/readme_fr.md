@@ -535,9 +535,6 @@ Toutes les méthodes retournant des dicts sont validées en CI contre les modèl
 ## Documentation
 
 - [Guide de contribution](CONTRIBUTING.md) - Mise en place de l'environnement de développement et workflow
-- [Guide de configuration](backend/docs/CONFIGURATION.md) - Instructions d'installation et de configuration
-- [Vue d'ensemble de l'architecture](backend/CLAUDE.md) - Détails de l'architecture technique
-- [Architecture backend](backend/README.md) - Architecture backend et référence API
 
 ## ⚠️ Avertissement de sécurité
 

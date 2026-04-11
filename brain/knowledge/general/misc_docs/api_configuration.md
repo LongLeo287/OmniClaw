@@ -393,6 +393,3 @@ API keys stored in the database are encrypted using Fernet (AES-128-CBC + HMAC-S
 
 ## Related
 
-- **[AI Providers](ai-providers.md)** — Provider setup instructions and recommendations
-- **[Security](../bmad_repo/SECURITY.md)** — Password and encryption configuration
-- **[Environment Reference](environment-reference.md)** — All configuration options

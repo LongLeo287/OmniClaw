@@ -146,19 +146,19 @@ curl http://localhost:5055/health
 
 ## KPI / Escalations / Mission â€” Correct Paths
 
-> **CANONICAL PATH:** `brain/brain/memory/corp_memory/`
+> **CANONICAL PATH:** `brain/brain/memory/system_memory/`
 
 | File | Correct Path |
 |------|-------------|
-| kpi_scoreboard.json | `brain/memory/corp_memory/kpi_scoreboard.json` |
-| escalations.md | `brain/brain/memory/corp_memory/escalations.md` |
-| mission.md | `brain/brain/memory/corp_memory/mission.md` |
-| proposals/ | `brain/brain/memory/corp_memory/proposals/` |
-| daily_briefs/ | `brain/brain/memory/corp_memory/daily_briefs/` |
+| kpi_scoreboard.json | `brain/memory/system_memory/kpi_scoreboard.json` |
+| escalations.md | `brain/brain/memory/system_memory/escalations.md` |
+| mission.md | `brain/brain/memory/system_memory/mission.md` |
+| proposals/ | `brain/brain/memory/system_memory/proposals/` |
+| daily_briefs/ | `brain/brain/memory/system_memory/daily_briefs/` |
 
-**corp/escalations.md** = redirect/alias. Real file = `brain/brain/memory/corp_memory/escalations.md`
+**corp/escalations.md** = redirect/alias. Real file = `brain/brain/memory/system_memory/escalations.md`
 
-GEMINI.md boot references should use `brain/brain/memory/corp_memory/` prefix.
+GEMINI.md boot references should use `brain/brain/memory/system_memory/` prefix.
 
 ---
 

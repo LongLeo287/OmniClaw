@@ -302,7 +302,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack). সর্বস্বত্ব স
 
 ## সাপোর্ট
 
-- **ডকুমেন্টেশন**: [docs/](docs/)
 - **ইস্যু**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **রিপোজিটরি**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **লেখক**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

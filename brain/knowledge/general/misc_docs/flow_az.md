@@ -97,7 +97,7 @@ C0. SYSTEM HEALTH (Phase 0)
     - Set: corp_cycle_status = "ACTIVE"
 
 C1. CEO BRIEF (Phase 1)
-    Read: brain/brain/memory/corp_memory/
+    Read: brain/brain/memory/system_memory/
       mission.md + kpi_scoreboard.json + escalations.md + proposals/
     Read: corp/memory/global/decisions_log.md (last 5)
     Output: CEO priority for this cycle
@@ -110,7 +110,7 @@ C2. C-SUITE PLANNING (Phase 2)
 
 C3. DEPT HEADS EXECUTE (Phase 3)
     21 dept heads read task cards
-    Write briefs: brain/brain/memory/corp_memory/daily_briefs/<dept>.md
+    Write briefs: brain/brain/memory/system_memory/daily_briefs/<dept>.md
     SECURITY GATE: new tools â†’ security_grc MUST approve first
     GATE depts: QA, Security, Finance, HR, Legal, Strategy must confirm
 
@@ -131,7 +131,7 @@ C6. CEO REVIEW (Phase 6)
 C7. RETRO & RESET (Phase 7)
     cognitive_reflector: read all 21 briefs â†’ RETRO_<date>.md
     archivist: archive receipts, rotate dept memory
-    UPDATE: brain/memory/corp_memory/kpi_scoreboard.json
+    UPDATE: brain/memory/system_memory/kpi_scoreboard.json
     RESET: blackboard.json corp_cycle_status = "IDLE"
     UPDATE: hud/HUD.md + hud/snapshots/<date>.md
 

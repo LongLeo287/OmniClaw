@@ -165,7 +165,7 @@ Uses cross_session_recall to check if a similar lesson already exists (dedup).
 - Read: MANAGER_PROMPT.md / WORKER_PROMPT.md (corp/departments/planning_pmo/)
 - Read: rules.md (corp/departments/planning_pmo/)
 - Write: task receipts â†’ telemetry/receipts/planning_pmo/
-- Write: dept brief â†’ brain/brain/memory/corp_memory/daily_briefs/planning_pmo.md
+- Write: dept brief â†’ brain/brain/memory/system_memory/daily_briefs/planning_pmo.md
 - Escalate: L2 â†’ dept head | L3 â†’ blackboard.json open_items[]
 
 ## Memory

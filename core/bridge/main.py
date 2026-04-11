@@ -1,18 +1,18 @@
 """
 OMNICLAW REMOTE BRIDGE - API GATEWAY
 Border Patrol Checkpoint receives all traffic from OmniClaw Remote.
-Dispatch thá»±c sá»± tá»›i agent_bus (SQLite pub/sub) + blackboard.json.
+Dispatch »±c »± »›i agent_bus (SQLite pub/sub) + blackboard.json.
 
 Endpoints:
-  POST /dock/bots/{platform}      â€” Social bot webhooks
-  POST /dock/mcp/dispatch         â€” MCP tool agent calls
-  POST /dock/agentic_ai/sync      â€” OmniClaw AI sync
-  POST /dock/cloud/webhook        â€” Supabase / GCloud updates
-  POST /dock/dashboard/ui_command â€” Web/Mobile UI commands
-  POST /vault/auth/issue_temp_pass â€” Issue temp token (HQ key required)
-  POST /vault/auth/revoke         â€” Revoke token
-  GET  /vault/auth/list           â€” List valid tokens (HQ only)
-  GET  /health                    â€” Health check
+  POST /dock/bots/{platform}      €” Social bot webhooks
+  POST /dock/mcp/dispatch         €” MCP tool agent calls
+  POST /dock/agentic_ai/sync      €” OmniClaw AI sync
+  POST /dock/cloud/webhook        €” Supabase / GCloud updates
+  POST /dock/dashboard/ui_command €” Web/Mobile UI commands
+  POST /vault/auth/issue_temp_pass €” Issue temp token (HQ key required)
+  POST /vault/auth/revoke         €” Revoke token
+  GET  /vault/auth/list           €” List valid tokens (HQ only)
+  GET  /health                    €” Health check
 """
 
 from __future__ import annotations
@@ -33,7 +33,6 @@ from fastapi.security.api_key import APIKeyHeader
 from .passport_issuer import vault
 from .customs_checkpoint import inspect_cargo, validate_platform
 
-# â”€â”€ Config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 _ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[2])))
 _BLACKBOARD = _ROOT / "brain" / "memory" / "blackboard.json"
 _BRIDGE_LOG = _ROOT / "core" / "ops" / "telemetry" / "logs" / "bridge_gateway.log"
@@ -47,7 +46,6 @@ _ALLOWED_ORIGINS = os.environ.get(
     "http://localhost,http://127.0.0.1,https://app.omniclaw.com"
 ).split(",")
 
-# â”€â”€ Logging â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 gw_logger = logging.getLogger("BridgeGateway")
 gw_logger.setLevel(logging.INFO)
 if not gw_logger.handlers:
@@ -55,7 +53,6 @@ if not gw_logger.handlers:
     fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
     gw_logger.addHandler(fh)
 
-# â”€â”€ Agent Bus (graceful fallback náº¿u chÆ°a init) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 _agent_bus = None
 try:
     import sys
@@ -65,7 +62,7 @@ try:
     _agent_bus = AgentBus()
     gw_logger.info("AgentBus connected.")
 except Exception as _e:
-    gw_logger.warning(f"AgentBus unavailable â€” using blackboard fallback. ({_e})")
+    gw_logger.warning(f"AgentBus unavailable €” using blackboard fallback. ({_e})")
 
 
 def _publish_event(topic: str, payload: dict) -> Optional[int]:
@@ -76,7 +73,6 @@ def _publish_event(topic: str, payload: dict) -> Optional[int]:
         except Exception as e:
             gw_logger.error(f"AgentBus publish failed: {e}")
 
-    # Blackboard fallback â€” append to inbound_queue list
     try:
         bb: dict = {}
         if _BLACKBOARD.exists():
@@ -90,7 +86,6 @@ def _publish_event(topic: str, payload: dict) -> Optional[int]:
     return None
 
 
-# â”€â”€ Lifespan â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     gw_logger.info("OmniClaw Bridge Gateway starting on port 8000.")
@@ -101,7 +96,6 @@ async def lifespan(app: FastAPI):
     gw_logger.info("OmniClaw Bridge Gateway shutting down.")
 
 
-# â”€â”€ App â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 app = FastAPI(
     title="OmniClaw Remote Bridge",
     description="Local Super Harbor receiving/processing requests from OmniClaw Remote and External Bots.",
@@ -117,7 +111,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# â”€â”€ Auth â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 API_KEY_NAME = "X-OMNICLAW-HQ-TOKEN"
 api_key_header = APIKeyHeader(name=API_KEY_NAME, auto_error=False)
 
@@ -134,7 +127,6 @@ async def check_passport(request: Request, api_key: str = Security(api_key_heade
     return status
 
 
-# â”€â”€ Middleware: inject X-Request-ID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @app.middleware("http")
 async def request_id_middleware(request: Request, call_next):
     req_id = request.headers.get("X-Request-ID") or str(uuid.uuid4())[:12]
@@ -144,7 +136,6 @@ async def request_id_middleware(request: Request, call_next):
     return response
 
 
-# â”€â”€ PHÃ‚N KHU 1: BOT DOCK â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @app.post("/dock/bots/{platform}")
 async def bot_webhook_receiver(
     platform: str,
@@ -179,7 +170,6 @@ async def bot_webhook_receiver(
     }
 
 
-# â”€â”€ PHÃ‚N KHU 2: AGENTIC AI & MCP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @app.post("/dock/mcp/dispatch")
 async def mcp_server_gateway(
     request: Request,
@@ -230,7 +220,6 @@ async def openclaw_sync(
     return {"status": "SYNC_AUTHORIZED", "event_id": event_id}
 
 
-# â”€â”€ PHÃ‚N KHU 3: CLOUD & DASHBOARD â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @app.post("/dock/cloud/webhook")
 async def cloud_webhook_sync(
     request: Request,
@@ -281,7 +270,6 @@ async def master_dashboard_command(
     return {"status": "HQ_COMMAND_DISPATCHED", "event_id": event_id}
 
 
-# â”€â”€ PHÃ‚N KHU 4: VAULT KEEPING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @app.post("/vault/auth/issue_temp_pass")
 async def issue_p2a_token(
     request: Request,
@@ -341,7 +329,6 @@ async def list_tokens(passport: dict = Security(check_passport)):
     return {"tokens": vault.list_passports()}
 
 
-# â”€â”€ HEALTH â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 @app.get("/health")
 async def harbor_health_check():
     """Ping to see if Harbor is active."""

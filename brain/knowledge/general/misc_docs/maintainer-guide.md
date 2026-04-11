@@ -31,7 +31,6 @@ This guide is for project maintainers to help manage contributions effectively w
 
 - Quick assessment:
   - Is it clear and well-described?
-  - Is it aligned with project vision? (See [design-principles.md](design-principles.md))
   - Does it duplicate an existing issue?
 
 **2. Initial Response**
@@ -47,7 +46,6 @@ Thanks for opening this issue! We'll review it and get back to you soon.
 **3. Decision Making**
 
 Ask yourself:
-- Does this align with our [design principles](design-principles.md)?
 - Is this something we want in the core project, or better as a plugin/extension?
 - Do we have the capacity to support this feature long-term?
 - Will this benefit most users, or just a specific use case?

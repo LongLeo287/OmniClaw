@@ -465,7 +465,6 @@ The default badge uses the `flat` style. If you need other styles, you can use t
     </a>
     ```
 
-  - Source file: Download [badge-flat-square.svg](./assets/badge-flat-square.svg)
 
 - `for-the-badge` <img src="./assets/badge-for-the-badge.svg" alt="for the badge" />
   - Markdown
@@ -482,7 +481,6 @@ The default badge uses the `flat` style. If you need other styles, you can use t
     </a>
     ```
 
-  - Source file: Download [badge-for-the-badge.svg](./assets/badge-for-the-badge.svg)
 
 ## License
 
@@ -606,7 +604,6 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
 
 默认为 `flat` 样式的徽标，如果需要其他样式，可以使用以下链接：
 
-- `flat-square` ![flat square](./assets/badge-flat-square.svg)
 
   - Markdown
 
@@ -626,7 +623,6 @@ The *Arknights: Endfield* IP and all associated copyrights are owned by [Shangha
 
     下载 [badge-flat-square.svg](./assets/badge-flat-square.svg)
 
-- `for-the-badge` ![for the badge](./assets/badge-for-the-badge.svg)
 
   - Markdown
 
@@ -1076,7 +1072,6 @@ The default badge uses the `flat` style. If you need other styles, you can use t
     </a>
     ```
 
-  - Source file: Download [badge-flat-square.svg](./assets/badge-flat-square.svg)
 
 - `for-the-badge` <img src="./assets/badge-for-the-badge.svg" alt="for the badge" />
   - Markdown
@@ -1195,7 +1190,6 @@ FILE: README.zh-CN.md
 
 默认为 `flat` 样式的徽标，如果需要其他样式，可以使用以下链接：
 
-- `flat-square` ![flat square](./assets/badge-flat-square.svg)
 
   - Markdown
 
@@ -1215,7 +1209,6 @@ FILE: README.zh-CN.md
 
     下载 [badge-flat-square.svg](./assets/badge-flat-square.svg)
 
-- `for-the-badge` ![for the badge](./assets/badge-for-the-badge.svg)
 
   - Markdown
 

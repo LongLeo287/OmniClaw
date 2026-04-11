@@ -228,7 +228,6 @@ Detailed exhaustive analysis of specific areas:
 
 <action>Add link to new deep-dive doc:
 
-- [{{target_name}} Deep-Dive](./deep-dive-{{sanitized_target_name}}.md) - Comprehensive analysis of {{target_description}} ({{file_count}} files, {{total_loc}} LOC) - Generated {{date}}
   </action>
 
   <action>Update index metadata:

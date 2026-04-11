@@ -268,7 +268,6 @@ cp -r ~/.cody-master/skills/* ~/.gemini/antigravity/skills/
 
 - 🌍 [Website](https://cody.todyle.com) — Tổng quan & bản demo
 - 📖 [Tài liệu](https://cody.todyle.com/docs) — Phân tích chuyên sâu toàn diện
-- 🛠️ [Tham khảo kỹ năng](skills/) — Xem toàn bộ 34 tệp SKILL.md
 - 📖 [Câu chuyện của chúng tôi](https://cody.todyle.com/story) — Tại sao công cụ này tồn tại
 
 ---

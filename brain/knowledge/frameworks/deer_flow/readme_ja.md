@@ -488,9 +488,6 @@ client.upload_files("thread-1", ["./report.pdf"])  # {"success": True, "files": 
 ## ドキュメント
 
 - [コントリビュートガイド](CONTRIBUTING.md) - 開発環境のセットアップとワークフロー
-- [設定ガイド](backend/docs/CONFIGURATION.md) - セットアップと設定の手順
-- [アーキテクチャ概要](backend/CLAUDE.md) - 技術的なアーキテクチャの詳細
-- [バックエンドアーキテクチャ](backend/README.md) - バックエンドアーキテクチャとAPIリファレンス
 
 ## ⚠️ セキュリティに関する注意
 

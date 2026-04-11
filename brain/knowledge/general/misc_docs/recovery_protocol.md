@@ -78,7 +78,7 @@ subagents/mq/BOOT_SYNC_*.md               â† boot sync messages
 
 ```
 telemetry/receipts/                        â† what was completed last session
-brain/brain/memory/corp_memory/daily_briefs/   â† what depts reported
+brain/brain/memory/system_memory/daily_briefs/   â† what depts reported
 ```
 
 ---

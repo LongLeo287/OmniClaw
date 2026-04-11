@@ -423,8 +423,8 @@ Every boot → fallback mechanism triggers → warning logged → CEO needs noti
 **Affected files:** `CLAUDE.md`, `.clauderules`
 
 Vietnamese/Unicode characters are garbled:
-- `→` displays as `Ã¢â€â€™`
-- `—` displays as `Ã¢â‚¬â€œ`
+- `→` displays as `€€™`
+- `—` displays as `‚¬€œ`
 - `✅` corrupts into multi-byte garbage
 
 **Cause:** Files saved with Windows-1252 or Latin-1 encoding, then re-read as UTF-8.

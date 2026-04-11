@@ -56,15 +56,10 @@ healed_at: 2026-04-02T20:29:06.906829
 | 26 | [⭐ firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 98688 | Dept 11 — Web | 🔥 The Web Data API for AI - Turn entire websites into LLM-re |
 | 27 | [⭐ mem0ai/mem0](https://github.com/mem0ai/mem0) | 51150 | Dept 01 — AI | Universal memory layer for AI Agents |
 | 28 | [⭐ firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 98692 | Dept 11 — Web | 🔥 The Web Data API for AI - Turn entire websites into LLM-re |
-| 29 | [⭐ local/ai-tagger](None) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/ai-tagger |
-| 30 | [⭐ local/anthropic-skills](None) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/anthropic-skills |
 | 31 | [⭐ local/assistant-context](https://github.com/huynamboz/assistant-context) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/assistant-context |
 | 32 | [⭐ local/carlrannaberg-claudekit](https://github.com/hesreallyhim/awesome-claude-code) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/carlrannaberg-claudek |
-| 33 | [⭐ local/cloud-sync](None) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/cloud-sync |
 | 34 | [⭐ local/cloudflare-skills](https://github.com/cloudflare/skills) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/cloudflare-skills |
 | 35 | [⭐ local/LobsterBoard](https://github.com/curbob/LobsterBoard) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/LobsterBoard |
-| 36 | [⭐ local/smart-search](None) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/smart-search |
-| 37 | [⭐ local/vercel-agent-skills](None) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/vercel-agent-skills |
 | 38 | [⭐ local/vercel-labs-skills](https://github.com/vercel-labs/agent-skills) | 0 | Dept 20 — CIV | Installed locally at ecosystem/plugins/vercel-labs-skills |
 
 ---

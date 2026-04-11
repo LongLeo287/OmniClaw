@@ -268,7 +268,6 @@ cp -r ~/.cody-master/skills/* ~/.gemini/antigravity/skills/
 
 - 🌍 [Веб-сайт](https://cody.todyle.com) — Обзор и демо
 - 📖 [Документация](https://cody.todyle.com/docs) — Полное погружение
-- 🛠️ [Справочник навыков](skills/) — Просмотреть все 34 файла SKILL.md
 - 📖 [Наша история](https://cody.todyle.com/story) — Почему это существует
 
 ---

@@ -1,59 +1,116 @@
+---
+id: activation-guide
+type: document
+owner: SYSTEM
+tags: [startup, runtime, public-bootstrap]
+---
+
 # OmniClaw Activation Guide
 
-This guide covers the current, shipped bootstrap flow for the `main` branch.
+This guide reflects the public OmniClaw runtime that actually exists in this repository.
 
-## 1. Install The Local CLI
+## Runtime Layers
+
+1. `omniclaw doctor`
+Checks workspace markers and required local dependencies.
+
+2. `omniclaw startup`
+Rebuilds registries/maps and runs the Python startup health checks.
+
+3. `omniclaw core`
+Starts the public core processes:
+- Bridge Gateway
+- Orchestrator watch loop
+
+## Recommended Startup Flow
 
 ```bash
-git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
-cd "OmniClaw"
-npm install -g .
+omniclaw doctor
+omniclaw startup
+omniclaw core
 ```
 
-If you do not want a global install on Windows, you can run:
+## Commands
 
-```bat
-omniclaw.bat doctor
-```
-
-## 2. Validate The Workspace
-
-Run the built-in doctor command first:
+### Doctor
 
 ```bash
 omniclaw doctor
 ```
 
-Useful environment variables:
+Verifies:
+- workspace root markers
+- required files
+- `git`, `node`, `python`
+- optional `docker`
 
-- `OMNICLAW_ROOT`: absolute path to the OmniClaw repository
-- `OMNICLAW_MODELS_ROOT`: absolute path to the shared models vault
-- `OMNICLAW_REMOTE_ROOT`: optional path to the future OmniClaw REMOTE project
-- `OMNICLAW_UI_ROOT`: optional path to the future OmniClaw UI project
-- `OMNICLAW_SYSTEM_PULSE_SCRIPT`: explicit path to the System Pulse daemon script if it lives outside the default repo layout
-
-## 3. Start Local Bridges Manually
-
-Examples:
+### Startup
 
 ```bash
-python ecosystem/bridges/launch_ollama.py
-python ecosystem/bridges/launch_mem0.py
-python ecosystem/bridges/launch_firecrawl.py
-python ecosystem/bridges/launch_lightrag.py
-python ecosystem/bridges/launch_model_ai.py --repair
+omniclaw startup
 ```
 
-Runtime policy:
+This command:
+- rebuilds tool and skill registries
+- regenerates ecosystem maps
+- runs the startup health/status refresh
 
-- Bridges should launch a real service or fail fast.
-- Dependency installation belongs in explicit repair/bootstrap flows.
-- Shared services such as `qdrant` should not be torn down by unrelated launchers.
+Optional:
 
-## 4. Known Scope
+```bash
+omniclaw startup --no-sync
+omniclaw startup --check-only
+```
 
-The current repository is the OmniClaw core workspace.
+### Core
 
-- `OmniClaw REMOTE` is not required for the local core to bootstrap.
-- `OmniClaw UI` is not required for the local core to bootstrap.
-- Bridges that target those future projects will fail clearly until those projects are provisioned.
+```bash
+omniclaw core
+```
+
+Starts:
+- bridge gateway on `127.0.0.1:8000`
+- orchestrator watch loop with a 30-second interval
+
+Optional:
+
+```bash
+omniclaw core --port 8001
+omniclaw core --interval 10
+omniclaw core --no-bridge
+omniclaw core --no-orchestrator
+```
+
+### Status
+
+```bash
+omniclaw status
+```
+
+Prints runtime-local status for:
+- bridge port
+- blackboard
+- system router
+- startup HUD
+- receipt store
+
+## Tool-Agnostic Usage
+
+The same startup flow is intended to be usable from:
+- Claude Code
+- Codex
+- Antigravity
+
+They should all rely on the same local commands rather than separate bootstrap paths.
+
+## Public Core Daemons
+
+For the public repository, the only startup-managed long-running processes with clear runtime evidence are:
+
+1. `Bridge Gateway`
+Implemented by `core/bridge/main.py`
+
+2. `Orchestrator Watch Loop`
+Implemented by `core/ops/omniclaw_orchestrator.py`
+
+Other daemon concepts may exist in rules or docs, but should not be treated as bootable public runtime processes unless they have an executable entrypoint in the repository.

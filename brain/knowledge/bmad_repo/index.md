@@ -15,8 +15,6 @@ BMad 方法（**B**reakthrough **M**ethod of **A**gile AI **D**riven Development
 
 理解 BMad 的最快方式是亲自尝试。
 
-- **[BMad 入门指南](getting-started.md)** — 安装并了解 BMad 的工作原理
-- **[工作流地图](workflow-map.md)** — BMM 阶段、工作流和上下文管理的可视化概览
 
 :::tip[只想直接上手？]
 安装 BMad 并运行 `bmad-help` — 它会根据您的项目和已安装的模块引导您完成所有操作。

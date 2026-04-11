@@ -32,9 +32,6 @@ This showcases the **Command → Agent → Skill** architecture pattern, where:
 
 | Component | Role | Example |
 |-----------|------|---------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](../claude_bp_repo/weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](../claude_bp_repo/weather-agent.md) with [`weather-fetcher`](../bmad_repo/SKILL.md) |
-| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../bmad_repo/SKILL.md) |
 
 ## Flow Diagram
 

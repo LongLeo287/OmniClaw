@@ -599,7 +599,6 @@ We publish regular updates of this repo in the [Altern Newsletter](http://newsle
 - [OpenAI Codex](https://platform.openai.com/docs/guides/code/) - An AI system by OpenAI that translates natural language to code.
 - [Ghostwriter](https://blog.replit.com/ai) - An AI-powered pair programmer by Replit.
 - [GoCodeo](https://www.gocodeo.com/)- An AI Coding & Testing Agent.
-- [Amazon Q Developer]([https://aws.amazon.com/codewhisperer/](https://aws.amazon.com/q/developer/build/?trk=fd6bb27a-13b0-4286-8269-c7b1cfaa29f0&sc_channel=el)) - AI coding assistant with extensions for IDEs such as VS Code and IntelliJ IDEA that provides both chat and agentic workflows.
 - [Amazon CodeWhisperer](https://aws.amazon.com/codewhisperer/) - Build applications faster with the ML-powered coding companion.
 - [tabnine](https://www.tabnine.com/) - Code faster with whole-line & full-function code completions.
 - [Stenography](https://stenography.dev/) - Automatic code documentation.
@@ -951,7 +950,6 @@ Raw repository assimilated by OA.
 ---
 
 ## ✅ Checklist
-- [ ] I have read the [Contribution Guidelines](CONTRIBUTING.md)
 - [ ] **Only one tool is modified in this PR**
 - [ ] All required fields (name, description, URL, altern.ai link if available) are provided
 - [ ] The tool link is **valid** and accessible

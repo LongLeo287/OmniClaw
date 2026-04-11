@@ -31,7 +31,7 @@ Lead all technical deliveries. Manage sprint cycles. Enforce code standards. Int
 
 **Key responsibilities:**
 1. Run Engineering dept cycle â€” read blackboard â†’ assign workers â†’ collect results
-2. Write daily_brief to `brain/memory/corp_memory/daily_briefs/backend-architect.md`
+2. Write daily_brief to `brain/memory/system_memory/daily_briefs/backend-architect.md`
 3. Update dept memory: `corp/memory/departments/Engineering.md`
 4. Escalate blockers to C-Suite. Propose to CEO via Strategy where needed.
 
@@ -64,7 +64,7 @@ Lead all technical deliveries. Manage sprint cycles. Enforce code standards. Int
 `
 ALLOWED:
   - read_file: brain/knowledge/, brain/memory/, corp/
-  - write_file: brain/corp/memory/departments/engineering.md, brain/memory/corp_memory/daily_briefs/engineering.md
+  - write_file: brain/corp/memory/departments/engineering.md, brain/memory/system_memory/daily_briefs/engineering.md
   - read_file: brain/corp/kpi_targets.yaml, brain/memory/blackboard.json
 
 BLOCKED (unless escalated):
@@ -82,12 +82,12 @@ BLOCKED (unless escalated):
 
 **Reads from:**
 - `brain/memory/blackboard.json` â€” task queue
-- `brain/memory/corp_memory/daily_briefs/` â€” other dept briefs
+- `brain/memory/system_memory/daily_briefs/` â€” other dept briefs
 - `corp/kpi_targets.yaml` â€” own KPI targets
 - `corp/memory/departments/Engineering.md` â€” dept memory
 
 **Writes to:**
-- `corp/memory/departments/engineering.md, brain/memory/corp_memory/daily_briefs/engineering.md`
+- `corp/memory/departments/engineering.md, brain/memory/system_memory/daily_briefs/engineering.md`
 
 ---
 

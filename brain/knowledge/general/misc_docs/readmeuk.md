@@ -302,7 +302,6 @@ npm run bug-report
 
 ## Підтримка
 
-- **Документація**: [docs/](docs/)
 - **Проблеми**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Репозиторій**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Автор**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

@@ -301,7 +301,6 @@ Katso [LICENSE](LICENSE)-tiedosto täydellisistä yksityiskohdista.
 
 ## Tuki
 
-- **Dokumentaatio**: [docs/](docs/)
 - **Ongelmat**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repositorio**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Tekijä**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

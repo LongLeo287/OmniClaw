@@ -150,7 +150,7 @@ OUTPUT: Respond with STRICTLY VALID JSON, no markdown fences, no extra text.
 JSON SCHEMA:
 {{
   "description_en": "2-3 sentences. What is this directory's purpose and responsibility within OmniClaw?",
-  "description_vn": "2-3 câu tiếng Việt. Mô tả chức năng và trách nhiệm của thư mục này trong OmniClaw.",
+  "description_vn": "2-3   .            trong OmniClaw.",
   "tags": ["tag1", "tag2", "tag3"],
   "mermaid_graph": "FULL mermaid graph string here"
 }}
@@ -235,7 +235,6 @@ forged_at: {now}
 
 ---
 
-## Chức Năng (Tiếng Việt)
 
 {desc_vn}
 

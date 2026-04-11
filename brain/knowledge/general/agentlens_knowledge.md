@@ -157,13 +157,6 @@ If documentation seems outdated or inconsistent with the code:
 
 | Module | Type | Files | Warnings | Hub |
 | ------ | ---- | ----- | -------- | --- |
-| [root](modules/root/MODULE.md) | root | 36 | 1 |  |
-| [Quotio/Models](modules/Quotio-Models/MODULE.md) | implicit | 15 | 2 |  |
-| [Quotio/Services/Antigravity](modules/Quotio-Services-Antigravity/MODULE.md) | implicit | 7 | - |  |
-| [Quotio/Services/QuotaFetchers](modules/Quotio-Services-QuotaFetchers/MODULE.md) | implicit | 9 | - |  |
-| [Quotio/Views/Components](modules/Quotio-Views-Components/MODULE.md) | implicit | 27 | - |  |
-| [Quotio/Views/Onboarding](modules/Quotio-Views-Onboarding/MODULE.md) | implicit | 6 | - |  |
-| [Quotio/Views/Screens](modules/Quotio-Views-Screens/MODULE.md) | implicit | 8 | - |  |
 
 ---
 
@@ -924,8 +917,6 @@ Generated automatically via Phoenix V3 Pipeline.
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
-- [memory.md](memory.md) - Warnings and TODOs
 
 ---
 
@@ -1090,13 +1081,9 @@ Symbol maps for 3 large files in this module.
 
 ## Child Modules
 
-- [Quotio-Services-Antigravity](../Quotio-Services-Antigravity/MODULE.md)
-- [Quotio-Services-QuotaFetchers](../Quotio-Services-QuotaFetchers/MODULE.md)
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
-- [memory.md](memory.md) - Warnings and TODOs
 
 ---
 
@@ -1323,7 +1310,6 @@ Symbol maps for 4 large files in this module.
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
 
 ---
 
@@ -1417,8 +1403,6 @@ Symbol maps for 1 large files in this module.
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
-- [memory.md](memory.md) - Warnings and TODOs
 
 ---
 
@@ -1505,7 +1489,6 @@ Symbol maps for 1 large files in this module.
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
 
 ---
 
@@ -1622,7 +1605,6 @@ _No import relationships detected._
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
 
 ---
 
@@ -1951,8 +1933,6 @@ Symbol maps for 6 large files in this module.
 
 ## Documentation
 
-- [outline.md](outline.md) - Symbol maps for large files
-- [memory.md](memory.md) - Warnings and TODOs
 
 ---
 

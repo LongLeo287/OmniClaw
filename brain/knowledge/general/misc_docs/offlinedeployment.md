@@ -314,7 +314,6 @@ mkdir -p ~/my_tiktoken_cache
 
 - [LightRAG GitHub Repository](https://github.com/HKUDS/LightRAG)
 - [Docker Deployment Guide](./DockerDeployment.md)
-- [API Documentation](../../../README.md)
 
 ## Support
 

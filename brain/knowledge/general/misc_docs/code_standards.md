@@ -379,5 +379,3 @@ Before submitting code for review, ensure:
 ---
 
 **See also:**
-- [Testing Guide](../bmad_repo/testing.md) - How to write tests
-- [Contributing Guide](contributing.md) - Overall contribution workflow

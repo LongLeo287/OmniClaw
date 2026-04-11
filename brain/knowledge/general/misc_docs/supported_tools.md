@@ -109,5 +109,3 @@ See [Commands](commands.md) for command behavior and [CLI](cli.md) for `init`/`u
 ## Related
 
 - [CLI Reference](cli.md) — Terminal commands
-- [Commands](commands.md) — Slash commands and skills
-- [Getting Started](getting-started.md) — First-time setup

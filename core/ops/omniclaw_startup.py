@@ -180,7 +180,7 @@ def check_blackboard() -> tuple[str, dict]:
     info(f"open_items = {open_items}")
 
     # Check escalations (v2.1 path)
-    esc_path = ROOT / "brain" / "memory" / "corp_memory" / "escalations.md"
+    esc_path = ROOT / "brain" / "memory" / "system_memory" / "escalations.md"
     if esc_path.exists():
         content = esc_path.read_text(encoding="utf-8", errors="ignore")
         l3_count = content.count("[L3]") + content.count("L3:")

@@ -100,7 +100,6 @@ references/
 
 - Link from SKILL.md with clear conditions
 - "See [patterns.md](patterns.md) for complex scenarios"
-- "For API integration: [api-integration.md](api-integration.md)"
 
 ### **assets/** (Optional)
 

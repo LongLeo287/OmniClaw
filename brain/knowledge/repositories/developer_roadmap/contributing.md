@@ -71,7 +71,6 @@ Please adhere to the following style when adding content to a topic:
 
 Visit the following resources to learn more:
 
-- [@type@Title/Description of Link](Link)
 ```
 
 `@type@` must be one of the following and describe the type of content you are adding:

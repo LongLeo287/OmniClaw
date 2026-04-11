@@ -302,7 +302,6 @@ Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 
 ## 지원
 
-- **문서**: [docs/](docs/)
 - **이슈**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **저장소**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **작성자**: Alex Newman ([@thedotmack](https://github.com/thedotmack))

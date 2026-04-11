@@ -33,7 +33,6 @@ No other agent, daemon, or officer may perform these actions. This is not a sugg
 
 ## Core Responsibilities
 
-### 1. The Registry (Sổ Cái Sinh Thái)
 OER owns and operates the single source of truth: `brain/registry/SKILL_REGISTRY.json`.
 Every Skill, Plugin, Agent, Workflow registered in OmniClaw must have an OER-issued ID before it can be used by the Orchestrator.
 

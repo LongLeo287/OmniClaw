@@ -79,7 +79,7 @@ Check B â€” COMPLIANCE: no policy violations?
 ## QA Escalation
 
 If QA finds a SYSTEMIC issue (same error in 3+ outputs from same agent):
-1. Write escalation to `brain/memory/corp_memory/escalations.md`
+1. Write escalation to `brain/memory/system_memory/escalations.md`
 2. Flag to Head of QA (security-engineer-agent)
 3. Head of QA escalates to CTO if systemic
 

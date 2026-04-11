@@ -10,99 +10,99 @@ applies_to: [Antigravity, all agents needing fast data retrieval]
 
 # Fast & Accurate Data Retrieval — Operating Protocol
 
-> Học từ: GitNexus (graph code intelligence) + LightRAG (graph-RAG framework)
-> Áp dụng: mỗi khi cần tìm dữ liệu trong OmniClaw Corp hoặc bất kỳ codebase nào
+> Learned from: GitNexus (graph code intelligence) + LightRAG (graph-RAG framework)
+> Applied: whenever querying data in OmniClaw or any codebase
 
 ---
 
 ## Core Shift in Thinking
 
-| ❌ Cách cũ (chậm, không chính xác) | ✅ Cách mới (nhanh, graph-native) |
+| ❌ Old Pattern (slow, inaccurate) | ✅ New Pattern (fast, graph-native) |
 |------------------------------------|----------------------------------|
-| "Tìm file chứa X" | "Tìm **flow/process** liên quan đến X" |
-| Đọc toàn bộ file để hiểu | **Context overview trước** (150 tokens), chi tiết sau |
-| Sửa rồi mới nghĩ ảnh hưởng | **Impact analysis trước**, rồi mới sửa |
-| Keyword grep trong 100+ files | Domain → CAPABILITY_MAP → jump thẳng |
-| Đọc mọi thứ để tìm pattern | Graph traversal: follow edges, không brute-force |
+| "Find files containing X" | "Find **flow/process** related to X" |
+| Read entire file to understand | **Context overview first** (150 tokens), details later |
+| Modify first, think of impact later | **Impact analysis first**, then modify |
+| Keyword grep traversing 100+ files | Domain → CAPABILITY_MAP → direct jump |
+| Read everything to find patterns | Graph traversal: follow edges, no brute-force |
 
 ---
 
-## Protocol 1 — TÌM FILE / THÔNG TIN (Find)
+## Protocol 1 — FIND FILES / INFO (Find)
 
 ```
-Step 1: Phân loại domain trước (30 giây)
-  → Là skill/plugin? → CAPABILITY_MAP.md section tương ứng
-  → Là workflow? → AI_OS_SYSTEM_MAP.md Section 4
-  → Là agent/dept? → AI_OS_SYSTEM_MAP.md Section 2 hoặc AGENTS.md
-  → Là shared state? → AI_OS_SYSTEM_MAP.md Section 8
+Step 1: Classify domain first (30s)
+  → Is it a skill/plugin? → CAPABILITY_MAP.md section corresponding
+  → Is it a workflow? → omniclaw_system_map.md Section 4
+  → Is it an agent/dept? → omniclaw_system_map.md Section 2 hoặc AGENTS.md
+  → Is it a shared state? → omniclaw_system_map.md Section 8
 
-Step 2: Narrowing (chỉ đọc nếu domain đã rõ)
-  → find_by_name với exact pattern (không dùng * nếu biết tên)
-  → grep_search với term cụ thể trong folder đúng (không search toàn repo)
-  → Không đọc file nếu chưa biết nó có liên quan
+Step 2: Narrowing (read only if domain is identified)
+  → find_by_name with exact pattern (avoid * if known)
+  → grep_search with specific term in target folder (not whole repo)
+  → Do not read files without establishing relevance
 
 Step 3: Confidence check
-  → Confidence cao (domain match rõ) → proceed
-  → Confidence thấp (domain mơ hồ) → readAI_OS_SYSTEM_MAP.md trước
-  → Không tìm thấy → query: CAPABILITY_MAP decision tree
+  → High confidence (clear domain match) → proceed
+  → Low confidence (ambiguous domain) → readomniclaw_system_map.md first
+  → Not found → query: CAPABILITY_MAP decision tree
 ```
 
 ---
 
-## Protocol 2 — HIỂU HỆ THỐNG / CODE (Explore)
+## Protocol 2 — UNDERSTAND SYSTEM / CODE (Explore)
 
 Học từ `gitnexus-exploring.md`:
 
 ```
-ĐÚNG THỨ TỰ:
-1. Context overview trước (~150 tokens)
-   → OmniClaw: đọc AI_OS_SYSTEM_MAP.md → biết toàn bộ cấu trúc
+STRICT ORDER:
+1. Context overview first (~150 tokens)
+   → OmniClaw: đọc omniclaw_system_map.md → understand whole structure
    → Codebase: gitnexus://repo/{name}/context → staleness + stats
 
-2. Query concept → tìm flows liên quan
+2. Query concept → find related flows
    → GitNexus: gitnexus_query({query: "authentication"})
-     → Trả về: processes grouped by execution flow
-   → OmniClaw: grep_search trong folder đúng, không scan everything
+     → Returns: processes grouped by execution flow
+   → OmniClaw: grep_search in correct folder, no blind scanning
 
-3. Context(symbol) → 360° view của 1 element
+3. Context(symbol) → 360° view of 1 element
    → GitNexus: gitnexus_context({name: "validateUser"})
-     → Callers (ai gọi nó), Callees (nó gọi ai), Processes (nó thuộc flow nào)
-   → OmniClaw: grep_search(symbol, SearchPath=OmniClaw root) → xem ai reference đến nó
+     → Callers (who calls it), Callees (who it calls), Processes (which flow it belongs to)
+   → OmniClaw: grep_search(symbol, SearchPath=OmniClaw root) → check references to it
 
-4. Full trace chỉ khi cần
+4. Full trace only when necessary
    → GitNexus: READ gitnexus://repo/{name}/process/{name}
-   → OmniClaw: view_file chỉ những file đã identify ở Step 3:
+   → OmniClaw: view_file only files identified in Step 3:
 ```
 
-**Key rule:** Process/flow trước, file sau. "Nó thuộc workflow nào?" trước "nó ở file nào?"
+**Key rule:** Process/flow first, file sau. "Nó thuộc workflow nào?" first "nó ở file nào?"
 
 ---
 
-## Protocol 3 — TRƯỚC KHI Changes: (Impact Analysis)
+## Protocol 3 — BEFORE Changes: (Impact Analysis)
 
 Học từ `gitnexus-impact-analysis.md`:
 
 ```
-PHẢI làm trước mọi Changes: quan trọng:
+PHẢI làm first mọi Changes: is important:
 
 gitnexus_impact({target: "X", direction: "upstream"})
 
 Depth interpretation:
-  d=1 → WILL BREAK   — direct callers/importers (phải fix ngay)
-  d=2 → LIKELY AFFECTED — indirect deps (phải test)
+  d=1 → WILL BREAK   — direct callers/importers (must fix immediately)
+  d=2 → LIKELY AFFECTED — indirect deps (must test thoroughly)
   d=3 → MAY NEED TESTING — transitive effects (monitor)
 
 Risk levels:
   <5 symbols, <2 processes     → LOW     → safe to proceed
   5-15 symbols, 2-5 processes  → MEDIUM  → careful, test after
-  >15 symbols hoặc many flows  → HIGH    → plan, announce trước
+  >15 symbols or many flows  → HIGH    → plan, announce first
   Core path (auth, CEO data)   → CRITICAL → CEO approval required
 
-Áp dụng trong OmniClaw:
-  Trước khi sửa org_chart.yaml → ai đọc nó? (d=1: tất cả 21 depts)
-  Trước khi sửa blackboard.json → ai writes/reads? (d=1: mọi agent)
-  Trước khi xoá plugin → gitnexus_impact hoặc grep_search(plugin_id, SearchPath=OmniClaw)
-  Trước khi sửa SKILL_REGISTRY.json → ai load skill này? (accessible_by[])
+Applied in OmniClaw:
+  Before changing _DIR_IDENTITY.md → who reads it? (d=1: all 21 depts)
+  Before changing blackboard.json → who writes/reads? (d=1: all agents)
+  Before deleting plugin → gitnexus_impact hoặc grep_search(plugin_id, SearchPath=OmniClaw)
+  Before changing SKILL_REGISTRY.json → who loads this skill? (accessible_by[])
 ```
 
 ---
@@ -112,7 +112,7 @@ Risk levels:
 Học từ `gitnexus-debugging.md`:
 
 ```
-Triệu chứng → Flow → Symbol → Root cause
+Symptom → Flow → Symbol → Root cause
 
 1. Identify symptom (error message, wrong output, missing data)
 2. Query flow: "which workflow/process involves this symptom?"
@@ -139,11 +139,11 @@ Pattern by symptom type:
 Học từ `lightrag_rag_framework.md`:
 
 ```
-Khi có LightRAG running (localhost:5055):
+When LightRAG is running (OBD Gateway):
 
-5 modes (chọn đúng mode = tiết kiệm cost + tăng accuracy):
+5 modes (select correct mode = save cost + increase accuracy):
 
-local   → Biết chính xác entity: "what does knowledge_navigator do?"
+local   → Know exactly entity: "what does knowledge_navigator do?"
 global  → Summary/pattern: "what are common patterns across all agents?"
 hybrid  → local + global combined
 naive   → Quick vector search only (fast, cheap, less accurate)
@@ -151,13 +151,13 @@ mix     → BEST for unknown queries: graph + vector + rerank → 95%+ accuracy
 
 Sử dụng:
   Câu hỏi về entity cụ thể → local (cheapest)
-  Câu hỏi tổng quan → global
-  Câu hỏi không biết category → mix (tốn hơn nhưng chính xác nhất)
-  Always enable_rerank=True khi accuracy quan trọng
+  Câu hỏi overview → global
+  Câu hỏi do not know category → mix (costs more but highly accurate)
+  Always enable_rerank=True khi accuracy is important
 
 Entity graph thinking:
-  Không nghĩ: "text chunk nào nói về X?"
-  Nghĩ: "entity X có relationship gì với Y và Z?"
+  Do not think: "text chunk nào talking about X?"
+  Think: "entity X has what relationship with Y và Z?"
   → Extract: entities + relationships từ content
   → Query: traverse graph edges, không scan all chunks
 ```
@@ -169,15 +169,15 @@ Entity graph thinking:
 Học từ `gitnexus-guide.md` và LightRAG Neo4j integration:
 
 ```cypher
--- Skill được dùng bởi agents nào?
+-- Which agents use the skill?
 MATCH (a:Agent)-[:USES]->(s:Skill {id: "security_shield"})
 RETURN a.id, a.dept
 
--- Flow nào gọi function này?
+-- Which flow calls this function?
 MATCH (f:Function {name: "validate_user"})<-[:CALLS]-(caller)
 RETURN caller.name, caller.filePath
 
--- Chain đầy đủ từ A đến B
+-- Full chain from A to B
 MATCH path = (a)-[:CALLS*1..3]->(b:Function {name: "processPayment"})
 RETURN [n IN nodes(path) | n.name] AS call_chain
 
@@ -187,24 +187,24 @@ RETURN dep.name, length(path) AS depth
 ORDER BY depth
 ```
 
-**Dùng cypher khi:** Pattern matching thông thường không đủ chính xác. Raw traversal = deterministic result.
+**Use Cypher when:** Pattern matching normally lacks precision. Raw traversal = deterministic result.
 
 ---
 
 ## Summary — Decision Tree
 
 ```
-CẦN THÔNG TIN GÌ?
+WHAT INFO IS NEEDED?
     │
-    ├── Tìm skill/plugin/tool → CAPABILITY_MAP.md (domain section)
+    ├── Find skill/plugin/tool → CAPABILITY_MAP.md (domain section)
     │
-    ├── Hiểu hệ thống → AI_OS_SYSTEM_MAP.md (đọc section phù hợp)
+    ├── Understand system → omniclaw_system_map.md (read relevant section)
     │
-    ├── Tìm file cụ thể → find_by_name (exact) hoặc grep_search (keyword trong folder đúng)
+    ├── Find specific file → find_by_name (exact) hoặc grep_search (keyword trong folder đúng)
     │
-    ├── Hiểu code/workflow → Process first: "belongs to which flow?" → then trace
+    ├── Understand code/workflow → Process first: "belongs to which flow?" → then trace
     │
-    ├── Trước khi sửa → Impact analysis: d=1 WHO BREAKS, d=2 LIKELY, d=3 MONITOR
+    ├── Before modifying → Impact analysis: d=1 WHO BREAKS, d=2 LIKELY, d=3 MONITOR
     │
     ├── Debug → Symptom → Flow → Context(symbol) → Callees → Root cause
     │

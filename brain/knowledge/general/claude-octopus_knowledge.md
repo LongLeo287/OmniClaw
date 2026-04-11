@@ -2468,14 +2468,6 @@ See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for details.
 
 ## Documentation
 
-- [Documentation Guide](docs/README.md) — Start here
-- [Command Reference](docs/COMMAND-REFERENCE.md) — Commands, triggers, and provider indicators
-- [Feature Gap Analysis](docs/FEATURE-GAP.md) — CC feature adoption tracker
-- [Architecture](docs/ARCHITECTURE.md) — Provider flow and execution model
-- [Plugin Architecture](docs/PLUGIN-ARCHITECTURE.md) — Internal plugin structure
-- [Agents & Personas](docs/AGENTS.md) — All 32 personas
-- [CLI Reference](docs/CLI-REFERENCE.md) — Direct CLI usage, debug mode, async, and tmux
-- [Changelog](CHANGELOG.md)
 
 ---
 
@@ -18569,9 +18561,6 @@ Octopus orchestrates — it doesn't replace domain knowledge. If three models co
 ## Learn More
 
 - [**Full README**](../README.md) — feature deep-dive, provider grid, architecture, star history
-- [**Command Reference**](../docs/COMMAND-REFERENCE.md) — all 47 commands with triggers
-- [**Persona Guide**](../docs/AGENTS.md) — 32 specialized agents
-- [**Changelog**](../CHANGELOG.md) — release history
 - [**Issues**](https://github.com/nyldn/claude-octopus/issues) — bugs and feature requests
 
 
@@ -29532,15 +29521,9 @@ FILE: docs\README.md
 
 ## Core References
 
-- [COMMAND-REFERENCE.md](./COMMAND-REFERENCE.md) — All 47 slash commands with natural-language triggers
-- [ARCHITECTURE.md](./ARCHITECTURE.md) — Provider model mapping, 7-provider architecture, execution flow
-- [AGENTS.md](./AGENTS.md) — 32 persona agents and 10 native agents
 
 ## Setup and Operations
 
-- [IDE-INTEGRATION.md](./IDE-INTEGRATION.md) — MCP server setup for VS Code, Cursor, and other IDEs
-- [SCHEDULER.md](./SCHEDULER.md) — Scheduled jobs and daemon management
-- [KNOWLEDGE-WORKERS.md](./KNOWLEDGE-WORKERS.md) — Research and strategy-oriented personas
 
 ## Provider Configuration
 
@@ -52880,8 +52863,6 @@ ${results.features ? `- [Feature Inventory](./20_product/feature-inventory.md)` 
 ${results.prd ? `- [PRD](./20_product/PRD.md)` : ''}
 
 ### Evidence & Quality
-- [Quality Report](./90_evidence/quality-report.md)
-- [Detection Report](./00_intent/detection-report.md)
 ${results.disagreements ? `- [Multi-AI Disagreements](./90_evidence/disagreements.md)` : ''}
 
 ## Next Steps
@@ -54579,7 +54560,6 @@ Then you'll see results from each provider marked with their indicator (🔴 �
 - `/octo:debate` - Structured four-way debates (better for adversarial analysis)
 - `/octo:research` - Research workflow (auto-triggers multi-provider for research)
 - `/octo:review` - Review workflow (auto-triggers multi-provider for validation)
-- [TRIGGERS.md](../../docs/TRIGGERS.md) - Full guide to what triggers multi-provider mode
 
 ```
 
@@ -90886,8 +90866,6 @@ ${results.features ? `- [Feature Inventory](./20_product/feature-inventory.md)` 
 ${results.prd ? `- [PRD](./20_product/PRD.md)` : ''}
 
 ### Evidence & Quality
-- [Quality Report](./90_evidence/quality-report.md)
-- [Detection Report](./00_intent/detection-report.md)
 ${results.disagreements ? `- [Multi-AI Disagreements](./90_evidence/disagreements.md)` : ''}
 
 ## Next Steps
@@ -92559,7 +92537,6 @@ Then you'll see results from each provider marked with their indicator (🔴 �
 - `/octo:debate` - Structured four-way debates (better for adversarial analysis)
 - `/octo:research` - Research workflow (auto-triggers multi-provider for research)
 - `/octo:review` - Review workflow (auto-triggers multi-provider for validation)
-- [TRIGGERS.md](../../docs/TRIGGERS.md) - Full guide to what triggers multi-provider mode
 
 ```
 
@@ -97577,9 +97554,6 @@ What phase are you in?
 ## Quick Links
 
 - **README:** [../README.md](../README.md)
-- **Decision Tree:** [agent-decision-tree.md](agent-decision-tree.md)
-- **Monthly Review:** [monthly-agent-review.md](monthly-agent-review.md)
-- **Personas:** [../agents/personas/](../agents/personas/)
 
 ---
 
@@ -98051,9 +98025,7 @@ The plugin wraps these commands and provides:
 
 ## See Also
 
-- **[Command and Usage Reference](./COMMAND-REFERENCE.md)** - Commands, triggers, and provider indicators
 - **[Documentation Guide](./README.md)** - Docs landing page
-- **[Command Reference](./COMMAND-REFERENCE.md)** - All available commands
 
 ```
 
@@ -99536,7 +99508,6 @@ Instead of slash commands, you can use natural language with the `octo` prefix:
 ## See Also
 
 - **[Documentation Guide](./README.md)** — Pick the right doc quickly
-- **[CLI Reference](./CLI-REFERENCE.md)** — Direct CLI usage (advanced)
 - **[README](../README.md)** — Main documentation
 
 ```
@@ -100371,9 +100342,7 @@ A: Yes! Use the `--ci` flag. This is useful for automatically generating release
 
 ## Quick Links
 
-- **Agent Catalog:** [AGENTS.md](AGENTS.md)
 - **Main README:** [../README.md](../README.md)
-- **Visual Decision Trees:** [agent-decision-tree.md](agent-decision-tree.md)
 - **Analytics Dashboard:** `orchestrate.sh analytics`
 
 ---
@@ -100443,15 +100412,9 @@ For privacy questions, open an issue at [github.com/nyldn/claude-octopus/issues]
 
 ## Core References
 
-- [COMMAND-REFERENCE.md](./COMMAND-REFERENCE.md) — All 47 slash commands with natural-language triggers
-- [ARCHITECTURE.md](./ARCHITECTURE.md) — Provider model mapping, 7-provider architecture, execution flow
-- [AGENTS.md](./AGENTS.md) — 32 persona agents and 10 native agents
 
 ## Setup and Operations
 
-- [IDE-INTEGRATION.md](./IDE-INTEGRATION.md) — MCP server setup for VS Code, Cursor, and other IDEs
-- [SCHEDULER.md](./SCHEDULER.md) — Scheduled jobs and daemon management
-- [KNOWLEDGE-WORKERS.md](./KNOWLEDGE-WORKERS.md) — Research and strategy-oriented personas
 
 ## Provider Configuration
 

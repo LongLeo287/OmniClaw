@@ -220,7 +220,6 @@ These startup-only environment variables are set in your shell before launching 
 | `CLAUDE_CODE_TMPDIR` | Override temp directory for internal files |
 | `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1` | Enable additional directory CLAUDE.md loading |
 | `DISABLE_AUTOUPDATER=1` | Disable auto-updates |
-| `CLAUDE_CODE_EFFORT_LEVEL` | Control thinking depth — see [Settings Reference](./claude-settings.md#environment-variables-via-env) |
 | `USE_BUILTIN_RIPGREP=0` | Use system ripgrep instead of built-in (Alpine Linux) |
 | `CLAUDE_CODE_SIMPLE` | Enable simple mode (Bash + Edit tools only) |
 | `CLAUDE_BASH_NO_LOGIN=1` | Skip login shell for BashTool |

@@ -706,7 +706,6 @@ When a document SHOULD be generated but wasn't (due to quick scan, missing data,
 
 - Use EXACTLY this marker: _(To be generated)_
 - Place it at the end of the markdown link line
-- Example: - [API Contracts - Server](./api-contracts-server.md) _(To be generated)_
 - This allows Step 11 to detect and offer to complete these items
 - ALWAYS use this exact format for consistency and automated detection
   </critical>
@@ -764,11 +763,6 @@ When a document SHOULD be generated but wasn't (due to quick scan, missing data,
 
 ### Generated Documentation
 
-- [Project Overview](./project-overview.md)
-- [Architecture](./architecture{{#if multi-part}}-{part\*id}{{/if}}.md){{#unless architecture_file_exists}} (To be generated) {{/unless}}
-- [Source Tree Analysis](./source-tree-analysis.md)
-- [Component Inventory](./component-inventory{{#if multi-part}}-{part\*id}{{/if}}.md){{#unless component_inventory_exists}} (To be generated) {{/unless}}
-- [Development Guide](./development-guide{{#if multi-part}}-{part\*id}{{/if}}.md){{#unless dev_guide_exists}} (To be generated) {{/unless}}
   {{#if deployment_found}}- [Deployment Guide](./deployment-guide.md){{#unless deployment_guide_exists}} (To be generated) {{/unless}}{{/if}}
   {{#if contribution_found}}- [Contribution Guide](./contribution-guide.md){{/if}}
   {{#if api_documented}}- [API Contracts](./api-contracts{{#if multi-part}}-{part_id}{{/if}}.md){{#unless api_contracts_exists}} (To be generated) {{/unless}}{{/if}}
@@ -779,7 +773,6 @@ When a document SHOULD be generated but wasn't (due to quick scan, missing data,
 
 {{#each existing_docs}}
 
-- [{{title}}]({{relative_path}}) - {{description}}
   {{/each}}
 
 ### Getting Started

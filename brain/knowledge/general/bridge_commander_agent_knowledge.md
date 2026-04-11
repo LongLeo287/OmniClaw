@@ -211,8 +211,6 @@ requires_ceo_approval_for:
 **Assigned Department**: Dept 3 (Gateway_Border_Security)
 
 ## 2. Linked Toolkit
-- **Primary Core Skill**: [create-command.md](../../../skills/create-command.md)
-- **Description**: Domain Capability File linked via OA Academy. Refer to the specific instructions within [create-command.md](../../../skills/create-command.md).
 
 ## 3. Standard OS Tooling Access
 - Local File Read/Write access (Constrained to Workspace)

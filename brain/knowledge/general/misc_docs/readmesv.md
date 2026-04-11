@@ -302,7 +302,6 @@ Se [LICENSE](LICENSE)-filen för fullständiga detaljer.
 
 ## Support
 
-- **Dokumentation**: [docs/](docs/)
 - **Problem**: [GitHub Issues](https://github.com/thedotmack/claude-mem/issues)
 - **Repository**: [github.com/thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
 - **Författare**: Alex Newman ([@thedotmack](https://github.com/thedotmack))
