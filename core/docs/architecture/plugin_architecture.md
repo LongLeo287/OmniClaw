@@ -29,6 +29,19 @@ These are out-of-process servers using the **Model Context Protocol (MCP)**.
 - OmniClaw acts as an MCP Host and can connect to off-site tools (e.g., Supabase MCP, Google Drive MCP).
 - Because they run on the OS machine but are written by outside parties, they are kept entirely sandboxed. The AI can only invoke the schema they expose.
 
+---
+
+## 🛑 The Air-Gapped Docker Mandate (Zero-Trust Protocol)
+
+Starting in **V5.0**, the directory `ecosystem/plugins/` acts **exclusively as passive "Cold Storage"**. 
+It only stores reference materials, metadata, and raw Python code. 
+
+**No background servers are permitted to auto-run** (e.g. `docker-compose up -d` running globally is strictly banned) to preserve RAM and eliminate idle vulnerabilities.
+Instead, OmniClaw forces an **"Opt-In / Air-Gapped"** mechanism:
+1. **Harbor Bridging:** If an external plugin requires Docker (like `Firecrawl` or `Mem0`), it MUST be tethered to a Bridge script in `ecosystem/bridges/` (e.g., `launch_firecrawl.py`).
+2. **On-Demand Power:** Only when the user or OBD Harbor invokes the Bridge script will it literally call `docker compose up <service>`.
+3. **Guillotine Cleanup:** When the Bridge is deactivated, it automatically triggers `docker compose stop <service>`, terminating the container and eliminating the threat surface.
+
 ## Building a New Plugin (The Strict Handoff)
 To build a skill or plugin for OmniClaw, a strict 3-step Isolation Handoff must be observed to prevent overlapping authority:
 1. **Quarantine:** The raw plugin code (created by R&D or OIW) must be placed in `storage/vault/quarantine/`.

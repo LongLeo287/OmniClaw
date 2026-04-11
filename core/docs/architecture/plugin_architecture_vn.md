@@ -28,6 +28,19 @@ Các server ngoài tiến trình sử dụng **Model Context Protocol (MCP)**.
 - OmniClaw hoạt động như MCP Host và có thể kết nối với công cụ bên ngoài (vd: Supabase MCP, Google Drive MCP).
 - Vì chạy trên máy OS nhưng được viết bởi bên thứ ba, chúng bị giữ trong sandbox hoàn toàn. AI chỉ có thể gọi schema mà chúng phơi bày.
 
+---
+
+## 🛑 Đạo Luật Docker Khép Kín (Zero-Trust Air-Gapped Protocol)
+
+Bắt đầu từ **V5.0**, thư mục `ecosystem/plugins/` chỉ đóng vai trò là **"Kho Lạnh" (Cold Storage) bị động**. 
+Nó chỉ là nơi chứa tư liệu tham khảo, metadata và code thô.
+
+**Bất kỳ Server chạy ngầm nào cũng bị nghiêm cấm cắm điện liên tục** (vd: chạy lệnh `docker-compose up -d` thả nổi bị cấm tiệt) nhằm tiết kiệm RAM và khóa chặt các cổng rủi ro.
+Thay vào đó, OmniClaw vận hành theo cơ chế **"Sổ lồng - Rút cầu" (Opt-In / Air-Gapped)**:
+1. **Cầu nối Harbor:** Nếu Plugin ngoại lai cần chạy Docker (như `Firecrawl` hay `Mem0`), nó BẮT BUỘC bị xích vào một file Bridge bên trong `ecosystem/bridges/` (vd: `launch_firecrawl.py`).
+2. **Cấp điện bằng tay:** Chỉ khi nào Hệ thống (hoặc Harbor) kích hoạt mở cái cầu đó lên, thì file Bridge mới được phép gọi lệnh `docker compose up <service>`.
+3. **Mệnh lệnh Máy chém:** Ngay khi tắt cầu nối, Bridge sẽ tự động gọi `docker compose stop <service>` để tháo điện, tiêu diệt toàn bộ Container và xóa đi hiểm họa rò rỉ bộ nhớ.
+
 ## Xây Dựng Plugin Mới (Quy Trình Bàn Giao Nghiêm Ngặt)
 Để xây dựng skill hoặc plugin cho OmniClaw, phải tuân thủ quy trình Bàn Giao Cô Lập 3 bước:
 1. **Cách Ly:** Code plugin thô (do R&D hoặc OIW tạo) phải được đặt vào `storage/vault/quarantine/`.
