@@ -6,14 +6,14 @@ namespace: ecosystem.bridges.template
 
 # 🌉 Bridge Construction Protocol
 
-Tài liệu hướng dẫn quy chuẩn chế tạo "Cổng gác" (Bridge) cho hệ sinh thái OmniClaw. 
+Standardized construction protocol for creating "Bridges" in the OmniClaw ecosystem.
 
-Bridges là tầng kiểm soát vòng ngoài, đại diện cho **OBD Harbor** để khởi động và quản lý các vệ tinh (Satellites/Skills/Servers) trong chế độ cô lập.
+Bridges act as the perimeter control layer, representing **OBD Harbor** to launch and manage satellites (Satellites/Skills/Servers) in isolated mode.
 
-### 📜 Tiêu chuẩn bắt buộc của 1 Bridge:
-1. **Lấy tham số từ mảng lệnh:** Port phải được nhận tự động thông qua `sys.argv[1]` do OBD Harbor truyền xuống.
-2. **Kế thừa lệnh tắt:** Bridge phải chặn `KeyboardInterrupt` để dọn dẹp (cleanup) tiến trình con một cách an toàn. Tránh để lại Zombie Process.
-3. **Cơ chế mô phỏng Port (Port Spoofing/Mocking):** Nếu ứng dụng mục tiêu chỉ chạy ngầm (như `system_pulse.py` hay desktop app) và không cắm một Socket nào, Bridge phải tự cắm một Socket ảo trên port được giao để hệ thống Ping Heartbeat của OBD Harbor có thể quét và ghi nhận trạng thái `ONLINE`.
-4. **Không tùy tiện mở 0.0.0.0:** Nếu cấu hình lệnh, mặc định cờ `--host` hoặc bind ip phải là `127.0.0.1`. Chỉ thay đổi khi có lệnh tuyệt đối.
+### 📜 Mandatory Bridge Standards:
+1. **Dynamic Parameter Acquisition:** The Port must be dynamically retrieved via `sys.argv[1]` as delegated by OBD Harbor.
+2. **Graceful Shutdown Inheritance:** The Bridge must intercept `KeyboardInterrupt` to safely clean up its child processes. Avoid leaving Zombie Processes.
+3. **Port Spoofing/Mocking Mechanism:** If the target application only runs in the background (e.g., `system_pulse.py` or a desktop app) without opening a network Socket, the Bridge MUST manually bind a dummy Socket on the assigned port so OBD Harbor's Heartbeat Ping can scan and register the `ONLINE` status.
+4. **No Unauthorized 0.0.0.0:** By default, if configuring host flags, always enforce `--host 127.0.0.1`. Only change to `0.0.0.0` if strictly authorized by overriding network policies.
 
-*Tham khảo `bridgetemplate.py` để sao chép bộ khung khởi tạo chuẩn.*
+*Reference `bridgetemplate.py` to copy the standard initialization boilerplate.*
