@@ -4,15 +4,16 @@ type: regional_map
 zone: ecosystem/tools
 ---
 
-# 🗺️ _REGIONAL_MAP — D:\OmniClaw\ecosystem\tools
+# _REGIONAL_MAP — $OMNICLAW_ROOT\ecosystem\tools
 
-## Integrated Tools (4)
+## Integrated Tools (5)
 | ID | Type | Validated |
 |---|---|---|
-| `crewai_gitingest` | Registered | ✅ |
-| `crewai_lightrag` | Registered | ✅ |
-| `heuristic_survival` | Registered | ✅ |
-| `mcp_notebooklm` | Registered | ✅ |
+| `crewai_gitingest` | Registered | OK |
+| `crewai_lightrag` | Registered | OK |
+| `heuristic_survival` | Registered | OK |
+| `mcp_notebooklm` | Registered | OK |
+| `ui_ux_pro_max` | Registered | OK |
 
 ## System Files
 - `TOOL_SPEC.md`

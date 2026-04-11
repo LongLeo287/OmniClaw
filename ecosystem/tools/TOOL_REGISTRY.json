@@ -94,5 +94,32 @@
             "google_workspace",
             "tools"
         ]
+    },
+    "ui_ux_pro_max": {
+        "id": "ui_ux_pro_max",
+        "name": "UI/UX Pro Max Toolkit",
+        "integration_type": "python_script",
+        "accessible_by": [
+            "Orchestrator",
+            "Frontend Agents"
+        ],
+        "exposed_functions": [
+            {
+                "name": "core.py",
+                "description": "Extract design patterns from reference UIs and generate structured component specifications."
+            },
+            {
+                "name": "search.py",
+                "description": "Search the curated data directory for UI components and returns top matching patterns."
+            }
+        ],
+        "tags": [
+            "ui",
+            "ux",
+            "design-system",
+            "pattern-extraction",
+            "data-driven"
+        ],
+        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\ui_ux_pro_max"
     }
 }

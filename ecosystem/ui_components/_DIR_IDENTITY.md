@@ -1,12 +1,18 @@
 ---
 id: ecosystem-ui_components
-name: Ui Components
+name: Frontend UI Components Storage
 path: ecosystem/ui_components
 type: directory_identity
-owner: OER
-created_by: OMA-v2.1
+owner: OMA
+created_by: OMA-v5.0
 ---
 
-# Ui Components
-Storage area for 'ui_components' domain.
-> Auto-generated identity tag by OMA v2.1.
+# UI Components Assembly Line
+
+This directory strictly contains raw, passive `.tsx`, `.jsx`, and `.css` visual assets used by Agents to bootstrap frontend applications.
+
+**Zero-Trust Rule Enforcement:**
+- No active Python scripts are allowed here (relocate natively to `ecosystem/tools`).
+- No passive prompt/guidelines are allowed here (relocate to `ecosystem/skills/frontend/`).
+
+*(Auto-generated directory cleanse by OMA V5.0)*
