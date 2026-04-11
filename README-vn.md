@@ -160,13 +160,14 @@ cd "OmniClaw"
 npm install -g .
 
 # 3. Kiểm tra workspace trước khi chạy bridge hoặc daemon
+# Hãy chạy lệnh này khi đang đứng trong repo OmniClaw, hoặc set OMNICLAW_ROOT trước.
 omniclaw doctor
 
 # 4. Xem các root path đã resolve nếu cần
 omniclaw paths
 ```
 
-*Mẹo cho Windows: Repository hiện có sẵn file `omniclaw.bat` ở thư mục gốc. Bạn có thể nhấp đúp hoặc chạy `omniclaw.bat doctor` để dùng cùng CLI chẩn đoán mà không cần dashboard riêng.*
+*Mẹo cho Windows: Repository hiện có sẵn file `omniclaw.bat` ở thư mục gốc. Bạn có thể nhấp đúp hoặc chạy `omniclaw.bat doctor`; script này sẽ tự gắn `OMNICLAW_ROOT` vào clone hiện tại rồi chạy CLI chẩn đoán.*
 
 ---
 
@@ -175,6 +176,7 @@ omniclaw paths
 Để hiểu sâu hơn về kiến trúc hiện đang có thật trên `main`, hãy tham khảo các bản đồ và thư mục đã được kiểm chứng trong repo:
 
 - ⚖️ [**Quy Tắc Lõi Bộ Não Của Kiến Trúc V5.0**](brain/rules/_DIR_IDENTITY.md) — Bộ hiến pháp cốt lõi chi phối hệ điều hành.
+- 🚦 [**Hướng Dẫn Kích Hoạt**](core/docs/usage_guides/activation_guide.md) — Luồng bootstrap, lệnh chẩn đoán, biến môi trường, và ví dụ bật bridge thủ công.
 - 🗺️ [**Bản Đồ Tổng Quan Ecosystem**](ecosystem/_REGIONAL_MAP.md) — Chỉ mục cấp cao của toàn bộ các domain trong `ecosystem`.
 - 🌁 [**Cầu Nối Máy Chủ Nội Bộ**](ecosystem/bridges/) — Launcher và topology compose cho runtime cục bộ.
 - 🗃️ [**Bản Đồ Kho Kỹ Năng**](ecosystem/skills/_REGIONAL_MAP.md) — Bản đồ registry-backed của kho skill hiện tại.

@@ -7,7 +7,7 @@ total_files: 12
 total_subdirs: 0
 ---
 
-# _REGIONAL_MAP — D:\OmniClaw\ecosystem\bridges
+# _REGIONAL_MAP — $OMNICLAW_ROOT\ecosystem\bridges
 
 ## Files (12 Python Bridges)
 

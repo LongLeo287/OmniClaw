@@ -6,7 +6,7 @@ generated_at: 2026-04-11
 status: v5.0_consolidated
 ---
 
-# 🗺️ _REGIONAL_MAP — D:\OmniClaw\ecosystem\workforce
+# 🗺️ _REGIONAL_MAP — $OMNICLAW_ROOT\ecosystem\workforce
 
 > Architecture consolidated: Agents & Subagents are nested inside Departments.
 

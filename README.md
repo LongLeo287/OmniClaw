@@ -160,13 +160,14 @@ cd "OmniClaw"
 npm install -g .
 
 # 3. Verify the workspace before launching bridges or daemons
+# Run this inside the OmniClaw repository, or set OMNICLAW_ROOT first.
 omniclaw doctor
 
 # 4. Inspect resolved project roots if needed
 omniclaw paths
 ```
 
-*Windows Tip: The repository now includes a local `omniclaw.bat` wrapper in the root. Double-clicking it, or running `omniclaw.bat doctor`, executes the same diagnostics CLI without requiring a separate dashboard project.*
+*Windows Tip: The repository now includes a local `omniclaw.bat` wrapper in the root. Double-clicking it, or running `omniclaw.bat doctor`, pins `OMNICLAW_ROOT` to the current clone and executes the same diagnostics CLI without requiring a separate dashboard project.*
 
 ---
 
@@ -175,6 +176,7 @@ omniclaw paths
 For a deeper understanding of the system's architecture, running services, and loaded capabilities, consult the checked-in maps that currently exist on `main`:
 
 - ⚖️ [**V5.0 Architectural Brain Rules**](brain/rules/_DIR_IDENTITY.md) — Core constitution and governance mapping for the operating system.
+- 🚦 [**Activation Guide**](core/docs/usage_guides/activation_guide.md) — Bootstrap, diagnostics, environment variables, and manual bridge startup examples.
 - 🗺️ [**Ecosystem Master Map**](ecosystem/_REGIONAL_MAP.md) — Top-level index of the shipped `ecosystem` domains.
 - 🌁 [**Local Server Bridges**](ecosystem/bridges/) — Launchers and compose topology for local runtime services.
 - 🗃️ [**Skills Directory Map**](ecosystem/skills/_REGIONAL_MAP.md) — Current registry-backed map of the skills warehouse.

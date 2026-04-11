@@ -5,7 +5,7 @@ zone: ecosystem/ui_components
 status: clean_foundation
 ---
 
-# 🗺️ _REGIONAL_MAP — D:\OmniClaw\ecosystem\ui_components
+# 🗺️ _REGIONAL_MAP — $OMNICLAW_ROOT\ecosystem\ui_components
 
 ## 🚧 Staging Area
 
