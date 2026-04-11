@@ -26,7 +26,7 @@ require (
 	github.com/sony/gobreaker v0.0.0-20180905101324-b2a34562d02c // indirect
 	github.com/streadway/handy v0.0.0-20160402200321-f450267a206e // indirect
 	github.com/stretchr/testify v1.2.2 // indirect
-	golang.org/x/net v0.0.0-20180826012351-8a410e7b638d // indirect
+	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sync v0.0.0-20180314180146-1d60e4601c6f // indirect
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce
