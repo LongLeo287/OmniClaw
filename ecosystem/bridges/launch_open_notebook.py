@@ -13,7 +13,13 @@ def launch():
         sys.exit(1)
         
     print(f"[OmniClaw Bridge] Activating Open Notebook Remote at {remote_path} (Assigned Port: {PORT})")
-    subprocess.Popen([sys.executable, remote_path], cwd=os.path.dirname(remote_path))
+    try:
+        subprocess.run([sys.executable, remote_path], cwd=os.path.dirname(remote_path), check=True)
+    except KeyboardInterrupt:
+        print("\n[OmniClaw Bridge] Open Notebook terminated safely.")
+    except subprocess.CalledProcessError as e:
+        print(f"[OmniClaw Bridge] Open Notebook exited with failure: {e}")
+        sys.exit(e.returncode or 1)
 
 if __name__ == "__main__":
     launch()

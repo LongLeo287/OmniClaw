@@ -1,33 +1,44 @@
 import os
 import sys
 import subprocess
+from pathlib import Path
 
 # Hardcoded Port Assignment (Enforced by backend repo compatibility)
 PORT = "18789"
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-TARGET_DIR = os.path.join(current_dir, "..", "..", "..", "OmniClaw REMOTE", "plugins", "openclaw")
+current_dir = Path(__file__).resolve().parent
+TARGET_DIR = (current_dir / ".." / ".." / ".." / "OmniClaw REMOTE" / "plugins" / "openclaw").resolve()
+NODE_MODULES_DIR = TARGET_DIR / "node_modules"
 
-if not os.path.exists(TARGET_DIR):
+if not TARGET_DIR.exists():
     print(f"[OmniClaw Bridge] ERR: OpenClaw target directory not found: {TARGET_DIR}")
     sys.exit(1)
 
-os.environ["OPENCLAW_HOME"] = TARGET_DIR
-os.chdir(TARGET_DIR)
+os.environ["OPENCLAW_HOME"] = str(TARGET_DIR)
 
-if not os.path.exists(os.path.join(TARGET_DIR, "node_modules")):
-    print("[OmniClaw Bridge] Auto-Healing: Missing node_modules. Initiating Plug&Play setup -> pnpm install...")
-    try:
-        subprocess.run(["pnpm", "install"], check=True)
-    except Exception as e:
-        print(f"[OmniClaw Bridge] Plug&Play Setup Failed: {e}")
+def repair_install():
+    print("[OmniClaw Bridge] Repair mode: provisioning OpenClaw dependencies with pnpm install...")
+    subprocess.run(["pnpm", "install"], cwd=TARGET_DIR, check=True)
+    print("[OmniClaw Bridge] Repair mode completed successfully.")
 
 print(f"[OmniClaw Bridge] Launching OpenClaw Gateway from {TARGET_DIR} on Port {PORT}...")
 COMMAND = ["pnpm", "openclaw", "gateway", "--port", str(PORT), "--verbose", "--allow-unconfigured"]
 
+if "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1":
+    repair_install()
+
+if not NODE_MODULES_DIR.exists():
+    print("[OmniClaw Bridge] ERR: OpenClaw dependencies are missing.")
+    print("[OmniClaw Bridge] Action required: provision the workspace first or rerun this bridge with --repair.")
+    sys.exit(1)
+
 try:
-    subprocess.run(COMMAND, check=True)
+    subprocess.run(COMMAND, cwd=TARGET_DIR, check=True)
 except KeyboardInterrupt:
     print("\n[OmniClaw Bridge] OpenClaw killed via KeyboardInterrupt.")
+except FileNotFoundError as e:
+    print(f"[OmniClaw Bridge] Missing runtime dependency for OpenClaw launch: {e}")
+    sys.exit(1)
 except Exception as e:
     print(f"[OmniClaw Bridge] OpenClaw crashed: {e}")
+    sys.exit(1)
