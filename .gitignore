@@ -93,6 +93,8 @@ secrets/
 !/brain/agents/**
 !/brain/indices/
 !/brain/indices/**
+!/brain/chroma_db/
+!/brain/chroma_db/**
 
 # Ignore systemic logs and massive auto-generated JSONs in registry
 brain/registry/*.log
