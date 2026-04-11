@@ -541,126 +541,145 @@
         }
     },
     "DEPARTMENTS": {
-        "Dept1": {
-            "name": "Engineering",
-            "head": "software-architect-agent",
-            "members": [
-                "backend-architect-agent",
-                "frontend-agent",
-                "ai-ml-agent",
-                "devops-agent",
-                "sre-agent",
-                "mobile-agent",
-                "ui-ux-agent",
-                "web-researcher"
-            ]
-        },
-        "Dept2": {
-            "name": "Marketing",
-            "head": "growth-agent",
-            "members": [
-                "content-agent",
-                "channel_agent"
-            ]
-        },
-        "Dept4": {
-            "name": "Registry&Capability",
-            "head": "registry-manager-agent",
-            "members": [
-                "skill-creator-agent"
-            ]
-        },
-        "Dept5": {
-            "name": "Product/Strategy",
-            "head": "product-manager-agent",
-            "members": [
-                "scrum-master-agent",
-                "pmo-agent"
-            ]
-        },
-        "Dept6": {
-            "name": "PMO",
-            "head": "pmo-agent",
-            "members": [
-                "scrum-master-agent"
-            ]
-        },
-        "Dept7": {
-            "name": "SRE/Monitoring",
-            "head": "sre-agent",
-            "members": [
-                "devops-agent",
-                "nemoclaw",
-                "tinyclaw"
-            ]
-        },
-        "Dept9": {
-            "name": "QA/Testing",
-            "head": "test-manager-agent",
-            "members": [
-                "security-engineer-agent"
-            ]
-        },
-        "Dept10": {
-            "name": "Security/GRC",
-            "head": "security-engineer-agent",
-            "members": [
-                "strix-agent",
-                "security_agent"
-            ]
-        },
-        "Dept14": {
-            "name": "Knowledge/RD",
-            "head": "knowledge_agent",
-            "members": [
-                "archivist",
-                "web-researcher",
-                "cognitive_reflector",
-                "rd-lead-agent",
-                "notebooklm-agent"
-            ]
-        },
-        "Dept15": {
-            "name": "Data/Analytics",
-            "head": "data-agent",
-            "members": [
-                "cost-manager-agent"
-            ]
-        },
-        "Dept16": {
-            "name": "HR/People",
-            "head": "hr-manager-agent",
+        "archivist": {
+            "name": "Archivist",
+            "head": "archivist-lead-agent",
             "members": []
         },
-        "Dept19": {
-            "name": "Support/Comms",
-            "head": "channel_agent",
-            "members": [
-                "omniclaw_bot"
-            ]
+        "asset_library": {
+            "name": "Asset Library",
+            "head": "asset_library-lead-agent",
+            "members": ["docs_agent"]
         },
-        "Dept20": {
+        "client_reception": {
+            "name": "Client Reception",
+            "head": "client_reception-lead-agent",
+            "members": []
+        },
+        "content_intake": {
             "name": "Content Intake",
-            "head": "civ-agent",
-            "members": [
-                "content-analyst-agent"
-            ]
+            "head": "content_intake-lead-agent",
+            "members": ["ingest-router", "intake-agent", "repo-fetcher", "web-crawler"]
         },
-        "Legal": {
-            "name": "Legal/Compliance",
-            "head": "legal-agent",
+        "content_review": {
+            "name": "Content Review",
+            "head": "content_review-lead-agent",
+            "members": ["classifier-agent", "content-validator", "formatter-agent", "review-chief-agent"]
+        },
+        "engineering": {
+            "name": "Engineering",
+            "head": "engineering-lead-agent",
+            "members": ["backend-architect-agent", "database-agent", "devops-agent", "frontend-agent", "it-manager-agent", "netops-agent", "software-architect-agent", "sre-agent", "sysadmin-agent"]
+        },
+        "facility": {
+            "name": "Facility",
+            "head": "facility-agent",
+            "members": ["deep-cleaner-agent"]
+        },
+        "finance": {
+            "name": "Finance",
+            "head": "finance-lead-agent",
+            "members": ["budget-agent", "cost-manager-agent", "invoice-agent"]
+        },
+        "hr_people": {
+            "name": "HR & People",
+            "head": "hr_people-lead-agent",
+            "members": ["curriculum-agent", "hr-manager-agent", "payroll-agent", "recruiter-agent", "trainer-agent", "org_architect_agent"]
+        },
+        "it_infra": {
+            "name": "IT Infrastructure",
+            "head": "it_infra-lead-agent",
             "members": []
         },
-        "System": {
-            "name": "System Core",
-            "head": "antigravity",
-            "members": [
-                "orchestrator_pro",
-                "cognitive_reflector",
-                "archivist",
-                "omniclaw_bot",
-                "gcp_architect"
-            ]
+        "legal": {
+            "name": "Legal & Compliance",
+            "head": "legal-lead-agent",
+            "members": ["compliance-agent", "contract-agent", "gdpr-agent", "ip-agent", "legal-agent"]
+        },
+        "marketing": {
+            "name": "Marketing",
+            "head": "marketing-lead-agent",
+            "members": ["ads-agent", "affiliate-agent", "content-agent", "growth-agent", "market-agent", "seo-agent", "social-agent"]
+        },
+        "monitoring_inspection": {
+            "name": "Monitoring & Inspection",
+            "head": "monitoring_inspection-lead-agent",
+            "members": ["alert-router", "health-checker", "log-analyzer", "monitor-agent", "port-checker", "system-health-agent"]
+        },
+        "od_learning": {
+            "name": "OD & Learning",
+            "head": "od_learning-lead-agent",
+            "members": []
+        },
+        "operations": {
+            "name": "Operations",
+            "head": "operations-lead-agent",
+            "members": ["asset-tracker-agent", "ops-agent", "pmo-agent", "scrum-master-agent", "bridge_commander_agent", "channel_agent", "health_chief_agent"]
+        },
+        "orchestration": {
+            "name": "Orchestration",
+            "head": "orchestrator_pro",
+            "members": ["antigravity"]
+        },
+        "planning_pmo": {
+            "name": "Planning & PMO",
+            "head": "planning_pmo-lead-agent",
+            "members": []
+        },
+        "qa_testing": {
+            "name": "QA & Testing",
+            "head": "qa_testing-lead-agent",
+            "members": ["pentest-agent", "qa-reviewer-agent", "security-engineer-agent", "superpowers-agent"]
+        },
+        "rd": {
+            "name": "Research & Development",
+            "head": "rd-lead-agent",
+            "members": ["ai-ml-agent", "experiment-agent", "onboard-agent", "research-agent", "web_researcher"]
+        },
+        "registry_capability": {
+            "name": "Registry & Capability",
+            "head": "registry_capability-lead-agent",
+            "members": ["archivist", "doc-parser", "knowledge-agent", "knowledge-curator-agent", "library-manager-agent", "registry-manager-agent"]
+        },
+        "security_grc": {
+            "name": "Security & GRC",
+            "head": "security_grc-lead-agent",
+            "members": ["strix-agent", "cloudflared_agent"]
+        },
+        "strategy": {
+            "name": "Strategy",
+            "head": "strategy-lead-agent",
+            "members": ["cognitive_reflector", "content-analyst-agent", "data-agent", "data-collector-agent", "evaluator-agent", "product-manager-agent", "repo-analyst-agent", "report-agent"]
+        },
+        "support": {
+            "name": "Support",
+            "head": "support-lead-agent",
+            "members": ["faq-agent", "feedback-agent", "incident-agent", "intake-greeter", "onboard-client", "reception-agent"]
+        },
+        "system_daemons": {
+            "name": "System Daemons",
+            "head": "oma_architect",
+            "members": ["oa_academy", "obd_harbor", "oer_registry", "oiw_intake"]
+        },
+        "system_health": {
+            "name": "System Health",
+            "head": "system_health-lead-agent",
+            "members": ["ohd_healer"]
+        },
+        "system_integrity": {
+            "name": "System Integrity",
+            "head": "system-repair-agent",
+            "members": []
+        },
+        "system_security": {
+            "name": "System Security",
+            "head": "osf-firewall-daemon",
+            "members": ["osf_warden", "osf_auditor", "osf_quarantine_guard"]
+        },
+        "ux_design": {
+            "name": "UX Design",
+            "head": "ui-ux-agent",
+            "members": ["frontend-agent"]
         }
     }
 }
