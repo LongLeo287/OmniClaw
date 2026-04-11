@@ -16,8 +16,9 @@
   },
   "homepage": "https://github.com/NousResearch/Hermes-Agent#readme",
   "dependencies": {
+    "@askjo/camoufox-browser": "^1.0.0",
     "agent-browser": "^0.13.0",
-    "@askjo/camoufox-browser": "^1.0.0"
+    "basic-ftp": "^5.2.2"
   },
   "engines": {
     "node": ">=18.0.0"
