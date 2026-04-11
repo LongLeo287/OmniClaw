@@ -58,12 +58,18 @@ class AgentBus:
 
         with self._lock:
             conn = self._get_conn()
+            conn.execute("BEGIN IMMEDIATE")
             rows = conn.execute(query, topics).fetchall()
 
             events = []
             for row in rows:
                 event_id, topic, payload_str = row
-                conn.execute("UPDATE events SET status='PROCESSING', picked_by=? WHERE id=?", (agent_id, event_id))
+                cursor = conn.execute(
+                    "UPDATE events SET status='PROCESSING', picked_by=? WHERE id=? AND status='PENDING'",
+                    (agent_id, event_id),
+                )
+                if cursor.rowcount != 1:
+                    continue
                 events.append({
                     "id": event_id,
                     "topic": topic,

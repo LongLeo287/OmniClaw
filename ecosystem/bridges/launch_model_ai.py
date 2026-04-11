@@ -14,13 +14,6 @@ import subprocess
 import json
 import glob
 
-# Try installing HuggingFace Hub via pip if missing
-try:
-    from huggingface_hub import hf_hub_download
-except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "huggingface_hub"])
-    from huggingface_hub import hf_hub_download
-
 # Define constants
 MODELS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..", "OmniClaw_Models"))
 CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "gguf_multi_model.json"))
@@ -63,6 +56,21 @@ AI_CATALOG = {
     }
 }
 
+
+def get_hf_hub_download():
+    try:
+        from huggingface_hub import hf_hub_download
+        return hf_hub_download
+    except ImportError as e:
+        if "--repair" in sys.argv or os.getenv("OMNICLAW_BRIDGE_REPAIR") == "1":
+            print("[OmniClaw Bridge] Repair mode: installing huggingface_hub...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "huggingface_hub"])
+            from huggingface_hub import hf_hub_download
+            return hf_hub_download
+        print("[OmniClaw Bridge] ERR: Missing Python dependency 'huggingface_hub'.")
+        print("[OmniClaw Bridge] Action required: install it during bootstrap or rerun this bridge with --repair.")
+        raise SystemExit(1) from e
+
 def download_model(model_key: str):
     """Downloads a model from HF Hub to the OmniClaw MODELS directory."""
     if model_key not in AI_CATALOG:
@@ -77,6 +85,7 @@ def download_model(model_key: str):
     print("[OmniClaw Bridge] WARN: This might take a while depending on network bandwidth. (Uses Cache if already downloaded)")
     
     try:
+        hf_hub_download = get_hf_hub_download()
         # force_download=False means it checks ETag cache natively to auto-update ONLY if the remote version changes!
         downloaded = hf_hub_download(
             repo_id=model_data['repo'], 
