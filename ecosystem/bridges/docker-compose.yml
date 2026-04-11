@@ -33,7 +33,7 @@ services:
       - "6333:6333"
       - "6334:6334"
     volumes:
-      - ./vault/vectors/qdrant_storage:/qdrant/storage
+      - ../../vault/vectors/qdrant_storage:/qdrant/storage
     restart: unless-stopped
     networks:
       - omniclaw-remote-net
@@ -48,7 +48,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - ./vault/vectors/redis_data:/data
+      - ../../vault/vectors/redis_data:/data
     command: redis-server --appendonly yes
     restart: unless-stopped
     networks:
