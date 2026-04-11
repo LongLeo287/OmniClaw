@@ -16,7 +16,7 @@ This folder contains the master blueprints of the system's logic and memory grap
    The strict laws, principles, and retrieval patterns that dictate how OmniClaw AI agents parse memory and write architecture.
 2. **`LIBRARY_GRAPH.json` (~5.3MB)**
    A master conceptual mapping connecting tens of thousands of concepts across the AI OS. This is a highly refined metadata graph, superior to raw text dumps.
-3. **`ai_os_system_map.md` & `capability_map.md`**
+3. **`omniclaw_system_map.md` & `capability_map.md`**
    The global cartography of what the system can achieve and how its departments interlock organically.
 4. **42+ Specialized Domain Folders**
    Such as `agent_architecture/`, `ai_ml/`, `cybersecurity/`, `devops/`, containing refined SOPs and distilled insights parsed from outside sources.

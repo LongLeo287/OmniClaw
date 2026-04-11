@@ -23,7 +23,7 @@ graph TD
       subgraph Core Architecture
         S1("agent_architecture/")
         S4("architecture/")
-        M1("ai_os_system_map.md")
+        M1("omniclaw_system_map.md")
         M2("capability_map.md")
       end
 
