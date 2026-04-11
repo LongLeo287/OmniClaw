@@ -1,12 +1,13 @@
 import os
 import json
 import logging
+import sys
 from pathlib import Path
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-ROOT_DIR = Path(r"D:\OmniClaw")
+ROOT_DIR = Path(os.getenv("OMNICLAW_ROOT", Path(__file__).resolve().parents[2]))
 SKILLS_DIR = ROOT_DIR / "ecosystem" / "skills"
 REGISTRY_FILE = SKILLS_DIR / "SKILL_REGISTRY.json"
 
@@ -46,66 +47,96 @@ def generate_schema_json(folder_name):
         "tags": ["auto-assimilated"]
     }
 
-def process_skills():
+
+def repair_skill_metadata(skill_id, skill_dir, schema_path, skill_md_path, readme_path):
+    human_name = skill_id.replace("_", " ").title()
+    repaired = []
+
+    if not skill_md_path.exists():
+        with open(skill_md_path, "w", encoding="utf-8") as f:
+            f.write(f"---\nid: {skill_id}\nname: {human_name}\ntier: 2\nstatus: active\n---\n\n# {human_name}\n[Skill logic here]\n")
+        repaired.append("SKILL.md")
+
+    if not schema_path.exists():
+        schema_data = generate_schema_json(skill_id)
+        with open(schema_path, "w", encoding="utf-8") as f:
+            json.dump(schema_data, f, indent=4)
+        repaired.append("schema.json")
+
+    if not readme_path.exists():
+        readme_content = WATERMARK_TEXT.format(skill_name=human_name)
+        with open(readme_path, "w", encoding="utf-8") as f:
+            f.write(readme_content)
+        repaired.append("README.md")
+
+    return repaired
+
+def process_skills(repair_mode=False):
     registry = {}
     total_processed = 0
-    missing_skill_md_count = 0
+    invalid_skills = []
 
     if not SKILLS_DIR.exists():
         logging.error(f"Skills directory not found: {SKILLS_DIR}")
-        return
+        return 1
 
     for item in SKILLS_DIR.iterdir():
         if item.is_dir() and not item.name.startswith("_"):
             skill_id = item.name
-            human_name = skill_id.replace("_", " ").title()
-            
             schema_path = item / "schema.json"
             readme_path = item / "README.md"
             skill_md_path = item / "SKILL.md"
 
-            # 1. Flag missing SKILL.md
-            if not skill_md_path.exists():
-                missing_skill_md_count += 1
-                # Auto-generate a dummy SKILL.md so it doesn't break
-                with open(skill_md_path, "w", encoding="utf-8") as f:
-                    f.write(f"---\nid: {skill_id}\nname: {human_name}\ntier: 2\nstatus: active\n---\n\n# {human_name}\n[Skill logic here]\n")
+            repaired_files = []
+            if repair_mode:
+                repaired_files = repair_skill_metadata(skill_id, item, schema_path, skill_md_path, readme_path)
+                if repaired_files:
+                    logging.warning(
+                        "Repair mode generated metadata for '%s': %s",
+                        skill_id,
+                        ", ".join(repaired_files),
+                    )
 
-            # 2. Write schema.json if missing
+            issues = []
+            if not skill_md_path.exists():
+                issues.append("missing SKILL.md")
+
             schema_data = None
             if not schema_path.exists():
-                schema_data = generate_schema_json(skill_id)
-                with open(schema_path, "w", encoding="utf-8") as f:
-                    json.dump(schema_data, f, indent=4)
+                issues.append("missing schema.json")
             else:
                 try:
                     with open(schema_path, "r", encoding="utf-8") as f:
                         schema_data = json.load(f)
                 except Exception as e:
-                    # Overwrite broken schema
-                    schema_data = generate_schema_json(skill_id)
-                    with open(schema_path, "w", encoding="utf-8") as f:
-                        json.dump(schema_data, f, indent=4)
-            
-            # 3. Add to master registry
+                    issues.append(f"invalid schema.json: {e}")
+
+            if schema_data:
+                if schema_data.get("id") != skill_id:
+                    issues.append(f"schema id mismatch: expected '{skill_id}', got '{schema_data.get('id')}'")
+                if "path" not in schema_data:
+                    issues.append("schema.json missing 'path'")
+
+            if issues:
+                invalid_skills.append((skill_id, issues))
+                logging.error("Skipping skill '%s': %s", skill_id, "; ".join(issues))
+                continue
+
             if schema_data:
                 registry[skill_id] = schema_data
 
-            # 4. Write README.md with Watermark if missing
-            if not readme_path.exists():
-                readme_content = WATERMARK_TEXT.format(skill_name=human_name)
-                with open(readme_path, "w", encoding="utf-8") as f:
-                    f.write(readme_content)
-
             total_processed += 1
 
-    # Write Master Registry
     with open(REGISTRY_FILE, "w", encoding="utf-8") as f:
         json.dump(registry, f, indent=4)
 
-    logging.info(f"Assimilation Complete. {total_processed} formatting operations finalized.")
-    logging.info(f"Fixed {missing_skill_md_count} empty SKILL.md endpoints.")
+    logging.info(f"Assimilation complete. Registered {total_processed} valid skills.")
+    if invalid_skills:
+        logging.error("Found %s invalid skills. Registry written with valid entries only.", len(invalid_skills))
+        return 1
     logging.info(f"Registry compiled successfully into {REGISTRY_FILE.name} with {len(registry)} skills.")
+    return 0
 
 if __name__ == "__main__":
-    process_skills()
+    repair_mode = "--repair" in sys.argv or os.getenv("OMNICLAW_ASSIMILATOR_REPAIR") == "1"
+    raise SystemExit(process_skills(repair_mode=repair_mode))

@@ -1,8 +1,9 @@
+import os
 import json
 from pathlib import Path
 from collections import defaultdict
 
-ROOT_DIR = Path(r"D:\OmniClaw")
+ROOT_DIR = Path(os.getenv("OMNICLAW_ROOT", Path(__file__).resolve().parents[2]))
 SKILLS_DIR = ROOT_DIR / "ecosystem" / "skills"
 REGISTRY_FILE = SKILLS_DIR / "SKILL_REGISTRY.json"
 ECOSYSTEM_GRAPH = SKILLS_DIR / "_ECOSYSTEM_GRAPH.md"
@@ -11,7 +12,7 @@ REGIONAL_MAP = SKILLS_DIR / "_REGIONAL_MAP.md"
 def generate_maps():
     if not REGISTRY_FILE.exists():
         print("Error: SKILL_REGISTRY.json not found.")
-        return
+        return 1
 
     with open(REGISTRY_FILE, "r", encoding="utf-8") as f:
         registry = json.load(f)
@@ -57,7 +58,7 @@ def generate_maps():
         else:
             prefix_groups["core_standalone"].append(skill_id)
 
-    # Filter out small groups to avoid noise
+    # Filter out small groups to avoid noise in the graph, but keep them visible in a catch-all section.
     major_hubs = {k: v for k, v in prefix_groups.items() if len(v) >= 5}
     minor_hubs = {k: v for k, v in prefix_groups.items() if len(v) < 5}
 
@@ -68,10 +69,16 @@ def generate_maps():
             graph_content.append(f" ├── {skill}")
         graph_content.append("```\n")
 
+    if minor_hubs:
+        graph_content.append("## 🌱 Emerging / Standalone Skills")
+        for hub, skills in sorted(minor_hubs.items()):
+            graph_content.append(f"- `{hub}`: {', '.join(skills)}")
+
     with open(ECOSYSTEM_GRAPH, "w", encoding="utf-8") as f:
         f.write("\n".join(graph_content))
 
     print(f"Successfully generated Regional Map ({REGIONAL_MAP.name}) and Ecosystem Graph ({ECOSYSTEM_GRAPH.name}).")
+    return 0
 
 if __name__ == "__main__":
-    generate_maps()
+    raise SystemExit(generate_maps())

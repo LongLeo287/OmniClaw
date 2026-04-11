@@ -8,8 +8,8 @@ PORT = "11434"
 
 # Bridge executed from: OmniClaw/ecosystem/bridges/launch_ollama.py
 current_file = Path(__file__).resolve()
-# System core root (D:\OmniClaw)
-CORP_ROOT = current_file.parent.parent.parent.parent
+# System core root (prefer explicit env var, otherwise derive repo root from this file)
+CORP_ROOT = Path(os.getenv("OMNICLAW_ROOT", current_file.parents[2])).resolve()
 
 MODELS_VAULT = CORP_ROOT / "OmniClaw_Models" / "ollama"
 
