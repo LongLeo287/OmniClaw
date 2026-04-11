@@ -1,167 +1,59 @@
----
-id: activation-guide
-type: document
-owner: SYSTEM
-tags: [auto-healed]
-healed_at: 2026-04-03T22:44:27.667345
----
+# OmniClaw Activation Guide
 
-# 🚦 ACTIVATION BOARD — OmniClaw Services & Dashboards
-# Updated: 2026-03-16
-# Everything that needs activation / localhost opening must be in this board
+This guide covers the current, shipped bootstrap flow for the `main` branch.
 
-> **Rule:** Before using any plugin below, the startup command must be run.
-> These services DO NOT auto-start — manual activation or auto-start configuration is required.
-
----
-
-## 🟢 Running / Always-On
-
-| Service | URL | Port | Notes |
-|---------|-----|------|---------|
-| **OmniClaw Dashboard** | http://127.0.0.1:19000 | 19000 | Auto-starts via pre-session.md |
-
----
-
-## 🔴 Manual Activation Required
-
-### 🦞 LobsterBoard — AI usage aggregation dashboard
-```bash
-cd "$OMNICLAW_ROOT\plugins\LobsterBoard"
-cp config.example.json config.json   # first time
-# Edit config.json: city, target API keys
-node server.cjs
-```
-| | |
-|-|-|
-| **URL** | http://localhost:3000 |
-| **Port** | 3000 |
-| **Requires** | Node.js ≥ 18 |
-| **Reason** | Monitor Antigravity + Claude Code + Gemini + Cursor + Copilot usage from a single screen |
-| **Special Widget** | Antigravity widget: `antigravity-usage login` → view Gemini 3 + Claude usage |
-
----
-
-### 📡 Remote Bridge (Channels) — Zalo / Telegram / Discord / Facebook
-
-> **Current status (2026-03-16):** Channels ARE NOT CONFIGURED YET
-> Run `python channels/health_check.py` to check.
+## 1. Install The Local CLI
 
 ```bash
-# 1. Fill tokens in .env (mandatory before running)
-# TELEGRAM_BOT_TOKEN=your_token  ← from @BotFather
-# DISCORD_BOT_TOKEN=your_token   ← from Discord Developer Portal
-# ZALO_ACCESS_TOKEN=your_token   ← from Zalo OA
-# MESSENGER_ACCESS_TOKEN=token   ← from Facebook Developer Portal
-
-# 2. Health check
-python "$OMNICLAW_ROOT\channels\health_check.py"
-
-# 3. Telegram (easiest, no ngrok needed):
-python "$OMNICLAW_ROOT\channels\telegram_bridge.py"
-
-# 4. All at once:
-python "$OMNICLAW_ROOT\channels\start_bridges.py"
-
-# 5. Public URL required for Zalo & Facebook → run ngrok first:
-python "$OMNICLAW_ROOT\channels\ngrok_connector.py"
+git clone https://github.com/LongLeo287/OmniClaw.git "OmniClaw"
+cd "OmniClaw"
+npm install -g .
 ```
 
-| | |
-|-|-|
-| **Port** | 5001 (webhook server for Zalo/FB) |
-| **Requires** | Tokens in `.env` (TELEGRAM_BOT_TOKEN, etc.) |
-| **Health Check** | `python channels/health_check.py` |
-| **Upgrade path** | PicoClaw (Go) — 8 channels incl. QQ/LINE/WeChat — see `knowledge/claws_evaluation.md` |
+If you do not want a global install on Windows, you can run:
 
----
+```bat
+omniclaw.bat doctor
+```
 
-### 🔍 LightRAG — Local RAG (Retrieval-Augmented Generation)
+## 2. Validate The Workspace
+
+Run the built-in doctor command first:
+
 ```bash
-cd "$OMNICLAW_ROOT\plugins\LightRAG"
-pip install -r requirements.txt   # first time
-python -m lightrag.api.lightrag_server
+omniclaw doctor
 ```
-| | |
-|-|-|
-| **Port** | 9621 (default) |
-| **URL** | http://localhost:9621 |
-| **Requires** | Python, embedding model |
 
----
+Useful environment variables:
 
-### 🕷️ Firecrawl — Web Crawler API
+- `OMNICLAW_ROOT`: absolute path to the OmniClaw repository
+- `OMNICLAW_MODELS_ROOT`: absolute path to the shared models vault
+- `OMNICLAW_REMOTE_ROOT`: optional path to the future OmniClaw REMOTE project
+- `OMNICLAW_UI_ROOT`: optional path to the future OmniClaw UI project
+- `OMNICLAW_SYSTEM_PULSE_SCRIPT`: explicit path to the System Pulse daemon script if it lives outside the default repo layout
+
+## 3. Start Local Bridges Manually
+
+Examples:
+
 ```bash
-cd "$OMNICLAW_ROOT\plugins\firecrawl"
-npm install   # first time
-npm run dev
-```
-| | |
-|-|-|
-| **Port** | 3002 (default) |
-| **URL** | http://localhost:3002 |
-| **Requires** | Node.js |
-
----
-
-### 🤖 MCP Server Bridge
-```bash
-cd "$OMNICLAW_ROOT\mcp"
-# See README.md in the mcp/ directory for specific commands
-```
-| | |
-|-|-|
-| **Port** | See mcp/README.md |
-| **Requires** | Node.js or Python |
-
----
-
-## ⚙️ Auto-Start (1-time configuration)
-
-### Using pm2 (starts with Windows):
-```bash
-npm install -g pm2
-
-# LobsterBoard
-pm2 start "$OMNICLAW_ROOT\plugins\LobsterBoard\server.cjs" --name lobsterboard
-
-# Remote Bridge
-pm2 start "python $OMNICLAW_ROOT\channels\start_bridges.py" --name omniclaw-channels
-
-# Save to auto-start on Windows boot
-pm2 startup
-pm2 save
+python ecosystem/bridges/launch_ollama.py
+python ecosystem/bridges/launch_mem0.py
+python ecosystem/bridges/launch_firecrawl.py
+python ecosystem/bridges/launch_lightrag.py
+python ecosystem/bridges/launch_model_ai.py --repair
 ```
 
-### Check all via PowerShell:
-```powershell
-# View running ports
-@(19000, 3000, 3002, 5001, 9621) | ForEach-Object {
-    $conn = Get-NetTCPConnection -LocalPort $_ -ErrorAction SilentlyContinue
-    $status = if ($conn) { "✅ RUNNING" } else { "❌ STOPPED" }
-    Write-Host "$status  port $_"
-}
-```
+Runtime policy:
 
----
+- Bridges should launch a real service or fail fast.
+- Dependency installation belongs in explicit repair/bootstrap flows.
+- Shared services such as `qdrant` should not be torn down by unrelated launchers.
 
-## 📋 When adding new plugins/services with localhost
+## 4. Known Scope
 
-> **Rule:** When injecting any plugin featuring a new server/dashboard/localhost, it MUST be added to this board.
->
-> Template for additions:
-> ```
-> ### 🔷 [Plugin Name] — [Short description]
-> \```bash
-> cd "$OMNICLAW_ROOT\plugins\<name>"
-> [start command]
-> \```
-> | URL | http://localhost:<port> |
-> | Port | <number> |
-> | Requires | [dependencies] |
-> | Reason | [why it's used] |
-> ```
+The current repository is the OmniClaw core workspace.
 
----
-
-*Update this file whenever a new plugin requiring activation is added.*
+- `OmniClaw REMOTE` is not required for the local core to bootstrap.
+- `OmniClaw UI` is not required for the local core to bootstrap.
+- Bridges that target those future projects will fail clearly until those projects are provisioned.
