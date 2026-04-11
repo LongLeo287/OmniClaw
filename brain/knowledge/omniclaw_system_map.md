@@ -8,11 +8,11 @@ version: 1.0
 authority: CEO
 ---
 
-# OmniClaw Corp â€” Master System Map
+# OmniClaw â€” Master System Map
 ## Complete Knowledge Reference for All Agents, Depts, Workflows, Rules, and Memory
 
 > **READ THIS FIRST.** Any new AI loaded into the system must read this file.
-> This is the master map of the entire OmniClaw Corp.
+> This is the master map of the entire OmniClaw.
 
 ---
 
@@ -20,15 +20,15 @@ authority: CEO
 
 | Field | Value |
 |-------|-------|
-| Name | OmniClaw Corp |
+| Name | OmniClaw |
 | Version | v2.4 (Cycle 7) |
 | CEO | LongLeo |
 | Soul | `OmniClaw/SOUL.md` |
 | Governance | `OmniClaw/GOVERNANCE.md` |
 | Thesis | `OmniClaw/THESIS.md` (40 pillars) |
 
-**What is OmniClaw Corp?**
-A multi-agent AI system organized as a real corporation.
+**What is OmniClaw?**
+A multi-agent AI OS organized as a unified workforce ecosystem.
 It features a CEO, C-Suite, 21 departments, 75+ agents, complete workflows, memory, gates, and self-operating procedures.
 
 ---
@@ -69,7 +69,7 @@ Tier 4: Workers â€” task execution
 | 20 | content_intake | intake-chief-agent | IS GATE_CIV | CTO |
 | 21 | client_reception | project-intake-agent | â€” | COO (DORMANT) |
 
-**Source of truth:** `corp/org_chart.yaml`
+**Source of truth:** `ecosystem/workforce/_DIR_IDENTITY.md`
 
 ---
 
@@ -91,13 +91,13 @@ Tier 4: Workers â€” task execution
 
 | Workflow | File | Trigger | Phases |
 |----------|------|---------|--------|
-| Corp Daily Cycle | `ops/workflows/corp-daily-cycle.md` | `omniclaw corp start` | 7 phases |
-| Knowledge Ingest | `ops/workflows/knowledge-ingest.md` | `omniclaw ingest <source>` | 7 phases |
-| Agent Auto-Create | `ops/workflows/agent-auto-create.md` | Phase 5b of knowledge-ingest | 7 phases |
-| Corp Learning Loop | `ops/workflows/corp-learning-loop.md` | `omniclaw corp retro` | auto |
-| Delivery Pipeline | `corp/sops/DELIVERY_PIPELINE.md` | Client accepts proposal | 6 phases |
+| OS Daily Cycle | `ecosystem/workflows/daily-cycle.md` | `omniclaw start` | 7 phases |
+| Knowledge Ingest | `core/ops/workflows/knowledge-ingest.md` | `omniclaw ingest <source>` | 7 phases |
+| Agent Auto-Create | `core/ops/workflows/agent-auto-create.md` | Phase 5b of knowledge-ingest | 7 phases |
+| OS Learning Loop | `ecosystem/workflows/learning-loop.md` | `omniclaw retro` | auto |
+| Delivery Pipeline | `ecosystem/workforce/score/ops/DELIVERY_PIPELINE.md` | Client accepts proposal | 6 phases |
 
-### Corp Daily Cycle (7 phases)
+### OS Daily Cycle (7 phases)
 ```
 Phase 1: CEO Brief â†’ reads mission, KPIs, escalations, proposals
 Phase 2: C-Suite Dispatch â†’ strategy â†’ dept goals â†’ blackboard.json
@@ -142,12 +142,12 @@ Phase 7: Activate skills (registry-manager-agent) â†’ SKILL_REGISTRY.json
 | Layer | Path | Owner | Retention | Content |
 |-------|------|-------|-----------|---------|
 | L1 Knowledge Base | `brain/knowledge/` | library-manager-agent | PERMANENT | Research, KIs, FAQs (72+ files) |
-| L2 Global | `corp/memory/global/` | CEO | PERMANENT | Strategic decisions |
-| L3 Dept | `corp/memory/departments/<dept>.md` | Dept head | 30-day rolling | Sprint lessons, patterns |
-| L4 Agent | `corp/memory/agents/<agent>.md` | Agent | 7-day auto-purge | Task context, outcomes |
+| L2 Global | `brain/memory/global/` | CEO | PERMANENT | Strategic decisions |
+| L3 Dept | `brain/memory/departments/<dept>.md` | Dept head | 30-day rolling | Sprint lessons, patterns |
+| L4 Agent | `brain/memory/agents/<agent>.md` | Agent | 7-day auto-purge | Task context, outcomes |
 | L5 Daily | `brain/memory/daily/<DATE>.md` | archivist | 7-day auto-purge | Session events |
 
-**Spec:** `corp/memory/MEMORY_SPEC.md` (v2.0)
+**Spec:** `brain/memory/MEMORY_SPEC.md` (v2.0)
 **Rotation:** archivist agent runs weekly on-demand
 
 ### Key Knowledge Files
@@ -216,13 +216,13 @@ notification_bridge  â€” Telegram/Discord alert routing
 | File | Purpose | Updated by |
 |------|---------|------------|
 | `brain/memory/blackboard.json` | Task queue, cycle state, open items | scrum-master-agent |
-| `brain/memory/corp_memory/kpi_scoreboard.json` | Live KPI status all 21 depts | monitor-chief-agent |
-| `brain/memory/corp_memory/escalations.md` | L1/L2/L3 open escalations | any agent |
-| `brain/memory/corp_memory/proposals/` | Pending CEO decisions | strategy dept |
-| `brain/memory/corp_memory/daily_briefs/<dept>.md` | Last dept brief | dept head |
+| `brain/memory/memory/kpi_scoreboard.json` | Live KPI status all 21 depts | monitor-chief-agent |
+| `brain/memory/memory/escalations.md` | L1/L2/L3 open escalations | any agent |
+| `brain/memory/memory/proposals/` | Pending CEO decisions | strategy dept |
+| `brain/memory/memory/daily_briefs/<dept>.md` | Last dept brief | dept head |
 | `brain/memory/roadmap.md` | Strategic milestones | pmo-agent |
 | `brain/memory/sources.yaml` | Data collector source list | data-collector-agent |
-| `corp/kpi_targets.yaml` | KPI targets all 21 depts | strategy |
+| `brain/memory/kpi_targets.yaml` | KPI targets all 21 depts | strategy |
 
 ---
 
@@ -230,9 +230,9 @@ notification_bridge  â€” Telegram/Discord alert routing
 
 ```
 âœ… VALID â€” OmniClaw workspace:
-  corp/           â†’ org structure, prompts, memory, rules
+  ecosystem/workforce/           â†’ org structure, prompts, memory, rules
   brain/          â†’ knowledge, agents, skills, registry, memory, brain/memory
-  ops/            â†’ workflows, scripts, infra
+  core/ops/            â†’ workflows, scripts, infra
   tools/clawtask/ â†’ task management API (port 7474)
   plugins/        â†’ external tools, MCPs, integrations
   telemetry/      â†’ receipts, logs, monitoring
@@ -259,11 +259,11 @@ Step 2: Read GOVERNANCE.md
 Step 3: Read THESIS.md (40 pillars)
 Step 4: Read AGENTS.md (roster)
 Step 5: Read brain/memory/blackboard.json
-Step 6: Check corp/memory/global/decisions_log.md (last 5 CEO decisions)
+Step 6: Check brain/memory/global/decisions_log.md (last 5 CEO decisions)
 Step 7: Read own AGENT.md from brain/agents/<agent-id>/AGENT.md
 Step 8: Read dept MANAGER_PROMPT.md or WORKER_PROMPT.md
-Step 9: Check KPI targets in corp/kpi_targets.yaml for own dept
-Step 10: Begin corp cycle or await CEO instruction
+Step 9: Check KPI targets in brain/memory/kpi_targets.yaml for own dept
+Step 10: Begin OS cycle or await CEO instruction
 ```
 
 Source: `GEMINI.md` and `CLAUDE.md` (both carry full boot sequence)
@@ -355,8 +355,8 @@ Every completed task writes a receipt to `telemetry/receipts/<dept>/<task_id>_re
 
 | Command | Action |
 |---------|--------|
-| `omniclaw corp start` | Begin daily corp cycle |
-| `omniclaw corp retro` | Run learning loop / retro |
+| `omniclaw start` | Begin daily OS cycle |
+| `omniclaw retro` | Run learning loop / retro |
 | `omniclaw ingest url <url>` | Ingest web URL into knowledge base |
 | `omniclaw ingest repo <url>` | Ingest GitHub repo |
 | `omniclaw ingest file <path>` | Ingest local file |
@@ -367,7 +367,7 @@ Every completed task writes a receipt to `telemetry/receipts/<dept>/<task_id>_re
 
 ---
 
-*OmniClaw Corp â€” System Map v1.0 â€” 2026-03-22*
+*OmniClaw â€” System Map v1.0 â€” 2026-03-22*
 *Last updated: Cycle 7 system audit*
 *Read on boot. Update when system structure changes.*
 
