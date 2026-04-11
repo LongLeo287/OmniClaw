@@ -1,5 +1,5 @@
 ---
-title: Auto Vetting Report for Dopamine
+title: Auto Vetting Report for dopamine
 date: 2026-04-05
 analyst: civ_vetting_pipeline
 status: AUTO_VETTED

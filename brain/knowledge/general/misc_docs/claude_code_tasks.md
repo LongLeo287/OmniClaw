@@ -1,4 +1,4 @@
-﻿---
+---
 id: claude-code-tasks
 type: document
 owner: OHD

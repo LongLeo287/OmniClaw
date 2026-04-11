@@ -8,7 +8,7 @@ healed_at: 2026-04-02T20:31:22.622719
 
 # Tool Use — Python
 
-For conceptual overview (tool definitions, tool choice, tips), see [shared/tool-use-concepts.md](../../shared/tool-use-concepts.md).
+For conceptual overview (tool definitions, tool choice, tips), see shared/tool-use-concepts.md.
 
 ## Tool Runner (Recommended)
 

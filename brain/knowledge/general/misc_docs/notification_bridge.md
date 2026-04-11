@@ -1,4 +1,4 @@
-﻿---
+---
 id: notification-bridge
 type: document
 owner: OHD
@@ -19,7 +19,7 @@ description: OmniClaw notification routing â€” gá»­i alert qua Telegram,
 
 ## Overview
 
-notification-bridge lÃ  lá»›p trung gian nháº­n notification tá»« má»i agent vÃ  route Ä‘Ãºng channel:
+notification-bridge lÃ  lá»›p trung gian nháº­n notification tá»« má»i agent vÃ  route Ä‘úng channel:
 
 ```
 Agent â†’ [notification-bridge] â†’ Telegram (CEO)
@@ -98,16 +98,16 @@ Invoke-RestMethod -Uri "http://localhost:<nullclaw-port>/notify" -Method POST -B
 ```
 ðŸ†• GAP PROPOSAL â€” [GAP-2026-03-24-DOMAIN]
 
-DOMAIN: <chÆ°a cÃ³ agent/dept phá»¥ trÃ¡ch X>
-CONTENT: <tÃªn repo/URL Ä‘Ã£ nháº­n>
+DOMAIN: <chÆ°a có agent/dept phá»¥ trách X>
+CONTENT: <tên repo/URL Ä‘ã nháº­n>
 
 Options:
 [A] Táº¡o agent má»›i â†’ agent-auto-create.md
 [B] Assign vÃ o dept gáº§n nháº¥t: <dept-name>
 [C] Create new department â†’ dept-builder-agent
-[D] Skip â€” lÆ°u reference, khÃ´ng táº¡o gÃ¬
+[D] Skip â€” lÆ°u reference, không táº¡o gÃ¬
 
-Reply A/B/C/D trong 24h. Default: B náº¿u khÃ´ng reply.
+Reply A/B/C/D trong 24h. Default: B náº¿u không reply.
 GAP saved: corp/gaps/GAP-<date>-<domain>.md
 ```
 

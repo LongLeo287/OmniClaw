@@ -1,7 +1,11 @@
 import os
 from pathlib import Path
 
-ROOT_DIR = Path(r"D:\OmniClaw")
+import os
+__TEMP_ROOT__ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+
+ROOT_DIR = Path(__TEMP_ROOT__)
 ECOSYSTEM_DIR = ROOT_DIR / "ecosystem"
 REGIONAL_MAP = ECOSYSTEM_DIR / "_REGIONAL_MAP.md"
 

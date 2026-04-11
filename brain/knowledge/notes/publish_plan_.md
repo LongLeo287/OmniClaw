@@ -1,4 +1,4 @@
-﻿---
+---
 id: ki-publish-plan-2026-03-24
 type: document
 owner: SYSTEM
@@ -14,9 +14,9 @@ healed_at: 2026-04-03T22:46:22.718450
 
 ## Bá»I Cáº¢NH
 
-OmniClaw Corp hiá»‡n cháº¡y full local trÃªn mÃ¡y CEO.
-Problem: há»‡ thá»‘ng náº·ng (~GB do plugins, vector DB, models) â†’ khÃ´ng thá»ƒ push raw lÃªn GitHub.
-CÃ¢u há»i cá»‘t lÃµi: **Distribute OmniClaw cho user khÃ¡c nhÆ° tháº¿ nÃ o?**
+OmniClaw Corp hiá»‡n cháº¡y full local trên máy CEO.
+Problem: há»‡ thá»‘ng náº·ng (~GB do plugins, vector DB, models) â†’ không thá»ƒ push raw lên GitHub.
+Câu há»i cá»‘t lõi: **Distribute OmniClaw cho user khác nhÆ° tháº¿ nÃ o?**
 
 ---
 
@@ -24,7 +24,7 @@ CÃ¢u há»i cá»‘t lÃµi: **Distribute OmniClaw cho user khÃ¡c nhÆ° 
 
 ### Tier 1 â€” GitHub Core (~5MB)
 ```
-Gá»“m: Táº¥t cáº£ code/config/markdown â€” KHÃ”NG cÃ³ data/models
+Gá»“m: Táº¥t cáº£ code/config/markdown â€” KHÃ”NG có data/models
 
 âœ… corp/           â€” 21 dept prompts, rules, sops
 âœ… brain/          â€” agents defs, brain/memory, governance
@@ -33,7 +33,7 @@ Gá»“m: Táº¥t cáº£ code/config/markdown â€” KHÃ”NG cÃ³ data/m
 âœ… hud/            â€” HUD.md template
 âœ… skills/         â€” SKILL.md files only (no heavy code)
 âœ… security/       â€” vet_repo.ps1
-âœ… .env.example    â€” template keys (khÃ´ng cÃ³ giÃ¡ trá»‹ tháº­t)
+âœ… .env.example    â€” template keys (không có giá trá»‹ tháº­t)
 âœ… requirements.txt â€” pinned dependencies
 âœ… README.md        â€” setup guide
 
@@ -67,12 +67,12 @@ Gá»“m: Táº¥t cáº£ code/config/markdown â€” KHÃ”NG cÃ³ data/m
 ```
 Pros:  Community má»Ÿ, dá»… chia sáº», SEO tá»‘t
 Cons:  Code/prompts lá»™, competitor copy Ä‘Æ°á»£c
-Best for: Template/skeleton version (khÃ´ng cÃ³ CEO data/customization)
+Best for: Template/skeleton version (không có CEO data/customization)
 ```
 
 ### Option B â€” Private Repo + Invite
 ```
-Pros:  Kiá»ƒm soÃ¡t access, báº£o máº­t cao
+Pros:  Kiá»ƒm soát access, báº£o máº­t cao
 Cons:  Giá»›i háº¡n collaborators (GitHub Free: 3 ngÆ°á»i)
 Best for: CEO vÃ  team internal (<5 ngÆ°á»i)
 ```
@@ -81,14 +81,14 @@ Best for: CEO vÃ  team internal (<5 ngÆ°á»i)
 ```
 Pros:  User click "Use this template" â†’ clone vá» â†’ setup
 Cons:  Cáº§n maintain 2 versions (template + CEO private)
-Best for: PhÃ¢n phá»‘i cho clients hoáº·c bÃ¡n OmniClaw template
+Best for: Phân phá»‘i cho clients hoáº·c bán OmniClaw template
 ```
 
 ### Option D â€” Packaged Release (ZIP)
 ```
-Pros:  Full system, khÃ´ng cáº§n git knowledge
-Cons:  Náº·ng náº¿u include data, update khÃ³
-Best for: CEO muá»‘n trao tay cho client khÃ´ng tech-savvy
+Pros:  Full system, không cáº§n git knowledge
+Cons:  Náº·ng náº¿u include data, update khó
+Best for: CEO muá»‘n trao tay cho client không tech-savvy
 ```
 
 ### Option E â€” Docker (TÆ°Æ¡ng lai)
@@ -97,7 +97,7 @@ Pros:  One-click deploy, isolate environment
 Cons:  Cáº§n Docker knowledge, náº·ng image
 Best for: Cloud deployment (VPS, server)
 Files: docker-compose.yml + Dockerfile
-Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (Ä‘Ã£ pending)
+Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (Ä‘ã pending)
 ```
 
 ---
@@ -107,37 +107,37 @@ Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (Ä‘Ã£ pending)
 | User Type | Muá»‘n gÃ¬ | Solution |
 |-----------|---------|---------|
 | CEO (chÃ­nh mÃ¬nh) | Backup + version | Private GitHub + git push |
-| Team internal | CÃ¹ng dÃ¹ng | Private repo + invite + shared .env |
-| Client chuyÃªn nghiá»‡p | System Ä‘Ã£ configured | Option D (ZIP) hoáº·c E (Docker) |
+| Team internal | Cùng dùng | Private repo + invite + shared .env |
+| Client chuyên nghiá»‡p | System Ä‘ã configured | Option D (ZIP) hoáº·c E (Docker) |
 | Developer/Builder | Tá»± customize | Option A/C (template) |
-| KhÃ´ng tech | Plug-and-play | Cáº§n build Setup Wizard (tÆ°Æ¡ng lai) |
+| Không tech | Plug-and-play | Cáº§n build Setup Wizard (tÆ°Æ¡ng lai) |
 
 ---
 
 ## ROADMAP PUBLISH
 
-### Phase 1 â€” Ngay bÃ¢y giá» (30 phÃºt)
+### Phase 1 â€” Ngay bây giá» (30 phút)
 ```
 [x] Táº¡o .gitignore chuáº©n
 [x] requirements.txt (pinned)
 [x] .env.example
-[ ] git commit + push lÃªn private repo
+[ ] git commit + push lên private repo
 ```
 
 ### Phase 2 â€” Ngáº¯n háº¡n
 ```
 [ ] ops/scripts/setup.ps1 (bootstrap script)
-[ ] README.md chuyÃªn nghiá»‡p (install guide, architecture overview)
+[ ] README.md chuyên nghiá»‡p (install guide, architecture overview)
 [ ] plugin-manifest.json (list plugins vá»›i download URL)
-[ ] ops/workflows/export_ai_os_template.md (Ä‘Ã£ cÃ³ workflow nÃ y)
+[ ] ops/workflows/export_ai_os_template.md (Ä‘ã có workflow nÃ y)
 ```
 
-### Phase 3 â€” Trung háº¡n (khi cÃ³ user khÃ¡c)
+### Phase 3 â€” Trung háº¡n (khi có user khác)
 ```
-[ ] TÃ¡ch thÃ nh GitHub Template repo
+[ ] Tách thÃ nh GitHub Template repo
 [ ] Táº¡o CHANGELOG.md (version history)
 [ ] Video demo / documentation site
-[ ] Pricing model (náº¿u bÃ¡n)
+[ ] Pricing model (náº¿u bán)
 ```
 
 ### Phase 4 â€” DÃ i háº¡n (scale)
@@ -145,7 +145,7 @@ Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (Ä‘Ã£ pending)
 [ ] Docker Compose full stack
 [ ] One-click VPS deploy (Digital Ocean App Platform, Railway)
 [ ] Setup Wizard UI (web-based)
-[ ] Multi-tenant architecture (nhiá»u CEO cÃ¹ng cháº¡y)
+[ ] Multi-tenant architecture (nhiá»u CEO cùng cháº¡y)
 ```
 
 ---
@@ -154,11 +154,11 @@ Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (Ä‘Ã£ pending)
 
 | File | Description: | Thá»i gian |
 |------|-------|----------|
-| `.gitignore` | Exclude plugins/, DB, secrets | 5 phÃºt |
-| `requirements.txt` | pip dependencies pinned | 5 phÃºt |
-| `.env.example` | Template keys | 5 phÃºt |
-| `ops/scripts/setup.ps1` | Bootstrap full install | 30 phÃºt |
-| `README.md` | Architecture + install guide | 20 phÃºt |
+| `.gitignore` | Exclude plugins/, DB, secrets | 5 phút |
+| `requirements.txt` | pip dependencies pinned | 5 phút |
+| `.env.example` | Template keys | 5 phút |
+| `ops/scripts/setup.ps1` | Bootstrap full install | 30 phút |
+| `README.md` | Architecture + install guide | 20 phút |
 
 **Tá»•ng:** ~1 giá» â†’ OmniClaw sáºµn sÃ ng distribute
 
@@ -166,8 +166,8 @@ Ref:  PROP_2026-03-23_OBSERVABILITY_LAYER (Ä‘Ã£ pending)
 
 ## CÃ‚U Há»ŽI CHO BRAINSTORM (khi CEO cáº§n quyáº¿t Ä‘á»‹nh)
 
-1. Má»¥c tiÃªu distribute: cho team ná»™i bá»™ hay cho client/cá»™ng Ä‘á»“ng?
-2. CÃ³ muá»‘n monetize OmniClaw template khÃ´ng?
+1. Má»¥c tiêu distribute: cho team ná»™i bá»™ hay cho client/cá»™ng Ä‘á»“ng?
+2. Có muá»‘n monetize OmniClaw template không?
 3. Pháº§n nÃ o cá»§a OmniClaw lÃ  "secret" (CEO customization) vÃ  pháº§n nÃ o lÃ  "template"?
 4. Cloud deploy hay local-only?
 5. Target user: technical (developer) hay non-technical?

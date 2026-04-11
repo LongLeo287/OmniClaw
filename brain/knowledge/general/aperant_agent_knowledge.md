@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for aperant_agent
+# Knowledge Dump for aperant_agent
 
 ## File: agent.md
 ```

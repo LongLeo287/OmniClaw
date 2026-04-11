@@ -1,116 +1,86 @@
----
-id: activation-guide
-type: document
-owner: SYSTEM
-tags: [startup, runtime, public-bootstrap]
----
-
 # OmniClaw Activation Guide
 
-This guide reflects the public OmniClaw runtime that actually exists in this repository.
+This guide separates OmniClaw into two boot paths.
 
-## Runtime Layers
+## 1. Agent System
 
-1. `omniclaw doctor`
-Checks workspace markers and required local dependencies.
+Use this when the goal is to run OmniClaw as the project-facing agent layer.
+This path should leave OmniClaw ready for user work, with skills, plugins,
+memory state, routing, and orchestrator readiness all checked.
 
-2. `omniclaw startup`
-Rebuilds registries/maps and runs the Python startup health checks.
-
-3. `omniclaw core`
-Starts the public core processes:
-- Bridge Gateway
-- Orchestrator watch loop
-
-## Recommended Startup Flow
+Commands:
 
 ```bash
 omniclaw doctor
 omniclaw startup
-omniclaw core
+omniclaw watch 30
+omniclaw agent-status
 ```
 
-## Commands
+Meaning:
 
-### Doctor
+- `omniclaw startup` runs the agent boot path and validates user-facing readiness.
+- `omniclaw watch 30` keeps the orchestrator polling in watch mode.
+- `omniclaw agent-status` reports agent-side routing and activation state.
+
+Scope:
+
+- orchestrator
+- agent routing
+- skill registry
+- tool registry
+- plugin inventory
+- memory state
+- workforce-facing execution flow
+
+Constraint:
+
+- the agent system may use OmniClaw, but it must not trigger self-healing, repair, registry mutation, or core-improvement flows
+
+Excluded from this flow:
+
+- core daemon maintenance
+- bridge, UI, remote, port provisioning
+
+## 2. Core Daemon System
+
+Use this when the goal is to repair, maintain, sync, and upgrade OmniClaw itself.
+This path is for the internal daemon side of OmniClaw, not for project-facing use.
+
+Commands:
 
 ```bash
 omniclaw doctor
+omniclaw core-daemon
+omniclaw core-loop 120
+omniclaw core-status
+omniclaw sync
 ```
 
-Verifies:
-- workspace root markers
-- required files
-- `git`, `node`, `python`
-- optional `docker`
+Meaning:
 
-### Startup
+- `omniclaw core-daemon` runs core startup preflight for the maintenance layer.
+- `omniclaw core-loop 120` keeps internal upkeep running.
+- `omniclaw core-status` reports internal state readiness.
+- `omniclaw sync` refreshes internal registries and maps.
 
-```bash
-omniclaw startup
-```
+Scope:
 
-This command:
-- rebuilds tool and skill registries
-- regenerates ecosystem maps
-- runs the startup health/status refresh
+- blackboard state
+- trust matrix compliance
+- daemon activation state
+- registry and telemetry upkeep
+- self-maintenance readiness
+- system repair and improvement flows
 
-Optional:
+Excluded from this flow:
 
-```bash
-omniclaw startup --no-sync
-omniclaw startup --check-only
-```
+- orchestrator watch for external project work
+- bridge, UI, remote, port provisioning
 
-### Core
+## Operating Rule
 
-```bash
-omniclaw core
-```
+Keep these two boot paths separate and logical:
 
-Starts:
-- bridge gateway on `127.0.0.1:8000`
-- orchestrator watch loop with a 30-second interval
-
-Optional:
-
-```bash
-omniclaw core --port 8001
-omniclaw core --interval 10
-omniclaw core --no-bridge
-omniclaw core --no-orchestrator
-```
-
-### Status
-
-```bash
-omniclaw status
-```
-
-Prints runtime-local status for:
-- bridge port
-- blackboard
-- system router
-- startup HUD
-- receipt store
-
-## Tool-Agnostic Usage
-
-The same startup flow is intended to be usable from:
-- Claude Code
-- Codex
-- Antigravity
-
-They should all rely on the same local commands rather than separate bootstrap paths.
-
-## Public Core Daemons
-
-For the public repository, the only startup-managed long-running processes with clear runtime evidence are:
-
-1. `Bridge Gateway`
-Implemented by `core/bridge/main.py`
-
-2. `Orchestrator Watch Loop`
-Implemented by `core/ops/omniclaw_orchestrator.py`
-
-Other daemon concepts may exist in rules or docs, but should not be treated as bootable public runtime processes unless they have an executable entrypoint in the repository.
+- `Khởi động OmniClaw` => boot the agent system.
+- `Khởi động Core Daemon` => boot the internal core daemon system.

@@ -1,5 +1,5 @@
 ---
-path: "D:\OmniClaw\system\telemetry\\receipts"
+path: "D:\LongLeo\OmniClaw\system\telemetry\\receipts"
 department_owner: "Dept 10"
 department_name: "Monitoring"
 assigned_daemon: "monitor-agent"

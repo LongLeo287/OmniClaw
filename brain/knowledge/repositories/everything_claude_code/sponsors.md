@@ -38,7 +38,7 @@ Use these proof points in sponsor conversations:
 - Public adoption signals: stars, forks, contributors, release cadence
 - Cross-harness support: Claude Code, Cursor, OpenCode, Codex app/CLI
 
-See [`docs/business/metrics-and-sponsorship.md`](docs/business/metrics-and-sponsorship.md) for a copy/paste metrics pull workflow.
+See `docs/business/metrics-and-sponsorship.md` for a copy/paste metrics pull workflow.
 
 ## Sponsor Tiers
 

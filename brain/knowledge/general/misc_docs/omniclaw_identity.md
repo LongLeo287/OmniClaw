@@ -1,4 +1,4 @@
-﻿---
+---
 id: omniclaw-identity
 type: document
 owner: OHD

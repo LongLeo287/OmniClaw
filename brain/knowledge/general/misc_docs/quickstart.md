@@ -21,7 +21,7 @@ Your AI stops forgetting. It remembers the patterns, decisions, and context from
 
 ## Don't Have Claude Code?
 
-If you're using Cursor without Claude Code, see [STANDALONE-SETUP.md](STANDALONE-SETUP.md) for setup with free-tier providers like Gemini or OpenRouter.
+If you're using Cursor without Claude Code, see STANDALONE-SETUP.md for setup with free-tier providers like Gemini or OpenRouter.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for cloudflared_agent
+# Knowledge Dump for cloudflared_agent
 
 ## File: agent.md
 ```

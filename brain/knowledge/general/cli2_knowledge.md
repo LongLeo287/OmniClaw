@@ -6069,7 +6069,7 @@ licenses:
        See the License for the specific language governing permissions and
        limitations under the License.
 - sources: README.md
-  text: Distributed under Apache Version 2.0, see [LICENSE](LICENSE) for more information.
+  text: Distributed under Apache Version 2.0, see LICENSE for more information.
 notices:
 - sources: NOTICE
   text: |-
@@ -6630,7 +6630,7 @@ licenses:
        See the License for the specific language governing permissions and
        limitations under the License.
 - sources: README.md
-  text: The MIT License (MIT) + Apache 2.0. Read [LICENSE](LICENSE).
+  text: The MIT License (MIT) + Apache 2.0. Read LICENSE.
 notices: []
 
 ```
@@ -9359,7 +9359,7 @@ licenses:
        See the License for the specific language governing permissions and
        limitations under the License.
 - sources: README.md
-  text: This project is under Apache v2 License. See the [LICENSE](LICENSE) file for
+  text: This project is under Apache v2 License. See the LICENSE file for
     the full license text.
 notices: []
 

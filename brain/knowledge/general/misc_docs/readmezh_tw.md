@@ -135,7 +135,7 @@ healed_at: 2026-04-02T20:31:08.081435
 
 ## 文件
 
-📚 **[檢視完整文件](docs/)** - 在 GitHub 上瀏覽 Markdown 文件
+📚 **檢視完整文件** - 在 GitHub 上瀏覽 Markdown 文件
 
 ### 入門指南
 
@@ -292,7 +292,7 @@ npm run bug-report
 
 Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 
-完整詳情請參閱 [LICENSE](LICENSE) 檔案。
+完整詳情請參閱 LICENSE 檔案。
 
 **這代表什麼：**
 
@@ -301,7 +301,7 @@ Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 - 衍生作品也必須採用 AGPL-3.0 授權
 - 本軟體不提供任何擔保
 
-**關於 Ragtime 的說明**：`ragtime/` 目錄採用 **PolyForm Noncommercial License 1.0.0** 另行授權。詳情請參閱 [ragtime/LICENSE](ragtime/LICENSE)。
+**關於 Ragtime 的說明**：`ragtime/` 目錄採用 **PolyForm Noncommercial License 1.0.0** 另行授權。詳情請參閱 ragtime/LICENSE。
 
 ---
 

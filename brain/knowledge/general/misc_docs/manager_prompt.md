@@ -1,4 +1,4 @@
-﻿---
+---
 id: manager-prompt
 type: document
 owner: OHD

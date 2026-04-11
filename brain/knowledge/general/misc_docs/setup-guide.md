@@ -408,7 +408,7 @@ Components will be added to `src/components/ui/` by default.
 ## Next Steps
 
 1. Browse the [component catalog](./component-catalog.md)
-2. Read the [customization guide](./customization-guide.md)
+2. Read the customization guide
 3. Check out example implementations in `/examples`
 4. Join the [shadcn/ui Discord](https://discord.com/invite/vNvTqVaWm6)
 

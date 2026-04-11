@@ -184,9 +184,9 @@ READ + NETWORK + DELETE       → Full Exfil Chain [CRITICAL -100]
 ### 8 Level System (Luyện Nghệ Toàn Thư)
 | Level | Chapter | Content |
 |-------|---------|---------|
-| Lv.1 | ĐỊNH HÌNH BẢN NGÃ | AI identity, naming, hierarchy |
+| Lv.1 | ĐỊNH HÌNH BẢN NGà| AI identity, naming, hierarchy |
 | Lv.2 | TIÊM NGỮ CẢNH | Context injection, cure "goldfish memory" |
-| Lv.3 | ĐA NHÂN CÁCH | Multi-persona simulation (Architect/Builder/Police) |
+| Lv.3 | ĐA NHN CÁCH | Multi-persona simulation (Architect/Builder/Police) |
 | Lv.4 | KỶ LUẬT THÉP | Discipline system, "Constitution" for stubborn AI |
 | Lv.5 | SIÊU LỆNH | Supercommands for 10x productivity |
 | Lv.6 | KHO VŨ KHÍ (SKILLS) | Code writing, web browsing, auto-fixing skills |

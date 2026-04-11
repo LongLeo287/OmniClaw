@@ -277,7 +277,7 @@ pnpm check
 
 ### PR Regression Checks
 
-Every pull request runs the backend regression workflow at [.github/workflows/backend-unit-tests.yml](.github/workflows/backend-unit-tests.yml), including:
+Every pull request runs the backend regression workflow at .github/workflows/backend-unit-tests.yml, including:
 
 - `tests/test_provisioner_kubeconfig.py`
 - `tests/test_docker_sandbox_mode_detection.py`
@@ -297,4 +297,4 @@ Every pull request runs the backend regression workflow at [.github/workflows/ba
 
 ## License
 
-By contributing to DeerFlow, you agree that your contributions will be licensed under the [MIT License](./LICENSE).
+By contributing to DeerFlow, you agree that your contributions will be licensed under the MIT License.

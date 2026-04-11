@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for agentscope_agent
+# Knowledge Dump for agentscope_agent
 
 ## File: agent.md
 ```

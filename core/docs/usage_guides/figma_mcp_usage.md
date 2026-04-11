@@ -11,7 +11,7 @@ This MCP plugin allows agents to fetch direct structural data (layers, typograph
 ## Setup Requirements
 1. Log into your Figma account.
 2. Go to **Settings > Personal access tokens** and create a new token.
-3. Open `D:\OmniClaw\.env` and add:
+3. Open `D:\LongLeo\OmniClaw\.env` and add:
    ```env
    # Figma MCP Integration
    FIGMA_API_KEY=your_token_here
@@ -21,5 +21,5 @@ This MCP plugin allows agents to fetch direct structural data (layers, typograph
 ## Usage Commands
 When tasked with a UI layout update, the `ui-ux-architect` agent can autonomously call the `get_figma_data` MCP tool with the URL of the Figma file or frame.
 
-- The system uses `D:\OmniClaw\vault\tmp\sandbox_env\QUARANTINE_figma-context-mcp\dist\bin.js`.
+- The system uses `D:\LongLeo\OmniClaw\vault\tmp\sandbox_env\QUARANTINE_figma-context-mcp\dist\bin.js`.
 - It processes node IDs and extracts CSS values, meaning you no longer have to guess font sizes or pixel gaps.

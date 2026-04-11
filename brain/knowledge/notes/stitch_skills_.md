@@ -1,4 +1,4 @@
-﻿---
+---
 id: ki-stitch-skills-2026-03-25
 type: document
 owner: SYSTEM
@@ -16,7 +16,7 @@ healed_at: 2026-04-03T22:46:22.762924
 
 ## Summary
 
-**stitch-skills** lÃ  repo chÃ­nh thá»©c tá»« Google Labs chá»©a cÃ¡c agent skills cho Stitch MCP. 7 skills sáºµn sÃ ng dÃ¹ng vá»›i `npx skills add`.
+**stitch-skills** lÃ  repo chÃ­nh thá»©c tá»« Google Labs chá»©a các agent skills cho Stitch MCP. 7 skills sáºµn sÃ ng dùng vá»›i `npx skills add`.
 
 ---
 
@@ -50,7 +50,7 @@ npx skills add google-labs-code/stitch-skills --skill enhance-prompt --global
 
 | Criterion | Score | Notes |
 |-----------|-------|-------|
-| Relevance to OmniClaw | 10/10 | CEO Ä‘ang dÃ¹ng Stitch MCP |
+| Relevance to OmniClaw | 10/10 | CEO Ä‘ang dùng Stitch MCP |
 | Security risk | NONE | Official Google source |
 | Integration effort | LOW | npx install |
 | Value type | SKILLS |  |

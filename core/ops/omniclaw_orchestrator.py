@@ -68,6 +68,16 @@ def _load_env():
                 k, _, v = line.partition("="); env[k.strip()] = v.strip().strip('"')
     return env
 ENV = _load_env()
+RUNTIME_MODE = "core"
+
+
+def set_runtime_mode(mode: str):
+    global RUNTIME_MODE
+    RUNTIME_MODE = mode
+
+
+def is_agent_runtime() -> bool:
+    return RUNTIME_MODE == "agent"
 
 def _load_system_router():
     try:
@@ -443,25 +453,28 @@ def run_cycle(verbose=True) -> dict:
     # 3. Read blackboard
     bb = load_json(BLACKBOARD)
     
-    # 3.5 [SELF-HEALING] Overlay Gap Ingestion
-    gap_task = _ingest_system_gaps()
-    if gap_task:
-        bb["task_payload"] = gap_task
-        bb["handoff_trigger"] = "READY"
-        if "parallel_lanes" in bb:
-            del bb["parallel_lanes"] # Force single lane to prioritize fixing core system
-        save_json(BLACKBOARD, bb)
-        log("Blackboard overlaid with Self-Healing Gap Task.", "WARN")
-        
-    # 3.6 [CEO INBOX] Overlay Proposal Ingestion
-    prop_task = _ingest_approved_proposals()
-    if prop_task:
-        bb["task_payload"] = prop_task
-        bb["handoff_trigger"] = "READY"
-        if "parallel_lanes" in bb:
-            del bb["parallel_lanes"] # Force single lane to execute CEO command safely
-        save_json(BLACKBOARD, bb)
-        log("Blackboard overlaid with CEO Approved Proposal.", "WARN")
+    if not is_agent_runtime():
+        # 3.5 [SELF-HEALING] Overlay Gap Ingestion
+        gap_task = _ingest_system_gaps()
+        if gap_task:
+            bb["task_payload"] = gap_task
+            bb["handoff_trigger"] = "READY"
+            if "parallel_lanes" in bb:
+                del bb["parallel_lanes"] # Force single lane to prioritize fixing core system
+            save_json(BLACKBOARD, bb)
+            log("Blackboard overlaid with Self-Healing Gap Task.", "WARN")
+            
+        # 3.6 [CEO INBOX] Overlay Proposal Ingestion
+        prop_task = _ingest_approved_proposals()
+        if prop_task:
+            bb["task_payload"] = prop_task
+            bb["handoff_trigger"] = "READY"
+            if "parallel_lanes" in bb:
+                del bb["parallel_lanes"] # Force single lane to execute CEO command safely
+            save_json(BLACKBOARD, bb)
+            log("Blackboard overlaid with CEO Approved Proposal.", "WARN")
+    else:
+        log("Agent runtime active: skipping core self-healing intake", "OK")
         
     trigger = bb.get("handoff_trigger", "IDLE")
     log(f"Blackboard: trigger={trigger} | campaign={bb.get('active_campaign', 'none')}")
@@ -642,13 +655,20 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "once"
 
     if cmd == "once":
+        set_runtime_mode("core")
         result = run_cycle()
         print(json.dumps({"status": result["status"], "trigger": result["trigger"]}, indent=2))
+
+    elif cmd == "agent-once":
+        set_runtime_mode("agent")
+        result = run_cycle()
+        print(json.dumps({"status": result["status"], "trigger": result["trigger"], "runtime": "agent"}, indent=2))
 
     elif cmd == "routes":
         list_routes()
 
     elif cmd == "watch":
+        set_runtime_mode("core")
         interval = int(sys.argv[2]) if len(sys.argv) > 2 else 30
         log(f"Watch mode €” polling every {interval}s | Ctrl+C to stop", "OK")
         while True:
@@ -656,6 +676,24 @@ if __name__ == "__main__":
                 run_cycle(verbose=False)
             except KeyboardInterrupt:
                 log("Orchestrator stopped", "WARN"); break
+            except Exception as e:
+                if _CLAWABLE_ONLINE:
+                    err_class = safe_failure_class(e)
+                    msg_body = truncate_body_snippet(str(e))
+                    log(f"[{err_class.upper()}] {msg_body}", "ERR")
+                else:
+                    log(f"Cycle error: {e}", "ERR")
+            time.sleep(interval)
+
+    elif cmd == "agent-watch":
+        set_runtime_mode("agent")
+        interval = int(sys.argv[2]) if len(sys.argv) > 2 else 30
+        log(f"Agent watch mode - polling every {interval}s | Ctrl+C to stop", "OK")
+        while True:
+            try:
+                run_cycle(verbose=False)
+            except KeyboardInterrupt:
+                log("Agent orchestrator stopped", "WARN"); break
             except Exception as e:
                 if _CLAWABLE_ONLINE:
                     err_class = safe_failure_class(e)
@@ -673,4 +711,4 @@ if __name__ == "__main__":
         print(json.dumps(route, indent=2))
 
     else:
-        print("Usage: python omniclaw_orchestrator.py [once|routes|watch [sec]|route <domain>]")
+        print("Usage: python omniclaw_orchestrator.py [once|agent-once|routes|watch [sec]|agent-watch [sec]|route <domain>]")

@@ -187,7 +187,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Services/AgentConfigurationService.swift
 
-[← Back to Module](../modules/root/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -246,7 +246,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Services/Proxy/CLIProxyManager.swift
 
-[← Back to Module](../modules/root/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -345,7 +345,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Services/Proxy/FallbackFormatConverter.swift
 
-[← Back to Module](../modules/root/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -359,7 +359,7 @@ Generated automatically via Phoenix V3 Pipeline.
 | Line | Kind | Name | Visibility | Signature |
 | ---- | ---- | ---- | ---------- | --------- |
 | 44 | mod | extension AIProvider | (internal) | - |
-| 93 | fn | convertRequest | (internal) | `static func convertRequest(     _ body: inout [...` |
+| 93 | fn | convertRequest | (internal) | `static func convertRequest(     _ body: inout ...` |
 | 131 | fn | isClaudeModel | (internal) | `static func isClaudeModel(_ modelName: String) ...` |
 | 144 | fn | detectFormat | (internal) | `static func detectFormat(from body: [String: An...` |
 | 187 | fn | convertMessages | (internal) | `static func convertMessages(     _ messages: [[...` |
@@ -400,7 +400,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Services/Proxy/ProxyBridge.swift
 
-[← Back to Module](../modules/root/MODULE.md) | [← Back to INDEX](../INDEX.md)
+[← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -430,7 +430,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Services/StatusBarMenuBuilder.swift
 
-[← Back to Module](../modules/root/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -497,7 +497,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/ViewModels/QuotaViewModel.swift
 
-[← Back to Module](../modules/root/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -640,7 +640,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Views/Screens/DashboardScreen.swift
 
-[← Back to Module](../modules/Quotio-Views-Screens/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -672,7 +672,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Views/Screens/ProvidersScreen.swift
 
-[← Back to Module](../modules/Quotio-Views-Screens/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -726,7 +726,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Views/Screens/QuotaScreen.swift
 
-[← Back to Module](../modules/Quotio-Views-Screens/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -776,7 +776,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Quotio/Views/Screens/SettingsScreen.swift
 
-[← Back to Module](../modules/Quotio-Views-Screens/MODULE.md) | [← Back to INDEX](../INDEX.md)
+← Back to Module | [← Back to INDEX](../INDEX.md)
 
 ## Overview
 
@@ -857,7 +857,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Memory
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 ## Summary
 
@@ -891,7 +891,7 @@ Generated automatically via Phoenix V3 Pipeline.
 ```
 # Module: Quotio/Models
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 15
 
@@ -927,7 +927,7 @@ _No import relationships detected._
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 3 large files in this module.
 
@@ -1007,7 +1007,7 @@ Symbol maps for 3 large files in this module.
 ```
 # Memory
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 ## Summary
 
@@ -1045,7 +1045,7 @@ Symbol maps for 3 large files in this module.
 ```
 # Module: Quotio/Services
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 25
 
@@ -1094,7 +1094,7 @@ _No import relationships detected._
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 4 large files in this module.
 
@@ -1292,7 +1292,7 @@ Symbol maps for 4 large files in this module.
 ```
 # Module: Quotio/Services/Antigravity
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 7
 
@@ -1320,7 +1320,7 @@ _No import relationships detected._
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 1 large files in this module.
 
@@ -1355,7 +1355,7 @@ Symbol maps for 1 large files in this module.
 ```
 # Memory
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 ## Summary
 
@@ -1383,7 +1383,7 @@ Symbol maps for 1 large files in this module.
 ```
 # Module: Quotio/Services/QuotaFetchers
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 9
 
@@ -1413,7 +1413,7 @@ _No import relationships detected._
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 1 large files in this module.
 
@@ -1451,7 +1451,7 @@ Symbol maps for 1 large files in this module.
 ```
 # Module: Quotio/Views/Components
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 27
 
@@ -1513,7 +1513,7 @@ _No import relationships detected._
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 2 large files in this module.
 
@@ -1562,7 +1562,7 @@ Symbol maps for 2 large files in this module.
 ```
 # Module: Quotio/Views/Onboarding
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 6
 
@@ -1586,7 +1586,7 @@ _No import relationships detected._
 ```
 # Module: Quotio/Views/Screens
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** implicit | **Files:** 8
 
@@ -1625,7 +1625,7 @@ _No import relationships detected._
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 6 large files in this module.
 
@@ -1804,7 +1804,7 @@ Symbol maps for 6 large files in this module.
 ```
 # Memory
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 ## Summary
 
@@ -1886,7 +1886,7 @@ Symbol maps for 6 large files in this module.
 ```
 # Root Module
 
-[← Back to INDEX](../../INDEX.md)
+← Back to INDEX
 
 **Type:** root | **Files:** 36
 
@@ -1957,7 +1957,7 @@ Dependencies from other modules:
 ```
 # Outline
 
-[← Back to MODULE](MODULE.md) | [← Back to INDEX](../../INDEX.md)
+← Back to MODULE | ← Back to INDEX
 
 Symbol maps for 9 large files in this module.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 id: AI-OS-SYSTEM-MAP-001
 type: REFERENCE
 domain: [system, architecture, meta]

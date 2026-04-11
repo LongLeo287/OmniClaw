@@ -50,3 +50,5 @@ graph TD
 
 ---
 *OmniClaw V5.0 | Forged by OMA AI Architect | brain.knowledge.general | 2026-04-10*
+
+- `codex_kit`  id: `codex_kit` | type: `kit` | registered: 2026-04-12T04:37:42.494920

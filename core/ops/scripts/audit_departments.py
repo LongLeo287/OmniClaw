@@ -1,7 +1,11 @@
 import os
 from pathlib import Path
 
-ROOT = Path(r"D:\OmniClaw\ecosystem\workforce\departments")
+import os
+__TEMP_ROOT__ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+
+
+ROOT = Path(os.path.join(__TEMP_ROOT__, "ecosystem", "workforce", "departments"))
 
 def remediate_departments():
     remediations = {

@@ -128,7 +128,7 @@ chat-quality-agent/
 | `LEGO_EMAIL` | Email cho Let's Encrypt | Không |
 | `APP_URL` | URL công khai (cho links notification) | Không |
 
-Xem đầy đủ trong [.env.example](.env.example).
+Xem đầy đủ trong .env.example.
 
 ## Screenshots
 
@@ -153,4 +153,4 @@ Xem tài liệu chi tiết tại: **[https://tanviet12.github.io/chat-quality-ag
 
 ## License
 
-[MIT](LICENSE) - SePay
+MIT - SePay

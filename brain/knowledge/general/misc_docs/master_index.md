@@ -1,4 +1,4 @@
-﻿---
+---
 id: master-index
 type: document
 owner: OHD
@@ -9,11 +9,11 @@ healed_at: 2026-04-02T20:29:06.861303
 # ðŸ›ï¸ OmniClaw â€” Master System Index
 > **Official Directory of Departments, Agents, and Workflows (Sorted by ID)**
 
-[**ðŸ‡»ðŸ‡³ Xem Báº£n Tiáº¿ng Viá»‡t (Vietnamese)**](MASTER_INDEX_vi.md)
+**ðŸ‡»ðŸ‡³ Xem Báº£n Tiáº¿ng Viá»‡t (Vietnamese)**
 
 This document serves as the definitive guide to the **21-department organizational structure** of OmniClaw. It defines who (Agents) does what (Functions) and how they are linked (Workflows).
 
-> ðŸ’¡ **Notice for Human Operators:** A simplified, public-facing version of this architecture is now available in the [**brain/knowledge/docs_legacy/architecture/system_overview.md**](../corp/docs/architecture/system_overview.md) guide.
+> ðŸ’¡ **Notice for Human Operators:** A simplified, public-facing version of this architecture is now available in the **brain/knowledge/docs_legacy/architecture/system_overview.md** guide.
 
 ---
 

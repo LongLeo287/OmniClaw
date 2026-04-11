@@ -1,0 +1,11 @@
+{
+  "registry": [
+    {
+      "id": "codex_kit",
+      "type": "kit",
+      "coord": "brain/knowledge/general/codex_kit",
+      "owner": "OA",
+      "registered_at": "2026-04-12T04:37:42.494920"
+    }
+  ]
+}

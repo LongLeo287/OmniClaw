@@ -272,13 +272,13 @@ DeerFlow supporte plusieurs modes d'exécution sandbox :
 
 En développement Docker, le démarrage des services suit le mode sandbox défini dans `config.yaml`. En mode Local/Docker, `provisioner` n'est pas démarré.
 
-Voir le [Guide de configuration Sandbox](backend/docs/CONFIGURATION.md#sandbox) pour configurer le mode de votre choix.
+Voir le Guide de configuration Sandbox pour configurer le mode de votre choix.
 
 #### Serveur MCP
 
 DeerFlow supporte des serveurs MCP et des skills configurables pour étendre ses capacités.
 Pour les serveurs MCP HTTP/SSE, les flux de tokens OAuth sont supportés (`client_credentials`, `refresh_token`).
-Voir le [Guide MCP Server](backend/docs/MCP_SERVER.md) pour les instructions détaillées.
+Voir le Guide MCP Server pour les instructions détaillées.
 
 #### Canaux de messagerie
 
@@ -457,7 +457,7 @@ DEERFLOW_GATEWAY_URL=http://localhost:2026    # Gateway API
 DEERFLOW_LANGGRAPH_URL=http://localhost:2026/api/langgraph  # LangGraph API
 ```
 
-Voir [`skills/public/claude-to-deerflow/SKILL.md`](skills/public/claude-to-deerflow/SKILL.md) pour la référence API complète.
+Voir `skills/public/claude-to-deerflow/SKILL.md` pour la référence API complète.
 
 ### Sub-Agents
 
@@ -562,7 +562,7 @@ La couverture de tests de régression inclut la détection du mode sandbox Docke
 
 ## Licence
 
-Ce projet est open source et disponible sous la [Licence MIT](./LICENSE).
+Ce projet est open source et disponible sous la Licence MIT.
 
 ## Remerciements
 

@@ -1,4 +1,4 @@
-﻿---
+---
 id: rule-secrets-01-secrets-management
 type: document
 owner: SYSTEM
@@ -74,7 +74,7 @@ IF EXIST "%OMNICLAW_ROOT%\system\ops\secrets\MASTER.env" (
 api_key = "sk-abc123..."
 
 # BAD â€” hardcoded path on local machine
-ENV_FILE = r"D:\LongLeo\OmniClaw\AI OS\system\ops\secrets\MASTER.env"
+ENV_FILE = r"$OMNICLAW_ROOT\AI OS\system\ops\secrets\MASTER.env"
 
 # GOOD â€” dynamic root + env var
 ROOT = Path(os.environ.get("OMNICLAW_ROOT", str(Path(__file__).resolve().parents[N])))

@@ -574,7 +574,7 @@ If you find it useful, please ⭐ or buy me a coffee! 🙏
 
 最初のQLoRAベースの33B完全オープンソースの中国語LLM
 
-*この内容を[中国語](README.md)で読む。この内容を[英語](README_en.md)で読む。*
+*この内容を中国語で読む。この内容を英語で読む。*
 
 
 <div align="left">
@@ -836,3 +836,5 @@ custom: # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
 
 ```
 
+
+```

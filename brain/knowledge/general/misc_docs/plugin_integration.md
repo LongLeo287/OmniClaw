@@ -1,4 +1,4 @@
-﻿---
+---
 id: plugin-integration
 type: document
 owner: OHD

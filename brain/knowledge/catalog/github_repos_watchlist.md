@@ -28,8 +28,8 @@ tags: [github-repos, agent-skills, agentic, claude, skills, bookmark-list]
 | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | Claude memory system |
 | [memodb-io/Acontext](https://github.com/memodb-io/Acontext) | Context management |
 | [shynlee04/hivemind-plugin](https://github.com/shynlee04/hivemind-plugin) | Hivemind plugin |
-| [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) | Graph RAG ✅ ĐÃ NẠP |
-| [QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) | Agent framework ✅ ĐÃ NẠP |
+| [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) | Graph RAG ✅ ĐàNẠP |
+| [QwenLM/Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) | Agent framework ✅ ĐàNẠP |
 | [FareedKhan-dev/all-agentic-architectures](https://github.com/FareedKhan-dev/all-agentic-architectures) | Agentic patterns reference |
 | [HoangNguyen0403/agent-skills-standard](https://github.com/HoangNguyen0403/agent-skills-standard) | Vietnamese dev skills |
 | [OpenBMB/ChatDev](https://github.com/OpenBMB/ChatDev) | Multi-agent software dev |

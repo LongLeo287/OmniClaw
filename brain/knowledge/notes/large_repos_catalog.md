@@ -8,14 +8,14 @@ healed_at: 2026-04-03T22:46:22.806677
 
 # 📚 Large Repos Catalog — Clone On Demand
 # Version: 1.0 | 2026-03-25
-# Purpose: Các repo lớn không clone ngay — agent/dept lấy lệnh clone khi cần
+# Purpose: the repo lớn not clone ngay — agent/dept lấy lệnh clone khi cần
 # Path: brain/knowledge/notes/LARGE_REPOS_CATALOG.md
 
 ---
 
 ## Cách sử dụng
 
-> Agent hoặc phòng ban: Tìm repo phù hợp → chạy lệnh clone → thực hiện dự án → xóa sau khi xong (hoặc giữ lại nếu cần tiếp)
+> Agent hoặc phòng ban: Tìm repo phù hợp → chạy lệnh clone → executed dự án → xóa sau khi xong (hoặc giữ lại nếu cần tiếp)
 
 ```powershell
 # Clone về thư mục project cụ thể
@@ -30,7 +30,7 @@ git clone --depth 1 <URL> "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 
 | Repo | Dept chủ | Tag | Lý do clone |
 |------|----------|-----|-------------|
-| `next.js` | Engineering | `FRONTEND` | Khi build web app cho OmniClaw |
+| `next.js` | Engineering | `FRONTEND` | Khi build web app for OmniClaw |
 | `excalidraw` | Design / R&D | `UI-TOOL` | Khi cần source code diagram / whiteboard tool |
 | `posthog` | Analytics / Ops | `ANALYTICS` | Khi cần self-hosted analytics pipeline |
 | `plotly.js` | Data / HUD | `VISUALIZATION` | Khi build dashboard charts |
@@ -39,7 +39,7 @@ git clone --depth 1 <URL> "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 | `openai-cookbook` | R&D | `AI-PATTERNS` | Khi research LLM integration patterns |
 | `anime.js` | Design / Frontend | `ANIMATION` | Khi build animated UI |
 | `agents-course` | Training / R&D | `AI-EDUCATION` | Khi training agents về LLM concepts |
-| `gitignore` | Core / DevOps | `TEMPLATE` | Khi setup repo mới |
+| `gitignore` | Core / DevOps | `TEMPLATE` | Khi setup repo new |
 | `public-apis` | R&D / Integration | `INTEGRATION` | Khi cần tích hợp external APIs |
 
 ---
@@ -51,17 +51,17 @@ git clone --depth 1 <URL> "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ### 🔷 next.js — Vercel
 **Dept:** Engineering | Product | Frontend
 **Size:** ~1.2 GB | **Stars:** 130k+
-**Khi nào dùng:** Build web apps, dashboards, frontend cho dự án OmniClaw Corp
+**Khi nào dùng:** Build web apps, dashboards, frontend for dự án OmniClaw Corp
 
 ```powershell
-# Dùng khi: Build web UI cho OmniClaw dashboard, customer portal, product frontend
+# Dùng khi: Build web UI for OmniClaw dashboard, customer portal, product frontend
 git clone --depth 1 https://github.com/vercel/next.js.git `
     "$OMNICLAW_ROOT\plugins\github-repos\next.js"
 ```
 
 **OmniClaw Impact:**
 - HUD v3 → Next.js real-time dashboard
-- Corp dashboard → web interface cho 21 depts
+- Corp dashboard → web interface for 21 depts
 - Product page / landing page
 
 ---
@@ -72,14 +72,14 @@ git clone --depth 1 https://github.com/vercel/next.js.git `
 **Khi nào dùng:** Whiteboard tool, diagram tool, system architecture drawing
 
 ```powershell
-# Dùng khi: Cần tool vẽ diagram cho dự án OmniClaw, system design, wireframe alternative
+# Dùng khi: Cần tool vẽ diagram for dự án OmniClaw, system design, wireframe alternative
 git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
     "$OMNICLAW_ROOT\plugins\github-repos\excalidraw"
 ```
 
 **OmniClaw Impact:**
-- Thay thế Stitch cho system architecture diagrams
-- Board brainstorm nội bộ cho các phòng ban
+- Thay thế Stitch for system architecture diagrams
+- Board brainstorm nội bộ for the phòng ban
 - Self-hosted lightweight alternative
 
 ---
@@ -90,25 +90,25 @@ git clone --depth 1 https://github.com/excalidraw/excalidraw.git `
 **Khi nào dùng:** Self-hosted analytics, event tracking, funnel analysis
 
 ```powershell
-# Dùng khi: Cần analytics pipeline cho OmniClaw products, track user events
+# Dùng khi: Cần analytics pipeline for OmniClaw products, track user events
 git clone --depth 1 https://github.com/posthog/posthog.git `
     "$OMNICLAW_ROOT\plugins\github-repos\posthog"
 ```
 
 **OmniClaw Impact:**
 - Track OmniClaw usage metrics (daily corp cycle, agent calls, skill usage)
-- Replace external analytics với self-hosted
-- Wire với B5 system_pulse.py
+- Replace external analytics with self-hosted
+- Wire with B5 system_pulse.py
 
 ---
 
 ### 🔷 plotly.js — Plotly
 **Dept:** Data | Analytics | HUD
 **Size:** ~400 MB | **Stars:** 17k+
-**Khi nào dùng:** Charts, graphs, data visualization cho dashboards
+**Khi nào dùng:** Charts, graphs, data visualization for dashboards
 
 ```powershell
-# Dùng khi: Build charts cho HUD, KPI dashboard, corp cycle analytics
+# Dùng khi: Build charts for HUD, KPI dashboard, corp cycle analytics
 git clone --depth 1 https://github.com/plotly/plotly.js.git `
     "$OMNICLAW_ROOT\plugins\github-repos\plotly.js"
 ```
@@ -134,7 +134,7 @@ git clone --depth 1 https://github.com/aquasecurity/trivy.git `
 
 **OmniClaw Impact:**
 - CIV Pipeline Phase 2: security scan (thay `vet_repo.ps1`)
-- Integrate với `security/QUARANTINE/` workflow
+- Integrate with `security/QUARANTINE/` workflow
 - Auto-scan mọi repo trước khi approve
 
 ---
@@ -142,18 +142,18 @@ git clone --depth 1 https://github.com/aquasecurity/trivy.git `
 ### 🔷 developer-roadmap — Kamran Ahmed
 **Dept:** Training | HR | R&D
 **Size:** ~300 MB | **Stars:** 310k+
-**Khi nào dùng:** Khi onboard agent mới, build skill matrix, training plan
+**Khi nào dùng:** Khi onboard agent new, build skill matrix, training plan
 
 ```powershell
-# Dùng khi: Training dept cần roadmap reference cho agent capabilities
+# Dùng khi: Training dept cần roadmap reference for agent capabilities
 git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git `
     "$OMNICLAW_ROOT\plugins\github-repos\developer-roadmap"
 ```
 
 **OmniClaw Impact:**
-- Training dept: skill gap analysis cho 21 depts
+- Training dept: skill gap analysis for 21 depts
 - SKILL_REGISTRY enhancement: map skills to roadmap nodes
-- Onboarding guide cho các agent mới
+- Onboarding guide for the agent new
 
 ---
 
@@ -163,7 +163,7 @@ git clone --depth 1 https://github.com/kamranahmedse/developer-roadmap.git `
 **Khi nào dùng:** Research LLM patterns, prompt engineering, RAG techniques
 
 ```powershell
-# Dùng khi: R&D dept cần reference cho LLM integration, RAG, fine-tuning patterns
+# Dùng khi: R&D dept cần reference for LLM integration, RAG, fine-tuning patterns
 git clone --depth 1 https://github.com/openai/openai-cookbook.git `
     "$OMNICLAW_ROOT\plugins\github-repos\openai-cookbook"
 ```
@@ -181,7 +181,7 @@ git clone --depth 1 https://github.com/openai/openai-cookbook.git `
 **Khi nào dùng:** Khi build animated UI components, HUD animations
 
 ```powershell
-# Dùng khi: Frontend cần animations cho HUD dashboard, product UI
+# Dùng khi: Frontend cần animations for HUD dashboard, product UI
 git clone --depth 1 https://github.com/juliangarnier/anime.git `
     "$OMNICLAW_ROOT\plugins\github-repos\anime"
 ```
@@ -200,31 +200,31 @@ git clone --depth 1 https://github.com/juliangarnier/anime.git `
 
 ```powershell
 # Dùng khi: Training dept cần full HuggingFace agents curriculum
-# Cảnh báo: ~2GB — chỉ clone khi có storage
+# Cảnh báo: ~2GB — chỉ clone khi has storage
 git clone --depth 1 https://github.com/huggingface/agents-course.git `
     "$OMNICLAW_ROOT\plugins\github-repos\agents-course"
 ```
 
 **OmniClaw Impact:**
-- Agent training curriculum cho 12 placeholder agents
-- Reference cho activation_status.json → activating new agents
-- Pattern library cho autonomous agent behavior
+- Agent training curriculum for 12 placeholder agents
+- Reference for activation_status.json → activating new agents
+- Pattern library for autonomous agent behavior
 
 ---
 
 ### 🔷 gitignore — GitHub
 **Dept:** DevOps | Engineering | All depts
 **Size:** ~50 MB (small actually)
-**Khi nào dùng:** Setup bất kỳ repo mới, cần .gitignore template
+**Khi nào dùng:** Setup bất kỳ repo new, cần .gitignore template
 
 ```powershell
-# Nhỏ — có thể clone ngay khi cần
+# Nhỏ — has thể clone ngay khi cần
 git clone --depth 1 https://github.com/github/gitignore.git `
     "$OMNICLAW_ROOT\plugins\github-repos\gitignore"
 ```
 
 **OmniClaw Impact:**
-- Template cho mọi repo mới trong OmniClaw Corp
+- Template for mọi repo new in OmniClaw Corp
 - Đặt vào `ops/templates/gitignore/`
 
 ---
@@ -232,18 +232,18 @@ git clone --depth 1 https://github.com/github/gitignore.git `
 ### 🔷 public-apis — Public APIs
 **Dept:** R&D | Integration | Product
 **Size:** ~100 MB (chủ yếu markdown)
-**Khi nào dùng:** Khi R&D cần tìm API để tích hợp tính năng mới
+**Khi nào dùng:** Khi R&D cần tìm API để tích hợp tính năng new
 
 ```powershell
-# Dùng khi: Integration dept cần tìm free API cho dự án
+# Dùng khi: Integration dept cần tìm free API for dự án
 git clone --depth 1 https://github.com/public-apis/public-apis.git `
     "$OMNICLAW_ROOT\plugins\github-repos\public-apis"
 ```
 
 **OmniClaw Impact:**
-- R&D dept: nguồn tham khảo API cho tích hợp
+- R&D dept: nguồn tham khảo API for tích hợp
 - External Integrations wishlist (B12 GitHub, Telegram, etc.)
-- Rate-free APIs cho prototyping
+- Rate-free APIs for prototyping
 
 ---
 
@@ -291,9 +291,9 @@ git clone --depth 1 https://github.com/github/gitignore.git "$OMNICLAW_ROOT\plug
 
 ---
 
-## Trigger Rule cho Agents
+## Trigger Rule for Agents
 
-Khi một agent/dept cần clone, tự chạy lệnh trong section "Quick Clone Reference" theo tag phù hợp:
+Khi a agent/dept cần clone, tự chạy lệnh in section "Quick Clone Reference" theo tag phù hợp:
 
 | Trigger | Tag cần tìm | Action |
 |---------|-------------|--------|
@@ -301,7 +301,7 @@ Khi một agent/dept cần clone, tự chạy lệnh trong section "Quick Clone 
 | Cần charts | `VISUALIZATION` | Clone plotly.js |
 | Security audit | `SECURITY` | Clone trivy |
 | Research LLM | `AI-PATTERNS` | Clone openai-cookbook |
-| Train agent mới | `AI-EDUCATION` | Clone agents-course |
+| Train agent new | `AI-EDUCATION` | Clone agents-course |
 | Tích hợp external | `INTEGRATION` | Clone public-apis |
 | Setup repo | `TEMPLATE` | Clone gitignore |
 | Cần analytics | `ANALYTICS` | Clone posthog |
@@ -311,5 +311,5 @@ Khi một agent/dept cần clone, tự chạy lệnh trong section "Quick Clone 
 ---
 
 *Catalog v1.0 | 2026-03-25 | Owner: content_intake dept*
-*Run `python ops/omniclaw.py intake <url>` khi có repo mới cần thêm vào catalog*
+*Run `python ops/omniclaw.py intake <url>` khi has repo new cần thêm vào catalog*
 

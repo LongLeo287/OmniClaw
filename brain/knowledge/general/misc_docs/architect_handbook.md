@@ -8,17 +8,17 @@ healed_at: 2026-04-02T20:18:50.047720
 
 # Architect's Handbook: Smart Bookmark Manager
 
-Chào mừng bạn đến với tài liệu hướng dẫn kỹ thuật dành cho lập trình viên. Tài liệu này giải thích các nguyên tắc thiết kế cốt lõi đứng sau Extension này.
+Chào mừng bạn to with tài liệu hướng dẫn kỹ thuật dành for lập trình viên. Tài liệu this giải thích the nguyên tắc thiết kế cốt lõi đứng sau Extension this.
 
 ## 🏗 Architecture: Domain-Driven Design (DDD)
 Chúng ta tách biệt logic thành 4 lớp rõ rệt:
-1. **Entities (`src/core/entities`)**: Chứa logic nghiệp vụ thuần túy (Example: `BookmarkEntity` xác định một bookmark hợp lệ).
-2. **Repositories (`src/services/BookmarkRepository.js`)**: Lớp truy xuất dữ liệu (Abstraction layer). Không quan tâm dữ liệu đến từ Chrome hay IndexedDB.
-3. **Services (`src/services`)**: Xử lý các nghiệp vụ phức tạp liên quan đến bên thứ 3 (Sync, AI, HTML Parsing).
-4. **UI Components (`src/ui/components`)**: Hoàn toàn không chứa logic lưu trữ. Chỉ nhận dữ liệu và render.
+1. **Entities (`src/core/entities`)**: Chứa logic nghiệp vụ thuần túy (Example: `BookmarkEntity` xác định a bookmark hợp lệ).
+2. **Repositories (`src/services/BookmarkRepository.js`)**: Lớp truy xuất dữ liệu (Abstraction layer). not quan tâm dữ liệu to from Chrome hay IndexedDB.
+3. **Services (`src/services`)**: Xử lý the nghiệp vụ phức tạp liên quan to bên thứ 3 (Sync, AI, HTML Parsing).
+4. **UI Components (`src/ui/components`)**: Hoàn toàn not chứa logic lưu trữ. Chỉ nhận dữ liệu and render.
 
 ## 🔌 Hệ thống Plugin
-Extension sử dụng mô hình **Event-driven Hooks**. Bạn có thể đăng ký plugin mới tại `PluginManager`:
+Extension sử dụng mô hình **Event-driven Hooks**. Bạn has thể đăng ký plugin new tại `PluginManager`:
 - `onBeforeCreate`: Tiền xử lý dữ liệu.
 - `onCreated`: Gán nhãn AI (Async).
 - `onImportComplete`: Xử lý hàng loạt sau khi nạp dữ liệu.
@@ -27,7 +27,7 @@ Extension sử dụng mô hình **Event-driven Hooks**. Bạn có thể đăng k
 `UI Event` -> `AppController` -> `BookmarkRepository` -> `Storage API` -> `SyncService` -> `Cloud`.
 
 ## 🎨 Design System
-Hệ thống sử dụng **CSS Variable Tokens**. Mọi Changes: về màu sắc trong Settings thực chất là Changes: giá trị của `--accent-primary` trong `:root`.
+Hệ thống sử dụng **CSS Variable Tokens**. Mọi Changes: về màu sắc in Settings thực chất is Changes: giá trị of `--accent-primary` in `:root`.
 
 ## 🚀 Định hướng Scalability
 Để hỗ trợ tree bookmark cực lớn:
@@ -35,4 +35,4 @@ Hệ thống sử dụng **CSS Variable Tokens**. Mọi Changes: về màu sắc
 - **Virtual DOM**: (Sắp triển khai ở Phase 8) Để nâng cao hiệu năng cuộn.
 
 ---
-*Tài liệu này được biên soạn bởi Senior Architect để làm kim chỉ nam cho quá trình phát triển.*
+*Tài liệu this successfully biên soạn bởi Senior Architect để làm kim chỉ nam for quá trình phát triển.*

@@ -429,7 +429,7 @@ claude mcp add --transport http context7 https://mcp.context7.com/mcp \
 
 ## 📄 License
 
-MIT License - See [LICENSE](LICENSE) file for details.
+MIT License - See LICENSE file for details.
 
 ## 👤 Author
 
@@ -1600,7 +1600,7 @@ claude mcp add --transport http context7 https://mcp.context7.com/mcp \
 
 ## 📄 License
 
-MIT License - See [LICENSE](LICENSE) file for details.
+MIT License - See LICENSE file for details.
 
 ## 👤 Author
 

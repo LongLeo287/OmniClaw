@@ -355,7 +355,7 @@ agent = initialize_agent(tools,
                          handle_parsing_errors=True)
 ```
 
-Check out the [Langchain Examples Notebook](./examples/langchain/langchain_examples.ipynb) for more details including Async handlers.
+Check out the Langchain Examples Notebook for more details including Async handlers.
 
 </details>
 
@@ -694,7 +694,7 @@ agentops_api_key = os.getenv("AGENTOPS_API_KEY") or "<your agentops key here>"
 ```
 </details>
 
-[You can find usage examples here!](examples/camelai_examples/README.md).
+You can find usage examples here!.
 
 
 

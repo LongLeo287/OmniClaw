@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for chatdev_agent
+# Knowledge Dump for chatdev_agent
 
 ## File: agent.md
 ```

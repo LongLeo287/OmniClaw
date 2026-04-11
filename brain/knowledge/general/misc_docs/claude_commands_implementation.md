@@ -27,7 +27,7 @@ The weather orchestrator command is implemented in this repo as the entry point 
 
 ## Weather Orchestrator
 
-**File**: [`.claude/commands/weather-orchestrator.md`](../claude_bp_repo/weather-orchestrator.md)
+**File**: `.claude/commands/weather-orchestrator.md`
 
 ```yaml
 ---

@@ -16,15 +16,15 @@ healed_at: 2026-04-02T20:29:06.906829
 
 | Kho | Count | Status: |
 |-----|-------|-----------|
-| ⭐ ACTIVE | 38 | Đang dùng trong OmniClaw |
-| 🔖 PENDING | 1245 | Đã APPROVE, chưa Installation: |
+| ⭐ ACTIVE | 38 | Đang dùng in OmniClaw |
+| 🔖 PENDING | 1245 | already APPROVE, chưa Installation: |
 | ❌ ARCHIVED | 140 | REJECT/DEFER — CEO xem xét lại |
 
 ---
 
-## ⭐ REPO ĐANG ACTIVE TRONG OmniClaw
+## ⭐ REPO ĐANG ACTIVE in OmniClaw
 
-> Các repo này cần được update thường xuyên. Mỗi tuần Dept 20 CIV kiểm tra version mới.
+> the repo this cần successfully update thường xuyên. Mỗi tuần Dept 20 CIV kiểm tra version new.
 
 | # | Repo | Stars | Dept | Ghi chú |
 |---|------|-------|------|---------|
@@ -39,8 +39,8 @@ healed_at: 2026-04-02T20:29:06.906829
 | 9 | [⭐ carlrannaberg/claudekit](https://github.com/carlrannaberg/claudekit) | 637 | Dept 00 — General | A toolkit of custom commands, hooks, and utilities for Claud |
 | 10 | [⭐ cloudflare/skills](https://github.com/cloudflare/skills) | 714 | Dept 01 — AI | Skills for teaching agents how to build on Cloudflare. |
 | 11 | [⭐ google/langextract](https://github.com/google/langextract) | 34979 | Dept 02 — AI | A Python library for extracting structured information from |
-| 12 | [⭐ jacob-bd/notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) | 2986 | Dept 20 — CIV | (Không có Description:) |
-| 13 | [⭐ jacob-bd/notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) | 2986 | Dept 20 — CIV | (Không có Description:) |
+| 12 | [⭐ jacob-bd/notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) | 2986 | Dept 20 — CIV | (not has Description:) |
+| 13 | [⭐ jacob-bd/notebooklm-mcp-cli](https://github.com/jacob-bd/notebooklm-mcp-cli) | 2986 | Dept 20 — CIV | (not has Description:) |
 | 14 | [⭐ productdevbook/port-killer](https://github.com/productdevbook/port-killer) | 4621 | Dept 15 — QA/Eval | A powerful cross-platform port management tool for developer |
 | 15 | [⭐ thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | 40989 | Dept 01 — AI | A Claude Code plugin that automatically captures everything |
 | 16 | [⭐ upstash/context7](https://github.com/upstash/context7) | 50708 | Dept 02 — AI | Context7 Platform -- Up-to-date code documentation for LLMs |
@@ -51,7 +51,7 @@ healed_at: 2026-04-02T20:29:06.906829
 | 21 | [⭐ bmad-code-org/BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) | 42411 | Dept 00 — General | Breakthrough Method for Agile Ai Driven Development |
 | 22 | [⭐ gabrielchua/open-notebooklm](https://github.com/gabrielchua/open-notebooklm) | 2575 | Dept 00 — General | Convert any PDF into a podcast episode! |
 | 23 | [⭐ lfnovo/open-notebook](https://github.com/lfnovo/open-notebook) | 21456 | Dept 00 — General | An Open Source implementation of Notebook LM with more flexi |
-| 24 | [⭐ vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit) | 6695 | Dept 00 — General | (Không có Description:) |
+| 24 | [⭐ vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit) | 6695 | Dept 00 — General | (not has Description:) |
 | 25 | [⭐ HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) | 30612 | Dept 07 — Knowledge | [EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented G |
 | 26 | [⭐ firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 98688 | Dept 11 — Web | 🔥 The Web Data API for AI - Turn entire websites into LLM-re |
 | 27 | [⭐ mem0ai/mem0](https://github.com/mem0ai/mem0) | 51150 | Dept 01 — AI | Universal memory layer for AI Agents |
@@ -64,7 +64,7 @@ healed_at: 2026-04-02T20:29:06.906829
 
 ---
 
-## 🔖 PENDING — Đã APPROVE, Chờ CEO Duyệt Installation:
+## 🔖 PENDING — already APPROVE, Chờ CEO Duyệt Installation:
 
 > Tổng 1245 repos. Priority: sort theo Stars. Dept phụ trách: Dept 20 CIV.
 > Trigger: `omniclaw integrate <plugin_id>` sau khi CEO sign-off.
@@ -252,7 +252,7 @@ healed_at: 2026-04-02T20:29:06.906829
 | 179 | [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) | ⭐22416 | Dept 00 — General | Fish shell like syntax highlighting for Zsh. |
 | 180 | [modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk) | ⭐22344 | Dept 02 — AI | The official Python SDK for Model Context Protocol servers a |
 | 181 | [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | ⭐22282 | Dept 00 — General | practice made claude perfect |
-| 182 | [yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi) | ⭐22213 | Dept 00 — General | (Không có Description:) |
+| 182 | [yoheinakajima/babyagi](https://github.com/yoheinakajima/babyagi) | ⭐22213 | Dept 00 — General | (not has Description:) |
 | 183 | [localtunnel/localtunnel](https://github.com/localtunnel/localtunnel) | ⭐22180 | Dept 00 — General | expose yourself |
 | 184 | [oraios/serena](https://github.com/oraios/serena) | ⭐22130 | Dept 01 — AI | A powerful coding agent toolkit providing semantic retrieval |
 | 185 | [usestrix/strix](https://github.com/usestrix/strix) | ⭐22017 | Dept 10 — Security | Open-source AI hackers to find and fix your app’s vulnerabil |
@@ -272,14 +272,14 @@ healed_at: 2026-04-02T20:29:06.906829
 | 199 | [pgvector/pgvector](https://github.com/pgvector/pgvector) | ⭐20455 | Dept 07 — Knowledge | Open-source vector similarity search for Postgres |
 | 200 | [qax-os/excelize](https://github.com/qax-os/excelize) | ⭐20430 | Dept 00 — General | Go language library for reading and writing Microsoft Excel™ |
 
-> ... và 1045 repos khác. Xem full list tại `PENDING_REPOS.md`
+> ... and 1045 repos khác. Xem full list tại `PENDING_REPOS.md`
 
 ---
 
 ## ❌ ARCHIVED — REJECT/DEFER
 
 > Tổng 140 repos. Gom về đây để CEO xem xét lại khi cần.
-> Không clone, không Installation: cho đến khi CEO unarchive.
+> not clone, not Installation: for to khi CEO unarchive.
 
 | # | Repo | Verdict | Lý do |
 |---|------|---------|----|
@@ -332,49 +332,49 @@ healed_at: 2026-04-02T20:29:06.906829
 | 47 | [ryletko/LexiQuest-Modular-DDD](https://github.com/ryletko/LexiQuest-Modular-DDD) | DEFER | Modular application designed with principles of DDD and Clea |
 | 48 | [ryletko/Modular.StarterTemplate](https://github.com/ryletko/Modular.StarterTemplate) | DEFER | Starter template for a modular application in Clean Architec |
 | 49 | [simara-svatopluk/cart](https://github.com/simara-svatopluk/cart) | DEFER | Domain-Driven Design shop cart demonstration |
-| 50 | [thurask/Qt-Linguist](https://github.com/thurask/Qt-Linguist) | DEFER | (Không có Description:) |
+| 50 | [thurask/Qt-Linguist](https://github.com/thurask/Qt-Linguist) | DEFER | (not has Description:) |
 | 51 | [xhafan/coreddd](https://github.com/xhafan/coreddd) | DEFER | A set of open-source .NET libraries helping with DDD (domain |
 | 52 | [xhafan/emailmaker](https://github.com/xhafan/emailmaker) | DEFER | Email marketing ASP.NET Core MVC and ASP.NET MVC demo app de |
 | 53 | [AykutSarac/jsoncrack-vscode](https://github.com/AykutSarac/jsoncrack-vscode) | REJECT | VS Code extension of JSON Crack. Convert your JSON files int |
 | 54 | [BurntSushi/xsv](https://github.com/BurntSushi/xsv) | REJECT | A fast CSV command line toolkit written in Rust. |
 | 55 | [ElderJames/shriek-fx](https://github.com/ElderJames/shriek-fx) | REJECT | An easy-to-use rapid development framework developed on the |
 | 56 | [Gentleman-Programming/agent-teams-lite](https://github.com/Gentleman-Programming/agent-teams-lite) | REJECT | Spec-Driven Development with AI Sub-Agents. An orchestrator |
-| 57 | [HeyVincent-ai/agent-skills](https://github.com/HeyVincent-ai/agent-skills) | REJECT | (Không có Description:) |
-| 58 | [HoangTran0410/douyin-dowload-all-video](https://github.com/HoangTran0410/douyin-dowload-all-video) | REJECT | (Không có Description:) |
-| 59 | [HoangTran0410/social_downloader_extension](https://github.com/HoangTran0410/social_downloader_extension) | REJECT | (Không có Description:) |
+| 57 | [HeyVincent-ai/agent-skills](https://github.com/HeyVincent-ai/agent-skills) | REJECT | (not has Description:) |
+| 58 | [HoangTran0410/douyin-dowload-all-video](https://github.com/HoangTran0410/douyin-dowload-all-video) | REJECT | (not has Description:) |
+| 59 | [HoangTran0410/social_downloader_extension](https://github.com/HoangTran0410/social_downloader_extension) | REJECT | (not has Description:) |
 | 60 | [Homebrew/homebrew-bundle](https://github.com/Homebrew/homebrew-bundle) | REJECT | 💀 Homebrew/bundle (merged into Homebrew/brew) |
-| 61 | [KalyanM45/Checking-Password-Strength-using-Machine-Learning](https://github.com/KalyanM45/Checking-Password-Strength-using-Machine-Learning) | REJECT | (Không có Description:) |
-| 62 | [KalyanM45/Diabetes-Prediction-using-Machine-Learning](https://github.com/KalyanM45/Diabetes-Prediction-using-Machine-Learning) | REJECT | (Không có Description:) |
-| 63 | [KalyanM45/Wine-Quality-Prediction](https://github.com/KalyanM45/Wine-Quality-Prediction) | REJECT | (Không có Description:) |
-| 64 | [LinesYu/trainingAI](https://github.com/LinesYu/trainingAI) | REJECT | (Không có Description:) |
+| 61 | [KalyanM45/Checking-Password-Strength-using-Machine-Learning](https://github.com/KalyanM45/Checking-Password-Strength-using-Machine-Learning) | REJECT | (not has Description:) |
+| 62 | [KalyanM45/Diabetes-Prediction-using-Machine-Learning](https://github.com/KalyanM45/Diabetes-Prediction-using-Machine-Learning) | REJECT | (not has Description:) |
+| 63 | [KalyanM45/Wine-Quality-Prediction](https://github.com/KalyanM45/Wine-Quality-Prediction) | REJECT | (not has Description:) |
+| 64 | [LinesYu/trainingAI](https://github.com/LinesYu/trainingAI) | REJECT | (not has Description:) |
 | 65 | [MarcoGorelli/absolufy-imports](https://github.com/MarcoGorelli/absolufy-imports) | REJECT | Automatically convert relative imports to absolute |
 | 66 | [MerrionComputing/CQRSAzure](https://github.com/MerrionComputing/CQRSAzure) | REJECT | CQRS on Windows Azure |
 | 67 | [NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker) | REJECT | Build and run Docker containers leveraging NVIDIA GPUs |
 | 68 | [NotMyself/claude-win11-speckit-update-skill](https://github.com/NotMyself/claude-win11-speckit-update-skill) | REJECT | A Claude Code Skill that manages GitHub SpecKit updates. |
-| 69 | [OptikR/OptikR](https://github.com/OptikR/OptikR) | REJECT | (Không có Description:) |
+| 69 | [OptikR/OptikR](https://github.com/OptikR/OptikR) | REJECT | (not has Description:) |
 | 70 | [Raduc4/gender_guesser](https://github.com/Raduc4/gender_guesser) | REJECT | A crate that detects the gender of the name given |
-| 71 | [SHADOWPR0/security-bluebook-builder](https://github.com/SHADOWPR0/security-bluebook-builder) | REJECT | (Không có Description:) |
-| 72 | [SangVoM/trans-faster](https://github.com/SangVoM/trans-faster) | REJECT | (Không có Description:) |
-| 73 | [VoltAgent/skills](https://github.com/VoltAgent/skills) | REJECT | (Không có Description:) |
+| 71 | [SHADOWPR0/security-bluebook-builder](https://github.com/SHADOWPR0/security-bluebook-builder) | REJECT | (not has Description:) |
+| 72 | [SangVoM/trans-faster](https://github.com/SangVoM/trans-faster) | REJECT | (not has Description:) |
+| 73 | [VoltAgent/skills](https://github.com/VoltAgent/skills) | REJECT | (not has Description:) |
 | 74 | [abhigyanpatwari/GitNexus](https://github.com/abhigyanpatwari/GitNexus) | REJECT | GitNexus: The Zero-Server Code Intelligence Engine -       G |
 | 75 | [batterseapower/pinyin-toolkit](https://github.com/batterseapower/pinyin-toolkit) | REJECT | A plugin for the Anki Spaced Repetition System (http://ichi2 |
 | 76 | [birkelund/boltdbcache](https://github.com/birkelund/boltdbcache) | REJECT | Package boltdbcache provides a file system based cache backe |
 | 77 | [bitcomplete/httpcache](https://github.com/bitcomplete/httpcache) | REJECT | A Transport for http.Client that will cache responses accord |
-| 78 | [brunohcastro/node-base](https://github.com/brunohcastro/node-base) | REJECT | (Không có Description:) |
+| 78 | [brunohcastro/node-base](https://github.com/brunohcastro/node-base) | REJECT | (not has Description:) |
 | 79 | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | REJECT | Framework for orchestrating role-playing, autonomous AI agen |
 | 80 | [mookid8000/Cirqus](https://github.com/mookid8000/Cirqus) | REJECT | :x: d60 event sourcing + CQRS framework |
-| 81 | [dathere/qsv-dateparser](https://github.com/dathere/qsv-dateparser) | REJECT | (Không có Description:) |
+| 81 | [dathere/qsv-dateparser](https://github.com/dathere/qsv-dateparser) | REJECT | (not has Description:) |
 | 82 | [die-net/lrucache](https://github.com/die-net/lrucache) | REJECT | LruCache is a thread-safe, in-memory, byte-size-limited http |
 | 83 | [dougmoscrop/fold-case](https://github.com/dougmoscrop/fold-case) | REJECT | A letter case folder with full Unicode support, i.e. based o |
 | 84 | [docopt/docopt.rs](https://github.com/docopt/docopt.rs) | REJECT | Docopt for Rust (command line argument parser). |
 | 85 | [dotnet-architecture/eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) | REJECT | Cross-platform .NET sample microservices and container based |
 | 86 | [dotnet-architecture/eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb) | REJECT | Sample ASP.NET Core 8.0 reference application, now community |
-| 87 | [dustin-decker/secretsandstuff](https://github.com/dustin-decker/secretsandstuff) | REJECT | (Không có Description:) |
+| 87 | [dustin-decker/secretsandstuff](https://github.com/dustin-decker/secretsandstuff) | REJECT | (not has Description:) |
 | 88 | [dylanaraps/neofetch](https://github.com/dylanaraps/neofetch) | REJECT | 🖼️  A command-line system information tool written in bash 3 |
-| 89 | [electron/node-gyp](https://github.com/electron/node-gyp) | REJECT | (Không có Description:) |
+| 89 | [electron/node-gyp](https://github.com/electron/node-gyp) | REJECT | (not has Description:) |
 | 90 | [Creditas/kotlin-ddd-sample](https://github.com/Creditas/kotlin-ddd-sample) | REJECT | A sample DDD/CQRS project using KOTLIN :beer: |
 | 91 | [firecrawl/cli](https://github.com/firecrawl/cli) | REJECT | CLI and Agent Skill for Firecrawl - Add scrape, search, and |
-| 92 | [firecrawl/create-llmstxt-py](https://github.com/firecrawl/create-llmstxt-py) | REJECT | (Không có Description:) |
+| 92 | [firecrawl/create-llmstxt-py](https://github.com/firecrawl/create-llmstxt-py) | REJECT | (not has Description:) |
 | 93 | [firecrawl/firecrawl-app-examples](https://github.com/firecrawl/firecrawl-app-examples) | REJECT | 🔥 This repository contains complete application examples, in |
 | 94 | [firecrawl/firecrawl-claude-plugin](https://github.com/firecrawl/firecrawl-claude-plugin) | REJECT | Firecrawl plugin for Claude Code - web scraping and crawling |
 | 95 | [firecrawl/firecrawl-discord-bot](https://github.com/firecrawl/firecrawl-discord-bot) | REJECT | A Discord bot to turn websites into LLM-ready data using the |
@@ -382,9 +382,9 @@ healed_at: 2026-04-02T20:29:06.906829
 | 97 | [firecrawl/firesearch](https://github.com/firecrawl/firesearch) | REJECT | 🔥 AI-powered deep research tool that breaks down complex que |
 | 98 | [firecrawl/open-lovable](https://github.com/firecrawl/open-lovable) | REJECT | 🔥 Clone and recreate any website as a modern React app in se |
 | 99 | [firecrawl/open-researcher](https://github.com/firecrawl/open-researcher) | REJECT | 🔥 Visual AI research assistant that displays real-time think |
-| 100 | [git-test-fixtures/binary](https://github.com/git-test-fixtures/binary) | REJECT | (Không có Description:) |
+| 100 | [git-test-fixtures/binary](https://github.com/git-test-fixtures/binary) | REJECT | (not has Description:) |
 
-> ... và 40 repos khác. Xem full list tại `ARCHIVED_REPOS.md`
+> ... and 40 repos khác. Xem full list tại `ARCHIVED_REPOS.md`
 
 ---
 
@@ -395,8 +395,8 @@ Automation: repo_catalog_updater
 Trigger: weekly (mỗi Thứ Hai 00:00)
 Steps:
   1. Chạy repo_eval_github_api.py (batch 50 repos)
-  2. Cross-check với ecosystem/plugins
+  2. Cross-check with ecosystem/plugins
   3. Cập nhật MASTER_REPO_CATALOG.md
-  4. Notify CEO qua Telegram nếu có repo ACTIVE có version mới
+  4. Notify CEO qua Telegram nếu has repo ACTIVE has version new
 Agent: Dept 20 CIV (knowledge_navigator + archivist)
 ```

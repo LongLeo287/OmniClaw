@@ -287,7 +287,7 @@ npm run bug-report
 
 Авторське право (C) 2025 Alex Newman (@thedotmack). Всі права захищені.
 
-Дивіться файл [LICENSE](LICENSE) для повних деталей.
+Дивіться файл LICENSE для повних деталей.
 
 **Що це означає:**
 
@@ -296,7 +296,7 @@ npm run bug-report
 - Похідні роботи також повинні бути ліцензовані під AGPL-3.0
 - Для цього програмного забезпечення НЕМАЄ ГАРАНТІЇ
 
-**Примітка про Ragtime**: Каталог `ragtime/` ліцензовано окремо під **PolyForm Noncommercial License 1.0.0**. Дивіться [ragtime/LICENSE](ragtime/LICENSE) для деталей.
+**Примітка про Ragtime**: Каталог `ragtime/` ліцензовано окремо під **PolyForm Noncommercial License 1.0.0**. Дивіться ragtime/LICENSE для деталей.
 
 ---
 

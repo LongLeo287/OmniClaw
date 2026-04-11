@@ -107,7 +107,7 @@ Structure the report:
 - [Actionable insight 3]
 
 ## Sources
-1. [Title](url) — [one-line summary]
+1. Title — [one-line summary]
 2. ...
 
 ## Methodology

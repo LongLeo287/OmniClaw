@@ -1,4 +1,4 @@
-﻿---
+---
 id: worker-prompt
 type: document
 owner: OHD

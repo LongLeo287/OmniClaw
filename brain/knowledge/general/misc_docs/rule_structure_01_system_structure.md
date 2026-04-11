@@ -1,4 +1,4 @@
-﻿---
+---
 id: rule-structure-01-system-structure
 type: document
 owner: OHD

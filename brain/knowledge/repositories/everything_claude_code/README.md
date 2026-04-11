@@ -1,5 +1,5 @@
-**Language:** English | [Português (Brasil)](docs/pt-BR/README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md)
- [Türkçe](docs/tr/README.md)
+**Language:** English | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어
+ Türkçe
 
 
 # Everything Claude Code
@@ -27,7 +27,7 @@
 
 **🌐 Language / 语言 / 語言 / Dil**
 
-[**English**](README.md) | [Português (Brasil)](docs/pt-BR/README.md) | [简体中文](README.zh-CN.md) | [繁體中文](docs/zh-TW/README.md) | [日本語](docs/ja-JP/README.md) | [한국어](docs/ko-KR/README.md)
+[**English**](README.md) | Português (Brasil) | 简体中文 | 繁體中文 | 日本語 | 한국어
 
 </div>
 
@@ -268,7 +268,7 @@ This repo is a **Claude Code plugin** - install it directly or copy components m
 
 ```
 everything-claude-code/
-|-- .claude-plugin/   # Plugin and marketplace manifests
+|-- claude_plugin/   # Plugin and marketplace manifests
 |   |-- plugin.json         # Plugin metadata and component paths
 |   |-- marketplace.json    # Marketplace catalog for /plugin marketplace add
 |
@@ -559,7 +559,7 @@ claude --version
 
 ### Important: Hooks Auto-Loading Behavior
 
-> ⚠️ **For Contributors:** Do NOT add a `"hooks"` field to `.claude-plugin/plugin.json`. This is enforced by a regression test.
+> ⚠️ **For Contributors:** Do NOT add a `"hooks"` field to `claude_plugin/plugin.json`. This is enforced by a regression test.
 
 Claude Code v2.1+ **automatically loads** `hooks/hooks.json` from any installed plugin by convention. Explicitly declaring it in `plugin.json` causes a duplicate detection error:
 
@@ -730,7 +730,7 @@ rules/
   php/             # PHP specific patterns and tools
 ```
 
-See [`rules/README.md`](rules/README.md) for installation and structure details.
+See `rules/README.md` for installation and structure details.
 
 ---
 
@@ -795,7 +795,7 @@ This shows all available agents, commands, and skills from the plugin.
 <details>
 <summary><b>My hooks aren't working / I see "Duplicate hooks file" errors</b></summary>
 
-This is the most common issue. **Do NOT add a `"hooks"` field to `.claude-plugin/plugin.json`.** Claude Code v2.1+ automatically loads `hooks/hooks.json` from installed plugins. Explicitly declaring it causes duplicate detection errors. See [#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103).
+This is the most common issue. **Do NOT add a `"hooks"` field to `claude_plugin/plugin.json`.** Claude Code v2.1+ automatically loads `hooks/hooks.json` from installed plugins. Explicitly declaring it causes duplicate detection errors. See [#29](https://github.com/affaan-m/everything-claude-code/issues/29), [#52](https://github.com/affaan-m/everything-claude-code/issues/52), [#103](https://github.com/affaan-m/everything-claude-code/issues/103).
 </details>
 
 <details>
@@ -1290,7 +1290,7 @@ Agent Teams spawns multiple context windows. Each teammate consumes tokens indep
 
 ### Token Optimization
 
-Hitting daily limits? See the **[Token Optimization Guide](docs/token-optimization.md)** for recommended settings and workflow tips.
+Hitting daily limits? See the **Token Optimization Guide** for recommended settings and workflow tips.
 
 Quick wins:
 

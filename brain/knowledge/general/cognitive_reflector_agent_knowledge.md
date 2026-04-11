@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for cognitive_reflector_agent
+# Knowledge Dump for cognitive_reflector_agent
 
 ## File: agent.md
 ```

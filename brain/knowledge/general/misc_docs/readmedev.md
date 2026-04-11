@@ -8,7 +8,7 @@ healed_at: 2026-04-02T20:31:07.709906
 
 # Developer Guide
 
-This guide is for developers working on Open Notebook. For end-user documentation, see [README.md](README.md) and [docs/](docs/).
+This guide is for developers working on Open Notebook. For end-user documentation, see [README.md](README.md) and docs/.
 
 ## Quick Start for Development
 
@@ -400,7 +400,7 @@ ANTHROPIC_API_KEY=sk-ant-...
 # OR configure other providers (see docs/5-CONFIGURATION/)
 ```
 
-See [docs/5-CONFIGURATION/](docs/5-CONFIGURATION/) for complete configuration guide.
+See docs/5-CONFIGURATION/ for complete configuration guide.
 
 ---
 

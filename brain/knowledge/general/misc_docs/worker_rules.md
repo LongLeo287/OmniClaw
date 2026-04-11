@@ -1,4 +1,4 @@
-﻿---
+---
 id: worker-rules
 type: document
 owner: OHD

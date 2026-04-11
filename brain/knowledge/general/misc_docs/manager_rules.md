@@ -1,4 +1,4 @@
-﻿---
+---
 id: manager-rules
 type: document
 owner: OHD

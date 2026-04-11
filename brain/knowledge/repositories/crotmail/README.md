@@ -329,4 +329,4 @@ Copyright (c) 2026 CrotMail Contributors
 
 ## License
 
-Licensed under the [MIT License](./LICENSE).
+Licensed under the MIT License.

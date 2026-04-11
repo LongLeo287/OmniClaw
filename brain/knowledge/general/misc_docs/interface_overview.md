@@ -382,4 +382,4 @@ On smaller screens, the three-panel layout stacks vertically:
 
 ---
 
-Now you know where everything is. Start with [Adding Sources](adding-sources.md) to begin your research!
+Now you know where everything is. Start with Adding Sources to begin your research!

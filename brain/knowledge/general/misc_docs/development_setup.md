@@ -404,7 +404,7 @@ docker compose down
 
 After setup is complete:
 
-1. **Read the Contributing Guide** - [contributing.md](contributing.md)
+1. **Read the Contributing Guide** - contributing.md
 2. **Explore the Architecture** - Check the documentation
 3. **Find an Issue** - Look for "good first issue" on GitHub
 4. **Set Up Pre-commit** - Install git hooks for code quality
@@ -420,4 +420,4 @@ If you get stuck:
 
 ---
 
-**Ready to contribute?** Go to [contributing.md](contributing.md) for the contribution workflow.
+**Ready to contribute?** Go to contributing.md for the contribution workflow.

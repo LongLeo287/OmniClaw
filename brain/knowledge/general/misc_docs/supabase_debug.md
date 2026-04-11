@@ -8,31 +8,31 @@ healed_at: 2026-04-02T20:31:19.054871
 
 # Department: operations
 ---
-description: Supabase connection debug — ClawTask API backend không switch sang supabase
+description: Supabase connection debug — ClawTask API backend not switch sang supabase
 ---
 
 # Supabase Debug Workflow
 
-## Khi nào dùng workflow này?
+## Khi nào dùng workflow this?
 
 ClawTask API trả về `"backend": "json"` thay vì `"backend": "supabase"`.
 
 ---
 
-## Step 1: Verify .env tồn tại và có đúng giá trị
+## Step 1: Verify .env tồn tại and has đúng giá trị
 
 ```powershell
-# Check .env trong thư mục clawtask
+# Check .env in thư mục clawtask
 cat "$OMNICLAW_ROOT\tools\clawtask\.env"
 ```
 
-Phải thấy:
+must thấy:
 ```
-SUPABASE_URL=https://xxxx.supabase.co   ← không được rỗng
-SUPABASE_KEY=eyJhbGci...                ← anon key từ Supabase dashboard
+SUPABASE_URL=https://xxxx.supabase.co   ← not successfully rỗng
+SUPABASE_KEY=eyJhbGci...                ← anon key from Supabase dashboard
 ```
 
-**Fix nếu trống:** Chạy lệnh sau (thay YOUR_PROJECT_REF và YOUR_ANON_KEY):
+**Fix nếu trống:** Chạy lệnh sau (thay YOUR_PROJECT_REF and YOUR_ANON_KEY):
 ```powershell
 @"
 SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
@@ -44,10 +44,10 @@ TZ=Asia/Ho_Chi_Minh
 
 ---
 
-## Step 2: Restart Docker container để load .env mới
+## Step 2: Restart Docker container để load .env new
 
 ```powershell
-# Từ thư mục clawtask
+# from thư mục clawtask
 cd "$OMNICLAW_ROOT\tools\clawtask"
 
 # Docker Compose V1 (nếu cài standalone)
@@ -56,13 +56,13 @@ docker-compose down && docker-compose up -d
 # Docker Compose V2 (nếu cài qua Docker Desktop)
 docker compose down && docker compose up -d
 
-# Hoặc dùng batch file có sẵn
+# Hoặc dùng batch file has sẵn
 .\docker-manage.bat
 ```
 
 ---
 
-## Step 3: Verify container đã load .env
+## Step 3: Verify container already load .env
 
 ```powershell
 # Check env vars inside container
@@ -104,7 +104,7 @@ docker exec clawtask_api printenv | findstr SUPABASE
 
 ## Step 6: Verify tasks table schema
 
-Chạy trong Supabase SQL Editor:
+Chạy in Supabase SQL Editor:
 ```sql
 SELECT column_name, data_type 
 FROM information_schema.columns 
@@ -112,7 +112,7 @@ WHERE table_name = 'tasks' AND table_schema = 'public'
 ORDER BY ordinal_position;
 ```
 
-Phải thấy: `id`, `title`, `agent_id`, `status`, `priority`, `created_at`, `blockers`, `notes`
+must thấy: `id`, `title`, `agent_id`, `status`, `priority`, `created_at`, `blockers`, `notes`
 
 **Thiếu `agent_id`?** Chạy:
 ```sql
@@ -140,8 +140,8 @@ $body = '{"title":"Debug test","agent_id":"antigravity","priority":"low"}'
 
 | Date | Issue | Fix Applied |
 |------|-------|------------|
-| 2026-03-20 | .env SUPABASE_URL trống trong root .env | Tạo .env riêng trong tools/clawtask/ |
-| 2026-03-20 | docker exec không available in PS context | Sử dụng docker compose hoặc docker-manage.bat |
+| 2026-03-20 | .env SUPABASE_URL trống in root .env | Tạo .env riêng in tools/clawtask/ |
+| 2026-03-20 | docker exec not available in PS context | Sử dụng docker compose hoặc docker-manage.bat |
 
 ---
 

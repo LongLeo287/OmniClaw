@@ -11,20 +11,20 @@ healed_at: 2026-04-03T22:46:22.532948
 ## Metadata
 - **Source:** https://github.com/sickn33/antigravity-awesome-skills
 - **Category:** Skills / Tools / Claw Variant
-- **Priority:** 🔴 CRITICAL — Trực tiếp cho Antigravity
+- **Priority:** 🔴 CRITICAL — Trực tiếp for Antigravity
 - **Ingested:** 2026-03-21
 - **Batch:** 03
 
 ## Tóm Tắt
-Thư viện skill lớn nhất dành riêng cho Antigravity (Gemini CLI). Release 8.3.0 với **1,273+ skills** có thể cài ngay qua `npx`. Bao gồm: installer CLI, bundles theo vai trò, workflows, và catalog tự động sinh.
+Thư viện skill lớn nhất dành riêng for Antigravity (Gemini CLI). Release 8.3.0 with **1,273+ skills** has thể cài ngay qua `npx`. Bao gồm: installer CLI, bundles theo vai trò, workflows, and catalog tự động sinh.
 
 ## Tính Năng核心
 - **Install path default:** `~/.gemini/antigravity/skills` (Antigravity global)
 - **CLI:** `npx @sickn33/antigravity-awesome-skills` 
-- **86 Releases** — đang được maintain tích cực
+- **86 Releases** — đang successfully maintain tích cực
 - **Bundles** theo role: Developer, PM, DevOps, Security, v.v.
 - Hỗ trợ: Claude Code, Cursor, Gemini CLI, Copilot, Codex CLI
-- Windows-compatible (có troubleshooting guide riêng)
+- Windows-compatible (has troubleshooting guide riêng)
 
 ## Quick Start
 ```bash
@@ -39,9 +39,9 @@ npx @sickn33/antigravity-awesome-skills install --bundle developer
 ```
 
 ## Liên Quan OmniClaw
-- **Install path trùng** với `<USER_PROFILE>\.gemini\antigravity\skills\` — đây chính là thư mục skill của OmniClaw
-- Là nguồn bổ sung skill cho **Antigravity (Tier 1 Orchestrator)**
-- Pending Action từ Batch 2: Đã được chỉ định Installation: nhưng chưa hoàn thành
+- **Install path trùng** with `<USER_PROFILE>\.gemini\antigravity\skills\` — đây chính is thư mục skill of OmniClaw
+- is nguồn bổ sung skill for **Antigravity (Tier 1 Orchestrator)**
+- Pending Action from Batch 2: already successfully chỉ định Installation: nhưng chưa hoàn thành
 - **ƯU TIÊN CÀI NGAY** — Chạy: `npx @sickn33/antigravity-awesome-skills install`
 
 ## OmniClaw Action

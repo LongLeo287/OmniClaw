@@ -176,9 +176,9 @@ uv run uvicorn api.main:app --port 5056
 
 ## Next Steps
 
-1. Read [Development Guide](quick-start.md)
+1. Read Development Guide
 2. See [Architecture Overview](ARCHITECTURE.md)
-3. Check [Contributing Guide](../bmad_repo/CONTRIBUTING.md)
+3. Check Contributing Guide
 
 ---
 

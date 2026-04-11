@@ -1,4 +1,4 @@
-﻿---
+---
 id: mission
 type: document
 owner: OHD

@@ -1,7 +1,0 @@
-﻿{
-    "id": "tool_name",
-    "name": "Human Readable Name",
-    "integration_type": "python_script",
-    "accessible_by": ["Orchestrator"],
-    "exposed_functions": []
-}

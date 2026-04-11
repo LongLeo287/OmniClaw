@@ -213,7 +213,7 @@ Check provider websites for current pricing.
 
 1. **Add Your Content**: PDFs, web links, documents
 2. **Explore Features**: Podcasts, transformations, search
-3. **Full Documentation**: [See all features](../3-USER-GUIDE/index.md)
+3. **Full Documentation**: See all features
 
 ---
 

@@ -4,6 +4,8 @@
 - **Manager**: rd-lead-agent
 
 ## Workforce Roster
+
+- **hermes_agent** (active): Advanced AI Agent framework created by Nous Research.
 - **ai-ml-agent** (active): *Worker for rd*
 - **experiment-agent** (active): *Worker for rd*
 - **onboard-agent** (active): *Worker for rd*

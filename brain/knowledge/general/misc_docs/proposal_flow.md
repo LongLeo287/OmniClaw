@@ -1,4 +1,4 @@
-﻿---
+---
 id: proposal-flow
 type: document
 owner: OHD
@@ -12,7 +12,7 @@ description: OmniClaw Proposal handling workflow â€” tá»« proposal creat
 ---
 # ops/workflows/proposal-flow.md
 # Version: 1.0 | 2026-03-24 | Owner: strategy + C-Suite
-# Purpose: Xá»­ lÃ½ 5 loáº¡i proposals Ä‘ang pending + standard flow
+# Purpose: Xá»­ lý 5 loáº¡i proposals Ä‘ang pending + standard flow
 
 ---
 

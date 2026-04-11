@@ -1,4 +1,4 @@
-﻿---
+---
 id: qa-gate
 type: document
 owner: OHD

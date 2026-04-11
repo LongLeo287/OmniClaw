@@ -18,7 +18,7 @@
             "code-analysis",
             "crewai"
         ],
-        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\crewai_gitingest"
+        "path": "$OMNICLAW_ROOT/ecosystem/tools/crewai_gitingest"
     },
     "crewai_lightrag": {
         "id": "crewai_lightrag",
@@ -39,7 +39,7 @@
             "graph-database",
             "crewai"
         ],
-        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\crewai_lightrag"
+        "path": "$OMNICLAW_ROOT/ecosystem/tools/crewai_lightrag"
     },
     "heuristic_survival": {
         "id": "heuristic_survival",
@@ -62,7 +62,7 @@
                 "description": "Network connectivity verifier"
             }
         ],
-        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\heuristic_survival"
+        "path": "$OMNICLAW_ROOT/ecosystem/tools/heuristic_survival"
     },
     "mcp_notebooklm": {
         "id": "mcp_notebooklm",
@@ -120,6 +120,6 @@
             "pattern-extraction",
             "data-driven"
         ],
-        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\ui_ux_pro_max"
+        "path": "$OMNICLAW_ROOT/ecosystem/tools/ui_ux_pro_max"
     }
 }

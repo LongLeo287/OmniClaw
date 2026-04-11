@@ -258,7 +258,7 @@ docker exec open-notebook-local-ollama-1 ollama pull neural-chat
 
 1. **Add Your Own Content**: PDFs, documents, articles (see 3-USER-GUIDE)
 2. **Explore Features**: Podcasts, transformations, search
-3. **Full Documentation**: [See all features](../3-USER-GUIDE/index.md)
+3. **Full Documentation**: See all features
 4. **Scale Up**: Deploy to a server with better hardware for faster responses
 5. **Benchmark Models**: Try different models to find the speed/quality tradeoff you prefer
 

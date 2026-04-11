@@ -1,4 +1,4 @@
-﻿---
+---
 id: corp-learning-loop
 type: document
 owner: OHD
@@ -72,7 +72,7 @@ cognitive_reflector triggers a 4-step "REM Sleep" process to extract wisdom with
 - Reads `brain/memory/blackboard.json` (Cycle context).
 - Sets the "Focus Lens" for what signals matter.
 
-### Step 2b: Gather Signal (Gom TÃ­n Hiá»‡u ThÃ´)
+### Step 2b: Gather Signal (Gom TÃ­n Hiá»‡u Thô)
 - Scans `telemetry/receipts/<dept>/` for tasks completed this cycle.
 - Scans `corp/daily_briefs/BRIEF_<date>.md` for anomalies.
 
@@ -80,7 +80,7 @@ cognitive_reflector triggers a 4-step "REM Sleep" process to extract wisdom with
 - Synthesizes findings into `brain/memory/system_memory/daily_briefs/SYNTHESIS_<date>.md`.
 - Formats cross-dept blockers, global wins, and skill gaps.
 
-### Step 2d: Prune & Index (Tá»‰a rÃ¡c vÃ  ÄÃ¡nh Chá»‰ Má»¥c)
+### Step 2d: Prune & Index (Tá»‰a rác vÃ  Äánh Chá»‰ Má»¥c)
 - Scans `corp/memory/departments/<dept>.md`.
 - If a memory file exceeds 200 lines, it forcibly truncates and summarizes the oldest entries.
 - Updates the `corp/memory/GLOBAL_INDEX.md` (Hard cap < 100 lines) to map where concepts are stored.

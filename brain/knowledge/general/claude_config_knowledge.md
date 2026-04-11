@@ -747,7 +747,7 @@ agent-browser state load ./auth.json
 agent-browser open https://app.example.com/dashboard
 ```
 
-See [references/authentication.md](references/authentication.md) for OAuth, 2FA, cookie-based auth, and token refresh patterns.
+See references/authentication.md for OAuth, 2FA, cookie-based auth, and token refresh patterns.
 
 ## Essential Commands
 
@@ -1765,7 +1765,7 @@ Create the Electron subproject alongside your existing Bun web app.
 - `scripts/download-bun.ts` for downloading platform-specific Bun binaries
 - Parent project changes: new scripts, tsconfig excludes, .gitignore entries
 
-**Reference:** [project-setup.md](references/project-setup.md)
+**Reference:** project-setup.md
 
 ## Phase 2: Main Process
 
@@ -1787,7 +1787,7 @@ Build the Electron main process — the entry point, server spawning, window man
 - Preload exposes only specific methods, never raw `ipcRenderer`
 - Window persists bounds via `electron-store`
 
-**Reference:** [main-process.md](references/main-process.md)
+**Reference:** main-process.md
 
 ## Phase 3: Web App Adaptation
 
@@ -1807,7 +1807,7 @@ Adapt the existing web app to detect and respond to the Electron environment whi
 | Update notification | Pill component showing available → downloading → ready states |
 | Feature gating | Disable demo mode, hosted features when in Electron |
 
-**Reference:** [web-adaptation.md](references/web-adaptation.md)
+**Reference:** web-adaptation.md
 
 ## Phase 4: Build & Distribution
 
@@ -1835,7 +1835,7 @@ Bundle everything, set up CI/CD, and handle code signing.
 - macOS: `sips` + `iconutil` from source PNG → `.icns`
 - Windows: `png-to-ico` npm package → `.ico`
 
-**Reference:** [build-and-distribute.md](references/build-and-distribute.md)
+**Reference:** build-and-distribute.md
 
 ## Cutting a Release
 
@@ -1865,11 +1865,11 @@ Bundle everything, set up CI/CD, and handle code signing.
 - Tagging before the version bump is merged — wrong version in build
 - Tagging a feature branch instead of `origin/main`
 
-See [pitfalls.md §13](references/pitfalls.md) for full details.
+See pitfalls.md §13 for full details.
 
 ## Critical Pitfalls
 
-Quick-reference list — see [pitfalls.md](references/pitfalls.md) for full details with symptoms and code examples.
+Quick-reference list — see pitfalls.md for full details with symptoms and code examples.
 
 | # | Pitfall | One-line fix |
 |---|---------|-------------|
@@ -5692,14 +5692,14 @@ Show basic content, link to advanced content:
 
 ## Creating documents
 
-Use docx-js for new documents. See [DOCX-JS.md](DOCX-JS.md).
+Use docx-js for new documents. See DOCX-JS.md.
 
 ## Editing documents
 
 For simple edits, modify the XML directly.
 
-**For tracked changes**: See [REDLINING.md](REDLINING.md)
-**For OOXML details**: See [OOXML.md](OOXML.md)
+**For tracked changes**: See REDLINING.md
+**For OOXML details**: See OOXML.md
 ```
 
 Claude reads REDLINING.md or OOXML.md only when the user needs those features.
@@ -6731,7 +6731,7 @@ description: Test-driven development with red-green-refactor loop. Use when user
 
 **Bad tests** are coupled to implementation. They mock internal collaborators, test private methods, or verify through external means (like querying a database directly instead of using the interface). The warning sign: your test breaks when you refactor, but behavior hasn't changed. If you rename an internal function and tests fail, those tests were testing implementation, not behavior.
 
-See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
+See tests.md for examples and mocking.md for mocking guidelines.
 
 ## Anti-Pattern: Horizontal Slices
 
@@ -6802,7 +6802,7 @@ Rules:
 
 ### 4. Refactor
 
-After all tests pass, look for [refactor candidates](refactoring.md):
+After all tests pass, look for refactor candidates:
 
 - [ ] Extract duplication
 - [ ] Deepen modules (move complexity behind simple interfaces)

@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for archivist_agent
+# Knowledge Dump for archivist_agent
 
 ## File: agent.md
 ```
@@ -510,9 +510,9 @@ print(f"OK: {OUT} ({OUT.stat().st_size} bytes)")
 ```
 """
 save_session_memory.py â€” Auto-save session summary to LTM (Long-Term Memory)
-Gá»i cuá»‘i má»—i phiÃªn lÃ m viá»‡c Ä‘á»ƒ lÆ°u kÃ½ á»©c vÄ©nh viá»…n vÃ o MemoryCore.
+Gá»i cuá»‘i má»—i phiên lÃ m viá»‡c Ä‘á»ƒ lÆ°u ký á»©c vÄ©nh viá»…n vÃ o MemoryCore.
 Usage:
-  python save_session_memory.py "TÃ³m táº¯t phiÃªn: hoÃ n thÃ nh X, Y, Z"
+  python save_session_memory.py "Tóm táº¯t phiên: hoÃ n thÃ nh X, Y, Z"
   python save_session_memory.py --from-blackboard  (auto-read from blackboard.json)
 """
 import os
@@ -551,7 +551,7 @@ def save_from_blackboard():
             ts = last_session.get("timestamp", "unknown")
             summary = last_session.get("summary", "")
             if summary:
-                facts.append(f"PhiÃªn lÃ m viá»‡c {ts}: {summary}")
+                facts.append(f"Phiên lÃ m viá»‡c {ts}: {summary}")
 
         # Extract open_items
         open_items = bb.get("open_items", [])

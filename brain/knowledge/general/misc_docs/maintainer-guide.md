@@ -40,7 +40,7 @@ Thanks for opening this issue! We'll review it and get back to you soon.
 
 [If it's a bug] In the meantime, have you checked our troubleshooting guide?
 
-[If it's a feature] You might find our [design principles](design-principles.md) helpful for understanding what we're building toward.
+[If it's a feature] You might find our design principles helpful for understanding what we're building toward.
 ```
 
 **3. Decision Making**
@@ -61,7 +61,7 @@ Great idea! This aligns well with our goals, particularly [specific design princ
 I see you'd like to work on this. Before you start:
 
 1. Please share your proposed approach/solution
-2. Review our [Contributing Guide](contributing.md) and [Design Principles](design-principles.md)
+2. Review our Contributing Guide and Design Principles
 3. Once we agree on the approach, I'll assign this to you
 
 Looking forward to your thoughts!
@@ -81,11 +81,11 @@ Once we have these details, we can discuss the best approach.
 ```markdown
 Thank you for the suggestion and for offering to work on this!
 
-After reviewing against our [design principles](design-principles.md), we've decided not to pursue this in the core project because [specific reason].
+After reviewing against our design principles, we've decided not to pursue this in the core project because [specific reason].
 
 However, you might be able to achieve this through [alternative approach, if applicable].
 
-We appreciate your interest in contributing! Feel free to check out our [open issues](link) for other ways to contribute.
+We appreciate your interest in contributing! Feel free to check out our open issues for other ways to contribute.
 ```
 
 ### Labels to Use
@@ -230,7 +230,7 @@ Let me know what you prefer!
 ```markdown
 Thanks for the PR! I appreciate you taking the time to contribute.
 
-However, to maintain project coherence, we require all PRs to be linked to an approved issue that was assigned to the contributor. This is explained in our [Contributing Guide](contributing.md).
+However, to maintain project coherence, we require all PRs to be linked to an approved issue that was assigned to the contributor. This is explained in our Contributing Guide.
 
 This helps us:
 - Ensure work aligns with project vision
@@ -253,7 +253,7 @@ Sorry for the inconvenience - this process helps us manage the project effective
 ```markdown
 Thank you for this suggestion! I can see how this would be useful for [specific use case].
 
-After reviewing against our [design principles](design-principles.md), we've decided not to include this in the core project because [specific reason - e.g., "it conflicts with our 'Simplicity Over Features' principle" or "it would require dependencies that conflict with our privacy-first approach"].
+After reviewing against our design principles, we've decided not to include this in the core project because [specific reason - e.g., "it conflicts with our 'Simplicity Over Features' principle" or "it would require dependencies that conflict with our privacy-first approach"].
 
 Some alternatives:
 - [If applicable] This could be built as a plugin/extension
@@ -319,7 +319,7 @@ Thank you for taking the time to contribute! We really appreciate it.
 
 After careful review, we've decided not to merge this PR because [specific reason related to design principles].
 
-This isn't a reflection on your code quality - it's about maintaining focus on our core goals as outlined in [design-principles.md](design-principles.md).
+This isn't a reflection on your code quality - it's about maintaining focus on our core goals as outlined in design-principles.md.
 
 We'd love to have you contribute in other ways! Check out:
 - Good first issues
@@ -398,7 +398,7 @@ This will be included in the next release.
 ## When in Doubt
 
 Ask yourself:
-1. Does this align with our [design principles](design-principles.md)?
+1. Does this align with our design principles?
 2. Will we be able to maintain this feature long-term?
 3. Does this benefit most users, or just an edge case?
 4. Is there a simpler alternative?

@@ -1,8 +1,12 @@
 import os
 
+import os
+__TEMP_ROOT__ = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
+
+
 PATHS_TO_CLEAN = [
-    r"D:\OmniClaw\vault\knowledge\global_codebases",
-    r"D:\OmniClaw\ecosystem\skills"
+    os.path.join(__TEMP_ROOT__, "vault", "knowledge", "global_codebases"),
+    os.path.join(__TEMP_ROOT__, "ecosystem", "skills")
 ]
 
 extensions_to_hide = [

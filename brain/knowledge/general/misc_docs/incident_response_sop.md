@@ -1,4 +1,4 @@
-﻿---
+---
 id: incident-response-sop
 type: document
 owner: OHD

@@ -20,7 +20,7 @@ tags: [openspec, spec-first, slash-commands, planning, claude-code, cursor, ai-w
 
 > AI coding agents code before aligning on specs → vague prompts → unpredictable results.
 
-OpenSpec adds **lightweight spec layer** giữa idea và code:
+OpenSpec adds **lightweight spec layer** giữa idea and code:
 ```
 Idea → /opsx:propose → SPEC APPROVED → /opsx:apply → /opsx:archive
 ```
@@ -105,7 +105,7 @@ openspec config profile  # Select workflow depth
 
 ---
 
-## So sánh với Alternatives
+## So sánh with Alternatives
 
 | Tool | Pros | Cons |
 |------|------|------|
@@ -116,21 +116,21 @@ openspec config profile  # Select workflow depth
 
 ---
 
-## Patterns Học Được cho OmniClaw
+## Patterns Học successfully for OmniClaw
 
 ### Pattern 1: Proposal → Spec → Design → Tasks
 ```
-Tương tự implementation_plan.md của OmniClaw, nhưng có thêm:
+Tương tự implementation_plan.md of OmniClaw, nhưng has thêm:
 → proposal.md: *why* trước khi *what*
-→ specs/ folder riêng với scenarios
+→ specs/ folder riêng with scenarios
 → Archive completed changes (lịch sử quyết định)
 ```
 
 ### Pattern 2: Archived Changes = Decision History
 ```
-Mỗi feature được archive kèm full spec → 
-→ AI tương lai có thể trace *tại sao* code được viết vậy
-→ OmniClaw: tạo archives/ trong .ai-memory/
+Mỗi feature successfully archive kèm full spec → 
+→ AI tương lai has thể trace *tại sao* code successfully viết vậy
+→ OmniClaw: tạo archives/ in .ai-memory/
 ```
 
 ### Pattern 3: `/opsx:verify` Command
@@ -141,14 +141,14 @@ Sau khi implement → riêng 1 command verify
 
 ---
 
-## Relevance cho OmniClaw
+## Relevance for OmniClaw
 
 | Aspect | Assessment |
 |--------|------------|
 | Adopt as-is | Partial — install vào OmniClaw project |
 | Key pattern | Proposal → Spec before Code |
 | Workflow gate | Tương tự Superpowers mandatory gates |
-| Archive pattern | Bổ sung cho implementation_plan.md |
+| Archive pattern | Bổ sung for implementation_plan.md |
 
 ---
 

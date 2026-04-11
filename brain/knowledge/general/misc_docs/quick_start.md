@@ -131,4 +131,4 @@ open http://localhost:5055/docs
 
 ---
 
-Need more help? See [Development Setup](development-setup.md) for details or join our [Discord](https://discord.gg/37XJPXfz2w).
+Need more help? See Development Setup for details or join our [Discord](https://discord.gg/37XJPXfz2w).
