@@ -57,9 +57,9 @@ CEO (human)
 | `brain/memory/AGENTS.md` | List of 120+ agent personas |
 | `brain/registry/SKILL_REGISTRY.json` | Registry 88 plugins + 55 skills |
 | `brain/memory/blackboard.json` | Real-time general information panel |
-| `brain/memory/os_memory/kpi_scoreboard.json` | KPI for each department |
-| `brain/memory/os_memory/escalations.md` | Escalation List |
-| `brain/memory/os_memory/mission.md` | Company mission |
+| `brain/memory/corp_memory/kpi_scoreboard.json` | KPI for each department |
+| `brain/memory/corp_memory/escalations.md` | Escalation List |
+| `brain/memory/corp_memory/mission.md` | Company mission |
 | `llm/router.yaml` | Map: task_type → optimal model |
 | `ecosystem/workforce/org_chart.yaml` | Full organizational chart |
 
