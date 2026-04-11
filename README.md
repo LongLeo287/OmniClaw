@@ -178,9 +178,9 @@ For a deeper understanding of the system's architecture, running services, and l
 - 🏢 [**Agent Workforce Matrix**](ecosystem/workforce/_REGIONAL_MAP.md) — Architectural map of the execution Agents.
 - 🎨 [**UI Components Library**](ecosystem/ui_components/_REGIONAL_MAP.md) — Central repository for frontend assets, shadcn_ui, and UI/UX generator workflows.
 - 🌁 [**Local Server Bridges**](ecosystem/bridges/) — Launchers for local database and LLM inference engines (Mem0, Ollama, LightRAG).
-- 🗃️ [**Skills Directory**](core/docs/architecture/skills_map.md) — Comprehensive library detailing specialized functions across OmniClaw.
-- 🔌 [**Tier-2 Plugins Registry**](ecosystem/plugins/) — Central catalog of heavy sandbox plugins.
-- 🧰 [**Native Fallback Tools**](ecosystem/tools/_REGIONAL_MAP.md) — Bare-metal OS survival scripts for Offline/Heuristic LLM operations.
+- 🗃️ [**Skills Directory**](ecosystem/skills/) — The Passive Competency Warehouse housing **1,932+** AI Persona & Knowledge prompts.
+- 🔌 [**Plugins Registry**](ecosystem/plugins/) — The Cold-Storage Library for 3rd-party repositories and sandboxed logic.
+- 🧰 [**Tools Armory**](ecosystem/tools/) — The Active Armory containing Native Executables and **MCP Gateways**.
 - 📊 [**Data Science Repositories**](core/docs/usage_guides/data_science_library.md) — List of active Machine Learning and RAG repositories in the capability library.
 
 ---
