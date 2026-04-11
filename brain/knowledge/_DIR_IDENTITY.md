@@ -1,43 +1,23 @@
 ---
-id: knowledge
+id: brain_knowledge
 type: directory_identity
 namespace: brain.knowledge
 owner: OSF_Daemon
 status: standard_v5
-description: "The 'knowledge' directory within OmniClaw v5.0 serves as the central repository for all knowledge-related assets, including architecture diagrams, AI/ML models, and data retrieval protocols."
-registered_by: OMA_AI_FORGER
-tags: ["knowledge", "architecture", "data"]
-forged_at: 2026-04-10
+description: "Curated Structural Knowledge Library. The refined core of system knowledge, isolated from raw vault dumps."
+registered_by: Antigravity
+tags: ["knowledge", "architecture", "data", "distilled"]
+forged_at: 2026-04-11
 ---
 
-# Knowledge Identity
+# Knowledge Identity 📚
 
-The 'knowledge' directory within OmniClaw v5.0 serves as the central repository for all knowledge-related assets, including architecture diagrams, AI/ML models, and data retrieval protocols.
+The `brain/knowledge/` directory within OmniClaw V5.0 serves as the highly curated, refined repository for all knowledge-related assets.
 
----
-
-## Topological View
-
-```mermaid
-graph TD
-  Parent("brain") --> Node("knowledge")
-  Node --> S1("agent_architecture")
-  Node --> S2("ai_ml")
-  Node --> S3("api")
-  Node --> S4("architecture")
-  Node --> S5("automation")
-  Node --> S6("bmad_repo")
-  Node --> S7("catalog")
-  Node --> S8("claude_bp_repo")
-  Node --> S9("corp")
-  Node --> S10("corp_feeds")
-  Node --> S11("cybersecurity")
-  Node --> S12("data")
-  
-  %% Quarantine Link (Cold Storage)
-  Node -.->|Archived Dumps| V1("vault/knowledge/archived_fetches")
-  style V1 fill:#ff9999,stroke:#cc0000,stroke-width:2px,color:#000
-```
+### 🛡️ The Isolation Boundary
+It is critical to distinguish this directory from `vault/knowledge/`.
+- `vault/knowledge/`: Contains massive, untethered raw dumps (`CIV_FETCHED` datasets, raw scraped repos) that are blocked by `.gitignore`.
+- **`brain/knowledge/` (Here):** Contains the refined, human-readable, and AI-optimized *distillations* of those dumps. These are heavily curated architecture topologies, rulesets (`OS_CODE_RULES`), and standard operating procedures safely synced via Git.
 
 ---
-*OmniClaw V5.0 | Forged by OMA AI Architect | brain.knowledge | 2026-04-10*
+*OmniClaw V5.0 Blueprint | Forged by Antigravity OS Architect | brain.knowledge | 2026-04-11*
