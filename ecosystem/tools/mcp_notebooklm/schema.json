@@ -1,0 +1,29 @@
+﻿{
+    "id": "mcp_notebooklm",
+    "name": "NotebookLM MCP Gateway",
+    "version": "1.2.1",
+    "tier": 2,
+    "status": "active",
+    "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\mcp_notebooklm\\TOOL.md",
+    "integration_type": "mcp_server",
+    "accessible_by": [
+        "Orchestrator",
+        "Claude Code"
+    ],
+    "dependencies": ["Node.js"],
+    "exposed_functions": [
+        {
+            "name": "list_notebooks",
+            "description": "Fetch the list of available notebooks in NotebookLM."
+        },
+        {
+            "name": "ask_notebooklm",
+            "description": "Ask questions and extract information from Google NotebookLM."
+        }
+    ],
+    "tags": [
+        "mcp",
+        "google_workspace",
+        "tools"
+    ]
+}

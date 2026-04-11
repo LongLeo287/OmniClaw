@@ -33,10 +33,10 @@ listens_to:
 tags: [knowledge, mcp, google-workspace, rag]
 ---
 
-# NotebookLM MCP Gateway (Skill)
+# NotebookLM MCP Gateway (Tool)
 
 ## 📌 Overview
-This skill allows OmniClaw to connect with **Google NotebookLM** via the Model Context Protocol (MCP). Agents can directly leverage NotebookLM's massive document parsing capabilities (PDFs, Videos, Docs) and use the Gemini API to extract knowledge without being constrained by local agent context limits.
+This tool allows OmniClaw to connect with **Google NotebookLM** via the Model Context Protocol (MCP). Agents can directly leverage NotebookLM's massive document parsing capabilities (PDFs, Videos, Docs) and use the Gemini API to extract knowledge without being constrained by local agent context limits.
 
 ## ⚙️ Agent Guidelines
 1. **Initialize Connection**: The MCP protocol is implemented via Node.js (`src/index.ts` in `CIV/RECALL_notebooklm_mcp`). Ensure you have the appropriate API keys or `.env` configuration.
@@ -47,4 +47,4 @@ This skill allows OmniClaw to connect with **Google NotebookLM** via the Model C
 
 ## ⚠️ Technical Notes (OER/OHD Guardrails)
 - Do not make abusive repetitive calls. Batch queries if possible to avoid Rate Limits.
-- Audio and Video files are natively supported by NotebookLM. Delegate multimedia parsing directly to NotebookLM instead of using a standalone audio skill!
+- Audio and Video files are natively supported by NotebookLM. Delegate multimedia parsing directly to NotebookLM instead of using a standalone audio tool!

@@ -1,0 +1,11 @@
+﻿{
+    "id": "heuristic_survival",
+    "name": "Heuristic Survival Tools",
+    "integration_type": "python_script",
+    "accessible_by": ["Orchestrator"],
+    "exposed_functions": [
+        {"name": "heuristic_dir_scan.py", "description": "Offline native directory scanner"},
+        {"name": "heuristic_file_read.py", "description": "Offline native file content reader"},
+        {"name": "system_ping.py", "description": "Network connectivity verifier"}
+    ]
+}
