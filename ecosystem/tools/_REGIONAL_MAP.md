@@ -4,7 +4,7 @@ type: regional_map
 zone: ecosystem/tools
 ---
 
-# _REGIONAL_MAP — $OMNICLAW_ROOT\ecosystem\tools
+# _REGIONAL_MAP — $OMNICLAW_ROOT/ecosystem/tools
 
 ## Integrated Tools (5)
 | ID | Type | Validated |

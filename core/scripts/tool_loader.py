@@ -32,7 +32,7 @@ def build_tool_registry():
                         schema_data = json.load(f)
                         # Add relative physical path if not exists
                         if "path" not in schema_data:
-                            schema_data["path"] = f"$OMNICLAW_ROOT\\ecosystem\\tools\\{tool_id}"
+                            schema_data["path"] = f"$OMNICLAW_ROOT/ecosystem/tools/{tool_id}"
                         registry[tool_id] = schema_data
                         valid_tools.append(tool_id)
                 except Exception as e:
@@ -63,7 +63,7 @@ def generate_regional_map(tools_list):
         "zone: ecosystem/tools",
         "---",
         "",
-        r"# _REGIONAL_MAP — $OMNICLAW_ROOT\ecosystem\tools",
+        "# _REGIONAL_MAP — $OMNICLAW_ROOT/ecosystem/tools",
         "",
         f"## Integrated Tools ({len(tools_list)})",
         "| ID | Type | Validated |",

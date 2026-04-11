@@ -37,7 +37,7 @@ def generate_schema_json(folder_name):
         "version": "1.0.0",
         "tier": 2,
         "status": "active",
-        "path": f"$OMNICLAW_ROOT\\ecosystem\\skills\\{folder_name}\\SKILL.md",
+        "path": f"$OMNICLAW_ROOT/ecosystem/skills/{folder_name}/SKILL.md",
         "accessible_by": ["Orchestrator", "Claude Code"],
         "dependencies": [],
         "exposed_functions": [],

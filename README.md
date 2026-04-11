@@ -208,7 +208,7 @@ OmniClaw is evolving from a localized operating system into a comprehensive ecos
 
 Have ideas, questions, or want to showcase your custom Agent workflows? We have built a dedicated space for the OmniClaw workforce to collaborate.
 
-**[🚀 Step into the OmniClaw Discussions Space](https://github.com/LongLeo287/omniclaw-local/discussions)**
+**[🚀 Step into the OmniClaw Discussions Space](https://github.com/LongLeo287/OmniClaw/discussions)**
 
 ---
 

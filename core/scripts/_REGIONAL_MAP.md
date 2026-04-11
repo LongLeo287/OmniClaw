@@ -4,7 +4,7 @@ type: regional_map
 zone: core/scripts
 ---
 
-# 🗺️ _REGIONAL_MAP — $OMNICLAW_ROOT\core\scripts
+# 🗺️ _REGIONAL_MAP — $OMNICLAW_ROOT/core/scripts
 
 ## ⚙️ Active Core Utilities
 
