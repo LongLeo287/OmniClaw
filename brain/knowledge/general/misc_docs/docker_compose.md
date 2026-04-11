@@ -162,7 +162,7 @@ curl -o docker-compose.yml https://raw.githubusercontent.com/lfnovo/open-noteboo
 cp examples/docker-compose-ollama.yml docker-compose.yml
 ```
 
-See [examples/docker-compose-ollama.yml](../../examples/docker-compose-ollama.yml) for the complete setup.
+See examples/docker-compose-ollama.yml for the complete setup.
 
 **Manual setup:** Add this to your existing `docker-compose.yml`:
 
@@ -206,7 +206,7 @@ Configure Ollama in the Settings UI:
 | `SURREAL_DATABASE` | Database name | `open_notebook` |
 | `API_URL` | API external URL | `http://localhost:5055` |
 
-See [Environment Reference](environment-reference.md) for complete list.
+See Environment Reference for complete list.
 
 ---
 
@@ -332,7 +332,7 @@ docker compose up -d
 
 ## Alternative Setups
 
-Looking for different configurations? Check out our [examples/](../../examples/) folder:
+Looking for different configurations? Check out our examples/ folder:
 
 
 Each example includes detailed comments and usage instructions.
@@ -344,7 +344,7 @@ Each example includes detailed comments and usage instructions.
 1. **Add Content**: Sources, notebooks, documents
 2. **Configure Models**: Settings → Models (choose your preferences)
 3. **Explore Features**: Chat, search, transformations
-4. **Read Guide**: [User Guide](../INDEX.md)
+4. **Read Guide**: User Guide
 
 ---
 

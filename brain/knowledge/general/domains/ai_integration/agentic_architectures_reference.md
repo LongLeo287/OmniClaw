@@ -112,7 +112,7 @@ Thought → Action → Observation → Thought → ...
 while not done:
     thought = llm.think(context)
     action = llm.choose_action(thought, tools)
-    observation = tools[action.name](**action.args)
+    observation = toolsaction.name
     context.add(thought, action, observation)
     done = llm.is_done(context)
 ```

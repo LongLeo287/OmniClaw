@@ -1073,8 +1073,8 @@ Initial request: $ARGUMENTS
    - ✗ Don't hard code values that should be in input schema
    - ✗ Don't skip input validation or error handling
    - ✗ Don't overload servers - use appropriate concurrency and delays
-3. Implement standby mode readiness probe if `usesStandbyMode: true` (see [skills/apify-actor-development/references/standby-mode.md](skills/apify-actor-development/references/standby-mode.md))
-4. Use proper logging (see [skills/apify-actor-development/references/logging.md](skills/apify-actor-development/references/logging.md))
+3. Implement standby mode readiness probe if `usesStandbyMode: true` (see skills/apify-actor-development/references/standby-mode.md)
+4. Use proper logging (see skills/apify-actor-development/references/logging.md)
 5. Update todos as you progress
 
 ---
@@ -2169,7 +2169,7 @@ function generateMarkdown(
 
       if (rule.references && rule.references.length > 0) {
         md += `Reference: ${rule.references
-          .map((ref) => `[${ref}](${ref})`)
+          .map((ref) => `${ref}`)
           .join(', ')}\n\n`
       }
     })
@@ -2181,7 +2181,7 @@ function generateMarkdown(
   if (metadata.references && metadata.references.length > 0) {
     md += `## References\n\n`
     metadata.references.forEach((ref, i) => {
-      md += `${i + 1}. [${ref}](${ref})\n`
+      md += `${i + 1}. ${ref}\n`
     })
   }
 
@@ -4350,8 +4350,8 @@ Use the appropriate CLI command based on the user's language choice. Additional 
    - Python: `pip install -r requirements.txt` (pin exact versions in `requirements.txt`, e.g. `crawlee==1.2.3`, and commit the file to version control)
 3. **Implement logic** - Write the actor code in `src/main.py`, `src/main.js`, or `src/main.ts`
 4. **Configure schemas** - Update input/output schemas in `.actor/input_schema.json`, `.actor/output_schema.json`, `.actor/dataset_schema.json`
-5. **Configure platform settings** - Update `.actor/actor.json` with actor metadata (see [references/actor-json.md](references/actor-json.md))
-6. **Write documentation** - Create comprehensive README.md for the marketplace (see [references/actor-readme.md](references/actor-readme.md) — this is mandatory, not optional)
+5. **Configure platform settings** - Update `.actor/actor.json` with actor metadata (see references/actor-json.md)
+6. **Write documentation** - Create comprehensive README.md for the marketplace (see references/actor-readme.md — this is mandatory, not optional)
 7. **Test locally** - Run `apify run` to verify functionality (see Local Testing section below)
 8. **Deploy** - Run `apify push` to deploy the actor on the Apify platform (actor name is defined in `.actor/actor.json`)
 
@@ -4403,7 +4403,7 @@ Use the appropriate CLI command based on the user's language choice. Additional 
 
 ## Logging
 
-See [references/logging.md](references/logging.md) for complete logging documentation including available log levels and best practices for JavaScript/TypeScript and Python.
+See references/logging.md for complete logging documentation including available log levels and best practices for JavaScript/TypeScript and Python.
 
 Check `usesStandbyMode` in `.actor/actor.json` - only implement if set to `true`.
 
@@ -4436,7 +4436,7 @@ This file should contain the input parameters defined in your `.actor/input_sche
 
 ## Standby Mode
 
-See [references/standby-mode.md](references/standby-mode.md) for complete standby mode documentation including readiness probe implementation for JavaScript/TypeScript and Python.
+See references/standby-mode.md for complete standby mode documentation including readiness probe implementation for JavaScript/TypeScript and Python.
 
 ## Project Structure
 
@@ -4456,29 +4456,29 @@ Dockerfile              # Container image definition
 
 ## Actor Configuration
 
-See [references/actor-json.md](references/actor-json.md) for complete actor.json structure and configuration options.
+See references/actor-json.md for complete actor.json structure and configuration options.
 
 ## Input Schema
 
-See [references/input-schema.md](references/input-schema.md) for input schema structure and examples.
+See references/input-schema.md for input schema structure and examples.
 
 ## Output Schema
 
-See [references/output-schema.md](references/output-schema.md) for output schema structure, examples, and template variables.
+See references/output-schema.md for output schema structure, examples, and template variables.
 
 ## Dataset Schema
 
-See [references/dataset-schema.md](references/dataset-schema.md) for dataset schema structure, configuration, and display properties.
+See references/dataset-schema.md for dataset schema structure, configuration, and display properties.
 
 ## Key-Value Store Schema
 
-See [references/key-value-store-schema.md](references/key-value-store-schema.md) for key-value store schema structure, collections, and configuration.
+See references/key-value-store-schema.md for key-value store schema structure, collections, and configuration.
 
 ## Actor README
 
 **IMPORTANT:** Always generate a README.md as part of Actor development. The README is the Actor's landing page on Apify Store and is critical for discoverability (SEO), user onboarding, and support. Do not consider an Actor complete without a proper README.
 
-See [references/actor-readme.md](references/actor-readme.md) for the required structure, SEO best practices, and content guidelines. Also review these top Actors for best practices:
+See references/actor-readme.md for the required structure, SEO best practices, and content guidelines. Also review these top Actors for best practices:
 
 - [Instagram Scraper](https://apify.com/apify/instagram-scraper)
 - [Google Maps Scraper](https://apify.com/compass/crawler-google-places)
@@ -5421,7 +5421,7 @@ Choose based on your project's language:
 
 ## Steps 4-6: Configure Schemas
 
-See [schemas-and-output.md](references/schemas-and-output.md) for detailed configuration of:
+See schemas-and-output.md for detailed configuration of:
 - Input schema (`.actor/input_schema.json`)
 - Output schema (`.actor/output_schema.json`)
 - Actor configuration (`.actor/actor.json`)
@@ -5718,7 +5718,7 @@ For web servers, use standby mode in actor.json:
 }
 ```
 
-Then implement readiness probe. See [standby-mode.md](../../apify-actor-development/references/standby-mode.md).
+Then implement readiness probe. See standby-mode.md.
 
 ## Batch Processing Scripts
 

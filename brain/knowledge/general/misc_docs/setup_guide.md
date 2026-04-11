@@ -26,7 +26,7 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 
 ---
 
-## System Requirements (cÃ i 1 láº§n náº¿u chÆ°a cÃ³)
+## System Requirements (cÃ i 1 láº§n náº¿u chÆ°a có)
 
 | Tool | Version | Install |
 |------|---------|---------|
@@ -36,7 +36,7 @@ powershell -ExecutionPolicy Bypass -File setup.ps1
 | Docker | any | [docker.com](https://docker.com/products/docker-desktop) |
 | Ollama | any | [ollama.ai](https://ollama.ai/download) |
 
-> **Bun, uv** â€” optional, cáº§n khi dÃ¹ng claude-mem hoáº·c cognee
+> **Bun, uv** â€” optional, cáº§n khi dùng claude-mem hoáº·c cognee
 
 ---
 
@@ -48,7 +48,7 @@ Táº¥t cáº£ trong `requirements.txt` â€” cháº¡y 1 láº§n:
 pip install -r requirements.txt
 ```
 
-| Package | DÃ¹ng cho |
+| Package | Dùng cho |
 |---------|---------|
 | python-dotenv | ClawTask, AgAuto |
 | pypdf | ClawTask (Ä‘á»c PDF) |
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 ---
 
-## Special Installs (cáº§n thÃªm bÆ°á»›c)
+## Special Installs (cáº§n thêm bÆ°á»›c)
 
 ### MaxKB
 ```powershell
@@ -76,9 +76,9 @@ docker compose up -d
 /plugin install claude-mem
 ```
 
-### nullclaw (binary Ä‘Ã£ cÃ³ sáºµn)
+### nullclaw (binary Ä‘ã có sáºµn)
 ```
-# KhÃ´ng cáº§n cÃ i thÃªm â€” binary cÃ³ táº¡i:
+# Không cáº§n cÃ i thêm â€” binary có táº¡i:
 REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe
 ```
 
@@ -86,7 +86,7 @@ REMOTE\claws\nullclaw\zig-out\bin\nullclaw.exe
 
 ## External API Keys
 
-ThÃªm vÃ o `ops/secrets/MASTER.env`:
+Thêm vÃ o `ops/secrets/MASTER.env`:
 
 ```env
 OPENROUTER_API_KEY=sk-or-...
@@ -95,5 +95,5 @@ FIRECRAWL_API_KEY=fc-...
 
 ---
 
-*Dashboard: `launcher\OmniClaw Corp.cmd` â†’ [I] Install Manager Ä‘á»ƒ kiá»ƒm tra tráº¡ng thÃ¡i*
+*Dashboard: `launcher\OmniClaw Corp.cmd` â†’ [I] Install Manager Ä‘á»ƒ kiá»ƒm tra tráº¡ng thái*
 

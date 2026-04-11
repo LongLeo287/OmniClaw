@@ -21,3 +21,4 @@ Like the `plugins` ecosystem, this zone is strictly "Cold Storage". It does not 
 ## Skill Declaration
 All capabilities are logged structurally in the `SKILL_REGISTRY.json` map file, which is automatically compiled via the Assimilation Pipeline.
 Local components run standard markdown metadata frontmatter containing execution boundaries outlined in `SKILL_SPEC.md`.
+- `oma_gps_navigator`  id: `oma_gps_navigator` | type: `skill` | registered: 2026-04-12T05:00:28.134234

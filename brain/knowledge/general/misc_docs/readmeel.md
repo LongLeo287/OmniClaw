@@ -287,7 +287,7 @@ npm run bug-report
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Με επιφύλαξη παντός δικαιώματος.
 
-Δείτε το αρχείο [LICENSE](LICENSE) για πλήρεις λεπτομέρειες.
+Δείτε το αρχείο LICENSE για πλήρεις λεπτομέρειες.
 
 **Τι Σημαίνει Αυτό:**
 
@@ -296,7 +296,7 @@ Copyright (C) 2025 Alex Newman (@thedotmack). Με επιφύλαξη παντό
 - Τα παράγωγα έργα πρέπει επίσης να διατίθενται με άδεια AGPL-3.0
 - ΔΕΝ υπάρχει ΕΓΓΥΗΣΗ για αυτό το λογισμικό
 
-**Σημείωση για το Ragtime**: Ο κατάλογος `ragtime/` διατίθεται χωριστά με άδεια **PolyForm Noncommercial License 1.0.0**. Δείτε το [ragtime/LICENSE](ragtime/LICENSE) για λεπτομέρειες.
+**Σημείωση για το Ragtime**: Ο κατάλογος `ragtime/` διατίθεται χωριστά με άδεια **PolyForm Noncommercial License 1.0.0**. Δείτε το ragtime/LICENSE για λεπτομέρειες.
 
 ---
 

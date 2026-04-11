@@ -261,7 +261,7 @@ Edit `code_review_graph/parser.py` and add your extension to `EXTENSION_TO_LANGU
 
 ## Licence
 
-MIT. See [LICENSE](LICENSE).
+MIT. See LICENSE.
 
 <p align="center">
 <br>

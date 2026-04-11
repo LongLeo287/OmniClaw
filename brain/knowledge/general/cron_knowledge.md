@@ -39,7 +39,7 @@ func NewChain(c ...JobWrapper) Chain {
 //     m1(m2(m3(job)))
 func (c Chain) Then(j Job) Job {
 	for i := range c.wrappers {
-		j = c.wrappers[len(c.wrappers)-i-1](j)
+		j = c.wrapperslen(c.wrappers)-i-1
 	}
 	return j
 }
@@ -3427,7 +3427,7 @@ func NewChain(c ...JobWrapper) Chain {
 //     m1(m2(m3(job)))
 func (c Chain) Then(j Job) Job {
 	for i := range c.wrappers {
-		j = c.wrappers[len(c.wrappers)-i-1](j)
+		j = c.wrapperslen(c.wrappers)-i-1
 	}
 	return j
 }

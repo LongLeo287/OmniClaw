@@ -54,4 +54,4 @@ You can also use Codex with an API key, but this requires [additional setup](htt
 
 - [**Codex Documentation**](https://developers.openai.com/codex)
 
-This repository is licensed under the [Apache-2.0 License](LICENSE).
+This repository is licensed under the Apache-2.0 License.

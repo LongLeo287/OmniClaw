@@ -1,4 +1,4 @@
-﻿---
+---
 id: knowledge-index
 type: document
 owner: OHD

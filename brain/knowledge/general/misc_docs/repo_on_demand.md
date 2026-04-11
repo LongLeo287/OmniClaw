@@ -1,4 +1,4 @@
-﻿---
+---
 id: repo-on-demand
 type: document
 owner: OHD
@@ -16,22 +16,22 @@ description: Repo On-Demand â€” how agents clone large repos when starting 
 ## Khi nÃ o trigger
 Tá»± Ä‘á»™ng khi:
 - Agent/dept báº¯t Ä‘áº§u project má»›i (phase 3: dispatch)
-- CEO táº¡o brief cÃ³ tá»« khÃ³a liÃªn quan (frontend, security, analytics, etc.)
+- CEO táº¡o brief có tá»« khóa liên quan (frontend, security, analytics, etc.)
 - `omniclaw.py project init <name>` Ä‘Æ°á»£c gá»i
 - Telegram: `/project <description>`
 
 Manual khi:
-- CEO paste yÃªu cáº§u dá»± Ã¡n â†’ Antigravity nháº­n diá»‡n
+- CEO paste yêu cáº§u dá»± án â†’ Antigravity nháº­n diá»‡n
 
 ---
 
 ## Step 1 â€” Auto-Detect (repo_resolver.py)
 
 ```powershell
-# Tá»« Description: dá»± Ã¡n
+# Tá»« Description: dá»± án
 python ops/scripts/repo_resolver.py "Build analytics dashboard with KPI charts"
 
-# Tá»« phÃ²ng ban
+# Tá»« phòng ban
 python ops/scripts/repo_resolver.py --dept engineering
 
 # Tá»« file proposal
@@ -58,18 +58,18 @@ Sau khi clone â†’ Antigravity gá»­i Telegram:
 ```
 ðŸ“¥ REPO CLONED
 Source: github.com/...
-Project: <tÃªn dá»± Ã¡n>
-Dept: <phÃ²ng ban>
+Project: <tên dá»± án>
+Dept: <phòng ban>
 Path: plugins/github-repos/<name>
 Size: xxx MB
 ```
 
 ---
 
-## Step 4 â€” Cleanup (tÃ¹y chá»n)
+## Step 4 â€” Cleanup (tùy chá»n)
 
 ```powershell
-# XÃ³a repo sau khi dá»± Ã¡n xong (náº¿u khÃ´ng cáº§n giá»¯)
+# Xóa repo sau khi dá»± án xong (náº¿u không cáº§n giá»¯)
 Remove-Item -Recurse -Force "$OMNICLAW_ROOT\plugins\github-repos\<REPO>"
 ```
 

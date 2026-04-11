@@ -76,6 +76,6 @@ Feature (green):
 
 <div align="center">
 
-[![tg](static/img/social/tg.png)](https://t.me/feature_sliced "Telegram chat")
+![tg](https://t.me/feature_sliced "Telegram chat")
 
 </div>

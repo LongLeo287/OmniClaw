@@ -287,7 +287,7 @@ Ez a projekt a **GNU Affero General Public License v3.0** (AGPL-3.0) alatt licen
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Minden jog fenntartva.
 
-A teljes részletekért lásd a [LICENSE](LICENSE) fájlt.
+A teljes részletekért lásd a LICENSE fájlt.
 
 **Mit jelent ez:**
 
@@ -296,7 +296,7 @@ A teljes részletekért lásd a [LICENSE](LICENSE) fájlt.
 - A származékos munkáknak szintén AGPL-3.0 alatt kell licencelve lenniük
 - Ehhez a szoftverhez NINCS GARANCIA
 
-**Megjegyzés a Ragtime-ról**: A `ragtime/` könyvtár külön licencelt a **PolyForm Noncommercial License 1.0.0** alatt. Részletekért lásd a [ragtime/LICENSE](ragtime/LICENSE) fájlt.
+**Megjegyzés a Ragtime-ról**: A `ragtime/` könyvtár külön licencelt a **PolyForm Noncommercial License 1.0.0** alatt. Részletekért lásd a ragtime/LICENSE fájlt.
 
 ---
 

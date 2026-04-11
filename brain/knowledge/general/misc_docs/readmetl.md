@@ -311,7 +311,7 @@ Ang proyektong ito ay licensed sa ilalim ng **GNU Affero General Public License 
 
 Copyright (C) 2025 Alex Newman (@thedotmack). All rights reserved.
 
-Tingnan ang [LICENSE](LICENSE) file para sa buong detalye.
+Tingnan ang LICENSE file para sa buong detalye.
 
 **Ano ang ibig sabihin nito:**
 
@@ -320,7 +320,7 @@ Tingnan ang [LICENSE](LICENSE) file para sa buong detalye.
 - Dapat ding naka-license sa AGPL-3.0 ang mga derivative works
 - WALANG WARRANTY para sa software na ito
 
-**Tala tungkol sa Ragtime**: Ang `ragtime/` directory ay may hiwalay na lisensya sa ilalim ng **PolyForm Noncommercial License 1.0.0**. Tingnan ang [ragtime/LICENSE](ragtime/LICENSE) para sa detalye.
+**Tala tungkol sa Ragtime**: Ang `ragtime/` directory ay may hiwalay na lisensya sa ilalim ng **PolyForm Noncommercial License 1.0.0**. Tingnan ang ragtime/LICENSE para sa detalye.
 
 ---
 

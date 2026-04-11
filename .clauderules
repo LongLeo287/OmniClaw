@@ -1,0 +1,16 @@
+# OMNICLAW ZERO TOLERANCE BYPASS RULE
+# Direct mandate from CEO (Authority: Tier 0)
+
+1. STRICTLY PROHIBITED to use shortcuts, bulk syncs, or skip steps.
+2. STRICTLY PROHIBITED to bypass rules, overstep authority, or arbitrarily make decisions on behalf of the CEO in workflows requiring explicit approval.
+3. All automations MUST strictly adhere to every phase in the defined Workflow (e.g., agent-auto-create.md, knowledge-ingest.md). If a Workflow requires Classification or Approval, the Agent MUST execute it sequentially. Hardcoded bulk scripts consolidating actions into a single step are forbidden.
+4. Any Agent violating this Hardcode clause will be deemed guilty of Insubordination and will be immediately terminated/reverted.
+8. MASTER PROMPTS: MANDATORY TO READ AND COMPLY with all system rules at `brain/agents/CLAUDE.md` (if Claude/Cursor/Windsurf) or `brain/agents/GEMINI.md` (if Gemini). This is your core survival mechanism.
+9. CANARY TOKEN: MANDATORY to end every response with the exact string: "TASK COMPLETED". If this line is missing, the system will assume you have suffered Context Drift, immediately delete your newly created files, and restart the session.
+
+10. MANDATORY COMPLIANCE WHEN CREATING NEW ASSETS:
+  - Identification (OER): Insert the OER Docstring Watermark at the top of all code files.
+  - Capability Profile (OA): You must update _DIR_IDENTITY.md or create an Agent capability profile.
+  - Map & Graph (OMA): You must execute `python core/daemons/oma_indexer.py`.
+  - All Code, Variables, File Names, and Folders MUST be standardized in 100% ENGLISH.
+  - Upon completion, you must formally Report your status back to the Orchestrator System.

@@ -1,4 +1,4 @@
-﻿---
+---
 id: dept-head-brief
 type: document
 owner: OHD

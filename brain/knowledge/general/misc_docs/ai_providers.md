@@ -24,7 +24,7 @@ Open Notebook uses a **credential-based system** for managing AI providers:
 4. **Discover & Register Models** to make them available
 5. **Start using** the provider in your notebooks
 
-> **Prerequisite**: You must set `OPEN_NOTEBOOK_ENCRYPTION_KEY` in your docker-compose.yml before storing credentials. See [API Configuration](api-configuration.md#encryption-setup) for details.
+> **Prerequisite**: You must set `OPEN_NOTEBOOK_ENCRYPTION_KEY` in your docker-compose.yml before storing credentials. See API Configuration for details.
 
 ---
 
@@ -373,7 +373,7 @@ For Text Generation UI, vLLM, or other OpenAI-compatible endpoints:
 6. Optionally configure per-service URLs (LLM, Embedding, TTS, STT)
 7. Click **Save**, then **Test Connection**
 
-See [OpenAI-Compatible Setup](openai-compatible.md) for detailed instructions.
+See OpenAI-Compatible Setup for detailed instructions.
 
 ---
 
@@ -427,7 +427,7 @@ Use OpenAI
 - Ollama: Free, but local
 - OpenRouter: many open source models very accessible
 
-**For privacy-first:** Ollama or LM Studio and Speaches ([TTS](local-tts.md), [STT](local-stt.md))
+**For privacy-first:** Ollama or LM Studio and Speaches (TTS, STT)
 - Everything stays local
 - Works offline
 - No API keys sent anywhere

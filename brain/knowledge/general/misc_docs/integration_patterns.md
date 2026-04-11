@@ -449,4 +449,4 @@ Beyond the examples above, Mem0 integrates with:
 | [Dify](https://docs.mem0.ai/integrations/dify) | Low-code AI platform | Plugin-based |
 | [Google AI ADK](https://docs.mem0.ai/integrations/google-ai-adk) | Google agent framework | `pip install google-adk mem0ai` |
 
-For the general Python pattern (no framework), see the "Common integration pattern" in [SKILL.md](../bmad_repo/SKILL.md).
+For the general Python pattern (no framework), see the "Common integration pattern" in SKILL.md.

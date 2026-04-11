@@ -115,7 +115,7 @@ When a private method has complex logic requiring direct testing:
 
 ```typescript
 // ❌ WRONG — triggers no-unsafe-member-access, no-unsafe-call
-const result = (service as any)['isLimitReached']('photos', 5);
+const result = (service as any)'isLimitReached';
 
 // ✅ CORRECT — typed helper function
 type IsLimitReached = (feature: string, count: number) => boolean;

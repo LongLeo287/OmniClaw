@@ -86,11 +86,11 @@
 
     <!-- Pipeline Diagram -->
     <div class="section">
-        <div class="section-title">🌊 PIPELINE TỔNG — LUỒNG DỮ LIỆU KHÔNG GIÁN ĐOẠN</div>
+        <div class="section-title">🌊 PIPELINE TỔNG — LUỒNG DỮ LIỆU not GIÁN ĐOẠN</div>
         <div class="mermaid-wrap">
             <div class="mermaid">
 flowchart TD
-    EXT["🌐 External\nGit / Web / API"] -->|"Lệnh cào từ OIW_INBOX"| OIW["📥 OIW\nIntake Workflow"]
+    EXT["🌐 External\nGit / Web / API"] -->|"Lệnh cào from OIW_INBOX"| OIW["📥 OIW\nIntake Workflow"]
     
     OIW -->|"Xử lý thô"| SANDBOX["vault/tmp/\nsandbox_env"]
     OIW -->|"Blob lớn"| RAWDUMP["vault/tmp/\nraw_knowledge_dumps"]
@@ -134,7 +134,7 @@ flowchart TD
             <div class="queue-card">
                 <div class="label">OER → OIW</div>
                 <div class="path">OIW_INBOX/</div>
-                <div class="desc">OER báo có data cần update/cào lại</div>
+                <div class="desc">OER báo has data cần update/cào lại</div>
             </div>
             <div class="queue-card">
                 <div class="label">Any → OHD</div>
@@ -144,7 +144,7 @@ flowchart TD
             <div class="queue-card">
                 <div class="label">OHD / OA → OER</div>
                 <div class="path">OER_INBOX/</div>
-                <div class="desc">File sạch, đã chữa, chờ đăng kiểm</div>
+                <div class="desc">File sạch, already chữa, chờ đăng kiểm</div>
             </div>
             <div class="queue-card">
                 <div class="label">OHD → OA</div>
@@ -160,17 +160,17 @@ flowchart TD
         <!-- OMA -->
         <div class="daemon-card oma">
             <div class="daemon-name">OMA — Map Master</div>
-            <div class="daemon-role">🗺️ Kiến Trúc Sư Trưởng: Thiết kế & duy trì trật tự không gian toàn hệ thống</div>
+            <div class="daemon-role">🗺️ Kiến Trúc Sư Trưởng: Thiết kế & duy trì trật tự not gian toàn hệ thống</div>
             <div class="rule-box">⚖️ IRON RULE: Chỉ Di Chuyển — Tuyệt Đối Cấm Xóa</div>
             <div class="zones">
-                <div class="zone allow"><div class="tag">✅ Được phép</div><code>Đọc: toàn hệ thống<br>Tạo Folder: toàn hệ thống<br>Ghi _DIR_IDENTITY.md<br>Ghi OMA_SYSTEM_MAP.json<br>Gắp → vault/tmp/quarantine</code></div>
-                <div class="zone deny"><div class="tag">🚫 Cấm</div><code>Sửa nội dung file<br>Xóa file/folder<br>Giao tiếp trực tiếp<br>với dữ liệu ngoài</code></div>
+                <div class="zone allow"><div class="tag">✅ successfully phép</div><code>Đọc: toàn hệ thống<br>Tạo Folder: toàn hệ thống<br>Ghi _DIR_IDENTITY.md<br>Ghi OMA_SYSTEM_MAP.json<br>Gắp → vault/tmp/quarantine</code></div>
+                <div class="zone deny"><div class="tag">🚫 Cấm</div><code>Sửa nội dung file<br>Xóa file/folder<br>Giao tiếp trực tiếp<br>with dữ liệu ngoài</code></div>
             </div>
             <h4>Pipeline</h4>
             <ol class="pipeline-steps">
                 <li><strong>Deepscan</strong> định kỳ toàn hệ thống</li>
-                <li>Kiểm tra <strong>_DIR_IDENTITY.md</strong> của mọi folder</li>
-                <li>Gắp file lạc không có địa chỉ → <strong>quarantine</strong></li>
+                <li>Kiểm tra <strong>_DIR_IDENTITY.md</strong> of mọi folder</li>
+                <li>Gắp file lạc not has địa chỉ → <strong>quarantine</strong></li>
                 <li>Cập nhật <strong>OMA_SYSTEM_MAP.json</strong> — bản đồ chung toàn cầu</li>
             </ol>
             <h4>Handoff To</h4>
@@ -180,17 +180,17 @@ flowchart TD
         <!-- OIW -->
         <div class="daemon-card oiw">
             <div class="daemon-name">OIW — Intake Workflow</div>
-            <div class="daemon-role">📥 Kẻ Săn Mồi: Kéo data từ Git/Web/API về, xử lý thô, đặt đúng trạm</div>
-            <div class="rule-box">⚖️ Cào xong phải để đúng trạm quy định. Không tiến sâu vào Brain.</div>
+            <div class="daemon-role">📥 Kẻ Săn Mồi: Kéo data from Git/Web/API về, xử lý thô, đặt đúng trạm</div>
+            <div class="rule-box">⚖️ Cào xong must để đúng trạm quy định. not tiến sâu vào Brain.</div>
             <div class="zones">
                 <div class="zone allow"><div class="tag">✅ Workspace</div><code>Read: OIW_INBOX<br>Write: sandbox_env<br>Write: quarantine<br>Write: raw_knowledge_dumps<br>Write: OHD_TRIGGER</code></div>
                 <div class="zone deny"><div class="tag">🚫 Kỵ Húy</div><code>brain/knowledge<br>brain/rules<br>brain/registry<br>ecosystem/skills<br>ecosystem/plugins<br>core/</code></div>
             </div>
             <h4>Pipeline</h4>
             <ol class="pipeline-steps">
-                <li>Đọc lệnh từ <strong>OIW_INBOX</strong></li>
+                <li>Đọc lệnh from <strong>OIW_INBOX</strong></li>
                 <li>Kéo data → dump vào <strong>sandbox_env</strong></li>
-                <li>Ép/xử lý thô trong sandbox</li>
+                <li>Ép/xử lý thô in sandbox</li>
                 <li>Đặt file vào <strong>quarantine</strong> hoặc <strong>raw_dumps</strong></li>
                 <li>Bắn signal vào <strong>OHD_TRIGGER</strong></li>
             </ol>
@@ -201,8 +201,8 @@ flowchart TD
         <!-- OHD -->
         <div class="daemon-card ohd">
             <div class="daemon-name">OHD — Health Daemon</div>
-            <div class="daemon-role">🩺 Bác Sĩ Hệ Thống: Chữa file bệnh, gom đúng chỗ, KHÔNG XÓA</div>
-            <div class="rule-box"><span class="auto-badge">⚡ AUTONOMOUS</span>&nbsp; Tự kích hoạt khi phát hiện vấn đề — không cần gọi</div>
+            <div class="daemon-role">🩺 Bác Sĩ Hệ Thống: Chữa file bệnh, gom đúng chỗ, not XÓA</div>
+            <div class="rule-box"><span class="auto-badge">⚡ AUTONOMOUS</span>&nbsp; Tự kích hoạt khi phát hiện vấn đề — not cần gọi</div>
             <div class="zones">
                 <div class="zone allow"><div class="tag">✅ Workspace</div><code>Read: toàn hệ thống<br>Move: toàn hệ thống<br>Write: quarantine<br>Write: OER_INBOX<br>Write: OA_DISPATCH<br>Write: OHD_TRIGGER</code></div>
                 <div class="zone deny"><div class="tag">🚫 Kỵ Húy</div><code>core/daemons (sửa code)<br>brain/rules (ban luật)<br>Xóa file (Delete)<br>Tự ý lên brain</code></div>
@@ -210,7 +210,7 @@ flowchart TD
             <h4>Pipeline</h4>
             <ol class="pipeline-steps">
                 <li>Theo dõi <strong>OHD_TRIGGER</strong> liên tục (Event Listener)</li>
-                <li>Tự nhảy vào bất kỳ vùng nào có vấn đề</li>
+                <li>Tự nhảy vào bất kỳ vùng nào has vấn đề</li>
                 <li>Chữa Frontmatter bị thiếu → <strong>tiêm YAML ID</strong></li>
                 <li>Gom file lạc về đúng vị trí theo <strong>OMA Map</strong></li>
                 <li>Giao file sạch → <strong>OER_INBOX</strong></li>
@@ -224,17 +224,17 @@ flowchart TD
         <div class="daemon-card oer">
             <div class="daemon-name">OER — Ecosystem Registrar</div>
             <div class="daemon-role">🏛️ Quan Hộ Tịch: Đăng kiểm, phân phối, cập nhật sổ sách</div>
-            <div class="rule-box">⚖️ Không tạo nội dung. Chỉ nhận, đăng kiểm, phân phối, cập nhật index.</div>
+            <div class="rule-box">⚖️ not tạo nội dung. Chỉ nhận, đăng kiểm, phân phối, cập nhật index.</div>
             <div class="zones">
                 <div class="zone allow"><div class="tag">✅ Quyền Tối Cao</div><code>Write: brain/knowledge<br>Write: ecosystem/skills<br>Write: ecosystem/plugins<br>Write: ecosystem/workflows<br>Write: FAST_INDEX.json<br>Update: _DIR_IDENTITY.md<br>Write: OIW_INBOX (báo update)</code></div>
-                <div class="zone deny"><div class="tag">🚫 Kỵ Húy</div><code>core/ (cấm hoàn toàn)<br>Tạo nội dung mới<br>Bypass OHD</code></div>
+                <div class="zone deny"><div class="tag">🚫 Kỵ Húy</div><code>core/ (cấm hoàn toàn)<br>Tạo nội dung new<br>Bypass OHD</code></div>
             </div>
             <h4>Pipeline</h4>
             <ol class="pipeline-steps">
-                <li>Nhận file từ <strong>OER_INBOX</strong></li>
+                <li>Nhận file from <strong>OER_INBOX</strong></li>
                 <li>Kiểm tra & đăng kiểm ID/tag/type</li>
                 <li>Tra <strong>OMA_SYSTEM_MAP</strong> → xác định folder đích</li>
-                <li>Move file về đúng vị trí trong brain/ecosystem</li>
+                <li>Move file về đúng vị trí in brain/ecosystem</li>
                 <li>Cập nhật <strong>_DIR_IDENTITY.md</strong> cục bộ</li>
                 <li>Cập nhật <strong>FAST_INDEX.json</strong></li>
                 <li>Chủ động check update → báo <strong>OIW_INBOX</strong></li>
@@ -247,7 +247,7 @@ flowchart TD
         <div class="daemon-card oa">
             <div class="daemon-name">OA — Academy Auditor <span class="authority-badge">👑 SUPREME AUTHORITY</span></div>
             <div class="daemon-role">🧠 Trưởng Lão Học Viện: Học, Tạo, Phán quyết. Mọi output đi qua OER.</div>
-            <div class="rule-box">⚖️ Thẩm quyền cao nhất — nhưng phải đúng quy trình. Output → OER_INBOX trước. Không bypass đăng kiểm.</div>
+            <div class="rule-box">⚖️ Thẩm quyền cao nhất — nhưng must đúng quy trình. Output → OER_INBOX trước. not bypass đăng kiểm.</div>
             <div class="zones" style="grid-template-columns: 1fr 1fr 1fr;">
                 <div class="zone allow"><div class="tag">✅ Hút Rác / Học</div><code>raw_knowledge_dumps<br>quarantine (blobs)<br>brain/knowledge (đọc)<br>brain/rules (đọc)</code></div>
                 <div class="zone allow"><div class="tag">✅ Tạo Output</div><code>OA_workshop (draft)<br>OER_INBOX (delivery)<br>brain/rules (propose)</code></div>
@@ -255,11 +255,11 @@ flowchart TD
             </div>
             <h4>Pipeline</h4>
             <ol class="pipeline-steps">
-                <li>Nhận case từ <strong>OA_DISPATCH_QUEUE</strong> → Phán quyết</li>
-                <li>Đọc data thô từ <strong>raw_knowledge_dumps</strong> → Chắt lọc KI</li>
+                <li>Nhận case from <strong>OA_DISPATCH_QUEUE</strong> → Phán quyết</li>
+                <li>Đọc data thô from <strong>raw_knowledge_dumps</strong> → Chắt lọc KI</li>
                 <li>Soạn thảo artifact (agent/skill/plugin/workflow) tại <strong>OA_workshop</strong></li>
                 <li>Giao toàn bộ output qua <strong>OER_INBOX</strong> để đăng kiểm</li>
-                <li>Đề xuất Luật mới → draft <strong>brain/rules</strong> → OER xác nhận</li>
+                <li>Đề xuất Luật new → draft <strong>brain/rules</strong> → OER xác nhận</li>
             </ol>
             <h4>Handoff To <span style="color:#8b949e; font-weight:normal; font-size:0.75rem;">(tất cả đều qua OER trước)</span></h4>
             <div class="handoff"><span class="handoff-tag">OER</span></div>

@@ -1,4 +1,4 @@
-﻿---
+---
 id: recovery-protocol
 type: document
 owner: OHD

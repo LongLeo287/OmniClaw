@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for content_agent
+# Knowledge Dump for content_agent
 
 ## File: agent.md
 ```

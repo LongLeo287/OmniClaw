@@ -406,7 +406,7 @@ Prueba [dotenv-expand](https://github.com/motdotla/dotenv-expand)
 
 ## Guía de contribución
 
-Vea [CONTRIBUTING.md](CONTRIBUTING.md)
+Vea CONTRIBUTING.md
 
 ## REGISTRO DE CAMBIOS
 

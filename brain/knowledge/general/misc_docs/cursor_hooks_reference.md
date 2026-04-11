@@ -242,7 +242,7 @@ We partner with ecosystem vendors who have built hooks support with Cursor. Thes
 |---------|-------------|
 | [1Password](https://marketplace.1password.com/integration/cursor-hooks) | Validate that environment files from 1Password Environments are properly mounted before shell commands execute, enabling just-in-time secrets access without writing credentials to disk. |
 
-For more details about our hooks partners, see the [Hooks for security and platform teams](/blog/hooks-partners) blog post.
+For more details about our hooks partners, see the Hooks for security and platform teams blog post.
 
 ## Configuration
 

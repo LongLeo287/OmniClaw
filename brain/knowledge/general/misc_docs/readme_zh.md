@@ -119,7 +119,7 @@ healed_at: 2026-04-02T20:31:07.609153
 >
 > **注意**：如果您愿意，也可以使用 pip，但为了获得更好的性能 and 更可靠的依赖管理，建议使用 uv。
 >
-> **📦 离线部署**: 对于离线或隔离环境，请参阅[离线部署指南](./docs/OfflineDeployment.md)，了解预安装所有依赖项和缓存文件的说明。
+> **📦 离线部署**: 对于离线或隔离环境，请参阅离线部署指南，了解预安装所有依赖项和缓存文件的说明。
 
 ### 安装LightRAG服务器
 
@@ -202,7 +202,7 @@ make env-server         # 可选：配置服务端口、鉴权和 SSL
 make env-security-check # 可选：审计当前 .env 中的安全风险
 ```
 
-每个目标的详细说明请参阅 [docs/InteractiveSetup.md](./docs/InteractiveSetup.md)。
+每个目标的详细说明请参阅 docs/InteractiveSetup.md。
 这些 setup 向导只负责更新配置；如需在部署前审计当前 `.env` 的安全风险，请额外运行
 `make env-security-check`。
 
@@ -249,7 +249,7 @@ LightRAG对大型语言模型（LLM）的能力要求远高于传统RAG，因为
 
 ### 使用LightRAG服务器
 
-**有关LightRAG服务器的更多信息，请参阅[LightRAG服务器](./lightrag/api/README.md)。**
+**有关LightRAG服务器的更多信息，请参阅LightRAG服务器。**
 
 ### 使用LightRAG Core
 
@@ -1275,7 +1275,7 @@ maxclients 500
 为了保持与旧数据的兼容性，当未配置工作区时，PostgreSQL 非图存储的默认工作区为 `default`，PostgreSQL AGE 图存储的默认工作区为 null，Neo4j 图存储的默认工作区为 `base`。对于所有外部存储，系统提供专用的工作区环境变量来覆盖通用的 `WORKSPACE` 环境变量配置。这些存储特定的工作区环境变量包括：`REDIS_WORKSPACE`、`MILVUS_WORKSPACE`、`QDRANT_WORKSPACE`、`MONGODB_WORKSPACE`、`POSTGRES_WORKSPACE`、`NEO4J_WORKSPACE`。
 
 **使用示例：**
-有关在单个应用程序中管理多个隔离知识库（例如，将"书籍"内容与"人力资源政策"分开）的实际演示，请参阅 [Workspace Demo](examples/lightrag_gemini_workspace_demo.py)。
+有关在单个应用程序中管理多个隔离知识库（例如，将"书籍"内容与"人力资源政策"分开）的实际演示，请参阅 Workspace Demo。
 
 ### AGENTS.md -- 指导编码代理
 
@@ -1861,11 +1861,11 @@ rag.clear_cache(modes=["local"])
 
 ## LightRAG API
 
-LightRAG 服务器旨在提供 Web UI 和 API 支持。**有关 LightRAG 服务器的更多信息，请参考 [LightRAG Server](./lightrag/api/README.md)。**
+LightRAG 服务器旨在提供 Web UI 和 API 支持。**有关 LightRAG 服务器的更多信息，请参考 LightRAG Server。**
 
 ## 图谱可视化
 
-LightRAG 服务器提供了全面的知识图谱可视化功能。它支持各种重力布局、节点查询、子图过滤等。**有关 LightRAG 服务器的更多信息，请参考 [LightRAG Server](./lightrag/api/README.md)。**
+LightRAG 服务器提供了全面的知识图谱可视化功能。它支持各种重力布局、节点查询、子图过滤等。**有关 LightRAG 服务器的更多信息，请参考 LightRAG Server。**
 
 ![iShot_2025-03-23_12.40.08](./README.assets/iShot_2025-03-23_12.40.08.png)
 
@@ -1915,7 +1915,7 @@ LANGFUSE_ENABLE_TRACE=true
 
 ## 基于 RAGAS 的评估
 
-**RAGAS** (Retrieval Augmented Generation Assessment) 是一个使用 LLM 对 RAG 系统进行无参考评估的框架。项目中包含一个基于 RAGAS 的评估脚本。有关详细信息，请参考 [基于 RAGAS 的评估框架](lightrag/evaluation/README_EVALUASTION_RAGAS.md)。
+**RAGAS** (Retrieval Augmented Generation Assessment) 是一个使用 LLM 对 RAG 系统进行无参考评估的框架。项目中包含一个基于 RAGAS 的评估脚本。有关详细信息，请参考 基于 RAGAS 的评估框架。
 
 ## 评估
 

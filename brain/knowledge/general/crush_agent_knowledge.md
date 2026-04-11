@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for crush_agent
+# Knowledge Dump for crush_agent
 
 ## File: agent.md
 ```

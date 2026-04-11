@@ -1,5 +1,5 @@
 ---
-path: "D:\\OmniClaw\\core\\ops\\scripts\\utils"
+path: "D:\\LongLeo\\OmniClaw\\core\\ops\\scripts\\utils"
 department_owner: "Dept 11"
 department_name: "Operations"
 assigned_daemon: "ops-agent"

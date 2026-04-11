@@ -1098,7 +1098,7 @@ These models established key concepts but are largely superseded for practical u
 
 ## How to Contribute
 
-We welcome contributions to this list! Before contributing, please take a moment to review our [contribution guidelines](contributing.md). These guidelines will help ensure that your contributions align with our objectives and meet our standards for quality and relevance.
+We welcome contributions to this list! Before contributing, please take a moment to review our contribution guidelines. These guidelines will help ensure that your contributions align with our objectives and meet our standards for quality and relevance.
 
 **What we're looking for:**
 - New high-quality papers, tools, or resources with a brief description of why they matter

@@ -1,4 +1,4 @@
-﻿---
+---
 id: governance
 type: document
 owner: OHD

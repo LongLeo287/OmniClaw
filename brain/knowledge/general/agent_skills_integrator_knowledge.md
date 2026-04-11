@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for agent_skills_integrator
+# Knowledge Dump for agent_skills_integrator
 
 ## File: agent.md
 ```

@@ -1033,7 +1033,7 @@ As the ecosystem grows, consistent quality helps agents discover and use skills 
 
 ## 🤝 Contributing
 
-We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! See CONTRIBUTING.md for guidelines.
 
 - Submit new skills via PR
 - Improve existing definitions
@@ -1045,7 +1045,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE)
+MIT License - see LICENSE
 
 This is a curated list. Skills listed here are created and maintained by their respective authors and teams, not by us. We select community-adopted, proven skills and do not audit, endorse, or guarantee the security or correctness of listed projects. They are not security-audited and should be reviewed before production use.
 

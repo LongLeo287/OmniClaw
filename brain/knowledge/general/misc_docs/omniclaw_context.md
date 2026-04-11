@@ -1,4 +1,4 @@
-﻿---
+---
 id: omniclaw-context
 type: document
 owner: OHD

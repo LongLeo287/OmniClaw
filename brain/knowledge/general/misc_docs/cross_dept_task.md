@@ -1,4 +1,4 @@
-﻿---
+---
 id: cross-dept-task
 type: document
 owner: OHD

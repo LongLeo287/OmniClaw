@@ -1,4 +1,4 @@
-﻿---
+---
 id: corp-gate-flow
 type: document
 owner: OHD

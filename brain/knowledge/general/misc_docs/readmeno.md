@@ -287,7 +287,7 @@ Dette prosjektet er lisensiert under **GNU Affero General Public License v3.0** 
 
 Copyright (C) 2025 Alex Newman (@thedotmack). Alle rettigheter reservert.
 
-Se [LICENSE](LICENSE)-filen for fullstendige detaljer.
+Se LICENSE-filen for fullstendige detaljer.
 
 **Hva Dette Betyr:**
 
@@ -296,7 +296,7 @@ Se [LICENSE](LICENSE)-filen for fullstendige detaljer.
 - Avledede verk må også være lisensiert under AGPL-3.0
 - Det er INGEN GARANTI for denne programvaren
 
-**Merknad om Ragtime**: `ragtime/`-katalogen er lisensiert separat under **PolyForm Noncommercial License 1.0.0**. Se [ragtime/LICENSE](ragtime/LICENSE) for detaljer.
+**Merknad om Ragtime**: `ragtime/`-katalogen er lisensiert separat under **PolyForm Noncommercial License 1.0.0**. Se ragtime/LICENSE for detaljer.
 
 ---
 

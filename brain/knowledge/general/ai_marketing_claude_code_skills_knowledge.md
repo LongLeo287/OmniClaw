@@ -138,7 +138,7 @@ Not guides. Not courses. *Skills* — packaged expertise your AI coding agent lo
 [![Also Works](https://img.shields.io/badge/Also%20Works-OpenClaw%20%7C%20Copilot%20%7C%20Cursor-gray.svg)](#compatibility)
 [![Updated](https://img.shields.io/badge/Updated-Mar%2014%202026-brightgreen.svg)](./CHANGELOG.md)
 
-> **March 2026 — v3.1:** All 19 free skills now support `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. [See what changed →](./CHANGELOG.md)
+> **March 2026 — v3.1:** All 19 free skills now support `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. See what changed →
 
 ---
 
@@ -178,7 +178,7 @@ Core positioning framework for founders and marketers. Clarify who you're for, w
 
 **Use when:** "Help me with positioning", "Who is this for?", "What makes us different?"
 
-→ [positioning-basics/SKILL.md](./positioning-basics/SKILL.md)
+→ positioning-basics/SKILL.md
 
 ---
 
@@ -187,7 +187,7 @@ Audit how a brand appears in AI-powered search and recommendation systems (ChatG
 
 **Use when:** "How do I show up in ChatGPT?", "AI search visibility", "AEO audit"
 
-→ [ai-discoverability-audit/SKILL.md](./ai-discoverability-audit/SKILL.md)
+→ ai-discoverability-audit/SKILL.md
 
 ---
 
@@ -196,7 +196,7 @@ Apply timeless marketing and business principles from the masters (Drucker, Ogil
 
 **Use when:** "First principles thinking", "Should I do X?", "What would work here?", strategic decisions
 
-→ [marketing-principles/SKILL.md](./marketing-principles/SKILL.md)
+→ marketing-principles/SKILL.md
 
 ---
 
@@ -207,7 +207,7 @@ Build a LinkedIn content system for thought leadership. Positioning, content pil
 
 **Use when:** "LinkedIn strategy", "Build my presence", "Content system", "Thought leadership"
 
-→ [linkedin-authority-builder/SKILL.md](./linkedin-authority-builder/SKILL.md)
+→ linkedin-authority-builder/SKILL.md
 
 ---
 
@@ -216,7 +216,7 @@ Generate content ideas based on your positioning and ICP. Multiple frameworks fo
 
 **Use when:** "What should I post?", "Content ideas", "Blog topics", "LinkedIn content"
 
-→ [content-idea-generator/SKILL.md](./content-idea-generator/SKILL.md)
+→ content-idea-generator/SKILL.md
 
 ---
 
@@ -225,7 +225,7 @@ Extract and document someone's authentic writing voice from samples. Create voic
 
 **Use when:** "Capture my voice", "Voice guide", "Write like me", "Train AI on my style"
 
-→ [voice-extractor/SKILL.md](./voice-extractor/SKILL.md) | [$9 premium version on Claw Mart →](https://www.shopclawmart.com/listings/voice-extractor-f1578cb8)
+→ voice-extractor/SKILL.md | [$9 premium version on Claw Mart →](https://www.shopclawmart.com/listings/voice-extractor-f1578cb8)
 
 ---
 
@@ -234,7 +234,7 @@ Remove AI-generated jargon and restore human voice to text. Built from analyzing
 
 **Use when:** "This sounds like AI", "Make it human", "Remove AI voice", "De-robotify this"
 
-→ [de-ai-ify/SKILL.md](./de-ai-ify/SKILL.md)
+→ de-ai-ify/SKILL.md
 
 ---
 
@@ -243,7 +243,7 @@ Generate platform-specific social post variants (Twitter, LinkedIn, Reddit) from
 
 **Use when:** "Turn this into social posts", "Repurpose for Twitter/LinkedIn", "Create social variants"
 
-→ [social-card-gen/SKILL.md](./social-card-gen/SKILL.md)
+→ social-card-gen/SKILL.md
 
 ---
 
@@ -254,7 +254,7 @@ Research any topic across Reddit, X, and web from the last 30 days. Current tren
 
 **Use when:** "What are people saying about X?", "Current trends in Y", "Market research", "Community sentiment"
 
-→ [last30days/SKILL.md](./last30days/SKILL.md)
+→ last30days/SKILL.md
 
 ---
 
@@ -263,7 +263,7 @@ Search and analyze Reddit content using semantic AI search. Find user pain point
 
 **Use when:** "Search Reddit for...", "What does Reddit think about?", "Find pain points", "Validate this idea"
 
-→ [reddit-insights/SKILL.md](./reddit-insights/SKILL.md)
+→ reddit-insights/SKILL.md
 
 ---
 
@@ -272,7 +272,7 @@ Fetch YouTube video transcripts, generate structured summaries with key insights
 
 **Use when:** "Summarize this YouTube video", "Get transcript from...", "Key takeaways from this video"
 
-→ [youtube-summarizer/SKILL.md](./youtube-summarizer/SKILL.md)
+→ youtube-summarizer/SKILL.md
 
 ---
 
@@ -281,7 +281,7 @@ Audit and rewrite your LinkedIn profile to attract the right people. Scores each
 
 **Use when:** "Optimize my LinkedIn", "Rewrite my about section", "LinkedIn profile help", "AI search visibility"
 
-→ [linkedin-profile-optimizer/SKILL.md](./linkedin-profile-optimizer/SKILL.md)
+→ linkedin-profile-optimizer/SKILL.md
 
 ---
 
@@ -292,7 +292,7 @@ Quick conversion audit for any homepage or landing page. Get actionable feedback
 
 **Use when:** "Review my homepage", "Why isn't my page converting?", "Audit my landing page"
 
-→ [homepage-audit/SKILL.md](./homepage-audit/SKILL.md)
+→ homepage-audit/SKILL.md
 
 ---
 
@@ -301,7 +301,7 @@ Build personalized cold outreach sequences for LinkedIn and email. Research, con
 
 **Use when:** "Cold outreach", "LinkedIn messages", "Prospecting sequence", "Sales emails"
 
-→ [cold-outreach-sequence/SKILL.md](./cold-outreach-sequence/SKILL.md)
+→ cold-outreach-sequence/SKILL.md
 
 ---
 
@@ -310,7 +310,7 @@ Turn client wins into formatted case studies for proposals, social proof, and sa
 
 **Use when:** "Write a case study", "Document results", "Client success story", "Build social proof"
 
-→ [case-study-builder/SKILL.md](./case-study-builder/SKILL.md)
+→ case-study-builder/SKILL.md
 
 ---
 
@@ -319,7 +319,7 @@ Systematically gather and format client testimonials for social proof.
 
 **Use when:** "Get testimonials", "Social proof", "Client quotes", "Build credibility"
 
-→ [testimonial-collector/SKILL.md](./testimonial-collector/SKILL.md)
+→ testimonial-collector/SKILL.md
 
 ---
 
@@ -330,7 +330,7 @@ Generate an energy-optimized, time-blocked daily plan based on circadian rhythm 
 
 **Use when:** "Plan my day", "Time block today", "What should I work on?", "Daily schedule"
 
-→ [plan-my-day/SKILL.md](./plan-my-day/SKILL.md)
+→ plan-my-day/SKILL.md
 
 ---
 
@@ -339,7 +339,7 @@ Industry-adaptive B2B newsletter creation with stage, role, and geography-aware 
 
 **Use when:** "Create a newsletter", "Curate content for newsletter", "B2B newsletter", "Weekly digest"
 
-→ [newsletter-creation-curation/SKILL.md](./newsletter-creation-curation/SKILL.md)
+→ newsletter-creation-curation/SKILL.md
 
 ---
 
@@ -348,7 +348,7 @@ Deep work execution mode. When you have a clear task and need to execute without
 
 **Use when:** "Go mode", "Execute this", "Let's build", "Ship it"
 
-→ [go-mode/SKILL.md](./go-mode/SKILL.md)
+→ go-mode/SKILL.md
 
 ---
 

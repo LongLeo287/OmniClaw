@@ -37,4 +37,4 @@ The BMad Method project is copyrighted by BMad Code, LLC. Individual contributio
 
 **Thank you to everyone who has helped make BMad Method better!**
 
-For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+For contribution guidelines, see CONTRIBUTING.md.

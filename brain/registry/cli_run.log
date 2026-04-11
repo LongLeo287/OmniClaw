@@ -685,3 +685,9 @@
 [2026-04-10 23:17:01] [OHD]  OK END PROCESS_QUARANTINE | success=5 failed=0 skipped=2
 [2026-04-10 23:17:31] [OHD]  START PROCESS_QUARANTINE | targets=GHOST_SWEEP_paid_ads, GHOST_SWEEP_pakistan_payments_stack, GHOST_SWEEP_parallel_agents, GHOST_SWEEP_parallel_debugging_hivemind, oma_test.log (count=6)
 [2026-04-10 23:17:31] [OHD]  OK END PROCESS_QUARANTINE | success=4 failed=0 skipped=2
+[2026-04-12 05:13:31] [OSF]  START PROCESS_SANDBOX | targets=CIV_FETCHED_acpms_202731, CIV_FETCHED_agent-browser_021925, CIV_FETCHED_agent-scan_015130, CIV_FETCHED_agent-skills_011833, CIV_FETCHED_agent-skills_021929 (count=267)
+[2026-04-12 05:16:05] [OHD]  START PROCESS_QUARANTINE | targets=CIV_FETCHED_Pyneat_051257 (count=1)
+[2026-04-12 05:16:13] [OHD]  OK END PROCESS_QUARANTINE | success=1 failed=0 skipped=0
+[2026-04-12 05:16:43] [OA]  START DISPATCH_VERDICT | targets=Task_ID_123 (count=1)
+[2026-04-12 05:16:52] [OA]  PARTIAL END DISPATCH_VERDICT | success=0 failed=1 skipped=0
+[2026-04-12 05:16:52] [OA]  START LEARN_DUMPS | targets=CIV_FETCHED_Pyneat_051257, docs, docs_015106, docs_015811, docs_020144 (count=4247)

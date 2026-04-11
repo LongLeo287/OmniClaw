@@ -407,7 +407,7 @@ It's easy! Just click the link below and fill out the form. No Git knowledge req
 
 <h3 align="center">🚀 <a href="https://github.com/lawvable/awesome-legal-skills/issues/new?template=submit-skill.yml">Submit a new Skill here!</a></h3>
 
-**How we evaluate submissions:** Every resource goes through a manual review before it makes it onto this list. First and foremost, best efforts are made to check for security concerns - no malware, bloatware, or other unwanted risks. Then, we assess whether the skill actually delivers real, practical value to users before it gets listed. See [CONTRIBUTING.md](/CONTRIBUTING.md) for more details.
+**How we evaluate submissions:** Every resource goes through a manual review before it makes it onto this list. First and foremost, best efforts are made to check for security concerns - no malware, bloatware, or other unwanted risks. Then, we assess whether the skill actually delivers real, practical value to users before it gets listed. See CONTRIBUTING.md for more details.
 
 ## Support
 Lawvable is the first-ever open hub dedicated to AI agent skills for law - and it's growing every day thanks to the incredible contributors sharing their work and the community showing its support. If you find this list useful, consider giving it a ⭐ - it helps others discover it too.
@@ -951,7 +951,7 @@ It's easy! Just click the link below and fill out the form. No Git knowledge req
 
 <h3 align="center">🚀 <a href="https://github.com/lawvable/awesome-legal-skills/issues/new?template=submit-skill.yml">Submit a new Skill here!</a></h3>
 
-**How we evaluate submissions:** Every resource goes through a manual review before it makes it onto this list. First and foremost, best efforts are made to check for security concerns - no malware, bloatware, or other unwanted risks. Then, we assess whether the skill actually delivers real, practical value to users before it gets listed. See [CONTRIBUTING.md](/CONTRIBUTING.md) for more details.
+**How we evaluate submissions:** Every resource goes through a manual review before it makes it onto this list. First and foremost, best efforts are made to check for security concerns - no malware, bloatware, or other unwanted risks. Then, we assess whether the skill actually delivers real, practical value to users before it gets listed. See CONTRIBUTING.md for more details.
 
 ## Support
 Lawvable is the first-ever open hub dedicated to AI agent skills for law - and it's growing every day thanks to the incredible contributors sharing their work and the community showing its support. If you find this list useful, consider giving it a ⭐ - it helps others discover it too.

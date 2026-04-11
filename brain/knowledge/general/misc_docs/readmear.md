@@ -290,7 +290,7 @@ npm run bug-report
 
 حقوق النشر (C) 2025 Alex Newman (@thedotmack). جميع الحقوق محفوظة.
 
-انظر ملف [LICENSE](LICENSE) للتفاصيل الكاملة.
+انظر ملف LICENSE للتفاصيل الكاملة.
 
 **ماذا يعني هذا:**
 
@@ -299,7 +299,7 @@ npm run bug-report
 - الأعمال المشتقة يجب أن تكون مرخصة أيضًا تحت AGPL-3.0
 - لا يوجد ضمان لهذا البرنامج
 
-**ملاحظة حول Ragtime**: دليل `ragtime/` مرخص بشكل منفصل تحت **ترخيص PolyForm Noncommercial 1.0.0**. انظر [ragtime/LICENSE](ragtime/LICENSE) للتفاصيل.
+**ملاحظة حول Ragtime**: دليل `ragtime/` مرخص بشكل منفصل تحت **ترخيص PolyForm Noncommercial 1.0.0**. انظر ragtime/LICENSE للتفاصيل.
 
 ---
 

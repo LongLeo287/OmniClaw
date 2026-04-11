@@ -1,4 +1,4 @@
-﻿---
+---
 id: repo-evaluation
 type: document
 owner: OHD
@@ -120,26 +120,26 @@ Before approving, estimate the real cost of bringing this repo in:
 
 > Ãp dá»¥ng khi viáº¿t Repo Intake Report gá»­i CEO. ToÃ n bá»™ ná»™i dung báº±ng **tiáº¿ng Viá»‡t**.
 
-### Cáº¥u trÃºc tá»•ng thá»ƒ 1 report:
+### Cáº¥u trúc tá»•ng thá»ƒ 1 report:
 
 ```
 # ðŸ“‹ Repo Intake Report â€” YYYY-MM-DD
-**CIV Tickets:** BATCH-XX | **Tá»•ng URLs nháº­n:** N | **Unique repos:** N | **KhÃ´ng Ä‘á»c Ä‘Æ°á»£c:** N
+**CIV Tickets:** BATCH-XX | **Tá»•ng URLs nháº­n:** N | **Unique repos:** N | **Không Ä‘á»c Ä‘Æ°á»£c:** N
 
 ## PHÃ‚N LOáº I THEO CATEGORY
-[OVERVIEW TABLE â€” QuÃ©t nhanh toÃ n bá»™ repos]
+[OVERVIEW TABLE â€” Quét nhanh toÃ n bá»™ repos]
 
 ## CHI TIáº¾T â€” APPROVE repos
-[DETAIL CARDS â€” Tá»«ng repo APPROVE cÃ³ Ä‘áº§y Ä‘á»§ thÃ´ng tin]
+[DETAIL CARDS â€” Tá»«ng repo APPROVE có Ä‘áº§y Ä‘á»§ thông tin]
 
 ## CHI TIáº¾T â€” REFERENCE repos
 [DETAIL CARDS â€” Tá»«ng repo REFERENCE (ngáº¯n hÆ¡n APPROVE)]
 
 ## DEFER & REJECT
-[TABLE gá»n â€” chá»‰ cáº§n repo + lÃ½ do]
+[TABLE gá»n â€” chá»‰ cáº§n repo + lý do]
 
 ## DEEP ANALYSIS
-[PhÃ¢n tÃ­ch sÃ¢u 2-3 repos APPROVE Æ°u tiÃªn cao nháº¥t]
+[Phân tÃ­ch sâu 2-3 repos APPROVE Æ°u tiên cao nháº¥t]
 
 ## Tá»”NG Káº¾T
 [Báº£ng Count/% + Priority Queue]
@@ -150,26 +150,26 @@ Before approving, estimate the real cost of bringing this repo in:
 ### Format DETAIL CARD â€” má»—i repo APPROVE:
 
 ```markdown
-### N. TÃªn-repo-hiá»ƒn-thá»‹ Â· `org/repo-name`
+### N. Tên-repo-hiá»ƒn-thá»‹ · `org/repo-name`
 ðŸ”— https://github.com/org/repo-name
 
-- **Description:** [1 cÃ¢u Description: repo lÃ m gÃ¬]
+- **Description:** [1 câu Description: repo lÃ m gÃ¬]
 - **License:** MIT / Apache / BSL / GPL / Custom
-- **Highlights:** [3-5 tÃ­nh nÄƒng/thá»‘ng kÃª ná»•i báº­t: sá»‘ releases, contributors, tÃ­nh nÄƒng chÃ­nh]
-- **OmniClaw Relevance:** â­â­â­â­â­ â€” [giáº£i thÃ­ch táº¡i sao phÃ¹ há»£p vá»›i OmniClaw]
+- **Highlights:** [3-5 tÃ­nh nÄƒng/thá»‘ng kê ná»•i báº­t: sá»‘ releases, contributors, tÃ­nh nÄƒng chÃ­nh]
+- **OmniClaw Relevance:** â­â­â­â­â­ â€” [giáº£i thÃ­ch táº¡i sao phù há»£p vá»›i OmniClaw]
 - **Action:** â†’ [lá»‡nh cá»¥ thá»ƒ hoáº·c bÆ°á»›c tiáº¿p theo]
-- **Conflict check:** SAFE / âš ï¸ [tÃªn tool conflict] â€” [lÃ½ do]
-- **Dept:** [Dept X â€” tÃªn department phá»¥ trÃ¡ch]
+- **Conflict check:** SAFE / âš ï¸ [tên tool conflict] â€” [lý do]
+- **Dept:** [Dept X â€” tên department phá»¥ trách]
 - **Tier:** [1 / 2]
 ```
 
 ### Format DETAIL CARD â€” má»—i repo REFERENCE (ngáº¯n hÆ¡n):
 
 ```markdown
-### N. TÃªn-repo-hiá»ƒn-thá»‹ Â· `org/repo-name`
+### N. Tên-repo-hiá»ƒn-thá»‹ · `org/repo-name`
 ðŸ”— https://github.com/org/repo-name
 
-- **Description:** [1 cÃ¢u Description: repo lÃ m gÃ¬]
+- **Description:** [1 câu Description: repo lÃ m gÃ¬]
 - **Há»c gÃ¬:** [Ä‘iá»ƒm cáº§n cherry-pick hoáº·c há»c]
 - **Action:** â†’ [lÆ°u KI vÃ o brain/knowledge/notes/ hoáº·c cherry-pick pattern]
 ```
@@ -177,9 +177,9 @@ Before approving, estimate the real cost of bringing this repo in:
 ### Overview Table format (Ä‘áº§u report):
 
 ```markdown
-| # | Repo | Verdict | PhÃ¢n tÃ­ch |
+| # | Repo | Verdict | Phân tÃ­ch |
 |---|------|---------|-----------|
-| 1 | `org/repo` *(tag)* | âœ… APPROVE â†’ Dept X | 1 cÃ¢u ngáº¯n |
+| 1 | `org/repo` *(tag)* | âœ… APPROVE â†’ Dept X | 1 câu ngáº¯n |
 ```
 
 ---

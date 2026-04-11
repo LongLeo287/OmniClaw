@@ -40,6 +40,7 @@ class PATHS:
     RAW_ENV         = "vault/archives/raw_repos/environments"
     DEAD_LETTERS    = "vault/archives/dead_letters"
     STUB_AGENTS     = "vault/archives/stub_agents"
+    GLOBAL_CODEBASES= "vault/knowledge/global_codebases"
     MODELS          = "vault/models"
 
     # BRAIN - Region of Knowledge
@@ -112,7 +113,7 @@ TRUST_MATRIX = {
         "description": "Heal files/folders system-wide. Route stray files to correct locations based on OMA map. NO deletion authority. Auto-triggers on errors.",
         "action_rule": "DO NOT DELETE. Heal or route to correct location. Automatically intercept all unhealthy flows.",
         "can_read":    ["*"],
-        "can_write":   [PATHS.QUARANTINE, PATHS.OA_FINAL_CHECK, PATHS.OA_DISPATCH, PATHS.OER_INBOX, PATHS.OHD_CLINIC, PATHS.RAW_REPOS],
+        "can_write":   [PATHS.QUARANTINE, PATHS.OA_FINAL_CHECK, PATHS.OA_DISPATCH, PATHS.OER_INBOX, PATHS.OHD_CLINIC, PATHS.RAW_REPOS, PATHS.GLOBAL_CODEBASES],
         "can_move":    ["*"],  # Allow moving files to correct destinations based on OMA map
         "strictly_denied": ["core", PATHS.RULES],
         "handoff_to": ["OER", "OA"],
@@ -127,7 +128,7 @@ TRUST_MATRIX = {
         "can_read":    ["*"],
         "can_write":   [PATHS.OER_INBOX, PATHS.KNOWLEDGE, PATHS.SKILLS,
                         PATHS.PLUGINS, PATHS.WORKFLOWS, PATHS.WORKFORCE,
-                        PATHS.FAST_INDEX, PATHS.OIW_INBOX, PATHS.RAW_DUMPS, PATHS.RAW_REPOS],
+                        PATHS.FAST_INDEX, PATHS.OIW_INBOX, PATHS.RAW_DUMPS, PATHS.RAW_REPOS, PATHS.GLOBAL_CODEBASES],
         "can_update_identity": [PATHS.KNOWLEDGE, PATHS.SKILLS, PATHS.PLUGINS,
                                  PATHS.WORKFLOWS, PATHS.WORKFORCE],
         "strictly_denied": ["core"],

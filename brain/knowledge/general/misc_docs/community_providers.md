@@ -44,7 +44,7 @@ Copy this row template, replace placeholders, and insert **above** the marker li
 
 ## Documentation
 
-For detailed plugin development instructions, see the [Custom Provider Plugin Example](../../../README.md).
+For detailed plugin development instructions, see the Custom Provider Plugin Example.
 
 ## Safety Disclaimer
 

@@ -1,5 +1,5 @@
 ---
-path: "D:\OmniClaw\system\telemetry\\civ_pipeline_state"
+path: "D:\LongLeo\OmniClaw\system\telemetry\\civ_pipeline_state"
 department_owner: "Dept 10"
 department_name: "Monitoring"
 assigned_daemon: "monitor-agent"

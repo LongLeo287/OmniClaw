@@ -177,13 +177,13 @@ A curated list of AI tools for image processing, generation, editing, and enhanc
 
 ## Contributing
 
-Contributions are welcome! Please follow the [guidelines](CONTRIBUTING.md) for adding new tools or improving descriptions.
+Contributions are welcome! Please follow the guidelines for adding new tools or improving descriptions.
 
 ---
 
 ## License
 
-[MIT](LICENSE)
+MIT
 
 ```
 
@@ -300,7 +300,7 @@ A curated list of AI tools designed to enhance marketing strategies, automate ta
 
 ## Contributing
 
-Contributions are welcome! Please follow the [guidelines](CONTRIBUTING.md) for adding new tools or improving descriptions.
+Contributions are welcome! Please follow the guidelines for adding new tools or improving descriptions.
 
 
 ```

@@ -84,4 +84,4 @@ cd your-project
 openspec init
 ```
 
-See [Getting Started](../bmad_repo/getting-started.md) for a full walkthrough.
+See Getting Started for a full walkthrough.

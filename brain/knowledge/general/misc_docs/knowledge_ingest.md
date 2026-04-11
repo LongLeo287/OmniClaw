@@ -1,4 +1,4 @@
-﻿---
+---
 id: knowledge-ingest
 type: document
 owner: OHD

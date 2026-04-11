@@ -3405,7 +3405,7 @@ Cache-Control = "public, max-age=31536000, immutable"
 
 ## User-Uploaded Images
 
-Combine **Netlify Functions** (upload handler) + **Netlify Blobs** (storage) + **Image CDN** (serving/transforming) to build a complete user-uploaded image pipeline. See [references/user-uploads.md](references/user-uploads.md) for the full pattern.
+Combine **Netlify Functions** (upload handler) + **Netlify Blobs** (storage) + **Image CDN** (serving/transforming) to build a complete user-uploaded image pipeline. See references/user-uploads.md for the full pattern.
 
 
 ================================================
@@ -6653,7 +6653,7 @@ Cache-Control = "public, max-age=31536000, immutable"
 
 ## User-Uploaded Images
 
-Combine **Netlify Functions** (upload handler) + **Netlify Blobs** (storage) + **Image CDN** (serving/transforming) to build a complete user-uploaded image pipeline. See [references/user-uploads.md](references/user-uploads.md) for the full pattern.
+Combine **Netlify Functions** (upload handler) + **Netlify Blobs** (storage) + **Image CDN** (serving/transforming) to build a complete user-uploaded image pipeline. See references/user-uploads.md for the full pattern.
 
 
 ================================================
@@ -10506,7 +10506,7 @@ Cache-Control = "public, max-age=31536000, immutable"
 
 ## User-Uploaded Images
 
-Combine **Netlify Functions** (upload handler) + **Netlify Blobs** (storage) + **Image CDN** (serving/transforming) to build a complete user-uploaded image pipeline. See [references/user-uploads.md](references/user-uploads.md) for the full pattern.
+Combine **Netlify Functions** (upload handler) + **Netlify Blobs** (storage) + **Image CDN** (serving/transforming) to build a complete user-uploaded image pipeline. See references/user-uploads.md for the full pattern.
 
 ```
 

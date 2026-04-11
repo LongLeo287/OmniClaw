@@ -2080,7 +2080,7 @@ npm install && cp ../agents/productivity/orion/SOUL.md ./SOUL.md
 node bot.js
 ```
 
-> All 100 agents are also available as machine-readable JSON: [`agents.json`](agents.json)
+> All 100 agents are also available as machine-readable JSON: `agents.json`
 
 > **Skip the setup?** [CrewClaw](https://crewclaw.com/create-agent?utm_source=github&utm_medium=readme&utm_campaign=skip_setup) generates a full deploy package (Dockerfile + docker-compose + bot + README) for any role.
 
@@ -2272,7 +2272,7 @@ Set it and forget it. Agents that work while you sleep.
 
 From developer workflows and DevOps automation to smart home control, crypto trading, robotics, and agents that modify their own code.
 
-**[Browse all 132 use cases →](USE-CASES.md)**
+**Browse all 132 use cases →**
 
 Top categories: Personal Productivity (14) · Business Operations (11) · Developer Workflows (10) · Content Creation (10) · Ecosystem Tools (10)
 
@@ -2282,14 +2282,14 @@ Top categories: Personal Productivity (14) · Business Operations (11) · Develo
 
 Reusable on-device skills for local AI platforms.
 
-### [Gemma](./skills/gemma/) — Google AI Edge Gallery
+### Gemma — Google AI Edge Gallery
 Skills for Gemma 4 running on iPhone / Android via [Google AI Edge Gallery](https://github.com/google-ai-edge/gallery). Fully offline, no API.
 
 
-### [Claude](./skills/claude/) — Claude Code
+### Claude — Claude Code
 Skills for [Claude Code](https://claude.com/claude-code), invoked via slash commands or automatic triggers.
 
-**[Browse all skills →](./skills/)**
+**Browse all skills →**
 
 ---
 
@@ -2305,7 +2305,7 @@ cp ../agents/marketing/echo/SOUL.md ./SOUL.md
 npm install && node bot.js    # your agent is live on Telegram
 ```
 
-See the full [Quickstart Guide](quickstart/) with Docker support.
+See the full Quickstart Guide with Docker support.
 
 Or skip setup entirely: **[Deploy with CrewClaw →](https://crewclaw.com/create-agent?utm_source=github&utm_medium=readme&utm_campaign=quickstart)** — get a full deploy package (Dockerfile + docker-compose + bot + README) for any role.
 
@@ -2594,7 +2594,7 @@ agents/[category]/[your-agent]/
 
 [Submit Your Agent →](https://github.com/mergisi/awesome-openclaw-agents/issues/new?template=agent-submission.md) — paste your files, we'll add it.
 
-Full guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+Full guide: CONTRIBUTING.md
 
 ---
 

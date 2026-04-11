@@ -4,7 +4,7 @@
 
 ---
 
-> **Prerequisite**: This guide builds on [The Shorthand Guide to Everything Claude Code](./the-shortform-guide.md). Read that first if you haven't set up skills, hooks, subagents, MCPs, and plugins.
+> **Prerequisite**: This guide builds on The Shorthand Guide to Everything Claude Code. Read that first if you haven't set up skills, hooks, subagents, MCPs, and plugins.
 
 ![Reference to Shorthand Guide](./assets/images/longform/02-shortform-reference.png)
 *The Shorthand Guide - read it first*

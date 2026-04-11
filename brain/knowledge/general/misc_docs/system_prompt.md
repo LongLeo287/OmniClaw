@@ -1,4 +1,4 @@
-﻿---
+---
 id: system-prompt
 type: document
 owner: OHD

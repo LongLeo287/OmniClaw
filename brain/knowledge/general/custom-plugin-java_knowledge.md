@@ -1254,7 +1254,11 @@ java-development-assistant:08-java-devops
 
 | Document | Description |
 |----------|-------------|
+<<<<<<< HEAD
+| LICENSE | License information |
+=======
 | [LICENSE](LICENSE) | License information |
+>>>>>>> origin/main
 
 ---
 
@@ -1298,7 +1302,7 @@ custom-plugin-java/
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md).
+Contributions are welcome! Please read our Contributing Guide.
 
 1. Fork the repository
 2. Create your feature branch
@@ -1314,7 +1318,7 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 > - ✅ Always review code before using in production
 > - ✅ Check dependencies for known vulnerabilities
 > - ✅ Follow security best practices
-> - ✅ Report security issues privately via [Issues](../../issues)
+> - ✅ Report security issues privately via Issues
 
 ---
 
@@ -1322,7 +1326,7 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 Copyright © 2025 **Dr. Umit Kacar** & **Muhsin Elcicek**
 
-Custom License - See [LICENSE](LICENSE) for details.
+Custom License - See LICENSE for details.
 
 ---
 
@@ -13395,3 +13399,5 @@ my-app/
 
 ```
 
+
+```

@@ -1,4 +1,4 @@
-﻿# Knowledge Dump for backend_architect_agent
+# Knowledge Dump for backend_architect_agent
 
 ## File: agent.md
 ```

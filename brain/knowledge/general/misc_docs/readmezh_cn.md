@@ -329,7 +329,7 @@ codesign --force --deep --sign - "/Applications/Antigravity Manager 2.app"
 
 ## 🤝 贡献指南
 
-欢迎贡献代码！请阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详情。
+欢迎贡献代码！请阅读 CONTRIBUTING.md 了解详情。
 
 我们遵循 [Contributor Covenant](CODE_OF_CONDUCT.md) 行为准则。
 
@@ -337,7 +337,7 @@ codesign --force --deep --sign - "/Applications/Antigravity Manager 2.app"
 
 ## 📄 许可证
 
-[CC BY-NC-SA 4.0](LICENSE)
+CC BY-NC-SA 4.0
 
 ---
 

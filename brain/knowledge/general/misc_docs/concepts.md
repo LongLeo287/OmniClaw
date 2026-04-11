@@ -8,7 +8,7 @@ healed_at: 2026-04-02T20:19:09.689503
 
 # Concepts
 
-This guide explains the core ideas behind OpenSpec and how they fit together. For practical usage, see [Getting Started](../bmad_repo/getting-started.md) and [Workflows](workflows.md).
+This guide explains the core ideas behind OpenSpec and how they fit together. For practical usage, see Getting Started and [Workflows](workflows.md).
 
 ## Philosophy
 

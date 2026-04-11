@@ -1,4 +1,4 @@
-﻿---
+---
 id: delivery-pipeline
 type: document
 owner: OHD

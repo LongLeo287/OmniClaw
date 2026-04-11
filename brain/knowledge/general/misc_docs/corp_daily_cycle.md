@@ -1,4 +1,4 @@
-﻿---
+---
 id: corp-daily-cycle
 type: document
 owner: OHD

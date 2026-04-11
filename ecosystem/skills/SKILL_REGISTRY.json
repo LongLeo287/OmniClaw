@@ -1089,6 +1089,16 @@
             "auto-assimilated"
         ]
     },
+    "agent_skill_creator": {
+        "name": "Agent Skill Creator",
+        "description": "Assimilated OmniClaw Skill for agent_skill_creator.",
+        "domain": "core",
+        "tier": 3,
+        "type": "assimilated_repo_skill",
+        "parameters": {},
+        "id": "agent_skill_creator",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/agent_skill_creator/SKILL.md"
+    },
     "agent_teams_lite": {
         "id": "agent_teams_lite",
         "name": "Agent Teams Lite",
@@ -2802,6 +2812,16 @@
             "auto-assimilated"
         ]
     },
+    "arknights_endfield_website_clone": {
+        "name": "Arknights Endfield Website Clone",
+        "description": "Assimilated OmniClaw Skill for arknights_endfield_website_clone.",
+        "domain": "frontend",
+        "tier": 3,
+        "type": "assimilated_repo_skill",
+        "parameters": {},
+        "id": "arknights_endfield_website_clone",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/arknights_endfield_website_clone/SKILL.md"
+    },
     "arm_cortex_expert": {
         "id": "arm_cortex_expert",
         "name": "Arm Cortex Expert",
@@ -3824,6 +3844,16 @@
             "event-storming",
             "architecture"
         ]
+    },
+    "awesome_legal_skills": {
+        "name": "Awesome Legal Skills",
+        "description": "Assimilated OmniClaw Skill for awesome_legal_skills.",
+        "domain": "core",
+        "tier": 3,
+        "type": "assimilated_repo_skill",
+        "parameters": {},
+        "id": "awesome_legal_skills",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/awesome_legal_skills/SKILL.md"
     },
     "awesome_openclaw_agents": {
         "id": "awesome_openclaw_agents",
@@ -15808,6 +15838,16 @@
             "auto-assimilated"
         ]
     },
+    "gah": {
+        "name": "Gah",
+        "description": "Assimilated OmniClaw Skill for gah.",
+        "domain": "core",
+        "tier": 3,
+        "type": "assimilated_repo_skill",
+        "parameters": {},
+        "id": "gah",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/gah/SKILL.md"
+    },
     "game_art": {
         "id": "game_art",
         "name": "Game Art",
@@ -16738,6 +16778,16 @@
         "tags": [
             "auto-assimilated"
         ]
+    },
+    "goddd": {
+        "name": "Goddd",
+        "description": "Assimilated OmniClaw Skill for goddd.",
+        "domain": "core",
+        "tier": 3,
+        "type": "assimilated_repo_skill",
+        "parameters": {},
+        "id": "goddd",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/goddd/SKILL.md"
     },
     "godot_4_migration": {
         "id": "godot_4_migration",
@@ -21084,6 +21134,16 @@
         "tags": [
             "auto-assimilated"
         ]
+    },
+    "lobsters": {
+        "name": "Lobsters",
+        "description": "Assimilated OmniClaw Skill for lobsters.",
+        "domain": "core",
+        "tier": 3,
+        "type": "assimilated_repo_skill",
+        "parameters": {},
+        "id": "lobsters",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/lobsters/SKILL.md"
     },
     "localtunnel": {
         "id": "localtunnel",
@@ -28540,6 +28600,37 @@
             "auto-assimilated"
         ]
     },
+    "recursive_decomposition": {
+        "id": "recursive_decomposition",
+        "name": "Recursive Decomposition Skill",
+        "version": "1.0.0",
+        "tier": 3,
+        "status": "active",
+        "domain": "llm-tooling",
+        "cost_tier": "standard",
+        "load_on_boot": false,
+        "path": "$OMNICLAW_ROOT\\ecosystem\\skills\\recursive_decomposition_skill\\SKILL.md",
+        "accessible_by": [
+            "Orchestrator",
+            "Claude Code"
+        ],
+        "dependencies": [],
+        "exposed_functions": [
+            {
+                "name": "reference",
+                "description": "Reference for recursive_decomposition_skill",
+                "input": "string",
+                "output": "string"
+            }
+        ],
+        "consumed_by": [],
+        "emits_events": [],
+        "listens_to": [],
+        "tags": [
+            "llm",
+            "ai"
+        ]
+    },
     "reddit_automation": {
         "id": "reddit_automation",
         "name": "Reddit Automation",
@@ -33589,6 +33680,36 @@
         "listens_to": [],
         "tags": [
             "auto-assimilated"
+        ]
+    },
+    "swiftui": {
+        "id": "swiftui",
+        "name": "Swiftui Agent Skill",
+        "version": "1.0.0",
+        "tier": 3,
+        "status": "active",
+        "domain": "agent-framework",
+        "cost_tier": "standard",
+        "load_on_boot": false,
+        "path": "\\ecosystem\\skills\\swiftui_agent_skill\\SKILL.md",
+        "accessible_by": [
+            "Orchestrator",
+            "Claude Code"
+        ],
+        "dependencies": [],
+        "exposed_functions": [
+            {
+                "name": "reference",
+                "description": "Reference for swiftui_agent_skill",
+                "input": "string",
+                "output": "string"
+            }
+        ],
+        "consumed_by": [],
+        "emits_events": [],
+        "listens_to": [],
+        "tags": [
+            "agent"
         ]
     },
     "swiftui_expert": {
@@ -38694,6 +38815,32 @@
         "tags": [
             "auto-assimilated"
         ]
+    },
+    "youtube_clipper": {
+        "name": "youtube_clipper",
+        "description": "Downloads and locally clips YouTube videos according to timestamp boundaries.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "youtube_url": {
+                    "type": "string",
+                    "description": "https link to the target video"
+                },
+                "start_time": {
+                    "type": "string",
+                    "description": "Timestamp in HH:MM:SS"
+                },
+                "end_time": {
+                    "type": "string",
+                    "description": "Timestamp in HH:MM:SS"
+                }
+            },
+            "required": [
+                "youtube_url"
+            ]
+        },
+        "id": "youtube_clipper",
+        "path": "$OMNICLAW_ROOT/ecosystem/skills/youtube_clipper/SKILL.md"
     },
     "youtube_summarizer": {
         "id": "youtube_summarizer",
