@@ -1,0 +1,13 @@
+{
+    "id": "crewai_gitingest",
+    "name": "CrewAI Gitingest Tool",
+    "integration_type": "python_script",
+    "accessible_by": ["Orchestrator", "CrewAI Agents"],
+    "exposed_functions": [
+        {
+            "name": "GitingestTool",
+            "description": "Extracts source code and summarizes directory structure from a Github URL."
+        }
+    ],
+    "tags": ["github", "code-analysis", "crewai"]
+}

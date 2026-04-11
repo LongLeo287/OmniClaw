@@ -6,9 +6,11 @@ zone: ecosystem/tools
 
 # 🗺️ _REGIONAL_MAP — D:\OmniClaw\ecosystem\tools
 
-## Integrated Tools (2)
+## Integrated Tools (4)
 | ID | Type | Validated |
 |---|---|---|
+| `crewai_gitingest` | Registered | ✅ |
+| `crewai_lightrag` | Registered | ✅ |
 | `heuristic_survival` | Registered | ✅ |
 | `mcp_notebooklm` | Registered | ✅ |
 

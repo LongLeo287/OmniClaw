@@ -1,4 +1,46 @@
 {
+    "crewai_gitingest": {
+        "id": "crewai_gitingest",
+        "name": "CrewAI Gitingest Tool",
+        "integration_type": "python_script",
+        "accessible_by": [
+            "Orchestrator",
+            "CrewAI Agents"
+        ],
+        "exposed_functions": [
+            {
+                "name": "GitingestTool",
+                "description": "Extracts source code and summarizes directory structure from a Github URL."
+            }
+        ],
+        "tags": [
+            "github",
+            "code-analysis",
+            "crewai"
+        ],
+        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\crewai_gitingest"
+    },
+    "crewai_lightrag": {
+        "id": "crewai_lightrag",
+        "name": "CrewAI LightRAG Tool",
+        "integration_type": "python_script",
+        "accessible_by": [
+            "Orchestrator",
+            "CrewAI Agents"
+        ],
+        "exposed_functions": [
+            {
+                "name": "LightRAGTool",
+                "description": "Reads document content and inserts it into the core Knowledge Graph RAG via LightRAG framework."
+            }
+        ],
+        "tags": [
+            "rag",
+            "graph-database",
+            "crewai"
+        ],
+        "path": "$OMNICLAW_ROOT\\ecosystem\\tools\\crewai_lightrag"
+    },
     "heuristic_survival": {
         "id": "heuristic_survival",
         "name": "Heuristic Survival Tools",
