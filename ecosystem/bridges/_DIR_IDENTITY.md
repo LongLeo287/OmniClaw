@@ -16,9 +16,9 @@ Launch scripts and dynamic bridges acting as the strict perimeter firewall conne
 
 ---
 
-## Chức Năng (Tiếng Việt)
+## Core Function
 
-Cổng gác (Bridge) và các kịch bản đánh thức (Launcher) được quản lý độc quyền bởi mỏ neo OBD (OBD Harbor). Các bridge này đóng vai trò cách ly cổng mạng, đảm bảo không có kết nối nào có thể vượt rào kết nối thẳng vào hệ sinh thái OmniClaw khi chưa được cấp phép (mở cảng) từ OBD.
+Launch scripts acting as gateways managed exclusively by the OBD Harbor. These bridges enforce port isolation and ensure no external connections can bypass the OBD perimeter without explicit authorization.
 
 ## Topological View
 
