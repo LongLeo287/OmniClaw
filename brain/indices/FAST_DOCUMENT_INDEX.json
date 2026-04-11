@@ -1,18 +1,32 @@
 {
   "registry": [
     {
-      "id": "omniclaw-ecosystem-sanitization-hardening",
-      "type": "document",
-      "coord": "brain/knowledge/general/OmniClaw Ecosystem Sanitization Hardening.md",
-      "owner": "OHD",
-      "registered_at": "2026-04-10T20:26:31.639877"
+      "id": "core_docs_domain",
+      "type": "DOCUMENT",
+      "coord": "core/docs/_DIR_IDENTITY.md",
+      "name": "Human UI Documentation",
+      "description": ""
     },
     {
-      "id": "sanitizing-omniclaw-rules-architecture",
-      "type": "document",
-      "coord": "brain/knowledge/general/Sanitizing OmniClaw Rules Architecture.md",
-      "owner": "OHD",
-      "registered_at": "2026-04-10T20:26:32.067463"
+      "id": "brain-knowledge-corp-docs-architecture",
+      "type": "DOCUMENT",
+      "coord": "core/docs/architecture/_DIR_IDENTITY.md",
+      "name": "Architecture",
+      "description": ""
+    },
+    {
+      "id": "brain-knowledge-corp-docs-usage_guides",
+      "type": "DOCUMENT",
+      "coord": "core/docs/usage_guides/_DIR_IDENTITY.md",
+      "name": "Usage Guides",
+      "description": ""
+    },
+    {
+      "id": "brain-knowledge-corp-docs-workflows",
+      "type": "DOCUMENT",
+      "coord": "core/docs/workflows/_DIR_IDENTITY.md",
+      "name": "Workflows",
+      "description": ""
     }
   ]
 }

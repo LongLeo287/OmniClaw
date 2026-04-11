@@ -247,13 +247,13 @@ def cmd_dispatch(dept: str):
 
 
 def cmd_rebuild_index():
-    """Rebuild FAST_INDEX from scratch."""
-    script = os.path.join(ROOT, "brain", "memory", "rebuild_fast_index.py")
+    """Rebuild FAST_INDEX from scratch using V5 Architecture."""
+    script = os.path.join(ROOT, "core", "ops", "scripts", "build_v5_indices.py")
     if os.path.exists(script):
-        print(f"{CYAN}Rebuilding FAST_INDEX...{RESET}")
+        print(f"{CYAN}Rebuilding OmniClaw V5.0 Indices...{RESET}")
         subprocess.run([sys.executable, script], check=True)
     else:
-        print(f"{RED}Error: vault/tmp/rebuild_shards.py not found{RESET}")
+        print(f"{RED}Error: {script} not found{RESET}")
         sys.exit(1)
 
 

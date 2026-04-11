@@ -8,10 +8,10 @@
       "description": ""
     },
     {
-      "id": "7",
+      "id": "007",
       "type": "SKILL",
       "coord": "ecosystem/skills/007/_DIR_IDENTITY.md",
-      "name": "7",
+      "name": "007",
       "description": ""
     },
     {
@@ -103,6 +103,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/accessibility_compliance_accessibility_audit/_DIR_IDENTITY.md",
       "name": "accessibility_compliance_accessibility_audit",
+      "description": ""
+    },
+    {
+      "id": "Acontext-Examples_124650",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/acontext_examples/_DIR_IDENTITY.md",
+      "name": "Acontext-Examples_124650",
       "description": ""
     },
     {
@@ -243,6 +250,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/agentphone/_DIR_IDENTITY.md",
       "name": "agentphone",
+      "description": ""
+    },
+    {
+      "id": "agentscope",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/agentscope/_DIR_IDENTITY.md",
+      "name": "agentscope",
       "description": ""
     },
     {
@@ -1135,6 +1149,13 @@
       "description": ""
     },
     {
+      "id": "agent-sandbox_104125",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/agent_sandbox/_DIR_IDENTITY.md",
+      "name": "agent-sandbox_104125",
+      "description": ""
+    },
+    {
       "id": "repo_fetched_agent_skills_144258",
       "type": "SKILL",
       "coord": "ecosystem/skills/agent_skills/_DIR_IDENTITY.md",
@@ -1317,6 +1338,13 @@
       "description": ""
     },
     {
+      "id": "agent_skills_integrator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/agent_skills_integrator/_DIR_IDENTITY.md",
+      "name": "agent_skills_integrator",
+      "description": ""
+    },
+    {
       "id": "repo_fetched_agent_skill_creator_052030",
       "type": "SKILL",
       "coord": "ecosystem/skills/agent_skill_creator/_DIR_IDENTITY.md",
@@ -1398,6 +1426,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/agent_teams_lite/_DIR_IDENTITY.md",
       "name": "agent_teams_lite",
+      "description": ""
+    },
+    {
+      "id": "repo-fetched-agent-teams-lite-052705",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/agent_teams_lite/payload/_DIR_IDENTITY.md",
+      "name": "repo-fetched-agent-teams-lite-052705",
       "description": ""
     },
     {
@@ -1597,13 +1632,6 @@
       "description": ""
     },
     {
-      "id": "ai-slop-cleaner",
-      "type": "SKILL",
-      "coord": "ecosystem/skills/ai-slop-cleaner/SKILL.md",
-      "name": "ai-slop-cleaner",
-      "description": "Run an anti-slop cleanup/refactor/deslop workflow"
-    },
-    {
       "id": "airflow_dag_patterns",
       "type": "SKILL",
       "coord": "ecosystem/skills/airflow_dag_patterns/_DIR_IDENTITY.md",
@@ -1615,6 +1643,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/airllm/_DIR_IDENTITY.md",
       "name": "airllm",
+      "description": ""
+    },
+    {
+      "id": "airllm_120013",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/airllm/payload/_DIR_IDENTITY.md",
+      "name": "airllm_120013",
       "description": ""
     },
     {
@@ -1671,6 +1706,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/ai_engineering_toolkit/_DIR_IDENTITY.md",
       "name": "ai_engineering_toolkit",
+      "description": ""
+    },
+    {
+      "id": "ai_marketing_claude_code_skills",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ai_marketing_claude_code_skills/_DIR_IDENTITY.md",
+      "name": "ai_marketing_claude_code_skills",
       "description": ""
     },
     {
@@ -2066,6 +2108,13 @@
       "description": ""
     },
     {
+      "id": "antigravity",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/antigravity/_DIR_IDENTITY.md",
+      "name": "antigravity",
+      "description": ""
+    },
+    {
       "id": "antigravity_design_expert",
       "type": "SKILL",
       "coord": "ecosystem/skills/antigravity_design_expert/_DIR_IDENTITY.md",
@@ -2073,9 +2122,30 @@
       "description": ""
     },
     {
+      "id": "antigravity_kit",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/antigravity_kit/_DIR_IDENTITY.md",
+      "name": "antigravity_kit",
+      "description": ""
+    },
+    {
+      "id": "Antigravity-Manager_111308",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/antigravity_manager/_DIR_IDENTITY.md",
+      "name": "Antigravity-Manager_111308",
+      "description": ""
+    },
+    {
       "id": "antigravity_mobile",
       "type": "SKILL",
       "coord": "ecosystem/skills/antigravity_mobile/_DIR_IDENTITY.md",
+      "name": "antigravity_mobile",
+      "description": ""
+    },
+    {
+      "id": "antigravity_mobile",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/antigravity_mobile/payload/_DIR_IDENTITY.md",
       "name": "antigravity_mobile",
       "description": ""
     },
@@ -2133,6 +2203,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/anti_reversing_techniques/_DIR_IDENTITY.md",
       "name": "anti_reversing_techniques",
+      "description": ""
+    },
+    {
+      "id": "aperant",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/aperant/_DIR_IDENTITY.md",
+      "name": "aperant",
       "description": ""
     },
     {
@@ -2500,6 +2577,13 @@
       "description": ""
     },
     {
+      "id": "arknights_endfield-website-clone_124624",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/arknights_endfield_website_clone/payload/_DIR_IDENTITY.md",
+      "name": "arknights_endfield-website-clone_124624",
+      "description": ""
+    },
+    {
       "id": "arm_cortex_expert",
       "type": "SKILL",
       "coord": "ecosystem/skills/arm_cortex_expert/_DIR_IDENTITY.md",
@@ -2710,6 +2794,13 @@
       "description": ""
     },
     {
+      "id": "atomic_chat",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/atomic_chat/_DIR_IDENTITY.md",
+      "name": "atomic_chat",
+      "description": ""
+    },
+    {
       "id": "ecosystem-workforce-repo-fetched-atomic-chat-035605-035815-autoqa",
       "type": "SKILL",
       "coord": "ecosystem/skills/atomic_chat/autoqa/_DIR_IDENTITY.md",
@@ -2759,10 +2850,10 @@
       "description": ""
     },
     {
-      "id": "global",
+      "id": "ecosystem-workforce-repo-fetched-atomic-chat-035605-035815-core-src-@global",
       "type": "SKILL",
       "coord": "ecosystem/skills/atomic_chat/core/src/global/_DIR_IDENTITY.md",
-      "name": "global",
+      "name": "@Global",
       "description": ""
     },
     {
@@ -3445,6 +3536,13 @@
       "description": ""
     },
     {
+      "id": "auto_claude",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/auto_claude/_DIR_IDENTITY.md",
+      "name": "auto_claude",
+      "description": ""
+    },
+    {
       "id": "ecosystem-workforce-repo-fetched-auto-claude-034831-035014-apps",
       "type": "SKILL",
       "coord": "ecosystem/skills/auto_claude/apps/_DIR_IDENTITY.md",
@@ -3515,6 +3613,13 @@
       "description": ""
     },
     {
+      "id": "ava",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ava/_DIR_IDENTITY.md",
+      "name": "ava",
+      "description": ""
+    },
+    {
       "id": "avalonia_layout_zafiro",
       "type": "SKILL",
       "coord": "ecosystem/skills/avalonia_layout_zafiro/_DIR_IDENTITY.md",
@@ -3557,10 +3662,24 @@
       "description": ""
     },
     {
+      "id": "awesome-ai-tools_120021",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/awesome_ai_tools/payload/_DIR_IDENTITY.md",
+      "name": "awesome-ai-tools_120021",
+      "description": ""
+    },
+    {
       "id": "awesome_eventstorming",
       "type": "SKILL",
       "coord": "ecosystem/skills/awesome_eventstorming/_DIR_IDENTITY.md",
       "name": "awesome_eventstorming",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-awesome-eventstorming-121545",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/awesome_eventstorming/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-awesome-eventstorming-121545",
       "description": ""
     },
     {
@@ -3575,6 +3694,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/awesome_legal_skills/payload/_DIR_IDENTITY.md",
       "name": "repo-civ-fetched-awesome-legal-skills-105805",
+      "description": ""
+    },
+    {
+      "id": "repo_civ_fetched_awesome_openclaw_agents_124707",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/awesome_openclaw_agents/_DIR_IDENTITY.md",
+      "name": "repo_civ_fetched_awesome_openclaw_agents_124707",
       "description": ""
     },
     {
@@ -3893,10 +4019,31 @@
       "description": ""
     },
     {
+      "id": "azure_appconfiguration_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_appconfiguration_ts/_DIR_IDENTITY.md",
+      "name": "azure_appconfiguration_ts",
+      "description": ""
+    },
+    {
       "id": "azure_cloud_migrate",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_cloud_migrate/_DIR_IDENTITY.md",
       "name": "azure_cloud_migrate",
+      "description": ""
+    },
+    {
+      "id": "azure_cloud_migrate",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_cloud_migrate/_DIR_IDENTITY.md",
+      "name": "azure_cloud_migrate",
+      "description": ""
+    },
+    {
+      "id": "azure_communication_callautomation_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_communication_callautomation_java/_DIR_IDENTITY.md",
+      "name": "azure_communication_callautomation_java",
       "description": ""
     },
     {
@@ -3914,10 +4061,31 @@
       "description": ""
     },
     {
+      "id": "azure_communication_callingserver_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_communication_callingserver_java/_DIR_IDENTITY.md",
+      "name": "azure_communication_callingserver_java",
+      "description": ""
+    },
+    {
       "id": "azure_communication_chat_java",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_communication_chat_java/_DIR_IDENTITY.md",
       "name": "azure_communication_chat_java",
+      "description": ""
+    },
+    {
+      "id": "azure_communication_chat_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_communication_chat_java/_DIR_IDENTITY.md",
+      "name": "azure_communication_chat_java",
+      "description": ""
+    },
+    {
+      "id": "azure_communication_common_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_communication_common_java/_DIR_IDENTITY.md",
+      "name": "azure_communication_common_java",
       "description": ""
     },
     {
@@ -3935,10 +4103,31 @@
       "description": ""
     },
     {
+      "id": "azure_communication_sms_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_communication_sms_java/_DIR_IDENTITY.md",
+      "name": "azure_communication_sms_java",
+      "description": ""
+    },
+    {
       "id": "azure_compliance",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_compliance/_DIR_IDENTITY.md",
       "name": "azure_compliance",
+      "description": ""
+    },
+    {
+      "id": "azure_compliance",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_compliance/_DIR_IDENTITY.md",
+      "name": "azure_compliance",
+      "description": ""
+    },
+    {
+      "id": "azure_compute",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_compute/_DIR_IDENTITY.md",
+      "name": "azure_compute",
       "description": ""
     },
     {
@@ -3956,10 +4145,31 @@
       "description": ""
     },
     {
+      "id": "azure_compute_batch_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_compute_batch_java/_DIR_IDENTITY.md",
+      "name": "azure_compute_batch_java",
+      "description": ""
+    },
+    {
       "id": "azure_containerregistry_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_containerregistry_py/_DIR_IDENTITY.md",
       "name": "azure_containerregistry_py",
+      "description": ""
+    },
+    {
+      "id": "azure_containerregistry_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_containerregistry_py/_DIR_IDENTITY.md",
+      "name": "azure_containerregistry_py",
+      "description": ""
+    },
+    {
+      "id": "azure_cosmos_db_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_cosmos_db_py/_DIR_IDENTITY.md",
+      "name": "azure_cosmos_db_py",
       "description": ""
     },
     {
@@ -3977,6 +4187,20 @@
       "description": ""
     },
     {
+      "id": "azure_cosmos_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_cosmos_java/_DIR_IDENTITY.md",
+      "name": "azure_cosmos_java",
+      "description": ""
+    },
+    {
+      "id": "azure_cosmos_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_cosmos_py/_DIR_IDENTITY.md",
+      "name": "azure_cosmos_py",
+      "description": ""
+    },
+    {
       "id": "azure_cosmos_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_cosmos_py/_DIR_IDENTITY.md",
@@ -3988,6 +4212,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_cosmos_rust/_DIR_IDENTITY.md",
       "name": "azure_cosmos_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_cosmos_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_cosmos_rust/_DIR_IDENTITY.md",
+      "name": "azure_cosmos_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_cosmos_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_cosmos_ts/_DIR_IDENTITY.md",
+      "name": "azure_cosmos_ts",
       "description": ""
     },
     {
@@ -4012,10 +4250,31 @@
       "description": ""
     },
     {
+      "id": "azure_data_tables_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_data_tables_java/_DIR_IDENTITY.md",
+      "name": "azure_data_tables_java",
+      "description": ""
+    },
+    {
       "id": "azure_data_tables_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_data_tables_py/_DIR_IDENTITY.md",
       "name": "azure_data_tables_py",
+      "description": ""
+    },
+    {
+      "id": "azure_data_tables_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_data_tables_py/_DIR_IDENTITY.md",
+      "name": "azure_data_tables_py",
+      "description": ""
+    },
+    {
+      "id": "azure_deploy",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_deploy/_DIR_IDENTITY.md",
+      "name": "azure_deploy",
       "description": ""
     },
     {
@@ -4040,10 +4299,31 @@
       "description": ""
     },
     {
+      "id": "azure_diagnostics",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_diagnostics/_DIR_IDENTITY.md",
+      "name": "azure_diagnostics",
+      "description": ""
+    },
+    {
       "id": "azure_enterprise_infra_planner",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_enterprise_infra_planner/_DIR_IDENTITY.md",
       "name": "azure_enterprise_infra_planner",
+      "description": ""
+    },
+    {
+      "id": "azure_enterprise_infra_planner",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_enterprise_infra_planner/_DIR_IDENTITY.md",
+      "name": "azure_enterprise_infra_planner",
+      "description": ""
+    },
+    {
+      "id": "azure_eventgrid_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventgrid_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_eventgrid_dotnet",
       "description": ""
     },
     {
@@ -4061,10 +4341,31 @@
       "description": ""
     },
     {
+      "id": "azure_eventgrid_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventgrid_java/_DIR_IDENTITY.md",
+      "name": "azure_eventgrid_java",
+      "description": ""
+    },
+    {
       "id": "azure_eventgrid_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_eventgrid_py/_DIR_IDENTITY.md",
       "name": "azure_eventgrid_py",
+      "description": ""
+    },
+    {
+      "id": "azure_eventgrid_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventgrid_py/_DIR_IDENTITY.md",
+      "name": "azure_eventgrid_py",
+      "description": ""
+    },
+    {
+      "id": "azure_eventhub_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventhub_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_eventhub_dotnet",
       "description": ""
     },
     {
@@ -4082,6 +4383,20 @@
       "description": ""
     },
     {
+      "id": "azure_eventhub_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventhub_java/_DIR_IDENTITY.md",
+      "name": "azure_eventhub_java",
+      "description": ""
+    },
+    {
+      "id": "azure_eventhub_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventhub_py/_DIR_IDENTITY.md",
+      "name": "azure_eventhub_py",
+      "description": ""
+    },
+    {
       "id": "azure_eventhub_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_eventhub_py/_DIR_IDENTITY.md",
@@ -4093,6 +4408,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_eventhub_rust/_DIR_IDENTITY.md",
       "name": "azure_eventhub_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_eventhub_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventhub_rust/_DIR_IDENTITY.md",
+      "name": "azure_eventhub_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_eventhub_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_eventhub_ts/_DIR_IDENTITY.md",
+      "name": "azure_eventhub_ts",
       "description": ""
     },
     {
@@ -4117,10 +4446,31 @@
       "description": ""
     },
     {
+      "id": "azure_hosted_copilot_sdk",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_hosted_copilot_sdk/_DIR_IDENTITY.md",
+      "name": "azure_hosted_copilot_sdk",
+      "description": ""
+    },
+    {
       "id": "azure_identity_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_identity_dotnet/_DIR_IDENTITY.md",
       "name": "azure_identity_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_identity_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_identity_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_identity_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_identity_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_identity_java/_DIR_IDENTITY.md",
+      "name": "azure_identity_java",
       "description": ""
     },
     {
@@ -4138,10 +4488,31 @@
       "description": ""
     },
     {
+      "id": "azure_identity_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_identity_py/_DIR_IDENTITY.md",
+      "name": "azure_identity_py",
+      "description": ""
+    },
+    {
       "id": "azure_identity_rust",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_identity_rust/_DIR_IDENTITY.md",
       "name": "azure_identity_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_identity_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_identity_rust/_DIR_IDENTITY.md",
+      "name": "azure_identity_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_identity_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_identity_ts/_DIR_IDENTITY.md",
+      "name": "azure_identity_ts",
       "description": ""
     },
     {
@@ -4159,10 +4530,31 @@
       "description": ""
     },
     {
+      "id": "azure_keyvault_certificates_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_keyvault_certificates_rust/_DIR_IDENTITY.md",
+      "name": "azure_keyvault_certificates_rust",
+      "description": ""
+    },
+    {
       "id": "azure_keyvault_keys_rust",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_keyvault_keys_rust/_DIR_IDENTITY.md",
       "name": "azure_keyvault_keys_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_keyvault_keys_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_keyvault_keys_rust/_DIR_IDENTITY.md",
+      "name": "azure_keyvault_keys_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_keyvault_keys_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_keyvault_keys_ts/_DIR_IDENTITY.md",
+      "name": "azure_keyvault_keys_ts",
       "description": ""
     },
     {
@@ -4180,6 +4572,20 @@
       "description": ""
     },
     {
+      "id": "azure_keyvault_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_keyvault_py/_DIR_IDENTITY.md",
+      "name": "azure_keyvault_py",
+      "description": ""
+    },
+    {
+      "id": "azure_keyvault_secrets_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_keyvault_secrets_rust/_DIR_IDENTITY.md",
+      "name": "azure_keyvault_secrets_rust",
+      "description": ""
+    },
+    {
       "id": "azure_keyvault_secrets_rust",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_keyvault_secrets_rust/_DIR_IDENTITY.md",
@@ -4191,6 +4597,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_keyvault_secrets_ts/_DIR_IDENTITY.md",
       "name": "azure_keyvault_secrets_ts",
+      "description": ""
+    },
+    {
+      "id": "azure_keyvault_secrets_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_keyvault_secrets_ts/_DIR_IDENTITY.md",
+      "name": "azure_keyvault_secrets_ts",
+      "description": ""
+    },
+    {
+      "id": "azure_kubernetes",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_kubernetes/_DIR_IDENTITY.md",
+      "name": "azure_kubernetes",
       "description": ""
     },
     {
@@ -4215,10 +4635,31 @@
       "description": ""
     },
     {
+      "id": "azure_maps_search_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_maps_search_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_maps_search_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_messaging",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_messaging/_DIR_IDENTITY.md",
       "name": "azure_messaging",
+      "description": ""
+    },
+    {
+      "id": "azure_messaging",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_messaging/_DIR_IDENTITY.md",
+      "name": "azure_messaging",
+      "description": ""
+    },
+    {
+      "id": "azure_messaging_webpubsubservice_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_messaging_webpubsubservice_py/_DIR_IDENTITY.md",
+      "name": "azure_messaging_webpubsubservice_py",
       "description": ""
     },
     {
@@ -4236,10 +4677,31 @@
       "description": ""
     },
     {
+      "id": "azure_messaging_webpubsub_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_messaging_webpubsub_java/_DIR_IDENTITY.md",
+      "name": "azure_messaging_webpubsub_java",
+      "description": ""
+    },
+    {
       "id": "azure_mgmt_apicenter_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_mgmt_apicenter_dotnet/_DIR_IDENTITY.md",
       "name": "azure_mgmt_apicenter_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_apicenter_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_apicenter_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_apicenter_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_apicenter_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_apicenter_py/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_apicenter_py",
       "description": ""
     },
     {
@@ -4257,10 +4719,31 @@
       "description": ""
     },
     {
+      "id": "azure_mgmt_apimanagement_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_apimanagement_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_apimanagement_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_mgmt_apimanagement_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_mgmt_apimanagement_py/_DIR_IDENTITY.md",
       "name": "azure_mgmt_apimanagement_py",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_apimanagement_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_apimanagement_py/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_apimanagement_py",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_applicationinsights_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_applicationinsights_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_applicationinsights_dotnet",
       "description": ""
     },
     {
@@ -4278,10 +4761,31 @@
       "description": ""
     },
     {
+      "id": "azure_mgmt_arizeaiobservabilityeval_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_arizeaiobservabilityeval_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_arizeaiobservabilityeval_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_mgmt_botservice_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_mgmt_botservice_dotnet/_DIR_IDENTITY.md",
       "name": "azure_mgmt_botservice_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_botservice_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_botservice_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_botservice_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_botservice_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_botservice_py/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_botservice_py",
       "description": ""
     },
     {
@@ -4299,10 +4803,31 @@
       "description": ""
     },
     {
+      "id": "azure_mgmt_fabric_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_fabric_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_fabric_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_mgmt_fabric_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_mgmt_fabric_py/_DIR_IDENTITY.md",
       "name": "azure_mgmt_fabric_py",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_fabric_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_fabric_py/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_fabric_py",
+      "description": ""
+    },
+    {
+      "id": "azure_mgmt_mongodbatlas_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_mongodbatlas_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_mongodbatlas_dotnet",
       "description": ""
     },
     {
@@ -4320,10 +4845,31 @@
       "description": ""
     },
     {
+      "id": "azure_mgmt_weightsandbiases_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_mgmt_weightsandbiases_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_mgmt_weightsandbiases_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_microsoft_playwright_testing_ts",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_microsoft_playwright_testing_ts/_DIR_IDENTITY.md",
       "name": "azure_microsoft_playwright_testing_ts",
+      "description": ""
+    },
+    {
+      "id": "azure_microsoft_playwright_testing_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_microsoft_playwright_testing_ts/_DIR_IDENTITY.md",
+      "name": "azure_microsoft_playwright_testing_ts",
+      "description": ""
+    },
+    {
+      "id": "azure_monitor_ingestion_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_ingestion_java/_DIR_IDENTITY.md",
+      "name": "azure_monitor_ingestion_java",
       "description": ""
     },
     {
@@ -4341,10 +4887,31 @@
       "description": ""
     },
     {
+      "id": "azure_monitor_ingestion_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_ingestion_py/_DIR_IDENTITY.md",
+      "name": "azure_monitor_ingestion_py",
+      "description": ""
+    },
+    {
       "id": "azure_monitor_opentelemetry_exporter_java",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_monitor_opentelemetry_exporter_java/_DIR_IDENTITY.md",
       "name": "azure_monitor_opentelemetry_exporter_java",
+      "description": ""
+    },
+    {
+      "id": "azure_monitor_opentelemetry_exporter_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_opentelemetry_exporter_java/_DIR_IDENTITY.md",
+      "name": "azure_monitor_opentelemetry_exporter_java",
+      "description": ""
+    },
+    {
+      "id": "azure_monitor_opentelemetry_exporter_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_opentelemetry_exporter_py/_DIR_IDENTITY.md",
+      "name": "azure_monitor_opentelemetry_exporter_py",
       "description": ""
     },
     {
@@ -4362,10 +4929,31 @@
       "description": ""
     },
     {
+      "id": "azure_monitor_opentelemetry_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_opentelemetry_py/_DIR_IDENTITY.md",
+      "name": "azure_monitor_opentelemetry_py",
+      "description": ""
+    },
+    {
       "id": "azure_monitor_opentelemetry_ts",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_monitor_opentelemetry_ts/_DIR_IDENTITY.md",
       "name": "azure_monitor_opentelemetry_ts",
+      "description": ""
+    },
+    {
+      "id": "azure_monitor_opentelemetry_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_opentelemetry_ts/_DIR_IDENTITY.md",
+      "name": "azure_monitor_opentelemetry_ts",
+      "description": ""
+    },
+    {
+      "id": "azure_monitor_query_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_query_java/_DIR_IDENTITY.md",
+      "name": "azure_monitor_query_java",
       "description": ""
     },
     {
@@ -4383,6 +4971,20 @@
       "description": ""
     },
     {
+      "id": "azure_monitor_query_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_monitor_query_py/_DIR_IDENTITY.md",
+      "name": "azure_monitor_query_py",
+      "description": ""
+    },
+    {
+      "id": "azure_postgres_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_postgres_ts/_DIR_IDENTITY.md",
+      "name": "azure_postgres_ts",
+      "description": ""
+    },
+    {
       "id": "azure_postgres_ts",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_postgres_ts/_DIR_IDENTITY.md",
@@ -4394,6 +4996,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_prepare/_DIR_IDENTITY.md",
       "name": "azure_prepare",
+      "description": ""
+    },
+    {
+      "id": "azure_prepare",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_prepare/_DIR_IDENTITY.md",
+      "name": "azure_prepare",
+      "description": ""
+    },
+    {
+      "id": "azure_quotas",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_quotas/_DIR_IDENTITY.md",
+      "name": "azure_quotas",
       "description": ""
     },
     {
@@ -4418,10 +5034,31 @@
       "description": ""
     },
     {
+      "id": "azure_resource_lookup",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_lookup/_DIR_IDENTITY.md",
+      "name": "azure_resource_lookup",
+      "description": ""
+    },
+    {
       "id": "azure_resource_manager_cosmosdb_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_resource_manager_cosmosdb_dotnet/_DIR_IDENTITY.md",
       "name": "azure_resource_manager_cosmosdb_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_resource_manager_cosmosdb_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_cosmosdb_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_cosmosdb_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_resource_manager_durabletask_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_durabletask_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_durabletask_dotnet",
       "description": ""
     },
     {
@@ -4439,10 +5076,31 @@
       "description": ""
     },
     {
+      "id": "azure_resource_manager_mysql_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_mysql_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_mysql_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_resource_manager_playwright_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_resource_manager_playwright_dotnet/_DIR_IDENTITY.md",
       "name": "azure_resource_manager_playwright_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_resource_manager_playwright_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_playwright_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_playwright_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_resource_manager_postgresql_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_postgresql_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_postgresql_dotnet",
       "description": ""
     },
     {
@@ -4460,10 +5118,31 @@
       "description": ""
     },
     {
+      "id": "azure_resource_manager_redis_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_redis_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_redis_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_resource_manager_sql_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_resource_manager_sql_dotnet/_DIR_IDENTITY.md",
       "name": "azure_resource_manager_sql_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_resource_manager_sql_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_manager_sql_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_resource_manager_sql_dotnet",
+      "description": ""
+    },
+    {
+      "id": "azure_resource_visualizer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_resource_visualizer/_DIR_IDENTITY.md",
+      "name": "azure_resource_visualizer",
       "description": ""
     },
     {
@@ -4481,10 +5160,31 @@
       "description": ""
     },
     {
+      "id": "azure_search_documents_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_search_documents_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_search_documents_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_search_documents_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_search_documents_py/_DIR_IDENTITY.md",
       "name": "azure_search_documents_py",
+      "description": ""
+    },
+    {
+      "id": "azure_search_documents_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_search_documents_py/_DIR_IDENTITY.md",
+      "name": "azure_search_documents_py",
+      "description": ""
+    },
+    {
+      "id": "azure_search_documents_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_search_documents_ts/_DIR_IDENTITY.md",
+      "name": "azure_search_documents_ts",
       "description": ""
     },
     {
@@ -4502,10 +5202,31 @@
       "description": ""
     },
     {
+      "id": "azure_security_keyvault_keys_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_security_keyvault_keys_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_security_keyvault_keys_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_security_keyvault_keys_java",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_security_keyvault_keys_java/_DIR_IDENTITY.md",
       "name": "azure_security_keyvault_keys_java",
+      "description": ""
+    },
+    {
+      "id": "azure_security_keyvault_keys_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_security_keyvault_keys_java/_DIR_IDENTITY.md",
+      "name": "azure_security_keyvault_keys_java",
+      "description": ""
+    },
+    {
+      "id": "azure_security_keyvault_secrets_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_security_keyvault_secrets_java/_DIR_IDENTITY.md",
+      "name": "azure_security_keyvault_secrets_java",
       "description": ""
     },
     {
@@ -4523,10 +5244,31 @@
       "description": ""
     },
     {
+      "id": "azure_servicebus_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_servicebus_dotnet/_DIR_IDENTITY.md",
+      "name": "azure_servicebus_dotnet",
+      "description": ""
+    },
+    {
       "id": "azure_servicebus_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_servicebus_py/_DIR_IDENTITY.md",
       "name": "azure_servicebus_py",
+      "description": ""
+    },
+    {
+      "id": "azure_servicebus_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_servicebus_py/_DIR_IDENTITY.md",
+      "name": "azure_servicebus_py",
+      "description": ""
+    },
+    {
+      "id": "azure_servicebus_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_servicebus_ts/_DIR_IDENTITY.md",
+      "name": "azure_servicebus_ts",
       "description": ""
     },
     {
@@ -4544,10 +5286,31 @@
       "description": ""
     },
     {
+      "id": "azure_speech_to_text_rest_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_speech_to_text_rest_py/_DIR_IDENTITY.md",
+      "name": "azure_speech_to_text_rest_py",
+      "description": ""
+    },
+    {
       "id": "azure_storage",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_storage/_DIR_IDENTITY.md",
       "name": "azure_storage",
+      "description": ""
+    },
+    {
+      "id": "azure_storage",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage/_DIR_IDENTITY.md",
+      "name": "azure_storage",
+      "description": ""
+    },
+    {
+      "id": "azure_storage_blob_java",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_blob_java/_DIR_IDENTITY.md",
+      "name": "azure_storage_blob_java",
       "description": ""
     },
     {
@@ -4565,10 +5328,31 @@
       "description": ""
     },
     {
+      "id": "azure_storage_blob_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_blob_py/_DIR_IDENTITY.md",
+      "name": "azure_storage_blob_py",
+      "description": ""
+    },
+    {
       "id": "azure_storage_blob_rust",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_storage_blob_rust/_DIR_IDENTITY.md",
       "name": "azure_storage_blob_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_storage_blob_rust",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_blob_rust/_DIR_IDENTITY.md",
+      "name": "azure_storage_blob_rust",
+      "description": ""
+    },
+    {
+      "id": "azure_storage_blob_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_blob_ts/_DIR_IDENTITY.md",
+      "name": "azure_storage_blob_ts",
       "description": ""
     },
     {
@@ -4586,10 +5370,31 @@
       "description": ""
     },
     {
+      "id": "azure_storage_file_datalake_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_file_datalake_py/_DIR_IDENTITY.md",
+      "name": "azure_storage_file_datalake_py",
+      "description": ""
+    },
+    {
       "id": "azure_storage_file_share_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_storage_file_share_py/_DIR_IDENTITY.md",
       "name": "azure_storage_file_share_py",
+      "description": ""
+    },
+    {
+      "id": "azure_storage_file_share_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_file_share_py/_DIR_IDENTITY.md",
+      "name": "azure_storage_file_share_py",
+      "description": ""
+    },
+    {
+      "id": "azure_storage_file_share_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_file_share_ts/_DIR_IDENTITY.md",
+      "name": "azure_storage_file_share_ts",
       "description": ""
     },
     {
@@ -4607,6 +5412,20 @@
       "description": ""
     },
     {
+      "id": "azure_storage_queue_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_queue_py/_DIR_IDENTITY.md",
+      "name": "azure_storage_queue_py",
+      "description": ""
+    },
+    {
+      "id": "azure_storage_queue_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_storage_queue_ts/_DIR_IDENTITY.md",
+      "name": "azure_storage_queue_ts",
+      "description": ""
+    },
+    {
       "id": "azure_storage_queue_ts",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_storage_queue_ts/_DIR_IDENTITY.md",
@@ -4621,10 +5440,31 @@
       "description": ""
     },
     {
+      "id": "azure_upgrade",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_upgrade/_DIR_IDENTITY.md",
+      "name": "azure_upgrade",
+      "description": ""
+    },
+    {
       "id": "azure_validate",
       "type": "SKILL",
       "coord": "ecosystem/skills/azure_validate/_DIR_IDENTITY.md",
       "name": "azure_validate",
+      "description": ""
+    },
+    {
+      "id": "azure_validate",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_validate/_DIR_IDENTITY.md",
+      "name": "azure_validate",
+      "description": ""
+    },
+    {
+      "id": "azure_web_pubsub_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/azure_web_pubsub_ts/_DIR_IDENTITY.md",
+      "name": "azure_web_pubsub_ts",
       "description": ""
     },
     {
@@ -4936,6 +5776,13 @@
       "description": ""
     },
     {
+      "id": "bridge_commander",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/bridge_commander/_DIR_IDENTITY.md",
+      "name": "bridge_commander",
+      "description": ""
+    },
+    {
       "id": "broken_authentication",
       "type": "SKILL",
       "coord": "ecosystem/skills/broken_authentication/_DIR_IDENTITY.md",
@@ -5125,6 +5972,13 @@
       "description": ""
     },
     {
+      "id": "carrier_relationship_management",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/carrier_relationship_management/_DIR_IDENTITY.md",
+      "name": "carrier_relationship_management",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_repo_fetched_ai_marketing_claude_code_skills_041506_case_study_builder",
       "type": "SKILL",
       "coord": "ecosystem/skills/case_study_builder/_DIR_IDENTITY.md",
@@ -5202,10 +6056,31 @@
       "description": ""
     },
     {
+      "id": "channel",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/channel/_DIR_IDENTITY.md",
+      "name": "channel",
+      "description": ""
+    },
+    {
       "id": "channel_manager",
       "type": "SKILL",
       "coord": "ecosystem/skills/channel_manager/_DIR_IDENTITY.md",
       "name": "channel_manager",
+      "description": ""
+    },
+    {
+      "id": "chart_testing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/chart_testing/_DIR_IDENTITY.md",
+      "name": "chart_testing",
+      "description": ""
+    },
+    {
+      "id": "chatdev",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/chatdev/_DIR_IDENTITY.md",
+      "name": "chatdev",
       "description": ""
     },
     {
@@ -5234,6 +6109,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/chrome_webstore_release_blueprint/_DIR_IDENTITY.md",
       "name": "Chrome_Webstore_Release_Blueprint",
+      "description": ""
+    },
+    {
+      "id": "churn_prevention",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/churn_prevention/_DIR_IDENTITY.md",
+      "name": "churn_prevention",
       "description": ""
     },
     {
@@ -5552,6 +6434,13 @@
       "description": ""
     },
     {
+      "id": "claude_d3js",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/claude_d3js/_DIR_IDENTITY.md",
+      "name": "claude_d3js",
+      "description": ""
+    },
+    {
       "id": "claude_in_chrome_troubleshooting",
       "type": "SKILL",
       "coord": "ecosystem/skills/claude_in_chrome_troubleshooting/_DIR_IDENTITY.md",
@@ -5569,6 +6458,13 @@
       "id": "claude_plugins_official",
       "type": "SKILL",
       "coord": "ecosystem/skills/claude_plugins_official/_DIR_IDENTITY.md",
+      "name": "claude_plugins_official",
+      "description": ""
+    },
+    {
+      "id": "claude_plugins_official",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/claude_plugins_official/payload/_DIR_IDENTITY.md",
       "name": "claude_plugins_official",
       "description": ""
     },
@@ -5608,10 +6504,24 @@
       "description": ""
     },
     {
+      "id": "claudy_registry",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/claudy_registry/payload/_DIR_IDENTITY.md",
+      "name": "claudy_registry",
+      "description": ""
+    },
+    {
       "id": "claudy_releases",
       "type": "SKILL",
       "coord": "ecosystem/skills/claudy_releases/_DIR_IDENTITY.md",
       "name": "claudy_releases",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-claudy-releases-121553",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/claudy_releases/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-claudy-releases-121553",
       "description": ""
     },
     {
@@ -5632,6 +6542,13 @@
       "id": "cli2",
       "type": "SKILL",
       "coord": "ecosystem/skills/cli2/_DIR_IDENTITY.md",
+      "name": "cli2",
+      "description": ""
+    },
+    {
+      "id": "cli2",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cli2/payload/_DIR_IDENTITY.md",
       "name": "cli2",
       "description": ""
     },
@@ -5671,6 +6588,13 @@
       "description": ""
     },
     {
+      "id": "cloudflared",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cloudflared/_DIR_IDENTITY.md",
+      "name": "cloudflared",
+      "description": ""
+    },
+    {
       "id": "cloudflare_workers_expert",
       "type": "SKILL",
       "coord": "ecosystem/skills/cloudflare_workers_expert/_DIR_IDENTITY.md",
@@ -5703,6 +6627,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/cloud_penetration_testing/_DIR_IDENTITY.md",
       "name": "cloud_penetration_testing",
+      "description": ""
+    },
+    {
+      "id": "cloud_penetration_testing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cloud_penetration_testing/_DIR_IDENTITY.md",
+      "name": "cloud_penetration_testing",
+      "description": ""
+    },
+    {
+      "id": "cloud_solution_architect",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cloud_solution_architect/_DIR_IDENTITY.md",
+      "name": "cloud_solution_architect",
       "description": ""
     },
     {
@@ -5839,10 +6777,24 @@
       "description": ""
     },
     {
+      "id": "cold_email",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cold_email/_DIR_IDENTITY.md",
+      "name": "cold_email",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_repo_fetched_ai_marketing_claude_code_skills_041506_cold_outreach_sequence",
       "type": "SKILL",
       "coord": "ecosystem/skills/cold_outreach_sequence/_DIR_IDENTITY.md",
       "name": "Cold_Outreach_Sequence",
+      "description": ""
+    },
+    {
+      "id": "comfyui_gateway",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/comfyui_gateway/_DIR_IDENTITY.md",
+      "name": "comfyui_gateway",
       "description": ""
     },
     {
@@ -5986,6 +6938,13 @@
       "description": ""
     },
     {
+      "id": "content",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/content/_DIR_IDENTITY.md",
+      "name": "content",
+      "description": ""
+    },
+    {
       "id": "ecosystem-workforce-agents-content-agent-prompts",
       "type": "SKILL",
       "coord": "ecosystem/skills/content/prompts/_DIR_IDENTITY.md",
@@ -5997,6 +6956,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/content_creator/_DIR_IDENTITY.md",
       "name": "content_creator",
+      "description": ""
+    },
+    {
+      "id": "content_creator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/content_creator/_DIR_IDENTITY.md",
+      "name": "content_creator",
+      "description": ""
+    },
+    {
+      "id": "content_experimentation_best_practices",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/content_experimentation_best_practices/_DIR_IDENTITY.md",
+      "name": "content_experimentation_best_practices",
       "description": ""
     },
     {
@@ -6028,10 +7001,31 @@
       "description": ""
     },
     {
+      "id": "content_modeling_best_practices",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/content_modeling_best_practices/_DIR_IDENTITY.md",
+      "name": "content_modeling_best_practices",
+      "description": ""
+    },
+    {
       "id": "content_strategy",
       "type": "SKILL",
       "coord": "ecosystem/skills/content_strategy/_DIR_IDENTITY.md",
       "name": "content_strategy",
+      "description": ""
+    },
+    {
+      "id": "content_strategy",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/content_strategy/_DIR_IDENTITY.md",
+      "name": "content_strategy",
+      "description": ""
+    },
+    {
+      "id": "context",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/context/_DIR_IDENTITY.md",
+      "name": "context",
       "description": ""
     },
     {
@@ -6105,6 +7099,13 @@
       "description": ""
     },
     {
+      "id": "context_guardian",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/context_guardian/_DIR_IDENTITY.md",
+      "name": "context_guardian",
+      "description": ""
+    },
+    {
       "id": "context_integrity",
       "type": "SKILL",
       "coord": "ecosystem/skills/context_integrity/_DIR_IDENTITY.md",
@@ -6158,6 +7159,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/continuous_learning_v2/_DIR_IDENTITY.md",
       "name": "continuous_learning_v2",
+      "description": ""
+    },
+    {
+      "id": "contribai",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/contribai/_DIR_IDENTITY.md",
+      "name": "contribai",
       "description": ""
     },
     {
@@ -6427,6 +7435,20 @@
       "description": ""
     },
     {
+      "id": "cook",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cook/_DIR_IDENTITY.md",
+      "name": "cook",
+      "description": ""
+    },
+    {
+      "id": "copilot_sdk",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/copilot_sdk/_DIR_IDENTITY.md",
+      "name": "copilot_sdk",
+      "description": ""
+    },
+    {
       "id": "copilot_sdk",
       "type": "SKILL",
       "coord": "ecosystem/skills/copilot_sdk/_DIR_IDENTITY.md",
@@ -6462,6 +7484,13 @@
       "description": ""
     },
     {
+      "id": "cost_manager",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cost_manager/_DIR_IDENTITY.md",
+      "name": "cost_manager",
+      "description": ""
+    },
+    {
       "id": "cost_optimization",
       "type": "SKILL",
       "coord": "ecosystem/skills/cost_optimization/_DIR_IDENTITY.md",
@@ -6476,10 +7505,24 @@
       "description": ""
     },
     {
+      "id": "cpp_pro",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/cpp_pro/_DIR_IDENTITY.md",
+      "name": "cpp_pro",
+      "description": ""
+    },
+    {
       "id": "cqrs_implementation",
       "type": "SKILL",
       "coord": "ecosystem/skills/cqrs_implementation/_DIR_IDENTITY.md",
       "name": "cqrs_implementation",
+      "description": ""
+    },
+    {
+      "id": "crawlee",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/crawlee/_DIR_IDENTITY.md",
+      "name": "crawlee",
       "description": ""
     },
     {
@@ -6525,6 +7568,13 @@
       "description": ""
     },
     {
+      "id": "crush",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/crush/_DIR_IDENTITY.md",
+      "name": "crush",
+      "description": ""
+    },
+    {
       "id": "crypto_bd",
       "type": "SKILL",
       "coord": "ecosystem/skills/crypto_bd/_DIR_IDENTITY.md",
@@ -6567,6 +7617,13 @@
       "description": ""
     },
     {
+      "id": "customs_trade_compliance",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/customs_trade_compliance/_DIR_IDENTITY.md",
+      "name": "customs_trade_compliance",
+      "description": ""
+    },
+    {
       "id": "c_pro",
       "type": "SKILL",
       "coord": "ecosystem/skills/c_pro/_DIR_IDENTITY.md",
@@ -6592,6 +7649,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/daily_news_report/_DIR_IDENTITY.md",
       "name": "daily_news_report",
+      "description": ""
+    },
+    {
+      "id": "data",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/data/_DIR_IDENTITY.md",
+      "name": "data",
       "description": ""
     },
     {
@@ -6742,6 +7806,20 @@
       "description": ""
     },
     {
+      "id": "db",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/db/_DIR_IDENTITY.md",
+      "name": "db",
+      "description": ""
+    },
+    {
+      "id": "dbos_golang",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/dbos_golang/_DIR_IDENTITY.md",
+      "name": "dbos_golang",
+      "description": ""
+    },
+    {
       "id": "dbos_golang",
       "type": "SKILL",
       "coord": "ecosystem/skills/dbos_golang/_DIR_IDENTITY.md",
@@ -6753,6 +7831,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/dbos_python/_DIR_IDENTITY.md",
       "name": "dbos_python",
+      "description": ""
+    },
+    {
+      "id": "dbos_python",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/dbos_python/_DIR_IDENTITY.md",
+      "name": "dbos_python",
+      "description": ""
+    },
+    {
+      "id": "dbos_typescript",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/dbos_typescript/_DIR_IDENTITY.md",
+      "name": "dbos_typescript",
       "description": ""
     },
     {
@@ -6784,10 +7876,31 @@
       "description": ""
     },
     {
+      "id": "ddd_context_mapping",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ddd_context_mapping/_DIR_IDENTITY.md",
+      "name": "ddd_context_mapping",
+      "description": ""
+    },
+    {
       "id": "ddd_strategic_design",
       "type": "SKILL",
       "coord": "ecosystem/skills/ddd_strategic_design/_DIR_IDENTITY.md",
       "name": "ddd_strategic_design",
+      "description": ""
+    },
+    {
+      "id": "ddd_strategic_design",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ddd_strategic_design/_DIR_IDENTITY.md",
+      "name": "ddd_strategic_design",
+      "description": ""
+    },
+    {
+      "id": "ddd_tactical_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ddd_tactical_patterns/_DIR_IDENTITY.md",
+      "name": "ddd_tactical_patterns",
       "description": ""
     },
     {
@@ -6847,13 +7960,6 @@
       "description": ""
     },
     {
-      "id": "deep-interview",
-      "type": "SKILL",
-      "coord": "ecosystem/skills/deep-interview/SKILL.md",
-      "name": "deep-interview",
-      "description": "Socratic deep interview with mathematical ambiguity gating before execution"
-    },
-    {
       "id": "deep_research",
       "type": "SKILL",
       "coord": "ecosystem/skills/deep_research/_DIR_IDENTITY.md",
@@ -6900,6 +8006,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/dependency_upgrade/_DIR_IDENTITY.md",
       "name": "dependency_upgrade",
+      "description": ""
+    },
+    {
+      "id": "deploy",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/deploy/_DIR_IDENTITY.md",
+      "name": "deploy",
       "description": ""
     },
     {
@@ -6980,6 +8093,13 @@
       "description": ""
     },
     {
+      "id": "desktop",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/desktop/_DIR_IDENTITY.md",
+      "name": "desktop",
+      "description": ""
+    },
+    {
       "id": "ecosystem-skills-repo_fetched_agent_config_144305-skills-deslop",
       "type": "SKILL",
       "coord": "ecosystem/skills/deslop/_DIR_IDENTITY.md",
@@ -7005,6 +8125,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/develop_web_game/_DIR_IDENTITY.md",
       "name": "develop_web_game",
+      "description": ""
+    },
+    {
+      "id": "develop_web_game",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/develop_web_game/_DIR_IDENTITY.md",
+      "name": "develop_web_game",
+      "description": ""
+    },
+    {
+      "id": "devops",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/devops/_DIR_IDENTITY.md",
+      "name": "devops",
       "description": ""
     },
     {
@@ -7190,6 +8324,20 @@
       "description": ""
     },
     {
+      "id": "domain_driven_design",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/domain_driven_design/_DIR_IDENTITY.md",
+      "name": "domain_driven_design",
+      "description": ""
+    },
+    {
+      "id": "domain_driven_hexagon",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/domain_driven_hexagon/_DIR_IDENTITY.md",
+      "name": "domain_driven_hexagon",
+      "description": ""
+    },
+    {
       "id": "dotnet_architect",
       "type": "SKILL",
       "coord": "ecosystem/skills/dotnet_architect/_DIR_IDENTITY.md",
@@ -7201,6 +8349,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/dotnet_backend/_DIR_IDENTITY.md",
       "name": "dotnet_backend",
+      "description": ""
+    },
+    {
+      "id": "dotnet_backend_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/dotnet_backend_patterns/_DIR_IDENTITY.md",
+      "name": "dotnet_backend_patterns",
       "description": ""
     },
     {
@@ -7239,10 +8394,24 @@
       "description": ""
     },
     {
+      "id": "dvc",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/dvc/_DIR_IDENTITY.md",
+      "name": "dvc",
+      "description": ""
+    },
+    {
       "id": "dwarf_expert",
       "type": "SKILL",
       "coord": "ecosystem/skills/dwarf_expert/_DIR_IDENTITY.md",
       "name": "dwarf_expert",
+      "description": ""
+    },
+    {
+      "id": "dxt",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/dxt/_DIR_IDENTITY.md",
+      "name": "dxt",
       "description": ""
     },
     {
@@ -7281,6 +8450,13 @@
       "description": ""
     },
     {
+      "id": "editor",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/editor/_DIR_IDENTITY.md",
+      "name": "editor",
+      "description": ""
+    },
+    {
       "id": "electron_development",
       "type": "SKILL",
       "coord": "ecosystem/skills/electron_development/_DIR_IDENTITY.md",
@@ -7299,6 +8475,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/elixir_pro/_DIR_IDENTITY.md",
       "name": "elixir_pro",
+      "description": ""
+    },
+    {
+      "id": "elon_musk",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/elon_musk/_DIR_IDENTITY.md",
+      "name": "elon_musk",
       "description": ""
     },
     {
@@ -7365,6 +8548,13 @@
       "description": ""
     },
     {
+      "id": "energy_procurement",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/energy_procurement/_DIR_IDENTITY.md",
+      "name": "energy_procurement",
+      "description": ""
+    },
+    {
       "id": "enhance_prompt",
       "type": "SKILL",
       "coord": "ecosystem/skills/enhance_prompt/_DIR_IDENTITY.md",
@@ -7376,6 +8566,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/entra_agent_id/_DIR_IDENTITY.md",
       "name": "entra_agent_id",
+      "description": ""
+    },
+    {
+      "id": "entra_agent_id",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/entra_agent_id/_DIR_IDENTITY.md",
+      "name": "entra_agent_id",
+      "description": ""
+    },
+    {
+      "id": "entra_app_registration",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/entra_app_registration/_DIR_IDENTITY.md",
+      "name": "entra_app_registration",
       "description": ""
     },
     {
@@ -7456,6 +8660,13 @@
       "description": ""
     },
     {
+      "id": "eventsourcing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/eventsourcing/_DIR_IDENTITY.md",
+      "name": "eventsourcing",
+      "description": ""
+    },
+    {
       "id": "event_sourcing_architect",
       "type": "SKILL",
       "coord": "ecosystem/skills/event_sourcing_architect/_DIR_IDENTITY.md",
@@ -7495,6 +8706,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/exa_search/_DIR_IDENTITY.md",
       "name": "exa_search",
+      "description": ""
+    },
+    {
+      "id": "excelize",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/excelize/_DIR_IDENTITY.md",
+      "name": "excelize",
       "description": ""
     },
     {
@@ -7645,6 +8863,13 @@
       "description": ""
     },
     {
+      "id": "fastapi_router_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/fastapi_router_py/_DIR_IDENTITY.md",
+      "name": "fastapi_router_py",
+      "description": ""
+    },
+    {
       "id": "fastapi_templates",
       "type": "SKILL",
       "coord": "ecosystem/skills/fastapi_templates/_DIR_IDENTITY.md",
@@ -7750,6 +8975,13 @@
       "description": ""
     },
     {
+      "id": "finrl",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/finrl/_DIR_IDENTITY.md",
+      "name": "finrl",
+      "description": ""
+    },
+    {
       "id": "firebase",
       "type": "SKILL",
       "coord": "ecosystem/skills/firebase/_DIR_IDENTITY.md",
@@ -7760,6 +8992,13 @@
       "id": "firecrawl_mcp_server",
       "type": "SKILL",
       "coord": "ecosystem/skills/firecrawl_mcp_server/_DIR_IDENTITY.md",
+      "name": "firecrawl_mcp_server",
+      "description": ""
+    },
+    {
+      "id": "firecrawl_mcp_server",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/firecrawl_mcp_server/payload/_DIR_IDENTITY.md",
       "name": "firecrawl_mcp_server",
       "description": ""
     },
@@ -8002,10 +9241,52 @@
       "description": ""
     },
     {
+      "id": "frontend",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend/_DIR_IDENTITY.md",
+      "name": "frontend",
+      "description": ""
+    },
+    {
+      "id": "shadcn_ui_domain",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend/shadcn_ui/_DIR_IDENTITY.md",
+      "name": "Shadcn Ui",
+      "description": ""
+    },
+    {
+      "id": "examples_domain",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend/shadcn_ui/examples/_DIR_IDENTITY.md",
+      "name": "Examples",
+      "description": ""
+    },
+    {
+      "id": "resources_domain",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend/shadcn_ui/resources/_DIR_IDENTITY.md",
+      "name": "Resources",
+      "description": ""
+    },
+    {
+      "id": "scripts_domain",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend/shadcn_ui/scripts/_DIR_IDENTITY.md",
+      "name": "Scripts",
+      "description": ""
+    },
+    {
       "id": "frontend_design",
       "type": "SKILL",
       "coord": "ecosystem/skills/frontend_design/_DIR_IDENTITY.md",
       "name": "frontend_design",
+      "description": ""
+    },
+    {
+      "id": "frontend_design_review",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend_design_review/_DIR_IDENTITY.md",
+      "name": "frontend_design_review",
       "description": ""
     },
     {
@@ -8065,6 +9346,13 @@
       "description": ""
     },
     {
+      "id": "frontend_ui_dark_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/frontend_ui_dark_ts/_DIR_IDENTITY.md",
+      "name": "frontend_ui_dark_ts",
+      "description": ""
+    },
+    {
       "id": "full_stack_orchestration_full_stack_feature",
       "type": "SKILL",
       "coord": "ecosystem/skills/full_stack_orchestration_full_stack_feature/_DIR_IDENTITY.md",
@@ -8107,10 +9395,24 @@
       "description": ""
     },
     {
+      "id": "game_designer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/game_designer/_DIR_IDENTITY.md",
+      "name": "game_designer",
+      "description": ""
+    },
+    {
       "id": "game_development",
       "type": "SKILL",
       "coord": "ecosystem/skills/game_development/_DIR_IDENTITY.md",
       "name": "game_development",
+      "description": ""
+    },
+    {
+      "id": "gcp_architect",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/gcp_architect/_DIR_IDENTITY.md",
+      "name": "gcp_architect",
       "description": ""
     },
     {
@@ -8184,6 +9486,13 @@
       "description": ""
     },
     {
+      "id": "generative_ai",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/generative_ai/_DIR_IDENTITY.md",
+      "name": "generative_ai",
+      "description": ""
+    },
+    {
       "id": "geoffrey_hinton",
       "type": "SKILL",
       "coord": "ecosystem/skills/geoffrey_hinton/_DIR_IDENTITY.md",
@@ -8205,6 +9514,20 @@
       "description": ""
     },
     {
+      "id": "ghost_sweep_angular",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ghost_sweep_angular/_DIR_IDENTITY.md",
+      "name": "ghost_sweep_angular",
+      "description": ""
+    },
+    {
+      "id": "ghost_sweep_global_code_reference",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ghost_sweep_global_code_reference/_DIR_IDENTITY.md",
+      "name": "ghost_sweep_global_code_reference",
+      "description": ""
+    },
+    {
       "id": "gh_review_requests",
       "type": "SKILL",
       "coord": "ecosystem/skills/gh_review_requests/_DIR_IDENTITY.md",
@@ -8216,6 +9539,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/git/_DIR_IDENTITY.md",
       "name": "git",
+      "description": ""
+    },
+    {
+      "id": "gitagent",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/gitagent/_DIR_IDENTITY.md",
+      "name": "gitagent",
       "description": ""
     },
     {
@@ -8247,10 +9577,24 @@
       "description": ""
     },
     {
+      "id": "github_issue_creator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/github_issue_creator/_DIR_IDENTITY.md",
+      "name": "github_issue_creator",
+      "description": ""
+    },
+    {
       "id": "github_workflow_automation",
       "type": "SKILL",
       "coord": "ecosystem/skills/github_workflow_automation/_DIR_IDENTITY.md",
       "name": "github_workflow_automation",
+      "description": ""
+    },
+    {
+      "id": "gitingest",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/gitingest/_DIR_IDENTITY.md",
+      "name": "gitingest",
       "description": ""
     },
     {
@@ -8286,6 +9630,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/gitnexus_analyzer/_DIR_IDENTITY.md",
       "name": "gitnexus_analyzer",
+      "description": ""
+    },
+    {
+      "id": "gitops_workflow",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/gitops_workflow/_DIR_IDENTITY.md",
+      "name": "gitops_workflow",
       "description": ""
     },
     {
@@ -8398,6 +9749,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/godot_4_migration/_DIR_IDENTITY.md",
       "name": "godot_4_migration",
+      "description": ""
+    },
+    {
+      "id": "godot_gdscript_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/godot_gdscript_patterns/_DIR_IDENTITY.md",
+      "name": "godot_gdscript_patterns",
       "description": ""
     },
     {
@@ -8527,6 +9885,13 @@
       "description": ""
     },
     {
+      "id": "go_concurrency_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/go_concurrency_patterns/_DIR_IDENTITY.md",
+      "name": "go_concurrency_patterns",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_repo_fetched_ai_marketing_claude_code_skills_041506_go_mode",
       "type": "SKILL",
       "coord": "ecosystem/skills/go_mode/_DIR_IDENTITY.md",
@@ -8538,6 +9903,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/go_playwright/_DIR_IDENTITY.md",
       "name": "go_playwright",
+      "description": ""
+    },
+    {
+      "id": "go_playwright",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/go_playwright/_DIR_IDENTITY.md",
+      "name": "go_playwright",
+      "description": ""
+    },
+    {
+      "id": "go_rod_master",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/go_rod_master/_DIR_IDENTITY.md",
+      "name": "go_rod_master",
       "description": ""
     },
     {
@@ -8559,6 +9938,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/grafana_dashboards/_DIR_IDENTITY.md",
       "name": "grafana_dashboards",
+      "description": ""
+    },
+    {
+      "id": "graft",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/graft/_DIR_IDENTITY.md",
+      "name": "graft",
       "description": ""
     },
     {
@@ -8618,6 +10004,20 @@
       "description": ""
     },
     {
+      "id": "grpc_golang",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/grpc_golang/_DIR_IDENTITY.md",
+      "name": "grpc_golang",
+      "description": ""
+    },
+    {
+      "id": "grpo_rl_training",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/grpo_rl_training/_DIR_IDENTITY.md",
+      "name": "grpo_rl_training",
+      "description": ""
+    },
+    {
       "id": "hallucination_guard",
       "type": "SKILL",
       "coord": "ecosystem/skills/hallucination_guard/_DIR_IDENTITY.md",
@@ -8660,10 +10060,31 @@
       "description": ""
     },
     {
+      "id": "helm_chart_scaffolding",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/helm_chart_scaffolding/_DIR_IDENTITY.md",
+      "name": "helm_chart_scaffolding",
+      "description": ""
+    },
+    {
+      "id": "helm_chart_scaffolding",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/helm_chart_scaffolding/_DIR_IDENTITY.md",
+      "name": "helm_chart_scaffolding",
+      "description": ""
+    },
+    {
       "id": "helpdesk_automation",
       "type": "SKILL",
       "coord": "ecosystem/skills/helpdesk_automation/_DIR_IDENTITY.md",
       "name": "helpdesk_automation",
+      "description": ""
+    },
+    {
+      "id": "FETCHED_hermes-agent_123035",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hermes/_DIR_IDENTITY.md",
+      "name": "FETCHED_hermes-agent_123035",
       "description": ""
     },
     {
@@ -8681,10 +10102,31 @@
       "description": ""
     },
     {
+      "id": "hig_components_content",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_content/_DIR_IDENTITY.md",
+      "name": "hig_components_content",
+      "description": ""
+    },
+    {
       "id": "hig_components_controls",
       "type": "SKILL",
       "coord": "ecosystem/skills/hig_components_controls/_DIR_IDENTITY.md",
       "name": "hig_components_controls",
+      "description": ""
+    },
+    {
+      "id": "hig_components_controls",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_controls/_DIR_IDENTITY.md",
+      "name": "hig_components_controls",
+      "description": ""
+    },
+    {
+      "id": "hig_components_dialogs",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_dialogs/_DIR_IDENTITY.md",
+      "name": "hig_components_dialogs",
       "description": ""
     },
     {
@@ -8702,10 +10144,31 @@
       "description": ""
     },
     {
+      "id": "hig_components_layout",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_layout/_DIR_IDENTITY.md",
+      "name": "hig_components_layout",
+      "description": ""
+    },
+    {
       "id": "hig_components_menus",
       "type": "SKILL",
       "coord": "ecosystem/skills/hig_components_menus/_DIR_IDENTITY.md",
       "name": "hig_components_menus",
+      "description": ""
+    },
+    {
+      "id": "hig_components_menus",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_menus/_DIR_IDENTITY.md",
+      "name": "hig_components_menus",
+      "description": ""
+    },
+    {
+      "id": "hig_components_search",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_search/_DIR_IDENTITY.md",
+      "name": "hig_components_search",
       "description": ""
     },
     {
@@ -8723,10 +10186,31 @@
       "description": ""
     },
     {
+      "id": "hig_components_status",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_status/_DIR_IDENTITY.md",
+      "name": "hig_components_status",
+      "description": ""
+    },
+    {
       "id": "hig_components_system",
       "type": "SKILL",
       "coord": "ecosystem/skills/hig_components_system/_DIR_IDENTITY.md",
       "name": "hig_components_system",
+      "description": ""
+    },
+    {
+      "id": "hig_components_system",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_components_system/_DIR_IDENTITY.md",
+      "name": "hig_components_system",
+      "description": ""
+    },
+    {
+      "id": "hig_foundations",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_foundations/_DIR_IDENTITY.md",
+      "name": "hig_foundations",
       "description": ""
     },
     {
@@ -8744,10 +10228,31 @@
       "description": ""
     },
     {
+      "id": "hig_inputs",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_inputs/_DIR_IDENTITY.md",
+      "name": "hig_inputs",
+      "description": ""
+    },
+    {
       "id": "hig_patterns",
       "type": "SKILL",
       "coord": "ecosystem/skills/hig_patterns/_DIR_IDENTITY.md",
       "name": "hig_patterns",
+      "description": ""
+    },
+    {
+      "id": "hig_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_patterns/_DIR_IDENTITY.md",
+      "name": "hig_patterns",
+      "description": ""
+    },
+    {
+      "id": "hig_platforms",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_platforms/_DIR_IDENTITY.md",
+      "name": "hig_platforms",
       "description": ""
     },
     {
@@ -8772,10 +10277,31 @@
       "description": ""
     },
     {
+      "id": "hig_technologies",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hig_technologies/_DIR_IDENTITY.md",
+      "name": "hig_technologies",
+      "description": ""
+    },
+    {
       "id": "himalaya",
       "type": "SKILL",
       "coord": "ecosystem/skills/himalaya/_DIR_IDENTITY.md",
       "name": "himalaya",
+      "description": ""
+    },
+    {
+      "id": "himalaya",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/himalaya/_DIR_IDENTITY.md",
+      "name": "himalaya",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_bilingual_tutor",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_bilingual_tutor/_DIR_IDENTITY.md",
+      "name": "hivefiver_bilingual_tutor",
       "description": ""
     },
     {
@@ -8793,10 +10319,31 @@
       "description": ""
     },
     {
+      "id": "hivefiver_domain_pack_router",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_domain_pack_router/_DIR_IDENTITY.md",
+      "name": "hivefiver_domain_pack_router",
+      "description": ""
+    },
+    {
       "id": "hivefiver_gsd_compat",
       "type": "SKILL",
       "coord": "ecosystem/skills/hivefiver_gsd_compat/_DIR_IDENTITY.md",
       "name": "hivefiver_gsd_compat",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_gsd_compat",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_gsd_compat/_DIR_IDENTITY.md",
+      "name": "hivefiver_gsd_compat",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_mcp_research_loop",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_mcp_research_loop/_DIR_IDENTITY.md",
+      "name": "hivefiver_mcp_research_loop",
       "description": ""
     },
     {
@@ -8814,6 +10361,27 @@
       "description": ""
     },
     {
+      "id": "hivefiver_persona_routing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_persona_routing/_DIR_IDENTITY.md",
+      "name": "hivefiver_persona_routing",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_ralph_tasking",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_ralph_tasking/_DIR_IDENTITY.md",
+      "name": "hivefiver_ralph_tasking",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_ralph_tasking",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_ralph_tasking/_DIR_IDENTITY.md",
+      "name": "hivefiver_ralph_tasking",
+      "description": ""
+    },
+    {
       "id": "hivefiver_ralph_tasking",
       "type": "SKILL",
       "coord": "ecosystem/skills/hivefiver_ralph_tasking/_DIR_IDENTITY.md",
@@ -8825,6 +10393,34 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/hivefiver_skill_auditor/_DIR_IDENTITY.md",
       "name": "hivefiver_skill_auditor",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_skill_auditor",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_skill_auditor/_DIR_IDENTITY.md",
+      "name": "hivefiver_skill_auditor",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_skill_auditor",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_skill_auditor/_DIR_IDENTITY.md",
+      "name": "hivefiver_skill_auditor",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_spec_distillation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_spec_distillation/_DIR_IDENTITY.md",
+      "name": "hivefiver_spec_distillation",
+      "description": ""
+    },
+    {
+      "id": "hivefiver_spec_distillation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hivefiver_spec_distillation/_DIR_IDENTITY.md",
+      "name": "hivefiver_spec_distillation",
       "description": ""
     },
     {
@@ -8849,10 +10445,24 @@
       "description": ""
     },
     {
+      "id": "holyclaude",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/holyclaude/_DIR_IDENTITY.md",
+      "name": "holyclaude",
+      "description": ""
+    },
+    {
       "id": "homebrew_core",
       "type": "SKILL",
       "coord": "ecosystem/skills/homebrew_core/_DIR_IDENTITY.md",
       "name": "homebrew_core",
+      "description": ""
+    },
+    {
+      "id": "repo-homebrew-core",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/homebrew_core/payload/_DIR_IDENTITY.md",
+      "name": "repo-homebrew-core",
       "description": ""
     },
     {
@@ -8947,6 +10557,13 @@
       "description": ""
     },
     {
+      "id": "hugging_face_community_evals",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_community_evals/_DIR_IDENTITY.md",
+      "name": "hugging_face_community_evals",
+      "description": ""
+    },
+    {
       "id": "hugging_face_datasets",
       "type": "SKILL",
       "coord": "ecosystem/skills/hugging_face_datasets/_DIR_IDENTITY.md",
@@ -8982,6 +10599,34 @@
       "description": ""
     },
     {
+      "id": "hugging_face_jobs",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_jobs/_DIR_IDENTITY.md",
+      "name": "hugging_face_jobs",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_jobs",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_jobs/_DIR_IDENTITY.md",
+      "name": "hugging_face_jobs",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_model_trainer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_model_trainer/_DIR_IDENTITY.md",
+      "name": "hugging_face_model_trainer",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_model_trainer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_model_trainer/_DIR_IDENTITY.md",
+      "name": "hugging_face_model_trainer",
+      "description": ""
+    },
+    {
       "id": "hugging_face_model_trainer",
       "type": "SKILL",
       "coord": "ecosystem/skills/hugging_face_model_trainer/_DIR_IDENTITY.md",
@@ -9003,6 +10648,20 @@
       "description": ""
     },
     {
+      "id": "hugging_face_paper_publisher",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_paper_publisher/_DIR_IDENTITY.md",
+      "name": "hugging_face_paper_publisher",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_paper_publisher",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_paper_publisher/_DIR_IDENTITY.md",
+      "name": "hugging_face_paper_publisher",
+      "description": ""
+    },
+    {
       "id": "hugging_face_tool_builder",
       "type": "SKILL",
       "coord": "ecosystem/skills/hugging_face_tool_builder/_DIR_IDENTITY.md",
@@ -9014,6 +10673,27 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/hugging_face_trackio/_DIR_IDENTITY.md",
       "name": "hugging_face_trackio",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_trackio",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_trackio/_DIR_IDENTITY.md",
+      "name": "hugging_face_trackio",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_vision_trainer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_vision_trainer/_DIR_IDENTITY.md",
+      "name": "hugging_face_vision_trainer",
+      "description": ""
+    },
+    {
+      "id": "hugging_face_vision_trainer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hugging_face_vision_trainer/_DIR_IDENTITY.md",
+      "name": "hugging_face_vision_trainer",
       "description": ""
     },
     {
@@ -9052,6 +10732,13 @@
       "description": ""
     },
     {
+      "id": "hybrid_search_implementation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/hybrid_search_implementation/_DIR_IDENTITY.md",
+      "name": "hybrid_search_implementation",
+      "description": ""
+    },
+    {
       "id": "ecosystem_skills_repo_fetched_agent_skills_054345_hyperliquid",
       "type": "SKILL",
       "coord": "ecosystem/skills/hyperliquid/_DIR_IDENTITY.md",
@@ -9063,6 +10750,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/i18n/_DIR_IDENTITY.md",
       "name": "i18n",
+      "description": ""
+    },
+    {
+      "id": "i18n_localization",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/i18n_localization/_DIR_IDENTITY.md",
+      "name": "i18n_localization",
       "description": ""
     },
     {
@@ -9115,6 +10809,27 @@
       "description": ""
     },
     {
+      "id": "imagegen",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/imagegen/_DIR_IDENTITY.md",
+      "name": "imagegen",
+      "description": ""
+    },
+    {
+      "id": "imagegen",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/imagegen/_DIR_IDENTITY.md",
+      "name": "imagegen",
+      "description": ""
+    },
+    {
+      "id": "imagen",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/imagen/_DIR_IDENTITY.md",
+      "name": "imagen",
+      "description": ""
+    },
+    {
       "id": "imagen",
       "type": "SKILL",
       "coord": "ecosystem/skills/imagen/_DIR_IDENTITY.md",
@@ -9164,6 +10879,13 @@
       "description": ""
     },
     {
+      "id": "incident_response_smart_fix",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/incident_response_smart_fix/_DIR_IDENTITY.md",
+      "name": "incident_response_smart_fix",
+      "description": ""
+    },
+    {
       "id": "incident_runbook_templates",
       "type": "SKILL",
       "coord": "ecosystem/skills/incident_runbook_templates/_DIR_IDENTITY.md",
@@ -9182,6 +10904,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/inngest/_DIR_IDENTITY.md",
       "name": "inngest",
+      "description": ""
+    },
+    {
+      "id": "instagram",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/instagram/_DIR_IDENTITY.md",
+      "name": "instagram",
+      "description": ""
+    },
+    {
+      "id": "instagram",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/instagram/_DIR_IDENTITY.md",
+      "name": "instagram",
       "description": ""
     },
     {
@@ -9238,6 +10974,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/interview_coach/_DIR_IDENTITY.md",
       "name": "interview_coach",
+      "description": ""
+    },
+    {
+      "id": "inventory_demand_planning",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/inventory_demand_planning/_DIR_IDENTITY.md",
+      "name": "inventory_demand_planning",
       "description": ""
     },
     {
@@ -9318,6 +11061,13 @@
       "description": ""
     },
     {
+      "id": "javascript_testing_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/javascript_testing_patterns/_DIR_IDENTITY.md",
+      "name": "javascript_testing_patterns",
+      "description": ""
+    },
+    {
       "id": "javascript_typescript_typescript_scaffold",
       "type": "SKILL",
       "coord": "ecosystem/skills/javascript_typescript_typescript_scaffold/_DIR_IDENTITY.md",
@@ -9374,6 +11124,13 @@
       "description": ""
     },
     {
+      "id": "json_canvas",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/json_canvas/_DIR_IDENTITY.md",
+      "name": "json_canvas",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workflows_repo_fetched_agent_teams_lite_052705_skills_judgment_day",
       "type": "SKILL",
       "coord": "ecosystem/skills/judgment_day/_DIR_IDENTITY.md",
@@ -9392,6 +11149,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/julia_pro/_DIR_IDENTITY.md",
       "name": "julia_pro",
+      "description": ""
+    },
+    {
+      "id": "junta_leiloeiros",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/junta_leiloeiros/_DIR_IDENTITY.md",
+      "name": "junta_leiloeiros",
+      "description": ""
+    },
+    {
+      "id": "junta_leiloeiros",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/junta_leiloeiros/_DIR_IDENTITY.md",
+      "name": "junta_leiloeiros",
       "description": ""
     },
     {
@@ -9423,6 +11194,27 @@
       "description": ""
     },
     {
+      "id": "k8s_manifest_generator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/k8s_manifest_generator/_DIR_IDENTITY.md",
+      "name": "k8s_manifest_generator",
+      "description": ""
+    },
+    {
+      "id": "k8s_manifest_generator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/k8s_manifest_generator/_DIR_IDENTITY.md",
+      "name": "k8s_manifest_generator",
+      "description": ""
+    },
+    {
+      "id": "k8s_security_policies",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/k8s_security_policies/_DIR_IDENTITY.md",
+      "name": "k8s_security_policies",
+      "description": ""
+    },
+    {
       "id": "k8s_security_policies",
       "type": "SKILL",
       "coord": "ecosystem/skills/k8s_security_policies/_DIR_IDENTITY.md",
@@ -9441,6 +11233,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/keyword_extractor/_DIR_IDENTITY.md",
       "name": "keyword_extractor",
+      "description": ""
+    },
+    {
+      "id": "kilocode",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/kilocode/_DIR_IDENTITY.md",
+      "name": "kilocode",
+      "description": ""
+    },
+    {
+      "id": "kimi_cli",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/kimi_cli/_DIR_IDENTITY.md",
+      "name": "kimi_cli",
       "description": ""
     },
     {
@@ -9486,10 +11292,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "knowledge_navigator",
       "type": "SKILL",
-      "coord": "ecosystem/skills/knowledge_navigator/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/knowledge_navigator/_DIR_IDENTITY.md",
+      "name": "knowledge_navigator",
       "description": ""
     },
     {
@@ -9528,6 +11334,20 @@
       "description": ""
     },
     {
+      "id": "landing_page_generator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/landing_page_generator/_DIR_IDENTITY.md",
+      "name": "landing_page_generator",
+      "description": ""
+    },
+    {
+      "id": "landing_page_generator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/landing_page_generator/_DIR_IDENTITY.md",
+      "name": "landing_page_generator",
+      "description": ""
+    },
+    {
       "id": "langchain_architecture",
       "type": "SKILL",
       "coord": "ecosystem/skills/langchain_architecture/_DIR_IDENTITY.md",
@@ -9546,6 +11366,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/langgraph/_DIR_IDENTITY.md",
       "name": "langgraph",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-langgraph-105719",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/langgraph/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-langgraph-105719",
       "description": ""
     },
     {
@@ -9605,6 +11432,13 @@
       "description": ""
     },
     {
+      "id": "lead_magnets",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/lead_magnets/_DIR_IDENTITY.md",
+      "name": "lead_magnets",
+      "description": ""
+    },
+    {
       "id": "legacy_modernizer",
       "type": "SKILL",
       "coord": "ecosystem/skills/legacy_modernizer/_DIR_IDENTITY.md",
@@ -9633,10 +11467,52 @@
       "description": ""
     },
     {
+      "id": "leiloeiro_avaliacao",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_avaliacao/_DIR_IDENTITY.md",
+      "name": "leiloeiro_avaliacao",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_avaliacao",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_avaliacao/_DIR_IDENTITY.md",
+      "name": "leiloeiro_avaliacao",
+      "description": ""
+    },
+    {
       "id": "leiloeiro_edital",
       "type": "SKILL",
       "coord": "ecosystem/skills/leiloeiro_edital/_DIR_IDENTITY.md",
       "name": "leiloeiro_edital",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_edital",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_edital/_DIR_IDENTITY.md",
+      "name": "leiloeiro_edital",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_edital",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_edital/_DIR_IDENTITY.md",
+      "name": "leiloeiro_edital",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_ia",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_ia/_DIR_IDENTITY.md",
+      "name": "leiloeiro_ia",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_ia",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_ia/_DIR_IDENTITY.md",
+      "name": "leiloeiro_ia",
       "description": ""
     },
     {
@@ -9654,10 +11530,52 @@
       "description": ""
     },
     {
+      "id": "leiloeiro_juridico",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_juridico/_DIR_IDENTITY.md",
+      "name": "leiloeiro_juridico",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_juridico",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_juridico/_DIR_IDENTITY.md",
+      "name": "leiloeiro_juridico",
+      "description": ""
+    },
+    {
       "id": "leiloeiro_mercado",
       "type": "SKILL",
       "coord": "ecosystem/skills/leiloeiro_mercado/_DIR_IDENTITY.md",
       "name": "leiloeiro_mercado",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_mercado",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_mercado/_DIR_IDENTITY.md",
+      "name": "leiloeiro_mercado",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_mercado",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_mercado/_DIR_IDENTITY.md",
+      "name": "leiloeiro_mercado",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_risco",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_risco/_DIR_IDENTITY.md",
+      "name": "leiloeiro_risco",
+      "description": ""
+    },
+    {
+      "id": "leiloeiro_risco",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/leiloeiro_risco/_DIR_IDENTITY.md",
+      "name": "leiloeiro_risco",
       "description": ""
     },
     {
@@ -9780,6 +11698,13 @@
       "description": ""
     },
     {
+      "id": "lint_and_validate",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/lint_and_validate/_DIR_IDENTITY.md",
+      "name": "lint_and_validate",
+      "description": ""
+    },
+    {
       "id": "linux_privilege_escalation",
       "type": "SKILL",
       "coord": "ecosystem/skills/linux_privilege_escalation/_DIR_IDENTITY.md",
@@ -9808,6 +11733,13 @@
       "description": ""
     },
     {
+      "id": "liquid_glass",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/liquid_glass/payload/_DIR_IDENTITY.md",
+      "name": "liquid_glass",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_agents_llama_trainer_agent",
       "type": "SKILL",
       "coord": "ecosystem/skills/llama_trainer/_DIR_IDENTITY.md",
@@ -9819,6 +11751,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/llmware/_DIR_IDENTITY.md",
       "name": "llmware",
+      "description": ""
+    },
+    {
+      "id": "repo-civ-fetched-llmware-112844",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/llmware/payload/_DIR_IDENTITY.md",
+      "name": "repo-civ-fetched-llmware-112844",
       "description": ""
     },
     {
@@ -9836,10 +11775,24 @@
       "description": ""
     },
     {
+      "id": "llm_application_dev_ai_assistant",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/llm_application_dev_ai_assistant/_DIR_IDENTITY.md",
+      "name": "llm_application_dev_ai_assistant",
+      "description": ""
+    },
+    {
       "id": "llm_application_dev_langchain",
       "type": "SKILL",
       "coord": "ecosystem/skills/llm_application_dev_langchain/_DIR_IDENTITY.md",
       "name": "llm_application_dev_langchain",
+      "description": ""
+    },
+    {
+      "id": "llm_application_dev_prompt_optimize",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/llm_application_dev_prompt_optimize/_DIR_IDENTITY.md",
+      "name": "llm_application_dev_prompt_optimize",
       "description": ""
     },
     {
@@ -9867,6 +11820,13 @@
       "id": "llm_lean_log",
       "type": "SKILL",
       "coord": "ecosystem/skills/llm_lean_log/_DIR_IDENTITY.md",
+      "name": "llm_lean_log",
+      "description": ""
+    },
+    {
+      "id": "llm_lean_log",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/llm_lean_log/payload/_DIR_IDENTITY.md",
       "name": "llm_lean_log",
       "description": ""
     },
@@ -9955,6 +11915,13 @@
       "description": ""
     },
     {
+      "id": "locomotive_scroll",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/locomotive_scroll/payload/_DIR_IDENTITY.md",
+      "name": "locomotive_scroll",
+      "description": ""
+    },
+    {
       "id": "ecosystem-skills-repo_fetched_agent_skills_144258-skills-logging-best-practices",
       "type": "SKILL",
       "coord": "ecosystem/skills/logging_best_practices/_DIR_IDENTITY.md",
@@ -9983,6 +11950,27 @@
       "description": ""
     },
     {
+      "id": "logistics_exception_management",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/logistics_exception_management/_DIR_IDENTITY.md",
+      "name": "logistics_exception_management",
+      "description": ""
+    },
+    {
+      "id": "loki_mode",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/loki_mode/_DIR_IDENTITY.md",
+      "name": "loki_mode",
+      "description": ""
+    },
+    {
+      "id": "loki_mode",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/loki_mode/_DIR_IDENTITY.md",
+      "name": "loki_mode",
+      "description": ""
+    },
+    {
       "id": "loki_mode",
       "type": "SKILL",
       "coord": "ecosystem/skills/loki_mode/_DIR_IDENTITY.md",
@@ -10004,10 +11992,31 @@
       "description": ""
     },
     {
+      "id": "m365_agents_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/m365_agents_dotnet/_DIR_IDENTITY.md",
+      "name": "m365_agents_dotnet",
+      "description": ""
+    },
+    {
       "id": "m365_agents_py",
       "type": "SKILL",
       "coord": "ecosystem/skills/m365_agents_py/_DIR_IDENTITY.md",
       "name": "m365_agents_py",
+      "description": ""
+    },
+    {
+      "id": "m365_agents_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/m365_agents_py/_DIR_IDENTITY.md",
+      "name": "m365_agents_py",
+      "description": ""
+    },
+    {
+      "id": "m365_agents_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/m365_agents_ts/_DIR_IDENTITY.md",
+      "name": "m365_agents_ts",
       "description": ""
     },
     {
@@ -10029,6 +12038,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/macos_menubar_tuist_app/_DIR_IDENTITY.md",
       "name": "macos_menubar_tuist_app",
+      "description": ""
+    },
+    {
+      "id": "macos_spm_app_packaging",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/macos_spm_app_packaging/_DIR_IDENTITY.md",
+      "name": "macos_spm_app_packaging",
       "description": ""
     },
     {
@@ -10064,6 +12080,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/magic_wormhole/_DIR_IDENTITY.md",
       "name": "magic_wormhole",
+      "description": ""
+    },
+    {
+      "id": "magic-wormhole_120017",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/magic_wormhole/payload/_DIR_IDENTITY.md",
+      "name": "magic-wormhole_120017",
       "description": ""
     },
     {
@@ -10193,10 +12216,24 @@
       "description": ""
     },
     {
+      "id": "manus",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/manus/_DIR_IDENTITY.md",
+      "name": "manus",
+      "description": ""
+    },
+    {
       "id": "markdown_printer",
       "type": "SKILL",
       "coord": "ecosystem/skills/markdown_printer/_DIR_IDENTITY.md",
       "name": "markdown_printer",
+      "description": ""
+    },
+    {
+      "id": "markdown-printer_111318",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/markdown_printer/payload/_DIR_IDENTITY.md",
+      "name": "markdown-printer_111318",
       "description": ""
     },
     {
@@ -10232,6 +12269,27 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/market_sizing_analysis/_DIR_IDENTITY.md",
       "name": "market_sizing_analysis",
+      "description": ""
+    },
+    {
+      "id": "market_sizing_analysis",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/market_sizing_analysis/_DIR_IDENTITY.md",
+      "name": "market_sizing_analysis",
+      "description": ""
+    },
+    {
+      "id": "matematico_tao",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/matematico_tao/_DIR_IDENTITY.md",
+      "name": "matematico_tao",
+      "description": ""
+    },
+    {
+      "id": "matematico_tao",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/matematico_tao/_DIR_IDENTITY.md",
+      "name": "matematico_tao",
       "description": ""
     },
     {
@@ -10277,6 +12335,13 @@
       "description": ""
     },
     {
+      "id": "mcp_builder",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mcp_builder/_DIR_IDENTITY.md",
+      "name": "mcp_builder",
+      "description": ""
+    },
+    {
       "id": "mcp_builder_ms",
       "type": "SKILL",
       "coord": "ecosystem/skills/mcp_builder_ms/_DIR_IDENTITY.md",
@@ -10298,6 +12363,13 @@
       "description": ""
     },
     {
+      "id": "media_writer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/media_writer/_DIR_IDENTITY.md",
+      "name": "media_writer",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_repo_fetched_ai_marketing_claude_code_skills_041506_meeting_prep",
       "type": "SKILL",
       "coord": "ecosystem/skills/meeting_prep/_DIR_IDENTITY.md",
@@ -10309,6 +12381,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/meeting_prep/references/_DIR_IDENTITY.md",
       "name": "References",
+      "description": ""
+    },
+    {
+      "id": "mem0",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mem0/_DIR_IDENTITY.md",
+      "name": "mem0",
+      "description": ""
+    },
+    {
+      "id": "mem0",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mem0/_DIR_IDENTITY.md",
+      "name": "mem0",
       "description": ""
     },
     {
@@ -10354,6 +12440,13 @@
       "description": ""
     },
     {
+      "id": "memory_safety_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/memory_safety_patterns/_DIR_IDENTITY.md",
+      "name": "memory_safety_patterns",
+      "description": ""
+    },
+    {
       "id": "memory_systems",
       "type": "SKILL",
       "coord": "ecosystem/skills/memory_systems/_DIR_IDENTITY.md",
@@ -10365,6 +12458,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/mempalace/_DIR_IDENTITY.md",
       "name": "mempalace",
+      "description": ""
+    },
+    {
+      "id": "mempalace_120244",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mempalace/payload/_DIR_IDENTITY.md",
+      "name": "mempalace_120244",
       "description": ""
     },
     {
@@ -10403,6 +12503,20 @@
       "description": ""
     },
     {
+      "id": "microservices_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/microservices_patterns/_DIR_IDENTITY.md",
+      "name": "microservices_patterns",
+      "description": ""
+    },
+    {
+      "id": "microsoft_azure_webjobs_extensions_authentication_events_dotnet",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/microsoft_azure_webjobs_extensions_authentication_events_dotnet/_DIR_IDENTITY.md",
+      "name": "microsoft_azure_webjobs_extensions_authentication_events_dotnet",
+      "description": ""
+    },
+    {
       "id": "microsoft_azure_webjobs_extensions_authentication_events_dotnet",
       "type": "SKILL",
       "coord": "ecosystem/skills/microsoft_azure_webjobs_extensions_authentication_events_dotnet/_DIR_IDENTITY.md",
@@ -10414,6 +12528,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/microsoft_docs/_DIR_IDENTITY.md",
       "name": "microsoft_docs",
+      "description": ""
+    },
+    {
+      "id": "microsoft_foundry",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/microsoft_foundry/_DIR_IDENTITY.md",
+      "name": "microsoft_foundry",
       "description": ""
     },
     {
@@ -10508,6 +12629,13 @@
       "description": ""
     },
     {
+      "id": "mobile_design",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mobile_design/_DIR_IDENTITY.md",
+      "name": "mobile_design",
+      "description": ""
+    },
+    {
       "id": "mobile_developer",
       "type": "SKILL",
       "coord": "ecosystem/skills/mobile_developer/_DIR_IDENTITY.md",
@@ -10533,6 +12661,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/modal/_DIR_IDENTITY.md",
       "name": "modal",
+      "description": ""
+    },
+    {
+      "id": "modern_javascript_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/modern_javascript_patterns/_DIR_IDENTITY.md",
+      "name": "modern_javascript_patterns",
       "description": ""
     },
     {
@@ -10585,6 +12720,20 @@
       "description": ""
     },
     {
+      "id": "monorepo_management",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/monorepo_management/_DIR_IDENTITY.md",
+      "name": "monorepo_management",
+      "description": ""
+    },
+    {
+      "id": "monte_carlo_monitor_creation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/monte_carlo_monitor_creation/_DIR_IDENTITY.md",
+      "name": "monte_carlo_monitor_creation",
+      "description": ""
+    },
+    {
       "id": "monte_carlo_monitor_creation",
       "type": "SKILL",
       "coord": "ecosystem/skills/monte_carlo_monitor_creation/_DIR_IDENTITY.md",
@@ -10599,10 +12748,38 @@
       "description": ""
     },
     {
+      "id": "monte_carlo_prevent",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/monte_carlo_prevent/_DIR_IDENTITY.md",
+      "name": "monte_carlo_prevent",
+      "description": ""
+    },
+    {
       "id": "monte_carlo_push_ingestion",
       "type": "SKILL",
       "coord": "ecosystem/skills/monte_carlo_push_ingestion/_DIR_IDENTITY.md",
       "name": "monte_carlo_push_ingestion",
+      "description": ""
+    },
+    {
+      "id": "monte_carlo_push_ingestion",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/monte_carlo_push_ingestion/_DIR_IDENTITY.md",
+      "name": "monte_carlo_push_ingestion",
+      "description": ""
+    },
+    {
+      "id": "monte_carlo_push_ingestion",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/monte_carlo_push_ingestion/_DIR_IDENTITY.md",
+      "name": "monte_carlo_push_ingestion",
+      "description": ""
+    },
+    {
+      "id": "monte_carlo_validation_notebook",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/monte_carlo_validation_notebook/_DIR_IDENTITY.md",
+      "name": "monte_carlo_validation_notebook",
       "description": ""
     },
     {
@@ -10624,6 +12801,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/moyu/_DIR_IDENTITY.md",
       "name": "moyu",
+      "description": ""
+    },
+    {
+      "id": "mssql",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mssql/_DIR_IDENTITY.md",
+      "name": "mssql",
       "description": ""
     },
     {
@@ -10694,6 +12878,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/mypy/_DIR_IDENTITY.md",
       "name": "Mypy_Agent",
+      "description": ""
+    },
+    {
+      "id": "mysql",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/mysql/_DIR_IDENTITY.md",
+      "name": "mysql",
       "description": ""
     },
     {
@@ -10872,6 +13063,13 @@
       "description": ""
     },
     {
+      "id": "netlify_deploy",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/netlify_deploy/_DIR_IDENTITY.md",
+      "name": "netlify_deploy",
+      "description": ""
+    },
+    {
       "id": "netlify_edge_functions",
       "type": "SKILL",
       "coord": "ecosystem/skills/netlify_edge_functions/_DIR_IDENTITY.md",
@@ -10893,6 +13091,13 @@
       "description": ""
     },
     {
+      "id": "netlify_frameworks",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/netlify_frameworks/_DIR_IDENTITY.md",
+      "name": "netlify_frameworks",
+      "description": ""
+    },
+    {
       "id": "netlify_functions",
       "type": "SKILL",
       "coord": "ecosystem/skills/netlify_functions/_DIR_IDENTITY.md",
@@ -10904,6 +13109,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/netlify_identity/_DIR_IDENTITY.md",
       "name": "netlify_identity",
+      "description": ""
+    },
+    {
+      "id": "netlify_identity",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/netlify_identity/_DIR_IDENTITY.md",
+      "name": "netlify_identity",
+      "description": ""
+    },
+    {
+      "id": "netlify_image_cdn",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/netlify_image_cdn/_DIR_IDENTITY.md",
+      "name": "netlify_image_cdn",
       "description": ""
     },
     {
@@ -10991,6 +13210,13 @@
       "description": ""
     },
     {
+      "id": "nextjs_app_router_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/nextjs_app_router_patterns/_DIR_IDENTITY.md",
+      "name": "nextjs_app_router_patterns",
+      "description": ""
+    },
+    {
       "id": "nextjs_best_practices",
       "type": "SKILL",
       "coord": "ecosystem/skills/nextjs_best_practices/_DIR_IDENTITY.md",
@@ -11019,6 +13245,13 @@
       "description": ""
     },
     {
+      "id": "nodejs_backend_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/nodejs_backend_patterns/_DIR_IDENTITY.md",
+      "name": "nodejs_backend_patterns",
+      "description": ""
+    },
+    {
       "id": "nodejs_best_practices",
       "type": "SKILL",
       "coord": "ecosystem/skills/nodejs_best_practices/_DIR_IDENTITY.md",
@@ -11030,6 +13263,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/nosql_expert/_DIR_IDENTITY.md",
       "name": "nosql_expert",
+      "description": ""
+    },
+    {
+      "id": "notebooklm",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/notebooklm/_DIR_IDENTITY.md",
+      "name": "notebooklm",
+      "description": ""
+    },
+    {
+      "id": "notebooklm",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/notebooklm/_DIR_IDENTITY.md",
+      "name": "notebooklm",
       "description": ""
     },
     {
@@ -11117,6 +13364,20 @@
       "description": ""
     },
     {
+      "id": "observability_monitoring_monitor_setup",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/observability_monitoring_monitor_setup/_DIR_IDENTITY.md",
+      "name": "observability_monitoring_monitor_setup",
+      "description": ""
+    },
+    {
+      "id": "observability_monitoring_slo_implement",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/observability_monitoring_slo_implement/_DIR_IDENTITY.md",
+      "name": "observability_monitoring_slo_implement",
+      "description": ""
+    },
+    {
       "id": "observability_monitoring_slo_implement",
       "type": "SKILL",
       "coord": "ecosystem/skills/observability_monitoring_slo_implement/_DIR_IDENTITY.md",
@@ -11138,6 +13399,13 @@
       "description": ""
     },
     {
+      "id": "obsidian_bases",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/obsidian_bases/_DIR_IDENTITY.md",
+      "name": "obsidian_bases",
+      "description": ""
+    },
+    {
       "id": "obsidian_cli",
       "type": "SKILL",
       "coord": "ecosystem/skills/obsidian_cli/_DIR_IDENTITY.md",
@@ -11149,6 +13417,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/obsidian_clipper_template_creator/_DIR_IDENTITY.md",
       "name": "obsidian_clipper_template_creator",
+      "description": ""
+    },
+    {
+      "id": "obsidian_clipper_template_creator",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/obsidian_clipper_template_creator/_DIR_IDENTITY.md",
+      "name": "obsidian_clipper_template_creator",
+      "description": ""
+    },
+    {
+      "id": "obsidian_markdown",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/obsidian_markdown/_DIR_IDENTITY.md",
+      "name": "obsidian_markdown",
       "description": ""
     },
     {
@@ -11362,6 +13644,13 @@
       "description": ""
     },
     {
+      "id": "okx_cex_market",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/okx_cex_market/_DIR_IDENTITY.md",
+      "name": "okx_cex_market",
+      "description": ""
+    },
+    {
       "id": "okx_cex_portfolio",
       "type": "SKILL",
       "coord": "ecosystem/skills/okx_cex_portfolio/_DIR_IDENTITY.md",
@@ -11373,6 +13662,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/okx_cex_skill_mp/_DIR_IDENTITY.md",
       "name": "okx_cex_skill_mp",
+      "description": ""
+    },
+    {
+      "id": "okx_cex_trade",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/okx_cex_trade/_DIR_IDENTITY.md",
+      "name": "okx_cex_trade",
       "description": ""
     },
     {
@@ -11453,6 +13749,20 @@
       "description": ""
     },
     {
+      "id": "openai_docs",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/openai_docs/_DIR_IDENTITY.md",
+      "name": "openai_docs",
+      "description": ""
+    },
+    {
+      "id": "openapi_spec_generation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/openapi_spec_generation/_DIR_IDENTITY.md",
+      "name": "openapi_spec_generation",
+      "description": ""
+    },
+    {
       "id": "openapi_spec_generation",
       "type": "SKILL",
       "coord": "ecosystem/skills/openapi_spec_generation/_DIR_IDENTITY.md",
@@ -11467,6 +13777,13 @@
       "description": ""
     },
     {
+      "id": "openclaw-admin_120028",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/openclaw_admin/payload/_DIR_IDENTITY.md",
+      "name": "openclaw-admin_120028",
+      "description": ""
+    },
+    {
       "id": "openclaw_github_repo_commander",
       "type": "SKILL",
       "coord": "ecosystem/skills/openclaw_github_repo_commander/_DIR_IDENTITY.md",
@@ -11478,6 +13795,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/openclaw_worker/_DIR_IDENTITY.md",
       "name": "openclaw_worker",
+      "description": ""
+    },
+    {
+      "id": "openclaw-worker_114506",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/openclaw_worker/payload/_DIR_IDENTITY.md",
+      "name": "openclaw-worker_114506",
       "description": ""
     },
     {
@@ -11516,6 +13840,13 @@
       "description": ""
     },
     {
+      "id": "orchestrate_batch_refactor",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/orchestrate_batch_refactor/_DIR_IDENTITY.md",
+      "name": "orchestrate_batch_refactor",
+      "description": ""
+    },
+    {
       "id": "orchestrator_pro",
       "type": "SKILL",
       "coord": "ecosystem/skills/orchestrator_pro/_DIR_IDENTITY.md",
@@ -11523,10 +13854,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "orchestrator_pro",
       "type": "SKILL",
-      "coord": "ecosystem/skills/orchestrator_pro/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/orchestrator_pro/_DIR_IDENTITY.md",
+      "name": "orchestrator_pro",
       "description": ""
     },
     {
@@ -11544,10 +13875,24 @@
       "description": ""
     },
     {
+      "id": "orphan_sweep_environments",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/orphan_sweep_environments/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_environments",
+      "description": ""
+    },
+    {
       "id": "ecosystem-workforce-agents-orphan_sweep_environments-__pycache__",
       "type": "SKILL",
       "coord": "ecosystem/skills/orphan_sweep_environments/pycache/_DIR_IDENTITY.md",
       "name": "Pycache",
+      "description": ""
+    },
+    {
+      "id": "orphan_sweep_yc_bench",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/orphan_sweep_yc_bench/_DIR_IDENTITY.md",
+      "name": "orphan_sweep_yc_bench",
       "description": ""
     },
     {
@@ -11569,6 +13914,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/os_scripting/_DIR_IDENTITY.md",
       "name": "os_scripting",
+      "description": ""
+    },
+    {
+      "id": "outline",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/outline/_DIR_IDENTITY.md",
+      "name": "outline",
       "description": ""
     },
     {
@@ -11639,6 +13991,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/pattern_craft/_DIR_IDENTITY.md",
       "name": "pattern_craft",
+      "description": ""
+    },
+    {
+      "id": "pattern-craft_124614",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/pattern_craft/payload/_DIR_IDENTITY.md",
+      "name": "pattern-craft_124614",
+      "description": ""
+    },
+    {
+      "id": "repo_fetched_agent_teams_lite_052705",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/payload/_DIR_IDENTITY.md",
+      "name": "repo_fetched_agent_teams_lite_052705",
       "description": ""
     },
     {
@@ -11887,6 +14253,13 @@
       "description": ""
     },
     {
+      "id": "pdf_official",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/pdf_official/_DIR_IDENTITY.md",
+      "name": "pdf_official",
+      "description": ""
+    },
+    {
       "id": "pentest_checklist",
       "type": "SKILL",
       "coord": "ecosystem/skills/pentest_checklist/_DIR_IDENTITY.md",
@@ -11908,6 +14281,13 @@
       "description": ""
     },
     {
+      "id": "perf",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/perf/_DIR_IDENTITY.md",
+      "name": "perf",
+      "description": ""
+    },
+    {
       "id": "performance_engineer",
       "type": "SKILL",
       "coord": "ecosystem/skills/performance_engineer/_DIR_IDENTITY.md",
@@ -11919,6 +14299,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/performance_optimizer/_DIR_IDENTITY.md",
       "name": "performance_optimizer",
+      "description": ""
+    },
+    {
+      "id": "performance_profiling",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/performance_profiling/_DIR_IDENTITY.md",
+      "name": "performance_profiling",
       "description": ""
     },
     {
@@ -11964,6 +14351,13 @@
       "description": ""
     },
     {
+      "id": "pipecat_friday",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/pipecat_friday/_DIR_IDENTITY.md",
+      "name": "pipecat_friday",
+      "description": ""
+    },
+    {
       "id": "pipedrive_automation",
       "type": "SKILL",
       "coord": "ecosystem/skills/pipedrive_automation/_DIR_IDENTITY.md",
@@ -11992,6 +14386,27 @@
       "description": ""
     },
     {
+      "id": "plan",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/plan/_DIR_IDENTITY.md",
+      "name": "plan",
+      "description": ""
+    },
+    {
+      "id": "planning_with_files",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/planning_with_files/_DIR_IDENTITY.md",
+      "name": "planning_with_files",
+      "description": ""
+    },
+    {
+      "id": "planning_with_files",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/planning_with_files/_DIR_IDENTITY.md",
+      "name": "planning_with_files",
+      "description": ""
+    },
+    {
       "id": "planning_with_files",
       "type": "SKILL",
       "coord": "ecosystem/skills/planning_with_files/_DIR_IDENTITY.md",
@@ -12010,6 +14425,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/plan_writing/_DIR_IDENTITY.md",
       "name": "plan_writing",
+      "description": ""
+    },
+    {
+      "id": "playwright",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/playwright/_DIR_IDENTITY.md",
+      "name": "playwright",
+      "description": ""
+    },
+    {
+      "id": "playwright",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/playwright/_DIR_IDENTITY.md",
+      "name": "playwright",
       "description": ""
     },
     {
@@ -12069,6 +14498,20 @@
       "description": ""
     },
     {
+      "id": "podcast_generation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/podcast_generation/_DIR_IDENTITY.md",
+      "name": "podcast_generation",
+      "description": ""
+    },
+    {
+      "id": "podcast_generation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/podcast_generation/_DIR_IDENTITY.md",
+      "name": "podcast_generation",
+      "description": ""
+    },
+    {
       "id": "pokemon_player",
       "type": "SKILL",
       "coord": "ecosystem/skills/pokemon_player/_DIR_IDENTITY.md",
@@ -12108,6 +14551,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/posix_shell_pro/_DIR_IDENTITY.md",
       "name": "posix_shell_pro",
+      "description": ""
+    },
+    {
+      "id": "postgres",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/postgres/_DIR_IDENTITY.md",
+      "name": "postgres",
       "description": ""
     },
     {
@@ -12171,6 +14621,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/pptx/_DIR_IDENTITY.md",
       "name": "pptx",
+      "description": ""
+    },
+    {
+      "id": "pptx",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/pptx/_DIR_IDENTITY.md",
+      "name": "pptx",
+      "description": ""
+    },
+    {
+      "id": "pptx_official",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/pptx_official/_DIR_IDENTITY.md",
+      "name": "pptx_official",
       "description": ""
     },
     {
@@ -12265,6 +14729,13 @@
       "description": ""
     },
     {
+      "id": "production_scheduling",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/production_scheduling/_DIR_IDENTITY.md",
+      "name": "production_scheduling",
+      "description": ""
+    },
+    {
       "id": "product_design",
       "type": "SKILL",
       "coord": "ecosystem/skills/product_design/_DIR_IDENTITY.md",
@@ -12293,10 +14764,31 @@
       "description": ""
     },
     {
+      "id": "product_manager_toolkit",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/product_manager_toolkit/_DIR_IDENTITY.md",
+      "name": "product_manager_toolkit",
+      "description": ""
+    },
+    {
+      "id": "product_manager_toolkit",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/product_manager_toolkit/_DIR_IDENTITY.md",
+      "name": "product_manager_toolkit",
+      "description": ""
+    },
+    {
       "id": "product_marketing_context",
       "type": "SKILL",
       "coord": "ecosystem/skills/product_marketing_context/_DIR_IDENTITY.md",
       "name": "product_marketing_context",
+      "description": ""
+    },
+    {
+      "id": "professional_proofreader",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/professional_proofreader/_DIR_IDENTITY.md",
+      "name": "professional_proofreader",
       "description": ""
     },
     {
@@ -12325,6 +14817,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/progressive_web_app/_DIR_IDENTITY.md",
       "name": "progressive_web_app",
+      "description": ""
+    },
+    {
+      "id": "projection_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/projection_patterns/_DIR_IDENTITY.md",
+      "name": "projection_patterns",
       "description": ""
     },
     {
@@ -12398,6 +14897,20 @@
       "description": ""
     },
     {
+      "id": "prompt_engineering_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/prompt_engineering_patterns/_DIR_IDENTITY.md",
+      "name": "prompt_engineering_patterns",
+      "description": ""
+    },
+    {
+      "id": "prompt_engineering_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/prompt_engineering_patterns/_DIR_IDENTITY.md",
+      "name": "prompt_engineering_patterns",
+      "description": ""
+    },
+    {
       "id": "prompt_library",
       "type": "SKILL",
       "coord": "ecosystem/skills/prompt_library/_DIR_IDENTITY.md",
@@ -12409,6 +14922,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/protect_mcp_governance/_DIR_IDENTITY.md",
       "name": "protect_mcp_governance",
+      "description": ""
+    },
+    {
+      "id": "protocol_reverse_engineering",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/protocol_reverse_engineering/_DIR_IDENTITY.md",
+      "name": "protocol_reverse_engineering",
       "description": ""
     },
     {
@@ -12444,6 +14964,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/pydantic_ai/_DIR_IDENTITY.md",
       "name": "pydantic_ai",
+      "description": ""
+    },
+    {
+      "id": "pydantic_models_py",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/pydantic_models_py/_DIR_IDENTITY.md",
+      "name": "pydantic_models_py",
       "description": ""
     },
     {
@@ -12496,10 +15023,24 @@
       "description": ""
     },
     {
+      "id": "python_packaging",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/python_packaging/_DIR_IDENTITY.md",
+      "name": "python_packaging",
+      "description": ""
+    },
+    {
       "id": "python_patterns",
       "type": "SKILL",
       "coord": "ecosystem/skills/python_patterns/_DIR_IDENTITY.md",
       "name": "python_patterns",
+      "description": ""
+    },
+    {
+      "id": "python_performance_optimization",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/python_performance_optimization/_DIR_IDENTITY.md",
+      "name": "python_performance_optimization",
       "description": ""
     },
     {
@@ -12531,10 +15072,24 @@
       "description": ""
     },
     {
+      "id": "python_testing_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/python_testing_patterns/_DIR_IDENTITY.md",
+      "name": "python_testing_patterns",
+      "description": ""
+    },
+    {
       "id": "qiskit",
       "type": "SKILL",
       "coord": "ecosystem/skills/qiskit/_DIR_IDENTITY.md",
       "name": "qiskit",
+      "description": ""
+    },
+    {
+      "id": "quality_nonconformance",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/quality_nonconformance/_DIR_IDENTITY.md",
+      "name": "quality_nonconformance",
       "description": ""
     },
     {
@@ -12587,13 +15142,6 @@
       "description": ""
     },
     {
-      "id": "ralplan",
-      "type": "SKILL",
-      "coord": "ecosystem/skills/ralplan/SKILL.md",
-      "name": "ralplan",
-      "description": "Alias for $plan --consensus"
-    },
-    {
       "id": "ecosystem-skills-repo_fetched_agent_config_144305-skills-rams",
       "type": "SKILL",
       "coord": "ecosystem/skills/rams/_DIR_IDENTITY.md",
@@ -12605,6 +15153,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/rd_lead/_DIR_IDENTITY.md",
       "name": "Rd_Lead_Agent",
+      "description": ""
+    },
+    {
+      "id": "react",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/react/_DIR_IDENTITY.md",
+      "name": "react",
       "description": ""
     },
     {
@@ -12664,6 +15219,13 @@
       "description": ""
     },
     {
+      "id": "react_component_performance",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/react_component_performance/_DIR_IDENTITY.md",
+      "name": "react_component_performance",
+      "description": ""
+    },
+    {
       "id": "ecosystem-skills-repo_fetched_agent_config_144305-skills-react-doctor",
       "type": "SKILL",
       "coord": "ecosystem/skills/react_doctor/_DIR_IDENTITY.md",
@@ -12692,10 +15254,31 @@
       "description": ""
     },
     {
+      "id": "react_flow_node_ts",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/react_flow_node_ts/_DIR_IDENTITY.md",
+      "name": "react_flow_node_ts",
+      "description": ""
+    },
+    {
       "id": "react_modernization",
       "type": "SKILL",
       "coord": "ecosystem/skills/react_modernization/_DIR_IDENTITY.md",
       "name": "react_modernization",
+      "description": ""
+    },
+    {
+      "id": "react_modernization",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/react_modernization/_DIR_IDENTITY.md",
+      "name": "react_modernization",
+      "description": ""
+    },
+    {
+      "id": "react_native_architecture",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/react_native_architecture/_DIR_IDENTITY.md",
+      "name": "react_native_architecture",
       "description": ""
     },
     {
@@ -12748,10 +15331,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "reasoning_engine",
       "type": "SKILL",
-      "coord": "ecosystem/skills/reasoning_engine/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/reasoning_engine/_DIR_IDENTITY.md",
+      "name": "reasoning_engine",
       "description": ""
     },
     {
@@ -12787,6 +15370,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/recursive_decomposition/_DIR_IDENTITY.md",
       "name": "recursive_decomposition",
+      "description": ""
+    },
+    {
+      "id": "recursive-decomposition-skill_123056",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/recursive_decomposition/payload/_DIR_IDENTITY.md",
+      "name": "recursive-decomposition-skill_123056",
       "description": ""
     },
     {
@@ -12888,6 +15478,20 @@
       "description": ""
     },
     {
+      "id": "repo_civ_fetched_browser_112830",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/repo_civ_fetched_browser/_DIR_IDENTITY.md",
+      "name": "repo_civ_fetched_browser_112830",
+      "description": ""
+    },
+    {
+      "id": "repo_civ_fetched_claude_subconscious_111317",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/repo_civ_fetched_claude_subconscious/_DIR_IDENTITY.md",
+      "name": "repo_civ_fetched_claude_subconscious_111317",
+      "description": ""
+    },
+    {
       "id": "repo_ingest_agent_domain",
       "type": "SKILL",
       "coord": "ecosystem/skills/repo_ingest/_DIR_IDENTITY.md",
@@ -12930,10 +15534,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "resilience_engine",
       "type": "SKILL",
-      "coord": "ecosystem/skills/resilience_engine/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/resilience_engine/_DIR_IDENTITY.md",
+      "name": "resilience_engine",
       "description": ""
     },
     {
@@ -12948,6 +15552,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/retro/_DIR_IDENTITY.md",
       "name": "retro",
+      "description": ""
+    },
+    {
+      "id": "returns_reverse_logistics",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/returns_reverse_logistics/_DIR_IDENTITY.md",
+      "name": "returns_reverse_logistics",
       "description": ""
     },
     {
@@ -12986,10 +15597,24 @@
       "description": ""
     },
     {
+      "id": "revops",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/revops/_DIR_IDENTITY.md",
+      "name": "revops",
+      "description": ""
+    },
+    {
       "id": "risk_manager",
       "type": "SKILL",
       "coord": "ecosystem/skills/risk_manager/_DIR_IDENTITY.md",
       "name": "risk_manager",
+      "description": ""
+    },
+    {
+      "id": "risk_metrics_calculation",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/risk_metrics_calculation/_DIR_IDENTITY.md",
+      "name": "risk_metrics_calculation",
       "description": ""
     },
     {
@@ -13056,6 +15681,13 @@
       "description": ""
     },
     {
+      "id": "rust_async_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/rust_async_patterns/_DIR_IDENTITY.md",
+      "name": "rust_async_patterns",
+      "description": ""
+    },
+    {
       "id": "rust_pro",
       "type": "SKILL",
       "coord": "ecosystem/skills/rust_pro/_DIR_IDENTITY.md",
@@ -13081,6 +15713,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/safeguard/_DIR_IDENTITY.md",
       "name": "safeguard",
+      "description": ""
+    },
+    {
+      "id": "saga_orchestration",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/saga_orchestration/_DIR_IDENTITY.md",
+      "name": "saga_orchestration",
       "description": ""
     },
     {
@@ -13133,10 +15772,24 @@
       "description": ""
     },
     {
+      "id": "sales_enablement",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sales_enablement/_DIR_IDENTITY.md",
+      "name": "sales_enablement",
+      "description": ""
+    },
+    {
       "id": "sam_altman",
       "type": "SKILL",
       "coord": "ecosystem/skills/sam_altman/_DIR_IDENTITY.md",
       "name": "sam_altman",
+      "description": ""
+    },
+    {
+      "id": "sanity_best_practices",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sanity_best_practices/_DIR_IDENTITY.md",
+      "name": "sanity_best_practices",
       "description": ""
     },
     {
@@ -13256,6 +15909,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/screenshots/_DIR_IDENTITY.md",
       "name": "screenshots",
+      "description": ""
+    },
+    {
+      "id": "screen_reader_testing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/screen_reader_testing/_DIR_IDENTITY.md",
+      "name": "screen_reader_testing",
       "description": ""
     },
     {
@@ -13399,6 +16059,13 @@
       "description": ""
     },
     {
+      "id": "security_compliance_compliance_check",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/security_compliance_compliance_check/_DIR_IDENTITY.md",
+      "name": "security_compliance_compliance_check",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_agents_security_engineer_agent",
       "type": "SKILL",
       "coord": "ecosystem/skills/security_engineer/_DIR_IDENTITY.md",
@@ -13417,6 +16084,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/security_requirement_extraction/_DIR_IDENTITY.md",
       "name": "security_requirement_extraction",
+      "description": ""
+    },
+    {
+      "id": "security_requirement_extraction",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/security_requirement_extraction/_DIR_IDENTITY.md",
+      "name": "security_requirement_extraction",
+      "description": ""
+    },
+    {
+      "id": "security_scanning_security_dependencies",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/security_scanning_security_dependencies/_DIR_IDENTITY.md",
+      "name": "security_scanning_security_dependencies",
       "description": ""
     },
     {
@@ -13490,6 +16171,34 @@
       "description": ""
     },
     {
+      "id": "senior_architect",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/senior_architect/_DIR_IDENTITY.md",
+      "name": "senior_architect",
+      "description": ""
+    },
+    {
+      "id": "senior_architect",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/senior_architect/_DIR_IDENTITY.md",
+      "name": "senior_architect",
+      "description": ""
+    },
+    {
+      "id": "senior_frontend",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/senior_frontend/_DIR_IDENTITY.md",
+      "name": "senior_frontend",
+      "description": ""
+    },
+    {
+      "id": "senior_frontend",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/senior_frontend/_DIR_IDENTITY.md",
+      "name": "senior_frontend",
+      "description": ""
+    },
+    {
       "id": "senior_frontend",
       "type": "SKILL",
       "coord": "ecosystem/skills/senior_frontend/_DIR_IDENTITY.md",
@@ -13501,6 +16210,27 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/senior_fullstack/_DIR_IDENTITY.md",
       "name": "senior_fullstack",
+      "description": ""
+    },
+    {
+      "id": "senior_fullstack",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/senior_fullstack/_DIR_IDENTITY.md",
+      "name": "senior_fullstack",
+      "description": ""
+    },
+    {
+      "id": "senior_fullstack",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/senior_fullstack/_DIR_IDENTITY.md",
+      "name": "senior_fullstack",
+      "description": ""
+    },
+    {
+      "id": "sentinel",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sentinel/_DIR_IDENTITY.md",
+      "name": "sentinel",
       "description": ""
     },
     {
@@ -13536,6 +16266,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/seo/_DIR_IDENTITY.md",
       "name": "seo",
+      "description": ""
+    },
+    {
+      "id": "seo",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/seo/_DIR_IDENTITY.md",
+      "name": "seo",
+      "description": ""
+    },
+    {
+      "id": "seo_aeo_best_practices",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/seo_aeo_best_practices/_DIR_IDENTITY.md",
+      "name": "seo_aeo_best_practices",
       "description": ""
     },
     {
@@ -13686,6 +16430,27 @@
       "description": ""
     },
     {
+      "id": "seo_fundamentals",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/seo_fundamentals/_DIR_IDENTITY.md",
+      "name": "seo_fundamentals",
+      "description": ""
+    },
+    {
+      "id": "seo_geo",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/seo_geo/_DIR_IDENTITY.md",
+      "name": "seo_geo",
+      "description": ""
+    },
+    {
+      "id": "seo_geo",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/seo_geo/_DIR_IDENTITY.md",
+      "name": "seo_geo",
+      "description": ""
+    },
+    {
       "id": "seo_geo",
       "type": "SKILL",
       "coord": "ecosystem/skills/seo_geo/_DIR_IDENTITY.md",
@@ -13833,6 +16598,13 @@
       "description": ""
     },
     {
+      "id": "session_bridge",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/session_bridge/_DIR_IDENTITY.md",
+      "name": "session_bridge",
+      "description": ""
+    },
+    {
       "id": "session_lifecycle",
       "type": "SKILL",
       "coord": "ecosystem/skills/session_lifecycle/_DIR_IDENTITY.md",
@@ -13844,6 +16616,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/sexual_health_analyzer/_DIR_IDENTITY.md",
       "name": "sexual_health_analyzer",
+      "description": ""
+    },
+    {
+      "id": "sglang_auto_benchmark",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sglang_auto_benchmark/_DIR_IDENTITY.md",
+      "name": "sglang_auto_benchmark",
       "description": ""
     },
     {
@@ -13875,6 +16654,27 @@
       "description": ""
     },
     {
+      "id": "sglang_diffusion_ako4all_kernel",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sglang_diffusion_ako4all_kernel/_DIR_IDENTITY.md",
+      "name": "sglang_diffusion_ako4all_kernel",
+      "description": ""
+    },
+    {
+      "id": "sglang_diffusion_ako4all_kernel",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sglang_diffusion_ako4all_kernel/_DIR_IDENTITY.md",
+      "name": "sglang_diffusion_ako4all_kernel",
+      "description": ""
+    },
+    {
+      "id": "sglang_diffusion_benchmark_profile",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sglang_diffusion_benchmark_profile/_DIR_IDENTITY.md",
+      "name": "sglang_diffusion_benchmark_profile",
+      "description": ""
+    },
+    {
       "id": "sglang_diffusion_benchmark_profile",
       "type": "SKILL",
       "coord": "ecosystem/skills/sglang_diffusion_benchmark_profile/_DIR_IDENTITY.md",
@@ -13886,6 +16686,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/sglang_diffusion_performance/_DIR_IDENTITY.md",
       "name": "sglang_diffusion_performance",
+      "description": ""
+    },
+    {
+      "id": "sglang_torch_profiler_analysis",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sglang_torch_profiler_analysis/_DIR_IDENTITY.md",
+      "name": "sglang_torch_profiler_analysis",
+      "description": ""
+    },
+    {
+      "id": "sglang_torch_profiler_analysis",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sglang_torch_profiler_analysis/_DIR_IDENTITY.md",
+      "name": "sglang_torch_profiler_analysis",
       "description": ""
     },
     {
@@ -13931,10 +16745,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "shell_assistant",
       "type": "SKILL",
-      "coord": "ecosystem/skills/shell_assistant/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/shell_assistant/_DIR_IDENTITY.md",
+      "name": "shell_assistant",
       "description": ""
     },
     {
@@ -13966,6 +16780,20 @@
       "description": ""
     },
     {
+      "id": "shopify_development",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/shopify_development/_DIR_IDENTITY.md",
+      "name": "shopify_development",
+      "description": ""
+    },
+    {
+      "id": "shopify_development",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/shopify_development/_DIR_IDENTITY.md",
+      "name": "shopify_development",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_agents_showdown_agent",
       "type": "SKILL",
       "coord": "ecosystem/skills/showdown/_DIR_IDENTITY.md",
@@ -13977,6 +16805,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/signup_flow_cro/_DIR_IDENTITY.md",
       "name": "signup_flow_cro",
+      "description": ""
+    },
+    {
+      "id": "similarity_search_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/similarity_search_patterns/_DIR_IDENTITY.md",
+      "name": "similarity_search_patterns",
       "description": ""
     },
     {
@@ -14005,6 +16840,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/site_architecture/_DIR_IDENTITY.md",
       "name": "site_architecture",
+      "description": ""
+    },
+    {
+      "id": "site_architecture",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/site_architecture/_DIR_IDENTITY.md",
+      "name": "site_architecture",
+      "description": ""
+    },
+    {
+      "id": "skill_aaak_compression",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/skill_aaak_compression/_DIR_IDENTITY.md",
+      "name": "skill_aaak_compression",
       "description": ""
     },
     {
@@ -14057,10 +16906,31 @@
       "description": ""
     },
     {
+      "id": "skill_forge",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/skill_forge/_DIR_IDENTITY.md",
+      "name": "skill_forge",
+      "description": ""
+    },
+    {
+      "id": "skill-generator_121550",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/skill_generator/_DIR_IDENTITY.md",
+      "name": "skill-generator_121550",
+      "description": ""
+    },
+    {
       "id": "skill_improver",
       "type": "SKILL",
       "coord": "ecosystem/skills/skill_improver/_DIR_IDENTITY.md",
       "name": "skill_improver",
+      "description": ""
+    },
+    {
+      "id": "skill_installer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/skill_installer/_DIR_IDENTITY.md",
+      "name": "skill_installer",
       "description": ""
     },
     {
@@ -14127,6 +16997,20 @@
       "description": ""
     },
     {
+      "id": "skill_sentinel",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/skill_sentinel/_DIR_IDENTITY.md",
+      "name": "skill_sentinel",
+      "description": ""
+    },
+    {
+      "id": "skill_sentinel",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/skill_sentinel/_DIR_IDENTITY.md",
+      "name": "skill_sentinel",
+      "description": ""
+    },
+    {
       "id": "skill_writer",
       "type": "SKILL",
       "coord": "ecosystem/skills/skill_writer/_DIR_IDENTITY.md",
@@ -14176,6 +17060,13 @@
       "description": ""
     },
     {
+      "id": "slides",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/slides/_DIR_IDENTITY.md",
+      "name": "slides",
+      "description": ""
+    },
+    {
       "id": "slo_implementation",
       "type": "SKILL",
       "coord": "ecosystem/skills/slo_implementation/_DIR_IDENTITY.md",
@@ -14190,10 +17081,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "smart_memory",
       "type": "SKILL",
-      "coord": "ecosystem/skills/smart_memory/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/smart_memory/_DIR_IDENTITY.md",
+      "name": "smart_memory",
       "description": ""
     },
     {
@@ -14274,6 +17165,13 @@
       "description": ""
     },
     {
+      "id": "solidity_security",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/solidity_security/_DIR_IDENTITY.md",
+      "name": "solidity_security",
+      "description": ""
+    },
+    {
       "id": "songsee",
       "type": "SKILL",
       "coord": "ecosystem/skills/songsee/_DIR_IDENTITY.md",
@@ -14285,6 +17183,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/source_map_resolve/_DIR_IDENTITY.md",
       "name": "source_map_resolve",
+      "description": ""
+    },
+    {
+      "id": "source-map-resolve_120012",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/source_map_resolve/payload/_DIR_IDENTITY.md",
+      "name": "source-map-resolve_120012",
       "description": ""
     },
     {
@@ -14351,6 +17256,13 @@
       "description": ""
     },
     {
+      "id": "sql_optimization_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/sql_optimization_patterns/_DIR_IDENTITY.md",
+      "name": "sql_optimization_patterns",
+      "description": ""
+    },
+    {
       "id": "sql_pro",
       "type": "SKILL",
       "coord": "ecosystem/skills/sql_pro/_DIR_IDENTITY.md",
@@ -14390,6 +17302,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/ssh_penetration_testing/_DIR_IDENTITY.md",
       "name": "ssh_penetration_testing",
+      "description": ""
+    },
+    {
+      "id": "stability_ai",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/stability_ai/_DIR_IDENTITY.md",
+      "name": "stability_ai",
+      "description": ""
+    },
+    {
+      "id": "stability_ai",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/stability_ai/_DIR_IDENTITY.md",
+      "name": "stability_ai",
       "description": ""
     },
     {
@@ -14442,6 +17368,13 @@
       "description": ""
     },
     {
+      "id": "startup_metrics_framework",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/startup_metrics_framework/_DIR_IDENTITY.md",
+      "name": "startup_metrics_framework",
+      "description": ""
+    },
+    {
       "id": "statsmodels",
       "type": "SKILL",
       "coord": "ecosystem/skills/statsmodels/_DIR_IDENTITY.md",
@@ -14470,6 +17403,13 @@
       "description": ""
     },
     {
+      "id": "stitch_ui_design",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/stitch_ui_design/_DIR_IDENTITY.md",
+      "name": "stitch_ui_design",
+      "description": ""
+    },
+    {
       "id": "ecosystem_skills_repo_fetched_agent_skill_creator_052030_references_examples_stock_analyzer",
       "type": "SKILL",
       "coord": "ecosystem/skills/stock_analyzer/_DIR_IDENTITY.md",
@@ -14488,6 +17428,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/store_data_structures/_DIR_IDENTITY.md",
       "name": "store_data_structures",
+      "description": ""
+    },
+    {
+      "id": "stride_analysis_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/stride_analysis_patterns/_DIR_IDENTITY.md",
+      "name": "stride_analysis_patterns",
       "description": ""
     },
     {
@@ -14638,10 +17585,31 @@
       "description": ""
     },
     {
+      "id": "swiftui_liquid_glass",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/swiftui_liquid_glass/_DIR_IDENTITY.md",
+      "name": "swiftui_liquid_glass",
+      "description": ""
+    },
+    {
       "id": "swiftui_performance_audit",
       "type": "SKILL",
       "coord": "ecosystem/skills/swiftui_performance_audit/_DIR_IDENTITY.md",
       "name": "swiftui_performance_audit",
+      "description": ""
+    },
+    {
+      "id": "swiftui_performance_audit",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/swiftui_performance_audit/_DIR_IDENTITY.md",
+      "name": "swiftui_performance_audit",
+      "description": ""
+    },
+    {
+      "id": "swiftui_ui_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/swiftui_ui_patterns/_DIR_IDENTITY.md",
+      "name": "swiftui_ui_patterns",
       "description": ""
     },
     {
@@ -14659,10 +17627,24 @@
       "description": ""
     },
     {
+      "id": "swiftui_view_refactor",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/swiftui_view_refactor/_DIR_IDENTITY.md",
+      "name": "swiftui_view_refactor",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_agents_swift_composable_architecture_agent",
       "type": "SKILL",
       "coord": "ecosystem/skills/swift_composable_architecture/_DIR_IDENTITY.md",
       "name": "Swift_Composable_Architecture_Agent",
+      "description": ""
+    },
+    {
+      "id": "swift_concurrency_expert",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/swift_concurrency_expert/_DIR_IDENTITY.md",
+      "name": "swift_concurrency_expert",
       "description": ""
     },
     {
@@ -14698,6 +17680,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/systems_programming_rust_project/_DIR_IDENTITY.md",
       "name": "systems_programming_rust_project",
+      "description": ""
+    },
+    {
+      "id": "tailwind_design_system",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/tailwind_design_system/_DIR_IDENTITY.md",
+      "name": "tailwind_design_system",
       "description": ""
     },
     {
@@ -14750,6 +17739,20 @@
       "description": ""
     },
     {
+      "id": "task",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/task/_DIR_IDENTITY.md",
+      "name": "task",
+      "description": ""
+    },
+    {
+      "id": "task_intelligence",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/task_intelligence/_DIR_IDENTITY.md",
+      "name": "task_intelligence",
+      "description": ""
+    },
+    {
       "id": "task_intelligence",
       "type": "SKILL",
       "coord": "ecosystem/skills/task_intelligence/_DIR_IDENTITY.md",
@@ -14768,6 +17771,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/tblite/_DIR_IDENTITY.md",
       "name": "tblite",
+      "description": ""
+    },
+    {
+      "id": "repo-orphan-sweep-tblite",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/tblite/payload/_DIR_IDENTITY.md",
+      "name": "repo-orphan-sweep-tblite",
       "description": ""
     },
     {
@@ -14820,6 +17830,13 @@
       "description": ""
     },
     {
+      "id": "tdd_workflows_tdd_green",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/tdd_workflows_tdd_green/_DIR_IDENTITY.md",
+      "name": "tdd_workflows_tdd_green",
+      "description": ""
+    },
+    {
       "id": "tdd_workflows_tdd_red",
       "type": "SKILL",
       "coord": "ecosystem/skills/tdd_workflows_tdd_red/_DIR_IDENTITY.md",
@@ -14848,6 +17865,20 @@
       "description": ""
     },
     {
+      "id": "team_collaboration_issue",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/team_collaboration_issue/_DIR_IDENTITY.md",
+      "name": "team_collaboration_issue",
+      "description": ""
+    },
+    {
+      "id": "team_collaboration_standup_notes",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/team_collaboration_standup_notes/_DIR_IDENTITY.md",
+      "name": "team_collaboration_standup_notes",
+      "description": ""
+    },
+    {
       "id": "team_collaboration_standup_notes",
       "type": "SKILL",
       "coord": "ecosystem/skills/team_collaboration_standup_notes/_DIR_IDENTITY.md",
@@ -14866,6 +17897,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/technical_change_tracker/_DIR_IDENTITY.md",
       "name": "technical_change_tracker",
+      "description": ""
+    },
+    {
+      "id": "telegram",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/telegram/_DIR_IDENTITY.md",
+      "name": "telegram",
+      "description": ""
+    },
+    {
+      "id": "telegram",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/telegram/_DIR_IDENTITY.md",
+      "name": "telegram",
       "description": ""
     },
     {
@@ -14925,10 +17970,24 @@
       "description": ""
     },
     {
+      "id": "temporal_golang_pro",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/temporal_golang_pro/_DIR_IDENTITY.md",
+      "name": "temporal_golang_pro",
+      "description": ""
+    },
+    {
       "id": "temporal_python_pro",
       "type": "SKILL",
       "coord": "ecosystem/skills/temporal_python_pro/_DIR_IDENTITY.md",
       "name": "temporal_python_pro",
+      "description": ""
+    },
+    {
+      "id": "temporal_python_testing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/temporal_python_testing/_DIR_IDENTITY.md",
+      "name": "temporal_python_testing",
       "description": ""
     },
     {
@@ -14974,6 +18033,13 @@
       "description": ""
     },
     {
+      "id": "terraform_module_library",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/terraform_module_library/_DIR_IDENTITY.md",
+      "name": "terraform_module_library",
+      "description": ""
+    },
+    {
       "id": "terraform_specialist",
       "type": "SKILL",
       "coord": "ecosystem/skills/terraform_specialist/_DIR_IDENTITY.md",
@@ -14992,6 +18058,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/testimonial_collector/_DIR_IDENTITY.md",
       "name": "Testimonial_Collector",
+      "description": ""
+    },
+    {
+      "id": "testing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/testing/_DIR_IDENTITY.md",
+      "name": "testing",
       "description": ""
     },
     {
@@ -15055,6 +18128,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/theme_factory/_DIR_IDENTITY.md",
       "name": "theme_factory",
+      "description": ""
+    },
+    {
+      "id": "threat_mitigation_mapping",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/threat_mitigation_mapping/_DIR_IDENTITY.md",
+      "name": "threat_mitigation_mapping",
       "description": ""
     },
     {
@@ -15226,6 +18306,13 @@
       "description": ""
     },
     {
+      "id": "tookie_osint",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/tookie_osint/payload/_DIR_IDENTITY.md",
+      "name": "tookie_osint",
+      "description": ""
+    },
+    {
       "id": "ecosystem-plugins-repo-fetched-tookie-osint-034731-config",
       "type": "SKILL",
       "coord": "ecosystem/skills/tookie_osint/payload/config/_DIR_IDENTITY.md",
@@ -15303,10 +18390,24 @@
       "description": ""
     },
     {
+      "id": "track_management",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/track_management/_DIR_IDENTITY.md",
+      "name": "track_management",
+      "description": ""
+    },
+    {
       "id": "ecosystem_skills_repo_fetched_agent_skills_054345_trading_engine",
       "type": "SKILL",
       "coord": "ecosystem/skills/trading_engine/_DIR_IDENTITY.md",
       "name": "Trading_Engine",
+      "description": ""
+    },
+    {
+      "id": "transformers_js",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/transformers_js/_DIR_IDENTITY.md",
+      "name": "transformers_js",
       "description": ""
     },
     {
@@ -15450,6 +18551,27 @@
       "description": ""
     },
     {
+      "id": "typescript_advanced_types",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/typescript_advanced_types/_DIR_IDENTITY.md",
+      "name": "typescript_advanced_types",
+      "description": ""
+    },
+    {
+      "id": "typescript_expert",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/typescript_expert/_DIR_IDENTITY.md",
+      "name": "typescript_expert",
+      "description": ""
+    },
+    {
+      "id": "typescript_expert",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/typescript_expert/_DIR_IDENTITY.md",
+      "name": "typescript_expert",
+      "description": ""
+    },
+    {
       "id": "typescript_expert",
       "type": "SKILL",
       "coord": "ecosystem/skills/typescript_expert/_DIR_IDENTITY.md",
@@ -15548,10 +18670,24 @@
       "description": ""
     },
     {
+      "id": "ui_ux_pro_max",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/ui_ux_pro_max/_DIR_IDENTITY.md",
+      "name": "ui_ux_pro_max",
+      "description": ""
+    },
+    {
       "id": "ui_visual_validator",
       "type": "SKILL",
       "coord": "ecosystem/skills/ui_visual_validator/_DIR_IDENTITY.md",
       "name": "ui_visual_validator",
+      "description": ""
+    },
+    {
+      "id": "uncle_bob_craft",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/uncle_bob_craft/_DIR_IDENTITY.md",
+      "name": "uncle_bob_craft",
       "description": ""
     },
     {
@@ -15590,6 +18726,13 @@
       "description": ""
     },
     {
+      "id": "unity_ecs_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/unity_ecs_patterns/_DIR_IDENTITY.md",
+      "name": "unity_ecs_patterns",
+      "description": ""
+    },
+    {
       "id": "unit_testing_test_generate",
       "type": "SKILL",
       "coord": "ecosystem/skills/unit_testing_test_generate/_DIR_IDENTITY.md",
@@ -15604,6 +18747,13 @@
       "description": ""
     },
     {
+      "id": "unsloth",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/unsloth/_DIR_IDENTITY.md",
+      "name": "unsloth",
+      "description": ""
+    },
+    {
       "id": "unsplash_integration",
       "type": "SKILL",
       "coord": "ecosystem/skills/unsplash_integration/_DIR_IDENTITY.md",
@@ -15615,6 +18765,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/update_skills/_DIR_IDENTITY.md",
       "name": "update_skills",
+      "description": ""
+    },
+    {
+      "id": "update_swiftui_apis",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/update_swiftui_apis/_DIR_IDENTITY.md",
+      "name": "update_swiftui_apis",
       "description": ""
     },
     {
@@ -15664,6 +18821,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/using_superpowers/_DIR_IDENTITY.md",
       "name": "using_superpowers",
+      "description": ""
+    },
+    {
+      "id": "uv_package_manager",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/uv_package_manager/_DIR_IDENTITY.md",
+      "name": "uv_package_manager",
       "description": ""
     },
     {
@@ -15765,6 +18929,13 @@
       "description": ""
     },
     {
+      "id": "vector_index_tuning",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/vector_index_tuning/_DIR_IDENTITY.md",
+      "name": "vector_index_tuning",
+      "description": ""
+    },
+    {
       "id": "vercel_ai_sdk_expert",
       "type": "SKILL",
       "coord": "ecosystem/skills/vercel_ai_sdk_expert/_DIR_IDENTITY.md",
@@ -15811,6 +18982,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/vexor/_DIR_IDENTITY.md",
       "name": "vexor",
+      "description": ""
+    },
+    {
+      "id": "vexor_cli",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/vexor_cli/_DIR_IDENTITY.md",
+      "name": "vexor_cli",
       "description": ""
     },
     {
@@ -15877,6 +19055,13 @@
       "description": ""
     },
     {
+      "id": "videodb",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/videodb/_DIR_IDENTITY.md",
+      "name": "videodb",
+      "description": ""
+    },
+    {
       "id": "videodb_skills",
       "type": "SKILL",
       "coord": "ecosystem/skills/videodb_skills/_DIR_IDENTITY.md",
@@ -15933,6 +19118,13 @@
       "description": ""
     },
     {
+      "id": "voice_ai_engine_development",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/voice_ai_engine_development/_DIR_IDENTITY.md",
+      "name": "voice_ai_engine_development",
+      "description": ""
+    },
+    {
       "id": "ecosystem_workforce_repo_fetched_ai_marketing_claude_code_skills_041506_voice_extractor",
       "type": "SKILL",
       "coord": "ecosystem/skills/voice_extractor/_DIR_IDENTITY.md",
@@ -15968,6 +19160,13 @@
       "description": ""
     },
     {
+      "id": "vulnerability_scanner",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/vulnerability_scanner/_DIR_IDENTITY.md",
+      "name": "vulnerability_scanner",
+      "description": ""
+    },
+    {
       "id": "ecosystem_skills_repo_fetched_agent_skills_054345_wallet",
       "type": "SKILL",
       "coord": "ecosystem/skills/wallet/_DIR_IDENTITY.md",
@@ -15986,6 +19185,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/watchdog/_DIR_IDENTITY.md",
       "name": "watchdog",
+      "description": ""
+    },
+    {
+      "id": "watchdog",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/watchdog/_DIR_IDENTITY.md",
+      "name": "watchdog",
+      "description": ""
+    },
+    {
+      "id": "wcag_audit_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/wcag_audit_patterns/_DIR_IDENTITY.md",
+      "name": "wcag_audit_patterns",
       "description": ""
     },
     {
@@ -16052,6 +19265,13 @@
       "description": ""
     },
     {
+      "id": "webapp_testing",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/webapp_testing/_DIR_IDENTITY.md",
+      "name": "webapp_testing",
+      "description": ""
+    },
+    {
       "id": "webflow_automation",
       "type": "SKILL",
       "coord": "ecosystem/skills/webflow_automation/_DIR_IDENTITY.md",
@@ -16063,6 +19283,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/webhook_subscriptions/_DIR_IDENTITY.md",
       "name": "webhook_subscriptions",
+      "description": ""
+    },
+    {
+      "id": "web_artifacts_builder",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/web_artifacts_builder/_DIR_IDENTITY.md",
+      "name": "web_artifacts_builder",
       "description": ""
     },
     {
@@ -16094,10 +19321,10 @@
       "description": ""
     },
     {
-      "id": "scripts",
+      "id": "web_intelligence",
       "type": "SKILL",
-      "coord": "ecosystem/skills/web_intelligence/scripts/README.md",
-      "name": "scripts",
+      "coord": "ecosystem/skills/web_intelligence/_DIR_IDENTITY.md",
+      "name": "web_intelligence",
       "description": ""
     },
     {
@@ -16112,6 +19339,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/web_researcher/_DIR_IDENTITY.md",
       "name": "Web_Researcher",
+      "description": ""
+    },
+    {
+      "id": "web_scraper",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/web_scraper/_DIR_IDENTITY.md",
+      "name": "web_scraper",
       "description": ""
     },
     {
@@ -16164,6 +19398,27 @@
       "description": ""
     },
     {
+      "id": "whatsapp_bridge",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/whatsapp_bridge/payload/_DIR_IDENTITY.md",
+      "name": "whatsapp_bridge",
+      "description": ""
+    },
+    {
+      "id": "whatsapp_cloud_api",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/whatsapp_cloud_api/_DIR_IDENTITY.md",
+      "name": "whatsapp_cloud_api",
+      "description": ""
+    },
+    {
+      "id": "whatsapp_cloud_api",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/whatsapp_cloud_api/_DIR_IDENTITY.md",
+      "name": "whatsapp_cloud_api",
+      "description": ""
+    },
+    {
       "id": "whatsapp_cloud_api",
       "type": "SKILL",
       "coord": "ecosystem/skills/whatsapp_cloud_api/_DIR_IDENTITY.md",
@@ -16182,6 +19437,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/wiki_agents_md/_DIR_IDENTITY.md",
       "name": "wiki_agents_md",
+      "description": ""
+    },
+    {
+      "id": "wiki_architect",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/wiki_architect/_DIR_IDENTITY.md",
+      "name": "wiki_architect",
       "description": ""
     },
     {
@@ -16217,6 +19479,20 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/wiki_page_writer/_DIR_IDENTITY.md",
       "name": "wiki_page_writer",
+      "description": ""
+    },
+    {
+      "id": "wiki_page_writer",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/wiki_page_writer/_DIR_IDENTITY.md",
+      "name": "wiki_page_writer",
+      "description": ""
+    },
+    {
+      "id": "wiki_qa",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/wiki_qa/_DIR_IDENTITY.md",
+      "name": "wiki_qa",
       "description": ""
     },
     {
@@ -16325,6 +19601,13 @@
       "description": ""
     },
     {
+      "id": "workflow_patterns",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/workflow_patterns/_DIR_IDENTITY.md",
+      "name": "workflow_patterns",
+      "description": ""
+    },
+    {
       "id": "worktree",
       "type": "SKILL",
       "coord": "ecosystem/skills/worktree/_DIR_IDENTITY.md",
@@ -16392,6 +19675,13 @@
       "type": "SKILL",
       "coord": "ecosystem/skills/xsv/_DIR_IDENTITY.md",
       "name": "Xsv_Agent",
+      "description": ""
+    },
+    {
+      "id": "xvary_stock_research",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/xvary_stock_research/_DIR_IDENTITY.md",
+      "name": "xvary_stock_research",
       "description": ""
     },
     {
@@ -16528,6 +19818,13 @@
       "description": ""
     },
     {
+      "id": "zustand",
+      "type": "SKILL",
+      "coord": "ecosystem/skills/zustand/_DIR_IDENTITY.md",
+      "name": "zustand",
+      "description": ""
+    },
+    {
       "id": "zustand_store_ts",
       "type": "SKILL",
       "coord": "ecosystem/skills/zustand_store_ts/_DIR_IDENTITY.md",
@@ -16535,354 +19832,88 @@
       "description": ""
     },
     {
-      "id": "repo-fetched-agentskills-111250",
+      "id": "zustand_store_ts",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/agentskills/_DIR_IDENTITY.md",
-      "name": "repo-fetched-agentskills-111250",
+      "coord": "ecosystem/skills/zustand_store_ts/_DIR_IDENTITY.md",
+      "name": "zustand_store_ts",
       "description": ""
     },
     {
-      "id": "repo-fetched-agent-config-144305",
+      "id": "ecosystem_tools_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/agent_config/_DIR_IDENTITY.md",
-      "name": "repo-fetched-agent-config-144305",
+      "coord": "ecosystem/tools/_DIR_IDENTITY.md",
+      "name": "Tools Ecosystem Domain",
       "description": ""
     },
     {
-      "id": "repo-fetched-agent-skills-144258",
+      "id": "ecosystem_tools_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/agent_skills/_DIR_IDENTITY.md",
-      "name": "repo-fetched-agent-skills-144258",
+      "coord": "ecosystem/tools/_DIR_IDENTITY.md",
+      "name": "Tools Ecosystem Domain",
       "description": ""
     },
     {
-      "id": "repo-fetched-agent-skill-creator-052030",
+      "id": "ecosystem_tools_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/agent_skill_creator/_DIR_IDENTITY.md",
-      "name": "repo-fetched-agent-skill-creator-052030",
+      "coord": "ecosystem/tools/_DIR_IDENTITY.md",
+      "name": "Tools Ecosystem Domain",
       "description": ""
     },
     {
-      "id": "agent_teams_lite",
+      "id": "heuristic_survival",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/agent_teams_lite/_DIR_IDENTITY.md",
-      "name": "agent_teams_lite",
+      "coord": "ecosystem/tools/heuristic_survival/_DIR_IDENTITY.md",
+      "name": "Heuristic Survival Tools",
       "description": ""
     },
     {
-      "id": "airllm",
+      "id": "heuristic_survival",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/airllm/_DIR_IDENTITY.md",
-      "name": "airllm",
+      "coord": "ecosystem/tools/heuristic_survival/_DIR_IDENTITY.md",
+      "name": "Heuristic Survival Tools",
       "description": ""
     },
     {
-      "id": "antigravity_mobile",
+      "id": "heuristic_survival",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/antigravity_mobile/_DIR_IDENTITY.md",
-      "name": "antigravity_mobile",
+      "coord": "ecosystem/tools/heuristic_survival/_DIR_IDENTITY.md",
+      "name": "Heuristic Survival Tools",
       "description": ""
     },
     {
-      "id": "arknights_endfield_website_clone",
+      "id": "ui_ux_pro_max_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/arknights_endfield_website_clone/_DIR_IDENTITY.md",
-      "name": "arknights_endfield_website_clone",
+      "coord": "ecosystem/tools/ui_ux_pro_max/_DIR_IDENTITY.md",
+      "name": "Ui Ux Pro Max",
       "description": ""
     },
     {
-      "id": "awesome_ai_tools",
+      "id": "data_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/awesome_ai_tools/_DIR_IDENTITY.md",
-      "name": "awesome_ai_tools",
+      "coord": "ecosystem/tools/ui_ux_pro_max/data/_DIR_IDENTITY.md",
+      "name": "Data",
       "description": ""
     },
     {
-      "id": "awesome_eventstorming",
+      "id": "stacks_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/awesome_eventstorming/_DIR_IDENTITY.md",
-      "name": "awesome_eventstorming",
+      "coord": "ecosystem/tools/ui_ux_pro_max/data/stacks/_DIR_IDENTITY.md",
+      "name": "Stacks",
       "description": ""
     },
     {
-      "id": "awesome_legal_skills",
+      "id": "scripts_domain",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/awesome_legal_skills/_DIR_IDENTITY.md",
-      "name": "awesome_legal_skills",
+      "coord": "ecosystem/tools/ui_ux_pro_max/scripts/_DIR_IDENTITY.md",
+      "name": "Scripts",
       "description": ""
     },
     {
-      "id": "repo-civ-fetched-awesome-legal-skills-105805",
+      "id": "ecosystem-ui_components",
       "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/awesome_legal_skills/payload/_DIR_IDENTITY.md",
-      "name": "repo-civ-fetched-awesome-legal-skills-105805",
+      "coord": "ecosystem/ui_components/_DIR_IDENTITY.md",
+      "name": "Frontend UI Components Storage",
       "description": ""
-    },
-    {
-      "id": "repo-fetched-claude-config-144310",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/claude_config/_DIR_IDENTITY.md",
-      "name": "repo-fetched-claude-config-144310",
-      "description": ""
-    },
-    {
-      "id": "claude_plugins_official",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/claude_plugins_official/_DIR_IDENTITY.md",
-      "name": "claude_plugins_official",
-      "description": ""
-    },
-    {
-      "id": "claude_skill_homeassistant",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/claude_skill_homeassistant/_DIR_IDENTITY.md",
-      "name": "claude_skill_homeassistant",
-      "description": ""
-    },
-    {
-      "id": "repo-civ-fetched-claude-skill-homeassistant-104045",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/claude_skill_homeassistant/payload/_DIR_IDENTITY.md",
-      "name": "repo-civ-fetched-claude-skill-homeassistant-104045",
-      "description": ""
-    },
-    {
-      "id": "claudy_registry",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/claudy_registry/_DIR_IDENTITY.md",
-      "name": "claudy_registry",
-      "description": ""
-    },
-    {
-      "id": "claudy_releases",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/claudy_releases/_DIR_IDENTITY.md",
-      "name": "claudy_releases",
-      "description": ""
-    },
-    {
-      "id": "cli2",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/cli2/_DIR_IDENTITY.md",
-      "name": "cli2",
-      "description": ""
-    },
-    {
-      "id": "firecrawl_mcp_server",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/firecrawl_mcp_server/_DIR_IDENTITY.md",
-      "name": "firecrawl_mcp_server",
-      "description": ""
-    },
-    {
-      "id": "gah",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/gah/_DIR_IDENTITY.md",
-      "name": "gah",
-      "description": ""
-    },
-    {
-      "id": "repo-civ-fetched-gah-121554",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/gah/payload/_DIR_IDENTITY.md",
-      "name": "repo-civ-fetched-gah-121554",
-      "description": ""
-    },
-    {
-      "id": "gitingest_extension",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/gitingest_extension/_DIR_IDENTITY.md",
-      "name": "gitingest_extension",
-      "description": ""
-    },
-    {
-      "id": "goddd",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/goddd/_DIR_IDENTITY.md",
-      "name": "goddd",
-      "description": ""
-    },
-    {
-      "id": "repo-civ-fetched-goddd-121543",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/goddd/payload/_DIR_IDENTITY.md",
-      "name": "repo-civ-fetched-goddd-121543",
-      "description": ""
-    },
-    {
-      "id": "homebrew_core",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/homebrew_core/_DIR_IDENTITY.md",
-      "name": "homebrew_core",
-      "description": ""
-    },
-    {
-      "id": "langgraph",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/langgraph/_DIR_IDENTITY.md",
-      "name": "langgraph",
-      "description": ""
-    },
-    {
-      "id": "lessmsi",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/lessmsi/_DIR_IDENTITY.md",
-      "name": "lessmsi",
-      "description": ""
-    },
-    {
-      "id": "liquid_glass",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/liquid_glass/_DIR_IDENTITY.md",
-      "name": "liquid_glass",
-      "description": ""
-    },
-    {
-      "id": "llmware",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/llmware/_DIR_IDENTITY.md",
-      "name": "llmware",
-      "description": ""
-    },
-    {
-      "id": "llm_lean_log",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/llm_lean_log/_DIR_IDENTITY.md",
-      "name": "llm_lean_log",
-      "description": ""
-    },
-    {
-      "id": "lobsters",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/lobsters/_DIR_IDENTITY.md",
-      "name": "lobsters",
-      "description": ""
-    },
-    {
-      "id": "repo-civ-fetched-lobsters-114454",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/lobsters/payload/_DIR_IDENTITY.md",
-      "name": "repo-civ-fetched-lobsters-114454",
-      "description": ""
-    },
-    {
-      "id": "localtunnel",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/localtunnel/_DIR_IDENTITY.md",
-      "name": "localtunnel",
-      "description": ""
-    },
-    {
-      "id": "locomotive_scroll",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/locomotive_scroll/_DIR_IDENTITY.md",
-      "name": "locomotive_scroll",
-      "description": ""
-    },
-    {
-      "id": "magic_wormhole",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/magic_wormhole/_DIR_IDENTITY.md",
-      "name": "magic_wormhole",
-      "description": ""
-    },
-    {
-      "id": "markdown_printer",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/markdown_printer/_DIR_IDENTITY.md",
-      "name": "markdown_printer",
-      "description": ""
-    },
-    {
-      "id": "openclaw_admin",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/openclaw_admin/_DIR_IDENTITY.md",
-      "name": "openclaw_admin",
-      "description": ""
-    },
-    {
-      "id": "openclaw_worker",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/openclaw_worker/_DIR_IDENTITY.md",
-      "name": "openclaw_worker",
-      "description": ""
-    },
-    {
-      "id": "ghost_sweep_repo_orphan_sweep_ascii_video",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/ORPHAN_SWEEP_payload/salvaged_k8s_and_ai_dumps/GHOST_SWEEP_repo_orphan_sweep_ascii_video_142829_215954/_DIR_IDENTITY.md",
-      "name": "ghost_sweep_repo_orphan_sweep_ascii_video",
-      "description": ""
-    },
-    {
-      "id": "skill_aaak_compression",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/ORPHAN_SWEEP_skill_aaak_compression/SKILL.md",
-      "name": "skill_aaak_compression",
-      "description": ""
-    },
-    {
-      "id": "pattern_craft",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/pattern_craft/_DIR_IDENTITY.md",
-      "name": "pattern_craft",
-      "description": ""
-    },
-    {
-      "id": "react_components",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/react_components/_DIR_IDENTITY.md",
-      "name": "react_components",
-      "description": ""
-    },
-    {
-      "id": "source_map_resolve",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/source_map_resolve/_DIR_IDENTITY.md",
-      "name": "source_map_resolve",
-      "description": ""
-    },
-    {
-      "id": "repo-fetched-swiftui-agent-skill-035836",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/swiftui_agent_skill/_DIR_IDENTITY.md",
-      "name": "repo-fetched-swiftui-agent-skill-035836",
-      "description": ""
-    },
-    {
-      "id": "tblite",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/tblite/_DIR_IDENTITY.md",
-      "name": "tblite",
-      "description": ""
-    },
-    {
-      "id": "tookie_osint",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/tookie_osint/_DIR_IDENTITY.md",
-      "name": "tookie_osint",
-      "description": ""
-    },
-    {
-      "id": "whatsapp_bridge",
-      "type": "SKILL",
-      "coord": "vault/knowledge/global_codebases/whatsapp_bridge/_DIR_IDENTITY.md",
-      "name": "whatsapp_bridge",
-      "description": ""
-    },
-    {
-      "id": "ghost_sweep_angular",
-      "type": "skill",
-      "coord": "ecosystem/skills/ghost_sweep_angular",
-      "owner": "OA",
-      "registered_at": "2026-04-10T21:37:35.634289"
-    },
-    {
-      "id": "ghost_sweep_global_code_reference",
-      "type": "skill",
-      "coord": "ecosystem/skills/ghost_sweep_global_code_reference",
-      "owner": "OA",
-      "registered_at": "2026-04-10T22:41:39.387993"
     }
   ]
 }
