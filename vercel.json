@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'khong can cai dat'",
+  "buildCommand": "echo 'trang tinh, khong can build'",
+  "outputDirectory": "landing",
+  "cleanUrls": true
+}
