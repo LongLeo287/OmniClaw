@@ -1,9 +1,10 @@
-# Vercel chỉ cần thư mục landing/ để phát hành trang này — phần còn lại của
-# repo là mã nguồn dự án, không liên quan tới trang giới thiệu.
+# Chỉ giữ lại thư mục landing/ trong bản phát hành — phần còn lại của repo là
+# mã nguồn dự án, không liên quan tới trang giới thiệu.
 #
-# Không phải chuyện dọn dẹp cho gọn: OmniClaw nặng 110 MB với gần 15.000 file,
-# đủ để build trên Vercel hỏng. Lọc ở đây thì mỗi lần deploy chỉ tải lên vài
-# chục KB.
+# Lưu ý cho ai đọc sau: file này KHÔNG ngăn Vercel tải repo về. Repo nối qua
+# Git thì Vercel vẫn clone toàn bộ vào container build, rồi mới lọc. Muốn
+# Vercel không phải đọc cả repo thì phải tách landing page sang một repo riêng
+# — đổi lại trang không còn nằm trong repo của chính dự án nữa.
 /*
 !/landing/
 !/vercel.json
