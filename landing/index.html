@@ -28,7 +28,7 @@
 *,*::before,*::after{box-sizing:border-box}
 :root{
   --bg:#080a0b; --pane:#0e1214; --pane-2:#131a1d; --line:#1e282c; --line-2:#2b393e;
-  --text:#dfe7ea; --muted:#8fa3aa; --dim:#5d6f76;
+  --text:#dfe7ea; --muted:#8fa3aa; --dim:#748a93;
   --amber:#f75c1e; --lime:#7ee787; --warn:#f2c14e; --danger:#ff6b6b;
   --ease:cubic-bezier(.16,1,.3,1);
 }
@@ -188,6 +188,42 @@ footer{border-top:1px solid var(--line);padding:1.4rem 0;font-size:.78rem;color:
 footer a{color:var(--muted);text-decoration:none;padding:.3rem 0}
 footer a:hover{color:var(--lime)}
 
+/* Vệt quét ngang cửa sổ terminal — gợi màn hình CRT đang làm tươi. */
+.term{position:relative;overflow:hidden}
+.term::after{content:'';position:absolute;left:0;right:0;height:38%;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(126,231,135,.05),transparent);
+  animation:sweep 6.5s linear infinite}
+@keyframes sweep{0%{transform:translateY(-120%)}100%{transform:translateY(320%)}}
+
+/* Đèn trạng thái từng daemon, nhấp theo phòng ban lệch pha nhau. */
+.tbl .id{position:relative;padding-left:1.1rem}
+.tbl .id::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:6px;
+  border-radius:50%;background:var(--lime);
+  animation:beat 2.6s ease-in-out infinite;animation-delay:calc(var(--i,0) * .22s)}
+.tbl tr[data-dept="security"] .id::before{background:var(--danger)}
+.tbl tr[data-dept="health"] .id::before{background:var(--warn)}
+@keyframes beat{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.72)}}
+
+/* Thanh tiến độ đọc trang, mảnh như dòng lệnh. */
+.prog{position:fixed;top:0;left:0;height:2px;width:100%;z-index:70;transform:scaleX(0);
+  transform-origin:0 50%;background:linear-gradient(90deg,var(--lime),var(--amber))}
+@supports (animation-timeline:scroll()){
+  .prog{animation:pgrow linear;animation-timeline:scroll(root block)}
+  @keyframes pgrow{to{transform:scaleX(1)}}
+}
+
+/* Con trỏ nhấp sau mỗi dòng nhắc của từng mục. */
+.prompt b::after{content:'';display:inline-block;width:7px;height:.95em;margin-left:.35rem;
+  background:var(--lime);vertical-align:text-bottom;animation:blink 1.05s step-end infinite}
+
+/* Luồng log chạy ở chân pane — chỉ đổi transform nên không gây vẽ lại layout. */
+.stream{overflow:hidden;height:1.6em;border-top:1px solid var(--line);
+  background:var(--pane-2);font-size:.76rem;color:var(--dim)}
+.stream ul{list-style:none;margin:0;padding:0;animation:roll2 12s steps(6) infinite}
+.stream li{height:1.6em;line-height:1.6em;padding-inline:.9rem;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+@keyframes roll2{to{transform:translateY(-9.6em)}}
+
 .rise{opacity:0;transform:translateY(14px);
   transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .rise.in{opacity:1;transform:none}
@@ -204,6 +240,8 @@ footer a:hover{color:var(--lime)}
 </head>
 <body>
 
+<div class="prog" aria-hidden="true"></div>
+
 <div class="top">
   <div class="top-in">
     <span class="leds"><i></i><i></i><i></i></span>
@@ -217,6 +255,7 @@ footer a:hover{color:var(--lime)}
     <div class="term">
       <div class="term-bar">omniclaw · 8 daemon · zero-trust</div>
       <div class="term-body"><div class="bl"><span class="p">$</span> <span class="c">omniclaw --boot</span></div><div class="bl"><span class="ok">[✓]</span> <span class="c">oma_architect</span>   lập bản đồ hạ tầng ......... OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">oap_pipeline</span>    phân luồng đầu vào ......... OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">oer_registry</span>    nạp sổ đăng ký ............. OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">oiw_intake</span>      chờ mã nguồn ngoài ......... OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">osf_warden</span>      dựng tường lửa biên ........ OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">obd_harbor</span>      khoá cổng ngoài 127.0.0.1 .. OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">ohd_healer</span>      quét sức khoẻ hệ thống ..... OK</div><div class="bl"><span class="ok">[✓]</span> <span class="c">oa_academy</span>      kiểm toán logic ............ OK</div><div class="bl last">8/8 daemon đang chạy · zero-trust ĐANG BẬT</div><span class="cursor"></span></div>
+      <div class="stream" aria-hidden="true"><ul><li>oer_registry  đăng ký thực thể mới: skill/vision-ocr</li><li>osf_warden    cách ly gói chưa ký: 1 mục vào khu chờ</li><li>ohd_healer    dọn 214 file tạm · vá 3 lỗi lint</li><li>obd_harbor    từ chối mở cổng 0.0.0.0:8080 — vi phạm luật</li><li>oiw_intake    thu thập xong 2 repo, chuyển sang OAP</li><li>oa_academy    kiểm toán 18 kỹ năng · 17 đạt · 1 trả lại</li></ul></div>
     </div>
 
     <h1>Agent ở đây <span class="hl">không có ý chí tự do</span></h1>
@@ -249,7 +288,7 @@ footer a:hover{color:var(--lime)}
     <div class="tbl rise">
       <table>
         <thead><tr><th>Mã node</th><th>Tên</th><th>Vai trò</th><th>Phòng ban</th></tr></thead>
-        <tbody><tr><td class="id">oma_architect</td><td class="nm">Map Architect</td><td class="rl">vẽ bản đồ hạ tầng và định danh node</td><td><span class="tag daemons">daemons</span></td></tr><tr><td class="id">oap_pipeline</td><td class="nm">Assimilation</td><td class="rl">phân luồng mọi thứ đi vào hệ</td><td><span class="tag daemons">daemons</span></td></tr><tr><td class="id">oer_registry</td><td class="nm">Ecosystem Registry</td><td class="rl">giữ sổ đăng ký thực thể</td><td><span class="tag daemons">daemons</span></td></tr><tr><td class="id">oiw_intake</td><td class="nm">Intake Worker</td><td class="rl">thu thập mã nguồn từ bên ngoài</td><td><span class="tag daemons">daemons</span></td></tr><tr><td class="id">oa_academy</td><td class="nm">Academy</td><td class="rl">kiểm toán logic, tuyển agent mới</td><td><span class="tag daemons">daemons</span></td></tr><tr><td class="id">osf_warden</td><td class="nm">Sandbox Firewall</td><td class="rl">cách ly thứ chưa qua kiểm duyệt</td><td><span class="tag security">security</span></td></tr><tr><td class="id">obd_harbor</td><td class="nm">Bridge Daemon</td><td class="rl">không skill nào tự mở cổng mạng</td><td><span class="tag security">security</span></td></tr><tr><td class="id">ohd_healer</td><td class="nm">Health Daemon</td><td class="rl">tự vá lỗi, dọn rác, chữa lint</td><td><span class="tag health">health</span></td></tr></tbody>
+        <tbody><tr data-dept="daemons"><td class="id" style="--i:0">oma_architect</td><td class="nm">Map Architect</td><td class="rl">vẽ bản đồ hạ tầng và định danh node</td><td><span class="tag daemons">daemons</span></td></tr><tr data-dept="daemons"><td class="id" style="--i:1">oap_pipeline</td><td class="nm">Assimilation</td><td class="rl">phân luồng mọi thứ đi vào hệ</td><td><span class="tag daemons">daemons</span></td></tr><tr data-dept="daemons"><td class="id" style="--i:2">oer_registry</td><td class="nm">Ecosystem Registry</td><td class="rl">giữ sổ đăng ký thực thể</td><td><span class="tag daemons">daemons</span></td></tr><tr data-dept="daemons"><td class="id" style="--i:3">oiw_intake</td><td class="nm">Intake Worker</td><td class="rl">thu thập mã nguồn từ bên ngoài</td><td><span class="tag daemons">daemons</span></td></tr><tr data-dept="daemons"><td class="id" style="--i:4">oa_academy</td><td class="nm">Academy</td><td class="rl">kiểm toán logic, tuyển agent mới</td><td><span class="tag daemons">daemons</span></td></tr><tr data-dept="security"><td class="id" style="--i:5">osf_warden</td><td class="nm">Sandbox Firewall</td><td class="rl">cách ly thứ chưa qua kiểm duyệt</td><td><span class="tag security">security</span></td></tr><tr data-dept="security"><td class="id" style="--i:6">obd_harbor</td><td class="nm">Bridge Daemon</td><td class="rl">không skill nào tự mở cổng mạng</td><td><span class="tag security">security</span></td></tr><tr data-dept="health"><td class="id" style="--i:7">ohd_healer</td><td class="nm">Health Daemon</td><td class="rl">tự vá lỗi, dọn rác, chữa lint</td><td><span class="tag health">health</span></td></tr></tbody>
       </table>
     </div>
   </section>
