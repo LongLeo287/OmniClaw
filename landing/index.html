@@ -4,224 +4,345 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>OmniClaw của Long Leo — hệ điều hành agent 8 daemon cho Claude Code</title>
-<meta name="description" content="Biến máy cá nhân thành một dàn AI tự vận hành, được cai quản bởi 8 daemon chạy nền — không phải mấy con agent &quot;đóng vai nhân viên&quot;." />
+<meta name="description" content="Biến máy cá nhân thành dàn AI tự vận hành, cai quản bởi 8 daemon lõi theo mô hình zero-trust. 14.879 file, 578 kỹ năng trong hệ sinh thái." />
 <meta name="author" content="Hà Đình Long" />
 <meta name="theme-color" content="#0c0a09" />
 <link rel="canonical" href="https://omniclaw-longleo.vercel.app/" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='5' fill='%23f75c1e'/><circle cx='16' cy='6' r='2.4' fill='%23fcd34d'/><circle cx='26' cy='16' r='2.4' fill='%23fcd34d'/><circle cx='16' cy='26' r='2.4' fill='%23fcd34d'/><circle cx='6' cy='16' r='2.4' fill='%23fcd34d'/></svg>" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OmniClaw" />
 <meta property="og:title" content="OmniClaw của Long Leo — hệ điều hành agent 8 daemon cho Claude Code" />
-<meta property="og:description" content="Biến máy cá nhân thành một dàn AI tự vận hành, được cai quản bởi 8 daemon chạy nền — không phải mấy con agent &quot;đóng vai nhân viên&quot;." />
+<meta property="og:description" content="Biến máy cá nhân thành dàn AI tự vận hành, cai quản bởi 8 daemon lõi theo mô hình zero-trust. 14.879 file, 578 kỹ năng trong hệ sinh thái." />
 <meta property="og:url" content="https://omniclaw-longleo.vercel.app/" />
 <meta property="og:image" content="https://omniclaw-longleo.vercel.app/cover.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="600" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="OmniClaw của Long Leo — hệ điều hành agent 8 daemon cho Claude Code" />
-<meta name="twitter:description" content="Biến máy cá nhân thành một dàn AI tự vận hành, được cai quản bởi 8 daemon chạy nền — không phải mấy con agent &quot;đóng vai nhân viên&quot;." />
+<meta name="twitter:description" content="Biến máy cá nhân thành dàn AI tự vận hành, cai quản bởi 8 daemon lõi theo mô hình zero-trust. 14.879 file, 578 kỹ năng trong hệ sinh thái." />
 <meta name="twitter:image" content="https://omniclaw-longleo.vercel.app/cover.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" />
 <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  --bg:#0c0a09; --panel:#141110; --line:#26211e;
+  --bg:#0c0a09; --panel:#151211; --panel-2:#1c1817; --line:#282221; --line-2:#3a302e;
   --text:#fafaf9; --muted:#a8a29e; --dim:#78716c;
-  --primary:#ff7a00; --amber:#fcd34d;
-  --dur:.6s; --ease:cubic-bezier(.16,1,.3,1);
+  --a1:#f75c1e; --a2:#fcd34d;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  margin:0;background:var(--bg);color:var(--text);
+body{margin:0;background:var(--bg);color:var(--text);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
-.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+svg{display:block}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{letter-spacing:-.022em}
+:focus-visible{outline:2px solid var(--a2);outline-offset:3px;border-radius:6px}
 
-/* ---------- thanh trên cùng ---------- */
-.bar{
-  position:sticky;top:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:.85rem 0;
-  background:rgba(12,10,9,.82);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
+.ticker{background:linear-gradient(90deg,color-mix(in srgb,var(--a1) 18%,transparent),
+  color-mix(in srgb,var(--a2) 9%,transparent));
+  border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted);
+  text-align:center;padding:.5rem 1rem}
+.ticker b{color:var(--a2);font-weight:700}
+.bar{position:sticky;top:0;z-index:50;padding:.7rem 0;
+  background:rgba(12,10,9,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .bar-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  width:min(1080px,100% - 2.5rem);margin-inline:auto}
-.back{
-  display:inline-flex;align-items:center;gap:.55rem;min-height:44px;
-  font-size:.875rem;font-weight:500;color:var(--muted);text-decoration:none;
-  padding:.5rem .25rem;transition:color .25s var(--ease);
-}
-.back:hover{color:var(--text)}
-.back svg{transition:transform .3s var(--ease)}
-.back:hover svg{transform:translateX(-3px)}
-.bar-cta{
-  display:inline-flex;align-items:center;gap:.5rem;
-  padding:.55rem 1.05rem;border-radius:999px;
-  border:1px solid var(--line);background:var(--panel);
-  font-size:.85rem;font-weight:600;text-decoration:none;color:var(--text);
-  transition:border-color .25s var(--ease),transform .25s var(--ease),background .25s var(--ease);
-}
-.bar-cta:hover{border-color:var(--primary);background:#1c1815;transform:translateY(-1px)}
+  width:min(1120px,100% - 2.5rem);margin-inline:auto}
+.brand{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;
+  font-weight:700;font-size:.95rem;text-decoration:none}
+.brand .logo{flex-shrink:0;transition:transform .5s var(--ease)}
+.brand:hover .logo{transform:rotate(90deg)}
+.bar-links{display:flex;align-items:center;gap:.35rem}
+.bar-links a{padding:.5rem .8rem;font-size:.85rem;color:var(--muted);text-decoration:none;
+  border-radius:8px;transition:color .25s var(--ease),background .25s var(--ease)}
+.bar-links a:hover{color:var(--text);background:var(--panel)}
+.bar-cta{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.05rem;
+  border-radius:999px;border:1px solid var(--line-2);background:var(--panel);
+  font-size:.85rem;font-weight:600;text-decoration:none;color:var(--text)!important;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.bar-cta:hover{border-color:var(--a1);transform:translateY(-1px)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;padding:clamp(3.5rem,9vw,6.5rem) 0 clamp(2.5rem,6vw,4rem);overflow:hidden}
-.hero::before{
-  content:'';position:absolute;inset:-20% -10% auto -10%;height:120%;
-  background:
-    radial-gradient(48% 42% at 12% 8%,rgba(255,122,0,.16),transparent 70%),
-    radial-gradient(38% 34% at 88% 0%,rgba(252,211,77,.09),transparent 70%);
-  pointer-events:none;z-index:0;
-  animation:glowDrift 18s ease-in-out infinite alternate;
-}
-@keyframes glowDrift{to{transform:translate3d(2%,1.5%,0) scale(1.06)}}
+.hero{position:relative;padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2rem,5vw,3rem);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:-25% -10% auto -10%;height:130%;z-index:0;
+  pointer-events:none;
+  background:radial-gradient(45% 40% at 15% 6%,color-mix(in srgb,var(--a1) 22%,transparent),transparent 70%),
+             radial-gradient(38% 34% at 85% 3%,color-mix(in srgb,var(--a2) 12%,transparent),transparent 70%);
+  animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(2.5%,1.5%,0) scale(1.07)}}
 .hero .wrap{position:relative;z-index:1}
-.eyebrow{
-  display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--amber);margin:0 0 1.1rem;
-  padding-bottom:.5rem;border-bottom:2px solid rgba(252,211,77,.45);
-}
-h1{
-  font-size:clamp(2.25rem,6.5vw,4rem);line-height:1.06;letter-spacing:-.025em;
-  font-weight:700;margin:0 0 1.25rem;
-}
-.tagline{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--muted);max-width:60ch;margin:0 0 2rem}
-.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.75rem}
-.btn{
-  display:inline-flex;align-items:center;gap:.55rem;
-  padding:.85rem 1.6rem;border-radius:999px;
-  font-size:.95rem;font-weight:600;text-decoration:none;
-  border:1px solid transparent;
+.hero-grid{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--a2);margin:0 0 1.1rem;
+  padding:.35rem .9rem .35rem .65rem;border-radius:999px;
+  border:1px solid color-mix(in srgb,var(--a2) 30%,transparent);
+  background:color-mix(in srgb,var(--a1) 8%,transparent)}
+.dot{width:7px;height:7px;border-radius:50%;background:#4ade80;
+  box-shadow:0 0 0 0 rgba(74,222,128,.55);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+h1{font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.06;font-weight:700;margin:0 0 1.15rem}
+h1 .hl{background:linear-gradient(90deg,var(--a1),var(--a2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{font-size:clamp(1rem,1.9vw,1.15rem);color:var(--muted);margin:0 0 1.8rem;max-width:54ch}
+.actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:1.6rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.5rem;border-radius:999px;
+  font-size:.94rem;font-weight:600;text-decoration:none;border:1px solid transparent;
   transform:translateY(var(--lift,0)) scale(var(--press,1));
   transition:transform .25s var(--ease),background .25s var(--ease),
-             border-color .25s var(--ease),box-shadow .25s var(--ease);
-}
+             border-color .25s var(--ease),box-shadow .25s var(--ease)}
 .btn:hover{--lift:-2px}
 .btn:active{--press:.97}
-.btn-primary{background:var(--primary);color:#0c0a09}
-.btn-primary:hover{box-shadow:0 10px 30px -10px rgba(255,122,0,.6)}
-.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--primary);background:rgba(255,122,0,.07)}
+.btn-primary{background:var(--a1);color:#0c0a09}
+.btn-primary:hover{box-shadow:0 12px 32px -12px color-mix(in srgb,var(--a1) 70%,transparent)}
+.btn-ghost{background:transparent;border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--a1);background:color-mix(in srgb,var(--a1) 8%,transparent)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;font-size:.85rem;color:var(--dim)}
+.hero-facts b{color:var(--text);font-weight:700}
 
-/* ---------- chỉ số ---------- */
-.meta{
-  display:grid;gap:1px;background:var(--line);
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  border:1px solid var(--line);border-radius:14px;overflow:hidden;
-}
-.meta div{background:var(--panel);padding:1.1rem 1.25rem}
-.meta dt{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);margin:0 0 .35rem}
-.meta dd{margin:0;font-size:1.02rem;font-weight:600;color:var(--text)}
+.marquee{border-block:1px solid var(--line);padding:1.05rem 0;overflow:hidden;
+  background:linear-gradient(180deg,#100c0b,#0c0a09)}
+.marquee-in{display:flex;width:max-content;animation:slide 38s linear infinite}
+.marquee:hover .marquee-in{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+.marquee span{display:inline-flex;align-items:center;gap:.65rem;padding-inline:1.8rem;
+  font-size:.93rem;font-weight:600;color:#5f5853;white-space:nowrap;
+  transition:color .3s var(--ease)}
+.marquee span::before{content:'';width:6px;height:6px;border-radius:1px;background:var(--line-2);
+  transform:rotate(45deg);transition:background .3s var(--ease)}
+.marquee span:hover{color:var(--a2)}
+.marquee span:hover::before{background:var(--a1)}
 
-/* ---------- ảnh bìa ---------- */
-.shot{margin:clamp(2.5rem,6vw,4rem) 0}
-.shot img{
-  width:100%;border-radius:16px;border:1px solid var(--line);
-  box-shadow:0 30px 70px -35px rgba(0,0,0,.9);
-}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;
+  background:var(--line);border-block:1px solid var(--line)}
+.stat{background:var(--bg);padding:1.6rem 1.2rem;text-align:center}
+.stat b{display:block;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;font-weight:800;
+  background:linear-gradient(90deg,var(--a1),var(--a2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:.5rem;font-size:.82rem;color:var(--dim);line-height:1.4}
 
-/* ---------- khối nội dung ---------- */
-section{padding:clamp(2.5rem,6vw,4rem) 0}
-h2{font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.2;letter-spacing:-.02em;margin:0 0 1.25rem}
-.lead{font-size:1.075rem;color:var(--muted);max-width:68ch;margin:0}
-.cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(290px,100%),1fr));margin-top:1.75rem}
-.card{
-  position:relative;overflow:hidden;
-  background:var(--panel);border:1px solid var(--line);border-radius:14px;
-  padding:1.6rem 1.5rem 1.5rem;
-  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease);
-}
-.card::after{
-  content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
-  background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(255,122,0,.09),transparent 68%);
-  opacity:0;transition:opacity .3s var(--ease);
-}
-.card:hover{border-color:#3a322c;transform:translateY(-3px);background:#171412}
-.card:hover::after{opacity:1}
-.card .n{
-  display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;
-  color:var(--primary);margin-bottom:.7rem;
-}
-.card h3{font-size:1.075rem;margin:0 0 .55rem;line-height:1.35}
-.card p{margin:0;font-size:.94rem;color:var(--muted);line-height:1.6}
+section{padding:clamp(3rem,7vw,5rem) 0}
+.head{max-width:58ch;margin-bottom:2.4rem}
+.kicker{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--a1);margin:0 0 .8rem}
+h2{font-size:clamp(1.5rem,3.3vw,2.2rem);line-height:1.2;margin:0 0 .8rem}
+.head p{color:var(--muted);margin:0;font-size:1.05rem}
 
-/* ---------- công nghệ ---------- */
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
-.chip{
-  padding:.45rem 1rem;border-radius:999px;font-size:.83rem;font-weight:500;
+.vis{border:1px solid var(--line-2);border-radius:18px;padding:1.6rem;
+  background:radial-gradient(70% 90% at 25% 10%,color-mix(in srgb,var(--a1) 7%,transparent),transparent 70%),
+             var(--panel)}
+
+.spec{display:grid}
+.spec .sp-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:.85rem .2rem;border-top:1px solid var(--line)}
+.spec .sp-row:first-child{border-top:0;padding-top:0}
+.spec span{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.spec b{font-size:1rem;font-weight:700;text-align:right}
+.spec .sp-row:hover b{color:var(--a2)}
+
+/* --- bon lop xep chong (Video AI) --- */
+.stackv{display:grid;gap:.7rem}
+.ly{display:flex;align-items:center;gap:1rem;padding:1.05rem 1.2rem;border-radius:14px;
+  border:1px solid var(--line-2);background:var(--panel-2);
+  margin-left:calc(var(--i) * clamp(0px,2.2vw,26px));
+  animation:lyIn .7s var(--ease) both;animation-delay:calc(var(--i) * .12s);
+  transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.ly:hover{border-color:var(--a1);transform:translateX(4px)}
+@keyframes lyIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+.ly-ic{flex-shrink:0;color:var(--a2)}
+.ly-ic .ic{width:24px;height:24px}
+.ly-t{display:flex;flex-direction:column;min-width:130px}
+.ly-t b{font-size:1rem}
+.ly-t em{font-style:normal;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim)}
+.ly-d{font-size:.88rem;color:var(--muted);margin-left:auto;text-align:right}
+
+/* --- bo nao va ve tinh (OS) --- */
+.hub{display:grid;gap:1.1rem;justify-items:center;text-align:center}
+.orbits,.sats{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.orb,.sat{padding:.5rem 1rem;border-radius:999px;font-size:.85rem;font-weight:600;
+  border:1px solid var(--line-2);background:var(--panel-2);color:var(--muted);
+  animation:fadeUp .6s var(--ease) both;animation-delay:calc(var(--i) * .08s);
+  transition:color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)}
+.orb:hover,.sat:hover{color:var(--text);border-color:var(--a1);transform:translateY(-2px)}
+.sat{border-style:dashed}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.core{padding:1.5rem 2rem;border-radius:18px;position:relative;
+  background:linear-gradient(140deg,var(--a1),color-mix(in srgb,var(--a2) 70%,var(--a1)));
+  color:#0c0a09;box-shadow:0 0 60px -14px color-mix(in srgb,var(--a1) 60%,transparent)}
+.core b{display:block;font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+.core em{font-style:normal;font-size:.8rem;opacity:.72;font-weight:600}
+.core::before,.core::after{content:'';position:absolute;left:50%;width:1px;height:18px}
+.core::before{top:-18px;background:linear-gradient(transparent,var(--line-2))}
+.core::after{bottom:-18px;background:linear-gradient(var(--line-2),transparent)}
+
+/* --- component that (UX-UI) --- */
+.showcase{display:grid;gap:.85rem}
+.sc-row{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.75rem .95rem;
+  border-radius:12px;border:1px solid var(--line);background:var(--panel-2)}
+.sc-lb{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);width:82px;flex-shrink:0}
+.dm-btn{padding:.42rem 1rem;border-radius:9px;font-size:.82rem;font-weight:700;cursor:default;
+  transition:transform .2s var(--ease),filter .2s var(--ease)}
+.dm-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.dm-btn.p{background:var(--a1);color:#08111f}
+.dm-btn.g{background:transparent;border:1px solid var(--line-2);color:var(--text)}
+.dm-btn.o{background:transparent;color:var(--dim)}
+.dm-bd{padding:.2rem .65rem;border-radius:999px;font-size:.72rem;font-weight:700}
+.dm-bd.ok{background:rgba(74,222,128,.14);color:#6ee7a0}
+.dm-bd.wa{background:rgba(252,211,77,.14);color:#fcd34d}
+.dm-bd.er{background:rgba(239,68,68,.14);color:#f87171}
+.dm-pg{flex:1;min-width:110px;height:7px;border-radius:99px;background:var(--line);overflow:hidden}
+.dm-pg i{display:block;height:100%;width:var(--w);border-radius:99px;
+  background:linear-gradient(90deg,var(--a1),var(--a2));transform-origin:0 50%;
+  animation:grow2 1.6s var(--ease) both}
+@keyframes grow2{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.dm-pc{font-size:.8rem;font-weight:800;color:var(--a2);font-variant-numeric:tabular-nums}
+.dm-to{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border-radius:10px;
+  background:#0f1c2e;border:1px solid #1e3a5f;font-size:.82rem;color:#cfe3ff}
+.dm-to i{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;
+  animation:pulse 2s ease-out infinite}
+.sw{width:26px;height:26px;border-radius:7px;transition:transform .25s var(--ease)}
+.sw:hover{transform:scale(1.15) rotate(6deg)}
+.sc-note{margin:.3rem 0 0;font-size:.8rem;color:var(--dim)}
+
+/* --- tam daemon (OmniClaw) --- */
+.daemons{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr))}
+.dm{padding:.9rem 1rem;border-radius:12px;border:1px solid var(--line-2);background:var(--panel-2);
+  border-left-width:3px;animation:fadeUp .6s var(--ease) both;
+  animation-delay:calc(var(--i) * .07s);
+  transition:transform .25s var(--ease),background .25s var(--ease)}
+.dm:hover{transform:translateY(-3px);background:#221c1a}
+.dm code{display:block;font-size:.74rem;color:var(--dim);font-family:ui-monospace,Menlo,monospace}
+.dm b{display:block;font-size:.92rem;margin:.15rem 0 .1rem}
+.dm em{font-style:normal;font-size:.8rem;color:var(--muted)}
+.dm.dept-daemons{border-left-color:var(--a1)}
+.dm.dept-security{border-left-color:#f87171}
+.dm.dept-health{border-left-color:#4ade80}
+.dept-key{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin-top:1rem;font-size:.78rem;
+  color:var(--dim)}
+.dept-key .k{display:inline-flex;align-items:center;gap:.45rem;
+  font-family:ui-monospace,Menlo,monospace}
+.dept-key .k::before{content:'';width:11px;height:3px;border-radius:2px}
+.dept-key .daemons::before{background:var(--a1)}
+.dept-key .security::before{background:#f87171}
+.dept-key .health::before{background:#4ade80}
+
+/* --- luoi noi dung --- */
+.cells{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr))}
+.cell{display:flex;gap:.8rem;padding:1rem 1.15rem;border-radius:12px;border:1px solid var(--line);
+  background:var(--panel);transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.cell:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.cell .no{font-size:.72rem;font-weight:800;color:var(--a1);flex-shrink:0;padding-top:.15rem;
+  font-variant-numeric:tabular-nums}
+.cell b{display:block;font-size:.93rem;margin-bottom:.15rem}
+.cell em{font-style:normal;font-size:.85rem;color:var(--muted)}
+
+.feats{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
+.feat{position:relative;overflow:hidden;padding:1.6rem 1.5rem;border:1px solid var(--line);
+  border-radius:16px;background:var(--panel);
+  transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
+.feat::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:0;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),
+    color-mix(in srgb,var(--a1) 13%,transparent),transparent 66%);
+  transition:opacity .3s var(--ease)}
+.feat:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--panel-2)}
+.feat:hover::after{opacity:1}
+.feat .ic{width:26px;height:26px;color:var(--a1);margin-bottom:.9rem;
+  transition:transform .35s var(--ease)}
+.feat:hover .ic{transform:scale(1.12) rotate(-4deg)}
+.feat .n{position:absolute;top:1.3rem;right:1.4rem;font-size:.7rem;font-weight:800;
+  letter-spacing:.1em;color:rgba(255,255,255,.12)}
+.feat h3{font-size:1.03rem;margin:0 0 .5rem}
+.feat p{margin:0;font-size:.92rem;color:var(--muted)}
+
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{padding:.45rem 1rem;border-radius:10px;font-size:.85rem;font-weight:500;
   background:var(--panel);border:1px solid var(--line);color:var(--muted);
-  transition:color .25s var(--ease),border-color .25s var(--ease);
-}
-.chip:hover{color:var(--text);border-color:#3a322c}
-.note{
-  margin-top:2rem;padding:1.15rem 1.35rem;border-radius:12px;
-  border:1px solid var(--line);border-left:3px solid var(--amber);
-  background:var(--panel);color:var(--muted);font-size:.94rem;
-}
+  transition:color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)}
+.chip:hover{color:var(--text);border-color:var(--a1);transform:translateY(-2px)}
 
-/* ---------- kết ---------- */
-.cta{
-  text-align:center;padding:clamp(3rem,8vw,5rem) 0;
-  border-top:1px solid var(--line);margin-top:clamp(2rem,5vw,3rem);
-}
-.cta h2{margin-bottom:.85rem}
-.cta p{color:var(--muted);margin:0 auto 2rem;max-width:52ch}
+.limits{border:1px solid var(--line);border-left:3px solid var(--a2);border-radius:16px;
+  background:var(--panel);padding:1.9rem 1.8rem}
+.limit{padding:1.1rem 0;border-top:1px solid var(--line)}
+.limit:first-of-type{border-top:0;padding-top:0}
+.limit h3{font-size:1rem;margin:0 0 .4rem;color:var(--a2)}
+.limit p{margin:0;font-size:.93rem;color:var(--muted)}
+
+.faq{display:grid;gap:.6rem;max-width:74ch}
+details{border:1px solid var(--line);border-radius:14px;background:var(--panel);
+  transition:border-color .25s var(--ease)}
+details[open]{border-color:var(--line-2)}
+summary{cursor:pointer;list-style:none;padding:1.05rem 1.3rem;font-weight:600;font-size:.97rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'';width:9px;height:9px;flex-shrink:0;
+  border-right:2px solid var(--dim);border-bottom:2px solid var(--dim);
+  transform:rotate(45deg) translateY(-2px);transition:transform .3s var(--ease)}
+details[open] summary::after{transform:rotate(-135deg) translateY(-2px);border-color:var(--a2)}
+details p{margin:0;padding:0 1.3rem 1.15rem;color:var(--muted);font-size:.93rem}
+
+.cta{text-align:center;border-top:1px solid var(--line)}
+.cta h2{margin-bottom:.8rem}
+.cta p{color:var(--muted);max-width:52ch;margin:0 auto 2rem}
+.cta .actions{justify-content:center;margin-bottom:0}
 footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--dim);font-size:.85rem}
-.foot-in{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:space-between;align-items:center}
-footer a{
-  display:inline-block;padding:.5rem .15rem;color:var(--muted);
-  text-decoration:none;transition:color .25s var(--ease);
-}
-footer a:hover{color:var(--primary)}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+.foot-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.foot-brand{display:flex;align-items:center;gap:.6rem;color:var(--muted);font-weight:600}
+footer a{display:inline-block;padding:.5rem .15rem;color:var(--muted);text-decoration:none;
+  transition:color .25s var(--ease)}
+footer a:hover{color:var(--a1)}
 
-/* ---------- chuyển động ---------- */
-.rise{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rise{opacity:0;transform:translateY(24px);
+  transition:opacity .75s var(--ease),transform .75s var(--ease)}
 .rise.in{opacity:1;transform:none}
-.hero .eyebrow,.hero h1,.hero .tagline,.hero .actions,.hero .meta{
-  opacity:0;animation:riseIn .85s var(--ease) forwards;
-}
+.hero .eyebrow,.hero h1,.hero .tagline,.hero .actions,.hero .hero-facts{
+  opacity:0;animation:riseIn .85s var(--ease) forwards}
 .hero .eyebrow{animation-delay:.05s}
-.hero h1{animation-delay:.14s}
-.hero .tagline{animation-delay:.23s}
-.hero .actions{animation-delay:.32s}
-.hero .meta{animation-delay:.41s}
-@keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-
-/* Thanh tiến độ cuộn — chạy bằng animation-timeline của trình duyệt,
-   không listener, không rAF. Trình duyệt cũ đơn giản là không thấy nó. */
-.progress{
-  position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;
-  background:linear-gradient(90deg,var(--primary),var(--amber));
-  transform-origin:0 50%;transform:scaleX(0);
-}
+.hero h1{animation-delay:.13s}
+.hero .tagline{animation-delay:.22s}
+.hero .actions{animation-delay:.31s}
+.hero .hero-facts{animation-delay:.4s}
+@keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;z-index:60;transform:scaleX(0);
+  transform-origin:0 50%;background:linear-gradient(90deg,var(--a1),var(--a2))}
 @supports (animation-timeline:scroll()){
   .progress{animation:grow linear;animation-timeline:scroll(root block)}
   @keyframes grow{to{transform:scaleX(1)}}
 }
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .bar-links{display:none}
+  .ly{margin-left:0;flex-wrap:wrap}
+  .ly-d{margin-left:0;text-align:left;width:100%}
+}
 @media (max-width:640px){
   .actions{flex-direction:column;align-items:stretch}
   .btn{justify-content:center}
+  .limits{padding:1.4rem 1.25rem}
+  .sc-lb{width:100%}
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "OmniClaw", "description": "Biến máy cá nhân thành một dàn AI tự vận hành, được cai quản bởi 8 daemon chạy nền — không phải mấy con agent \"đóng vai nhân viên\".", "url": "https://omniclaw-longleo.vercel.app/", "image": "https://omniclaw-longleo.vercel.app/cover.jpg", "codeRepository": "https://github.com/LongLeo287/OmniClaw", "programmingLanguage": ["Python", "Claude Code CLI", "Google Antigravity", "MCP", "SQLite"], "author": {"@type": "Person", "name": "Hà Đình Long", "alternateName": "Long Leo", "url": "https://portfolio-long-leo.vercel.app/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareSourceCode", "name": "OmniClaw", "description": "Biến máy cá nhân thành dàn AI tự vận hành, cai quản bởi 8 daemon lõi theo mô hình zero-trust. 14.879 file, 578 kỹ năng trong hệ sinh thái.", "url": "https://omniclaw-longleo.vercel.app/", "image": "https://omniclaw-longleo.vercel.app/cover.jpg", "codeRepository": "https://github.com/LongLeo287/OmniClaw", "programmingLanguage": ["Python", "Claude Code CLI", "Google Antigravity", "MCP", "SQLite", "TypeScript", "Rust"], "author": {"@type": "Person", "name": "Hà Đình Long", "alternateName": "Long Leo", "url": "https://portfolio-long-leo.vercel.app/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Nó khác gì một tập script tự động hoá?", "acceptedAnswer": {"@type": "Answer", "text": "Khác ở tầng cai quản. Script thì ai cũng chạy được bất cứ lúc nào; ở đây mọi thứ phải qua pipeline có daemon kiểm soát, và vượt quyền là bị chấm dứt phiên."}}, {"@type": "Question", "name": "Vì sao lại là tám daemon?", "acceptedAnswer": {"@type": "Answer", "text": "Để không con nào ôm quá nhiều quyền. Tám vai được chia vào ba phòng ban — hạ tầng, an ninh và sức khoẻ hệ thống — mỗi cái một ranh giới riêng."}}, {"@type": "Question", "name": "Có phải bản clone của dự án OmniClaw nào khác không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Trên GitHub có hơn mười repo cùng tên do trùng trào lưu đặt tên, nhưng bản này không phải fork của ai — 135 commit tự viết."}}, {"@type": "Question", "name": "Cần gì để chạy?", "acceptedAnswer": {"@type": "Answer", "text": "Python, cộng Claude Code CLI hoặc Google Antigravity. Repo nặng khoảng 110 MB vì mang theo cả kho tri thức và hệ sinh thái kỹ năng."}}]}]}</script>
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div>
+<div class="ticker"><b>8</b> daemon lõi · <b>3</b> phòng ban zero-trust · <b>578</b> kỹ năng</div>
 
 <nav class="bar">
   <div class="bar-in">
-    <a class="back" href="https://portfolio-long-leo.vercel.app/#labs">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Portfolio Hà Đình Long
-    </a>
+    <a class="brand" href="#top"><svg class="logo" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f75c1e"/><stop offset="1" stop-color="#fcd34d"/></linearGradient></defs><rect x="1.4" y="1.4" width="29.2" height="29.2" rx="9" fill="none" stroke="url(#bg)" stroke-width="2"/><circle cx="16" cy="16" r="4.2" fill="url(#bg)"/><circle cx="16" cy="7.4" r="2" fill="url(#bg)" opacity=".65"/><circle cx="24.6" cy="16" r="2" fill="url(#bg)" opacity=".65"/><circle cx="16" cy="24.6" r="2" fill="url(#bg)" opacity=".65"/><circle cx="7.4" cy="16" r="2" fill="url(#bg)" opacity=".65"/></svg> OmniClaw</a>
+    <div class="bar-links">
+      <a href="#kien-truc">Kiến trúc</a>
+      <a href="#ben-trong">Bên trong</a>
+      <a href="#tinh-nang">Tính năng</a>
+      <a href="#gioi-han">Giới hạn</a>
+      <a href="#hoi-dap">Hỏi đáp</a>
+    </div>
     <a class="bar-cta" href="https://github.com/LongLeo287/OmniClaw" target="_blank" rel="noopener">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
       Mã nguồn
@@ -229,75 +350,129 @@ footer a:hover{color:var(--primary)}
   </div>
 </nav>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Hệ điều hành agent</p>
-    <h1>OmniClaw</h1>
-    <p class="tagline">Biến máy cá nhân thành một dàn AI tự vận hành, được cai quản bởi 8 daemon chạy nền — không phải mấy con agent &quot;đóng vai nhân viên&quot;.</p>
-    <div class="actions"><a class="btn btn-primary" href="https://github.com/LongLeo287/OmniClaw" target="_blank" rel="noopener">Xem mã nguồn ↗</a><a class="btn btn-ghost" href="https://portfolio-long-leo.vercel.app/#labs">Các dự án khác</a></div>
-    <dl class="meta"><div><dt>Ngôn ngữ</dt><dd>Python</dd></div><div><dt>Phiên bản</dt><dd>5.0</dd></div><div><dt>Giấy phép</dt><dd>MIT</dd></div><div><dt>Chạy trên</dt><dd>Claude Code · Antigravity</dd></div></dl>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><span class="dot"></span> Hệ điều hành agent</p>
+      <h1>Agent ở đây <span class="hl">không có ý chí tự do</span></h1>
+      <p class="tagline">Mọi thứ chạy qua một pipeline cứng, được tám daemon canh gác. Không phải mấy con agent đóng vai nhân viên rồi tự quyết — mà là một tầng backend không né được, nằm dưới mọi công cụ AI trên máy.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://github.com/LongLeo287/OmniClaw" target="_blank" rel="noopener">Xem mã nguồn ↗</a>
+        <a class="btn btn-ghost" href="#kien-truc">Xem kiến trúc</a>
+      </div>
+      <div class="hero-facts"><span><b>8</b> daemon lõi</span><span><b>578</b> kỹ năng</span><span><b>14.879</b> file</span></div>
+    </div>
+    <div class="vis"><div class="spec"><div class="sp-row"><span>Ngôn ngữ</span><b>Python</b></div><div class="sp-row"><span>Phiên bản</span><b>5.0 genesis</b></div><div class="sp-row"><span>Daemon lõi</span><b>8</b></div><div class="sp-row"><span>Phòng ban</span><b>3</b></div><div class="sp-row"><span>Kỹ năng hệ sinh thái</span><b>578</b></div><div class="sp-row"><span>Giấy phép</span><b>MIT</b></div></div></div>
   </div>
 </header>
 
-<div class="wrap shot rise">
-  <img src="cover.jpg" width="1200" height="600" alt="Ảnh bìa dự án OmniClaw" fetchpriority="high" />
-</div>
+<div class="marquee" aria-hidden="true"><div class="marquee-in"><span>Python</span><span>Claude Code CLI</span><span>Google Antigravity</span><span>MCP</span><span>SQLite</span><span>TypeScript</span><span>Rust</span><span>Python</span><span>Claude Code CLI</span><span>Google Antigravity</span><span>MCP</span><span>SQLite</span><span>TypeScript</span><span>Rust</span></div></div>
+<div class="stats"><div class="stat"><b data-to="8" data-suffix="">0</b><span>daemon lõi canh gác</span></div><div class="stat"><b data-to="578" data-suffix="">0</b><span>kỹ năng trong hệ sinh thái</span></div><div class="stat"><b data-to="2148" data-suffix="">0</b><span>file tri thức</span></div><div class="stat"><b data-to="14879" data-suffix="">0</b><span>file trong toàn repo</span></div></div>
 
 <main>
-  <section class="wrap">
-    <h2 class="rise">Vấn đề nó giải quyết</h2>
-    <p class="lead rise">Mỗi công cụ AI lập trình có bộ luật riêng, trí nhớ riêng, và quên sạch sau mỗi phiên. Kết quả là cùng một máy nhưng mỗi công cụ hành xử một kiểu, và không có gì bắt chúng tuân theo kỷ luật chung. OmniClaw đặt một tầng backend không thể né phía dưới tất cả.</p>
+  <section class="wrap" id="kien-truc">
+    <div class="head">
+      <p class="kicker rise">Tám trụ cột</p>
+      <h2 class="rise">Quyền hạn bị chia nhỏ, cố ý</h2>
+      <p class="rise">Mỗi daemon chỉ được làm đúng một việc và bị nhốt trong một phòng ban. Daemon nào chạy script ngoài phạm vi của mình thì bộ điều phối chấm dứt phiên ngay lập tức — đó là ý nghĩa của zero-trust ở đây.</p>
+    </div>
+    <div class="vis rise"><div class="daemons" role="img" aria-label="Tám daemon lõi chia ba phòng ban"><div class="dm dept-daemons" style="--i:0"><code>oma_architect</code><b>Map Architect</b><em>vẽ bản đồ hạ tầng</em></div><div class="dm dept-daemons" style="--i:1"><code>oap_pipeline</code><b>Assimilation</b><em>phân luồng đầu vào</em></div><div class="dm dept-daemons" style="--i:2"><code>oer_registry</code><b>Ecosystem Registry</b><em>sổ đăng ký thực thể</em></div><div class="dm dept-daemons" style="--i:3"><code>oiw_intake</code><b>Intake Worker</b><em>thu thập mã nguồn ngoài</em></div><div class="dm dept-daemons" style="--i:4"><code>oa_academy</code><b>Academy</b><em>kiểm toán logic thực thi</em></div><div class="dm dept-security" style="--i:5"><code>osf_warden</code><b>Sandbox Firewall</b><em>tường lửa biên</em></div><div class="dm dept-security" style="--i:6"><code>obd_harbor</code><b>Bridge Daemon</b><em>canh cổng mạng</em></div><div class="dm dept-health" style="--i:7"><code>ohd_healer</code><b>Health Daemon</b><em>tự chữa lỗi hệ thống</em></div></div><div class="dept-key"><span class="k daemons">system_daemons</span><span class="k security">system_security</span><span class="k health">system_health</span></div></div>
+  </section>
+
+  <section class="wrap" id="ben-trong">
+    <div class="head">
+      <p class="kicker rise">Điểm cốt lõi</p>
+      <h2 class="rise">Vì sao lại dựng thế này</h2>
+    </div>
+    <div class="cells"><div class="cell"><span class="no">01</span><div><b>Tính di động</b><em>tương thích gốc với Claude Code CLI và Google Antigravity</em></div></div><div class="cell"><span class="no">02</span><div><b>Luật toàn cục</b><em>kế thừa ở phạm vi máy, không phải cấu hình lại từng dự án</em></div></div><div class="cell"><span class="no">03</span><div><b>Bảo vệ Git</b><em>daemon quét cache và làm sạch commit trước khi đẩy lên GitHub</em></div></div><div class="cell"><span class="no">04</span><div><b>Một lệnh khởi động</b><em>gõ omniclaw là mở bảng điều khiển trung tâm</em></div></div><div class="cell"><span class="no">05</span><div><b>MemPalace</b><em>kiến trúc bộ nhớ ba tầng để ngữ cảnh sống qua nhiều phiên</em></div></div><div class="cell"><span class="no">06</span><div><b>Cổng mạng</b><em>không skill nào tự mở port, phải qua daemon canh cổng</em></div></div></div>
+  </section>
+
+  <section class="wrap" id="tinh-nang">
+    <div class="head">
+      <p class="kicker rise">Tính năng</p>
+      <h2 class="rise">Những gì có trong repo</h2>
+    </div>
+    <div class="feats"><article class="feat rise"><span class="n">01</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6zM9 12l2 2 4-4"/></svg><h3>Zero-trust là mặc định</h3><p>Quyền hạn chia cho tám daemon trong ba phòng ban. Vượt ranh giới là bị chấm dứt phiên, không phải cảnh báo rồi cho qua.</p></article><article class="feat rise"><span class="n">02</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h12v10H6zM9 11V7a3 3 0 0 1 6 0v4"/></svg><h3>Không rò khoá API</h3><p>Daemon chạy nền quét cache, dọn file cơ sở dữ liệu tạm và làm sạch commit trước khi đẩy lên GitHub.</p></article><article class="feat rise"><span class="n">03</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3a3 3 0 0 0-3 3 3 3 0 0 0-1 5.8A3 3 0 0 0 7 18a3 3 0 0 0 5 1 3 3 0 0 0 5-1 3 3 0 0 0 2-6.2A3 3 0 0 0 18 6a3 3 0 0 0-3-3 3 3 0 0 0-3 1.5A3 3 0 0 0 9 3ZM12 5v14"/></svg><h3>MemPalace ba tầng</h3><p>Bộ nhớ không gian ba lớp để ngữ cảnh sống qua nhiều phiên làm việc, thay vì bốc hơi mỗi lần đóng cửa sổ.</p></article><article class="feat rise"><span class="n">04</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></svg><h3>Chạy trên công cụ có sẵn</h3><p>Tương thích gốc với Claude Code CLI và Google Antigravity — không phải bỏ công cụ đang dùng để đổi sang cái khác.</p></article><article class="feat rise"><span class="n">05</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7 12 3l8 4v10l-8 4-8-4zM4 7l8 4 8-4M12 11v10"/></svg><h3>578 kỹ năng trong hệ sinh thái</h3><p>Kỹ năng, plugin, cầu nối và workflow đều là thực thể có đăng ký, không phải script rời rạc ai muốn thả vào đâu thì thả.</p></article><article class="feat rise"><span class="n">06</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4"/></svg><h3>Một lệnh là xong</h3><p>Bootstrapper tự lo NPM, extension VSCode và các pipeline logic. Gõ `omniclaw` là bảng điều khiển mở lên.</p></article></div>
   </section>
 
   <section class="wrap">
-    <h2 class="rise">Điểm cốt lõi</h2>
-    <div class="cards"><article class="card rise"><span class="n">01</span><h3>Tính di động tuyệt đối</h3><p>Tương thích gốc với Claude Code CLI và Google Antigravity. Luật hệ thống được kế thừa ở phạm vi toàn cục, không phải cấu hình lại từng dự án.</p></article><article class="card rise"><span class="n">02</span><h3>Bảo vệ Git kiểu Zero-Trust</h3><p>Daemon chạy nền quét cache, dọn file .sqlite và làm sạch commit trước khi đẩy lên GitHub — để khoá API không bao giờ lọt ra ngoài.</p></article><article class="card rise"><span class="n">03</span><h3>Bootstrapper tự động</h3><p>Gõ một lệnh `omniclaw` là mở bảng điều khiển trung tâm. Nó tự lo NPM, extension VSCode và các pipeline logic.</p></article><article class="card rise"><span class="n">04</span><h3>8 daemon bất tử</h3><p>Agent ở đây không có &quot;ý chí tự do&quot;. Toàn bộ chạy qua một pipeline cứng, được 8 daemon Python canh gác: kiến trúc sư, bộ phân luồng, bộ đăng ký thực thể, bộ thu thập…</p></article><article class="card rise"><span class="n">05</span><h3>MemPalace — trí nhớ 3 tầng</h3><p>Kiến trúc bộ nhớ không gian ba lớp, để ngữ cảnh sống qua nhiều phiên làm việc thay vì bốc hơi mỗi lần đóng cửa sổ.</p></article></div>
+    <div class="head">
+      <p class="kicker rise">Công nghệ</p>
+      <h2 class="rise">Dựng bằng gì</h2>
+    </div>
+    <div class="chips rise"><span class="chip">Python</span><span class="chip">Claude Code CLI</span><span class="chip">Google Antigravity</span><span class="chip">MCP</span><span class="chip">SQLite</span><span class="chip">TypeScript</span><span class="chip">Rust</span></div>
   </section>
 
-  <section class="wrap">
-    <h2 class="rise">Công nghệ sử dụng</h2>
-    <div class="chips rise"><span class="chip">Python</span><span class="chip">Claude Code CLI</span><span class="chip">Google Antigravity</span><span class="chip">MCP</span><span class="chip">SQLite</span></div>
-    
+  <section class="wrap" id="gioi-han">
+    <div class="head">
+      <p class="kicker rise">Nói trước cho rõ</p>
+      <h2 class="rise">Ba giới hạn bạn nên biết</h2>
+      <p class="rise">Đây là dự án cá nhân đang phát triển, không phải sản phẩm thương mại. Nói thẳng thì đỡ mất thời gian của cả hai bên.</p>
+    </div>
+    <div class="limits rise"><div class="limit"><h3>Không phải phần mềm cho người dùng cuối</h3><p>Đây là hạ tầng cho máy của một lập trình viên. Không có bộ cài, không có giao diện đồ hoạ, và đọc tài liệu là bắt buộc.</p></div><div class="limit"><h3>Tám daemon nhưng ba cái đã hiện thực bằng Python</h3><p>Phần còn lại tồn tại dưới dạng node agent theo tài liệu kiến trúc. Đây là hệ đang phát triển, không phải bản đã đóng băng.</p></div><div class="limit"><h3>Trùng tên với nhiều dự án khác</h3><p>Trên GitHub có hơn mười repo tên OmniClaw. Bản này là của Long Leo, không liên quan gì tới các dự án cùng tên.</p></div></div>
+  </section>
+
+  <section class="wrap" id="hoi-dap">
+    <div class="head">
+      <p class="kicker rise">Hỏi đáp</p>
+      <h2 class="rise">Câu hỏi thường gặp</h2>
+    </div>
+    <div class="faq"><details open><summary>Nó khác gì một tập script tự động hoá?</summary><p>Khác ở tầng cai quản. Script thì ai cũng chạy được bất cứ lúc nào; ở đây mọi thứ phải qua pipeline có daemon kiểm soát, và vượt quyền là bị chấm dứt phiên.</p></details><details><summary>Vì sao lại là tám daemon?</summary><p>Để không con nào ôm quá nhiều quyền. Tám vai được chia vào ba phòng ban — hạ tầng, an ninh và sức khoẻ hệ thống — mỗi cái một ranh giới riêng.</p></details><details><summary>Có phải bản clone của dự án OmniClaw nào khác không?</summary><p>Không. Trên GitHub có hơn mười repo cùng tên do trùng trào lưu đặt tên, nhưng bản này không phải fork của ai — 135 commit tự viết.</p></details><details><summary>Cần gì để chạy?</summary><p>Python, cộng Claude Code CLI hoặc Google Antigravity. Repo nặng khoảng 110 MB vì mang theo cả kho tri thức và hệ sinh thái kỹ năng.</p></details></div>
   </section>
 
   <section class="wrap cta">
-    <h2 class="rise">Muốn xem cách nó hoạt động?</h2>
-    <p class="rise">Toàn bộ mã nguồn công khai trên GitHub. Có gì muốn hỏi hoặc muốn hợp tác, liên hệ qua portfolio.</p>
-    <div class="actions rise" style="justify-content:center">
-      <a class="btn btn-primary" href="https://github.com/LongLeo287/OmniClaw" target="_blank" rel="noopener">Xem trên GitHub</a>
-      <a class="btn btn-ghost" href="https://portfolio-long-leo.vercel.app/#contact">Liên hệ</a>
+    <h2 class="rise">Mã nguồn mở, đọc được toàn bộ</h2>
+    <p class="rise">Không có bản trả phí, không có phần đóng. Tất cả nằm trên GitHub.</p>
+    <div class="actions rise">
+      <a class="btn btn-primary" href="https://github.com/LongLeo287/OmniClaw" target="_blank" rel="noopener">Xem trên GitHub ↗</a>
+      <a class="btn btn-ghost" href="https://portfolio-long-leo.vercel.app/#labs">Các dự án khác của Long Leo</a>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot-in">
+    <span class="foot-brand"><svg class="logo" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f75c1e"/><stop offset="1" stop-color="#fcd34d"/></linearGradient></defs><rect x="1.4" y="1.4" width="29.2" height="29.2" rx="9" fill="none" stroke="url(#bg)" stroke-width="2"/><circle cx="16" cy="16" r="4.2" fill="url(#bg)"/><circle cx="16" cy="7.4" r="2" fill="url(#bg)" opacity=".65"/><circle cx="24.6" cy="16" r="2" fill="url(#bg)" opacity=".65"/><circle cx="16" cy="24.6" r="2" fill="url(#bg)" opacity=".65"/><circle cx="7.4" cy="16" r="2" fill="url(#bg)" opacity=".65"/></svg> OmniClaw</span>
     <span>© 2026 Hà Đình Long — Long Leo</span>
     <span><a href="https://portfolio-long-leo.vercel.app/">Portfolio</a> · <a href="https://github.com/LongLeo287/OmniClaw" target="_blank" rel="noopener">GitHub</a></span>
   </div>
 </footer>
 
 <script>
-// Hiện dần khi cuộn tới. IntersectionObserver thay vì nghe sự kiện scroll.
 var io=new IntersectionObserver(function(es){
   es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
 },{rootMargin:'0px 0px -10% 0px',threshold:.08});
 document.querySelectorAll('.rise').forEach(function(el,i){
-  el.style.transitionDelay=(Math.min(i,6)*55)+'ms'; io.observe(el);
+  el.style.transitionDelay=(Math.min(i%6,5)*55)+'ms'; io.observe(el);
 });
 
-// Vệt sáng theo con trỏ. Một vòng rAF dùng chung cho mọi thẻ, chỉ ghi
-// biến CSS rồi để trình duyệt tự vẽ — không đụng vào layout.
-var pending=null,frame=0;
+// Dem theo thoi gian that chu khong theo so khung hinh, nen may yeu van dung dung luc.
+var cio=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    cio.unobserve(e.target);
+    var el=e.target, to=+el.dataset.to, suf=el.dataset.suffix||'', t0=0, dur=1200;
+    if(!to){ el.textContent='0'+suf; return; }
+    requestAnimationFrame(function step(t){
+      if(!t0) t0=t;
+      var p=Math.min((t-t0)/dur,1), e2=1-Math.pow(1-p,3);
+      el.textContent=Math.round(to*e2).toLocaleString('vi-VN')+suf;
+      if(p<1) requestAnimationFrame(step);
+    });
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-to]').forEach(function(el){ cio.observe(el); });
+
+var pend=null,fr=0;
 if(matchMedia('(pointer:fine)').matches){
-  document.querySelectorAll('.card').forEach(function(card){
-    card.addEventListener('pointermove',function(ev){
-      pending=[card,ev];
-      if(!frame) frame=requestAnimationFrame(function(){
-        frame=0; if(!pending) return;
-        var c=pending[0],e=pending[1],r=c.getBoundingClientRect();
-        c.style.setProperty('--mx',(e.clientX-r.left)+'px');
-        c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  document.querySelectorAll('.feat').forEach(function(c){
+    c.addEventListener('pointermove',function(ev){
+      pend=[c,ev];
+      if(!fr) fr=requestAnimationFrame(function(){
+        fr=0; if(!pend) return;
+        var el=pend[0],e=pend[1],r=el.getBoundingClientRect();
+        el.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        el.style.setProperty('--my',(e.clientY-r.top)+'px');
       });
     });
   });
