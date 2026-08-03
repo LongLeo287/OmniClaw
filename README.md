@@ -1,3 +1,5 @@
+**[▶ Xem trang giới thiệu dự án](https://portfolio-long-leo.vercel.app/labs/omniclaw.html)**
+
 <div align="center">
 
   <img src="vault/assets/media/Welcome to OmniClaw.jpg" alt="OmniClaw Banner" width="100%" style="border-radius: 10px;" />
