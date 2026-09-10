@@ -1,0 +1,14 @@
+{
+  "name": "OmniClaw",
+  "slug": "omniclaw",
+  "tagline": "Hệ điều hành tám daemon",
+  "repo": "https://github.com/LongLeo287/OmniClaw",
+  "portfolio": "https://portfolio-long-leo.vercel.app",
+  "lead": {
+    "title": "Nhận lệnh cài ba daemon đã chạy được",
+    "field": "email",
+    "endpoint": "/api/lead"
+  },
+  "updated": "2026-09-10",
+  "note": "Đọc lúc chạy, không nhúng vào HTML — sửa file này là trang đổi theo mà không cần dựng lại."
+}
