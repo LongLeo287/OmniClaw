@@ -1,10 +1,13 @@
-# Chỉ giữ lại thư mục landing/ trong bản phát hành — phần còn lại của repo là
-# mã nguồn dự án, không liên quan tới trang giới thiệu.
+# Vercel chỉ cần landing/ để phát hành phần tĩnh, và api/ để chạy serverless
+# function. Phần còn lại của repo là mã nguồn dự án, không liên quan.
 #
-# Lưu ý cho ai đọc sau: file này KHÔNG ngăn Vercel tải repo về. Repo nối qua
-# Git thì Vercel vẫn clone toàn bộ vào container build, rồi mới lọc. Muốn
-# Vercel không phải đọc cả repo thì phải tách landing page sang một repo riêng
-# — đổi lại trang không còn nằm trong repo của chính dự án nữa.
+# Lưu ý cho ai đọc sau: thiếu dòng !/api/ là /api/lead và /health cùng 404,
+# form trên trang gửi đi đâu cũng hỏng mà không có lỗi nào lộ ra. Đã xảy ra
+# thật ngày 10/09/2026.
+#
+# File này KHÔNG ngăn Vercel tải repo về. Repo nối qua Git thì Vercel vẫn clone
+# toàn bộ vào container build rồi mới lọc.
 /*
 !/landing/
+!/api/
 !/vercel.json
