@@ -5,6 +5,105 @@
 (function () {
   'use strict';
 
+  /* ---------- Nâng tương phản cho nhãn số thứ tự ----------
+     Đo ngày 10/09/2026 trên seosona-os: 5 số 01-05 cỡ 30px, rgb(36,26,61)
+     trên nền rgb(22,15,41) = 1.14:1, gần như vô hình. Mục đó tên là "Năm
+     năng lực, xếp theo thứ tự chúng chạy" nên con số mang thông tin thật,
+     không phải hoạ tiết.
+     Giữ nguyên hue va do bao hoa, chi nang do sang toi khi dat 3:1 (nguong
+     AA cho chu lon). Chi dung toi nhan hai chu so dang khong dat. */
+  (function () {
+    function soRGB(s) {
+      var m = (s || '').match(/[\d.]+/g);
+      return m ? m.slice(0, 3).map(Number) : null;
+    }
+    function sang(c) {
+      var f = c.map(function (v) {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return 0.2126 * f[0] + 0.7152 * f[1] + 0.0722 * f[2];
+    }
+    function tyLe(a, b) {
+      var x = sang(a), y = sang(b);
+      return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05);
+    }
+    function nenCua(el) {
+      var e = el;
+      while (e) {
+        var cs = getComputedStyle(e);
+        if (cs.backgroundImage && cs.backgroundImage !== 'none') return null;
+        var p = soRGB(cs.backgroundColor);
+        if (p && cs.backgroundColor.indexOf('rgba(0, 0, 0, 0)') === -1 &&
+            cs.backgroundColor !== 'transparent') return p;
+        e = e.parentElement;
+      }
+      return [255, 255, 255];
+    }
+    /* RGB -> HSL -> RGB, chỉ để đổi mỗi độ sáng. */
+    function rgb2hsl(c) {
+      var r = c[0] / 255, g = c[1] / 255, b = c[2] / 255;
+      var mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+      var l = (mx + mn) / 2, h = 0, s = 0;
+      if (d) {
+        s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+        h = mx === r ? (g - b) / d + (g < b ? 6 : 0)
+          : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+        h /= 6;
+      }
+      return [h, s, l];
+    }
+    function hsl2rgb(h, s, l) {
+      function q(p, q2, t) {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q2 - p) * 6 * t;
+        if (t < 1 / 2) return q2;
+        if (t < 2 / 3) return p + (q2 - p) * (2 / 3 - t) * 6;
+        return p;
+      }
+      if (!s) { var v = Math.round(l * 255); return [v, v, v]; }
+      var b2 = l < 0.5 ? l * (1 + s) : l + s - l * s, a2 = 2 * l - b2;
+      return [q(a2, b2, h + 1 / 3), q(a2, b2, h), q(a2, b2, h - 1 / 3)]
+        .map(function (v) { return Math.round(v * 255); });
+    }
+
+    function sua() {
+      var ds = document.querySelectorAll('body *');
+      for (var i = 0; i < ds.length; i++) {
+        var el = ds[i];
+        if (el.children.length) continue;
+        var t = (el.textContent || '').trim();
+        if (!/^\d{2}$/.test(t)) continue;              /* chỉ nhãn hai chữ số */
+        if (el.dataset.tuongPhanDaSua) continue;
+
+        var cs = getComputedStyle(el);
+        var fg = soRGB(cs.color), nen = nenCua(el);
+        if (!fg || !nen) continue;
+        var co = parseFloat(cs.fontSize) || 16;
+        var dam = parseInt(cs.fontWeight, 10) || 400;
+        var can = (co >= 24 || (co >= 18.66 && dam >= 700)) ? 3 : 4.5;
+        if (tyLe(fg, nen) >= can) continue;
+
+        /* Nền tối thì kéo sáng lên, nền sáng thì kéo tối xuống. */
+        var hsl = rgb2hsl(fg), toi = sang(nen) < 0.18;
+        var lo = hsl[2], hi = toi ? 1 : 0, moi = null;
+        for (var k = 0; k < 30; k++) {
+          var mid = (lo + hi) / 2;
+          var thu = hsl2rgb(hsl[0], hsl[1], mid);
+          if (tyLe(thu, nen) < can + 0.05) { lo = mid; } else { hi = mid; moi = thu; }
+        }
+        if (!moi) continue;
+        el.style.setProperty('color', 'rgb(' + moi.join(',') + ')', 'important');
+        el.dataset.tuongPhanDaSua = '1';
+      }
+    }
+
+    sua();
+    setTimeout(sua, 800);
+    setTimeout(sua, 1900);
+  })();
+
   /* ---------- Gỡ nút đổi ngôn ngữ VI/EN ----------
      Đo trên 4 trang: bấm EN không đổi một chữ. Không có [data-i18n], không hàm
      i18n, và không có nội dung tiếng Anh ở đâu — 0 khối ẩn, 0 template, 0 dấu
