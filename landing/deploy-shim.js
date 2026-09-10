@@ -5,6 +5,43 @@
 (function () {
   'use strict';
 
+  /* ---------- Gỡ nút đổi ngôn ngữ VI/EN ----------
+     Đo trên 4 trang: bấm EN không đổi một chữ. Không có [data-i18n], không hàm
+     i18n, và không có nội dung tiếng Anh ở đâu — 0 khối ẩn, 0 template, 0 dấu
+     vết trong window.__resources. Nút lại đặt aria-pressed nên hứa với trình
+     đọc màn hình rằng nó dùng được.
+     Đặt lại thành false khi đã có bản tiếng Anh thật. */
+  var GO_BO_NUT_NGON_NGU = true;
+
+  (function () {
+    if (!GO_BO_NUT_NGON_NGU) return;
+
+    function isLangBtn(el) {
+      var t = (el.textContent || '').trim();
+      return (t === 'VI' || t === 'EN') && el.children.length === 0;
+    }
+
+    function strip() {
+      var btns = [].slice.call(document.querySelectorAll('button, a'))
+        .filter(isLangBtn);
+      if (btns.length < 2) return;
+
+      /* Gỡ cả khung bọc nếu khung đó chỉ chứa đúng mấy nút này — để không
+         chừa lại một ô trống trong thanh điều hướng. */
+      var parent = btns[0].parentElement;
+      if (parent && parent.children.length === btns.length &&
+          [].every.call(parent.children, isLangBtn)) {
+        parent.remove();
+      } else {
+        btns.forEach(function (b) { b.remove(); });
+      }
+    }
+
+    strip();
+    setTimeout(strip, 600);
+    setTimeout(strip, 1700);
+  })();
+
   /* ---------- Nút lên đầu trang + nới khối giảm chuyển động ----------
      HTML và CSS thật nằm trong khối đã nén nên không sửa trực tiếp được; chèn
      ở đây vì shim chạy sau khi bộ giải nén thay thẻ <html>. */
