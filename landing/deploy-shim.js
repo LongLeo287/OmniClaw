@@ -14,14 +14,24 @@
      @media duoi day chi la viet ro y dinh chu khong phai bat buoc. Nut len dau
      trang da tu chon 'auto' hay 'smooth' theo dung thiet lap do. */
   (function () {
-    var st = document.getElementById('__cuon_muot');
-    if (st) return;
-    st = document.createElement('style');
-    st.id = '__cuon_muot';
-    st.textContent =
-      'html{scroll-behavior:smooth}' +
-      '@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}';
-    (document.head || document.documentElement).appendChild(st);
+    /* Phai chen lai nhieu lan. Bo dong goi thay ca documentElement bang
+       replaceWith sau khi giai nen, keo theo toan bo <head> — ke ca <style>
+       vua chen. Do ngay 11/09/2026: ban dau toi chen mot lan, tren trang that
+       #__cuon_muot khong ton tai, scroll-behavior van la 'auto'.
+       __totop_css va __focus_fix song duoc chinh vi chung chen lai. */
+    function chen() {
+      if (document.getElementById('__cuon_muot')) return;
+      var st = document.createElement('style');
+      st.id = '__cuon_muot';
+      st.textContent =
+        'html{scroll-behavior:smooth}' +
+        '@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}';
+      (document.head || document.documentElement).appendChild(st);
+    }
+    chen();
+    setTimeout(chen, 400);
+    setTimeout(chen, 1200);
+    setTimeout(chen, 2500);
   })();
 
   /* ---------- Gỡ liên kết chết "Design System ←" ----------
