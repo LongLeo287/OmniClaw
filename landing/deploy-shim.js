@@ -5,6 +5,29 @@
 (function () {
   'use strict';
 
+  /* ---------- Gỡ liên kết chết "Design System ←" ----------
+     Bộ soạn thảo để lại một liên kết chân trang trỏ tới
+     "Design System 8 Landing Page.dc.html" — file không có trong gói phát
+     hành, bấm vào là 404. Đo ngày 11/09/2026: có trên cả 8 trang, hiện rõ
+     58x68 px ở chân trang chứ không phải ẩn.
+
+     Nó đứng trong hàng ba liên kết cùng "GitHub ↗" và "Portfolio ↗"; hai cái
+     kia trả 200. Gỡ hẳn thay vì giữ lại chữ — một nhãn không dẫn đi đâu nằm
+     giữa hàng liên kết thì khó hiểu hơn là không có. */
+  (function () {
+    function go() {
+      var ds = document.querySelectorAll('a[href]');
+      for (var i = ds.length - 1; i >= 0; i--) {
+        if ((ds[i].getAttribute('href') || '').indexOf('.dc.html') !== -1) {
+          ds[i].parentNode.removeChild(ds[i]);
+        }
+      }
+    }
+    go();
+    setTimeout(go, 700);
+    setTimeout(go, 1800);
+  })();
+
   /* ---------- Lưới an toàn cho reveal theo cuộn ----------
      Cả 8 trang đặt .xx-rv{opacity:0} rồi chờ JS gắn .xx-in. Nội dung vì thế
      phụ thuộc vào JS chạy trót lọt. Trang đã chặn trường hợp thiếu
