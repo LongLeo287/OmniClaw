@@ -5,6 +5,25 @@
 (function () {
   'use strict';
 
+  /* ---------- Cuộn mượt ----------
+     Đo ngày 11/09/2026: scroll-behavior khong duoc khai bao o bat ky trang
+     nao trong tam, computed value la 'auto'. Bam muc nav la nhay phich sang
+     vi tri moi, khong co gi noi cho mat theo kip.
+
+     Trinh duyet tu tat cuon muot khi may bat prefers-reduced-motion, nen khoi
+     @media duoi day chi la viet ro y dinh chu khong phai bat buoc. Nut len dau
+     trang da tu chon 'auto' hay 'smooth' theo dung thiet lap do. */
+  (function () {
+    var st = document.getElementById('__cuon_muot');
+    if (st) return;
+    st = document.createElement('style');
+    st.id = '__cuon_muot';
+    st.textContent =
+      'html{scroll-behavior:smooth}' +
+      '@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}';
+    (document.head || document.documentElement).appendChild(st);
+  })();
+
   /* ---------- Gỡ liên kết chết "Design System ←" ----------
      Bộ soạn thảo để lại một liên kết chân trang trỏ tới
      "Design System 8 Landing Page.dc.html" — file không có trong gói phát
