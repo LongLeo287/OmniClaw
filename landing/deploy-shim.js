@@ -5,6 +5,77 @@
 (function () {
   'use strict';
 
+  /* ---------- Lưới an toàn cho reveal theo cuộn ----------
+     Cả 8 trang đặt .xx-rv{opacity:0} rồi chờ JS gắn .xx-in. Nội dung vì thế
+     phụ thuộc vào JS chạy trót lọt. Trang đã chặn trường hợp thiếu
+     IntersectionObserver, nhưng không chặn trường hợp IO có mà không bắn, hay
+     script chết trước khi gắn observer — khi đó 23-34 khối nằm lại opacity:0
+     và trang trông như hỏng. Khung xem trước của tôi đúng là như vậy: có IO,
+     không bắn lần nào.
+
+     Lưới chỉ ra tay khi có bằng chứng cơ chế đã chết, chứ không ép hiện hết
+     sau vài giây — làm thế là giết luôn hiệu ứng cuộn. */
+  (function () {
+    var CHO = 3000;
+
+    function danhSach() {
+      var ds = document.querySelectorAll('[class*="-rv"]');
+      var out = [];
+      for (var i = 0; i < ds.length; i++) {
+        var m = (ds[i].className || '').match(/(?:^|\s)([a-z]{2,4})-rv(?:\s|$)/);
+        if (m) out.push({ el: ds[i], tien: m[1] });
+      }
+      return out;
+    }
+
+    function trongKhungNhin(el) {
+      var r = el.getBoundingClientRect();
+      var cao = window.innerHeight || document.documentElement.clientHeight || 0;
+      if (!cao) return false;
+      return r.top < cao && r.bottom > 0 && r.width > 0 && r.height > 0;
+    }
+
+    /* chiDoan = chỉ chẩn đoán, không sửa gì. */
+    function kiem(chiDoan) {
+      var ds = danhSach();
+      if (!ds.length) return 'khong-co';
+
+      var daHien = false;
+      for (var i = 0; i < ds.length; i++) {
+        if (ds[i].el.classList.contains(ds[i].tien + '-in')) { daHien = true; break; }
+      }
+      if (daHien) return 'dang-chay';   /* cơ chế đang chạy, không đụng vào */
+
+      var coTrongKhung = false;
+      for (var j = 0; j < ds.length; j++) {
+        if (trongKhungNhin(ds[j].el)) { coTrongKhung = true; break; }
+      }
+      if (!coTrongKhung) return 'chua-cuon-toi';
+
+      if (chiDoan) return 'hong';
+
+      /* Có phần tử nằm trong khung nhìn mà vẫn chưa được hiện -> cơ chế hỏng. */
+      for (var k = 0; k < ds.length; k++) {
+        ds[k].el.classList.add(ds[k].tien + '-in');
+      }
+      if (window.console && console.warn) {
+        console.warn('[shim] reveal theo cuộn không chạy — đã hiện ' + ds.length +
+                     ' khối nội dung để trang không bị trắng.');
+      }
+    }
+
+    /* Xác nhận hai nhịp. Trang nặng 350-660 KB và phải hydrate React; trên
+       máy yếu 3 giây có thể chưa đủ. Bắn nhầm thì mất hiệu ứng cuộn, nên
+       chỉ ra tay khi lần kiểm thứ hai vẫn thấy hỏng. Trường hợp hỏng thật
+       thì nội dung vốn đã vô hình, chờ thêm 2 giây không mất gì. */
+    setTimeout(function () {
+      if (kiem(true) !== 'hong') return;
+      setTimeout(function () {
+        if (kiem(true) === 'hong') kiem();
+      }, 2000);
+    }, CHO);
+  })();
+
   /* ---------- Nâng tương phản cho nhãn số thứ tự ----------
      Đo ngày 10/09/2026 trên seosona-os: 5 số 01-05 cỡ 30px, rgb(36,26,61)
      trên nền rgb(22,15,41) = 1.14:1, gần như vô hình. Mục đó tên là "Năm
