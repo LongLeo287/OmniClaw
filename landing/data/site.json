@@ -3,7 +3,7 @@
   "slug": "omniclaw",
   "tagline": "Hệ điều hành tám daemon",
   "repo": "https://github.com/LongLeo287/OmniClaw",
-  "portfolio": "https://portfolio-long-leo.vercel.app",
+  "portfolio": "https://portfolio-longleo.vercel.app",
   "lead": {
     "title": "Nhận lệnh cài ba daemon đã chạy được",
     "field": "email",
